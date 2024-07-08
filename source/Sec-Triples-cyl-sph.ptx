@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_cylindrical">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- raduit et adapté par Juan Carlos Bustamante, Octobre 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Intégrales triples en coordonnées cylindriques et sphériques</title>
+<introduction>
+<p>
+  Plusieurs problèmes présentent certaines symétries. Il est plus facile de travailler sur ces problèmes avec des systèmes de coordonnées qui se prêtent bien à ces contextes. Les coordonnées polaires en sont un exemple, en deux dimensions. Nous allons considérer deux analogues tridimensionnels, à savoir les coordonnées cylindriques et les coordonnées sphériques.
+</p>
+</introduction>
+
+<subsection xml:id="pars-Cyl">
+  <title>Coordonnées cylindriques</title>
+
+<p>
+  Supposons que nous voulons calculer la masse d'un objet qui est invariant par rotations autour de l'axe <m>Oz</m>, par exemple un tube ou une boîte de conserve. Il est naturel d'utiliser une généralisation des coordonnées polaires. La façon la plus facile de le faire est de considérer les coordonnées polaires dans le plan <m>Oxy</m> et d'ajouter la coordonnée <m>z</m>. Ceci donne ce qu'on appelle les <em>coordonnées cylindriques</em>.
+</p>
+
+<definition xml:id="def_cylindrical">
+<statement>
+  <p>
+    Les coordonnées cylindriques d'un point (de coordonnées cartésiennes) <m>(x,y,z)</m> sont <m>r</m>, <m>\theta</m> et <m>z</m>, définies par
+<md>
+<mrow>
+r&amp;=\text{ distance de }(x,y,0)\text{ à }(0,0,0)
+</mrow>
+<mrow>
+ &amp;=\text{ distance de }(x,y,z)\text{ à l'axe $z$,}
+</mrow>;
+<mrow>
+\theta&amp;=\text{ angle entre l'axe $Ox$ positif et}
+</mrow>
+<mrow>
+  &amp; \qquad \text{la demi-droite de $(0,0,0)$ à  $(x,y,0)$,}
+</mrow>;
+<mrow>
+z&amp;=\text{ distance signée de }(x,y,z)
+\text{ au plan $Oxy$}
+</mrow>
+</md>,
+</p>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/cyl1"/>
+</sidebyside>
+<p>
+c'est-à-dire que <m>r</m> et <m>\theta</m> sont les coordonnées polaires usuelles et que <m>z</m> est <m>z</m>.
+</p></statement>
+</definition>
+
+<p>
+  Les coordonnées cartésiennes et cylindriques sont liées par les formules suivantes. Comme pour les coordonnées polaires, il est utile de poser  <m>x = r\cos\theta</m> et <m>y = r\sin\theta</m>, même pour des valeurs négatives de <m>r</m>. Aussi, on fera attention au fait que la formule pour <m>\theta</m> ne détermine l'angle qu'à <m>\pi</m> près. Il faut tenir compte du signe de <m>x</m> et <m>y</m>.
+</p>
+
+<fact xml:id="eqn_cylindrical">
+  <statement>
+    <p>
+<md>
+<mrow>
+x&amp;=r\cos\theta &amp;
+y&amp;=r\sin\theta &amp;
+z&amp;=z
+</mrow><mrow>
+    r&amp;=\sqrt{x^2+y^2} &amp;
+    \theta&amp;=\arctan\frac{y}{x} &amp;
+    z&amp;=z
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+<!-- WeBWork à inclure>
+Active Calculus, 11.8.6, n. 1
+Exercise 1
+https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-cylindrical-to-rectangular
+Library/ASU-topics/setCalculus/stef12_7p1.pg
+-->
+<!-- 
+<exercise xml:id = "Triples-cyl-sph-01" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-01.pg"/>
+</exercise>
+ -->
+<p>
+  Voyons quelques surfaces données par les points dont les coordonnées cylindriques ont des valeurs constantes de <m>r</m>, <m>\theta</m> ou <m>z</m>.
+</p>
+
+<sidebyside widths="30% 32% 26%" valign="middle">
+<image source="images/CLP-figs/cyl3JC"/>
+<image source="images/CLP-figs/cyl4JC"/>
+<image source="images/CLP-figs/cyl2JC"/>
+</sidebyside>
+
+</subsection>
+
+<subsection xml:id="sec_cylindrical_vol">
+  <title>Volume en coordonnées cylindriques</title>
+
+<p>
+  Afin d'utiliser les coordonnées cylindriques pour calculer des intégrales triples, nous devons calculer l'élément de volume, <m>\dee{V}</m>, comme nous l'avons fait pour les intégrales doubles en coordonnées polaires. En effet, nous avons d'abord établi que <m>\dee{A}=r\,\dee{r}\,\dee{\theta}</m>. Dans ce qui suit, nous allons établir que <m>\dee{V} =r\,\dee{r}\, \dee{\theta}\,\dee{z}</m>.
+</p>
+
+<p>Commençons donc par découper la région d'intégration :
+<ul>
+<li><p>
+D'abord horizontalement, en tranches d'épaisseur <m>\dee{z}</m>. Nous obtenons ceci en coupant par des plans horizontaux d'équation <m>z= </m> constante.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/sphereCyl1"/>
+</sidebyside>
+</li>
+<li>
+  <p>
+    Puis, en divisant les tranches au moyen de surfaces vérifiant <m>\theta = </m> constante, avec les différences successives des différents  <m>\theta</m> égales à <m>\dee{\theta}</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/sphereCyl2"/>
+</sidebyside>
+</li>
+<li>
+  <p>
+    Puis, en sous-divisant les quartiers ainsi obtenus en cubes approximatifs, en utilisant des surfaces vérifiant <m>r=</m> constante, avec les différences entre deux de ces valeurs successives de <m>r</m> égales à <m>\dee{r}</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/sphereCyl3"/>
+</sidebyside>
+</li>
+</ul>
+Nous finissons donc avec des cubes approximatifs, comme illustré dans la figure suivante.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/cylCube"/>
+</sidebyside>
+<p>
+<ul>
+<li>
+  Lorsque nous avons effectué les coupes avec les surfaces ayant  <m>r</m> constant, l'écart entre ces valeurs était  <m>\dee{r}</m> : ainsi, l'arête indiquée dans la figure a une longueur  <m>\dee{r}</m>.
+</li>
+<li>
+  Lorsque nous avons effectué les coupes par les surfaces ayant <m>z</m> constant, les écarts étaient <m>\dee{x}</m>, de sorte que l'épaisseur, c'est-à-dire la longueur des traits verticaux, est  <m>\dee{z}</m>.
+</li>
+<li>
+  Lorsque nous avons effectué les coupes avec les surfaces ayant <m>\theta</m> constant, l'écart entre deux de ces valeurs était <m>\dee{\theta}</m> : ainsi, les arêtes restantes sont des arcs de cercle de rayon <m>r</m><fn>
+    En fait, le rayon intérieur est <m>r</m>, mais le rayon extérieur est  <m>r+\dee{r}</m>. Cependant, l'erreur que ceci entraîne tend vers zéro lorsque  <m>\dee{r}</m>, <m>\dee{\theta}</m>, <m>\dee{z}</m> <m>\rightarrow 0</m>.
+  </fn> 
+  qui sous-tend un angle <m>\theta</m> et donc ont une longueur <m>r\,\dee{\theta}</m>. On pourra revoir la justification de la <xref ref="eq_dA_polar"/>.
+</li>
+</ul>
+Ainsi, le volume de ces cubes approximatifs est (essentiellement<fn>
+  Par  <q>essentiellement</q>, on veut dire que la formule pour <m>\dee{V}</m> tient lorsqu'on prend la limite  <m>\dee{r},\dee{\theta}, \dee{z}\rightarrow 0</m> au niveau des sommes de Riemann.
+</fn>) :
+</p>
+
+<fact xml:id="eq_dV_cylindrical">
+  <statement>
+    <p>
+<me>
+\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}.
+</me>
+</p>
+</statement>
+</fact>
+
+</subsection>
+
+<subsection xml:id="sec_cylindrical_eg">
+  <title>Quelques exemples de calcul</title>
+
+
+<p>Les coordonnées cylindriques sont de mise lorsque l'intégrande <m>f</m> est invariant par rotations autour de l'axe <m>Oz</m> ou lorsque le domaine est cylindrique. Voyons un premier exemple.
+</p>
+
+<example xml:id="eg_sphere_mass_B">
+<statement>
+<p>
+  Trouver la masse du solide à l'intérieur de la sphère  <m>x^2+y^2+z^2=1</m> lorsque la densité est <m>\rho(x,y,z) = x^2+y^2</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+  Avant de continuer, notons que  <m>x^2+y^2</m> est le carré de la distance de <m>(x,y,z)</m> à <m>Oz</m>. En conséquence, tant l'intégrande  <m>x^2+y^2</m> que le domaine d'intégration  <m>x^2+y^2+z^2\leqslant 1</m> sont invariants par rotations autour de l'axe <m>Oz</m>. Les coordonnées cylindriques sont donc un bon choix.
+</p>
+
+<p>
+  De nouveau, par symétrie, la masse totale de la sphère est huit fois la masse du premier octant.
+</p>
+
+<p>
+  Décrivons notre région d'intégration avec les coordonnées cylindriques pour calculer avec l'ordre d'intégration <m>\dee{r}\, \dee{\theta}\, \dee{z}</m>. Notons que l'équation de la sphère en coordonnées cylindriques est <m>r^2  + z^2 =2</m>.
+</p>
+<sidebyside widths="30% 60%">
+  <image source="images/CLP-figs/sphereCyl1a"/>
+  <p>
+    <ul>
+      <li>
+        <p>
+          Les points de notre solide vérifient globalement <m>0\leqslant  z \leqslant 1 </m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pour chaque <m>z \in [0,1]</m>, les points <m>(x,y,z)</m> du solide vérifient <m>0\leqslant  x^2 + y^2 \leqslant 1-z^2</m> et <m>0\leqslant  x,\ 0\leqslant  y</m>. En coordonnées cylindriques, ceci revient à dire que <m>(r,\theta, z)</m> vérifient <m>0\leqslant  r^2 \leqslant 1-z^2</m> et <m>0\leqslant  \theta \leqslant \pi/2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          L'intégrande est <m>\rho(x,y,z) = x^2  + y^2 = r^2</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+</sidebyside>
+
+<p>
+  La masse de la portion du solide dans le premier octant est donc
+    <md>
+      <mrow>M \amp = \iiint_{\cE} \rho\ \dee{V}  = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^2 \ r\, \dee{r}\, \dee{\theta}\, \dee{z}</mrow>
+      <mrow> \amp = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^3\, \dee{r}\, \dee{\theta}\, \dee{z}  = \int_0^1\int_0^{\pi/2}\left[\frac{1}{4}r^4\right]_{r=0}^{r=\sqrt{-z^2}}\ \dee{\theta}\, \dee{z} </mrow>
+      <mrow>  \amp= \frac{1}{4}\int_0^1\int_0^{\pi/2}\left(1-z^2\right)^2 \ \dee{\theta}\, \dee{z} = \frac{\pi}{8} \int_0^1 1-2z^2 + z^4\  \dee{z} </mrow>
+      <mrow>  \amp= \frac{\pi}{8} \left[z-\frac{2}{3}z^3 + \frac{1}{5}{z^5}\right]_{z=0}^{z=1} =\frac{\pi}{8}\left(1-\frac{2}{3} + \frac{1}{5}\right) = \frac{\pi}{15} </mrow>
+    </md>.
+    La masse totale de notre solide est donc  <m>\frac{8\pi}{15}</m>.
+
+</p>
+
+<p> Sans la calculer, posons l'intégrale en utilisant les coordonnées cylindriques dans l'ordre d'intégration <m>\dee{z}\,\dee{r}\, \dee{\theta}</m>.
+<ul>
+  <li>
+    <p>
+      La projection du solide (la partie dans le premier octant) sur le plan <m>Oxy</m> est le quart du disque unitaire. Il est décrit en coordonnées polaires par
+      <me>
+        \{ r()\theta)| 0\leqslant  r \leqslant 1,\ 0\leqslant  \theta \leqslant \pi/2\}.
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      Pour chaque <m>(r,\theta)</m> sur cette région du plan, les points <m>(r,\theta,z)</m> du solide vérifient <m>0\leqslant   z \leqslant \sqrt{1-r^2}</m>.
+    </p>
+  </li>
+</ul>
+La masse est donc également calculée par l'intégrale
+<me>
+  \int_0^{\pi/2}\int_0^1 \int_0^{\sqrt{1-r^2}}\ r^3 \dee{z}\, \dee{r}\, \dee{\theta}.
+</me>
+Celle-ci est plus dure à calculer.
+</p>
+
+<p>
+Finalement, voici l'intégrale correspondante en coordonnées cartésiennes.
+<me>
+\int_0^1 \int_0^{\sqrt{1-z^2}}\int_0^{\sqrt{1-y^2 - z^2}} \
+           \big(x^2+y^2\big) \ \dee{x}\, \dee{y}\, \dee{z}
+</me>
+</p>
+</solution>
+</example>
+
+<!-- WeBWork à inclure>
+Active Calculus 11.8.6, n.8
+Exercise 8
+https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-cylinder-evaluate
+Library/Rochester/setVMultIntegrals5Triple/ur_vc_10_9.pg
+-->
+<!-- 
+<exercise xml:id = "Triples-cyl-sph-02" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-02.pg"/>
+</exercise> -->
+
+<p>
+  Dans notre prochain exemple, nous calculons le moment d'inertie d'un cône circulaire droit. Le moment d'inertie est défini (en deux dimensions) à la   <xref ref="def_moment_of_inertia"/>. Ceci s'étend naturellement à trois dimensions.
+</p>
+
+<fact xml:id="eqn_mom_of_inertia_3d">
+  <statement>
+    <p> Le moment d'inertie d'un solide <m>\cV</m> dont la densité est <m>\rho(x,y,z)</m> et dont la distance de chaque point à l'axe de rotation est <m>D(x,y,z)</m> est donné par
+      <me>
+I_\cA=\iiint_\cV D(x,y,z)^2\,\rho(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
+</me>.
+</p>
+</statement>
+</fact>
+
+<example xml:id="eg_moment_cone">
+<statement>
+<p>
+  Trouver le moment d'inertie d'un cône circulaire droit dont l'axe coïncide avec l'axe <m>Oz</m> et dont le sommet est, à l'origne, de rayon <m>a</m>, de hauteur <m>h</m> et de densité constante <m>M</m> autour de l'axe <m>Oy</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+  Voici une figure illustrant le cône ainsi que l'axe de rotation.
+</p>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/coneZ"/>
+</sidebyside>
+
+<p>
+  Calculons la densité <m>\rho</m> qui est constante. Comme la masse totale est <m>M</m>, la densité est <m>\rho = M / V</m>, où <m>V</m> est le volume. Nous devons donc calculer deux intégrales, une pour le volume puis une autre pour le moment d'inertie. Les deux auront le même domaine d'intégration <m>\cV</m>, qui est décrit comme suit.
+</p>
+<sidebyside widths="50% 30%">
+    <ul>
+      <li>
+        <p>
+          Globalement, <m>z</m> varie de <m>0</m> à <m>h</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pour chaque <m>z</m> dans cet intervalle, la section de <m>\cV</m> par un plan horizontal est un cercle de rayon <m>az/h</m>, et donc <m>\theta</m> varie entre <m>0</m> et <m>2\pi</m>, puis <m>r</m> varie entre <m>0</m> et <m>az/h</m>.
+        </p>
+      </li>
+    </ul>
+    <image source="images/CLP-figs/coneT"/>
+  </sidebyside>
+
+<p>
+  Commençons par calculer le volume du cône.
+
+  <md>
+    <mrow>Vol(\cV) \amp= \iiint_{\cV}\dee{V} = \int_0^h \int_0^{2\pi}\int_0^{az/h} r\ \dee{r}\, \dee{\theta}\, \dee{z} </mrow>
+    <mrow> \amp= \int_0^h \int_0^{2\pi}\left[\frac{1}{2}r^2\right]_{r=0}^{r=az/h} \ \dee{\theta}\ \dee{z}  = \int_0^h \int_0^{2\pi} \frac{1}{2}\frac{a^2z^2}{h^2}\ \dee{\theta}\, \dee{z}</mrow>
+    <mrow>\amp= \pi\frac{a^2}{h^2}\int_{0}^h z^2\ \dee{z} = \pi\frac{a^2}{h^3}\frac{1}{3}\left.z^3\right|_{z=0}^{z=h} = \frac{1}{3}\pi a^2 h </mrow>
+  </md>
+</p>
+
+<p>
+  Calculons maintenant le moment d'inertie. Pour un point <m>(x,y,z)</m> donné, sa distance à l'axe de rotation (c'est-à-dire l'axe  <m>Oy</m>) est <m>D(x,y,z) = \sqrt{x^2 + z^2}</m>. Ainsi, le moment d'inertie est
+  <md>
+  <mrow>
+  \iiint_\cV (x^2+z^2)\ \dee{x}\,\dee{y}\,\dee{z}
+  &amp;=\int_0^h\int_0^{2\pi}\int_0^{\frac{a}{h}z}\ r\,
+     \overbrace{\big(r^2\cos^2\theta+z^2\big)}^{x^2+z^2}\dee{r}\, \dee{\theta}\, \dee{z}
+  </mrow><mrow>
+  &amp;=\int_0^h\dee{z}\int_0^{2\pi}\dee{\theta}\left[
+        \frac{1}{4}\left(\frac{a}{h}z\right)^4\cos^2\theta
+         +\frac{1}{2}\left(\frac{a}{h}z\right)^2z^2\right]
+  </mrow><mrow>
+  &amp;=\int_0^h\dee{z}\left[
+        \frac{1}{4}\frac{a^4}{h^4}
+         +\frac{a^2}{h^2}\right]\pi z^4,
+  </mrow><mrow>
+  &amp;\hskip0.5in\text{puisque} \int_0^{2\pi}\cos^2\theta\ \dee{\theta}=\pi,
+  </mrow><mrow>
+  &amp;=\frac{1}{5}\left[
+        \frac{1}{4}\frac{a^4}{h^4}
+         +\frac{a^2}{h^2}\right]\pi h^5
+  </mrow>
+  </md>.
+</p>
+
+<p> Ainsi, nous avons
+<md>
+<mrow>
+I_\cA
+
+&amp;=\iiint_\cV \overbrace{(x^2+z^2)}^{D(x,y,z)^2}
+              \overbrace{\frac{M}{\frac{1}{3}\pi a^2h}}^{\rho(x,y,z)}
+             \ \dee{x}\,\dee{y}\,\dee{z}
+</mrow><mrow>
+&amp;=3\frac{M}{\pi a^2h} \ \frac{1}{5}\left[
+      \frac{1}{4}\frac{a^4}{h^4}
+       +\frac{a^2}{h^2}\right]\pi h^5
+</mrow><mrow>
+&amp;=\frac{3}{20} M\big(a^2+4h^2\big)
+</mrow>
+</md>.
+</p>
+</solution>
+</example>
+</subsection>
+
+<!--
+<xi:include href="../problems/prob_s3.6.ptx" />
+-->
+
+<subsection xml:id="sec_spherical_coords">
+  <title>Coordonnées sphériques</title>
+
+  <p>Dans l'éventualité où l'on veut, par exemple, calculer une masse d'un objet qui est invariant par les rotations autour de tout axe passant par l'origine, il est avantageux d'utiliser un autre système de coordonnées, qui est aussi une généralisation des coordonnées polaires. Il s'agit des <em>coordonnées sphériques</em>. Cette fois, on mesure une distance à l'origine, puis deux angles, celui des coordonnées polaires et celui par rapport à l'axe <m>Oz</m>. Ce qui est fait ici est analogue au système utilisé pour repérer un endroit sur le globe terrestre : le rayon de la Terre étant spécifié, on donne la longitude, c'est-à-dire l'angle par rapport au méridien de Greenwich, puis la latitude, qui mesure l'angle d'écart par rapport à l'équateur terrestre. Pour les coordonnées sphériques, la latitude est mesurée par rapport au pôle nord.
+  </p>
+
+  <definition xml:id="def_spherical">
+  <statement>
+    <p>
+      Les coordonnées sphériques d'un point de coordonnées cartésiennes <m>(x,y,z)</m> sont <m>(r,\theta,\varphi)</m>, définies par
+  <md>
+  <mrow>
+  \rho&amp;=\text{ distance de }(0,0,0)\text{ à }(x,y,z),
+  </mrow>;
+  <mrow>
+  \varphi&amp;=\text{ angle entre l'axe $Oz$ positif et la demi-droite},
+  </mrow>
+  <mrow> \amp \qquad \text{$(0,0,0)$ en direction de $(x,y,z)$}
+  </mrow>;
+  <mrow>
+  \theta&amp;=\text{ angle entre l'axe $Ox$ positif }
+  </mrow>
+  <mrow> \amp\qquad \text{et la demi-droite de $(0,0,0)$ en direction de $(x,y,z)$}
+  </mrow>
+  </md>.
+  </p>
+
+  <sidebyside width="45%">
+  <image source="images/CLP-figs/spherical"/>
+  </sidebyside>
+  </statement>
+  </definition>
+
+
+  <p>
+  Voici deux figures donnant une vue latérale et une vue d'en haut de la figure ci-haut.
+  </p>
+
+  <sidebyside widths="40% 50%" valign="middle">
+  <image source="images/CLP-figs/sphericalSideJC"/>
+  <image source="images/CLP-figs/sphericalTopJC"/>
+  </sidebyside>
+
+  <p>
+  La coordonnée sphérique  <m>\theta</m> est la même que la coordonnée cylindrique <m>\theta</m>. La coordonnée sphérique <m>\varphi</m> est nouvelle, elle parcourt l'intervalle allant de  <m>0</m>  (sur l'axe  <m>z</m> positif, <em><q>le pôle nord</q></em>) à <m>\pi</m> (sur l'axe  <m>z</m> négatif, <em><q>le pôle sud</q></em>). Les formules reliant les coordonnées cartésiennes et sphériques sont les suivantes.
+  </p>
+
+  <fact xml:id="eqn_spherical">
+  <statement>
+  <p>
+  <md>
+  <mrow>
+  x&amp;=\rho\sin\varphi\cos\theta, &amp;
+  y&amp;=\rho\sin\varphi\sin\theta, &amp;
+  z&amp;=\rho\cos\varphi,
+  </mrow>
+  <mrow>
+   \rho&amp;=\sqrt{x^2+y^2+z^2}, &amp;
+   \theta&amp;=\arctan\frac{y}{x}, &amp;
+   \varphi&amp;=\arctan\frac{\sqrt{x^2+y^2}}{z},
+  </mrow>,
+  </md>
+  où, de nouveau, il faut faire peuve de vigilance : la formule pour <m>\theta</m> ne permet que de le calculer à <m>\pi</m> près.
+  </p>
+  </statement>
+  </fact>
+
+  <p>
+  Voici trois figures montrant des surfaces où
+  <ul>
+  <li>
+  <m>\rho</m> est constant, c'est-à-dire  <m>x^2+y^2+z^2=\rho^2</m>
+  avec <m>\rho</m> constant, il s'agit d'une sphère,
+  </li>
+  <li>
+  <m>\theta</m> est constant, c'est-à-dire un plan vertical, et
+  </li>
+  <li>
+  <m>\varphi</m> est constant, c'est-à-dire une surface où
+  <m>z=\sqrt{x^2+y^2}\ \tan\varphi</m> avec <m>\varphi</m> constante
+  (ceci ressemble à un entonnoir).
+  </li>
+  </ul>
+  </p>
+
+  <sidebyside widths="30% 30% 30%" valign="middle">
+  <image source="images/CLP-figs/spher2JC"/>
+  <image source="images/CLP-figs/spher3JC"/>
+  <image source="images/CLP-figs/spher4JC"/>
+  </sidebyside>
+
+  <!-- WeBWork à inclure>
+Active calculus 11.8.6, n.2
+Exercise 2
+https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-spherical-to-rectangular
+Library/Rochester/setVectors5Coordinates/urvc_3_4.pg
+  -->
+<!-- 
+  <exercise xml:id = "Triples-cyl-sph-03" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-03.pg"/>
+  </exercise>
+ -->
+</subsection>
+
+<subsection xml:id="sec_spherical_vol">
+    <title>Volume en coordonnées sphériques</title>
+
+  <p>Si l'on coupe un solide
+  <ul>
+  <li><p>
+  en coupant d'abord selon des plans avec <m>\theta</m> constant, où l'écart entre deux valeurs consécutives est <m>\dee{\theta}</m>,
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/sphereSph1"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  puis en coupant avec des surfaces avec <m>\varphi</m> constantes, avec la différence successive entre deux telles valeurs <m>\dee{\varphi}</m>,
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/sphereSph2"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  puis en divisant ces régions en cubes approximatifs au moyen de surfaces données par des valeurs constantes de  <m>\rho</m>, avec la différence entre deux de ces valeurs égale à  <m>\dee{\rho}</m>,
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/sphereSph3"/>
+  </sidebyside>
+  </li>
+  </ul>
+  nous obtenons des cubes approximatifs, comme illustré dans la figure ci-bas.
+  </p>
+
+  <sidebyside width="66%">
+  <image source="images/CLP-figs/spher5b"/>
+  </sidebyside>
+  <p>
+    Les dimensions de ce cube en coordonnées sphériques sont essentiellement  <m>\dee{\rho}</m> par  <m>\rho\dee{\varphi}</m> par
+  <m>\rho\sin\varphi\,\dee{\theta}</m>. Nous verrons pourquoi plus bas. Ainsi, le volume approché du cube est :
+  </p>
+
+  <fact xml:id="eq_dV_spherical">
+  <statement>
+  <p>
+  <me>
+  \dee{V} = \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </me>.
+  </p>
+  </statement>
+  </fact>
+
+  <p>Voyons la justification de la formule ci-haut. Chacune des <m>12</m> arêtes du cube est formée en fixant les valeurs de deux des coordonnées  <m>\rho</m>, <m>\theta</m>, <m>\varphi</m> et en faisant varier la troisième.
+  <ul>
+  <li><p>
+  Quatre des arêtes sont formées en fixant <m>\theta</m> et <m>\varphi</m>, et en faisant varier <m>\rho</m>. L'intersection d'un plan donné par <m>\theta</m> fixe avec un cône donné par <m>\varphi</m> constant est une droite passant par l'origine. Quand nous avons fait nos coupes par des valeurs différentes de <m>\rho</m>, l'écart entre deux valeurs de <m>\rho</m> successives a été <m>\dee{\rho}</m>, ainsi ces arêtes du cube ont pour longueur  <m>\dee{\rho}</m>.
+  </p>
+
+  <sidebyside widths="30% 30% 30%" valign="middle">
+  <image source="images/CLP-figs/sphereThJC"/>
+       <image source="images/CLP-figs/spherePhiJC"/>
+       <image source="images/CLP-figs/sphereThPhiAJC"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  Quatre autres des arêtes sont formées en fixant <m>\theta</m> et <m>\rho</m>, et en faisant varier  <m>\varphi</m>. L'intersection d'un plan donné par <m>\theta</m> constant (qui contient l'origine) avec une sphère de rayon <m>\rho</m> fixe (centrée à l'origine) est un cercle de rayon <m>\rho</m> centré à l'origine, ce qu'on appellerait un <em>méridien</em>.
+  </p>
+
+  <sidebyside widths="30% 30% 30%" valign="middle">
+  <image source="images/CLP-figs/sphereRhoJC"/>
+       <image source="images/CLP-figs/sphereThJC"/>
+       <image source="images/CLP-figs/sphereRhoThBJC"/>
+  </sidebyside>
+  <p>
+  Quand nous avons fait nos coupes avec les surfaces de <m>\varphi</m> constant, la différence entre deux valeurs successives était <m>\dee{\varphi}</m>. Ainsi, ces quatre arêtes sont des arcs de cercle dont le rayon est essentiellement <m>\rho</m> et qui sous-tendent un angle <m>\dee{\varphi}</m>, elles ont donc une longueur <m>\rho\,\dee{\varphi}</m>.
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/spher9"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  Les quatre arêtes restantes sont formées en fixant  <m>\varphi</m> et <m>\rho</m>, et en faisant varier  <m>\theta</m>. L'intersection d'un cône de <m>\varphi</m> fixe avec une sphère de <m>\rho</m> fixe est un cercle. Comme <m>\rho</m> et <m>\varphi</m> sont tous les deux fixes, le cercle est contenu dans le plan <m>z=\rho\cos\varphi</m>. En termes cartographiques, il s'agirait d'un <em>parallèle</em>. Le cercle a un rayon  <m>\rho\sin\varphi</m> et est centré à  <m>\big(0,0, \rho\cos\varphi\big)</m>.
+  </p>
+
+  <sidebyside widths="30% 30% 30%" valign="middle">
+  <image source="images/CLP-figs/sphereRhoJC"/>
+   <image source="images/CLP-figs/spherePhiJC"/>
+   <image source="images/CLP-figs/sphereRhoPhiJC"/>
+  </sidebyside>
+
+  <p>
+  Lorsque nous avons effectué nos coupes avec des surfaces de <m>\theta</m> constant, la différence entre deux valeurs successives était <m>\dee{\theta}</m>. Ainsi, ces quatre arêtes du cube sont des arcs de cercle dont le rayon est essentiellement  <m>\rho\sin\varphi</m> et qui sous-tendent un angle <m>\dee{\theta}</m>. Leur longueur est donc <m>\rho\sin\varphi\,\dee{\theta}</m>.
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/spher10"/>
+  </sidebyside>
+  </li>
+  </ul>
+  </p>
+
+  <example xml:id="eg_ice_cream_cone"><title>Cône de crème glacée</title>
+  <statement>
+  <p>
+    Trouver le volume du cône de crème glacée formé par l'intérieur de la sphère <m>x^2+y^2+z^2=a^2</m> qui se trouve au-dessus du plan <m>Oxy</m> et à l'intérieur du cône <m>x^2+y^2=b^2 z^2</m>. Ici, <m>a</m> et  <m>b</m> sont deux constantes strictement positives.
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+  Remarquons que, en coordonnées sphériques,
+  <me>
+  x^2+y^2=\rho^2\sin^2\varphi,\qquad
+  z^2=\rho^2\cos^2\varphi,\qquad
+  x^2+y^2+z^2=\rho^2
+  </me>.
+  Ainsi, en coordonnées sphériques, l'équation d'une sphère est <m>\rho=a</m>, et l'équation du cône est <m>\tan^2\varphi = b^2</m>. Posons  <m>\be=\arctan b</m>, avec <m>0 \lt \be \lt \frac{\pi}{2}</m>. Voici une esquisse de la portion du cône de crème glacée qui se trouve dans le premier octant.
+  </p>
+
+  <sidebyside width="33%">
+  <image source="images/CLP-figs/iceCream"/>
+  </sidebyside>
+
+  <p>
+    Afin de calculer le volume, décrivons notre région d'intégration  en coordonnées sphériques. Nous avons que :
+    <ol>
+      <li>
+        <p> 
+          l'angle  <m>\theta</m> varie entre <m>0</m> et <m>2\pi</m>, puisque nous devons effectuer un tour complet autour de l'axe des <m>z</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          le rayon <m>\rho</m> varie entre <m>0</m> et <m>a</m>, puisque la région contient l'origine et est limitée par la sphère de rayon <m>a</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          l'angle <m>\varphi</m> varie entre <m>0</m> et <m>\be</m>, puisque nous commençons au pôle nord et que nous sortons de notre crème glacée lorsque nous frappons le cylindre.
+        </p>
+      </li>
+    </ol>
+
+Ainsi, le volume est donné par
+
+<md>
+  <mrow>\text{Vol}(\cV) \amp = \iiint_{\cV}\ \dee{V} = \int_0^{2\pi} \int_0^a\int_0^\be\  \rho^2\, \sin \varphi\, \dee{\varphi}\, \dee{\rho}\, \dee{\theta} </mrow>
+  <mrow> \amp = \left[\int_0^{2\pi} \dee{\theta}\right] \left[\int_0^a \rho^2 \dee{\rho} \right]\left[ \int_0^\be \sin \varphi \ \dee{\varphi}\right]</mrow>
+  <mrow>  \amp = 2\pi \cdot \frac{a^3}{3}\cdot (1-\cos \be) </mrow>
+</md>.
+
+  Notons que nous avons pu séparer l'intégrale triple en un produit de trois intégrales, car l'intégrande est un produit de fonctions des variables d'intégration, et les bornes d'intégration sont constantes. C'est le résultat analogue du <xref ref="thm_factorize"/> pour les intégrales triples.
+  </p>
+
+  <sidebyside widths="60% 20%">
+  <p>
+    Nous pouvons exprimer  <m>\be</m> (qui ne faisait pas partie du problème donné) en termes de  <m>b</m>, il suffit regarder le triangle ci-joint.
+  </p>
+  <image source="images/CLP-figs/triangleIceCream"/>
+  </sidebyside>
+
+  <p>
+  Le côté droit ainsi que celui du bas ont été choisis de sorte que  <m>\tan\be=b</m>, c'est la définition de <m>\beta</m>. Ainsi,
+  <m>\cos\beta=\frac{1}{\sqrt{1+b^2}}</m>, et le volume de notre cône de crème glacée est
+  <me>
+  \text{Vol}(\cV)
+  =\frac{2\pi a^3}{3}\left[1-\frac{1}{\sqrt{1+b^2}}\right]
+  </me>.
+  </p>
+  <p>
+    À l'instar de l'<xref ref="eg_polar_volume"/>, nous pouvons faire quelques vérifications salutaires.
+    <ul>
+      <li>
+        Si <m>b=0</m>, le cône est simplement  <m>x^2+y^2=0</m>, c'est-à-dire la droite <m>x=y=0</m> (il s'agit de l'axe des <m>z</m>), le volume total devrait être nul. Notre calcul donne en effet cette réponse.
+      </li>
+      <li>
+        À la limite, lorsque <m>b\rightarrow\infty</m>, l'angle  <m>\beta\rightarrow\frac{\pi}{2}</m>, et le cornet de crème glacée tend vers l'hémisphère nord de la sphère de rayon <m>a</m>. Notre calcul donne en effet le volume de l'hémisphère, à savoir <m>\frac{1}{2}\times\frac{4}{3}\pi a^3</m> lorsque <m>b\rightarrow \infty</m>.
+  </li>
+  </ul>
+  </p>
+  </solution>
+  </example>
+
+  <example xml:id="eg_cored_apple">
+  <statement>
+  <p>
+  Un trou cylindrique de rayon <m>b</m> est percé dans une pomme parfaitement symétrique dont le rayon est <m>a\geqslant b</m>. Trouver le volume restant de la pomme.
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+  À l'<xref ref="eg_polar_volume"/>, nous avons calculé le volume enlevé. Nous pourrions donc déduire le volume restant, le tout avec des coordonnées cylindriques. Au lieu de faire ceci, nous allons évaluer le volume avec une intégrale en coordonnées sphériques.
+  </p>
+
+  <p>Comme à l'<xref ref="eg_polar_volume"/>, choisissons notre système de coordonnées avec le centre de la pomme à l'origine et avec le centre de la perceuse suivant l'axe  <m>Oz</m>. Voici une esquisse de la partie de la pomme du premier octant qui reste, ainsi qu'une vue latérale.
+  </p>
+
+  <sidebyside widths ="50% 30%">
+  <image source="images/CLP-figs/appleCoreB"/>
+  <image source="images/CLP-figs/appleCoreB2"/>
+  </sidebyside>
+
+  <p>
+    Afin de calculer le volume en coordonnées sphériques, décrivons la région.
+    <ul>
+      <li>
+        <p>
+          Comme on doit effectuer un tour complet autour de l'axe <m>z</m> afin de parcourir la région, <m>\theta</m> varie entre <m>0</m> et <m>2\pi</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          L'angle <m>\varphi</m> varie entre <m>\arcsin (b/a)</m> et <m>\pi/2</m>, comme la figure de droite ci-haut le montre.
+        </p>
+      </li>
+      <li>
+        <p>Pour des valeurs de <m>\theta</m> et <m>\varphi</m> fixées, les points <m>(\rho, \theta, \varphi)</m> de notre région vérifient <m>\frac{b}{\sin\varphi} \leqslant \rho \leqslant a</m>. En effet, avec <m>\theta</m> et <m>\varphi</m> fixes, lorsque nous faisons varier <m>\rho</m>, c'est-à-dire lorsque nous quittons l'origine, nous entrons dans la région qui nous importe par la paroi intérieure du trou percé (ligne droite verticale en rouge dans la figure de droite ci-haut). Ceci correspond à  <m>\rho = \frac{b}{\sin \varphi}</m>. Puis, on quitte la région lorsqu'on rencontre la sphère de rayon <m>a</m>.
+        </p>
+      </li>
+    </ul>
+    Afin d'alléger l'écriture, posons <m>\al = \arcsin (b/a)</m>. Le volume qui nous intéresse est donc
+    <md>
+      <mrow>\text{Vol}(\cV) \amp = \iiint_{\cV} \ \dee{V} = \int_0^{2\pi}\int_{\al}^{\pi/2}\int_{\frac{b}{\sin \varphi}}^a \rho^2 \,\sin\varphi\, \dee{\rho}\, \dee{\varphi}\, \dee{\theta}
+      </mrow>
+      <mrow> \amp=\int_0^{2\pi} \int_{\al}^{\pi/2}\left[\frac{1}{3}\sin \varphi \rho^3\right]_{\rho ={b/\sin\varphi}}^{\rho = a} \ \dee{\varphi}\, \dee{\theta}
+      </mrow>
+      <mrow>  \amp=\frac{1}{3} \int_0^{2\pi}\int_{\al}^{\pi/2} \sin\varphi \left(a^3 - \frac{b^3}{\sin^3 \varphi}\right) \ \dee{\varphi}\ \dee{\theta}
+      </mrow>
+      <mrow>  \amp=\frac{2\pi}{3} \int_{\al}^{\pi/2} a^3 \sin \varphi - b^3 \csc^2 \varphi\  \dee{\varphi}
+      </mrow>
+      <mrow> \amp= \frac{2\pi}{3}\left[-a\cos \varphi + b^3\cot \varphi \right]_{\phi = \al}^{\varphi = \pi/2}
+      </mrow>
+      <mrow>  \amp= \frac{2\pi}{3} \left( a^3 \cos \al - b^3 \cot \al\right) </mrow>
+    </md>,
+  </p>
+
+  <p> où nous avons utilisé le fait que <m>\displaystyle \int \csc^2 \varphi \ \dee{\varphi}=  -\cot \varphi + C</m> et que  <m>\cos\frac{\pi}{2} = \cot\frac{\pi}{2}=0</m>.
+   Du triangle ci-bas, nous pouvons conclure que <m>\cos\al =\frac{\sqrt{a^2-b^2}}{a} </m> et que <m>\cot\al=\frac{\sqrt{a^2-b^2}}{b}</m>.
+  </p>
+
+  <sidebyside width="20%">
+  <image source="images/CLP-figs/triangleApple"/>
+  </sidebyside>
+
+  <p>
+    Ainsi, le volume de la portion de pomme restante est
+    <me>
+    \text{Vol}(\cV) =\frac{4}{3}\pi\big[a^2-b^2\big]^{3/2}
+    </me>.
+  Nous pouvons faire quelques vérifications comme à l'<xref ref="eg_polar_volume"/>.
+    <ul>
+      <li>
+        Si le rayon de la perceuse est  <m>b=0</m>, il n'y a rien qui est enlevé. Le volume restant doit être égal au volume de la sphère,  <m>\frac{4}{3}\pi a^3</m>. Notre réponse est cohérente avec ceci.
+      </li>
+      <li>
+        Si le rayon de la perceuse est  <m>b=a</m>, toute la pomme est enlevée, le volume restant est <m>0</m>. Encore une fois, notre réponse est en accord avec ceci.
+      </li>
+    </ul>
+    Comme vérification finale, notons que la somme des réponses de l'<xref ref="eg_polar_volume"/> et de celui que nous venons de faire est bel et bien <m>\frac{4}{3}\pi a^3</m>, ce qui est rassurant.
+  </p>
+
+  </solution>
+  </example>
+
+
+  <!-- WeBWork à inclure>
+  Active Calculus 11.8.6 n.9
+  Exercise 9
+https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-spherical-evaluate
+Library/Rochester/setVMultIntegrals5Triple/ur_vc_10_10.pg
+  -->
+<!-- 
+  <exercise xml:id = "Triples-cyl-sph-04" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-04.pg"/>
+  </exercise>
+ -->
+  </subsection>
+
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Triples-Cyl-Sph.ptx"/>
+
+
+
+
+
+</section>

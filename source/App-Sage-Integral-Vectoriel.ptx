@@ -1,0 +1,53 @@
+<appendix xml:id="sec-Sage-Integral" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Intégrales multiples</title>
+
+  <section>
+    <title>Intégration</title>
+    <p>
+      On aura intérêt à regarder <url href="https://doc.sagemath.org/html/en/reference/calculus/sage/symbolic/integration/integral.html">la documentation</url>, car il y a bien de subtitlités. Disons pour commencer que dans SageMath, afin de calculer une intégrale, qu'elle soit définie ou pas on utilise la commande <c>integrate(...)</c>. Pour une intégrale indéfinie, c'est à dire <m>\int f(x)\, dx</m>, on fait <c>integrate(f,x)</c>, pour une intégrale définie <m>\int_a^b f(x)\, dx</m> on fait plutôt <c>integrate(f,x,a,b)</c>. Il faut cependant noter que les constantes d'intégration seront ommises. 
+    </p>
+    <sage>
+      <input>
+        f(x) = x^2 + cos(x)
+        F(x) = integrate(f(x),x)
+        show(F(x))
+        A = integrate(f(x),x,0,pi)
+        show(A)
+      </input>
+    </sage>
+    <p>
+      Sans aller trop loin, disons que des fois dans ce bas monde on doit se contenter d'une approximation numérique pour une intégrale. Dans ce cas c'est la commande <c>numerical_integral(...)</c> qu'il faut utiliser. Par exemple, l'intégrale 
+      <me>
+        \int_0^{2\pi} \sqrt{2\sin^2 t + 8 \cos^2 t -4\sin t\, \cos t}\, dt
+      </me>
+      ne peut pas être évaluée analytiquement, mais 
+    </p>
+    <sage>
+      <input>
+        var('t')
+        numerical_integral(sqrt(2*sin(t)^2 + 8*cos(t)^2 - 4*sin(t)*cos(t)), 0, 2*pi)
+      </input>      
+    </sage>
+    <p>
+      donne comme sortie une paire de nombres. La première est une valeur approchée de l'intégrale, la deuxième une borne pour l'erreur.
+    </p>
+
+  
+  </section>
+
+  <section>
+    <title>Intégrales doubles et triples</title>
+    <p>
+      Comme dans la vraie vie, on calcule une intégrale double en itérant des intégrales simples. Voyons l'intégrale double de l'<xref ref="eg_dblInt_D">exemple</xref>, à savoir <m>\displaystyle\int_{-1}^2\int_{x^2}^{x+2}\dee{y}\,\dee{x}</m>  
+    </p> 
+    <sage>
+      <input>
+        var('x,y')
+        integrate(integrate(1,y,x^2, x+2),x,-1,2)
+      </input>
+    </sage>
+     
+      
+  </section>
+      
+</appendix>

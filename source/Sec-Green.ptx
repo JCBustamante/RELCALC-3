@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-green">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Le Théorème de Green</title>
+
+<introduction>
+<!-- 
+  <p>
+    <term>Début nouveau</term>
+  </p> -->
+  <p>
+    Dans cette section, nous verrons le théorème de Green, formulé de deux façons différentes. Il fait le lien entre les intégrales de flux d'un champ de vecteurs et l'intégrale double du rotationnel ou la divergence de celui-ci. Il s'agit d'une version du théorème fondamental du calcul intégral pour les champs de vecteurs.
+  </p>
+  <p>
+    Plus précisément, le théorème de Green, dans sa forme tangentielle, stipule que le flux d'un champ <m>\vF</m> le long d'une courbe fermée (et simple) <m>\cC</m> est égal à l'intégrale double du rotationnel de <m>\vF</m> sur la région <m>\cR</m> limitée par <m>\cC</m>. Bien entendu, certaines hypothèses sont nécessaires, tant au sujet du champ de vecteurs que de la région <m>\cR</m> et de sa frontière <m>\cC</m>.
+  </p>
+  <!-- <p>
+    <term>Fin nouveau</term>
+  </p> -->
+  <p>
+    Par ailleurs, la version normale du théorème de Green dit que le flux de <m>\vF</m> à travers une courbe <m>\cC</m> est donné par l'intégrale double de la divergence de ce champ sur la région <m>\cR</m> limitée par <m>\cC</m>.
+  </p>
+
+
+
+</introduction>
+
+
+
+
+<!-- WeBWork à inclure>
+Library/Michigan/Chap20Sec3/Q02.pg
+Je peux traduire
+-->
+
+
+
+
+<!-- WeBWork à inclure>
+Devoir 12, problème 4
+-->
+
+
+<subsection xml:id="pars-courbes-green">
+  <title>Compléments sur les courbes</title>
+  <p>
+  Afin d'énoncer le théorème de Green, dans ses deux versions, nous devons donner quelques compléments d'information au sujet des courbes et des régions qu'elles délimitent.
+  </p>
+
+
+  <definition xml:id="def_Green">
+  <statement>
+  <p>
+  <ol marker = "(a)">
+  <li>
+  Une courbe <m>\cC</m> paramétrée par  <m>\vr(t)</m>, <m>a\leqslant t\leqslant b</m>, est dite
+  <term>fermée</term> si <m>\vr(a)=\vr(b)</m>.
+  </li>
+  <li>
+  La courbe  <m>\cC</m> est dite <term>simple</term> si elle ne se coupe pas elle-même. Plus précisément, si <m>a\leqslant t_1,t_2\leqslant b</m> sont tels que <m>t_1\ne t_2</m> et que <m>\{t_1,t_2\}
+  \ne\{a,b\}</m>, alors <m>\vr(t_1)\ne \vr(t_2)</m>. Ceci revient à dire que si <m>\vr(t_1)=\vr(t_2)</m>, alors <m>t_1=t_2</m> ou <m>t_1=a</m>, <m>t_2=b</m>, ou <m>t_1=b</m>, <m>t_2=a</m>.
+  </li>
+  <li><p>
+  La courbe  <m>\cC</m> est  <term>lisse par morceaux</term> si elle admet un paramétrage
+  <m>\vr(t)</m>
+  <ul>
+  <li>
+    continu,
+
+  </li>
+  <li>
+  différentiable, sauf peut-être à un nombre fini de points, et si
+  </li>
+  <li>
+  la dérivée est continue et non nulle, sauf peut-être à un nombre fini de points.
+  </li>
+  </ul>
+  </p></li>
+  </ol>
+  </p></statement>
+  </definition>
+
+  <p>
+  Voici quelques exemples.
+  </p>
+
+  <sidebyside widths="20% 26% 20% 23%" valign="middle">
+  <image source="images/CLP4-figs/curve1JC"/>
+      <image source="images/CLP4-figs/curve2JC"/>
+      <image source="images/CLP4-figs/curve3JC"/>
+      <image source="images/CLP4-figs/astroid5JC"/>
+  </sidebyside>
+
+  <p>
+  Si <m>\cC</m> est une courbe fermée et simple, la région bornée qu'elle délimite, disons <m>\cR</m>, admet pour frontière justement la courbe <m>\cC</m>, et nous écrirons <m>\cC =\partial \cR</m>. Le symbole de dérivée partielle est utilisé pour frontière. Nous avons besoin d'orienter la frontière de la région <m>\cR</m>, c'est-à-dire de donner un sens de parcours. Par convention, une courbe fermée simple sera <em>orientée positivement</em> si elle est parcourue dans le sens contraire des aiguilles d'une montre. Ceci revient à dire que lorsqu'on parcourt la courbe <m>\cC</m>, la région <m>\cR</m> se trouve à gauche.
+  </p>
+  <p>
+    Finalement, notons que si <m>\cC = \partial \cR</m> , il est habituel d'écrire
+    <me>
+      \int_{\cC} \vF \cdot d\vr
+    </me>
+    pour l'intégrale de <m>\vF</m> sur le bord de <m>\cR</m> (une réunion de courbes!) orienté positivement.
+  </p>
+
+
+</subsection>
+
+
+
+<subsection xml:id="pars-Green">
+  <title>Le théorème de Green</title>
+
+  <p>
+    Nous pouvons maintenant énoncer le théorème de Green.
+  </p>
+
+  <theorem xml:id="thm_Green_tgt"><title>Théorème de Green, forme tangentielle</title>
+  <statement><p>
+  Soit <m>\cR</m> une région bornée du plan telle que la frontière <m>\partial \cR</m> consiste en un nombre fini de courbes simples lisses par morceaux, avec l'orientation positive.
+  </p>
+  <sidebyside widths="25%  27%" valign="middle">
+  <image source="images/CLP4-figs/greens1"/>
+  <image source="images/CLP4-figs/dcircleE"/>
+  </sidebyside>
+  <p>
+    Si <m>\vF(x,y)</m> est défini et de classe <m>C^1</m> sur <m>\cR</m>, alors
+  </p>
+  <p>
+    <me>
+      \int_{\partial \cR} \vF \cdot \dee{\vr} = \iint_{\cR} \rot \vF\, \dee{A}.
+    </me>
+  </p>
+
+
+  </statement>
+
+  <proof>
+
+  <!-- <p>
+  <term>Début nouveau</term>
+  </p> -->
+  
+  <p>
+    Nous nous contenterons de faire une démonstration  pour les régions <m>\cR</m> dont le bord <m>\partial \cR</m> est une courbe simple, lisse par morceaux, et ayant en plus la propriété que <m>\cR</m> peut s'exprimer sous les deux formes suivantes :
+    <md>
+      <mrow>\cR  \amp = \{ (x,y)\in \R^2| a\leqslant x \leqslant b,\ \phi_1(x)\leqslant y \leqslant \phi_2(x)\} </mrow>
+      <mrow> \amp =  \{ (x,y)\in \R^2| c\leqslant y \leqslant d,\ \psi_1(y)\leqslant x \leqslant \psi_2(y)\} </mrow>
+    </md>
+    pour certaines fonctions <m>\phi, \phi_2, \psi_1, \psi_2</m>. L'<xref ref="ex-green-bord-x2"></xref> montre comment procéder lorsque le bord de <m>\cR</m> est formé de plusieurs courbes ou que <m>\cR</m> ne s'exprime pas sous les formes requises. 
+  </p>
+  <sidebyside widths="45% 45%">
+  <figure xml:id="fig-Green-pf-a">
+    <image xml:id="img-Green-pf-a" width="40%">
+      <description>Une région simple</description>
+      <sageplot aspect="1.0">
+        p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
+        Fig = arrow2d(path = p1, width=2, color='purple', 
+          axes_labels = ['$x$','$y$'], ticks =[[],[]], arrowsize = 4, xmin=-0.25, xmax=7.5, axes_labels_size =2.5)
+        p2 = [[(2,-1), (3,-1),(4,0), (5,2)]]
+        Fig += bezier_path(path = p2,color='purple', thickness= 2)
+        p3 = [[(5,2), (5,3)]]
+        Fig += arrow2d(path = p3, width=2, color='black', arrowsize = 4,
+          thickness= 2)
+        Fig += bezier_path(path = [[(5,3),(5,4)]], color='black', thickness= 2)
+        p4 = [[(5,4),(4,4),(4,7), (3,7) ]]
+        Fig += arrow2d(path = p4, width=2, color='steelblue', arrowsize = 4)
+        p5 = [[(3,7), (2,7),(2,6), (1,5)]]
+        Fig += bezier_path(path = p5, color='steelblue', thickness= 2)
+        p6 = [[(1,5), (1,3)]]
+        Fig += arrow2d(path = p6, width=2, color='black', arrowsize = 4)
+        Fig += bezier_path(path=[[(1,3),(1,1)]], color='black', thickness= 2) 
+        Fig += text("$\\mathcal{C}_1 : y = \\phi_1(x)$", (3, -1.7), color = "purple", axes = True, fontsize = 28)
+        Fig += text("$\\mathcal{C}_2 : x = b$", (6.5, 3), color = "black", 
+          axes = True,fontsize = 28)
+        Fig += text("$\\mathcal{C}_3 : y = \\phi_2(x)$", (3, 8), 
+          color = "steelblue", axes = True,fontsize = 28)
+        Fig += text("$\\mathcal{C}_4 : x = a$", (-1, 3), color = "black", 
+          axes = True,fontsize = 28, zorder = 1)
+        Fig += text("$\\mathcal{R}$", (3, 3), color = "brown", 
+          axes = True,fontsize = 28)
+        P = p1 + [p2[0:][0][1:]] +  [p3[0:][0][1:]] +[[(5,4)]] + [p4[0:][0][1:]] + [p5[0:][0][1:]]
+        Fig += bezier_path(P, fill = True, alpha =0.25, 
+          rgbcolor = "orange", zorder = -1)
+        Fig += line2d([(1,0), (1,1)],linestyle = "dashed", color = "gray")
+        Fig += line2d([(5,0), (5,2)],linestyle = "dashed", color = "gray")
+        Fig += text("$a$", (1, -0.5), color = "black", axes = True, 
+         fontsize = 28)
+        Fig += text("$b$", (5, -0.5), color = "black", axes = True, 
+         fontsize = 28)
+        Fig         
+      </sageplot>
+    </image>
+  </figure>
+  <figure xml:id="fig-Green-pf-b">
+    <image xml:id="img-fig-Green-pf-b" width="40%">
+      <description>Une région simple</description>
+      <sageplot aspect="1.0">
+        p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
+        Fig = arrow2d(path = p1, width=2, color='red', 
+          axes_labels = ['$x$','$y$'], ticks =[[],[]], arrowsize = 4, 
+          xmin=-0.25, xmax=7.5, axes_labels_size =2.5)
+        p2 = [[(2,-1), (3,-1),(4,0), (5,2)]]
+        Fig += bezier_path(path = p2,color='green', thickness= 1)        
+        p3 = [[(5,2), (5,3)]]        
+        Fig += arrow2d(path = p3, width=2, color='green', arrowsize = 4)
+        Fig += bezier_path(path = [[(5,3),(5,4)]], color='green', thickness= 2)
+        p4 = [[(5,4),(4,4),(4,7), (3,7) ]]
+        Fig += arrow2d(path = p4, width=2, color='green', arrowsize = 4)
+        p5 = [[(3,7), (2,7),(2,6), (1,5)]]
+        Fig += bezier_path(path = p5, color='red', thickness= 2)
+        p6 = [[(1,5), (1,3)]]
+        Fig += arrow2d(path = p6, width=2, color='red', arrowsize = 4)
+        Fig += bezier_path(path=[[(1,3),(1,1)]], color='red', thickness = 2) 
+        Fig += text("$\\mathcal{C}'_2 : x = \\psi_2(y)$", (5.5, 7), color = "green", axes = True, fontsize = 28)
+        Fig += text("$\\mathcal{C}'_1 : x = \\psi_1(y)$", (-1, 6), color = "red", axes = True, fontsize = 28)
+        Fig += text("$\\mathcal{R}$", (3, 3), color = "brown", axes = True, fontsize = 28)
+        P = p1 + [p2[0:][0][1:]] +  [p3[0:][0][1:]] +[[(5,4)]] + [p4[0:][0][1:]] + [p5[0:][0][1:]]
+        Fig += bezier_path(P, fill = True, alpha =0.25, rgbcolor = "orange", zorder = -1)
+        Fig += line2d([(0,1), (1,1)],linestyle = "dashed", color = "gray")
+        Fig += line2d([(0,7), (3,7)],linestyle = "dashed", color = "gray")
+        Fig += text("$c$", (-0.4, 1), color = "black", axes = True, 
+          fontsize = 28)
+        Fig += text("$d$", (-0.4, 7), color = "black", axes = True, 
+          fontsize = 28)
+        Fig       
+      </sageplot>
+    </image>
+  </figure>  
+  </sidebyside>
+
+  <p>
+    Dans un premier temps, nous montrerons que 
+    <md>
+      <mrow xml:id = "eq-pf-green-P" tag = "star"> 
+      \int_{\partial \cR} P\, dx \amp= -\iint_{\cR} \pdiff{P}{y}\, dA. </mrow>
+    </md>
+  </p>
+
+  <p>
+    En effet, il suit de la description de <m>\cR</m> que 
+    <md>
+      <mrow> \iint_{\cR} \pdiff{P}{y}\, dA \amp = \int_a^b\int_{\phi_1(x)}^{\phi_2(x)} P(x,y)\, dy\, dx =\int_a^b P(x,\phi_2(x)) - P(x,\phi_x)\, dx</mrow>
+      <mrow>\amp = \int_a^b P(x,\phi_2(x))\, dx - \int_a^b P(x,\phi_1(x))\, dx</mrow>.
+    </md>
+  </p>
+
+  <p>
+    Or, le bord supérieur de <m>\cR</m>, la courbe <m>\cC_3</m> dans la <xref ref="fig-Green-pf-a"></xref>, est paramétré par <m> \vr(t) = t\,\vi + \phi_2(t)\, \vj </m> pour <m>t\in [a,b]</m>. Cependant, l'orientation de <m>\cC = \partial \cR</m> dans le sens trigonométrique impose à <m>\cC</m> d'être parcourue de droite à gauche, c'est-à-dire de <m>(b,\phi_2(b))</m> à <m>(a,\phi_2(a))</m>. Ainsi, la première des deux intégrales ci-haut est 
+    <md>
+      <mrow xml:id = "eq-pf-green-1" tag = "dagger">  
+      \int_a^b P(x,\phi_2(x))\, dx  \amp = - \int_{\cC_3} P\, dx </mrow>.
+    </md>
+  </p>
+  <p>Pour la seconde intégrale, les choses sont plus faciles, il ne faut pas changer le sens de parcours. Ainsi, celle-ci est 
+    <md>
+      <mrow xml:id = "eq-pf-green-2" tag = "ddagger"> 
+      \int_a^b P(x,\phi_1(x))\, dx  \amp =  \int_{\cC_1} P\, dx </mrow>.
+    </md>
+  </p>  
+
+  <p>
+    Il vient donc, après addition des équations <xref ref="eq-pf-green-1"/> et <xref ref="eq-pf-green-2"/>, que 
+    <me>
+      \iint_{\cR} \pdiff{P}{y}\, dA = -\left[\int_{\cC_1} P\, dx  + \int_{\cC_3}P\, dx\right].
+    </me>
+  </p>
+
+  <p>
+    Le bord <m>\cC = \partial \cR</m> de <m>\cR</m> est formé de deux, trois ou quatre courbes. En effet, les portions <m>\cC_2</m> et <m>\cC_4</m> pourraient être réduites à un seul point. Ceci arrive si <m>\phi_1(a) = \phi_2(a)</m> ou si <m>\phi_1(b) = \phi_2(b)</m>. Mais ça n'a pas d'importance, car sur ces portions, même si elles étaient là, nous aurons que <m>x</m> est constante et donc, dans tout paramétrage, nous aurons <m>x'(t)=0</m>, de sorte que 
+    <md>
+      <mrow> \int_{\cC_2} P\, dx \amp = \int_{\cC_4} P\, dx =0 </mrow>.
+    </md>
+    
+  </p>
+  <p>
+    Ainsi, nous obtenons
+    <md>
+      <mrow>\iint_{\cR} \pdiff{P}{y}\, dA \amp = -\left[ \int_{\cC_1} P\, dx  + \int_{\cC_3}P\, dx\right]  </mrow>
+      <mrow> \amp = -\int_{\partial \cR} P\, dx. </mrow>
+    </md> 
+  </p>
+  <p>Pour montrer que  
+
+  <md>
+    <mrow xml:id = "eq-pf-green-Q" tag = "dstar"> 
+    \iint_{\cR}\pdiff{Q}{x} \amp = \int_{\partial \cR} Q\, dy </mrow>.
+  </md>
+  on procède de la même façon, mais en exprimant l'intégrale double de départ comme une intégrale itérée dans l'autre ordre d'intégration :
+  <me>
+    \iint_{\cR} \pdiff{Q}{x} \, dA = \int_{c}^d \int_{\psi_1(y)}^{\psi_2(y)} Q(x,y)\, dx\, dy.
+  </me>
+  </p>
+  <p>Le résultat suit alors d'additionner les équations <xref ref="eq-pf-green-P"/> et <xref ref="eq-pf-green-Q"/>.
+  </p>
+
+
+
+  <!-- <p>
+
+  <term>Fin nouveau</term>
+</p> -->
+
+</proof>
+
+
+
+
+
+
+
+
+
+  </theorem>
+  <p> Le terme <q>forme tangentielle</q> vient de ce que l'intégrale considérée calcule la circulation du champ <m>\vF</m> autour de la courbe <m>\cC</m>. Comme nous l'avons vu à la <xref ref="fact-FdR-FTdS"/>, ceci revient à intégrer la projection de <m>\vF</m> sur le vecteur tangent unitaire <m>\vT</m> à la courbe. Ainsi, informellement, on peut penser que le théorème de Green, dans sa version tangentielle, dit:
+  <blockquote>
+    <em>La circulation d'un champ <m>\vF</m></em> autour <em>d'une courbe <m>\cC</m> est l'intégrale du rotationnel de</em> <m>\vF</m> <em>sur la région limitée par <m>\cC</m></em>.
+  </blockquote>
+  </p>
+  <p>Si le champ <m>\vF(x,y)</m> est donné par ses composantes <m>P(x,y)\, \vi + Q(x,y)\, \vj</m>, l'égalité du théorème devient :
+  <md>
+    <mrow>\int_{\partial \cR} \vF \cdot \vT\, \dee{s} \amp =  \int_{\partial \cR} \vF \cdot \dee{\vr}  = \int_{\partial \cR}  P\,\dee{x} + Q\,\dee{y}</mrow>
+    <mrow> \amp = \iint_{\cR} \rot \vF\,\dee{A} = \iint_{\cR} \pdiff{Q}{x} - \pdiff{P}{y}\, \dee{A} = \iint_{\cR} \left(\vnabla \times \vF\right)\cdot \vk\, \dee{A}. </mrow>
+  </md>
+  Toutes ces égalités sont équivalentes; chacune des formes d'écrire le théorème de Green présente ses avantages.
+
+
+
+  <example xml:id="eg_greenA">
+  <statement>
+  <p>
+  Calculer
+  <m>\displaystyle   \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y},
+  </m> où <m>\cC</m> est le carré montré dans la figure.
+  </p>
+  <sidebyside width="39%">
+  <image source="images/CLP4-figs/greensSquare"/>
+  </sidebyside>
+
+  </statement>
+
+  <solution>
+  <p>
+  Soit <m>R=\Set{(x,y)}{1\leqslant x\leqslant 2,\ 0\leqslant y\leqslant 1}</m>. En vertu du théorème de Green,
+  <md>
+  <mrow>
+  \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y}
+  &amp;=\iint_{\cR}\Big[\frac{\partial }{\partial x}(y^3+1)
+                  - \frac{\partial }{\partial y}(x-xy)\Big]\dee{x}\dee{y}
+  </mrow><mrow>
+  &amp;=\int_1^2\dee{x}\int_0^1\dee{y}\ x
+  =\frac{x^2}{2}\bigg|_1^2
+  =\frac{3}{2}.
+  </mrow>
+  </md>
+  </p>
+  </solution>
+  </example>
+
+
+  <!-- WeBWork à inclure>
+  Devoir 12, problème 1
+  -->
+
+  <p>
+    Le théorème de Green demande d'avoir une courbe fermée. L'exemple suivant montre comment on peut s'en tirer lorsque la courbe n'est pas fermée.
+  </p>
+  <example xml:id="Green-fermer-courbe">
+    <statement>
+      <p>
+        Calculer le flux du champ <m>\vF = (2y-x^2)\,\vi + \left(\cos^3 y -x\right)\, \vj</m> sur la portion du cercle <m>x^2 + y^2 = 1</m> se trouvant dans le demi-plan  <m>x\geqslant 0</m> allant de <m>(0,-1)</m> à <m>(0,1)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Notons, pour commencer, que le calcul direct de l'intégrale de ligne sera ardu. En effet, le paramétrage usuel <m>\vr(t) = \cos t \, \vi + \sin t\, \vj</m> avec <m>-\pi/2 \leqslant t \leqslant \pi/2</m> mènera à intégrer un terme de la forme <m>\left(\cos (\sin t)\right)^3</m>, venant de la deuxième composante de <m>\vF</m>.
+      </p>
+      <p>
+        Par contre, la composante <m>\vk</m> du rotationnel de <m>\vF</m> est facile à traiter. Si nous dénotons par <m>P</m> et <m>Q</m> les composantes de <m>\vF</m>, nous avons
+        <me>
+          \pdiff{Q}{x} - \pdiff{P}{y} = \pdiff{}{x}\left(\cos^3 y -x\right) - \pdiff{}{y}(2y-x^2) = -1 -2 = -3.
+        </me>
+      </p>
+
+      <sidebyside widths="45% 45%">
+      <image xml:id="sageplot-eg_fermer-trajectoire" width="100%">
+        <description>Théorème de Green avec une courbe non fermée</description>
+       <sageplot>
+        N = 60
+        p1 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [0,1,..,N/4] ]
+        p2 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [N/4,N/4+1,..,N]]
+        L1 = [[p] for p in p1]
+        L2 = [[p] for p in p2]
+        L= p1+p2 +[(0,-1)]
+        Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1,
+          zorder = 5, color= "red", axes= True, ticks = [[1],[1]],
+          axes_labels = ['$x$','$y$'], axes_labels_size=1.4)
+        Fig += arrow2d(path=L2, arrowsize = 4, width=1, zorder = 5,
+          color= "red")
+        Fig += arrow2d((0,1), (0,0.5), arrowsize = 4, width=1, zorder = 5,
+          color= "blue")
+        Fig += arrow2d((0,0.5), (0,-1), arrowsize = 4, width=1, zorder = 5,
+          color= "blue")
+        Fig += polygon2d(L, fill = True, alpha = 0.35, color ="steelblue")
+        Fig += text("$\\mathcal{C}$", (0.8,-0.75), color = "red", fontsize = 14)
+        Fig += text("$\\mathcal{C}'$", (-0.15,0.5), color = "blue",
+          fontsize = 14)
+        Fig += text("$\\mathcal{D}$", (0.5,0.5), color = "black", fontsize = 14)
+        Fig
+       </sageplot>
+      </image>
+      <p>
+        Cependant, il y a une difficulté additionnelle : la courbe <m>\cC</m> n'est pas une courbe fermée, le théorème de Green ne peut donc pas être appliqué directement. Pour surmonter cet inconvénient, nous allons ajouter une portion de courbe, disons <m>\cC'</m>, à <m>\cC</m> de sorte que la trajectoire résultante <m>\Gamma</m>  obtenue en parcourant d'abord <m>\cC</m> puis <m>\cC'</m> soit fermée et que le théorème de Green puisse être appliqué. De plus, soit <m>\cR</m> la région enfermée par la courbe <m>\Gamma</m>.
+      </p>
+      </sidebyside>
+      <p>Nous avons alors
+        <me>
+          \iint_{\cR} \rot \vF \ \dee{A} = \int_{\partial \cR} \vF\cdot \dee{\vr} = \int_{\cC}\vF \cdot \dee{\vr} + \int_{\cC'}\vF \cdot \dee{\vr}.
+        </me>
+        Or, <m>\rot \vF = -3</m>, de sorte que
+        <me>
+          \iint_{\cR} \rot \vF \, \dee{A} = - \iint_{\cR} 3\,\dee{A} = -3\text{Aire}(\cR) = -3\pi.
+        </me>
+      </p>
+      <p>
+        Par ailleurs, <m>\cC'</m> est paramétrée par <m>\vr(t) =x(t)\, \vi + y(t)\ \vj  = 0\, \vi -t\, \vj</m> avec <m>-1\leqslant  t \leqslant 1</m>. Il vient alors que
+        <md>
+          <mrow>\int_{\cC'} \vF \cdot \dee{\vr} \amp= \int_{\cC'} \left(2y-x^2\right) \dee{x} + \left(\cos ^3 y - x \right)\,\dee{y} =  - \int_{-1}^1 \cos^3 t\, \dee{t}</mrow>
+          <mrow> \amp=-\left[-\frac{1}{3}\sin^3 t +\sin t\right]_{t=-1}^{t=1} = \frac{2}{3}\sin^3 1 - 2\sin 1.  </mrow>
+        </md>
+      </p>
+      <p>
+        Ainsi, l'intégrale qui nous intéresse vaut
+        <me>
+          \int_{\cC} \vF \cdot \dee{\vr} = -3\pi +2\sin 1 -\frac{2}{3}\sin^3 1.
+        </me>
+
+      </p>
+    </solution>
+  </example>
+  <p>
+    Lorsque la région <m>\cR</m> est telle que sa frontière <m>\partial \cR</m> est donnée par plus d'une courbe, une attention particulière est requise pour l'orientation des différentes courbes qui constituent <m>\partial \cR</m>. Plutôt que de penser au sens de parcours de chacune de ces courbes individuellement, il faut les considérer comme la frontière de <m>\cR</m> et les orienter de sorte à ce que lorsque nous les parcourons (debout sur le plan, avec notre tête dans la direction du vecteur <m>\vk</m>), la région <m>\cR</m> se trouve à gauche. On peut voir la figure de droite dans l'énoncé du théorème de Green. Ci-bas, on présente une situation plus générale.
+    </p>
+
+
+  <figure xml:id = "OpenStax-Plusieurs-trous">
+  <image source="images/OpenStax/CNX_Calc_Figure_16_04_014" width = "75%"/>
+  <caption>L'orientation de la frontière d'une région est donnée par la règle de la main droite. Figure tirée de <em>Calculus Volume 3, d'Open Stax</em>.
+  </caption>
+  </figure>
+
+
+  <p>
+    Ceci revient à utiliser la règle de la main droite  en chaque point de <m>\cR</m>. Le pouce de la main droite pointe dans la direction du vecteur <m>\vk</m>, les autres doigts donnent l'orientation de la frontière de <m>\cR</m>.
+  </p>
+  <example xml:id="ex-green-bord-x2">
+    <statement>
+      <p>
+        Soit <m>\cR</m> la région du plan donnée en coordonnées polaires par <m>1\leqslant  r \leqslant 2</m> et <m>0\leqslant  \theta  \leqslant 2\pi</m>. Calculer la valeur de <m>\displaystyle\int_{\partial \cR} \left(\sin x - \frac{1}{3}y^3\right)\, \dee{x} + \left(\frac{1}{3}x^3 + \sin y\right)\, \dee{y}</m>.
+      </p>
+      <image xml:id="sageplot-eg_non-simp-connexte" width="60%">
+        <description>Théorème de Green avec une région non simplement connexe</description>
+       <sageplot>
+        N=60
+        p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
+        L1 = [[p] for p in p1]
+        Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1.2,
+          zorder = 5, color= "blue", axes= True, ticks = [[1],[1]],
+          axes_labels = ['$x$','$y$'], axes_labels_size=1.4)
+        p2 = [(cos(-j*pi/N+pi/4), sin(-j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
+        L2 = [[p] for p in p2]
+        Fig += arrow2d(path=L2, aspect_ratio =1, arrowsize = 4, width=1.2,
+          zorder = 5, color= "blue")
+        Fig += polar_plot(2, 0, 2*pi, fill=1, fillcolor='orange',
+          color="white", zorder = -1)
+        Fig += text("$\\mathcal{R}$", (1,1), color = "brown", fontsize = 14)
+        Fig += text("$\\mathcal{C}_2$", (1.55,1.55), color = "blue",
+          fontsize = 14)
+        Fig += text("$\\mathcal{C}_1$", (0.55,0.55), color = "blue",
+          fontsize = 14)
+        Fig
+       </sageplot>
+      </image>
+
+    </statement>
+
+    <solution>
+
+      <p>
+        Le calcul par le théorème de Green se fait aisément. Posons <m>P(x,y) = \left(\sin x - \frac{1}{3}y^3\right) </m> et <m>Q(x,y) = \left(\frac{1}{3}x^3 + \sin y\right) </m>. Nous avons alors
+        <md>
+          <mrow>\int_{\partial \cR} P\, \dee{x} + Q \, \dee{y} \amp = \iint_{\cR} \pdiff{Q}{x} - \pdiff{P}{y}\, \dee{A} = \iint_{\cR} x^2 + y^2 \dee{A} </mrow>
+          <mrow> \amp = \int_0^{2\pi} \int_1^2 r^3 \, \dee{r}\, \dee{\theta} = \int_0^{2\pi}\frac{15}{4}\dee{\theta} = \frac{15\pi}{2}. </mrow>
+        </md>
+      </p>
+    </solution>
+
+  </example>
+
+</p>
+
+<warning xml:id="warn_Green">
+<p>
+Il est important de remarquer que, dans le <xref ref="thm_Green_tgt"/>, on exige que les composantes du champ <m>\vF</m> admettent des dérivées partielles continues en <em>chaque point de </em> <m>\cR</m>. Si ce n'est pas le cas, ne serait-ce que pour un seul point, la conclusion sera fausse. L'exemple suivant, que nous avons déjà rencontré, le montre.
+</p>
+</warning>
+
+<!-- <p>
+
+</p>
+<p>
+  <term>Début nouveau</term>
+</p> -->
+
+<example xml:id="ex-contre-green" >
+  <title>
+    L'<xref ref="eg_screeningCounterexample">exemple</xref> revisité
+  </title>
+
+  <statement>
+    <p>
+      À l'<xref ref="eg_screeningCounterexample"></xref>, nous avons considéré le champ de vecteurs défini sur le plan sans l'origine par la formule
+      <md>
+      <mrow>
+      &amp;\vF(x,y) = -\frac{y}{x^2+y^2}\vi + \frac{x}{x^2+y^2}\vj
+      &amp;\qquad \text{ pour }(x,y)\ne (0,0)
+      </mrow>
+      </md>.
+    </p>
+    <p>
+      Les calculs que nous avons faits montrent que si <m>\cC</m> est la trajectoire fermée partant de <m>(1,0)</m> suivant le cercle <m>x^2 + y^2 = 1</m> dans le sens trigonométrique, nous aurons
+    </p>
+    <md>
+      <mrow xml:id="Green-contre-1" tag = "star"> \amp       \int_{\cC} \vF \cdot d\vr = 2\pi. </mrow>
+    </md>
+    <p>
+      Par ailleurs, nous avons aussi montré que le rotationnel de <m>\vF</m> est nul. Soit <m>\cR</m> la région du plan définie par <m>x^2 + y^2 \leqslant  1</m>, de sorte que <m>\partial \cR = \cC</m>. Ainsi, nous avons
+    </p>
+    <md>
+      <mrow xml:id="Green-contre-2" tag = "dstar"> \amp \iint_{\cR} \rot\, \vF = 0</mrow>.
+    </md>
+
+    <p>
+      Les valeurs des intégrales <xref ref="Green-contre-1"/> et <xref ref="Green-contre-2"/> diffèrent, en apparente contradiction avec le théorème de Green. Cependant, il n'en est rien. En effet, les composantes de <m>\vF</m> ne sont pas continues sur <em>toute</em> la région <m>\cR</m>. En fait, le champ <m>\vF</m> n'est même pas défini à l'origine, et il est impossible de le faire de sorte à avoir la continuité sur <m>\cR</m>.
+    </p>
+
+  </statement>
+
+</example>
+
+
+<p>
+
+</p>
+
+<!-- 
+<p>
+  <term>Fin nouveau</term>
+</p> -->
+
+
+  <!-- WeBWork à inclure>
+  Devoir 12, probleme 3
+  -->
+  <p>
+    La <q>version normale</q> du théorème de Green traite pour sa part du flux d'un champ <m>\vF</m> à travers la frontière d'une région <m>\cR</m>, pourvu que cette frontière satisfasse aux mêmes hypothèses que celles faites pour la forme tangentielle du théorème. Nous l'avons vu, pour calculer le <q>flux à travers </q> une courbe, nous devons choisir un vecteur unitaire <m>\vn</m> orthogonal à la courbe. Pour calculer le flux à travers le bord de <m>\cR</m>, nous choisissons le vecteur <m>\vn</m> pointant vers l'extérieur de <m>\cR</m>. Comme précédemment, si <m>\partial \cR</m> est composée de plusieurs courbes, il faudra tenir compte de ceci pour faire un choix cohérent de <m>\vn</m> pour chacune de ces courbes.
+  </p>
+  <theorem xml:id="thm_Green-norm"><title>Théorème de Green, forme normale</title>
+  <statement><p>
+  Soit <m>\cR</m> une région bornée du plan telle que la frontière <m>\partial \cR</m> consiste en un nombre fini de courbes simples lisses par morceaux et, en chaque point de  <m>\partial \cR</m>, <m>\vn</m> un vecteur unitaire normal à  <m>\partial \cR</m> pointant vers l'extérieur de <m>\cR</m>.
+  </p>
+  <p>
+    Si <m>\vF(x,y)</m> est défini et de classe <m>C^1</m> sur <m>\cR</m>, alors
+  </p>
+  <p>
+    <me>
+      \int_{\partial \cR} \vF \cdot \vn \dee{s} = \iint_{\cR} \div \vF \dee{A}.
+    </me>
+  </p>
+
+
+  </statement>
+  </theorem>
+
+<p>Ainsi, le théorème de Green, dans sa forme normale, s'interprète comme :
+  <blockquote>
+    <em>Le flux d'un champ <m>\vF</m></em> à travers <em>la frontière d'une région <m>\cR</m> est l'intégrale de la divergence de </em><m>\vF</m> <em>sur la région <m>\cR</m></em>.
+  </blockquote>
+</p>
+<p>
+  De nouveau, si le champ <m>\vF(x,y)</m> s'écrit explicitement <m>\vF(x,y) = P(x,y)\, \vi + Q(x,y)\, \vj</m>, l'égalité du théorème de Green ainsi que la formule <xref ref="Formule-Flux-travers"/> donnent
+</p>
+<md>
+  <mrow>\int_{\partial \cR} \vF \cdot \vn \, \dee{s} \amp= \int_{\partial \cR} P\, \dee{y} - Q\,\dee{x} </mrow>
+  <mrow> \amp= \iint_{\cR} \div \vF \, \dee{A} = \iint_{\cR} \pdiff{P}{x} + \pdiff{Q}{y} = \iint_{\cR} \vnabla \cdot \vF\, \dee{A}. </mrow>
+</md>
+<example>
+  <statement>
+    <p>Calculer le flux du champ <m>\vF(x,y) = x\,\vi + y^2\, \vj</m> à travers le carré formé par les droites <m>x= \pm 1</m> et <m>y= \pm 1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>Calculer le flux avec une intégrale de ligne demanderait de calculer quatre intégrales, une pour chaque portion du carré. Aucun calcul n'est compliqué en soi, mais utilisons le théorème de Green pour le faire.
+    </p>
+    <p>
+      Soit <m>\cR</m> la région <m>[-1,1]\times[-1,1]</m> et <m>\cC</m> son bord.
+      <md>
+        <mrow>\int_{\cC} \vF\cdot  \vn \, \dee{s} \amp = \int_{\cC} x\, \dee{y} - y^2\, \dee{x} = \iint_{\cR} \pdiff{}{x}x + \pdiff{}{y}y^2\, \dee{A} </mrow>
+        <mrow> \amp=\int_{-1}^1 \int_{-1}^1 1+2y\ \dee{x}\, \dee{y} = \int_{-1}^1 \left[x+2xy\right]_{x=-1}^{x=1}\dee{y} </mrow>
+        <mrow>  \amp= \int_{-1}^1 2+4y\, \dee{y} = \left[ 2y+2y^2\right]_{-1}^1\ = 4 </mrow>
+      </md>
+    </p>
+  </solution>
+</example>
+<example>
+  <statement>
+    <p>
+      Soit <m>\cC</m> une courbe simple lisse par morceaux, orientée par un vecteur normal <m>\vn</m> pointant vers l'extérieur lorsque la courbe est parcourue dans le sens antihoraire, et <m>\vF(x,y)  = \frac{x}{x^2+ y^2}\, \vi + \frac{y}{x^2 + y^2}\, \vj</m>. Montrer que <m>\displaystyle \int_{\cC} \vF \cdot \vn \, \dee{s}</m> peut prendre seulement deux valeurs, selon que <m>\cC</m> enferme l'origine ou pas.
+    </p>
+  </statement>
+  <solution>
+    <p>Notons, pour commencer, que le champ <m>\vF</m> n'est pas défini à l'origine. Soit <m>\cR</m> la région du plan enfermée par <m>\cC</m>. Nous avons par ailleurs
+    <md>
+      <mrow> \div \vF\amp= \vnabla \cdot \vF = \pdiff{}{x}\frac{x}{x^2 + y^2} + \pdiff{}{y}\frac{y}{x^2 + y^2} </mrow>
+      <mrow> \amp= \frac{(x^2 + y^2) - 2x^2}{(x^2 + y^2)^2} +\frac{(x^2 + y^2) - 2y^2}{(x^2 + y^2)^2}  = 0.</mrow>
+    </md>
+  </p>
+  <p>
+    Lorsque <m>\cC</m> n'entoure pas l'origine, le champ <m>\vF</m> est de classe <m>C^1</m> sur la région <m>\cR</m>. Dans ce cas, le théorème de Green donne directement
+    <me>
+      \int_{\cC}\vF \cdot \vn\, \dee{s} = \iint_{\cR}\, \dee{A} = 0.
+    </me>
+  </p>
+  <p>
+    Le cas où <m>\cC</m> entoure l'origine pose problème, l'hypothèse du théorème de Green n'est pas satisfaite. Nous pouvons cependant adapter notre argument comme suit.
+  </p>
+  <p>
+    Puisque <m>\cC</m> contourne l'origine, il existe un réel <m>h\gt 0 </m> tel que <m>\cC</m> entoure le cercle <m>\cC_h</m> centré à l'origine et de rayon <m>h</m>. Soit alors <m>\cR</m> la région comprise entre <m>\cC_h</m> et <m>\cC</m>. Sur cette région, l'argument de la première partie peut être appliqué. Il faut noter que <m>\partial \cR</m> est cette fois composée de deux courbes : d'une part <m>\cC</m> orientée en s'éloignant de l'origine, d'autre part <m>\cC_h</m> avec le vecteur normal pointant vers l'origine.
+  </p>
+  <image xml:id="sageplot-eg-nb-enroulement" width="80%">
+    <description>Le nobre d'enroulement</description>
+   <sageplot>
+    var('x,y,t')
+    r=3/4
+    Fig = parametric_plot([r*cos(t), r*sin(t)], (t,0,2*pi), color = "darkblue",
+                      gridlines = False, axes = True, ticks = [[],[]],
+                      axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
+                      fillalpha = 0.25, zorder = 6)
+    chemin = [[(2,0),(2,1),(1,0),(1,1)],
+      [(1,2),(1,3), (0,3)],
+      [(-1,3), (-1.5,2.5),(-2,2)],
+      [(-2.5,1.5),(-4,1),(-2,0)],
+      [(0,-1),(-1,-2),(0,-2)],
+      [(1,-2),(2,-1),(2,0)]]
+    Fig += bezier_path(chemin, rgbcolor = "darkblue", thickness = 1)
+    Fig += arrow2d((2,0), (2.5,0), color = "red", arrowsize = 1, zorder = 5)
+    Fig += arrow2d((r,0), (r-0.5,0), color = "red", arrowsize= 1, zorder = 5)
+    Fig += text("$\\mathcal{C}$", (1.3,1.1), fontsize = 14, color= "darkblue")
+    Fig += text("$\\mathcal{C}_h$", (-0.7,0.7), fontsize = 14,
+      color= "darkblue")
+    Fig += text("$\\mathbf{n}$", (2.2,0.2), color = "red", fontsize = 14)
+    Fig += text("$\\mathbf{n}$", (0.5,0.2), color = "red", fontsize = 14)
+    Fig
+   </sageplot>
+  </image>
+
+
+
+
+
+  <p>
+    Nous avons alors
+    <md>
+      <mrow>0 \amp= \iint_{\cR} 0\, \dee{A} = \iint_{\cR} \div \vF\, \dee{A} = \int_{\partial \cR} \vF\cdot \vn\, \dee{s}   </mrow>
+      <mrow> \amp= \int_{\cC} \vF\cdot \vn\, \dee{s} +  \int_{\cC_h}\vF\cdot \vn\, \dee{s}.</mrow>
+    </md>
+    Ceci montre que l'intégrale qui nous occupe peut être ramenée à l'intégrale sur un cercle et que, mieux encore, le rayon de celui-ci n'a pas d'importance, pourvu qu'il soit assez petit pour être contourné par <m>\cC</m>.
+  </p>
+  <p>
+    Afin de calculer l'intégrale sur <m>\cC_h</m>, on utilise le paramétrage <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj</m>, avec <m>0\leqslant  t \leqslant 2\pi</m>. Sur <m>\cC_h</m>, le vecteur normal unitaire <m>\cos t\, \vi + \sin t\, \vj</m> pointe dans la direction qui s'éloigne de l'origine, nous devons donc choisir <m>\vn = -\cos t\, \vi - \sin t\, \vj = \frac{-1}{h}x(t)\vi - \frac{1}{h}y(t)\vj</m>. On a alors
+    <me>
+      \vF \cdot \vn  = \left(\frac{x}{x^2 + y^2}\vi + \frac{y}{x^2 + y^2}\vj\right)\cdot \left(\frac{-1}{h} x\, \vi - \frac{1}{h} y\, \vj \right) = \frac{-1}{h}.
+    </me>
+    Ainsi, puisque <m>|\vr'| = h</m>, nous avons
+    <me>
+      \int_{\cC_h}\vF \cdot \vn\, \dee{s} = \int_0^{2\pi} \vF \cdot \vn\ |\vr'(t)|\, \dee{t} = -\int_0^{2\pi}\, \dee{t} =-2\pi.
+    </me>
+    Comme <m>\int_{\cC} \vF \cdot \vn \, \dee{s} + \int_{\cC_h} \vF \cdot \vn \, \dee{s} = 0 </m>, nous avons
+    <me>
+      \int_{\cC} \vF \cdot \vn \, \dee{s} =2\pi.
+    </me>
+  </p>
+  </solution>
+</example>
+
+</subsection>
+
+<subsection xml:id="pars-Green-aires">
+  <title>Une application : calcul d'aires</title>
+  <p>
+    Nous avons vu qu'une intégrale de ligne peut, avec un peu de chance, se ramener au calcul d'une aire (voir <xref ref="Green-fermer-courbe"/>). Nous exploitons ici ce fait, en donnant quelques exemples.
+  </p>
+  <p>
+    L'aire d'une région <m>\cR</m> est donnée par <m>\displaystyle \iint_{\cR}\, \dee{A}</m>. Ainsi, si nous disposons d'un champ <m>\vF</m> tel que <m>\rot \vF = 1</m>, nous aurons, en vertu du théorème de Green,
+    <me>
+      \text{Aire}(\cR) = \iint_{\cR} \dee{A} = \int_{\partial \cR} \vF \cdot \dee{\vr}.
+    </me>
+    Quelques choix possibles de tels champs sont :
+    <ul>
+      <li>
+        <p>
+          <m>\vF(x,y) = -\frac{1}{2}y\vi + \frac{1}{2}x\vj</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vF(x,y) = -y\vi</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vF(x,y) = x\vj</m>.
+        </p>
+      </li>
+    </ul>
+    Ces choix de champs donnent les formules suivantes.
+  </p>
+  <fact xml:id="fact-Aire-Green">
+    <statement>
+      <p>Soit <m>\cR</m> une région du plan telle que son bord, <m>\partial \cR</m>, est une réunion finie de courbes lisses par morceaux. Alors, l'aire de <m>\cR</m> est donnée par
+        <md>
+          <mrow xml:id="GreenAire_xdy-ydx" tag="star"> \text{Aire}(\cR)\amp= \frac{1}{2}\int_{\partial \cR} x\, \dee{y} -y\, \dee{x}</mrow>
+          <mrow xml:id="GreenAire-ydx" tag="dstar"> \amp= -\int_{\partial \cR}y\, \dee{x}</mrow>
+          <mrow xml:id="GreenAire_xdy" tag="tstar"> \amp= \int_{\partial \cR} x\, \dee{y}.</mrow>
+        </md>
+      </p>
+    </statement>
+  </fact>
+  <p>
+    Voyons quelques exemples.
+  </p>
+  <example xml:id="Aire-astroide-Green">
+    <statement>
+      <p>Calculer l'aire de la région limitée par l'astroïde <m>x^{2/3} + y^{2/3} = 1</m>.
+
+      </p>
+    </statement>
+    <solution>
+      <sidebyside widths="45% 50%">
+        <image xml:id="sageplot-Aire-astroide">
+        <description>L'aire de l'astoïde</description>
+         <sageplot>
+          var('t')
+          Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
+            color= "steelblue", axes= True, ticks = [[],[]],
+            axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
+            fillalpha = 0.25, figsize = 4)
+          Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 14,
+            color="black")
+          Fig +=text("$\\mathcal{C} = \\partial \\mathcal{R}$",
+            (0.5,0.5), fontsize = 14, color="black")
+          Fig
+         </sageplot>
+        </image>
+        <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse"/>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
+        L'aire est alors donnée par
+          <me>
+            \frac{1}{2}\int_{\cC} x\dee{y} - y\dee{x} = \frac{1}{2}\int_0^{2\pi} xy' - yx'\, \dee{t}.
+          </me>
+        </p>
+      </sidebyside>
+
+      <p>
+        Or, <m>\vr'(t) = -(3\sin t\, \cos^2 t)\, \vi + 3 (\cos t\, \sin^2 t)\vj</m>, de sorte que
+        <md>
+          <mrow>x(t)y'(t) - y(t)x'(t) \amp= \cos^3t\ 3\cos t\ \sin^2 t+ \sin^3 t\, \ 3 \sin t\, \cos^2 t </mrow>
+          <mrow> \amp=3\left(\cos^4 t\, \sin^2 t + \sin^4 t\, \cos^2t\right)
+          </mrow>
+          <mrow>  \amp= 3\cos^2 t\, \sin^2 \left(\cos^2 t + \sin^2 t\right)  = 2\cos^2 t\, \sin^2 t.</mrow>
+        </md>
+        Il vient alors que l'aire <m>A</m> vaut
+        <md>
+          <mrow>A \amp= \frac{1}{2}\int_0^{2\pi} 3\cos^2t\ \sin^2 t\, \dee{t} = \frac{3}{2}\int_0^{2\pi} \left(\frac{\sin 2t}{2}\right)^2\, \dee{t} </mrow>
+          <mrow> \amp= \frac{3}{8}\int_0^{2\pi} \sin^2\, 2t\, \dee{t} = \frac{3}{8} \int_0^{2\pi}\frac{1-\cos 4t}{2}\, \dee{t} =\frac{3\pi}{8}. </mrow>
+        </md>
+
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Soit <m>f:[a,b]\to \R</m> une fonction continue telle que <m>0\leqslant  f(x)</m> pour <m>x\in[a,b]</m>. Soit <m>\cR</m> la région du plan limitée par les droites <m>x=a,\ x=b</m>, au-dessus de l'axe <m>Oy</m> et en dessous de la courbe <m>y=f(x)</m>. Calculer l'aire de <m>\cR</m> à l'aide du théorème de Green.
+      </p>
+    </statement>
+    <solution>
+      <sidebyside widths="45% 50%">
+      <image xml:id="sageplot-Aire-Green">
+      <description>L'aire avec le Théorème de Green</description>
+       <sageplot>
+        R = PolynomialRing(QQ, 'x')
+        f = R.lagrange_polynomial([(1,2),(2,3),(5,2),(7,5)]);
+        p1 = [(7,f(7)/2-0.1)] + [(j,f(j)) for j in[7,6.9,..,5]]
+        L1= [[x] for x in p1 ]
+        p2 = [(j,f(j)) for j in[5.1,5,..,1]] + [(1,1)]
+        L2= [[x] for x in p2 ]
+        Fig = arrow2d(path = L1, color= "steelblue", arrowsize = 4,
+              width=1.2, thickness = 1.2, figsize = 3)
+        Fig += arrow2d(path = L2, color= "steelblue", arrowsize = 4,
+               width=1.2, thickness = 1.2)
+        Fig += arrow2d(path = [[(1,1.1)],[(1,0)],[(4,0)]],
+               color = "steelblue", arrowsize = 4, width=1.2, thickness = 1.2)
+        Fig += arrow2d(path = [[(4,0)],[(7,0)],[(7,f(7)/2)]],
+               color = "steelblue", arrowsize = 4, width=1.2, thickness = 1.2,
+               zorder = 5)
+        Fig +=polygon2d(p1+p2+[(1,0), (7,0), (7,f(7))] ,
+                color = "orange", fill = True, alpha = 0.25,
+                axes= True, ticks = [[],[]], axes_labels = ['$x$','$y$'],
+                axes_labels_size=1.4, xmin=0, xmax=7,zorder =0)
+        Fig += text("$\\mathcal{C}_2$", (7.5,f(7/2)), fontsize = 14,
+            color = "steelblue")
+        Fig += text("$\\mathcal{C}_3$", (5,f(5)+0.5), fontsize = 14,
+            color = "steelblue")
+        Fig += text("$\\mathcal{C}_4$", (0.5,f(1)/2+0.3), fontsize = 14,
+            color = "steelblue")
+        Fig += text("$\\mathcal{C}_1$", (4,-0.5), fontsize = 14,
+            color = "steelblue")
+        Fig += text("$\\mathcal{R}$", (4,f(4)/2), fontsize = 14,
+            color = "brown")
+        Fig += text("$a$", (1,-0.4), fontsize = 12, color = "black")
+        Fig += text("$b$", (7,-0.4), fontsize = 12, color = "black")
+        Fig += text("$y=f(x)$", (2,f(2)+1), fontsize = 12, color = "black")
+        Fig
+       </sageplot>
+      </image>
+      <p>
+      Nous calculons l'aire au moyen de <m>\displaystyle \text{Aire}(\cR) = -\int_{\partial \cR} y\, \dee{x}</m>.
+
+      Le bord de <m>\cR</m> est composé de quatre courbes, dont trois sont des segments de droite : <m>\cC_1</m> est le segment <m>(a,0)</m> à <m>(b,0)</m>; <m>\cC_2</m>, celui de <m>(b,0)</m> à <m>(b,f(b))</m>; <m>\cC_3</m> est la portion de la courbe <m>y=f(x)</m> <em>parcourue de droite à gauche, c'est-à-dire de <m>x=b</m> à <m>x=a</m></em>; <m>\cC_4</m> est le segment de <m>(a,f(a))</m> à <m>(a,0)</m>.
+      </p>
+      </sidebyside>
+
+      <p>
+        Ainsi, l'aire est
+        <me>
+          \text{Aire}(\cR) =  -\int_{\partial \cR} y\, \dee{x} =-\left[ \int_{\cC_1} y\, \dee{x} + \int_{\cC_2} y\, \dee{x} + \int_{\cC_3} y\, \dee{x} + \int_{\cC_4} y\, \dee{x}\right].
+        </me>
+        Or, sur <m>\cC_1</m>, nous avons <m>y=0</m> tandis que, sur <m>\cC_2</m> et <m>\cC_4</m>, la valeur de <m>x</m> est constante, de sorte que <m>x'(t)=0</m>. Ainsi, les trois termes correspondant à ces portions de <m>\partial \cR</m> sont nuls.
+      </p>
+      <p>
+        Le chemin <m>\vr(t) = x(t)\,\vi + y(t)\,\vj = t\,\vi + f(t)\,\vj</m>, avec <m>a\leqslant  t \leqslant b</m>, est un paramétrage de la trajectoire <m>\cC_3</m>, mais allant de gauche à droite. Ainsi,
+        <me>
+          \text{Aire}(\cR) = -\int_{\cC_3}y\, \dee{x} = -\left[- \int_{a}^{b} y(t)\,x'(t)\, \dee{t} \right] = \int_a^b f(t)\, \dee{t},
+        </me>
+        comme on s'y attendait.
+
+      </p>
+    </solution>
+  </example>
+
+</subsection>
+
+
+<xi:include  href="./Problemes/Prob-sec-Green.ptx"/>
+
+</section>

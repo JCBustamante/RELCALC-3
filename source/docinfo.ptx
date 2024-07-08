@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The docinfo block is the analogue to the latex preamble -->
+<!-- This is where you can define macros and other book-wide -->
+<!-- settings. -->
+<docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- A unique name for the book in a catalog; for example, see https://pretextbook.org/catalog.html and https://runestone.academy/ns/books/index. It contains a simple lowercase string with no dashes or other special characters. See https://pretextbook.org/doc/guide/html/sec-publishing-to-runestone-academy.html for more information. -->
+  <document-id>Calcul Libre</document-id>
+  <!-- A brief description for the book in a catalog; see the links above. The @shelf is used only when publishing to Runestone; see https://runestone.academy/ns/books/index for a list of valid values. You must copy these @shelf names exactly, including capitalization. -->
+  <blurb>Calcul multivariable </blurb>
+
+
+  <!-- The next three lines are likely for mature projects only: -->
+
+  <!-- <brandlogo url="" source="images/cover.png"/> -->
+  <covers front="images/logos/1-Couv-CalculMultivariable.pdf" back="images/logos/4-Couv-CalculMultivariable.pdf"/>
+  <!-- <document-id>unique-book-id</document-id> -->
+
+  <!-- macros for defining latex math shortcuts. It is good practice -->
+  <!-- to define these semantically, so that the macro relates to what-->
+  <!-- it defines. -->
+  <macros> 
+    \newcommand{\N}{\mathbb N} 
+    \newcommand{\Z}{\mathbb Z} 
+    \newcommand{\Q}{\mathbb Q} 
+    \newcommand{\R}{\mathbb R} 
+
+
+    \newcommand{\ts}{\textstyle}
+    \newcommand{\ds}{\displaystyle}
+  
+    \newcommand{\va}{\mathbf{a}}
+    \newcommand{\vb}{\mathbf{b}}
+    \newcommand{\vc}{\mathbf{c}}
+    \newcommand{\vC}{\mathbf{C}}
+    \newcommand{\vE}{\mathbf{E}}
+  
+    \newcommand{\vd}{\mathbf{d}}
+    \newcommand{\ve}{\mathbf{e}}
+    \newcommand{\vg}{\mathbf{g}}
+    \newcommand{\vh}{\mathbf{h}}
+    \newcommand{\vi}{\mathbf{i}}
+    \newcommand{\vj}{\mathbf{j}}
+    \newcommand{\vl}{\mathbf{l}}
+    \newcommand{\vk}{\mathbf{k}}
+    \newcommand{\vn}{\mathbf{n}}
+    \newcommand{\vm}{\mathbf{m}}
+    \newcommand{\vp}{\mathbf{p}}
+    \newcommand{\vq}{\mathbf{q}}
+  
+    \newcommand{\vr}{\mathbf{r}}
+    \newcommand{\vs}{\mathbf{s}}
+    \newcommand{\vt}{\mathbf{t}}
+  
+    \newcommand{\vu}{\mathbf{u}}
+    \newcommand{\vv}{\mathbf{v}}
+    \newcommand{\vphi}{\pmb{\phi}}
+  
+  
+    \newcommand{\vw}{\mathbf{w}}
+    \newcommand{\vx}{\mathbf{x}}
+    \newcommand{\vy}{\mathbf{y}}
+    \newcommand{\vz}{\mathbf{z}}
+    \newcommand{\vZero}{\mathbf{0}}
+    \newcommand{\vF}{\mathbf{F}}
+    \newcommand{\vR}{\mathbf{R}}
+    \newcommand{\vT}{\mathbf{T}}
+    \newcommand{\vN}{\mathbf{N}}
+    \newcommand{\vL}{\mathbf{L}}
+    \newcommand{\vB}{\mathbf{B}}
+    \newcommand{\vD}{\mathbf{D}}
+    \newcommand{\vH}{\mathbf{H}}
+    \newcommand{\vK}{\mathbf{K}}
+    \newcommand{\vG}{\mathbf{G}}
+    \newcommand{\vA}{\mathbf{A}}
+    \newcommand{\vS}{\mathbf{S}}
+    \newcommand{\vV}{\mathbf{V}}
+  
+  
+    \newcommand{\proj}{\text{proj}\, }
+    \newcommand{\comp}{\text{comp}\, }
+    \newcommand{\rot}{\text{rot}\, }
+    \renewcommand{\div }{\text{div}\, }
+    \newcommand{\grad }{\text{grad}\, }
+  
+    \newcommand{\Om}{\Omega}
+    \newcommand{\om}{\omega}
+    \newcommand{\vOm}{\pmb{\Omega}}
+    \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+  
+  
+    \renewcommand{\a}{\alpha}
+    \renewcommand{\b}{\beta}
+    \newcommand{\g}{\gamma}
+    \newcommand{\e}{\epsilon}
+    \newcommand{\veps}{\varepsilon}
+    \renewcommand{\d}{\delta}
+    \newcommand{\f}{\phi}
+    \renewcommand{\j}{\theta}
+  
+    \newcommand{\ka}{\kappa}
+    \newcommand{\la}{\lambda}
+    \newcommand{\be}{\beta}
+    \newcommand{\al}{\alpha}
+  
+  
+  
+  
+  
+  \newcommand{\dvect}[2]{\left[\begin{array}{r} #1\\ #2\end{array} \right]}
+  
+  \newcommand{\tvect}[3]{\left[\begin{array}{r} #1\\ #2 \\ #3\end{array} \right]}
+  \newcommand{\ctvec}[3]{\left[\begin{array}{c} #1\\ #2 \\ #3\end{array} \right]}
+  
+  
+  \newcommand{\plan}[1]{\mathcal{#1}}
+  
+  
+  \newcommand{\diff}[2]{\frac{d#1}{d#2}}
+  \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+  \newcommand{\difftwo}[2]{ \frac{d^2#1}{d{#2}^2}}
+  \newcommand{\De}{\Delta}
+  
+  \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+  \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+  \newcommand{\smsum}{\mathop{{\ts \sum}}}
+  \newcommand{\half}{ \frac{1}{2} }
+  \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+  \newcommand{\set}[1]{ \left\{#1\right\} }
+  
+  <!--
+  \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+  -->
+  \DeclareMathOperator{\sgn}{sgn}
+  
+  \newcommand{\dee}[1]{d#1}
+  \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+  
+  \newcommand{\ave}{\mathrm{ave}}
+  <!--Commandes originales pour avoir <... > comme délimiterus pour les vecteurs.
+  \newcommand{\llt}{\left \lt }
+  \newcommand{\rgt}{\right \gt }
+  -->
+  \newcommand{\llt}{\left ( }
+  \newcommand{\rgt}{\right ) }
+  
+  \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                              {\pmb{\nabla}}
+                              {\pmb{\scriptstyle\nabla}}
+                              {\pmb{\scriptscriptstyle\nabla}} }   }
+  
+  
+  
+  \DeclareMathOperator{\sech}{sech}
+  \DeclareMathOperator{\csch}{csch}
+  \DeclareMathOperator{\arcsec}{arcsec}
+  \DeclareMathOperator{\arccot}{arcCot}
+  \DeclareMathOperator{\arccsc}{arcCsc}
+  \DeclareMathOperator{\arccosh}{arcCosh}
+  \DeclareMathOperator{\arcsinh}{arcsinh}
+  \DeclareMathOperator{\arctanh}{arctanh}
+  \DeclareMathOperator{\arcsech}{arcsech}
+  \DeclareMathOperator{\arccsch}{arcCsch}
+  \DeclareMathOperator{\arccoth}{arcCoth}
+  
+  
+  \def\eqover#1{\ {\buildrel #1 \over =}\ }
+  \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+  
+  
+  \newcommand{\cA}{\mathcal{A}}
+  \newcommand{\cB}{\mathcal{B}}
+  \newcommand{\cC}{\mathcal{C}}
+  \newcommand{\cD}{\mathcal{D}}
+  \newcommand{\cE}{\mathcal{E}}
+  \newcommand{\cR}{\mathcal{R}}
+  \newcommand{\cS}{\mathcal{S}}
+  \newcommand{\cT}{\mathcal{T}}
+  
+  \newcommand{\cV}{\mathcal{V}}
+  \newcommand{\cH}{\mathcal{H}}
+  
+  
+  \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+  
+    \newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+  
+    \newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+    \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+  
+    \newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+    \newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+    \newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+    \newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+  
+    \newcommand{\YEstickfig}[3]{
+    \draw (#1,#2) arc(-90:270:2mm);
+    \draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+  
+  
+  
+  
+  </macros>
+
+  <!-- If you put any latex-image elements you can include preambles -->
+  <!-- for those in the next element. -->
+  <latex-image-preamble>
+    \usepackage{calculator}
+    \usepackage{tikz}
+    \usetikzlibrary{shapes, patterns, snakes}
+    \tikzstyle{vertex}=[shape=circle, minimum size=2mm, inner sep=0, fill]
+    \tikzstyle{opendot}=[shape=circle, minimum size=2mm, inner sep=0, fill=white, draw]
+
+    \usepackage{pgfplots}
+    \pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
+    \usepackage{mathrsfs}
+    \usepackage{amsmath}
+  </latex-image-preamble>
+
+  <!-- It is possible to rename elements: -->
+  <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
+  <rename element="fact">Formule</rename>
+
+  <!-- Specify the default type of cross reference: -->
+  <!-- <cross-references text="type-global" /> -->
+
+
+</docinfo>

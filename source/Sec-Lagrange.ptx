@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Lagrange">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit au francçais et adapté par Juan Carlos Bustamante, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Multiplicateurs de Lagrange</title>
+<introduction>
+
+<p>
+  Dans la dernière section, nous avons dû résoudre un certain nombre de problèmes de la forme <q>Quelle est la valeur maximale de la fonction <m>f</m> sur la courbe <m>\plan{C}</m>?</q>. Dans ces exemples, la courbe <m>\plan{C}</m> était suffisamment simple pour que nous puissions réduire le problème au problème plus simple de recherche du maximum d'une fonction d'une variable. Pour des problèmes plus compliqués, cette réduction pourrait ne pas être possible. Dans cette section, nous introduisons une autre méthode pour résoudre de tels problèmes. Tout d'abord, un peu de terminologie.
+</p>
+
+<definition xml:id="def_constrained_optimization">
+<statement><p>
+Un problème de la forme
+<ul>
+<li> <q>Trouver le maximum ou le minimum d'une fonction
+<m>f(x,y)</m> pour  <m>(x,y)</m> sur la courbe <m>g(x,y)=0</m></q>
+</li>
+</ul>
+est un type de <em>problème d'optimisation avec une contrainte</em>. La fonction qui doit être maximisée/minimisée, <m>f</m>, est appelée la <em>fonction objectif</em>. La fonction <m>g</m>, qui définit la courbe d'intérêt, est la  <em>fonction de contrainte</em>.
+</p></statement>
+</definition>
+
+<p>Ces problèmes sont assez courants. Comme nous l'avons dit plus haut, nous les avons déjà rencontrés dans la dernière section sur les maximums et les minimums absolus, lorsque nous cherchions les valeurs extrêmes d'une fonction sur le bord d'un domaine. En économie, les <q>fonctions d'utilité</q> sont utilisées pour modéliser l'<q>utilité relative</q>, ou <q>désirabilité</q> ou <q>préférence</q>, de divers choix économiques. Par exemple, une fonction d'utilité <m>U(w,\ka)</m> pourrait spécifier le niveau relatif de satisfaction qu'une personne obtiendrait en achetant une quantité <m>w</m> de vin et <m>\ka</m> de café. Si elle veut dépenser 100$ et que le vin coûte 20$ par unité et que le café coûte 5$ par unité, alors elle souhaiterait maximiser <m>U(w,\ka)</m> tout en respectant la contrainte <m>20w+5\ka=100</m>.
+</p>
+
+<p>Jusqu'à présent, nous avons toujours résolu ce genre de problèmes avec contrainte :
+<ul>
+<li>en isolant <m>y</m> à partir de  <m>g(x,y)=0</m> pour avoir <m>y</m> en fonction de <m>x</m> (ou réciproquement), ou
+</li>
+<li>en paramétrant la courbe <m>g(x,y)=0</m>, c'est-à-dire en écrivant les points sur la courbe sous la forme  <m>\big(x(t), y(t)\big)</m> pour certaines fonctions  <m>x(t)</m> et  <m>y(t)</m>. Par exemple, nous avons utilisé <m>x(t)=\cos t</m>, <m>y(t)=\sin t</m> pour paramétrer le cercle  <m>x^2+y^2=1</m> dans l'<xref ref="eg_MXMNabsA"/>.
+</li>
+</ul>
+Cependant, très souvent, la fonction <m>g(x,y)</m> est tellement compliquée qu'on ne peut pas résoudre explicitement <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m> ni pour <m>x</m> en fonction de <m>y</m> et, en plus, on ne peut pas paramétrer <m>g(x,y)=0</m>. Parfois, on pourrait résoudre <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m>, mais la solution résultante peut être si compliquée qu'il peut être vraiment difficile, ou même virtuellement impossible, de travailler avec elle. Ce type de traitement peut devenir encore plus difficile dans les dimensions supérieures lorsque, par exemple, on souhaite optimiser une fonction <m>f(x,y,z)</m> soumise à une contrainte <m>g(x,y,z)=0</m>.
+</p>
+</introduction>
+
+<subsection xml:id="pars-Lagrange-1-contrainte">
+  <title>La méthode des multiplicateurs de Lagrange : une contrainte</title>
+
+ <p>Il existe une autre procédure, appelée la méthode des <q>multiplicateurs de Lagrange</q><fn>
+    Joseph-Louis Lagrange est en fait né Giuseppe Lodovico Lagrangia à Turin, en Italie, en 1736. Il s'installe à Berlin en 1766, puis à Paris en 1786. Il a fini par obtenir la nationalité française, et la communauté mathématique française affirme qu'il était un mathématicien français, tandis que la communauté italienne continue à affirmer qu'il était un mathématicien italien.
+  </fn>,
+  qui vient à notre secours dans ces scénarios. Voici la version tridimensionnelle de la méthode. Il y a des analogues pour d'autres dimensions.
+</p>
+
+
+<theorem xml:id="thm_Lagrange"><title>Multiplicateurs de Lagrange</title>
+<statement><p>
+Soit <m>f(x,y,z)</m> et <m>g(x,y,z)</m> des fonctions de classe <m>C^1</m> dans une région <m>\plan{D}\subseteq \R^3</m> qui contient la surface <m>\plan{S}</m> donnée par l'équation
+<m>g(x,y,z)=0</m>. De plus, supposons que  <m>\vnabla g(x,y,z)\ne\vZero</m> sur <m>\plan{S}</m>.
+</p>
+
+<p>Si <m>f</m> restreinte à la surface <m>\plan{S}</m> admet un extremum local au point  <m>\vr_0 = (x_0,y_0,z_0)</m>, se trouvant sur  <m>\plan{S}</m>,
+alors il existe un scalaire <m>\la</m> tel que
+<md>
+<mrow>
+\vnabla f(\vr_0) &amp;= \la\vnabla g(\vr_0),
+</mrow>
+<intertext>c'est-à-dire</intertext><mrow>
+f_x(\vr_0) &amp;= \la\, g_x(\vr_0),
+</mrow><mrow>
+f_y(\vr_0) &amp;= \la\, g_y(\vr_0),
+</mrow><mrow>
+f_z(\vr_0) &amp;= \la\, g_z(\vr_0)
+</mrow>
+</md>.
+Le scalaire <m>\la</m> est appelé un <em>multiplicateur de Lagrange</em>.
+</p></statement>
+
+<proof>
+<p> Écrivons <m>\vr = (x,y,z)</m> et supposons que <m>\vr_0=(x_0, y_0, z_0)</m> est un point sur  <m>\plan{S}</m> tel que <m>f(\vr)\geqslant f(\vr_0)</m> pour tous les points <m>\vr</m> sur  <m>\plan{S}</m> qui sont près de <m>\vr_0</m>. En d'autres termes,  <m>\vr_0</m> est un point de minimum local pour  <m>f</m> sur <m>\plan{S}</m>. Naturellement, l'argument pour les maximums locaux sera identique.
+</p>
+
+<p> Imaginons que nous nous promenons sur la surface <m>\plan{S}</m> avec le temps (disons <m>t</m>) allant de  <m>t=-1</m> à <m>t=+1</m>, de sorte que la position à <m>t=0</m> est exactement <m>\vr_0</m>. Notre position est donnée par un chemin <m>\vr(t) =\big(x(t),y(t),z(t)\big)</m>.
+</p>
+
+<p> Posons
+<me>
+F(t) = f\circ\vr\,(t)  = (r) f\big(x(t),y(t),z(t)\big)
+</me>,
+de sorte que <m>F(t)</m> est la valeur de  <m>f</m> observée au temps <m>t</m> de notre balade. Alors, pour <m>t</m> près de <m>0</m>, <m>\vr(t)</m> est près de  <m>\vr_0 = \big(x(0),y(0),z(0)\big)</m>, et
+<me>
+F(0) = f\circ \vr(0) = f(\vr_0)
+     \leqslant f\circ \vr(t) = F(t)
+</me>
+pour tout <m>t</m> suffisamment près de zéro, c'est-à-dire que <m>F</m> admet un minimum local à <m>t=0</m> et que, par conséquent, <m>F'(0)=0</m>.
+</p>
+
+<p> En vertu de la règle de dérivation des fonctions composées, vue au <xref ref="thm_chainRule"/>, nous avons
+<md>
+<mrow>
+&amp;0=F'(0)= \left(f\circ \vr \right)'(0)  =  \vnabla f(\vr_0)\cdot \vr'_0
+</mrow><mrow>
+&amp;\implies \vnabla f(\vr_0) \perp \vr'_0
+</mrow>
+</md>.
+Ainsi, le vecteur <m>\vnabla f(\vr_0)</m> est orthogonal au vecteur vitesse lors du passage par <m>\vr_0</m>. Ceci est vrai pour tout chemin contenu dans  <m>\plan{S}</m> qui passe par <m>\vr_0</m> à  <m>t=0</m>. Il en résulte que <m>\vnabla f(\vr_0)</m> est orthogonal à tout vecteur tangent à <m>\plan{S}</m> en <m>\vr_0</m>.
+</p>
+
+<p>Par ailleurs, nous savons, en vertu du <xref ref="thm_tan_plane_G"/>, que <m>\vnabla g(\vr_0)</m> est aussi orthogonal à <m>\plan{S}</m> en <m>\vr_0</m>.
+Ainsi, <m>\vnabla f(\vr_0)</m> et <m>\vnabla g(\vr_0)</m> doivent être des vecteurs colinéaires, c'est-à-dire que
+<me>
+\vnabla f(\vr_0) = \la \vnabla g(\vr_0)
+</me>
+pour un certain scalaire  <m>\la</m>.
+</p></proof>
+</theorem>
+
+<p>Ainsi, pour trouver le maximum et le minimum de <m>f(x,y,z)</m> parmi les points d'une surface <m>\plan{S}</m> donnée par <m>g(x,y,z)=0</m>, avec l'hypothèse supplémentaire que  <m>f</m> et <m>g</m> ont des dérivées partielles continues et que  <m>\vnabla g\ne\vZero</m>, on doit :
+<ol>
+<li> Dresser la liste de points candidats  <m>\vr = (x,y,z)</m> en résolvant les équations
+<md>
+<mrow>
+\vnabla f(\vr) &amp;= \la\vnabla g(\vr) \qquad \text{ et } \qquad
+g(\vr)&amp;=0
+</mrow>
+</md>.
+Il faut noter qu'il y a quatre équations en tout et quatre inconnues, à savoir <m>\la</m> et les trois composantes de <m>\vr</m>.
+</li>
+<li> Évaluer <m>f</m> à chacun des points de la liste de candidats. La valeur la plus grande est le maximum; la plus petite, le minimum.
+</li>
+</ol>
+Une autre façon d'écrire le système d'équations ci-haut est d'écrire
+<me>
+L_x(a,b,c,\la) = L_y(a,b,c,\la) = L_z(a,b,c,\la) = L_\la(a,b,c,\la) = 0
+</me>,
+où <m>L(x,y,z,\la)</m> est la fonction auxiliaire
+<me>
+L(x,y,z,\la)=f(x,y,z)-\la\, g(x,y,z)
+</me>.
+</p>
+
+<observation xml:id="obs-Lagrange2">
+<p>
+Nous avons formulé et prouvé le <xref ref="thm_Lagrange"/> pour les fonctions à trois variables, c'est-à-dire l'optimisation d'une fonction <m>f</m> sur une surface <m>g=0</m>. Le même résultat tient lorsque la fonction objectif ainsi que la fonction de contrainte  sont des fonctions de deux variables : ceci revient à maximiser/minimiser une quantité <m>f(x,y)</m> sur une courbe <m>g(x,y)=0</m>. Nous verrons d'autres généralisations plus tard.
+</p>
+</observation>
+
+<p>Voyons quelques exemples.
+</p>
+
+<example xml:id="eg_LagrangeA">
+<statement>
+<p>
+  Trouver le maximum et le minimum de <m>x^2-10x-y^2</m> sur l'ellipse d'équation <m>x^2+4y^2= 16</m>.
+</p>
+</statement>
+<solution>
+<p> Dans ce problème, la fonction objectif est  <m>f(x,y) = x^2-10x-y^2</m>, et la fonction de contrainte est <m>g(x,y)=x^2+4y^2-16</m>.
+
+Afin d'appliquer la méthode des multiplicateurs de Lagrange, nous calculons les gradients  <m>\vnabla f</m> et  <m>\vnabla g</m>.
+<me>
+f_x=2x-10\qquad
+f_y=-2y\qquad
+g_x=2x\qquad
+g_y=8y
+</me>
+Ainsi, on doit trouver les solutions de
+<md>
+<mrow>
+2x-10&amp;=\la (2x),
+</mrow><mrow>
+-2y&amp;=\la (8y),
+</mrow><mrow>
+x^2+4y^2-16&amp;=0
+</mrow>
+</md>.
+Après réarrangement, on obtient
+<md>
+<mrow>
+     (\la-1)x&amp;=-5, \tag{E1}
+</mrow><mrow>
+     (4\la+1)y&amp;=0, \tag{E2}
+</mrow><mrow>
+   x^2+4y^2-16&amp;=0   \tag{E3}
+</mrow>
+</md>.
+De  (E2), nous avons
+<m>\la=-\frac{1}{4}</m> ou <m>y=0</m>.
+<ul>
+<li> Si <m>\la=-\frac{1}{4}</m>, (E1) donne
+<m>-\frac{5}{4}x=-5</m>, et donc <m>x=4</m>, et alors (E3) donne <m>y=0</m>.
+</li>
+<li> Si <m>y=0</m>, alors (E3) donne  <m>x=\pm 4</m> (et même si l'on aurait pu utiliser (E1) pour trouver  <m>\la</m>, nous n'en avons pas vraiment besoin).
+</li>
+</ul>
+Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange"/>
+(la version 2D en fait), donne que les seuls candidats possibles pour les points de maximum et de minimum de <m>f</m> sont <m>(4,0)</m> et <m>(-4,0)</m>. Pour compléter le problème, on calcule la valeur de  <m>f</m> en ces points.
+</p>
+
+<sidebyside>
+<tabular  left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>
+         <col halign="center"/>
+<row>
+<cell> point
+       </cell><cell><m>(4,0)</m>
+       </cell><cell><m>(-4,0)</m> </cell>
+</row><row>
+<cell> valeur de <m>f</m>
+       </cell><cell><m>-24</m>
+       </cell><cell><m>56</m> </cell>
+</row><row>
+<cell> </cell><cell>min.
+       </cell><cell>max.  </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>
+Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et la valeur minimale est  <m>-24</m>.
+</p>
+
+
+
+<figure xml:id="figure-eg_LagrangeA">
+  <caption>Les courbes de niveau de la fonction objectif <m>f(x,y) = x^2-10x-y^2 </m>, en bleu. La contrainte  <m>x^2 + 4y^2 =16</m> est l'ellipse en brun.</caption>
+   <image xml:id="sageplot-eg_LagrangeA" width="80%">
+     <description>Une parabole standard sur l'intervale  [-2,4]</description>
+    <sageplot>
+      var('x,y')
+      f(x,y) = x^2 -2*x-y^2
+      Ellipse = implicit_plot(x^2 + 4*y^2 -16,(x,-4.5,4.5),(y,-2.5,2.5),
+        color = "red", zorder =2, axes= True)
+      Contour = contour_plot(f(x,y),(x,-4.5,4.5),(y,-2.5,2.5), cmap= "Blues",
+        labels = True,  label_fmt=lambda x: "$%s$"%x,  label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
+        contours=[-56,-24,-15,-10,-5,0,5,10,15,24,56],
+      axes_labels=["$x$","$y$"], axes_labels_size=1.5, tick_formatter =   "latex", fontsize= 10, axes=True)
+      Fig = Contour +Ellipse
+      Fig += point([(4,0), (-4,0)], marker = "X",  size = 60, color =
+      "orange", zorder = 3)
+      Fig += text("$x^2 + 4y^2 =16$", (3.2,1.8), color = "red", fontsize = 12)
+      Fig
+    </sageplot>
+  </image>
+</figure>
+
+<!--
+<sidebyside width="50%">
+<image source="images/CLP-figs/lagrangeA"/>
+</sidebyside>
+-->
+</solution>
+</example>
+<!-- 
+<exercise xml:id ="Lagrange-01" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Lagrange-01.pg"/>
+</exercise> -->
+
+
+<p>Dans les exemples précédents, la fonction objectif et la fonction de contrainte étaient données explicitement. Ce ne sera pas toujours le cas. Le prochain exemple montre comment utiliser la géométrie pour trouver les deux fonctions.
+</p>
+
+<example xml:id="eg_LagrangeB">
+  <statement>
+<p>
+  Trouver l'aire du plus grand rectangle (avec des côtés parallèles aux axes) qui peut être inscrit dans l'ellipse  <m>x^2+2y^2=1</m>.
+</p>
+</statement>
+
+<solution>
+<p>Ce problème étant de nature nettement géométrique, commençons par faire une figure.
+</p>
+
+<sidebyside width="45%">
+<image source="images/CLP-figs/lagrangeB"/>
+</sidebyside>
+
+<p>Soit <m>(x,y)</m> les coordonnées du point du rectangle du premier quadrant. Les quatre coins sont alors <m>(\pm x, \pm y)</m>, de sorte que  ses côtés mesurent <m>2x</m> et  <m>2y</m>. Par ailleurs, la fonction objectif est  <m>f(x,y) = 4xy</m>. La fonction de contrainte du problème est <m>g(x,y)=x^2+2y^2-1</m>. De nouveau, pour utiliser les multiplicateurs de Lagrange, nous calculons quelques dérivées partielles :
+<me>
+f_x=4y,\qquad
+f_y=4x,\qquad
+g_x=2x,\qquad
+g_y=4y
+</me>.
+Ainsi, nous devons trouver les solutions de
+<md>
+<mrow>
+4y&amp;=\la (2x), \tag{E1}
+</mrow><mrow>
+4x&amp;=\la (4y), \tag{E2}
+</mrow><mrow>
+x^2+2y^2-1&amp;=0  \tag{E3}
+</mrow>
+</md>.
+L'équation (E1) donne <m>y=\frac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
+<md>
+<mrow>
+4x=2\la^2 x \qquad\text{ou}\qquad
+         2x\big(2-\la^2\big)=0
+</mrow>
+</md>.
+Ainsi, (E2) est vérifiée si <m>x=0</m> ou <m>\la=\sqrt{2}</m> ou <m>\la=-\sqrt{2}</m>.
+<ul>
+<li> Si <m>x=0</m>, alors (E1) donne <m>y=0</m> aussi. Mais
+<m>(0,0)</m> ne satisfait pas l'équation  (E3).
+</li>
+<li><p> Si <m>\la=\sqrt{2}</m>, alors
+<ul>
+<li>
+(E2) donne <m>x=\sqrt{2}y</m>, et alors
+</li>
+<li>
+(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\frac{1}{4}</m>, de sorte que
+</li>
+<li>
+<m>y=\pm\frac{1}{2}</m> et <m>x=\sqrt{2}y=\pm\frac{1}{\sqrt{2}}</m>.
+</li>
+</ul></p>
+</li>
+<li><p> Si <m>\la=-\sqrt{2}</m>, alors
+<ul>
+<li>
+(E2) donne <m>x=-\sqrt{2}y</m>, et alors
+</li>
+<li>
+(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\frac{1}{4}</m>, et donc
+</li>
+<li>
+<m>y=\pm\frac{1}{2}</m> et <m>x=-\sqrt{2}y=\mp\frac{1}{\sqrt{2}}</m>.
+</li>
+</ul></p>
+</li>
+</ul>
+Nous avons à présent les quatre points candidats  <m>(x,y)</m>, à savoir
+<m>\big(\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>,
+<m>\big(-\frac{1}{\sqrt{2}},\,-\frac{1}{2}\big)</m>,
+<m>\big(\frac{1}{\sqrt{2}},\,-\frac{1}{2}\big)</m>
+et
+<m>\big(-\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>.
+Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <m>(x,y)</m> soit le coin du premier quadrant, il s'agit de <m>\big(\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>.
+</p>
+</solution>
+</example>
+
+
+<example xml:id="eg_LagrangeC">
+<statement>
+<p>
+ Trouver les extrémités des demi-axes de l'ellipse <m>3x^2-2xy+3y^2=4</m>. Il s'agit des points sur l'ellipse qui sont le plus loin et le plus près de l'origine.
+</p>
+</statement>
+
+<solution>
+<p>
+ Soit  <m>(x,y)</m> un point sur <m>3x^2-2xy+3y^2=4</m>. Ce point est à l'extrémité du demi-axe le plus grand lorsqu'il maximise la distance au centre de l'ellipse, qui coïncide avec l'origine. Le point se trouve à l'extrémité du petit demi-axe lorsque cette distance est minimisée. Nous devons donc maximiser et minimiser la distance  <m>\sqrt{x^2+y^2}</m> avec la contrainte
+<me>
+g(x,y)=3x^2-2xy+3y^2-4=0
+</me>.
+Notons cependant que de maximiser ou de minimiser <m>\sqrt{x^2+y^2}</m> est équivalent<fn>
+  Car la fonction <m>S(z)=z^2</m> est strictement croissante pour  <m>z\geqslant 0</m>. Ainsi, pour  <m>a,b\geqslant 0</m>, le fait d'avoir <q><m>a \lt b</m></q> équivaut à avoir  <q><m>S(a) \lt S(b)</m></q>.
+</fn>
+ à maximiser ou à minimiser son carré, <m>\big(\sqrt{x^2+y^2}\big)^2=x^2+y^2</m>. Ainsi, nous pouvons choisir la fonction objectif
+<me>
+f(x,y)=x^2+y^2
+</me>,
+ce que nous ferons afin de rendre les calculs plus simples. De nouveau, utilisons les multiplicateurs de Lagrange. Pour cela, calculons les dérivées partielles
+<me>
+f_x(x,y)=2x,\quad f_y(x,y)=2y, \quad
+g_x(x,y)=6x-2y,\quad g_y(x,y)=-2x+6y
+</me>.
+Nous devons trouver les solutions de
+<md>
+<mrow>
+2x&amp;=\la (6x-2y),
+</mrow><mrow>
+2y&amp;=\la (-2x+6y),
+</mrow><mrow>
+3x^2-2xy+3y^2-4&amp;=0
+</mrow>
+</md>.
+En divisant ces deux équations par <m>2</m> et en factorisant, on obtient
+<md>
+<mrow>
+       (1-3\la)x+\la y&amp;=0,  \tag{E1}
+</mrow><mrow>
+       \la x+(1-3\la)y&amp;=0,  \tag{E2}
+</mrow><mrow>
+    3x^2-2xy+3y^2-4&amp;=0  \tag{E3}
+</mrow>
+</md>.
+Pour commencer, concentrons-nous sur les deux premières équations. Supposons que la valeur de  <m>\la</m> est connue et que nous voulons trouver <m>x</m> et <m>y</m>.
+</p>
+
+<p>
+  Le système d'équations  <m>(1+3\la)x-\la y=0</m>, <m>-\la x+(1+3\la)y=0</m> admet une solution évidente, à savoir <m>x=y=0</m>. Cependant, cette solution n'est pas acceptable, car il ne s'agit pas d'un point sur l'ellipse. On sait, grâce aux cours d'algèbre linéaire, qu'un système homogène d'équations linéaires admet une solution non nulle si et seulement si le déterminant de la matrice des coefficients est nul.
+<me>
+\det\left[\begin{matrix}
+                 1-3\la&amp;\la\\
+                \la&amp;1-3\la
+          \end{matrix}\right]=(1-3\la)^2-\la^2
+=(1-2\la)(1-4\la)=0\implies\la=\half,\frac{1}{4}
+</me>
+
+On peut diviser par  <m>\la</m>, et (E1) donne
+<me>
+y=-\frac{1-3\la}{\la}x
+</me>.
+En remplaçant ceci dans (E2), on obtient
+<me>
+\la x-\frac{(1-3\la)^2}{\la}x=0
+</me>.
+À nouveau, <m>x</m> ne peut pas être nul, car, dans ce cas, <m>y=-\frac{1-3\la}{\la}x</m> donnerait <m>y=0</m>, et <m>(0,0)</m> n'est toujours pas sur l'ellipse.
+</p>
+
+<p>Ainsi, on peut diviser <m>\la x-\frac{(1-3\la)^2}{\la}x=0</m> par  <m>x</m>, ce qui donne
+<md>
+<mrow>
+\la -\frac{(1-3\la)^2}{\la}=0
+&amp;\iff (1-3\la)^2-\la^2=0
+</mrow><mrow>
+&amp;\iff 8\la^2-6\la+1 =(2\la-1)(4\la-1)=0
+</mrow>
+</md>.
+Nous avons que <m>\la</m> doit être <m>\frac{1}{2}</m> ou <m>\frac{1}{4}</m>. Remplacer ces valeurs dans (E1) ou (E2) donne
+<md alignment="alignat">
+<mrow>
+\la&amp;=\frac{1}{2}
+        &amp;\ \implies\  -\frac{1}{2} x+\frac{1}{2} y&amp;=0
+        &amp;\ \implies\   x&amp;=y
+        </mrow><mrow>&amp;
+        &amp;\ \impliesover{(E3)}\  3x^2-2x^2+3x^2&amp;=4
+        &amp;\ \implies\   x&amp;=\pm 1,
+</mrow><mrow>
+\la&amp;=\frac{1}{4}
+        &amp;\ \implies\  \phantom{-}\frac{1}{4} x+\frac{1}{4} y&amp;=0
+        &amp;\ \implies\  x&amp;=-y
+        </mrow><mrow>&amp;
+        &amp;\ \impliesover{(E3)}\   3x^2+2x^2+3x^2&amp;=4
+        &amp;\ \implies\  x&amp;=\pm \frac{1}{\sqrt{2}}
+</mrow>
+</md>.
+Ici, <q><m>\impliesover{(E3)}</m></q> signifie que l'on utilise (E3). Nous avons maintenant  <m>(x,y)=\pm (1,1)</m> (de <m>\la=\frac{1}{2}</m>) et  <m>(x,y)=\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m> (de <m>\la=\frac{1}{4}</m>).
+
+La distance de  <m>(0,0)</m> à <m>\pm (1,1)</m>, à savoir  <m>\sqrt{2}</m>, est supérieure à la distance de <m>(0,0)</m> à <m>\pm\big(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\big)</m>, à savoir  <m>1</m>.
+Ainsi, les extrémités du petit demi-axe sont  <m>\pm\big(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\big)</m>, et celles du grand demi-axe sont <m>\pm(1,1)</m>. Ces points sont esquissés dans la figure de gauche ci-bas. Une fois ces points trouvés, il devient aisé de dessiner l'ellipse<fn>
+  Si l'on incline la tête de sorte à ce que la droite par <m>(1,1)</m> et <m>(-1,-1)</m> apparaisse horizontale.
+</fn>.
+</p>
+
+<sidebyside>
+<image source="images/CLP-figs/lagrangeCC"/>
+<image source="images/CLP-figs/lagrangeC"/>
+</sidebyside>
+
+</solution>
+</example>
+
+<!--
+<exercise>
+  <webwork source = "BPL/CCDMD/Calcul_avance-03optimisation/optimisation_contrainte_4.pg"/>
+</exercise>
+-->
+
+
+<example xml:id="eg_LagrangeD">
+<statement>
+<p>
+Trouver les valeurs de  <m>w\geqslant0</m>, <m>\ka\geqslant0</m> qui maximisent la fonction d'utilité
+<me>
+U(w,\ka) =6 w^{\frac{2}{3}}\ka^{\frac{1}{3}}
+ \qquad\text{avec la contrainte}\qquad
+4w+2\ka=12
+</me>.
+</p>
+</statement>
+
+<solution>
+<p>
+La contrainte  <m>4w+2\ka=12</m> est suffisamment simple pour exprimer <m>\ka</m> en termes de  <m>w</m>. On peut alors remplacer <m>\ka=6-2w</m> dans <m>U(w,\ka)</m> et maximiser <m>U(w,6-2w) = 6 w^{\frac{2}{3}}(6-2w)^{\frac{1}{3}}</m> avec les technique du calcul différentiel à une variable.
+</p>
+
+<p>Cependant, afin de pratiquer la méthode des multiplicateurs de Lagrange, on va présenter une solution avec celle-ci.
+On a <m>U(w,\ka) =6 w^{\frac{2}{3}}\ka^{\frac{1}{3}}</m>, et la fonction de contrainte est  <m>g(w,\ka)=4w+2\ka-12</m>. Les dérivées partielles sont
+<me>
+U_w=4w^{-\frac{1}{3}}\ka^{\frac{1}{3}},\qquad
+U_\ka=2w^{\frac{2}{3}}\ka^{-\frac{2}{3}},\qquad
+g_w=4,\qquad
+g_\ka=2
+</me>.
+Les valeurs  <m>w=0</m> et <m>\ka=0</m> donnent une utilité de <m>0</m>, qui ne sera certainement pas un maximum. Il suffit alors de considérer les maximums locaux. Nous devons résoudre
+<md alignment="alignat">
+<mrow>
+4w^{-\frac{1}{3}}\ka^{\frac{1}{3}}&amp;=4\la,  \tag{E1}
+</mrow><mrow>
+2w^{\frac{2}{3}}\ka^{-\frac{2}{3}}&amp;=2\la,  \tag{E2}
+</mrow><mrow>
+4w+2\ka-12&amp;=0 \tag{E3}
+</mrow>
+</md>.
+Alors,
+<ul>
+<li> l'équation (E1) donne <m>\la=w^{-\frac{1}{3}}\ka^{\frac{1}{3}}</m>;
+</li>
+<li> En remplaçant ceci dans (E2), on obtient
+    <m>w^{\frac{2}{3}}\ka^{-\frac{2}{3}}=\la
+   =w^{-\frac{1}{3}}\ka^{\frac{1}{3}}</m>, et alors <m>w=\ka</m>;
+</li>
+<li> Puis, en remplaçant <m>w=\ka</m> dans (E3), on obtient <m>6\ka=12</m>.
+</li>
+</ul>
+Ainsi, <m>w=\ka=2</m>, et l'utilité maximale est <m>U(2,2)=12</m>.
+</p>
+</solution>
+</example>
+
+
+<example xml:id="eg_LagrangeE">
+<statement>
+<p>
+Trouver le point sur la sphère  <m>x^2+y^2+z^2=1</m> qui est le plus éloigné de <m>(1,2,3)</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Comme précédemment, on simplifie les calculs en considérant le carré de la distance comme fonction objectif
+<me>
+f(x,y,z) = (x-1)^2 +(y-2)^2 + (z-3)^2
+</me>
+avec la contrainte <me>
+g(x,y,z)= x^2 + y^2 + z^2 -1=0
+</me>.
+Puisque
+<md>
+<mrow>
+f_x(x,y,z)&amp;=2(x-1),  &amp; f_y(x,y,z)&amp;=2(y-2), &amp; f_z(x,y,z)&amp;=2(z-3),
+</mrow><mrow>
+g_x(x,y,z)&amp;=2x,      &amp; g_y(x,y,z)&amp;=2y,     &amp; g_z(x,y,z)&amp;= 2z
+</mrow>
+</md>,
+nous devons résoudre
+<md alignment="alignat">
+<mrow>
+2(x-1)&amp;=\la (2x)\qquad&amp;\iff\qquad
+       x&amp;=\frac{1}{1-\la},  \tag{E1}
+</mrow><mrow>
+2(y-2)&amp;=\la (2y)\qquad&amp;\iff\qquad
+       y&amp;=\frac{2}{1-\la},  \tag{E2}
+</mrow><mrow>
+2(z-3)&amp;=\la (2z)\qquad&amp;\iff\qquad
+         z&amp;=\frac{3}{1-\la},  \tag{E3}
+</mrow><mrow>
+0&amp;=x^2+y^2+z^2-1  \tag{E4}
+</mrow>
+</md>.
+En remplaçant (E1), (E2) et (E3) dans (E4), on obtient
+<md>
+<mrow>
+\frac{1+4+9}{(1-\la)^2}-1=0
+\implies (1-\la)^2 = 14
+\implies 1-\la = \pm\sqrt{14}
+</mrow>
+</md>.
+On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pour <m>x</m>, <m>y</m>, <m>z</m> en termes de  <m>\la</m> pour obtenir les points <m>\frac{1}{\sqrt{14}}(1,2,3)</m> et <m>-\frac{1}{\sqrt{14}}(1,2,3)</m>.
+</p>
+
+<p>Le vecteur de  <m>\frac{1}{\sqrt{14}}(1,2,3)</m> à <m>(1,2,3)</m>, à savoir
+ <m>\left\{1-\frac{1}{\sqrt{14}}\right\}(1,2,3)</m>, est clairement de norme plus petite que le vecteur de <m>-\frac{1}{\sqrt{14}}(1,2,3)</m> à <m>(1,2,3)</m>, c'est-à-dire  <m>\left\{1+\frac{1}{\sqrt{14}}\right\}(1,2,3)</m>. Ainsi, le point le plus proche est  <m>\frac{1}{\sqrt{14}}(1,2,3)</m>, et le point le plus éloigné est  <m>-\frac{1}{\sqrt{14}}(1,2,3)</m>.
+</p>
+</solution>
+</example>
+
+<!--
+<exercise>
+  <webwork source = "BPL/CCDMD/Calcul_avance-03optimisation/optimisation_3_SL.pg"/>
+</exercise>
+-->
+
+</subsection>
+
+<subsection xml:id="pars-Deux-contraintes">
+<title> Deux contraintes</title>
+
+<p>
+  Dans cette section, on considère l'exemple d'un problème de la forme  <q>maximiser (ou minimiser)  <m>f(x,y,z)</m> avec les deux contraintes  <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m></q>. La méthode des multiplicateurs de Lagrange, vue au <xref ref="thm_Lagrange"/>, s'adapte à ce contexte comme suit.
+</p>
+
+<theorem xml:id="thm_doubleLagrange"><title>Deux contraintes</title>
+<statement><p>
+Soit  <m>f(x,y,z)</m>, <m>g(x,y,z)</m> et <m>h(x,y,z)</m> des fonctions de classe <m>C^1</m> dans une région de  <m>\R^3</m> qui contient une courbe
+<m>\plan{C}</m> donnée par l'équation
+<me>
+g(x,y,z)=h(x,y,z)=0
+</me>,
+c'est-à-dire que <m>\plan{C}</m> est l'intersection des deux surfaces <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m>. Supposons que<fn>
+  Ceci revient à dire que les deux vecteurs normaux aux surfaces <m>g=0</m> et <m>h=0</m> au point <m>(x,y,z)</m> ne sont pas parallèles. Ceci assure que les deux surfaces ne sont pas tangentes en <m>(x,y,z)</m>, de sorte qu'elles se coupent en formant une courbe.
+</fn>
+<m>\vnabla g \times \vnabla h \ne 0</m> sur  <m>\plan{C}</m>. Si <m>f</m> restreinte à <m>\plan{C}</m> admet une valeur extrémale au point <m>\vr_0 = (x_0,y_0,z_0)</m> sur <m>\plan{C}</m>, alors il existe deux nombres réels <m>\la</m> et <m>\mu</m> tels que
+<md>
+<mrow>
+\vnabla f(\vr_0) &amp;= \la\vnabla g(\vr_0) + \mu\vnabla h(\vr_0),
+</mrow>,
+<intertext>c'est-à-dire</intertext><mrow>
+f_x(\vr_0) &amp;= \la\, g_x(\vr_0) + \mu\, h_x(\vr_0),
+</mrow><mrow>
+f_y(\vr_0) &amp;= \la\, g_y(\vr_0) + \mu\, h_y(\vr_0),
+</mrow><mrow>
+f_z(\vr_0) &amp;= \la\, g_z(\vr_0) + \mu\, h_z(\vr_0)
+</mrow>
+</md>.
+</p></statement>
+</theorem>
+
+<p>
+On peut, bien entendu, formuler ce théorème avec une fonction auxiliaire, comme avant :
+<me>
+L(x,y,z,\la,\mu)=f(x,y,z)-\la\, g(x,y,z) - \mu\, h(x,y,z)
+</me>.
+Il s'agit d'une fonction de cinq variables : les trois variables originales,  <m>x</m>, <m>y</m> et <m>z</m>, et les deux variables auxiliaires, <m>\la</m> et <m>\mu</m>.
+S'il y a un extremum local à <m>\vr_0</m>, alors <m>\vr_0</m> doit aussi satisfaire la formule suivante:
+</p>
+
+<fact xml:id="eqn_Ll">
+  <statement>
+    <p>
+<md alignment="alignat">
+<mrow>
+0&amp;= L_x(x_0,y_0,z_0,\la,\mu)
+ &amp;&amp;= f_x(\vr_0) - \la g_x(\vr_0) -\mu h_x(\vr_0),
+</mrow><mrow>
+0&amp;= L_y(x_0, y_0,z_0,\la,\mu)
+ &amp;&amp;= f_y(\vr_0) - \la g_y(\vr_0) -\mu h_y(\vr_0),
+</mrow><mrow>
+0&amp;=L_z(x_0,y_0, z_0,\la,\mu)
+ &amp;&amp;= f_z(\vr_0) - \la g_z(\vr_0) -\mu h_z(\vr_0),
+</mrow><mrow>
+0&amp;=L_\la(x_0,y_0,z_0,\la,\mu)
+ &amp;&amp;= g(\vr_0),
+</mrow><mrow>
+0&amp;=L_\mu(x_0,y_0, z_0,\la,\mu)
+ &amp;&amp;= h(\vr_0)
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+  pour certains  <m>\la</m> et <m>\mu</m>. Ainsi, résoudre ce système de cinq équations donne les points candidats pour les extremums locaux. Nous verrons un exemple sous peu.
+</p>
+
+<proof><title>Preuve du <xref ref="thm_doubleLagrange"/></title>
+<p>
+Avant de voir un exemple, justifions la validité de cette approche.  Supposons donc que le minimum est atteint à  <m>\vr_0</m>, le point gris dans la figure ci-après. Comme précédemment, imaginons que nous commençons à nous déplacer en partant de <m>\vr_0</m> le long de la courbe <m>g=h=0</m>. La trajectoire est la droite grise de la figure suivante.
+</p>
+
+<sidebyside width="66%">
+<image source="images/CLP-figs/dblLagrangeB"/>
+</sidebyside>
+
+<p>
+Soit  <m>\vv</m> le vecteur vitesse lors du passage à <m>\vr_0</m>, il est donc tangent à la courbe  <m>g=h=0</m>. Comme <m>f</m> admet un minimum local en  <m>\vr_0</m>, <m>f</m> doit être croissante en quittant <m>\vr_0</m>, de sorte que la dérivée directionnelle dans la direction de notre mouvement est positive :
+<me>
+D_{\vv}f(\vr_0)=\vnabla f(\vr_0) \cdot \vv\geqslant 0
+</me>.
+Recommençons, mais, cette fois, en allant dans la direction opposée avec le vecteur vitesse <m>-\vv</m>. De nouveau, <m>f</m> doit être croissante lorsque l'on quitte <m>\vr_0</m>, de sorte que la dérivée directionnelle est positive :
+<me>
+D_{-\vv}f(\vr_0)=\vnabla f(\vr_0) \cdot (-\vv)\geqslant 0
+</me>.
+Comme <m>\vnabla f(\vr_0) \cdot \vv</m> et
+<m>-\vnabla f(\vr_0) \cdot \vv</m> sont positifs ou nuls, nous devons avoir
+<me>
+\vnabla f(\vr_0) \cdot \vv=0
+\tag{$*$}</me>,
+et ceci tient pour tout vecteur  <m>\vv</m> qui est tangent à la courbe  <m>g=h=0</m> en  <m>\vr_0</m>. Soit <m>\cT</m> l'ensemble des vecteurs <m>\vv</m> qui sont tangents à la courbe  <m>g=h=0</m> en <m>\vr_0</m> et soit  <m>\cT^\perp</m> l'ensemble des vecteurs orthogonaux à ces vecteurs tangents. Ainsi, <m>(*)</m> dit que <m>\vnabla f(\vr_0)</m> doit faire partie de <m>\cT^\perp</m>.
+</p>
+
+<p>Nous allons maintenant trouver les vecteurs de <m>\cT^\perp</m>. Nous pouvons facilement deviner deux de ces vecteurs, à savoir <m>\vnabla g(\vr_0)</m> et <m>\vnabla h(\vr_0)</m>. Tout vecteur qui est une combinaison linéaire de ces deux vecteurs sera également orthogonal à tout vecteur de <m>\cT</m>.
+</p>
+
+<p>Par ailleurs, les vecteurs de  <m>\cT</m> forment en fait une droite (la tangente à <m>\cal{C}</m> en <m>\vr_0</m>). Ainsi, <m>\cT^\perp</m>, l'ensemble orthogonal à <m>\cT</m>, est un plan. Lorsque  <m>\la</m> et <m>\mu</m> parcourent les réels, les vecteurs <m>\la\vnabla g(\vr_0) + \mu\vnabla h(\vr_0)</m> décrivent un plan. Ainsi, nous pouvons conclure que tout vecteur de <m>\cT^\perp</m>, et en particulier  <m>\vnabla f(\vr_0)</m>, doit s'écrire sous la forme <m>\la\vnabla g(\vr_0)+\mu\vnabla h(\vr_0)</m>.
+<me>
+\vnabla f(\vr_0)
+=\la\vnabla g(\vr_0)+\mu\vnabla h(\vr_0)
+</me>
+
+</p>
+</proof>
+
+
+<example xml:id="eg_double_Lagrange">
+<statement>
+<p>
+Trouver la distance de l'origine à la courbe intersection des surfaces
+<me>
+z^2=x^2+y^2,\qquad x-2z=3
+</me>.
+</p>
+</statement>
+<solution>
+<p>
+De nouveau, nous simplifions les calculs en considérant le carré de la distance comme fonction objectif
+<me>
+f(x,y,z)=x^2+y^2+z^2
+</me>
+avec les contraintes <me>
+0=g(x,y,z)=x^2+y^2-z^2,\qquad
+0=h(x,y,z)=x-2z-3
+</me>.
+Puisque
+<md>
+<mrow>
+f_x&amp;=2x, &amp;  f_y&amp;=2y,  &amp; f_z&amp;=2z,
+</mrow><mrow>
+g_x&amp;=2x, &amp;  g_y&amp;=2y,  &amp; g_z&amp;=-2z,
+</mrow><mrow>
+h_x&amp;=1,  &amp;  h_y&amp;=0,   &amp; h_z&amp;=-2
+</mrow>
+</md>,
+la méthode des multiplicateurs de Lagrange nous impose de trouver les solutions de
+<md alignment="alignat">
+<mrow>
+2x&amp;=\la(2x) + \mu(1),  \tag{E1}
+</mrow><mrow>
+2y&amp;=\la(2y) + \mu(0) \qquad&amp;\iff\qquad(1-\la)y&amp;=0, \tag{E2}
+</mrow><mrow>
+2z&amp;=\la(-2z) + \mu(-2),  \tag{E3}
+</mrow><mrow>
+z^2&amp;=x^2+y^2, \tag{E4}
+</mrow><mrow>
+x-2z&amp;=3 \tag{E5}
+</mrow>
+</md>.
+Puisque l'équation (E2) se factorise, nous commençons par le faire. Nous devons donc avoir <m>y=0</m> ou <m>\la=1</m>.
+</p>
+
+<p><em>Cas <m>\la=1</m> :</em>
+Lorsque <m>\la=1</m>, les autres équations se réduisent à
+<md alignment="alignat">
+<mrow>
+0&amp;=\mu,  \tag{E1}
+</mrow><mrow>
+0&amp;=4z + 2 \mu,  \tag{E3}
+</mrow><mrow>
+z^2&amp;=x^2+y^2, \tag{E4}
+</mrow><mrow>
+x-2z&amp;=3 \tag{E5}
+</mrow>
+</md>,
+donc
+<ul>
+<li>
+l'équation (E1) donne <m>\mu=0</m>;
+</li>
+<li>
+Puis, en remplaçant  <m>\mu=0</m> dans (E3), on obtient <m>z=0</m>;
+</li>
+<li>
+Puis, remplacer <m>z=0</m> dans (E5) donne <m>x=3</m>;
+</li>
+<li>
+Finalement, remplacer <m>z=0</m> et <m>x=3</m> dans (E4) donne <m>0=9+y^2</m>, ce qui est absurde.
+</li>
+</ul>
+Ainsi, il est impossible d'avoir  <m>\la=1</m>.
+</p>
+
+<p><em>Cas <m>y=0</m> :</em>
+Lorsque <m>y=0</m>, les autres équations se réduisent à
+<md alignment="alignat">
+<mrow>
+2(1-\la)x &amp;= \mu,  \tag{E1}
+</mrow><mrow>
+(1+\la)z&amp;= -\mu,  \tag{E3}
+</mrow><mrow>
+z^2&amp;=x^2, \tag{E4}
+</mrow><mrow>
+x-2z&amp;=3 \tag{E5}
+</mrow>
+</md>.
+Les simplifications ne sont pas aussi faciles qu'au cas <m>\la=1</m>. Cependant, au moins, l'équation (E4) donne <m>z=\pm x</m>. Nous devons donc considérer ces deux possibilités.
+</p>
+
+<p><em>Sous-cas <m>y=0</m>, <m>z=x</m> :</em>
+Lorsque <m>y=0</m> et <m>z=x</m>, les équations deviennent
+<md alignment="alignat">
+<mrow>
+2(1-\la)x &amp;= \mu,  \tag{E1}
+</mrow><mrow>
+(1+\la)x&amp;= -\mu,  \tag{E3}
+</mrow><mrow>
+-x&amp;=3 \tag{E5}
+</mrow>
+</md>.
+Ainsi, l'équation (E5) nous dit que  <m>x=-3</m>, et donc
+<m>
+(x,y,z)=(-3,0,-3)
+</m>.
+Nous ne nous soucions pas des valeurs de  <m>\la</m> et <m>\mu</m>, mais puisque  <m>-6(1-\la)=\mu</m> et <m>-3(1+\la)=-\mu</m>, nous obtenons
+<me>
+-9+3\la=0 \implies \la=3
+</me>,
+puis, après substitution, <m>\mu=12</m>.
+</p>
+
+<p><em>Sous-cas <m>y=0</m>, <m>z=-x</m> :</em>
+Lorsque  <m>y=0</m> et <m>z=-x</m>, les équations deviennent <md alignment="alignat">
+<mrow>
+2(1-\la)x &amp;= \mu,  \tag{E1}
+</mrow><mrow>
+(1+\la)x&amp;= \mu,  \tag{E3}
+</mrow><mrow>
+3x&amp;=3 \tag{E5}
+</mrow>
+</md>.
+Ainsi, l'équation (E5) donne <m>x=1</m>, de sorte que
+<m>
+(x,y,z)=(1,0,-1)
+</m>.
+De nouveau, même si elles ne sont pas nécessaires, on calcule les valeurs de <m>\la</m> et <m>\mu</m>. Comme <m>2(1-\la)=\mu</m> et <m>(1+\la)=\mu</m>, on soustrait la seconde équation de la première pour obtenir
+<me>
+1-3\la=0
+\implies \la=\frac{1}{3}
+</me>,
+ce qui à son tour donne  <m>\mu=\frac{4}{3}</m>.
+</p>
+
+<p><em>Conclusion :</em> Nous avons deux candidats pour les points de maximum et de minimum local, à savoir  <m>(-3,0,-3)</m> et <m>(1,0,-1)</m>. Le premier se trouve à distance <m>3\sqrt{2}</m> de l'origine, ce qui donne le maximum; le second se trouve à distance <m>\sqrt{2}</m>, ce qui donne le minimum. En particulier, la distance est <m>\sqrt{2}</m>.
+</p>
+</solution>
+</example>
+<!-- 
+<exercise xml:id ="Lagrange-02" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Lagrange-02.pg"/>
+</exercise> -->
+
+
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Lagrange.ptx"/>
+</section>

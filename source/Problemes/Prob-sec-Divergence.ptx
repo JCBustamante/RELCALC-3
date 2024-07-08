@@ -1,0 +1,5181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+    
+    
+    <exercise>
+    <statement><p>
+    Soit <m>\cV</m> le cube
+    <md>
+    <mrow>
+    V=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1,\ 0\leqslant z\leqslant 1}
+    </mrow>
+    </md>
+    et <m>\cR</m> le carré
+    <md>
+    <mrow>
+    R=\Set{(x,y)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1}
+    </mrow>
+    </md>
+    et soit <m>f(x,y,z)</m> une fonction de classe <m>C^1</m>
+    <ol marker="a">
+    <li>
+    Utiliser le théorème fondamental du calcul pour montrer que
+    <md>
+    <mrow>
+    \iiint_{\cV}\frac{\partial f}{\partial z}(x,y,z)\,\dee{x}\,\dee{y}\,\dee{z}
+    =\iint_{\cR}\! f(x,y,1)\,\dee{x}\,\dee{y}
+      -\! \iint_{\cR}\! f(x,y,0)\,\dee{x}\,\dee{y}
+    </mrow>
+    </md>
+    </li>
+    <li>
+    Utiliser le théorème de la divergence pour montrer que
+    <md>
+    <mrow>
+    \iiint_{\cV}\frac{\partial f}{\partial z}(x,y,z)\,\dee{x}\,\dee{y}\,\dee{z}
+    =\iint_{\cR}\! f(x,y,1)\,\dee{x}\,\dee{y}
+      -\! \iint_{\cR}\! f(x,y,0)\,\dee{x}\,\dee{y}
+    </mrow>
+    </md>
+    </li>
+    </ol>
+    </p></statement>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution>
+      <p> (a) Expressing the left hand side as an iterated integral,
+    with <m>z</m> as the innermost integration variable, we have
+    <md>
+    <mrow>
+    \iiint_{\cV}\frac{\partial f}{\partial z}(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
+    &amp;=\int_0^1\dee{x}\int_0^1\dee{y}\left[\int_0^1\dee{z}\
+                    \frac{\partial f}{\partial z}(x,y,z)\right]
+    </mrow><mrow>
+    &amp;=\int_0^1\dee{x}\int_0^1\dee{y}\ \big[f(x,y,1)-f(x,y,0)\big]
+    </mrow><mrow>
+    &amp;\hskip1in\text{by the fundamental theorem of calculus}
+    </mrow><mrow>
+    &amp;=\iint_{\cR}\big[f(x,y,1)-f(x,y,0)\big]\ \dee{x}\,\dee{y}
+    </mrow><mrow>
+    &amp;=\iint_{\cR} f(x,y,1)\ \dee{x}\,\dee{y}
+      - \iint_{\cR} f(x,y,0)\ \dee{x}\,\dee{y}
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) Define the vector field <m>\vF(x,y,z) = f(x,y,z)\,\vk </m>. Then the divergence
+    of <m>\vF</m> is <m>\vnabla\cdot\vF(x,y,z) = \frac{\partial f}{\partial z}(x,y,z)</m>.
+    The boundary of the cube <m>\cV</m> is the union of six faces
+    <md>
+    <mrow>
+    S_1&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1,\ z=1}\
+       \text{with outward normal } \vn =\vk
+    </mrow><mrow>
+    S_2&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1,\ z=0}\
+       \text{with outward normal } \vn =-\vk
+    </mrow><mrow>
+    S_3&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant z\leqslant 1,\ y=1}\
+       \text{with outward normal } \vn =\vj
+    </mrow><mrow>
+    S_4&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant z\leqslant 1,\ y=0}\
+       \text{with outward normal } \vn =-\vj
+    </mrow><mrow>
+    S_5&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant 1,\ 0\leqslant z\leqslant 1,\ x=1}\
+       \text{with outward normal } \vn =\vi
+    </mrow><mrow>
+    S_6&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant 1,\ 0\leqslant z\leqslant 1,\ x=0}\
+       \text{with outward normal } \vn =-\vi
+    </mrow>
+    </md>
+    </p>
+
+    <sidebyside width="55%">
+    <image source = "images/CLP4-figs/pfigs/cubeDT"/>
+    </sidebyside>
+
+    <p>
+    Observe that
+    <md>
+    <mrow>
+    \vF\cdot\vn  = f\,\vk \cdot\vn  = \begin{cases} +f &amp;\text{on } S_1 \\
+                                -f &amp;\text{on } S_2 \\
+                                0  &amp;\text{on } S_3, S_4, S_5, S_6
+                 \end{cases}
+    </mrow>
+    </md>
+    So le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iiint_{\cV}\frac{\partial f}{\partial z}(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
+    </mrow><mrow>
+    &amp;= \iint_{\partial V} \vF\cdot\vn \ \dee{S}
+    =\sum_{j=1}^6  \iint_{S_j} \vF\cdot\vn \ \dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{S_1} f\ \dee{S}
+         -\iint_{S_2} f\ \dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{\cR} f(x,y,1)\ \dee{x}\,\dee{y}
+      - \iint_{\cR} f(x,y,0)\ \dee{x}\,\dee{y}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    <ol marker="a">
+    <li>
+    Appliquer le théorème de la divergence à  <m>\vF=\phi\,\va</m>, où  <m>\va</m> est un vecteur constant arbitraire, pour montrer que
+    <me>
+    \iiint_{\cV} \vnabla\phi\,\dee{V}=\iint_{\partial V}\phi\,\vn \,\dee{S}
+    </me>
+    </li>
+    <li>
+    Montrer que le centre de gravité<m>(\bar x,\bar y,\bar z)</m> d'un solide  <m>\cV</m> de volume <m>|\cV|</m> est donné par
+    <me>
+    (\bar x,\bar y,\bar z)=\frac{1}{2|\cV| }\iint_{\partial V} (x^2+y^2+z^2)\,\vn \,\dee{S}
+    </me>
+    </li>
+    </ol>
+    </p></statement>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+    (a) The divergence of <m>\phi\,\va</m> is
+    <m>\vnabla\cdot(\phi\,\va)
+    =\vnabla\phi\cdot\va+\phi\vnabla\cdot\va=\vnabla\phi\cdot\va</m>, since <m>\va</m> is
+    constant. So, by
+    le théorème de la divergence,
+    <md>
+    <mrow>
+    \iint_{\partial V}\phi\,\va\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot(\phi\,\va)\ \dee{V}
+    =\iiint_{\cV} \vnabla\phi\cdot\va\ \dee{V}
+    </mrow><mrow>
+    &amp;\implies \left[\iint_{\partial V}\phi\vn \,\dee{S}
+             -\iiint_{\cV} \vnabla\phi\,\dee{V}\right]\cdot\va=0
+    </mrow>
+    </md>
+    This is true for all vectors <m>\va</m>. In particular, applying this with
+    <m>\va=\vi ,\vj ,\vk </m>, we have that all three components of
+    <m>\left[\iint_{\partial V}\phi\vn \,\dee{S}
+             -\iiint_{\cV} \vnabla\phi\,\dee{V}\right]</m> are zero.
+    So
+    <me>
+    \iint_{\partial V}\phi\,\vn \,\dee{S}-\iiint_{\cV} \vnabla\phi\,\dee{V}=0
+    </me>
+    </p>
+
+    <p>(b) By part (a), with <m>\phi=x^2+y^2+z^2</m> and
+    <m>\vnabla\phi = 2x\,\vi +2y\,\vj +2z\,\vk </m>,
+    <md>
+    <mrow>
+    \frac{1}{2|\cV| }\iint_{\partial V} (x^2+y^2+z^2)\,\vn \,\dee{S}
+    &amp;=\frac{1}{2|\cV| } \iiint_{\cV} (2x\,\vi +2y\,\vj +2z\,\vk )\,\dee{V}
+    </mrow><mrow>
+    &amp;=(\bar x,\bar y,\bar z)
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+   
+
+    <exercise>
+    <statement><p>
+    Soit  <m>\cS</m> la sphère unité centrée à l'origine, avec le vecteur normal pointant vers l'extérieur. Si    <me>
+    \vF(x,y,z)=\big(x,y,z^2\big)
+    </me>
+    calculer le flux de <m>\vF</m>à travers <m>\cS</m>
+    <ol marker="a">
+    <li>
+       directement, et
+    </li>
+    <li>
+       en utilisant le théorème de la divergence.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (b) L'intégrale peut être évaluée trivialement en exploitant l'imparité de l'intégrande et le fait que  <m> \iiint_{\cV}\ \dee{V}=\text{Volume}(V)</m>.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{8\pi}{3}</m>
+    </p></answer>
+
+    <solution><p>
+     (a) We'll parametrize the sphere using the spherical coordinates <m>\theta</m> and
+    <m>\varphi</m>.
+    <md>
+    <mrow>
+    x&amp;=\sin\varphi\cos\theta
+    </mrow><mrow>
+    y&amp;=\sin\varphi\sin\theta
+    </mrow><mrow>
+    z&amp;=\cos\varphi
+    </mrow>
+    </md>
+    with <m>0\le\theta\leqslant 2\pi</m>, <m>0\le\varphi\leqslant \pi</m>.
+    Since
+    <md>
+    <mrow>
+    \Big(\frac{\partial x}{\partial\theta}\,,\,
+          \frac{\partial y}{\partial\theta}\,,\,
+          \frac{\partial z}{\partial\theta}\Big)
+    &amp;=\big(-\sin\varphi\sin\theta\,,\,
+           \sin\varphi\cos\theta\,,\,0\big)
+    </mrow><mrow>
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+                 \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    &amp;=(\cos\varphi\cos\theta\,,\,\cos\varphi\sin\theta\,,\,-\sin\varphi)
+    </mrow>
+    </md>
+    (<xref ref="eq_SUdSparam"/>) yields
+    <md>
+    <mrow>
+    &amp;\vn \,\dee{S}
+    =\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+              \frac{\partial y}{\partial\theta}\,,\,
+              \frac{\partial z}{\partial\theta}\Big)
+    \times
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+       \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm \big(-\sin\varphi\sin\theta\,,\,
+           \sin\varphi\cos\theta\,,\,0\big)
+    \!\times\!
+    (\cos\varphi\cos\theta\,,\,\cos\varphi\sin\theta\,,\,-\sin\varphi)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm\big(-\sin^2\varphi\cos\theta\,,\,
+              -\sin^2\varphi\sin\theta\,,\,
+              -\sin\varphi\cos\varphi\big)\ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\mp \sin\varphi \big(\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos\varphi\big)\ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\mp \sin\varphi \big(x(\theta,\varphi)\,,\,
+              y(\theta,\varphi)\,,\,
+              z(\theta,\varphi)\big)\ \dee{\theta}\dee{\varphi}
+    </mrow>
+    </md>
+    To get an outward pointing normal we need the <m>+</m> sign, since then
+    <m>\vn (\theta,\varphi)</m> is a positive multiple, namely <m>\sin\varphi</m>,
+    times <m>\vr(\theta,\varphi)</m>. So, on <m>\cS</m>,
+    <md>
+    <mrow>
+    \vF\cdot\vn \,\dee{S}
+      &amp;= \sin\varphi \overbrace{\big(\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos^2\varphi\big)}^{\vF}
+    </mrow><mrow>&amp;\hskip1.5in\cdot
+          \big(\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos\varphi\big)\ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+      &amp;= \sin\varphi\big(\sin^2\varphi\cos^2\theta
+                 +\sin^2\varphi\sin^2\theta+\cos^3\varphi\big)
+    </mrow>
+    </md>
+    and
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^\pi \dee{\varphi}\int_0^{2\pi}\dee{\theta}\ \sin\varphi\big(\sin^2\varphi\cos^2\theta
+    +\sin^2\varphi\sin^2\theta+\cos^3\varphi\big)\cr
+    &amp;=\int_0^\pi \dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+          \big(\sin^3\varphi + \sin\varphi\cos^3\varphi\big)\cr
+    &amp;=2\pi \left\{\int_0^\pi \dee{\varphi}\ \sin^3\varphi
+             \ +\ \left[-\frac{1}{4}\cos^4\varphi\right]^\pi_0 \right\}\cr
+    &amp;=2\pi\int_0^\pi \dee{\varphi}\ \sin\varphi(1-\cos^2\varphi)
+    =2\pi\left[-\cos\varphi+\frac{1}{3}\cos^3\varphi\right]_0^\pi
+    </mrow><mrow>
+    &amp;=2\pi\left[\frac{4}{3}\right]
+    </mrow><mrow>
+    &amp;=\frac{8\pi}{3}
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) Let <m>\cV</m> be the interior of <m>\cS</m>. Then, by le théorème de la divergence,
+    <me>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    =\iiint_{\cV}\vnabla\cdot\vF\ \dee{V}
+    =\iiint_{\cV}(1+1+2z)\ \dee{V}
+    </me>
+    By oddness under <m>z\rightarrow -z</m>, the <m>z</m> integral vanishes, so that
+    <me>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    =2\iiint_{\cV}\ \dee{V}
+    =2\,\text{Volume}(V)
+    =2\frac{4\pi}{3}
+    =\frac{8\pi}{3}
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+     Calculer, de deux façons calculer
+    <m>\iint_{\cS}\vF\cdot \vn \,\dee{S}</m>, où  <m>\vF=z\,\vk </m>,
+    <m>\cS</m> est la surface <m>x^2+y^2+z^2=a^2</m> et  <m>\vn </m> est le vecteur normal à <m>\cS</m> pointant vers l'extérieur.
+
+    <ol marker="a">
+    <li>
+    D'abord par un calcul de l'intégrale de surface;
+    </li>
+    <li>
+    Puis en utilisant le théorème de la divergence.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Pour la partie (a), penser aux coordonnées sphériques.
+    </p></hint>
+
+    <answer><p>
+    (a), (b) <m>\frac{4}{3}\pi a^3</m>
+    </p></answer>
+
+    <solution><p>
+    (a) Let's use spherical coordinates. As <m>\cS</m> is the
+    sphere of radius <m>a</m> centred on the origin,  we can parametrize it by
+    <md>
+    <mrow>
+    \vr(\theta,\varphi)
+      &amp;=a\sin\varphi\cos\theta\,\vi
+         +a\sin\varphi\sin\theta\,\vj
+         + a\cos\varphi\,\vk
+    </mrow><mrow>
+    \pdiff{\vr}{\theta}
+       &amp;=-a\sin\varphi\sin\theta\,\vi
+         +a\sin\varphi\cos\theta\,\vj
+    </mrow><mrow>
+    \pdiff{\vr}{\varphi}
+       &amp;= \phantom{-}a\cos\varphi\cos\theta\,\vi
+         +a\cos\varphi\sin\theta\,\vj
+        -a\sin\varphi\,\vk
+    </mrow><mrow>
+    \vn \,\dee{S}
+    &amp;=\pm\pdiff{\vr}{\theta}
+       \times \pdiff{\vr}{\varphi}
+        \ \dee{\theta}\, d\varphi
+    </mrow><mrow>
+    &amp;=\det\left[\begin{matrix}   \vi  &amp;\vj  &amp;\vk
+    </mrow><mrow>
+                  -a\sin\varphi\sin\theta &amp; a\sin\varphi\cos\theta &amp; 0
+    </mrow><mrow>
+                  a\cos\varphi\cos\theta &amp; a\cos\varphi\sin\theta &amp; -a\sin\varphi
+       \end{matrix}\right]  \dee{\theta}\, d\varphi
+    </mrow><mrow>
+    &amp;=\pm\Big(-a^2\sin^2\varphi\cos\theta\,\vi
+              -a^2\sin^2\varphi\sin\theta\,\vj
+              -a^2\sin\varphi\cos\varphi\,\vk \Big)\ \dee{\theta}\, d\varphi
+    </mrow><mrow>
+    &amp;=\mp a^2\sin\varphi \big(\sin\varphi\cos\theta\,\vi
+              +\sin\varphi\sin\theta\,\vj
+              +\cos\varphi\,\vk \Big)\ \dee{\theta}\, d\varphi
+    </mrow>
+    </md>
+    For the outward normal, we want the <m>+</m> sign, so
+    <md>
+    <mrow>
+    \vn \,\dee{S}
+    &amp;= a^2\sin\varphi \big(\sin\varphi\cos\theta\,\vi
+              +\sin\varphi\sin\theta\,\vj
+              +\cos\varphi\,\vk \Big)\ \dee{\theta}\, d\varphi
+    </mrow><mrow>
+    \vF\cdot \vn \,\dee{S} &amp;= z(\theta,\varphi)\,\vk \cdot \vn \,\dee{S}
+               = a^3 \sin\varphi\cos^2\varphi\ \dee{\theta}\,d\varphi
+    </mrow>
+    </md>
+    and
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot \vn \,\dee{S}
+    &amp;= a^3\int_0^\pi d\varphi\int_0^{2\pi}\dee{\theta}\ \sin\varphi\,\cos^2\varphi
+    </mrow><mrow>
+    &amp;=2\pi a^3 \int_0^\pi d\varphi \ \sin\varphi\,\cos^2\varphi
+    =2\pi a^3\left[-\frac{1}{3}\cos^3\varphi\right]_0^\pi
+    </mrow><mrow>
+    &amp;=\frac{4}{3}\pi a^3
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) Call the solid <m>x^2+y^2+z^2\leqslant a^2</m>, <m>\cV</m>.
+    As
+    <me>
+    \vnabla\cdot\vF
+    =\pdiff{}{x}(0)
+    +\pdiff{}{y}(0)
+    +\pdiff{}{z}(z)
+    =1
+    </me>
+    le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vF\ \dee{V}
+    =\iiint_{\cV} \ \dee{V}
+    =\text{Volume}(V)
+    =\frac{4}{3}\pi a^3
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+     Soit
+    <ul>
+    <li>
+    <m>\ \vF=zy^3\,\vi +yx\, \vj +(2z+y^2)\vk \ </m> et
+    </li>
+    <li>
+     <m>\cV</m> la région de <m>\R^3</m> définie par
+    <me>
+    0\leqslant z\leqslant \frac{9-x^2-y^2}{9+x^2+y^2}
+    </me>
+    et
+    </li>
+    <li>
+    <m>\cD</m> la partie surface intégieur de <m>\cV</m>. Puisque <m>\frac{9-x^2-y^2}{9+x^2+y^2}</m> est positive pour<m>x^2+y^2 \lt  9</m> et négative pour  <m>x^2+y^2 \gt  9</m>, la surface inférieure est  <m>z=0</m>, <m>x^2+y^2\leqslant 9</m>.
+    </li>
+    <li><p>
+    Soit <m>\cS</m> la portion courbée du bord de <m>\cV</m>. Il s'agit de <m>z={9-x^2-y^2\over 9+x^2+y^2}</m>, <m>x^2+y^2\leqslant 9</m>. Voici une esquisse
+    </p>
+    <sidebyside width="35%">
+      <image source = "images/CLP4-figs/pfigs/divThmA"/>
+    </sidebyside>
+
+    </li>
+    </ul>
+    Soit  <m>|\cV| </m> le volume de  <m>\cV</m>. Calculer, en termes de  <m>|\cV| </m>,
+    <ol marker="a">
+    <li>
+    <m>\ds \iint_{D}\vF\cdot \vn \,\dee{S}</m> avec  <m>\vn </m> pointant vers le bas
+    </li>
+    <li>
+    <m>\ds \iiint_{\cV}\vnabla\cdot F\,\dee{V}</m>
+    </li>
+    <li>
+    <m>\ds \iint_{\cS}\vF\cdot\vn \,\dee{S}</m> avec <m>\vn </m> pointant vers l'extérieur
+    </li>
+    </ol>
+    Utiliser le théorème de la divergence  pour répondre à moins une des questions  (a), (b) ou (c).
+    </p></statement>
+
+    <hint><p>
+    (a) Penser aux coordonnées polaires.
+    </p>
+
+    <p>(b) Puisque <m>x</m> est impaire, <m>\iiint_{\cV} x\,\dee{V}=0</m>.
+    </p>
+
+    </hint>
+
+    <answer><p>
+    (a) <m>-\frac{81}{4}\pi</m> </p><p>
+    (b) <m>2|\cV| </m>  </p><p>
+    (c) <m>2|\cV| +\frac{81}{4}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    (a)
+    On <m>D</m>, <m>z=0</m> and
+    <me>
+    \vn =-\vk \qquad
+    \dee{S}=\dee{x}\,\dee{y}\qquad
+    \vF\cdot\vn =-y^2
+    </me>
+    so that
+    <me>
+    \iint_{D}\vF\cdot \vn \,\dee{S}
+    =-\iint_D y^2\,\dee{x}\,\dee{y}
+    </me>
+    Switching to polar coordinates
+    <md>
+    <mrow>
+    \iint_{D}\vF\cdot \vn \,\dee{S}
+    &amp;=-\int_0^3 dr\,r\int_0^{2\pi}\dee{\theta}\ \big(r\sin\theta\big)^2
+    </mrow><mrow>
+    &amp;=-\bigg[\int_0^3 dr\,r^3\bigg]\ \bigg[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\bigg]
+    </mrow><mrow>
+    &amp;=-\frac{3^4}{4}\ \bigg[\int_0^{2\pi}\dee{\theta}\ \frac{1-\cos(2\theta)}{2}\bigg]
+    </mrow><mrow>
+    &amp;=-\frac{81}{4}\bigg[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\bigg]_0^{2\pi}
+    </mrow><mrow>
+    &amp;=-\frac{81}{4}\pi
+    </mrow>
+    </md>
+    For an efficient, sneaky, way to evaluate
+    <m>\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}</m>, see Example
+    <xref ref="eg_workIntegralB"/>.
+    </p>
+
+    <p>(b)
+    Observe that <m>\vnabla\cdot \vF=x+2</m>. Since <m>x</m> is odd and <m>\cV</m> is invariant
+    under <m>x\rightarrow -x</m>, we have <m>\iiint_{\cV} x\,\dee{V}=0</m> (more details
+    below) so that
+    <me>
+    \iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    =\iiint_{\cV} (x+2)\,\dee{V}
+    =2\iiint_{\cV} \,\dee{V}
+    =2|\cV|
+    </me>
+    Here are two more detailed arguments showing that <m>\iiint_{\cV} x\,\dee{V}=0</m>.
+    </p>
+
+    <p><em>Argument 1:</em> We may rewrite the equation
+    <m>z=\frac{9-x^2-y^2}{9+x^2+y^2}</m> of the curved boundary of <m>\cV</m>
+    as
+    <me>
+    z(9+x^2+y^2) = 9-x^2-y^2 \iff
+    x^2+y^2 = \frac{9(1-z)}{1+z}
+    </me>
+    This is the equation of the circle of radius
+    <m>r(z)=\sqrt{\frac{9(1-z)}{1+z}}</m> centred on <m>x=y=0</m>.
+    So <m>z</m> runs from <m>0</m> to <m>1</m>, and for each fixed <m>0\leqslant z\leqslant 1</m>,
+    <m>y</m> runs from  <m>-r(z)</m> to <m>r(z)</m>
+    and, for each fixed <m>y</m> and <m>z</m>, <m>x</m> runs from <m>-\sqrt{r(z)^2-y^2}</m>
+    to <m>\sqrt{r(z)^2-y^2}</m>. So
+    <md>
+    <mrow>
+    \iiint_{\cV} x\,\dee{V}
+    =\int_0^1 \dee{z}\int_{-r(z)}^{r(z)}\dee{y}
+           \int_{-\sqrt{r(z)^2-y^2}}^{\sqrt{r(z)^2-y^2}} \dee{x}\ x
+    =\int_0^1 \dee{z}\int_{-r(z)}^{r(z)}\dee{y}\ 0
+    =0
+    </mrow>
+    </md>
+    since <m>\int_{-a}^a x\ \dee{x}=0</m> for any <m>a \gt 0</m>.
+    </p>
+
+    <p><em>Argument 2:</em>  As we have observed above, the
+    curved boundary of <m>\cV</m> is <m>x^2+y^2 = \frac{9(1-z)}{1+z}</m> which
+    is invariant under rotations about the <m>z</m>--axis. By that symmetry, the
+    centroid of <m>\cV</m> lies on the <m>z</m>-axis. Recall that, for any solid <m>\cV</m>,
+    the centroid of <m>\cV</m> is <m>(\bar x,\bar y,\bar z)</m> with
+    <me>
+    \bar x = \frac{\iiint_{\cV} x \dee{V}}{\iiint_{\cV} \dee{V}}\qquad
+    \bar y = \frac{\iiint_{\cV} y \dee{V}}{\iiint_{\cV} \dee{V}}\qquad
+    \bar z = \frac{\iiint_{\cV} z \dee{V}}{\iiint_{\cV} \dee{V}}
+    </me>
+    So
+    <me>
+    \iiint_{\cV} x\,\dee{V} = \bar x\, \text{Volume}(V) =0 \qquad\text{and}\qquad
+    \iiint_{\cV} y\,\dee{V} = \bar y\,  \text{Volume}(V) =0
+    </me>
+    </p>
+
+    <p>(c)
+    By le théorème de la divergence,
+    <me>
+    \iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    =\iint_{\partial V}\vF\cdot \vn \,\dee{S}
+    =\iint_{\cS}\vF\cdot \vn \,\dee{S}
+    +\iint_D\vF\cdot \vn \,\dee{S}
+    </me>
+    so that
+    <me>
+    \iint_{\cS}\vF\cdot \vn \,\dee{S}
+    =\iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    -\iint_D\vF\cdot \vn \,\dee{S}
+    =2|\cV| +\frac{81}{4}\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    Évaluer, par deux méthodes,  l'intégrale  <m>\iint_{\cS}\vF\cdot \vn \,\dee{S}</m>, où <m>\vF=(x,y,1)</m>, <m>\cS</m> est la surface <m>z=1-x^2-y^2</m> pour <m>x^2 y^2 \leqslant 1</m>, et <m>\vn </m> est le vecteur normal pointant vers le haut.
+    <ol marker="a">
+    <li>
+    D'abord par un calcul direct de l'intégrale de surface;
+    </li>
+    <li>
+    Puis grace au  théorème de la divergence.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (a) Penser aux coordonnées polaires.
+    </p>
+
+    <p>(b) Le volume du solide peut être calculé au moyen de tranches horizontales minces.
+    </p>
+
+    </hint>
+
+    <answer><p>
+    (a), (b) <m>2\pi</m>
+    </p></answer>
+
+    <solution><p>
+    (a)  Let <m>G(x,y,z) = x^2+y^2+z</m>. Then the surface is <m>G(x,y,z)=1</m>
+    and <m>\vnabla G(x,y,z) = 2x\,\vi +2y\,\vj +\vk </m>  is upward pointing (i.e. the coefficient of
+    <m>\vk </m> is positive)  so that, by (<xref ref="eq_SUdSimplicit"/>),
+    <md>
+    <mrow>
+    \vn \,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\vk }\ \dee{x}\,\dee{y}
+    =\frac{2x\,\vi +2y\,\vj +\vk }{1}\,\dee{x}\,\dee{y}
+    </mrow><mrow>
+    &amp;=(2x\,\vi +2y\,\vj +\vk )\,\dee{x}\,\dee{y}
+    </mrow><mrow>
+    \vF\cdot\vn \,\dee{S}
+    &amp;=\big[x\,\vi +y\,\vj +\vk \big]\cdot
+              \big[2x\,\vi +2y\,\vj +\vk \big]\,\dee{x}\,\dee{y}
+    </mrow><mrow>
+    &amp;=\big[2x^2+2y^2+1\big]\,\dee{x}\,\dee{y}
+    </mrow>
+    </md>
+    Switching to polar coordinates
+    <me>
+    \iint_{\cS}\vF\cdot \vn \,\dee{S}
+    =\int_0^1dr\ r\int_0^{2\pi}\dee{\theta}\ (2r^2+1)
+    =2\pi\left[\frac{2}{4} r^4+\frac{1}{2} r^2\right]_0^1
+    =2\pi
+    </me>
+    </p>
+
+    <p>(b) Call the solid <m>0\leqslant z\leqslant 1-x^2-y^2</m>, <m>\cV</m>.
+    </p>
+
+    <sidebyside width="40%">
+    <image source = "images/CLP4-figs/pfigs/divThmB"/>
+    </sidebyside>
+    <p>
+    Let  <m>D</m> denote the bottom surface of <m>\cV</m>.
+    The disk <m>D</m> has radius <m>1</m>, area <m>\pi</m>, <m>z=0</m> and outward normal <m>-\vk </m>,
+    so that
+    <me>
+    \iint_{D}\vF\cdot\vn \,\dee{S}
+    =-\iint_{D}\vF\cdot\vk \,\dee{x}\,\dee{y}
+    =-\iint_{D}\dee{x}\,\dee{y}
+    =-\pi
+    </me>
+    As
+    <me>
+    \vnabla\cdot\vF
+    =\pdiff{}{x}(x)
+    +\pdiff{}{y}(y)
+    +\pdiff{}{z}(1)
+    =2
+    </me>
+    le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vF\ \dee{V}
+    -\iint_{D}\vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV} 2\ \dee{V} -(-\pi)
+    </mrow><mrow>
+    &amp;=\pi + 2\iiint_{\cV} \dee{V}
+    </mrow>
+    </md>
+    To evaluate the volume <m>\iiint_{\cV} \dee{V}</m>, we slice the <m>\cV</m> into
+    thin horizontal pancakes. Here is a sketch of the pancake at height
+    <m>z</m>.
+    </p>
+
+    <sidebyside width="45%">
+    <image source = "images/CLP4-figs/pfigs/divThmC"/>
+    </sidebyside>
+
+    <p>
+    Its cross-section is a circular disk of radius <m>\sqrt{1-z}</m>,
+    and hence of area <m>\pi(1-z)</m>. As the pancake has thickness <m>\dee{z}</m>,
+    it has volume <m>\pi(1-z)\,\dee{z}</m>. So
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\pi+2\int_0^1 \dee{z}\iint_{x^2+y^2\leqslant 1-z} \dee{x}\,\dee{y}
+    =\pi+2\int_0^1 \dee{z}\ \pi(1-z)
+    </mrow><mrow>
+    &amp;=\pi+2\pi\left[z-\frac{1}{2}z^2\right]_0^1
+    =2\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    
+    <exercise>
+      <!-- <title><from exam>M317 2012D</fromexam></title> --> 
+    <statement><p><ol marker="a">
+    <li>
+      Calculer la divergence du champ de vecteurs <m>\vF = (z + \sin y, zy, \sin x \cos y)</m>.
+    </li>
+    <li>
+    Calculer le flux de <m>\vF</m> à travers la sphère de rayon  <m>3</m> centrée à l'origine dans  <m>\R^3</m> .
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    le théorème de la divergence,  bien entendu!
+    </p></hint>
+
+    <answer><p>
+    (a) <m>z</m> </p><p>
+    (b) <m>0</m>
+    </p></answer>
+
+    <solution><p> (a)
+    The divergence is
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(z+\sin y\big)
+         +\pdiff{}{y}\left(zy\right)
+         +\pdiff{}{z}\big(\sin x\cos y\big)
+    </mrow><mrow>
+       &amp;=   z
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (b) Let
+    <md>
+    <mrow>
+    V=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant 9}
+    </mrow>
+    </md>
+    By le théorème de la divergence  (note that we are to find the <em>outward</em>
+    flux),
+    <md>
+    <mrow>
+    \iint_{\partial V}  \vF\cdot\vn \,\dee{S}
+    &amp;= \iiint_{\cV} \vnabla\cdot \vF\ \dee{V}
+    = \iiint_{\cV} z\ \dee{V}
+    = 0
+    </mrow>
+    </md>
+    since <m>z</m> is odd.
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    La paroi d'un silo à grains est décrite par la portion du cylindre  <m>x^2 + y^2 = 1</m> avec <m>0 \leqslant z\leqslant 1</m>. Le toit du silo est la portion de la sphère  <m>x^2+ y^2+ z^2 = 2</m> qui se trouve à l'intérieur du cylindre, au dessus du plan <m>xy</m>. Calculer le flux du champ de vecteurs
+    <me>
+    \vV(x,y,z) = (x^2yz\,,\, yz+e^xz\,,\, x^2+y )
+    </me>
+    vers l'extérieur du.
+    </p></statement>
+
+    <hint><p>
+    C'est facile d'utiliser théorème de la divergence, mais il ne faut pas oublier la base du silo.
+    </p></hint>
+
+    <answer><p>
+    <m>\pi</m>
+    </p></answer>
+
+    <solution><p>
+    Call the silo <m>\cV</m>.
+    Call the sides and top of the silo <m>\cS</m>. Call the base of the silo (namely,
+    <m>x^2+y^2\leqslant 1</m>, <m>z=0</m>) <m>B</m>. By le théorème de la divergence,
+    <md>
+    <mrow>
+    \iint_{\cS} \vV\cdot\vn \ \dee{S} + \iint_B \vV\cdot(-\vk )\ \dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vV\ \dee{V}
+    </mrow><mrow>
+    \iint_{\cS} \vV\cdot\vn \ \dee{S}
+            - \iint_{x^2+y^2\leqslant 1} (x^2+y)\ \dee{x}\,\dee{y}
+    &amp;=\iiint_{\cV}(2xyz+z)\ \dee{V}
+    </mrow>
+    </md>
+    By oddness under <m>Y\rightarrow -y</m>,
+     <m>\iint_{x^2+y^2\leqslant 1} y\ \dee{x}\,\dee{y}
+            = \iiint_{\cV} xyz\ \dee{V}=0</m>, so
+    <md>
+    <mrow>
+    \iint_{\cS} \vV\cdot\vn \ \dee{S}
+    &amp;=\iint_{x^2+y^2\leqslant 1} x^2\ \dee{x}\,\dee{y} +\iiint_{\cV} z\ \dee{V}
+    </mrow><mrow>
+    &amp;=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\ r\ (\overbrace{r\cos\theta}^{x})^2
+               +\iiint_{\cV} z\ \dee{V}
+    </mrow>
+    </md>
+    We can evaluate the volume integral by decomposing <m>\cV</m>
+    into thin horizontal pancakes. See Section 1.6 in the CLP-2 text.
+    For <m>0\leqslant z\leqslant 1</m>, the horizontal cross-section of the silo at height
+    <m>z</m> is a circle of radius <m>1</m> and hence of area <m>\pi</m>. For <m>z\ge1</m>,
+    the horizontal cross-section of the silo at height <m>z</m> is again a
+    circle. Its radius is determined by the equation <m>x^2+ y^2+ z^2 = 2</m> of
+    the top of the silo. The radius is <m>\sqrt{2-z^2}</m>, so the cross-section
+    has area <m>\pi(2-z^2)</m>. The biggest that <m>z</m> can get is <m>\sqrt{2}</m>. Thus
+    <md>
+    <mrow>
+    \iint_{\cS} \vV\cdot\vn \ \dee{S}
+    &amp;=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta} \ r\ (r\cos\theta)^2+\int_0^1 dz\ \pi z
+    +\int_1^{\sqrt{2}}dz\ \pi(2-z^2) z
+    </mrow><mrow>
+    &amp;=\left[\int_0^1 \dee{r}\ r^3\right]
+       \left[\int_0^{2\pi}\dee{\theta} \ \frac{\cos(2\theta)+1}{2}\right]+\int_0^1 dz\ \pi z
+    </mrow><mrow>
+    &amp;\hskip1in+\int_1^{\sqrt{2}}dz\ \pi(2-z^2) z
+    </mrow><mrow>
+    &amp;=\left[\frac{r^4}{4}\right]_0^1\pi
+     +\left[\pi\frac{z^2}{2}\right]_0^1
+     +\pi\left[z^2-\frac{z^4}{4}\right]_1^{\sqrt{2}}
+    </mrow><mrow>
+    &amp;=\frac{\pi}{4}+\frac{\pi}{2}+\pi\left[1-\frac{3}{4}\right]
+    </mrow><mrow>
+    &amp;=\pi
+    </mrow>
+    </md>
+    For an efficient, sneaky, way to evaluate
+    <m>\int_0^{2\pi} \cos^2 \theta\ \dee{\theta}</m>, see Example
+    <xref ref="eg_workIntegralB"/>.
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    Soit  <m>\cB</m> la boule de volume   <m>V</m> centrée au point <m>(x_0, y_0, z_0)</m>, et soit  <m>\cS</m> la sphère qui est le bord de  <m>\cB</m>. Calculer le flux de <m>\vF = x^2\vi  + xy\vj +(3 z - yz)\vk </m> vers l'extérieur de <m>\cB</m>.
+    </p></statement>
+
+    <hint><p>
+    Le théorème de la divergence,  bien entendu!
+    L'intégraler peut être évaluée facilement grâce au fait que pour tout solide  <m>\cV</m> dans <m>\R^3</m>,
+    <md>
+    <mrow>
+    \iiint_\cV\dee{V}=\text{Volume}(\cV)
+    </mrow>
+    </md>
+    et
+    <md>
+    <mrow>
+    \bar x =\frac{\iiint_\cV x\,\dee{V}}{\text{Volume}(\cV)}\qquad
+    \bar y =\frac{\iiint_\cV y\,\dee{V}}{\text{Volume}(\cV)}\qquad
+    \bar z =\frac{\iiint_\cV z\,\dee{V}}{\text{Volume}(\cV)}
+    </mrow>
+    </md>
+    où <m>(\bar x,\bar y,\bar z)</m> est le barycentre <m>\cV</m>.
+    </p></hint>
+
+    <answer><p>
+    <m>[3+3x_0-y_0]\,V</m>
+    </p></answer>
+
+    <solution><p>
+    Apply le théorème de la divergence.  The divergence of <m>\vF</m> is
+    <me>
+    \vnabla\cdot\vF = \pdiff{}{x}(x^2)
+    +\pdiff{}{y}(xy)
+    +\pdiff{}{z}(3 z - yz)
+    =3+3x-y
+    </me>
+    So
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    =\iiint_B\vnabla\cdot\vF\ \dee{V}
+    =\iiint_B(3+3x-y)\ \dee{V}
+    </mrow>
+    </md>
+    To evaluate the integrals of <m>x</m> and <m>y</m> we use that, for any solid <m>\cV</m>
+    in <m>\R^3</m>,
+    <md>
+    <mrow>
+    \iiint_\cV\dee{V}=\text{Volume}(\cV)\qquad
+    </mrow>
+    </md>
+    and
+    <md>
+    <mrow>
+    \bar x =\frac{\iiint_\cV x\,\dee{V}}{\text{Volume}(\cV)}\qquad
+    \bar y =\frac{\iiint_\cV y\,\dee{V}}{\text{Volume}(\cV)}\qquad
+    \bar z =\frac{\iiint_\cV z\,\dee{V}}{\text{Volume}(\cV)}
+    </mrow>
+    </md>
+    where <m>(\bar x,\bar y,\bar z)</m> is the centroid of <m>\cV</m>.
+    Our ball has volume <m>\cV</m> and centroid
+    <m>(\bar x,\bar y,\bar z) = (x_0,y_0,z_0)</m>.
+    So
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    = V[3+3\bar x-\bar y]
+    =[3+3x_0-y_0]\,V
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2010D</fromexam></title> --> 
+    <statement><p>
+    On considère le champ
+    <me>
+    \vF(x, y, z) = \big( 1 + z^{1+z^{1+z}}\,,\, 1 + z^{1+z^{1+z}}\,,\,1\big).
+    </me>
+    Soit <m>\cS</m> la portion de la surface     <me>
+    x^2 + y^2 = 1 - z^4
+    </me>
+    se trouvant au dessus du plan  <m>xy</m>. Quel est le flux de  <m>\vF</m> vers le bas, à travers <m>\cS</m>?
+    </p></statement>
+
+    <hint><p>
+    La complexité de <m>\vF</m> suggère que le flux ne devrait pas être calculé directement.
+    </p></hint>
+
+    <answer><p>
+    <m>-\pi</m>
+    </p></answer>
+
+    <solution><p> Let
+    <me>
+    V=\Set{(x,y,z)}{x^2+y^2\leqslant 1-z^4,\ 0\leqslant z\leqslant 1}
+    </me>
+    Then the boundary, <m>\partial V</m>, of <m>\cV</m>, with the orientation
+    that is used in le théorème de la divergence,  consists of two parts
+    <ul>
+    <li>
+    the surface <m>\cS</m>, but with the upward pointing normal, and
+    </li>
+    <li>
+    the disk <m>D=\Set{(x,y,z)}{x^2+y^2\leqslant 1,\ z=0}</m>, with normal <m>-\vk </m>.
+    </li>
+    </ul>
+    So le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    =\iint_{\partial V}\vF\cdot\vn \,\dee{S}
+    =- \iint_{\cS}\vF\cdot\vn \,\dee{S}
+      +\iint_D\vF\cdot(-\vk )\,\dee{S}
+    </mrow>
+    </md>
+    As <m>\vnabla\cdot\vF=0</m> and <m>\vF(x,y,0) = \big( 1 \,,\, 1 \,,\,1\big)</m>
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    =\iint_D\vF\cdot(-\vk )\,\dee{S}
+    =-\iint_D\dee{S}
+    =-\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2002A</fromexam></title> --> 
+    <statement><p>
+    Utiliser le théorème de la divergence  pour calculer le flux de <m>x\vi +y\vj +2z\vk </m> à travers la portion de l'ellipsoïde
+    <me>
+    x^2+y^2+2z^2=2
+    </me>
+    telle que  <m>z\geqslant 0</m>. [Note: l'ellipsoïde <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1</m> a un volume égal à <m>\frac{4}{3}\pi abc</m>.]
+    </p></statement>
+
+    <hint><p>
+    La surface n'est pas fermée.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{16}{3}\pi</m>
+    </p></answer>
+
+    <solution><p>
+     Let <m>\cV</m> be the solid <m>x^2+y^2+2z^2\leqslant 2</m>,
+    <m>z\geqslant 0</m>. The surface of <m>\cV</m> consists of the half-ellipsoid
+    <m>S=\Set{(x,y,z)}{x^2+y^2+2z^2=2,\ z\geqslant 0}</m>, on top with upward pointing normal,
+    and the disk <m>D=\set{(x,y,z)}{z=0,\ x^2+y^2\leqslant 2}</m>, on the bottom with
+    normal <m>-\vk </m>.
+    Call the vector field <m>\vF</m>. By le théorème de la divergence
+    <me>
+    \iint_{\cS}\vF\cdot\vn \ \dee{S}
+    +\iint_D\vF\cdot(-\vk )\,\dee{S}
+    =\iiint_{\cV}\vnabla\cdot\vF\ \dee{V}
+    =\iiint_{\cV} 4\ \dee{V}
+    </me>
+    The ellipsoid has <m>a=\sqrt{2}</m>, <m>b=\sqrt{2}</m>, <m>c=1</m> and volume
+    <m>\frac{4}{3}\pi abc=\frac{8}{3}\pi</m>. So
+    <me>
+    \iiint_{\cV} 4\ \dee{V}=4\times\half({\rm Volume\ of\ the\ ellipsoid})=\frac{16\pi}{3}
+    </me>
+    On <m>D</m>, <m>z=0</m> and <m>\iint_D x\,\dee{S}=\iint_D y\,\dee{S}=0</m>
+    because <m>x</m> and <m>y</m> are odd.
+    So
+    <me>
+    \iint_D\vF\cdot(-\vk )\,\dee{S}
+    =\iint_D(x\vi +y\vj +0\vk )\cdot(-\vk )\,\dee{S}
+    =0
+    </me>
+    and the desired flux is
+    <me>
+    \iint_{\cS}\vF\cdot\vn \ \dee{S}=\iiint_{\cV} 4\ \dee{V}
+    =\frac{16}{3}\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2010A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\vF(x,y,z) = \vr/r^3</m> où <m>\vr= x\,\vi  + y\,\vj  + z\,\vk </m> et <m>r = |\vr|</m>.
+    <ol marker="a">
+    <li>
+    Calculer  <m>\vnabla \cdot \vF</m>.
+    </li>
+    <li>
+    Calculer le flux de  <m>\vF</m> vers l'extérieur, à travers la surface sphérique <m>x^2 + y^2 + z^2 = a^2</m>.
+    </li>
+    <li>
+    Est-ce que les résultats des parties (a) et (b) contredisent le  théorème de la divergence? Expliquer.
+    </li>
+    <li>
+    Soit <m>\cE</m> la région solide bornée par les surfaces <m>z^2 - x^2 - y^2 + 1 = 0</m>, <m>z = 1</m> et <m>z = -1</m>. Soit  <m>\sigma</m> la surface qui est le bord de  <m>\cE</m>. Calculer le flux de  <m>\vF</m> vers l'extérieur, à travers <m>\sigma</m>.
+    </li>
+    <li>
+    Soit <m>\cR</m> la région solide limitée par les surfaces
+    <m>z^2 - x^2 - y^2 + 4y - 3 = 0</m>, <m>z = 1</m> et <m>z = - 1</m>. Soit  <m>\Sigma</m> la surface qui est le bord de <m>\cR</m>. Calculer le flux de  <m>\vF</m> vers l'estérieur, à travers <m>\Sigma</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (a), (b), (c) Revoir la mise en garde <xref ref="warn_divThm"/>.
+    </p>
+
+    <p>(d) le théorème de la divergence peut être utilisé <mdash/> avec précaution.
+    </p>
+
+    <p>(e) L'équation gagnerait à être écrite à nouveau en complétant un carré. 
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\vnabla \cdot \vF(x,y,z)=0</m> sauf à <m>(x,y,z)=(0,0,0)</m>, où <m>\vF</m> n'est pas défini.
+    </p>
+
+    <p>(b) <m>4\pi</m> </p><p>
+    (c) Non.  </p><p>
+    (d) <m>4\pi</m> </p><p>
+    (e) <m>0</m>
+    </p>
+
+    </answer>
+
+    <solution><p> (a)
+    If <m>(x,y,z)\ne\vZero</m>,
+    <md>
+    <mrow>
+    &amp;\vnabla\cdot\vF(x,y,z)
+    =\pdiff{}{x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+    +\pdiff{}{y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+    </mrow><mrow>
+    &amp;\hskip1.25in
+    +\pdiff{}{z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+    </mrow><mrow>
+    &amp;\hskip0.25in
+    =\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+    +\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+    </mrow><mrow>
+    &amp;\hskip1.25in
+    +\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+    </mrow><mrow>
+    &amp;\hskip0.25in
+    =\frac{3\big[x^2+y^2+z^2\big]-3x^2-3y^2-3z^2}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+    </mrow><mrow>
+    &amp;\hskip0.25in=0
+    </mrow>
+    </md>
+    If <m>(x,y,z)=\vZero</m>, <m>\vF(x,y,z)</m> is not defined
+    and hence <m>\vnabla\cdot\vF(x,y,z)</m> is also not defined.
+    </p>
+
+    <p>  (b)
+    Let <m>a \gt 0</m>. Write
+    <m>\sigma_a = \Set{(x,y,z)}{x^2+y^2+z^2 = a^2}</m>. The outward unit normal
+    to <m>\sigma_a</m> is <m>\vn  = \frac{\vr}{|\vr|}</m> so that
+    <md>
+    <mrow>
+    \int_{\sigma_a}\vF\cdot\vn \, \dee{S}
+    &amp;=\int_{|\vr|=a}  \frac{\vr}{|\vr|^3}\cdot \frac{\vr}{|\vr|}\ \dee{S}
+    =\int_{|\vr|=a}  \frac{1}{|\vr|^2}\ \dee{S}
+    =\frac{1}{a^2}\int_{|\vr|=a}\dee{S}
+    </mrow><mrow>
+    &amp;=\frac{1}{a^2}\big(4\pi a^2\big)
+    =4\pi\ne 0
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (c)
+    No, the results of (a) and (b) do not contradict le théorème de la divergence.
+    One hypothesis of le théorème de la divergence  is that <m>\vnabla\cdot\vF</m>
+    (in fact all first order derivatives of <m>\vF</m>) be defined and continuous
+    throughout the solid that <m>\vnabla\cdot\vF</m> is to be integrated over.
+    That hypothesis is violated in this case.
+    </p>
+
+    <p>  (d)
+    Let's first figure out what the surface <m>z^2 - x^2 - y^2 + 1 = 0</m>,
+    i.e. the surface <m>x^2 + y^2 = 1 +z^2</m>, looks like. For each <m>z_0</m>, the
+    <m>z=z_0</m> cross-section of this surface is the circle <m>x^2+y^2=1+z_0^2</m>.
+    The radius of this circle is <m>1</m> when <m>z_0=0</m> and grows as <m>|z_0|</m>
+    increases. So the solid region <m>E</m> looks like an hourglass drum, as sketched
+    in the figure on the left below.
+    </p>
+
+    <sidebyside widths="20% 27%" valign="middle">
+      <image source = "images/CLP4-figs/pfigs/hyperboloid1"/>
+      <image source = "images/CLP4-figs/pfigs/hyperboloidHole"/>
+    </sidebyside>
+
+    <p>
+    We are going to use le théorème de la divergence  to Calculer le flux de  <m>\vF</m>
+    outà travers the surface <m>\sigma</m> of <m>E</m>. However we cannot apply the
+    divergence theorem using <m>E</m> as the solid, because <m>\vF</m> is not defined
+    at the origin, <m>(0,0,0)</m>, which is a point in <m>E</m>. So we pick any
+    <m>0 \lt a \lt 1</m>, and define the auxiliary solid
+    <me>
+    E_a = \Set{(x,y,z)}{ x^2+y^2+z^2\geqslant a^2,\
+                        x^2+y^2\leqslant 1+z^2,\
+                        -1\leqslant z\leqslant 1}
+    </me>
+    The solid <m>E_a</m> is constructed from the solid <m>E</m> by removing
+    the ball <m>x^2+y^2+z^2\leqslant a^2</m> from it. A side view of <m>E_a</m> is sketched
+    in the figure on the right above. As in part (b), denote by <m>\sigma_a</m>
+    the surface <m>x^2+y^2+z^2=a^2</m> with <em>outward</em> pointing normal.
+    Then the boundary of <m>E_a</m> is <m>\partial E_a=\sigma-\sigma_a</m>, meaning that
+    it consists of two parts. One part is the boundary, <m>\sigma</m>, of <m>E</m>,
+    with outward pointing normal. The other part is the surface
+    <m>x^2+y^2+z^2=a^2</m>, but with normal pointing into the sphere, opposite to the
+    normals for <m>\sigma_a</m>. Consequently le théorème de la divergence  gives
+    <md>
+    <mrow>
+    0=\iiint_{E_a} \vnabla \cdot \vF\,\dee{V}
+     =\iint_{\partial E_a} \vF\cdot\vn \,\dee{S}
+     = \iint_{\sigma} \vF\cdot\vn \,\dee{S}
+          -\iint_{\sigma_a} \vF\cdot\vn \,\dee{S}
+    </mrow>
+    </md>
+    so that, by part (b)
+    <md>
+    <mrow>
+    \iint_{\sigma} \vF\cdot\vn \,\dee{S}
+    =\iint_{\sigma_a} \vF\cdot\vn \,\dee{S}
+    =4\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (e)
+    The equation <m>z^2 - x^2 - y^2 + 4y - 3 = 0</m> can be rewritten as
+    <me>
+    x^2 + (y-2)^2 = 1+z^2
+    </me>
+    As is part (d), for each <m>z_0</m>, the
+    <m>z=z_0</m> cross-section of this surface is a circle <m>x^2+(y-2)^2=1+z_0^2</m>
+    of radius <m>\sqrt{1+z_0^2}</m>. But this circle is centred at
+    <m>(0,2,z_0)</m>, whereas the corresponding circle in part (d) was centred at
+    <m>(0,0,z_0)</m>. The solid <m>R</m> again has the shape of an hourglass drum.
+    But while the origin <m>(0,0,0)</m> was in <m>E</m>, it is <em>not</em> in
+    <me>
+    R=\Set{(x,y,z)}{x^2+(y-2)^2\leqslant 1+z^2,\ -1\leqslant z\leqslant 1}
+    </me>
+    So <m>\vnabla \cdot \vF=0</m> <em>throughout all</em> of <m>R</m> and the
+    divergence theorem gives
+    <md>
+    <mrow>
+    \iint_{\Sigma} \vF\cdot\vn \,\dee{S}
+    =\iint_{\partial R} \vF\cdot\vn \,\dee{S}
+    =\iiint_{R} \vnabla \cdot \vF\,\dee{V}
+    =0
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2009A</fromexam></title> --> 
+    <statement><p>
+    Considérer l'ellipsoide <m>\cS</m> donné par
+    <me>
+    x^2 + \frac{y^2}{4} +\frac{z^2}{4} = 1
+    </me>
+    orienté par le vecteur normal qui pointe vers l'extérieur.
+    </p>
+
+    <p><ol marker="a">
+    <li>
+    Donner un paramétrage de  <m>\cS</m>.
+    </li>
+    <li>
+    Calculer le flux  <m>\iint_{\cS} \vF\cdot\vn \, \dee{S}</m> du champ     <me>
+    \vF(x,y,z) = (x, y, z)
+    </me>
+    </li>
+    <li>
+    Vérifiez votre réponse de (b) avec le théorème de la divergence.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (a) Modifiez convenablement les coordonnées sphériques. N'oubliez pas de bien spécifier le domaine des paramètres.
+    </p></hint>
+
+    <answer><p>
+    (a)
+    <md>
+    <mrow>
+    &amp;\vr(\theta,\varphi)
+    =\sin\varphi\cos\theta\,\vi
+      +2\sin\varphi\sin\theta\,\vj
+      +2\cos\varphi\,\vk
+    </mrow><mrow>
+    &amp;0\le\theta \lt 2\pi,\ 0\leqslant \varphi \leqslant \pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) <m>16\pi</m> </p><p>
+    (c) <m>16\pi</m>, à nouveau.
+    </p>
+
+    </answer>
+
+    <solution><p> (a)
+    If the surface were the sphere <m>x^2+y^2+z^2=1</m>, we could parametrize
+    it using the spherical coordinates  <m>\theta</m> and <m>\varphi</m> (with the radial
+    spherical coordinate <m>\rho=1</m>).
+    <md>
+    <mrow>
+    x&amp;=\sin\varphi\cos\theta
+    </mrow><mrow>
+    y&amp;=\sin\varphi\sin\theta
+    </mrow><mrow>
+    z&amp;=\cos\varphi
+    </mrow>
+    </md>
+    with <m>0\le\theta \lt 2\pi</m>, <m>0\leqslant \varphi \leqslant \pi</m>. Our surface is not a sphere,
+    but the equation looks like the equation of the sphere with the units of the
+    <m>y</m>- and <m>z</m>-coordinates changed. In particular, if we define <m>\tilde y =y/2</m>
+    and <m>\tilde z =z/2</m>, so that <m>y=2\tilde y</m> and <m>z=2\tilde z</m>, then on our
+    surface
+    <md>
+    <mrow>
+    1=x^2 + \frac{y^2}{4} +\frac{z^2}{4}
+     =x^2 + \frac{(2\tilde y)^2}{4} +\frac{(2\tilde z)^2}{4}
+     =x^2+\tilde y^2 +\tilde z^2
+    </mrow>
+    </md>
+    and we can parametrize
+    <md>
+    <mrow>
+    x&amp;=\sin\varphi\cos\theta
+    </mrow><mrow>
+    \tilde y&amp;=\sin\varphi\sin\theta
+    </mrow><mrow>
+    \tilde z&amp;=\cos\varphi
+    </mrow>
+    </md>
+    and then
+    <md>
+    <mrow>
+    x&amp;=\sin\varphi\cos\theta
+    </mrow><mrow>
+    y&amp;=2\tilde y=2\sin\varphi\sin\theta
+    </mrow><mrow>
+    z&amp;=2\tilde z=2\cos\varphi
+    </mrow>
+    </md>
+    or
+    <md>
+    <mrow>
+    &amp;\vr(\theta,\varphi)
+    =\sin\varphi\cos\theta\,\vi
+      +2\sin\varphi\sin\theta\,\vj
+      +2\cos\varphi\,\vk
+    </mrow><mrow>
+    &amp;0\le\theta \lt 2\pi,\ 0\leqslant \varphi \leqslant \pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (b) Considering part (c) in this question, we are presumably
+    to evaluate the flux integral directly.
+    Since
+    <md>
+    <mrow>
+    \Big(\frac{\partial x}{\partial\theta}\,,\,
+          \frac{\partial y}{\partial\theta}\,,\,
+          \frac{\partial z}{\partial\theta}\Big)
+    &amp;=\big(-\sin\varphi\sin\theta\,,\,
+           2\sin\varphi\cos\theta\,,\,0\big)
+    </mrow><mrow>
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+                 \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    &amp;=(\cos\varphi\cos\theta\,,\,2\cos\varphi\sin\theta\,,\,-2\sin\varphi)
+    </mrow>
+    </md>
+    (<xref ref="eq_SUdSparam"/>) yields
+    <md>
+    <mrow>
+    \vn \,\dee{S}
+    &amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+              \frac{\partial y}{\partial\theta}\,,\,
+              \frac{\partial z}{\partial\theta}\Big)
+    \times
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+       \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm \big(-\sin\varphi\sin\theta\,,\,
+           2\sin\varphi\cos\theta\,,\,0\big)
+    </mrow><mrow>
+    &amp;\hskip1.5in\times
+    (\cos\varphi\cos\theta\,,\,2\cos\varphi\sin\theta\,,\,-2\sin\varphi)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm\big(-4\sin^2\varphi\cos\theta\,,\,
+              -2\sin^2\varphi\sin\theta\,,\,
+              -2\sin\varphi\cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\mp 2\sin\varphi \big(2\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+    </mrow>
+    </md>
+    To get an outward pointing normal we need the <m>+</m> sign. For example, with the
+    <m>+</m> sign, the <m>z</m>-component is <m>2\sin\varphi\cos\varphi
+    =\sin(2\varphi)</m> so that the normal is pointing upward when
+    <m>0 \lt \varphi \lt \frac{\pi}{2}</m>, i.e. in the northern hemisphere,
+    and is pointing downward when <m>\frac{\pi}{2} \lt \varphi \lt \pi</m>, i.e.
+    in the southern hemisphere. So
+    <md>
+    <mrow>
+    \vF\cdot\vn \dee{S}
+    &amp;=\big\{
+         (\sin\varphi\cos\theta)(4\sin^2\varphi\cos\theta)
+         + (2\sin\varphi\sin\theta)(2\sin^2\varphi\sin\theta)
+    </mrow><mrow>&amp;\hskip2.6in
+         + (2\cos\varphi)(2\sin\varphi\cos\varphi)
+      \big\}\dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\big\{4\sin^3\varphi\cos^2\theta
+      +4\sin^3\varphi\sin^2\theta
+      +4\sin\varphi\cos^2\varphi\big\}\dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+     &amp;=4\sin\varphi \big(\sin^2\varphi +\cos^2\varphi\big)
+                    \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+     &amp;=4\sin\varphi\,\dee{\theta}\dee{\varphi}
+    </mrow>
+    </md>
+    and the flux is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \, \dee{S}
+    &amp;=\int_0^\pi\dee{\varphi}\int_0^{2\pi}\dee{\theta}\ 4\sin\varphi
+     =8\pi \int_0^\pi \dee{\varphi}\ \sin\varphi
+    =16\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (c)
+    Set
+    <me>
+    V=\Set{(x,y,z)} {x^2 + \tfrac{y^2}{4} +\tfrac{z^2}{4} \leqslant 1}
+    </me>
+    Since <m>\vnabla\cdot\vF=3</m>, le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \, \dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\ \dee{V}
+    = 3 \text{Volume}(V)
+    </mrow>
+    </md>
+    The volume contained in the ellipsoid,
+    <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} +\tfrac{z^2}{c^2}=1</m>, of semiaxes
+    <m>a</m>, <m>b</m> and <m>c</m> is <m>\frac{4}{3}\pi abc</m>. In our case <m>a=1</m>, <m>b=c=2</m>,
+    so
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \, \dee{S}
+    &amp;= 3 \text{Volume}(V)
+    =3\times \frac{4}{3}\pi (1)(2)(2)
+    =16\pi
+    </mrow>
+    </md>
+    which is exactly what we found in part (b).
+    </p>
+
+    <p>The volume of the ellipsoid <m>\cV</m> can also be found by observing that,
+    in <m>\cV</m>,
+    <ul>
+    <li>
+    <m>x</m> runs from <m>-1</m> to <m>1</m> and
+    </li>
+    <li> for each fixed <m>-1\leqslant x\leqslant 1</m>, <m>(y,z)</m> runs over the
+       disk <m>y^2+z^2\leqslant 4(1-x^2)</m>, which has area <m>4\pi (1-x^2)</m>.
+    </li>
+    </ul>
+    That is
+    <me>
+    V=\Set{(x,y,z)} {-1\leqslant x\leqslant 1,\  y^2+z^2 \leqslant 4(1-x^2)}
+    </me>
+    so that
+    <md>
+    <mrow>
+    \text{Volume}(V) &amp;=\int_{-1}^1 \dee{x}
+               \iint_{y^2+z^2 \leqslant 4(1-x^2)}\dee{y}\,\dee{z}
+    </mrow><mrow>
+    &amp;= \int_{-1}^1 \dee{x}\ 4\pi(1-x^2)
+      =2\times 4\pi \int_0^1 \dee{x}\ (1-x^2)
+      =8\pi\left[1-\frac{1}{3}\right]
+    </mrow><mrow>
+    &amp;=\frac{16\pi}{3}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2009A</fromexam></title> --> 
+    <statement><p>
+    Calculer l'intégrale de flux <m>\iint_{\cS} \vF\cdot\vn \, \dee{S}</m>, où
+    <me>
+      \vF(x,y,z) = \big(x^3 + \cos(y^2)\,,\, y^3 + ze^x\,,\, z^2 + \arctan(xy)\big)
+    </me>
+    et <m>\cS</m> est la surface qui est le bord de la région solide limitée par le cylindre  <m>x^2 + y^2 = 2</m> et les plans  <m>z = 0</m> et <m>z = 2x + 3</m>.
+    La surface est orientée positivement, c'est à dire le vecteur normal pointe vers l'extérieur.
+    </p></statement>
+
+    <hint><p>
+    N'évaluez pas le flux directement.
+    </p></hint>
+
+    <answer><p>
+    <m>40\pi</m>
+    </p></answer>
+
+    <solution><p>
+    Set
+    <me>
+    V=\Set{(x,y,z)}{x^2+y^2\leqslant 2,\ 0\leqslant z\leqslant 2x+3}
+    </me>
+    Let's try le théorème de la divergence. Since
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(x^3 + \cos(y^2)\big)
+         +\pdiff{}{y}\big(y^3 + ze^x\big)
+         +\pdiff{}{z}\big(z^2 + \arctan(xy)\big)
+    </mrow><mrow>
+       &amp;=3x^2+3y^2+2z
+    </mrow>
+    </md>
+    le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    </mrow><mrow>
+    &amp;=\int_{x^2+y^2\leqslant 2}\dee{x}\dee{y}\int_0^{2x+3}\dee{z}\
+          \big(3x^2+3y^2+2z\big)
+    </mrow><mrow>
+    &amp;= \int_{x^2+y^2\leqslant 2}\dee{x}\dee{y}\
+          \big\{3(x^2+y^2)(2x+3)+(2x+3)^2\big\}
+    </mrow><mrow>
+    &amp;= \int_{x^2+y^2\leqslant 2}\dee{x}\dee{y}\
+          \big\{9+12x+13x^2+9y^2+6x^3+6xy^2\big\}
+    </mrow><mrow>
+    &amp;= 9(2\pi) +\int_{x^2+y^2\leqslant 2}\dee{x}\dee{y}\
+          \big\{13x^2+9y^2\big\}
+    </mrow>
+    </md>
+    because <m>12x</m>, <m>6x^3</m> and <m>6xy^2</m> are all odd under <m>x\rightarrow -x</m>.
+    To evaluate the final remaining integral, let's switch to polar coordinates.
+    <md>
+    <mrow>
+    \iint_{x^2+y^2\leqslant 2} \big\{13x^2+9y^2\big\}\,\dee{x}\dee{y}
+    &amp;=\int_0^{\sqrt{2}}\dee{r}\ r\int_0^{2\pi}\hskip-5pt\dee{\theta}\
+    \big\{13\big(r\cos\theta)^2+9\big(r\sin\theta)^2\big\}
+    </mrow><mrow>
+    &amp;=\int_0^{\sqrt{2}} \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\
+    \big\{ 13\cos^2\theta+9\sin^2\theta\big\}
+    </mrow>
+    </md>
+    Since
+    <md>
+    <mrow>
+    \int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+    &amp;=\int_0^{2\pi}\frac{\cos(2\theta)+1}{2}\ \dee{\theta}
+    =\left[\frac{\sin(2\theta)}{4}+\frac{\theta}{2}\right]_0^{2\pi}
+    =\pi
+
+    </mrow><mrow>
+    \int_0^{2\pi}\sin^2\theta\ \dee{\theta}
+    &amp;=\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}
+    =\left[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+    =\pi
+    </mrow>
+    </md>
+    we finally have
+    <me>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    =18\pi+\frac{(\sqrt{2})^4}{4}\pi\big\{13+9\big\}
+    =(18+22)\pi=40\pi
+    </me>
+    For an efficient, sneaky, way to evaluate
+    <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>
+    and <m>\int_0^{2\pi} \sin^2\theta\,\dee{\theta}</m>,
+    see Example
+    <xref ref="eg_workIntegralB"/>.
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2008D</fromexam></title> --> 
+    <statement><p>
+    Trouver le flux du champ <m>(x + y, x + z, y + z)</m> à travers la surface cylindrique d'équation <m>x^2 + z^2 = 4</m>, qui s'étend de  <m>y = 0</m> à <m>y = 3</m>. (Seulement la partie courbée, pas les disques Only the curved part à droite et à gauche). La surface est orientée avec le vecteur normal pointant en s'éloignant de l'axe  <m>y</m>.
+    </p></statement>
+
+    <hint><p>
+    Pour pratiquer, essayer de faire cet exercice deux fois <mdash/> une avec le théorème de la divergence, puis par calcul direct.
+    </p>
+
+    </hint>
+
+    <answer><p>
+    <m>24\pi</m>
+    </p></answer>
+
+    <solution><title>By divergence theorem</title>
+    <p>
+    Set <m>\vF = (x + y, x + z, y + z)</m>.
+    Then <m>\vnabla\cdot\vF = 2</m>. That's really simple. So let's
+    try using le théorème de la divergence.
+    </p>
+
+    <p><ul>
+    <li><p>
+    Set <m>S=\Set{(x,y,z)}{x^2+z^2=4,\ 0\leqslant y\leqslant 3}</m>. We are to compute
+    <m>\iint_{\cS}\vF\cdot\vn \,\dee{S}</m>, with <m>\vn </m> denoting the outward normal to <m>\cS</m>.
+    <m>\cS</m> is <em>not</em> the boundary of a solid, so we cannot compute
+    <m>\iint_{\cS}\vF\cdot\vn \,\dee{S}</m> by applying le théorème de la divergence  directly.
+    The figure on the left below shows the part of <m>\cS</m> that is in the first octant.
+    </p>
+
+    <sidebyside widths="50% 49%" valign="middle">
+    <image source = "images/CLP4-figs/pfigs/cylinder"/>
+    <image source = "images/CLP4-figs/pfigs/cylinder2"/>
+    </sidebyside>
+
+    </li>
+    <li>
+    On the other hand <m>\cS</m>, is <q>almost</q> the boundary of
+    <me>
+    V = \Set{(x,y,z)}{x^2+z^2\leqslant 4,\ 0\leqslant y\leqslant 3}
+    </me>
+    The boundary, <m>\partial V</m> of <m>\cV</m> consists of three pieces <mdash/> <m>\cS</m> and the
+    two disks
+    <md>
+    <mrow>
+    D_l &amp;= \Set{(x,y,z)}{x^2+z^2\leqslant 4,\ y=0}
+    </mrow><mrow>
+    D_r &amp;= \Set{(x,y,z)}{x^2+z^2\leqslant 4,\ y=3}
+    </mrow>
+    </md>
+    The figure on the right above shows the parts of <m>\cS</m>, <m>\cV</m>, <m>D_l</m>
+    and <m>D_r</m> that are  in the first octant.
+
+    </li>
+    </ul>
+    The outward normal to <m>D_r</m> is <m>\vj </m> and the outward normal to <m>D_l</m> is
+    <m>-\vj </m>, to le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iiint_{\cV} \vnabla\cdot \vF\,\dee{V}
+    &amp;=\iint_{\partial V}\vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{S}\vF\cdot\vn \,\dee{S}
+      + \iint_{D_r}\vF\cdot\vj \,\dee{S}
+      + \iint_{D_l}\vF\cdot(-\vj )\,\dee{S}
+    </mrow>
+    </md>
+    Since <m>\vnabla\cdot\vF = 2</m> and <m>\vF\cdot\vj  = x+z</m>,
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{S}
+    &amp;= \iiint_{\cV} 2\,\dee{V}
+      -\iint_{x^2+z^2\leqslant 4}\hskip-5pt(x+z)\,\dee{x}\dee{z}
+      - \iint_{x^2+z^2\leqslant 4}\hskip-5pt(-x-z)\,\dee{x}\dee{z}
+    </mrow><mrow>
+    &amp;= \iiint_{\cV} 2\,\dee{V}
+    </mrow><mrow>
+    &amp;= 2\ \text{volume}(V)
+    =2(\pi 2^2) 3 =24\pi
+    </mrow>
+    </md>
+    </p>
+    </solution>
+
+    <solution><title>By direct evaluation</title>
+    <p>
+    Let's parametrize the surface by
+    <md>
+    <mrow>
+    \vr(\theta,y) &amp;= 2\cos\theta\,\vi  +y\,\vj  + 2\sin\theta\,\vk \qquad
+    0\le\theta \lt 2\pi,\ 0\leqslant y\leqslant 3
+    </mrow>
+    </md>
+    Then
+    <md>
+    <mrow>
+    \tfrac{\partial\vr}{\partial\theta}
+    &amp;=\big(-2\sin\theta\,,\,
+            0\,,\,
+            2\cos\theta \big)
+    </mrow><mrow>
+    \tfrac{\partial\vr}{\partial y}
+    &amp;=\big(0\,,\,
+           1\,,\,
+           0\big)
+    </mrow><mrow>
+    \vn \dee{S}
+    &amp;=\pm\tfrac{\partial\vr}{\partial\theta} \times \tfrac{\partial\vr}{\partial y}
+       \dee{\theta}\dee{y}
+    =\pm \big(-2\cos\theta\,,\,
+           0\,,\,
+           -2\sin\theta\big)\dee{\theta}\dee{y}
+    </mrow>
+    </md>
+    To get the outward normal, we want the minus sign. So
+    <me>
+    \vn \dee{S}
+    =\big(2\cos\theta\,,\,
+           0\,,\,
+           2\sin\theta\big)\dee{\theta}\dee{y}
+    </me>
+    and, since
+    <me>
+    \vF\big(\vr(\theta,y)\big)
+    =\big(2\cos\theta + y\,,\,2\cos\theta+2\sin\theta\,,\,y+2\sin\theta\big)
+    </me>
+    the specified flux is
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{S}
+    &amp;= \int_0^{2\pi}\dee{\theta}\int_0^3\dee{y} \
+    \big(2\cos\theta + y\,,\,2\cos\theta+2\sin\theta\,,\,y+2\sin\theta\big)
+    </mrow><mrow>&amp;\hskip2in
+    \cdot  \big(2\cos\theta\,,\,0\,,\, 2\sin\theta\big)
+    </mrow><mrow>
+    &amp;= \int_0^{2\pi}\dee{\theta}\int_0^3\dee{y} \
+    \big(4\cos^2\theta + 2y\cos\theta
+          +2y\sin\theta+4\sin^2\theta\big)
+    </mrow><mrow>
+    &amp;= \int_0^{2\pi}\dee{\theta}\int_0^3\dee{y} \
+    \big(4 + 2y\cos\theta +2y\sin\theta\big)
+    </mrow>
+    </md>
+    Since <m>\int_0^{2\pi}\dee{\theta}\ \cos\theta
+     = \int_0^{2\pi}\dee{\theta}\ \sin\theta = 0</m>,
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{S}
+    &amp;= 4\int_0^{2\pi}\dee{\theta}\int_0^3\dee{y}
+    =4(2\pi)3
+    =24\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2008D</fromexam></title> --> 
+    <statement><p>
+    On considère la surface de révolution obtenue en faisant tourner la courbe <m>z=1-x^4</m> autour de l'axe  <m>z</m>. Soit  <m>\cS</m> la portion de cette surface qui se trouve au dessus du plan <m>xy</m>, orienté par un vecteur normal qui pointe vers le haut. Le bord de <m>\cS</m> est le cercle de rayon  <m>1</m> centré à l'origine qui se trouve sur le plan <m>xy</m>.
+    </p>
+
+    <p>Calculer le flux du champ incompressible
+    <m>\vF(x, y, z) = (yz, x + z, x^2 + y^2)</m> à travers <m>\cS</m>.
+    </p></statement>
+
+    <hint><p>
+    La question met l'accent sur le fait que le champ a une divergence nulle. C'est un gros indice. 
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{\pi}{2}</m>
+    </p></answer>
+
+    <solution><p>
+    The question highlights that the vector field has divergence <m>0</m>.
+    That strongly suggests that we use le théorème de la divergence.
+    Set
+    </p>
+
+    <sidebyside widths="50% 30%" valign="middle">
+    <p><m>V=\Set{(x,y,z)}{0\leqslant z\leqslant 1-\big(x^2+y^2\big)^2}</m></p>
+    <image source = "images/CLP4-figs/pfigs/OE08D_10"/>
+    </sidebyside>
+
+    <p>
+    Then the boundary, <m>\partial V</m>, of <m>\cV</m> consists of two parts, namely <m>\cS</m>
+    (with normal pointing upwards) and the disk
+    <me>
+    D=\Set{(x,y,0)}{x^2+y^2\leqslant 1}
+    </me>
+    (with normal pointing downwards).  le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+        -\iint_D \vF \cdot (-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_D (x^2+y^2)\,\dee{x}\dee{y}
+    </mrow>
+    </md>
+    Switching to polar coordinates, the flux is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    =\int_0^1\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ r^2
+    =2\pi \int_0^1 \dee{r}\, r^3
+    =2\pi \tfrac{1}{4}
+    =\tfrac{\pi}{2}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2008A</fromexam></title> --> 
+    <statement><p>Soit  <m>\cS</m> la portion du paraboloïde  <m>z = 2 - x^2 - y^2</m> contenu dans le cône <m>z = \sqrt{x^2+y^2}</m> et orienté vers le haut. Soit
+    <me>
+    \vF = (\tan \sqrt{z} + \sin(y^3))\,\vi  + e^{-x^2}\,\vj  + z\vk
+    </me>
+    Calculer l'intégrale  <m>\iint_{\cS} \vF \cdot\vn \,\dee{S}</m>.
+    </p></statement>
+
+    <hint><p>
+    Étant donnée l'allure de <m>\vF</m>, il vaut peut-être mieux de ne pas essayer d'évaluer le flux directement. 
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{3}{2}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    As <m>\vF</m> looks complicated, we will probably want to avoid evaluating
+    the flux integral directly. Let's first compute the divergence of <m>\vF</m>,
+    to see if it looks wise to use le théorème de la divergence  instead.
+    <md>
+    <mrow>
+    \vnabla\cdot\vF =
+       \pdiff{}{x}\big(\tan \sqrt{z} + \sin(y^3)\big)
+       +\pdiff{}{y}\big(e^{-x^2}\big)
+       +\pdiff{}{z}\big(z\big)
+    =1
+    </mrow>
+    </md>
+    Looks good! We cannot yet apply le théorème de la divergence,  since <m>\cS</m> is
+    not the boundary of a solid region <m>\cV</m>. To help us choose a solid
+    <m>\cV</m> whose boundary at least includes <m>\cS</m>, here is a sketch. <m>\cS</m> is the
+    top of the <q>ice cream cone</q>
+    </p>
+
+    <sidebyside width="42%">
+      <image source = "images/CLP4-figs/pfigs/iceCream"/>
+    </sidebyside>
+
+    <p>
+    Note that the paraboloid <m>z = 2 - x^2 - y^2</m> and the cone
+    <m>z = \sqrt{x^2+y^2}</m> intersect along the circle <m>x^2+y^2=1</m>, <m>z=1</m>.
+    Probably the simplest solid whose boundary includes <m>\cS</m> is
+    <me>
+    V=\Set{(x,y,z)}{1\leqslant z\leqslant 2-x^2-y^2,\ x^2+y^2\leqslant 1}
+    </me>
+    The boundary <m>\partial V</m> of <m>\cV</m> consists of <m>\cS</m> (with upward pointing normal)
+    and the disk
+    <me>
+    D = \Set{(x,y,z)}{x^2+y^2\leqslant 1,\ z=1}
+    </me>
+    with normal <m>-\vk </m>. So le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\ \dee{V}
+          -\iint_D \vF \cdot(-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV}  \overbrace{1}^{\vnabla\cdot\vF}\dee{V}
+          +\iint_D \overbrace{1}^{\vF \cdot \vk  = z}\,\dee{S}
+    </mrow>
+    </md>
+    As <m>D</m> is a disk of radius 1, <m>\iint_D \dee{S}=\pi</m>. To compute the volume of
+    <m>\cV</m>, we'll slice it into a stack of horizontal <q>pancakes</q>. Since
+    <m>z=2-x^2-y^2</m> is equivalent to <m>\sqrt{x^2+y^2}=\sqrt{2-z}</m>, the pancake at height <m>z</m>
+    is a circular disk of radius <m>\sqrt{2-z}</m> and hence of cross-sectional area
+    <m>\pi(2-z)</m>. So the volume of <m>\cV</m> is
+    <md>
+    <mrow>
+    \iiint_{\cV}  \dee{V}
+    &amp;=\int_1^2 \pi(2-z) \ \dee{z}
+    = -\frac{\pi}{2}(2-z)^2\Big|_1^2
+    =\frac{\pi}{2}
+    </mrow>
+    </md>
+    and the flux
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot\vn \,\dee{S}
+    =\frac{\pi}{2} +\pi =\frac{3}{2}\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2007A</fromexam></title> --> 
+    <statement><p>
+    Calcule l'intégrale de surface
+    <me>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    </me>
+    où <m>\vF(x, y, z) = \big(\cos z + xy^2\,,\, xe^{-z}\,,\, \sin y + x^2 z\big)</m> et  <m>\cS</m> est le bord de la région limitée par le paraboloïde <m>z = x^2 + y^2</m> et le plan  <m>z = 4</m>, orientée vers l'extérieur.
+    </p></statement>
+
+    <hint><p>
+    Étant donnée l'allure de <m>\vF</m>, ce n'est peut-être pas une bonne idée de calculer l'intégrale de flux directement.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{32}{3}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    As <m>\vF</m> looks complicated, we will probably want to avoid evaluating
+    the flux integral directly. Let's first compute the divergence of <m>\vF</m>,
+    to see if it looks wise to use le théorème de la divergence  instead.
+    <md>
+    <mrow>
+    \vnabla\cdot\vF =
+       \pdiff{}{x}\big(\cos z + xy^2\big)
+       +\pdiff{}{y}\big(xe^{-z}\big)
+       +\pdiff{}{z}\big(\sin y + x^2 z\big)
+    =y^2+x^2
+    </mrow>
+    </md>
+    Looks promising. Furthermore <m>\cS</m> is the boundary of the solid region
+    </p>
+
+    <sidebyside widths="50% 40%" valign="middle">
+      <p><m>V=\Set{(x,y,z)}{x^2+y^2\leqslant z\leqslant 4}</m></p>
+      <image source = "images/CLP4-figs/pfigs/OE07A_4"/>
+    </sidebyside>
+
+    <p>
+    So le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\ \dee{V}
+    =\iiint_{\cV}  (x^2+y^2)\ \dee{V}
+    </mrow>
+    </md>
+    To compute the triple integral, we'll use the cylindrical coordinates <m>(r,\theta,z)</m>.
+    The <m>z</m>-coordinate runs from <m>0</m> to <m>4</m>. For each fixed <m>0\leqslant z \leqslant 4</m>
+    (see the blue disk in the figure below <mdash/> which shows the part of <m>\cV</m> in the first octant),
+    </p>
+
+    <sidebyside width="50%">
+      <image source = "images/CLP4-figs/pfigs/OE07A_4b"/>
+    </sidebyside>
+
+    <p>
+    <m>(x,y)</m> runs over <m>0\leqslant x^2+y^2 \leqslant z</m>, which in cylindrical coordinates
+    is <m>0\leqslant r^2\leqslant z</m> or <m>0\leqslant r\le\sqrt{z}</m>.
+    So the flux and the triple integral are
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV}  (x^2+y^2)\ \dee{V}
+    </mrow><mrow>
+    &amp;=\int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ r\int_0^{2\pi}\dee{\theta}\   r^2
+    </mrow><mrow>
+    &amp;=2\pi \int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ r^3
+    </mrow><mrow>
+    &amp;=2\pi \int_0^4\dee{z}\ \frac{z^2}{4}
+    =2\pi \frac{4^3}{3\times 4}
+    </mrow><mrow>
+    &amp;=\frac{32}{3}\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2006D</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> la portion de la sphère  <m>x^2 + y^2 + z^2 = 4</m> comprise entre les plans <m>z = 1</m> et <m>z = 0</m> orientée vers l'extérieur. Soit
+    <md>
+    <mrow>
+    \vF = (e^y + xz)\,\vi  + (zy + \sin(x))\,\vj  + (z^2 - 1)\,\vk
+    </mrow>
+    </md>
+    Calculer l'intégrale de flux
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}.
+    </mrow>
+    </md>
+    </p></statement>
+
+    <hint><p>
+    Le champ  <m>\vF</m> a l'air pas mal compliqué. Essayer d'éviter le calcul de l'intégrale de flux.
+    </p></hint>
+
+    <answer><p>
+    <m>3\pi</m>
+    </p></answer>
+
+    <solution><p>
+    If we were to evaluate this integral directly using, for example,
+    spherical coordinates, our integrand would contain
+    <me>
+    \sin(x) = \sin\big(2\sin\varphi\cos\theta\big)
+    </me>
+    That's not very friendly looking. So let's consider using the divergence
+    theorem instead. To start,
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(e^y + xz\big)
+         +\pdiff{}{y}\big(zy + \sin(x)\big)
+         +\pdiff{}{z}\big(z^2 - 1\big)
+       = 4z
+    </mrow>
+    </md>
+    That's nice and simple. So let's move on to consideration of <m>\cS</m>.
+    The part of <m>\cS</m> in the first octant is outlined in red in the figure
+    on the left below.
+    </p>
+
+    <sidebyside widths="43% 43%" valign="middle">
+    <image source = "images/CLP4-figs/pfigs/OE06D_4"/>
+    <image source = "images/CLP4-figs/pfigs/OE06D_4b"/>
+    </sidebyside>
+
+    <p>
+    The surface <m>\cS</m> is not closed, and so is not the boundary of a solid,
+    so we cannot apply le théorème de la divergence  directly. But we can easily
+    come up with a solid whose boundary contains <m>\cS</m>. Let
+    <me>
+    V=\Set{(x,y,z)}{ x^2 + y^2 + z^2 \leqslant 4,\ 0\leqslant z\leqslant 1}
+    </me>
+    The boundary <m>\partial V</m> of <m>\cV</m> consists of three parts <mdash/> <m>\cS</m>,
+    the bottom disk
+    <me>
+    D_b = \Set{(x,y,z)}{x^2 + y^2 \leqslant 4,\ z=0}
+    </me>
+    and the top disk
+    <me>
+    D_t = \Set{(x,y,z)}{x^2 + y^2 \leqslant 3,\ z=1}
+    </me>
+    The outward normal to <m>D_t</m> is <m>\vk </m> and the outward normal to <m>D_b</m> is <m>-\vk </m>.
+    So le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iiint_{\cV}\vnabla\cdot\vF\,\dee{V}
+    &amp;=\iint_{\partial V} \vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{\cS} \vF\cdot\vn \,\dee{S}
+      +\iint_{D_t} \vF\cdot\vk \,\dee{S}
+      +\iint_{D_b} \vF\cdot(-\vk )\,\dee{S}
+    </mrow>
+    </md>
+    On <m>D_b</m>, <m>z=0</m> so that <m>\vF\cdot(-\vk ) = -(0^2-1)=1</m> and
+    on <m>D_t</m>, <m>z=1</m> so that <m>\vF\cdot\vk  = 1^2-1=0</m>.
+    So
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    =\iiint_{\cV}\overbrace{4z}^{\vnabla\cdot\vF}\,\dee{V}
+       -\iint_{D_b} \dee{S}
+    </mrow>
+    </md>
+    The constant <m>z</m> cross-section of <m>\cV</m> is a disk of radius <m>\sqrt{4-z^2}</m>
+    and hence of area <m>\pi(4-z^2)</m> and <m>D_b</m> is a disk of radius <m>2</m> and hence
+    of area <m>4\pi</m>. So
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^1 (4z)\ \pi(4-z^2) \ \dee{z}  -4\pi
+    =4\pi\Big[2z^2 - \frac{z^4}{4}\Big]_0^1 -4\pi
+    =3\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2006A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cB</m> la région solide comprise entre les plans <m>x=-1</m>,
+    <m>x=1</m>, <m>y=0</m>, <m>y=2</m> et bornée en dessous par le plan  <m>z=0</m> et au dessus par le plan  <m>z+y=3</m>. Soit  <m>\cS</m> le bord de <m>\cB</m>. Calculer le flux du champ
+    <me>
+    \vF(x,y,z) =  \big(x^2 z +\cos \pi y\big)\,\vi
+                 +\big(yz +\sin \pi z\big)\,\vj
+                 +(x-y^2)\,\vk
+    </me>
+    à travers <m>\cS</m>.
+    </p></statement>
+
+    <hint><p>
+    La divergence de  <m>\vF</m> est pas mal plus simple que  <m>\vF</m> lui-même. Par défaut, on veut le flux vers l'extérieur.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{26}{3}</m>
+    </p></answer>
+
+    <solution><p>
+    The divergence of <m>\vF</m>, namely,
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(x^2 z +\cos \pi y\big)
+         +\pdiff{}{y}\big(yz +\sin \pi z\big)
+         +\pdiff{}{z}\big(x-y^2\big)
+    </mrow><mrow>
+      &amp;=2xz +z
+    </mrow>
+    </md>
+    is a lot simpler than <m>\vF</m> itself. So let's use le théorème de la divergence
+    (Theorem <xref ref="thm_divThm"/>).
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    =\iiint_B \vnabla\cdot\vF\,\dee{V}
+    =\iiint_B (2xz+z)\,\dee{V}
+    </mrow>
+    </md>
+    As <m>B</m> is invariant under <m>x\rightarrow-x</m> while <m>2xz</m> is odd under
+    <m>x\rightarrow-x</m>, the integral <m>\iiint_B 2xz\,\dee{V}</m> is zero.
+    To help set up the limits of integration for <m>\iiint_B z\,\dee{V}</m>,
+    note that, in <m>B</m>,
+    <ul>
+    <li>
+    <m>(x,y)</m> runs over the rectangle <m>-1\leqslant x\leqslant 1</m>, <m>0\leqslant y\leqslant 2</m> and
+    </li>
+    <li>
+    for each fixed <m>(x,y)</m>, <m>z</m> runs over <m>0\leqslant z\leqslant 3-y</m>.
+    </li>
+    </ul>
+    So
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;= \int_{-1}^1\dee{x}\int_0^2\dee{y}\int_0^{3-y}\dee{z}\ z
+    </mrow><mrow>
+    &amp;= \frac{1}{2}\int_{-1}^1\dee{x}\int_0^2\dee{y}\ (3-y)^2
+    </mrow><mrow>
+    &amp;=-\frac{1}{2}\int_{-1}^1\dee{x}\int_3^1\dee{u}\ u^2 \qquad
+    \text{with } u = 3-y,\ \dee{u}=-\dee{y}
+    </mrow><mrow>
+    &amp;=-\frac{1}{2}\int_{-1}^1\dee{x}\
+           \Big[\frac{1^3}{3} - \frac{3^3}{3}\Big]_{-1}^1
+    </mrow><mrow>
+    &amp;=\frac{26}{3}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2005D</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> l'hémisphère <m>x^2 + y^2 + z^2 = 1</m>, <m>z\geqslant 0</m>, orienté par le vecteur normal qui s'éloigne de l'origine. Calculer l'intégrale
+    <me>
+    \iint_{\cS} \vF\cdot\vn \, \dee{S}
+    </me>
+    où
+    <me>
+    \vF = \big(x + \cos(z^2)\big)\,\vi  + \big(y + \ln(x^2 + z^5)\big)\,\vj
+               + \sqrt{x^2 + y^2}\,\vk
+    </me>
+    </p></statement>
+
+    <hint><p>
+    Le champ <m>\vF</m> est compliqué. Ceci suggère fortement de ne pas calculer l'intégrale directement
+    </p></hint>
+
+    <answer><p>
+    <m>2\pi</m>
+    </p></answer>
+
+    <solution><p>
+    The vector field <m>\vF</m> looks very complicated.
+    That strongly suggests that we not evaluate the integral directly.
+    So let's start by computing
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(x + \cos(z^2)\big)
+         +\pdiff{}{y}\left(y + \ln(x^2 + z^5)\right)
+         +\pdiff{}{z}\big(\sqrt{x^2 + y^2}\big)
+    </mrow><mrow>
+       &amp;=   2
+    </mrow>
+    </md>
+    That's really simple, which suggest that we use le théorème de la divergence.
+    But the surface <m>\cS</m> is not closed, and so is not the boundary of a solid.
+    So we cannot apply le théorème de la divergence  directly. But we can easily
+    come up with a solid whose boundary contains <m>\cS</m>. Let
+    <md>
+    <mrow>
+    V&amp;=\Set{(x,y,z)}{0\leqslant z\leqslant \sqrt{1-x^2-y^2},\ x^2+y^2\leqslant 1}
+    </mrow>
+    </md>
+    </p>
+
+    <sidebyside widths="30%">
+      <image source = "images/CLP4-figs/pfigs/OE05D_9"/>
+    </sidebyside>
+
+    <p>
+    Then the boundary, <m>\partial V</m>, of <m>\cV</m> consists of two parts, namely <m>\cS</m>
+    (with normal pointing upwards) and the disk
+    <me>
+    D=\Set{(x,y,0)}{x^2+y^2\leqslant 1}
+    </me>
+    (with normal <m>-\vk </m>).  le théorème de la divergence
+    (Theorem <xref ref="thm_divThm"/>) gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+        -\iint_D \vF \cdot (-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV} 2\,\dee{V}
+      +\iint_D \sqrt{x^2+y^2}\,\dee{x}\dee{y}
+    </mrow><mrow>
+    &amp;=2\ \frac{1}{2}\ \frac{4}{3}\pi 1^3
+      +\iint_D \sqrt{x^2+y^2}\,\dee{x}\dee{y}
+    </mrow>
+    </md>
+    Switching to polar coordinates, the flux is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    &amp;=\frac{4}{3}\pi+\int_0^1\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ r
+    =\frac{4}{3}\pi + 2\pi \int_0^1 \dee{r}\, r^2
+    </mrow><mrow>
+    &amp;=\frac{4}{3}\pi + 2\pi \frac{1}{3}
+    =2\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2015A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\cE</m> la région solide limitée par le plan <m>z = 4</m> et le paraboloide  <m>z = x^2 + y^2</m>. Soit par ailleurs
+    <me>
+    \vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\vi
+         + \Big(-\frac{1}{3}y^3 + x\tan z\Big)\vj  + 4z\vk
+    </me>
+    <ol marker="a">
+    <li>
+    Calculer le flux de  <m>\vF</m> vers l'extérieur à travers le bord de <m>\cE</m>.
+    </li>
+    <li>
+    Soit <m>\cS</m> la portion du paraboloïde <m>z = x^2 + y^2</m> en dessous du plan <m>z = 4</m> orientée de sorte à ce que le vecteur <m>\vn </m> a une composante  <m>\vk </m> positive.  Calculer le flux de  <m>\vF</m> à travers <m>\cS</m>.
+    </li>
+    </ol>
+    </p>
+
+    </statement>
+
+    <hint><p>
+    Le divergence de  <m>\vF</m> est beuacoup plus simple que <m>\vF</m> lui-même.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\frac{64}{3}\pi</m> </p><p>
+    (b) <m>\frac{128}{3}\pi</m>
+    </p></answer>
+
+    <solution><p> (a)
+    By le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>), the outward flux of <m>\vF</m>à travers the boundary of <m>E</m> is
+    <md>
+    <mrow>
+    \iint_{\partial E}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_E \vnabla\cdot\vF\,\dee{V}
+    </mrow><mrow>
+    &amp;=\iiint_E \big(-x^2-y^2+4\big)\,\dee{V}
+    </mrow>
+    </md>
+    To evaluate this integral we switch to cylindrical coordinates.
+    In cylindrical coordinates
+    <me>
+    E=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\leqslant z\leqslant 4,\ r^2\leqslant z}
+    </me>
+    So
+    <md>
+    <mrow>
+    \iint_{\partial E}\vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\,r\int_0^{2\pi}\dee{\theta}\
+             \big(-r^2+4\big)
+    </mrow><mrow>
+    &amp;=2\pi \int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ \big(4r-r^3\big)
+    </mrow><mrow>
+    &amp;=2\pi \int_0^4\dee{z}\ \Big(2z-\frac{z^2}{4}\Big)
+    </mrow><mrow>
+    &amp;= 2\pi\Big[z^2-\frac{z^3}{12}\Big]_0^4
+    =2\pi\Big[16-\frac{16}{3}\Big]
+    =\frac{64}{3}\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) The boundary of <m>\cS</m> consists of two parts <mdash/> <m>\cS</m>, but with downward
+    pointing normal, on the bottom and the disk
+    <me>
+    D =\Set{(x,y,z)}{z=4,\ x^2+y^2\leqslant 4}
+    </me>
+    with normal <m>\vk </m>, on top.
+    </p>
+
+    <sidebyside width="41%">
+    <image source = "images/CLP4-figs/pfigs/OE15A_6"/>
+    </sidebyside>
+
+    <p>
+    So, by part (a),
+    <md>
+    <mrow>
+    \frac{64}{3}\pi =\iint_{\partial E}\vF\cdot\vn \,\dee{S}
+    &amp;=-\iint_{\cS} \vF\cdot\vn \,\dee{S}
+      +\iint_D \vF\cdot\vk \,\dee{S}
+    </mrow><mrow>
+    &amp;=-\iint_{\cS} \vF\cdot\vn \,\dee{S}
+      +\iint_D \overbrace{4z}^{\vF\cdot\vk }\,\dee{S}
+    </mrow>
+    </md>
+    Since <m>z=4</m> on <m>D</m>, and <m>D</m> is a disk of radius 2,
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    =-\frac{64}{3}\pi +16\iint_D \dee{S}
+    =-\frac{64}{3}\pi +16(4\pi)
+    =\frac{128}{3}\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2012J</fromexam></title> --> 
+    <statement><p>
+    Soit le champ de vecteurs
+    <me>
+    \vF(x,y,z) = \frac{x\,\vi +y\,\vj +z\,\vk }
+                      {{[x^2 + y^2 + z^2\big]}^{3/2}}
+    </me>
+    <ol marker="a">
+    <li>
+       Calculer  <m>\vnabla\cdot\vF</m>.
+    </li>
+    <li>
+    Soit  <m>\cS_1</m> la sphère
+    <me>
+    x^2 + (y - 2)^2 + z^2 = 9
+    </me>
+    orientée vers l'extérieur. Calculer
+    <m>\ds \iint_{\cS_1} \vF\cdot\vn \,\dee{S}</m>.
+    </li>
+    <li>
+    Soit <m>\cS_2</m> la sphère
+    <me>
+    x^2 + (y - 2)^2 + z^2 = 1
+    </me>
+    orienteé vers l'extérieur. Calculer     <m>\ds \iint_{\cS_2} \vF\cdot\vn \,\dee{S}</m>.
+    </li>
+    <li>
+    Est-ce que les réponses de (b) et (c) coïncident? Expliquer mathématiquement votre réponse.
+
+    </li>
+    </ol>
+    </p>
+
+    </statement>
+
+    <hint><p>
+    Noter que  <m>\vF(x,y,z)</m> n'est pas défini à <m>(x,y,z)=(0,0,0)</m>.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\vnabla\cdot\vF=0</m> if <m>(x,y,z)\ne\vZero</m> et n'est pas définie si <m>(x,y,z)=\vZero</m>.
+    </p>
+
+    <p>(b) <m>4\pi</m> </p><p>
+    (c) <m>0</m>
+    </p>
+
+    <p>(d) Les intégrales de flux <m>\iint_{S_1} \vF\cdot\vn \,\dee{S}</m> et <m>\iint_{S_2} \vF\cdot\vn \,\dee{S}</m> sont différentes, à cause du point <m>(0,0,0)</m>, où <m>\vnabla\cdot\vF</m> n'est pas bien définie et l'origine est contenu à l'intérieur de la région limitée par  <m>\cS_1</m>  mais pas à l'intérieur de celle limitée par <m>\cS_2</m>.
+    </p></answer>
+
+    <solution><p> (a) Since
+    <md>
+    <mrow>
+    \pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{3/2}}
+    &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+                -\frac{3}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow><mrow>
+    &amp;=\frac{-2x^2+y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow><mrow>
+    \pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{3/2}}
+    &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+                -\frac{3}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow><mrow>
+    &amp;=\frac{x^2-2y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow><mrow>
+    \pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{3/2}}
+    &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+                -\frac{3}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow><mrow>
+    &amp;=\frac{x^2+y^2-2z^2}{{[x^2+y^2+z^2]}^{5/2}}
+    </mrow>
+    </md>
+    the specified divergence is
+    <md>
+    <mrow>
+    \vnabla\cdot\vF
+               &amp;=  \frac{(-2x^2+y^2+z^2) + (x^2-2y^2+z^2) + (x^2+y^2-2z^2)}
+                         {{[x^2+y^2+z^2]}^{5/2}}
+               =0
+    </mrow>
+    </md>
+    if <m>(x,y,z)\ne\vZero</m> and is not defined if <m>(x,y,z)=\vZero</m>.
+    </p>
+
+    <p>(b), (c) Set
+    <md>
+    <mrow>
+    V_1 &amp;= \Set{(x,y,z)}{x^2 + (y - 2)^2 + z^2 \leqslant 9}
+    </mrow><mrow>
+    V_2 &amp;= \Set{(x,y,z)}{x^2 + (y - 2)^2 + z^2 \leqslant 1}
+    </mrow>
+    </md>
+    Here are side views of both <m>V_1</m> and <m>V_2</m>.
+    </p>
+
+    <sidebyside widths="43% 43%" valign="middle">
+    <image source = "images/CLP4-figs/pfigs/OE12J_8a"/>
+    <image source = "images/CLP4-figs/pfigs/OE12J_8b"/>
+    </sidebyside>
+
+    <p>
+    Both <m>V_1</m> and <m>V_2</m> are spherical balls centred on <m>(0,2,0)</m>.
+    The difference between them is that <m>V_1</m> has radius <m>3</m> while <m>V_2</m>
+    has radius <m>1</m>. In particular <m>(0,0,0)</m> is not in <m>V_2</m>. So <m>\vnabla\cdot\vF</m> is
+    well-defined and zero throughout <m>V_2</m> and, by le théorème de la divergence
+    (Theorem <xref ref="thm_divThm"/>),
+    <md>
+    <mrow>
+    \iint_{S_2} \vF\cdot\vn \,\dee{S}
+    =\iiint_{V_2} \vnabla\cdot\vF\,\dee{V}
+    =0
+    </mrow>
+    </md>
+    On the other hand, <m>(0,0,0)</m> is in <m>V_1</m>. We cannot blindly apply the divergence
+    theorem to <m>V_1</m> <mdash/> <m>\vnabla\cdot\vF(x,y,z)</m> is not defined at the point
+    <m>(x,y,z)=(0,0,0)</m> in <m>V_1</m>. We can work around this obstruction
+    by
+    <ul>
+    <li>
+    choosing a number <m>\rho \gt 0</m> that is small enough that the sphere
+    <me>
+    S_\rho = \Set{(x,y,z)}{x^2+y^2+z^2=\rho^2}
+    </me>
+    is completely contained inside <m>V_1</m> (for example, <m>\rho=\frac{1}{2}</m> is fine)
+    </li>
+    <li>
+    and then removing the interior of <m>S_\rho</m> from <m>V_1</m>.
+    </li>
+    </ul>
+    This produces
+    <me>
+    V_3 = \Set{(x,y)}{x^2 + (y - 2)^2 + z^2 \leqslant 9,\ x^2+y^2+z^2\ge\rho^2}
+    </me>
+    whose side view is sketched below.
+    </p>
+
+    <sidebyside width="43%">
+    <image source = "images/CLP4-figs/pfigs/OE12J_8c"/>
+    </sidebyside>
+
+    <p>
+    The boundary of <m>V_3</m> consists of two parts
+    <ul>
+    <li>
+    the sphere <m>S_1</m>, with outward normal and
+    </li>
+    <li>
+    the sphere <m>S_\rho</m> with <em>inward</em> normal <m>\vn =-\frac{\vr}{|\vr|}</m>
+    </li>
+    </ul>
+    The divergence <m>\vnabla\cdot\vF</m> is well-defined and zero throughout <m>V_3</m>
+    so that, by le théorème de la divergence,
+    <md>
+    <mrow>
+    0=\iiint_{V_3} \vnabla\cdot\vF\,\dee{V}
+    =\iint_{S_1} \vF\cdot\vn \,\dee{S}
+     +\iint_{S_\rho} \vF\cdot\Big(-\frac{\vr}{|\vr|}\Big)\,\dee{S}
+    </mrow>
+    </md>
+    So
+    <md>
+    <mrow>
+    \iint_{S_1} \vF\cdot\vn \,\dee{S}
+    &amp;=\iint_{S_\rho} \vF\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}
+    =\iint_{S_\rho} \Big(\frac{\vr}{|\vr|^3}\Big)\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{S_\rho} \frac{1}{|\vr|^2}\,\dee{S}
+    =\iint_{S_\rho} \frac{1}{\rho^2}\,\dee{S}
+    </mrow><mrow>
+    &amp;=\frac{1}{\rho^2}\ 4\pi\rho^2=4\pi
+    </mrow>
+    </md>
+    since <m>S_\rho</m> is a sphere of radius <m>\rho</m> and hence of surface area <m>4\pi\rho^2</m>.
+    </p>
+
+    <p>(d) The flux integrals <m>\iint_{S_1} \vF\cdot\vn \,\dee{S}</m> and
+    <m>\iint_{S_2} \vF\cdot\vn \,\dee{S}</m> are different, because the one point,
+    <m>(0,0,0)</m>, where <m>\vnabla\cdot\vF</m> fails to be well-defined and zero,
+    is contained inside <m>S_1</m> but is not contained inside <m>S_2</m>.
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2016D</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\vF</m> le champ de vecteurs
+    <me>
+    \vF(x,y, z) = \big(y^3 z + 2x\big)\,\vi
+                 +\big(3y - e^{\sin z}\big)\,\vj  + \big(e^{x^2+y^2}+ z\big)\,\vk
+    </me>
+    Calculer l'intégrale de flux   <m>\iint_{\cS} \vF\cdot\vn \,\dee{S}</m> où <m>\cS</m> est la surface qui délimite la région solide
+    <me>
+    \cE\ :\
+    0 \leqslant x \leqslant 2,\quad
+    0 \leqslant y \leqslant 2,\quad
+    0 \leqslant z \leqslant 2+ y
+    </me>
+    avec un vecteur normal pointant vers l'extérieur.
+    </p></statement>
+
+    <answer><p>
+    <m>72</m>
+    </p></answer>
+
+    <solution><p>
+    The vector field <m>\vF</m> looks pretty complicated. But its divergence
+    <me>
+    \vnabla\cdot\vF = 2 + 3 + 1 = 6
+    </me>
+    is very simple. So let's use le théorème de la divergence
+    (Theorem <xref ref="thm_divVrn"/>). It says
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_E \vnabla\cdot\vF\ \dee{V}
+    =\iiint_E 6\ \dee{V}
+    =6\ \text{Volume}(E)
+    </mrow>
+    </md>
+    For any fixed <m>0\leqslant X\leqslant 2</m>, the cross-section of <m>E</m> with <m>x=X</m> has side view
+    </p>
+
+    <sidebyside width="33%">
+    <image source = "images/CLP4-figs/pfigs/OE16D_8"/>
+    </sidebyside>
+
+    <p>
+    That cross-section has area <m>2\times \frac{2+4}{2}=6</m>. Consequently the
+    volume of <m>E</m> is <m>2\times 6=12</m> and
+    <me>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    =6\times 12
+    =72
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2017A</fromexam></title> --> 
+    <statement><p>
+    Considérer le champ de vecteurs
+    <me>
+     \vF(x, y, z) = \big(z \arctan(y^2)\,,\, z^3 \ln(x^2 + 1)\,,\, 3z\big)
+    </me>
+    Soit  <m>\cS</m> la portion de la sphère  <m>x^2 + y^2 + z^2 = 4</m> qui se trouve au dessus du plan  <m>z = 1</m> et orientée vers le bas.
+    <ol marker="a">
+    <li>
+    Calculer la divergence de <m>\vF</m>.
+    </li>
+    <li>
+    Calculer l'intégrale de flux  <m>\iint_{\cS} \vF \cdot\vn \,\dee{S}</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    La surface <m>\cS</m> n'est pas une surface fermée.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>3</m> </p><p>
+    (b) <m>-14\pi</m>
+    </p></answer>
+
+    <solution><p> (a) The divergence is
+    <md>
+    <mrow>
+    \vnabla\cdot\vF
+    &amp;=\pdiff{}{x}\big(z \arctan(y^2)\big)
+          +  \pdiff{}{y}\big(z^3 \ln(x^2 + 1)\big)
+          +  \pdiff{}{z}\big(3z\big)
+    = 3
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) The complexity of <m>\vF</m> and the simplicity of <m>\vnabla\cdot\vF</m>
+    strongly suggest that we use le théorème de la divergence  to evaluate
+    <m>\iint_{\cS} \vF \cdot\vn \,\dee{S}</m>. However, <m>\cS</m> is <em>not</em> a closed
+    surface and is <em>not</em> the boundary of a solid. The figure on the left below
+    is a sketch of the part of <m>\cS</m> in the first octant.
+    </p>
+
+    <sidebyside widths="36% 36%" valign="middle">
+    <image source = "images/CLP4-figs/pfigs/OE17A_7a"/>
+    <image source = "images/CLP4-figs/pfigs/OE17A_7b"/>
+    </sidebyside>
+
+    <p>
+    On the other hand <m>\cS</m> is part of the surface of the solid
+    <me>
+    V=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant 4,\ z\geqslant 1}
+    </me>
+    which is sketched on the right above. The boundary of <m>\cV</m> consists of two parts:
+    <ul>
+    <li>
+    the original surface <m>\cS</m>, but with upward, rather than downward, normal and
+    </li>
+    <li>
+    the disk <m>D=\Set{(x,y,z)}{ x^2+y^2\leqslant 3,\ z=1}</m> with normal <m>-\vk </m>.
+    </li>
+    </ul>
+    So le théorème de la divergence  (Theorem <xref ref="thm_divVrn"/>) gives
+    <md>
+    <mrow>
+       \iint_{\partial V}\vF\cdot\vn \,\dee{S}
+               &amp;= \iiint_{\cV}\vnabla\cdot\vF\ \dee{V}
+               = 3 \iiint_{\cV} \dee{V}
+    </mrow><mrow>
+    \implies
+      -\iint_{\cS}\vF\cdot\vn \,\dee{S} +\iint_D\vF\cdot(-\vk )\,\dee{S}
+               &amp;=3\,\text{Volume}(V)
+    </mrow>
+    </md>
+    Thus
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S} &amp;= -3\,\text{Volume}(V)
+                          + \iint_D\overbrace{-3}^{-\vF\cdot\vk }\,\dee{S}
+    </mrow><mrow>
+    &amp;= -3\,\text{Volume}(V) -3\,\text{Area}(D)
+    </mrow><mrow>
+    &amp;= -3\,\text{Volume}(V) -9\pi
+    </mrow>
+    </md>
+    since <m>D</m> is a circular disk of radius <m>\sqrt{3}</m>. To compute the volume
+    of <m>\cV</m>, we slice <m>\cV</m> into thin horizontal pancakes each of thinkness <m>\dee{z}</m>.
+    The pancake at height <m>z</m> has cross-section the circular disk
+    <m>x^2+y^2\leqslant 4-z^2</m>. As this disk has area <m>\pi(4-z^2)</m>, the pancake has volume
+    <m>\pi(4-z^2)\,\dee{z}</m>. All together
+    <md>
+    <mrow>
+    \text{Volume}(V)
+    &amp;=\int_1^2\dee{z}\ \pi(4-z^2)
+    =\pi\left[4z-\frac{z^3}{3}\right]_1^2
+    =\pi\left[4-\frac{7}{3}\right]
+    =\frac{5\pi}{3}
+    </mrow>
+    </md>
+    and
+    <me>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S} =-3\frac{5\pi}{3}-9\pi
+    =-14\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2017D</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> la sphère  <m>x^2+y^2+z^2=3</m> orientée vers l'intérieur. Calculer l'intégrale de flux
+    <me>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    </me>
+    où
+    <me>
+    \vF = \big(xy^2 + y^4z^6\,,\, yz^2+x^4z\,,\,zx^2+xy^4\big)
+    </me>
+    </p></statement>
+
+    <answer><p>
+    <m>-\frac{4\,\pi}{5}\ 3^{5/2}</m>
+    </p></answer>
+
+    <solution><p>
+    Let's try le théorème de la divergence. Set
+    <me>
+    V = \Set{(x,y,z)}{x^2+y^2+z^2\leqslant 3}
+    </me>
+    Then the boundary of <m>\cV</m> is <m>\cS</m>, but with outward pointing normal.
+    Since
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+       \pdiff{}{x} \big(xy^2 + y^4z^6\big)
+     + \pdiff{}{y} \big(yz^2+x^4z\big)
+     + \pdiff{}{z} \big(zx^2+xy^4\big)
+    </mrow><mrow>
+    &amp;=y^2+z^2+x^2
+    </mrow>
+    </md>
+    and because <m>\cS</m> is oriented <em>inward</em>, le théorème de la divergence
+    (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+             &amp;=-\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+              = -\iiint_{\cV} (x^2+y^2+z^2)\,\dee{V}
+    </mrow>
+    </md>
+    Switching to spherical coordinates
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=-\int_0^{\sqrt{3}}\dee{\rho}\int_0^\pi\dee{\varphi}
+                 \int_0^{2\pi}\dee{\theta} \ \rho^4\sin\varphi
+    </mrow><mrow>
+    &amp;=-2\pi\left[\int_0^{\sqrt{3}}\dee{\rho}\ \rho^4\right]
+          \left[\int_0^\pi\dee{\varphi}\ \sin\varphi\right]
+    </mrow><mrow>
+    &amp;=-2\pi\left[\frac{\rho^5}{5}\right]_0^{\sqrt{3}}
+          \Big[-\cos\varphi\Big]_0^\pi
+    </mrow><mrow>
+    &amp;=-\frac{36\sqrt{3}}{5}\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2004A</fromexam></title> --> 
+    <statement><p>
+    Considérer le champ de vecteurs  <m>\vF(x,y,z)
+    =-2xy\,\vi +\big(y^2+\sin(xz)\big)\,\vj +(x^2+y^2)\,\vk </m>.
+    <ol marker="a">
+    <li>
+    Calculer <m>\nabla\cdot \vF</m>.
+    </li>
+    <li>
+    Trouver le flux de <m>\vF</m> à travers la surface <m>\cS</m> définie par     <me>
+    x^2+y^2+(z-12)^2=13^2,\ z\geqslant 0
+    </me>
+    en utilisant le normal qui pointe vers l'extérieur.
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    (a) <m>0</m> </p><p>
+    (b) <m>\frac {625}{2}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    (a) The divergence of <m>\vF</m> is
+    <md>
+    <mrow>
+    \nabla\cdot \vF
+    &amp;=\pdiff{}{x}\big(-2xy\big)
+    +\pdiff{}{y}\big(y^2+\sin(xz)\big)
+    +\pdiff{}{z}\big(x^2+y^2\big)
+    </mrow><mrow>
+    &amp;=-2y+2y+0=0
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b)
+    Call the specified surface <m>\cS</m> and set
+    <me>
+    V = \Set{(x,y,z)}{x^2+y^2+(z-12)^2\leqslant 13^2,\ z\geqslant 0}
+    </me>
+    The boundary, <m>\partial V</m>, of <m>\cV</m> consists of two parts <mdash/>
+    <m>\cS</m>, with outward normal, and the disk
+    <me>
+    D = \Set{(x,y,z)}{x^2+y^2\leqslant 13^2-12^2=5^2,\ z=0}
+    </me>
+    with normal <m>-\vk </m>.
+    By le théorème de la divergence,  the desired flux is
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \ \dee{s}
+    &amp;=\iiint_{\cV}\nabla\cdot \vF\ \dee{V} - \iint_D \vF\cdot(-\vk )\ \dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV} 0 \ \dee{V} + \iint_D (x^2+y^2) \dee{x}\dee{y}
+    </mrow><mrow>
+    &amp;=0 +\int_0^5\dee{r}\ r\int_0^{2\pi}\dee{\theta}\ r^2
+    </mrow><mrow>
+    &amp;=2\pi\frac{5^4}{4} = \frac {625}{2}\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2003A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> la portion de l'hyporboloïde <m>x^2 + y^2 -z^2 = 1</m> se trouvant entre les plans <m>z=-1</m> et <m>z=1</m>. Trouver le flux de
+    <m>\vF = (x+e^{yz})\,\vi  +\big(2yz+\sin(xz)\big)\,\vj  +(xy-z-z^2)\,\vk </m> vers l'extérieur de <m>\cS</m>..
+    </p></statement>
+
+    <answer><p>
+    <m>4\pi</m>
+    </p></answer>
+
+    <solution><p>
+    The boundary of the solid <m>\cV</m> enclosed by <m>\cS</m> and <m>z= \pm 1</m> consists
+    of three pieces: <m>\cS</m>, the top disk
+    <me>
+    S_1=\Set{(x,y,z)}{x^2 + y^2 \leqslant 2,\ z= 1}
+    </me>
+    and the bottom disk
+    <me>
+    S_2=\Set{(x,y,z)}{x^2 + y^2 \leqslant 2,\ z= -1}
+    </me>
+    On <m>S_1</m>, <m>\vn =\vk </m> and
+    <me>
+    \vF\cdot\vn =\vF\cdot\vk =xy-z-z^2\Big|_{z=1}= xy-2
+    </me> so that,
+    denoting <m>D=\Set{(x,y)}{x^2+y^2 \leqslant 2}</m>,
+    <me>
+    \iint_{S_1} \vF \cdot \vn \, \dee{S}
+       = \iint_D (xy -2) \,\dee{x}\dee{y}
+       =-2\,\text{Area}(D)= - 4 \pi
+    </me>
+    Here we have used that the integral <m>\iint_D xy \,\dee{x}\dee{y}=0</m>
+    because <m>xy</m> is odd under <m>x\rightarrow -x</m>.
+    On <m>S_2</m>, <m>\vn =-\vk </m> and
+    <me>
+    \vF\cdot\vn =-\vF\cdot\vk = -(xy-z-z^2)\Big|_{z=-1}=-xy
+    </me>
+    so that
+    <me>
+    \iint_{S_2} \vF \cdot \vn \, \dee{S} = \iint_D (- xy)\,  \dee{x}\dee{y} = 0
+    </me>
+    By le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>),
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn  \dee{S}
+    &amp;= \iint_V \vnabla\cdot\vF\, \dee{V} -
+     \iint_{S_1} \vF \cdot \vn \, \dee{S}
+    - \iint_{S_2} \vF \cdot \vn \, \dee{S}
+    </mrow><mrow>
+    &amp;= 0 -(- 4 \pi) - 0
+    = 4\pi
+    </mrow>
+    </md>
+    since
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}(x+e^{yz})
+         +\pdiff{}{y}\big(2yz+\sin(xz)\big)
+         +\pdiff{}{z}(xy-z-z^2)
+    </mrow><mrow>
+       &amp;=   1 + 2z -1 -2z
+    </mrow><mrow>
+       &amp;=0
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2002A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\vF</m> le champ de vecteurs <m>\vF(x,y,z)=(x^2-y-1)\,\vi +(e^{\cos y}+z^3)\,\vj +(2xz+z^5)\,\vk </m>.
+    Calculer <m>\iint_{\cS}\vnabla\times \vF\cdot\vn \,\dee{S}</m> où  <m>\cS</m> est la portion de l'ellipsoide <m>x^2+y^2+2z^2=1</m> vérifiant  <m>z\geqslant 0</m>.
+    </p></statement>
+
+    <hint><p>
+    La complexité de  <m>\vF</m> suggère que le flux ne devrait pas être calculé directement.
+    </p></hint>
+
+    <answer><p>
+    <m>\pi</m>
+    </p></answer>
+
+    <solution><p>
+    <em>Direct Solution.</em>
+    The surface is given by the implicit equation
+    <m>f(x,y,z)=0</m> with <m>f(x,y,z)=x^2+y^2+2z^2-1</m>. Hence,
+     by (<xref ref="eq_SUdSimplicit"/>),
+    <me>
+    \vn \,\dee{S}=\frac{\vnabla f}{\vnabla f\cdot\vk }\dee{x}\dee{y}
+    =\frac{2x\vi +2y\vj +4z\vk }{4z}\dee{x}\dee{y}
+    </me>
+    This <m>\vn </m> has positive <m>\vk </m> component. Assume that it is the desired
+    <m>\vn </m>, though this was not specified in the question.
+    Since
+    <md>
+    <mrow>
+    \vnabla\times\vF
+    &amp;=\det\left[\begin{matrix}
+    \vi  &amp;\vj  &amp;\vk
+    </mrow><mrow>
+    \tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                    \tfrac{\partial }{\partial z}
+    </mrow><mrow>
+    x^2-y-1 &amp; e^{\cos y}+z^3 &amp; 2xz+z^5
+    \end{matrix}
+    \right]
+    </mrow><mrow>
+    &amp;=-3z^2\,\vi -2z\,\vj +\vk
+    </mrow>
+    </md>
+    we have
+    <md>
+    <mrow>
+    &amp;\iint_{\cS}\vnabla\times \vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{x^2+y^2\leqslant 1}\hskip-10pt\big(-3z(x,y)^2\,\vi -2z(x,y)\,\vj +\vk \big)
+       \cdot\frac{2x\,\vi +2y\,\vj +4z(x,y)\,\vk }{4z(x,y)}\ \dee{x}\dee{y}
+
+    </mrow><mrow>
+    &amp;=\iint_{x^2+y^2\leqslant 1}\Big(-\frac{3}{2}x\,z(x,y)-y+1\Big)\ \dee{x}\dee{y}
+    </mrow>
+    </md>
+    Since <m>y</m> is an odd function of <m>y</m> and <m>x\,z(x,y)=x\sqrt{\half(1-x^2-y^2)}</m>
+    is an odd function of <m>x</m>, they both integrate to zero. Hence
+    <me>
+    \iint_{\cS}\vnabla\times \vF\cdot\vn \,\dee{S}
+    =\iint_{x^2+y^2\leqslant 1}1\ \dee{x}\dee{y}
+    =\pi
+    </me>
+    </p>
+
+    <p><em>Tricky Solution.</em>
+     Let <m>\cV</m> be the solid <m>x^2+y^2+2z^2\leqslant 1</m>,
+    <m>z\geqslant 0</m>. The surface of <m>\cV</m> consists of <m>\cS</m> with upward pointing normal
+    and the disk <m>D=\Set{(x,y,z)}{z=0,\ x^2+y^2\leqslant 1}</m> with normal <m>-\vk </m>.
+    By le théorème de la divergence,  Theorem <xref ref="thm_divThm"/>,
+    <md>
+    <mrow>
+    \iint_{\cS}\vnabla\times \vF\cdot\vn \,\dee{S}
+    +\iint_D\vnabla\times \vF\cdot(-\vk )\,\dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vnabla\times\vF\ \dee{V}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV} 0\ \dee{V}=0
+    </mrow>
+    </md>
+    Hence
+    <me>
+    \iint_{\cS}\vnabla\times \vF\cdot\vn \,\dee{S}
+    =\iint_D\vnabla\times \vF\cdot\vk \,\dee{S}
+    =\iint_D \dee{S}
+    =\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2001A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> la portion de la sphère  <m>x^2+y^2+(z-1)^2=4</m> qui se trouve  au dessus du plan <m>xy</m>. Find the flux of
+    <m>\vF=(x^2+e^{y^2})\,\vi +(e^{x^2}+y^2)\,\vj  +(4+5x)\,\vk </m> outward across
+    <m>\cS</m>.
+    </p></statement>
+
+    <answer><p>
+    <m>12\pi</m>
+    </p></answer>
+
+    <solution><p>
+    Let <m>S'</m> be the disk <m>x^2+y^2\leqslant 3,\ z=0</m> (with <m>\vn </m> the downward
+    pointing normal) and let <m>\cV</m>
+    be the portion of the ball <m>x^2+y^2+(z-1)^2\leqslant 4</m> with <m>z\geqslant 0</m>.
+    Then, by le théorème de la divergence,
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{V}\vnabla\cdot\vF\, \dee{V}
+    -\iint_{S'}\vF\cdot(-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{V}(2x+2y)\, \dee{V}
+    +\iint_{S'}(4+5x)\,\dee{x}\dee{y}
+    </mrow>
+    </md>
+    Because <m>x</m> is odd under <m>x\rightarrow-x</m> and <m>y</m> is odd under
+    <m>y\rightarrow -y</m>,
+    <me>
+    \iiint_{V}x\, \dee{V}=\iiint_{V}y\, \dee{V}=\iint_{S'}x\,\dee{x}\dee{y}=0
+    </me>
+    so that
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{S}
+    =4\iint_{S'}\,\dee{x}\dee{y}
+    =4\,\text{Area}(S')
+    =4\times \pi\big(\sqrt{3}\big)^2=12\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 1999A</fromexam></title> --> 
+    <statement><p>
+    Calculer le flux de  <m>\vF=xy^2\vi +x^2y\vj +\vk </m> vers l'extérieur, à travers la surface     <me>
+    x^2+y^2+z^2=4,\qquad z\geqslant 0
+    </me>
+    </p></statement>
+
+    <hint><p>
+    Le flux peut être calculé directement, mais c'est plus facile d'utiliser le théorème de la divergence.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{188}{15}\pi\approx39.37</m>
+    </p></answer>
+
+    <solution><p>
+    Call the hemisphere <m>0\leqslant z\leqslant \sqrt{4-x^2-y^2}</m>, <m>H</m>.
+    Call the bottom surface of the hemisphere <m>D</m> and the top surface <m>\cS</m>.
+    The disk <m>D</m> has radius <m>2</m>, area <m>4\pi</m>, <m>z=0</m> and
+    the outward normal <m>-\vk </m>, so that
+    <me>
+    \iint_{D}\vF\cdot\vn \,\dee{S}
+    =-\iint_{D}\vF\cdot\vk \,\dee{x}\dee{y}
+    =-\iint_D\,\dee{x}\dee{y}
+    =-4\pi
+    </me>
+    As
+    <me>
+    \vnabla\cdot\vF
+    =\pdiff{}{x}(xy^2)
+    +\pdiff{}{y}(x^2y)
+    +\pdiff{}{z}(1)
+    =x^2+y^2
+    </me>
+    le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_H\vnabla\cdot\vF\ \dee{V}
+    -\iint_D\vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cR}(x^2+y^2)\ \dee{V}
+    -(-4\pi)
+    </mrow>
+    </md>
+    To evaluate the remaining integral, let's switch to the
+    cylindrical coordinates <m>(r,\theta,z)</m>. In cylindrical coordinates,
+    the equation <m>x^2+y^2+z^2=4</m> becomes <m>r^2+z^2=4</m>. So
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=4\pi+\int_0^2 \dee{z}\int_0^{\sqrt{4-z^2}}dr\ r\int_0^{2\pi}\dee{\theta}\ r^2
+    </mrow><mrow>
+    &amp;=4\pi+2\pi\int_0^2 \dee{z}\ \frac{1}{4}\big(\sqrt{4-z^2}\big)^4
+    </mrow><mrow>
+    &amp;=4\pi+\frac{\pi}{2}\int_0^2 \dee{z}\ (16-8z^2+z^4\big)
+    </mrow><mrow>
+    &amp;=4\pi+\frac{\pi}{2}\Big[16z-\frac{8}{3}z^3+\frac{1}{5}z^5\Big]_0^2
+    </mrow><mrow>
+    &amp;=\frac{188}{15}\pi\approx39.37
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 1998D</fromexam></title> --> 
+    <statement><p>
+     Soit  <m>\cD</m> le cylindre  <m>x^2+y^2\leqslant 1</m>, <m>0\leqslant z\leqslant 5</m>. Calculer le flux du champ de vecteurs
+    <me>
+    \vF=(x+xye^z)\,\vi +\half y^2ze^z\,\vj +(3z-yze^z)\,\vk
+    </me>
+    vers l'extérieur, à travers la portion courbée du bord de  <m>\cD</m>.
+    </p></statement>
+
+    <hint><p>
+    Utiliser le fait que  <m>y</m> est impaire et évaluer quelques intégrales.
+    </p></hint>
+
+    <answer><p>
+    <m>5\pi</m>
+    </p></answer>
+
+    <solution><p>
+    Let <m>S_t</m>, <m>S_b</m> and <m>S_c</m> denote the top, bottom and curved surfaces of
+    <m>D</m> respectively. On the top surface, <m>z=5</m> and
+    the outward normal to <m>D</m> is <m>\vk </m>, so that
+    <me>
+    \iint_{\cS_t}\vF\cdot\vn \,\dee{S}
+    =\iint_{x^2+y^2\leqslant 1}(15-5ye^5)\,\dee{x}\dee{y}
+    =15\iint_{x^2+y^2\leqslant 1}\,\dee{x}\dee{y}
+    =15\pi
+    </me>
+    The integral over <m>y</m> was zero because <m>y</m> is odd under <m>y\rightarrow -y</m>.
+    On the bottom surface, <m>z=0</m> and
+    the outward normal to <m>D</m> is <m>-\vk </m>, so that
+    <me>
+    \iint_{\cS_b}\vF\cdot\vn \,\dee{S}
+    =-\iint_{x^2+y^2\leqslant 1}(3\times 0-0\times ye^0)\,\dee{x}\dee{y}
+    =0
+    </me>
+    Again, the integral over <m>y</m> was zero because <m>y</m> is odd under
+    <m>y\rightarrow -y</m>. As
+    <md>
+    <mrow>
+    \vnabla\cdot\vF
+    &amp;=\pdiff{}{x}(x+xye^z)
+    +\half\pdiff{}{y}\big( y^2ze^z\big)
+    +\pdiff{}{z}(3z-yze^z)
+    </mrow><mrow>
+    &amp;=(1+ye^z)+yze^z+(3-yze^z-ye^z)
+    =4
+    </mrow>
+    </md>
+    le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS_c}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_D\vnabla\cdot\vF\ \dee{V}
+    -\iint_{\cS_t}\vF\cdot\vn \,\dee{S}
+    -\iint_{\cS_b}\vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_D4\ \dee{V}
+    -15\pi-0
+    </mrow><mrow>
+    &amp;=4\times\pi 1^2\times 5-15\pi
+    =5\pi
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    Trouver le flux de <m>\vF=(y+xz)\vi +(y+yz)\vj -(2x+z^2)\vk </m> vers le haut, à travers la portion de la sphère  <m>x^2+y^2+z^2=a^2</m> qui se trouve dans le premier ocrant.
+    </p></statement>
+
+    <answer><p>
+    <m>\left[\frac{\pi}{6}-\frac{1}{3}\right]a^3</m>
+    </p></answer>
+
+    <solution><p>
+    Let <m>V=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant a^2, x\geqslant 0, y\geqslant 0,\ z\geqslant 0}</m>.
+    </p>
+
+    <sidebyside width="44%">
+    <image source = "images/CLP4-figs/pfigs/quartSph"/>
+    </sidebyside>
+
+    <p>
+    Then <m>\partial V</m> consists of
+    <ul>
+    <li>
+       the <m>x=0</m> face <m>\Set{(x,y,z)}{y^2+z^2\leqslant a^2, x=0, y\geqslant 0,\ z\geqslant 0}</m>
+       with normal <m>\vn =-\vi </m>,
+    </li>
+    <li>
+       the <m>y=0</m> face <m>\Set{(x,y,z)}{x^2+z^2\leqslant a^2, x\geqslant 0, y= 0,\ z\geqslant 0}</m>
+       with normal <m>\vn =-\vj </m>,
+    </li>
+    <li>
+       the <m>z=0</m> face <m>\Set{(x,y,z)}{x^2+y^2\leqslant a^2, x\geqslant 0, y\geqslant 0,\ z= 0}</m>
+       with normal <m>\vn =-\vk </m>,
+    </li>
+    <li>
+       and the first octant part of the sphere. Call it <m>\cS</m>.
+    </li>
+    </ul>
+    Then
+    <md>
+    <mrow>
+    \iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    &amp;=\iiint_{\cV}\big[z+1+z-2z\big]\,\dee{V}
+    =\iiint_{\cV} \,\dee{V}=\frac{1}{8}\ \frac{4}{3}\pi a^3
+    </mrow><mrow>
+    &amp;=\frac{1}{6}\pi a^3
+    </mrow><mrow>
+    \iint_{\Atop{z=0}{\rm face}}\vF\cdot(-\vk )\,\dee{x}\,\dee{y}
+    &amp;=\iint_{\Atop{z=0}{\rm face}}(2x+0^2)\,\dee{x}\,\dee{y}
+    =2\int_0^a dr\,r\int_0^{\pi/2}\dee{\theta}\ r\cos\theta
+    </mrow><mrow>
+    &amp;=2\int _0^a r^2\,dr
+    =\frac{2a^3}{3}
+    </mrow><mrow>
+    \iint_{\Atop{y=0}{\rm face}}\vF\cdot(-\vj )\,\dee{x}\,\dee{z}
+    &amp;=-\iint_{\Atop{y=0}{\rm face}}(0+0z)\,\dee{x}\,\dee{z}
+    =0
+    </mrow><mrow>
+    \iint_{\Atop{x=0}{\rm face}}\vF\cdot(-\vi )\,\dee{y}\,\dee{z}
+    &amp;=\iint_{\Atop{x=0}{\rm face}}-(y+0z)\,\dee{y}\,\dee{z}
+    =-\int_0^a dr\,r\int_0^{\pi/2}\dee{\theta}\ r\sin\theta
+    </mrow><mrow>
+    &amp;=-\int _0^a r^2\,dr=-\frac{a^3}{3}
+    </mrow>
+    </md>
+    By le théorème de la divergence
+    <md>
+    <mrow>
+    \iint_{S}\vF\cdot\vn \,\dee{x}\,\dee{y}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    -\iint_{\Atop{x=0}{\rm face}}\hskip-3pt\vF\cdot(-\vi )\,\dee{y}\,\dee{z}
+    </mrow><mrow>&amp;\hskip1in
+    -\iint_{\Atop{y=0}{\rm face}}\hskip-3pt\vF\cdot(-\vj )\,\dee{x}\,\dee{z}
+    -\iint_{\Atop{z=0}{\rm face}}\hskip-3pt\vF\cdot(-\vk )\,\dee{x}\,\dee{y}
+
+    </mrow><mrow>
+    &amp;=\left[\frac{\pi}{6}-\frac{1}{3}\right]a^3
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    Soit <m>\ \vF=(x-yz)\vi +(y+xz)\vj +(z+2xy)\vk \ </m>, puis
+    <ul>
+    <li>
+    <m>\cS_1</m> la portion du cylindre  <m>\ x^2+y^2=2\ </m> qui se trouve à l'intérieur de la sphère  <m>\ x^2+y^2+z^2=4</m>
+    </li>
+    <li>
+    <m>\cS_2</m> la portion de la sphère   <m>\ x^2+y^2+z^2=4\ </m> qui se trouve à l'extérieur du cylindre  <m>\ x^2+y^2=2\ </m>
+    </li>
+    <li>
+    <m>\cV</m> la région solide limitée par  <m>\cS_1</m> et <m>\cS_2</m>
+    </li>
+    </ul>
+    Calculer
+    <ol marker="a">
+    <li>
+    <m>\iint_{S_1}\vF\cdot \vn \,\dee{S}</m>  avec <m>\vn </m> pointant vers l'intérieur;    </li>
+    <li>
+    <m>\iiint_{\cV}\vnabla\cdot F\,\dee{V}</m>
+    </li>
+    <li>
+    <m>\iint_{S_2}\vF\cdot \vn \,\dee{S}</m> avec  <m>\vn </m> pointant vers l'extérieur
+    </li>
+    </ol>
+    Utiliser le théorème de la divergence  pour répondre à au moins une des parties (a), (b) ou (c).
+    </p></statement>
+
+    <hint><p>
+    (a) Penser aux coordonnées cylindriques.
+    </p>
+
+    <p>(b) Le volume de <m>\cV</m> peut être calculé facilement avec des rondelles horizontales. C'est en fait un exercice de calcul intégral à une variable.
+    </p>
+
+    </hint>
+
+    <answer><p>
+    (a) <m>-8\sqrt{2}\pi</m> </p><p>
+    (b) <m>8\sqrt{2}\pi</m> </p><p>
+    (c) <m>16\sqrt{2}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    (a)
+    On the cylindrical surface <m>S_1</m>, use (surprise!) cylindrical coordinates.
+    Since the cylinder has radius <m>\sqrt{2}</m>, we may parametrize it by
+    <md>
+    <mrow>
+    \vr(\theta,z) &amp;= \sqrt{2}\cos\theta\,\vi  + \sqrt{2}\sin\theta\,\vj  + z\,\vk
+    </mrow><mrow>
+    \pdiff{\vr}{\theta}(\theta,z)
+       &amp;= -\sqrt{2}\sin\theta\,\vi  + \sqrt{2}\cos\theta\,\vj
+    </mrow><mrow>
+    \pdiff{\vr}{z}(\theta,z)
+       &amp;= \vk
+    </mrow><mrow>
+    \vn \,\dee{S} &amp;= \pm \pdiff{\vr}{\theta}(\theta,z)\times
+                    \pdiff{\vr}{z}(\theta,z)\ \dee{\theta}\, \dee{z}
+    </mrow><mrow>
+            &amp;=\pm\det\left[\begin{matrix} \vi  &amp; \vj  &amp;\vk  \\
+                              -\sqrt{2}\sin\theta\,\vi  &amp; \sqrt{2}\cos\theta &amp; 0 \\
+                                0 &amp; 0 &amp; 1
+                       \end{matrix}\right]\ \dee{\theta}\, \dee{z}
+    </mrow><mrow>
+            &amp;= \pm\big(\sqrt{2}\cos\theta\,\vi +\sqrt{2}\sin\theta\,\vj \big)\
+                                       \dee{\theta}\ \dee{z}
+    </mrow>
+    </md>
+    To get the inward pointing normal, choose the minus sign. So
+    <md>
+    <mrow>
+    \vF\cdot\vn \,\dee{S}
+    &amp;=
+    \big[\sqrt{2}\big(\cos\theta-z\sin\theta\big)\vi
+          + \sqrt{2}\big(\sin\theta+z\cos\theta\big)\vj
+          + (\cdots)\vk \big]
+    </mrow><mrow>
+    &amp;
+    \hskip2in\cdot
+    \big[-\sqrt{2}\cos\theta\,\vi -\sqrt{2}\sin\theta\,\vj \big]\ \dee{\theta}\, \dee{z}
+    </mrow><mrow>
+    &amp;=-2\big[\big(\cos\theta-z\sin\theta\big)\cos\theta
+    +\big(\sin\theta+z\cos\theta\big)\sin\theta\big]\ \dee{\theta}\, \dee{z}
+    </mrow><mrow>
+    &amp;=-2\, \dee{\theta}\, \dee{z}
+    </mrow>
+    </md>
+    On the intersection of the sphere and cylinder
+    <md>
+    <mrow>
+    z^2=4-x^2-y^2 = 4-2=2
+    </mrow>
+    </md>
+    so <m>z</m> runs from <m>-\sqrt{2}</m> to <m>\sqrt{2}</m> (see the figure below)
+    and
+    <md>
+    <mrow>
+    \iint_{S_1}\vF\cdot \vn \,\dee{S}
+    =-2\int_{-\sqrt{2}}^{\sqrt{2}}\dee{z}\,\int_0^{2\pi}\dee{\theta}
+    =-8\sqrt{2}\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) Observe that <m>\vnabla\cdot \vF=3</m>. So
+    <me>
+    \iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    =\iiint_{\cV} 3\,\dee{V}
+    </me>
+    The horizontal cross-section of <m>\cV</m> at height <m>z</m> is a washer with outer
+    radius <m>\sqrt{4-z^2}</m> (determined by the equation of the sphere) and inner
+    radius <m>\sqrt{2}</m> (determined by the equation of the cylinder).
+    </p>
+
+    <sidebyside width="61%">
+    <image source = "images/CLP4-figs/pfigs/cylSph"/>
+    </sidebyside>
+
+    <p>
+    So the cross-section has area
+    <m>\pi\big(\sqrt{4-z^2}\big)^2-\pi\big(\sqrt{2}\big)^2=\pi\big(2-z^2\big)</m>
+    and
+    <md>
+    <mrow>
+    \iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    &amp;=3\iiint_{\cV} \,\dee{V}
+    =3\int_{-\sqrt{2}}^{\sqrt{2}} \pi\big(2-z^2\big)\,\dee{z}
+    </mrow><mrow>
+    &amp;=6\pi \int_{0}^{\sqrt{2}} \big(2-z^2\big)\,\dee{z}
+    =6\pi\big(2\sqrt{2}-\frac{2^{3/2}}{3}\big)
+    </mrow><mrow>
+    &amp;=8\sqrt{2}\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>(c)
+    By le théorème de la divergence
+    <me>
+    \iint_{S_2}\vF\cdot \vn \,\dee{S}
+    =\iiint_{\cV}\vnabla\cdot F\,\dee{V}
+    -\iint_{S_1}\vF\cdot \vn \,\dee{S}
+    =16\sqrt{2}\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+  </exercisegroup>
+    
+  <exercisegroup> 
+      <title>Pour aller plus loin</title>
+      
+      
+
+    <exercise>
+    <statement><p>
+    Soit <m>\vE(\vr)</m> le champ électrique du à une configuration de charges électriques de densité (de charge)  <m>\rho(\vr)</m>. La loi de Gauss dit que si  <m>\cV</m> est un solide dans  <m>\R^3</m> avec bord (surface) <m>\partial V</m>, alors le flux electrique
+    <me>
+    \iint_{\partial V}\vE\cdot\vn \, \dee{S}=4\pi Q
+    \qquad \text{ où } \qquad Q=\iiint_{\cV}\rho\ \dee{V}
+    </me>
+    est la charge totale dans  <m>\cV</m>. Ici, comme d'habiture, <m>\vn </m> est le vecteur normal qui pointe vers l'extérieur. Montrer que
+    <me>
+    \vnabla\cdot\vE(\vr)=4\pi \rho(\vr)
+    </me>
+    pour tout <m>\vr</m> dans <m>\R^3</m>. Ceci est l'une des équations de Maxwell. Prendre pour acquis que <m>\vnabla\cdot\vE(\vr)</m> et <m> \rho(\vr)</m> sont bien définis et continus partout.
+    </p></statement>
+
+    <hint><p>
+    Revoir comment l'équation de la chaleur a été établie.
+    </p></hint>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+    By le théorème de la divergence
+    <me>
+    \iint_{\partial V}\vE\cdot\vn \, \dee{S}
+    =\iiint_{\cV}\vnabla\cdot\vE\,\dee{V}
+    </me>
+    So by Gauss' law
+    <me>
+    \iiint_{\cV}\vnabla\cdot\vE\,\dee{V}=4\pi\iiint_{\cV}\rho\ \dee{V}
+    \quad\implies\quad
+    \iiint_{\cV}\big[\vnabla\cdot\vE-4\pi\rho\big]\,\dee{V}=0
+    </me>
+    This is true for all solids <m>\cV</m> for which le théorème de la divergence  applies.
+    If there were some point in <m>\R^3</m> for which <m>\vnabla\cdot\vE-4\pi\rho</m>
+    were, say, strictly bigger than zero, then, by continuity, we could find a ball
+    <m>B_\epsilon</m> centered on that point with <m>\vnabla\cdot\vE-4\pi\rho \gt 0</m> everywhere
+    on <m>B_\epsilon</m>. This would force  <m>\iiint_{B_\epsilon}\big[\vnabla\cdot\vE-4\pi\rho\big]\,\dee{V} \gt 0</m>,
+    which violates <m>\iiint_{\cV}\big[\vnabla\cdot\vE-4\pi\rho\big]\,\dee{V}=0</m> with <m>\cV</m>
+    set equal to <m>B_\epsilon</m>. Hence <m>\vnabla\cdot\vE-4\pi\rho</m> must be zero everywhere.
+    </p></solution>
+    </exercise>
+
+    <exercise>
+    <statement><p>
+    Soit  <m>\cV</m> une région solide dans  <m>\R^3</m> dont le bord  est <m>\partial \cV</m>. Montrer que
+    <me>
+    \iint_{\partial V}\vr\cdot\vn \,\dee{S}=3\,\text{Volume}(V)
+    </me>
+    où <m>\vr=x\,\vi +y\,\vj +z\,\vk </m> et, comme d'habitude <m>\vn </m> est le vecteur normal à  <m>\partial \cV</m> qui pointe vers l'extérieur. Expiquer géométriquement ce résultat.
+    </p></statement>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+     By le théorème de la divergence
+    <md>
+    <mrow>
+    \iint_{\partial V}\vr\cdot\vn \, \dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vr\,\dee{V}
+    =\iiint_{\cV}\vnabla\cdot(x\,\vi +y\,\vj +z\,\vk )\,\dee{V}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV} 3\,\dee{V}
+    =3\,\text{Volume}(V)
+    </mrow>
+    </md>
+    Our geometric explanation starts with the observation that
+    the volume of the cone with vertex <m>(0,0,0)</m> and base a tiny piece of
+    surface <m>\dee{S}</m> is <m>\frac{1}{3}</m> times the area of the base times
+    the height of the cone. The height of the cone is <m>|\vn \cdot\vr|</m>,
+    where <m>\vr</m> is a point in <m>\dee{S}</m>. So the volume of the cone is <m>\frac{1}{3}|\vn \cdot\vr|\,\dee{S}</m>.
+    </p>
+
+    <sidebyside width="42%">
+    <image source = "images/CLP4-figs/pfigs/cone"/>
+    </sidebyside>
+
+    <p>
+    First assume that <m>(0,0,0)</m> is in <m>\cV</m> and <m>\cV</m> is convex.
+    Then
+    <ul>
+    <li>
+    <m>\vn \cdot\vr \gt 0</m>, and the volume is  <m>\frac{1}{3} \vn \cdot\vr \,\dee{S}</m>.
+    </li>
+    <li>
+    the cone is contained in <m>\cV</m> and
+    </li>
+    <li>
+     <m>\cV</m> is the union of all the tiny conical pieces
+    with <m>\dee{S}</m> running over <m>\partial V</m>.
+    </li>
+    </ul>
+    So
+    <me>
+    \text{Volume}(V)=\frac{1}{3}\iint_{\partial V}\vr\cdot\vn \, \dee{S}
+    </me>
+    To generalise to the case that  <m>\cV</m> is not convex or <m>(0,0,0)</m> is not in <m>\cV</m>,
+    write <m>\cV</m> as the difference between a large convex solid and one or more
+    smaller convex solids.
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2016A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\cS</m> la sphère de rayon  <m>3</m> centrée à l'origine orientée vers l'extérieur. Étant donné le champ de vecteurs  <m>\vF(x,y,z) = (0, 0, x + z)</m>:
+    <ol marker="a">
+    <li>
+    Calculer (avec la définition) le flux de  <m>\vF</m> à travers <m>\cS</m>
+    <me>
+       \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    </me>
+    C'est-à-dire, calculer le flux en évaluant l'intégrale de surface directement.
+    </li>
+    <li>
+       Calculer le même flux avec le théorème de la divergence.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Choisissez un paramétrage judicieux.
+    </p></hint>
+
+    <answer><p>
+    (a), (b) <m>36\pi</m>
+    </p></answer>
+
+    <solution><p> (a)
+    We'll parametrize the sphere using the spherical coordinates <m>\theta</m> and
+    <m>\varphi</m>.
+    <md>
+    <mrow>
+    x&amp;=3\sin\varphi\cos\theta
+    </mrow><mrow>
+    y&amp;=3\sin\varphi\sin\theta
+    </mrow><mrow>
+    z&amp;=3\cos\varphi
+    </mrow>
+    </md>
+    with <m>0\le\theta\leqslant 2\pi</m>, <m>0\le\varphi\leqslant \pi</m>.
+    Since
+    <md>
+    <mrow>
+    \Big(\frac{\partial x}{\partial\theta}\,,\,
+          \frac{\partial y}{\partial\theta}\,,\,
+          \frac{\partial z}{\partial\theta}\Big)
+    &amp;=\big(-3\sin\varphi\sin\theta\,,\,
+           3\sin\varphi\cos\theta\,,\,0\big)
+    </mrow><mrow>
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+                 \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    &amp;=(3\cos\varphi\cos\theta\,,\,3\cos\varphi\sin\theta\,,\,-3\sin\varphi)
+    </mrow>
+    </md>
+    (<xref ref="eq_SUdSparam"/>) yields
+    <md>
+    <mrow>
+    \vn \,\dee{S}
+    &amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+              \frac{\partial y}{\partial\theta}\,,\,
+              \frac{\partial z}{\partial\theta}\Big)
+            \times
+    \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+       \,,\, \frac{\partial z}{\partial\varphi}\Big)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm \big(-3\sin\varphi\sin\theta\,,\,
+           3\sin\varphi\cos\theta\,,\,0\big)
+    </mrow><mrow>
+    &amp;\hskip1.5in\times
+    (3\cos\varphi\cos\theta\,,\,3\cos\varphi\sin\theta\,,\,-3\sin\varphi)
+    \ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\pm\big(-9\sin^2\varphi\cos\theta\,,\,
+              -9\sin^2\varphi\sin\theta\,,\,
+              -9\sin\varphi\cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+    </mrow><mrow>
+    &amp;=\mp 9\sin\varphi \big(\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+    </mrow>
+    </md>
+    To get an outward pointing normal we need the <m>+</m> sign. For example, with the
+    <m>+</m> sign, the <m>z</m>-component is <m>9\sin\varphi\cos\varphi
+    =\frac{9}{2}\sin(2\varphi)</m> so that the normal is pointing upward when
+    <m>0 \lt \varphi \lt \frac{\pi}{2}</m>, i.e. in the northern hemisphere,
+    and is pointing downward when <m>\frac{\pi}{2} \lt \varphi \lt \pi</m>, i.e.
+    in the southern hemisphere. (As a further consistency check, note that
+    <m>\vn (\theta,\varphi)</m> is parallel to <m>\vr(\theta,\varphi)</m>.) So
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;= 9\!\int_{0}^{2\pi}\hskip-10pt\dee{\theta}\!
+    \int_0^\pi\hskip-5pt\dee{\varphi}\,\sin\varphi\,
+    (0,0,3\sin\varphi\cos\theta+3\cos\varphi)
+    </mrow><mrow>&amp;\hskip2in\cdot
+    \big(\sin\varphi\cos\theta\,,\,
+              \sin\varphi\sin\theta\,,\,
+              \cos\varphi\Big)
+    </mrow><mrow>
+    &amp;= 27\int_{0}^{2\pi}\hskip-10pt\dee{\theta}
+    \int_0^\pi\hskip-5pt\dee{\varphi}\ \big(\sin^2\varphi\cos\varphi\cos\theta
+                        +\sin\varphi\cos^2\varphi\big)
+    </mrow><mrow>
+    &amp;= 54\pi\int_0^\pi\hskip-5pt\dee{\varphi}\ \sin\varphi\cos^2\varphi\qquad
+    \text{since } \int_0^{2\pi}\cos\theta\ \dee{\theta}=0
+    </mrow><mrow>
+    &amp;= -18\pi \big[\cos^3\varphi\big]_0^\pi
+    </mrow><mrow>
+    &amp;= 36\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (b)
+    Set
+    <me>
+    V=\Set{(x,y,z)\in\R^3}{x^2+y^2+z^2\leqslant 9}
+    </me>
+    Since
+    <me>
+    \vnabla\cdot\vF = \pdiff{}{z}\big(x+z\big)=1
+    </me>
+    le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <me>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    =\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    =\iiint_{\cV} \dee{V}
+    =\frac{4}{3}\pi 3^3
+    =36\pi
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2016A</fromexam></title> --> 
+    <statement><p>
+    Considére le cube de côté <m>1</m> qui se trouve dans le premier octant
+    (<m>x \geqslant 0</m>, <m>y \geqslant 0</m>, <m>z \geqslant 0</m>) ayant un sommet à l'origine et le somme opposé au point <m>(1, 1, 1)</m>. Un de ses faces se trouve dans le plan <m>x = 0</m>, une autre dans  <m>y = 0</m>, et une troisième dans le plan  <m>z = 0</m>. Les trois autres faces se trouvent dans les plans <m>x = 1</m>, <m>y = 1</m>, et <m>z = 1</m>.
+    Soit  <m>\cS</m> la surface ouverte formée par les  <m>5</m> faces du cube qui ne se trouvent pas dans le plan <m>z = 0</m>. La surface  <m>\cS</m> est orientée de sorte que le normal uniatire pointe vers l'extérieur du cube. Trouver la valeur de
+    <me>
+    I=\iint_{\cS} \vF \cdot\vn \, \dee{S}
+    </me>
+    où <m>\vF</m> est le champ de vecteurs
+    <me>
+    \vF = \left(y \cos(y^2) + z - 1\,,\, \frac{z}{x+1}+1\,,\, xy e^{z^2}\right)
+    </me>
+    </p>
+
+    </statement>
+
+    <hint><p>
+    Ne pas évaluer l'intégrale directement.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{e}{4}</m>
+    </p></answer>
+
+    <solution><p>
+    Denote by <m>\cV</m> the cube specified in the problem. Then <m>\partial V</m>
+    consists of <m>\cS</m> together with the face <m>F</m> in the plane <m>z=0</m>, oriented
+    with the normal being <m>-\vk </m>.
+    </p>
+
+    <sidebyside width="37%">
+      <image source = "images/CLP4-figs/pfigs/cubeP"/>
+    </sidebyside>
+
+    <p>
+    As
+    <md>
+    <mrow>
+    \vnabla\cdot\vF &amp;=
+        \pdiff{}{x}\big(y \cos(y^2) + z - 1\big)
+         +\pdiff{}{y}\left(\frac{z}{x+1}+1\right)
+         +\pdiff{}{z}\big(xy e^{z^2}\big)
+    </mrow><mrow>
+       &amp;=   \pdiff{}{z}\big(xy e^{z^2}\big)
+
+    </mrow>
+    </md>
+    le théorème de la divergence  (Theorem <xref ref="thm_divThm"/>)
+    gives
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+        -\iint_F \vF \cdot (-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\int_0^1\dee{x}\int_0^1\dee{y}\int_0^1\dee{z}\
+          \pdiff{}{z}\big(xy e^{z^2}\big)
+      +\int_0^1\dee{x}\int_0^1\dee{y}\ xy e^{z^2}\Big|_{z=0}
+    </mrow><mrow>
+    &amp;=\int_0^1\dee{x}\int_0^1\dee{y}\ xy e^{z^2}\Big|_{z=0}^{z=1}
+    +\int_0^1\dee{x}\int_0^1\dee{y}\ xy e^{z^2}\Big|_{z=0}
+    </mrow><mrow>
+    &amp;=\int_0^1\dee{x}\int_0^1\dee{y}\ xy e^{z^2}\Big|_{z=1}
+    </mrow><mrow>
+    &amp;=e\left[\frac{x^2}{2}\right]_0^1\ \left[\frac{y^2}{2}\right]_0^1
+    </mrow><mrow>
+    &amp;=\frac{e}{4}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2013D</fromexam></title> --> 
+    <statement><p><ol marker="a">
+    <li>
+    Trouver un vecteur normal unitaire à la surface <m>z = xy</m> pointant vers le haut, au point  <m>(1, 1, 1)</m>.
+    </li>
+    <li>
+    Considérer maintenant <m>\cS</m>, la portion de la surface  <m>z = xy</m>, qui se trouve à l'intérieur du cylindre  <m>x^2 + y^2 = 9</m>. Calculer le flux vers l'extérieur de du champ <m>\vF = (y, x, 3)</m>.
+    </li>
+    <li>
+    Trouver le flux de  <m>\vF = (y, x, 3)</m> à travers la surface cylindrique  <m>x^2 + y^2 = 9</m> entre  <m>z = xy</m> et <m>z = 10</m>. L'orientation est celle qui pointe en s'éloignant de l'axe des <m>z</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Il faut faire attention aux vecteurs normaux dans (c). Pour la pratique, essayer de faire (c) de deux façons différentes.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\frac{1}{\sqrt{3}}(-1,-1,1)</m> </p><p>
+    (b) <m>-\tfrac{27\pi}{2}</m> </p><p>
+    (c) <m>-\tfrac{81\pi}{2}</m>
+    </p></answer>
+
+    <solution><p>  (a)
+    The equation of the surface is <m>G(x,y,z)=z-xy=0</m>. So one normal to the
+    surface at <m>(1,1,1)</m> is <m>(\vnabla G)(1,1,1)=(-y,-x,1)\big|_{(x,y,z)=(1,1,1)}
+    =(-1,-1,1)</m> and a unit upward pointing normal at <m>(1,1,1)</m> is
+    <m>\frac{(-1,-1,1)}{|(-1,-1,1)|}=\frac{1}{\sqrt{3}}(-1,-1,1)</m>.
+    </p>
+
+    <p>  (b)
+    For the surface <m>G(x,y,z)=z-xy</m>, so that, by (<xref ref="eq_SUdSimplicit"/>),
+    <md>
+    <mrow>
+    \vn \,\dee{S} =\pm\frac{\vnabla G(x,y,z)}{\vnabla G(x,y,z)\cdot\vk }\dee{x}\dee{y}
+    =\pm (-y,-x,1) \dee{x}\dee{y}
+    </mrow>
+    </md>
+    The <q><m>+</m></q> sign gives the upward normal, so the specified upward flux is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    &amp;=\iint_{x^2+y^2\leqslant 9} (y,x,3)\cdot (-y-x,1)\,\dee{x}\dee{y}
+    </mrow><mrow>
+    &amp;=\iint_{x^2+y^2\leqslant 9} (3-x^2-y^2)\,\dee{x}\dee{y}
+    </mrow>
+    </md>
+    Switching to polar coordinates, the flux is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^3\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ (3-r^2)
+    =2\pi \int_0^3 \dee{r}\, (3r-r^3)
+    </mrow><mrow>
+    &amp;=2\pi \big(\tfrac{3}{2}3^2-\tfrac{1}{4}3^4\big)
+    =-\tfrac{27\pi}{2}
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (c) <em> by direct evaluation:</em>
+    Parametrize the specified surface using the cylindrical coordinates <m>\theta</m>
+    and <m>z</m>.
+    <md>
+    <mrow>
+    x &amp;= 3\cos \theta
+    </mrow><mrow>
+    y &amp;= 3\sin \theta
+    </mrow><mrow>
+    z &amp; = z
+    </mrow>
+    </md>
+    with <m>0\le\theta\leqslant 2\pi</m> and <m>9\sin\theta\cos\theta\leqslant z\leqslant 10</m>.
+    Then, using (<xref ref="eq_SUdSparam"/>),
+    <md>
+    <mrow>
+    \pdiff{\vr}{\theta}
+     &amp;= \big(-3\sin\theta\,,\, 3\cos\theta \,,\, 0\big)
+    </mrow><mrow>
+    \pdiff{\vr}{z}
+     &amp;= \big(0\,,\, 0 \,,\, 1\big)
+    </mrow><mrow>
+    \pdiff{\vr}{\theta} \times
+         \pdiff{\vr}{z}
+    &amp;=3\big(\cos\theta\,,\, \sin\theta\,,\,0 \big)
+    </mrow><mrow>
+    \vn \,\dee{S}
+    &amp;= \pdiff{\vr}{\theta} \times
+         \pdiff{\vr}{z}\dee{\theta}\,\dee{z}
+    =3\big(\cos\theta\,,\, \sin\theta\,,\,0 \big)\,\dee{\theta}\,\dee{z}
+    </mrow>
+    </md>
+    (We have taken the <m>+</m> sign in
+    <m>\vn \,\dee{S}
+    = \pm \pdiff{\vr}{\theta} \times
+         \pdiff{\vr}{z}\dee{\theta}\,\dee{z}</m>
+    to give the outward pointing normal.)
+    So the specified flux is
+    <md>
+    <mrow>
+    \dblInt \vF\cdot\vn \,\dee{S}
+    &amp; = 3\int_0^{2\pi}\dee{\theta} \int_{9\cos\theta\sin\theta}^{10}\dee{z}\
+         \overbrace{\big(3\sin\theta\,,\,3\cos\theta\,,\,3\big)}^{\vF=(y,x,3)}
+            \cdot \big(\cos\theta\,,\, \sin\theta\,,\,0 \big)
+    </mrow><mrow>
+    &amp; = 18\int_0^{2\pi}\dee{\theta} \int_{9\cos\theta\sin\theta}^{10}\dee{z}\
+         \sin\theta\,\cos\theta
+    </mrow><mrow>
+    &amp; = 18\int_0^{2\pi}\dee{\theta} \
+         \big[10 -9\cos\theta\sin\theta\big]\sin\theta\,\cos\theta
+    </mrow><mrow>
+    &amp; = -9\times 18\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\,\cos^2\theta
+    </mrow><mrow>
+    &amp;\qquad\qquad\text{since} \int_0^{2\pi} \sin\theta\cos\theta\ \dee{\theta}
+                     =\frac{1}{2} \int_0^{2\pi}\sin(2\theta)\ \dee{\theta} = 0
+    </mrow><mrow>
+    &amp;=-9\times 18\times\frac{1}{4} \int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)
+    </mrow><mrow>
+    &amp;=-\frac{81}{2}
+              \int_0^{2\pi}\dee{\theta}\,\frac{1-\cos(4\theta)}{2}
+    </mrow><mrow>
+    &amp;=-\frac{81}{2}
+         \left[\frac{\theta}{2}-\frac{\sin(4\theta)}{8}\right]_0^{2\pi}
+    </mrow><mrow>
+    &amp;= -\frac{81}{2}\pi
+    </mrow>
+    </md>
+    For an efficient, sneaky, way to evaluate
+    <m>\int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)</m> see Example
+    <xref ref="eg_workIntegralB"/>.
+    </p>
+
+    <p>  (c) <em> using le théorème de la divergence :</em>
+    Note that if <m>x^2+y^2\leqslant 9</m>, then <m>|x|\leqslant 3</m> and <m>y\leqslant 3</m> so
+    that <m>|xy|\leqslant 9 \lt 10</m>. Set
+    <md>
+    <mrow>
+    \tilde S&amp;=\Set{(x,y,z)}{ x^2+y^2 = 9,\ xy\leqslant z\leqslant 10}
+    </mrow><mrow>
+    V&amp;=\Set{(x,y,z)}{ x^2+y^2\leqslant 9,\ xy\leqslant z\leqslant 10}
+    </mrow>
+    </md>
+    Note that the boundary, <m>\partial V</m>,  of <m>\cV</m> consists of three parts:
+    <ul>
+    <li>
+    the side <m>\tilde S</m>, with outward pointing normal (which is the surface and
+    the normal specified in part (c) of the question)
+    </li>
+    <li>
+    the bottom, which is the surface <m>\cS</m> of part (b), with downward pointing
+    normal (which is opposite the normal specified in part (b)) and
+    </li>
+    <li>
+    the top, which is the surface <m>S_T=\Set{(x,y,z)}{x^2+y^2\leqslant 9,\ z=10}</m>,
+    with normal <m>\vn =\vk </m>.
+    </li>
+    </ul>
+    Here is a sketch of the part of <m>\partial V</m> that is in the first octant.
+    </p>
+
+    <sidebyside width="35%">
+      <image source = "images/CLP4-figs/pfigs/OE13D_6"/>
+    </sidebyside>
+
+    <p>
+    Note that <m>\vnabla\cdot\vF=0</m>. So le théorème de la divergence  yields
+    <md>
+    <mrow>
+    0&amp;=\iiint_{\cV} \vnabla\cdot \vF\,\dee{V}
+    </mrow><mrow>
+    &amp;=\iint_{\tilde \partial V} \vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{\tilde S} \vF\cdot\vn \,\dee{S}
+       -\iint_{S} \vF\cdot\vn \,\dee{S}
+       +\iint_{S_T} \vF\cdot\vk \,\dee{S}
+    </mrow>
+    </md>
+    This implies
+    <md>
+    <mrow>
+    \iint_{\tilde S} \vF\cdot\vn \,\dee{S}
+    &amp;=\iint_{S} \vF\cdot\vn \,\dee{S}
+       -\iint_{S_T} \vF\cdot\vk \,\dee{S}
+    </mrow><mrow>
+    &amp;=-\tfrac{27\pi}{2} -\iint_{x^2+y^2\leqslant 9} 3\,\dee{S}
+    </mrow><mrow>
+    &amp;= -\tfrac{27\pi}{2} -3 \pi 3^2
+    =-\tfrac{81\pi}{2}
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2013D</fromexam></title> --> 
+    <statement><p><ol marker="a">
+    <li>
+    Trouver la divergence du champ <m>\vF  = (x + \sin y, z + y, z^2)</m>.
+    </li>
+    <li>
+    Trouver le flux de <m>\vF</m> à travers l'hémisphère  <m>x^2 + y^2 + z^2 = 25</m>,    <m>z \geqslant 0</m>, orienté vers le haut.
+    </li>
+    <li>
+    Donner une surface fermée  <m>\cS</m>, telle que     <m>\iint_{\cS}\vF \cdot\vn \,\dee{S}</m> soit égale à  <m>-9</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Pour (b), ne pas évaluer le flux directement.
+
+    Pour (c), le flux peut être relié au volume de la région limitée par la surface et le centre de mass de cette région.
+    </p>
+
+    </hint>
+
+    <answer><p>
+    (a) <m>\vnabla\cdot\vF =2+2z</m> </p><p>
+    (b) <m>\pi\frac{23}{6} 5^3 =\frac{2875}{6}\pi</m>
+    </p>
+
+    <p>(c) Soit <m>\cS</m> une surface qui délimite un solide  <m>\cV</m>, orientée vers l'extérieur. Si <m>\bar z = -\frac{9}{2|\cV| }-1</m>, où <m>|\cV| </m> est le volume de <m>\cV</m> et <m>\bar z</m> est la composante  <m>z</m> du barycentre (i.e. centre de masse si la densité est constante) de <m>\cV</m>, alors
+    <m>\iint_{S} \vF\cdot\vn \,\dee{S}=-9</m>. Une surface qui vérifie ces conditions est le cube unitaire  <m>\big(0,0, -\frac{11}{2}\big)</m>.
+    </p></answer>
+
+    <solution><p> (a)
+    The divergence of <m>\vF</m> is
+    <md>
+    <mrow>
+    \vnabla\cdot\vF
+    &amp;= \tfrac{\partial }{\partial x}(x+\sin y)
+      +\tfrac{\partial }{\partial y}(z+y)
+      +\tfrac{\partial }{\partial z}(z^2)
+    </mrow><mrow>
+    &amp;=2+2z
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (b) Set
+    <md>
+    <mrow>
+    V &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant 25,\ 0\leqslant z\leqslant \sqrt{25-x^2-y^2}}
+    </mrow><mrow>
+    S_T &amp;= \Set{(x,y,z)}{x^2+y^2+z^2 = 25,\ z\geqslant 0}
+    </mrow><mrow>
+    S_B &amp;= \Set{(x,y,z)}{x^2+y^2 \leqslant 25,\ z= 0}
+    </mrow>
+    </md>
+    Note that the boundary, <m>\partial V</m>, of <m>\cV</m> consists ot two parts <mdash/>
+    <m>S_T</m> with upward normal, and <m>S_B</m> with normal <m>-\vk </m>.
+    We are to find the fluxà travers <m>S_T</m> with upward normal. By the
+    divergence theorem, it is
+    <md>
+    <mrow>
+    \iint_{S_T} \vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+         - \iint_{S_B} \vF\cdot(-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;= \iiint_{\cV} (2+2z)\,\dee{V}
+    </mrow>
+    </md>
+    since <m>\vF\cdot\vk =z^2=0</m> on <m>S_B</m>. We'll compute the volume integral by expressing it as an iterated integral, with the <m>z</m> integration on the
+    outside. In <m>\cV</m>, <m>z</m> ranges for <m>0</m> to <m>5</m>. The set of points
+    at exactly height <m>z</m> in <m>\cV</m> is  <m>\Set{(x,y,z)}{x^2+y^2\leqslant 25-z^2}</m>.
+    So
+    <md>
+    <mrow>
+    \iint_{S_T} \vF\cdot\vn \,\dee{S}
+    &amp;= \int_0^5\dee{z} \iint_{x^2+y^2\leqslant 25-z^2}
+                \dee{x}\,\dee{y}\  (2+2z)
+    </mrow><mrow>
+    &amp;= \int_0^5\dee{z}\ (2+2z)\iint_{x^2+y^2\leqslant 25-z^2}
+    \dee{x}\,\dee{y}
+    </mrow><mrow>
+    &amp;= \int_0^5\dee{z}\ \pi(25-z^2) (2+2z)
+    </mrow>
+    </md>
+    since <m>\iint_{x^2+y^2\leqslant 25-z^2} \dee{x}\,\dee{y}</m>
+    is the area of a disk of radius <m>\sqrt{25-z^2}</m>. Continuing,
+    <md>
+    <mrow>
+    \iint_{S_T} \vF\cdot\vn \,\dee{S}
+    &amp;= \pi\int_0^5\dee{z}\ (50 -2z^2 +50z -2z^3)
+    </mrow><mrow>
+    &amp;=\pi\Big(50\times 5-2\frac{5^3}{3} +50\frac{5^2}{2}-2\frac{5^4}{4}\Big)
+    </mrow><mrow>
+    &amp;=\pi 5^3 \Big(2-\frac{2}{3} +5-\frac{5}{2}\Big)
+    </mrow><mrow>
+    &amp;= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)
+    </mrow><mrow>
+    &amp;=\pi\frac{23}{6} 5^3
+    =\frac{2875}{6}\pi
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (c)
+    To start, consider any closed surface <m>\cS</m> that is the boundary of a
+    solid <m>\cV</m>. Use
+    <ul>
+    <li>
+    the outward pointing normal for <m>\cS</m>,
+    </li>
+    <li>
+    <m>|\cV| </m> to denote the volume of <m>\cV</m>, and
+    </li>
+    <li>
+    <m>\bar z=\frac{1}{|\cV| }\iiint_{\cV} z\ \dee{V}</m> to denote the <m>z</m>-component
+    of the centroid (i.e. centre of mass with constant density) of <m>\cV</m>.
+    </li>
+    </ul>
+    Then, by le théorème de la divergence
+    <md>
+    <mrow>
+    \iint_{S} \vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    =\iiint_{\cV} (2+2z)\,\dee{V}
+    </mrow><mrow>
+    &amp;=2\iiint_{\cV} \,\dee{V} +2\iiint_{\cV} z\,\dee{V}
+    </mrow><mrow>
+    &amp;=2|\cV|  +2|\cV| \bar z
+    </mrow>
+    </md>
+    This takes the value <m>-9</m> if and only if
+    <md>
+    <mrow>
+     2|\cV| \bar z =-9-2|\cV|  \iff
+    \bar z = -\frac{9}{2|\cV| }-1
+    </mrow>
+    </md>
+    One surface which obeys this condition is the unit cube (with outward normal)
+    centred on <m>\big(0,0, -\frac{11}{2}\big)</m>.
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2011D</fromexam></title> --> 
+    <statement><p>
+    Calculer les intégrales de surface (méthode au choix).
+    <ol marker="a">
+    <li>
+    <m>\iint_{\cS} z^2\,\dee{S}</m>, si  <m>\cS</m> est la portion du cône
+    <m>x^2 + y^2 = 4z^2</m> où <m>0 \leqslant x \leqslant y</m> et <m>0 \leqslant z \leqslant 1</m>.
+    </li>
+    <li>
+    <m>\iint_{\cS} \vF \cdot \vn \,\dee{S}</m>, if <m>\vF = z\vk </m> and <m>\cS</m> est le rectangle de sommets <m>(0, 2, 0)</m>, <m>(0, 0, 4)</m>, <m>(5, 2, 0)</m>, <m>(5, 0, 4)</m>, orienté vers le haut.
+    </li>
+    <li>
+    <m>\iint_{\cS} \vF \cdot \vn \,\dee{S}</m>, où <m>\vF = (y - z^2 )\vi  + (z - x^2)\vj
+    + z^2\vk </m> et <m>\cS</m> est la surface qui délimite la boîte  <m>0 \leqslant x \leqslant 1</m>, <m>0 \leqslant y \leqslant 2</m>, <m>0 \leqslant z \leqslant 3</m>, avec le normal pointant vers l'extérieur.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (b) Plusieurs méthodes pour calculer des intégrales de flux sont à notre disposition. Qu'est-ce que chacune d'elles demanderait? Laquelle est plus facile à utiliser?
+    </p>
+
+    <p>(c) Ne pas évaluer pas directement.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\frac{\sqrt{5}\pi}{8}</m>  </p><p>
+    (b) <m>20</m>  </p><p>
+    (c) <m>18</m>
+    </p></answer>
+
+    <solution><p> (a) The constant <m>z</m> cross-section of the cone at height
+    <m>0\leqslant z\leqslant 1</m> is a circle of radius <m>2z</m>. So we may parametrize the
+    cone by
+    <me>
+    \vr(\theta,z) = 2z\cos\theta\,\vi  + 2z\sin\theta\,\vj  +z\,\vk
+    \qquad 0\le\theta \lt  2\pi,\ 0\leqslant z\leqslant 1
+    </me>
+    Since
+    <md>
+    <mrow>
+    \tfrac{\partial\vr}{\partial\theta}
+    &amp;=\big(-2z\sin\theta\,,\,
+            2z\cos\theta\,,\,
+              0 \big)
+    </mrow><mrow>
+    \tfrac{\partial\vr}{\partial z}
+    &amp;=\big(2\cos\theta\,,\,
+           2\sin\theta\,,\,
+              1 \big)
+    </mrow><mrow>
+    \tfrac{\partial\vr}{\partial\theta} \times \tfrac{\partial\vr}{\partial z}
+    &amp;=\big(2z\cos\theta\,,\,
+           2z\sin\theta\,,\,
+           -4z\big)
+    </mrow>
+    </md>
+    (<xref ref="eq_SUdSparam"/>) yields that
+    the element of surface area for this parametrization is
+    <md>
+    <mrow>
+    \dee{S} &amp;=
+    \big|\tfrac{\partial\vr}{\partial\theta}\times
+          \tfrac{\partial\vr}{\partial z} \big|\dee{\theta}\dee{z}
+    \ =\ 2z\big|(\cos\theta\,,\,\sin\theta\,,\,-2\big)\big|
+        \dee{\theta}\dee{z}
+    </mrow><mrow>
+    &amp;=2\sqrt{5}z\,\dee{\theta}\dee{z}
+    </mrow>
+    </md>
+    In our parametrization the condition <m>x\leqslant y</m> becomes
+    <m>2z\cos\theta\leqslant 2z\sin\theta</m>, which, for <m>z \gt  0</m>, is equivalent
+    to <m>\tan\theta\geqslant 1</m>.
+    So the specified integral is
+    <md>
+    <mrow>
+    \iint_{\cS} z^2\,\dee{S}
+    &amp;=2\sqrt{5}\int_0^1\dee{z}\int_{\pi/4}^{\pi/2}\dee{\theta}\ z^3
+    =\frac{\sqrt{5}\pi}{2}\int_0^1\dee{z}\ z^3
+    =\frac{\sqrt{5}\pi}{8}
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (b) Let's first do some strategizing. We have to compute a flux integral over a surface that is not closed. There are two potential sneaky
+    attacks that come to mind.
+    <ul>
+    <li>  The first uses Stokes' theorem. But the flux integral
+    in Stokes' theorem  is of the form
+    <m>\iint_{\cS} \vnabla\times\vA\cdot\vn \,\dee{S}</m>. So to be able to apply
+    Stokes' theorem in the current problem, <m>\vF</m> has to be of the form
+    <m>\vnabla\times\vA</m>. That is, <m>\vF</m> has to have a vector potential.
+    We know that in order for <m>\vF</m> to have a vector potential, it must
+    pass the screening test <m>\vnabla\cdot\vF=0</m>. Our <m>\vF=z\,\vk </m> fails
+    this screening test. So we can't use Stokes' theorem.
+    </li>
+    <li>  The second uses le théorème de la divergence. But the flux
+    integral in le théorème de la divergence  is over the boundary of a solid.
+    That is not the case for our <m>\cS</m>. So in order to apply le théorème de la divergence
+    in the current problem, we have to enlarge <m>\cS</m> to the boundary of
+    a solid. There are many ways to do this. But they all appear
+    fairly complicated. So it does not seem wise to use le théorème de la divergence.
+    </li>
+    </ul>
+    So it looks like we have to evaluate the flux integral directly.
+    To do so, we have to determine <m>\vn \,\dee{S}</m> for the specified rectangle.
+    Look at the sketch of <m>\cS</m> below. It is part of a plane,
+    </p>
+
+    <sidebyside width="45%">
+    <image source = "images/CLP4-figs/pfigs/OE11D_7"/>
+    </sidebyside>
+
+    <p>
+    and that plane is invariant under translations parallel to the
+    <m>x</m> axis. As the plane does not passà travers the origin, the equation
+    of the plane has to be of the form <m>by+cz=1</m>. For <m>(0,0,4)</m> to be on the plane,
+    we need <m>c=\frac{1}{4}</m>. For <m>(0,2,0)</m> to be on the plane, we need
+    <m>b=\frac{1}{2}</m>. So <m>\cS</m> is contained in the plane
+    <m>G(x,y,z) = \frac{y}{2} +\frac{z}{4} =1</m> and
+    equation (<xref ref="eq_SUdSimplicit"/>) gives that
+    <me>
+    \vn \,\dee{S} = \pm\frac{\vnabla G(x,y,z)}{\vnabla G(x,y,z)\cdot\vk }
+                           \dee{x}\dee{y}
+    =\pm \frac{(0,\frac{1}{2},\frac{1}{4})}{\frac{1}{4}} \dee{x}\dee{y}
+    =\pm (0,2,1)\, \dee{x}\dee{y}
+    </me>
+    The problem specifies that the normal is to be upward, i.e. is to have
+    a positive <m>z</m>-component. So
+    <me>
+    \vn \,\dee{S} = (0,2,1)\,\dee{x}\dee{y}
+    </me>
+    Again looking at the sketch of <m>\cS</m> above we see, as <m>(x,y,z)</m> runs over <m>\cS</m>, <m>(x,y)</m> runs over
+    <me>
+    R = \Set{(x,y)}{0\leqslant x\leqslant 5,\ 0\leqslant y\leqslant 2}
+    </me>
+    Thus our flux integral is
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;=\iint_{\cR} \overbrace{\big(4-2y\big)}^{z}\vk \cdot
+               \overbrace{(0,2,1)\,\dee{x}\dee{y}}^{\vn \,\dee{S}}
+    =\int_0^2\dee{y}\int_0^5\dee{x}\ (4-2y)
+    </mrow><mrow>
+    &amp;= \int_0^2\dee{y}\ 5(4-2y)
+    =5\Big[4y-y^2\Big]_0^2
+    =20
+    </mrow>
+    </md>
+    </p>
+
+    <p>  (c) The divergence of the given vector field is
+    <m>\vnabla\cdot\vF = 2z</m>, which is pretty simple. So let's
+    use le théorème de la divergence. If
+    <m>V=\Set{(x,y,z)}{0 \leqslant x \leqslant 1, 0 \leqslant y \leqslant 2, 0 \leqslant z \leqslant 3}</m>,
+    le théorème de la divergence  says that
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    &amp;= \iiint_{\cV} \vnabla\cdot\vF\,\dee{V}
+    = 2\iiint_{\cV} z\,\dee{V}
+    </mrow>
+    </md>
+    This integral would be easy enough to evaluate directly, but we don't
+    need to. The average value of <m>z</m> (i.e. the <m>z</m>-coordinate of the centre
+    of mass with constant density) is <m>\frac{3}{2}</m>, by symmetry. Since <m>\cV</m>
+    has volume <m>6</m>, that average value of <m>z</m> is also
+    <md>
+    <mrow>
+    \bar z = \frac{1}{6} \iiint_{\cV} z\,\dee{V} = \frac{3}{2}
+    </mrow>
+    </md>
+    So <m>\iiint_{\cV} z\,\dee{V}=9</m>
+    <md>
+    <mrow>
+    \iint_{\cS} \vF \cdot \vn \,\dee{S}
+    = 2\iiint_{\cV} z\,\dee{V}
+    =18
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2010A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\sigma_1</m> la surface ouverte donnée par  <m>z = 1 - x^2 - y^2</m>, <m>z \geqslant 0</m>.
+    Soit <m>\sigma_2</m> la surface ouverte donnée par <m>z = x^2 + y^2 - 1</m>, <m>z \leqslant 0</m>. Soit  <m>\sigma_3</m> la surface plane donnée par <m>z = 0</m>, <m>x^2 + y^2 \leqslant 1</m>. Considérer le champ de vecteurs  <m>\vF = [ a ( y^2 + z^2 ) + bxz ]\,\vi
+              + [ c ( x^2 + z^2 ) + dyz ]\,\vj
+              + x^2\,\vk </m>
+    où <m>a</m>, <m>b</m>, <m>c</m>, et <m>d</m> sont des constantes.
+    <ol marker="a">
+    <li>
+    Trouver le flux de  <m>\vF</m> à travers <m>\sigma_1</m> vers le haut.
+    </li>
+    <li>
+    Trouver les valeurs des constantes <m>a</m>, <m>b</m>, <m>c</m>, et <m>d</m> telles que le flux de  <m>\vF</m> vers l'extérieur à travers la surface fermée  <m>\sigma_1 \cup \sigma_3</m> soit nul.
+    </li>
+    <li>
+    Trouvers les valeurs des constantes <m>a</m>, <m>b</m>, <m>c</m>, et <m>d</m> telles que flux de  <m>\vF</m> vers l'extérieur à travers la surface fermée <m>\sigma_1 \cup \sigma_2</m> soit nul.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Pour (b) et (c), écrire soigneusement l'intégrale fournie par le théorème de la divergence.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\frac{\pi}{4} +\frac{\pi(b+d)}{6}</m>
+    </p>
+
+    <p>(b) <m>\iint_{\sigma_1\cup\sigma_3} \vF\cdot\vn \,\dee{S}</m> est nulle si et seulement si  <m>d=-b</m>.
+    </p>
+
+    <p>(c) <m>\iint_{\sigma_1\cup\sigma_3} \vF\cdot\vn \,\dee{S}</m> est nulle pour tous <m>a</m>, <m>b</m>, <m>c</m>, <m>d</m>.
+    </p></answer>
+
+    <solution><p> (a) For the surface <m>z=f(x,y)=1-x^2-y^2</m>, with an upwards
+    pointing normal,
+    <me>
+    \vn \,\dee{S} = \big[-f_x(x,y)\,\dee{x} -f_y(x,y) +\vk \big]\dee{x}\dee{y}
+                 = \big[2x\,\vi  + 2y\,\vj  +\vk \big]\,\dee{x}\dee{y}
+    </me>
+    by (<xref ref="eq_SUdSgraph"/>).
+    So the specified upward flux is
+    <md>
+    <mrow>
+    &amp;\iint_{\sigma_1} \vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iint_{x^2+y^2\leqslant 1}\hskip-5pt
+             \big\{[ a ( y^2 + z^2 ) + bxz ]\,\vi
+              + [ c ( x^2 + z^2 ) + dyz ]\,\vj  + x^2\,\vk \big\}
+    </mrow><mrow>
+    &amp;\hskip3in\cdot
+                \big\{2x\,\vi  + 2y\,\vj  +\vk \big\}_{z=1 - x^2 - y^2}
+             \,\dee{x}\dee{y}
+    </mrow><mrow>
+    &amp;=\!\iint_{x^2+y^2\leqslant 1}
+             \Big\{[2a x( y^2 \!+\! z^2 ) + 2bx^2z ]
+    </mrow><mrow>&amp;\hskip2in
+              + [2cy ( x^2 \!+\! z^2 ) +2 dy^2z ] + x^2\Big\}_{z=1 - x^2 - y^2}
+             \,\dee{x}\dee{y}
+    </mrow>
+    </md>
+    Now
+    <me>
+    \iint_{x^2+y^2\leqslant 1}\hskip-5pt
+             \big\{2a x( y^2 + z^2 ) \big\}_{z=1 - x^2 - y^2}
+             \,\dee{x}\dee{y} =0
+    </me>
+    because the integrand is odd under <m>x\rightarrow -x</m> and
+    <me>
+    \iint_{x^2+y^2\leqslant 1}\hskip-5pt
+             \big\{2cy ( x^2 + z^2 )\big\}_{z=1 - x^2 - y^2}
+             \,\dee{x}\dee{y} =0
+    </me>
+    because the integrand is odd under <m>y\rightarrow -y</m>. So that leaves
+    <me>
+    \iint_{\sigma_1} \vF\cdot\vn \,\dee{S}
+    =\iint_{x^2+y^2\leqslant 1}\hskip-5pt
+             \big\{ 2bx^2z +2 dy^2z  + x^2\big\}_{z=1 - x^2 - y^2}
+             \,\dee{x}\dee{y}
+    </me>
+    We'll switch to polar coordinates to evaluate the remaining integral.
+    <md>
+    <mrow>
+    \iint_{\sigma_1} \vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^1\hskip-5pt\dee{r}\, r\int_0^{2\pi}\hskip-5pt\dee{\theta}\
+             \big\{ 2br^2z\cos^2\theta  +2 dr^2z\sin^2\theta
+                         + r^2\cos^2\theta\big\}_{z=1 - r^2}
+    </mrow>
+    </md>
+    Now
+    <md>
+    <mrow>
+    \int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+    &amp;=\int_0^{2\pi}\frac{\cos(2\theta)+1}{2}\ \dee{\theta}
+    =\left[\frac{\sin(2\theta)}{4}+\frac{\theta}{2}\right]_0^{2\pi}
+    =\pi
+
+    </mrow><mrow>
+    \int_0^{2\pi}\sin^2\theta\ \dee{\theta}
+    &amp;=\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}
+    =\left[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+    =\pi
+    </mrow>
+    </md>
+    For an efficient, sneaky, way to evaluate
+    <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>
+    and <m>\int_0^{2\pi} \sin^2\theta\,\dee{\theta}</m>,
+    see Example
+    <xref ref="eg_workIntegralB"/>.
+    So, we finally have
+    <md>
+    <mrow>
+    \iint_{\sigma_1} \vF\cdot\vn \,\dee{S}
+    &amp;=\int_0^1\dee{r}\,
+             \big\{ 2\pi br^3(1-r^2)  +2\pi dr^3(1-r^2)
+                         + \pi r^3\big\}
+    </mrow><mrow>
+    &amp;=2\pi b\Big[\frac{1}{4}-\frac{1}{6}\Big]
+      +2\pi d\Big[\frac{1}{4}-\frac{1}{6}\Big]
+      +\pi\frac{1}{4}
+    =\frac{\pi}{4} +\frac{\pi(b+d)}{6}
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b), (c) Here is a side view of <m>\sigma_1</m>, <m>\sigma_2</m> and <m>\sigma_3</m>.
+    </p>
+
+    <sidebyside width="53%">
+    <image source = "images/CLP4-figs/pfigs/OE10A_5"/>
+    </sidebyside>
+
+    <p>
+    Set
+    <md>
+    <mrow>
+    V_b &amp;=\Set{(x,y,z)}{0\leqslant z \leqslant 1-x^2-y^2,\ x^2+y^2\leqslant 1}
+    </mrow><mrow>
+    V_c &amp;=\Set{(x,y,z)}{x^2+y^2-1 \leqslant z \leqslant 1-x^2-y^2,\ x^2+y^2\leqslant 1}
+    </mrow>
+    </md>
+    Then <m>\partial V_b = \sigma_1\cup\sigma_3</m> and
+         <m>\partial V_c = \sigma_1\cup\sigma_2</m>,
+    all with outward pointing normals. Since the divergence of <m>\vF</m> is
+    <me>
+    \vnabla\cdot\vF =
+      \pdiff{}{x}[ a ( y^2 \!+\! z^2 ) + bxz ]
+      +\pdiff{}{y}[ c ( x^2 \!+\! z^2 ) + dyz ]
+      +\pdiff{}{z}[ x^2]
+    = (b+d) z
+    </me>
+    le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\sigma_1\cup\sigma_3} \vF\cdot\vn \,\dee{S}
+       &amp; = \iiint_{V_b} \vnabla\cdot\vF\,\dee{V}
+         = (b+d)\iiint_{V_b} z\,\dee{V}
+    </mrow><mrow>
+    \iint_{\sigma_1\cup\sigma_2} \vF\cdot\vn \,\dee{S}
+       &amp; = \iiint_{V_c} \vnabla\cdot\vF\,\dee{V}
+         = (b+d)\iiint_{V_c} z\,\dee{V}
+    </mrow>
+    </md>
+    Now on <m>V_b</m>, <m>z\geqslant 0</m> and <m>z \gt 0</m> except on <m>\sigma_3</m>. So
+    <m>\iiint_{V_b} z\,\dee{V} \gt 0</m> and
+    <m>\iint_{\sigma_1\cup\sigma_3} \vF\cdot\vn \,\dee{S}</m> is zero if and only if
+    <m>d=-b</m>. That's the answer to part (b).
+    </p>
+
+    <p>On the other hand,  <m>V_c</m> is even under <m>z\rightarrow -z</m> so that
+    <m>\iiint_{V_c} z\,\dee{V}=0</m>. Consequently
+    <m>\iint_{\sigma_1\cup\sigma_3} \vF\cdot\vn \,\dee{S}</m> is zero for all <m>a</m>, <m>b</m>,
+    <m>c</m>, <m>d</m>.  That's the answer to part (c).
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2005A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cS</m> l'ellipsoïde <m>x^2+2y^2+3z^2=16</m> et <m>\vn </m> son normal unitaire pointant vers l'extérieur.
+    <ol marker="a">
+    <li>
+    Trouver  <m>\iint_{\cS} \vF\cdot\vn \,\dee{S}</m> si
+    <m>\vF(x,y,z)=\dfrac{(x,y,z)-(2,1,1)}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]}^{3/2}}</m>.
+    </li>
+    <li>
+    Trouver  <m>\iint_{\cS} \vG\cdot\vn \,\dee{S}</m> si
+    <m>\vG(x,y,z)=\dfrac{(x,y,z)-(3,2,2)}{{\big[(x-3)^2+(y-2)^2+(z-2)^2\big]}^{3/2}}</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Noter que  <m>2^2+2(1^2)+3(1)^2 = 9 \lt 16</m> de sorte que  <m>(2,1,1)</m> se trouve à l'intérieur de <m>\cS</m>, tandis que  <m>3^2+2(2^2)+3(2)^2 = 29 \gt 16</m>, et donc <m>(3,2,2)</m> est à l'extérieur de  <m>\cS</m>.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>4\pi</m>   </p><p>
+    (b) <m>0</m>.
+    </p></answer>
+
+    <solution><p>
+    We will be using le théorème de la divergence  in both parts (a) and <m>b</m>.
+    So as a prelimary calculation, let's find the divergence of
+    <m>\vH(x,y,z)=\frac{(x,y,z)-(a,b,c)}{{[(x-a)^2+(y-b)^2+(z-b)^2]}^{3/2}}</m>
+    for any <m>(a,b,c)</m>. If <m>(x,y,z)\ne(a,b,c)</m>,
+    <md>
+    <mrow>
+    &amp;\vnabla\cdot\vH(x,y,z)
+    </mrow><mrow>
+    &amp;\hskip0.25in
+    =\pdiff{}{x}\frac{x-a}
+                   {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
+    </mrow><mrow>&amp;\hskip1.5in
+    +\pdiff{}{y}\frac{y-b}
+                   {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
+    </mrow><mrow>&amp;\hskip1.5in
+    +\pdiff{}{z}\frac{z-c}
+                    {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
+
+    </mrow><mrow>
+    &amp;\hskip0.25in
+    =\frac{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]\ -\ (x-a)\ \frac{3}{2}(2(x-a))}
+                           {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
+
+    </mrow><mrow>&amp;\hskip1.5in
+    +\frac{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]\ -\ (y-b)\ \frac{3}{2}(2y)}
+                            {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
+
+    </mrow><mrow>&amp;\hskip1.5in
+    +\frac{\big[(x-a)^2+(y-b)^2+z^2\big]\ -\ (z-c)\ \frac{3}{2}(2(z-c))}
+                           {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
+
+    </mrow><mrow>
+    &amp;\hskip0.25in
+    =\frac{3\big[(x\!-\!a)^2+(y\!-\!b)^2+(z\!-\!c)^2\big]\
+                   -\ 3(x\!-\!a)^2-3(y\!-\!b)^2-3(z\!-\!c)^2}
+                           {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
+    </mrow><mrow>
+    &amp;\hskip0.25in=0
+    </mrow>
+    </md>
+    If <m>(x,y,z)=(a,b,c)</m>, <m>\vH(x,y,z)</m> is not defined
+    and hence <m>\vnabla\cdot\vH(x,y,z)</m> is also not defined.
+    </p>
+
+    <p>(b) By the above preliminary computation with <m>(a,b,c)=(3,2,2)</m>,
+    <m>\vnabla\cdot\vG</m> is defined and zero for all <m>(x,y,z)\ne (3,2,2)</m>,
+    and, in particular for all <m>(x,y,z)</m> in
+    <me>
+    V=\Set{(x,y,z)}{x^2+2y^2+3z^2\leqslant 16}
+    </me>
+    So, by le théorème de la divergence,
+    <md>
+    <mrow>
+    \iint_{\cS} \vG\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cV}\vnabla\cdot\vG\,\dee{V}
+    =0
+    </mrow>
+    </md>
+    </p>
+
+    <p>(a) Because <m>(1,1,2)</m> is inside <m>\cV</m>, we cannot use the argument of part (b),
+    to conclude that the integral is zero. Let <m>\veps \gt 0</m> be small enough
+    that
+    <me>
+    S_\veps = \Set{(x,y,z)}{(x-2)^2 + (y-1)^2 +(z-1)^2=\veps^2}
+    </me>
+    is completely contained inside <m>\cV</m>, as in the sketch below.
+    </p>
+
+    <sidebyside width="35%">
+      <image source = "images/CLP4-figs/pfigs/OE05A_3"/>
+    </sidebyside>
+
+    <p>
+    Set
+    <me>
+    V_\veps=\Set{(x,y,z)}{x^2+2y^2+3z^2\leqslant 16,\
+                    (x-2)^2 + (y-1)^2 +(z-1)^2\ge\veps^2}
+    </me>
+    The boundary, <m>\partial V_\veps</m>, of <m>\cV</m> consists of two parts <mdash/>
+    <m>\cS</m> and <m>S_\veps</m>, with the normals as in the figure above. The divergence
+    <m>\vnabla\cdot\vF</m> of <m>\vF</m> is well-defined and zero throughout <m>V_\veps</m>.
+    Consequently, le théorème de la divergence  gives
+    <md>
+    <mrow>
+    0 &amp;= \iiint_{\cV}\vnabla\cdot\vF\,\dee{V}
+       = \iint_{\cS} \vF\cdot\vn \,\dee{S}
+          + \iint_{S_\veps} \vF\cdot\vn \,\dee{S}
+    </mrow>
+    </md>
+    So
+    <me>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S} = -\iint_{S_\veps} \vF\cdot\vn \,\dee{S}
+    </me>
+    The unit normal to <m>S_\veps</m> at the point <m>(x,y,z)</m> on <m>S_\veps</m> is
+    <me>
+    \vn  =-\frac{1}{\veps}\big[(x-2)\,\vi  + (y-1)\,\vj  +(z-1)\,\vk \big]
+    </me>
+    (Recall that <m>|(2-1)\,\vi  + (y-1)\,\vj  +(z-1)\,\vk |=\veps</m> on <m>S_\veps</m>.
+    So, on <m>S_\veps</m>,
+    <md>
+    <mrow>
+    \vF\cdot\vn
+    &amp;= -\frac{1}{\veps}
+      \left(\frac{(x,y,z)-(2,1,1)}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]}^{3/2}}\right)
+    </mrow><mrow>&amp;\hskip2in
+      \cdot\big[(x-2)\,\vi  + (y-1)\,\vj  +(z-1)\,\vk \big]
+    </mrow><mrow>
+    &amp;=-\frac{1}{\veps} \left(\frac{(x-2)^2+(y-1)^2+(z-1)^2}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]
+                                                            }^{3/2}}\right)
+    </mrow><mrow>
+    &amp;= -\frac{1}{\veps^2}
+    </mrow>
+    </md>
+    Hence
+    <md>
+    <mrow>
+    \iint_{\cS} \vF\cdot\vn \,\dee{S}
+    = -\iint_{S_\veps}   \left(-\frac{1}{\veps^2}\right)\,\dee{S}
+    =\frac{1}{\veps^2} (4\pi\veps^2)
+    =4\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2005A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\Om\subset\R^3</m> une région bornée par une surface lisse  <m>\partial\Om</m> et avec normal unitaire  <m>\vn </m>. Montrer que pour tout champ de vecteurs  <m>\vF</m> de classe <m>C^1</m> sur  <m>\Om\cup\partial\Om</m>,
+    <me>
+    \iiint_\Om \vnabla\times\vF\,\dee{V}
+       = -\iint_{\partial\Om} \vF\times\vn \,\dee{S}
+    </me>
+    </p></statement>
+
+
+    <hint><p>
+    Voir le <xref ref="thm_divVrn"/>.
+    </p></hint>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+    This was part of Theorem <xref ref="thm_divVrn"/>.
+    To prove it apply le théorème de la divergence,  but with
+    <m>\vF</m> replaced by <m>\va\times\vF</m>, where <m>\va</m> is any constant vector.
+    <md>
+    <mrow>
+    &amp;\iint_{\partial \Omega} (\va\times\vF)\cdot\vn \ \dee{S}
+    =\iiint_{\cV}\vnabla\cdot(\va\times\vF)\ \dee{V}
+    </mrow><mrow>
+    &amp;\hskip0.5in
+    =\iiint_\Omega\big[\vF\cdot\underbrace{(\vnabla \times \va)}_{=\vZero}
+      -\va\cdot(\vnabla\times\vF)\big]\ \dee{V}
+    </mrow><mrow>
+    &amp;\hskip0.5in=-\iiint_\Omega\va\cdot(\vnabla \times\vF)\ \dee{V}
+    =-\va\cdot\iiint_\Omega\vnabla \times\vF\ \dee{V}
+    </mrow>
+    </md>
+    To get the second line we used the vector identity Theorem <xref ref="thm_divIdentities"/>.d.
+    To get the third line, we used that <m>\va</m> is a constant, so that
+    all of its derivatives are zero. For all vectors
+    <m>\va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc</m> (in case you don't
+    remember this, it was <xref ref="prop-vect-bis"/>.a)
+    so that
+    <me>
+    (\va\times\vF)\cdot\vn
+    =\va\cdot(\vF\times\vn )
+    </me>
+    and
+    <md>
+    <mrow>
+    &amp;\va\cdot\iint_{\partial \Omega} \vF\times\vn\ \dee{S}
+    =-\va\cdot\iiint_\Omega\vnabla \times\vF\ \dee{V}
+    </mrow><mrow>
+    \implies &amp;\va\cdot\bigg\{\iint_{\partial \Omega} \vF\times\vn\ \dee{S}
+    +\iiint_\Omega\vnabla\times\vF\ \dee{V}\bigg\}=0
+    </mrow>
+    </md>
+    In particular, choosing <m>\va=\vi </m>, <m>\vj </m> and <m>\vk </m>, we see that
+    all three components of the vector
+    <m>\iint_{\partial \Omega} \vF\times\vn\ \dee{S}
+    +\iiint_\Omega\vnabla\times\vF\ \dee{V}</m> are zero. So
+    <me>
+    \iiint_\Omega\vnabla\times\vF\ \dee{V}
+    =-\iint_{\partial \Omega} \vF\times\vn\ \dee{S}
+    =\iint_{\partial \Omega} \vn \times\vF\ \dee{S}
+    </me>
+    which is what we wanted show.
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2004A</fromexam></title> --> 
+    <statement><p>
+    Rappelons que si  <m>\cS</m> est une surface fermée lisse avec normal unitaire  <m>\vn </m>, alors pour toute fonction lisse <m>p(x,y,z)</m> sur  <m>\R^3</m>,
+    on a
+    <me>
+    \iint_{\cS} p\vn \ \dee{s}=\iiint_{\cE} \nabla p\ \dee{V}
+    </me>
+    où  <m>\cE</m> est la région solide bornée par  <m>\cS</m>. Montrer qu'en conséquence la force totale exercée sur la surface d'un solide immergé dans ungas de pression constante est nulle. La pression agit dans la direction de la normale à la surface.
+    </p></statement>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+    Pressure is force per unit surface area acting normally into
+    a surface. So the force per unit surface area is <m>-p\vn </m>. The total force
+    acting on <m>\cS</m> is
+    <me>
+    -\iint_{\cS} p\vn \,\dee{S}=-\iiint_E \nabla p\ \dee{V}
+    </me>
+    We are assuming that <m>p</m> is a constant, so that <m>\nabla p=0</m> and the
+    total force is zero.
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2002A</fromexam></title> --> 
+    <statement><p>
+    Soit <m>\vF</m> un champ de vecteurs lisse dans <m>\R^3</m> tel que le flux de  <m>\vF</m> vers l'extérieur de la sphère  <m>x^2+y^2+z^2=a^2</m> est égal à  <m>\pi(a^3+2a^4)</m> pour tout <m>a \gt 0</m>.
+    Calculer <m>\vnabla\cdot \vF(0,0,0)</m>.
+    </p></statement>
+
+    <hint><p>
+    Considérer une constante  <m>a</m> très petite.
+    </p></hint>
+
+    <answer><p>
+    <m>\frac{3}{4}</m>
+    </p></answer>
+
+    <solution><p>
+    Let <m>S_a</m> denote the sphere <m>x^2+y^2+z^2=a^2</m>
+    and <m>V_a</m> denote the solid inside it, which is the ball
+    <m>x^2+y^2+z^2\leqslant a^2</m>. Then, by le théorème de la divergence,
+    Theorem <xref ref="thm_divThm"/>,
+    <me>
+    \pi(a^3+2a^4)
+    =\iint_{S_a}\vF\cdot\vn \,\dee{S}
+    =\iiint_{V_a}\vnabla\cdot\vF\,\dee{V}
+    </me>
+    Now, for very small <m>a</m>, <m>\vnabla\cdot\vF</m> is almost equal to
+    <m>\vnabla\cdot\vF(0,0,0)</m> on all of <m>V_a</m>, and
+    the integral  <m>\iiint_{V_a}\vnabla\cdot\vF\,\dee{V}</m>
+    will be
+    <me>
+    \vnabla\cdot\vF(0,0,0){\rm Volume}(V_a)+O(a^4)
+    =\frac{4}{3}\pi a^3\vnabla\cdot\vF(0,0,0)+O(a^4)
+    </me>
+    Here <m>O(a^4)</m> is an error term that is bounded by a constant times <m>a^4</m>.
+    This is consistent with the above equation if and only if
+    <m>\vnabla\cdot\vF(0,0,0)=\frac{3}{4}</m>.
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2018A</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\ \vF= (x^2+y^2+z^2)\,\vi +(e^{x^2}+y^2)\,\vj +(3+x+z)\,\vk \ </m> et  soit <m>\cS</m> la portion de la surface  <m>\ x^2+y^2+z^2=2az+3a^2\ </m> telle que  <m>\ z\geqslant 0</m>, orienté en s'éloignant de l'origine. Ici <m>a \gt 0</m> est constante.  Calculer le flux de  <m>\vF</m> à travers <m>\cS</m>.
+    </p></statement>
+
+    <hint><p>
+    Dessiner soigneusement une vue latérale de <m>\cS</m>.
+    </p></hint>
+
+    <answer><p>
+    <m>9\pi a^3+9\pi a^2</m>
+    </p></answer>
+
+    <solution><p>
+    Note that, since <m>z^2-2az = (z-a)^2 -a^2</m>,
+    <me>
+    S=\Set{(x,y,z}{ x^2+y^2 +(z-a)^2=4a^2,\ z\geqslant 0}
+    </me>
+    Let <m>\cV</m> be the solid
+    <me>
+    V=\Set{(x,y,z)}{x^2+y^2+(z-a)^2\leqslant 4a^2,\ z\geqslant 0}
+    </me>
+    It is the interior of the sphere of radius <m>2a</m> centred on <m>(0,0,a)</m>.
+    The surface of <m>\cV</m> (with outward normal) is the union of <m>\cS</m>
+    (with normal pointing away from the origin)  and the
+    disk
+    <me>
+    B=\Set{(x,y,0)}{x^2+y^2\leqslant 3a^2}
+    </me>
+    with normal <m>-\vk </m>. Hence, by le théorème de la divergence
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \, \dee{S}
+    &amp;=\iiint_{\cV}\vn\cdot\vF\,\dee{V}-\iint_B\vF\cdot(-\vk )\,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cV}(2x+2y+1)\,\dee{V}-\iint_B(-3-x)\,\dee{S}
+    </mrow>
+    </md>
+    Both <m>\cV</m> and <m>B</m> are invariant under <m>x\rightarrow -x</m> and under <m>y\rightarrow
+    -y</m>, so <m>\iiint_{\cV}x\,\dee{V}=\iiint_{\cV}y\,\dee{V}=\iint_B x\,\dee{S}=0</m> and
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \, \dee{S}
+    &amp;=\iiint_{\cV} \,\dee{V}+3\iint_B\,\dee{S}
+    </mrow>
+    </md>
+    To evaluate the integral over <m>\cV</m>, we note that <m>z</m> runs from
+    <m>0</m> to <m>3a</m> and that the cross section
+    of
+    <me>
+    V=\Set{(x,y,z)}{0\leqslant z\leqslant 3a,\ x^2+y^2\leqslant 4a^2-(z-a)^2,\ z\geqslant 0}
+    </me>
+    with fixed <m>z</m> is the circular disk <m>x^2+y^2\leqslant 4a^2-(z-a)^2
+                                                        = 3a^2 +2a z - z^2</m>,
+    which has area <m>\pi\big({\sqrt{3a^2+2az-z^2}\,}\big)^2</m>.
+    So
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \, \dee{S}
+    &amp;
+    =\int_0^{3a}\pi\big({\sqrt{3a^2+2az-z^2}\,}\big)^2\,\dee{z}+3\,\text{Area}(B)
+    </mrow><mrow>
+    &amp;=\pi\int_0^{3a}(3a^2+2az-z^2)\,\dee{z}+3\pi(3a^2)
+    </mrow><mrow>
+    &amp;=\pi \left(3a^2\times 3a+2a\times\frac{9a^2}{2}-\frac{27a^3}{3}\right)
+            +9\pi a^2
+    </mrow><mrow>
+    &amp;= 9\pi a^3+9\pi a^2
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2000D</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>u=u(x,y,z)</m> une solution à l'équation de Laplace
+    <me>
+    \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}
+    = 0,
+    </me>
+    dans  <m>\R^3</m>. Soit <m>\cR</m> un solide lisse dans <m>\R^3</m>.
+    </p>
+
+    <p><ol marker="a">
+    <li>
+    Montrer que le flux total de  <m>\vF = \nabla u</m> vers l'extérieur à travers le bord de  <m>\cR</m> est nul.
+    </li>
+    <li>
+    Montrer que le flux total de  <m>\vG = u\nabla u</m> vers l'extérieur, à travers le bord de  <m>\cR</m> vaut
+    <me>
+    \iiint_\cR \Big[\Big(\frac{\partial u}{\partial x}\Big)^2 +
+    \Big(\frac{\partial u}{\partial y}\Big)^2 +
+    \Big(\frac{\partial u}{\partial z}\Big)^2\Big]\,\dee{V}
+    </me>
+    </li>
+    </ol>
+    </p>
+
+    </statement>
+
+    <hint><p>
+    Le théorème de la divergence ainsi qu'une identité vectorielle dans  <xref ref="thm_divIdentities"/> peuvent être utiles.
+    </p></hint>
+
+    <!-- <answer><p>
+    See the solution.
+    </p></answer> -->
+
+    <solution><p>
+    (a)
+    Let <m>\cS</m> denote the boundary of <m>\cR</m>.
+    Then <q>the total flux of <m>\vF = \nabla u</m> outà travers the
+    boundary of <m>\cR</m></q>
+    is given by the integral
+    <me>
+    I = \iint_\cS \vF\cdot \vn \,\dee{S}
+    </me>
+    Thanks to le théorème de la divergence,
+    <md>
+    <mrow>
+    I
+    &amp;= \iiint_\cR \nabla\cdot\vF\,\dee{V}
+    = \iiint_\cR \nabla\cdot\nabla u\,\dee{V}
+    = \iiint_\cR \Big(\frac{\partial^2 u}{\partial x^2}
+         +\frac{\partial^2 u}{\partial y^2}
+         +\frac{\partial^2 u}{\partial z^2}\Big)\,\dee{V}
+    </mrow><mrow>
+    &amp;= 0
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b)
+    Similarly,
+    <q>the total flux of <m>\vG = u\nabla u</m> outà travers the boundary of <m>\cR</m></q>
+    equals
+    <me>
+    J
+    = \iint_\cS \vG\cdot \vn \,\dee{S}
+    = \iiint_\cR \nabla\cdot\vG\,\dee{V}
+    </me>
+    Here <m>\vG = u\vF</m> (using the notation from part<nbsp/>(a)), so by the vector
+    identity of Theorem <xref ref="thm_divIdentities"/>.c,
+    <me>
+    \nabla\cdot\vG
+    = \nabla\cdot(u\vF)
+    = (\nabla u)\cdot\vF + u(\nabla\cdot\vF)
+    </me>
+    But <m>\vF = \nabla u</m>, so <m>\nabla\cdot\vF=\Delta u=0</m> as in part<nbsp/>(a), giving
+    <me>
+    \nabla\cdot\vG = |\nabla u|^2 + 0
+    </me>
+    In conclusion,
+    <me>
+    J
+    = \iiint_\cR \nabla\cdot\vG\,\dee{V}
+    = \iiint_\cR \Big[ \Big(\frac{\partial u}{ \partial x}\Big)^2
+       + \Big(\frac{\partial u}{\partial y}\Big)^2
+       + \Big(\frac{\partial u}{\partial z}\Big)^2\Big]\,\dee{V}
+    </me>
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2000D</fromexam></title> --> 
+    <statement><p>
+    Soit  <m>\cR</m> la portion du cylindre  <m>x^2 + (y-1)^2 \leqslant 1</m> telle que  <m>0\leqslant z \leqslant y^2</m>; soit  <m>\cS</m> le bord de  <m>\cR</m>. Étant donné  <m>\vF = x^2\,\vi  + 2y\,\vj  - 2z\,\vk </m>,
+    <ol marker="a">
+    <li>
+    Trouver le flux total de <m>\vF</m> vers l'extérieur à travers <m>\cS</m>.
+    </li>
+    <li><p>
+    Trouver le flux total de  <m>\vF</m> vers l'extérieur  à travers la paroi verticale de <m>\cS</m>.
+    </p>
+
+    <p>
+    Vous pouvez utiliser <m> \int_0^\pi \sin^{n}\theta\,\dee{\theta}
+    = \frac{n-1}{ n}\int_0^\pi \sin^{n-2}\theta\,\dee{\theta}</m>
+    pour  <m>n=2,3,4,\ldots</m>.
+    </p>
+    </li>
+    </ol>
+    </p>
+
+    </statement>
+
+    <hint><p>
+    <m>x</m> est une fonction impaire.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>0</m> </p><p>
+    (b) <m>\frac{15}{2}\pi</m>
+    </p></answer>
+
+    <solution><p>
+    (a)
+    This is a classic case for le théorème de la divergence.
+    The flux we want equals
+    <me>
+    I
+    = \iint_\cS \vF\cdot \vn \,\dee{S}
+    = \iiint_\cR \nabla\cdot\vF\,\dee{V}
+    = \iiint_\cR (2x + 2 - 2)\,\dee{V}
+    = 2\iiint_\cR x\,\dee{V}
+    </me>
+    The solid <m>\cR</m> clearly has reflection symmetry across the plane <m>x=0</m>.
+    So the <m>x</m>-coordinate of the centre of mass of <m>\cR</m>,
+    i.e. the average value of <m>x</m> over <m>\cR</m>,
+    i.e.
+    <me>
+    \bar x =\frac{\iiint_\cR x\,\dee{V}}{\iiint_\cR\dee{V}}
+    =\frac{\iiint_\cR x\,\dee{V}}{{\rm Vol}(\cR)}
+    </me>
+    is zero. Hence
+    <me>
+    I=2\bar x{\rm Vol}(\cR)=0
+    </me>
+    </p>
+
+    <p><em>Alternatively</em>, here is a direct evaluation of
+    <m>2\iiint_\cR x\,\dee{V}</m>. The base region <m>x^2 +(y-1)^2\leqslant 1</m> is
+    the circular disk of radius <m>1</m> centred on <m>(0,1)</m>. In polar coordinates
+    it is
+    <me>
+    r^2\cos^2\theta +(r\sin\theta-1)^2\leqslant 1\quad\text{or}\quad
+    r^2-2r\sin\theta +1 \leqslant 1 \quad\text{or}\quad
+    r\leqslant 2\sin\theta
+    </me>
+    Because the disk is contained in the upper half plane, the polar angle
+    <m>\theta</m> is restricted to <m>0\le\theta\leqslant \pi</m>. So,
+    in cylindrical coordinates, the solid <m>\cR</m> is described by
+    <me>
+    0\le\theta\le\pi,\qquad
+    0\leqslant r \leqslant 2\sin\theta,\qquad
+    0\leqslant z\leqslant r^2\sin^2\theta
+    </me>
+    Hence
+    <md>
+    <mrow>
+    I
+    &amp;= 2\int_{\theta=0}^\pi \int_{r=0}^{2\sin\theta} \int_{z=0}^{r^2\sin^2\theta}
+    (r\cos\theta)\,\dee{z}\,r\,\dee{r}\,\dee{\theta}
+
+    </mrow><mrow>
+    &amp;= 2 \int_{\theta=0}^\pi \int_{r=0}^{2\sin\theta}
+    r^4\sin^2\theta\cos\theta\,\dee{r}\,\dee{\theta}
+
+    </mrow><mrow>
+    &amp;= 2 \int_{\theta=0}^\pi\sin^2\theta\cos\theta
+               \Big[\frac{2^5\sin^5\theta}{ 5}\Big]\,\dee{\theta}
+    </mrow><mrow>
+    &amp;= \frac{64}{5} \int_{\theta=0}^\pi \sin^7\theta\cos\theta\,\dee{\theta}
+    </mrow><mrow>
+    &amp;= \frac{64}{5} \Big[\frac{\sin^8\theta}{8}\Big]_{\theta=0}^\pi
+    </mrow><mrow>
+    &amp;= 0
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) <em>using part (a):</em>
+    We have
+    <me>
+    \iint_\cS\vF\cdot \vn \,\dee{S}
+    = \iint_{\cal S_{\rm bottom}}\vF\cdot \vn \,\dee{S}
+    + \iint_{\cal S_{\rm top}}\vF\cdot \vn \,\dee{S}
+    + \iint_{\cal S_{\rm side}}\vF\cdot \vn \dee{S}
+    </me>
+    On <m>{\cal S_{\rm bottom}}</m>, <m>z=0</m> and the outward unit normal is
+    <m>\vn =-\vk </m>, so <m>\vF\cdot\vn  = 0</m>. Hence
+    <me>
+    \iint_{\cal S_{\rm bottom}}\vF\cdot \vn \,\dee{S}
+    = \iint_{\cal S_{\rm bot}} 0\,\dee{S}
+    = 0
+    </me>
+    On <m>{\cal S_{\rm top}}</m>, <m>z=y^2</m>,
+    so <m>\vF = (2x,2y,-2y^2)</m> and,
+    by (<xref ref="eq_SUdSgraph"/>),
+    <me>
+    \vn \dee{S}
+    = {(0,-2y,1)}\,\dee{x}\dee{y}
+    </me>
+    Hence (by the Hint)
+    <md>
+    <mrow>
+    \iint_{\cal S_{\rm bot}}\vF\cdot \vn \,\dee{S}
+    &amp;= \iint_\cD[-4y^2 - 2y^2]\,\dee{x}\dee{y}
+    </mrow><mrow>
+    &amp;= -6\int_{\theta=0}^{\pi} \int_{r=0}^{2\sin\theta}
+    \big(r^2\sin^2\theta\big)\,r\,\dee{r}\,\dee{\theta}
+
+    </mrow><mrow>
+    &amp;= -6\frac{2^4}{4}\int_{\theta=0}^{\pi} \sin^6\theta\,\dee{\theta}
+    </mrow><mrow>
+    &amp;=-24\frac{5}{6}\int_{\theta=0}^{\pi} \sin^4\theta\,\dee{\theta}
+    </mrow><mrow>
+    &amp;=-24\frac{5}{6}\frac{3}{4}\int_{\theta=0}^{\pi} \sin^2\theta\,\dee{\theta}
+    </mrow><mrow>
+    &amp;=-24\frac{5}{6}\frac{3}{4}\frac{1}{2}\int_{\theta=0}^{\pi}\dee{\theta}
+    </mrow><mrow>
+    &amp;= -24\Big[\frac{5}{6}\frac{3}{4}\frac{1}{2}\pi\Big]
+    </mrow><mrow>
+    &amp;= -\frac{15}{2}\pi
+    </mrow>
+    </md>
+    The conclusion is
+    <me>
+    \iint_{\cal S_{\rm side}}\vF\cdot \vn \dee{S}
+    = \iint_\cS\vF\cdot \vn \dee{S}
+    - \iint_{\cal S_{\rm top}}\vF\cdot \vn \dee{S}
+    - \iint_{\cal S_{\rm bot}}\vF\cdot \vn \dee{S}
+    = \frac{15}{2}\pi
+    </me>
+    </p>
+
+    <p>(b) <em>by direct evaluation:</em>
+    Use the polar equation <m>r=2\sin\theta</m> to parametrize <m>\cS_{\rm side}</m>:
+    <md>
+    <mrow>
+    &amp;\vr(\theta,t)
+    = (r\cos\theta,r\sin\theta,t)
+    = (2\sin\theta\cos\theta, 2\sin^2\theta, t),
+    </mrow><mrow>
+    &amp;0\le\theta\le\pi,\
+    0\leqslant t\leqslant y^2 = 4\sin^4\theta
+    </mrow>
+    </md>
+    Then using (<xref ref="eq_SUdSparam"/>),
+    <md>
+    <mrow>
+    \vF\cdot \vn \,\dee{S}
+    &amp;= \vF\cdot\Big(\frac{\partial\vr}{\partial \theta}
+             \times\frac{\partial\vr}{\partial t}\Big)\,\dee{\theta}\,\dee{t}
+    </mrow><mrow>
+    &amp;= \det\left[\begin{matrix}
+    4\sin^2\theta\cos^2\theta    &amp; 4\sin^2\theta         &amp; -2t \\
+    2(\cos^2\theta-\sin^2\theta) &amp; 4\sin\theta\cos\theta &amp; 0 \\
+    0                            &amp; 0                     &amp; 1 \end{matrix}\right]
+    \,\dee{\theta}\,\dee{t}
+    </mrow><mrow>
+    &amp;= \det\left[\begin{matrix}
+    4\sin^2\theta\cos^2\theta    &amp; 4\sin^2\theta
+    </mrow><mrow>
+    2(\cos^2\theta-\sin^2\theta) &amp; 4\sin\theta\cos\theta \end{matrix}\right]
+    \,\dee{\theta}\,\dee{t}
+    </mrow><mrow>
+    &amp;= \big[16\sin^3\theta\cos^3\theta - 8\sin^2\theta\big(\cos^2\theta-\sin^2\theta\big)\big]
+    \,\dee{\theta}\,\dee{t}
+    </mrow><mrow>
+    &amp;= \big[16\sin^3\theta\big(1-\sin^2\theta\big)\cos\theta - 8\sin^2\theta\big(1 - 2\sin^2\theta\big)\big]
+    \,\dee{\theta}\,\dee{t}
+    </mrow><mrow>
+    &amp;= 8\big[2\sin^3\theta\cos\theta - 2\sin^5\theta\cos\theta - \sin^2\theta + 2\sin^4\theta\big]
+    \,\dee{\theta}\,\dee{t}
+    </mrow>
+    </md>
+    so
+    <md>
+    <mrow>
+    &amp;\iint_{\cal S_{\rm side}}\vF\cdot \vn \dee{S}
+    </mrow><mrow>
+    &amp;= 8\int_{\theta=0}^\pi \int_{t=0}^{4\sin^4\theta}
+    \big[2\sin^3\theta\cos\theta - 2\sin^5\theta\cos\theta - \sin^2\theta + 2\sin^4\theta\big]
+    \,\dee{t}\,\dee{\theta}
+    </mrow><mrow>
+    &amp;= 32\int_{\theta=0}^\pi
+    \big[2\sin^7\theta\cos\theta - 2\sin^9\theta\cos\theta - \sin^6\theta + 2\sin^8\theta\big]
+    \,\dee{\theta}
+    </mrow><mrow>
+    &amp;=32{\Big[2\frac{\sin^8\theta}{8}-2\frac{\sin^{10}\theta}{10}\Big]}_0^\pi
+    -32\int_{\theta=0}^\pi \sin^6\theta \,\dee{\theta}
+    +64\int_{\theta=0}^\pi \sin^8\theta \,\dee{\theta}
+    </mrow><mrow>
+    &amp;= -32 \frac{5}{6}\frac{3}{4}\frac{1}{2}\pi
+       + 64\frac{7}{8}\frac{5}{6}\frac{3}{4}\frac{1}{2}\pi
+    \quad\text{(by the Hint as above)}
+    </mrow><mrow>
+    &amp;= \frac{15}{2}\pi.
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b) <em>Offset polar alternative:</em>
+    We can also parametrize <m>\cS</m> using cylindrical coordinates translated so that the centre of the base of the cylinder, namely <m>(0,1,0)</m>, plays the role of
+    the origin. Then, looking at the figure
+    </p>
+
+    <sidebyside width="41%">
+      <image source = "images/CLP4-figs/pfigs/cylOffset"/>
+    </sidebyside>
+
+    <p>
+    we see that
+    <me>
+    x = r\cos\theta\qquad
+    y=1+r\sin\theta\qquad
+    z=z
+    </me>
+    In these coordinates, the base region, <m>x^2+(y-1)^2\leqslant 1</m>, <m>z=0</m>, of
+    the cylinder is <m>0\leqslant r\leqslant 1</m>, <m>z=0</m>. So we can parametrize <m>\cS</m> by
+    <me>
+    x = \cos\theta,\ y=1+\sin\theta,\ z=t,
+    \qquad
+    0\le\theta\le2\pi,\
+    0\leqslant t\leqslant (1+\sin\theta)^2
+    </me>
+    By (<xref ref="eq_SUdSparam"/>),
+    <md>
+    <mrow>
+    &amp;\frac{\partial\vr}{\partial t}\times\pdiff{\vr}{\theta}
+    = \det\left[\begin{matrix} \vi  &amp; \vj  &amp; \vk
+    </mrow><mrow>
+    0 &amp; 0 &amp; 1
+    </mrow><mrow>
+    -\sin\theta &amp; \cos\theta &amp; 0 \end{matrix}\right]
+    = \big(-\cos\theta, -\sin\theta, 0\big),
+
+    </mrow><mrow>
+    \vn \,\dee{S} &amp;= -\frac{\partial\vr}{\partial t}\times
+                \pdiff{\vr}{\theta}\,\dee{t}\,\dee{\theta}
+    = (\cos\theta,\sin\theta,0)\dee{t}\,\dee{\theta}
+    </mrow>
+    </md>
+    where we have chosen the sign to give the outward pointing normal.
+    So
+    <md>
+    <mrow>
+    \iint_\cS\vF\cdot \vn \dee{S}
+    &amp;= \int_{\theta=0}^{2\pi} \int_{t=0}^{(1+\sin\theta)^2}
+    \big[\cos^3\theta+2(1+\sin\theta)\sin\theta\big]\,\dee{t}\,\dee{\theta}
+    </mrow><mrow>
+    &amp;= \int_0^{2\pi}
+    \big[ (1+\sin\theta)^2\cos^3\theta
+    +2(1+\sin\theta)^3\sin\theta\big]\,\dee{\theta}
+    </mrow><mrow>
+    &amp;= \int_0^{2\pi}
+    \big[ 2\sin\theta\cos^3\theta
+    +6\sin^2\theta+2\sin^4\theta\big]\,\dee{\theta}
+    </mrow><mrow>
+    &amp;=-\frac{1}{2}\cos^4\theta\Big|_0^{2\pi}
+       +12\int_0^\pi \sin^2\theta\,\dee{\theta}
+       +4\int_0^\pi \sin^4\theta\,\dee{\theta}
+    </mrow><mrow>
+    &amp;=0+12\frac{\pi}{2} +4\frac{3}{4}\frac{\pi}{2}
+     = \frac{15}{2}\pi
+    </mrow>
+    </md>
+    To get the third line, we used that the integral over <m>0\le\theta\le2\pi</m>
+    of any odd power of <m>\sin\theta</m> or <m>\cos\theta</m> is zero.
+    </p></solution>
+    </exercise>
+
+    <exercise><!-- <title><from exam>M317 2000A</fromexam></title> --> 
+    <statement><p>
+    Une surface lisse <m>\cS</m> se trouve au dessus du plan <m>z=0</m> et a pour bord le cercle <m>x^2+y^2=4y</m> dans le plan  <m>z=0</m>. Ce cerle délimite aussi un disque  <m>\cD</m> dans ce plan. Le volume de la région solide  <m>\cR</m> limitée par  <m>\cS</m> et <m>\cD</m> est de 10 unités cubes. Trouver le flux de
+    <me>
+    \vF(x,y,z)=(x+x^2y)\vi +(y-xy^2)\vj +(z+2x+3y)\vk
+    </me>
+    à travers <m>\cS</m> vers l'extérieur de <m>\cR</m>.
+    </p></statement>
+
+    <hint><p>
+    Le barycentre <m>(\bar x,\bar y)</m> du disque  <m>\cD</m> devrait être facile à deviner. Alors les intégrales <m>\iint_{\cD} x\,\dee{x}\dee{y}</m> et <m>\iint_{\cD} y\,\dee{x}\dee{y}</m> peuvent être utilisées au moyen de  <m>\bar x = \frac{\iint_{\cD} x\,\dee{x}\dee{y}}{\iint_{\cD} \dee{x}\dee{y}}</m>
+    et
+    <m>\bar y = \frac{\iint_{\cD} y\,\dee{x}\dee{y}}{\iint_{\cD} \dee{x}\dee{y}}</m>.
+    </p></hint>
+
+    <answer><p>
+    <m>30+24\pi</m>
+    </p></answer>
+
+    <solution><p>
+    The circle <m>x^2+y^2=4y</m>, or equivalently, <m>x^2+(y-2)^2=4</m>, has radius
+    <m>2</m> and centre <m>(0,2)</m>.
+    On the bottom surface, <m>z=0</m> and
+    the outward normal is <m>-\vk </m>, so that
+    <me>
+    \iint_{\cD}\vF\cdot\vn \,\dee{S}
+    =-\iint_{\cD}\vF\cdot\vk \,\dee{x}\dee{y}
+    =-\iint_{\cD}(2x+3y)\,\dee{x}\dee{y}
+    </me>
+    By symmetry, the centre of mass, <m>(\bar x,\bar y)</m>, of the circle
+    is <m>(0,2)</m>. Here <m>\bar x</m> and <m>\bar y</m> are the average values
+    <md>
+    <mrow>
+    \bar x = \frac{\iint_D x\,\dee{x}\dee{y}}{\iint_D \dee{x}\dee{y}}\qquad
+    \bar y = \frac{\iint_D y\,\dee{x}\dee{y}}{\iint_D \dee{x}\dee{y}}
+    </mrow>
+    </md>
+    of <m>x</m> and <m>y</m> over <m>D</m>.
+    As the disk <m>D</m> has area <m>4\pi</m>,
+    <me>
+    \iint_D x\,\dee{x}\dee{y} =4\pi\bar x =0\qquad
+    \iint_D y\,\dee{x}\dee{y} =4\pi\bar y =8\pi
+    </me>
+    and
+    <me>
+    \iint_{D}\vF\cdot\vn \,\dee{S}
+    =-4\pi(2\bar x+3\bar y)
+    =-4\pi(2\times 0+3\times 2)
+    =-24\pi
+    </me>
+    As
+    <md>
+    <mrow>
+    \vnabla\cdot\vF
+    &amp;=\pdiff{}{x}(x+x^2y)
+    +\pdiff{}{y}(y-xy^2)
+    +\pdiff{}{z}(z+2x+3y)
+    </mrow><mrow>
+    &amp;=(1+2xy)+(1-2xy)+(1)
+    </mrow><mrow>
+    &amp;=3
+    </mrow>
+    </md>
+    le théorème de la divergence  gives
+    <md>
+    <mrow>
+    \iint_{\cS}\vF\cdot\vn \,\dee{S}
+    &amp;=\iiint_{\cR}\vnabla\cdot\vF\ \dee{V}
+    -\iint_{D}\vF\cdot\vn \,\dee{S}
+    </mrow><mrow>
+    &amp;=\iiint_{\cR}3\ \dee{V}
+    -(-24\pi)
+    =3\text{Vol}(R)+24\pi
+    =3\times10+24\pi
+    </mrow><mrow>
+    &amp;=30+24\pi
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+  
+  </exercisegroup>
+
+</exercises>

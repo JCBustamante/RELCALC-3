@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_gradient">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021, juin 2022 -->
+
+<title>Vecteur gradient</title>
+
+<subsection xml:id="pars-Gradient-motiv">
+  <title>Motivation</title>
+  <p>
+  Dans cette section, nous nous intéressons aux fonctions <m>f</m> à valeurs dans <m>\R</m>. Supposons, pour motiver la discussion, que <m>\cD \subseteq \R^2</m> et <m>f :\cD \to \R</m> sont données. On s'intéresse à <m>\vD f</m>, mais vue à travers une lentille différente de celle de la <xref ref="sec_lin_approx"/>. Jusqu'à présent, on a surtout considéré <m>\vD f(\vr_0)</m>, la dérivée évaluée en un point, et on la comprend comme une transformation linéaire (c'est pour ça qu'il s’agit d'un vecteur rangée plutôt qu'un vecteur colonne). Le changement de point de vue consiste à considérer une fonction à valeurs dans <m>\R^2</m>, à savoir la fonction
+  <me>
+    (x,y)\mapsto \begin{bmatrix} \pdiff{f}{x}(x,y)\\  \pdiff{f}{y}(x,y) \end{bmatrix}
+  </me>.
+  </p>
+
+  <p>
+    Cette nouvelle fonction <m>\cD \to \R^2</m> est ce qu'on appelle le <terms> champ gradient de <m>f</m></terms>. Nous l'avons déjà évoqué très <em>tangentiellement</em> lors de la discussion sur les fonctions implicites (voir les paragraphes juste avant la <xref ref="figure-implicites"> figure</xref>). Ce champ gradient jouera un rôle crucial par la suite, notamment dans le dernier chapitre, celui sur le calcul vectoriel.
+  </p>
+  <p>
+    Nous rencontrerons deux contextes également importants, mais les interprétations du gradient seront différentes.
+    <ul>
+      <li>
+        <p>
+          D'une part, lorsqu'on aura une relation de la forme <m>z=f(x,y)</m> ou, plus généralement, <m>z= f(\vx)</m>, où une variable (ici <m>z</m>) est définie <em>explicitement</em> en termes d'autres variables (ici <m>(x,y)</m> ou  <m>\vx</m>), le gradient de <m>f</m> sera surtout lié à la notion de <em>dérivée directionnelle</em>.
+        </p>
+      </li>
+      <li>
+        <p>
+          D'autre part, lorsqu'on aura plutôt une relation de la forme <m>g(x,y) = k</m> ou, plus généralement, <m>g(\vx) = 0</m>, c'est-à-dire lorsqu'on aura une relation <em>implicite</em> entre certaines variables, le gradient de <m>g</m> sera plutôt lié à des considérations géométriques comme les objets tangents ou normaux à des ensembles de niveau.
+        </p>
+      </li>
+    </ul>
+    Bien entendu, ces deux contextes sont liés, et il est (presque tout le temps) possible de passer de l'un à l'autre. Nous verrons comment.
+  </p>
+<definition xml:id="def-Gradient">
+  <statement>
+    <p>Soit <m>\cD \subseteq \R^n</m> donné et <m>f:\cD \to \R</m> ayant des dérivées partielles (sur <m>\cD</m>). Le <terms>gradient de <m>f</m></terms> est la fonction
+    <me>
+      \vnabla f : \cD \to \R^n \text{ donnée par } \vnabla f (\vr_0) = \begin{bmatrix} \pdiff{f}{x_1}(\vr_0)\\ \vdots  \\\pdiff{f}{x_n}(\vr_0) \end{bmatrix}
+    </me>.
+    </p>
+  </statement>
+</definition>
+<example>
+  <statement>
+    <p>
+      Soit <m>f(x,y) = x^2 - 2y^2</m>. Le champ gradient de <m>f</m> est <m>\vnabla f(x,y) = 2x\vi -4y\vj</m>.
+    </p>
+    <p>
+      On représente les champs vectoriels (dans le plan) en dessinant au point <m>(x,y)</m> un vecteur représentant le vecteur <m>\vnabla f(x,y)</m>, à facteur d'échelle près. En effet, afin de ne pas surcharger la figure, il est commun d'ajuster la norme de <m>\vnabla f(x,y)</m>. Ainsi, par exemple, au point <m>(2,1)</m>, plutôt que de dessiner le vecteur <m>\vnabla f(2,1) = 4\vi - 4 \vj</m>, on représente un multiple de celui-ci.
+    </p>
+    <p>
+      La figure ci-dessous représente le champ gradient <m>\vnabla f</m> ainsi que certaines courbes de niveau de <m>f</m>.
+    </p>
+    <figure xml:id="fig_gradient-2d">
+        <caption>Les courbes de niveau de la fonction <m>f(x,y) = x^2 - 2y^2</m> ainsi que le champ gradient de <m>f</m>, à savoir <m>\vnabla f(x,y) = 2x \vi - 4y\vj</m>. Plus bas, nous allons expliquer le lien apparent entre le gradient et les courbes de niveau. </caption>
+        <image xml:id="sageplot-gradient-2d" width="60%">
+            <sageplot>
+              var('x,y')
+              f(x,y) = x^2 -2*y^2
+              C = contour_plot(f(x,y), (x,-3,3),(y,-3,3), cmap = "Spectral",
+                axes = False, fill = True, labels = False, label_colors="black", label_inline=True, label_fontsize=8, gridlines=True,  contours = 6, axes_labels=["$x$","$y$"], axes_labels_size=1, tick_formatter = "latex", fontsize= 12)
+              C+= plot_vector_field(f.gradient(), (x,-3,3), (y,-3,3),
+                color = 'black', zorder = 2, plot_points = 7)
+              C
+            </sageplot>
+        </image>
+    </figure>
+  </statement>
+</example>
+
+<!-- 
+<exercise xml:id = "deriv_direct_4" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/deriv_direct_4.pg"/>
+</exercise> -->
+
+<p>
+  Remarquons que <m>\vnabla f(\vr_0) = \vD f(\vr_0)^T</m>, c'est simplement la transposée de la dérivée de <m>f</m>, de sorte que l'approximation linéaire de <m>f</m>  au point <m>\vr_0</m> (voir <xref ref="thm-Diffte-Gral"/>) peut s'écrire simplement
+  <me>
+    L(\vr) = f(\vr_0) + \vnabla f(\vr_0)\cdot (\vr - \vr_0)
+  </me>,
+  c'est-à-dire que le produit matriciel devient un produit scalaire.
+</p>
+
+</subsection>
+
+<subsection xml:id="pars-Directionnelles-gradient">
+  <title>Dérivées directionnelles et le vecteur gradient</title>
+
+  <p>La principale interprétation de  <m>\diff{f}{x}(a)</m> est le taux de variation instantané de <m>f(x)</m>, par unité de <m>x</m>, au point <m>x=a</m>. L'analogie naturelle pour les fonctions de plusieurs variables est celle de <em>dérivée directionnelle</em>.
+  </p>
+
+  <p>
+  Supposons que nous nous trouvons à proximité d'un feu de camp. La température perçue au point <m>\vr = (x,y)</m> est <m>f(x,y)</m>. Supposons que nous nous déplaçons avec une vitesse de norme constante (que nous supposons égale à <m>1</m>) en passant par le point <m>\vr_0 = (x_0,y_0)</m>. Lors du passage, la vitesse est <m>\vu=\llt u_1,u_2\rgt </m>, et l'on se demande quel est le taux de variation de la température ressentie.
+  </p>
+
+
+  <figure xml:id="Directionnelles-motivation">
+      <caption>Les courbes isothermes sur une région du plan. En partant de <m>(-1,-1)</m> avec la direction <m>\vu </m>, on se demande comment on perçoit le changement de température.</caption>
+      <image xml:id="sageplot-directionnelles-motiv" width="60%">
+          <sageplot>
+            var('x,y')
+            g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+            C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+                             axes = True, fill = True, labels = True, label_colors="black", label_inline=True, label_fontsize=8,
+                             gridlines=True, axes_labels=["$x$","$y$"], axes_labels_size=1, tick_formatter = "latex", fontsize= 12)
+            C+=arrow((-1,-1), (-0.10557,-0.5527), color = "black", thickness = 0.5, arrowsize=2)
+            C+=text("$\\mathbf{u}$",(-0.5,-0.9), fontsize=14, zorder=2, color= "black")
+            C
+          </sageplot>
+      </image>
+  </figure>
+  <p>
+    Plus précisément, nous avons un chemin <m>\pmb{\g}(t)</m> qui, au temps <m>t=0</m>, passe par le point <m>\vr_0</m>, c'est-à-dire tel que <m>\pmb{\g}(0)= \vr_0</m>. De plus, la condition sur la vitesse constante lors du déplacement revient à dire que <m>\pmb{\g}'(0) = \vu</m> est un vecteur unitaire.
+  </p>
+  <p>
+    Nous pourrions considérer n'importe quel chemin vérifiant ces conditions : un exemple serait <m>\pmb{\g}(t) = \vr_0 + t \vv</m>, la droite par <m>\vr_0</m> dirigée par <m>\vv</m>.
+  </p>
+  <p>
+    On s'intéresse au taux de variation de <m>f</m> le long de la courbe décrite par <m>\pmb{\g}(t)</m>, c'est-à-dire au taux de variation de <m>f\circ \pmb{\g}(t)</m>. Ce taux de variation est précisément la dérivée <m>\frac{d}{dt}\left(f\circ \pmb{\g}\right)(t) </m> évaluée en <m>t=0</m>.
+  </p>
+  <p>
+    Bien entendu, ceci peut être généralisé aux fonctions de plus de deux variables.
+  </p>
+  <definition xml:id="def-Grad">
+    <statement>
+      <p>Soit <m>\cD \subseteq \R^n</m> et <m>f : \cD \to \R</m> ayant des dérivées partielles. Soit, par ailleurs, <m>\vu</m> un vecteur unitaire. La <terms>dérivée directionnelle de <m>f</m> dans la direction de <m>\vu</m> en <m>\vr_0</m></terms> est
+      <me>
+        \vD_\vu f (\vr_0) = \left.\diff{}{t}f(\vr_0 + t \vu)\right|_{t\, =\, 0}
+      </me>
+      lorsque cette dérivée (qui est une limite) existe.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Remarquons que l'hypothèse <m>|\vu| = 1</m> donne que <m>\vD_\vu f(\vr_0)</m> est le taux de variation de la valeur de <m>f</m> lorsque, en partant de <m>\vr_0</m>, on part dans la direction de <m>\vu</m> <alert>par unité de distance</alert>.
+  </p>
+  <p>
+    Dans certains textes, on n'impose pas cette condition. Ceci revient à dire qu'on passe par <m>\vr_0</m> avec une vitesse arbitraire <m>\vv</m>. Dans ce cas, on parlera plutôt de la <terms>dérivée directionnelle de <m>f</m> le long de <m>\vv</m> en <m>\vr_0</m></terms>. La formule est la même, mais l'interprétation est différente : cette fois, <m>\vD_\vv f(\vr_0)</m> est le taux de variation de la valeur de <m>f</m> lorsque, en partant de <m>\vr_0</m>, on part dans la direction de <m>\vv</m> <alert>par unité de temps</alert>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Soit <m>f(x,y) = x^{1/3} y^{1/3}</m>. Étudier l'existence de dérivées directionnelles de <m>f</m> à l'origine, dans la direction du vecteur unitaire <m>\vu = \frac{\sqrt{2}}{2}\, \vi + \frac{\sqrt{2}}{2}\, \vj </m>.
+      </p>
+      <p> Par définition, on s'intéresse à la limite
+        <md>
+          <mrow>\lim_{h\to 0} \frac{f \left(h\frac{\sqrt{2}}{2}, h\frac{\sqrt{2}}{2}\right) - f(0,0)}{h}  \amp = \lim_{h\to 0} \frac{ \left(h\frac{\sqrt{2}}{2} \right)^{2/3}}{h}</mrow>
+          <mrow>  \amp = \lim_{h\to 0} \left(\frac{\sqrt{2}}{2}\right)^{2/3} t^{-1/3} </mrow>
+        </md>.
+        Or, cette limite n'existe pas. Cette fonction n'admet donc pas de dérivée directionnelle en <m>(0,0)</m> dans la direction donnée (on peut voir aisément qu'il en va de même pour toute direction), et ce, même si les dérivées partielles de <m>f</m> existent.
+      </p>
+    </statement>
+
+  </example>
+  <proposition xml:id="prop-Diffte-directionnelle">
+    <statement>
+      <p>Soit <m>\cD \subseteq \R^n</m> et <m>f:\cD \to \R</m> différentiable en un point <m>\vr_0 \in \cD</m>. Alors, <m>f</m> admet des dérivées directionnelles dans toutes les directions en <m>\vr_0</m>, et
+      <me>
+        \vD_\vu f (\vr_0) = \vnabla f(\vr_0)\cdot \vu.
+      </me>
+      </p>
+    </statement>
+    <proof>
+      <p> En effet, avec les notations et les hypothèses de l'énoncé, posons <m>\pmb{\g}(t) = \vr_0 + t \vu</m>. Par définition, nous avons <m>\vD_\vu f (\vr_0) = \left(f\circ \pmb{\g}\right)'(0)</m>. Or, <m>f</m> étant différentiable, la règle de la chaîne donne :
+      <md>
+        <mrow>\left(f\circ \pmb{\g}\right)'(0) \amp =\vD (f\circ \pmb{\g})(0) = \vD f(\pmb{\g}(0))\, \vD \pmb{\g}(0) =  \vD f(\vr_0) \pmb{\g}'(0)  </mrow>
+        <mrow>  \amp = \vnabla f(\vr_0)\cdot \pmb{\g}'(0) = \vnabla f(\vr_0)\cdot \vu.  </mrow>
+      </md>
+      </p>
+    </proof>
+  </proposition>
+  <p>Voyons maintenant quelques exemples.
+  </p>
+
+  <example xml:id="eg_dir_deriv_A">
+  <statement>
+  <p>
+  Trouver la dérivée directionnelle de  <m>f(x,y)=e^{x+y^2}</m> au point <m>(0,1)</m> dans la direction de  <m>-\vi + \vj</m>.
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+  Afin de calculer la dérivée directionnelle, nous avons besoin du gradient et donc des dérivées partielles de  <m>f</m> au point  <m>(0,1)</m> :
+  <md alignment="alignat">
+  <mrow>
+  f_x(0,1) = e^{x+y^2}\Big|_{x\,=\,0\atop y\,=\,1} &amp;&amp;=e \text{ et }
+  f_y(0,1) = 2ye^{x+y^2}\Big|_{x\,=\,0\atop y\,=\,1} &amp;&amp;=2e
+  </mrow>
+  </md>,
+  de sorte que le gradient est
+  <me>
+  \vnabla f(0,1) = f_x(0,1)\,\vi + f_y(0,1)\,\vj
+                 = e\,\vi + 2e\,\vj.
+  </me>
+  Par ailleurs, le vecteur donnant la direction doit être normalisé, puisque la norme de <m>-\vi + \vj</m> est <m>\sqrt{2}</m>.  La dérivée directionnelle dans la direction de  <m>-\vi + \vj</m> est
+  <me>
+  D_{\frac{-\vi +\vj}{|-\vi +\vj|}} f(0,1)
+     = \vnabla f(0,1)\cdot\frac{-\vi +\vj}{|-\vi +\vj|}
+     = \big(e\,\vi + 2e\,\vj\big)\cdot \frac{-\vi +\vj}{\sqrt{2}}
+     = \frac{e}{\sqrt{2}}
+  </me>.
+  </p>
+  </solution>
+  </example>
+
+  <example xml:id="eg_dir_deriv_B">
+    <statement>
+  <p>
+    Trouver la dérivée directionnelle de la fonction  <m>w(x,y,z)=xyz +\ln(xz)</m> au point  <m>(1,3,1)</m> dans la direction de <m>\llt 1\,,\,0\,,\,1\rgt</m>.
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+  Pour commencer, les dérivées partielles de  <m>w</m> en <m>(1,3,1)</m> sont
+  <md alignment="alignat">
+  <mrow>
+  w_x(1,3,1) &amp;= \left[yz+\frac{1}{x}\right]\bigg|_{(1,3,1)}
+               &amp;&amp;=3\times 1+\frac{1}{1}&amp;&amp;=4,
+  </mrow><mrow>
+  w_y(1,3,1) &amp;= xz\bigg|_{(1,3,1)} &amp;&amp;=1\times 1&amp;&amp;=1,
+  </mrow><mrow>
+  w_z(1,3,1) &amp;= \left[xy+\frac{1}{z}\right]\bigg|_{(1,3,1)} &amp;&amp;=1\times 3 +\frac{1}{1} &amp;&amp;=4
+  </mrow>
+  </md>,
+  de sorte que le gradient qui nous intéresse est
+  <me>
+  \vnabla w(1,3,1) = \llt w_x(1,3,1),\,w_y(1,3,1),\,w_z(1,3,1)\rgt
+                 = \llt 4,\,1,\,4\rgt
+  </me>,
+  et la dérivée directionnelle dans la direction de <m>\llt 1\,,\,0\,,\,1\rgt</m> est
+  <md>
+  <mrow>
+  D_{\frac{\llt 1\,,\,0\,,\,1\rgt}{|\llt 1\,,\,0\,,\,1\rgt|}} w(1,3,1)
+     &amp;= \vnabla w(1,3,1)\cdot
+                \frac{\llt 1\,,\,0\,,\,1\rgt}{|\llt 1\,,\,0\,,\,1\rgt|}
+     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\llt 1\,,\,0\,,\,1\rgt}{\sqrt{2}}
+  </mrow><mrow>
+    &amp;= \frac{8}{\sqrt{2}}=4\sqrt{2}
+  </mrow>
+  </md>.
+  La dérivée directionnelle de  <m>w</m> en <m>(1,3,1)</m> dans la direction de <m>\vd\ne\vZero</m>
+  est nulle si et seulement si
+  <me>
+  0 = \vD_{\frac{\vd}{|\vd|}} w(1,3,1)
+     = \vnabla w(1,3,1)\cdot\frac{\vd}{|\vd|}
+     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\vd}{|\vd|}
+  </me>,
+  ce qui arrive si et seulement si  <m>\vd</m> est orthogonal à <m>\llt 4\,,\,1\,,\,4\rgt</m>. Ainsi, si l'on se déplace dans la direction de n'importe quel vecteur dans le plan <m>4x+y+4z=0</m> (dont le vecteur normal est  <m>\llt 4\,,\,1\,,\,4\rgt</m>), alors la dérivée directionnelle est nulle.
+  </p>
+  </solution>
+  </example>
+
+  <!-- Cet exercice est en anglais. Il faut le traduire ou trouver un équivalent en fraçais -->
+<!-- 
+  <exercise xml:id= "Gradient-03" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-03.pg"/>
+  </exercise> -->
+
+
+  <p>
+  On vient de voir que le taux de variation instantané de  <m>f</m> par unité de distance lorsqu'on quitte  <m>\vr_0</m> dans la direction du vecteur unitaire <m>\vu</m> est un produit scalaire que l'on peut écrire sous la forme <me>
+  \vnabla f(\vr_0)\cdot\vu = |\vnabla f(\vr)| \cos \theta
+  </me>,
+  où  <m>\theta</m> est l'angle formé par le vecteur gradient  <m>\vnabla f(\vr_0)</m> et le vecteur de direction  <m>\vu</m>. Le fait de l'écrire de cette façon et que le cosinus d'un angle se trouve toujours entre <m>-1</m> et <m>1</m> nous permet de faire quelques remarques importantes :
+  <ul>
+  <li>
+    La direction de plus grande augmentation de <m>f</m> lorsqu'on est à <m>\vr_0</m> est celle qui correspond à l'angle <m>\theta=0</m>. Ainsi, afin d'avoir ce taux d'augmentation maximal, on doit quitter  <m>\vr_0</m> dans la direction donnée par le gradient <m>\vnabla f(\vr_0)</m>. Le taux d'augmentation par unité de distance sera alors <m>|\vnabla f(\vr_0)|</m>.
+  </li>
+  <li>
+    La direction de taux d'augmentation minimale (c'est-à-dire le plus négative) est celle qui correspond à <m>\theta=\pi</m>. Afin d'obtenir le taux minimal de variation par unité de distance, on doit quitter <m>\vr_0</m> dans la direction opposée de celle donnée par le vecteur gradient. Dans ce cas, le taux de variation est  <m>-|\vnabla f(\vr_0)|</m>.
+  </li>
+  <li>
+    Les directions donnant un taux de variation nul sont celles perpendiculaires au vecteur gradient  <m>\vnabla f(\vr_0)</m>. Si l'on se déplace dans une direction orthogonale à <m>\vnabla f(\vr_0)</m>, alors  <m>f</m> reste constante. À cet instant, on se déplace de sorte que <m>f(\vr)</m> reste constante, c'est-à-dire qu'on se déplace le long de l'ensemble de niveau de <m>f</m> (une courbe de niveau si <m>f</m> est une fonction de deux variables, ou une surface s'il s'agit d'une fonction de trois variables). Dans tous les cas, nous avons que <m>\vnabla f(\vr_0)</m> est orthogonal à l'ensemble de niveau <m>f(\vr)  = f(\vr_0)</m>. Nous reviendrons sur ces considérations un peu plus tard.
+  </li>
+  </ul>
+  </p>
+  <example xml:id="eg_dir_deriv_C">
+  <p>
+  Soit
+  <m>
+  f(x,y)=5-x^2-2y^2</m> et <m> (x_0,y_0)=\big(-1,-1\big)
+  </m>.
+  Dans cet exemple, on étudie le comportement de <m>f(x,y)</m> autour du point <m>(x_0,y_0)</m>.
+  </p>
+
+  <p>Remarquons que, pour toute valeur de  <m>f_0 \lt 5</m>, fixe, la courbe de niveau <m>f(x,y)=f_0</m> est l'ellipse <m>x^2+2y^2=5-f_0</m>. Ainsi, le  graphe de <m>z=f(x,y)</m> est formé d'un amoncellement d'ellipses les unes par-dessus les autres.
+  <ul>
+  <li><p>
+  Puisque l'ellipse  <m>x^2+2y^2=5-f_0</m>  a pour demi-axes <m>\sqrt{5-f_0}</m>  demi-axe dans la direction des <m>x</m> et <m>\sqrt{\frac{5-f_0}{2}}</m> dans la direction des <m>y</m>,
+  <ul>
+  <li>
+      les ellipses commencent en étant réduites à un point sur l'axe des  <m>z</m> lorsque <m>f_0=5</m> et
+  </li>
+  <li>
+      voient leur taille grandir à mesure que <m>f_0</m> décroît.
+  </li>
+  </ul></p>
+  </li>
+  <li>
+  La  portion du graphe  <m>z=f(x,y)</m> dans le premier octant est esquissée dans la figure de gauche ci-bas.
+  </li>
+  <li>
+  Plusieurs courbes de niveau <m>f(x,y)=f_0</m> sont esquissées dans la figure de droite.
+  </li>
+  <li>
+  Le vecteur gradient
+  <me>
+  \vnabla f(x_0,y_0)=\llt -2x,-4y\rgt \big|_{(-1,-1)}=\llt 2,4\rgt
+       =2\llt 1,2\rgt
+  </me>
+  au point  <m>(-1,-1)</m> est aussi illustré dans la figure de droite.
+  </li>
+  </ul>
+  À <m>(x_0,y_0)=(-1,-1)</m> :
+  <ul>
+  <li>
+  Le vecteur unitaire donnant la direction de taux d'accroissement maximal est le vecteur gradient normalisé, c'est-à-dire  <m>2\llt 1,2\rgt</m> normalisé :
+  <m>\frac{1}{\sqrt{5}}\llt 1,2\rgt</m>.
+  Le taux maximal d'accroissement est <m>|\llt 2,4\rgt |=2\sqrt{5}</m>.
+  </li>
+  <li>
+  Le vecteur unitaire donnant la direction de décroissance plus rapide est
+  <m>-\frac{1}{\sqrt{5}}\llt 1,2\rgt </m>, et le taux de décroissance est  <m>-|\llt 2,4\rgt |=-2\sqrt{5}</m>.
+  </li>
+  <li><p>
+  Les directions donnant lieu à un taux de variation nul sont les directions orthogonales au gradient <m>\vnabla f(x_0,y_0)</m>. Un tel vecteur est<fn>Vérifiez-le avec le produit scalaire!</fn> <m>\llt 2,-1\rgt</m>.  Ainsi, les vecteurs unitaires donnant un taux de variation nul sont  <m>\pm\frac{1}{\sqrt{5}}(2,-1)</m>. Il s'agit, bien entendu, de deux vecteurs directeurs pour la tangente à la courbe de niveau <m>f(x_0,y_0)</m> au point <m>(x_0,y_0)</m>, c'est-à-dire la courbe  <m>f(x,y)=f(x_0,y_0)</m>.
+  </p></li>
+  </ul>
+  </p>
+
+  <sidebyside widths="30% 50%" valign="middle">
+  <image source="images/CLP-figs/dderivB"/>
+  <image source="images/CLP-figs/dderivC"/>
+  </sidebyside>
+  </example>
+<!-- 
+  <exercise xml:id ="Gradient-01" component = "webwork" >
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-01.pg"/>
+  </exercise> -->
+
+
+  <p>Changeons un peu les choses pour le prochain exemple. Les taux de variation en deux directions différentes sont fournis, on verra comment ceci permet de déterminer le taux de variation dans n'importe quelle direction.
+  </p>
+
+  <example xml:id="eg_dir_deriv_E">
+  <statement>
+  <p>
+  Le taux de variation d'une fonction donnée  <m>f(x,y)</m> au point  <m>P_0(1,2)</m> dans la direction du point  <m>P_1(2,3)</m> est <m>2\sqrt{2}</m> et dans la direction de  <m>P_2=(1,0)</m> est <m>-3</m>. Quel est le taux de variation de  <m>f</m> en <m>P_0</m> dans la direction de l'origine  <m>P_3(0,0)</m>?
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+  On pourra facilement calculer le taux de variation de <m>f</m> au point <m>P_0</m> dans n'importe quelle direction lorsqu'on connaîtra le gradient <m>\vnabla f(1,2) =a\,\vi +b\,\vj</m>.
+
+  On utilisera donc les deux taux de variation donnés pour trouver <m>a</m> et <m>b</m>, puis pour déterminer le taux de variation dans la direction de <m>(0,0)</m>.
+  </p>
+
+  <p>Les deux taux de variation sont ceux dans les directions des vecteurs
+  <md>
+  <mrow>
+  \overrightarrow{P_0P_1} = \llt 1,1\rgt, \qquad
+  \overrightarrow{P_0P_2} = \llt 0,-2\rgt
+  </mrow>
+  </md>.
+  Ainsi, on sait que :
+  <md alignment="alignat">
+  <mrow>
+  \sqrt{2}&amp;=D_{\frac{\llt 1,1\rgt}{|\llt 1,1\rgt|}} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 1,1\rgt}{|\llt 1,1\rgt|}
+     &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 1,1\rgt}{\sqrt{2}},
+  </mrow><mrow>
+     &amp;=\frac{a}{\sqrt{2}} +\frac{b}{\sqrt{2}}
+  </mrow><mrow>
+  -3&amp;=D_{\frac{\llt 0,-2\rgt}{|\llt 0,-2\rgt|}} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 0,-2\rgt}{|\llt 0,-2\rgt|}
+     &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 0,-2\rgt}{2}
+  </mrow><mrow>
+     &amp;=-b
+  </mrow>
+  </md>.
+  Ces deux calculs fournissent ainsi deux équations linéaires en  <m>a</m> et <m>b</m>. La seconde équation donne directement <m>b=3</m>. En remplaçant dans la première, on obtient <m>a=1</m>.
+  Le vecteur  direction de  <m>P_0(1,2)</m> vers <m>P_3(0,0)</m> est
+  <me>
+  \overrightarrow{P_0P_3} = \llt -1,-2\rgt
+  </me>,
+  et le taux de variation  (par unité de distance) dans cette direction est
+  <md>
+  <mrow>
+  D_{\frac{\llt -1,-2\rgt}{|\llt -1,-2\rgt|}} f(1,2)
+     &amp;= \vnabla f(1,2)\cdot\frac{\llt -1,-2\rgt}{|\llt -1,-2\rgt|}
+      = \llt a,b\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
+  </mrow><mrow>
+      &amp;= \llt 1,3\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
+  =-\frac{7}{\sqrt{5}}
+  </mrow>
+  </md>.
+  </p>
+  </solution>
+  </example>
+
+<!--   
+  <exercise xml:id ="Gradient-04" component = "webwork">
+    <webwork source = "RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-04.pg"/>
+  </exercise> -->
+
+
+  <example xml:id="eg_chainRuleF"><title>Le gradient en coordonnées polaires</title>
+  <statement>
+  <p>
+  Trouver le gradient en coordonnées polaires.
+  </p>
+  </statement>
+
+  <solution>
+  <p>
+    Comme c'est souvent le cas, bien comprendre la question est plus que la moitié du travail. Par la <xref ref="def-Gradient"/>, le gradient d'une fonction <m>g(x,y)</m> est le vecteur  <m>\llt g_x(x,y),g_y(x,y)\rgt</m>. Dans cette question, on nous donne une fonction <m>f(r,\theta)</m> exprimée avec les coordonnées polaires  <m>r</m> et <m>\theta</m>. Nous convertissons celle-ci en coordonnées rectangulaires et nous considérons la fonction
+  <me>
+  g(x,y)=f\big(r(x,y),\theta(x,y)\big)
+  </me>,
+  où
+  <md>
+  <mrow>
+  r(x,y)&amp;=\sqrt{x^2+y^2},\cr
+  \theta(x,y)&amp;= \arctan\,\frac{y}{x}
+  </mrow>
+  </md>.
+  Puis, nous voulons calculer le gradient de  <m>g(x,y)</m> et l'exprimer en termes de  <m>r</m> et <m>\theta</m>. En vertu de la règle de la chaîne,
+  <md>
+  <mrow>
+  \pdiff{g}{x}
+  &amp;=\pdiff{f}{r}\ \pdiff{r}{x}
+             +\pdiff{f}{\theta}\  \pdiff{\theta}{x}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \frac{1}{2}\frac{2x}{\sqrt{x^2+y^2}}
+          +\pdiff{f}{\theta}\ \frac{-y/x^2}{1+(y/x)^2}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \frac{x}{\sqrt{x^2+y^2}}
+          -\pdiff{f}{\theta}\ \frac{y}{x^2+y^2}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \frac{r\cos\theta}{r}
+         -\pdiff{f}{\theta}\ \frac{r\sin\theta}{r^2},
+  </mrow>
+  <intertext>puisque <m>x=r\cos\theta</m> et <m>y=r\sin\theta</m>,</intertext><mrow>
+  &amp;=\pdiff{f}{r}\ \cos\theta
+             -\pdiff{f}{\theta}\ \frac{\sin\theta}{r}
+  </mrow>
+  </md>.
+  De la même façon,
+  <md>
+  <mrow>
+  \pdiff{g}{y}
+  &amp;=\pdiff{f}{r}\ \pdiff{r}{y}
+             +\pdiff{f}{\theta}\ \pdiff{\theta}{y}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \frac{1}{2}\frac{2y}{\sqrt{x^2+y^2}}
+           +\pdiff{f}{\theta}\ \frac{1/x}{1+(y/x)^2}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \frac{y}{\sqrt{x^2+y^2}}
+             +\pdiff{f}{\theta}\ \frac{x}{x^2+y^2}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{r}\ \sin\theta
+       +\pdiff{f}{\theta}\ \frac{\cos\theta}{r}
+  </mrow>
+  </md>,
+  de sorte que
+  <me>
+  \llt g_x,g_y\rgt= f_r\ \llt\cos\theta,\sin\theta\rgt
+             +\frac{f_\theta}{r}\llt-\sin\theta,\cos\theta\rgt
+  </me>,
+  ou, avec les points d'évaluation écrits explicitement,
+  <md>
+  <mrow>
+  \llt g_x(x,y),g_y(x,y)\rgt
+  &amp;=
+  f_r\big(r(x,y),\theta(x,y)\big)\ \llt\cos\theta(x,y),\,\sin\theta(x,y)\rgt
+  </mrow><mrow>
+  &amp;\ \ +\frac{1}{r(x,y)}f_\theta\big(r(x,y),\theta(x,y)\big)\
+  \llt-\sin\theta(x,y),\,\cos\theta(x,y)\rgt
+  </mrow>
+  </md>.
+  </p>
+  </solution>
+  </example>
+
+</subsection>
+
+<subsection xml:id="pars-Gradient-niveau">
+  <title>Gradient et ensembles de niveau</title>
+  <p>
+    Considérons le cas des fonctions à deux variables et posons <m>\vr = (x,y)</m>. Nous avons déjà vu que si <m>\cC</m> est une courbe de niveau donnée par <m>f(x,y)=0</m> et que <m>\vr_0 = (x_0,y_0)\in \cC</m>, alors la tangente à <m>\cC</m> en <m>\vr_0</m> est
+    <md>
+    <mrow xml:id="Eq-tg" tag = "star" >  \vD f(\vr_0)(\vr - \vr_0) = 0 </mrow>
+    </md>,
+    ou, en développant,
+    <me>
+      \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
+    </me>
+  </p>
+  <p>
+    Ayant à l'esprit la <xref ref="def-Gradient"> Définition du gradient </xref>, nous obtenons plus que la moitié de la preuve du résultat suivant :
+  </p>
+  <theorem xml:id="thm-Grad-tgt-2d">
+    <statement>
+      <p>Soit <m>\cD \subseteq \R^n</m>, <m>f :\cD \to \R</m> différentiable et <m>\vr_0 = (x_0,y_0)</m> un point sur la courbe de niveau <m>f(\vr) = c</m>. Alors,
+      <ol>
+        <li>
+          <p>
+            l'équation de la tangente à <m>\cC</m> en <m>\vr_0</m> est
+            <me>
+                \vnabla f(\vr_0)\cdot (\vr - \vr_0) = 0
+            </me>;
+           </p>
+        </li>
+        <li>
+          <p>
+            l'équation de la droite passant par <m>\vr_0</m> et orthogonale à <m>\cC</m> en ce point est
+            <me>
+              \vr(t) = \vr_0 + t \vnabla f(\vr_0)
+            </me>.
+          </p>
+        </li>
+      </ol>
+
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Le premier énoncé est simplement une reformulation de l'équation <xref ref="Eq-tg"/>.
+      </p>
+      <p>
+        Le second énoncé découle du fait que le vecteur <m>\vnabla f(\vr_0)</m> est un vecteur normal pour la tangente, donc un vecteur directeur pour la droite normale.
+      </p>
+    </proof>
+
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Soit <m>\cC</m> donnée par <m>\sqrt{x} + \sqrt{y} = \sqrt{c} </m>. Soit <m>\cT</m> la tangente à <m>\cC</m> en un point quelconque et <m>(x^\ast, 0),\ (0, y^\ast)</m> les points d'intersection de <m>\cT</m> avec les axes de coordonnées.
+      </p>
+      <p>
+        Montrer que la quantité <m>x^\ast + y^\ast </m> ne dépend pas du point de tangence choisi.
+      </p>
+    </statement>
+    <solution>
+      <p>Soit <m>f(x,y) = \sqrt{x} + \sqrt{y})</m> et <m>(x_0,y_0)\in \vC</m>. Le gradient de <m>f</m> est
+      <me>
+        f_x(x,y) \vi + f_y (x,y) \vj = \frac{1}{2\sqrt{x}} \vi + \frac{1}{2\sqrt{y}}\vj.
+      </me>
+      </p>
+      <p>
+        L'équation de la tangente à <m>\cC</m> en <m>(x_0,y_0)</m> est alors
+      <md>
+        <mrow> \amp 0 =  \frac{1}{2\sqrt{x_0}}(x-x_0) + \frac{1}{2\sqrt{y_0}}(y-y_0) </mrow>
+        <mrow>\iff \amp  0 =  \frac{x}{\sqrt{x_0}} - \frac{x_0}{\sqrt{x_0}} + \frac{y}{\sqrt{y_0}} - \frac{y_0}{\sqrt{y_0}}     \amp </mrow>
+        <mrow> \iff \amp \sqrt{c} = \frac{x}{\sqrt{x_0}} + \frac{y}{\sqrt{y_0}} </mrow>
+      </md>,
+        où la dernière égalité vient de ce que <m>(x_0,y_0)</m> se trouve sur <m>\cC</m>.
+      </p>
+      <p>
+        Les intersections de la tangente <m>\cT</m> avec les axes des coordonnées se calculent aisément
+        <ul>
+          <li>
+            <p>
+              avec l'axe des abscisses : <m>y=0</m> donne <m>x^\ast = \sqrt{c x_0}</m> ;
+            </p>
+          </li>
+          <li>
+            <p>
+              avec l'axe des ordonnées : <m>x=0</m> donne <m>y^\ast = \sqrt{c y_0}</m>.
+            </p>
+          </li>
+        </ul>
+        Ainsi, <me>x^\ast + y^\ast = \sqrt{cx_0} + \sqrt{xy}_0  = \sqrt{c}(\sqrt{x_0} + \sqrt{y}_0) = c.</me>
+      </p>
+      <figure xml:id="fig_expl-grad-tg">
+          <caption>La courbe <m>f(x,y) = \sqrt{x} + \sqrt{y} = \sqrt{c}</m> ainsi que sa tangente en un point quelconque </caption>
+          <image xml:id="sageplot-expt-grad-tg" width="60%">
+              <sageplot>
+                var('x,y')
+                f(x,y) = sqrt(x) + sqrt(y)
+                x0, y0 = 4,1
+                c=9
+                C = implicit_plot(f - sqrt(c), (x,-1,7), (y,-1,7),
+                  axes_labels=["$x$","$y$"], ticks = [[],[]])
+                C += implicit_plot(
+                  f.gradient()(x0,y0)*vector([x-x0, y-y0]) ==  0, (x,0,7), (y,0,7), frame = False, axes = True, color ="red")
+                C += point([x0,y0], size = 30, color = "red")
+                C += text("$P_0(x_0, y_0)$",(x0,y0+0.75), fontsize=12,
+                  zorder=2, color= "black")
+                C += text("$y^\\ast$",(0.2,3.2), fontsize=12, zorder=2,
+                  color= "black")
+                C += text("$x^\\ast$",(6,-0.5), fontsize=12, zorder=2,
+                  color= "black")
+                C
+              </sageplot>
+          </image>
+      </figure>
+
+
+
+
+
+    </solution>
+  </example>
+
+  <p>
+    Avec une variable de plus, nous assistons à une métamorphose :
+    <ol>
+      <li>
+        <p>
+          La courbe d'équation <m>f(x,y)=k</m> devient une surface <m>\plan{S}</m> d'équation <m>f(x,y,z) = k</m>, et le point <m>(x_0,y_0)</m>  devient un point <m>(x_0,y_0,z_0)</m> sur <m>\plan{S}</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          La droite tangente à la courbe devient le plan tangent à la surface <m>\plan{S}</m>.
+        </p>
+      </li>
+    </ol>
+
+  </p>
+  <p>
+    Nous allons utiliser un procédé semblable à celui qui nous a servi lors de notre discussion au sujet des fonctions implicites, mais avec une surface au lieu d'une courbe. Soit <m>\plan{S}</m> la surface  <m>G(x,y,z)=0</m> et  <m>R_0\big(x_0,\,y_0,\,z_0\big)</m> un point sur <m>\plan{S}</m>.
+  </p>
+
+  <p>
+    Imaginons que nous nous promenons sur la surface et que, à l'instant <m> t= 0</m>, nous passons au point <m>R_0\big(x_0,\,y_0,\,z_0\big)</m>. Soit <m>\vr(t)
+  =\big(x(t),\,y(t),\,z(t)\big)</m> la position au temps  <m>t</m>.
+  </p>
+
+  <sidebyside width="75%">
+  <image source="images/CLP-figs/tanPlaneG"/>
+  </sidebyside>
+
+  <p>
+    Puisque notre balade a lieu sur la surface, nous savons que <m>\vr(t)</m> se trouve sur la surface, c'est-à-dire
+    <me>
+    G \circ \vr(t) = G\big( x(t),\,y(t),\,z(t)\big)=0
+    </me>
+    pour tout  <m>t</m>. En dérivant par rapport à <m>t</m>, on obtient, en vertu de la règle de la chaîne,
+    <me>
+      (\vD G \circ \vr(t))\, \vr'(t) = 0
+    </me>,
+    c'est-à-dire
+    <md>
+    <mrow>
+    \pdiff{G}{x}\big( x(t),\,y(t),\,z(t)\big)\ x'(t)
+    &amp;+\pdiff{G}{y}\big( x(t),\,y(t),\,z(t)\big)\ y'(t)
+    </mrow><mrow>
+    &amp;+\pdiff{G}{z}\big( x(t),\,y(t),\,z(t)\big)\ z'(t) = 0
+    </mrow>
+    </md>.
+    En particulier, en  <m>t=0</m>, on obtient
+    <md>
+      <mrow> \amp \pdiff{G}{x}\big( x_0,\,y_0,\,z_0\big)\ x'(0)
+      +\pdiff{G}{y}\big( x_0,\,y_0,\,z_0\big)\ y'(0)</mrow>
+      <mrow xml:id="tgt-surf-impl" tag = "ddagger" > \amp +\pdiff{G}{z}\big( x_0,\,y_0,\,z_0\big)\ z'(0) = 0 </mrow>
+  </md>.
+
+    À nouveau, compte tenu de la définition du gradient de <m>G</m>, l'égalité <xref ref="tgt-surf-impl"/> se lit simplement
+    <me>
+      \vnabla G(\vr_0) \cdot \vr'_0 = 0
+    </me>,
+    c'est-à-dire que le gradient <m>\vnabla G (\vr_0)</m> est orthogonal à <m>\vr'_0</m>.
+  </p>
+  <p>
+    Ceci étant vrai pour toute courbe sur <m>\plan{S}</m> passant par <m>\vr_0</m>, on a que <m>\vnabla G(\vr_0)</m> est orthogonal au plan tangent à <m>\plan{S}</m> en <m>\vr_0</m>. Ceci donne la preuve du résultat suivant.
+  </p>
+  <theorem xml:id="thm_tan_plane_G"><title>Plan tangent et droite normale : surfaces de niveau</title>
+  <statement><p>
+  Soit <m>\plan{S}</m> la surface d'équation <m>G(x,y,z)= k</m> et <m>\vr_0 = x_0,\, \vi + y_0 \, \vj +  z_0\,\vk</m>  sur <m>\plan{S}</m> tel que le gradient <m>\vnabla G (\vr_0)</m> existe et est non nul. Alors :
+    <ol marker = "(a)">
+    <li>
+    Le vecteur  <m>\vnabla G(\vr_0)</m> est orthogonal à <m>\plan{S}</m> en <m>\vr_0</m>;
+    </li>
+    <li>
+    L'équation du plan tangent à <m>\plan{S}</m> en <m>\vr_0</m> est
+    <me>
+    \vnabla G(x_0,y_0,z_0)\cdot\llt x-x_0,\,y-y_0,\,z-z_0\rgt =0
+    </me>
+    ou encore
+    <me>
+      \vnabla G(\vr_0)\cdot (\vr - \vr_0) = 0
+    </me>;
+
+    </li>
+    <li>
+    Un paramétrage de la droite normale à <m>\plan{S}</m>  en <m>\vr_0</m> est
+    <me>
+    \ctvec{x}{y}{z} =\vr_0 + t \vnabla G(\vr_0)
+    </me>.
+    </li>
+    </ol>
+  </p></statement>
+  </theorem>
+
+  <remark xml:id="rem_tan_plane">
+  <p>
+  Nous avons quelques idées au sujet des plans tangents aux surfaces <m>z=f(x,y)</m> et des approximations linéaires au  <xref ref="principle-Plan-tg-idee"/>. Il s'agit de conséquences  du <xref ref="thm_tan_plane_G"/>. En effet, il est toujours possible d'écrire l'équation <m>z=f(x,y)</m> sous la forme <m>z-f(x,y)=0</m> et d'invoquer le
+  <xref ref="thm_tan_plane_G"/> avec <m>G(x,y,z)=z-f(x,y)</m>, puisque
+
+  <me>
+  \vnabla G(x_0,y_0,z_0) = -f_x(x_0,y_0)\,\vi -f_y(x_0,y_0)\,\vj +\vk
+  </me>.
+  Le <xref ref="thm_tan_plane_G"/> donne alors les points du <xref ref="principle-Plan-tg-idee"/> comme une conséquence.
+  </p>
+  <p>
+    Il est <alert> très important </alert> de pouvoir passer d'un contexte à l'autre.
+  </p>
+</remark>
+<p>
+  Voyons maintenant quelques exemples.
+</p>
+
+
+<example xml:id="eg_tan_plane_C">
+<statement>
+<p>
+Trouver le plan tangent et la droite normale à la surface <m>\plan{S}</m> d'équation
+<m>
+z= x^2+5xy-2y^2
+</m>
+au point <m>(1,2,3)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Vérifions pour commencer que
+<m>
+1^2+5\times 1\times 2-2(2)^2=3
+</m>,
+de sorte que le point  <m>(1,2,3)</m> appartient effectivement à la surface <m>\plan{S}</m>.
+</p>
+<p>
+Écrivons l'équation de la surface sous la forme  <m>G(x,y,z)=x^2+5xy-2y^2-z=0</m>.
+Alors, le gradient est
+<md>
+<mrow>
+\vnabla G(x,y,z) = (2x+5y)\,\vi +(5x-4y)\,\vj-\vk
+</mrow>
+</md>,
+de sorte que, en vertu du  <xref ref="thm_tan_plane_G"/>,
+<m>
+\vn = \vnabla G(1,2,3) = 12\,\vi -3\,\vj-\vk
+</m>
+est un vecteur normal à la surface au point <m>(1,2,3)</m>. Ayant le vecteur normal, nous n'avons plus qu'à trouver l'équation du plan tangent.
+<me>
+\vn\cdot\llt x-1\,,\,y-2\,,\,z-3 \rgt
+=\llt 12\,,\,-3\,,\, -1\rgt\cdot\llt x-1\,,\,y-2\,,\,z-3 \rgt
+=0
+</me>
+ou encore
+<me>
+12x -3y -z = 3
+</me>
+On vérifie aisément que  <m>(1,2,3)</m> se trouve bel et bien sur le plan :
+<m>
+12\times 1 -3\times 2 -3 = 3
+</m>.
+La droite normale est donc
+<me>
+\ctvec{x-1}{y-2}{z-3}  = t\,\vn = t\ctvec{12}{-3}{-1}
+</me>
+ou
+<me>
+\frac{x-1}{12} = \frac{y-2}{-3} = \frac{z-3}{-1}\quad
+  {\color{gray}{\Big(=t\Big)}}
+</me>.
+</p>
+</solution>
+</example>
+<!-- 
+<exercise xml:id = "Gradient-02" component = "webwork" >
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-02.pg"/>
+</exercise> -->
+
+<warning xml:id="warn_tan_plane">
+<p>
+Le vecteur  <m>\vnabla G(x,y,z)</m> n'est pas orthogonal à la surface
+<m>G(x,y,z)\!=\!K</m> au point <m>(x_0,y_0,z_0)</m>. Le vecteur  <m>\vnabla G(x_0,y_0,z_0)</m> est orthogonal à la surface en ce point (pourvu, bien entendu, qu'il s'agisse d'un point de la surface, c'est-à-dire <m>G(x_0,y_0,z_0)=K</m>).
+</p>
+
+<p>Considérons l'exemple suivant pour illustrer les problèmes qui peuvent arriver si nous omettons d'évaluer <m>\vnabla G(x,y,z)</m> en <m>(x_0,y_0,z_0)</m>.
+<me>
+\text{ Trouver le plan tangent à la surface }
+x^2+y^2+z^2=1
+\text{ au point  }
+(0,0,1).
+</me>
+ Dans ce cas, la surface est donnée par <m>G(x,y,z)=x^2+y^2+z^2=1</m>. Le gradient de  <m>G</m> est  <m>\vnabla G(x,y,z) = 2x\,\vi +2y\,\vj +2z\,\vk</m>. Afin d'invoquer correctement la partie (b) du  <xref ref="thm_tan_plane_G"/>, on doit évaluer  <m>\vnabla G(0,0,1) = 2\,\vk</m> et trouver que le plan tangent en  <m>(0,0,1)</m> est
+<md>
+<mrow>
+\vnabla G(0,0,1)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt = 0
+\quad\text{ou}\quad 2(z-1)=0
+\quad\text{ou}\quad z=1
+</mrow>
+</md>.
+Ceci est correct : le plan tangent à la sphère unité au pôle nord est un plan horizontal.
+</p>
+
+<p>
+Cependant, si l'on applique incorrectement la partie (b) du <xref ref="thm_tan_plane_G"/>, sans évaluer <m>\vnabla G(x,y,z)</m> au point <m>(0,0,1)</m>, on trouverait que le <q>plan tangent </q> est
+<md>
+<mrow>
+&amp;\vnabla G(x,y,z)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt =0
+</mrow><mrow>
+\qquad\text{ou}\qquad &amp;2x(x-0) +2y(y-0) + 2z(z-1)=0
+</mrow><mrow>
+\qquad\text{ou}\qquad &amp; x^2+y^2+z^2 -z = 0,
+</mrow>
+</md>
+ce qui est terriblement faux. Cette équation n'est même pas l'équation d'un plan puisque tout plan a une équation de la forme <m>ax+by+cz=d</m>, avec  <m>a</m>, <m>b</m>, <m>c</m> et <m>d</m> des constantes.
+</p>
+</warning>
+
+<p>Voyons plus d'exemples.
+</p>
+
+<example xml:id="eg_tan_plane_E">
+<p>
+  Supposons que nous voulons déterminer le point le plus haut et le point le plus bas sur la surface  <m>G(x,y,z) = x^2-2x +y^2-4y + z^2-6z = 2</m>, c'est-à-dire que nous voulons déterminer, parmi les points de cette surface, ceux pour lesquels la coordonnée <m>z</m> a la valeur la plus grande ou la plus petite.
+</p>
+
+<p>
+  Après complétion des carrés, on obtient
+<md>
+<mrow>
+G(x,y,z) &amp;= x^2-2x +y^2-4y + z^2-6z
+</mrow><mrow>
+        &amp;=(x-1)^2 +(y-2)^2 +(z-3)^2 - 14
+</mrow>
+</md>,
+  de sorte que la surface  <m>G(x,y,z)=2</m> est une sphère, son point le plus haut est le <q>pôle nord</q> et son point le plus bas est le <q>pôle sud</q>. Supposons cependant que <m>G(x,y,z)=2</m> est plus compliquée et que nous ne pouvons pas l'esquisser facilement.
+</p>
+
+<p>
+  Nous allons trouver les points qui nous intéressent en utilisant le fait que le plan  tangent à la surface  <m>G=2</m> est horizontal en ces points. De façon équivalente, le vecteur normal à  <m>G=2</m> doit être vertical. En effet, regardons la figure ci-bas. Si le plan tangent en <m>(x_0,y_0,z_0)</m> n'est pas horizontal, alors ce plan tangent contient des points dans un voisinage de  <m>(x_0,y_0,z_0)</m> avec <m>z \gt z_0</m>  et d'autres points dans ce voisinage avec <m>z \lt z_0</m>. Près de <m>(x_0,y_0,z_0)</m>, le plan tangent est une bonne approximation de la surface<fn>Nous reviendrons avec plus de précision sur ce point, lorsque la notion de <em>différentiabilité</em> sera introduite.</fn>, de sorte qu'elle contient aussi de tels points.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP-figs/highLowBJC"/>
+</sidebyside>
+
+<p>
+  Le gradient est
+<me>
+\vnabla G(x,y,z) = (2x-2)\,\vi + (2y-4)\,\vj + (2z-6)\,\vk
+</me>.
+  Il est vertical lorsque  les composantes en <m>\vi</m> et  en <m>\vj</m> sont nulles. Ceci arrive lorsque <m>2x-2=0</m> et <m>2y-4=0</m>, c'est-à-dire lorsque <m>x=1</m> et <m>y=2</m>.
+
+  Ainsi, le vecteur normal  à la surface  <m>G=2</m> au point <m>(x,y,z)</m> est vertical quand  <m>x=1</m>, <m>y=2</m> et (il ne faut pas oublier ceci!) <m>(x,y,z)</m> se trouve sur  <m>G=2</m>.
+  <md>
+  <mrow>
+  &amp;G(1,2,z) = 1^2-2\times 1 +2^2-4\times 2 + z^2-6z = 2
+  </mrow><mrow>
+  \iff &amp; z^2-6z-7=0
+  </mrow><mrow>
+  \iff &amp; (z-7)(z+1)=0
+  </mrow><mrow>
+  \iff &amp; z=7,\ -1
+  </mrow>
+  </md>.
+  Le point le plus haut est <m>(1,2,7)</m> tandis que le point le plus bas est <m>(1,2,-1)</m>, tel qu'on s'y attendait.
+</p></example>
+
+<p>
+  Dans cet exemple, nous aurions pu utiliser le fait que la surface est une sphère et que, dans ce cas, le vecteur joignant le centre à un point quelconque est orthogonal au plan tangent en ce point. Voyons un autre exemple dans lequel un tel raccourci n'est pas possible.
+</p>
+
+<example xml:id="eg_tan_plane_F">
+<p>
+  Trouver les points sur la surface <m>x^2+ 2y^2 +3z^2 = 72</m> qui donnent lieu à la plus grande ainsi qu'à la plus basse valeur de  <m>x+y+3z</m>.
+</p>
+
+<p>Afin de développer une stratégie pour résoudre ce problème, considérons l'esquisse ci-bas.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP-figs/bigSmall"/>
+</sidebyside>
+
+<p>
+  L'ellipse en rouge représente la surface
+<me>
+x^2+ 2y^2 +3z^2 = 72,
+</me>
+  qui est un ellipsoïde. La ligne diagonale du milieu (en noir) représente le plan  <m>x+y+3z=C</m> pour une certaine valeur de <m>C</m> que nous ferons varier astucieusement. À chaque point sur ce plan, la fonction  <m>(x,y,z)\mapsto x+y+3z</m> (que l'on veut maximiser ou minimiser) prend la valeur <m>C</m>.
+</p>
+<p>
+  En particulier, pour la valeur de  <m>C</m> choisie dans la figure, le plan   <m>x+y+3z=C</m> coupe notre surface, ce qui nous dit que <m>x+y+3z</m> prend la valeur <m>C</m> à quelque part sur la surface.
+</p>
+
+<p>
+  Afin de maximiser  <m>x+y+3z</m>, imaginons que la valeur de <m>C</m> croît lentement, de sorte que le plan  <m>x+y+3z=C</m> se déplace vers la droite<fn>En effet, <m>\pdiff{C}{x} = 1 = \pdiff{C}{y} \gt 0</m>.</fn>. Nous voulons arrêter de faire croître la valeur de <m>C</m> lorsque nous atteindrons la plus grande valeur de <m>C</m> pour laquelle le plan <m>x+y+3z=C</m> coupe la surface <m>x^2+ 2y^2 +3z^2 = 72</m>. Pour cette valeur de  <m>C</m>, le plan <m>x+y+3z=C</m>, représenté par la diagonale bleue de droite, est tangent à notre surface.
+</p>
+
+<p>
+  De la même façon, si l'on veut minimiser  <m>x+y+3z</m>, on doit diminuer la valeur de  <m>C</m>. Le même argument mène à conclure que, au point de minimum, le plan doit être tangent à la surface.
+
+  L'<xref ref="eg_tan_plane_E"/> était semblable, mais le plan en question était <m>z=C</m>.
+</p>
+
+<p>
+  Nous sommes en mesure de calculer. Nous avons besoin de trouver les points  <m>(a,b,c)</m> (dans la figure, ils sont représentés par les points de tangence, en noir) pour lesquels
+<ul>
+<li> <m>(a,b,c)</m> se trouve sur la surface, et
+</li>
+<li> le vecteur normal à la surface  <m>x^2+ 2y^2 +3z^2 = 72</m> en <m>(a,b,c)</m> est parallèle au vecteur normal du plan, c'est-à-dire à   <m>\llt 1,1,3\rgt</m>.
+</li>
+</ul>
+Étant donné que le gradient de  <m>x^2+ 2y^2 +3z^2</m> est  <m>\llt 2x\,,\,4y\,,\,6z\rgt=2\llt x\,,\,2y\,,\,3z\rgt</m>, ces conditions sont équivalentes aux équations ci-après.
+<md>
+<mrow>
+a^2+ 2b^2 +3c^2 &amp;= 72
+</mrow><mrow>
+\llt a\,,\,2b\,,\,3c\rgt &amp;=t \llt 1,1,3\rgt\qquad
+\text{pour un scalaire } t
+</mrow>
+</md>
+La seconde équation dit que  <m>a=t</m>, <m>b=\frac{t}{2}</m> et <m>c=t</m>. En remplaçant dans la première équation, on obtient
+<md>
+<mrow>
+t^2+ \frac{1}{2}t^2 +3t^2 &amp;= 72
+\iff \frac{9}{2}t^2=72
+\iff t^2 = 16
+\iff t=\pm 4,
+</mrow>
+</md>
+de sorte que
+<ul>
+<li>
+le point sur la surface   <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel <m>x+y+3z</m> atteint sa valeur maximale est  <m>(a,b,c) = \big(t,\frac{t}{2},t\big)\Big|_{t\,=\,4}=(4,2,4)</m>, et
+</li>
+<li>
+<m>x+y+3z</m> prend la valeur  <m>4+2+3\times 4 =18</m> en ce point;
+</li>
+<li>
+le point sur la surface <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel  <m>x+y+3z</m> atteint sa valeur minimale est  <m>(a,b,c) =\big(t,\frac{t}{2},t\big)\Big|_{t\,=\,-4}= (-4,-2,-4)</m>, et
+</li>
+<li>
+<m>x+y+3z</m> prend la valeur <m>-4-2+3\times (-4) =-18</m> en ce point.
+</li>
+</ul>
+</p></example>
+
+<example xml:id="eg_tan_plane_H">
+<statement>
+<p>
+Soit <m>F(x,y,z)=0</m> et <m>G(x,y,z)=0</m> deux surfaces se coupant le long d'une courbe. Trouver un vecteur qui est tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Soit  <m>\vT</m> le vecteur tangent cherché. Ainsi, <m>\vT</m> doit être
+<ul>
+<li>
+tangent à la surface  <m>F(x,y,z)=0</m> en <m>(x_0,y_0,z_0)</m> et
+</li>
+<li>
+tangent à la surface   <m>G(x,y,z)=0</m> en <m>(x_0,y_0,z_0)</m>.
+</li>
+</ul>
+Ainsi, <m>\vT</m> doit être
+<ul>
+<li>
+orthogonal au vecteur  <m>\vnabla F(x_0,y_0,z_0)</m>, qui est normal à <m>F(x,y,z)=0</m> en <m>(x_0,y_0,z_0)</m>, et, en même temps, il doit être
+</li>
+<li>
+orthogonal au vecteur  <m>\vnabla G(x_0,y_0,z_0)</m>, qui est normal à  <m>G(x,y,z)=0</m> en <m>(x_0,y_0,z_0)</m>.
+</li>
+</ul>
+On peut donc utiliser le produit vectoriel des deux vecteurs gradients pour construire <m>\vT</m> :
+<md>
+<mrow>
+\vT &amp;= \vnabla F(x_0,y_0,z_0)\times \vnabla G(x_0,y_0,z_0)
+    =\det\left[\begin{matrix}
+                 \vi &amp; F_x &amp; G_x \\
+                 \vj &amp; F_y &amp; G_y \\
+                 \vk &amp; F_z &amp; G_z \end{matrix}\right]
+</mrow><mrow>
+&amp; =\big(F_yG_z-F_z G_y\big)\,\vi + \big(F_zG_x-F_x G_z\big)\,\vj
+    +\big(F_xG_y-F_y G_x\big)\,\vk
+</mrow>
+</md>,
+où, bien entendu, toutes les dérivées partielles doivent être évaluées en <m>(x,y,z)=(x_0,y_0,z_0)</m>.
+</p>
+</solution>
+</example>
+
+<p>Voyons l'<xref ref="eg_tan_plane_H"/> en action.
+</p>
+
+<example xml:id="eg_tan_plane_I">
+<statement>
+<p>
+Considérer la courbe intersection des surfaces
+<me>
+x^2+y^2+z^2=5,\qquad\text{et}\qquad
+x^2+y^2=4z
+</me>.
+Trouver un vecteur tangent à cette courbe au point <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Vérifions tout d'abord que le point  <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m> se trouve bel et bien sur la courbe, c'est-à-dire qu'il vérifie les deux équations :
+<me>
+\big(\sqrt{3}\big)^2+1^2+1^2=5\qquad
+\big(\sqrt{3}\big)^2+1^2=4\times 1
+</me>.
+Nous trouverons le vecteur tangent voulu en utilisant la stratégie de l'<xref ref="eg_tan_plane_H"/>.
+</p>
+
+<p>Posons  <m>F(x,y,z) = x^2+y^2+z^2</m> et  <m>G(x,y,z) = x^2+y^2-4z</m>. Alors,
+<ul>
+<li>
+le vecteur
+<me>
+\vnabla F\left(\sqrt{3},1,1\right)
+ =\llt 2x,\,2y,\,2z \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
+ = 2\llt \sqrt{3},\,1,\,1 \rgt
+</me>
+est normal à <m>F(x,y,z)=5</m> en <m>\big(\sqrt{3},\,1,\,1\big)</m>, et
+</li>
+<li>
+le vecteur
+<me>
+\vnabla G\left(\sqrt{3},1,1\right)
+ =\llt 2x,\,2y,\,-4 \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
+ = 2\llt \sqrt{3},\,1,\,-2 \rgt
+</me>est normal à <m>G(x,y,z)=0</m> en <m>\big(\sqrt{3},\,1,\,1\big)</m>.
+</li>
+</ul>
+Ainsi, un vecteur tangent est
+<md>
+<mrow>
+&amp;\ctvec{\sqrt{3}}{1}{1}\times \ctvec{\sqrt{3}}{1}{-2}    =\det\left[\begin{matrix}
+                 \vi &amp; \sqrt{3} &amp; \sqrt{3} \\
+                 \vj &amp;  1  &amp; 1 \\
+                 \vk &amp;  1  &amp; -2 \end{matrix}\right]
+</mrow><mrow>
+&amp;\hskip0.5in =\big(-2-1\big)\,\vi + \big(\sqrt{3}+2\sqrt{3}\big)\,\vj
+    +\big(\sqrt{3}-\sqrt{3}\big)\,\vk
+</mrow><mrow>
+&amp;\hskip0.5in= -3\,\vi + 3\sqrt{3}\,\vj
+</mrow>
+</md>.
+Il y a un facteur <m>3</m> dans les deux composantes non nulles, de sorte que l'on peut choisir <m>-\vi + \sqrt{3}\, \vj</m>  comme vecteur tangent.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_hidden_surface"><title>(Optionnel) Graphiques par ordinateur, élimination de surfaces cachées</title>
+<p>
+  Lorsque nous regardons un objet tridimensionnel, nous ne le voyons pas au complet : certaines portions de l'objet nous sont cachées par d'autres portions de celui-ci. Par exemple, l'esquisse ci-bas schématise la trajectoire d'un rayon de lumière entre l'œil et la surface de l'objet. L'objet est solide, de sorte que le rayon ne peut pas le traverser. S'il le pouvait, il traverserait, suivant la ligne pointillée, rencontrant la surface de l'objet à trois autres reprises. L'œil peut voir un seul point, mais pas les trois autres.
+</p>
+
+<sidebyside width="35%">
+<image source="images/CLP-figs/hiddenA"/>
+</sidebyside>
+
+<p>
+  La technique de reproduire cet effet en infographie est connue comme l'<q>élimination de surfaces cachées</q>.  En général, l'implémentation peut être compliquée. Souvent, on utilise une technique appelée <q>ray tracing</q>. Elle est relativement simple à comprendre pour peu qu'on connaisse les vecteurs et les gradients, et si, l'on regarde un seul objet convexe (par définition, un objet est convexe si, lorsque deux points se trouvent sur celui-ci, tout le segment de droite joignant ces deux points fait également partie de l'objet).
+</p>
+
+<sidebyside widths="31.7% 31.7%" valign="middle">
+<image source="images/CLP-figs/hiddenBJC"/>
+<image source="images/CLP-figs/hiddenCJC"/>
+</sidebyside>
+
+<p>
+  Supposons donc que nous regardons un solide convexe, et que l'équation de sa surface est <m>G(x,y,z)=0</m> et que notre œil se trouve à <m>(x_e,y_e,z_e)</m>.
+</p>
+
+<p>
+<ul>
+<li>
+<p>
+  Travaillons à reculons et considérons pour commencer un rayon de lumière qui quitte l'œil et  effleure le solide en <m>(x,y,z)</m>, comme dans la figure de gauche ci-bas. Le rayon est tangent à la surface en <m>(x,y,z)</m>. Ainsi, le vecteur donnant la direction du rayon,  <m>\llt x-x_e,y-y_e,z-z_e \rgt</m>, est tangent à la surface en  <m>(x,y,z)</m> et, conséquemment, il est orthogonal au vecteur normal
+<m>\vn=\vnabla G(x,y,z)</m>, à la surface en <m>(x,y,z)</m>. Ainsi,
+<me>
+\ctvec{x-x_e}{y-y_e}{z-z_e}\cdot \vnabla G(x,y,z) = 0
+</me>.
+</p>
+</li>
+</ul>
+</p>
+
+<sidebyside widths="43.6% 51.7%" valign="middle">
+<image source="images/CLP-figs/hiddenD"/>
+<image source="images/CLP-figs/hiddenE"/>
+</sidebyside>
+
+<p>
+<ul>
+<li>
+<p>
+  Considérons maintenant un rayon qui quitte l'œil et qui passe à travers le solide, tel qu'illustré dans la figure de droite ci-haut. Soit <m>(x,y,z)</m> le point par lequel le rayon entre dans le solide et <m>(x',y',z')</m> le point <q>de sortie</q>.
+<ul>
+<li>
+  Soit <m>\vv</m> un vecteur de même direction, c'est-à-dire un multiple positif, de <m>\llt x-x_e, y-y_e, z-z_e\rgt</m>.
+</li><li>
+  Soit  <m>\vn</m> un vecteur normal pointant vers l'extérieur du solide à  <m>(x,y,z)</m>. Il s'agira, par exemple, de  <m>\vnabla G(x,y,z)</m> ou de <m>-\vnabla G(x,y,z)</m>.
+</li><li>
+  Soit <m>\vn'</m> un vecteur normal pointant vers l'extérieur du solide à <m>(x',y',z')</m>. Il s'agira de  <m>\vnabla G(x',y',z')</m> ou de <m>-\vnabla G(x',y',z')</m>.
+</li>
+</ul>
+Alors,
+<ul>
+<li>
+au point <m>(x,y,z)</m> où le rayon entre dans le solide, qui est un point visible, le vecteur <m>\vv</m> pointe vers l'intérieur du solide. L'angle <m>\theta</m> entre <m>\vv</m> et le normal  <m>\vn</m> pointant vers l'extérieur est plus grand que  <m>\pi /2</m>, de sorte que  <m>\vv\cdot\vn=|\vv|\,|\vn|\,\cos\theta \lt 0</m>. Mais
+</li><li>
+au point  <m>(x',y',z')</m> où le rayon quitte le solide, qui est un point caché, le vecteur  <m>\vv</m> pointe vers l'extérieur. L'angle <m>\theta</m> entre <m>\vv</m> et le normal <m>\vn'</m> pointant vers l'extérieur est inférieur à <m>\pi/2</m>, de sorte que  <m>\vv\cdot\vn'=|\vv|\,|\vn'|\,\cos\theta\gt 0</m>.
+</li>
+</ul>
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+La conclusion est que si l'on regarde dans la direction de <m>\vv</m> et que le normal pointant vers l'extérieur<fn>Si <m>\vnabla G(x,y,z)</m> est le normal pointant vers l'intérieur, on remplace  <m>G</m> par <m>-G</m>.</fn> de la surface à <m>(x,y,z)</m> est <m>\vnabla G(x,y,z)</m>, alors le point  <m>(x,y,z)</m> est caché si et seulement si <m>\vv\cdot\vnabla G(x,y,z)\gt 0</m>.
+</p>
+
+<p>
+Cette méthode est utilisée en infographie pour créer des figures comme celles ci-après<fn>Ces figures ne sont pas convexes, mais il est possible d'adapter la méthode décrite parce que chaque rayon qui passe par notre œil passe par le solide au plus deux fois. Il y entre au point visible et en sort par le point invisible.</fn>.
+</p>
+
+<sidebyside widths="28% 31.7%" valign="middle">
+<image source="images/CLP-figs/hyperboloid1sheetDD"/>
+<image source="images/CLP-figs/hyperboloid2sheetDD"/>
+</sidebyside>
+
+
+</example>
+
+</subsection>
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Gradient.ptx"/>
+
+</section>

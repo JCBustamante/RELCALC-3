@@ -1,0 +1,4919 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+    <!-- Coordonnées cylindriques partie 1 -->
+    <exercise>
+      <statement><p>
+      Utilisez <m>(r,\theta,z)</m> pour dénoter les coordonnées cylindriques.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      Dessinez <m>r=0</m>.
+      </li>
+      <li>
+      Dessinez <m>r=1</m>.
+      </li>
+      <li>
+      Dessinez <m>\theta=0</m>.
+      </li>
+      <li>
+      Dessinez <m>\theta=\frac{\pi}{4}</m>.
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer>
+      <sbsgroup widths="10% 27% 30%">
+      <sidebyside>
+      <p>(a), (b)</p>
+      <image source="images/CLP-figs/pfigs/cylR0"/>
+      <image source="images/CLP-figs/pfigs/cylR"/>
+      </sidebyside>
+      <sidebyside>
+      <p>(c), (d)</p>
+      <image source="images/CLP-figs/pfigs/cylTh0"/>
+      <image source="images/CLP-figs/pfigs/cylTh"/>
+      </sidebyside>
+      </sbsgroup>
+      </answer>
+
+      <solution><p>
+      (a), (b) Since the cylindrical coordinate <m>r(x,y,z)</m> of a point <m>(x,y,z)</m> is
+      the distance, <m>\sqrt{x^2+y^2}</m>, from <m>(x,y,z)</m> to the <m>z</m>-axis, the sets
+      <md>
+      <mrow>
+      \Set{(x,y,z)}{r(x,y,z)=0}
+      &amp;=\Set{(x,y,z)}{x^2+y^2=0}
+      </mrow><mrow>
+      &amp;=\Set{(x,y,z)}{x=y=0}
+      </mrow><mrow>
+      &amp;=\text{the $z$-axis}
+      </mrow><mrow>
+      \Set{(x,y,z)}{r(x,y,z)=1}
+      &amp;=\Set{(x,y,z)}{x^2+y^2=1}
+      </mrow><mrow>
+      &amp;=\text{the cylinder of radius $1$ centred on the $z$-axis}
+      </mrow>
+      </md>
+      </p>
+
+      <sidebyside widths="27% 30%">
+        <image source="images/CLP-figs/pfigs/cylR0"/>
+        <image source="images/CLP-figs/pfigs/cylR"/>
+      </sidebyside>
+
+      <p>
+      (c), (d)
+      Since the cylindrical coordinate <m>\theta(x,y,z)</m> of a point <m>(x,y,z)</m> is
+      the angle between the positive <m>x</m>-axis and the line from <m>(0,0,0)</m>
+      to <m>(x,y,0)</m>, the sets
+      <md>
+      <mrow>
+      \Set{(x,y,z)}{\theta(x,y,z)=0}
+      &amp;=\text{the half of the $xz$-plane with } x \gt 0
+      </mrow><mrow>
+      \Set{(x,y,z)}{\theta(x,y,z)=\frac{\pi}{4}}
+      &amp;=\text{the half of the plane $y=x$ with } x \gt 0
+      </mrow>
+      </md>
+      </p>
+
+      <sidebyside widths="28% 30%">
+        <image source="images/CLP-figs/pfigs/cylTh0"/>
+        <image source="images/CLP-figs/pfigs/cylTh"/>
+      </sidebyside>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Esquissez les points ayant les coordonnées cylindriques spécifiées.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      <m>r=1</m>, <m>\theta=0</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{2}</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=0</m>, <m>\theta=\pi</m>, <m>z=1</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=1</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer>
+      <sidebyside width="85%">
+      <image source="images/CLP-figs/pfigs/cylP1"/>
+      </sidebyside>
+
+      </answer>
+
+      <solution><p>
+      The sketch is below. To help build up this sketch, it is useful to
+      recall the following facts.
+      <ul>
+      <li>
+      The cylindrical coordinate <m>r</m> is the distance of the point from the <m>z</m>-axis.
+      In particular all points with <m>r=0</m> lie on the <m>z</m>-axis (for all values of <m>\theta</m>).
+      </li>
+      <li>
+      The cylindrical coordinate <m>z</m> is the distance of the point from the <m>xy</m>-plane.
+      In particular all points with <m>z=0</m> lie on the <m>xy</m>-plane.
+      </li>
+      </ul>
+      </p>
+      <sidebyside width="90%">
+      <image source="images/CLP-figs/pfigs/cylP1"/>
+      </sidebyside>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Convertissez des coordonnées cylindriques aux coordonnées cartésiennes.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      <m>r=1</m>, <m>\theta=0</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{2}</m>, <m>z=0</m>
+      </li>
+      <li>
+      <m>r=0</m>, <m>\theta=\pi</m>, <m>z=1</m>
+      </li>
+      <li>
+      <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=1</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>(1,0,0)</m></p><p>
+      (b) <m>\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0\right)</m></p><p>
+      (c) <m>(0,1,0)</m></p><p>
+      (d) <m>(0,0,1)</m></p><p>
+      (e) <m>\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},1\right)</m>
+      </p></answer>
+
+      <solution><p>
+      (a) When <m>\theta=0</m>,  <m>\sin\theta=0</m> and <m>\cos\theta=1</m>, so that
+      the polar coordinates <m>r=1</m>, <m>\theta=0</m>, <m>z=0</m> correspond to the Cartesian
+      coordinates
+      <me>
+      (x,y,z) = (r\cos\theta,r\sin\theta,z)
+              = (1\times\cos 0,\  1\times\sin 0,\ 0)
+              =(1,0,0)
+      </me>
+      </p>
+
+      <p>(b) When <m>\theta=\frac{\pi}{4}</m>,  <m>\sin\theta=\cos\theta=\frac{1}{\sqrt{2}}</m>,
+      so that the polar coordinates <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=0</m> correspond
+      to the Cartesian coordinates
+      <md>
+      <mrow>
+      (x,y,z) &amp;= (r\cos\theta,r\sin\theta,z)
+        = \left(1\times\cos \frac{\pi}{4},\  1\times\sin \frac{\pi}{4},\ 0\right)
+      </mrow><mrow>
+      &amp;= \left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0\right)
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) When <m>\theta=\frac{\pi}{2}</m>,  <m>\sin\theta=1</m> and <m>\cos\theta=0</m>,
+      so that the polar coordinates <m>r=1</m>, <m>\theta=\frac{\pi}{2}</m>, <m>z=0</m> correspond
+      to the Cartesian coordinates
+      <me>
+      (x,y,z) = (r\cos\theta,r\sin\theta,z)
+        = \left(1\times\cos \frac{\pi}{2},\  1\times\sin \frac{\pi}{2},\ 0\right)
+        = (0,1,0)
+      </me>
+      </p>
+
+      <p>(d) When <m>\theta=\pi</m>,  <m>\sin\theta=0</m> and <m>\cos\theta=-1</m>,
+      so that the polar coordinates <m>r=0</m>, <m>\theta=\pi</m>, <m>z=1</m> correspond
+      to the Cartesian coordinates
+      <me>
+      (x,y,z) = (r\cos\theta,r\sin\theta,z)
+        = \left(0\times\cos\pi,\  0\times\sin\pi,\ 1\right)
+        = (0,0,1)
+      </me>
+      </p>
+
+      <p>(e) When <m>\theta=\frac{\pi}{4}</m>,  <m>\sin\theta=\cos\theta=\frac{1}{\sqrt{2}}</m>,
+      so that the polar coordinates <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m>, <m>z=1</m> correspond
+      to the Cartesian coordinates
+      <md>
+      <mrow>
+      (x,y,z) &amp;= (r\cos\theta,r\sin\theta,z)
+      </mrow><mrow>
+      &amp;= \left(1\times\cos \frac{\pi}{4},\  1\times\sin \frac{\pi}{4},\ 1\right)
+      </mrow><mrow>
+      &amp;= \left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},1\right)
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Convertissez des coordonnées cartésiennes aux coordonnées cylindriques.
+      <ol marker = "(a)" cols = "2">
+      <li> <m>(1,1,2)</m>
+      </li>
+      <li> <m>(-1,-1,2)</m>
+      </li>
+      <li> <m>(-1,\sqrt{3}, 0)</m>
+      </li>
+      <li> <m>(0,0,1)</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>r=\sqrt{2}</m>, <m>z=2</m>, <m>\theta=\frac{\pi}{4}</m> (plus possiblement
+      tout entier multiple de <m>2\pi</m>)
+      </p>
+
+      <p>(b) <m>r=\sqrt{2}</m>, <m>z=2</m>, <m>\theta=\frac{5\pi}{4}</m> (plus possiblement
+      tout entier multiple de <m>2\pi</m>)
+      </p>
+
+      <p>(c) <m>r=2</m>, <m>z=0</m>, <m>\theta=\frac{2\pi}{3}</m> (plus possiblement
+      tout entier multiple de <m>2\pi</m>)
+      </p>
+
+      <p>(d) <m>r=0</m>, <m>z=1</m>, <m>\theta=\text{arbitraire}</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) The cylindrical coordinates must obey
+      <me>
+      1=x=r\cos\theta\qquad
+      1=y=r\sin\theta\qquad
+      2=z
+      </me>
+      So <m>z=2</m>, <m>r=\sqrt{1^2+1^2}=\sqrt{2}</m> and <m>\tan\theta=\frac{y}{x}
+      =\frac{1}{1}=1</m>. Recall that <m>\tan\left(\frac{\pi}{4}+k\pi\right)=1</m>
+      for all integers <m>k</m>.  As <m>(x,y)=(1,1)</m> lies in the first quadrant,
+      <m>0\le\theta\le\frac{\pi}{2}</m>. So <m>\theta=\frac{\pi}{4}</m> (plus possibly
+      any integer multiple of <m>2\pi</m>).
+      </p>
+
+      <p>(b) The cylindrical coordinates must obey
+      <me>
+      -1=x=r\cos\theta\qquad
+      -1=y=r\sin\theta\qquad
+      2=z
+      </me>
+      So <m>z=2</m>, <m>r=\sqrt{(-1)^2+(-1)^2}=\sqrt{2}</m> and <m>\tan\theta=\frac{y}{x}
+      =\frac{-1}{-1}=1</m>. Recall that <m>\tan\left(\frac{\pi}{4}+k\pi\right)=1</m>
+      for all integers <m>k</m>. As <m>(x,y)=(-1,-1)</m> lies in the third quadrant,
+      <m>\pi\le\theta\le\frac{3\pi}{2}</m>. So <m>\theta=\frac{5\pi}{4}</m> (plus possibly
+      any integer multiple of <m>2\pi</m>).
+      </p>
+
+      <p>(c) The cylindrical coordinates must obey
+      <me>
+      -1=x=r\cos\theta\qquad
+      \sqrt{3}=y=r\sin\theta\qquad
+      0=z
+      </me>
+      So <m>z=0</m>, <m>r=\sqrt{(-1)^2+\big(\sqrt{3}\big)^2}=2</m> and
+      <m>\tan\theta=\frac{y}{x} =\frac{\sqrt{3}}{-1}=-\sqrt{3}</m>.
+      Recall that <m>\tan\left(\frac{2\pi}{3}+k\pi\right)=-\sqrt{3}</m>
+      for all integers <m>k</m>.
+      As <m>(x,y)=(-1,\sqrt{3})</m> lies in the second quadrant,
+      <m>\frac{\pi}{2}\le\theta\le\pi</m>. So <m>\theta=\frac{2\pi}{3}</m> (plus possibly
+      any integer multiple of <m>2\pi</m>).
+      </p>
+
+      <p>(d) The cylindrical coordinates must obey
+      <me>
+      0=x=r\cos\theta\qquad
+      0=y=r\sin\theta\qquad
+      1=z
+      </me>
+      So <m>z=0</m>, <m>r=\sqrt{0^2+0^2}=0</m> and
+      <m>\theta</m> is completely arbitrary.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Réécrire les équations suivantes en coordonnées cylindriques.
+      <ol marker = "(a)">
+      <li> <m>z=2xy</m>
+      </li>
+      <li> <m>x^2+y^2+z^2=1</m>
+      </li>
+      <li> <m>(x-1)^2 + y^2 =1</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>z=r^2\sin(2\theta)</m></p><p>
+      (b) <m>r^2+z^2=1</m></p><p>
+      (c) <m>r=2\cos\theta</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) As <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>,
+      <me>
+      z=2xy
+      \iff z=2r^2\cos\theta\sin\theta = r^2\sin(2\theta)
+      </me>
+      </p>
+
+      <p>(b) As <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>,
+      <me>
+      x^2+y^2+z^2=1
+      \iff r^2\cos^2\theta+r^2\sin^2\theta + z^2 =1
+      \iff r^2+z^2=1
+      </me>
+      </p>
+
+      <p>(c) As <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>,
+      <md>
+      <mrow>
+      (x-1)^2 + y^2 =1
+      &amp;\iff (r\cos\theta-1)^2 + (r\sin\theta)^2 =1
+      </mrow><mrow>
+      &amp;\iff r^2\cos^2\theta -2r\cos\theta +1 + r^2\sin^2\theta = 1
+      </mrow><mrow>
+      &amp;\iff r^2=2r\cos\theta
+      \iff r=2\cos\theta\text{ or }r=0
+      </mrow><mrow>
+      &amp;\iff r=2\cos\theta
+      </mrow>
+      </md>
+      Note that the solution <m>r=0</m> is included in <m>r=2\cos\theta</m> <mdash/> just choose <m>\theta=\frac{\pi}{2}</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- Coordonnées sphériques partie 1 -->
+    <exercise>
+      <statement><p>
+      Utilisez <m>(\rho,\theta,\varphi)</m> pour dénoter les coordonnées sphériques.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      Dessinez <m>\varphi=0</m>.
+      </li>
+      <li>
+      Dessinez <m>\varphi=\frac{\pi}{4}</m>.
+      </li>
+      <li>
+      Dessinez <m>\varphi=\frac{\pi}{2}</m>.
+      </li>
+      <li>
+      Dessinez <m>\varphi=\frac{3\pi}{4}</m>.
+      </li>
+      <li>
+      Dessinez <m>\varphi=\pi</m>.
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer>
+      <sbsgroup width="35%">
+      <sidebyside>
+      <image source="images/CLP-figs/pfigs/spherPhi0"/>
+      <image source="images/CLP-figs/pfigs/spherPhiUp"/>
+      </sidebyside>
+      <sidebyside>
+      <image source="images/CLP-figs/pfigs/spherPhiFl"/>
+      <image source="images/CLP-figs/pfigs/spherPhiDn"/>
+      </sidebyside>
+      </sbsgroup>
+      </answer>
+
+      <solution><p>
+      Since the spherical coordinate <m>\varphi(x,y,z)</m> of a point <m>(x,y,z)</m> is
+      the angle between the positive <m>z</m>-axis and the radius vector from
+      <m>(0,0,0)</m> to <m>(x,y,z)</m>, the sets
+      <md>
+      <mrow>
+      \Set{(x,y,z)}{\varphi(x,y,z)=0}
+      &amp;=\text{the positive $z$-axis}
+      </mrow><mrow>
+      \Set{(x,y,z)}{\varphi(x,y,z)=\frac{\pi}{2}}
+      &amp;=\text{the $xy$-plane}
+      </mrow><mrow>
+      \Set{(x,y,z)}{\varphi(x,y,z)=\pi}
+      &amp;=\text{the negative $z$-axis}
+      </mrow>
+      </md>
+      Alternatively, <m>\tan\varphi(x,y,z)=\frac{z}{\sqrt{x^2+y^2}}</m>, so that,
+      for any <m>0 \lt \Phi \lt \pi</m>,
+      <md>
+      <mrow>
+      \Set{(x,y,z)}{\varphi(x,y,z)=\Phi}
+      &amp;=\Set{(x,y,z)}{z=\tan\Phi\sqrt{x^2+y^2}}
+      </mrow><mrow>
+      &amp;\hskip-0.5in=\text{the cone that makes the angle $\Phi$ with the positive $z$-axis}
+      </mrow>
+      </md>
+      </p>
+
+      <sbsgroup width="40%">
+      <sidebyside>
+      <image source="images/CLP-figs/pfigs/spherPhi0"/>
+      <image source="images/CLP-figs/pfigs/spherPhiUp"/>
+      </sidebyside>
+      <sidebyside widths="45% 45%" valign="middle">
+      <image source="images/CLP-figs/pfigs/spherPhiFl"/>
+      <image source="images/CLP-figs/pfigs/spherPhiDn"/>
+      </sidebyside>
+      <sidebyside width="40%">
+      <image source="images/CLP-figs/pfigs/spherPhiPi"/>
+      </sidebyside>
+      </sbsgroup>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Esquissez le point ayant les coordonnées sphériques spécifiées.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      <m>\rho=0</m>, <m>\theta=0.1\pi</m>, <m>\varphi=0.7\pi</m>
+      </li>
+      <li>
+      <m>\rho=1</m>, <m>\theta=0.3\pi</m>, <m>\varphi=0</m>
+      </li>
+      <li>
+      <m>\rho=1</m>, <m>\theta=0</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </li>
+      <li>
+      <m>\rho=1</m>, <m>\theta=\frac{\pi}{3}</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </li>
+      <li>
+      <m>\rho=1</m>, <m>\theta=\frac{\pi}{2}</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </li>
+      <li>
+      <m>\rho=1</m>, <m>\theta=\frac{\pi}{3}</m>, <m>\varphi=\frac{\pi}{6}</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer>
+      <sidebyside width="95%">
+      <image source="images/CLP-figs/pfigs/sphericalP1"/>
+      </sidebyside>
+      </answer>
+
+      <solution><p>
+      The sketch is below. To help build up this sketch, it is useful to
+      recall the following facts.
+      <ul>
+      <li>
+      The spherical coordinate <m>\rho</m> is the distance of the point from the
+      origin <m>(0,0,0)</m>.
+      In particular if <m>\rho=0</m>, then the point is the origin (regardless of the values of <m>\theta</m> and <m>\varphi</m>). If <m>\rho=1</m> then the point lies on the
+      sphere of radius <m>1</m> centred on the origin.
+      </li>
+      <li>
+      The spherical coordinate <m>\varphi</m> is the angle between the positive <m>z</m>-axis
+      and the radial line segment from the origin to <m>(x,y,z)</m>.
+      In particular, all points with <m>\varphi=0</m> lie on the positive <m>z</m>-axis
+      (regardless of the value of <m>\theta</m>). All points with <m>\varphi=\frac{\pi}{2}</m>
+      lie in the <m>xy</m>-plane.
+      </li>
+      </ul>
+      </p>
+
+      <sidebyside width="95%">
+      <image source="images/CLP-figs/pfigs/sphericalP1"/>
+      </sidebyside>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Convertissez des coordonnées cartésiennes aux coordonnées sphériques.
+      <ol marker = "(a)" cols = "2">
+      <li> <m>(-2,0,0)</m>
+      </li>
+      <li> <m>(0,3,0)</m>
+      </li>
+      <li> <m>(0,0,-4)</m>
+      </li>
+      <li> <m>\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},\sqrt{3}\right)</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\rho=2</m>, <m>\theta=\pi</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </p>
+
+      <p>(b) <m>\rho=3</m>, <m>\theta=\frac{\pi}{2}</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </p>
+
+      <p>(c) <m>\rho=4</m>, <m>\theta=\text{arbitraire}</m>, <m>\varphi=\pi</m>
+      </p>
+
+      <p>(d) <m>\rho=2</m>, <m>\theta=\frac{3\pi}{4}</m>, <m>\varphi=\frac{\pi}{6}</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) The point <m>(-2,0,0)</m>
+      <ul>
+      <li>
+      lies in the <m>xy</m>-plane (i.e. has <m>z=\rho\cos\varphi=0</m>) and so has <m>\varphi=\frac{\pi}{2}</m> and
+      </li>
+      <li>
+      lies on the negative <m>x</m>-axis and so has <m>\theta=\pi</m> and
+      </li>
+      <li>
+      is a distance <m>2</m> from the origin and so has <m>\rho=2</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>(b) The point <m>(0,3,0)</m>
+      <ul>
+      <li>
+      lies in the <m>xy</m>-plane (i.e. has <m>z=\rho\cos\varphi=0</m>) and so has <m>\varphi=\frac{\pi}{2}</m> and
+      </li>
+      <li>
+      lies on the positive <m>y</m>-axis and so has <m>\theta=\frac{\pi}{2}</m> and
+      </li>
+      <li>
+      is a distance <m>3</m> from the origin and so has <m>\rho=3</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>(c) The point <m>(0,0,-4)</m>
+      <ul>
+      <li>
+      lies on the negative <m>z</m>-axis and so has <m>\varphi=\pi</m> and <m>\theta</m> arbitrary
+      and
+      </li>
+      <li>
+      is a distance <m>4</m> from the origin and so has <m>\rho=4</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>(d) The point <m>\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},\sqrt{3}\right)</m>
+      <ul>
+      <li>
+      has <m>\rho=\sqrt{x^2+y^2+z^2}
+             =\sqrt{\left(-\frac{1}{\sqrt{2}}\right)^2
+                     +\left(\frac{1}{\sqrt{2}}\right)^2
+                     +\left(\sqrt{3}\right)^2}=\sqrt{4}=2</m>
+      and
+      </li>
+      <li>
+      has <m>\sqrt{3}=z=\rho\cos\varphi = 2\cos\varphi</m> so that
+      <m>\cos\varphi = \frac{\sqrt{3}}{2}</m> and <m>\varphi=\frac{\pi}{6}</m>
+      and
+      </li>
+      <li>
+      has <m>-\frac{1}{\sqrt{2}}=x=\rho\sin\varphi\cos\theta
+      = 2\big(\frac{1}{2}\big)\cos\theta</m>
+      so that <m>\cos\theta = -\frac{1}{\sqrt{2}}</m>. As
+      <m>\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)</m> is in the second
+      quadrant, we have <m>\frac{\pi}{2}\le\theta\le\pi</m> and so
+      <m>\theta=\frac{3\pi}{4}</m>.
+      </li>
+      </ul>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Convertissez des coordonnées sphériques aux coordonnées cartésiennes.
+      <ol marker = "(a)">
+      <li> <m>\rho=1</m>, <m>\theta=\frac{\pi}{3}</m>, <m>\varphi=\frac{\pi}{6}</m>
+      </li>
+      <li> <m>\rho=2</m>, <m>\theta=\frac{\pi}{2}</m>, <m>\varphi=\frac{\pi}{2}</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\left(\frac{1}{4}\,,\,\frac{\sqrt{3}}{4}\,,\,\frac{\sqrt{3}}{2}\right)</m>
+      </p><p>
+      (b) <m>(0,2,0)</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) The Cartesian coordinates corresponding to
+      <m>\rho=1</m>, <m>\theta=\frac{\pi}{3}</m>, <m>\varphi=\frac{\pi}{6}</m> are
+      <md>
+      <mrow>
+      x&amp;=\rho\sin\varphi\cos\theta
+        =\sin\frac{\pi}{6}\cos\frac{\pi}{3}
+        =\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)
+        =\frac{1}{4}
+      </mrow><mrow>
+      y&amp;=\rho\sin\varphi\sin\theta
+        =\sin\frac{\pi}{6}\sin\frac{\pi}{3}
+        =\left(\frac{1}{2}\right)\left(\frac{\sqrt{3}}{2}\right)
+        =\frac{\sqrt{3}}{4}
+      </mrow><mrow>
+      z&amp;=\rho\cos\varphi
+        =\cos\frac{\pi}{6}
+        =\frac{\sqrt{3}}{2}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The Cartesian coordinates corresponding to
+      <m>\rho=2</m>, <m>\theta=\frac{\pi}{2}</m>, <m>\varphi=\frac{\pi}{2}</m> are
+      <md>
+      <mrow>
+      x&amp;=\rho\sin\varphi\cos\theta
+        =2\sin\frac{\pi}{2}\cos\frac{\pi}{2}
+        =0
+
+      </mrow><mrow>
+      y&amp;=\rho\sin\varphi\sin\theta
+        =2\sin\frac{\pi}{2}\sin\frac{\pi}{2}
+        =2
+
+      </mrow><mrow>
+      z&amp;=\rho\cos\varphi
+        =2\cos\frac{\pi}{2}
+        =0
+      </mrow>
+      </md>
+      Alternatively, we could just observe that
+      <ul>
+      <li>
+      as <m>\varphi=\frac{\pi}{2}</m> the point lies in the <m>xy</m>-plane
+      and so has <m>z=0</m> and
+      </li>
+      <li>
+      as <m>\rho=2</m>, <m>\theta=\frac{\pi}{2}</m> the point lies on the positive <m>y</m>-axis
+      and is a distance <m>2</m> from the origin and so is <m>(0,2,0)</m>.
+      </li>
+      </ul>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Réécrire les équations suivantes en coordonnées sphériques.
+      <ol marker = "(a)">
+      <li> <m>z^2=3x^2+3y^2</m>
+      </li>
+      <li> <m>x^2+y^2+(z-1)^2=1</m>
+      </li>
+      <li> <m>x^2+y^2=4</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\varphi=\frac{\pi}{6}\text{ ou }\frac{5\pi}{6}</m></p><p>
+      (b) <m>\rho=2\cos\varphi</m></p><p>
+      (c) <m>\rho\sin\varphi=2</m>
+      </p></answer>
+
+      <solution><p>
+      (a) In spherical coordinates
+      <md>
+      <mrow>
+      z^2=3x^2+3y^2
+      &amp;\iff
+      \rho^2\cos^2\varphi = 3\rho^2\sin^2\varphi\cos^2\theta
+                           +3\rho^2\sin^2\varphi\sin^2\theta
+      </mrow><mrow>&amp;\phantom{\iff \rho^2\cos^2\varphi\ }
+                          =3\rho^2\sin^2\varphi
+      </mrow><mrow>
+      &amp;\iff
+      \tan^2\varphi=\frac{1}{3}
+      </mrow><mrow>
+      &amp;\iff
+      \tan\varphi=\pm\frac{1}{\sqrt{3}}
+      </mrow><mrow>
+      &amp;\iff \varphi=\frac{\pi}{6}\text{ or }\frac{5\pi}{6}
+      </mrow>
+      </md>
+      The surface <m>z^2=3x^2+3y^2</m> is a cone. The upper half of the cone,
+      i.e. the part with <m>z\geqslant 0</m>, is <m>\varphi=\frac{\pi}{6}</m>.
+      The lower half of the cone,
+      i.e. the part with <m>z\leqslant 0</m>, is <m>\varphi=\pi-\frac{\pi}{6}=\frac{5\pi}{6}</m>.
+      </p>
+
+      <p>(b) In spherical coordinates
+      <md>
+      <mrow>
+      &amp;x^2+y^2+(z-1)^2=1
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff
+      \rho^2\sin^2\varphi\cos^2\theta
+          +\rho^2\sin^2\varphi\sin^2\theta
+          +\big(\rho\cos\varphi-1\big)^2
+                          =1
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff
+      \rho^2\sin^2\varphi
+          +\rho^2\cos^2\varphi-2\rho\cos\varphi
+                          =0
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff
+      \rho^2-2\rho\cos\varphi =0
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff \rho=2\cos\varphi
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) In spherical coordinates
+      <md>
+      <mrow>
+      x^2+y^2=4
+      &amp;\iff
+      \rho^2\sin^2\varphi\cos^2\theta
+          +\rho^2\sin^2\varphi\sin^2\theta
+                          =4
+      </mrow><mrow>
+      &amp;\iff
+      \rho^2\sin^2\varphi  =4
+      </mrow><mrow>
+      &amp;\iff
+      \rho\sin\varphi=2
+      </mrow>
+      </md>
+      since <m>\rho\geqslant 0</m> and <m>0\le\varphi\le\pi</m> so that <m>\sin\varphi\geqslant 0</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2003A</fromexam></title> -->
+      <statement><p>
+      Soit <m>B</m> dénotant la région à l'intérieur de la sphère <m>x^2+y^2+z^2=4</m>
+      et au-dessus du cône <m>x^2+y^2=z^2</m>. Calculez le moment d'inertie
+      <me>
+      \iiint_B z^2\,\dee{V}
+      </me>
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{64}{15}\pi\big(1-\frac{1}{2\sqrt{2}}\big)\approx 8.665 </m>
+      </p></answer>
+
+      <solution><p>
+      In spherical coordinates,
+      <me>
+      x=\rho\sin\varphi\cos\theta\qquad y=\rho\sin\varphi\sin\theta\qquad z=\rho\cos\varphi
+      </me>
+      so that the sphere <m>x^2+y^2+z^2=4</m> is <m>\rho^2=4</m> or <m>\rho=2</m> and the
+      cone <m>x^2+y^2=z^2</m> is <m>\rho^2\sin^2\varphi=\rho^2\cos^2\varphi</m> or <m>\tan\varphi=\pm1</m>
+      or <m>\varphi=\frac{\pi}{4},\ \frac{3\pi}{4}</m>. So
+      <md>
+      <mrow>
+      \text{moment}
+      &amp;=\int_0^2\dee{\rho}\int_0^{\pi/4}\dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+                                  \rho^2\sin\varphi\  (\rho\cos\varphi)^2
+      </mrow><mrow>
+      &amp;=2\pi\int_0^2 \dee{\rho}\ \rho^4\int_0^{\pi/4}\dee{\varphi}\ \sin\varphi\cos^2\varphi
+      </mrow><mrow>
+      &amp;=2\pi\left[\frac{\rho^5}{5}\right]_0^2
+          \left[-\frac{1}{3}\cos^3\varphi\right]_0^{\pi/4}
+      =\frac{64}{15}\pi\left(1-\frac{1}{2\sqrt{2}}\right)
+      </mrow><mrow>
+      &amp;\approx 8.665
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Coordonnées sphériques partie 3 -->
+    <exercise> <!-- <title><fromexam>M253 2010D</fromexam></title> -->
+      <statement><p>
+      Trouvez la limite ou montrez qu'elle n'existe pas
+      <me>
+      \lim_{(x,y,z)\to(0,0,0)}\frac{xy+yz^2+xz^2}{x^2+y^2+z^4}
+      </me>
+      </p>
+      <p>
+        Utilisez les coordonnées sphériques.
+      </p>
+
+      </statement>
+
+      <hint><p>
+      Utilisez les coordonnées sphériques.
+      </p></hint>
+
+      <answer><p>
+      Elle n'existe pas.
+      </p></answer>
+
+      <solution><p>
+      In spherical coordinates, <m>x=\rho\sin\varphi\cos\theta</m>,
+      <m>y=\rho\sin\varphi\sin\theta</m>, <m>z=\rho\cos\varphi</m> so that
+      <md>
+      <mrow>
+      &amp;\frac{\rho^2\sin^2\varphi\cos\theta\sin\theta
+            +\rho^3\sin\varphi\sin\theta\,\cos^2\varphi
+            +\rho^3\sin\varphi\,\cos^2\varphi}
+           {\rho^2\sin^2\varphi+\rho^4\cos^4\varphi}
+      </mrow><mrow>
+      &amp;\hskip0.5in
+      =\frac{\sin^2\varphi\cos\theta\sin\theta
+            +\rho\sin\varphi\sin\theta\,\cos^2\varphi
+            +\rho\sin\varphi\cos\theta\,\cos^2\varphi}
+           {\sin^2\varphi+\rho^2\cos^4\varphi}
+      </mrow>
+      </md>
+      As <m>(x,y,z)\to (0,0,0)</m>, the radius <m>\rho\to 0</m> and the second and third terms
+      in the numerator and the second term in the denominator converge to <m>0</m>.
+      But that leaves
+      <me>
+      \frac{\sin^2\varphi\cos\theta\sin\theta}{\sin^2\varphi}
+      =\cos\theta\sin\theta
+      </me>
+      which takes many different values. In particular, if we send
+      <m>(x,y,z)\to (0,0,0)</m> along either the <m>x</m>- or <m>y</m>-axis,
+      that is with <m>z=0</m> and either <m>x=0</m> or <m>y=0</m>, then
+      <me>
+      \frac{xy+yz^2+xz^2}{x^2+y^2+z^4}\bigg|_{\Atop{x=0\text{ or }y=0}{z=0}}=0
+      </me>
+      converges to <m>0</m>. But, if we send
+      <m>(x,y,z)\to (0,0,0)</m> along the line <m>y=x</m>, <m>z=0</m>
+      <me>
+      \frac{xy+yz^2+xz^2}{x^2+y^2+z^4}\bigg|_{\Atop{y=x}{z=0}}=\frac{x^2}{2x^2}
+      =\frac{1}{2}
+      </me>
+      converges to <m>1/2</m>. So <m>\frac{xy+yz^2+xz^2}{x^2+y^2+z^4}</m> does not
+      approach a single value as  <m>(x,y,z)\to(0,0,0)</m> and the limit does not exist.
+      </p></solution>
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+
+    <!-- La solution et la réponse coïncident -->
+    <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
+      <statement><p>
+      En utilisant les coordonnées sphériques et les intégrales, montrez que le volume de la
+      sphère de rayon <m>1</m> centré à l'origine est <m>4\pi/3</m>.
+      </p></statement>
+
+      <answer><p>
+      En coordonnées sphériques, la sphère en question est
+      <md>
+      <mrow>
+      B =\big\{\ (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                \rho\cos\varphi)\ \big|\ 0\le\rho\leqslant 1\,,\,&amp;0\le\varphi\le\pi\,,\,
+      </mrow><mrow>
+                &amp;\hskip0.25in 0\le\theta\leqslant 2\pi\ \big\}
+      </mrow>
+      </md>
+      Comme <m>\dee{V} =\rho^2\sin\varphi\ \dee{\rho}\,\dee{\varphi}\,\dee{\theta}</m>,
+      <md>
+      <mrow>
+      \text{Volume}(S)
+      =\iiint_B\dee{V}
+      &amp;=\int_0^{2\pi}\int_0^{\pi}\int_0^1\
+               \rho^2\sin\varphi\dee{\rho}\dee{\varphi}\dee{\theta}
+      </mrow><mrow>
+      &amp;=\left[\int_0^{2\pi}
+        \left[\int_0^{\pi}\ \sin\varphi
+        \left[\int_0^1\ \rho^2\dee{\rho}\right]\dee{\varphi}\right]\dee{\theta}\right]
+      </mrow><mrow>
+      &amp;= 2\pi\Big[-\cos\varphi\Big]_0^\pi \left[\frac{\rho^3}{3}\right]_0^1
+       =(2\pi)(2)\left(\frac{1}{3}\right)
+      </mrow><mrow>
+      &amp;=\frac{4\pi}{3}
+      </mrow>
+      </md>
+      </p></answer>
+
+      <solution><p>
+      En coordonnées sphériques, la sphère en question est
+      <md>
+      <mrow>
+      B =\big\{\ (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                \rho\cos\varphi)\ \big|\ 0\le\rho\leqslant 1\,,\,&amp;0\le\varphi\le\pi\,,\,
+      </mrow><mrow>
+                &amp;\hskip0.25in 0\le\theta\leqslant 2\pi\ \big\}
+      </mrow>
+      </md>
+      Comme <m>\dee{V} =\rho^2\sin\varphi\ \dee{\rho}\,\dee{\varphi}\,\dee{\theta}</m>,
+      <md>
+      <mrow>
+      \text{Volume}(S)
+      =\iiint_B\dee{V}
+      &amp;=\int_0^{2\pi}\int_0^{\pi}\int_0^1\
+               \rho^2\sin\varphi\dee{\rho}\dee{\varphi}\dee{\theta}
+      </mrow><mrow>
+      &amp;=\left[\int_0^{2\pi}
+        \left[\int_0^{\pi}\ \sin\varphi
+        \left[\int_0^1\ \rho^2\dee{\rho}\right]\dee{\varphi}\right]\dee{\theta}\right]
+      </mrow><mrow>
+      &amp;= 2\pi\Big[-\cos\varphi\Big]_0^\pi \left[\frac{\rho^3}{3}\right]_0^1
+       =(2\pi)(2)\left(\frac{1}{3}\right)
+      </mrow><mrow>
+      &amp;=\frac{4\pi}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Coordonnées cylindriques partie 2 -->
+    <exercise>
+      <statement><p>
+      Utilisez les coordonnées cylindriques afin d'évaluer les volumes de chacune des régions suivantes.
+      <ol marker = "(a)">
+      <li>
+      Au-dessus du plan <m>xy</m>, à l'intérieur du cône <m>z=2a-\sqrt{x^2+y^2}</m> et
+      à l'intérieur du cylindre <m>x^2+y^2=2ay</m>.
+      </li>
+      <li>
+      Au-dessus du plan <m>xy</m>, sous le paraboloïde <m>z=1-x^2-y^2</m> et
+      dans le coin <m>-x\leqslant y\leqslant \sqrt{3}x</m>.
+      </li>
+      <li>
+      Au-dessus du paraboloïde <m>\ z=x^2+y^2\ </m> et sous le plan <m>\ z=2y</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>a^3\big(2\pi-\frac{32}{9}\big)</m> </p><p>
+      (b) <m>\frac{7}{48}\pi</m></p><p>
+      (c) <m>\frac{\pi}{2}</m>
+      </p></answer>
+
+      <solution><p>
+       (a) In cylindrical coordinates, the cone <m>z=2a-\sqrt{x^2+y^2}</m> is <m>z=2a-r</m>
+      and the cylinder <m>x^2+y^2=2ay</m> is <m>r^2=2ar\sin\theta</m> or <m>r=2a\sin\theta</m>.
+      The figures below show the parts of the cone, the cylinder and
+      the intersection, respectively, that are in the first octant.
+      </p>
+
+      <sidebyside width="50%">
+        <image source="images/CLP-figs/pfigs/domainCylinderConea"/>
+      </sidebyside>
+
+      <sidebyside width="42%">
+        <image source="images/CLP-figs/pfigs/domainCylinderConeb"/>
+      </sidebyside>
+
+      <sidebyside width="55%">
+        <image source="images/CLP-figs/pfigs/domainCylinderCone"/>
+      </sidebyside>
+
+      <p>
+      The specified region is
+      <me>
+      V=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}
+                 {0\le\theta\le\pi,\ r\leqslant 2a\sin\theta,\ 0\leqslant z\leqslant 2a-r}
+      </me>
+      By symmetry under <m>x\rightarrow -x</m>, the full volume is twice the
+      volume in the first octant.
+      </p>
+
+      <p>So the
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r
+                 \int_0^{2a -r}\dee{z}
+      </mrow><mrow>
+      &amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r(2a-r)
+
+      </mrow><mrow>
+      &amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\
+                   \left[4a^3\sin^2\theta-\frac{8a^3}{3}\sin^3\theta\right]
+
+      </mrow><mrow>
+      &amp;= 8a^3\left[\int_0^{{\pi\over 2}} \dee{\theta}\ \frac{1-\cos(2\theta)}{2}
+                   +\frac{2}{3}\int^0_1 \dee{t}\ \big(1-t^2\big)\right]
+      \quad\text{where } t=\cos\theta
+      </mrow><mrow>
+      &amp;= 8a^3\left[\frac{\pi}{4}-\frac{2}{3}\left(1-\frac{1}{3}\right)\right]
+      =a^3\big(2\pi-\frac{32}{9}\big)
+      </mrow>
+      </md>
+      <!--
+      For an efficient, sneaky, way to evaluate
+      <m>\int_0^{{\pi\over 2}} \dee{\theta}\ \sin^2\theta</m>,
+      see Remark <xref ref="rem_sneaky"/>.
+      -->
+      </p>
+
+      <p>(b) The domain of integration is
+      <me>
+      V = \Set{(x,y,z)}{-x\leqslant y\leqslant \sqrt{3}x,\ 0\leqslant z\leqslant1-x^2-y^2}
+      </me>
+      Recall that in polar coordinates <m>\frac{y}{x}=\tan\theta</m>.
+      So the boundaries of the wedge <m>-x\leqslant y\leqslant \sqrt{3}x</m>, or equivalently
+      <m>-1\le\frac{y}{x}\le\sqrt{3}</m>, correspond, in polar coordinates,
+      to <m>\theta=\tan^{-1}(-1)=-\frac{\pi}{4}</m> and <m>\theta=\tan^{-1}\sqrt{3}=\frac{\pi}{3}</m>. In cylindrical coordinates,
+      the paraboloid <m>z=1-x^2-y^2</m> becomes <m>z=1-r^2</m>. There are <m>z</m>'s that obey
+      <m>0\leqslant z\leqslant 1-r^2</m> if and only if <m>r\leqslant 1</m>. So, in cylindrical coordinates,
+      <me>
+      V = \Set{(r\cos\theta,r\sin\theta,z)}
+                    {-\tfrac{\pi}{4}\leqslant \theta\leqslant \tfrac{\pi}{3},\
+                        0\leqslant r\leqslant 1,\ 0\leqslant z\leqslant1-r^2}
+      </me>
+      and
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= \int_{-{\pi\over 4}}^{{\pi\over 3}} \dee{\theta}\int_0^1\dee{r}\ r
+                   \int_0^{1 -r^2}\dee{z}
+      = \left(\frac{\pi}{3}+\frac{\pi}{4}\right)\int_0^1\dee{r}\ r(1-r^2)
+      </mrow><mrow>
+      &amp;= \frac{7}{12}\pi\left(\frac{1}{2}-\frac{1}{4}\right)
+      = \frac{7}{48}\pi
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) The region is
+      <me>
+      V = \Set{(x,y,z)}{x^2+y^2\leqslant z\leqslant 2y}
+      </me>
+      There are <m>z</m>'s that obey <m>x^2+y^2\leqslant z\leqslant 2y</m> if and only if
+      <md>
+      <mrow>
+      x^2+y^2\leqslant 2y
+      &amp;\iff x^2+y^2-2y\leqslant0
+       \iff x^2 + (y-1)^2\leqslant1
+      </mrow>
+      </md>
+      This disk is sketched in the figure
+      </p>
+
+      <sidebyside width="45%">
+      <image source="images/CLP-figs/pfigs/domain2bis"/>
+      </sidebyside>
+
+      <p>
+      In cylindrical coordinates,
+      <ul>
+      <li>
+      the bottom, <m>z=x^2+y^2</m>, is <m>z=r^2</m>,
+      </li>
+      <li>
+      the top, <m>z=2y</m>, is <m>z=2r\sin\theta</m>, and
+      </li>
+      <li>
+      the disk <m>x^2+y^2\leqslant 2y</m> is <m>r^2\leqslant 2r\sin\theta</m>, or equivalently <m>r\le2\sin\theta</m>,
+      </li>
+      </ul>
+      so that, looking at the figure above,
+      <me>
+      V = \Set{(r\cos\theta,r\sin\theta,z)}{0\le\theta\le\pi,
+                      \ 0\leqslant r\leqslant 2\sin\theta,\ r^2\leqslant z\leqslant 2r\sin\theta}
+      </me>
+      By symmetry under <m>x\rightarrow -x</m>,
+      the full volume is twice the volume in the first octant so that
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r\int_{r^2}^{2r\sin\theta}\dee{z}
+      </mrow><mrow>
+      &amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r(2r\sin\theta-r^2)
+      </mrow><mrow>
+      &amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\ \left(\frac{2^4}{3}-\frac{2^4}{4}\right)\sin^4\theta
+      </mrow>
+      </md>
+      To integrate<fn>For a general discussion of trigonometric integrals see
+      §1.8 in the CLP-2 text. In particular the integral
+      <m>\int \cos^4 x\ \dee{x}</m> is evaluated in Example 1.8.8
+      in the CLP-2 text.</fn>
+      <m>\sin^4\theta</m>, we use the double angle formulae
+      <m>\sin^2 x= \frac{1-\cos(2x)}{2}</m> and <m>\cos^2 x= \frac{1+\cos(2x)}{2}</m>
+      to write
+      <md>
+      <mrow>
+        \sin^4\theta &amp;= \left[ \frac{1-\cos(2\theta)}{2} \right]^2
+      </mrow><mrow>
+         &amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{4}\cos^2(2\theta)
+      </mrow><mrow>
+        &amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\left(1 + \cos(4\theta) \right)
+      </mrow><mrow>
+        &amp;= \frac{3}{8} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\cos(4\theta)
+      </mrow>
+      </md>
+      So
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= 2\ \frac{2^4}{12} \left[
+         \frac{3}{8}\theta - \frac{1}{4} \sin(2\theta) + \frac{1}{32}\sin(4\theta)
+                                             \right]_0^{\pi\over 2}
+      = 2\ \frac{2^4}{12}\ \frac{3}{16}\pi
+      =\frac{\pi}{2}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
+      <statement><p>
+      Soit <m>E</m> la région bornée entre les surfaces paraboloïque
+      <m>z = x^2 + y^2</m> et <m>z = 2 - x^2 - y^2</m> et à l'intérieur du cylindre
+      <m>x^2 + y^2\leqslant1</m>.  Calculez l'intégrale de <m>f(x,y,z) = {(x^2 + y^2)}^{3/2}</m> sur la région <m>E</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{8\pi}{35}</m>
+      </p></answer>
+
+      <solution><p>
+      Note that the paraboloids <m>z=x^2+y^2</m> and <m>z=2-x^2-y^2</m>
+      intersect when <m>z=x^2+y^2=1</m>.
+      We'll use cylindrical coordinates. Then <m>x^2+y^2=r^2</m>,
+      <m>\dee{V}=r \ \dee{r}\,\dee{\theta}\,\dee{z}</m>, and
+      <me>
+      E=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z))}{0\leqslant r\leqslant 1,\
+                          r^2\leqslant z\leqslant 2-r^2,\ 0\le\theta\leqslant 2\pi}
+      </me>
+      so that
+      <md>
+      <mrow>
+      \iiint_E f(x,y,z)\ \dee{V}
+      &amp;=\int_0^1\dee{r}\int_{r^2}^{2-r^2}\dee{z}\int_0^{2\pi}\dee{\theta}\
+              r\ \overbrace{r^3}^{f}
+      </mrow><mrow>
+      &amp;=2\pi \int_0^1\dee{r}\ r^4\big(2-r^2-r^2\big)
+      </mrow><mrow>
+      &amp;=2\pi \left[2\frac{1^5}{5}-2\frac{1^7}{7}\right]
+      </mrow><mrow>
+      &amp;=\frac{8\pi}{35}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
+      <statement><p>
+      Soit <m>E</m> la région bornée au-dessus par la sphère <m>x^2 + y^2 + z^2 = 2</m> et en-dessous par le
+      paraboloïde <m>z = x^2 + y^2</m>. Trouvez le centre de gravité de <m>E</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\big(0,0,\frac{7}{16\sqrt{2}-14}
+        \approx 0.811\big)</m>
+      </p></answer>
+
+      <solution><p>
+      Observe that both the sphere <m>x^2+y^2+z^2=2</m>
+      and the paraboloid <m>z=x^2+y^2</m>  are invariant under rotations
+      around the <m>z</m>--axis. So <m>E</m> is invariant under rotations around the
+      <m>z</m>--axis and the centroid (centre of mass) of <m>E</m> will lie on the
+      <m>z</m>--axis. Thus <m>\bar x=\bar y=0</m> and we just have to find
+      <md>
+      <mrow>
+      \bar z = \frac{\iiint_E z\ \dee{V}}{\iiint_E\dee{V}}
+      </mrow>
+      </md>
+      The surfaces <m>z = x^2 + y^2</m> and <m>x^2 + y^2 + z^2 = 2</m>
+      intersect when <m>z=x^2+y^2</m> and
+      <me>
+      z+z^2=2
+      \iff z^2+z-2=0
+      \iff(z+2)(z-1)=0
+      </me>
+      Since <m>z=x^2+y^2\geqslant 0</m>, the surfaces intersect on the circle <m>z=1</m>,
+      <m>x^2+y^2=2</m>. So
+      <me>
+      E = \Set{(x,y,z)}{ x^2+y^2\leqslant 1,\ x^2+y^2\leqslant z\leqslant \sqrt{2-x^2-y^2}}
+      </me>
+      Here is a sketch of the <m>y=0</m> cross section of E.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/OE10D_6"/>
+      </sidebyside>
+
+      <p>
+      Let's use cylindrical coordinates to do the two integrals.
+      In cylindrical coordinates
+      <ul>
+      <li>
+      <m>E = \Set{(r\cos\theta,r\sin\theta,z)}{ 0\leqslant r\leqslant 1,\ 0\le\theta\leqslant 2\pi,\
+                                           r^2\leqslant z\leqslant \sqrt{2-r^2}}</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      so, for <m>n=0,1</m> (we'll try to do both integrals at the same time)
+      <md>
+      <mrow>
+      \iiint_E z^n\ \dee{V}
+      &amp;=\int_0^1\dee{r} \int_0^{2\pi}\dee{\theta}
+         \int_{r^2}^{\sqrt{2-r^2}} \dee{z}\ r\ z^n
+      </mrow><mrow>
+      &amp;=2\pi\int_0^1\dee{r}  \ r\begin{cases}
+                        \sqrt{2-r^2}-r^2 &amp; \text{if }n=0
+      </mrow><mrow>
+                        \frac{1}{2}\big(2-r^2-r^4\big) &amp; \text{if }n=1
+                        \end{cases}
+      </mrow>
+      </md>
+      Since
+      <md>
+      <mrow>
+      \int_0^1 \dee{r}\ r\sqrt{2-r^2}
+      &amp;=\left[-\frac{1}{3}(2-r^2)^{3/2}\right]_0^1
+      =\frac{1}{3}\big(2\sqrt{2}-1\big)
+      </mrow>
+      </md>
+      we have
+      <md>
+      <mrow>
+      \iiint_E z^n\ \dee{V}
+      &amp;=2\pi\left.\begin{cases}
+      \frac{1}{3}(2\sqrt{2}-1)-\frac{1}{4} &amp;\text{if }n=0
+      </mrow><mrow>
+      \frac{1}{2}-\frac{1}{8}-\frac{1}{12} &amp;\text{if }n=1
+      \end{cases}\right\}
+      </mrow><mrow>
+      &amp;=2\pi\begin{cases}
+      \frac{2}{3}\sqrt{2}-\frac{7}{12} &amp;\text{if }n=0
+      </mrow><mrow>
+      \frac{7}{24} &amp;\text{if }n=1
+      \end{cases}
+      </mrow>
+      </md>
+      and <m>\bar x=\bar y=0</m> and
+      <md>
+      <mrow>
+      \bar z =\frac{\iiint_E z\ \dee{V}}{\iiint_E\dee{V}}
+        =\frac{\frac{7}{24}}{\frac{2}{3}\sqrt{2}-\frac{7}{12}}
+        =\frac{7}{16\sqrt{2}-14}
+        \approx 0.811
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2012A</fromexam></title> -->
+      <statement><p>
+      Soit <m>E</m> la région la plus petite parmi les deux solides bornés par les surfaces
+      <m>z = x^2 + y^2</m> et <m>x^2 + y^2 + z^2 = 6</m>. Évaluez
+      <m>\iiint_E (x^2+y^2)\ \dee{V}</m> .
+      </p></statement>
+
+      <answer><p>
+      <m>\pi\left[\frac{48}{5}\sqrt{6}-\frac{328}{15}\right]
+      \approx 1.65\pi</m>
+      </p></answer>
+
+      <solution><p>
+      Note that both surfaces are invariant under rotations about the
+      <m>z</m>--axis. Here is a sketch of the <m>y=0</m> cross section of E.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/OE12A_9"/>
+      </sidebyside>
+
+      <p>
+      The surfaces <m>z = x^2 + y^2</m> and <m>x^2 + y^2 + z^2 = 6</m>
+      intersect when <m>z=x^2+y^2</m> and
+      <me>
+      z+z^2=6
+      \iff z^2+z-6=0
+      \iff(z+3)(z-2)=0
+      </me>
+      Since <m>z=x^2+y^2\geqslant 0</m>, the surfaces intersect on the circle <m>z=2</m>,
+      <m>x^2+y^2=2</m>. So
+      <me>
+      E = \Set{(x,y,z)}{ x^2+y^2\leqslant 2,\ x^2+y^2\leqslant z\leqslant \sqrt{6-x^2-y^2}}
+      </me>
+      Let's use cylindrical coordinates to do the integral.
+      In cylindrical coordinates
+      <ul>
+      <li>
+      <m>E = \Set{(r\cos\theta,r\sin\theta,z)}{ r\leqslant \sqrt{2},\ 0\le\theta\leqslant 2\pi,\
+                                           r^2\leqslant z\leqslant \sqrt{6-r^2}}</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      so
+      <md>
+      <mrow>
+      \iiint_E (x^2+y^2)\ \dee{V}
+      &amp;=\int_0^{\sqrt{2}}\dee{r} \int_0^{2\pi}\dee{\theta}
+         \int_{r^2}^{\sqrt{6-r^2}} \dee{z}\ r\ r^2
+      </mrow><mrow>
+      &amp;=2\pi\int_0^{\sqrt{2}}\dee{r}  \ r^3\big(\sqrt{6-r^2}-r^2\big)
+      </mrow><mrow>
+      &amp; =2\pi\int_0^{\sqrt{2}}\dee{r}\,r\ r^2\sqrt{6-r^2}
+         - 2\pi\int_0^{\sqrt{2}}\dee{r}  \ r^5
+      </mrow><mrow>
+      &amp;=2\pi\int_6^4\frac{\dee{u}}{-2}  \ (6-u)\sqrt{u} -2\pi\frac{2^3}{6}
+      </mrow><mrow>
+      &amp;\hskip1in\qquad\text{with } u = 6-r^2,\ \dee{u} = -2r\,\dee{r}
+      </mrow><mrow>
+      &amp;=-\pi\left[6\frac{u^{3/2}}{3/2}-\frac{u^{5/2}}{5/2}\right]_6^4-\frac{8\pi}{3}
+      </mrow><mrow>
+      &amp;=-\pi\left[4\big(8-6\sqrt{6}\big)-\frac{2}{5}\big(32-36\sqrt{6}\big)\right]
+                   -\frac{8\pi}{3}
+      </mrow><mrow>
+      &amp;=\pi\left[\frac{64}{5}-32-\frac{8}{3}
+               +\left(24-\frac{72}{5}\right)\sqrt{6}\right]
+      </mrow><mrow>
+      &amp;=\pi\left[\frac{48}{5}\sqrt{6}-\frac{328}{15}\right]
+      \approx 1.65\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
+      <statement><p>
+      Soit <m>a  \gt  0</m> un nombre réel positif fixé. Considérez le solide à l'intérieur
+      du cylindre <m>x^2 + y^2 = ax</m> et de la sphère <m>x^2 + y^2 + z^2 = a^2</m>.
+      Calculez son volume.
+      </p>
+
+      <p>Vous pouvez utiliser le fait que
+          <m>\int \sin^3(\theta) =\frac{1}{12}\cos(3\theta) -\frac{3}{4}\cos(\theta) +C</m>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      <m>\frac{4a^3}{3}\left[\frac{\pi}{2}  - \frac{2}{3} \right]</m>
+      </p></answer>
+
+      <solution><p>
+      We'll use cylindrical coordinates. In cylindrical coordinates
+      <ul>
+      <li>
+      the sphere <m>x^2+y^2+z^2=a^2</m> becomes <m>r^2+z^2=a^2</m> and
+      </li>
+      <li>
+      the circular cylinder  <m>x^2+y^2=ax</m> (or equivalently <m>(x-a/2)^2+ y^2=a^2/4</m>)
+      becomes <m>r^2=ar\cos\theta</m> or <m>r=a\cos\theta</m>.
+      </li>
+      </ul>
+      Here is a sketch of the top view of the solid.
+      </p>
+
+      <sidebyside width="50%">
+        <image source="images/CLP-figs/pfigs/OE13D_7"/>
+      </sidebyside>
+
+      <p>
+      The solid is
+      <md>
+      <mrow>
+      \big\{\ (r\cos\theta\,,\,r\sin\theta\,,\,z)\ \big|\
+              -\frac{\pi}{2}\le\theta\le\frac{\pi}{2}\,,\,
+             &amp; 0\leqslant r\leqslant a\cos\theta\,,\,
+      </mrow><mrow>
+             &amp;\hskip0.25in -\sqrt{a^2-r^2}\leqslant z\leqslant \sqrt{a^2-r^2}\ \big\}
+      </mrow>
+      </md>
+      By symmetry, the volume of the specified solid is four times
+      the volume of the solid
+      <me>
+      \Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{
+              0\le\theta\le\frac{\pi}{2}\,,\,
+              0\leqslant r\leqslant a\cos\theta\,,\,
+              0\leqslant z\leqslant \sqrt{a^2-r^2}}
+      </me>
+      Since <m>\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>,
+       the volume of the solid is
+      <md>
+      <mrow>
+      4\int_0^{\pi/2}\dee{\theta} \int_0^{a\cos\theta} \dee{r}
+         \int_0^{\sqrt{a^2-r^2}}\dee{z}\ r
+      &amp;=4\int_0^{\pi/2}\dee{\theta} \int_0^{a\cos\theta} \dee{r}\
+              r\sqrt{a^2-r^2}
+      </mrow><mrow>
+      &amp;=-\frac{4}{3}\int_0^{\pi/2}\dee{\theta}\
+               \big(a^2-r^2\big)^{3/2}\Big|_0^{a\cos\theta}
+      </mrow><mrow>
+      &amp;=\frac{4}{3}\int_0^{\pi/2}\dee{\theta}\
+               \Big[a^3-\big(a^2-a^2\cos^2\theta\big)^{3/2}\Big]
+      </mrow><mrow>
+      &amp;=\frac{4a^3}{3}\int_0^{\pi/2}\dee{\theta}\
+               \big[1-\sin^3\theta\big]
+      </mrow><mrow>
+      &amp;=\frac{4a^3}{3}\left[\theta - \frac{1}{12}\cos(3\theta) + \frac{3}{4}\cos\theta
+                 \right]_0^{\pi/2}
+      </mrow><mrow>
+      &amp;=\frac{4a^3}{3}\left[\frac{\pi}{2} + \frac{1}{12} - \frac{3}{4} \right]
+      </mrow><mrow>
+      &amp;=\frac{4a^3}{3}\left[\frac{\pi}{2}  - \frac{2}{3} \right]
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2014A</fromexam></title> -->
+      <statement><p>
+      Soit <m>E</m> le solide se retrouvant à l'intérieur de la surface <m>z = y^2</m> et sous
+      la surface <m>z = 4 - x^2</m>. Évaluez
+      <me>
+      \iiint_E y^2\ \dee{V}
+      </me>
+      Vous pouvez utiliser les formules d'angle moitié:
+      <me>
+      \sin^2\theta = \frac{1-\cos(2\theta)}{2},\qquad
+      \cos^2\theta = \frac{1+\cos(2\theta)}{2}
+      </me>
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{16\pi}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      Note that the surfaces meet when <m>z=y^2=4-x^2</m> and then <m>(x,y)</m>
+      runs over the circle <m>x^2+y^2=4</m>. So the domain of integration is
+      <me>
+      E = \Set{(x,y,z)}{x^2+y^2\leqslant 4,\ y^2\leqslant z\leqslant 4-x^2}
+      </me>
+      Let's switch to cylindrical coordinates. Then
+      <md>
+      <mrow>
+      E = \big\{\ (r\cos\theta,r\sin\theta,z)\ \big|\ 0\leqslant r\leqslant 2,\
+                     &amp;0\le\theta\leqslant 2\pi,
+      </mrow><mrow>
+                  &amp;\hskip0.25in r^2\sin^2\theta\leqslant z\leqslant 4-r^2\cos^2\theta\ \big\}
+      </mrow>
+      </md>
+      and, since <m>\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>,
+      <md>
+      <mrow>
+      \iiint_E y^2\ \dee{V}
+      &amp;=\int_0^2\dee{r} \int_0^{2\pi} \dee{\theta}
+               \int_{r^2\sin^2\theta}^{4-r^2\cos^2\theta}\dee{z}\ r\
+               \overbrace{r^2\sin^2\theta}^{y^2}
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{r} \int_0^{2\pi} \dee{\theta}\
+                   r^3\sin^2\theta\big[4-r^2\cos^2\theta - r^2\sin^2\theta\big]
+
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{r}\ \big[4r^3-r^5\big] \int_0^{2\pi} \dee{\theta}\
+               \frac{1-\cos(2\theta)}{2}
+      </mrow><mrow>
+      &amp;=\frac{1}{2}\int_0^2\dee{r}\ \big[4r^3-r^5\big]\
+            \left[\theta-\frac{\sin(2\theta)}{2}\right]_0^{2\pi}
+      </mrow><mrow>
+      &amp;=\pi\left[r^4-\frac{r^6}{6}\right]_0^2
+      </mrow><mrow>
+      &amp;=\frac{16\pi}{3}
+      </mrow>
+      </md>
+      <!--
+      For an efficient, sneaky, way to evaluate
+      <m>\int_0^{2\pi}\sin^2\theta\ \dee{\theta}</m>,
+      see Remark <xref ref="rem_sneaky"/>.
+      -->
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Le centre de masse <m>(\bar x,\bar y, \bar z)</m> d'un corps <m>B</m> ayant une
+      densité <m>\rho(x,y,z)</m> (unités de masse par unité de volume) à <m>(x,y,z)</m> est défini
+      comme étant
+      <md>
+      <mrow>
+      \bar x=\frac{1}{M}\iiint_B x\rho(x,y,z)\ \dee{V}\quad
+      \bar y=\frac{1}{M}\iiint_B y\rho(x,y,z)\ \dee{V}
+      </mrow><mrow>
+      \bar z=\frac{1}{M}\iiint_B z\rho(x,y,z)\ \dee{V}
+      </mrow>
+      </md>
+      où
+      <me>
+      M=\iiint_B \rho(x,y,z)\ \dee{V}
+      </me>
+      est la masse du corps. Donc, par exemple, <m>\bar x</m> est la moyenne pondérée
+      de <m>x</m> sur le corps. Trouvez le centre de masse de la partie de la boule solide
+      <m>x^2+y^2+z^2\leqslant a^2</m> avec <m>x\geqslant 0</m>, <m>y\geqslant 0</m> et <m>z\geqslant 0</m>, en assumant
+      que sa densité <m>\rho</m> est constante.
+      </p></statement>
+
+      <hint><p>
+      Utilisez les coordonnées cylindriques.
+      </p></hint>
+
+      <answer><p>
+      <m>\bar x=\bar y=\bar z=\frac{3}{8}a</m>
+      </p></answer>
+
+      <solution><p>
+      By symmetry, <m>\bar x=\bar y=\bar z</m>, so it suffices to compute,
+      for example, <m>\bar z</m>.   The mass of the body is the density, <m>\rho</m>,
+      times its volume, which is one eighth of the volume of a sphere. So
+      <me>
+      M=\frac{\rho}{8}\ \frac{4}{3}\pi a^3
+      </me>
+      In cylindrical coordinates, the equation of the spherical surface of the
+      body is <m>r^2+z^2=a^2</m>. The part of the body at height <m>z</m> above the
+      <m>xy</m>--plane is one quarter of a disk of radius <m>\sqrt{a^2-z^2}</m>. The numerator
+      of <m>\bar z</m> is
+      <md>
+      <mrow>
+      \iiint_B z\rho\ \dee{V}
+      &amp;=\rho\int_0^a \dee{z}\int_0^{\pi/2}d\theta\int_0^{\sqrt{a^2-z^2}}dr\ r\ z
+      </mrow><mrow>
+      &amp;=\rho\int_0^a \dee{z}\int_0^{\pi/2}d\theta\ z\ \frac{r^2}{2}
+                                         \bigg|_0^{\sqrt{a^2-z^2}}
+      </mrow><mrow>
+      &amp;=\frac{\rho}{2}\int_0^a \dee{z}\int_0^{\pi/2}d\theta\ z(a^2-z^2)
+      </mrow><mrow>
+      &amp;=\frac{\pi}{4}\rho\int_0^a \dee{z}\ z(a^2-z^2)
+      </mrow><mrow>
+      &amp;=\frac{\pi}{4}\rho\left[a^2\frac{z^2}{2}-\frac{z^4}{4}\right]_0^a
+      =\frac{\pi}{16}\rho a^4
+      </mrow>
+      </md>
+      Dividing by <m>M=\frac{\pi}{6}\rho a^3</m> gives
+      <m>\bar x=\bar y=\bar z=\frac{3}{8}a</m>.
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2003D</fromexam></title> -->
+      <statement><p>
+      Une sphère de rayon <m>2{\rm m}</m> centrée à l'origine a une densité variable
+      <m>\frac{5}{\sqrt{3}}(z^2+1)</m><m>{\rm kg}/{\rm m}^3</m>. Un trou de diamètre <m>1{\rm m}</m> est percé
+      à travers la sphère le long de l'axe <m>z</m>.
+      <ol marker = "(a)">
+      <li>
+      Posez une intégrale triple en coordonnées cylindriques donnant la masse de la sphère après que le trou ait été percé.
+      </li>
+      <li>
+       Évaluez cette intégrale.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\ds\text{masse} =
+      \int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+      \frac{5}{\sqrt{3}}(z^2+1)r</m>
+      </p>
+
+      <p>(b) <m>\frac{525}{24}\sqrt{5}\pi\approx 153.7\text{kg}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) In cylindrical coordinates the equation of a sphere of radius
+      2 centred on the origin is <m>r^2+z^2=2^2</m>. Since
+      <m>\dee{V}=r\, \dee{r}\, \dee{\theta}\, \dee{z}</m>
+      and <m>\dee{m} =\frac{5}{\sqrt{3}}(z^2+1)r\, \dee{r}\, \dee{\theta}\, \dee{z}</m>
+      and the hole has radius <m>1/2</m>, the integral is
+      <md>
+      <mrow>
+      \text{mass} =
+      \int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+      \frac{5}{\sqrt{3}}(z^2+1)r
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      By part (a)
+      <md>
+      <mrow>
+      \text{mass} =
+      &amp;\int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+      \frac{5}{\sqrt{3}}(z^2+1)r
+      </mrow><mrow>
+      &amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\ r\int_0^{\sqrt{4-r^2}}\dee{z}\ (z^2+1)
+      </mrow><mrow>
+      &amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\
+                         r\left[\frac{z^3}{3}+z\right]_0^{\sqrt{4-r^2}}
+      </mrow><mrow>
+      &amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\
+                 r\left[\frac{1}{3}{(4-r^2)}^{3/2}+{(4-r^2)}^{1/2}\right]
+      </mrow>
+      </md>
+      Make the change of variables <m>s=4-r^2</m>, <m>\dee{s}=-2r\,\dee{r}</m>. This gives
+      <md>
+      <mrow>
+      \text{mass} &amp;= 4\pi\frac{5}{\sqrt{3}}\int_{15/4}^0\frac{\dee{s}}{-2}\
+                               \left[\frac{1}{3}s^{3/2}+s^{1/2}\right]
+      = -2\pi\frac{5}{\sqrt{3}}
+      \left[\frac{2}{15}s^{5/2}+\frac{2}{3}s^{3/2} \right]_{15/4}^0
+      </mrow><mrow>
+      &amp;=
+      2\pi\frac{5}{\sqrt{3}} \left[\frac{2}{15}\frac{15^{5/2}}{32}
+      +\frac{2}{3}\frac{15^{3/2}}{8}\right]
+      </mrow><mrow>
+      &amp;=2\pi\frac{5}{\sqrt{3}} \left[\frac{1}{16}+\frac{1}{12}\right]15^{3/2}
+      =\frac{525}{24}\sqrt{5}\pi\approx 153.7\text{kg}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
+      <statement><p>
+      Considérez le solide fini borné par les trois surfaces:
+      <m>z=e^{-x^2-y^2}</m>, <m>z=0</m> et <m>x^2+y^2=4</m>.
+      <ol marker = "(a)">
+      <li>
+      Posez (mais n'évaluez pas) l'intégrale triple en coordonnées cartésiennes décrivant
+      le volume du solide.
+      </li>
+      <li>
+      Calculez le volume du solide en utilisant n'importe quelle méthode.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\ds\int_{-2}^2
+          \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\int_0^{e^{-x^2-y^2}}\dee{z}\dee{y}\dee{x}</m>
+      </p><p>
+      (b) <m>\pi\big[1-e^{-4}\big]\approx 3.084</m>
+      </p></answer>
+
+      <solution><p>
+      (a) The solid consists of all <m>(x,y,z)</m> with
+      <ul>
+      <li>
+      <m>(x,y)</m> running over the disk <m>x^2+y^2\leqslant 4</m> and
+      </li>
+      <li>
+      for each fixed <m>(x,y)</m> obeying <m>x^2+y^2\leqslant 4</m>, <m>z</m> running from
+      <m>0</m> to <m>e^{-x^2-y^2}</m>
+      </li>
+      </ul>
+      On the disk <m>x^2+y^2\leqslant 4</m>,
+      <ul>
+      <li>
+      <m>x</m> runs from <m>-2</m> to <m>2</m> and
+      </li>
+      <li>
+      for each fixed <m>x</m> obeying <m>-2\leqslant x\leqslant 2</m>, <m>y</m> runs from
+      <m>-\sqrt{4-x^2}</m> to <m>\sqrt{4-x^2}</m>
+      </li>
+      </ul>
+      So
+      <me>
+      \text{Volume}=\int_{-2}^2 \dee{x}
+          \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\dee{y}\int_0^{e^{-x^2-y^2}}\dee{z}
+      </me>
+      </p>
+
+      <p>(b) Switching to cylindrical coordinates
+      <md>
+      <mrow>
+      \text{Volume}&amp;=\int_0^2 \dee{r}\int_0^{2\pi}\dee{\theta} \int_0^{e^{-r^2}}\dee{z}\ r
+      =\int_0^2 \dee{r}\int_0^{2\pi}\dee{\theta} \ r e^{-r^2}
+      =\int_0^2 \dee{r}\ 2\pi\ r e^{-r^2}
+      </mrow><mrow>
+      &amp;=-\pi e^{-r^2}\Big|_0^2
+      =\pi\big[1-e^{-4}\big]\approx 3.084
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2000A</fromexam></title> -->
+      <statement><p>
+      Trouvez le volume du solide se trouvant à l'intérieur de <m>x^2 + y^2 = 4</m>,
+      au-dessus de <m>z = 0</m> et sous <m>2z = y</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{8}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      The solid consists of the set of all points <m>(x,y,z)</m> such
+      that <m>x^2+y^2\leqslant 4</m> and <m>0\leqslant z\le\frac{y}{2}</m>. In particular <m>y\geqslant 0</m>.
+      When we look at the solid from above, we see all <m>(x,y)</m> with
+      <m>x^2+y^2\leqslant 4</m> and <m>y\geqslant 0</m>. This is sketched in the figure on the left
+      below.
+      </p>
+
+      <sidebyside width="50%" valign="middle">
+        <image source="images/CLP-figs/pfigs/OE00AQ9a"/>
+        <image source="images/CLP-figs/pfigs/OE00AQ9b"/>
+      </sidebyside>
+
+      <p>
+      We'll use cylindrical coordinates. In the base region (the shaded region
+      in the figure on the left above)
+      <ul>
+      <li>
+      <m>\theta</m> runs from <m>0</m> to <m>\pi</m> and
+      </li>
+      <li>
+      for each fixed <m>\theta</m> between <m>0</m> and <m>\pi</m>, <m>r</m> runs from <m>0</m> to <m>2</m>.
+      </li>
+      <li>
+      For each fixed point <m>(x,y)=(r\cos\theta,r\sin\theta)</m> in the base
+      region, <m>z</m> runs from <m>0</m>) to <m>\frac{y}{2}=\frac{r\sin\theta}{2}</m>.
+      </li>
+      </ul>
+      So the volume is
+      <md>
+      <mrow>
+      \int_0^\pi \dee{\theta}\int_0^2 \dee{r}\int_0^{r\sin\theta/2} dz\ r
+      &amp;=\int_0^\pi \dee{\theta}\int_0^2 \dee{r}\ \frac{1}{2} r^2\sin\theta
+      =\int_0^\pi \dee{\theta}\ \frac{r^3}{6}\sin\theta\,\bigg|_0^2
+      </mrow><mrow>
+      &amp;=\frac{4}{3}\int_0^\pi \dee{\theta}\ \sin\theta
+      </mrow><mrow>
+      &amp;=-\frac{4}{3}\cos\theta\,\bigg|_0^\pi
+      =\frac{8}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Coordonnées sphériques partie 2 -->
+    <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
+      <statement><p>
+      Considérez la région <m>E</m> en <m>3</m>-dimensions spécifiée par les inégalités sphériques
+      <me>
+      1\leqslant \rho\leqslant1 + \cos \varphi
+      </me>
+      <ol marker = "(a)">
+      <li>
+        Dessinez, de façon raisonnablement précise, <m>E</m> en <m>3</m>-dimensions.
+      S'assurer de montrer les unités sur les axes de coordonnées.
+      </li>
+      <li>
+        Trouvez le volume de <m>E</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer>
+      <p>(a)</p>
+      <sidebyside width="50%">
+        <image source="images/CLP-figs/pfigs/OE06A_8b"/>
+      </sidebyside>
+
+      <p>
+      (b) <m>\frac{11\pi}{6}</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      First observe that both boundaries of <m>E</m>, namely <m>\rho=1</m> and
+      <m>\rho= 1 + \cos\varphi</m>, are independent of the spherical coordinate
+      <m>\theta</m>. So <m>E</m> is invariant under rotations about the <m>z</m>-axis.
+      To sketch <m>E</m> we
+      <ul>
+      <li>
+      first sketch the part of the boundary of <m>E</m> with <m>\theta=0</m>
+      (i.e. in the half of the <m>xz</m>-plane with <m>x \gt 0</m>), and then
+      </li>
+      <li>
+      rotate about the <m>z</m>-axis.
+      </li>
+      </ul>
+      The part of the boundary of <m>E</m> with <m>\theta=0</m> (i.e.
+      in the half-plane <m>y=0</m>, <m>x\geqslant 0</m>), consists of two curves.
+      <ul>
+      <li><p>
+      <m>\rho=1+\cos\varphi</m>, <m>\theta=0</m>:
+      <ul>
+      <li> When <m>\varphi=0</m> (i.e. on the positive <m>z</m>-axis),
+      We have <m>\cos\varphi =1</m> and hence <m>\rho=2</m>.  So this curve starts
+      at <m>(0,0,2)</m>.
+      </li>
+      <li>
+      As <m>\varphi</m> increases <m>\cos\varphi</m>, and hence <m>\rho</m>,
+      decreases.
+      </li>
+      <li>
+      When <m>\varphi</m> is <m>\frac{\pi}{2}</m> (i.e. in the <m>xy</m>-plane),
+      we have <m>\cos\varphi =0</m> and hence <m>\rho=1</m>.
+      </li>
+      <li>
+      When <m>\frac{\pi}{2} \lt \varphi\leqslant \pi</m>, we have <m>\cos\varphi \lt 0</m> and hence
+      <m>\rho \lt 1</m>. All points in <m>E</m> are required to obey <m>\rho\geqslant 1</m>. So
+      this part of the boundary stops at the point <m>(1,0,0)</m> in the <m>xy</m>-plane.
+      </li>
+      <li>
+      The curve <m>\rho=1+\cos\varphi</m>, <m>\theta=0</m>, <m>0\le\varphi\le\frac{\pi}{2}</m>
+      is sketched in the figure on the left below. It is the outer curve from
+      <m>(0,0,2)</m> to <m>(1,0,0)</m>.
+      </li>
+      </ul></p>
+      </li>
+      <li><p>
+      <m>\rho=1</m>, <m>\theta=0</m>:
+      <ul>
+      <li>
+      The surface <m>\rho=1</m> is the sphere of radius <m>1</m> centred on the origin.
+      </li>
+      <li>
+      As we observed above, the conditions <m>1\le\rho\leqslant 1+\cos\varphi</m>
+      force <m>0\le\varphi\le\frac{\pi}{2}</m>, i.e. <m>z\geqslant 0</m>.
+      </li>
+      <li>
+      The sphere <m>\rho=1</m> intersects the quarter plane <m>y=0</m>, <m>x\geqslant 0</m>, <m>z\geqslant 0</m>,
+      in the quarter circle centred on the origin that starts at <m>(0,0,1)</m>
+      on the <m>z</m>-axis and ends at <m>(1,0,0)</m> in the <m>xy</m>-plane.
+      </li>
+      <li>
+      The curve <m>\rho=1</m>, <m>\theta=0</m>, <m>0\le\varphi\le\frac{\pi}{2}</m>
+      is sketched in the figure on the left below. It is the inner curve from
+      <m>(0,0,1)</m> to <m>(1,0,0)</m>.
+      </li>
+      </ul>
+      To get <m>E</m>, rotate the shaded region in the figure on the left below
+      about the <m>z</m>-axis. The part of <m>E</m> in the first octant is sketched
+      in the figure on the right below. The part of <m>E</m> in the <m>xz</m>-plane
+      (with <m>x\geqslant 0</m>) is lightly shaded and the part of <m>E</m> in the <m>yz</m>-plane
+      (with <m>y\geqslant 0</m>) is shaded a little more darkly.
+      </p>
+
+      <sidebyside width="45%" valign="middle">
+        <image source="images/CLP-figs/pfigs/OE06A_8aa"/>
+         <image source="images/CLP-figs/pfigs/OE06A_8bb"/>
+      </sidebyside>
+
+      </li>
+      </ul>
+      </p>
+
+      <p>(b) In <m>E</m>
+      <ul>
+      <li>
+      <m>\varphi</m> runs from <m>0</m> (i.e. the positive <m>z</m>-axis) to <m>\frac{\pi}{2}</m>
+      (i.e. the <m>xy</m>-plane).
+      </li>
+      <li>
+      For each <m>\varphi</m> in that range <m>\rho</m> runs from <m>1</m> to
+      <m>1+\cos\varphi</m> and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      <li>
+      In spherical coordinates <m>\dee{V} = \rho^2\,\sin\varphi\,\dee{\rho}\,
+           \dee{\theta}\,\dee{\varphi}</m>.
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      \text{Volume}(E)
+      &amp;=\int_0^{\pi/2}\dee{\varphi} \int_1^{1+\cos\varphi}\dee{\rho}
+      \int_0^{2\pi}\dee{\theta}\ \rho^2\sin\varphi
+      </mrow><mrow>
+      &amp;=2\pi \int_0^{\pi/2}\dee{\varphi}\ \sin\varphi\
+              \frac{(1+\cos\varphi)^3-1^3}{3}
+      </mrow><mrow>
+      &amp;=-\frac{2\pi}{3} \int_2^1 \big(u^3-1\big)\ \dee{u}
+      \quad\text{with }u=1+\cos\varphi,\ \dee{u}=-\sin\varphi\,\dee{\varphi}
+      </mrow><mrow>
+      &amp;= -\frac{2\pi}{3}\left[\frac{u^4}{4}-u\right]_2^1
+      </mrow><mrow>
+      &amp;=-\frac{2\pi}{3} \left[\frac{1}{4}-1-4+2\right]
+      </mrow><mrow>
+      &amp;=\frac{11 \pi}{6}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
+      <statement><p>
+      Utilisez les coordonnées sphériques pour évaluer l'intégrale
+      <me>
+      I=\iiint_D z\ \dee{V}
+      </me>
+      où <m>D</m> est le solide formé par le cône <m>z = \sqrt{x^2 + y^2}</m>
+      et la sphère <m>x^2 + y^2 + z^2 = 4</m>. Autrement, <m>(x,y,z)</m> est dans <m>D</m> si et seulement si <m>\sqrt{x^2 + y^2}\leqslant z</m> et <m>x^2 + y^2 + z^2\leqslant4</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>2\pi</m>
+      </p></answer>
+
+      <solution><p>
+      Recall that in spherical coordinates,
+      <md>
+      <mrow>
+      x&amp;=\rho\sin\varphi\cos\theta
+      </mrow><mrow>
+      y&amp;=\rho\sin\varphi\sin\theta
+      </mrow><mrow>
+      z&amp;=\rho\cos\varphi
+      </mrow><mrow>
+      x^2+y^2 &amp;=\rho^2\sin^2\varphi
+      </mrow>
+      </md>
+      so that <m>x^2+y^2+z^2= 4</m> becomes <m>\rho = 2</m>,
+      and <m>\sqrt{x^2+y^2}= z</m> becomes
+      <md>
+      <mrow>
+      \rho\sin\varphi = \rho\cos\varphi
+      \iff
+      \tan\varphi= 1
+      \iff
+      \varphi=\frac{\pi}{4}
+      </mrow>
+      </md>
+      Here is a sketch of the <m>y=0</m> cross-section of <m>D</m>.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/OE06D_6b"/>
+      </sidebyside>
+
+      <p>
+      Looking at the figure above, we see that, on <m>D</m>
+      <ul>
+      <li>
+        <m>\varphi</m> runs from <m>0</m> (the positive <m>z</m>-axis) to
+          <m>\frac{\pi}{4}</m> (on the cone), and
+      </li>
+      <li>
+        for each <m>\varphi</m> is that range, <m>\rho</m> runs from <m>0</m>  to <m>2</m>
+        and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      D&amp;=\Set{(\rho\sin\varphi\cos\theta,\rho\sin\varphi\sin\theta,\rho\cos\varphi)}
+       {0\le\varphi\le\frac{\pi}{4},\
+           0\leqslant \theta\leqslant 2\pi,\ \rho\leqslant 2}
+      </mrow>
+      </md>
+      and, as <m>\dee{V} =\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>,
+      <md>
+      <mrow>
+      I&amp;= \int_0^{\pi/4}\dee{\varphi}\int_0^{2\pi}\dee{\theta}
+                  \int_0^{2}\dee{\rho}\
+                   \rho^2\sin\varphi\ \overbrace{\rho\cos\varphi}^{z}
+      </mrow><mrow>
+      &amp;= \int_0^{\pi/4}\dee{\varphi}\int_0^{2\pi}\dee{\theta}
+                  \int_0^{2}\dee{\rho}\
+                        \rho^3\sin\varphi\,\cos\varphi
+      </mrow><mrow>
+      &amp;= 2\pi\ \frac{2^4}{4} \int_0^{\pi/4}\dee{\varphi}\ \sin\varphi\,\cos\varphi
+      </mrow><mrow>
+      &amp;= 2\pi\ \frac{2^4}{4}\left[\frac{\sin^2\varphi}{2}\right]_0^{\pi/4}
+      </mrow><mrow>
+      &amp;= 2\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Utilisez les coordonnées sphériques afin de trouver
+      <ol marker = "(a)">
+      <li>
+      Le volume à l'intérieur du cône <m>z=\sqrt{x^2+y^2}</m> et à l'intérieur de la sphère
+      <m>x^2+y^2+z^2=a^2</m>.
+      </li>
+      <li>
+      <m>\iiint_R x\, \dee{V}</m> et <m>\iiint_R z\, \dee{V}</m> au-dessus de la partie de la
+      sphère de rayon <m>a</m> se trouvant dans le premier octant.
+      </li>
+      <li>
+      La masse de la planète sphérique de rayon <m>a</m> dont la densité à
+      distance <m>\rho</m> du centre est <m>\d=A/(B+\rho^2)</m>.
+      </li>
+      <li>
+      Le volume formé par <m>\ \rho=a(1-\cos\varphi).</m> Ici <m>\rho</m> et <m>\varphi</m>
+      réfèrent aux coordonnées sphériques usuelles.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>2\pi\frac{a^3}{3}\big(1-\frac{1}{\sqrt{2}}\big)</m></p><p>
+      (b) <m>\frac{\pi a^4}{16}</m></p><p>
+      (c) <m>4\pi A\big(a-\sqrt{B}\tan^{-1}\frac{a}{\sqrt{B}}\big)</m></p><p>
+      (d) <m>\frac{8}{3}\pi a^3</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      Recall that in spherical coordinates,
+      <md>
+      <mrow>
+      x&amp;=\rho\sin\varphi\cos\theta
+      </mrow><mrow>
+      y&amp;=\rho\sin\varphi\sin\theta
+      </mrow><mrow>
+      z&amp;=\rho\cos\varphi
+      </mrow><mrow>
+      x^2+y^2 &amp;=\rho^2\sin^2\varphi
+      </mrow>
+      </md>
+      so that <m>x^2+y^2+z^2= a^2</m> becomes <m>\rho = a</m>,
+      and <m>\sqrt{x^2+y^2}= z</m> becomes
+      <md>
+      <mrow>
+      \rho\sin\varphi = \rho\cos\varphi
+      \iff
+      \tan\varphi= 1
+      \iff
+      \varphi=\frac{\pi}{4}
+      </mrow>
+      </md>
+      Here is a sketch of the <m>y=0</m> cross-section of the specified region.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/coneSphere"/>
+      </sidebyside>
+
+      <p>
+      Looking at the figure above, we see that, on that region,
+      <ul>
+      <li>
+        <m>\varphi</m> runs from <m>0</m> (the positive <m>z</m>-axis) to
+          <m>\frac{\pi}{4}</m> (on the cone), and
+      </li>
+      <li>
+        for each <m>\varphi</m> is that range, <m>\rho</m> runs from <m>0</m>  to <m>a</m>
+        and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      so that
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= \int_{0}^{a}\dee{\rho}  \int_{0}^{2\pi} \dee{\theta}
+      \int_0^{{\pi\over 4}}\dee{\varphi}\ \rho^2\sin\varphi
+      </mrow><mrow>
+      &amp;= \Big\{\int_{0}^{a}\dee{\rho}\ \rho^2  \Big\}\Big\{\int_{0}^{2\pi} \dee{\theta}\Big\}\Big\{
+      \int_0^{{\pi\over 4}}\dee{\varphi}\ \sin\varphi\Big\}
+      </mrow><mrow>
+      &amp;= \frac{a^3}{3}\ 2\pi\ \Big[-\cos\varphi\Big]_0^{{\pi\over 4}}
+      =2\pi\frac{a^3}{3}\left(1-\frac{1}{\sqrt{2}}\right)
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The part of the sphere in question is
+      <md>
+      <mrow>
+      R&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant a^2,\ x\ge0,\ y\geqslant 0,\ z\geqslant 0}
+      </mrow><mrow>
+       &amp;=\Set{(\rho\sin\varphi\cos\theta\,,\,
+               \rho\sin\varphi\sin\theta\,,\,
+               \rho\cos\varphi)}{\rho\leqslant a,\ 0\le\varphi\le\tfrac{\pi}{2},
+                   \ 0\le\theta\le\tfrac{\pi}{2}}
+      </mrow>
+      </md>
+      By symmetry, the two specified integrals are equal, and are
+      <md>
+      <mrow>
+       \int_{0}^{a}\dee{\rho}\ \rho^2 \int_0^{{\pi\over 2}}\dee{\varphi}\ \sin\varphi
+      \int_{0}^{{\pi\over 2}} \dee{\theta}\ \overbrace{\rho\cos\varphi}^{z}
+      &amp;=\frac{a^4}{4}\frac{\pi}{2} \int_0^{{\pi\over 2}}\dee{\varphi}\
+      \sin\varphi\cos\varphi
+      </mrow><mrow>
+      &amp;=\frac{\pi a^4}{8} \int_0^{1}\dee{t}\ t
+      </mrow><mrow>
+      &amp;\hskip0.5in\text{ where } t=\sin\varphi, \dee{t}=\cos\varphi\,\dee{\varphi}
+      </mrow><mrow>
+      &amp;=\frac{\pi a^4}{16}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) The planet in question is
+      <md>
+      <mrow>
+      P&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant a^2}
+      </mrow><mrow>
+       &amp;=\Set{(\rho\sin\varphi\cos\theta\,,\,
+               \rho\sin\varphi\sin\theta\,,\,
+               \rho\cos\varphi)}{\rho\leqslant a,\ 0\le\varphi\le\pi,
+                   \ 0\le\theta\le2\pi}
+      </mrow>
+      </md>
+      So the
+      <md>
+      <mrow>
+      \text{mass}
+      &amp;= \int_{0}^{a}\dee{\rho}\ \rho^2 \int_0^{\pi}\dee{\varphi}\ \sin\varphi
+      \int_{0}^{2\pi} \dee{\theta}\ \overbrace{\frac{A}{B+\rho^2}}^{\rm density}
+      </mrow><mrow>
+      &amp;=2\pi A\Big\{ \int_0^{\pi}\dee{\varphi}\ \sin\varphi\Big\}
+      \Big\{\int_{0}^{a}\dee{\rho}\ \frac{\rho^2}{B+\rho^2} \Big\}
+      </mrow><mrow>
+      &amp;=4\pi A\int_{0}^{a}\dee{\rho}\ \left(1-\frac{B}{B+\rho^2} \right)
+      </mrow><mrow>
+      &amp;=4\pi Aa-4\pi A\sqrt{B}\int_{0}^{a/\sqrt{B}}\dee{s}\ \frac{1}{1+s^2}
+      \quad\hbox{ where } \rho=\sqrt{B}\,s,  \dee{\rho}=\sqrt{B}\,\dee{s}
+      </mrow><mrow>
+      &amp;=4\pi A\left(a-\sqrt{B}\tan^{-1}\frac{a}{\sqrt{B}}\right)
+      </mrow>
+      </md>
+      </p>
+
+      <p>(d)  Observe that
+      <ul>
+      <li>
+      when <m>\varphi=0</m> (i.e. on the positive <m>z</m>-axis), <m>\cos\varphi=1</m> so that
+              <m>\rho=a(1-\cos\varphi)=0</m> and
+      </li>
+      <li>
+      as <m>\varphi</m> increases from <m>0</m> to <m>\frac{\pi}{2}</m>, <m>\cos\varphi</m> decreases
+               so that <m>\rho=a(1-\cos\varphi)</m> increases and
+      </li>
+      <li>
+      when <m>\varphi=\frac{\pi}{2}</m> (i.e. on the <m>xy</m>-plane), <m>\cos\varphi=0</m> so that
+             <m>\rho=a(1-\cos\varphi)=a</m> and
+      </li>
+      <li>
+      as <m>\varphi</m> increases from  <m>\frac{\pi}{2}</m> to <m>\pi</m>, <m>\cos\varphi</m>
+            continues to decrease so that
+                <m>\rho=a(1-\cos\varphi)</m> increases still more and
+      </li>
+      <li>
+      when <m>\varphi=\pi</m> (i.e. on the negative <m>z</m>-axis), <m>\cos\varphi=-1</m> so that
+              <m>\rho=a(1-\cos\varphi)=2a</m>
+      </li>
+      </ul>
+      So we have the following sketch of the intersection of the specified
+      volume with the right half of the <m>yz</m>-plane.
+      </p>
+
+      <sidebyside width="50%">
+      <image source="images/CLP-figs/pfigs/domain3d"/>
+      </sidebyside>
+
+      <p>
+      The volume in question is invariant under rotations about
+      the <m>z</m>-axis so that
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= \int_{0}^{2\pi} \dee{\theta}\int_0^{\pi}\dee{\varphi}\ \sin\varphi\int_{0}^{a(1-\cos\varphi)}\dee{\rho}\ \rho^2
+      </mrow><mrow>
+      &amp;=2\pi\frac{a^3}{3} \int_0^{\pi}\dee{\varphi}\ \sin\varphi(1-\cos\varphi)^3
+      </mrow><mrow>
+      &amp;=2\pi\frac{a^3}{3} \int_0^2\dee{t}\ t^3
+      \qquad\hbox{ where } t=1-\cos\varphi, \dee{t}=\sin\varphi\,\dee{\varphi}
+      </mrow><mrow>
+      &amp;=2\pi\ \frac{a^3}{3}\ \frac{2^4}{4}
+      =\frac{8}{3}\pi a^3
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
+      <statement><p>
+      Considérez la coquille hémisphérique délimitée par les surfaces sphériques
+      <me>
+      x^2 + y^2 + z^2 = 9\qquad\text{et}\qquad
+      x^2 + y^2 + z^2 = 4
+      </me>
+      et au-dessus du plan <m>z = 0</m>. La coquille admet une densité constante <m>D</m>.
+      <ol marker = "(a)">
+      <li>
+      Trouvez la masse de la coquille.
+      </li>
+      <li>
+      Trouvez la location du centre de masse de la coquille.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\frac{38}{3}\pi D</m>
+      </p>
+
+      <p>(b)
+      <m>\bar x = \bar y=0</m></p><p>
+      <m>\bar z =\frac{195}{152} \approx 1.28</m>
+      </p></answer>
+
+      <solution><p>
+      Let's use <m>H</m> to denote the hemispherical shell.
+      On that shell, the spherical coordinate <m>\varphi</m> runs from <m>0</m>
+      (on the <m>z</m>-axis) to <m>\pi/2</m> (on the <m>xy</m>-plane, <m>z=0</m>)
+      and the spherical coordinate <m>\rho</m> runs from <m>2</m>, on <m>x^2+y^2+z^2=4</m>,
+      to <m>3</m>, on <m>x^2+y^2+z^2=9</m>. So, in spherical coordinates,
+      <md>
+      <mrow>
+      H=\big\{\
+      (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,\rho\cos\varphi)\ \big|\
+      2\leqslant \rho\leqslant 3,\ &amp;0\le\varphi\le\pi/2,
+      </mrow><mrow>
+      &amp; \hskip0.25in 0\le\theta\leqslant 2\pi\ \big\}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(a) In spherical coordinates
+      <m>\dee{V}=\rho^2\sin\varphi\ \dee{\rho}\,\dee{\varphi}\,\dee{\theta}</m>,
+      so that, as the density is the constant <m>D</m>,
+      <md>
+      <mrow>
+      \text{Mass}(H)
+      &amp;=\int_2^3\dee{\rho} \int_0^{2\pi}\dee{\theta}\int_0^{\pi/2}\dee{\varphi}\
+                 D\ \rho^2\sin\varphi
+      </mrow><mrow>
+      &amp;=D\ \left[\int_2^3\dee{\rho}\ \rho^2\right]\
+           \left[\int_0^{2\pi}\dee{\theta}\right]\
+           \left[\int_0^{\pi/2}\dee{\varphi}\ \sin\varphi\right]
+      </mrow><mrow>
+      &amp;= D\left[\frac{3^3}{3}-\frac{2^3}{3}\right]\
+           \big[2\pi\big]\ \big[\cos 0 -\cos(\pi/2)\big]
+      </mrow><mrow>
+      &amp;=\frac{38}{3}\pi D
+      </mrow>
+      </md>
+      </p>
+
+      <p>
+      We could have gotten the same result by expressing the mass as
+      <ul>
+      <li>
+      one half, times
+      </li>
+      <li>
+      the density <m>D</m>, times
+      </li>
+      <li>
+      the difference between
+      the volume of a sphere of radius <m>3</m> and a sphere of radius <m>2</m>.
+      </li>
+      </ul>
+      That is
+      <md>
+      <mrow>
+      \text{Mass}(H) =\frac{1}{2}D\left[\frac{4}{3}\pi 3^3-\frac{4}{3}\pi 2^3\right]
+                     =\frac{38}{3}\pi D
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) By definition, the centre of mass is <m>(\bar x,\bar y,\bar z)</m>
+      where <m>\bar x</m>, <m>\bar y</m> and <m>\bar z</m> are the weighted averages of
+      <m>x</m>, <m>y</m> and <m>z</m>, respectively, over <m>H</m>. That is
+      <md>
+      <mrow>
+      \bar x =\frac{\iiint_H x\,D\,\dee{V}}{\iiint_H D\,\dee{V}}\qquad
+      \bar y =\frac{\iiint_H y\,D\,\dee{V}}{\iiint_H D\,\dee{V}}\qquad
+      \bar z =\frac{\iiint_H z\,D\,\dee{V}}{\iiint_H D\,\dee{V}}
+      </mrow>
+      </md>
+      As <m>H</m> is invariant under reflection in the <m>yz</m>-plane (i.e. under
+      <m>x\rightarrow-x</m>) we have <m>\bar x=0</m>.
+      As <m>H</m> is also invariant under reflection in the <m>xz</m>-plane (i.e. under
+      <m>y\rightarrow-y</m>) we have <m>\bar y=0</m>.
+      So we just have to find <m>\bar z</m>. We have already found the denominator in part
+      (a), so we just have evaluate the numerator
+      <md>
+      <mrow>
+      \iiint_H z\,D\,\dee{V}
+      &amp;=\int_2^3\dee{\rho} \int_0^{2\pi}\dee{\theta}\int_0^{\pi/2}\dee{\varphi}\
+                 D\ \rho^2\sin\varphi\ \overbrace{\rho\cos\varphi}^{z}
+      </mrow><mrow>
+      &amp;=D\ \left[\int_2^3\dee{\rho}\ \rho^3\right]\
+           \left[\int_0^{2\pi}\dee{\theta}\right]\
+           \left[\int_0^{\pi/2}\dee{\varphi}\ \sin\varphi\ \cos\varphi\right]
+      </mrow><mrow>
+      &amp;= D\left[\frac{3^4}{4}-\frac{2^4}{4}\right]\
+           \big[2\pi\big]\
+           \left[\frac{1}{2}\sin^2\frac{\pi}{2} -\frac{1}{2}\sin^2 0\right]
+      </mrow><mrow>
+      &amp;=\frac{81-16}{4}\pi D
+      =\frac{65}{4}\pi D
+      </mrow>
+      </md>
+      All together
+      <md>
+      <mrow>
+      \bar x = \bar y=0\qquad
+      \bar z =\frac{\frac{65}{4}\pi D}{\frac{38}{3}\pi D}
+             =\frac{195}{152}
+             \approx 1.28
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2008D</fromexam></title> -->
+      <statement><p>
+      Soit
+      <me>
+      I = \iiint_T xz\ \dee{V}
+      </me>
+      où <m>T</m> est le huitième de la sphère <m>x^2 + y^2 + z^2\leqslant1</m> avec
+      <m>x,y,z \geqslant 0</m>.
+      <ol marker = "(a)">
+      <li>
+      Esquissez le volume <m>T</m>.
+      </li>
+      <li>
+      Exprimez <m>I</m> comme l'intégrale triple en coordonnées sphériques.
+      </li>
+      <li>
+      Évaluez <m>I</m> par n'importe quelle méthode.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer>
+      <p>(a)</p>
+      <sidebyside width="40%">
+      <image source="images/CLP-figs/pfigs/OE08D_8"/>
+      </sidebyside>
+
+      <p>
+      (b) <m>I=\int_0^{\pi/2}\int_0^{\pi/2}\int_0^1\
+               \rho^4\sin^2\varphi\cos\varphi\ \cos\theta\dee{\varphi}\dee{\theta}\dee{\rho}</m>
+      </p>
+
+      <p>(c) <m>\frac{1}{15}</m>
+      </p></answer>
+
+      <solution>
+      <p>(a) Here is a sketch</p>
+      <sidebyside width="40%">
+        <image source="images/CLP-figs/pfigs/OE08D_8"/>
+      </sidebyside>
+
+      <p>
+      (b) On <m>T</m>,
+      <ul>
+      <li>
+      the spherical coordinate <m>\varphi</m> runs from <m>0</m> (the positive <m>z</m>-xis)
+      to <m>\frac{\pi}{2}</m> (the <m>xy</m>-plane), and
+      </li>
+      <li>
+      for each fixed <m>\varphi</m> in that range,
+      <m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>, and
+      </li>
+      <li>
+      for each fixed <m>\varphi</m> and <m>\theta</m>, the spherical coordinate
+      <m>\rho</m> runs from <m>0</m> to <m>1</m>.
+      </li>
+      <li>
+      In spherical coordinates
+        <m>\dee{V}=\rho^2\,\sin\varphi\,\dee{\rho}\,\dee{\theta}\, \dee{\varphi}</m>
+      and
+      <me>
+         xz=\big(\rho\sin\varphi\cos\theta\big)\big(\rho\cos\varphi\big)
+            =\rho^2 \sin\varphi\ \cos\varphi\ \cos\theta
+      </me>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      I=\int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\int_0^1\dee{\rho}\
+               \rho^4\sin^2\varphi\cos\varphi\ \cos\theta
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) In spherical coordinates,
+      <md>
+      <mrow>
+      I&amp;=  \left[\int_0^{\pi/2}\dee{\varphi}\ \sin^2\varphi\cos\varphi\right]
+          \left[\int_0^{\pi/2}\dee{\theta}\ \cos\theta\right]
+           \left[\int_0^1\dee{\rho}\ \rho^4\right]
+      </mrow><mrow>
+       &amp;=\left[\frac{\sin^3\varphi}{3}\right]_0^{\pi/2}
+          \left[\sin\theta\right]_0^{\pi/2}
+           \left[\frac{\rho^5}{5}\right]_0^1
+      </mrow><mrow>
+       &amp;=\frac{1}{15}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
+      <statement><p>
+      Évaluez <m>W = \iiint_Q xz\ \dee{V}</m>, où <m>Q</m> est le huitième de la sphère
+      <m>x^2 + y^2 + z^2\leqslant9</m> avec <m>x</m>, <m>y</m>, <m>z \geqslant 0</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{81}{5}</m>
+      </p></answer>
+
+      <solution><p>
+      We'll use spherical coordinates.
+      On <m>Q</m>,
+      <ul>
+      <li>
+      the spherical coordinate <m>\varphi</m> runs from <m>0</m>
+      (the positive <m>z</m>-axis) to <m>\frac{\pi}{2}</m> (the <m>xy</m>-plane),
+      </li>
+      <li>
+      the spherical coordinate <m>\theta</m> runs from <m>0</m> (the half of the
+      <m>xz</m>-plane with <m>x\geqslant 0</m>) to <m>\frac{\pi}{2}</m> (the half of the
+      <m>yz</m>-plane with <m>y\geqslant 0</m>) and
+      </li>
+      <li>
+      the spherical coordinate <m>\rho</m> runs from <m>0</m> to <m>3</m>.
+      </li>
+      </ul>
+      As <m>\dee{V}=\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>,
+      <md>
+      <mrow>
+      W&amp;= \iiint_Q xz\ \dee{V}
+      =\int_0^3 \dee{\rho} \int_0^{\pi/2}\dee{\theta}\int_0^{\pi/2}\dee{\varphi}
+      \ \rho^2\sin\varphi\ \overbrace{\rho\sin\varphi\cos\theta}^{x}
+        \overbrace{\rho\cos\varphi}^{z}
+      </mrow><mrow>
+      &amp;=\int_0^3 \dee{\rho} \int_0^{\pi/2}\dee{\theta}
+      \ \rho^4\cos\theta\left[\frac{\sin^3\varphi}{3}\right]
+              _{\varphi=0}^{\varphi=\pi/2}
+      </mrow><mrow>
+      &amp;=\frac{1}{3}\int_0^3 \dee{\rho}\ \rho^4\Big[\sin\theta\Big]_0^{\pi/2}
+      </mrow><mrow>
+      &amp;=\frac{3^5}{15}=\frac{81}{5}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2012A</fromexam></title> -->
+      <statement><p>
+      Évaluez <m>\iiint_{\R^3}  {\big[1+{(x^2+y^2+z^2)}^3\big]}^{-1}\ \dee{V}</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{2\pi^2}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      Let's use spherical coordinates. This is an improper integral.
+      So, to be picky, we'll take the limit as <m>R\rightarrow\infty</m>
+      of the integral over <m>0\le\rho\leqslant R</m>.
+      <md>
+      <mrow>
+      &amp;\iiint_{\R^3}  {\big[1+{(x^2+y^2+z^2)}^3\big]}^{-1}\ \dee{V}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\lim_{R\rightarrow\infty}
+              \int_0^R \dee{\rho} \int_0^{2\pi}\dee{\theta} \int_0^\pi\dee{\varphi}\
+                            \rho^2\sin\varphi\ \frac{1}{1+\rho^6}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\lim_{R\rightarrow\infty}
+              \int_0^R  \dee{\rho} \int_0^{2\pi}\dee{\theta} \
+             \frac{\rho^2}{1+\rho^6}\Big[-\cos\varphi\Big]_0^\pi
+      </mrow><mrow>
+      &amp;\hskip0.5in=4\pi \lim_{R\rightarrow\infty}
+              \int_0^R  \dee{\rho} \ \frac{\rho^2}{1+\rho^6}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{4\pi}{3} \lim_{R\rightarrow\infty}
+              \int_0^{R^3}  \dee{u} \ \frac{1}{1+u^2}\qquad
+      \text{with }u=\rho^3,\ \dee{u}=3\rho^2\,\dee{\rho}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{4\pi}{3}\lim_{R\rightarrow\infty}\Big[\arctan u\Big]_0^{R^3}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{2\pi^2}{3}\qquad\text{since }
+                  \lim_{R\rightarrow\infty}\arctan R^3=\frac{\pi}{2}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
+      <statement><p>
+      Évaluez
+      <me>
+      \int_{-1}^1 \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
+                 \int_{1-\sqrt{1-x^2-y^2}}^{1+\sqrt{1-x^2-y^2}}
+         (x^2+y^2+z^2)^{5/2}  \ \dee{z}\,\dee{y}\,\dee{x}
+      </me>
+      en changeant en coordonnées sphériques.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{64\pi}{9}</m>
+      </p></answer>
+
+      <solution><p>
+      On the domain of integration
+      <ul>
+      <li>
+      <m>x</m> runs from <m>-1</m> to <m>1</m>.
+      </li>
+      <li>
+      For each fixed <m>x</m> in that range, <m>y</m> runs from <m>-\sqrt{1-x^2}</m> to
+      <m>\sqrt{1-x^2}</m>. In inequalities, that is <m>-\sqrt{1-x^2}\leqslant y\leqslant \sqrt{1-x^2}</m>,
+      which is equivalent to <m>x^2+y^2\leqslant 1</m>.
+      </li>
+      <li>
+      For each fixed <m>(x,y)</m> obeying <m>x^2+y^2\leqslant 1</m>, <m>z</m> runs from
+      <m>1-\sqrt{1-x^2-y^2}</m> to <m>1+\sqrt{1-x^2-y^2}</m>.
+      In inequalities, that is <m>1-\sqrt{1-x^2-y^2}\leqslant z\leqslant 1+\sqrt{1-x^2-y^2}</m>,
+      which is equivalent to <m>x^2+y^2+(z-1)^2\leqslant 1</m>.
+      </li>
+      </ul>
+      So the domain of integration is
+      <me>
+      V = \Set{(x,y,z)}{x^2+y^2+(z-1)^2\leqslant 1}
+      </me>
+      In spherical coordinates, the  condition <m>x^2+y^2+(z-1)^2\leqslant 1</m> is
+      <md>
+      <mrow>
+      &amp;(\rho\sin\varphi\cos\theta)^2
+      +(\rho\sin\varphi\sin\theta)^2
+      +(\rho\cos\varphi-1)^2\leqslant 1
+      </mrow><mrow>
+      &amp;\iff
+      \rho^2\sin^2\varphi + (\rho\cos\varphi-1)^2\leqslant 1
+      </mrow><mrow>
+      &amp;\iff
+      \rho^2\sin^2\varphi + \rho^2\cos^2\varphi -2 \rho\cos\varphi +1\leqslant1
+      </mrow><mrow>
+      &amp;\iff
+      \rho^2\leqslant 2\rho\cos\varphi
+      </mrow><mrow>
+      &amp;\iff
+      \rho\leqslant 2\cos\varphi
+      </mrow>
+      </md>
+      Note that <m>V</m> is contained in the upper half, <m>z\geqslant 0</m>, of <m>\R^3</m>
+      and that the <m>xy</m>-plane in tangent to <m>V</m>. So as <m>(x,y,z)</m> runs over <m>V</m>,
+      the spherical coordinate <m>\varphi</m> runs from <m>0</m> (the positive <m>z</m>-axis)
+      to <m>\frac{\pi}{2}</m> (the <m>xy</m>-plane). Here is a sketch of the side view
+      of <m>V</m>.
+      </p>
+
+      <sidebyside width="30%">
+        <image source="images/CLP-figs/pfigs/OE12D_10"/>
+      </sidebyside>
+
+      <p>
+      As <m>\dee{V} = \rho^2\sin\varphi\ \dee{\rho}\,\dee{\varphi}\,\dee{\theta}</m>
+      and <m>\big(x^2+y^2+z^2\big)^{5/2}=\rho^5</m>, the integral is
+      <md>
+      <mrow>
+      &amp;\int_{-1}^1 \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
+                 \int_{1-\sqrt{1-x^2-y^2}}^{1+\sqrt{1-x^2-y^2}}
+         (x^2+y^2+z^2)^{5/2}  \ \dee{z}\,\dee{y}\,\dee{x}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\int_0^{2\pi}\dee{\theta}\int_0^{\pi/2}\dee{\varphi}
+             \int_0^{2\cos\varphi}\dee{\rho}\ \rho^2\sin\varphi
+              \ \rho^5
+      </mrow><mrow>
+      &amp;\hskip0.5in=\int_0^{2\pi}\dee{\theta}\int_0^{\pi/2}\dee{\varphi}
+             \ \frac{2^8\cos^8\varphi}{8}\sin\varphi
+      </mrow><mrow>
+      &amp;\hskip0.5in=32\int_0^{2\pi}\dee{\theta}\ \left[-\frac{\cos^9\varphi}{9}\right]_0^{\pi/2}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{32}{9}(2\pi)
+      =\frac{64\pi}{9}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Évaluez le volume d'un cylindre de rayon <m>a</m> et de hauteur <m>h</m> à l'aide d'une intégrale en coordonnées sphériques.
+      </p></statement>
+
+      <answer><p>
+      <m>\pi a^2h</m>
+      </p></answer>
+
+      <solution><p>
+      The top of the cylinder has equation <m>z=h</m>, i.e. <m>\rho\cos\varphi=h</m>.
+      The side of the cylinder has equation <m>x^2+y^2=a^2</m>, i.e. <m>\rho\sin\varphi=a</m>.
+      The bottom of the cylinder has equation <m>z=0</m>, i.e. <m>\varphi=\frac{\pi}{2}</m>.
+      </p>
+
+      <sidebyside widths="28% 28% 35%" valign="middle">
+      <image source="images/CLP-figs/pfigs/cylinder1"/>
+      <image source="images/CLP-figs/pfigs/cylinder2"/>
+      <image source="images/CLP-figs/pfigs/cylinder3"/>
+      </sidebyside>
+
+      <p>
+      For each fixed <m>\varphi</m>, <m>\theta</m> runs from <m>0</m> to <m>2\pi</m> and <m>\rho</m>
+      runs from <m>0</m>
+      to either <m>\frac{h}{\cos\varphi}</m> (at the top of the can,
+      when <m>\varphi \lt \tan^{-1}\frac{a}{h}</m>)
+      or <m>\frac{a}{\sin\varphi}</m> (at the side of the can, when <m>\varphi \gt \tan^{-1}\frac{a}{h}</m>). So the
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= \int_{0}^{\tan^{-1}{a\over h}} \dee{\varphi} \int_{0}^{2\pi} \dee{\theta}
+      \int_0^{h/\cos\varphi}\dee{\rho}\ \rho^2\sin\varphi
+      </mrow><mrow>&amp;\hskip1in
+      +\int_{\tan^{-1}{a\over h}}^{{\pi\over 2}} \dee{\varphi} \int_{0}^{2\pi} \dee{\theta}
+      \int_0^{a/\sin\varphi}\dee{\rho}\ \rho^2\sin\varphi
+      </mrow><mrow>
+      &amp;= 2\pi\int_{0}^{\tan^{-1}{a\over h}} \dee{\varphi}
+      \ \frac{h^3\sin\varphi}{3\cos^3\varphi}
+      +2\pi\int_{\tan^{-1}{a\over h}}^{{\pi\over 2}} \dee{\varphi}
+      \ \frac{a^3\sin\varphi}{3\sin^3\varphi}
+      </mrow><mrow>
+      &amp;=2\pi\Big\{\int_0^{{a\over h}}\dee{t}\ \frac{h^3}{3}t
+      -\int^0_{{h\over a}}\dee{s}\ \frac{a^3}{3}\Big\}
+      </mrow><mrow>
+      &amp;\hskip0.5in\hbox{ where }
+        t=\tan\varphi, \dee{t}=\sec^2\varphi\,\dee{\varphi},
+        s=\cot\varphi, \dee{s}=-\csc^2\varphi\,\dee{\varphi}
+      </mrow><mrow>
+      &amp;=2\pi\left\{\frac{h^3}{3}\,\frac{1}{2}\left(\frac{a}{h}\right)^2
+      +\frac{a^3}{3}\,\frac{h}{a}\right\}
+      =2\pi\left\{\frac{ah^2}{6}+\frac{a^2h}{3}\right\}
+      =\pi a^2h
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Évaluez <m>\ds\iiint_\Om z\,\dee{V}</m>, où <m>\Om</m>
+      est la région à trois dimensions dans le premier octant <m>x\geqslant 0</m>, <m>y\geqslant 0</m>,
+      <m>z\geqslant 0</m>, occupant l'intérieur de la sphère <m>x^2+y^2+z^2=1</m>.
+      </li>
+      <li>
+      Utilisez le résultat de la partie (a) afin de déterminant rapidement le centre de gravité
+      d'une boule hémisphérique donnée par <m>z\geqslant 0</m>, <m>x^2+y^2+z^2\leqslant 1</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\frac{\pi}{16}</m></p><p>
+      (b)  Le centre de gravité est <m>(\bar x,\bar y,\bar z)</m> avec
+      <m>\bar x=\bar y=0</m> et <m>\bar z=\frac{3}{8}</m>.
+      </p></answer>
+
+      <solution><p>
+      (a)
+      In spherical coordinates,
+      <md>
+      <mrow>
+      x=\rho\sin\phi\cos\theta\qquad y=\rho\sin\phi\sin\theta\qquad z=\rho\cos\phi
+      </mrow>
+      </md>
+      so that
+      <ul>
+      <li>
+      the sphere <m>x^2+y^2+z^2=1</m> is <m>\rho=1</m>,
+      </li>
+      <li>
+      the <m>xy</m>-plane, <m>z=0</m>, is <m>\phi=\frac{\pi}{2}</m>,
+      </li>
+      <li>
+      the positive half of the <m>xz</m>-plane, <m>y=0</m>, <m>x \gt 0</m>, is <m>\theta=0</m> and
+      </li>
+      <li>
+      the positive half of the <m>yz</m>-plane, <m>x=0</m>, <m>y \gt 0</m>, is <m>\theta=\frac{\pi}{2}</m>.
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      \iiint_\Om z\,\dee{V}&amp;=
+      \int_0^1 \dee{\rho}\int_0^{\pi/2}d\phi\int _0^{\pi/2}\dee{\theta}\  \rho^2\sin\phi\overbrace{(\rho\cos\phi)}^{z}
+      </mrow><mrow>
+      &amp;=\frac{\pi}{2}\int_0^1 \dee{\rho}\int_0^{\pi/2}d\phi\  \rho^3\sin\phi \cos\phi
+
+      </mrow><mrow>
+      &amp;=\frac{\pi}{2}\int_0^1 \dee{\rho}\  \rho^3\ \frac{1}{2}\sin^2\phi \Big|_0^{\pi/2}
+      =\frac{\pi}{4}\int_0^1 \dee{\rho}\  \rho^3
+      =\frac{\pi}{16}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The hemispherical ball given by <m>z\geqslant 0</m>, <m>x^2+y^2+z^2\leqslant 1</m>
+      (call it <m>H</m>) has centroid <m>(\bar x,\bar y,\bar z)</m> with
+      <m>\bar x=\bar y=0</m> (by symmetry) and
+      <md>
+      <mrow>
+      \bar z=\frac{\iiint_H z\,\dee{V}}{\iiint_H\,\dee{V}}
+      =\frac{4\iiint_\Om z\,\dee{V}}{\half\times\frac{4}{3}\pi}
+      =\frac{\frac{\pi}{4}}{\frac{2\pi}{3}}
+      =\frac{3}{8}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2000D</fromexam></title> -->
+      <statement><p>
+      Considérez la moitié supérieure d'une boule de rayon <m>2</m> centrée à l'origine. Supposons que la boule a une densité variable égale à <m>9z</m> unités
+      de masse par unité de volume.
+      <ol marker = "(a)">
+      <li>
+      Posez une intégrale triple donnant la masse de cette demi-boule.
+      </li>
+      <li>
+      Trouvez quelle fraction de cette masse se trouve à l'intérieur du cône
+      <me>
+      z=\sqrt{x^2+y^2}
+      </me>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\ds 9\int_0^2\int_0^{\pi/2}\int_0^{2\pi}\
+                  \rho^3\,\sin\phi\,\cos\phi\dee{\theta}\dee{\varphi}\dee{\rho}</m></p><p>
+      (b) <m>\frac{1}{2}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) In spherical coordinates,
+      <me>
+      x=\rho\sin\phi\cos\theta\qquad y=\rho\sin\phi\sin\theta\qquad z=\rho\cos\phi
+      </me>
+      the sphere <m>x^2+y^2+z^2=4</m> is <m>\rho^2=4</m> or <m>\rho=2</m> and the
+      <m>xy</m>-plane is <m>\phi=\frac{\pi}{2}</m>. So
+      <me>
+      \text{mass}
+      =\int_0^2d\rho\int_0^{\pi/2}d\phi\int_0^{2\pi}d\theta\ \rho^2\sin\phi
+      \ \overbrace{(9 \rho\cos\phi)}^{\rm density}
+      </me>
+      </p>
+
+      <p>(b) The mass of the half ball is
+      <md>
+      <mrow>
+      &amp;9 \int_0^2d\rho\int_0^{\pi/2}d\phi\int_0^{2\pi}d\theta\ \rho^3\sin\phi \cos\phi
+      </mrow><mrow>
+      &amp;\hskip1in=9 \bigg[\int_0^2d\rho\ \rho^3\bigg]
+        \bigg[\int_0^{\pi/2}d\phi\ \sin\phi \cos\phi\bigg]
+        \bigg[\int_0^{2\pi}d\theta\bigg]
+      </mrow>
+      </md>
+      In spherical coordinates, the
+      cone <m>x^2+y^2=z^2</m> is <m>\rho^2\sin^2\phi=\rho^2\cos^2\phi</m> or
+      <m>\tan\phi=\pm1</m> or <m>\phi=\frac{\pi}{4},\ \frac{3\pi}{4}</m>. So the mass
+      of the part that is inside the cone is
+      <md>
+      <mrow>
+      &amp;9 \int_0^2d\rho\int_0^{\pi/4}d\phi\int_0^{2\pi}d\theta\ \rho^3\sin\phi \cos\phi
+      </mrow><mrow>&amp;\hskip1in=9 \bigg[\int_0^2d\rho\ \rho^3\bigg]
+        \bigg[\int_0^{\pi/4}d\phi\ \sin\phi \cos\phi\bigg]
+        \bigg[\int_0^{2\pi}d\theta\bigg]
+      </mrow>
+      </md>
+      The fraction inside the cone is
+      <me>
+      \frac{\int_0^{\pi/4}d\phi\ \sin\phi \cos\phi}{\int_0^{\pi/2}d\phi\ \sin\phi \cos\phi}
+      =\frac{\half\sin^2\phi\big|_0^{\pi/4}}{\half\sin^2\phi\big|_0^{\pi/2}}
+      =\frac{1}{2}
+      </me>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2007A</fromexam></title> -->
+      <statement><p>
+      Un certain solide <m>V</m> est un cylindre circulaire droit. Sa base est
+      le disque de rayon <m>2</m> centré à l'origine dans le plan <m>xy</m>.
+      Il a une hauteur de <m>2</m> et sa densité est donnée par <m>\sqrt{x^2 + y^2}</m>.
+      </p>
+
+      <p>Un solide plus petit <m>U</m> est obtenu en retirant le cône inversé,
+      dont la base est la surface supérieure de <m>V</m> et dont le sommet est le point <m>(0, 0, 0)</m>.
+      </p>
+
+      <p><ol marker = "(a)">
+      <li>
+          Utilisez les coordonnées cylindriques pour poser une intégrale donnant la masse de <m>U</m>.
+      </li>
+      <li>
+         Utilisez les coordonnées sphériques pour poser une intégrale donnant la masse de <m>U</m>.
+      </li>
+      <li>
+        Trouvez la masse.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\text{Masse} = \int_0^2\int_0^{2\pi}\int_z^2\
+                                        r^2\dee{r}\dee{\theta}\dee{z}</m>
+      </p>
+
+      <p>(b) <m>\text{Masse} =  \int_{\pi/4}^{\pi/2}\int_0^{2\pi}
+                  \int_0^{2/\sin\varphi}\
+                        \rho^3\sin^2\varphi\dee{\rho}\dee{\theta}\dee{\varphi}</m>
+      </p>
+
+      <p>(c) <m>8\pi</m>
+      </p></answer>
+
+      <solution><p>
+      The disk of radius <m>2</m>  centred at the origin in the <m>xy</m>-plane
+      is <m>x^2+y^2\leqslant 4</m>. So
+      <md>
+      <mrow>
+      V&amp;=\Set{(x,y,z)}{x^2+y^2\leqslant 4,\ 0\leqslant z\leqslant 2}
+      </mrow>
+      </md>
+      The cone with vertex at the origin that contains the top edge,
+      <m>x+y^2=4</m>, <m>z=2</m>, of <m>U</m> is <m>x^2+y^2=z^2</m>. So
+      <md>
+      <mrow>
+      U&amp;=\Set{(x,y,z)}{x^2+y^2\leqslant 4,\ 0\leqslant z\leqslant 2,\ x^2+y^2\geqslant z^2}
+      </mrow>
+      </md>
+      Here are sketches of the <m>y=0</m> cross-section of <m>V</m>, on top,
+      and <m>U</m>, on the bottom.
+      </p>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE07A_8"/>
+      </sidebyside>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE07A_8a"/>
+      </sidebyside>
+
+      <p>
+      (a) In cylindrical coordinates, <m>x^2+y^2\leqslant 4</m> becomes <m>r\leqslant 2</m>
+      and <m>x^2+y^2\geqslant z^2</m> is <m>r\geqslant |z|</m>, and the density is <m>\sqrt{x^2+y^2}=r</m>.
+      So
+      <md>
+      <mrow>
+      U&amp;=\Set{(r\cos\theta,r\sin\theta,z)}{r\leqslant 2,\ 0\leqslant z\leqslant 2,\ r\geqslant z}
+      </mrow>
+      </md>
+      Looking at the figure below, we see that, on <m>U</m>
+      <ul>
+      <li>
+        <m>z</m> runs from <m>0</m> to <m>2</m>, and
+      </li>
+      <li>
+        for each <m>z</m> is that range, <m>r</m> runs from <m>z</m> to <m>2</m>
+        and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      <li> <m>\dee{V} =r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      \text{Mass}&amp;= \int_0^2\dee{z}\int_0^{2\pi}\dee{\theta}\int_z^2\dee{r}\
+                        r\ \overbrace{r}^{\text{density}}
+      = \int_0^2\dee{z}\int_0^{2\pi}\dee{\theta}\int_z^2\dee{r}\
+                        r^2
+      </mrow>
+      </md>
+      </p>
+
+      <sidebyside width="60%">
+        <image source="images/CLP-figs/pfigs/OE07A_8c"/>
+      </sidebyside>
+
+      <p>
+      (b)
+      Recall that in spherical coordinates,
+      <md>
+      <mrow>
+      x&amp;=\rho\sin\varphi\cos\theta
+      </mrow><mrow>
+      y&amp;=\rho\sin\varphi\sin\theta
+      </mrow><mrow>
+      z&amp;=\rho\cos\varphi
+      </mrow><mrow>
+      x^2+y^2 &amp;=\rho^2\sin^2\varphi
+      </mrow>
+      </md>
+      so that <m>x^2+y^2\leqslant 4</m> becomes <m>\rho\sin\varphi\leqslant 2</m>,
+      and <m>x^2+y^2\geqslant z^2</m> becomes
+      <md>
+      <mrow>
+      \rho\sin\varphi \geqslant \rho\cos\varphi
+      \iff
+      \tan\varphi\geqslant 1
+      \iff
+      \varphi\ge\frac{\pi}{4}
+      </mrow>
+      </md>
+      and the density <m>\sqrt{x^2+y^2}=\rho\sin\varphi</m>.
+      So
+      <md>
+      <mrow>
+      U=\big\{\ (\rho\sin\varphi\cos\theta,\rho\sin\varphi\sin\theta,\rho\cos\varphi)
+                    \ \big|\
+                  \frac{\pi}{4}\le\varphi\le\frac{\pi}{2},\ &amp;0\leqslant \theta\leqslant 2\pi,\
+                   </mrow><mrow>
+                   &amp;\hskip0.25in\rho\sin\varphi\leqslant 2\ \big\}
+      </mrow>
+      </md>
+      Looking at the figure below, we see that, on <m>U</m>
+      <ul>
+      <li>
+        <m>\varphi</m> runs from <m>\frac{\pi}{4}</m> (on the cone) to
+           <m>\frac{\pi}{2}</m> (on the <m>xy</m>-plane), and
+      </li>
+      <li>
+        for each <m>\varphi</m> is that range, <m>\rho</m> runs from <m>0</m>
+               to <m>\frac{2}{\sin\varphi}</m>
+        and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      <li> <m>\dee{V} =\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      \text{Mass}&amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}\int_0^{2\pi}\dee{\theta}
+                  \int_0^{2/\sin\varphi}\dee{\rho}\
+                   \rho^2\sin\varphi\ \overbrace{\rho\sin\varphi}^{\text{density}}
+      </mrow><mrow>
+      &amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}\int_0^{2\pi}\dee{\theta}
+                  \int_0^{2/\sin\varphi}\dee{\rho}\
+                        \rho^3\sin^2\varphi
+      </mrow>
+      </md>
+      </p>
+
+      <sidebyside width="60%">
+       <image source="images/CLP-figs/pfigs/OE07A_8s"/>
+      </sidebyside>
+
+
+      <p>(c) We'll use the cylindrical form.
+      <md>
+      <mrow>
+      \text{Mass}
+      &amp;= \int_0^2\dee{z}\int_0^{2\pi}\dee{\theta}\int_z^2\dee{r}\
+                        r^2
+      </mrow><mrow>
+      &amp;=2\pi \int_0^2\dee{z}\ \frac{8-z^3}{3}
+      </mrow><mrow>
+      &amp;=\frac{2\pi}{3}\ \left[16-\frac{2^4}{4}\right]
+      </mrow><mrow>
+      &amp;=8\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2009A</fromexam></title> -->
+      <statement><p>
+      Un solide est borné en-dessous par le cône <m>z\!=\!\sqrt{x^2\!+\!y^2}\ </m> et au-dessus
+      par la sphère <m>x^2+y^2+z^2 = 2</m>.
+      Sa densité est <m>\d(x,y,z) = x^2 + y^2</m>.
+      </p>
+
+      <p><ol marker = "(a)">
+      <li>
+      Exprimez la masse <m>M</m> du solide comme une intégrale triple, dont les bornes sont en coordonnées cylindriques.
+      </li>
+      <li>
+      Comme en (a), mais en coordonnées sphériques.
+      </li>
+      <li>
+      Évaluez <m>M</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\int_0^1\int_0^{2\pi}
+                 \int_r^{\sqrt{2-r^2}}\ r^3\dee{z}\dee{\theta}\dee{r}</m>
+      </p>
+
+      <p>(b)  <m>\int_0^{\sqrt{2}}\int_0^{2\pi}
+                 \int_0^{\pi/4}\ \rho^4\sin^3\varphi\dee{\varphi}\dee{\theta}\dee{\rho}</m>
+      </p>
+
+      <p>(c) <m>\pi \left[\frac{16\sqrt{2}}{15} - \frac{4}{3}\right]
+           \approx 0.5503</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      Call the solid <m>V</m>.
+      In cylindrical coordinates
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 2</m> is <m>r^2+z^2\leqslant 2</m> and
+      </li>
+      <li>
+      <m>\sqrt{x^2+y^2}\leqslant z</m> is <m>r\leqslant z</m> and
+      </li>
+      <li>
+      the density <m>\de=r^2</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      Observe that <m>r^2+z^2= 2</m> and <m>r= z</m> intersect when <m>2r^2=2</m> so that <m>r=z=1</m>.
+      Here is a sketch of the <m>y=0</m> cross-section of <m>E</m>.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/OE09A_7"/>
+      </sidebyside>
+
+      <p>
+      So
+      <me>
+      V =\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\leqslant r\leqslant 1,\
+                                                   0\le\theta\le2\pi,\
+                                                    r\leqslant z\leqslant \sqrt{2-r^2}}
+      </me>
+      and
+      <md>
+      <mrow>
+      M &amp;=\iiint_V \rho(x,y,z)\ \dee{V}
+         =\int_0^1\dee{r}\int_0^{2\pi}\dee{\theta}
+                 \int_r^{\sqrt{2-r^2}}\dee{z}\ r\overbrace{(r^2)}^{\de}
+      </mrow><mrow>
+         &amp;=\int_0^1\dee{r}\int_0^{2\pi}\dee{\theta}
+                 \int_r^{\sqrt{2-r^2}}\dee{z}\ r^3
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      </p>
+
+      <p>In spherical coordinates
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 2</m> is <m>\rho\le\sqrt{2}</m>, and
+      </li>
+      <li>
+      <m>\sqrt{x^2+y^2}\leqslant z</m> is <m>\rho\sin\varphi\leqslant \rho\cos\varphi</m>,
+      or <m>\tan\varphi\leqslant 1</m> or <m>\varphi\le\frac{\pi}{4}</m>, and
+      </li>
+      <li>
+      the density <m>x^2+y^2=\rho^2\sin^2\varphi</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      V =\big\{\ (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                                               \rho\cos\varphi)\ \big|\
+                  0\le\rho\leqslant \sqrt{2},\  &amp;0\le\theta\le2\pi,
+                  </mrow><mrow>
+                          &amp;\hskip 0.25in 0\leqslant \varphi\leqslant \frac{\pi}{4}\ \big\}
+      </mrow>
+      </md>
+      and, since the integrand <m>x^2+y^2=\rho^2\sin^2\varphi</m>,
+      <md>
+      <mrow>
+      M &amp;=\iiint_V \big(x^2+y^2\big)\ \dee{V}
+         =\int_0^{\sqrt{2}}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^2\sin\varphi\
+                 \rho^2\sin^2\varphi
+      </mrow><mrow>
+         &amp;=\int_0^{\sqrt{2}}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^4\sin^3\varphi
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) We'll use the spherical coordinate form.
+      <md>
+      <mrow>
+      M &amp;=\int_0^{\sqrt{2}}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^4\sin^3\varphi
+      </mrow><mrow>
+         &amp;=\int_0^{\sqrt{2}}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^4\sin\varphi
+                    \big[1-\cos^2\varphi\big]
+      </mrow><mrow>
+         &amp;=2\pi \int_0^{\sqrt{2}}\dee{\rho}\ \rho^4
+                      \left[-\cos\varphi +\frac{\cos^3\varphi}{3}\right]_0^{\pi/4}
+          =2\pi \left[\frac{2}{3} - \frac{5}{6\sqrt{2}}\right]
+                            \int_0^{\sqrt{2}}\dee{\rho}\ \rho^4
+      </mrow><mrow>
+          &amp;=2\pi \frac{4\sqrt{2}}{5}\left[\frac{2}{3} - \frac{5}{6\sqrt{2}}\right]
+           =\pi \left[\frac{16\sqrt{2}}{15} - \frac{4}{3}\right]
+           \approx 0.5503
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
+      <statement><p>
+      Soit
+      <md>
+      <mrow>
+      I = \iiint_E xz\ \dee{V}
+      </mrow>
+      </md>
+      où <m>E</m> est le huitième de la sphère <m>x^2+y^2+z^2\leqslant 1</m> avec
+      <m>x,y,z\geqslant 0</m>.
+      <ol marker = "(a)">
+      <li>
+      Exprimez <m>I</m> comme une intégrale triple en coordonnées sphériques.
+      </li>
+      <li>
+      Exprimez <m>I</m> comme une intégrale triple en coordonnées cylindriques.
+      </li>
+      <li>
+      Évaluez <m>I</m> par n'importe quelle méthode.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\int_0^{\pi/2}\int_0^{\pi/2}\int_0^1\
+               \rho^4\sin^2\varphi\cos\varphi\ \cos\theta\dee{\rho}\dee{\theta}\dee{\varphi}</m></p><p>
+      (b) <m>\int_0^1\int_0^{\pi/2}\int_0^{\sqrt{1-z^2}} \
+               r^2\,z\,\cos\theta\dee{r}\dee{\theta}\dee{z}</m>
+      </p>
+
+      <p>(c) <m>\frac{1}{15}</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      On <m>E</m>,
+      <ul>
+      <li>
+      the spherical coordinate <m>\varphi</m> runs from <m>0</m> (the positive <m>z</m>-xis)
+      to <m>\frac{\pi}{2}</m> (the <m>xy</m>-plane), and
+      </li>
+      <li>
+      for each fixed <m>\varphi</m> in that range,
+      <m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>, and
+      </li>
+      <li>
+      for each fixed <m>\varphi</m> and <m>\theta</m>, the spherical coordinate
+      <m>\rho</m> runs from <m>0</m> to <m>1</m>.
+      </li>
+      <li>
+      In spherical coordinates
+        <m>\dee{V}=\rho^2\,\sin\varphi\,\dee{\rho}\,\dee{\theta}\, \dee{\varphi}</m>
+      and
+      <me>
+         xz=\big(\rho\sin\varphi\cos\theta\big)\big(\rho\cos\varphi\big)
+            =\rho^2 \sin\varphi\ \cos\varphi\ \cos\theta
+      </me>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      I=\int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\int_0^1\dee{\rho}\
+               \rho^4\sin^2\varphi\cos\varphi\ \cos\theta
+      </mrow>
+      </md>
+      (b)
+      In cylindrical coordinates, the condition <m>x^2+y^2+z^2\leqslant 1</m>
+      becomes <m>r^2+z^2\leqslant 1</m>. So, on <m>E</m>
+      <ul>
+      <li>
+      the cylindrical coordinate <m>z</m> runs from <m>0</m> (in the <m>xy</m>-plane)
+      to <m>1</m> (at <m>(0,0,1)</m>) and
+      </li>
+      <li>
+      for each fixed <m>z</m> in that range, <m>\theta</m> runs from <m>0</m> to <m>\pi/2</m> and
+      </li>
+      <li>
+      for each such fixed <m>z</m> and <m>\theta</m>, the cylindrical coordinate
+      <m>r</m> runs from <m>0</m> to <m>\sqrt{1-z^2}</m> (recall that <m>r^2+z^2\leqslant 1</m>).
+      </li>
+      <li>
+      In cylindrical coordinates
+        <m>\dee{V}=r\,\dee{r}\,\dee{\theta}\, \dee{z}</m>
+      and
+      <me>
+         xz=\big(r\cos\theta\big)\big(z\big)
+            =r\,z\, \cos\theta
+      </me>
+      So
+      <md>
+      <mrow>
+      I=\int_0^1\dee{z}\int_0^{\pi/2}\dee{\theta}\int_0^{\sqrt{1-z^2}}\dee{r} \
+               r^2\,z\,\cos\theta
+      </mrow>
+      </md>
+      </li>
+      </ul>
+      </p>
+
+      <p> (c)
+      Both spherical and cylindrical integrals are straight forward to evaluate.
+      Here are both. First, in spherical coordinates,
+      <md>
+      <mrow>
+      I&amp;=  \left[\int_0^{\pi/2}\dee{\varphi}\ \sin^2\varphi\cos\varphi\right]
+          \left[\int_0^{\pi/2}\dee{\theta}\ \cos\theta\right]
+           \left[\int_0^1\dee{\rho}\ \rho^4\right]
+      </mrow><mrow>
+       &amp;=\left[\frac{\sin^3\varphi}{3}\right]_0^{\pi/2}
+          \left[\sin\theta\right]_0^{\pi/2}
+           \left[\frac{\rho^5}{5}\right]_0^1
+      </mrow><mrow>
+       &amp;=\frac{1}{15}
+      </mrow>
+      </md>
+      Now in cylindrical coordinates
+      <md>
+      <mrow>
+      I&amp;=\int_0^1\dee{z}\int_0^{\pi/2}\dee{\theta}\int_0^{\sqrt{1-z^2}}\dee{r} \
+               r^2\,z\,\cos\theta
+      </mrow><mrow>
+      &amp;=\frac{1}{3}\int_0^1\dee{z}\int_0^{\pi/2}\dee{\theta}\ z{(1-z^2\big)}^{3/2}\,
+                  \cos\theta
+      </mrow><mrow>
+      &amp;=\frac{1}{3}\int_0^1\dee{z}\ z{(1-z^2\big)}^{3/2}
+      </mrow><mrow>
+      &amp;=\frac{1}{3}\left[-\frac{1}{2}\ \frac{(1-z^2)^{5/2}}{5/2}\right]_0^1
+      </mrow><mrow>
+      &amp;=\frac{1}{15}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2010A</fromexam></title> -->
+      <statement><p>
+      Soit
+      <me>
+      I = \iiint_T  (x^2+y^2)\ \dee{V}
+      </me>
+      où <m>T</m> est la région solide bornée en-dessous par le cône
+      <m>z =\sqrt{3x^2+3y^2}</m> et au-dessus par la sphère
+      <m>x^2 + y^2 + z^2 = 9</m>.
+      <ol marker = "(a)">
+      <li>
+      Exprimez <m>I</m> comme une intégrale triple en coordonnées sphériques.
+      </li>
+      <li>
+      Exprimez <m>I</m> comme une intégrale triple en coordonnées cylindriques.
+      </li>
+      <li>
+      Évaluez <m>I</m> par n'importe quelle méthode.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\int_0^{3}\int_0^{2\pi}
+                 \int_0^{\pi/6}\ \rho^4\sin^3\varphi\dee{\varphi}\dee{\theta}\dee{\rho}</m>
+      </p>
+
+      <p>(b) <m>\int_0^{3/2}\int_0^{2\pi}
+                                \int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}\ \ r^3\dee{z}\dee{\theta}\dee{r}</m>
+      </p>
+
+      <p>(c) <m>81\pi \left[\frac{4}{5} - \frac{9\sqrt{3}}{20}\right]
+           \approx 5.24</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      Recall that in spherical coordinates
+      <md>
+      <mrow>
+      x=\rho\,\sin\varphi\,\cos\theta\qquad
+      y=\rho\,\sin\varphi\,\sin\theta\qquad
+      z=\rho\,\cos\varphi
+      </mrow>
+      </md>
+      so that
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 9</m> is <m>\rho\leqslant 3</m>, and
+      </li>
+      <li>
+      <m>\sqrt{3x^2+3y^2}\leqslant z</m> is <m>\sqrt{3}\rho\sin\varphi\leqslant \rho\cos\varphi</m>,
+      or <m>\tan\varphi\leqslant \frac{1}{\sqrt{3}}</m> or <m>\varphi\le\frac{\pi}{6}</m>, and
+      </li>
+      <li>
+      the integrand <m>x^2+y^2=\rho^2\sin^2\varphi</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      T =\big\{\ (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                                  \rho\cos\varphi)\ \big|\
+                           0\le\rho\leqslant 3,\  &amp;0\le\theta\le2\pi,
+                          </mrow><mrow>
+                            &amp;\hskip0.25in    0\leqslant \varphi\leqslant \frac{\pi}{6}\ \big\}
+      </mrow>
+      </md>
+      and,
+      <md>
+      <mrow>
+      I &amp;=\iiint_T \big(x^2+y^2\big)\ \dee{V}
+         =\int_0^{3}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/6}\dee{\varphi}\ \rho^2\sin\varphi\
+                 \overbrace{\rho^2\sin^2\varphi}^{x^2+y^2}
+      </mrow><mrow>
+         &amp;=\int_0^{3}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/6}\dee{\varphi}\ \rho^4\sin^3\varphi
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      In cylindrical coordinates
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 9</m> is <m>r^2+z^2\leqslant 9</m> and
+      </li>
+      <li>
+      <m>\sqrt{3 x^2+3 y^2}\leqslant z</m> is <m>\sqrt{3}\,r\leqslant z</m> and
+      </li>
+      <li>
+      the integand <m>x^2+y^2=r^2</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      Observe that <m>r^2+z^2= 9</m> and <m>\sqrt{3}\,r= z</m> intersect when <m>r^2+3r^2=9</m> so that <m>r=\frac{3}{2}</m> and <m>z=\frac{3\sqrt{3}}{2}</m>.
+      Here is a sketch of the <m>y=0</m> cross-section of <m>T</m>.
+      </p>
+
+      <sidebyside width="75%">
+      <image source="images/CLP-figs/pfigs/OE10A_8"/>
+      </sidebyside>
+
+      <p>
+      So
+      <me>
+      T =\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\leqslant r\leqslant \tfrac{3}{2},\
+                                                   0\le\theta\le2\pi,\
+                                                \sqrt{3}\,r\leqslant z\leqslant \sqrt{9-r^2}}
+      </me>
+      and
+      <md>
+      <mrow>
+      I &amp;=\iiint_V (x^2+y^2)\ \dee{V}
+         =\int_0^{3/2}\dee{r}\int_0^{2\pi}\dee{\theta}
+                 \int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}\dee{z}\
+                                     r\overbrace{(r^2)}^{x^2+y^2}
+      </mrow><mrow>
+         &amp;=\int_0^{3/2}\dee{r}\int_0^{2\pi}\dee{\theta}
+                                \int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}\dee{z}\ \ r^3
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) We'll use the spherical coordinate form.
+      <md>
+      <mrow>
+      I  &amp;=\int_0^{3}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/6}\dee{\varphi}\ \rho^4\sin^3\varphi
+      </mrow><mrow>
+         &amp;=\int_0^{3}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/6}\dee{\varphi}\ \rho^4\sin\varphi
+                    \big[1-\cos^2\varphi\big]
+      </mrow><mrow>
+         &amp;=2\pi \int_0^3\dee{\rho}\ \rho^4
+                      \left[-\cos\varphi +\frac{\cos^3\varphi}{3}\right]_0^{\pi/6}
+      </mrow><mrow>
+         &amp;=2\pi \left[-\frac{\sqrt{3}}{2} + \frac{\sqrt{3}}{8}+1-\frac{1}{3}\right]
+                            \int_0^3\dee{\rho}\ \rho^4
+      </mrow><mrow>
+          &amp;=2\pi \frac{3^5}{5}\left[\frac{2}{3} - \frac{3\sqrt{3}}{8}\right]
+           =\overbrace{81}^{3^4}\pi \left[\frac{4}{5} - \frac{9\sqrt{3}}{20}\right]
+           \approx 5.24
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2011A</fromexam></title> -->
+      <statement><p>
+      Soit <m>E</m> le <q>cornet de crème à glace</q> <m>x^2 + y^2 + z^2\leqslant1</m>,
+      <m>x^2 + y^2\leqslant z^2</m> , <m>z \geqslant 0</m>. Considérez
+      <me>
+      J =\iiint_E \sqrt{x^2+y^2+z^2}\ \dee{V}
+      </me>
+      <ol marker = "(a)">
+      <li>
+      Écrire <m>J</m> comme une intégrale itérée, dont les bornes sont en coordonnées cylindriques.
+      </li>
+      <li>
+      Écrire <m>J</m> comme une intégrale itérée, dont les bornes sont en coordonnées sphériques.
+      </li>
+      <li>
+      Évaluez <m>J</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\int_0^{1/\sqrt{2}}\int_0^{2\pi}
+                 \int_r^{\sqrt{1-r^2}}\ r\sqrt{r^2+z^2}\dee{z}\dee{\theta}\dee{r}</m>
+      </p>
+
+      <p>(b) <m>\int_0^{1}\int_0^{2\pi}
+                 \int_0^{\pi/4}\ \rho^3\sin\varphi\dee{\varphi}\dee{\theta}\dee{\rho}</m>
+      </p>
+
+      <p>(c) <m>\frac{\pi}{2}\ \left[1-\frac{1}{\sqrt{2}}\right]</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      In cylindrical coordinates
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 1</m> is <m>r^2+z^2\leqslant 1</m> and
+      </li>
+      <li>
+      <m>x^2+y^2\leqslant z^2</m> is <m>r^2\leqslant z^2</m> and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>
+      </li>
+      </ul>
+      Observe that <m>r^2+z^2= 1</m> and <m>r^2= z^2</m> intersect when <m>r^2=z^2=\frac{1}{2}</m>.
+      Here is a sketch of the <m>y=0</m> cross-section of <m>E</m>.
+      </p>
+
+
+      <sidebyside width="85%">
+      <image source="images/CLP-figs/pfigs/OE11A_8"/>
+      </sidebyside>
+
+      <p>
+      So
+      <me>
+      E =\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\leqslant r\le\frac{1}{\sqrt{2}},\
+                                                   0\le\theta\le2\pi,\
+                                                    r\leqslant z\leqslant \sqrt{1-r^2}}
+      </me>
+      and
+      <md>
+      <mrow>
+      J &amp;=\iiint_E \sqrt{x^2+y^2+z^2}\ \dee{V}
+         =\int_0^{1/\sqrt{2}}\dee{r}\int_0^{2\pi}\dee{\theta}
+                 \int_r^{\sqrt{1-r^2}}\dee{z}\ r\sqrt{r^2+z^2}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      In spherical coordinates
+      <ul>
+      <li>
+      <m>x^2+y^2+z^2\leqslant 1</m> is <m>\rho\leqslant 1</m> and
+      </li>
+      <li>
+      <m>x^2+y^2\leqslant z^2</m> is <m>\rho^2\sin^2\varphi\leqslant \rho^2\cos^2\varphi</m>,
+      or <m>\tan\varphi\leqslant 1</m> or <m>\varphi\le\frac{\pi}{4}</m>, and
+      </li>
+      <li>
+      <m>\dee{V}</m> is <m>\rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>
+      </li>
+      </ul>
+      So
+      <md>
+      <mrow>
+      E =\big\{\ (\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                          \rho\cos\varphi)\ \big|\
+                          0\le\rho\leqslant 1,\  &amp;0\le\theta\le2\pi,
+               </mrow><mrow>
+                                &amp;\hskip0.25in  0\leqslant \varphi\leqslant \frac{\pi}{4}\ \big\}
+      </mrow>
+      </md>
+      and, since the integrand <m>\sqrt{x^2+y^2+z^2}=\rho</m>,
+      <md>
+      <mrow>
+      J &amp;=\iiint_E \sqrt{x^2+y^2+z^2}\ \dee{V}
+         =\int_0^{1}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^2\sin\varphi\ \rho
+      </mrow><mrow>
+         &amp;=\int_0^{1}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^3\sin\varphi
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) We'll use the spherical coordinate form to evaluate
+      <md>
+      <mrow>
+      J &amp;=\int_0^{1}\dee{\rho}\int_0^{2\pi}\dee{\theta}
+                 \int_0^{\pi/4}\dee{\varphi}\ \rho^3\sin\varphi
+      </mrow><mrow>
+         &amp;=2\pi \int_0^{1}\dee{\rho}\ \rho^3
+                           \Big[-\cos\varphi\Big]_0^{\pi/4}
+          =2\pi\ \frac{1}{4}\ \left[1-\frac{1}{\sqrt{2}}\right]
+      </mrow><mrow>
+          &amp;=\frac{\pi}{2}\ \left[1-\frac{1}{\sqrt{2}}\right]
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
+          <statement><p>
+          <ol marker = "(a)">
+          <li><p>
+          Trouvez le volume du solide à l'intérieur de la surface définie par l'équation
+          <m>\rho = 8 \sin(\varphi)</m> en coordonnées sphériques.
+          </p>
+
+          <p>Vous pouvez utiliser le fait que
+          <me>
+          \int \sin^4(\varphi)\dee{\varphi} =\frac{1}{32}\big(12\varphi -8\sin(2\varphi)
+          +\sin(4\varphi)\big) +C
+          </me></p>
+          </li>
+          <li>
+          Esquissez le solide ou décrivez ce à quoi il ressemble.
+          </li>
+          </ol>
+          </p></statement>
+
+          <hint><p>
+          (b) C'est un solide de révolution.
+          </p></hint>
+
+          <answer><p>
+          (a) <m>\frac{2(8^3)\,\pi}{3}\ \frac{12\,\pi}{32}=128\pi^2</m>
+          </p>
+
+          <p>(b) La surface est un tore (un beigne) mais avec le trou au centre
+          réduit à un point.
+          La figure ci-dessous est un croquis de la partie de la surface située dans le
+          premier octant.
+          </p>
+
+          <sidebyside width="40%">
+          <image source="images/CLP-figs/pfigs/torusB"/>
+          </sidebyside>
+
+          </answer>
+
+          <solution><p>
+          (a)
+          Recall that, in spherical coordinates, <m>\varphi</m> runs from <m>0</m> (that's the
+          positive <m>z</m>-axis) to <m>\pi</m> (that's the negative <m>z</m>-axis),
+          <m>\theta</m> runs from <m>0</m> to <m>2\pi</m> (<m>\theta</m> is the regular polar
+          or cylindrical coordinate)
+          and
+           <m>\dee{V} = \rho^2\ \sin\varphi\ \dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>.
+          So
+          <md>
+          <mrow>
+          \text{Volume} &amp; = \int_0^\pi \dee{\varphi}\int_0^{2\pi}\dee{\theta}
+                                \int_0^{8\sin\varphi}\dee{\rho}\ \rho^2\ \sin\varphi
+          </mrow><mrow>
+          &amp; = \int_0^\pi \dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+                                \frac{(8\sin\varphi)^3}{3} \sin\varphi
+          </mrow><mrow>
+          &amp; = \frac{2(8^3)\,\pi}{3} \int_0^\pi \dee{\varphi}\
+                                 \sin^4\varphi
+          </mrow><mrow>
+          &amp;= \frac{2(8^3)\,\pi}{3} \left[\frac{1}{32}\big(12\varphi -8\sin(2\varphi)
+          +\sin(4\varphi)\big)\right]_0^\pi
+          </mrow><mrow>
+          &amp;=\frac{2(8^3)\,\pi}{3}\ \frac{12\,\pi}{32}
+          =128\pi^2
+          </mrow>
+          </md>
+          </p>
+
+          <p>(b) Fix any <m>\varphi</m> between <m>0</m> and <m>\pi</m>. If <m>\rho=8\sin\varphi</m>,
+          then as <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>,
+          <md>
+          <mrow>
+          (x,y,z) &amp;= \big(\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                         \rho\cos\varphi\big)
+          </mrow><mrow>
+                  &amp;= \big(8\sin^2\varphi\cos\theta\,,\,8\sin^2\varphi\sin\theta\,,\,
+                         8\sin\varphi\cos\varphi\big)
+          </mrow><mrow>
+                  &amp;= \big(R\cos\theta\,,\,R\sin\theta\,,\,Z\big)\qquad
+                  \text{with }R=8\sin^2\varphi,\ Z= 8\sin\varphi\cos\varphi
+          </mrow>
+          </md>
+          sweeps out a circle of radius <m>R=8\sin^2\varphi</m> contained in the plane
+          <m>z=Z=8\sin\varphi\cos\varphi</m> and centred on
+          <m>\big(0,0,Z=8\sin\varphi\cos\varphi\big)</m>. So the surface is
+          a bunch of circles stacked one on top of the other. It is a surface of
+          revolution. We can sketch it by
+          <ul>
+          <li>
+          first sketching the <m>\theta=0</m> section of the surface (that's the part of
+          the surface in the right half of the <m>xz</m>-plane)
+          </li>
+          <li>
+          and then rotate the result about the <m>z</m>-axis.
+          </li>
+          </ul>
+          The <m>\theta=0</m> part of the surface is
+          <md>
+          <mrow>
+          &amp;\Set{(x,y,z)}{x=8\sin^2\varphi,\ y=0,\ z=8\sin\varphi\cos\varphi,\
+                               0\le\varphi\leqslant \pi}
+          </mrow><mrow>
+          &amp;=\Set{(x,y,z)}{x=4-4\cos(2\varphi),\ y=0,\ z=4\sin(2\varphi),\
+                               0\le\varphi\leqslant \pi}
+          </mrow>
+          </md>
+          It's a circle of radius <m>4</m>, contained in the <m>xz</m>-plane (i.e. <m>y=0</m>)
+          and centred on <m>(4,0,0)</m>! The figure on the left below is a sketch of the
+          top half of the circle. When we rotate the circle about the <m>z</m>-axis
+          we get a torus (a donut) but with the hole in the centre shrunk to a point.
+          The figure on the right below is a sketch of the part of the torus in the
+          first octant.
+          </p>
+
+          <sidebyside widths="29% 45%" valign="middle">
+          <image source="images/CLP-figs/pfigs/torusA"/>
+          <image source="images/CLP-figs/pfigs/torusB"/>
+          </sidebyside>
+          </solution>
+        </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2014A</fromexam></title> -->
+          <statement><p>
+          Soit <m>E</m> le solide
+          <me>
+          0\leqslant z\leqslant \sqrt{x^2 + y^2},\qquad
+          x^2 + y^2\leqslant1,
+          </me>
+          et considérez l'intégrale
+          <me>
+          I = \iiint_E z \sqrt{x^2 + y^2 + z^2}\  \dee{V}.
+          </me>
+          <ol marker = "(a)">
+          <li>
+          Écrivez l'intégrale <m>I</m> en coordonnées cylindriques.
+          </li>
+          <li>
+          Écrivez l'intégrale <m>I</m> en coordonnées sphériques.
+          </li>
+          <li>
+          Évaluez l'intégrale <m>I</m> en utilisant une des deux formes.
+          </li>
+          </ol>
+          </p></statement>
+
+          <answer><p>
+          (a) <m>I = \int_0^1 \int_0^{2\pi} \int_0^r\
+                     r\ z\ \sqrt{r^2+z^2}\dee{z}\dee{\theta}\dee{r}</m></p><p>
+          (b) <m>I = \int_{\pi/4}^{\pi/2}
+                          \int_0^{2\pi}
+                          \int_0^{1/\sin\varphi}\
+                          \rho^4\sin\varphi \ \cos\varphi\dee{\rho}\dee{\theta}\dee{\varphi}</m>
+          </p>
+
+          <p>(c) <m>\frac{2(2\sqrt{2}-1)\pi}{15}</m>
+          </p></answer>
+
+          <solution><p>
+          (a) In cylindrical coordinates <m>0\leqslant z\leqslant \sqrt{x^2+y^2}</m> becomes
+          <m>0\leqslant z\leqslant r</m>, and <m>x^2+y^2\leqslant 1</m> becomes <m>0\leqslant r\leqslant 1</m>. So
+          <me>
+          E = \Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\leqslant r\leqslant 1,\ 0\le\theta\leqslant 2\pi,
+                        \ 0\leqslant z\leqslant r}
+          </me>
+          and, since <m>\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>,
+          <md>
+          <mrow>
+          I &amp;= \iiint_E z \sqrt{x^2 + y^2 + z^2}\  \dee{V}
+            = \int_0^1\dee{r} \int_0^{2\pi}\dee{\theta} \int_0^r\dee{z}\
+                     r\ z\ \sqrt{\underbrace{r^2+z^2}_{x^2+y^2+z^2}}
+          </mrow>
+          </md>
+          </p>
+
+          <p>(b)
+          Here is a sketch of a constant <m>\theta</m> section of <m>E</m>.
+          </p>
+
+          <sidebyside width="40%">
+          <image source="images/CLP-figs/pfigs/OE14A_8"/>
+          </sidebyside>
+
+          <p>
+          Recall that the spherical coordinate <m>\varphi</m> is the angle
+          between the <m>z</m>-axis and the radius vector.
+          So, in spherical coordinates <m>z=r</m> (which makes an angle <m>\frac{\pi}{4}</m>
+          with the <m>z</m> axis) becomes <m>\varphi=\frac{\pi}{4}</m>, and
+          the plane <m>z=0</m>, i.e. the <m>xy</m>-plane, becomes <m>\varphi=\frac{\pi}{2}</m>,
+          and <m>r=1</m> becomes <m>\rho\sin\varphi = 1</m>.  So
+          <md>
+          <mrow>
+          E = \Big\{(\rho\sin\varphi\cos\theta\,,\,\rho\sin\varphi\sin\theta\,,\,
+                    \rho\cos\varphi)\ \Big|\
+                              \frac{\pi}{4}\leqslant \varphi\leqslant \frac{\pi}{2},
+                              \ &amp;0\le\theta\leqslant 2\pi,
+                         </mrow><mrow>
+                          &amp;\hskip0.1in 0\leqslant \rho\leqslant \frac{1}{\sin\varphi}\ \Big\}
+          </mrow>
+          </md>
+          and, since
+            <m>\dee{V} = \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>,
+          <md>
+          <mrow>
+          I &amp;= \iiint_E z \sqrt{x^2 + y^2 + z^2}\  \dee{V}
+          </mrow><mrow>
+            &amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}
+                          \int_0^{2\pi}\dee{\theta}
+                          \int_0^{1/\sin\varphi}\dee{\rho}\
+                          \rho^2\sin\varphi \
+                     \overbrace{\rho\cos\varphi}^{z}\ \rho
+          </mrow><mrow>
+            &amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}
+                          \int_0^{2\pi}\dee{\theta}
+                          \int_0^{1/\sin\varphi}\dee{\rho}\
+                          \rho^4\sin\varphi \ \cos\varphi
+          </mrow>
+          </md>
+          </p>
+
+          <p>(c) We'll integrate using the spherical coordinate version.
+          <md>
+          <mrow>
+          I &amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}
+                          \int_0^{2\pi}\dee{\theta}
+                          \int_0^{1/\sin\varphi}\dee{\rho}\
+                          \rho^4\sin\varphi \ \cos\varphi
+          </mrow><mrow>
+            &amp;= \int_{\pi/4}^{\pi/2}\dee{\varphi}
+                          \int_0^{2\pi}\dee{\theta}\
+                          \frac{1}{5\sin^5\varphi}\sin\varphi \ \cos\varphi
+          </mrow><mrow>
+            &amp;= \frac{2\pi}{5}\int_{\pi/4}^{\pi/2}\dee{\varphi}\
+                          \frac{\cos\varphi}{\sin^4\varphi}
+          </mrow><mrow>
+            &amp;= \frac{2\pi}{5}\int_{1/\sqrt{2}}^{1}
+                          \frac{\dee{u}}{u^4}\qquad\text{with }
+                               u=\sin\varphi,\ \dee{u}=\cos\varphi\,\dee{\varphi}
+          </mrow><mrow>
+            &amp;= \frac{2\pi}{5} \left[\frac{u^{-3}}{-3}\right]_{1/\sqrt{2}}^{1}
+          </mrow><mrow>
+            &amp;= \frac{2(2\sqrt{2}-1)\pi}{15}
+          </mrow>
+          </md>
+          </p></solution>
+        </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2014D</fromexam></title> -->
+          <statement><p>
+          Considérez les intégrales itérées
+          <me>
+          I =\int_{-a}^0\int_{-\sqrt{a^2-x^2}}^0 \int_0^{\sqrt{a^2-x^2-y^2}}
+              \big(x^2+y^2+z^2\big)^{2014}\ \dee{z}\,\dee{y}\,\dee{x}
+          </me>
+          où <m>a</m> est une constante positive.
+          <ol marker = "(a)">
+          <li>
+          Écrivez <m>I</m> comme une intégrale itérée en coordonnées cylindriques.
+          </li>
+          <li>
+          Écrivez <m>I</m> comme une intégrale en coordonnées sphériques.
+          </li>
+          <li>
+          Évaluez <m>I</m> en utilisant la méthode que vous préférez.
+          </li>
+          </ol>
+          </p></statement>
+
+          <answer><p>
+          (a) <m>\int_0^a \int_{\pi}^{3\pi/2}
+                \int_0^{\sqrt{a^2-z^2}}\ r\big(r^2+z^2\big)^{2014}\dee{r}\dee{\theta}\dee{z}</m></p><p>
+          (b) <m>\int_0^{\pi/2} \int_{\pi}^{3\pi/2}
+               \int_0^a\ \rho^{4030}\sin\varphi\dee{rho}\dee{\theta}\dee{\varphi}</m>
+          </p>
+
+          <p>(c) <m>\frac{a^{4031}\pi}{8062}</m>
+          </p></answer>
+
+          <solution><p>
+          The main step is to figure out what the domain of integration
+          looks like.
+          <ul>
+          <li>
+          The outside integral says that <m>x</m> runs from <m>-a</m> to <m>0</m>.
+          </li>
+          <li><p>
+          The middle integrals says that, for each <m>x</m> in that range, <m>y</m> runs
+          from <m>-\sqrt{a^2-x^2}</m> to <m>0</m>. We can rewrite <m>y=-\sqrt{a^2-x^2}</m>
+          in the more familiar form <m>x^2+y^2=a^2</m>, <m>y\leqslant 0</m>. So <m>(x,y)</m>
+          runs over the third quadrant part of the disk of radius <m>a</m>, centred
+          on the origin.
+          </p>
+
+          <sidebyside width="50%">
+            <image source="images/CLP-figs/pfigs/OE14D_8AA"/>
+          </sidebyside>
+
+          </li>
+          <li>
+          Finally, the inside integral says that, for each <m>(x,y)</m> in the quarter disk,
+          <m>z</m> runs from <m>0</m> to <m>\sqrt{a^2-x^2-y^2} </m>. We can also rewrite
+          <m>z=\sqrt{a^2-x^2-y^2}</m> in the more familiar form <m>x^2+y^2+z^2=a^2</m>, <m>z\geqslant 0</m>.
+          </li>
+          </ul>
+          So the domain of integration is the part of the interior of the sphere
+          of radius <m>a</m>, centred on the origin, that lies in the octant
+          <m>x\leqslant 0</m>, <m>y\leqslant 0</m>, <m>z\geqslant 0</m>.
+          <md>
+          <mrow>
+          V&amp;=\Big\{\ (x,y,z)\ \Big|\ -a\leqslant x\leqslant 0,\ -\sqrt{a^2-x^2}\leqslant y\leqslant 0,
+                          </mrow><mrow>
+                          &amp;\hskip0.1in 0\leqslant z\le\sqrt{a^2-x^2-y^2} \Big\}
+          </mrow><mrow>
+          &amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant a^2,\ x\leqslant 0,\ y\leqslant 0,\ z\geqslant 0 }
+          </mrow>
+          </md>
+          </p>
+
+          <sidebyside width="60%">
+            <image source="images/CLP-figs/pfigs/OE14D_8BB"/>
+          </sidebyside>
+
+          <p>
+          (a) Note that, in <m>V</m>, <m>(x,y)</m> is restricted to the third
+          quadrant, which in cylindrical coordinates
+          is <m>\pi\le\theta\le\frac{3\pi}{2}</m>. So, in cylindrical coordinates,
+          <md>
+          <mrow>
+          V&amp;=\Big\{(r\cos\theta,r\sin\theta,z)\ \Big|\
+                    r^2+z^2\leqslant a^2,\ \pi\le\theta\le\frac{3\pi}{2},\ z\geqslant 0 \Big\}
+          </mrow><mrow>
+           &amp;=\Big\{(r\cos\theta,r\sin\theta,z)\ \Big|\ 0\leqslant z\leqslant a,\
+                    \pi\le\theta\le\frac{3\pi}{2},\ 0\leqslant r\le\sqrt{a^2-z^2} \Big\}
+          </mrow>
+          </md>
+          and
+          <md>
+          <mrow>
+          I&amp;= \iiint_V \big(x^2+y^2+z^2\big)^{2014}\ \dee{V}
+            = \iiint_V \big(r^2+z^2\big)^{2014}\ r\,\dee{r}\,\dee{\theta}\,\dee{z}
+          </mrow><mrow>
+          &amp;=\int_0^a \dee{z}\int_{\pi}^{3\pi/2}\dee{\theta}
+               \int_0^{\sqrt{a^2-z^2}}\dee{r}\ r\big(r^2+z^2\big)^{2014}
+          </mrow>
+          </md>
+          </p>
+
+          <p>(b) The spherical coordinate <m>\varphi</m> runs from <m>0</m> (when the radius
+          vector is along the positive <m>z</m>-axis)  to <m>\frac{\pi}{2}</m>
+          (when the radius vector lies in the <m>xy</m>-plane) so that
+          <md>
+          <mrow>
+          I&amp;= \iiint_V \big(x^2+y^2+z^2\big)^{2014}\ \dee{V}
+            = \iiint_V \rho^{2\times 2014}\ \rho^2\sin\varphi\
+                           \dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+          </mrow><mrow>
+          &amp;=\int_0^{\pi/2} \dee{\varphi}\int_{\pi}^{3\pi/2}\dee{\theta}
+               \int_0^a\dee{\rho}\ \rho^{4030}\sin\varphi
+          </mrow>
+          </md>
+          </p>
+
+          <p>(c) Using the spherical coordinate version
+          <md>
+          <mrow>
+          I&amp;=\int_0^{\pi/2} \dee{\varphi}\int_{\pi}^{3\pi/2}\dee{\theta}
+               \int_0^a\dee{\rho}\ \rho^{4030}\sin\varphi
+          </mrow><mrow>
+           &amp;=\frac{a^{4031}}{4031}
+                \int_0^{\pi/2} \dee{\varphi}\int_{\pi}^{3\pi/2}\dee{\theta}
+                    \ \sin\varphi
+          </mrow><mrow>
+           &amp;=\frac{a^{4031}\pi}{8062}
+                \int_0^{\pi/2} \dee{\varphi}\ \sin\varphi
+          </mrow><mrow>
+           &amp;=\frac{a^{4031}\pi}{8062}
+          </mrow>
+          </md>
+          </p></solution>
+        </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
+          <statement><p>
+          Le solide <m>E</m> est borné en-dessous par le paraboloïde <m>z = x^2 + y^2</m>
+          et au-dessus par le cône <m>z=\sqrt{x^2+y^2}</m>. Soit
+          <me>
+          I = \iiint_E z\big(x^2+y^2+z^2\big)\ \dee{V}
+          </me>
+          <ol marker = "(a)">
+          <li>
+          Écrire <m>I</m> en termes des coordonnées cylindriques. Ne pas évaluer.
+          </li>
+          <li>
+          Écrire <m>I</m> en termes des coordonnées sphériques. Ne pas évaluer.
+          </li>
+          <li>
+          Calculez <m>I</m>.
+          </li>
+          </ol>
+          </p></statement>
+
+          <answer><p>
+          (a) <m>\int_0^1 \ r \int_0^{2\pi} \int_{r^2}^r\
+                     z(r^2+z^2)\dee{z}\dee{\theta}\dee{r}</m></p><p>
+          (b) <m>\int_{\pi/4}^{\pi/2} \int_0^{2\pi}
+                   \int_0^{\cos\varphi/\sin^2\varphi} \ \rho^5\sin\varphi
+                       \cos\varphi\dee{\rho}\dee{\theta}\dee{\varphi}</m>
+          </p>
+
+          <p>(c) <m>\frac{3\pi}{40}</m>
+          </p></answer>
+
+          <solution><p>
+          (a)
+          In cylindrical coordinates, the paraboloid is <m>z=r^2</m> and
+          the cone is <m>z=r</m>. The two meet when <m>r^2=r</m>. That is, when <m>r=0</m>
+          and when <m>r=1</m>. So, in cylindrical coordinates
+          <md>
+          <mrow>
+          I = \int_0^1 \dee{r}\ r \int_0^{2\pi}\dee{\theta} \int_{r^2}^r\dee{z}\
+                     z(r^2+z^2)
+          </mrow>
+          </md>
+          </p>
+
+          <p>(b) In spherical coordinates, the paraboloid is
+          <me>
+          \rho\cos\varphi=\rho^2\sin^2\varphi\qquad\text{or}\qquad
+               \rho=\frac{\cos\varphi}{\sin^2\varphi}
+          </me>
+          and the cone is
+          <me>
+          \rho\cos\varphi=\rho\sin\varphi\quad\text{or}\quad
+          \tan\varphi=1\quad\text{or}\quad
+          \varphi=\frac{\pi}{4}
+          </me>
+          The figure below shows  a constant <m>\theta</m> cross-section of
+          <m>E</m>. Looking at that figure, we see that <m>\varphi</m> runs from
+          <m>\frac{\pi}{4}</m> (i.e. the cone) to <m>\frac{\pi}{2}</m>
+          (i.e. the <m>xy</m>-plane).
+          </p>
+
+          <sidebyside width="40%">
+            <image source="images/CLP-figs/pfigs/OE15D_8"/>
+          </sidebyside>
+
+          <p>
+          So, is spherical coordinates,
+          <md>
+          <mrow>
+          I &amp;= \int_{\pi/4}^{\pi/2} \dee{\varphi} \int_0^{2\pi}\dee{\theta}
+                   \int_0^{\cos\varphi/\sin^2\varphi} \dee{\rho}\ \rho^2\sin\varphi \
+                       \overbrace{\rho\cos\varphi}^{z}
+                       \overbrace{\rho^2}^{x^2+y^2+z^2}
+          </mrow><mrow>
+          &amp;= \int_{\pi/4}^{\pi/2} \dee{\varphi} \int_0^{2\pi}\dee{\theta}
+                   \int_0^{\cos\varphi/\sin^2\varphi} \dee{\rho}\ \rho^5\sin\varphi
+                       \cos\varphi
+          </mrow>
+          </md>
+          </p>
+
+          <p>(c) The cylindrical coordinates integral looks easier.
+          <md>
+          <mrow>
+          I &amp;= \int_0^1 \dee{r}\ r \int_0^{2\pi}\dee{\theta} \int_{r^2}^r\dee{z}\
+                     z(r^2+z^2)
+          </mrow><mrow>
+            &amp;= \int_0^1 \dee{r}\ r \int_0^{2\pi}\dee{\theta}\
+                         \left[r^2\frac{z^2}{2}+\frac{z^4}{4}\right]_{r^2}^r
+          </mrow><mrow>
+            &amp;= 2\pi \int_0^1 \dee{r}\ r
+                         \left[r^2\frac{r^2}{2}+\frac{r^4}{4}
+                         -r^2\frac{r^4}{2}-\frac{r^8}{4}\right]
+          </mrow><mrow>
+            &amp;=2\pi \left[\frac{1}{12}+\frac{1}{24}
+                         -\frac{1}{16}-\frac{1}{40}\right]
+             =\frac{\pi}{2} \left[\frac{1}{3}+\frac{1}{6}
+                         -\frac{1}{4}-\frac{1}{10}\right]
+          </mrow><mrow>
+             &amp;=\frac{3\pi}{40}
+          </mrow>
+          </md>
+          </p></solution>
+        </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2016D</fromexam></title> -->
+          <statement><p>
+          Soit <m>S</m> la région du premier octant (i.e. <m>x,y,z\geqslant 0</m>)
+          qui se trouve entre le cône <m>z=\sqrt{x^2+y^2}</m> et en-dessous de la sphère
+          <m>(z-1)^2 +x^2+y^2=1</m>. Soit <m>V</m> son volume.
+          <ol marker = "(a)">
+          <li>
+          Exprimez <m>V</m> comme une intégrale triple en coordonnées cylindriques.
+          </li>
+          <li>
+          Exprimez <m>V</m> comme une intégrale triple en coordonnées sphériques.
+          </li>
+          <li>
+          Calculez <m>V</m> en utilisant une des deux intégrales ci-dessus.
+          </li>
+          </ol>
+          </p></statement>
+
+          <answer><p>
+          (a)
+          <m>V  = \int_0^1 \int_0^{\pi/2}\int_r^{1+\sqrt{1-r^2}}
+               \ r\dee{z}\dee{\theta}\dee{r}</m></p><p>
+          (b)
+          <m>V = \int_0^{\pi/4} \int_0^{\pi/2}
+                         \int_0^{2\cos\varphi}\ \rho^2\sin\varphi\dee{\rho}\dee{\theta}\dee{\varphi}</m>
+          </p>
+
+          <p>(c) <m>\frac{\pi}{4}</m>
+          </p></answer>
+
+          <solution><p>
+          Note that both the sphere <m>x^2+y^2+(z-1)^2=1</m>
+          and the cone <m>z=\sqrt{x^2+y^2}</m>  are invariant under rotations
+          around the <m>z</m>-axis. The sphere <m>x^2 + y^2 + (z-1)^2 = 1</m>
+          and the cone <m>z = \sqrt{x^2 + y^2}</m> intersect when <m>z=\sqrt{x^2+y^2}</m>, so that
+          <m>x^2+y^2=z^2</m>, and
+          <md>
+          <mrow>
+          x^2 + y^2 + (z-1)^2 = z^2+(z-1)^2=1
+          &amp;\iff 2z^2-2z=0
+          </mrow><mrow>
+          &amp;\iff 2z(z-1)=0
+          </mrow><mrow>
+          &amp;\iff z=0,1
+          </mrow>
+          </md>
+          So the surfaces intersect on the circle <m>z=1</m>,
+          <m>x^2+y^2=1</m> and
+          <me>
+          S = \Set{(x,y,z)}{x,y\geqslant 0,\  x^2+y^2\leqslant 1,\
+                   \sqrt{x^2+y^2}\leqslant z\leqslant 1+\sqrt{1-x^2-y^2}}
+          </me>
+          Here is a sketch of the <m>y=0</m> cross section of S.
+          </p>
+
+          <sidebyside width="87%">
+          <image source="images/CLP-figs/pfigs/OE16D_7"/>
+          </sidebyside>
+
+
+          <p>
+          (a) In cylindrical coordinates
+          <ul>
+          <li>
+          the condition <m>x,y\geqslant 0</m> is <m>0\le\theta\le\frac{\pi}{2}</m>,
+          </li>
+          <li>
+          the condition <m>x^2+y^2\leqslant 1</m> is <m>r\leqslant 1</m>, and
+          </li>
+          <li>
+          the conditions <m>\sqrt{x^2+y^2}\leqslant z\leqslant 1+\sqrt{1-x^2-y^2}</m>
+          are <m>r\leqslant z\leqslant 1+\sqrt{1-r^2}</m>, and
+          </li>
+          <li>
+          <m>\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}</m>.
+          </li>
+          </ul>
+          So
+          <md>
+          <mrow>
+          V = \iiint_S\dee{V}
+            = \int_0^1\dee{r} \int_0^{\pi/2}\dee{\theta}\int_r^{1+\sqrt{1-r^2}}\dee{z}
+               \ r
+          </mrow>
+          </md>
+          </p>
+
+          <p>(b) In spherical coordinates,
+          <ul>
+          <li>
+          the cone <m>z=\sqrt{x^2+y^2}</m> becomes
+          <md>
+          <mrow>
+          &amp;\rho\,\cos\varphi =\sqrt{\rho^2\sin^2\varphi\,\cos^2\theta
+                                   +\rho^2\sin^2\varphi\,\sin^2\theta}
+                            =\rho\sin\varphi
+          </mrow><mrow>
+          &amp;\hskip0.5in\iff \tan\varphi=1
+          </mrow><mrow>
+          &amp;\hskip0.5in\iff \varphi=\frac{\pi}{4}
+          </mrow>
+          </md>
+          </li>
+          <li>
+          so that, on <m>S</m>, the spherical coordinate <m>\varphi</m> runs from <m>\varphi=0</m>
+          (the positive <m>z</m> -axis) to <m>\varphi=\frac{\pi}{4}</m>
+          (the cone <m>z=\sqrt{x^2+y^2}</m>), which keeps us above the cone,
+          </li>
+          <li>
+          the condition <m>x,y\geqslant 0</m> is <m>0\le\theta\le\frac{\pi}{2}</m>,
+          </li>
+          <li>
+          the condition <m>x^2+y^2+(z-1)^2\leqslant 1</m>, (which keeps us inside the sphere),
+          becomes
+          <md>
+          <mrow>
+          &amp;\rho^2\sin^2\varphi\,\cos^2\theta + \rho^2\sin^2\varphi\,\sin^2\theta
+                +\big(\rho\cos\varphi-1\big)^2\leqslant 1
+          </mrow><mrow>
+          &amp;\iff \rho^2\,\sin^2\varphi +\rho^2\cos^2\varphi -2\rho\cos\varphi +1 \leqslant1
+          </mrow><mrow>
+          &amp;\iff \rho^2-2\rho\cos\varphi\leqslant 0
+          </mrow><mrow>
+          &amp;\iff \rho\leqslant 2 \cos\varphi
+          </mrow>
+          </md>
+          </li>
+          <li>
+          and <m>\dee{V} = \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}</m>.
+          </li>
+          </ul>
+          So
+          <md>
+          <mrow>
+          V = \iiint_S\dee{V}
+            = \int_0^{\pi/4}\dee{\varphi} \int_0^{\pi/2}\dee{\theta}
+                         \int_0^{2\cos\varphi}\dee{\rho}\ \rho^2\sin\varphi
+          </mrow>
+          </md>
+          </p>
+
+          <p>(c) We'll evaluate <m>V</m> using the spherical coordinate integral of part (b).
+          <md>
+          <mrow>
+          V &amp;= \int_0^{\pi/4}\dee{\varphi} \int_0^{\pi/2}\dee{\theta}
+                         \int_0^{2\cos\varphi}\dee{\rho}\ \rho^2\sin\varphi
+          </mrow><mrow>
+          &amp;=\frac{8}{3} \int_0^{\pi/4}\dee{\varphi} \int_0^{\pi/2}\dee{\theta}\
+                         \cos^3\varphi\ \sin\varphi
+          </mrow><mrow>
+          &amp;=\frac{8}{3}\ \frac{\pi}{2}\ \left[-\frac{\cos^4\varphi}{4}\right]_0^{\pi/4}
+          </mrow><mrow>
+          &amp;=\frac{\pi}{3} \left[1-\frac{1}{(\sqrt{2})^4}\right]
+          </mrow><mrow>
+          &amp;=\frac{\pi}{4}
+          </mrow>
+          </md>
+          </p></solution>
+        </exercise>
+
+
+        <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
+          <statement><p>
+          Un solide est borné en-dessous par le cône <m>z=\sqrt{3x^2+3y^2}</m>
+          et au-dessus par la sphère <m>x^2+y^2+z^2=9</m>. Sa densité est donnée par <m>\d(x,y,z)=x^2+y^2</m>.
+          <ol marker = "(a)">
+          <li>
+          Exprimez la masse <m>m</m> du solide comme une intégrale triple en coordonnées cylindriques.
+          </li>
+          <li>
+          Exprimez la masse <m>m</m> du solide comme une intégrale triple en coordonnées sphériques.
+          </li>
+          <li>
+          Évaluez <m>m</m>.
+          </li>
+          </ol>
+          </p></statement>
+
+          <answer><p>
+          (a) <m>\int_0^{2\pi}\int_0^{3/2}\ r\int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}\ r^2\dee{z}\dee{r}\dee{\theta}</m>
+          </p>
+
+          <p>(b) <m>\int_0^{2\pi}\int_0^{\pi/6}\int_0^3\ \big(\rho^2\sin\varphi\big)
+          \big(\rho^2\sin^2\varphi\big)\dee{\rho}\dee{\varphi}\dee{\theta}</m>
+          </p>
+
+          <p>(c) <m>2\pi \frac{3^5}{5} \big[\frac{2}{3}-\frac{3\sqrt{3}}{8}\big]</m>
+          </p></answer>
+
+          <solution><p>
+          (a)
+          In cylindrical coordinates, the density of is <m>\de=x^2+y^2=r^2</m>,
+          the bottom of the solid is at <m>z=\sqrt{3x^2+3y^2}=\sqrt{3}\,r</m> and the
+          top of the solid is at <m>z=\sqrt{9-x^2-y^2}=\sqrt{9-r^2}</m>.
+          The top and bottom meet when
+          <me>
+          \sqrt{3}\,r=\sqrt{9-r^2}\iff 3r^2=9-r^2\iff 4r^2=9\iff r=\frac{3}{2}
+          </me>
+          The mass is
+          <md>
+          <mrow>
+          m=\int_0^{2\pi}\dee{\theta}\int_0^{3/2}\dee{r}\ r\int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}dz\ \overbrace{r^2}^{\de}
+          </mrow>
+          </md>
+          </p>
+
+          <sidebyside width="27%">
+            <image source="images/CLP-figs/pfigs/OE04Q8"/>
+          </sidebyside>
+
+          <p>
+          (b) In spherical coordinates, the density of is
+          <m>\de=x^2+y^2=\rho^2\sin^2\varphi</m>,
+          the bottom of the solid is at
+          <me>
+          z=\sqrt{3}\,r\iff \rho\cos\varphi=\sqrt{3}\,\rho\sin\varphi\iff
+          \tan\varphi=\frac{1}{\sqrt{3}}\iff\varphi=\frac{\pi}{6}
+          </me>
+          and the top of the solid is at <m>x^2+y^2+z^2=\rho^2=9</m>.
+          The mass is
+          <me>
+          m=\int_0^{2\pi}\dee{\theta}\int_0^{\pi/6}\dee{\varphi}\int_0^3\dee{\rho}\ \big(\rho^2\sin\varphi\big)
+          \overbrace{\big(\rho^2\sin^2\varphi\big)}^{\de}
+          </me>
+          </p>
+
+          <p>(c) <em>Solution 1:</em>
+          Making the change of variables <m>s=\cos\varphi</m>,
+          <m>\dee{s}=-\sin\varphi\ \dee{\varphi}</m>, in the integral of part (b),
+          <md>
+          <mrow>
+          m&amp;=\int_0^{2\pi}\dee{\theta}\int_0^{\pi/6}\dee{\varphi}
+            \int_0^3\dee{\rho}\ \rho^4\sin\varphi \big(1-\cos^2\varphi\big)
+          </mrow><mrow>
+          &amp;=\frac{3^5}{5}\int_0^{2\pi}\dee{\theta}\int_0^{\pi/6}\dee{\varphi}\ \sin\varphi
+          \big(1-\cos^2\varphi\big)
+          </mrow><mrow>
+          &amp;=-\frac{3^5}{5}\int_0^{2\pi}\dee{\theta}\int_1^{\sqrt{3}/2}\dee{s}\  (1-s^2)
+          </mrow><mrow>
+          &amp;=-\frac{3^5}{5}\int_0^{2\pi}\dee{\theta}\ \left[s-\frac{s^3}{3}\right]_1^{\sqrt{3}/2}
+          </mrow><mrow>
+          &amp;=2\pi \frac{3^5}{5} \left[1-\frac{1}{3}-\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{8}\right]
+          </mrow><mrow>
+          &amp;=2\pi \frac{3^5}{5} \left[\frac{2}{3}-\frac{3\sqrt{3}}{8}\right]
+          </mrow>
+          </md>
+          </p>
+
+          <p>(c) <em>Solution 2:</em>
+          As an alternate solution, we can also evaluate the integral of part (a).
+          <md>
+          <mrow>
+          m&amp;=\int_0^{2\pi}\dee{\theta}\int_0^{3/2}\dee{r}\ r\int_{\sqrt{3}\,r}^{\sqrt{9-r^2}}dz\ r^2\cr
+          &amp;=\int_0^{2\pi}\dee{\theta}\int_0^{3/2}\dee{r}\ r^3\big(\sqrt{9-r^2}-\sqrt{3}\,r\big)\cr
+          &amp;=2\pi\int_0^{3/2}\dee{r}\ r^3\big(\sqrt{9-r^2}-\sqrt{3}\,r\big)
+          </mrow>
+          </md>
+          The second term
+          <me>
+          -2\pi\int_0^{3/2}\dee{r}\ \sqrt{3}\,r^4=-2\pi\sqrt{3}\,\frac{r^5}{5}\bigg|_0^{3/2}
+          =-2\pi\sqrt{3}\,\frac{3^5}{5\times  2^5}
+          </me>
+          For the first term, we substitute <m>s=9-r^2</m>, <m>\dee{s}=-2r\,\dee{r}</m>.
+          <md>
+          <mrow>
+          2\pi\int_0^{3/2}\dee{r}\ r^3\sqrt{9-r^2}
+          &amp;=2\pi\int_9^{27/4}\overbrace{\frac{\dee{s}}{-2}}^{r\,\dee{r}}
+                  \overbrace{(9-s)}^{r^2} \sqrt{s}
+          =-\pi \left[6s^{3/2}-\frac{2}{5}s^{5/2}\right]_9^{27/4}\cr
+          &amp;=-\pi \left[\frac{3^5\sqrt{3}}{4}-2\times 3^4
+                   -\frac{3^7}{2^4 5}\sqrt{3}+2\frac{3^5}{5}\right]
+          </mrow>
+          </md>
+          Adding the two terms together,
+          <md>
+          <mrow>
+          m&amp;=-2\pi\frac{3^5}{5} \frac{\sqrt{3}}{32}
+             -2\pi\frac{3^5}{5} \frac{5\sqrt{3}}{8}
+             +2\pi\frac{3^5}{5} \frac{5}{3}
+             +2\pi\frac{3^5}{5} \frac{9\sqrt{3}}{32}
+             -2\pi\frac{3^5}{5}
+          </mrow><mrow>
+          &amp;=2\pi\frac{3^5}{5}\left[\left(\frac{5}{3}-1\right)
+          -\sqrt{3}\left(\frac{1}{32}+\frac{5}{8}-\frac{9}{32}\right)\right]
+          </mrow><mrow>
+          &amp;=2\pi \frac{3^5}{5} \left[\frac{2}{3}-\frac{3\sqrt{3}}{8}\right]
+          </mrow>
+          </md>
+          </p>
+
+          </solution>
+        </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+    <!-- Coordonnées cylindriques partie 3 -->
+    <exercise> <!-- <title><fromexam>M200 2014D</fromexam></title> -->
+      <statement><p>
+      La densité de l'hydrogène gazeux dans une région de l'espace est donnée par la formule
+      <me>
+      \rho(x,y,z) =\frac{z+2x^2}{1+x^2+y^2}
+      </me>
+      <ol marker = "(a)">
+      <li>
+      À <m>(1,0,-1)</m>, dans quelle direction est-ce que la densité de l'hydrogène augmente le plus rapidement?
+      </li>
+      <li><p>
+      Vous êtes dans un vaisseau spatial à l'origine. Supposons que le vaisseau spatial vole
+      dans la direction de <m>\llt 0,0,1\rgt</m>. Il y a un disque de rayon <m>1</m>,
+      centré sur le vaisseau spatial et déployé perpendiculairement à la direction
+      de la trajectoire, pour capter l'hydrogène. Quelle quantité d'hydrogène a été collectée
+      au moment où le vaisseau spatial a parcouru une distance <m>2</m>?
+      </p>
+
+      <p>
+        Vous pouvez utiliser le fait que <m>\int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+      =\pi</m>.
+      </p>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) Le vecteur unitaire dans la direction du taux de croissance maximal est <m>\frac{1}{\sqrt{10}}(3,0,1)</m>.
+      </p>
+      <p>(b) <m>2\pi</m>
+      </p></answer>
+
+      <solution><p>
+      (a) The direction of maximum rate of increase is <m>\vnabla\rho(1,0,-1)</m>.
+      As
+      <md>
+      <mrow>
+      \pdiff{\rho}{x}(x,y,z)
+            &amp;= \frac{4x}{1+x^2+y^2} -\frac{2x(z+2x^2)}{{(1+x^2+y^2)}^2}
+      </mrow><mrow>&amp;\hskip0.5in
+      \pdiff{\rho}{x}(1,0,-1)
+            = \frac{4}{2} -\frac{2(-1+2)}{{(2)}^2} =\frac{3}{2}
+      </mrow><mrow>
+      \pdiff{\rho}{y}(x,y,z)
+            &amp;=  -\frac{2y(z+2x^2)}{{(1+x^2+y^2)}^2}
+      </mrow><mrow>&amp;\hskip0.5in
+      \pdiff{\rho}{y}(1,0,-1)=  0
+      </mrow><mrow>
+      \pdiff{\rho}{z}(x,y,z)
+            &amp;= \frac{1}{1+x^2+y^2}
+      </mrow><mrow>&amp;\hskip0.5in
+      \pdiff{\rho}{z}(1,0,-1) = \frac{1}{2}
+      </mrow>
+      </md>
+      So <m>\vnabla\rho(1,0,-1) = \frac{1}{2}(3,0,1)</m>. The unit vector
+      in this direction is <m>\frac{1}{\sqrt{10}}(3,0,1)</m>.
+      </p>
+
+      <p>(b) The region swept by the space craft is, in cylindrical coordinates,
+      <me>
+         V=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\le\theta\leqslant 2\pi,\
+                   0\leqslant r\leqslant 1,\
+                    0\leqslant z\leqslant 2}
+      </me>
+      and the amount of hydrogen collected is
+      <md>
+      <mrow>
+      \iiint_V \rho\ \dee{V} &amp;=\iiint_V\frac{z+2r^2\cos^2\theta}{1+r^2}r\dee{r}\,\dee{\theta}\,\dee{z}
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta} \int_0^1\dee{r}\
+                    \frac{zr+(2\cos^2\theta)r^3}{1+r^2}
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta} \int_0^1\dee{r}\
+           \left[ z \frac{r}{1+r^2} +2r\cos^2\theta
+                     -\cos^2\theta\frac{2r}{1+r^2}\right]
+      </mrow><mrow>
+      &amp;\hskip1.5in\text{since }\frac{r^3}{1+r^2} = \frac{r+r^3 - r}{1+r^2}
+                               =r-\frac{r}{1+r^2}
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta}\
+                    \left[\frac{z}{2}\ln(1+r^2)+r^2\cos^2\theta
+                           -\ln(1+r^2)\cos^2\theta\right]_0^1
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta}\
+                    \left[\frac{\ln 2}{2} z+ \cos^2\theta
+                           -\ln(2)\cos^2\theta\right]
+      </mrow><mrow>
+      &amp;=\int_0^2\dee{z} \ \left[(\pi\ln 2) z+ \pi-\pi\ln 2\right]
+      </mrow><mrow>
+      &amp;= 2\pi\ln 2 +2\pi -2\pi\ln 2
+      </mrow><mrow>
+      &amp;=2\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Un tore de masse <m>M</m> est généré en effectuant la rotation d'un cercle de rayon <m>a</m> autour d'un axe dans son plan à distance <m>b</m> du centre <m>(b \gt a)</m>. Le
+      tore a une densité constante.
+      Trouvez le moment d'inertie autour de l'axe de rotation.
+      Par définition le moment d'intertie est <m>\iiint r^2 \dee{m}</m>,
+      où <m>\dee{m}</m> est la masse d'une pièce infiniment petite du solide et <m>r</m> est
+      sa distance par rapport à l'axe.
+      </p></statement>
+
+      <answer><p>
+      <m>M\big(\frac{3}{4}a^2+b^2\big)</m>
+      </p></answer>
+
+      <solution><p>
+       We may choose our coordinate axes so that the torus is constructed by rotating the circle <m>(x-b)^2+z^2=a^2</m>
+      (viewed as lying in the <m>xz</m>--plane) about the <m>z</m>--axis. On this circle,
+      <m>x</m> runs from <m>b-a</m> to <m>b+a</m>.
+      </p>
+
+      <sidebyside width="50%">
+      <image source="images/CLP-figs/pfigs/torusSection"/>
+      </sidebyside>
+
+      <p>
+      In cylindrical coordinates, the torus has equation <m>(r-b)^2+z^2=a^2</m>.
+      (Recall that the cylindrical coordinate <m>r</m> of a point is its distance from the
+      <m>z</m>--axis.)
+      On this torus,
+      <ul>
+      <li> <m>r</m> runs from <m>b-a</m> to <m>b+a</m>.
+      </li>
+      <li> For each fixed <m>r</m>, <m>z</m> runs
+      from <m>-\sqrt{a^2-(r-b)^2}</m> to <m>\sqrt{a^2-(r-b)^2}</m>.
+      </li>
+      </ul>
+      As the torus
+      is symmetric about the <m>xy</m>--plane, its volume is twice that of the volume
+      of the part with <m>z\geqslant 0</m>.
+      <md>
+      <mrow>
+      \text{Volume}
+      &amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\int_{0}^{\sqrt{a^2-(r-b)^2}}\dee{z}
+      </mrow><mrow>
+      &amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\sqrt{a^2-(r-b)^2}
+      </mrow><mrow>
+      &amp;= 4\pi \int_{-a}^{a}\dee{s}\ (s+b)\sqrt{a^2-s^2}
+      \qquad\text{ where } s=r-b
+      </mrow>
+      </md>
+      As <m>s\sqrt{a^2-s^2}</m> is odd under <m>s\rightarrow -s</m>,
+      <m>\int_{-a}^{a}\dee{s}\ s\sqrt{a^2-s^2}=0</m>. Also,  <m>\int_{-a}^{a}\dee{s}\ \sqrt{a^2-s^2}</m>
+      is precisely the area of the top half of a circle of radius <m>a</m>. So
+      <me>
+      \text{Volume }= 4b\pi \int_{-a}^{a}\dee{s}\ \sqrt{a^2-s^2}
+      =2\pi^2a^2b
+      </me>
+      So the mass density of the torus is <m>\frac{M}{2\pi^2a^2b}</m> and
+      <m>\dee{m} = \frac{M}{2\pi^2a^2b}\,\dee{V}
+                =\frac{M}{2\pi^2a^2b}\,r\,\dee{r}\,d\theta\,\dee{z}</m>
+      and
+      <md>
+      <mrow>
+      \text{moment of inertia}
+      &amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\int_{0}^{\sqrt{a^2-(r-b)^2}}\dee{z}\
+      \frac{M}{2\pi^2a^2b} r^2
+      </mrow><mrow>
+      &amp;= \frac{M}{\pi^2a^2b}\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r^3\sqrt{a^2-(r-b)^2}
+      </mrow><mrow>
+      &amp;= \frac{2M}{\pi a^2b} \int_{-a}^{a}\dee{s}\ (s+b)^3\sqrt{a^2-s^2}
+      \qquad\text{ where } s=r-b
+      </mrow><mrow>
+      &amp;= \frac{2M}{\pi a^2b} \int_{-a}^{a}\dee{s}\ (s^3+3s^2b+3sb+b^3)\sqrt{a^2-s^2}
+      </mrow>
+      </md>
+      Again, by oddness, the <m>s^3</m> and <m>3sb</m> integrals are zero. For the others,
+      substitute in <m>s=a\sin t</m>, <m>\dee{s}=a\cos t</m>.
+      <md>
+      <mrow>
+      \text{moment}
+      &amp;= \frac{2M}{\pi a^2b} \int_{-{\pi\over 2}}^{{\pi\over 2}}(a\cos t\, \dee{t})
+      \ (3a^2b\sin^2 t+b^3)a\cos t
+      </mrow><mrow>
+      &amp;= \frac{2M}{\pi } \int_{-{\pi\over 2}}^{{\pi\over 2}}\dee{t}\
+      (3a^2\sin^2 t+b^2)\cos^2 t
+      </mrow><mrow>
+      &amp;= \frac{4M}{\pi} \int_0^{{\pi\over 2}}\dee{t}\
+      (3a^2\cos^2 t-3a^2\cos^4 t+b^2\cos^2 t)
+      </mrow><mrow>
+      &amp;\hskip1in    \text{since } \sin^2t=1-\cos^2t
+      </mrow>
+      </md>
+      To integrate<fn>For a general discussion of trigonometric integrals see
+      §1.8 in the CLP-2 text. In particular the integral
+      <m>\int \cos^4 x\ \dee{x}</m> is evaluated in Example 1.8.8
+      in the CLP-2 text. <!--For an efficient, sneaky, way to evaluate
+      <m>\int_0^{{\pi\over 2}} \cos^2 t\ \dee{t}</m>
+      see Remark <xref ref="rem_sneaky"/>-->.</fn>
+      <m>\cos^2t</m> and <m>\cos^4t</m>, we use the double angle formulae
+      <m>\sin^2 x= \frac{1-\cos(2x)}{2}</m> and <m>\cos^2 x= \frac{1+\cos(2x)}{2}</m>
+      to write
+      <me>
+      \cos^2 t= \frac{1+\cos(2t)}{2}
+      </me>
+      and
+      <md>
+      <mrow>
+        \cos^4 t &amp;= \left[ \frac{1+\cos(2t)}{2} \right]^2
+      </mrow><mrow>
+         &amp;= \frac{1}{4} + \frac{1}{2} \cos(2t) + \frac{1}{4}\cos^2(2t)
+      </mrow><mrow>
+        &amp;= \frac{1}{4} + \frac{1}{2} \cos(2t) + \frac{1}{8}\left(1 + \cos(4t)\right)
+      </mrow><mrow>
+        &amp;= \frac{3}{8} + \frac{1}{2} \cos(2t) + \frac{1}{8}\cos(4t)
+      </mrow>
+      </md>
+      So
+      <md>
+      <mrow>
+      \text{moment}
+      &amp;= \frac{4M}{\pi}
+      \bigg[3a^2\left(\frac{t}{2}\!+\!\frac{\sin(2t)}{4}\right)
+          \!-\!3a^2\left(\frac{3t}{8}\!+\! \frac{1}{4} \sin(2t)\!+\! \frac{1}{32}\sin(4t)\right)
+      </mrow><mrow>
+      &amp;\hskip3.0in  +b^2\left(\frac{t}{2}+\frac{\sin(2t)}{4}\right)\!\bigg]_0^{{\pi\over 2}}
+      </mrow><mrow>
+      &amp;= \frac{4M}{\pi}
+               \Big[3a^2\frac{\pi}{4}-3a^2\frac{3\pi}{16}+b^2\frac{\pi}{4}\Big]
+      =M\left(\frac{3}{4}a^2+b^2\right)
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2011D</fromexam></title> -->
+      <statement><p>
+      Le corps d'un bonhomme de neige est formé par les boules de neige <m>x^2 + y^2 + z^2 = 12</m>
+      (ceci est son corps) et <m>x^2 + y^2 + (z - 4)^2 = 4</m> (ceci est sa tête).
+      <ol marker = "(a)">
+      <li>
+        Trouvez le volume du bonhomme de neige en soustrayant l'intersection des deux boules de neige de la somme des volumes des boules de neige. [Rappelons que le volume d'une
+        sphère de rayon <m>r</m> est <m>\frac{4\pi}{3} r^3</m>.]
+      </li>
+      <li><p>
+      Nous pouvons également calculer le volume du bonhomme de neige comme une somme des intégrales triples suivantes :
+      <ol>
+      <li>
+      <me>
+      \int_0^{\frac{2\pi}{3}} \int_0^{2\pi}  \int_0^2 \rho^2\sin{\varphi}
+                       \  \dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+      </me>
+      </li>
+      <li>
+      <me>
+      \int_0^{2\pi} \int_0^{\sqrt{3}}  \int_{\sqrt{3}\,r}^{4-\frac{r}{\sqrt{3}}}
+                                  r\ \dee{z}\,\dee{r}\,\dee{\theta}
+      </me>
+      </li>
+      <li>
+      <me>
+      \int_{\frac{\pi}{6}}^\pi  \int_0^{2\pi} \int_0^{2\sqrt{3}}
+                      \rho^2\sin(\varphi)\ \dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+      </me>
+      </li>
+      </ol>
+      Encerclez la bonne réponse parmi les choix soulignés et remplissez les espaces vides
+      dans les descriptions suivantes de la région d'intégration pour chaque intégrale.
+      [Remarque : nous avons déplacé les axes afin d'écrire certaines des intégrales ci-dessus. Les équations que vous indiquez doivent être celles avant que la translation ne soit effectuée].
+      <ol marker="i">
+      <li>
+      La région d'intégration dans (1) est une partie du bonhomme de neige.
+      <me>
+      \underline{
+      \text{ corps / tête / corps et tête}
+      }
+      </me>
+        C'est le solide entouré par la/le
+      <me>
+        \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      et la/le
+      <me>
+      \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      </li>
+      <li>
+      La région d'intégration dans (2) est une partie du bonhomme de neige.
+      <me>
+      \underline{
+      \text{ corps / tête / corps et tête}
+      }
+      </me>
+        C'est le solide entouré par la/le
+      <me>
+        \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      et la/le
+      <me>
+      \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      </li>
+      <li>
+      La région d'intégration dans (3) est une partie du bonhomme de neige.
+      <me>
+      \underline{
+      \text{ corps / tête / corps et tête}
+      }
+      </me>
+        C'est le solide entouré par la/le
+      <me>
+        \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      et la/le
+      <me>
+      \underline{\text{sphère / cône}}
+      </me>
+      défini(e) par l'équation
+      <me>
+      \rule{30ex}{0.2ex}
+      </me>
+      </li>
+      </ol></p>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\frac{2\pi}{3}\left[\big(12\big)^{3/2}+54\right]</m>
+      </p>
+
+      <p>(b) i. La partie supérieure est la partie de la tête du bonhomme de neige qui se trouve à l'intérieur de la sphère.
+      <me>
+      x^2+y^2+(z-4)^2 = 4
+      </me>
+      et au-dessus du cône
+      <me>
+      z-4 = - \sqrt{\frac{x^2+y^2}{3}}.
+      </me>
+      </p>
+
+      <p>ii. La partie médiane est la partie de la tête et du corps du bonhomme de neige qui
+      est délimitée sur le dessus par le cône.
+      <m>
+      z-4 = - \sqrt{\frac{x^2+y^2}{3}}
+      </m>
+      et est bornée par le dessous du cône
+      <m>
+      z = \sqrt{3(x^2+y^2)}
+      </m>.
+      </p>
+
+      <p>iii. La partie inférieure est la partie du corps du bonhomme de neige qui se trouve à l'intérieur
+      la sphère
+      <m>
+      x^2+y^2+z^2 = 12
+      </m>
+      et est en-dessous du cône
+      <m>
+      z = \sqrt{3(x^2+y^2)}
+      </m>.
+      </p></answer>
+
+      <solution><p>
+      (a)
+      As a check, the body of the snow man has radius <m>\sqrt{12} = 2\sqrt{3}
+      \approx 3.46</m>, which is between <m>2</m> (the low point of the head) and <m>4</m>
+      (the center of the head). Here is a sketch of a side view of the snowman.
+      </p>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE11D_8a"/>
+      </sidebyside>
+
+      <p>
+      We want to determine the volume of the intersection of the body and the head,
+      whose side view is the darker shaded region in the sketch.
+      <ul>
+      <li>
+      The outer boundary of the body and the outer boundary of the head
+      intersect when both <m>x^2 + y^2 + z^2 = 12</m> and <m>x^2 + y^2 + (z - 4)^2 = 4</m>.
+      Subtracting the second equation from the first gives
+      <me>
+      z^2-(z-4)^2 =12 -4
+      \iff
+      8z-16 =8
+      \iff
+      z=3
+      </me>
+      Then substituting <m>z=3</m> into either equation gives <m>x^2+y^2=3</m>.
+      So the intersection of the outer boundaries of the head and body
+      (i.e. the neck)
+      is the circle <m>x^2+y^2=3</m>, <m>z=3</m>.
+      </li>
+      <li>
+      The top boundary of the intersection is part of the top half
+      of the snowman's body and so has equation <m>z=+\sqrt{12-x^2-y^2}</m>.
+      </li>
+      <li>
+      The bottom boundary of the intersection is part of the bottom half of the snowman's head, and so has equation <m>z=4-\sqrt{4-x^2-y^2}</m>
+      </li>
+      </ul>
+      The intersection of the head and body is thus
+      <md>
+      <mrow>
+      \cV = \Set{(x,y,z}{x^2+y^2\leqslant 3,\
+                  4-\sqrt{4-x^2-y^2}\leqslant z\leqslant \sqrt{12-x^2-y^2}}
+      </mrow>
+      </md>
+      We'll compute the volume of <m>\cV</m> using cylindrical coordinates
+      <md>
+      <mrow>
+      &amp;\text{Volume}(\cV) = \int_0^{\sqrt{3}}\dee{r}\int_0^{2\pi}\dee{\theta}
+                           \int_{4-\sqrt{4-r^2}}^{\sqrt{12-r^2}}\dee{z}\ r
+      </mrow><mrow>
+         &amp;\hskip0.5in
+                =\int_0^{\sqrt{3}}\dee{r}\ 2\pi\ r\big[\sqrt{12-r^2}-4+\sqrt{4-r^2}\big]
+      </mrow><mrow>
+         &amp;\hskip0.5in=2\pi\left[-\frac{1}{3}{\big(12-r^2\big)}^{3/2}
+                     -2r^2
+                     -\frac{1}{3}{\big(4-r^2\big)}^{3/2}\right]_0^{\sqrt{3}}
+      </mrow><mrow>
+         &amp;\hskip0.5in= 2\pi\left[-\frac{1}{3}{\big(9\big)}^{3/2}
+                     -2(3)
+                     -\frac{1}{3}{\big(1\big)}^{3/2}
+                     +\frac{1}{3}{\big(12\big)}^{3/2}
+                     +2(0)^2
+                     +\frac{1}{3}{\big(4\big)}^{3/2}
+                     \right]
+      </mrow><mrow>
+         &amp;\hskip0.5in= 2\pi\left[-9
+                     -6
+                     -\frac{1}{3}
+                     +\frac{1}{3}{\big(12\big)}^{3/2}
+                     +\frac{8}{3}
+                     \right]
+      </mrow><mrow>
+         &amp;\hskip0.5in=2\pi\left[\frac{1}{3}{\big(12\big)}^{3/2}
+                     -\frac{38}{3}
+                     \right]
+      </mrow>
+      </md>
+      So the volume of the snowman is
+      <md>
+      <mrow>
+      &amp;\frac{4\pi}{3}\big(12\big)^{3/2}
+      +\frac{4\pi}{3} 2^3
+      -2\pi\left[\frac{1}{3}{\big(12\big)}^{3/2}
+                     -\frac{38}{3}
+                     \right]
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{2\pi}{3}\left[\big(12\big)^{3/2}+54\right]
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The top figure below is another side view of the snowman.
+      This time it is divided into a lighter gray top part, a darker gray
+      middle part and a lighter gray bottom part. The bottom figure
+      below is an enlarged view of the central part of the figure on the
+      left.
+      </p>
+
+      <sidebyside width="60%">
+        <image source="images/CLP-figs/pfigs/OE11D_8b"/>
+      </sidebyside>
+
+      <sidebyside width="60%">
+         <image source="images/CLP-figs/pfigs/OE11D_8c"/>
+      </sidebyside>
+
+      <p>
+      i. The top part is the Pac-Man
+      </p>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE11D_8d"/>
+      </sidebyside>
+      <p>
+      part of the snowman's head. It is the part of the sphere
+      <me>
+      x^2+y^2+(z-4)^2\leqslant 4
+      </me>
+      that is above the cone
+      <me>
+      z-4 = - \sqrt{\frac{x^2+y^2}{3}}
+      </me>
+      (which contains the points <m>(0,0,4)</m> and <m>(\sqrt{3},0,3)</m>).
+      </p>
+
+      <p>ii. The middle part is the diamond shaped
+      </p>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE11D_8e"/>
+      </sidebyside>
+
+      <p>
+      part of the snowman's head and body. It is bounded on the top by the  cone
+      <me>
+      z-4 = - \sqrt{\frac{x^2+y^2}{3}}
+      </me>
+      (which contains the points <m>(0,0,4)</m> and <m>(\sqrt{3},0,3)</m>) and
+      is bounded on the bottom by the  cone
+      <me>
+      z = \sqrt{3(x^2+y^2)}
+      </me>
+      (which contains the points <m>(0,0,0)</m> and <m>(\sqrt{3},0,3)</m>).
+      </p>
+
+      <p>iii. The bottom part is the Pac-Man
+      </p>
+
+      <sidebyside width="66%">
+      <image source="images/CLP-figs/pfigs/OE11D_8f"/>
+      </sidebyside>
+
+      <p>
+      part of the snowman's body. It is the part of the sphere
+      <me>
+      x^2+y^2+z^2\leqslant 12
+      </me>
+      that is below the cone
+      <me>
+      z = \sqrt{3(x^2+y^2)}
+      </me>
+      (which contains the points <m>(0,0,0)</m> and <m>(\sqrt{3},0,3)</m>).
+      </p></solution>
+    </exercise>
+
+  </exercisegroup>
+
+</exercises>

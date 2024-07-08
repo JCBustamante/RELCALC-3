@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Surfaces">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, automne 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Surfaces</title>
+
+
+<introduction>
+  <p>Pour plusieurs applications, nous devons calculer des intégrales de surface. Un exemple évident est le calcul de l'aire d'une surface. Un peu plus généralement, on peut imaginer une surface mince faite d'un matériau de densité constante. Si l'on veut calculer la masse, le centre de gravité ou les moments d'inertie, on devra additionner de petits éléments de masse sur la surface. Un peu plus généralement, on peut vouloir calculer le flux d'un fluide à travers une surface donnée. Afin d'attaquer tous ces problèmes, on doit, dans un premier temps, spécifier la surface convenablement.
+</p>
+</introduction>
+
+<subsection xml:id="pars-Surf-parametrees">
+  <title>Surfaces paramétrées</title>
+<p>Il y a trois façons usuelles de spécifier une surface dans l'espace tridimensionnel.
+<ol marker = "(a)">
+<li> <em>Graphe d'une fonction.</em> Probablement la façon la plus commune, c'est ce que nous avons fait à la <xref ref="S2-1-Plusieurs-variables"/>. Il s'agit de donner une équation de la forme
+
+<me>
+ z = f(x,y)\qquad (x,y)\in\cD\subset\R^2.
+</me>
+Par exemple, si la surface est la moitié supérieure de la sphère de rayon 1 centrée à l'origine, on a
+<me>
+ z = \sqrt{1-x^2-y^2}\qquad \text{avec } x^2+y^2 \leqslant 1.
+</me>
+</li>
+<li> <em>Implicitement. </em>
+Nous l'avons aussi fait. Il s'agit de spécifier la surface comme l'ensemble de niveau d'une fonction de trois variables. Ceci revient à dire que la surface est l'ensemble des points  <m>(x,y,z)</m>  qui vérifient l'équation
+<m>G(x,y,z)=K</m>. Par exemple, la sphère de rayon 1 centrée à l'origine est l'ensemble des points vérifiant
+<me>
+x^2+y^2+z^2=1.
+</me>
+Nous reviendrons sur cette surface à l'<xref ref="eg_SURsphere"/> plus bas.
+</li>
+<li> <em>Un paramétrage, l'image d'une fonction.</em>
+Il s'agit probablement de la façon la plus utile de spécifier une surface. Tout comme un chemin (une fonction d'une variable qui renvoie des points dans <m>\R^2</m> ou <m>\R^3</m>) sert à paramétrer une courbe, on peut obtenir une surface comme l'image d'une fonction de deux variables :
+<md>
+<mrow>
+\vr&amp;: \cD\subset\R^2 \rightarrow \R^3
+</mrow><mrow>
+   &amp;(u,v) \in\cD \mapsto \vr(u,v) =x(u,v)\,\vi +y(u,v)\,\vj + z(u,v)\, \vk.
+</mrow>
+</md>
+On dit que la surface est <em>paramétrée par <m>\vr</m></em>. Chaque point de la surface est étiqueté par les valeurs des paramètres  <m>u</m> et <m>v</m>.
+</li>
+</ol>
+</p>
+
+<example xml:id="SUR_paramGraph">
+<p>
+Une façon simple, voire triviale, de paramétrer une surface qui est le graphe
+<me>
+ z = f(x,y)\qquad (x,y)\in\cD\subset\R^2
+</me>
+est de choisir  <m>x</m> et <m>y</m> comme paramètres, c'est-à-dire de choisir
+<md>
+<mrow>
+\vr(u,v) &amp;= u\, \vi  + v\,\vj  + f(u,v)\, \vk \quad (u,v)\in\cD
+</mrow><mrow>\text{ ou }\qquad
+\vr(x,y) &amp;= x\, \vi + y\,\vj + f(x,y)\, \vk \quad (x,y)\in\cD.
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Voyons quelque chose d'un peu plus substantiel.
+</p>
+
+<example xml:id="eg_SURsphere"><title>Sphère</title>
+<p>
+La sphère de rayon <m>1</m> centrée à l'origine est l'ensemble des points <m>(x,y,z)</m> vérifiant
+<me>
+G(x,y,z)= x^2+y^2+z^2=1.
+</me>
+Nous ne pouvons pas exprimer cette surface comme le graphe d'une fonction puisque, pour chaque  <m>(x,y)</m> vérifiant  <m>x^2+y^2 \leqslant 1</m>, il existe deux valeurs de <m>z</m> telles que <m>x^2+y^2+z^2=1</m>, à savoir
+<me>
+z=\pm\sqrt{1-x^2-y^2}.
+</me>
+De plus, localement, cette surface est le graphe d'une fonction. Ceci veut dire que, pour tout point  <m>(x_0, y_0, z_0)</m> sur la sphère, les points sur cette surface qui sont suffisamment près de  <m>(x_0, y_0, z_0)</m> peuvent être exprimés sous une des formes <m>z=f(x,y)</m>, <m>x=g(y,z)</m> ou  <m>y=h(x,z)</m>. Par exemple, la portion de la sphère qui se trouve à une distance inférieure à <m>\sqrt{2}</m> du point <m>(0,0,1)</m> est
+<md>
+<mrow>
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ |(x,y,z) - (0,0,1)| \leqslant \sqrt{2}}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+(z-1)^2  \leqslant  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+z^2-2z+1  \leqslant  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ z \gt 0}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ z=\sqrt{1-x^2-y^2},\ x^2+y^2 \leqslant 1}.
+</mrow>
+</md>
+Ceci est illustré dans la figure ci-bas, qui montre la section de la sphère  <m>x^2+y^2+z^2=1</m> par le plan <m>y=0</m>, ainsi que la section par  <m>y=0</m> de l'ensemble des points qui sont à une distance inférieure à  <m>\sqrt{2}</m> de <m>(0,0,1)</m> (ce sont les points à l'intérieur du cercle).
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP4-figs/localGraphA"/>
+</sidebyside>
+
+<p>De la même façon, comme cela est schématisé dans la figure ci-bas, la portion de la sphère qui se trouve à une distance inférieure à <m>\sqrt{2}</m> du point  <m>(1,0,0)</m> est
+<md>
+<mrow>
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ |(x,y,z) - (1,0,0)| \leqslant \sqrt{2}}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ (x-1)^2+y^2+z^2  \leqslant  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2-2x+1+y^2+z^2  \leqslant  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x \gt 0}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x=\sqrt{1-y^2-z^2},\ y^2+z^2 \leqslant 1}.
+</mrow>
+</md>
+La figure ci-après montre la section de la sphère par le plan  <m>y=0</m> ainsi que la section par ce même plan de l'ensemble des points à une distance de <m>(1,0,0)</m> inférieure à  <m>\sqrt{2}</m> de <m>(1,0,0)</m> (ce sont les points dans le cercle pointillé).
+</p>
+
+<sidebyside width="90%">
+<image source="images/CLP4-figs/localGraphB"/>
+</sidebyside>
+
+<p>Nous pouvons obtenir un paramétrage de la sphère unité avec les coordonnées sphériques au moyen des formules
+<!--
+As a reminder, here is a figure showing the definitions of the
+three spherical coordinates<fn>The symbols <m>\rho</m>, <m>\varphi</m>, <m>\theta</m> are the standard mathematics symbols for the spherical coordinates. Appendix  <xref ref="ap_ISO"/> gives another set of symbols that is commonly used in the physical sciences and engineering.</fn>
+<md>
+<mrow>
+\rho&amp;=\text{ distance from }(x,y,z)\text{ to }(0,0,0)
+</mrow><mrow>
+\varphi&amp;=\text{ angle between the line }\overline{(0,0,0)\,(x,y,z)}
+\text{ and the $z$ axis}
+</mrow><mrow>
+\theta&amp;=\text{ angle between the line }\overline{(0,0,0)\,(x,y,0)}
+\text{ and the $x$ axis}
+</mrow>
+</md>
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP4-figs/spherical"/>
+</sidebyside>
+
+<p>
+and here are two more figures giving the side and top views of the
+previous figure.
+</p>
+
+<sidebyside widths="40% 50%" valign="middle">
+<image source="images/CLP4-figs/sphericalSide"/>
+<image source="images/CLP4-figs/sphericalTop"/>
+</sidebyside>
+
+<p>
+From the figure, we see that Cartesian and spherical coordinates
+are related by
+-->
+<md>
+<mrow>
+x&amp;=\rho\sin\varphi\cos\theta,
+</mrow><mrow>
+y&amp;=\rho\sin\varphi\sin\theta,
+</mrow><mrow>
+z&amp;=\rho\cos\varphi.
+</mrow>
+</md>
+Les points sur la sphère  <m>x^2+y^2+z^2=1</m> sont exactement les points  vérifiant  <m>\rho=1</m>, de sorte que nous avons un paramétrage
+<me>
+\vr(\theta,\varphi)
+=\sin\varphi\cos\theta\,\vi  + \sin\varphi\sin\theta\,\vj+ \,\cos\varphi\vk.
+</me>
+</p>
+<!--
+<p>Here is how to see that as <m>\varphi</m> runs over <m>(0,\pi)</m> and <m>\theta</m>
+runs over <m>[0,2\pi)</m>, <m>\vr(\theta,\varphi)</m> covers the whole
+sphere <m>x^2+y^2+z^2=1</m> except for the north pole (<m>\varphi=0</m> gives
+the north pole for all values of <m>\theta</m>) and the south pole
+(<m>\varphi=\pi</m> gives the south pole for all values of <m>\theta</m>).
+</p>
+<p>
+<ul>
+<li><p> Fix <m>\theta</m> and have <m>\varphi</m> run over the interval
+<m>0 \leqslant \varphi\leqslant  \frac{\pi}{2}</m>. Then <m>\vr(\theta,\varphi)</m> traces out one quarter of a circle starting at the north pole <m>\vr(\theta,0) = (0,0,1)</m>
+(but excluding the north pole itself) and ending at the point
+<m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
+</p>
+
+<sidebyside width="45%">
+<image source="images/CLP4-figs/sphericalRngA"/>
+</sidebyside>
+
+</li>
+<li><p>
+Keep <m>\theta</m> fixed at the same value and extend the interval over which
+<m>\varphi</m> runs to <m>0 \leqslant \varphi \leqslant \pi</m>. Now <m>\vr(\theta,\varphi)</m> traces out a
+semi-circle starting at the north pole <m>\vr(\theta,0) = (0,0,1)</m>,
+ending at the south pole <m>\vr(\theta,\pi) = (0,0,-1)</m>
+(but excluding both the north and south poles themselves) and passing
+through the point
+<m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
+</p>
+
+<sidebyside width="45%">
+<image source="images/CLP4-figs/sphericalRngB"/>
+</sidebyside>
+</li>
+<li>
+Finally have <m>\theta</m>  run over <m>0\le\theta \leqslant 2\pi</m>. Then the semicircle
+rotates about the <m>z</m>-axis, sweeping out the full sphere, except for
+the north and south poles.
+</li>
+</ul>
+</p>
+
+<p>Recall that <m>\varphi</m> is the angle between the radius vector and the
+<m>z</m>-axis. If you hold <m>\varphi</m> fixed and increase <m>\theta</m> by a small amount
+<m>\dee{\theta}</m>, <m>\vr(\theta,\varphi)</m> sweeps out the red circular arc in the
+figure on the left below.
+If you hold <m>\varphi</m> fixed  and vary <m>\theta</m> from <m>0</m> to <m>2\pi</m>,
+<m>\vr(\theta,\varphi)</m> sweeps out a line of latitude. The figure on the
+right below gives the lines of latitude (or at least the parts of those
+lines in the first octant) for
+<m>\varphi=\frac{\pi}{10}</m>, <m>\frac{2\pi}{10}</m>, <m>\frac{3\pi}{10}</m>, <m>\frac{4\pi}{10}</m>
+and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
+</p>
+
+<sidebyside widths="45% 50%" valign="middle">
+<image source="images/CLP4-figs/sphericalTh"/>
+<image source="images/CLP4-figs/sphericalLat"/>
+</sidebyside>
+
+<p>
+On the other hand, if you hold <m>\theta</m> fixed and increase <m>\varphi</m>
+by a small amount <m>\dee{\varphi}</m>, <m>\vr(\theta,\varphi)</m> sweeps out the red circular
+arc in the figure on the left below. If you hold <m>\theta</m> fixed  and vary
+<m>\varphi</m> from <m>0</m> to <m>\pi</m>, <m>\vr(\theta,\varphi)</m> sweeps out a line of longitude.
+The figure on the right below gives the lines of longitude
+(or at least the parts of those lines in the first octant) for
+<m>\theta=0</m>, <m>\frac{\pi}{10}</m>, <m>\frac{2\pi}{10}</m>, <m>\frac{3\pi}{10}</m>,
+<m>\frac{4\pi}{10}</m> and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
+</p>
+
+<sidebyside widths="45% 50%" valign="middle">
+<image source="images/CLP4-figs/sphericalPhi"/>
+<image source="images/CLP4-figs/sphericalLong"/>
+</sidebyside>
+-->
+</example>
+
+
+<example xml:id="SURclyinder"><title>Cylindre</title>
+<p>
+La surface  <m>x^2+y^2=1</m> est un cylindre infini. Une portion est esquissée ci-bas.
+</p>
+
+<sidebyside width="20%">
+<image source="images/CLP4-figs/cylinder"/>
+</sidebyside>
+
+<p>
+Remarquons que la section de ce cylindre au plan <m>Oxy</m>, et en fait à n'importe quel plan <m>z=c</m>, est le cercle  <m>x^2+z^2=1</m>. Nous pouvons en donner un paramétrage en posant <m>x=\cos\theta</m>, <m>y=\sin\theta</m>, de sorte que la figure en entier peut être paramétrée avec les paramètres  <m>\theta</m> et <m>z</m> comme
+<me>
+\vr(\theta,z) = \cos\theta\, \vi + \sin\theta\,\vj + z\, \vk
+\qquad
+0\le\theta \leqslant 2\pi,\ \ -\infty \leqslant z \leqslant \infty.
+</me>
+</p>
+
+</example>
+
+
+<example xml:id="SURrevolution"><title>Surface de révolution</title>
+<p>
+Dans cet exemple, nous allons donner un paramétrage d'une surface de révolution. Notre axe de révolution sera l'axe des <m>z</m>. Plus précisément, nous nous intéressons à la surface obtenue en faisant tourner la courbe du plan <m>Oyz</m>,
+<me>
+z=g(y)=e^y \qquad 0\leqslant  y\leqslant  1,
+</me>
+autour de l'axe  <m>Oz</m>. La même procédure peut être utilisée pour obtenir des paramétrages de surfaces de révolution autour d'autres axes.
+</p>
+
+<p>Commençons par esquisser la courbe, il s'agit de la courbe rouge dans la figure ci-bas. Concentrons-nous sur un point spécifique de la courbe pendant la révolution, disons le point bleu, de coordonnées <m>(0,Y,e^Y)</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP4-figs/revA"/>
+</sidebyside>
+
+<p>
+Lorsque notre courbe tourne autour de l'axe  des <m>z</m>, le point bleu décrit un cercle. Celui-ci se trouve sur le plan horizontal  <m>z=e^Y</m>, est centré à l'axe des  <m>z</m> et a pour rayon <m>Y</m>. Nous pouvons paramétrer facilement le cercle en question avec l'angle de révolution, disons <m>\theta</m> comme paramètre.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP4-figs/revTopJC"/>
+</sidebyside>
+
+<p>
+Les coordonnées du point rouge sont  <m>\left( Y\sin\theta,\,Y\cos\theta,\,e^Y\right) </m>. Ceci donne aussi un paramétrage de la surface de révolution.
+<md>
+<mrow>
+x(Y,\theta) &amp; = Y\sin\theta
+</mrow><mrow>
+y(Y,\theta) &amp; = Y\cos\theta
+</mrow><mrow>
+z(Y,\theta) &amp; = e^Y
+</mrow><mrow>
+&amp;0\leqslant  Y\leqslant  1,\qquad 0\le\theta \leqslant 2\pi
+</mrow>
+</md>
+Remarquons, pour des fins de vérification, que
+<ul>
+<li>  lorsque <m>\theta=0</m>,
+<me>
+    \left( x(Y,0),\,y(Y,0),\,z(Y,0)\right)
+                 =(0,Y,e^Y)
+</me>
+parcourt la courbe  <m>z=g(y)</m>, <m>0\leqslant  y\leqslant  1</m>, lorsque  <m>Y</m> vérifie  <m>0\leqslant  Y\leqslant  1</m>, et que,
+</li>
+<li>  pour toute valeur fixe de <m>Y</m> vérifiant  <m>0\leqslant  Y\leqslant  1</m>,
+   <m>\left( x(Y,\theta),\,y(Y,\theta),\,z(Y,\theta)\right) </m> parcourt le cercle <m>x^2+y^2=Y^2</m> du plan <m>z=e^Y</m>, lorsque  <m>\theta</m> vérifie <m>0\le\theta \leqslant 2\pi</m>.
+</li>
+</ul>
+Notons aussi que
+<me>
+x(Y,\theta)^2 + y(Y,\theta)^2 = Y^2,
+</me>
+de sorte que
+<me>
+Y=\sqrt{x(Y,\theta)^2 + y(Y,\theta)^2}
+</me>
+et que
+<md>
+<mrow>
+z(Y,\theta) =e^{Y} = e^{ \sqrt{x(Y,\theta)^2 + y(Y,\theta)^2} }.
+</mrow>
+</md>
+Ceci veut dire que la surface de révolution est contenue dans la surface infinie
+<me>
+z=e^{\sqrt{x^2+y^2}}.
+</me>
+Ayant à l'esprit que <m>0\leqslant  Y\leqslant  1</m>, nous avons que <m>1\leqslant  z=e^Y \leqslant e</m>.
+La surface de révolution est
+<me>
+z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
+</me>
+Finalement, voici une esquisse de la portion de notre surface qui se trouve dans le premier octant,
+<m>x,y,z\geqslant 0</m>.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP4-figs/revB"/>
+</sidebyside>
+
+</example>
+
+<example xml:id="SURdonut"><title>Tore</title>
+<p>
+Dans cet exemple, nous allons paramétrer la surface d'un beigne.
+</p>
+
+<sidebyside  width="40%">
+<image source="images/CLP4-figs/torus3d"/>
+</sidebyside>
+
+<p>
+Le nom formel pour un <q>beigne</q> est un <q>tore</q>. Notre stratégie sera de paramétrer d'abord sa section dans la moitié droite du plan
+<m>Oyz</m>, puis nous construirons le tore complet en faisant tourner ce cercle autour de l'axe des <m>z</m>. Le cercle en question est esquissé ci-après.
+</p>
+
+<sidebyside width="60%">
+<image source="images/CLP4-figs/torusSection"/>
+</sidebyside>
+
+<p>
+Nous prendrons pour acquis que le centre du cercle se trouve à une distance <m>R</m> de l'axe <m>Oz</m> et que le cercle a lui-même un rayon  <m>r</m>. Ainsi, le point rouge se trouve à
+<md>
+<mrow>
+x&amp;=0,
+</mrow><mrow>
+y&amp;= R + r\cos\theta,
+</mrow><mrow>
+z&amp;= r\sin\theta.
+</mrow>
+</md>
+En particulier, le point rouge se trouve à une distance  <m>r\sin\theta</m> au-dessus du plan <m>Oxy</m> et à une distance  <m>R + r\cos\theta</m> de l'axe  <m>Oz</m>. Ainsi, quand on le fait tourner autour de l'axe <m>Oz</m>, le point rouge décrit un cercle, comme esquissé ci-après.
+</p>
+
+<sidebyside width="60%">
+<image source="images/CLP4-figs/torusRotB"/>
+</sidebyside>
+
+<p>
+Le cercle en question est contenu dans le plan  <m>z=r\sin\theta</m>, son centre se trouve sur l'axe <m>Oz</m> et a un rayon <m>\rho=R + r\cos\theta</m>.
+</p>
+<p>
+Nous pouvons paramétrer ce cercle de la façon usuelle. Voici une vue d'en haut du cercle, avec le paramètre nommé  <m>\psi</m>.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP4-figs/torusTopJC"/>
+</sidebyside>
+
+<p>
+Ainsi, nous avons un paramétrage du cercle décrit par le point rouge :
+<md>
+<mrow>
+x &amp;= \rho\cos\psi =  (R + r\cos\theta)\cos\psi,
+</mrow><mrow>
+y &amp;= \rho\sin\psi =  (R + r\cos\theta)\sin\psi,
+</mrow><mrow>
+z &amp;= r\sin\theta,
+</mrow>
+</md>
+ou encore
+<md>
+<mrow>
+&amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \vi
+                    + (R + r\cos\theta)\sin\psi \ \vj
+                    + r\sin\theta\ \vk
+</mrow><mrow>
+&amp; 0\leqslant  \theta,\psi  \leqslant  2\pi.
+</mrow>
+</md>
+</p>
+
+</example>
+
+</subsection>
+
+
+
+
+<subsection  xml:id="pars_tangentPlanes">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Plans tangents</title>
+<p>
+Lorsqu'on rencontre une surface <q>compliquée</q> et qu'on veut l'étudier au voisinage d'un point, il est naturel de penser à utiliser le plan tangent en ce point.  Afin de spécifier un plan, on doit avoir
+<ul>
+<li>
+un vecteur non nul <m>\vn</m>, le vecteur normal pour ce plan, et
+</li>
+<li>
+un point  <m>(x_0,y_0,z_0)</m> appartenant au plan.
+</li>
+</ul>
+Si <m>(x,y,z)</m> est un autre point sur le plan, alors le vecteur
+<me>
+(x\, \vi + y\, \vj + z\, \vk) - (x_0\, \vi + y_0\, \vj + z_0\, \vk) = (x-x_0)\vi + (y-y_0)\vj + (z-z_0)\vk
+</me>
+est parallèle au plan et, donc, est orthogonal à  <m>\vn</m>. Ceci donne une équation pour le plan
+</p>
+
+<sidebyside widths="45% 30%" valign="middle">
+<p><me>
+\vn\cdot(x-x_0,\,y-y_0,\,z-z_0) = 0.
+</me></p>
+<image source="images/CLP4-figs/plane"/>
+</sidebyside>
+
+<p>
+Le résultat suivant fournit les formules pour trouver un vecteur normal <m>\vn</m> à une surface dans différents contextes : si la surface est paramétrée, s'il s'agit d'un graphe d'une fonction et, finalement, s'il s'agit d'une surface de niveau d'une fonction de trois variables.
+</p>
+
+<theorem xml:id="thm_normalVectors"><title>Vecteurs normaux aux surfaces</title>
+<statement><p>
+<ol marker = "(a)">
+<li>
+Soit
+<md>
+<mrow>
+\vr&amp;: \cD\subset\R ^2 \rightarrow \R ^3
+</mrow><mrow>
+   &amp;(u,v) \in\cD \mapsto \vr(u,v) =\left( x(u,v),\,y(u,v),\,z(u,v)\right)
+</mrow>
+</md>
+une surface paramétrée et  <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m> un point sur la surface. Soit
+<md>
+<mrow>
+\vT_u &amp;= \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
+=\left( \frac{\partial x}{\partial u}(u_0,v_0),\,
+      \frac{\partial y}{\partial u}(u_0,v_0),\,
+      \frac{\partial z}{\partial u}(u_0,v_0)\right),
+</mrow><mrow>
+\vT_v &amp;= \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
+=\left( \frac{\partial x}{\partial v}(u_0,v_0),\,
+      \frac{\partial y}{\partial v}(u_0,v_0),\,
+      \frac{\partial z}{\partial v}(u_0,v_0)\right).
+</mrow>
+</md>
+Alors,
+<md>
+      <mrow>
+            \vn = \vT_u\times\vT_v
+            =\det\left[\begin{matrix}
+              \vi &amp; \frac{\partial x}{\partial u}(u_0,v_0) &amp; \frac{\partial x}{\partial v}(u_0,v_0) \\
+              \vj &amp; \frac{\partial y}{\partial u}(u_0,v_0) &amp; \frac{\partial y}{\partial v}(u_0,v_0) \\
+              \vk &amp; \frac{\partial z}{\partial u}(u_0,v_0) &amp; \frac{\partial z}{\partial v}(u_0,v_0)
+            \end{matrix}\right]
+          </mrow>
+</md>
+est normal à la surface au point <m>(x_0,y_0,z_0)</m>.
+</li>
+<li>
+Soit <m>(x_0,y_0,z_0)=f(x_0,y_0)</m> un point sur la surface d'équation <m>z=f(x,y)</m>. Alors,
+<md>
+<mrow>
+\vn =-f_x(x_0,y_0)\,\vi   - f_y(x_0,y_0)\,\vj  + \vk
+</mrow>
+</md>
+est normal à la surface au point <m>(x_0,y_0,z_0)</m>.
+</li>
+<li>
+Soit une surface donnée implicitement par <m>G(x,y,z) = K</m>, et  <m>(x_0,y_0,z_0)</m> un point sur la surface. Si le gradient t <m>\vnabla G\left( x_0,y_0,z_0\right) \ne \vZero</m>, alors
+<md>
+<mrow>
+\vn= \vnabla G\left( x_0,y_0,z_0\right)
+</mrow>
+</md>
+est normal à la surface au point  <m>(x_0,y_0,z_0)</m>.
+</li>
+</ol>
+</p>
+
+<p>Notons cependant qu'aucun de ces vecteurs n'a besoin d'être un vecteur unitaire.
+</p></statement>
+</theorem>
+
+<p>
+Remarquons aussi que, si nous appliquons la partie (c) à  <m>G(x,y,z) = z - f(x,y)</m>, nous obtenons le vecteur normal  <m>\vn=\vnabla G\left( x_0,y_0,z_0\right)
+   =-f_x(x_0,y_0)\,\vi   - f_y(x_0,y_0)\,\vj  + \vk  </m>, qui est le même que le vecteur normal fourni par la partie (b).
+</p>
+
+<proof>
+<p> (a)
+Fixons d'abord  <m>v=v_0</m> et faisons varier <m>u</m>. Alors,
+<me>
+u\mapsto \vr(u,v_0) = \left( x(u,v_0),\,y(u,v_0),\,z(u,v_0)\right)
+</me>
+est un chemin, sa courbe fait partie de la surface (la courbe rouge dans la figure de droite ci-bas) et elle passe par <m>(x_0,y_0,z_0)</m> (le point noir sur la figure) lorsque <m>u=u_0</m>.
+</p>
+
+<sidebyside widths="48% 48%">
+<image source="images/CLP4-figs/surfaceSlice"/>
+<image source="images/CLP4-figs/saddleA"/>
+</sidebyside>
+
+<p>
+Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>, qui est aussi tangent à la surface en  <m>(x_0,y_0,z_0)</m>, est
+<me>
+\vT_u = \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
+=\left( \frac{\partial x}{\partial u}(u_0,v_0),\,
+      \frac{\partial y}{\partial u}(u_0,v_0),\,
+      \frac{\partial z}{\partial u}(u_0,v_0)\right).
+</me>
+Il s'agit de la flèche rouge dans la figure de droite ci-haut.
+</p>
+
+<p>Fixons maintenant <m>u=u_0</m> et faisons varier <m>v</m>. Alors, <me>
+v\mapsto \vr(u_0,v) = \left( x(u_0,v),\,y(u_0,v),\,z(u_0,v)\right)
+</me>
+est un chemin dont la courbe se trouve sur la surface (c'est la courbe bleue dans la surface ci-haut) qui passe par  <m>(x_0,y_0,z_0)</m> lorsque  <m>v=v_0</m>. Le vecteur tangent à cette courbe au point  <m>(x_0,y_0,z_0)</m>, qui est aussi tangent à la surface au point <m>(x_0,y_0,z_0)</m>, est
+<me>
+\vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
+=\left( \frac{\partial x}{\partial v}(u_0,v_0),\,
+      \frac{\partial y}{\partial v}(u_0,v_0),\,
+      \frac{\partial z}{\partial v}(u_0,v_0)\right).
+</me>
+C'est la flèche bleue dans la figure de droite ci-haut.
+</p>
+
+<p>Nous avons deux vecteurs tangents à la surface au point <m>(x_0,y_0,z_0)</m>, à savoir <m>\vT_u</m> et <m>\vT_v</m>. Leur produit vectoriel
+<md>
+<mrow>
+            \vn = \vT_u\times\vT_v
+            =\det\left[\begin{matrix}
+              \vi &amp; \frac{\partial x}{\partial u}(u_0,v_0) &amp; \frac{\partial x}{\partial v}(u_0,v_0) \\
+              \vj &amp; \frac{\partial y}{\partial u}(u_0,v_0) &amp; \frac{\partial y}{\partial v}(u_0,v_0) \\
+              \vk &amp; \frac{\partial z}{\partial u}(u_0,v_0) &amp; \frac{\partial z}{\partial v}(u_0,v_0)
+            \end{matrix}\right]
+</mrow>
+</md>
+est donc normal à la surface au point  <m>(x_0,y_0,z_0)</m>.
+</p>
+
+<p>(b)
+Supposons maintenant que la surface est donnée comme le graphe de la fonction <m>z=f(x,y)</m>. Après avoir changé les noms des variables/paramètres, <m>u</m> devient  <m>x</m>, et <m>v</m> devient <m>y</m>, nous pouvons utiliser le résultat de (a) :
+<me>
+\vr(x,y) = \left( x,y, f(x,y)\right),
+</me>
+est un paramétrage de la surface, et, au point <m>\left( x_0,y_0,z_0\right) =f(x_0,y_0) </m>,
+<md>
+<mrow>
+\vT_x &amp;= \frac{\partial\vr }{\partial x}(x_0,y_0)
+=\left( 1,\,
+      0,\,
+      f_x(x_0,y_0)\right)
+</mrow><mrow>
+\vT_y &amp;= \frac{\partial\vr }{\partial y}(x_0,y_0)
+=\left( 0,\,
+      1,\,
+      f_y(x_0,y_0)\right)
+</mrow>
+</md>
+et
+<md>
+ <mrow> 
+      \vn &amp;= \vT_x\times\vT_y  =\det\left[\begin{matrix}
+              \vi &amp; 1 &amp; 0 \\
+              \vj &amp; 0 &amp; 1 \\
+              \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)
+            \end{matrix}\right]
+          </mrow>
+          <mrow> \amp =             =-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj + \vk. </mrow>
+</md>
+</p>
+
+<p> (c) Ce résultat a été établi au <xref ref="thm_tan_plane_G"/>.
+<!--
+Fianlement, supposons que la surface est donnée implicitement par  <m>G(x,y,z) = K</m>, où <m>K</m> est une constante. Si <m>\vr(t)=\left( x(t)\,\,y(t)\,,\,z(t)\right) </m> is any curve
+with <m>\vr(0) = (x_0,y_0,z_0)</m> that lies on the surface, then
+<md alignment="alignat">
+<mrow>
+&amp; &amp; G\left( \vr(t)\right) &amp;=K &amp;\qquad &amp;\text{for all } t
+</mrow><mrow>
+&amp;\implies &amp; \diff{\ }{t} G\left( x(t),y(t),z(t)\right) &amp;=0 &amp; &amp;\text{for all } t
+</mrow>
+</md>
+Applying the chain rule gives
+<md>
+<mrow>
+\frac{\partial G}{\partial x}\left( x(t),y(t),z(t)\right) \diff{x}{t}(t)
+&amp;+\frac{\partial G}{\partial y}\left( x(t),y(t),z(t)\right) \diff{y}{t}(t)
+</mrow><mrow>
+&amp;+\frac{\partial G}{\partial z}\left( x(t),y(t),z(t)\right) \diff{z}{t}(t)
+=0
+</mrow>
+</md>
+The left hand side is exactly the dot product
+of <m>\left( \frac{\partial G}{\partial x}
+\,,\,\frac{\partial G}{\partial y}
+\,,\,\frac{\partial G}{\partial z}\right) =\vnabla G</m>
+with
+<m>\left( \diff{x}{t}
+\,,\,\diff{y}{t}
+\,,\,\diff{z}{t}\right)
+=\diff{\vr}{t}</m>, so that
+<md>
+<mrow>
+\vnabla G\left( \vr(t)\right) \cdot\vr'(t)&amp;=0 \qquad
+          \text{for all } t
+</mrow><mrow>
+\implies  \vnabla G\left( x_0,y_0,z_0\right) \cdot\vr'(0)&amp;=0 &amp;
+</mrow>
+</md>
+This tell us that <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is perpendicular
+to <m>\vr'(0)</m>, which is a tangent vector to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+This is true for all curves <m>\vr(t)</m> on <m>G=K</m> and so is true
+for all tangent vectors to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+So <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is a normal vector to <m>G(x,y,z)=K</m>
+at <m>(x_0,y_0,z_0)</m>.
+-->
+</p>
+
+</proof>
+
+<example xml:id="eg_tangentPlaneA">
+<p>
+Considérons la surface
+<md>
+<mrow>
+x &amp;= x(u,v) = u\cos v,
+</mrow><mrow>
+y &amp;=y(u,v) = u\sin v,
+</mrow><mrow>
+z &amp;=z(u,v) = u.
+</mrow>
+</md>
+Remarquons que
+<me>
+x(u,v)^2 + y(u,v)^2 = u^2 = z(u,v)^2,
+</me>
+de sorte que notre surface est aussi
+<me>
+G(x,y,z) = x^2+y^2-z^2 = 0.
+</me>
+Nous en ferons une esquisse sous peu, mais, avant, trouvons son plan tangent au point <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m>.
+
+Nous allons le faire deux fois, une fois avec l'équation implicite, puis une fois avec le paramétrage
+<m>\vr(u,v) = u\cos v\,\vi   + u\sin v\,\vj  + u\,\vk  </m>. Nous avons
+<md>
+<mrow>
+\vT_u &amp;= \frac{\partial\vr}{\partial u}(u_0,v_0)
+       =  \cos v_0\,\vi   + \sin v_0\,\vj  + \vk,
+</mrow><mrow>
+\vT_v &amp;= \frac{\partial\vr}{\partial v}(u_0,v_0)
+       =  -u_0\sin v_0\,\vi   + u_0\cos v_0\,\vj,
+</mrow>
+</md>
+de sorte que
+<md>
+<mrow>
+\vn &amp;= \left( \cos v_0\,\vi   + \sin v_0\,\vj  + \vk  \right) \times
+      \left( -u_0\sin v_0\,\vi   + u_0\cos v_0\,\vj \right)
+</mrow><mrow>
+    &amp;= \left( -u_0\cos v_0,\,-u_0\sin v_0,\, u_0\right)
+      = (-x_0,-y_0,z_0).
+</mrow>
+</md>
+Par ailleurs, avec l'équation  <m>G(x,y,z) = x^2+y^2-z^2=0</m>, nous avons le vecteur normal
+<me>
+\vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =-2(-x_0,-y_0,z_0).
+</me>
+Bien entendu, les deux vecteurs  <m>(-x_0,-y_0,z_0)</m> et <m>-2(-x_0,-y_0,z_0)</m> sont colinéaires, les deux peuvent être utilisés comme vecteur normal pour le plan tangent. L'équation de ce plan est
+<me>
+0=\vn\cdot(x-x_0,y-y_0,z-z_0)
+ = -x_0(x-x_0)-y_0(y-y_0) + z_0(z-z_0),
+</me>
+<em>pourvu que </em> <m>(x_0,y_0,z_0)\ne \vZero</m>. Si jamais
+<m>(x_0,y_0,z_0) = \vZero</m>, l'<q>équation du plan tangent</q> devient <m>0=0</m>, ce qui n'est clairement pas tellement utile.
+</p>
+
+<p>Plus généralement, si
+<m>\vT_u\times\vT_v=\vZero</m> (ou <m>\vnabla G(x_0,y_0,z_0)=\vZero</m>), alors soit<fn>Nous avons vu cette dichotomie pour une courbe, lorsque <m>\vr'(t) = 0 </m>, voir l'<xref ref="eg_zeroSpeed"/>.
+</fn>
+<ul>
+<li>
+la surface n'admet pas de plan tangent au point  <m>(x_0,y_0,z_0)</m>, soit
+</li>
+<li>
+notre paramétrage est <q>tordu</q><fn>Bien sûr, <q>tordu</q> n'est pas un terme très précis. Une raison pour qu'un paramétrage soit <q>tordu</q> est qu'il ne fournit pas une correspondance 1 à 1 entre les paramètres  <m>(u,v)</m> et les points d'une portion de la surface. Par exemple, les coordonnées polaires <m>\vr(u,v) = u\cos v\,\vi   + u\sin v\,\vj </m> donnent <m>\vr(0,v)=(0,0)</m> pour toutes les valeurs de  <m>v</m>.
+</fn> en ce point. Par exemple, nous pouvons paramétrer le plan
+<m>xy</m>, soit le plan <m>z=0</m>, par  <m>\vr(u,v) = u\cos v\,\vi   + u\sin v\,\vj </m>  (ce sont les coordonnées polaires). Alors,
+<m>\vT_u =  \cos v_0\,\vi   + \sin v_0\,\vj  </m> et
+<m>\vT_v =  -u_0\sin v_0\,\vi   + u_0\cos v_0\,\vj </m>, de sorte que
+<m>\vT_u\times\vT_v = u_0\vk  </m> est <m>\vZero</m> lorsque <m>u_0=0</m>. Mais le plan <m>z=0</m> est son propre plan tangent!
+</li>
+</ul>
+La surface qui nous intéresse est  <m>x^2+y^2=z^2</m>. L'intersection de cette surface avec le plan horizontal  <m>z=z_0</m> est <m>x^2+y^2=z_0^2</m>, qui est un cercle de rayon  <m>|z_0|</m> centré à  <m>x=y=0</m>. Ainsi, notre surface est un empilement de cercles. Le rayon du cercle dans le plan <m>Oxy</m> est nul, et ce rayon croît linéairement à mesure qu'on s'éloigne du plan <m>Oxy</m>. Notre surface est un cône, elle n'a pas de plan tangent à  <m>(0,0,0)</m>.
+</p>
+
+<sidebyside width="30%">
+<image source="images/CLP4-figs/cone"/>
+</sidebyside>
+
+</example>
+
+
+<example xml:id="eg_tangentPlaneB">
+<p>
+Nous allons maintenant trouver les plans tangents à la surface
+<me>
+x^2 + y^2 -z^2 = 1.
+</me>
+Comme pour le cône, l'intersection de la surface avec un plan  horizontal <m>z=z_0</m> est un cercle, le cercle de rayon <m>\sqrt{1+z_0^2}</m>  centré à <m>x=y=0</m>. Notre surface est, de nouveau, un empilement de cercles. Le rayon du cercle au plan <m>Oxy</m> est  <m>1</m>, et ce rayon croît à mesure qu'on s'éloigne du plan <m>Oxy</m>. Voici une esquisse.
+</p>
+
+<sidebyside width="25%">
+<image source="images/CLP4-figs/hyperboloid1"/>
+</sidebyside>
+
+<p>
+Cette surface est un hyperboloïde à une nappe<fn>Il y a aussi des hyperboloïdes à deux nappes.
+</fn>.
+</p>
+
+<p>
+Avec l'équation  <m>G(x,y,z) = x^2+y^2-z^2=1</m>, nous avons
+<me>
+\vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =2(x_0,y_0,-z_0)
+</me>
+et nous pouvons prendre  <m>(x_0,y_0,-z_0)</m> comme vecteur normal au point  <m>(x_0,y_0,z_0)</m>. Ainsi, le plan tangent à <m>x^2+y^2-z^2=1</m> au point <m>(x_0,y_0,z_0)</m> est
+<me>
+0=\vn\cdot(x-x_0,y-y_0,z-z_0)
+ = x_0(x-x_0)+y_0(y-y_0) - z_0(z-z_0).
+</me>
+Cette fois, <m>\vn=(x_0,y_0,-z_0)\ne \vZero</m>, de sorte que nous avons un plan tangent en chaque point. Comme <m>(0,0,0)</m> n'appartient pas à la surface, nous n'avons pas le problème d'annulation du vecteur normal <m>\vn=(x_0,y_0,-z_0)</m>.
+</p>
+
+</example>
+
+<!-- WeBWork à inclure>
+J'aiimporté "manuellement" certains fichier dans le cours Mat298, dans notre serveur.
+local/Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.4_Parametrized_Surfaces_and_Surface_Integrals/16.4.7.pg
+
+Je peux faire la traduction.
+
+-->
+
+<example xml:id="eg_tangentPlaneBB">
+<title>L'hyperboloïde à une nappe</title>
+
+
+<p>L'hyperboloïde à une nappe <m>x^2+y^2-z^2=1</m> est invariant par rotation autour de l'axe des <m>z</m>. Il semble donc naturel de le paramétrer en utilisant les coordonnées cylindriques.
+</p>
+
+<sidebyside widths="45% 30%" valign="middle">
+<p><md>
+<mrow>
+x &amp;= r\cos\theta
+</mrow><mrow>
+y &amp;= r\sin\theta
+</mrow><mrow>
+z &amp;= z
+</mrow>
+</md></p>
+<image source="images/CLP4-figs/cylindrical"/>
+</sidebyside>
+
+<p>
+En coordonnées cylindriques, la surface <m>x^2+y^2-z^2=1</m> est <m>r^2-z^2=1</m>,
+et l'on peut la paramétrer en prenant
+  <m>\vr(\theta,z) = \sqrt{1+z^2}\,\cos\theta\,\vi   +\sqrt{1+z^2}\,\sin\theta\,\vj
+      +z\,\vk  </m>.
+</p>
+
+<p>
+  Une autre façon de procéder est de tirer profit des propriétés des fonctions trigonométriques hyperboliques.
+<me>
+\sinh u = \frac{1}{2}\left( e^u-e^{-u}\right),  \qquad
+\cosh u = \frac{1}{2}\left( e^u+e^{-u}\right),
+</me>
+    Celles-ci ont des propriétés analogues à celles des fonctions trigonométriques usuelles. Ce n'est pas un hasard, puisque  <m>\cosh u = \cos(iu)</m> et <m>\sinh u = -i\sin(iu)</m>. En effet, on montre que
+<md>
+<mrow>
+\diff{}{u} \cosh u= \sinh u \qquad
+\diff{}{u} \sinh u= \cosh u \qquad
+\cosh^2 u -\sinh^2 u =1.
+</mrow>
+</md>
+On peut choisir  <m>r=\cosh u</m>, <m>z=\sinh u</m> pour obtenir un paramétrage
+<md>
+<mrow>
+\vr(\theta,u) = \cosh u\,\cos\theta\,\vi   +\cosh u\,\sin\theta\,\vj
+      +\sinh u\,\vk.
+</mrow>
+</md>
+Afin de nous exercer avec les fonctions trigonométriques hyperboliques, trouvons, au moyen de ce paramétrage, le vecteur  <m>\vn </m>.
+<md>
+<mrow>
+x&amp;=  \cosh u\,\cos\theta &amp;
+x_u&amp;=  \sinh u\,\cos\theta &amp;
+x_\theta&amp;=  -\cosh u\,\sin\theta
+
+</mrow><mrow>
+
+y&amp;= \cosh u\,\sin\theta &amp;
+y_u&amp;= \sinh u\,\sin\theta &amp;
+y_\theta&amp;= \phantom{-}\cosh u\,\cos\theta
+
+</mrow><mrow>
+
+z&amp;=\sinh u &amp;
+z_u&amp;=\cosh u &amp;
+z_\theta&amp;=0
+</mrow>
+</md>
+Ainsi,
+<md>
+      <mrow>
+            \vn = \vT_u\times\vT_\theta
+            &amp;=\det\left[\begin{matrix}
+              \vi &amp; \sinh u\,\cos\theta &amp; -\cosh u\,\sin\theta \\
+              \vj &amp; \sinh u\,\sin\theta &amp; \cosh u\,\cos\theta \\
+              \vk &amp; \cosh u &amp; 0
+            \end{matrix}\right]
+          </mrow>
+<mrow>
+&amp;= -\cosh^2u\,\cos\theta\, \vi 
+       -\cosh^2u\,\sin\theta\, \vj +  
+       \sinh u\cosh u\vk.
+</mrow>
+</md>
+</p></example>
+</subsection>
+
+<xi:include href="./Problemes/Prob-sec-Surfaces.ptx"/>
+</section>

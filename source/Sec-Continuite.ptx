@@ -1,0 +1,570 @@
+<section xml:id="sec-Continuite" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Limites et continuité</title>
+<introduction>
+<p>
+  Rappelons ce que nous entendons par <q>limite d'une fonction d'une variable</q> avant de considérer le cas de plusieurs variables.
+</p>
+
+<p>
+  Si <m>f</m> est une fonction d'une variable dont le domaine contient des points arbitrairement près de la valeur <m>a</m> (peut-être que <m>a</m> fait partie de ce domaine aussi, mais peut-être pas), ce qui veut dire que <m>a</m> est un <q><em>point limite du domaine</em></q>, on écrit
+  <me>
+    \lim_{x\to a}f(x) = L
+  </me>
+lorsque les valeurs de <m>f(x)</m> peuvent être aussi près que l'on veut de <m>L</m>, pourvu que l'on puisse choisir <m>x</m> suffisamment près de <m>a</m>, mais sans être égal à <m>a</m>. En d'autres termes, peu importe la marge <m>\epsilon</m> que l'on se donne, on doit avoir <m>|L-f(x)|\lt \e</m> aussitôt que l'écart <m>|x-a|</m>, sans être nul, est inférieur à un certain seuil <m>\d \gt 0 </m> qui est à déterminer.
+</p>
+</introduction>
+
+<subsection xml:id="pars-limites">
+  <title>Limites</title>
+<p>
+Si on lit attentivement ce qui précède, on remarque que toutes les notions impliquées ont du sens dans <m>\R^n</m> : les valeurs absolues mesurent des écarts. Il suffit donc de les remplacer par des normes.
+</p>
+
+<definition xml:id="def-Limites">
+  <statement>
+    <p>Soit <m>\plan{D}\subseteq \R</m>, <m>f\colon \plan{D} \to \R</m> et <m>\va\in \R^n</m> tels que <m>\plan{D}</m> contient des points arbitrairement près de <m>\va</m>. On dit que <em>la limite de <m>f</m> lorsque <m>\vx</m> tend vers <m>\va</m> est <m>L</m></em>, ce qu'on écrit
+    <me>
+      \lim_{\vx\to \va}f(\vx) = L
+    </me>
+    si la valeur de <m>f(\vx)</m> peut être aussi près de <m>L</m> que l'on veut, pourvu que l'écart entre <m>\vx</m> et <m>\va</m> soit suffisamment près de <m>0</m>, mais sans être nul. Ceci revient à dire que, pour tout <m>\e \gt 0</m>, il existe <m>\d \gt 0</m> tel que <m>0 \lt |\vx - \va| \lt \d</m>, et  <m>\vx \in \plan{D}</m>  entraîne <m>|f(\vx) - L| \lt \epsilon</m>.
+    </p>
+  </statement>
+</definition>
+
+<ul>
+  <li>
+
+    <p>Dans le cas où <m>n = 2</m>, si l'on veut écrire explicitement les variables, on écrira naturellement
+    <me>
+      \lim_{(x,y)\to (x_a, y_a)} f(x,y)
+    </me>.
+  </p>
+  </li>
+  <li>
+    <p>
+      On écrit souvent aussi
+      <md>
+        <mrow>f(\vx) \underset{\vx \to \va}{\longrightarrow} L \amp \amp \amp \text{ ou } \amp \amp f(\vx) \longrightarrow L \text{ lorsque } \vx \to \va</mrow>
+      </md>.
+    </p>
+  </li>
+</ul>
+<p>
+  S'il est vrai que la définition pour les fonctions de plusieurs variables est en tout point semblable à celle pour les fonctions à une variable, il y a une différence substantielle entre les deux contextes. Avec une seule variable, <m>x</m> peut se rapprocher de <m>a</m> par la gauche ou par la droite, il n'y a que deux directions de rapprochement. Pour que la limite <m>\lim_{x\to a} f(x)</m> existe, on demande que les deux limites latérales coïncident, c'est-à-dire
+  <me>
+    \lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x).
+  </me>
+   Dans ce cas, la limite <m>\lim_{x\to a} f(x)</m> est la valeur commune des deux limites latérales.
+</p>
+<p>
+  Dans le cas des fonctions à plusieurs variables, il y a beaucoup plus de <q>place</q> pour que <m>\vx</m> s'approche de <m>\va</m>. Il existe une infinité de directions ou de façons de s'approcher d'un point <m>\va</m> donné.
+</p>
+<figure>
+<caption>
+  Dans la figure de gauche, le cas d'une variable : on peut s'approcher par la gauche ou par la droite d'un point donné. La situation est différente en deux variables, comme la figure du centre et celle de droite l'illustrent.
+</caption>
+
+
+<sidebyside>
+<image source="images/CLP-figs/room1"/>
+<image source="images/CLP-figs/room2"/>
+<image source="images/CLP-figs/room3"/>
+</sidebyside>
+</figure>
+
+
+<example xml:id = "ex-Lim-NE1">
+  <statement>
+    <p>
+      Soit <m>f(x,y) = \frac{x^2 - y^2}{x^2 + y^2}</m> pour <m>(x,y)\ne (0,0)</m>. Ci-bas, on trouve les courbes de niveau ainsi que le graphe de la fonction <m>f</m>.
+    </p>
+    <figure xml:id="Limite-NE">
+      <caption>Les courbes de niveau et le graphe de <m>f(x,y)= \frac{x^2 - y^2}{x^2 + y^2}</m> </caption>
+    <sidebyside widths="45% 55%" margins="auto" valign="middle">
+        <image xml:id="sageplot-Limite-NE">
+            <sageplot>
+              var('x,y')
+              f(x,y) = (x^2 -y^2)/(x^2 + y^2)
+              C = contour_plot(f ,(-1,1), (-1,1), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x, label_colors="black", label_inline=True, label_fontsize=14,
+              gridlines=True, axes_labels=["$x$","$y$"], tick_formatter = "latex", fontsize= 14)
+              C
+             </sageplot>
+        </image>
+        <image xml:id="sageplot-Limite-NE-Surface">
+            <sageplot variant="3d" aspect="1.0">
+              var('x,y,z')
+              f(x,y) = (x^2-y^2)/(x^2 + y^2)
+              cm = colormaps.Spectral
+              zmin, zmax = -1, 1
+              def c(x,y,z):
+                  return float((f(x,y)-zmin)/(zmax-zmin))
+              fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
+              fig
+             </sageplot>
+        </image>
+        <!-- <image source = "images/Jupyter-sage/Limite-NE-surf.png"/> -->
+    </sidebyside>
+    </figure>
+    <p>
+      On observe dans le graphe que, autour de <m>(0,0)</m>, la surface semble ne pas être lisse. Du côté des courbes de niveau, on voit que, près du point <m>(0,0)</m>, il existe des points appartenant à des courbes de niveau très différents. Ceci suggère que la limite de <m>f</m> lorsque <m>(x,y) \to (0,0)</m> n'existe pas.
+    </p>
+    <p>
+      Si, au contraire, nous avions une limite, disons <m>L</m>, les valeurs de <m>f(x,y)</m> devraient s'approcher de <m>L</m> à mesure que <m>(x,y)</m> s'approche de <m>(0,0)</m>. En particulier, si <m>(x,y)</m> s'approche de <m>(0,0)</m> le long de n'importe quelle trajectoire, alors <m>f(x,y)</m> doit s'approcher de <m>L</m>.
+      <ul>
+        <li>
+          <p>
+            Si <m>(x,y)</m> tend vers <m>(0,0)</m> le long de l'axe des <m>x</m>, c'est-à-dire le long de la droite <m>y=0</m>, on aura
+            <me>
+              f(x,y) = \frac{x^2 -y^2}{x^2+ y^2} = \frac{x^2}{x^2} = 1
+            </me>,
+            et donc <m>f(x,y) \longrightarrow 1</m> lorsque <m>(x,y) \to (0,0)</m> avec <m>y=0</m>. Ceci forcerait <m>L=1</m>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            Si, en revanche, on fait tendre <m>(x,y)</m> vers <m>(0,0)</m> le long de l'axe des <m>y</m>, c'est-à-dire le long de la droite <m>x=0</m>, on aura
+            <me>
+              f(x,y) = \frac{x^2 -y^2}{x^2+ y^2} = \frac{-y^2}{y^2} = -1
+            </me>,
+            et donc <m>f(x,y) \longrightarrow -1</m> lorsque <m>(x,y) \to (0,0)</m> avec <m>x=0</m>. Ceci forcerait <m>L=-1</m>, ce qui est une contradiction.
+          </p>
+        </li>
+      </ul>
+      Ainsi, la limite de <m>f</m> lorsque <m>(x,y) \to (0,0)</m> n'existe pas.
+    </p>
+
+  </statement>
+</example>
+
+Le phénomène observé dans l'exemple précédent fournit un critère permettant de décider qu'une limite n'existe pas.
+
+<remark>
+  <title>Critère des deux trajectoires</title>
+  <p>
+    Si <m>f(x,y) \longrightarrow L_1</m> lorsque <m>(x,y)</m> tend vers <m>(x_0,y_0)</m> le long d'un chemin <m>\plan{C}_1</m> et que <m>f(x,y) \longrightarrow L_2</m> lorsque <m>(x,y)</m> tend vers <m>(x_0,y_0)</m> le long d'un autre chemin <m>\plan{C}_2</m> avec <m>L_1 \ne L_2</m>, alors
+    <me>
+      \lim_{(x,y)\to (x_0,y_0)} f(x,y)
+    </me>
+     n'existe pas.
+  </p>
+
+
+</remark>
+
+<p>
+  Une mise en garde s'impose cependant : si deux trajectoires donnent la même limite, il n'est pas possible de conclure que la limite existe. L'exemple suivant montre cette situation.
+</p>
+<example>
+  <statement>
+    <p>
+      Considérer <m>f(x,y) = \frac{xy^2}{x^2 + y^4}</m> et étudier la limite de <m>f</m> lorsque <m>(x,y) </m> tend vers <m>(0,0)</m>.
+    </p>
+    <p>
+      À l'instar de l'<xref ref="ex-Lim-NE1"/>, essayons plusieurs droites non verticales, d'équation <m>y=kx</m>. Nous avons, sur une telle droite,
+      <me>
+        f(x,y) =f(x,kx) = \frac{x(kx)^2}{x^2 + (kx)^2} =\frac{m^2 x^3}{x^2 + k^4x^4} = \frac{k^2 x}{1+k^4 x^2}
+      </me>,
+      ce qui donne que <m>f(x,y) \longrightarrow 0</m> lorsque <m>(x,y)\to (0,0) </m> le long de la droite <m>y=kx</m>. Nous avons donc une infinité de trajectoires le long desquelles la limite est nulle. Ceci ne suffit pourtant pas pour établir que la limite existe et est zéro.
+    </p>
+    <p>
+      Analysons le graphique des courbes de niveau  ainsi que le graphe de <m>f</m>.
+    </p>
+<figure xml:id="Limite-NE2">
+  <caption>Les courbes de niveau et le graphe de <m>f(x,y)= \frac{xy^2}{x^2 + y^4}</m> </caption>
+  <sidebyside widths="45% 55%" margins="auto" valign="middle">
+      <image xml:id="sageplot-Limite-NE2">
+        <sageplot>
+          var('x,y')
+          f(x,y) = (x*y^2)/(x^2 + y^4)
+          C = contour_plot(f ,(-2,2), (-2,2), cmap = "Spectral", labels = True, label_colors="black", label_inline=True, label_fontsize=14,
+          gridlines=True, label_fmt=lambda x: "$%s$"%round(x,2), axes_labels=["$x$","$y$"], tick_formatter = "latex", fontsize= 14)
+          C
+         </sageplot>
+      </image>
+      <image xml:id="sageplot3d-Limite-NE2-surface">
+        <sageplot variant="3d" aspect="1.0">
+          var('x,y,z')
+          f(x,y) = (x*y^2)/(x^2 + y^4)
+          cm = colormaps.Spectral
+          zmin, zmax = -0.5, 0.5
+          def c(x,y,z):
+              return float((f(x,y)-zmin)/(zmax-zmin))
+          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 90)
+          fig
+        </sageplot>
+      </image>
+
+      <!-- <image source = "images/Jupyter-sage/Limite-NE2.png"/> -->
+  </sidebyside>
+</figure>
+<p>
+  À nouveau, on voit un problème à l'origine. Les courbes de niveau indiquent que, près de l'origine, on a des points sur des courbes de niveau de niveaux très différents. Ces courbes ont l'aspect de paraboles. Le long de la parabole <m>x = y^2</m>, on a
+</p>
+<me>
+  f(x,y) = f(y^2,x) = \frac{y^2 y^2}{y^4 + y^4} = \frac{1}{2}
+</me>,
+<p>
+de sorte que <m>f(x,y) \longrightarrow \frac{1}{2}</m> lorsque <m>(x,y) \to (0,0)</m> le long de <m>y^2 = x</m>. Ceci suffit donc pour conclure que la limite de <m>f(x,y)</m> lorsque <m>(x,y) \to (0,0)</m> n'existe pas.
+</p>
+<p>
+  Notons que le diagramme des courbes de niveau suggère à lui seul de considérer des paraboles de la forme <m>x = ky^2</m> avec différentes valeurs de <m>k</m> comme trajectoires donnant des limites différentes.
+</p>
+  </statement>
+</example>
+
+<!--  
+<exercise xml:id="limite_xy_3_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-01fonctions_plusieurs_variables/limite_xy_3_SL.pg"/>
+</exercise> -->
+
+
+<!-- 
+<exercise xml:id="Limites-cont-01" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Limites-cont-01.pg"/>
+</exercise> -->
+
+
+
+
+<p>
+Voyons maintenant un exemple d'une limite qui existe.
+</p>
+
+<example xml:id = "ex-Lim-E1">
+  <statement>
+    <p>
+      Soit <m>f(x,y) = \frac{2x^2y}{x^2 + y^2}</m> pour <m>(x,y)\ne (0,0)</m>. À nouveau, le numérateur et le dénominateur tendent vers <m>0</m> lorsque <m>(z,y)</m> tend vers <m>(0,0)</m>. Cependant, dans ce cas, le numérateur est de degré total <m>3</m>, tandis que le dénominateur est de degré total <m>2</m>. On peut donc s'attendre à ce que <em><q>le numérateur l'emporte</q></em> et que la limite soit <m>0</m>. Par ailleurs, le diagramme des courbes de niveau et le graphe de <m>f</m> appuient ceci. Montrons que c'est effectivement le cas.
+    </p>
+<figure xml:id="Limite-E1">
+<caption>Les courbes de niveau et le graphe de <m>f(x,y)= \frac{2x^2y}{x^2 + y^2}</m> </caption>
+<sidebyside widths="45% 50%" margins="auto" valign="middle">
+    <image xml:id="sageplot-Limite-E1">
+        <sageplot>
+          var('x,y')
+          f(x,y) = (2*x^2 *y)/(x^2 + y^2)
+          C = contour_plot(f ,(-1,1), (-1,1), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x, label_colors="black", label_inline = True, label_fontsize=14,
+          gridlines =True, axes_labels=["$x$","$y$"], axes_labels_size=1.8, tick_formatter = "latex", fontsize= 14)
+          C
+         </sageplot>
+    </image>
+    <image xml:id="sageplot-Limite-E1-surface">
+        <sageplot variant="3d" aspect="1.0">
+          var('x,y,z')
+          f(x,y)=(2*x^2*y)/(x^2+y^2)
+          cm = colormaps.Spectral
+          zmin, zmax = -1, 1
+          def c(x,y,z):
+              return float((f(x,y)-zmin)/(zmax-zmin))
+          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
+          fig
+         </sageplot>
+    </image>
+    <!-- <image source ="images/Jupyter-sage/Limite-E1-surf.png"/> -->
+</sidebyside>
+</figure>
+
+    <p>Soit donc <m>\e \gt 0</m>. On soupçonne que la limite est <m>L=0</m>, on s'intéresse donc à la quantité
+    <me>
+      |f(x,y) - L | = | f(x,y) | = \frac{2x^2 |y|}{x^2 + y^2}.
+    </me>
+    Nous devons montrer qu'il est possible de choisir <m>\d \gt 0</m> tel que la condition <m>0\lt \sqrt{x^2 + y^2} \lt \d</m> entraîne  <m>\frac{2x^2 |y|}{x^2 + y^2} \lt \e</m>.
+    </p>
+    <p>
+      Or, <m>y^2 \geqslant 0</m>, de sorte que <m>x^2 \leqslant x^2 + y^2 </m>, et donc <m>\frac{x^2}{x^2 + y^2}\leqslant 1</m>. Ainsi, <m> |f(x,y) -L| \leqslant 2 |y| </m>.
+    </p>
+    <p>
+      Il suffit alors de poser <m>\d = \e /2</m>. En effet, dans ce cas, si <m>\sqrt{x^2+ y^2} \lt \d</m>, nous aurons <m>|y| \leqslant \sqrt{x^2 + y^2} \lt \d = \e /2</m>, et donc
+      <me>
+        |f(x,y) - L| \leqslant 2 |y| \lt2 \frac{\e}{2} = \e
+      </me>.
+
+    </p>
+  </statement>
+</example>
+<p>
+Dans la pratique, il est fastidieux d'étudier les limites en utilisant la définition. C'est pour ça qu'on s'intéresse à des propriétés générales : il s'agit d'adaptations au contexte des fonctions de plusieurs variables de résultats connus pour les fonctions d'une variable. Étant donné que celles-ci sont valables en toute généralité, nous les énonçons avec le langage vectoriel. Par ailleurs, rappelons que si <m>f,g</m> sont deux fonctions et que <m>\a \in \R</m>, alors on peut construire les fonctions <m>\a f,\, f+g, fg</m> et <m>\frac{f}{g}</m> par les formules  <m>(\a f)(\vx) = \a f(\vx), (f+g)(\vx) = f(\vx) + g(\vx), (fg)(\vx) = f(\vx) g(\vx)</m> et
+ <m>\left(\frac{f}{g}\right)(\vx) =\frac{f(\vx)}{g(\vx)} </m>, pourvu que <m> g(\vx) \ne 0</m>.
+</p>
+
+
+<theorem xml:id="thm-Limit-Properties">
+    <title>Propriétés des limites</title>
+    <statement>
+      <p>Soit <m>\plan{D}\subseteq \R^n</m> et <m>f,g:\plan{D} \to \R</m> telles que <m>\lim_{\vx \to \va}f(\vx) = L_1</m> et <m>\lim_{\vx \to \va} g(\vx) = L_2</m>. Alors, pour tout <m>\a\in \R</m>, nous avons
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\displaystyle \lim_{\vx \to \va} (\a f)(\vx) = \a L_1</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \lim_{\vx \to \va} (f + g)(\vx) = L_1 + L_2</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \lim_{\vx \to \va} (fg)(\vx) = L_1 \, L_2</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lim_{\vx \to \va} \left(\frac{f}{g}\right)(\vx) = \frac{L_1}{L_2}</m> si <m>L_2 \ne 0</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+
+</theorem>
+<p>
+  En somme, ce théorème nous dit que lorsque les limites existent, elles se comportent comme nous nous y attendons.
+</p>
+
+<!-- 
+<exercise xml:id="limite_xy_1_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-01fonctions_plusieurs_variables/limite_xy_1_SL.pg"/>
+</exercise> -->
+
+<p>
+  Par ailleurs, le résultat suivant est souvent utile, car il permet de se ramener à des fonctions dont les limites sont connues.
+</p>
+
+<theorem xml:id="thm-Sandwich">
+  <title>Théorème du sandwich</title>
+
+  <statement>
+    <p>  Soit <m>\plan{D}\subseteq \R^n</m> et <m>f,g, h:\plan{D} \to \R</m> telles que <m>\lim_{\vx \to \va}f(\vx) = L_1 = \lim_{\vx \to \va} g(\vx) </m>  et  <m>f(\vx)\leqslant h(\vx) \leqslant g(\vx)</m> pour <m>\vx \in \plan{D}</m>. Alors, <m>\displaystyle \lim_{\vx \to \va} h(\vx) = L</m>.
+    </p>
+  </statement>
+</theorem>
+
+
+
+<example xml:id = "ex-Lim-NE3-bis">
+  <statement>
+    <p>Considérer la limite de l'<xref ref="ex-Lim-E1"/> à nouveau. Nous avons
+    <me>
+      \left|f(x,y) - 0 \right| = \frac{x^2 |y|}{x^2 + y^2} \leqslant |y|.
+    </me>
+    Comme <m>|y|\to 0</m> lorsque <m>(x,y) \to (0,0)</m>, le théorème du sandwich donne <m>f(x,y) \to 0</m> lorsque <m>(x,y)\to (0,0)</m>.
+
+    </p>
+  </statement>
+</example>
+<p>
+Une technique utile pour l'étude de certaines limites est le passage aux coordonnées polaires. Rappelons qu'à un point <m>P</m> de coordonnées <m>(x,y)</m> du plan, on associe ses coordonnées polaires <m>(r,\theta)</m>, où <m>r = |\overrightarrow{OP}|</m> et où <m>\theta</m> est l'angle orienté formé par l'axe des abscisses et la demi-droite <m>OP</m>.
+
+</p>
+<sidebyside width="20%">
+<p><md>
+<mrow>
+x&amp;=r\cos\theta
+</mrow><mrow>
+y&amp;=r\sin\theta
+</mrow>
+</md></p>
+<image source="images/CLP-figs/polar"/>
+</sidebyside>
+
+<p>
+  En particulier, les points qui sont près de l'origine sont ceux pour lesquels <m>r</m> est petit, sans égard à la valeur de <m>\theta</m>.
+</p>
+<p>
+  Voyons quelques exemples.
+</p>
+
+<example xml:id = "ex-Lim-E1-pol">
+  <statement>
+    <p>Considérer à nouveau la fonction <m>f(x,y) = \frac{x^2y}{x^2+y^2}</m> pour <m>(x,y)\ne (0,0)</m> et étudier la limite lorsque <m>(x,y)\to (0,0)</m>. En coordonnées polaires, nous avons
+    <me>
+      f(x,y) = f(r\cos \theta, r\sin \theta) = \frac{r^2 \cos^2\theta \cdot r \sin \theta}{r^2 \cos^2 \theta + r^2 \sin^2 \theta} = r \cos^2\theta \cdot  \sin\theta
+    </me>.
+    Comme <m>|r \cos^2 \theta \sin \theta | \leqslant r</m> et que <m>r \to 0</m> lorsque <m>(x,y) \to (0,0)</m>, nous retrouvons le fait que <m>f(x,y) \longrightarrow 0</m> lorsque <m>(x,y) \to (0,0)</m>.
+
+
+    </p>
+  </statement>
+
+</example>
+
+
+<example xml:id = "ex-Lim-NE1-pol">
+  <statement>
+    <p> Considérer à nouveau la limite de l'<xref ref="ex-Lim-NE1"/>. En coordonnées polaires, nous avons
+    <me>
+      f(x,y) = \frac{r^2 \cos^2 \theta - r^2 \sin^2 \theta}{r^2 \cos^2 \theta + r^2 \sin^2 \theta} = \cos^2 \theta - \sin^2 \theta = \cos 2\theta.
+    </me>
+    Cette fois, la valeur de <m>f</m> est indépendante de <m>r</m>, mais est constante sur toute droite dont l'équation polaire est de la forme <m>\theta = \theta_0</m>. Ceci explique l'allure des courbes de niveau.
+    </p>
+    <p>
+      Comme <m>\lim_{(x,y)\to (0,0)} \cos 2\theta = \cos 2\theta</m> n'existe pas (chaque choix de <m>\theta</m> donne une limite différente), il en va de même pour <m>\lim_{(x,y)\to (0,0)}f(x,y)</m>.
+    </p>
+  </statement>
+
+</example>
+<!-- 
+<exercise xml:id="limite_xy_5_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-01fonctions_plusieurs_variables/limite_xy_5_SL.pg"/>
+</exercise> -->
+
+
+
+
+
+</subsection>
+
+<subsection xml:id="pars-Continuite">
+  <title>Continuité</title>
+  <p>
+    Rappelons qu'une fonction <m>f</m> d'une variable est dite être continue en <m>a</m> si <m>\lim_{x\to a} f(x) = f(a)</m>. Cela présuppose notamment que la fonction est définie en <m>x=a</m>. Le calcul d'une limite d'une fonction continue se fait donc par simple évaluation.
+    Pour les fonctions de plusieurs variables, on procède de la même façon.
+
+  </p>
+  <definition xml:id="def-Continuite">
+    <statement>
+      <p>Soit <m>\va \in \plan{D} \subseteq\R^n</m> et <m>f:\plan{D} \to R</m>. On dit que <em><m>f</m> est continue en <m>\va</m></em> <m>\displaystyle \lim_{\vx \to \va} f(\vx) = f(\va)</m>.
+
+      Si <m>f</m> est continue en tout point de <m>\plan{D}</m>, on dit qu'elle est <em>continue sur <m>\plan{D}</m></em>.
+
+      </p>
+    </statement>
+  </definition>
+
+
+
+
+
+<principle xml:id="principle-continuite">
+  <statement>
+    <p> De façon intuitive, une fonction <m>f</m> est continue en un point  <m>\va</m> si une petite variation de <m>\vx</m> près de <m>\va</m> entraîne une petite variation de <m>f(\vx)</m>. En d'autres termes, si <m>\vu</m> est un vecteur unitaire quelconque et que <m>h</m> est un <q>petit</q> nombre réel, on aura
+      <me>
+      f(\va+ h \vu) \approx f(\va)
+      </me>.
+    </p>
+  </statement>
+</principle>
+
+
+  <p>
+    Les propriétés des limites vues au <xref ref="thm-Limit-Properties"/> permettent d'obtenir les propriétés correspondantes pour la continuité.
+  </p>
+
+  <theorem xml:id="thm-Prop-Continues">
+      <title>Propriétés des fonctions continues</title>
+      <statement>
+        <p>Soit <m>\va \in \plan{D}\subseteq \R^n</m> et <m>f,g:\plan{D} \to \R</m> deux fonctions continues en  <m>\va</m> et <m>\a \in \R</m>. Alors, il en va de même pour les fonctions <m>\a f,\ f+g,\ fg</m>. Si, en plus, <m>g(\va)\ne 0</m>, alors la fonction <m>\left(\frac{f}{g}\right)</m> est aussi continue en <m>\va</m>.
+      </p>
+      </statement>
+  </theorem>
+
+  <example>
+    <statement>
+      <p>
+        Toute fonction de la forme <m>f(x,y) = c x^n y^m</m> avec <m>n,m</m> des entiers positifs est continue : elle est obtenue avec des produits de fonctions continues. De la même façon, toute fonction polynomiale, c'est-à-dire toute somme de termes de la forme  <m>cx^n y^m</m>, est une fonction continue. Ceci s'étend naturellement aux fonctions de trois variables ou plus.
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        En vertu du <xref ref="thm-Prop-Continues"/>, toute fonction rationnelle, c'est-à-dire toute fonction de la forme
+        <me>
+          f(x,y) = \frac{p(x,y)}{q(x,y)}
+        </me>
+        où <m>p</m> et <m>q</m> sont des polynômes, est une fonction continue sur l'ensemble de points tels que <m>q(x,y)\ne 0</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Au-delà de la multiplication par les constantes et des additions, produits et quotients de fonctions, il est très pratique de considérer leur composition. Sans surprise, la composition de fonctions continues est une fonction continue.
+  </p>
+
+  <theorem xml:id="thm-Cont-composition">
+    <statement>
+      <p>Soit <m>\plan{D}\subseteq \R^n</m> et <m>f:\plan{D}\to \R</m> une fonction continue.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Si l'image de <m>f</m> est contenue dans une partie <m>\plan{U}</m> de <m>\R</m> et que <m>\f : \plan{U} \to \R </m> est continue, alors <m>\f \circ f : \plan{D} \to \R </m> est une fonction continue également.
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>\vr : I \to \R^n</m> est un chemin dont les composantes sont des fonctions continues et que la courbe est contenue dans <m>\plan{D}</m>, alors le chemin <m>f\circ \vr : I \to \R</m> est une fonction continue.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+
+  <example>
+    <statement>
+      <p> Soit <m>g(x,y) = \arctan \left(\frac{x+y}{x-y}\right)</m>. La fonction <m>f(x,y) = \frac{x+y}{x-y}</m> est une fonction rationnelle. Elle est continue sur le plan <m>\R^2</m> privé de la droite <m>x-y = 0</m>. La fonction <m>\f(t) = \arctan (t)</m> est continue partout. Il en résulte que la fonction <m>g = \f \circ f</m> est continue sur le plan privé de la droite <m>x-y = 0</m>.
+      </p>
+      <figure xml:id="Continuite-composee">
+          <caption>Les courbes de niveau et le graphe de <m>g(x,y) = \arctan \left(\frac{x+y}{x-y}\right)</m>. On observe un changement brusque de niveau le long de la droite <m>x-y=0</m>. Ceci correspond à la discontinuité de cette fonction. La surface, de son côté, présente une déchirure le long de la droite <m>x-y= 0</m>. </caption>
+          <sidebyside widths="45% 55%" margins="auto" valign="middle">
+
+              <image xml:id="sageplot-Cont-compose">
+                  <sageplot>
+                    var('x,y')
+                    f(x,y) = arctan((x+y)/(x-y))
+                    C = contour_plot(f ,(-1,1), (-1,1), cmap = "Spectral", 
+                      labels = False,
+                      gridlines = True, 
+                      axes_labels=["$x$","$y$"], 
+                      colorbar = True,
+                      axes_labels_size = 1.6, 
+                      tick_formatter = "latex", fontsize= 14)
+                    C
+                   </sageplot>
+              </image>
+
+              <image xml:id="sageplot-Cont-compose-surf">
+                  <sageplot variant="3d" aspect="1.0">
+                    var('x,y,z')
+                    f(x,y) = arctan((x+y)/(x-y))
+                    cm = colormaps.Spectral
+                    zmin, zmax = -1.6, 1.6
+                    def c(x,y,z):
+                        return float((f(x,y)-zmin)/(zmax-zmin))
+                    fig = implicit_plot3d(z==f(x,y), (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z:abs(x-y)^2>=0.0015, plot_points = 100, projection = "orthographic")
+                    fig
+                  </sageplot>
+              </image>
+
+            <!-- <image source = "images/Jupyter-sage/Continuite-composition.png"/> -->
+          </sidebyside>
+          </figure>
+    </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Soit <m>\vr (t) = \cos t \, \vi + \sin t \, \vj = x(t)\,\vi + y(t)\,\vj</m> avec <m>t \in [0,2\pi]</m> un paramétrage du cercle. Il s'agit d'une fonction continue puisque chacune de ses composantes l'est. Soit de nouveau <m>g(x,y) =  \arctan\left(\frac{x+y}{x-y}\right)</m>. Afin de calculer la composition <m>f\circ \vr</m>, on doit exclure les valeurs de <m>t</m> dans <m>[0,2\pi]</m> qui font que <m>x(t) - y(t) = 0</m>. Ceci arrive seulement si <m>t\in\{ \pi/4, 5\pi/4 \}</m>.
+          Ainsi, la composition <m>f\circ \vr</m> est définie et continue sur <m>[0,2\pi] \backslash \{ \pi/4, 5\pi/4 \} </m>. Pour un tel <m>t</m>, nous avons
+          <me>
+            f\circ \vr (t) = \arctan\left(\frac{\cos t + \sin t}{\cos t - \sin t} \right).
+          </me>
+        </p>
+      </statement>
+    </example>
+
+
+
+</subsection>
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Continuite.ptx"/>
+
+
+
+</section>

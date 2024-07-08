@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+    <exercise>
+            <!--
+            <title><fromexam>M317 2013D</fromexam></title>
+        -->
+        <statement><p><ol marker = "(a)">
+        <li> Soit <m> \vr(t) = \left(t^2 , 3, \tfrac{1}{3} t^3 \right) </m>. Trouver le vecteur tangent unitaire (pointant dans la direction des <m>t</m> croissants) à  <m>t = 1</m>.
+        </li>
+        <li>
+        Trouver la longueur d'arc de la courbe en (a) entre les points  <m>(0, 3, 0)</m> et  <m>(1, 3, -\frac{1}{3})</m>.
+        </li>
+        </ol>
+        </p></statement>
+
+        <hint><p>
+        Voir <xref ref = "thm-Longueur"/>. La longueur devrait être une quantité positive.
+        </p></hint>
+
+        <answer><p>
+        (a) <m>\hat\vT(1) = \frac{(2,0,1)}{\sqrt{5}}</m>
+        </p><p>
+        (b) <m>\frac{1}{3}\big[5^{3/2}-8\big]</m>
+        </p></answer>
+
+        <solution><p> (a)
+        Since <m>\vr'(t) = (2t,0,t^2)</m>, the specified unit tangent at <m>t=1</m> is
+        <me>
+        \hat\vT(1) = \frac{(2,0,1)}{\sqrt{5}}
+        </me>
+        </p>
+
+        <p>(b)
+        We are to find the arc length between <m>\vr(0)</m> and <m>\vr(-1)</m>.
+        As <m>\diff{s}{t}=\sqrt{4t^2+t^4}</m>, the
+        <md>
+        <mrow>
+        \text{arc length} &amp;= \int_{-1}^0 \sqrt{4t^2+t^4}\ \dee{t}
+        </mrow>
+        </md>
+        The integrand is even, so
+        <md>
+        <mrow>
+        \text{arc length} &amp;= \int_0^1 \sqrt{4t^2+t^4}\ \dee{t}
+        =\int_0^1 t\sqrt{4+t^2}\ \dee{t}
+        =\Big[\tfrac{1}{3}{(4+t^2)}^{3/2}\Big]_0^1
+        </mrow><mrow>
+        &amp;=\tfrac{1}{3}\big[5^{3/2}-8\big]
+        </mrow>
+        </md>
+        </p>
+
+        </solution>
+      </exercise>
+
+    <exercise xml:id="prob_s1_1_lemma113">
+      <statement><p> En utilisant le <nbsp/><xref ref = "thm-Longueur"/>, trouver la longuer de la portion de la courbe donnée par  <m>\vr(t)=\left(t,\sqrt{\frac{3}{2}}t^2,t^3\right)</m> entre <m>t=0</m> et <m>t=1</m>.
+      </p></statement>
+      <hint><p>
+      On a, en vertu du <nbsp/><xref ref = "thm-Longueur"/>, que la longueur est donnéé entre <m>t=0</m> par et <m>t=1</m> est donnée par
+      <me>
+      \int_{0}^1\left| \diff{\vr}{t}(t)\right|\dee t</me>
+      </p>
+
+      <p>La notation peut être un peu lourde. Cependant  <m>\diff{\vr}{t}(t)</m> est un vecteur dont les composantes sont des fonctions de la variable <m>t</m>. Si on prend la norme, on obtient donc une fonction de <m>t</m>. C'est cette fonction qu'il faut intéegrer. Afin de le faire, on a intérêt à simplifier autant que possible.
+      </p></hint>
+      <answer><p>
+      2
+      </p></answer>
+      <solution><p>
+      By Lemma<nbsp/><xref ref = "thm-Longueur"/>,
+      the arclength of <m>\vr(t)</m> from <m>t=0</m> to <m>t=1</m> is
+      <m>\int_{0}^1\left| \diff{\vr}{t}(t)\right|\dee t</m>. We'll calculate this in a few pieces to make the steps clearer.
+      <md>
+      <mrow>
+      \vr(t)&amp;=\left(t,\sqrt{\frac{3}{2}}t^2,t^3\right)
+      </mrow><mrow>
+      \diff{\vr}{t}(t)&amp;=\left(1,\sqrt{6}t,3t^2\right)
+      </mrow><mrow>
+      \left|\diff{\vr}{t}(t)\right|&amp;=\sqrt{1^2+(\sqrt{6}t)^2+(3t^2)^2}=\sqrt{1+6t^2+9t^4}
+      </mrow><mrow>
+      &amp;=\sqrt{(3t^2+1)^2}=3t^2+1
+      </mrow><mrow>
+      \int_{0}^1\left| \diff{\vr}{t}(t)\right|\dee t&amp;=\int_0^1\left(3t^2+1 \right)\dee t=2
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      La position d'une particule au temps  <m>t</m> est donnée par <m>\vr(t) = (t+\sin t, \cos t)</m><fn>La courbe tracée par cette particule est une cycloïde</fn>. Quelle est la norme de l'accéleration au temps <m>t</m>?
+      </p></statement>
+      <hint><p>
+      <m>\vr(t)</m> est la position, de sorte que l'accéleration est <m>\vr''(t)</m>.
+      </p></hint>
+      <answer><p>
+      1
+      </p></answer>
+      <solution><p>
+      Since <m>\vr(t)</m> is the position of the particle,  its acceleration is <m>\vr''(t)</m>.
+      <md>
+      <mrow>
+      \vr(t)&amp;=(t+\sin t, \cos t)
+      </mrow><mrow>
+      \vr'(t)&amp;=(1+\cos t,-\sin t)
+      </mrow><mrow>
+      \vr''(t)&amp;=(-\sin t,-\cos t)
+      </mrow><mrow>
+      |\vr''(t)|&amp;=\sqrt{\sin^2t+\cos^2t}=1
+      </mrow>
+      </md>
+      The magnitude of acceleration is constant, but its <em>direction</em> is changing, since <m>\vr''(t)</m> is a vector with changing direction.
+      </p></solution>
+    </exercise>
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <exercise>
+          <!--
+          <title><fromexam>M200 2003A</fromexam></title>
+      -->
+      <statement><p>
+       Au temps  <m>t=0</m>, une particule a  <m>\vr(0)=\llt -1,0,0\rgt</m> et <m>\vv(0)=\llt 0,-1,1\rgt</m> pour position et vitesse, respetivement. Au temps <m>t</m>, l'accélération est
+      <m>
+      \va(t)=\llt \cos t,\sin t,0\rgt
+      </m>
+      <ol marker = "(a)">
+      <li>
+      Trouver la position de la particule au temps  <m>t</m>.
+      </li>
+      <li>
+      Montrer que les vecteurs vitesse et accélération sont toujours mutuellement orthogonaux.
+      </li>
+      <li>
+      Trouver l'équation de la tangente à la courbe décrite par la particule au point correspondant à <m>t=-\pi/2</m>.
+      </li>
+      <li>
+      Vrai ou Faux : Aucune tangente à la courbe décrite par la particule ne passe par <m>(0,0,0)</m>. Justifiez.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\vr(t)=\llt -\cos t, -\sin t, t\rgt</m>
+      </p><p>
+      (b) <m>\vv(t)\cdot\va(t)=0</m>
+      </p>
+
+      <p>(c) <m>\vr(u)=\llt 0,1,-\frac{\pi}{2}\rgt+u\llt -1,0,1\rgt</m>
+      </p><p>
+      (d) Vrai.
+      </p></answer>
+
+      <solution><p>
+      (a) By definition,
+      <me>
+      \vv'(t)=\va(t)=\llt \cos t,\sin t,0\rgt
+      \implies \vv(t)=\llt \sin t+c_1, -\cos t+c_2, c_3\rgt
+      </me>
+      for some constants <m>c_1</m>, <m>c_2</m>, <m>c_3</m>. To satisfy <m>\vv(0)=\llt 0,-1,1\rgt</m>,
+      we need <m>c_1=0</m>, <m>c_2=0</m> and <m>c_3=1</m>. So
+      <m>\vv(t)=\llt \sin t, -\cos t, 1\rgt</m>. Similarly,
+      <md>
+      <mrow>
+      \vr'(t)=\vv(t)&amp;=\llt \sin t,-\cos t,1\rgt
+      </mrow><mrow>&amp;\implies \vr(t)=\llt -\cos t+d_1, -\sin t+d_2, t+d_3\rgt
+      </mrow>
+      </md>
+      for some constants <m>d_1</m>, <m>d_2</m>, <m>d_3</m>. To satisfy <m>\vr(0)=\llt -1,0,0\rgt</m>,
+      we need <m>d_1=0</m>, <m>d_2=0</m> and <m>d_3=0</m>. So
+      <m>\vr(t)=\llt -\cos t, -\sin t, t\rgt</m>.
+      </p>
+
+      <p>(b) To test for orthogonality, we compute the dot product
+      <md>
+      <mrow>
+      \vv(t)\cdot\va(t)&amp;=\llt \sin t, -\cos t, 1\rgt\cdot\llt \cos t,\sin t,0\rgt
+      </mrow><mrow>
+      &amp;=\sin t\cos t-\cos t \sin t+1\times 0=0
+      </mrow>
+      </md>
+      so <m>\vv(t)\perp\va(t)</m> for all <m>t</m>.
+      </p>
+
+      <p>(c)
+      At <m>t=-\frac{\pi}{2}</m> the particle is at
+      <m>\vr\big(-\frac{\pi}{2}\big)=\llt 0,1,-\frac{\pi}{2}\rgt</m> and has velocity
+      <m>\vv\big(-\frac{\pi}{2}\big)=\llt -1,0,1\rgt</m>. So the tangent line must pass through <m>\llt 0,1,-\frac{\pi}{2}\rgt</m> and have direction vector
+      <m>\llt -1,0,1\rgt</m>. Here is a vector parametric
+      equation for the tangent line.
+      <me>
+      \vr(u)=\llt 0,1,-\frac{\pi}{2}\rgt+u\llt -1,0,1\rgt
+      </me>
+      </p>
+
+      <p>(d) True. Look at the path followed by the particle from
+      the top so that we only see <m>x</m> and <m>y</m> coordinates. The path we see (call
+      this the projected path) is
+      <m>x(t)=-\cos t</m>, <m>y(t)=-\sin t</m>, which is a circle of radius one centred
+      on the origin. Any tangent line to any circle always remains outside the
+      circle. So no tangent line to the projected path can pass through the <m>(0,0)</m>.
+      So no tangent line to the path followed by the particle can pass through
+      the <m>z</m>--axis and, in particular, through <m>(0,0,0)</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+          <!--
+          <title><fromexam>M200 2002D</fromexam></title>
+      -->
+
+      <statement><p>
+      La position d'une particule au temps  <m>t</m> (mesuré en secondes) est donnée par
+      <me>
+      \vr(t)=t\cos\left(\frac{\pi t}{2}\right)\vi
+               +t\sin\left(\frac{\pi t}{2}\right)\vj +t\,\vk
+      </me>
+      <ol marker = "(a)">
+      <li>
+      Montrez que la courbe décrite par la particule se trouve sur le <m>z^2=x^2+y^2</m>.
+      </li>
+      <li>
+      Trouvez le vecteur vitesse, ainsi que sa norme, au temps <m>t</m>.
+      </li>
+      <li>
+      Supposez qu'au temps  <m>t=1</m>s la particule quitte sa trajectoire pour prendre la droite tangente  <m>L</m>. Trouvez l'équation de la tangente  <m>L</m>.
+      </li>
+      <li>
+      Combien de temps ça prend àla prticule pour traverser le plan <m>x=-1</m> à compter du moment où elle commence à bouger le long de  <m>L</m>?
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>x(t)^2+y(t)^2=z(t)^2</m> pour tout <m>t</m>
+      </p>
+
+      <p>(b) <me>\text{vitesse}= \big[\cos\big(\tfrac{\pi t}{2}\big)
+                 -\tfrac{\pi t}{2}\sin\big(\tfrac{\pi t}{2}\big)\big]\vi
+               +\big[\sin\big(\tfrac{\pi t}{2}\big)
+                 +\tfrac{\pi t}{2}\cos\big(\tfrac{\pi t}{2}\big)\big]\vj +\vk</me>
+      <me>\text{vitesse scalaire}=\sqrt{2+\frac{\pi^2 t^2}{4}}</me>
+      </p>
+
+      <p>(c) <m>\llt x,y,z\rgt = \llt 0,1,1\rgt +(t-1)\llt -\frac{\pi}{2},1,1\rgt</m>
+      </p>
+
+      <p>(d)   <m>\frac{2}{\pi}</m> secondes
+      </p></answer>
+
+      <solution><p> (a)
+      Since
+      <me>
+      x(t)^2+y(t)^2=t^2\cos^2\big(\tfrac{\pi t}{2}\big)
+         +t^2\sin^2\big(\tfrac{\pi t}{2}\big)=t^2\qquad\text{and}\qquad
+      z(t)^2=t^2
+      </me>
+      are the same, the path of the particl
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+          <!-- <title><fromexam>M317 2008A</fromexam></title>
+      -->
+      <statement><p>
+      Une particule de masse  <m>m = 1</m> est située à <m>\vr_0 = \frac{1}{2}\,\vk</m> et admet pour vecteur vitesse  <m>\vv_0 =\frac{\pi^2}{2}\,\vi</m> au temps  <m>t=0</m>. La particule se déplace soumise à la force
+      <m>
+      \vF(t) = -3t\,\vi + \sin t\,\vj + 2e^{2t}\,\vk.
+      </m>
+      <ol marker = "(a)">
+      <li>
+      Trouvez la position <m>\vr(t)</m> de la particule au temps <m>t</m>.
+      </li>
+      <li>
+      À quel moment (après <m>t=0</m>) la particule croise-t-elle le plan
+      <m>x = 0</m> pour la première fois?
+      </li>
+      <li>
+      Quel est le vecteur vitesse de la particule à l'instant trouvé en (b)?
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      D'après la loi de Newton, <m>\vF=m\va</m>.
+      </p></hint>
+
+      <answer><p>
+      (a) <m>\vr(t) = \big(\frac{\pi^2 t}{2}-\frac{t^3}{2}\big)\,\vi +
+                    (t- \sin t)\,\vj + \left(\frac{1}{2}e^{2t}-t\right)\,\vk</m>
+      </p><p>
+      (b) <m>t=\pi</m>
+      </p>
+
+      <p>(c) <m>-\pi^2\,\vi +2\,\vj + \big(e^{2\pi}-1\big)\,\vk</m>
+      </p></answer>
+
+      <solution><p> (a)
+      According to Newton,
+      <me>
+      m\vr''(t) = \vF(t)\qquad\text{so that}\qquad
+      \vr''(t) = -3t\,\vi + \sin t\,\vj + 2e^{2t}\,\vk
+      </me>
+      Integrating once gives
+      <md>
+      <mrow>
+      \vr'(t) = -3\frac{t^2}{2}\,\vi - \cos t\,\vj + e^{2t}\,\vk +\vc
+      </mrow>
+      </md>
+      for some constant vector <m>\vc</m>. We are told that <m>\vr'(0)=\vv_0
+      =\frac{\pi^2}{2}\,\vi</m>. This forces <m>\vc=\frac{\pi^2}{2}\,\vi+\vj-\vk</m>
+      so that
+      <md>
+      <mrow>
+      \vr'(t) = \left(\frac{\pi^2}{2}-\frac{3t^2}{2}\right)\,\vi +(1- \cos t)\,\vj + \big(e^{2t}-1\big)\,\vk
+      </mrow>
+      </md>
+      Integrating a second time gives
+      <md>
+      <mrow>
+      \vr(t) = \left(\frac{\pi^2 t}{2}-\frac{t^3}{2}\right)\,\vi +(t- \sin t)\,\vj
+       + \left(\frac{1}{2}e^{2t}-t\right)\,\vk  + \vc
+      </mrow>
+      </md>
+      for some (other) constant vector <m>\vc</m>.  We are told that <m>\vr(0)=\vr_0
+      =\frac{1}{2}\,\vk</m>. This forces <m>\vc=\vZero</m>
+      so that
+      <md>
+      <mrow>
+      \vr(t) = \left(\frac{\pi^2 t}{2}-\frac{t^3}{2}\right)\,\vi +(t- \sin t)\,\vj
+       + \left(\frac{1}{2}e^{2t}-t\right)\,\vk
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The particle is in the plane <m>x=0</m> when
+      <md>
+      <mrow>
+      0=\left(\frac{\pi^2 t}{2}-\frac{t^3}{2}\right)
+       =\frac{t}{2}(\pi^2-t^2)
+      \iff t=0, \pm\pi
+      </mrow>
+      </md>
+      So the desired time is <m>t=\pi</m>.
+      </p>
+
+      <p>(c) At time <m>t=\pi</m>, the velocity is
+      <md>
+      <mrow>
+      \vr'(\pi)
+      &amp;= \left(\frac{\pi^2}{2}-\frac{3\pi^2}{2}\right)\,\vi +(1- \cos\pi)\,\vj +                 \big(e^{2\pi}-1\big)\,\vk
+      </mrow><mrow>
+      &amp;= -\pi^2\,\vi +2\,\vj + \big(e^{2\pi}-1\big)\,\vk
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+          <!-- <title><fromexam>M200 2003A</fromexam></title>
+      -->
+      <statement><p>
+       Au temps  <m>t=0</m> une particule se trouve à la position
+      <m>\vr(0)=\llt -1,0,0\rgt</m> et se déplace avec vitesse  <m>\vv(0)=\llt 0,-1,1\rgt</m>. À l'instant <m>t</m>, le particule a pour vecteur accélération
+      <me>
+      \va(t)=\llt \cos t,\sin t,0\rgt
+      </me>
+      <ol marker = "(a)">
+      <li>
+      Trouver la position de la particvule au temps  <m>t</m> (en secondes).
+      </li>
+      <li>
+      Montrer qu'en tout temps les vecteurs vitesse et accélération sont orthogonaux. .
+      </li>
+      <li>
+       Trouver l'équaiton de la tangente à la trajectoire de la particule au point correspondant à <m>t=-\pi/2</m>.
+      </li>
+      <li>
+      Vrai ou Faux : Aucune des tangentes à la trajectoire de la particule ne passe par l'origine. Justifiez.</li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\vr(t)=\llt -\cos t, -\sin t, t\rgt</m>
+      </p><p>
+      (b) <m>\vv(t)\cdot\va(t)=0</m>
+      </p>
+
+      <p>(c) <m>\vr(u)=\llt 0,1,-\frac{\pi}{2}\rgt+u\llt -1,0,1\rgt</m>
+      </p><p>
+      (d) Vrai
+      </p></answer>
+
+      <solution><p>
+      (a) By definition,
+      <me>
+      \vv'(t)=\va(t)=\llt \cos t,\sin t,0\rgt
+      \implies \vv(t)=\llt \sin t+c_1, -\cos t+c_2, c_3\rgt
+      </me>
+      for some constants <m>c_1</m>, <m>c_2</m>, <m>c_3</m>. To satisfy <m>\vv(0)=\llt 0,-1,1\rgt</m>,
+      we need <m>c_1=0</m>, <m>c_2=0</m> and <m>c_3=1</m>. So
+      <m>\vv(t)=\llt \sin t, -\cos t, 1\rgt</m>. Similarly,
+      <md>
+      <mrow>
+      \vr'(t)=\vv(t)&amp;=\llt \sin t,-\cos t,1\rgt
+      </mrow><mrow>&amp;\implies \vr(t)=\llt -\cos t+d_1, -\sin t+d_2, t+d_3\rgt
+      </mrow>
+      </md>
+      for some constants <m>d_1</m>, <m>d_2</m>, <m>d_3</m>. To satisfy <m>\vr(0)=\llt -1,0,0\rgt</m>,
+      we need <m>d_1=0</m>, <m>d_2=0</m> and <m>d_3=0</m>. So
+      <m>\vr(t)=\llt -\cos t, -\sin t, t\rgt</m>.
+      </p>
+
+      <p>(b) To test for orthogonality, we compute the dot product
+      <md>
+      <mrow>
+      \vv(t)\cdot\va(t)&amp;=\llt \sin t, -\cos t, 1\rgt\cdot\llt \cos t,\sin t,0\rgt
+      </mrow><mrow>
+      &amp;=\sin t\cos t-\cos t \sin t+1\times 0=0
+      </mrow>
+      </md>
+      so <m>\vv(t)\perp\va(t)</m> for all <m>t</m>.
+      </p>
+
+      <p>(c)
+      At <m>t=-\frac{\pi}{2}</m> the particle is at
+      <m>\vr\big(-\frac{\pi}{2}\big)=\llt 0,1,-\frac{\pi}{2}\rgt</m> and has velocity
+      <m>\vv\big(-\frac{\pi}{2}\big)=\llt -1,0,1\rgt</m>. So the tangent line must pass through <m>\llt 0,1,-\frac{\pi}{2}\rgt</m> and have direction vector
+      <m>\llt -1,0,1\rgt</m>. Here is a vector parametric
+      equation for the tangent line.
+      <me>
+      \vr(u)=\llt 0,1,-\frac{\pi}{2}\rgt+u\llt -1,0,1\rgt
+      </me>
+      </p>
+
+      <p>(d) True. Look at the path followed by the particle from
+      the top so that we only see <m>x</m> and <m>y</m> coordinates. The path we see (call
+      this the projected path) is
+      <m>x(t)=-\cos t</m>, <m>y(t)=-\sin t</m>, which is a circle of radius one centred
+      on the origin. Any tangent line to any circle always remains outside the
+      circle. So no tangent line to the projected path can pass through the <m>(0,0)</m>.
+      So no tangent line to the path followed by the particle can pass through
+      the <m>z</m>--axis and, in particular, through <m>(0,0,0)</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+          <!--
+          <title><fromexam>M200 2002A</fromexam></title>
+      -->
+      <statement><p>
+       On considère la courbe <m>\Gamma</m> paramétrée par
+      <m> \vr(t)=t\sin(\pi t)\,\vi+t\cos(\pi t)\,\vj +t^2\vk\,\qquad 0\leqslant  t \lt \infty.
+      </m>
+      La courbe démarre a l'origine, et événtuellement croise l'ellipsoïde
+      <m>E</m> d'équation <m>2x^2+2y^2+z^2=24</m>.
+      <ol marker = "(a)">
+      <li>
+      Trouver les coordonnées du point  <m>P</m> auquel  <m>\Gamma</m> croise  <m>E</m>.
+      </li>
+      <li>
+      Trouver un vecteur tangent à  <m>\Gamma</m> en <m>P</m>.
+      </li>
+      <!-- Cette partie présuppose le vecteur gradient
+      <li>
+      Est-ce que  <m>\Gamma</m> coupe  <m>E</m> en formant un angle droit?
+      </li>
+      -->
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\vr(2)=2\vj+4\vk</m>
+      </p><p>
+      (b) tout multiple non nul de  <m>\vr'(2)=2\pi\,\vi+\vj+4\,\vk</m>
+      </p>
+
+      <!--
+      <p>(c) <m>\Gamma</m> and <m>E</m> do not intersect at right angles.
+      </p>
+      -->
+      </answer>
+
+      <solution><p>
+      (a) The curve intersects <m>E</m> when
+      <md>
+      <mrow>
+      2\big(t\sin(\pi t)\big)^2+2\big(t\cos(\pi t)\big)^2 +\big(t^2\big)^2=24
+      &amp;\iff 2t^2+t^4=24
+      </mrow><mrow>
+      &amp;\iff (t^2-4)(t^2+6)=0
+      </mrow>
+      </md>
+      Since we need <m>t \gt 0</m>, the desired time is <m>t=2</m> and the corresponding point
+      is <m>\vr(2)=2\,\vj+4\,\vk</m>.
+      </p>
+
+      <p>(b) Since
+      <me>
+      \vr'(t)=\big[\sin(\pi t)+\pi t\cos(\pi t)\big]\vi
+          +\big[\cos(\pi t)-\pi t\sin(\pi t)\big]\vj + 2t\vk
+      </me>
+      a tangent vector to <m>\Gamma</m> at <m>P</m> is any nonzero multiple of
+      <me>
+      \vr'(2)=2\pi\,\vi+\vj+4\,\vk
+      </me>
+      </p>
+
+      <!--
+      <p>(c) A normal vector to <m>E</m> at <m>P</m> is
+      <me>
+      \vnabla(2x^2+2y^2+z^2)\big|_{(0,2,4)}= \llt 4x,4y,2z\rgt\big|_{(0,2,4)}
+      =\llt 0,8,8\rgt
+      </me>
+      Since <m>\vr'(2)</m> and <m>\llt 0,8,8\rgt</m> are not parallel, <m>\Gamma</m> and <m>E</m>
+      do not intersect at right angles.
+      </p>
+      --></solution>
+    </exercise>
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+    <!-- Vient de Thomas-->
+    <exercise>
+      <statement>
+        <p>
+          Si une corde enroulée autour d'un cercle fixe est déroulée tout en étant maintenue tendue dans le plan du cercle, son extrémité <m>P</m> trace une courbe <m>\mathcal{C}</m>. Dans la figure ci-bas, le cercle en question est le cercle <m>x^2 + y^2 = a^2</m> et le point <m>P</m> démarre à <m>(a, 0)</m>. La courbe <m>\mathcal{C}</m> est la courbe bleue.
+        </p>
+        <p>
+          La portion déroulée de la corde est tangente au cercle en <m>Q</m>. Notez que la distance entre le point de tangence <m>Q</m> et l'extrémité <m>P</m> est égale à la longueur du fil déroulé. Donner un paramétrage de la courbe décrite par <m>P</m>.
+        </p>
+        <figure xml:id="figure-developpee">
+          <caption>La courbe obtenue en déroulant un fil.</caption>
+           <image xml:id="sageplot-developpee" width="50%">
+             <description>La courbe obtenue en déroulant un fil.</description>
+            <sageplot>
+              var('t')
+              p = Graphics()
+              p += circle((0,0), 1, color='black', thickness=1, axes = True, ticks=[[],[]], axes_labels = ["$x$", "$y$"])
+              var('t')
+              x(t) = cos(t) + t*sin(t)
+              y(t) = sin(t)-t*cos(t)
+              p+=parametric_plot([x(t),y(t)], (t,0,pi), color = "steelblue", thickness= 1.5)
+              t0 = pi/3
+              O = (0,0)
+              P = (x(t0), y(t0))  
+              Q = (cos(t0), sin(t0)) 
+              p += point(O, color='black', size=30, zorder=5)
+              p += point(P, color='darkblue', size=30, zorder=5)
+              p += point(Q, color='black', size=30, zorder=5)
+              p += point((1,0), color='black', size=30, zorder=5)
+              p += text('$O$', (-0.1,-0.1), color='black', horizontal_alignment='right', vertical_alignment='top', fontsize = 14)
+              p += text('$P(x, y)$', (x(t0)+0.1, y(t0)+0.1), color='steelblue', horizontal_alignment='left', vertical_alignment='top', fontsize = 12)
+              p += text('$Q$', (cos(t0), sin(t0)+0.25), color='red', horizontal_alignment='left', vertical_alignment='top', fontsize = 14)
+              p += text('$(a,0)$', (1,-0.2), color='black', horizontal_alignment='left', vertical_alignment='top', fontsize = 14)
+              p += line([Q, P], color='red', thickness=1.2)
+              p += parametric_plot([cos(t),sin(t)], (t,0,t0), color = "red", thickness= 1.5, zorder = 5) 
+              p += line([O, Q], color='grey', thickness=1.2)
+              p
+            </sageplot>
+          </image>
+        </figure>
+      </statement>
+    </exercise>
+    
+
+
+    <exercise>
+      <statement><p>Un projectile qui tombe sous l'influence de la force de gravité. Le projectile est ralenti par la résistance de l'air, qui est proportionnelle à sa vitesse. Sa position satisfait l'équation
+      <me>
+      \frac{d^2\vr}{dt^2}=-g\vk-\alpha\frac{d\vr}{dt}
+      </me>
+      où <m>\alpha</m> est une constante positive. Si <m>\vr=\vr_0</m> et
+      <m>\frac{d\vr}{dt}=\vv_0</m> à l'instant <m>t=0</m>, trouver <m>\vr(t)</m>.
+
+      </p></statement>
+       <hint>
+         <p>
+             Posez <m>\vu(t)=e^{\alpha t}\frac{d\vr}{dt}(t)</m> et rempacez
+             <m>\frac{d\vr}{dt}(t)=e^{-\alpha t}\vu(t)</m> dans l'équation différentielle donnée pour obtenir une équation différentielle pour  <m>\vu</m>.
+         </p>
+       </hint>
+      <answer><p>
+      <m>\vr(t)=\vr_0-\frac{e^{-\alpha t}-1}{\alpha}\vv_0
+      +g\frac{1-\alpha t-e^{-\alpha t}}{\alpha^2}\vk</m>
+      </p></answer>
+      <solution><p>
+      Define <m>\vu(t)=e^{\alpha t}\frac{d\vr}{dt}(t)</m>. Then
+      <md>
+      <mrow>
+      \frac{d\vu}{dt}(t)&amp;=\alpha e^{\alpha t}\frac{d\vr}{dt}(t)
+      +e^{\alpha t}\frac{d^2\vr}{dt^2}(t)\cr
+      &amp;=\alpha e^{\alpha t}\frac{d\vr}{dt}(t)
+      -ge^{\alpha t}\vk
+      -\alpha e^{\alpha t}\frac{d\vr}{dt}(t)\cr
+      &amp;=-ge^{\alpha t}\vk\cr
+      </mrow>
+      </md>
+      Integrating both sides of this equation from <m>t=0</m> to <m>t=T</m> gives
+      <md>
+      <mrow>
+      \vu(T)-\vu(0)&amp;=-g\frac{e^{\alpha T}-1}{\alpha}\vk
+      </mrow><mrow>
+      \implies
+      \vu(T)&amp;=\vu(0)-g\frac{e^{\alpha T}-1}{\alpha}\vk
+      =\frac{d\vr}{dt}(0)-g\frac{e^{\alpha T}-1}{\alpha}\vk
+      </mrow><mrow>
+      &amp;=\vv_0-g\frac{e^{\alpha T}-1}{\alpha}\vk
+      </mrow>
+      </md>
+      Substituting in <m>\vu(T)=e^{\alpha t}\frac{d\vr}{dt}(T)</m> and multiplying
+      through by <m>e^{-\alpha T}</m>
+      <me>
+      \frac{d\vr}{dt}(T)
+      =e^{-\alpha T}\vv_0-g\frac{1-e^{-\alpha T}}{\alpha}\vk
+      </me>
+      Integrating both sides of this equation from <m>T=0</m> to <m>T=t</m> gives
+      <md>
+      <mrow>
+      &amp;\vr(t)-\vr(0)
+      =\frac{e^{-\alpha t}-1}{-\alpha}\vv_0-g\frac{ t}{\alpha}\vk
+      +g\frac{e^{-\alpha t}-1}{-\alpha^2}\vk
+      </mrow><mrow>
+      &amp;\implies \vr(t)=\vr_0-\frac{e^{-\alpha t}-1}{\alpha}\vv_0
+      +g\frac{1-\alpha t-e^{-\alpha t}}{\alpha^2}\vk
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+          <!--
+          <title><fromexam>M200 2001D</fromexam></title>
+      -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Les courbes paramétrées par <m>\vr_1(t)=\llt 1+t, t^2, t^3\rgt</m> et
+      <m>\vr_2(t)=\llt \cos t, \sin t, t\rgt</m> se coupent au point  <m>P(1,0,0)</m>. Trouver l'angle formé par ces courbes au point donné.
+      </li>
+      <li>
+      Trouver la distance entre la droite d'intersection des plans
+      <m>x+y-z=4</m> et <m>2x-z=4</m> et la droite <m>\vr(t)=\llt t, -1+2t, 1+3t\rgt</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>90^\circ</m>
+      </p><p>
+      (b) <m>2\sqrt{3}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) The tangent vectors to the two curves are
+      <me>
+      \vr'_1(t)=\llt 1, 2t, 3t^2\rgt\qquad
+      \vr'_2(t)=\llt-\sin t, \cos t, 1\rgt
+      </me>
+      Both curves pass through <m>P</m> at <m>t=0</m> and then the tangent vectors are
+      <me>
+      \vr'_1(0)=\llt 1, 0, 0\rgt\qquad
+      \vr'_2(0)=\llt 0, 1, 1\rgt
+      </me>
+      So the angle of intersection, <m>\theta</m>, is determined by
+      <md>
+      <mrow>
+      \vr'_1(0)\cdot\vr'_2(0)=|\vr'_1(0)|\,|\vr'_2(0)|\,\cos\theta
+      &amp;\implies \llt 1, 0, 0\rgt\cdot\llt 0, 1, 1\rgt=1\cdot\sqrt{2}\cdot\cos\theta
+      </mrow><mrow>
+      &amp;\implies\cos\theta=0\implies \theta=90^\circ
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) Our strategy will be to
+      <ul>
+      <li>
+        find a vector <m>\vv</m> whose tail is on one line and whose head is on the
+        other line and then
+      </li>
+      <li>
+        find a vector <m>\vn</m> that is perpendicular to both lines.
+      </li>
+      <li>
+        Then, if we denote by <m>\theta</m> the angle between <m>\vv</m> and <m>\vn</m>,
+        the distance between the two lines is
+        <m>|\vv|\cos\theta = \frac{|\vv\cdot\vn|}{|\vn|}</m>
+      </li>
+      </ul>
+      Here we go
+      <ul>
+      <li><p>
+      So the first step is to find a <m>\vv</m>.
+      <ul>
+      <li>
+      One point on the line <m>\vr(t)=\llt t, -1+2t, 1+3t\rgt</m> is
+      <m>\vr(0)=\llt 0,-1,1\rgt</m>.
+      </li>
+      <li>
+      <m>(x,y,z)</m> is on the other line if and only if <m>x+y-z=4</m> and <m>2x-z=4</m>.
+      In particular, if <m>z=0</m> then <m>x+y=4</m> and <m>2x=4</m> so that <m>x=2</m> and <m>y=2</m>.
+      </li>
+      <li>
+      So the vector <m>\vv=\llt 2-0\,,\,2-(-1)\,,\,0-1\rgt=\llt 2,3,-1\rgt</m>
+      has its head on one line and its tail on the other line.
+      </li>
+      </ul></p>
+      </li>
+      <li><p>
+      Next we find a vector <m>\vn</m> that is perpendicular to both lines.
+      <ul>
+      <li>
+      First we find a direction vector for the line <m>x+y-z=4</m>, <m>2x-z=4</m>.
+      We already know that <m>x=y=2</m>, <m>z=0</m> is on that line. We can find a second point
+      on that line by choosing, for example, <m>z=2</m> and then solving <m>x+y=6</m>, <m>2x=6</m>
+      to get <m>x=3</m>, <m>y=3</m>.  So one direction vector for the line <m>x+y-z=4</m>, <m>2x-z=4</m>
+      is <m>\vd_1=\llt3-2\,,\,3-2\,,\,2-0 \rgt = \llt 1,1,2\rgt</m>.
+      </li>
+      <li>
+      A second way to get a direction vector for the line <m>x+y-z=4</m>, <m>2x-z=4</m>
+      is to observe that <m>\llt 1,1,-1\rgt</m> is normal to <m>x+y-z=4</m> and so
+      is perpendicular to the line and <m>\llt 2,0,-1\rgt</m> is normal to <m>2x-z=4</m>
+      and so is also perpendicular to the line.
+      So <m>\llt 1,1,-1\rgt\times\llt 2,0,-1\rgt</m> is a direction vector for the line.
+      </li>
+      <li>
+      A direction vector for the line <m>\vr(t)=\llt t, -1+2t, 1+3t\rgt</m> is <m>\vd_2=\vr'(t)=\llt 1,2,3\rgt</m>.
+      </li>
+      <li>
+      So
+      <me>
+      \vn=\vd_2\times\vd_1
+      =\det\left[\begin{matrix}
+                           \vi &amp; \vj &amp; \vk \\
+                           1   &amp;  2  &amp; 3 \\
+                           1   &amp;  1  &amp; 2
+                      \end{matrix}\right]
+      = \vi + \vj -\vk
+      </me>
+      is perpendicular to both lines.
+      </li>
+      </ul></p>
+      </li>
+      </ul>
+      The distance between the two lines is then
+      <me>
+      |\vv|\cos\theta = \frac{|\vv\cdot\vn|}{|\vn|}
+      =\frac{\llt 2,3,-1\rgt \cdot\llt 1,1,-1\rgt}{|\llt 1,1,-1\rgt|}
+      =\frac{6}{\sqrt{3}}
+      =2\sqrt{3}
+      </me>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <!--<title><fromexam>M200 2002D</fromexam></title>
+        -->
+      <statement><p>
+      La position d'une particule au temps  <m>t</m> (en secondes <m>s</m>) est donnée par
+      <me>
+      \vr(t)=t\cos\left(\frac{\pi t}{2}\right)\vi
+               +t\sin\left(\frac{\pi t}{2}\right)\vj +t\,\vk
+      </me>
+      <ol marker = "(a)">
+      <li>
+      Montrer que la trajectoire suivie par la particule se trouve sur le cône  <m>z^2=x^2+y^2</m>.
+      </li>
+      <li>
+      Trouver le vecteur vitesse et sa norme au temps <m>t</m>.
+      </li>
+      <li>
+      Supposons qu'à l'instant  <m>t=1</m>s la particule quitte sa trajectoire pour prendre celle de la tangente <m>L</m> au point correspondant. Trouver une équation de <m>L</m>.
+      </li>
+      <li>
+      Combien de temps ça prend pour que la particule croise le plan  <m>x=-1</m> à partir du moment où elle adopte la trajectoire donnée par <m>L</m>?
+      </li>
+      </ol>
+      </p></statement>
+
+
+      <answer>
+          <p>
+              (a) <m>x(t)^2+y(t)^2=z(t)^2</m> pour tout <m>t</m>
+          </p>
+
+
+          <p> (b)
+              <me>\text{vitesse }= \big[\cos\big(\tfrac{\pi t}{2}\big)
+                 -\tfrac{\pi t}{2}\sin\big(\tfrac{\pi t}{2}\big)\big]\vi
+               +\big[\sin\big(\tfrac{\pi t}{2}\big)
+                 +\tfrac{\pi t}{2}\cos\big(\tfrac{\pi t}{2}\big)\big]\vj +\vk</me>
+      <me>\text{vitesse scalaire}=\sqrt{2+\frac{\pi^2 t^2}{4}}</me>
+          </p>
+      </answer>
+
+  </exercise>
+  </exercisegroup>
+</exercises>

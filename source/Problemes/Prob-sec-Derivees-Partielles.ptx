@@ -1,0 +1,1520 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+    <exercise>
+      <statement><p>
+      Soit <m>f(x,y) = e^x\cos y</m>. Les tables suivantes donnent des valeurs de <m>f(x,y)</m>.
+      </p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />  <col halign="center"/> <col /> <col halign="center"/> <col />
+      <row>
+      <cell>  </cell><cell> <m>x=0</m> </cell><cell> <m>x=0.01</m> </cell><cell> <m>x=0.1</m> </cell>
+      </row><row>
+      <cell> <m>y=-0.1</m> </cell><cell> 0.99500 </cell><cell> 1.00500 </cell><cell> 1.09965 </cell>
+      </row><row>
+      <cell> <m>y=-0.01</m> </cell><cell> 0.99995 </cell><cell> 1.01000 </cell><cell> 1.10512 </cell>
+      </row><row>
+      <cell> <m>y=0</m> </cell><cell> 1.0 </cell><cell> 1.01005 </cell><cell> 1.10517 </cell>
+      </row>
+      </tabular></sidebyside>
+
+      <p>
+      <ol>
+      <li>
+      Trouvez deux valeurs approximatives différentes pour <m>\pdiff{f}{x}(0,0)</m> en utilisant les données du
+      tableau ci-dessus.
+      </li><li>
+      Trouvez deux valeurs approximatives différentes pour <m>\pdiff{f}{y}(0,0)</m> en utilisant les données du
+      tableau ci-dessus.
+      </li><li>
+      Évaluez <m>\pdiff{f}{x}(0,0)</m> et <m>\pdiff{f}{y}(0,0)</m> exactement.
+      </li>
+      </ol>
+      </p>
+      </statement>
+
+      <hint><p>
+      Revoir la <xref ref="def_partials"/>.
+      </p></hint>
+
+      <answer><p>
+      <ol>
+      <li>
+      <me>
+      \pdiff{f}{x}(0,0)
+      \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.1}
+      =\frac{1.10517-1}{0.1}
+      =1.0517
+      </me>
+      et
+      <me>
+      \pdiff{f}{x}(0,0)
+      \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
+      =\frac{1.01005-1}{0.01}
+      =1.005
+      </me>
+      </li><li>
+      <me>
+      \pdiff{f}{y}(0,0)
+      \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.1}
+      =\frac{0.99500-1}{-0.1}
+      =0.0500
+      </me>
+      et
+      <me>
+      \pdiff{f}{y}(0,0)
+      \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
+      =\frac{0.99995-1}{0.01}
+      =.0050
+      </me>
+      </li><li>
+      <m>
+      \pdiff{f}{x}(0,0) =1
+      </m>
+      et
+      <m>
+      \pdiff{f}{y}(0,0) = 0
+      </m>
+      </li>
+      </ol>
+      </p></answer>
+
+      <solution><p>
+      <ol>
+      <li>
+      Par définition
+      <me>
+      \pdiff{f}{x}(0,0)
+      =\lim_{h\rightarrow 0}\frac{f(h,0)-f(0,0)}{h}
+      </me>
+      One approximation to this is
+      <me>
+      \pdiff{f}{x}(0,0)
+      \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.1}
+      =\frac{1.10517-1}{0.1}
+      =1.0517
+      </me>
+      Another approximation to this is
+      <me>
+      \pdiff{f}{x}(0,0)
+      \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
+      =\frac{1.01005-1}{0.01}
+      =1.005
+      </me>
+      </li><li>
+      By definition
+      <me>
+      \pdiff{f}{y}(0,0)
+      =\lim_{h\rightarrow 0}\frac{f(0,h)-f(0,0)}{h}
+      </me>
+      One approximation to this is
+      <me>
+      \pdiff{f}{y}(0,0)
+      \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.1}
+      =\frac{0.99500-1}{-0.1}
+      =0.0500
+      </me>
+      Another approximation to this is
+      <me>
+      \pdiff{f}{y}(0,0)
+      \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
+      =\frac{0.99995-1}{0.01}
+      =.0050
+      </me>
+      </li><li>
+      To take the partial derivative with respect to <m>x</m> at <m>(0,0)</m>,
+      we set <m>y=0</m>, differentiate with respect to <m>x</m> and then set <m>x=0</m>. So
+      <me>
+      \pdiff{f}{x}(0,0) = \left.\diff{}{x} e^x\cos 0\right|_{x=0}
+      =\left.e^x\right|_{x=0}=1
+      </me>
+      To take the partial derivative with respect to <m>y</m> at <m>(0,0)</m>,
+      we set <m>x=0</m>, differentiate with respect to <m>y</m> and then set <m>y=0</m>. So
+      <me>
+      \pdiff{f}{y}(0,0) = \left.\diff{}{y} e^0\cos y\right|_{y=0}
+      =\left.\sin y\right|_{y=0}
+      =0
+      </me>
+      </li>
+      </ol>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M226 2009D</fromexam></title> -->
+      <statement><p>
+      Soit
+      <me>
+      f(x,y)=\begin{cases}\frac{x^2y}{x^2+y^2}&amp; \text{si}\ (x,y)\ne (0,0)\\
+                      0 &amp; \text{si}\ (x,y)=(0,0)
+             \end{cases}
+      </me>
+      Calculez, directement d'après les définitions,
+      <ol marker = "(a)">
+      <li>
+      <m>\pdiff{f}{x}(0,0)</m>
+      </li>
+      <li>
+      <m>\pdiff{f}{y}(0,0)</m>
+      </li>
+      <li>
+      <m>\diff{}{t} f(t,t)\Big|_{t=0}</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Pour (a) et (b), se rappeler que <m>\pdiff{f}{x}(x,y)=\lim\limits_{h\to0}\frac{f(x+h,y)-f(x,y)}{h}</m> et
+      <m>\pdiff{f}{y}(x,y)=\lim\limits_{h\to0}\frac{f(x,y+h)-f(x,y)}{h}</m>. Pour (c), vous trouvez la dérivée d'une fonction à une variable, disons <m>g(t)</m>, où <me>
+      g(t)=f(t,t)=\begin{cases}
+                        \frac{t^2t}{t^2+t^2} &amp; \text{si } t\ne 0 \\
+                        0                    &amp; \text{si } t= 0
+                       \end{cases}
+      </me>
+      </p></hint>
+
+      <answer><p>
+      (a) <m>0</m></p><p>
+      (b) <m>0</m></p><p>
+      (c) <m>\frac{1}{2}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) Par définition
+      <md>
+      <mrow>
+      \pdiff{f}{x}(0,0)
+      &amp;=\lim_{\De x\rightarrow 0}\frac{f(\De x,0)-f(0,0)}{\De x}
+      </mrow><mrow>
+      &amp;=\lim_{\De x\rightarrow 0}\frac{\frac{(\De x^2)(0)}{\De x^2+0^2}-0}{\De x}
+      </mrow><mrow>
+      &amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) Par définition
+      <md>
+      <mrow>
+      \pdiff{f}{y}(0,0)
+      &amp;=\lim_{\De y\rightarrow 0}\frac{f(0,\De y)-f(0,0)}{\De y}
+      </mrow><mrow>
+      &amp;=\lim_{\De y\rightarrow 0}\frac{\frac{(0^2)(\De y)}{0^2+\De y^2}-0}{\De y}
+      </mrow><mrow>
+      &amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) Par définition
+      <md>
+      <mrow>
+      \diff{}{t} f(t,t)\Big|_{t=0}
+      &amp;=\lim_{t\rightarrow 0}\frac{f(t,t)-f(0,0)}{t}
+      </mrow><mrow>
+      &amp;=\lim_{h\rightarrow 0}\frac{\frac{(t^2)(t)}{t^2+t^2}-0}{t}
+      </mrow><mrow>
+      &amp;=\lim_{t\rightarrow 0}\frac{t/2}{t}
+      </mrow><mrow>
+      &amp;=\frac{1}{2}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Trouvez toutes les dérivées partielles premières des fonctions suivantes
+      et évaluez-les au point donné.
+      <ol marker = "(a)">
+      <li>
+      <m>f(x,y,z)=x^3y^4z^5\qquad (0,-1,-1)</m>
+      </li>
+      <li>
+      <m>w(x,y,z)=\ln\left(1+e^{xyz}\right)\qquad (2,0,-1)</m>
+      </li>
+      <li>
+      <m>f(x,y)=\frac{1}{\sqrt{x^2+y^2}}\qquad (-3,4)</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a)
+      <md>
+      <mrow>
+      f_x(x,y,z)&amp;=3x^2y^4z^5 &amp; f_x(0,-1,-1)&amp;=0
+      </mrow><mrow>
+      f_y(x,y,z)&amp;=4x^3y^3z^5 &amp; f_y(0,-1,-1)&amp;=0
+      </mrow><mrow>
+      f_z(x,y,z)&amp;=5x^3y^4z^4 &amp; f_z(0,-1,-1)&amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      <md>
+      <mrow>
+      w_x(x,y,z)&amp;=\frac{yz e^{xyz}}{1+e^{xyz}} &amp; w_x(2,0,-1)&amp;=0
+      </mrow><mrow>
+      w_y(x,y,z)&amp;=\frac{xz e^{xyz}}{1+e^{xyz}} &amp; w_y(2,0,-1)&amp;=-1
+      </mrow><mrow>
+      w_z(x,y,z)&amp;=\frac{xy e^{xyz}}{1+e^{xyz}} &amp; w_z(2,0,-1)&amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c)
+      <md>
+      <mrow>
+      f_x(x,y)&amp;=-\frac{x}{(x^2+y^2)^{3/2}} &amp; f_x(-3,4)&amp;=\frac{3}{125}
+      </mrow><mrow>
+      f_y(x,y)&amp;=-\frac{y}{(x^2+y^2)^{3/2}} &amp; f_y(-3,4)&amp;=-\frac{4}{125}
+      </mrow>
+      </md>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      <md>
+      <mrow>
+      f_x(x,y,z)&amp;=3x^2y^4z^5 &amp; f_x(0,-1,-1)&amp;=0
+      </mrow><mrow>
+      f_y(x,y,z)&amp;=4x^3y^3z^5 &amp; f_y(0,-1,-1)&amp;=0
+      </mrow><mrow>
+      f_z(x,y,z)&amp;=5x^3y^4z^4 &amp; f_z(0,-1,-1)&amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      <md>
+      <mrow>
+      w_x(x,y,z)&amp;=\frac{yz e^{xyz}}{1+e^{xyz}} &amp; w_x(2,0,-1)&amp;=0
+      </mrow><mrow>
+      w_y(x,y,z)&amp;=\frac{xz e^{xyz}}{1+e^{xyz}} &amp; w_y(2,0,-1)&amp;=-1
+      </mrow><mrow>
+      w_z(x,y,z)&amp;=\frac{xy e^{xyz}}{1+e^{xyz}} &amp; w_z(2,0,-1)&amp;=0
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c)
+      <md>
+      <mrow>
+      f_x(x,y)&amp;=-\frac{x}{(x^2+y^2)^{3/2}} &amp; f_x(-3,4)&amp;=\frac{3}{125}
+      </mrow><mrow>
+      f_y(x,y)&amp;=-\frac{y}{(x^2+y^2)^{3/2}} &amp; f_y(-3,4)&amp;=-\frac{4}{125}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2010A</fromexam></title> -->
+      <statement><p>
+      Une surface <m>z(x, y)</m> est définie par <m>zy - y + x = \ln(xyz)</m>.
+      <ol marker = "(a)">
+      <li>
+      Calculez <m>\pdiff{z}{x}</m>, <m>\pdiff{z}{y}</m> en termes de <m>x</m>, <m>y</m> et <m>z</m>.
+      </li>
+      <li>
+      Évaluez <m>\pdiff{z}{x}</m> et <m>\pdiff{z}{y}</m> à <m>(x, y, z) = (-1, -2, 1/2)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a)
+      <m>\pdiff{z}{x} = \frac{z(1-x)}{x(yz-1)}</m>,</p><p>
+      <m>\pdiff{z}{y} = \frac{z(1+y-yz)}{y(yz-1)}</m>
+      </p>
+
+      <p>(b)
+      <m>\pdiff{z}{x}(-1,-2) =\frac{1}{2}</m>,</p><p>
+      <m>\pdiff{z}{y}(-1,-2) =0</m>.
+      </p></answer>
+
+      <solution><p>
+      (a) We are told that <m>z(x,y)</m> obeys
+      <md>
+      <mrow>
+      z(x,y)\, y - y + x = \ln\big(xy\,z(x,y)\big)
+      \tag{$*$}</mrow>
+      </md>
+      for all <m>(x,y)</m> (near <m>(-1,-2)</m>).  Differentiating <m>(*)</m> with respect to <m>x</m>
+      gives
+      <md>
+      <mrow>
+      y\,\pdiff{z}{x}(x,y) + 1 = \frac{1}{x} + \frac{\pdiff{z}{x}(x,y)}{z(x,y)}
+      \implies \pdiff{z}{x}(x,y) = \frac{\frac{1}{x}-1}{y-\frac{1}{z(x,y)}}
+      </mrow>
+      </md>
+      or, dropping the arguments <m>(x,y)</m> and multiplying both the numerator and denominator by <m>xz</m>,
+      <md>
+      <mrow>
+      \pdiff{z}{x} = \frac{z-xz}{xyz-x} = \frac{z(1-x)}{x(yz-1)}
+      </mrow>
+      </md>
+      Differentiating <m>(*)</m> with respect to <m>y</m>
+      gives
+      <md>
+      <mrow>
+      &amp;z(x,y)+y\,\pdiff{z}{y}(x,y) - 1 = \frac{1}{y} + \frac{\pdiff{z}{y}(x,y)}{z(x,y)}
+      </mrow><mrow>
+      &amp;\hskip1in\implies \pdiff{z}{y}(x,y) = \frac{\frac{1}{y}+1-z(x,y)}{y-\frac{1}{z(x,y)}}
+      </mrow>
+      </md>
+      or, dropping the arguments <m>(x,y)</m> and multiplying both the numerator and denominator by <m>yz</m>,
+      <md>
+      <mrow>
+      \pdiff{z}{y} = \frac{z+yz-yz^2}{y^2z-y} = \frac{z(1+y-yz)}{y(yz-1)}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)  When <m>(x,y,z) = (-1, -2, 1/2)</m>,
+      <md>
+      <mrow>
+      \pdiff{z}{x}(-1,-2)
+        &amp;= \left.\frac{\frac{1}{x}-1}{y-\frac{1}{z}}
+                               \right|_{(x,y,z) = (-1, -2, 1/2)}
+         =\frac{\frac{1}{-1}-1}{-2-2}
+         =\frac{1}{2}
+      </mrow><mrow>
+      \pdiff{z}{y}(-1,-2)  &amp;= \left.\frac{\frac{1}{y}+1-z}{y-\frac{1}{z}}
+                               \right|_{(x,y,z) = (-1, -2, 1/2)}
+               =\frac{\frac{1}{-2}+1-\frac{1}{2}}{-2-2}
+               =0
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
+      <statement><p>
+      Trouvez  <m>\pdiff{U}{T}</m> et <m>\pdiff{T}{V}</m> à <m>(1, 1, 2, 4)</m> si <m>(T, U, V, W)</m> vérifient la relation
+      <me>
+      (TU-V)^2 \ln(W-UV) = \ln 2
+      </me>
+      </p></statement>
+
+      <answer><p>
+      <m>\pdiff{U}{T}(1,2,4) = -\frac{2\ln(2)}{1+2\ln(2)}</m></p><p>
+      <m>\pdiff{T}{V}(1,2,4) = 1 -\frac{1}{4\ln(2)}</m>
+      </p></answer>
+
+      <solution><p>
+      We are told that the four variables <m>T</m>, <m>U</m>, <m>V</m>, <m>W</m> obey the       the single equation <m>(TU-V)^2 \ln(W-UV) = \ln 2</m>. So they are not all independent variables. Roughly speaking, we can treat any three of them as independent variables and solve the given equation for the fourth  as a function of the three chosen independent variables.
+      </p>
+
+      <p>We are first asked to find <m>\pdiff{U}{T}</m>. This implicitly tells to
+      treat <m>T</m>, <m>V</m> and <m>W</m> as independent variables and to view <m>U</m>
+      as a function <m>U(T,V,W)</m> that obeys
+      <me>
+      \big(T\, U(T,V,W)-V\big)^2 \ln\big(W-U(T,V,W)\,V\big) = \ln 2
+      \tag{E1}</me>
+      for all <m>(T, U, V, W)</m> sufficiently near <m>(1, 1, 2, 4)</m>.
+      Differentiating (E1) with respect to <m>T</m> gives
+      <md>
+      <mrow>
+      &amp;2\big(T\, U(T,V,W)\!-\!V\big)\!
+               \left[ U(T,V,W)\!+\!T\,\pdiff{U}{T}(T,V,W)\right]
+                  \ln\big(W\!-\!U(T,V,W)\,V\big)
+      </mrow><mrow>
+      &amp;\hskip0.5in
+        -\big(T\, U(T,V,W)-V\big)^2 \frac{1}{W-U(T,V,W)\,V}\pdiff{U}{T}(T,V,W)\,V = 0
+      </mrow>
+      </md>
+      In particular, for <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
+      <md>
+      <mrow>
+      &amp;2\big((1)(1)-2\big)
+               \left[ 1 +(1)\pdiff{U}{T}(1,2,4)\right]
+                  \ln\big(4-(1)(2)\big)
+      </mrow><mrow>
+      &amp;\hskip1in
+        -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)}\pdiff{U}{T}(1,2,4)\,(2) = 0
+      </mrow>
+      </md>
+      This simplifies to
+      <md>
+      <mrow>
+      &amp;-2\left[ 1 +\pdiff{U}{T}(1,2,4)\right] \ln(2)
+                              -\pdiff{U}{T}(1,2,4)=0
+      </mrow><mrow>
+      &amp;\hskip1.0in\implies
+      \pdiff{U}{T}(1,2,4) = -\frac{2\ln(2)}{1+2\ln(2)}
+      </mrow>
+      </md>
+      </p>
+
+
+      <p>We are then asked to find <m>\pdiff{T}{V}</m>. This implicitly tells to
+      treat <m>U</m>, <m>V</m> and <m>W</m> as independent variables and to view <m>T</m>
+      as a function <m>T(U,V,W)</m> that obeys
+      <me>
+      \big(T(U,V,W)\, U-V\big)^2 \ln\big(W-U\,V\big) = \ln 2
+      \tag{E2}</me>
+      for all <m>(T, U, V, W)</m> sufficiently near <m>(1, 1, 2, 4)</m>.
+      Differentiating (E2) with respect to <m>V</m> gives
+      <md>
+      <mrow>
+      &amp;2\big(T(U,V,W)\, U-V\big)\ \left[\pdiff{T}{V}(U,V,W)\ U-1\right]
+                  \ln\big(W-U\,V\big)
+      </mrow><mrow>
+      &amp;\hskip2.5in
+        -\big(T(U,V,W)\, U-V\big)^2 \frac{U}{W-U\,V} = 0
+      </mrow>
+      </md>
+      In particular, for <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
+      <md>
+      <mrow>
+      &amp;2\big((1)(1)-2\big)
+               \left[ (1)\pdiff{T}{V}(1,2,4)-1\right]
+                  \ln\big(4-(1)(2)\big)
+      </mrow><mrow>
+      &amp;\hskip2.5in
+        -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)} = 0
+      </mrow>
+      </md>
+      This simplifies to
+      <md>
+      <mrow>
+      -2\left[\pdiff{T}{V}(1,2,4)-1\right] \ln(2) -\frac{1}{2}=0
+      \implies
+      \pdiff{T}{V}(1,2,4) = 1 -\frac{1}{4\ln(2)}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
+      <statement><p>
+      Supposons que <m>u = x^2 + yz</m>, <m>x = \rho r \cos(\theta)</m>,
+      <m>y = \rho r \sin(\theta)</m> et <m>z = \rho r</m>. Trouvez <m>\pdiff{u}{r}</m>
+      au point <m>(\rho_0 , r_0 , \theta_0) = (2, 3, \pi/2)</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>24</m>
+      </p></answer>
+
+      <solution><p>
+      La fonction
+      <md>
+      <mrow>
+      u(\rho, r,\theta) &amp;= \big[\rho r\cos\theta\big]^2
+                            +\big[\rho r\sin\theta\big] \rho r
+      </mrow><mrow>
+      &amp;=\rho^2 r^2\cos^2\theta +\rho^2 r^2\sin\theta
+      </mrow>
+      </md>
+      Donc
+      <md>
+      <mrow>
+      \pdiff{u}{r}(\rho, r,\theta)
+      &amp;=2 \rho^2 r\cos^2\theta +2 \rho^2 r\sin\theta
+      </mrow>
+      </md>
+      et
+      <md>
+      <mrow>
+      \pdiff{u}{r}(2, 3,\pi/2)
+      &amp;=2 (2^2) (3) (0)^2 +2 (2^2) (3) (1)
+      =24
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Utilisez la définition de la dérivée pour évaluer <m>f_x(0,0)</m> et <m>f_y(0,0)</m> pour
+      <me>
+      f(x,y)=\begin{cases}
+                      \frac{x^2-2y^2}{x-y}&amp;\text{si } x\ne y\\
+                      0&amp;\text{si } x=y
+                    \end{cases}
+      </me>
+      </p></statement>
+
+      <answer><p>
+      <m>f_x(0,0)=1</m>,</p><p>
+      <m>f_y(0,0)=2</m>
+      </p></answer>
+
+      <solution><p>
+      Par définition
+      <md>
+      <mrow>
+      f_x(x_0,y_0) \amp =\lim_{\De x\rightarrow 0}\frac{f(x_0+\De x,y_0)-f(x_0,y_0)}{\De x}
+      </mrow><mrow>
+      f_y(x_0,y_0) \amp =\lim_{\De y\rightarrow 0}\frac{f(x_0,y_0+\De y)-f(x_0,y_0)}{\De y}
+      </mrow>
+      </md>
+      Posons <m>x_0=y_0=0</m>,
+      <md>
+      <mrow>
+      f_x(0,0)&amp;=\lim_{\De x\rightarrow 0}\frac{f(\De x,0)-f(0,0)}{\De x}
+      =\lim_{\De x\rightarrow 0}\frac{f(\De x,0)}{\De x}
+      </mrow><mrow>&amp;=\lim_{\De x\rightarrow 0}\frac{((\De x)^2-2\times0^2)/(\De x-0)}{\De x}
+      </mrow><mrow>
+      &amp;=\lim_{\De x\rightarrow 0}1
+      =1
+      </mrow><mrow>
+      f_y(0,0)&amp;=\lim_{\De y\rightarrow 0}\frac{f(0,\De y)-f(0,0)}{\De y}
+      =\lim_{\De y\rightarrow 0}\frac{f(0,\De y)}{\De y}
+      </mrow><mrow>
+      &amp;=\lim_{\De y\rightarrow 0}\frac{(0^2-2(\De y)^2)/(0-\De y)}{\De y}
+      </mrow><mrow>
+      &amp;=\lim_{\De y\rightarrow 0}2
+      =2
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Définissez la fonction
+      <me>
+      f(x,y)=\begin{cases}\frac{(x+2y)^2}{x+y}&amp; \text{si } x+y\ne 0 \\
+                              0 &amp;\text{si } x+y=0
+             \end{cases}
+      </me>
+      <ol marker = "(a)">
+      <li>
+      Évaluez, si possible, <m>\pdiff{f}{x}(0,0)</m> et
+      <m>\pdiff{f}{y}(0,0)</m>.
+      </li>
+      <li>
+       Est-ce que <m>f(x,y)</m> est continue à <m>(0,0)</m>?
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\pdiff{f}{x}(0,0)=1</m>, <m>\pdiff{f}{y}(0,0)=4</m></p><p>
+      (b) Non.
+      </p></answer>
+
+      <solution><p>
+      By definition
+      <md>
+      <mrow>
+      \pdiff{f}{x}(0,0)
+      &amp;=\lim_{\De x\rightarrow 0}\frac{f(\De x,0)-f(0,0)}{\De x}
+      </mrow><mrow>
+      &amp;=\lim_{\De x\rightarrow 0}\frac{\frac{(\De x+2\times 0)^2}{\De x+0}-0}{\De x}
+      </mrow><mrow>
+      &amp;=\lim_{\De x\rightarrow 0}\frac{\De x}{\De x}
+      </mrow><mrow>
+      &amp;=1
+      </mrow>
+      </md>
+      and
+      <md>
+      <mrow>
+      \pdiff{f}{y}(0,0)
+      &amp;=\lim_{\De y\rightarrow 0}\frac{f(0,\De y)-f(0,0)}{\De y}
+      </mrow><mrow>
+      &amp;=\lim_{\De y\rightarrow 0}\frac{\frac{(0+2\De y)^2}{0+\De y}-0}{\De y}
+      </mrow><mrow>
+      &amp;=\lim_{\De y\rightarrow 0}\frac{4\De y}{\De y}
+      </mrow><mrow>
+      &amp;=4
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) <m>f(x,y)</m> is <em>not continuous</em> at <m>(0,0)</m>, even though both partial
+      derivatives exist there. To see this, make a change of coordinates from
+      <m>(x,y)</m> to <m>(X,y)</m> with <m>X=x+y</m> (the denominator). Of course,
+      <m>(x,y)\rightarrow (0,0)</m> if and only if <m>(X,y)\rightarrow (0,0)</m>.
+      Now watch what happens when <m>(X,y)\rightarrow(0,0)</m> with <m>X</m> a lot smaller
+      than <m>y</m>. For example, <m>X=ay^2</m>. Then
+      <md>
+      <mrow>
+      \frac{(x+2y)^2}{x+y}=\frac{(X+y)^2}{X}=\frac{(ay^2+y)^2}{ay^2}
+      =\frac{(1+ay)^2}{a}\rightarrow\frac{1}{a}
+      </mrow>
+      </md>
+      This depends on <m>a</m>. So approaching <m>(0,0)</m> along different paths gives
+      different limits. (You can see the same effect without changing coordinates
+      by sending <m>(x,y)\rightarrow (0,0)</m> with <m>x=-y+ay^2</m>.) Even more dramatically,
+      watch what happens when <m>(X,y)\rightarrow(0,0)</m> with  <m>X=y^3</m>. Then
+      <me>
+      \frac{(x+2y)^2}{x+y}=\frac{(X+y)^2}{X}=\frac{(y^3+y)^2}{y^3}
+      =\frac{{(1+y^2)}^2}{y}\rightarrow\pm\infty
+      </me>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Considérez le cylindre dont la base est le cercle de rayon 1 dans le plan <m>xy</m> centré à <m>(0,0)</m>, et dont la pente est parallèle à la droite dans le plan <m>yz</m> donnée par <m>z=y</m>.
+      </p>
+      <p>
+        <figure xml:id="fig-sage3d-Ex-partielles" >
+        <caption>Le cylindre pour l'exercice</caption>
+        <image xml:id="sageplot-Ex-partielles" width = "60%">
+        <description>Un cylindre oblique</description>
+        <sageplot variant="3d" aspect="1.0">
+          var('s,t')
+          Fig = parametric_plot3d([cos(t), sin(t) + s, s], 
+            (t,0,2*pi), (s,-1,1.2), color = "orange", opacity = 0.65)
+          Fig += arrow3d((0,0,0),(1.5,0,0), width=1, color = "black")
+          Fig += text3d("x", (1.7,0,0), color = "black")
+          Fig += arrow3d((0,0,0),(0,1.5,0), width=1, color = "black")
+          Fig += text3d("y", (0,1.7,0), color = "black")
+          Fig += arrow3d((0,0,0),(0,0,1.5), width=1, color = "black")
+          Fig += text3d("z", (0,0,1.7), color = "black", frame = False)
+          Fig += parametric_plot3d([cos(t),sin(t), 0], 
+            (t,0,2*pi), color = "brown", linestyle = "dashed", thickness = 2)
+          Fig           
+        </sageplot>
+        </image>
+        </figure>
+      </p>
+      <!-- Problème de compilation des figures LaTeX. Faire attention aux - - qui doivent être collés. -->
+      <!-- <sidebyside width="40%">
+      <image><latex-image>\begin{tikzpicture}
+      \draw[thin, gray] (0,0)- -(1,0) (0,0)- -(0,1) (0,0)- -(-.2,-.2);
+      \draw (0,1)- -(0,2) (1,0)- -(3,0) (-.2,-.2)- -(-1,-1);
+      \draw (2,2) node[shape=ellipse, minimum width=2cm, minimum height=.4cm,draw,fill=gray,fill opacity=0.3]{};
+      \draw[thick,blue] (-3,-2)- -(1,2) (-1,-2)- -(3,2);
+      \draw[thick,blue] (-1,0) arc (180:360:1cm and .2cm);
+      \draw[dotted,thick](-1,0) arc (180:0:1cm and .2cm);
+      \draw[thick,blue] (-3,-2) arc (180:360:1cm and .2cm);
+      \draw[dotted,thick](-3,-2) arc (180:0:1cm and .2cm);
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside><p> -->
+        <p>
+          Quand vous vous tenez au point <m>(0,-1,0)</m>, Quelle est la pente de la surface si vous regardez dans la dircetion des <m>y</m> positifs? Dans la direction des <m>x</m> positifs?
+      </p></statement>
+      <hint><p>
+      Vous pouvez trouver une équation pour la surface, ou simplement regarder le diagramme.
+      </p></hint>
+      <answer><p>
+      1 respectivement 0
+      </p></answer>
+      <solution>
+      <p>
+      Let's start by finding an equation for this surface. Every level curve
+      is a horizontal circle of radius one, so the equation should be of the form
+      <me>
+      (x-f_1)^2+(y-f_2)^2=1
+      </me>
+      where <m>f_1</m> and <m>f_2</m> are functions depending only on <m>z</m>. Since the centre of the circle at height <m>z</m> is at position <m>x=0</m>, <m>y=z</m>, we see that the equation of our surface is
+      <me>
+      x^2+(y-z)^2=1
+      </me>
+      The height of the surface at the point <m>(x,y)</m> is the <m>z(x,y)</m> found by solving
+      that equation. That is,
+      <me>
+      x^2+\big(y-z(x,y)\big)^2=1
+      \tag{$*$}
+      </me>
+      We differentiate this equation implicitly to find <m>z_x(x,y)</m> and <m>z_y(x,y)</m> at the desired point <m>(x,y)= (0,-1)</m>. First, differentiating <m>(*)</m> with respect
+      to <m>y</m> gives
+      <md>
+      <mrow>
+      0+2\big(y-z(x,y)\big)\big(1- z_y(x,y)\big)&amp;=0
+      </mrow><mrow>
+      2(-1-0)\big(1-z_y(0,-1)\big)&amp;=0&amp; &amp; \mbox{ at } (0,-1,0)
+      </mrow>
+      </md>
+      so that the slope looking in the positive <m>y</m> direction is <m>z_y(0,-1)=1</m>.
+      Similarly, differentiating <m>(*)</m> with respect to <m>x</m> gives
+      <md>
+      <mrow>
+      2x+2\big(y-z(x,y)\big)\cdot\big(0-z_x(x,y)\big)&amp;=0
+      </mrow><mrow>
+      2x&amp;=2\big(y-z(x,y)\big)\cdot z_x(x,y)
+      </mrow><mrow>
+      z_x(x,y)&amp;=\frac{x}{y-z(x,y)}
+      </mrow><mrow>
+      z_x(0,-1)&amp;=0 \hskip1in\mbox{ at } (0,-1,0)
+      </mrow>
+      </md>
+      The slope looking in the positive <m>x</m> direction is <m>z_x(0,-1)=0</m>.
+      </p>
+      </solution>
+
+      <solution>
+      <p>
+      Standing at <m>(0,-1,0)</m> and looking in the positive <m>y</m> direction,
+      the surface follows the straight line that
+      <ul>
+      <li>
+      passes through the point <m>(0,-1,0)</m>, and
+      </li>
+      <li>
+      is parallel to the central line <m>z=y, x=0</m> of the cylinder.
+      </li>
+      </ul>
+      Shifting the central line one unit in the <m>y</m>-direction, we get the line <m>z=y+1</m>, <m>x=0</m>. (As a check, notice that <m>(0,-1,0)</m> is indeed on <m>z=y+1</m>,
+      <m>x=0</m>.) The slope of this line is 1.
+      </p>
+
+      <p>Standing at <m>(0,-1,0)</m> and looking in the positive <m>x</m> direction,
+      the surface follows the circle <m>x^2+y^2=1</m>, <m>z=0</m>, which is the intersection
+      of the cylinder with the <m>xy</m>-plane. As we move along that circle our <m>z</m> coordinate stays fixed at <m>0</m>. So the slope in that direction is 0.
+      </p>
+
+      </solution>
+
+    </exercise>
+
+  </exercisegroup>
+
+
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+
+    <exercise>
+      <statement><p>
+        Vous traversez un paysage vallonné. Considérez que l'axe des <m>z</m> pointe vers le ciel, que l'axe des <m>x</m> positifs pointe vers le sud, et que l'axe des <m>y</m> positifs pointe vers l'est. Alors le paysage autour de vous est décrit par l'équation <m>z=f(x,y)</m>, avec vous au point <m>(0,0,f(0,0))</m>. La fonction <m>f(x,y)</m> est différentiable.
+      </p>
+
+      <p>Supposons que <m>f_y(0,0) \lt 0</m>. Est-t-il possible que vous soyez sur un sommet? Expliquez.
+      </p>
+
+      </statement>
+      <hint><p>
+      Qu'arrive-t-il si vous vous déplacez vers <q>l'arrière,</q> dans la direction des <m>y</m> négatifs?
+      </p></hint>
+      <answer><p>
+      Non: vous pouvez aller plus haut en vous déplaçant dans la direction des <m>y</m> négatifs.
+      </p></answer>
+      <solution>
+
+      <p>If <m>f_y(0,0) \lt 0</m>, then <m>f(0,y)</m> decreases as <m>y</m> increases from <m>0</m>.
+      Thus moving in the positive <m>y</m> direction takes you downhill. This means
+      you aren't at the lowest point in a valley, since you can still move downhill.
+      On the other hand, as <m>f_y(0,0) \lt 0</m>, <m>f(0,y)</m> also decreases as <m>y</m>
+      increases towards <m>0</m> from slightly negative values. Thus if you move in the <em>negative</em> <m>y</m>-direction from <m>y=0</m>, your height <m>z</m> will <em>increase</em>.
+      So you are not at a locally highest point<mdash/>you're not at a summit.
+      </p>
+
+      </solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Montrez que la fonction <m>z(x,y)=\frac{x+y}{x-y}</m> vérifie
+      <me>
+      x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y) = 0
+      </me>
+      </p></statement>
+
+      <hint><p>
+      Simplement évaluer <m>x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y)</m>.
+      </p></hint>
+
+      <answer><p>
+        <p>
+        Par la règle du quotient,
+        <md alignment="alignat">
+        <mrow>
+        \pdiff{z}{x}(x,y)
+        &amp;=\frac{(1)(x-y)-(x+y)(1)}{(x-y)^2}
+        &amp;&amp;=\frac{-2y}{(x-y)^2}
+        </mrow><mrow>
+        \pdiff{z}{y}(x,y)
+        &amp;=\frac{(1)(x-y)-(x+y)(-1)}{(x-y)^2}
+        &amp;&amp;=\frac{2x}{(x-y)^2}
+        </mrow>
+        </md>
+        Ainsi,
+        <me>
+        x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y)
+        =\frac{-2xy+2yx}{(x-y)^2}
+        =0
+        </me>
+        </p>
+      </p></answer>
+
+      <solution><p>
+      Par la règle du quotient,
+      <md alignment="alignat">
+      <mrow>
+      \pdiff{z}{x}(x,y)
+      &amp;=\frac{(1)(x-y)-(x+y)(1)}{(x-y)^2}
+      &amp;&amp;=\frac{-2y}{(x-y)^2}
+      </mrow><mrow>
+      \pdiff{z}{y}(x,y)
+      &amp;=\frac{(1)(x-y)-(x+y)(-1)}{(x-y)^2}
+      &amp;&amp;=\frac{2x}{(x-y)^2}
+      </mrow>
+      </md>
+      Ainsi,
+      <me>
+      x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y)
+      =\frac{-2xy+2yx}{(x-y)^2}
+      =0
+      </me>
+      </p></solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Soit <m>f</m> une fonction différentiable quelconque d'une variable. Définissez
+      <m>z(x,y)=f(x^2+y^2)</m>. Est-ce que l'équation
+      <me>
+      y\pdiff{z}{x}(x,y)-x\pdiff{z}{y}(x,y) = 0
+      </me>
+      est nécessairement satisfaite?
+      </p></statement>
+
+      <hint><p>
+      Simplement évaluer <m>y\pdiff{z}{x}(x,y)</m> et <m>x\pdiff{z}{y}(x,y)</m>.
+      </p></hint>
+
+      <answer><p>
+      Oui.
+      </p></answer>
+
+      <solution><p>
+      As <m>z(x,y)=f(x^2+y^2)</m>
+      <md>
+      <mrow>
+      \pdiff{z}{x}(x,y)&amp;=2xf'(x^2+y^2)
+      </mrow><mrow>
+      \pdiff{z}{y}(x,y)&amp;=2yf'(x^2+y^2)
+      </mrow>
+      </md>
+      by the (ordinary single variable) chain rule.
+      So
+      <me>
+      y\pdiff{z}{x}-x\pdiff{z}{y}
+      =y(2x)f'(x^2+y^2)-x(2y)f'(x^2+y^2)=0
+      </me>
+      and the differential equation is always satisfied, assuming that
+      <m>f</m> is differentiable, so that the chain rule applies.
+      </p></solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Trouvez, si possible, une fonction <m>f(x,y)</m> pour laquelle <m>f_x(x,y)=e^y</m> et
+      <m>f_y(x,y)=e^x</m>.
+      </p></statement>
+
+      <hint><p>
+      Si <m>f(x,y)</m> obéissant aux conditions spécifiées existe, alors il est nécessaire
+      que <m>f_{xy}(x,y)=f_{yx}(x,y)</m>.
+      </p></hint>
+
+      <answer><p>
+      Il n'existe pas une telle fonction <m>f(x,y)</m>.
+      </p></answer>
+
+      <solution><p>
+      No such <m>f(x,y)</m> exists, because if it were to exist, then we would have
+      that <m>f_{xy}(x,y)=f_{yx}(x,y)</m>. But
+      <md>
+      <mrow>
+      f_{xy}(x,y)&amp;=\pdiff{}{y}f_x(x,y)=\pdiff{}{y}e^y=e^y
+      </mrow><mrow>
+      f_{yx}(x,y)&amp;=\pdiff{}{x}f_y(x,y)=\pdiff{}{x}e^x=e^x
+      </mrow>
+      </md>
+      are not equal.
+      </p></solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Trouvez les dérivées partielles spécifiées.
+      <ol marker = "(a)">
+      <li>
+      <m>f(x,y) = x^2y^3</m>;
+      <m>f_{xx}(x,y)</m>, <m>f_{xyy}(x,y)</m>, <m>f_{yxy}(x,y)</m>
+      </li>
+      <li>
+      <m>f(x,y) = e^{xy^2}</m>;
+      <m>f_{xx}(x,y)</m>, <m>f_{xy}(x,y)</m>, <m>f_{xxy}(x,y)</m>, <m>f_{xyy}(x,y)</m>
+      </li>
+      <li>
+      <m>\displaystyle f(u,v,w) = \frac{1}{u+2v+3w}\ </m>,
+         <m>\displaystyle \frac{\partial^3 f}{\partial u\partial v\partial w}(u,v,w)\ </m>,
+         <m>\displaystyle \frac{\partial^3 f}{\partial u\partial v\partial w}(3,2,1)</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>f_{xx}(x,y) = 2y^3</m></p><p>
+          <m>f_{yxy}(x,y) = f_{xyy}(x,y) = 12xy</m>
+      </p>
+
+      <p>(b) <m>f_{xx}(x,y)= y^4e^{xy^2}</m></p><p>
+          <m>f_{xy}(x,y)= \big(2y+2xy^3\big)e^{xy^2}</m></p><p>
+          <m>f_{xxy}(x,y)= \big(4y^3 + 2xy^5\big)e^{xy^2}</m></p><p>
+          <m>f_{xyy}(x,y) = \big(2+10xy^2+4x^2y^4\big)e^{xy^2}</m>
+      </p>
+
+      <p>(c) <m>\displaystyle\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
+              = -\frac{36}{(u+2v+3w)^4}</m></p><p>
+          <m>\displaystyle\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
+               = -0.0036
+               = -\frac{9}{2500}</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) We have
+      <md>
+      <mrow>
+      f_x(x,y) &amp;= 2xy^3 &amp;
+      f_{xx}(x,y) &amp;= 2y^3
+      </mrow><mrow>
+       &amp; &amp;
+      f_{xy}(x,y) &amp;= 6xy^2 &amp;
+      f_{yxy}(x,y) = f_{xyy}(x,y) &amp;= 12xy
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) We have
+      <md alignment="alignat">
+      <mrow>
+      f_x(x,y) &amp;= y^2e^{xy^2}
+      </mrow><mrow>
+      f_{xx}(x,y) &amp;= y^4e^{xy^2} &amp;
+      f_{xxy}(x,y) &amp;= 4y^3e^{xy^2} + 2xy^5e^{xy^2}
+      </mrow><mrow>
+      f_{xy}(x,y) &amp;= 2ye^{xy^2}+2xy^3e^{xy^2}\quad &amp;
+      f_{xyy}(x,y) &amp;= \big(2\!+\!4xy^2\!+\!6xy^2\!+\!4x^2y^4\big)e^{xy^2}
+      </mrow><mrow>
+       &amp; &amp;
+       &amp;= \big(2+10xy^2+4x^2y^4\big)e^{xy^2}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) We have
+      <md>
+      <mrow>
+      \pdiff{f}{u}(u,v,w) &amp;= -\frac{1}{(u+2v+3w)^2}
+      </mrow><mrow>
+      \frac{\partial^2 f}{\partial u\,\partial v}(u,v,w) &amp;= \frac{4}{(u+2v+3w)^3}
+      </mrow><mrow>
+      \frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
+              &amp;= -\frac{36}{(u+2v+3w)^4}
+      </mrow>
+      </md>
+      In particular
+      <md>
+      <mrow>
+      \frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
+              &amp;= -\frac{36}{(3+2\times 2+3\times 1)^4}
+               = -\frac{36}{10^4}
+               = -\frac{9}{2500}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Trouvez toutes les dérivées partielles de deuxième ordre de <m>f(x,y)=\sqrt{x^2+5y^2}</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>f_{xx}=\frac{5y^2}{(x^2+5y^2)^{3/2}}</m></p><p>
+      <m>f_{xy}=f_{yx}=-\frac{5xy}{(x^2+5y^2)^{3/2}}</m></p><p>
+      <m>f_{yy}=\frac{5x^2}{(x^2+5y^2)^{3/2}}</m>
+      </p></answer>
+
+      <solution><p>
+      Let <m>f(x,y)=\sqrt{x^2+5y^2}</m>. Then
+      <md>
+      <mrow>
+      f_x&amp;=\frac{x}{\sqrt{x^2+5y^2}}
+      </mrow><mrow>
+      f_{xx}&amp;=\frac{1}{\sqrt{x^2+5y^2}}-\frac{1}{2}\frac{(x)(2x)}{(x^2+5y^2)^{3/2}} &amp;
+      f_{xy}&amp;=-\frac{1}{2}\frac{(x)(10y)}{(x^2+5y^2)^{3/2}}
+      </mrow><mrow>
+      f_y&amp;=\frac{5y}{\sqrt{x^2+5y^2}}
+      </mrow><mrow>
+      f_{yy}&amp;=\frac{5}{\sqrt{x^2+5y^2}}-\frac{1}{2}\frac{(5y)(10y)}{(x^2+5y^2)^{3/2}}&amp;
+      f_{yx}&amp;=-\frac{1}{2}\frac{(5y)(2x)}{(x^2+5y^2)^{3/2}}
+      </mrow>
+      </md>
+      Simplifying, and in particular using that <m>\frac{1}{\sqrt{x^2+5y^2}}
+      =\frac{x^2+5y^2}{(x^2+5y^2)^{3/2}}</m>,
+      <md>
+      <mrow>
+      f_{xx}&amp;=\frac{5y^2}{(x^2+5y^2)^{3/2}}\qquad
+      f_{xy}=f_{yx}=-\frac{5xy}{(x^2+5y^2)^{3/2}}
+      </mrow><mrow>
+      f_{yy}&amp;=\frac{5x^2}{(x^2+5y^2)^{3/2}}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+
+    <exercise>
+      <statement><p>
+      Trouvez toutes les dérivées partielles spécifiées.
+      <ol marker = "(a)">
+      <li>
+      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>; <m>f_{xyz}(x,y,z)</m>
+      </li>
+      <li>
+      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)
+                  +\arctan\big(e^{\sqrt{xz}}\big)
+                  +\arctan\big(e^{\sqrt{yz}}\big)</m>; <m>f_{xyz}(x,y,z)</m>
+      </li>
+      <li>
+      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xyz}}\big)</m>; <m>f_{xx}(1,0,0)</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      (a) Cette dérivée partielle d'ordre supérieur peut être évaluée de manière extrêmement efficace
+      en choisissant soigneusement l'ordre d'évaluation des dérivées.
+      </p>
+
+      <p> Cette dérivée partielle d'ordre supérieur peut être évaluée de manière extrêmement efficace
+      en choisissant soigneusement un <em>différent ordre d'évaluation</em> des dérivées
+      pour chacun des trois termes.
+      </p>
+
+      <p>(c) Posez <m>g(x) = f(x,0,0)</m>. Alors, <m>f_{xx}(1,0,0)=g''(1)</m>.
+      </p></hint>
+
+      <answer><p>
+      (a) <m>f_{xyz}(x,y,z)=0</m></p><p>
+      (b) <m>f_{xyz}(x,y,z)=0</m></p><p>
+      (c) <m>f_{xx}(1,0,0)=0</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      As <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> is independent of <m>z</m>,
+      we have <m>f_z(x,y,z) = 0</m> and hence
+      <me>
+      f_{xyz}(x,y,z)
+      =f_{zxy}(x,y,z)
+      =0
+      </me>
+      </p>
+
+      <p>(b) Write <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>,
+                <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> and
+                <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m>.
+      Then
+      <ul>
+      <li>
+      As <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> is independent of <m>z</m>,
+      we have <m>u_z(x,y,z) = 0</m> and hence
+      <m>
+      u_{xyz}(x,y,z)
+      =u_{zxy}(x,y,z)
+      =0
+      </m>
+      </li>
+      <li>
+      As <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> is independent of <m>y</m>,
+      we have <m>v_y(x,y,z) = 0</m> and hence
+      <m>
+      v_{xyz}(x,y,z)
+      =v_{yxz}(x,y,z)
+      =0
+      </m>
+      </li>
+      <li>
+      As <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m> is independent of <m>x</m>,
+      we have <m>w_x(x,y,z) = 0</m> and hence
+      <m>
+      w_{xyz}(x,y,z)
+      =0
+      </m>
+      </li>
+      </ul>
+      As <m>f(x,y,z)=u(x,y,z)+v(x,y,z)+w(x,y,z)</m>, we have
+      <me>
+      f_{xyz}(x,y,z)=u_{xyz}(x,y,z)+v_{xyz}(x,y,z)+w_{xyz}(x,y,z)=0
+      </me>
+      </p>
+
+      <p>(c) In the course of evaluating <m>f_{xx}(x,0,0)</m>, both <m>y</m> and <m>z</m> are held fixed at <m>0</m>. Thus, if we set <m>g(x) = f(x,0,0)</m>, then  <m>f_{xx}(x,0,0)=g''(x)</m>.
+      Now
+      <me>
+      g(x) = f(x,0,0) = \arctan\big(e^{\sqrt{xyz}}\big)\Big|_{y=z=0}
+                      =\arctan(1)
+                      =\frac{\pi}{4}
+      </me>
+      for all <m>x</m>. So <m>g'(x)=0</m> and <m>g''(x)=0</m> for all <m>x</m>. In particular,
+      <me>
+      f_{xx}(1,0,0) = g''(1) = 0
+      </me>
+      </p>
+
+      </solution>
+    </exercise>
+  </exercisegroup>
+
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+
+    <exercise>
+      <statement><p>
+      Supposons que toutes les dérivées partielles de troisième ordre de la fonction
+      <m>f(x,y,z)</m> existent et sont continues. Montrez que
+      <md>
+      <mrow>
+      f_{xyz}(x,y,z)
+      &amp;=f_{xzy}(x,y,z)
+      =f_{yxz}(x,y,z)
+      =f_{yzx}(x,y,z)
+      </mrow><mrow>
+      &amp;=f_{zxy}(x,y,z)
+      =f_{zyx}(x,y,z)
+      </mrow>
+      </md>
+      </p></statement>
+
+      <hint><p>
+      Utilisez de façon répété le théorème de Clairaut, i.e. <xref ref="thm_mixed_partials"/>.
+      </p></hint>
+
+      <answer><p>
+        <p>
+        Nous devons dériver plusieurs égalités.
+        <ul>
+        <li>
+        Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
+        <me>
+        f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
+        </me>
+        </li>
+        <li>
+        Pour tout nombre réel fixé <m>z</m>,
+        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
+        <me>
+        f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
+        =f_{yxz}(x,y,z)
+        </me>
+        Jusqu'à présent, nous avons
+        <me>
+        f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+        </me>
+        </li>
+        <li>
+        Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
+        de Clairaut <xref ref="thm_mixed_partials"/>
+        <m>g_{xz}(x,z)=g_{zx}(x,z)</m>. Ainsi,
+        <me>
+        f_{yxz}(x,y,z) = g_{xz}(x,z) =g_{zx}(x,z) = f_{yzx}(x,y,z)
+        </me>
+        Jusqu'à présent, nous avons
+        <me>
+        f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
+        </me>
+        </li>
+        <li>
+        Pour tout nombre réel fixé <m>y</m>,
+        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
+        <me>
+        f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
+        =f_{zxy}(x,y,z)
+        </me>
+        Jusqu'à présent, nous avons
+        <md>
+        <mrow>
+        f_{xyz}(x,y,z) &amp;= f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+        </mrow><mrow>
+        &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
+        </mrow>
+        </md>
+        </li>
+        <li>
+        Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
+        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
+        <me>
+        f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zxy}(x,y,z)
+        </me>
+        Nous avons maintenant toues les égalités
+        <md>
+        <mrow>
+        f_{xyz}(x,y,z) &amp;= f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+        </mrow><mrow>
+        &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
+        = f_{zxy}(x,y,z)
+        </mrow>
+        </md>
+        </li>
+        </ul>
+        </p>
+      </p></answer>
+
+      <solution><p>
+      Nous devons dériver plusieurs égalités.
+      <ul>
+      <li>
+      Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
+      <me>
+      f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
+      </me>
+      </li>
+      <li>
+      Pour tout nombre réel fixé <m>z</m>,
+      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
+      <me>
+      f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
+      =f_{yxz}(x,y,z)
+      </me>
+      Jusqu'à présent, nous avons
+      <me>
+      f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+      </me>
+      </li>
+      <li>
+      Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
+      de Clairaut <xref ref="thm_mixed_partials"/>
+      <m>g_{xz}(x,z)=g_{zx}(x,z)</m>. Ainsi,
+      <me>
+      f_{yxz}(x,y,z) = g_{xz}(x,z) =g_{zx}(x,z) = f_{yzx}(x,y,z)
+      </me>
+      Jusqu'à présent, nous avons
+      <me>
+      f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
+      </me>
+      </li>
+      <li>
+      Pour tout nombre réel fixé <m>y</m>,
+      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
+      <me>
+      f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
+      =f_{zxy}(x,y,z)
+      </me>
+      Jusqu'à présent, nous avons
+      <md>
+      <mrow>
+      f_{xyz}(x,y,z) &amp;= f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+      </mrow><mrow>
+      &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
+      </mrow>
+      </md>
+      </li>
+      <li>
+      Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
+      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
+      <me>
+      f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zxy}(x,y,z)
+      </me>
+      Nous avons maintenant toues les égalités
+      <md>
+      <mrow>
+      f_{xyz}(x,y,z) &amp;= f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
+      </mrow><mrow>
+      &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
+      = f_{zxy}(x,y,z)
+      </mrow>
+      </md>
+      </li>
+      </ul>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+      <statement><p>
+       Soit <m>f(r,\theta)=r^m\cos m\theta</m> une fonction de <m>r</m> et de <m>\theta</m>,
+      où <m>m</m> est un entier positif.
+      <ol marker = "(a)">
+      <li>
+       Trouvez les dérivées partielles de deuxième ordre <m>f_{rr}</m>, <m>f_{r\theta}</m>,
+      <m>f_{\theta\theta}</m> et évaluez leurs valeurs respectives à <m>(r,\theta)=(1,0)</m>.
+      </li>
+      <li>
+       Déterminez la valeur du nombre réel <m>\la</m> tel que <m>f(r,\theta)</m>
+      satisfait l'équation différentielle
+      <me>
+      f_{rr}+\frac{\la}{r}f_r+\frac{1}{r^2}f_{\theta\theta}=0
+      </me>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>f_{rr}(1,0)=m(m-1),\
+      f_{r\theta}(1,0)=0,\
+      f_{\theta\theta}(1,0)=-m^2</m></p><p>
+      (b) <m>\la=1</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      The first order derivatives are
+      <me>
+      f_r(r,\theta)=mr^{m-1}\cos m\theta\qquad
+      f_\theta(r,\theta)=-mr^m\sin m\theta
+      </me>
+      The second order derivatives are
+      <md>
+      <mrow>
+      f_{rr}(r,\theta)&amp;=m(m-1)r^{m-2}\cos m\theta \qquad
+      f_{r\theta}(r,\theta)=-m^2r^{m-1}\sin m\theta
+      </mrow><mrow>
+      f_{\theta\theta}(r,\theta)&amp;=-m^2r^m\cos m\theta
+      </mrow>
+      </md>
+      so that
+      <me>
+      f_{rr}(1,0)=m(m-1),\
+      f_{r\theta}(1,0)=0,\
+      f_{\theta\theta}(1,0)=-m^2
+      </me>
+      </p>
+
+      <p>(b) By part (a), the expression
+      <md>
+      <mrow>
+      f_{rr}+\frac{\la}{r}f_r+\frac{1}{r^2}f_{\theta\theta}
+      &amp;=m(m-1)r^{m-2}\cos m\theta+\la mr^{m-2}\cos m\theta
+      </mrow><mrow>
+      &amp;\hskip1in-m^2r^{m-2}\cos m\theta
+      </mrow>
+      </md>
+      vanishes for all <m>r</m> and <m>\theta</m> if and only if
+      <me>
+      m(m-1)+\la m-m^2=0\iff m(\la-1)=0\iff \la=1
+      </me>
+      </p></solution>
+    </exercise>
+
+    <!-- Solution et réponse sont les mêmes -->
+    <exercise>
+      <statement><p>
+      Soit <m>\a \gt 0</m> une constante.
+      Montrez que <m>\displaystyle u(x,y,z,t) =\frac{1}{t^{3/2}}
+                   e^{-(x^2+y^2+z^2)/(4\a t)}</m> satisfait l'équation de la chaleur
+      <me>
+      u_t =  \a\big(u_{xx} + u_{yy} + u_{zz} \big)
+      </me>
+      pour tout <m>t \gt 0</m>
+      </p></statement>
+
+      <answer><p>
+        <p>
+        Comme
+        <md>
+        <mrow>
+        u_t(x,y,z,t)
+        &amp;=-\frac{3}{2}\frac{1}{t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        &amp;\hskip1in  +\frac{1}{4\a\,t^{7/2}}(x^2+y^2+z^2) e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        u_x(x,y,z,t)
+        &amp;=-\frac{x}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        u_{xx}(x,y,z,t)
+        &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+          +\frac{x^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        u_{yy}(x,y,z,t)
+        &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+          +\frac{y^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        u_{zz}(x,y,z,t)
+        &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+          +\frac{z^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow>
+        </md>
+        on a
+        <md>
+        <mrow>
+        \a\big(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \big)
+        &amp;=-\frac{3}{2\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+          \!+\!\frac{x^2\!+\!y^2\!+\!z^2}{4\a\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        </mrow><mrow>
+        &amp;=u_t
+        </mrow>
+        </md>
+        </p>
+      </p></answer>
+
+      <solution><p>
+      Comme
+      <md>
+      <mrow>
+      u_t(x,y,z,t)
+      &amp;=-\frac{3}{2}\frac{1}{t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      &amp;\hskip1in  +\frac{1}{4\a\,t^{7/2}}(x^2+y^2+z^2) e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      u_x(x,y,z,t)
+      &amp;=-\frac{x}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      u_{xx}(x,y,z,t)
+      &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        +\frac{x^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      u_{yy}(x,y,z,t)
+      &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        +\frac{y^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      u_{zz}(x,y,z,t)
+      &amp;=-\frac{1}{2\a\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        +\frac{z^2}{4\a^2\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow>
+      </md>
+      on a
+      <md>
+      <mrow>
+      \a\big(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \big)
+      &amp;=-\frac{3}{2\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+        \!+\!\frac{x^2\!+\!y^2\!+\!z^2}{4\a\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
+      </mrow><mrow>
+      &amp;=u_t
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup>
+
+</exercises>

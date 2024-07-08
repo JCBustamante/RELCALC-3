@@ -1,0 +1,325 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Produit-vectoriel">
+  <title>Produit vectoriel</title>
+  <introduction>
+    Dans cette section, nous étudierons une seconde <q>multiplication</q>, définie pour des vecteurs dans <m>\R^3</m> (contrairement au produit scalaire qui est défini sans égard à la dimension des vecteurs). Le produit vectoriel est souvent défini au moyen de ses applications en physique, mais il a aussi une très claire interprétation géométrique. L'approche qu'on retient relève plutôt de l'algèbre linéaire : on tire profit des propriétés des déterminants.
+  </introduction>
+  <p>
+    Étant donné deux vecteurs fixes <m>\va,\vb\in \R^3</m>, on peut définir une application <m>\phi :\R^3 \to \R</m> par la formule
+    <me>
+      \phi(\vx) = \text{det} (\vx,\va,\vb).
+    </me>
+    En vertu des propriétés des déterminants, il s'agit d'une fonction linéaire, c'est-à-dire que, pour <m>\vx,\vy \in \R^n</m> et <m>k\in \R</m>, on a
+    <md>
+    <mrow>  \phi(\vx + \vy) = \phi(\vx) +\phi(\vy) \amp \amp  \text{ et }\amp  \amp \phi(k\vx) =k \phi(\vx).</mrow>
+    </md>
+    Ainsi, il existe un unique vecteur <m>\vn</m>, tel que
+    <me>
+      \vx \cdot \vn= \phi(\vx).
+    </me>
+    Ceci nous permet de définir le produit vectoriel.
+</p>
+    <definition xml:id="def-Prod-vect">
+      <statement>
+        <p>Étant donné deux vecteurs <m>\va,\vb\in \R^3</m>, leur <term>produit vectoriel</term>, noté <m>\va\times \vb</m><fn>Il est aussi souvent noté <m>\va \wedge \vb</m>, surtout dans les textes européens.</fn>, est l'unique vecteur vérifiant
+        <me>
+          \vx \cdot (\va \times \vb) = \text{det} (\vx, \va,\vb).
+        </me>
+        L'expression <m>\va \times \vb</m> se lit en français <em><q><m>\va</m> croix <m>\vb</m></q></em> ou encore <em><q><m>\va</m> produit vectoriel <m>\vb</m></q></em>.
+        </p>
+      </statement>
+    </definition>
+
+<proposition xml:id="prop-ppt-vect">
+  <statement>
+    <p>Étant donné <m>\va, \vb, \vc \in \R^3\text{ et } \b,\g \in\R</m>, on a :
+    <ol>
+      <li>
+        <p>
+          <m>\va \times \vb = -\vb \times \va</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\va \times \vb</m> est orthogonal à <m>\va</m> et à <m>\vb</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\va \times (\b\, \vb + \g\, \vc) = \b (\va\times \vb ) + \g(\va\times \vc) </m>;
+        </p>
+      </li>
+      <li>
+        <p> Si <m>\va= a_1 \vi + a_2 \vj +a_3\vk</m> et <m>\vb =b_1\vi +b_2 \vj + b_3 \vk</m>, alors
+        <me>
+          \va \times \vb = \left|\begin{array}{ccc}a_2 \amp a_3 \\ b_2 \amp b_3\end{array}\right|\,\vi - \begin{vmatrix}a_1 \amp a_3\\ b_1 \amp b_3\end{vmatrix}\,\vj + \begin{vmatrix}a_1 \amp b_1\\ a_2 \amp b_2\end{vmatrix}\,\vk \text{;}
+        </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>|\va \times \vb| = |\va|\, |\vb|\, \sin \theta</m>, où <m>\theta\in [0, \pi]</m> est l'angle (non orienté) formé par <m>\va</m> et <m>\vb</m>. En particulier, <m>\va</m> et <m>\vb</m> sont parallèles si et seulement si <m>\va \times \vb = \vZero</m>.
+        </p>
+      </li>
+    </ol>
+
+    </p>
+  </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Cela suit de ce que pour tout <m>\vx\in \R^3</m>, on a <m>\text{det} (\vx,\va, \vb) = - \det (\vx,\vb, \va)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+          En effet, en vertu de la définition, on a
+          <me>
+            \va \cdot (\va \times \vb) = \text{det}\, (\va, \va, \vb) = 0,
+          </me> ce qui montre le premier énoncé; le second se démontre de la même façon.
+          </p>
+        </li>
+        <li>
+          <p>
+            De nouveau, ce sont les propriétés des déterminants qui donnent la preuve. Soit <m>\vx\in \R^3</m>, on a
+            <md>
+            <mrow> \vx \cdot (\va \times (\b \vb + \g \vc)) \amp =  \text{det}\, (\vx, \va, \b\,\vb + \g\,\vc)</mrow>
+              <mrow> \amp = \text{det}\, (\vx, \va, \b\,\vb) + \text{det}\, (\vx, \va,  \g\,\vc)   </mrow>
+              <mrow> \amp  = \b\,\text{det}\, (\vx, \va, \vb) + \g\, \text{det}\, (\vx, \va,  \vc) </mrow>
+              <mrow>  \amp = \b \vx \cdot (\va \times \vb) + \g \vx\cdot (\va \times \vc) </mrow>
+              <mrow>  \amp = \vx \cdot \left( \b\, (\va \times \vb) + \g(\va\times \vc) \right). </mrow>
+            </md>
+            Comme ceci est vrai pour tout <m>\vx\in\R^3</m>, on obtient la conclusion voulue<fn>En effet, s'il est vrai que la loi de simplification pour le produit scalaire n'est pas valide, il est vrai que si <m>\vx \cdot \vv = \vx \cdot \vu</m> pour tout <m>\vx \in \R^n</m>, alors <m>\vv = \vu</m>.</fn>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            Écrivons <m>\va \times \vb = x\vi + y \vj + z \vk</m>. Nous avons alors
+            <me>
+                x = \vi \cdot (\va \times \vb) = \begin{vmatrix} 1\amp a_1 \amp b_1 \\ 0 \amp a_2 \amp b_3\\ 0 \amp a_2 \amp b_3\end{vmatrix} = \begin{vmatrix} a_2 \amp a_3 \\b_2 \amp b_3\end{vmatrix}.
+            </me>
+            Nous montrons de la même façon les autres égalités.
+          </p>
+        </li>
+        <li>
+          <p>
+            Nous avons
+            <md>
+              <mrow> |\va\times \vb|^2 \amp =
+              \begin{vmatrix}a_2 \amp a_3\\ b_2 \amp b_3 \end{vmatrix}^2 + \begin{vmatrix}a_1 \amp a_3\\ b_1 \amp b_3 \end{vmatrix}^2 + \begin{vmatrix}a_1 \amp a_2\\ b_1 \amp b_2 \end{vmatrix}^2
+                </mrow>
+                <mrow>   \amp = \left(a_2 b_3 - a_3 b_2\right)^2 + \left( a_1 b_3 - b_1 a_3 \right)^2 + \left(a_1 b_2 - b_1 a_2\right)^2.
+                </mrow>
+            </md>
+            Après développement, nous pouvons arranger les termes de façon équivalente pour obtenir
+            <me>
+              \left(a_1 ^2 + a_2^2+a_3^2\right)\left(b_1^2+ b_2^2+b_3^2\right)- \left(a_1 b_1 + a_2 b_2 + a_3 b_3\right)^2,
+            </me>
+            qui à son tour est égal à
+            <me>
+              |\va|^2 |\vb|^2  - (\va \cdot \vb)^2 = |\va|^2 |\vb|^2 - |\va|^2 |\vb|^2 \cos^2 \theta = |\va|^2 |\vb|^2 (1-\cos^2 \theta),
+            </me>
+            et le résultat suit de ce que <m>1-\cos^2 \theta = \sin^2\theta</m>, et nous considérons l'angle <m>\theta \in [0,\pi]</m>, de sorte que son sinus est positif.
+
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</proposition>
+
+
+  <ul>
+    <li>
+      <p>  Remarquons qu'il est usuel de définir le produit vectoriel au moyen de la formule de la propriété 3. La vérification des autres propriétés est alors un exercice de calcul, plutôt fastidieux et pas très édifiant.
+      </p>
+    </li>
+    <li>
+      <p>
+        La formule 4 fournit une façon concise d'écrire le produit vectoriel comme un <em>déterminant symbolique</em><fn><em>Symbolique</em>, car il ne s'agit pas, à proprement parler, d'un déterminant, les éléments apparaissant dans la première ligne étant des vecteurs, pas des nombres.</fn>:
+        <me>
+          \va \times \vb = \begin{vmatrix}\vi \amp a_1 \amp b_1 \\ \vj \amp a_2 \amp b_2\\ \vk \amp a_3 \amp b_3
+        \end{vmatrix}.
+        </me>
+      </p>
+    </li>
+
+  </ul>
+
+<!--
+<example>
+  <statement>
+    <p>
+      Il faudrait un exemple
+    </p>
+  </statement>
+  <solution>
+    <p>
+      avec sa solution
+    </p>
+  </solution>
+</example>
+
+
+-->
+<p>
+Les propriétés 2 et 5 de la <xref ref = "prop-ppt-vect"/> nous disent que si <m>\va</m>  et <m>\vb </m> ne sont pas colinéaires, alors <m>\va \times \vb</m> est orthogonal au plan engendré par <m>\va</m> et <m>\vb</m>, et sa norme est <m>|\va|\, |\vb|\, \sin \theta</m>. Ceci laisse encore deux choix pour le produit vectoriel. Dans la figure de gauche ci-bas, les vecteurs <m>\vc</m>  et <m>\vd</m> sont des candidats potentiels. Lequel des deux choisir? La <term>règle de la main droite</term> fournit la réponse : lorsque vos doigts de la main droite tournent d'un angle <m>\theta</m> de <m>\va</m> jusqu'à <m>\vb</m>, alors votre pouce indique la direction de <m>\va \times \vb</m>.
+</p>
+<figure>
+  <caption>Pour le produit vectoriel, l'ordre des facteurs est important. À droite, la règle de la main droite. </caption>
+  <sidebyside  widths="25% 22% 20%" valign="middle">
+   <image source="images/CLP-figs/crossLL"/>
+   <image source="images/CLP-figs/crossRR"/>
+   <image source="images/CLP-figs/RHR"/>
+   </sidebyside>
+ </figure>
+
+
+
+<p>La partie 5 admet une interprétation qui nous sera utile à plusieurs reprises par la suite :  le produit vectoriel permet de calculer l'aire d'un parallélogramme.
+
+</p>
+<corollary xml:id="cor-Aire">
+  <statement>
+    <p>Soit <m>\va</m> et <m>\vb</m> deux vecteurs dans <m>\R^3</m>. Alors, l'aire du parallélogramme qu'ils déterminent est <m>|\va \times \vb|</m>.
+    </p>
+  </statement>
+
+  <proof>
+    <p>En effet, l'aire du parallélogramme en question est donnée par le produit de la longueur d'un de ses côtés, disons <m>\va</m> par la distance <m>h</m> d'un sommet à ce côté. Cette distance vaut <m>h = |\vb| \sin \theta</m>.
+    <sidebyside width="22%">
+    <image source="images/CLP-figs/areaB"/>
+    </sidebyside>
+    </p>
+  </proof>
+
+</corollary>
+
+<p>Le volume d'un parallélépipède est le produit de l'aire de sa base par sa hauteur. On vient de voir que cette base peut être calculée au moyen d'un produit vectoriel. De plus, la hauteur n'est rien d'autre qu'une projection, donc le produit scalaire n'est pas loin. Plus précisément, nous avons le résultat suivant.
+</p>
+
+<corollary xml:id="cor-produit-mixte">
+  <title>Volume d'un parallélépipède : le produit mixte</title>
+    <statement>
+    <p> Soit <m>\va, \vb</m> et <m>\vc</m> trois vecteurs dans <m>\R^3</m>. Le volume du parallélépipède qu'ils déterminent est <m>V = |\va \cdot (\vb \times \vc)|</m>.
+    </p>
+  </statement>
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/pipedVolume"/>
+  </sidebyside>
+
+
+  <proof>
+    <p>
+      En effet, on peut choisir comme base le parallélogramme déterminé par <m>\vb</m> et <m>\vc</m>. Soit <m>\vn =\vb \times \vc</m>. L'aire de la base est donc  <m>A= |\vn|</m>. Par ailleurs,  <m>\vn </m>  est orthogonal au plan qui contient cette base. La hauteur du parallélépipède est donnée par <m>h = \left| \proj_{\vn}\, \va \right| </m>. Il vient alors que le volume cherché est
+      <md>
+        <mrow> V \amp = h\cdot A  = \left| \proj_{\vn}\, \va \right| |\vn|   = \left|\frac{\va \cdot \vn}{\vn \cdot \vn}\vn \right|\, |\vn|</mrow>
+        <mrow>  \amp = \frac{\left|\va \cdot \vn\right|}{|\vn|^2}|\vn|^2 = \left|\va \cdot (\vb\times \vc)\right|.</mrow>    </md>
+    </p>
+
+  </proof>
+
+</corollary>
+
+<p>
+  Le produit vectoriel a d'autres propriétés, nous finissons avec deux qui sont souvent utilisées.
+</p>
+<proposition xml:id = "prop-vect-bis">
+  <statement>
+    <p> Soit <m>\va, \vb</m> et <m>\vc</m> des vecteur de <m>\R^3</m>. Alors
+      <ol marker = "(a)">
+        <li>
+          <p>
+            <m>\va \cdot (\vb \times \vc) = (\va \times \vb ) \cdot \vc </m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\va \times (\vb \times \vc) = (\vc\cdot \va)\vb - (\vb\cdot \va)\vc </m>
+          </p>
+        </li>
+      </ol>
+      
+    </p>
+  </statement>
+
+  <proof>
+    <ol marker = "(a)">
+      <li>
+        <p>
+          La première identité résulte directement du fait que lorsqu'on échange deux vecteurs dans un déterminant, celui-ci est multiplié par <m>-1</m>. En effet, nous avons, par définition            
+        </p>
+        <md>
+          <mrow> \va \cdot (\vb \times \vc) \amp  = \det(\va, \vb, \vc) </mrow>
+          <mrow> \amp = -\det (\va,\vc,\vb) </mrow>
+          <mrow> \amp = \det( \vc,\va, \vb)</mrow>
+          <mrow> \amp = (\va \times \vb ) \cdot \vc</mrow>
+        </md>
+      </li>
+      <li>
+        <p>
+          La preuve de la deuxième égalité n'est pas exceptionnellement difficile, il s'agit de calculer explicitement les deux côtés et remarquer qu'ils sont effectivement égaux. 
+          Nous avons d'une part 
+          <me>
+          \vb\times\vc
+          \ =\ (b_2c_3-b_3c_2)\vi -(b_1c_3-b_3c_1)\vj + (b_1c_2-b_2c_1)\vk 
+          </me>
+          Remplaçons dans le terme de gauche de l'égalité que nous devons montrer, ce qui donne  
+          <md>
+            <mrow> \va\times(\vb\times\vc)\amp  = \det \left[ \begin{matrix}  \vi &amp;a_1 &amp; b_2c_3 - b_3c_2\\
+              \vj &amp; a_2 &amp; -b_1c_3 + b_3c_1\\
+              \vk &amp; a_3 &amp; b_1 c_2 - b_2 c_1 
+              \end{matrix}  \right] </mrow>
+          <mrow>
+          =\phantom{-}&amp;\vi \big[a_2(b_1c_2-b_2c_1)-a_3(-b_1c_3+b_3c_1)\big]
+          </mrow><mrow>
+          -&amp;\vj \big[a_1(b_1c_2-b_2c_1)-a_3(b_2c_3-b_3c_2)\big]
+          </mrow><mrow>
+          +&amp;\vk \big[a_1(-b_1c_3+b_3c_1)-a_2(b_2c_3-b_3c_2)\big]
+          </mrow>
+          </md>
+          D'autre part, le terme de droite est 
+          <md>
+          <mrow>
+          (\va\cdot\vc)\vb-(\va\cdot\vb)\vc
+          \ =\ &amp;(a_1c_1+a_2c_2+a_3c_3)(b_1\vi +b_2\vj +b_3\vk )
+          </mrow><mrow>
+          &amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\vi +c_2\vj +c_3\vk )
+          </mrow><mrow>
+          =\ &amp;
+          \vi \ \big[{\color{blue}{a_1b_1c_1}}
+                  +a_2b_1c_2+a_3b_1c_3-
+                  {\color{blue}{a_1b_1c_1}}
+                  -a_2b_2c_1-a_3b_3c_1\big]
+          </mrow><mrow>
+          {+}&amp;\vj \ \big[a_1b_2c_1
+                +{\color{blue}{a_2b_2c_2}}
+                +a_3b_2c_3-a_1b_1c_2
+                -{\color{blue}{a_2b_2c_2}}
+                -a_3b_3c_2\big]
+          </mrow><mrow>
+          {+}&amp;\vk \ \big[a_1b_3c_1+a_2b_3c_2
+                    +{\color{blue}{a_3b_3c_3}}
+                    -a_1b_1c_3-a_2b_2c_3
+                    -{\color{blue}{a_3b_3c_3}}\big]
+          </mrow><mrow>
+          {=}\ &amp;
+          \vi \ [a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]
+          </mrow><mrow>
+          {+}&amp;\vj \ [a_1b_2c_1+a_3b_2c_3-a_1b_1c_2-a_3b_3c_2]
+          </mrow><mrow>
+          {+}&amp;\vk \ [a_1b_3c_1+a_2b_3c_2-a_1b_1c_3-a_2b_2c_3]
+          </mrow>
+          </md>
+          La ernière expression que nous avons pour le terme de gauche est équivalente à la dernière expression que nous avons pour le terme de droite.
+        </p>
+      </li>
+    </ol>
+  </proof>
+</proposition>
+
+<xi:include  href="./Problemes/Prob-sec-Prod-vectoriel.ptx"/>
+
+</section>

@@ -1,0 +1,126 @@
+<appendix xml:id="sec-Sage-Alg-Lin-Courbes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>SageMath : Vecteurs et courbes</title>
+  <section>
+    <title>Vecteurs, produit scalaire, produit vectoriel</title>
+
+
+  <p>
+    Pour déclarer un vecteur on l'entre comme une liste de nombres. L'addition des vecteurs et la multiplication par une constante se font de la façon naturelle. Voyons un exemple avec des vecteurs de <m>\R^4</m>.
+  </p>
+  <sage>
+    <input>
+      a = vector([1,2,3,4])
+      b=vector([5,6,7,8])
+      c = a+2*b
+      show(c)
+    </input>
+    </sage>
+
+    <p>
+      Le produit scalaire et le produit vectoriel se font grâce aux commandes <c>_dot_product()</c> ou <c>_cross_product()</c>. Le produit scalaire peut aussi se faire au moyen de <c>*</c>. Voyons des exemples
+    </p>
+    <sage>
+      <input>
+        u = vector([-1,-3,1])
+        v = vector([4,2,8])
+        w = u.cross_product(v)
+        z = u.dot_product(v)
+        y = u * v
+        print("w = ", w)
+        print("z = ", z)
+        print("y = ", y)
+      </input>
+    </sage>
+    <p>
+      De la même façon, la commande <c>norm(...)</c> permet de calculer la norme d'un vecteur.
+    </p>
+  </section>
+
+  <section>
+    <title>Courbes</title>
+    <p>
+      Afin de tracer une courbe parametrique, c'est la commande <c>parametric_plot(...)</c> qu'il faut utiliser. Noter que si le paramètre est une variable autre que <m>x</m>, il faut la déclarer. Il y a plusieurs options, voyons l'exemple de l'astroïde <m>x^{2/3} + y^{2/3} = a^{2/3}</m>, traité à <xref ref="eg_paramEllipse">l'exemple </xref>.
+    </p>
+    <sage>
+      <input>
+        var('t')
+        a= 1
+        x(t) = a*cos(t)^3
+        y(t) = a*sin(t)^3
+        parametric_plot([x(t),y(t)], (t,0,2*pi))
+      </input>
+    </sage>
+    <p>
+      Notons que nous avons défini les fonctions <m>x(t)</m> et <m>y(t)</m> séparément, mais ceci n'est pas nécessaire, on aurrait pu faire <c>parametric_plot([a*cos(t)^3, a*sin(t)^3],...)</c>. La portion <c>(t,0,2*pi)</c> est là pour dire que le paramètre <m>t</m> prend les valeurs entre <m>0</m> et <m>2\pi</m>.
+    </p>
+    <p>
+      Voyons maintenant la même figure, un peu retouchée.
+    </p>
+    <sage>
+      <input>
+        var('t')
+        a= 1
+        x(t) = a*cos(t)^3
+        y(t) = a*sin(t)^3
+        parametric_plot([x(t),y(t)], (t,0,2*pi),
+            color = "steelblue", thickness = 2, gridlines = "True",
+            axes_labels=["$x$","$y$"], axes_labels_size=1.2,
+            tick_formatter = "latex",fontsize= 12)
+      </input>
+    </sage>
+    <p>
+      Pour les courbes dans <m>\R^3</m> le principe est le même. Il faut cependant noter que les possibilités d'annoter une figure soint beaucoup moins variées que pour les figures dans <m>\R^2</m>. Voici un exemple, celui de l'<xref ref="Param-intersec">exemple </xref>, où il s'agissait de tracer la courbe intersection cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.  Notons cependant que dans les notes, afin de mieux visualiser la courbe, elle est dessinée avec le cône et plan. Le paramétrage obtenu est
+      <me>
+        \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad t\in \R.
+      </me>
+      Ce code montrera seulement la courbe. Afin de voir les autres éléments, faites <c>show(Courbe + Plan + Cone)</c> à la dernière ligne, et changez la valeur du paramètre <c>frame = ...</c> pour voir l'effet.
+    </p>
+    <sage>
+      <input>
+        var('u,v,r,s')
+        Courbe =  parametric_plot3d([s,(s^2 - 1)/2,(s^2 + 1)/2],
+          (s,-2,2), color = "red", thickness = 5)
+        Plan  = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2),
+          mesh = True, texture = "lightblue")
+        Cone = parametric_plot3d([r*cos(s), r*sin(s),r],
+          (r,0, 2),(s,0,2*pi), mesh = True,
+          texture = "orange", opacity = 0.75)
+        show(Courbe, frame = True)
+      </input>
+
+    </sage>
+
+
+
+
+  </section>
+
+  <section>
+    <title>Cordonnées polaires</title>
+    <p>
+      Bien que les coordonnées polaires aient été traitées dans le <xref ref="C-3">Chapitre 3</xref>, finissons cette section avec un exemple de tracée de courbes en coordonnées polaires. En plus on remarquera l'utilisation de la commande <c>graphics_array(...)</c>. On trace les courbes dont l'équation polaire est <m>r=1+c\sin t</m> pour différentes valeurs de <m>c</m>. La commande <c>Courbes(...)</c> construit une liste de courbes, puis avec <c>graphics_array(...)</c> on les dispose en tableau.
+    </p>
+    <sage>
+      <input>
+      var('t')
+      C=[3, 1.5, 1, 0.5, 0, -0.5, -1, -1.5,-3]
+      Courbes = [polar_plot(1+c*sin(t),0,t,2*pi,
+          gridlines = True,
+          axes_labels=["$x$","$y$"], 
+          tick_formatter = "latex", 
+          legend_label = "$%s$"%c.n(digits=2)) for c in C]
+      for g in Courbes:
+          g.set_legend_options(font_size = 8, loc = 7)
+          g.fontsize(8)
+      Graphique = graphics_array(((Courbes[0],Courbes[1], Courbes[2]),
+                     (Courbes[3], Courbes[4], Courbes[5]),
+                     (Courbes[6],Courbes[7], Courbes[8])))
+      Graphique.show(figsize  = 7)
+      </input>
+     
+    </sage>
+    
+        
+  </section>  
+
+</appendix>

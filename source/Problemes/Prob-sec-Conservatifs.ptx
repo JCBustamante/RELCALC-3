@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+    <!-- No 2 -->
+    <exercise>
+      <!-- Vient de Briggs, 27 - 32, p. 1105,  --> 
+      <statement><p>
+        Pour chacun des champs suivants, déterminer laquelle des affirmations suivantes s'applique :
+        <ol marker = "A.">
+          <li> Le test de dépistage pour les champs vectoriels conservatifs nous dit que <m>\vF</m> est conservatif. </li>
+          <li> Le test de dépistage pour les champs vectoriels conservatifs nous dit que <m>\vF</m> <alert>n'est pas</alert> conservatif </li>
+          <li> Le test de dépistage pour les champs vectoriels conservatifs ne nous dit pas si <m>\vF</m> est conservatif ou non.</li>
+        </ol>
+    (Le test de dépistage est le <xref ref="thm_screenConserv"/>.)
+    </p>
+
+    <p>
+      <ol marker = "(a)">
+        <li> <m>\vF=x\vi + z\vj + y\vk</m> </li>
+        <li> <m>\vF=y^2z\vi + x^2z\vj + x^2y\vk</m> </li>
+        <li> <m>\vF=(ye^{xy}+1)\vi + (xe^{xy}+z)\vj + \left( \frac1z+y\right)\vk</m> </li>
+        <li> <m>\vF=y\cos(xy)\vi + x\sin(xy)\vj </m> </li>
+      </ol>
+    </p></statement>
+    <hint><p>
+      L'une des trois options ne sera JAMAIS vraie, pour n'importe quel <m>\vF</m>.
+    </p></hint>
+    <answer><p>
+      <ol marker = "(a)">
+        <li> C. </li>
+        <li> B. </li>
+        <li> C. </li>
+        <li> B. </li>
+      </ol>
+      <!-- a. C </p><p>
+      b. B </p><p>
+      c. C </p><p>
+      d. B -->
+    </p></answer>
+    <solution><p>
+      Remember that the screening test can only rule out conservativity <mdash/> it can never, by itself, guarantee conservativity. So, A is <em>never</em> the case.
+    </p>
+
+    <p> a.
+      <md>
+        <mrow>\vF&amp;=x\vi + z\vj + y\vk
+        </mrow><mrow>
+        \vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\vi
+        +\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\vj
+        +\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\vk
+      </mrow><mrow>
+      &amp;=(1-1)\vi+(0-0)\vj+(0-0)\vk = \mathbf0
+    </mrow>
+    </md>
+    This field passes the screening test. That means the screening test doesn't rule out the possibility of <m>\vF</m> being conservative. So, we have option C.
+    </p>
+
+    <p> b.
+      <md>
+        <mrow>\vF&amp;=y^2z\vi + x^2z\vj + x^2y\vk
+        </mrow><mrow>
+        \vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\vi
+        +\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\vj
+        +\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\vk
+      </mrow><mrow>
+      &amp;=(x^2-x^2)\vi+(y^2-2xy)\vj+(2xz-2yz)\vk \neq \mathbf0
+    </mrow>
+    </md>
+    So, <m>\vF</m> fails the screening test <mdash/> it's not conservative. That's option B.
+    </p>
+
+    <p> c.
+      <md>
+        <mrow>\vF&amp;=(ye^{xy}+1)\vi + (xe^{xy}+z)\vj + \left( \frac1z+y\right)\vk
+        </mrow><mrow>
+        \vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\vi
+        +\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\vj
+        +\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\vk
+      </mrow><mrow>
+      &amp;=(1-1)\vi+(0-0)\vj+(e^{xy}(xy+1)-e^{xy}(xy+1))\vk = \mathbf0
+    </mrow>
+    </md>
+    <m>\vF</m> passes the screening test, so it may or may not be conservative. That is Option C.
+    </p>
+
+    <p> d.
+      <md>
+        <mrow>\vF&amp;=y\cos(xy)\vi + x\sin(xy)\vj
+        </mrow><mrow>
+        \pdiff{F_2}{x}&amp;=xy\cos(xy)+\sin(xy)
+      </mrow><mrow>
+      \pdiff{F_1}{y}&amp;=-xy\sin(xy)+\cos(xy)
+    </mrow><mrow>
+    \pdiff{F_2}{x}&amp;\neq \pdiff{F_1}{y}
+    </mrow>
+    </md>
+    <m>\vF</m> fails the screening test, so it is not conservative.
+    That is Option B.
+    </p>
+    </solution>
+  </exercise>
+
+
+  <exercise>
+    <title>Évaluation d'intégrales de ligne</title>
+    <statement>
+      <p>
+        Évaluer les intégrales <m>\int_{\cC} \vnabla f \cdot  d\vr</m> de deux façons :
+        <ol marker = "(1)">
+          <li>
+            <p>Avec un paramétrage de <m>\cC</m> et l'évaluation directe de l'intégrale de ligne;
+              
+            </p>
+          </li>
+          <li>
+            <p>
+              Au moyen tu théorème fondamental pour les intégrales de ligne. 
+            </p>
+          </li>
+        </ol>
+
+      </p>
+      <p> Faire ceci pour les fonctions et courbes suivantes.
+  
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>f (x,y) = xy</m>; <m> \cC :  \vr (t) = (\cos t, \sin t)</m> pour <m>0 \leqslant t \leqslant \pi</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f (x,y) = \frac{x^2 + y^2}{2}</m>; <m> \cC :  \vr (t) = (\sin t, \cos t)</m> pour <m>0 \leqslant t \leqslant \pi</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f (x,y) = x + 3y</m>; <m> \cC :  \vr (t) = (2 - t, t)</m> pour <m>0 \leqslant t \leqslant 2</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f (x,y,z) = x + y + z</m>; <m> \cC :  \vr (t) = (\sin t, \cos t, t/\pi)</m> pour <m>0 \leqslant t \leqslant \pi</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f (x,y,z) = (x^2 + y^2 + z^2)/2</m>; <m> \cC :  \vr (t) = (\cos t, \sin t, t/\pi)</m> pour <m>0 \leqslant t \leqslant 2\pi</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f (x,y,z) = xy + xz + yz</m>; <m> \cC :  \vr (t) = (t, 2t, 3t)</m> pour <m>0 \leqslant t \leqslant 4</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <answer>
+        <ol cols = "3">
+          <li>
+            <p>
+              <m>0</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>0</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>-2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>-1</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>4</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>176</m>
+            </p>
+          </li>
+        </ol>
+    </answer>
+    
+    
+  </exercise>
+
+    <!-- No 3 -->
+    <exercise>
+      <statement><p>
+      Supposer que <m>\vF</m> est conservatif et soit <m>a</m>, <m>b</m> et <m>c</m> des constantes.
+      Trouver un potentiel pour <m>\vF+(a,b,c)</m>, OU donner un champ conservatif <m>\vF</m> et des constantes  <m>a</m>, <m>b</m>, et <m>c</m> pour lesquelles <m>\vF+(a,b,c)</m> n'est pas conservatif.
+      </p>
+      </statement>
+
+      <hint><p>
+      Modifiez <m>\varphi</m>, le potentiel pour <m>\vF</m>.
+      </p></hint>
+      <answer><p>
+      Soit <m>\varphi</m> un potentiel pour <m>\vF</m>. Définir <m>\phi=\varphi+ax+by+cz</m>. Alors, <m>\vnabla \phi = \vnabla\varphi+(a,b,c)=\vF+(a,b,c)</m>.
+      </p></answer>
+      <solution><p>
+      Let <m>\varphi</m> be a potential for <m>\vF</m>. Define <m>\phi=\varphi+ax+by+cz</m>. Then <m>\vnabla \phi = \vnabla\varphi+(a,b,c)=\vF+(a,b,c)</m>. So, <m>\vF+(a,b,c)</m> is also conservative.
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <!--Vient de Thonas 13 a 16, p. 1168-->
+      <statement>
+        <p>
+          Montrer que chacune des intégrales de ligne suivantes est indépendante de la tajectoire, puis donner la valeur de l'intégrale
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>\int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{\cC} yz\, dx + xz\, dy + xy\, dz</m> où <m>\cC</m> est une courbe allant de <m>(1,2,3)</m> à <m>(3,5,0)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{\cC} 2xy\, dx + (x^2 - z^2)\, dy + -2yz\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(1,2,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\int_{\cC} 2x\, dx -y^2\, dy  - \frac{4}{1+z^2}\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(3,3,1),-3,6)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\int_{\cC} \sin x \cos y \, dx + \cos y \sin x\, dy + dz</m> où <m>\cC</m> est une courbe allant de <m>(1,0,0)</m> à <m>(0,1,1)</m>.
+              </p>
+            </li>
+
+
+          </ol>
+        </p>
+
+
+      </statement>
+
+      <answer>
+        <p>
+          <ol cols = "3">
+            <li>
+              <p><m>49</m>                
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>-2</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>-16</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-\pi</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </answer>
+      
+    </exercise>
+
+
+    <!-- No 4 -->
+    <exercise>
+      <statement><p>
+      Prouver (ou trouver un contre-exemple pour) chacun des énoncés suivants.
+      <ol marker = "(a)">
+        <li>
+          Si <m>\vF</m> est un champ conservatif et <m>\vG</m> est un champ non conservatif, alors <m>\vF+\vG</m> est non conservatif.
+        </li>
+        <li>
+          Si <m>\vF</m> et <m>\vG</m> sont des champs non conservatifs, alors <m>\vF+\vG</m> est non conservatif.
+        </li>
+        <li>
+          Si <m>\vF</m> et <m>\vG</m> sont des champs conservatifs, alors <m>\vF+\vG</m> est conservatif.
+        </li>
+      </ol>
+      </p></statement>
+      <hint><p>
+      <!-- a. Si <m>\vF+\vG</m> est conservatif, qu'est-ce qui doit être vrai?</p><p>
+      b. Qu'arrive-t-il si <m>\vF</m> et <m>\vG</m> sont similaires? </p><p>
+      c. Trouvez un potentiel pour <m>\vF+\vG</m>. -->
+      <ol marker = "(a)">
+        <li>
+          Si <m>\vF+\vG</m> est conservatif, qu'est-ce qui doit être vrai ?
+        </li>
+        <li>
+          Qu'arrive-t-il si <m>\vF</m> et <m>\vG</m> sont similaires ?
+        </li>
+        <li>
+          Trouvez un potentiel pour <m>\vF+\vG</m>.
+        </li>
+      </ol>
+      </p></hint>
+      <answer><p>
+      <ol marker = "(a)">
+      <li><p> Si <m>\vF+\vG</m> est <em>conservatif</em> pour tout <m>\vF</m> et <m>\vG</m>, alors, par définition, il existe un potentiel <m>\varphi</m> avec <m>\vF+\vG = \vnabla \varphi</m>.
+      </p>
+
+      <p>Comme <m>\vF</m> est conservatif, il existe également un potentiel <m>\psi</m> avec <m>\vF = \vnabla \psi</m>.
+      </p>
+
+      <p>Mais maintenant, <m>\vG = (\vF+\vG)-\vF=\vnabla \varphi - \vnabla \psi = \vnabla(\varphi-\psi)</m>. Ceci signifie que la fonction <m>(\varphi-\psi)</m> est un potentiel pour <m>G</m>. Toutefois, ceci est impossible : comme <m>\vG</m> est non conservatif, aucune fonction avec cette propriété n'existe.
+      </p>
+
+      <p>Ainsi, il est impossible que <m>\vF+\vG</m> soit conservatif. Il doit alors être non conservatif.</p>
+      </li>
+      <li> Contre-exemple : si <m>\vF = -\vG</m>, alors <m>\vF+\vG = \mathbf 0 = \vnabla c</m> pour toute constante <m>c</m>.
+      </li>
+      <li> Comme les deux champs sont conservatifs, ils ont tous deux un potentiel, disons <m>\vF=\vnabla \varphi</m> et <m>\vG = \vnabla \psi</m>. Alors, <m>\vF+\vG = \vnabla\varphi+\vnabla\psi=\vnabla(\varphi+\psi)</m>, c'est-à-dire que <m>(\varphi+\psi)</m> est un potentiel pour <m>\vF+\vG</m>, donc <m>\vF+\vG</m> est conservatif.
+      </li>
+      </ol>
+      </p></answer>
+      <solution><p>
+      <ol marker = "(a)">
+      <li><p>
+         If <m>\vF+\vG</m> is <em>conservative</em> for any particular <m>\vF</m> and <m>\vG</m>, then by definition, there exists a potential <m>\varphi</m> with <m>\vF+\vG = \vnabla \varphi</m>.
+      </p>
+
+      <p>Since <m>\vF</m> is conservative, there also exists a potential <m>\psi</m> with <m>\vF = \vnabla \psi</m>.
+      </p>
+
+      <p>But now <m>\vG = (\vF+\vG)-\vF=\vnabla \varphi - \vnabla \psi = \vnabla(\varphi-\psi)</m>. That means the function <m>(\varphi-\psi)</m> is a potential for <m>G</m>. However, this is impossible: since <m>\vG</m> is non-conservative, no function with this property exists.
+      </p>
+
+      <p>So it is not possible that <m>\vF+\vG</m> is conservative. It must be non-conservative.</p>
+      </li>
+      <li> Counterexample: if <m>\vF = -\vG</m>, then <m>\vF+\vG = \mathbf 0 = \vnabla c</m> for any constant <m>c</m>.
+      </li>
+      <li> Since both fields are conservative, they both have potentials, say <m>\vF=\vnabla \varphi</m> and <m>\vG = \vnabla \psi</m>. Then <m>\vF+\vG = \vnabla\varphi+\vnabla\psi=\vnabla(\varphi+\psi)</m>. That is, <m>(\varphi+\psi)</m> is a potential for <m>\vF+\vG</m>, so <m>\vF+\vG</m> is conservative.
+      </li>
+      </ol>
+      </p></solution>
+    </exercise>
+
+
+    <exercise>
+      <title>L'allure des champs conservatifs</title>
+      <statement>
+        <p> Le champ vectoriel représenté dans la figure suivante est-il conservatif ou pas? Justifiez.
+        </p>
+        <figure xml:id="fig_allure-conserv" width = "65%">
+          <caption>Un champ de vecteurs. Est-il conservatif?</caption>
+          <image xml:id="sageplot-allure-conserv" width="75%">
+            <description>Un champ de vecteurs.</description>
+            <sageplot>
+              var('x,y')
+              P(x,y) = (-y+x)/sqrt(x^2 + y^2)
+              Q(x,y) = (y+x)/sqrt(x^2 + y^2)
+              Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.5,0.5), 
+                (y,-0.5,0.5),   plot_points=12, frame = False, zorder = -1, 
+                color = "steelblue", axes = True, ticks = [[],[]],
+                aspect_ratio = 1, tick_formatter = "latex", 
+                axes_labels = ["$x$", "$y$"], fontsize = 12)
+              Fig              
+            </sageplot>
+          </image>
+          </figure>
+
+
+
+      </statement>
+
+      <hint>
+        <p>
+          Pensez aux intégrales sur les courbes fermées.
+        </p>
+      </hint>
+      <answer>
+        <p>
+          Non, il n'est pas conservatif.
+        </p>
+      </answer>
+      
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+
+    <!-- No 5 -->
+    <exercise> <!-- <title><fromexam>M317 2006A</fromexam></title> -->
+      <statement><p>
+      Soit <m>D</m> le domaine consistant en tous les <m>(x,y)</m> vérifiant <m>x \gt 1</m>,
+      et soit <m>\vF</m> le champ de vecteurs
+      <md>
+      <mrow>
+      \vF =  -\frac{y}{x^2+y^2}\,\vi + \frac{x}{x^2+y^2} \, \vj.
+      </mrow>
+      </md>
+      Est-ce que <m>\vF</m> est conservatif sur <m>D</m>? Expliquer.
+      </p>
+
+      </statement>
+
+      <hint><p>
+      Noter que le domaine est <m>D=\Set{(x,y)}{x \gt 1}</m>. Comparer avec l'<xref ref="eg_screeningCounterexample"/>.
+      </p></hint>
+
+      <answer><p>
+      Oui, <m>\vF</m> est conservatif sur <m>D</m>. Un potentiel est
+      <m>\varphi(x,y) = \arctan\frac{y}{x}</m>.
+      </p></answer>
+
+      <solution><p>
+      Set <m>\varphi(x,y)= \arctan\frac{y}{x}</m> (using the standard <m>\arctan</m>
+      that takes values between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>).
+      Note that <m>\varphi(x,y)</m> is well-defined, with all partial derivatives
+      continuous, on <m>D</m> since <m>x \gt 1</m> there. Then
+      <md alignment="alignat">
+      <mrow>
+      \pdiff{\varphi}{x}(x,y)
+      &amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
+      &amp;&amp;= -\frac{y}{x^2+y^2}
+      </mrow><mrow>
+      \pdiff{\varphi}{y}(x,y)
+      &amp;= \frac{\frac{1}{x}}{1+\big(\frac{y}{x}\big)^2}
+      &amp;&amp;= \phantom{-} \frac{x}{x^2+y^2}
+      </mrow>
+      </md>
+      so that <m>\vF=\vnabla\varphi</m>.
+      </p></solution>
+    </exercise>
+
+    <!-- No 6 -->
+    <exercise>
+      <statement><p>
+      Trouver un potentiel <m>\varphi</m> pour <m>\vF(x,y)=(x+y)\vi+(x-y)\vj</m>, ou prouver qu'il n'en existe pas.
+      </p></statement>
+      <hint><p>
+      Il existe un potentiel.
+      </p></hint>
+      <answer><p>
+      <m>\varphi=\frac{1}{2}x^2+xy-\frac{1}{2}y^2</m>
+      </p></answer>
+      <solution><p>
+      If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+      <ul>
+      <li> <m>\pdiff{\varphi}{x}=x+y</m>, so <m>\varphi = \frac{1}{2}x^2+xy+\psi_1(y)</m>
+      </li>
+      <li> <m>\pdiff{\varphi}{y}=x-y</m>, so <m>\varphi = xy-\frac{1}{2}y^2+\psi_2(x)</m>
+      </li>
+      </ul>
+      So, for instance, <m>\varphi = \frac{1}{2}x^2+xy-\frac{1}{2}y^2</m> is a potential for <m>\vF</m>.
+      </p></solution>
+    </exercise>
+
+    <!-- No 7 -->
+    <exercise>
+      <statement><p>
+      Trouver un potentiel <m>\varphi</m> pour <m>\vF(x,y)=\left( \frac{1}{x}-\frac{1}{y}\right)\vi+\left(\frac{x}{y^2}\right)\vj</m>, ou montrer qu'il n'en existe pas.
+      </p></statement>
+      <hint><p>
+      Se rappeler que <m>\diff{}{x} \ln |x| = \frac1x</m>.
+      </p></hint>
+      <answer><p>
+      <m>\varphi=\ln |x| - \frac{x}{y}</m>
+      </p></answer>
+      <solution><p>
+      If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+      <ul>
+      <li> <m>\pdiff{\varphi}{x}=\frac1x-\frac1y</m>, so <m>\varphi = \ln|x|-\frac{x}{y}+\psi_1(y)</m>
+      </li>
+      <li> <m>\pdiff{\varphi}{y}=\frac{x}{y^2}</m>, so <m>\varphi = -\frac{x}{y}+\psi_2(x)</m>
+      </li>
+      </ul>
+      So, for instance, <m>\varphi=\ln |x| - \frac{x}{y}</m> is a potential for <m>\vF</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- No 8 -->
+    <exercise>
+      <statement><p>
+      Trouver un potentiel <m>\varphi</m> pour <m>\vF(x,y,z)=\left(x^2yz+xz\right)\vi+\left( \frac13x^3z+y \right)\vj+\left(\frac13x^3y+\frac12x^2+y\right)\vk</m>, ou montrer qu'il n'en existe pas.
+      </p></statement>
+      <hint><p>
+      Essayer le test de dépistage, <xref ref="thm_screenConserv"/>.
+      </p></hint>
+      <answer><p>
+      Il n'en existe pas : <m>\pdiff{F_2}{z}=\frac13x^3</m>, tandis que <m>\pdiff{F_3}{y}=\frac{1}{3}x^3+1</m>, donc <m>\vF</m> échoue au test de dépistage du <xref ref="thm_screenConserv"/>.
+      </p></answer>
+      <solution><p>
+      Il n'en existe pas : <m>\pdiff{F_2}{z}=\frac13x^3</m>, tandis que <m>\pdiff{F_3}{y}=\frac{1}{3}x^3+1</m>, donc <m>\vF</m> échoue au test de dépistage du <xref ref="thm_screenConserv"/>.
+      </p></solution>
+    </exercise>
+
+    <!-- No 9 -->
+    <exercise>
+      <statement><p>
+      Trouver un potentiel <m>\varphi</m> pour <me>
+      \vF(x,y,z)=\left( \frac{x}{x^2+y^2+z^2}\right)\vi+\left( \frac{y}{x^2+y^2+z^2}\right)\vj+\left( \frac{z}{x^2+y^2+z^2}\right)\vk,</me> ou montrer qu'il n'en existe pas.
+      </p></statement>
+      <hint><p>
+      <m>\displaystyle\int\frac{x}{x^2+y^2+z^2}\,\dee{x}</m> peut être évaluée par inspection, ou avec la substitution <m>u=x^2+y^2+z^2</m>.
+      </p></hint>
+      <answer><p>
+      <m>\varphi = \frac12\ln(x^2+y^2+z^2) + K</m>
+      </p></answer>
+      <solution><p>
+      If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+      <ul>
+      <li> <m>\pdiff{\varphi}{x}=\frac{x}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)</m>
+      </li>
+      <li> <m>\pdiff{\varphi}{y}=\frac{y}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)</m>
+      </li>
+      <li> <m>\pdiff{\varphi}{z}=\frac{z}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)</m>
+      </li>
+      </ul>
+      So, for instance, <m>\varphi= \frac{1}{2}\ln(x^2+y^2+z^2)</m> is a potential for <m>\vF</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- No 10 -->
+    <exercise>
+      <statement><p>
+      Déterminer si les champs de vecteurs suivants sont conservatifs ou non. Trouver le potentiel le cas échéant.
+      <ol marker = "(a)">
+      <li>
+         <m>\vF(x,y,z)=x\vi-2y\vj+3z\vk</m>
+      </li>
+      <li>
+         <m>\vF(x,y)=\frac{x\vi-y\vj}{x^2+y^2}</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\vF</m> est conservatif avec le potentiel
+         <m>\phi(x,y,z)=\half x^2-y^2+\frac{3}{2}z^2+C</m> pour toute constante <m>C</m>.
+      </p>
+
+      <p>(b) <m>\vF</m> est non conservatif.
+      </p></answer>
+      <solution><p>
+      (a) We shall show that <m>\vF(x,y,z)</m> is conservative
+      by finding a potential for it. <m>\varphi(x,y,z)</m> is a potential for this <m>\vF</m>
+      if and only if
+      <md>
+      <mrow>
+      \pdiff{\varphi}{x}(x,y,z) &amp;= x
+      </mrow><mrow>
+      \pdiff{\varphi}{y}(x,y,z) &amp;= -2y
+      </mrow><mrow>
+      \pdiff{\varphi}{z}(x,y,z) &amp;= 3z
+      </mrow>
+      </md>
+      Integrating the first of these equations gives
+      <me>
+      \varphi(x,y,z) = \frac{x^2}{2} + f(y,z)
+      </me>
+      Substituting this into the second equation gives
+      <me>
+      \pdiff{f}{y}(y,z)
+         = -2y
+      </me>
+      which integrates to
+      <me>
+      f(y,z) = -y^2+ g(z)
+      </me>
+      Finally, substituting <m>\varphi(x,y,z) = \frac{x^2}{2} -y^2 + g(z)</m>
+      into the last equation gives
+      <me>
+       g'(z) = 3z
+      </me>
+      which integrates to
+      <me>
+      g(z) = \frac{3}{2} z^2 +C
+      </me>
+      with <m>C</m> being an arbitrary constant.
+      So, <m>\vF(x,y,z)</m> is conservative and
+      <m>\varphi(x,y,z)=\half x^2-y^2+\frac{3}{2}z^2</m> is one allowed potential.
+      </p>
+
+      <p>(b)
+      The field <m>\vF= F_1\,\vi + F_2\,\vj</m> can be conservative
+      only if it passes the screening test
+      <me>
+      \pdiff{F_1}{y}=\pdiff{F_2}{x}
+      </me>
+      In this case
+      <me>
+      \pdiff{F_1}{y}
+      =\frac{\partial }{\partial y}\Big(\frac{x}{x^2+y^2}\Big)
+      =-\frac{2xy}{{(x^2+y^2)}^2}
+      </me>
+      is different from
+      <me>
+      \pdiff{F_2}{x}
+      =\frac{\partial }{\partial x}\Big(\frac{-y}{x^2+y^2}\Big)
+      =\frac{2xy}{{(x^2+y^2)}^2}
+      </me>
+      for all <m>(x,y)</m> with <m>x</m> and <m>y</m> both nonzero.
+      So <m>\vF</m> is not conservative.
+      </p></solution>
+    </exercise>
+
+    <!-- N0 11 -->
+    <exercise>
+      <statement><p>
+      Soit
+      <m>\vF= e^{(z^2)}\,\vi+2Byz^3\,\vj
+                +\big(Axze^{(z^2)}+3By^2z^2\big)\,\vk</m>.
+      <ol marker = "(a)">
+      <li>
+      Pour quelles valeurs des constantes <m>A</m> et <m>B</m> est-ce que le champ de vecteurs
+      <m>\vF</m> est conservatif sur <m>\R^3</m>?
+      </li>
+      <li>
+      Si <m>A</m> et <m>B</m> prennent les valeurs trouvées en (a),
+      trouver un potentiel pour <m>\vF</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Pour quelles valeurs des constantes <m>A</m> et <m>B</m> est-ce que le champ de vecteurs
+      <m>\vF</m> vérifie le test de dépistage
+      <m>\vnabla\times\vF=\vZero</m>?
+      </p></hint>
+
+      <answer><p>
+      (a)
+      <m>A=2</m>, <m>B</m> est arbitraire.
+      </p>
+
+      <p>(b)
+      <m>\varphi(x,y,z)=xe^{(z^2)}+By^2 z^3+C</m>
+      pour toute constante <m>C</m>.
+      </p></answer>
+
+      <solution><p>
+      By Theorem <xref ref="thm_screenConserv"/>,
+      the field <m>\vF= F_1\,\vi + F_2\,\vj + F_3\,\vk</m> is conservative
+      only if it passes the screening test
+      <m>\vnabla\times\vF=\vZero</m>. That is, if and only if
+      <md>
+      <mrow>
+      \pdiff{F_1}{y}=\pdiff{F_2}{x}\qquad
+      \pdiff{F_1}{z}=\pdiff{F_3}{x}\qquad
+      \pdiff{F_2}{z}=\pdiff{F_3}{y}
+      </mrow>
+      </md>
+      or,
+      <md>
+      <mrow>
+      \pdiff{}{y}\big(e^{(z^2)}\big)
+      &amp;=\pdiff{}{x}\big(2Byz^3\big) &amp;
+      &amp;\iff &amp;
+      0 &amp; =0
+
+      </mrow><mrow>
+
+      \pdiff{}{z}\big(e^{(z^2)}\big)
+      &amp;=\pdiff{}{x}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+      &amp;\iff &amp;
+      2ze^{(z^2)} &amp; =Aze^{(z^2)}
+
+      </mrow><mrow>
+
+      \pdiff{}{z}\big(2Byz^3\big)
+      &amp;=\pdiff{}{y}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+      &amp;\iff &amp;
+      6Bye^{(z^2)}&amp; =6Bye^{(z^2)}
+      </mrow>
+      </md>
+      Hence only <m>A=2</m> works. We shall see in part (b) that any <m>B</m> works.
+      </p>
+
+      <p>(b) When <m>A=2</m>, and <m>B</m> is any real number.
+      <me>
+      \vF=e^{(z^2)}\,\vi+2Byz^3\,\vj
+                +\big(2xze^{(z^2)}+3By^2z^2\big)\,\vk
+      </me>
+      <m>\varphi(x,y,z)</m> is a potential for this <m>\vF</m> if and only if
+      <md>
+      <mrow>
+      \pdiff{\varphi}{x}(x,y,z) &amp;= e^{(z^2)}
+      </mrow><mrow>
+      \pdiff{\varphi}{y}(x,y,z) &amp;= 2Byz^3
+      </mrow><mrow>
+      \pdiff{\varphi}{z}(x,y,z) &amp;= 2xze^{(z^2)}+3By^2z^2
+      </mrow>
+      </md>
+      Integrating the first of these equations gives
+      <me>
+      \varphi(x,y,z) = xe^{(z^2)} + f(y,z)
+      </me>
+      Substituting this into the second equation gives
+      <me>
+      \pdiff{f}{y}(y,z)
+         = 2Byz^3
+      </me>
+      which integrates to
+      <me>
+      f(y,z) = By^2 z^3 + g(z)
+      </me>
+      Finally, substituting <m>\varphi(x,y,z) = xe^{(z^2)}+By^2 z^3 + g(z)</m>
+      into the last equation gives
+      <me>
+      2xze^{(z^2)} + 3By^2z^2 + g'(z)
+         = 2xze^{(z^2)}+3By^2z^2\qquad\text{or}\quad
+      g'(z) = 0
+      </me>
+      which integrates to
+      <me>
+      g(z) = C
+      </me>
+      with <m>C</m> being an arbitrary constant.
+      So, for each  real number <m>B</m>,
+      <m>\varphi(x,y,z)=xe^{(z^2)}+By^2 z^3</m> is one allowed potential.
+      </p></solution>
+    </exercise>
+
+    <!-- No 15 -->
+    <exercise>
+      <statement><p>
+      Pour des fonctions différentiables à valeurs réelles <m>f,g,h:\mathbb R \to \mathbb R</m>, on définit
+      <me>
+      \vF=2f(x)f'(x)\vi+g'(y)h(z)\vj+g(y)h'(z).</me>
+      </p>
+
+      <p>Vérifier que <m>\vF</m> est conservatif.
+      </p>
+
+      </statement>
+      <hint><p>
+      Trouvez un potentiel <m>\varphi</m>. Notez que <m>f</m>, <m>g</m>, et <m>h</m> sont des fonctions d'une variable chacune <mdash/> ceci simplifie les choses.
+      </p></hint>
+      <answer><p>
+      <m>\varphi=f^2(x)+g(y)h(z)</m> est un potentiel pour <m>\vF</m>, donc <m>\vF</m> est conservatif.
+      </p></answer>
+      <solution>
+
+      <p>We can start with the screening test, Theorem<nbsp/><xref ref="thm_screenConserv"/>.
+      <md>
+      <mrow>
+      \mathbf\vnabla \times \vF &amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\vi
+      +\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\vj
+      +\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\vk
+      </mrow><mrow>
+      &amp;=\Big(g'(y)h'(z)-g'(y)h'(z) \Big)\vi
+      +\Big(0 -0 \Big)\vj
+      +\Big(0 -0 \Big)\vk=\mathbf{0}
+      </mrow>
+      </md>
+      </p>
+
+      <p>So, it's possible that the field is conservative. Remember, this test alone isn't enough to tell us it's conservative. (Had the test come out differently, though, we'd be done.)
+      </p>
+
+      <p>Suppose <m>\vF=\vnabla\varphi(x,y,z)</m>. Then:
+      <ul>
+      <li> <m>\pdiff{\varphi}{x} = 2f(x)f'(x) </m>. By inspection, we see <m>\varphi = f^2(x)+ \psi_1(y,z)</m>. (We could also find this by evaluating <m>\int 2f(x)f'(x)\dee{x}</m> with the substitution <m>u=f(x)</m>.)
+      </li>
+      <li> <m>\pdiff{\varphi}{y} =  g'(y)h(z)</m>, so <m>\varphi=g(y)h(z)+\psi_2(x,z)</m>.
+      </li>
+      <li> <m>\pdiff{\varphi}{z} =  g(y)h'(z)</m>, so <m>\varphi=g(y)h(z)+\psi_2(x,y)</m>.
+      </li>
+      </ul>
+      All together, we can choose <m>\varphi(x,y,z) = f^2(x)+g(y)h(z)</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <title>Une décomposition utile</title>
+      <statement>
+      <p>
+        Soit le champ de vecteurs <m>\vF(x,y) = \left(x+\cos{y^2}\right) \vi + \left( x-2xy\sin{y^2}\right)\vj</m>. Décomposez le champ sous la forme <m>\vF = \vG + \vH</m> avec  <m>\vG</m> conservatif, puis calculez la valeur de <m>\displaystyle \int_{\cC} \vF\cdot d\vr</m> où  <m>\cC</m> est le segment de droite de <m>(0,0)</m> à <m>(1,1)</m>.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        La valeur de l'intégrale est <m>\frac{\sqrt{2}}{3}</m>. Une décomposition possible est obtenue en posant  <m>\vG =\left(x+\cos{y^2}\right) \vi 2xy\sin{y^2} </m> et <m>\vH = x\vj</m>.
+      </p>
+    </answer>
+      
+    </exercise>
+
+
+
+  </exercisegroup>
+
+</exercises>

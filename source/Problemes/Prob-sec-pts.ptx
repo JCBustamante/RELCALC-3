@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit par Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+<!-- Le groupement des exercices sera fait plus tard. Aussi, va falloir voir la place des exercices WeBWork dans tout ça.
+
+<exercisegroup>
+<introduction><conceptual/></introduction>
+-->
+
+
+<!--
+<exercise>
+  <statement>
+    <p>
+      Describe the set of all points <m>(x,y,z)</m> in <m>\R^3</m> that satisfy
+     <ol marker = "(a)">
+     <li><m>x^2 +y^2+z^2= 2x-4y+4</m></li>
+     <li><m>x^2 +y^2+z^2 \lt  2x-4y+4</m></li>
+     </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+    <ol marker = "(a)">
+    <li> The sphere of radius 3 centered on <m>(1,-2,0)</m>.
+    </li>
+    <li> The interior of the sphere of radius 3 centered on <m>(1,-2,0)</m>.</li>
+    </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>
+<ol marker = "(a)">
+  <li>
+    The point <m>(x,y,z)</m> satisfies <m>x^2 +y^2+z^2= 2x-4y+4</m>
+      if and only if it satisfies <m>x^2-2x +y^2+4y+z^2= 4</m>, or equivalently
+      <m>(x-1)^2 +(y+2)^2+z^2=9 </m>. Since <m>\sqrt{(x-1)^2 +(y+2)^2+z^2}</m> is the distance
+      from <m>(1, -2, 0)</m> to <m>(x,y,z)</m>, our point satisfies the given equation
+      if and only if its distance from <m>(1,-2,0)</m> is three. So the set is
+      the sphere of radius 3 centered on <m>(1,-2,0)</m>.
+    </li>
+    <li>
+      As in part (a), <m>x^2 +y^2+z^2 \lt  2x-4y+4</m>
+      if and only if  <m>(x-1)^2 +(y+2)^2+z^2 \lt 9 </m>. Hence our point
+      satifies the given inequality
+      if and only if its distance from <m>(1,-2,0)</m> is strictly smaller than three.
+      The set is the interior of the sphere of radius 3 centered on <m>(1,-2,0)</m>.
+  </li>
+</ol>
+</p>
+</solution>
+</exercise>
+-->
+<exercise>
+  <statement>
+    <p>
+      Décrire l'ensemble des points <m>(x,y,z)</m> dans <m>\R^3</m> qui satisfont
+     <ol marker = "(a)">
+     <li><m>x^2 +y^2+z^2= 2x-4y+4</m></li>
+     <li><m>x^2 +y^2+z^2 \lt  2x-4y+4</m></li>
+     </ol>
+    </p>
+  </statement>
+  <answer>
+    <p>
+    <ol marker = "(a)">
+    <li> La sphère de rayon 3 de centre <m>(1,-2,0)</m>.
+    </li>
+    <li> L'intérieur de la sphère de rayon 3 de centre <m>(1,-2,0)</m>.</li>
+    </ol>
+    </p>
+  </answer>
+  <solution>
+    <p>
+  <ol marker = "(a)">
+    <li>
+      Les points <m>(x,y,z)</m> satisfont <m>x^2 +y^2+z^2= 2x-4y+4</m>
+        si et seulement s'ils satisfont <m>x^2-2x +y^2+4y+z^2= 4</m> ou, de façon équivalente,
+        <m>(x-1)^2 +(y+2)^2+z^2=9 </m>. Comme <m>\sqrt{(x-1)^2 +(y+2)^2+z^2}</m> est la distance
+        de <m>(1, -2, 0)</m> à <m>(x,y,z)</m>, les points satisfont l'équation donnée si et seulement si leur distance à <m>(1,-2,0)</m> est de trois. Alors l'ensemble est
+        la sphère de rayon 3 de centre <m>(1,-2,0)</m>.
+      </li>
+      <li>
+        Comme dans la partie (a), <m>x^2 +y^2+z^2 \lt  2x-4y+4</m>
+        si et seulement si  <m>(x-1)^2 +(y+2)^2+z^2 \lt 9 </m>. Ainsi, les points
+        satifont l'inégalité
+        si et seulement si leur distance à <m>(1,-2,0)</m> est strictement plus petite que trois.
+        L'ensemble est l'intérieur de la sphère de rayon 3 de centre <m>(1,-2,0)</m>.
+    </li>
+  </ol>
+  </p>
+  </solution>
+</exercise>
+
+<!--
+<exercise>
+<statement><p>
+Describe and sketch the set of all points <m>(x,y)</m>
+in <m>\R^2</m> that satisfy
+<ol marker = "(a)">
+<li>
+<m>x=y</m>
+</li>
+<li>
+<m>x+y=1</m>
+</li>
+<li>
+<m>x^2+y^2=4</m>
+</li>
+<li>
+<m>x^2+y^2=2y</m>
+</li>
+<li>
+<m>x^2+y^2 \lt 2y</m>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+In part (d), complete a square.
+</p></hint>
+
+<answer><p>
+<ol marker = "(a)">
+<li><p>
+<m>x=y</m> is the straight line through the origin that makes an
+angle <m>45^\circ</m> with the <m>x</m>- and <m>y</m>-axes. It is sketched in the
+figure on the left below.
+</p>
+<sidebyside widths="28% 33%" valign="middle">
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1a"/>
+   <image source="images/CLP-figs/pfigs/sec1_1_Q1b"/>
+</sidebyside>
+</li>
+<li><p>
+<m>x+y=1</m> is the straight line through the points <m>(1,0)</m> and
+<m>(0,1)</m>. It is sketched in the figure on the right above.
+</p>
+</li>
+<li><p><m>x^2+y^2=4</m> is the circle with centre <m>(0,0)</m> and radius 2. It is
+sketched in the figure on the left below.
+</p>
+<sidebyside widths="35% 40%" valign="middle">
+<image source="images/CLP-figs/pfigs/sec1_1_Q1c"/>
+<image source="images/CLP-figs/pfigs/sec1_1_Q1d"/>
+</sidebyside>
+</li>
+<li><m>x^2+y^2=2y</m> is the circle with centre <m>(0,1)</m> and radius 1.
+It is sketched in the figure on the right above.
+</li>
+<li><p><m>x^2+y^2 \lt 2y</m> is the set of points that are strictly inside
+the circle with centre <m>(0,1)</m> and radius 1.
+It is the shaded region (not including the dashed circle) in the sketch below.
+</p>
+<sidebyside width="40%">
+<image source="images/CLP-figs/pfigs/sec1_1_Q1e"/>
+</sidebyside>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+  <p>
+<ol marker = "(a)">
+  <li>
+    <p><m>x=y</m> is a straight line and passes through the points <m>(0,0)</m>
+and <m>(1,1)</m>. So it is the straight line through the origin that makes an angle <m>45^\circ</m> with the <m>x</m>- and <m>y</m>-axes. It is sketched in the figure on the
+left below.
+</p>
+<sidebyside widths="28% 33%" valign="middle">
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1a"/>
+ <image source="images/CLP-figs/pfigs/sec1_1_Q1b"/>
+</sidebyside>
+</li>
+<li>
+<m>x+y=1</m> is the straight line through the points <m>(1,0)</m> and
+<m>(0,1)</m>. It is sketched in the figure on the right above.
+</li>
+
+<li>
+  <p><m>x^2+y^2</m> is the square of the distance from <m>(0,0)</m> to <m>(x,y)</m>.
+So <m>x^2+y^2=4</m> is the circle with centre <m>(0,0)</m> and radius 2.
+It is sketched in the figure on the left below.
+</p>
+<sidebyside widths="35% 40%" valign="middle">
+    <image source="images/CLP-figs/pfigs/sec1_1_Q1c"/>
+     <image source="images/CLP-figs/pfigs/sec1_1_Q1d"/>
+   </sidebyside>
+ </li>
+ <li>The equation <m>x^2+y^2=2y</m> is equivalent to  <m>x^2+(y-1)^2=1</m>.
+As <m>x^2+(y-1)^2</m> is the square of the distance from <m>(0,1)</m> to <m>(x,y)</m>,
+<m>x^2+(y-1)^2=1</m> is the circle with centre <m>(0,1)</m> and radius 1.
+It is sketched in the figure on the right above.
+</li>
+<li>
+<p>As in part (d),
+<md>
+<mrow>
+x^2+y^2 \lt 2y
+&amp; \iff x^2+y^2-2y \lt 0
+\iff x^2+y^2-2y+1 \lt 1
+</mrow><mrow>
+&amp;\iff x^2+(y-1)^2 \lt 1
+</mrow>
+</md>
+As <m>x^2+(y-1)^2</m> is the square of the distance from <m>(0,1)</m> to <m>(x,y)</m>,
+<m>x^2+(y-1)^2 \lt 1</m> is the set of points whose distance from <m>(0,1)</m> is
+strictly less than <m>1</m>. That is, it is the set of points strictly inside
+the circle with centre <m>(0,1)</m> and radius 1.
+That set is the shaded region (not including the dashed circle)
+in the sketch below.
+</p>
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1e"/>
+</sidebyside>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+-->
+<exercise>
+  <statement><p>
+  Décrire et esquisser l'ensemble des points <m>(x,y)</m>
+  dans <m>\R^2</m> qui satisfont
+  <ol marker = "(a)">
+  <li>
+  <m>x=y</m>
+  </li>
+  <li>
+  <m>x+y=1</m>
+  </li>
+  <li>
+  <m>x^2+y^2=4</m>
+  </li>
+  <li>
+  <m>x^2+y^2=2y</m>
+  </li>
+  <li>
+  <m>x^2+y^2 \lt 2y</m>
+  </li>
+  </ol>
+  </p></statement>
+
+  <hint><p>
+  Dans la partie (d), compléter le carré.
+  </p></hint>
+
+  <answer><p>
+  <ol marker = "(a)">
+  <li><p>
+  <m>x=y</m> est une ligne droite passant par l'origine formant un angle de <m>45^\circ</m> avec l'axe des <m>x</m> et l'axe des <m>y</m>. Illustré dans la figure ci-dessous à gauche.
+  </p>
+  <sidebyside widths="28% 33%" valign="middle">
+    <image source="images/CLP-figs/pfigs/sec1_1_Q1a"/>
+     <image source="images/CLP-figs/pfigs/sec1_1_Q1b"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  <m>x+y=1</m> est une ligne droite passant par les points <m>(1,0)</m> et
+  <m>(0,1)</m>. Illustré dans la figure ci-dessus à droite.
+  </p>
+  </li>
+  <li><p><m>x^2+y^2=4</m> est le cercle de centre <m>(0,0)</m> et de rayon 2. Illustré dans la figure ci-dessous à gauche.
+  </p>
+  <sidebyside widths="35% 40%" valign="middle">
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1c"/>
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1d"/>
+  </sidebyside>
+  </li>
+  <li><m>x^2+y^2=2y</m> est le cercle de centre <m>(0,1)</m> et de rayon 1.
+  Illustré dans la figure ci-dessus à droite.
+  </li>
+  <li><p><m>x^2+y^2 \lt 2y</m> est l'ensemble des points qui sont strictement à l'intérieur du cercle de centre <m>(0,1)</m> et de rayon 1.
+  Illustré par la région ombragée (cercle pointillé non-inclu) de l'image ci-dessous.
+  </p>
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/sec1_1_Q1e"/>
+  </sidebyside>
+  </li>
+  </ol>
+  </p>
+  </answer>
+  <solution>
+    <p>
+  <ol marker = "(a)">
+    <li>
+      <p><m>x=y</m> est une ligne droite passant par les points <m>(0,0)</m>
+  et <m>(1,1)</m>. Donc c'est la ligne droite passant par l'origine formant un angle de <m>45^\circ</m> avec l'axe des <m>x</m> et l'axe des <m>y</m>. Illustré dans la figure ci-dessous à gauche.
+  </p>
+  <sidebyside widths="28% 33%" valign="middle">
+    <image source="images/CLP-figs/pfigs/sec1_1_Q1a"/>
+   <image source="images/CLP-figs/pfigs/sec1_1_Q1b"/>
+  </sidebyside>
+  </li>
+  <li>
+  <m>x+y=1</m> est une ligne droite passant par les points <m>(1,0)</m> et
+  <m>(0,1)</m>. Illustré dans la figure ci-dessous à droite.
+  </li>
+
+  <li>
+    <p><m>x^2+y^2</m> est le carré de la distance entre <m>(0,0)</m> et <m>(x,y)</m>.
+  Ainsi <m>x^2+y^2=4</m> est le cercle de centre <m>(0,0)</m> et de rayon 2.
+  Illusté dans la figure ci-dessous à gauche.
+  </p>
+  <sidebyside widths="35% 40%" valign="middle">
+      <image source="images/CLP-figs/pfigs/sec1_1_Q1c"/>
+       <image source="images/CLP-figs/pfigs/sec1_1_Q1d"/>
+     </sidebyside>
+   </li>
+   <li>L'équation <m>x^2+y^2=2y</m> est équivalente à  <m>x^2+(y-1)^2=1</m>.
+  Comme <m>x^2+(y-1)^2</m> est le carré de la distance entre <m>(0,1)</m> et <m>(x,y)</m>,
+  <m>x^2+(y-1)^2=1</m> est le cercle de centre <m>(0,1)</m> et de rayon 1.
+  Illustré dans la figure ci-dessus à gauche.
+  </li>
+  <li>
+  <p>Comme dans la partie (d),
+  <md>
+  <mrow>
+  x^2+y^2 \lt 2y
+  &amp; \iff x^2+y^2-2y \lt 0
+  \iff x^2+y^2-2y+1 \lt 1
+  </mrow><mrow>
+  &amp;\iff x^2+(y-1)^2 \lt 1
+  </mrow>
+  </md>.
+  Comme <m>x^2+(y-1)^2</m> est le carré de la distance entre <m>(0,1)</m> et <m>(x,y)</m>,
+  <m>x^2+(y-1)^2 \lt 1</m> est l'ensemble des points dont la distance par rapport à <m>(0,1)</m> est
+  strictement inférieure à <m>1</m>. C'est donc l'ensemble des points strictement à l'intérieur
+  du cercle de centre <m>(0,1)</m> et de rayon 1.
+  Illustré par la région ombragée (le cercle en pointillé non-inclu) ci-dessous.
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/sec1_1_Q1e"/>
+  </sidebyside>
+  </li>
+  </ol>
+  </p>
+  </solution>
+</exercise>
+
+<!--
+<exercise>
+<statement><p>
+Describe the set of all points <m>(x,y,z)</m> in <m>\R^3</m> that satisfy
+the following conditions. Sketch the part of the set that is in the
+first octant.
+<ol marker = "(a)">
+<li>
+<m>z = x</m>
+</li>
+<li>
+<m>x + y + z = 1</m>
+</li>
+<li>
+<m>x^2 + y^2 + z^2 = 4</m>
+</li>
+<li>
+<m>x^2 + y^2 + z^2 = 4</m>, <m>z = 1</m>
+</li>
+<li>
+<m>x^2+y^2=4</m>
+</li>
+<li>
+<m>z = x^2 + y^2</m>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+<ol>
+<li>
+<p>
+The set <m>z=x</m> is the plane which contains the <m>y</m>-axis and which
+makes an angle <m>45^\circ</m> with the <m>xy</m>-plane. Here is a sketch
+of the part of the plane that is in the first octant.
+</p>
+<sidebyside width="35%">
+  <image source="images/CLP-figs/pfigs/xeqzPlane"/>
+</sidebyside>
+</li>
+<li>
+  <p>
+<m>x+y+z=1</m> is the plane through the points <m>(1,0,0)</m>, <m>(0,1,0)</m>
+and  <m>(0,0,1)</m>. Here is a sketch of the part of the plane
+that is in the first octant.
+</p>
+
+<sidebyside width="50%">
+  <image source="images/CLP-figs/pfigs/xyzPlane"/>
+</sidebyside>
+</li>
+<li><p>
+<m>x^2+y^2+z^2=4</m> is the sphere with centre <m>(0,0,0)</m> and radius 2.
+Here is a sketch of the part of the sphere that is in the first octant.
+</p>
+
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterSphere"/>
+</sidebyside>
+</li>
+<li><p>(d)
+<m>x^2+y^2+z^2=4</m>, <m>z=1</m> is the circle in the plane <m>z=1</m>
+that has centre <m>(0,0,1)</m> and radius <m>\sqrt{3}</m>. The part of the circle
+in the first octant is the heavy quarter circle in the sketch
+</p>
+<sidebyside width="40%">
+<image source="images/CLP-figs/pfigs/quarterCircle"/>
+</sidebyside>
+</li>
+<li><p>
+<m>x^2+y^2=4</m> is the cylinder of radius <m>2</m> centered on the <m>z</m>-axis.
+Here is a sketch of the part of the cylinder that is in the first octant.
+</p>
+<sidebyside width="35%">
+  <image source="images/CLP-figs/pfigs/quarterCylinder"/>
+</sidebyside>
+</li>
+<li>
+<p>
+<m>z=x^2+y^2</m> is a paraboloid consisting of a vertical stack of
+horizontal circles. The intersection of the surface with the <m>yz</m>-plane
+is the parabola <m>z=y^2</m>.  Here is a sketch of the part of the paraboloid
+that is in the first octant.
+</p>
+
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterParaboloid"/>
+</sidebyside>
+</li>
+</ol>
+</p>
+</answer>
+
+<solution><p>
+<ol marker = "(a)">
+  <li>
+    <p>
+      For each fixed <m>y_0</m>, <m>z=x,\ y=y_0</m> is a straight line
+that lies in the plane, <m>y=y_0</m> (which is parallel to the plane
+containing the <m>x</m> and <m>z</m> axes and is a distance <m>y_0</m> from it).
+This line passes through <m>x=z=0</m> and makes an angle <m>45^\circ</m>
+with the <m>xy</m>-plane. Such a line (with <m>y_0=0</m>) is sketched in the
+figure below.
+The set <m>z=x</m> is the union of all the lines <m>z=x,\ y=y_0</m> with all
+values of <m>y_0</m>. As <m>y_0</m> varies  <m>z=x,\ y=y_0</m> sweeps out the
+plane which contains the <m>y</m>-axis and which  makes an angle
+<m>45^\circ</m> with the <m>xy</m>-plane. Here is a sketch of the part of the plane
+that is in the first octant.
+</p>
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/xeqzPlane"/>
+  </sidebyside>
+</li>
+<li><p>
+<m>x+y+z=1</m> is the plane through the points <m>(1,0,0)</m>, <m>(0,1,0)</m>
+and  <m>(0,0,1)</m>. Here is a sketch of the part of the plane
+that is in the first octant.
+</p>
+
+<sidebyside width="50%">
+  <image source="images/CLP-figs/pfigs/xyzPlane"/>
+</sidebyside>
+</li>
+<li><p>
+  <m>x^2+y^2+z^2</m> is the square of the distance from <m>(0,0,0)</m> to <m>(x,y,z)</m>.
+So <m>x^2+y^2+z^2=4</m> is the set of points whose distance from <m>(0,0,0)</m> is
+<m>2</m>. It is the sphere with centre <m>(0,0,0)</m> and radius 2.
+Here is a sketch of the part of the sphere that is in the first octant.
+</p>
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterSphere"/>
+</sidebyside>
+</li>
+<li><p>
+<m>x^2+y^2+z^2=4</m>, <m>z=1</m> or equivalently <m>x^2+y^2=3</m>, <m>z=1</m>,
+is the intersection of the plane <m>z=1</m> with the sphere of centre
+<m>(0,0,0)</m> and radius 2. It is a circle in the plane <m>z=1</m>
+that has centre <m>(0,0,1)</m> and radius <m>\sqrt{3}</m>. The part of the circle
+in the first octant is the heavy quarter circle in the sketch
+</p>
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterCircle"/>
+</sidebyside>
+</li>
+<li><p>
+For each fixed <m>z_0</m>, <m>x^2+y^2=4</m>, <m>z=z_0</m> is a circle in the
+plane <m>z=z_0</m> with centre <m>(0,0,z_0)</m> and radius <m>2</m>.
+So <m>x^2+y^2=4</m> is the union of <m>x^2+y^2=4,\ z=z_0</m> for all
+possible values of <m>z_0</m>. It is  a vertical stack of horizontal
+circles. It is the cylinder of radius <m>2</m> centered on the <m>z</m>-axis.
+Here is a sketch of the part of the cylinder that is in the first octant.
+</p>
+<sidebyside width="35%">
+  <image source="images/CLP-figs/pfigs/quarterCylinder"/>
+</sidebyside>
+</li>
+<li><p>
+For each fixed <m>z_0\geqslant 0</m>, the curve <m>z = x^2 + y^2,\ z=z_0</m> is the circle in the plane <m>z=z_0</m> with centre <m>(0,0,z_0)</m> and radius <m>\sqrt{z_0}</m>. As
+<m>z = x^2 + y^2</m> is the union of <m>z = x^2 + y^2,\ z=z_0</m> for all
+possible values of <m>z_0\geqslant 0</m>, it is  a vertical stack of horizontal circles.
+The intersection of the surface with the <m>yz</m>-plane is the parabola
+<m>z=y^2</m>.  Here is a sketch of the part of the paraboloid that is in the
+first octant.
+</p>
+<sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterParaboloid"/>
+</sidebyside>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+-->
+
+<exercise>
+  <statement><p>
+  Décrire l'ensemble des points <m>(x,y,z)</m> dans <m>\R^3</m> qui satisfont
+  les conditions suivantes. Esquisser la partie de l'ensemble qui se trouve dans le premier octant.
+  <ol marker = "(a)">
+  <li>
+  <m>z = x</m>
+  </li>
+  <li>
+  <m>x + y + z = 1</m>
+  </li>
+  <li>
+  <m>x^2 + y^2 + z^2 = 4</m>
+  </li>
+  <li>
+  <m>x^2 + y^2 + z^2 = 4</m>, <m>z = 1</m>
+  </li>
+  <li>
+  <m>x^2+y^2=4</m>
+  </li>
+  <li>
+  <m>z = x^2 + y^2</m>
+  </li>
+  </ol>
+  </p></statement>
+
+  <answer><p>
+  <ol>
+  <li>
+  <p>
+  L'ensemble <m>z=x</m> est le plan qui contient l'axe des <m>y</m> et qui forme
+  un angle de <m>45^\circ</m> avec le plan <m>xy</m>. Voici une figure
+  de la partie du plan qui est dans le premier octant:
+  </p>
+  <sidebyside width="35%">
+    <image source="images/CLP-figs/pfigs/xeqzPlane"/>
+  </sidebyside>
+  </li>
+  <li>
+    <p>
+  <m>x+y+z=1</m> est le plan passant par les points <m>(1,0,0)</m>, <m>(0,1,0)</m>
+  et  <m>(0,0,1)</m>. Voici une figure de la partie du plan qui est dans le premier octant:
+  </p>
+
+  <sidebyside width="50%">
+    <image source="images/CLP-figs/pfigs/xyzPlane"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  <m>x^2+y^2+z^2=4</m> est la sphère de centre <m>(0,0,0)</m> et de rayon 2.
+  Voici une figure de la partie du plan qui est dans le premier octant:
+  </p>
+
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/quarterSphere"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  <m>x^2+y^2+z^2=4</m>, <m>z=1</m> est le cercle dans le plan <m>z=1</m> de centre
+   <m>(0,0,1)</m> et de rayon <m>\sqrt{3}</m>. La partie du cercle dans le premier octant
+   est le quart de cercle lourd dans la figure:
+  </p>
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/quarterCircle"/>
+  </sidebyside>
+  </li>
+  <li><p>
+  <m>x^2+y^2=4</m> est le cylindre de rayon <m>2</m> ayant pour centre l'axe des <m>z</m>.
+  Voici une figure de la partie du cylindre qui est dans le premier octant:
+  </p>
+  <sidebyside width="35%">
+    <image source="images/CLP-figs/pfigs/quarterCylinder"/>
+  </sidebyside>
+  </li>
+  <li>
+  <p>
+  <m>z=x^2+y^2</m> est un paraboloïde consistant en une pile verticale de
+  cercles horizontaux. L'intersection de la surface avec le plan <m>yz</m>
+  est la parabole <m>z=y^2</m>. Voici une figure de la partie du paraboloïde qui est dans le premier octant:
+  </p>
+
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/quarterParaboloid"/>
+  </sidebyside>
+  </li>
+  </ol>
+  </p>
+  </answer>
+
+  <solution><p>
+  <ol marker = "(a)">
+    <li>
+      <p>
+        En fixant <m>y_0</m>, <m>z=x,\ y=y_0</m> est une droite inclue
+  dans le plan <m>y=y_0</m> (qui est parallèle au plan contenant l'axe des <m>x</m>, l'axe des <m>z</m> et se trouvant à une distance <m>y_0</m> de celui-ci).
+  Cette droite passe à travers <m>x=z=0</m> et forme un angle de <m>45^\circ</m>
+  avec le plan <m>xy</m>. Une telle droite (avec <m>y_0=0</m>) est illustré dans la figure ci-dessous.
+  L'ensemble <m>z=x</m> est l'union de toutes les droites <m>z=x,\ y=y_0</m> et toutes les valeurs de <m>y_0</m>. Comme <m>y_0</m> varie, <m>z=x,\ y=y_0</m> balaie le
+  plan qui contient l'axe des <m>y</m> et qui forme un angle de
+  <m>45^\circ</m> avec le plan <m>xy</m>. Voici une figure de la partie du plan qui est dans le premier octant:
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/xeqzPlane"/>
+    </sidebyside>
+  </li>
+  <li><p>
+  <m>x+y+z=1</m> est le plan passant par les points <m>(1,0,0)</m>, <m>(0,1,0)</m>
+  et <m>(0,0,1)</m>. Voici une figure de la partie du plan
+  qui est dans le premier octant:
+  </p>
+
+  <sidebyside width="50%">
+    <image source="images/CLP-figs/pfigs/xyzPlane"/>
+  </sidebyside>
+  </li>
+  <li><p>
+    <m>x^2+y^2+z^2</m> est le carré de la distance de <m>(0,0,0)</m> à <m>(x,y,z)</m>.
+    Donc <m>x^2+y^2+z^2=4</m> est l'ensemble des points dont la distance de <m>(0,0,0)</m> est
+    <m>2</m>. C'est la sphère de centre <m>(0,0,0)</m> et de rayon 2.
+    Voici une figure de la partie de la sphère qui se trouve dans le premier octant:
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/quarterSphere"/>
+  </sidebyside>
+  </li>
+  <li><p>
+    <m>x^2+y^2+z^2=4</m>, <m>z=1</m> ou de manière équivalente <m>x^2+y^2=3</m>, <m>z=1</m>,
+    est l'intersection du plan <m>z=1</m> avec la sphère de centre
+    <m>(0,0,0)</m> et de rayon 2. C'est un cercle dans le plan <m>z=1</m>
+    qui a pour centre <m>(0,0,1)</m> et pour rayon <m>\sqrt{3}</m>. La partie du cercle
+    dans le premier octant est le quart de cercle lourd dans la figure:
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/quarterCircle"/>
+  </sidebyside>
+  </li>
+  <li><p>
+    Pour chaque <m>z_0</m> fixe, <m>x^2+y^2=4</m>, <m>z=z_0</m> est un cercle dans le plan <m>z=z_0</m> de centre <m>(0,0,z_0)</m> et de rayon <m>2</m>.
+    Donc <m>x^2+y^2=4</m> est l'union de <m>x^2+y^2=4</m>, <m>z=z_0</m> pour toutes les valeurs possibles de <m>z_0</m>. C'est une pile verticale de
+    cercles horizontaux. C'est le cylindre de rayon <m>2</m> centré sur l'axe <m>z</m>.
+    Voici une figure de la partie du cylindre qui se trouve dans le premier octant:
+  </p>
+  <sidebyside width="35%">
+    <image source="images/CLP-figs/pfigs/quarterCylinder"/>
+  </sidebyside>
+  </li>
+  <li><p>
+    Pour chaque <m>z_0\geqslant 0</m> fixe, la courbe <m>z = x^2 + y^2,\ z=z_0</m> est le cercle du plan <m>z=z_0</m> de centre <m>(0,0,z_0)</m> et de rayon <m>\sqrt{z_0}</m>. Comme
+    <m>z = x^2 + y^2</m> est l'union de <m>z = x^2 + y^2,\ z=z_0</m> pour toutes les valeurs possibles de <m>z_0</m>, c'est un empilement vertical de cercles horizontaux.
+    L'intersection de la surface avec le plan <m>yz</m> est la parabole
+    <m>z=y^2</m>.  Voici une figure de la partie du paraboloïde qui se trouve dans le
+    premier octant:
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/quarterParaboloid"/>
+  </sidebyside>
+  </li>
+  </ol>
+  </p>
+  </solution>
+</exercise>
+
+</exercisegroup>
+
+<exercisegroup>
+  <title>Pour mieux comprendre</title>
+
+
+<!--
+<exercise>
+<statement><p>
+Let <m>A</m> be the point <m>(2,1,3)</m>.
+<ol marker = "(a)">
+<li>
+Find the distance from <m>A</m> to the <m>xy</m>-plane.
+</li><li>
+Find the distance from <m>A</m> to the <m>xz</m>-plane.
+</li><li>
+Find the distance from <m>A</m> to the point <m>(x,0,0)</m> on the <m>x</m>-axis.
+</li><li>
+Find the point on the <m>x</m>-axis that is closest to <m>A</m>.
+</li><li>
+What is the distance from <m>A</m> to the <m>x</m>-axis?
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+In part (d) you are being asked to find the value of <m>x</m> that minimizes the
+distance from <m>(x,0,0)</m> to <m>A</m>. You found a formula for that distance in part (c).
+</p>
+</hint>
+
+<answer><p>
+<ol marker = "(a)">
+<li> <m>3</m> </li>
+<li> <m>1</m> </li>
+<li> <m>\sqrt{(x-2)^2 + 10}</m> </li>
+<li> <m>(2,0,0)</m> </li>
+<li> <m>\sqrt{10}</m> </li>
+</ol>
+</p></answer>
+
+<solution><p>
+<ol marker = "(a)">
+<li>
+The <m>z</m> coordinate of any point is the signed distance from the point to the
+<m>xy</m>-plane. So the distance from <m>(2,1,3)</m> to the <m>xy</m>-plane is <m>|3|=3</m>.
+</li><li>
+The <m>y</m> coordinate of any point is the signed distance from the point to the
+<m>xz</m>-plane. So the distance from <m>(2,1,3)</m> to the <m>xz</m>-plane is <m>|1|=1</m>.
+</li><li>
+The distance from <m>(2,1,3)</m> to <m>(x,0,0)</m> is
+<me>
+\sqrt{(2-x)^2 + (1-0)^2 + (3-0)^2} = \sqrt{(x-2)^2 + 10}
+</me>
+</li><li>
+Since <m>(x-2)^2\geqslant 0</m>, the distance <m>\sqrt{(x-2)^2 + 10}</m> is minimized when
+<m>x=2</m>. Alternatively,
+<md>
+<mrow>
+\diff{}{x} \sqrt{(x-2)^2 + 10}
+=\frac{x-2}{\sqrt{(x-2)^2 + 10}}
+=0 &amp;\iff x=2
+</mrow>
+</md>
+So the point on the <m>x</m>-axis that is closest to <m>A</m> is <m>(2,0,0)</m>.
+</li><li>
+As <m>(2,0,0)</m> is the point on the <m>x</m>-axis that is nearest <m>(2,1,3)</m>,
+the distance from <m>A</m> to the <m>x</m>-axis is
+<me>
+\sqrt{(2-2)^2 + (1-0)^2 + (3-0)^2} = \sqrt{1^2+3^2} = \sqrt{10}
+</me>
+</li>
+</ol>
+</p>
+<sidebyside width="36%">
+  <image source="images/CLP-figs/pfigs/pythag3dB"/>
+</sidebyside>
+
+</solution>
+</exercise>
+-->
+
+<exercise>
+  <statement><p>
+  Soit <m>A</m> le point <m>(2,1,3)</m>.
+  <ol marker = "(a)">
+  <li>
+  Trouver la distance entre <m>A</m> et le plan <m>xy</m>.
+  </li><li>
+  Trouver la distance entre <m>A</m> et le plan <m>xz</m>.
+  </li><li>
+  Trouver la distance entre <m>A</m> et le plan <m>(x,0,0)</m> sur l'axe des <m>x</m>.
+  </li><li>
+  Trouver le point de l'axe des <m>x</m> qui est le plus près de <m>A</m>.
+  </li><li>
+  Quelle est la distance entre <m>A</m> et l'axe des <m>x</m>?
+  </li>
+  </ol>
+  </p></statement>
+
+  <hint><p>
+  Dans la partie (d) on vous demande de trouver la valeur <m>x</m> qui minimise la
+  distance entre <m>(x,0,0)</m> et <m>A</m>. Vous pouvez trouver la formule de la distance entre ces points à la partie (c).
+  </p>
+  </hint>
+
+  <answer><p>
+  <ol marker = "(a)">
+  <li> <m>3</m> </li>
+  <li> <m>1</m> </li>
+  <li> <m>\sqrt{(x-2)^2 + 10}</m> </li>
+  <li> <m>(2,0,0)</m> </li>
+  <li> <m>\sqrt{10}</m> </li>
+  </ol>
+  </p></answer>
+
+  <solution><p>
+  <ol marker = "(a)">
+  <li>
+  La coordonnée <m>z</m> de tout point est sa distance signée avec le plan
+  <m>xy</m>. Ainsi, la distance entre le point <m>(2,1,3)</m> et le plan <m>xy</m> est <m>|3|=3</m>.
+  </li><li>
+  La coordonnée <m>y</m> de tout point est sa distance signée avec le plan
+  <m>xz</m>. Ainsi, la distance entre le point <m>(2,1,3)</m> et le plan <m>xz</m> est <m>|1|=1</m>.
+  </li><li>
+  La distance entre les points <m>(2,1,3)</m> et <m>(x,0,0)</m> est
+  <me>
+  \sqrt{(2-x)^2 + (1-0)^2 + (3-0)^2} = \sqrt{(x-2)^2 + 10}
+  </me>
+  </li><li>
+  Comme <m>(x-2)^2\geqslant 0</m>, la distance <m>\sqrt{(x-2)^2 + 10}</m> est minimisée lorsque
+  <m>x=2</m>. De façon alternée,
+  <md>
+  <mrow>
+  \diff{}{x} \sqrt{(x-2)^2 + 10}
+  =\frac{x-2}{\sqrt{(x-2)^2 + 10}}
+  =0 &amp;\iff x=2
+  </mrow>
+  </md>
+  Ainsi, le point sur l'axe des <m>x</m> qui est le plus près de <m>A</m> est <m>(2,0,0)</m>.
+  </li><li>
+  Comme <m>(2,0,0)</m> est le point sur l'axe des <m>x</m> qui est le plus près de <m>(2,1,3)</m>,
+  la distance entre <m>A</m> et l'axe des <m>x</m> est
+  <me>
+  \sqrt{(2-2)^2 + (1-0)^2 + (3-0)^2} = \sqrt{1^2+3^2} = \sqrt{10}
+  </me>
+  </li>
+  </ol>
+  </p>
+  <!-- <sidebyside width="36%">
+    <image source="images/CLP-figs/pfigs/pythag3dB"/>
+  </sidebyside> -->
+
+  </solution>
+</exercise>
+
+<!--
+</exercisegroup>
+
+
+
+<exercisegroup><introduction><procedural/></introduction>
+-->
+
+<!--
+<exercise>
+<statement><p>
+Consider any triangle. Pick a coordinate system so that one vertex
+is at the origin and a second vertex is on the positive <m>x</m>-axis. Call
+the coordinates of the second vertex <m>(a,0)</m> and those of the third vertex
+<m>(b,c)</m>. Find the circumscribing circle (the circle that goes through all
+three vertices).
+</p></statement>
+
+<answer><p>
+The circumscribing circle has centre <m>(\bar x,\bar y)</m> and radius <m>r</m>
+with <m>\bar x=\frac{a}{2}</m>, <m>\bar y=\frac{b^2+c^2-ab}{2c}</m> and
+<m>r=\sqrt{\big(\frac{a}{2}\big)^2+\big(\frac{b^2+c^2-ab}{2c}\big)^2}</m>.
+</p></answer>
+
+<solution><p>
+Call the centre of the circumscribing circle
+<m>(\bar x,\bar y)</m>. This centre must be equidistant from the three vertices.
+So
+<me>
+\bar x^2+\bar y^2=(\bar x-a)^2+\bar y^2=(\bar x-b)^2+(\bar y-c)^2
+</me>
+or, subtracting <m>\bar x^2+\bar y^2</m> from the three equal expressions,
+<me>
+0=a^2-2a\bar x=b^2-2b\bar x+c^2-2c\bar y
+</me>
+which implies
+<me>
+\bar x=\frac{a}{2}\qquad\qquad \bar y
+=\frac{b^2+c^2-2b\bar x}{2c}=\frac{b^2+c^2-ab}{2c}
+</me>
+The radius is the distance from the vertex <m>(0,0)</m> to the centre
+<m>(\bar x,\bar y)</m>, which is
+<m>\sqrt{\big(\frac{a}{2}\big)^2+\big(\frac{b^2+c^2-ab}{2c}\big)^2}</m>.
+</p>
+
+</solution>
+-->
+<exercise>
+  <statement><p>
+  Considérer un triangle arbitraire. Choisir un système de coordonnées de telle sorte
+   qu'un des sommets soit à l'origine et qu'un second sommet soit sur l'axe des <m>x</m> positif. Appeler
+  les coordonnées du deuxième sommet <m>(a,0)</m> et celles du troisème sommet
+  <m>(b,c)</m>. Trouver le cercle circonscrit (le cercle passant par les trois sommets).
+  </p></statement>
+
+  <answer><p>
+  Le cercle circonscrit est de centre <m>(\bar x,\bar y)</m> et de rayon <m>r</m>
+  avec <m>\bar x=\frac{a}{2}</m>, <m>\bar y=\frac{b^2+c^2-ab}{2c}</m> et
+  <m>r=\sqrt{\big(\frac{a}{2}\big)^2+\big(\frac{b^2+c^2-ab}{2c}\big)^2}</m>.
+  </p></answer>
+
+  <solution><p>
+  Appeler le centre du cercle circonscrit
+  <m>(\bar x,\bar y)</m>. Ce centre doit être équidistants aux trois sommets.
+  Ainsi,
+  <me>
+  \bar x^2+\bar y^2=(\bar x-a)^2+\bar y^2=(\bar x-b)^2+(\bar y-c)^2
+  </me>
+  ou, soustraire <m>\bar x^2+\bar y^2</m> des trois expressions égales,
+  <me>
+  0=a^2-2a\bar x=b^2-2b\bar x+c^2-2c\bar y
+  </me>,
+  ce qui implique
+  <me>
+  \bar x=\frac{a}{2}\qquad\qquad \bar y
+  =\frac{b^2+c^2-2b\bar x}{2c}=\frac{b^2+c^2-ab}{2c}
+  </me>
+  Le rayon est la distance entre le sommet <m>(0,0)</m> et le centre
+  <m>(\bar x,\bar y)</m>, ce qui est
+  <m>\sqrt{\big(\frac{a}{2}\big)^2+\big(\frac{b^2+c^2-ab}{2c}\big)^2}</m>.
+  </p>
+
+  </solution>
+</exercise>
+
+</exercisegroup>
+
+<exercisegroup>
+  <title>Pour aller plus loin</title>
+
+
+<!--
+<exercise><title><fromexam>M200 2001A</fromexam></title>
+<statement><p>
+A certain surface consists of all points <m>P=(x,y,z)</m>
+such that the distance from <m>P</m> to the point <m>(0,0,1)</m> is equal to the
+distance from <m>P</m> to the plane <m>z+1=0</m>. Find an equation for the surface,
+sketch and describe it verbally.
+</p></statement>
+
+<answer><p>
+<m>x^2+y^2=4z</m>
+The surface is a paraboloid consisting of a stack of horizontal circles, starting with a point at the origin and with radius increasing vertically.
+The circle in the plane <m>z=z_0</m> has radius <m>2\sqrt{z_0}</m>.
+</p></answer>
+
+<solution><p>
+The distance from <m>P</m> to the point <m>(0,0,1)</m> is <m>\sqrt{x^2+y^2+(z-1)^2}</m>.
+The distance from <m>P</m> to the specified plane is <m>|z+1|</m>. Hence the equation
+of the surface is
+<me>
+x^2+y^2+(z-1)^2=(z+1)^2\text{ or }
+   x^2+y^2=4z
+</me>
+All points on this surface have <m>z\geqslant 0</m>. The set of points on the surface
+that have any fixed value, <m>z_0\geqslant 0</m>, of <m>z</m> consists of a circle that is
+centred on the <m>z</m>-axis, is parallel to the <m>xy</m>-plane and has radius
+<m>2\sqrt{z_0}</m>. The surface consists of a stack of these circles, starting
+with a point at the origin and with radius increasing vertically. The surface
+is a paraboloid and is sketched below.
+</p>
+<sidebyside width="33%">
+<image source="images/CLP-figs/pfigs/OE01AQ1"/>
+</sidebyside>
+</solution>
+</exercise>
+-->
+
+
+<exercise>
+  <!-- <title><fromexam>M200 2001A</fromexam></title> -->
+  <statement><p>
+  Une certaine surface consiste en tous les points <m>P=(x,y,z)</m>
+  tels que la distance entre <m>P</m> et le point <m>(0,0,1)</m> est égale à la
+  distance entre <m>P</m> et le plan <m>z+1=0</m>. Trouver une équation pour la surface, esquisser et décrire verbalement.
+  </p></statement>
+
+  <answer><p>
+  <m>x^2+y^2=4z</m>
+  La surface est un paraboloïde consistant en une pile de cercles horizontaux, en commençant par le point à l'origine et dont le rayon augmente verticalement.
+  Le cercle dans le plan <m>z=z_0</m> a un rayon <m>2\sqrt{z_0}</m>.
+  </p></answer>
+
+  <solution><p>
+    La distance de <m>P</m> au point <m>(0,0,1)</m> est <m>\sqrt{x^2+y^2+(z-1)^2}</m>.
+    La distance de <m>P</m> au plan spécifié est <m>|z+1|</m>. Par conséquent, l'équation
+    de la surface est
+  <me>
+  x^2+y^2+(z-1)^2=(z+1)^2\text{ ou }
+     x^2+y^2=4z
+  </me>
+  Tous les points de cette surface ont <m>z\geqslant 0</m>. L'ensemble des points de la surface
+  qui ont une valeur fixe quelconque, <m>z_0\geqslant 0</m>, de <m>z</m> consiste en un cercle qui est
+  centré sur l'axe <m>z</m>, parallèle au plan <m>xy</m> et de rayon
+  <m>2\sqrt{z_0}</m>. La surface est constituée d'un empilement de ces cercles, commençant
+  par un point à l'origine et dont le rayon augmente verticalement. La surface
+  est le paraboloïde présenté dans la figure ci-dessous.
+  </p>
+  <sidebyside width="33%">
+  <image source="images/CLP-figs/pfigs/OE01AQ1"/>
+  </sidebyside>
+  </solution>
+</exercise>
+
+
+<!--
+<exercise>
+<statement><p>
+Show that the set of all points <m>P</m> that are twice as far from
+<m>(3,-2,3)</m> as from <m>(3/2,1,0)</m> is a sphere. Find its centre and radius.
+</p></statement>
+
+<answer><p>
+The sphere has radius 3 and is centered on <m>(1,2,-1)</m>.
+</p></answer>
+
+<solution><p>
+Let <m>(x,y,z)</m> be a point in <m>P</m>. The distances from
+<m>(x,y,z)</m> to <m>(3,-2,3)</m> and to <m>(3/2,1,0)</m> are
+<me>
+\sqrt{(x-3)^2+(y+2)^2+(z-3)^2}\quad\text{ and }\quad
+\sqrt{(x-3/2)^2+(y-1)^2+z^2}
+</me>
+respectively. To be in <m>P</m>, <m>(x,y,z)</m> must obey
+<md>
+<mrow>
+\sqrt{(x-3)^2+(y+2)^2+(z-3)^2}&amp;=2\sqrt{(x-3/2)^2+(y-1)^2+z^2}
+</mrow><mrow>
+(x-3)^2+(y+2)^2+(z-3)^2&amp;=4(x-3/2)^2+4(y-1)^2+4z^2
+</mrow>
+</md>
+Squaring out both sides gives
+<md>
+<mrow>
+&amp;x^2-6x+9+y^2+4y+4+z^2-6z+9
+</mrow><mrow>
+&amp;\hskip1in=4x^2-12x+9+4y^2-8y+4+4z^2
+</mrow>
+</md>
+and the simplifying gives
+<md>
+<mrow>
+3x^2-6 x+3y^2-12y+3z^2+6z-9&amp;=0
+</mrow><mrow>
+x^2-2 x+y^2-4y+z^2+2z-3&amp;=0
+</mrow><mrow>
+(x-1)^2+(y-2)^2+(z+1)^2&amp;=9
+</mrow>
+</md>
+This is a sphere of radius 3 centered on <m>(1,2,-1)</m>.
+</p></solution>
+</exercise>
+-->
+
+
+<exercise>
+  <statement><p>
+  Montrer que l'ensemble des points <m>P</m> qui sont deux fois plus loin de
+  <m>(3,-2,3)</m> que de <m>(3/2,1,0)</m> est une sphère. Trouver son centre et son rayon.
+  </p></statement>
+
+  <answer><p>
+  La sphère a un rayon égal à 3 a pour centre <m>(1,2,-1)</m>.
+  </p></answer>
+
+  <solution><p>
+  Soit <m>(x,y,z)</m> un point dans <m>P</m>. Les distances de
+  <m>(x,y,z)</m> à <m>(3,-2,3)</m> et à <m>(3/2,1,0)</m> sont
+  <me>
+  \sqrt{(x-3)^2+(y+2)^2+(z-3)^2}\quad\text{ et }\quad
+  \sqrt{(x-3/2)^2+(y-1)^2+z^2}
+  </me>
+  respectivement. Pour être dans <m>P</m>, <m>(x,y,z)</m> doit vérifier
+  <md>
+  <mrow>
+  \sqrt{(x-3)^2+(y+2)^2+(z-3)^2}&amp;=2\sqrt{(x-3/2)^2+(y-1)^2+z^2}
+  </mrow><mrow>
+  (x-3)^2+(y+2)^2+(z-3)^2&amp;=4(x-3/2)^2+4(y-1)^2+4z^2
+  </mrow>
+  </md>
+  En élevant les deux côtés au carré
+  <md>
+  <mrow>
+  &amp;x^2-6x+9+y^2+4y+4+z^2-6z+9
+  </mrow><mrow>
+  &amp;\hskip1in=4x^2-12x+9+4y^2-8y+4+4z^2
+  </mrow>
+  </md>
+  et en simplifiant donne
+  <md>
+  <mrow>
+  3x^2-6 x+3y^2-12y+3z^2+6z-9&amp;=0
+  </mrow><mrow>
+  x^2-2 x+y^2-4y+z^2+2z-3&amp;=0
+  </mrow><mrow>
+  (x-1)^2+(y-2)^2+(z+1)^2&amp;=9
+  </mrow>
+  </md>
+  C'est une sphère de rayon 3 de centre <m>(1,2,-1)</m>.
+  </p></solution>
+</exercise>
+
+<!--
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+-->
+<!--
+<exercise>
+<statement><p>
+The pressure <m>p(x,y)</m> at the point <m>(x,y)</m>  is at least zero and is determined by the equation <m>x^2-2px+y^2=3p^2</m>. Sketch several isobars. An isobar is a curve with
+equation <m>p(x,y)=c</m> for some constant <m>c\geqslant 0</m>.
+</p></statement>
+
+<hint><p>
+It is not necessary to solve the equation <m>x^2-2px+y^2=3p^2</m> for <m>p(x,y)</m>.
+For example, a point <m>(x,y)</m> is on the isobar <m>p(x,y)=1</m> if and only if
+<m>x^2-2x+y^2=3</m>. This curve can be easily identified if one first completes a
+square.
+</p></hint>
+
+<answer>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/pressureB"/>
+  </sidebyside>
+</answer>
+
+<solution><p>
+For each fixed <m>c\geqslant 0</m>, the isobar <m>p(x,y)=c</m> is the curve
+<m>x^2-2cx+y^2=3c^2</m>, or equivalently, <m>(x-c)^2+y^2=4c^2</m>. This is a
+circle with centre <m>(c,0)</m> and radius <m>2c</m>.  Here is a sketch of the isobars
+<m>p(x,y)=c</m> with <m>c=0,1,2,3</m>.
+</p>
+<sidebyside width="40%">
+<image source="images/CLP-figs/pfigs/pressureB"/>
+</sidebyside>
+</solution>
+</exercise>
+-->
+
+<exercise>
+  <statement><p>
+  La pression <m>p(x,y)</m> au point <m>(x,y)</m>  est au moins de zéro et est déterminée par l'équation <m>x^2-2px+y^2=3p^2</m>. Esquisser des isobares. Une isobare est une courbe avec
+  équation <m>p(x,y)=c</m> pour une constante <m>c\geqslant 0</m>.
+  </p></statement>
+
+  <hint><p>
+  Ce n'est pas nécessaire de résoudre l'équation <m>x^2-2px+y^2=3p^2</m> pour <m>p(x,y)</m>.
+  Par exemple, un point <m>(x,y)</m> est une isobare <m>p(x,y)=1</m> si et seulement si
+  <m>x^2-2x+y^2=3</m>. Cette courbe peut être facilement identifiée en complétant d'abord le
+  carré.
+  </p></hint>
+
+  <answer>
+    <sidebyside width="40%">
+      <image source="images/CLP-figs/pfigs/pressureB"/>
+    </sidebyside>
+  </answer>
+
+  <solution><p>
+  Pour chaque valeur fixée <m>c\geqslant 0</m>, l'isobare <m>p(x,y)=c</m> est la courbe
+  <m>x^2-2cx+y^2=3c^2</m>, ou de façon équivalente, <m>(x-c)^2+y^2=4c^2</m>. Ceci est un
+  cercle de centre <m>(c,0)</m> et de rayon <m>2c</m>.  Voici une figure des isobares
+  <m>p(x,y)=c</m> avec <m>c=0,1,2,3</m>.
+  </p>
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/pressureB"/>
+  </sidebyside>
+  </solution>
+</exercise>
+
+</exercisegroup>
+
+<!--
+</exercisegroup>
+-->
+</exercises>

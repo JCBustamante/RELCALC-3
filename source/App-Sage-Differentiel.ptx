@@ -1,0 +1,260 @@
+<appendix xml:id="sec-Sage-Differentiel" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>SageMath : Calcul différentiel </title>
+
+  <section>
+    <title>Fonctions de plusieurs variables</title>
+    <p>
+      La figure de <xref ref="def-Fonctions-2-3-vars">l'exemple</xref>. On voit comment composer une figure, étape par étape. De plus, la commande <c>text(...)</c> sert à ajouter des annotations. Il existe d'autres façons de le faire, par exemple en utilisant les options <c>legend</c> ou <c>legend_label</c>.
+
+    </p>
+    <sage>
+      <input>
+        var('x')
+        Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, 
+          fill='axis', axes_labels=['$x$', '$y$'], 
+          fillcolor = "blue", fillalpha=0.2, 
+          linestyle = "dashed", tick_formatter="latex", 
+          ticks = [[1,2],[1/2, 1]], fontsize = 14)
+        Fig+= line([(2,0), (0,0), (0,1)], 
+          color = "blue", thickness=2)
+        Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), 
+          fontsize = 16, xmin=-0.25, xmax= 2, 
+          ymin=-0.25, ymax=1)
+        show(Fig, figsize = 6)
+      </input>
+
+    </sage>
+    <p>
+      Pour tracer le graphe d'une fonction de deux variables, c'est la commande <c>plot3d(...)</c> qu'il faut utiliser. Voici le graphe de <xref ref="eg_traces">l'exemple </xref>. Noter cependant que dans le texte, la figure en question a été produite avec GeoGebra.
+    </p>
+    <sage>
+      <input>
+        var('x,y')
+        plot3d(x^2 * sin(2*y), (x,0,10), (y,0,2*pi), 
+          color = "orange", mesh = True, opacity = 0.85,
+          aspect_ratio = [20,40,1])
+      </input>
+    </sage>
+    <p>
+      Plusieurs options sont disponibles, notamment on peut colorier une surface avec une couleur qui varie. Ceci utilise les <q><em>colormaps</em></q>, de matplotlib. Ce sont des règles qui servent à assigner une couleur d'une échelle donnée à un nombre compris entre <m>0</m> et <m>1</m>. <url href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">Ce lien</url>  mène vers les <q><em>colormaps</em></q> disponibles.
+    </p>
+    <p>
+      Voici un exemple.
+    </p>
+    <sage>
+      <input>
+        var('x,y')
+        f(x,y) = x^2 * sin(2*y)
+        def macouleur(x,y):
+            return float((f(x,y)+100)/200)
+        Fig = plot3d(f(x,y),(x,0,10), (y,0,2*pi),  
+             color=(macouleur,colormaps.Spectral), 
+             plot_points = 80, frame = True, 
+             aspect_ratio = [20,40,1])
+        show(Fig)
+      </input>
+    </sage>
+    <p>
+      L'élément a noter est la définition de <c>macouleur(...)</c> il s'agit d'une fonction qui prendra des valeurs entre <m>0</m> et <m>1</m>. Noter que dans l'exemple qu nous occupe, <m>f</m> varie en <m>f_{min} = -100</m> et <m>f_{max} = 100</m>. On obtiendra quelque chose qui varie entre <m>0</m> et <m>1</m> en faisant 
+      <me>
+        \frac{f-f_{min}}{f_{max} - f_{min}.}
+      </me>
+      À l'intérieur de <c>Fig(...)</c>, la portion <c>color=(macouleur, colormaps.Spectral)</c> dit à SageMath d'utiliser <c>macouleur(...)</c> pour obtenir une valeur entre <m>0</m> et <m>1</m>, puis utiliser la règle <c>Spectral</c> pour assigner une couleur. 
+    </p>
+    <p>
+      Voici maintenant comment faire des diagrammes de courbes de niveau. C'est la fonction de <xref ref="Limite-NE2">l'exemple </xref>
+    </p>
+    <sage>
+      <input>
+        var('x,y')
+        f(x,y) = (x*y^2)/(x^2 + y^4)
+        C = contour_plot(f ,(-2,2), (-2,2), cmap = "Spectral", 
+          colorbar = True,
+          labels = True, label_colors="black", 
+          label_inline=True, label_fontsize=11,
+          label_fmt=lambda x: "$z=%s$"%round(x,1),
+          gridlines=True, frame = False,
+          axes = True,
+          axes_labels=["$x$","$y$"], 
+          tick_formatter = "latex", fontsize= 10)
+        show(C)
+      </input>
+    </sage>
+    <p>
+      On suggère de commenter une ligne, à l'aide du caractère <c>#</c> en tout début de ligne, puis d'exécuter le code pour voir l'effet de chaque option. Il y a plus d'options, on pourra regarder <url href="https://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">la page de référence</url>.
+    </p>
+    <p>
+      Une autre commande utile est <c>implicit_plot3d(...)</c>. Elle a été utilisée pour produire la  <xref ref="fig-sage3d-Traces-horizontales"> figure</xref>. Voici un exemple un peu plus simple. L'astuce ici est que les traces horizontales sont en réalité des petits morceaux de cylindres, d'une hauteur presque négligeable, en l'occurrence chaque tel cylindre va, en hauteur, de <c>zlevel -0.02</c> à <c>zlevel +0.02</c>. 
+    </p>
+    <sage>
+      <input>
+        var('x y z')
+        g(x,y,z) =  y/(x^2+y^2)
+        xmin, xmax, ymin, ymax, zmin, zmax = -1,1,-1,1,-2,2
+        f = z==g
+        S = implicit_plot3d(z==g(x,y), 
+          (x,xmin,xmax), (y,ymin,ymax), (z,zmin, zmax), 
+          color = "orange", opacity = 0.5, 
+          frame = True, projection = "orthographic", aspect_ratio=[2,2,1])
+        levels=srange(-2,2,0.2)
+        for zlevel in levels:
+              S+=implicit_plot3d(g(x,y,z)-zlevel, 
+                (x,xmin,xmax),(y,ymin,ymax),(z,zlevel - 0.02,zlevel + 0.02),
+                color = "brown")
+        show(S)     
+      </input>
+     
+    </sage>
+  </section>
+
+    <section>
+      <title>Dérivées partielles et champs gradients</title>
+      <p>
+        Le calcul des dérivées partielles avec SageMath se fait avec la commande <c>diff(...)</c>. À nouveau, plusieurs options sont disponibles : <c>diff(f,x,1,y,2)</c> par exemple retourne la dérivée partielle d'une fonction <m>f</m> (qui doit être définie) par rapport à <m>x</m> une fois, et par rapport à <m>y</m> deux fois, c'est à dire <me>\frac{\partial^3 f}{\partial x\, \partial y^2}</me>. Voici d'autres exemples.
+      </p>
+      <sage>
+        <input>
+          f(x,y) = x*y*exp(x^2)
+          show(diff(f,x,1,y,1)(x,y))
+          show(diff(f,x,2)(x,y))
+          show(f.derivative()(x,y))
+          show(f.gradient()(x,y))
+          show(f.derivative(2)(x,y))
+          show(f.hessian()(x,y))
+        </input>
+      </sage>
+      <p>
+        Ceci définit la fonction <m>f(x,y) = xye^{x^2}</m> puis on calcule certaines dérivées, à savoir :
+        <ol marker = "a">
+          <li>
+            <p>
+              La dérivée partielle d'ordre 2 : <m>\frac{\partial^2 f}{\partial x\, \partial y}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              La dérivée partielle d'ordre 2 : <m>\frac{\partial^2 f}{\partial x^2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              La dérivée totale (du premier ordre de <m>f</m>), à savoir la fonction que nous avons notée <m>\vD f(x,y)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              La commande <c>f.gradient()</c> est une autre façon d'obtenir la dérivée (totale, du premier ordre) d'une fonction à valeurs scalaires <m>f</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              La dérivée totale d'ordre <m>2</m>, de <m>f</m>, <m>\vD^2f(x,y)</m>, c'est à dire la matrice hessienne de <m>f</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              La commande <c>f.hessian()</c> est une autre façon d'obtenir la matrice hessienne d'une fonction <m>f</m>.
+            </p>
+          </li>
+
+
+        </ol>
+      </p>
+
+      <p>
+        Voyons maintenant comment représenter un champ de vecteurs, avec la commande <c>plot_vector_field(..)</c>.  Dans l'exemple ci-bas, on considère le champ<m>\vF(x,y)  = -y\, \vi + x\, \vj </m>, celui de la  <xref ref="fig-sageplot-vortex">figure</xref>.
+      </p>
+      <sage>
+        <input>
+          var('x,y')
+          Fig = plot_vector_field((-y,x), (x,-2,2),(y,-2,2),
+            color = "steelblue", axes = True,
+            axes_labels = ['$x$','$y$'],
+            axes_labels_size=1.4, aspect_ratio = 1,
+            ticks = [[],[]],
+            frame= False,
+            plot_points = 10)
+          show(Fig)
+        </input>
+      </sage>
+      <p>
+        Pour le champ gradient d'une fonction <m>f</m> déjà définie, on pourrait faire <c>plot_vector_field(f.gradient()...)</c>.
+      </p>
+      
+      
+      
+      
+    </section>
+    <section>
+      <title>Approximations de Taylor</title>
+      <p>
+        Afin de calculer les polynômes de Taylor d'une fonction d'une ou de plusieurs variables, c'est la commande <c>taylor(...)</c> qu'il faut uriliser. On doit spécifier le point autour duquel on calcule le polynôme, et le degré total. 
+      </p>
+      <p>
+        Ci-bas on calcule le polynôme de Taylor de degré total 2 de <m>f(x,y) = e^{2x}\sin{3y}</m> autour du point <m>(x_0,y_0)=(0,1)</m>
+      </p>
+      <sage>
+        <input>
+          var('x,y')
+          taylor(exp(2*x)*sin(3*y), (x,0),(y,1),2)          
+        </input>
+      </sage>
+      
+      
+    </section>
+    <section>
+      <title>Points critiques et multiplicateurs de Lagrange</title>
+      <p>
+        Pour trouver les points critiques d'une fonction il faut résoudre certaines équations. La commande <c>solve(...)</c> fait ceci. On doit lui passer en paramètres deux listes, d'abord les équations à résoudre, puis les variables pour lesquelles on veut les solutions. Ci-après on fait les calculs de <xref ref="eg_MXMNlocalC">l'exemple </xref>.
+      </p>
+      <sage>
+        <input>
+          var('x,y')
+          f(x,y) = x*y*(5*x+y-15)
+          df = f.gradient()
+          show(df(x,y))
+          Solutions = solve([df[0](x,y) ==0, df[1](x,y) ==0],[x,y] )
+          show(Solutions)
+        </input>
+      </sage>
+      <p>
+        On peut aussi calculer la matrice hessienne de <m>f</m> évaluée en chacun de ces points. La commande <c>().rhs</c> extrait le terme de droite (<q><em>right-hand side</em></q>) d'une expression donnée. Il faut garder a l'esprit que les listes sont numérotées à compter de zéro.
+      </p>
+      <sage>
+        <input>
+          H(x,y) = f.hessian()(x,y)
+          show(H(x,y))
+          Hess = [H(Solutions[j][0].rhs(), Solutions[j][1].rhs()) for j in range(len(Solutions))]
+          show(Hess)
+        </input>
+      </sage>
+      <p>
+        Voyons maintenant comment oprimiser un problème avec contraites, à l'aide des multiplicateurs de Lagrange. Nous nous servons du contexte de l<xref ref="eg_LagrangeC">'exemple </xref>, à savoir trouver des demi-axes de l'ellipse <m>3x^2-2xy+3y^2=4</m>. On doit maximiser la fonction <m>f(x,y) = x^2 + y^2</m>.
+      </p>
+      <p>
+        Pour faire ceci avec Sage, on doit inroduire une variable, <c>L</c> qui jouera le rôle de <m>\lambda</m>. Par la suite, il s'agit de former le système d'équations et le résoudre. 
+      </p>
+      <sage>
+        <input>
+          var('x,y,L')
+          f(x,y) = x^2 + y^2
+          g(x,y)= 3*x^2 -2*x*y+3*y^2
+          df=f.gradient()
+          dg=g.gradient()
+          solve([df[0](x,y) == L*dg[0](x,y), 
+              df[1](x,y)==L*dg[1](x,y), 
+              g(x,y)==4],[x,y,L])
+        </input>
+      </sage>
+      
+      
+      
+    </section>
+    
+    
+    
+    
+    
+      
+  </appendix>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="sec_Taylor" xmlns:xi="http://www.w3.org/2001/XInclude" >
+
+<!-- Juan Carlos Bustamante, Juin 2022   -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Polynômes de Taylor avec plusieurs variables</title>
+<subsection xml:id="pars-Taylor-rappels">
+  <title>Quelques rappels</title>
+  <p>
+    Pour commencer, en guise de rappel et aussi de motivation, plaçons-nous dans le contexte des fonctions d'une variable réelle. Nous utiliserons ces idées et ces résultats pour obtenir ce que nous cherchons, à savoir:
+    <ul>
+      <li>
+        <p>
+          une formule pour avoir les polynômes de Taylor des fonctions de plusieurs variables;
+        </p>
+      </li>
+      <li>
+        <p>
+          une idée de l'erreur commise lorsque nous utilisons une approximation de Taylor plutôt que la fonction elle-même.
+        </p>
+      </li>
+    </ul>
+    Une des conséquences de ceci sera le résultat analogue au critère de la dérivée seconde permettant de classifier les points critiques. Ceci viendra dans la section suivante.
+  </p>
+
+  <p>
+    Soit donc <m>g</m> une fonction deux fois dérivable sur un intervalle <m>I</m> et <m>t_0</m> un point à l'intérieur de <m>I</m>.
+  </p>
+  <p>
+    La formule de Taylor du premier ordre (autour de <m>t_0</m>) dit que, pour <m>t\in I</m>, il existe <m>c_t</m> dans <m>I</m> tel que
+    <md>
+      <mrow> g(t) \amp = \underbrace{g(t_0) + g'(t_0)(t-t_0)}_{\text{Approx. linéaire}}  + \underbrace{\frac{1}{2} g''(c_t)(t-t_0)^2}_{\text{Reste}}</mrow>
+    </md>.
+  </p>
+  <p>
+    Si <m>g</m> est trois fois dérivable, on aura à nouveau un (autre) <m>c_t</m> entre <m>x_0</m> et <m>t</m> tel que
+    <md>
+      <mrow> g(t) \amp = \underbrace{g(t_0) + g'(t_0)(t-t_0) +  \frac{1}{2}g''(t_0)(t-t_0)^2 }_{\text{Approx. quadratique}}  + \underbrace{\frac{1}{3!} g'''(c_t)(t-t_0)^3}_{\text{Reste}}</mrow>
+    </md>.
+  </p>
+  <p>
+    La partie <m>Q(t) = g(t_0) + g'(t_0)(t-t_0) +  \frac{1}{2}g''(t_0)(t-t_0)^2 </m> est <terms>l'approximation quadratique</terms>, ou encore <terms>l'approximation de Taylor d'ordre <m>2</m></terms>, de <m>g</m> autour de <m>t_0</m>. Le reste correspondant, à savoir <m>R_2(t) = \frac{1}{3!}g'''(c_t)(t-t_0)^3</m>, vérifie
+    <me>
+      \lim_{t\to t_0}\frac{R_2(t)}{(t-t_0)^2} = 0
+    </me>.
+  </p>
+</subsection>
+
+<subsection xml:id="pars-Taylor-n-var">
+  <title>Avec plusieurs variables</title>
+  <p>
+    Voyons maintenant comment obtenir les formules analogues pour les fonctions à plusieurs variables. L'idée centrale sera de considérer une telle fonction <m>f</m> et de la composer avec un chemin <m>\pmb{\g}</m>, de sorte à obtenir une fonction <m>g = f\circ \pmb{\g}</m> d'une variable à laquelle appliquer les résultats mentionnés auparavant.
+  </p>
+  <p>
+    Soit donc <m>\cD \subset \R^n</m> et <m>\vr_0</m> un point intérieur à <m>\cD</m> proche de <m>\vr_0</m>. Soit par ailleurs <m>f : \cD \to \R </m> ayant des dérivées partielles continues jusqu'à l'ordre <m>3</m>. Écrivons aussi <m>\vr = \ctvec{x_1}{\vdots}{x_m}</m> puis <m> \vh = \vr - \vr_0 = \ctvec{h_1}{\vdots}{h_n}</m>.
+  </p>
+  <p>
+    Nous voulons une approximation de <m> f(\vr) = f(\vr_0 + \vh) </m>. Pour cela, considérons le chemin <m>\pmb{\g} : t \mapsto \vr_0 + t (\vr - \vr_0) = r_0 + t\vh</m>. Il s'agit de la droite qui relie <m>\vr_0</m> (à <m>t=0</m>) à <m>\vr_0</m> (à <m>t=1</m>). Remarquons qu'il s'agit d'un chemin de vitesse constante, à savoir <m>\pmb{\g}' = \vh</m>.
+  </p>
+  <p>
+  Posons finalement <m>g = f \circ \pmb{\g} : t \mapsto f(\pmb{\g}(t)) = f(\vr_0 + t\vh)</m>. Alors, l'approximation de Taylor de <m>g</m> autour de <m>t_0 = 0</m> permet d'obtenir, pour <m>t=1</m>,
+
+  <me>
+    g(1) = g(0) + g'(0) + \frac{1}{2}g''(0) + \frac{1}{3!}g'''(c)
+  </me>
+  pour un <m>c</m> entre <m>0</m> et <m>1</m>.
+    </p>
+    <p>
+      Or, <m>g(0) = f(\pmb{\g}(0)) = f(\vr_0)</m>.
+    </p>
+    <p>
+      Par ailleurs,
+      <md>
+        <mrow>g'(t) \amp = \vD (f\circ \pmb{\g})(t) = \vD f(\pmb{\g}(t) \pmb{\g}'(t) = \sum_{j\,=\,1}^n \pdiff{f}{x_j}(\pmb{\g}(t)) \vh </mrow>
+        <mrow> \amp = \sum_{j\,=\,1}^n  \pdiff{f}{x_j}(\vr_0 + t\vh) h_j  </mrow>
+      </md>.
+      En particulier,
+      <me>
+        g'(0) = \vD f(\vr_0) \vh = \sum_{j\,=\,1}^n \pdiff{f}{x_j}(\vr_0) h_j
+      </me>.
+
+    </p>
+    <p>
+      Pour calculer le terme d'ordre <m>2</m>, nous devons dériver encore une fois <m>g'(t)</m> puis évaluer en <m>0</m>.
+    </p>
+    <p>
+      Afin d'alléger les notations, utilisons les indices pour indiquer les dérivées partielles. Ainsi, on écrit <m>f_{x_j}</m> au lieu de  <m>\pdiff{f}{x_j}</m>, de sorte que
+      <me>g'(t) =  \sum_{j\,=\,1}^n  f_{x_j}(\vr_0 + t\vh) h_j = \sum_{j\,=\,1}^n  (f_{x_j}\circ \pmb{\g})(t) h_j
+      </me>.
+      Nous calculons alors, pour un <m>j</m> fixé,
+      <me>
+        \diff{}{t} \left(f_{x_j} \circ\pmb{\g}\right)(t) = \vD f_{x_j}(\pmb{\g}(t)) \pmb{\g}'(t) = \vD f_{x_j}(\vr_0 + t\vh) \vh
+      </me>.
+      Or, <m>\vD f_{x_j}(\vr_0 + t\vh)</m> est la matrice à une rangée formée par les dérivées partielles de <m>f_{x_j}</m>, qu'on note <m>f_{x_j\, x_i}</m>, évaluées en <m>\vr_0 + t \vh</m>, de sorte que
+      <!--
+      <md>
+        <mrow> \diff{}{t} \left(f_{x_j} \circ\pmb{\g}\right)(t)\amp = \left.\begin{bmatrix}\frac{\partial^2 f}{\partial x_1 \partial x_j} \amp \frac{\partial^2 f}{\partial x_2 \partial x_j}\amp \cdots \amp \frac{\partial^2 f}{\partial x_n \partial x_j}\end{bmatrix}\right|_{\vr_0 + t\vh} \begin{bmatrix}h_1 \\  h_2 \\ \vdots \\ h_n\end{bmatrix}   </mrow>
+        <mrow> \amp = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i \partial x_j}(\vr_0 + t \vh)h_i </mrow>
+      </md>
+    -->
+    <md>
+      <mrow> \diff{}{t} \left(f_{x_j} \circ\pmb{\g}\right)(t)\amp = \left.\begin{bmatrix} f_{x_j\, x_1} \amp f_{x_j\, x_2}\amp \ldots  \amp f_{x_j\, x_n} \end{bmatrix} \right|_{\vr_0 + t\vh} \begin{bmatrix}h_1 \\  h_2 \\ \vdots \\ h_n\end{bmatrix}   </mrow>
+      <mrow> \amp = \sum_{i\,=\,1}^n f_{x_j\, x_i}(\vr_0 + t \vh)h_i </mrow>
+    </md>.
+
+      Il vient donc que
+      <md>
+        <mrow>g''(t) = \amp \diff{}{t} \left( \sum_{j\,=\,1}^n (f_{x_j}\circ \pmb{\g})(t) \  h_j \right) = \sum_{j\,=\,1}^n\left(\diff{}{t} (f_{x_j} \circ \pmb{\g})(t) \right)h_j </mrow>
+        <mrow> \amp  =  \sum_{j\,=\,1}^n \sum_{i\,=\,1}^n f_{x_j\, x_i}(\vr_0 + t \vh) h_i\, h_j</mrow>
+      </md>,
+
+      <!--
+      <md>
+        <mrow>g''(t) =  \amp \diff{}{t}\left( \sum_{j=1}^n \pdiff{f}{x_j}(\vr_0+t\vh) h_j\right) = \diff{}{t} \left(f_{x_j} \circ\pmb{\g}\right)(t)h_j </mrow>
+        <mrow> \amp \sum_{i,j=1}^n  \frac{\partial^2 f}{\partial x_i \partial x_j}(\vr_0 + t \vh)h_i h_j  = \sum_{i,j = 1}^n f_{x_i\, x_j}(\vr_0 + t\vh) h_i\, h_j </mrow>
+      </md>
+    -->
+      et donc le terme qui nous intéresse est
+      <me>
+        g''(0) = \sum_{i,\,j\, =\, 1}^n f_{x_j\, x_i}(\vr_0) h_i\, h_j
+      </me>.
+    </p>
+    <p>
+      Remarquons que l'hypothèse de continuité des dérivées partielles d'ordre 2 donne l'égalité des dérivées partielles croisées. Par ailleurs, nous pouvons écrire la double somme apparaissant dans <m>g''(t)</m> de façon plus succincte à l'aide du produit matriciel. En effet, on vérifie que
+      <md>
+      <mrow>\sum_{i,\, j\, =\, 1}^n f_{x_j\, x_i}(\vr_0) h_i\, h_j   \amp =\begin{bmatrix} h_1 \amp \cdots \amp h_n\end{bmatrix} \left.\begin{bmatrix} f_{x_1 x_1}  \amp \cdots \amp f_{x_n x_1} \\
+        \vdots \amp  \ddots \amp \vdots \\
+         f_{x_1 x_n}  \amp \cdots \amp f_{x_n x_n}\end{bmatrix}\right|_{\vr_0} \begin{bmatrix} h_1 \\ \vdots \\ h_n\end{bmatrix} </mrow>
+        <mrow>  \amp = \vh^T  \left.\begin{bmatrix} f_{x_1 x_1}  \amp \cdots \amp f_{x_n x_1} \\
+          \vdots \amp  \ddots \amp \vdots \\
+           f_{x_1 x_n}  \amp \cdots \amp f_{x_n x_n}\end{bmatrix}\right|_{\vr_0} \vh </mrow>
+      </md>.
+    </p>
+
+<!--ou,préfère-t-on
+<p>
+
+<me>
+  \sum_{i,j=1}^n  \frac{\partial^2 f}{\partial x_i \partial x_j}(\vr_0 + t \vh)h_i h_j = \vh^T \begin{bmatrix} \frac{\partial^2 }{\partial x_1 \partial x_1} \amp \frac{\partial^2 f}{\partial x_2 \partial x_1} \amp \cdots \amp \frac{\partial^2 f}{\partial x_n \partial x_1} \\
+  \frac{\partial^2 f}{\partial x_1 \partial x_2} \amp \frac{\partial^2 f}{\partial x_2 \partial x_2} \amp \ddots \amp \frac{\partial ^2 f}{\partial x_n  \partial x_2}\\
+   \vdots \amp \vdots \amp \ddots \amp \vdots \\
+    \frac{\partial^2 f}{\partial x_1 \partial x_n} \amp \frac{\partial ^2 f}{\partial x_2 \partial x_n} \amp \cdots \amp \frac{\partial^2 f}{\partial x_n \partial x_n}\end{bmatrix} \vh
+</me>
+
+      où la matrice doit être évaluée en <m>\vr_0 + t \vh</m>
+
+    </p>
+-->
+<p>
+  Remarquons que la matrice apparaissant dans la formule ci-haut est exactement la matrice des dérivées partielles des composantes de  <m>\vnabla f</m>, vue comme une fonction à valeurs dans <m>\R^n</m>. Avec les notations des sections précédentes, on noterait cette matrice <m>\vD \vnabla f</m>, mais il est naturel de la noter <m>\vD^2 f</m>.
+</p>
+<definition xml:id="def-Hessienne">
+  <statement>
+    <p>Soit <m>f : \cD \to \R^n</m> de classe <m>C^2</m> et <m>\vr_0\in\cD</m> un point intérieur. Alors,
+    <ol>
+      <li>
+        <p>
+          la <em>matrice hessienne de <m>f</m> en <m>\vr_0</m></em> est la matrice
+          <me>
+          \vD^2 f (\vr_0) = \left.\begin{bmatrix} f_{x_1 x_1}  \amp \cdots \amp f_{x_n x_1} \\
+            \vdots \amp  \ddots \amp \vdots \\
+             f_{x_1 x_n}  \amp \cdots \amp f_{x_n x_n}\end{bmatrix}\right|_{\vr_0}
+          </me>;
+        </p>
+      </li>
+      <li>
+        <p>
+          la forme quadratique <m>Hf(\vr_0) : \R^n \to \R</m> définie par
+          <me>
+            Hf(\vr_0)(\vh) = \frac{1}{2} \vh^T \vD^2 f (\vr_0) \vh
+          </me>
+          est <em>la forme quadratique hessienne de <m>f</m> en <m>\vr_0</m> </em>.
+
+        </p>
+      </li>
+    </ol>
+
+    </p>
+  </statement>
+</definition>
+<p>Rappelons que <m>\vh = \vr - \vr_0</m>.
+</p>
+<definition xml:id="def-Taylor-2">  
+  <!-- TODO verifier structure -->
+  <statement>
+    <p>Soit <m>f : \cD \to \R^n</m> de classe <m>C^2</m> et <m>\vr_0\in\cD</m> un point intérieur. Le <em>polynôme de Taylor</em> d'ordre <m>2</m> de <m>f</m> autour de <m>\vr_0</m> est
+    <!-- <me>
+      Q(\vr) = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0) + Hf(\vr_0)(\vr-\vr_0)
+    </me> -->
+    <md>
+      <mrow>Q(\vr) \amp = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0) + Hf(\vr_0)(\vr-\vr_0) </mrow>
+      <mrow>\amp = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0) + \frac{1}{2} (\vr - \vr_0)^T \vD^2 f (\vr_0) (\vr - \vr_0) </mrow>
+    </md>.
+    </p>
+  </statement>
+</definition>
+<p>
+  Voyons quelques exemples. Dans la pratique, on traitera surtout les cas où <m>n=2</m> ou <m>3</m>. Si <m>n=2</m>, on écrit <m>\vr_0 = (x_0, y_0),\ \vr = (x,y)</m> et <m>\vh = \vr - \vr_0 =(x-x_0, y-y_0) = (h_x, h_y) </m>. Le polynôme de Taylor s'écrit alors
+  <md>
+    <mrow xml:id="eq-Taylor-2" tag = "star"> Q(x,y)  = \amp f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0) </mrow>
+    <mrow> \amp + \frac{1}{2}\left[f_{xx}(x_0,y_0)(x-x_0)^2 + 2 f_{xy}(x_0,y_0)(x-x_0)(y-y_0)\right.
+    </mrow>
+    <mrow> \amp  + \left. f_{yy}(x_0,y_0)(y-y_0)^2 \right]
+     </mrow>
+  </md>.
+  Il est commun d'utiliser les polynômes de Taylor pour faire des approximations. On veut approcher la valeur de <m>f(x_0 + \De x, y_0 + \De y)</m>, avec l'information de <m>f</m> (et de ses dérivées) en <m>(x_0,y_0)</m>. On aura alors
+  <md>
+    <mrow xml:id="eq-Taylor-2b" tag = "dstar"> Q(x_0+ \De x,y_0 + \De y)  = \amp f(x_0,y_0) + f_x(x_0,y_0)\De x + f_y(x_0,y_0)\De y </mrow>
+    <mrow> \amp + \frac{1}{2}\left[f_{xx}(x_0,y_0)\De x^2 + 2 f_{xy}(x_0,y_0)\De x \De y\right.
+    </mrow>
+    <mrow> \amp  + \left. f_{yy}(x_0,y_0)\De y^2 \right]
+     </mrow>
+  </md>.
+</p>
+
+<p>
+  La formule explicite pour les fonctions de trois variables est plus longue : on a les trois termes du premier ordre faisant intervenir les trois dérivées partielles, puis les six termes d'ordre 2 faisant intervenir les dérivées croisées d'ordre 3.
+</p>
+<example>
+  <statement>
+    <p>
+      Calculer l'approximation de Taylor d'ordre <m>2</m> de la fonction <m>f : (x,y) \mapsto \cos (2x -y)</m> autour de l'origine.
+    </p>
+    <p>
+      On calcule
+      <me>
+        \vD f(x,y) =\begin{bmatrix} f_x(x,y) \amp f_y(x,y)\end{bmatrix} =  \begin{bmatrix} -2\sin(2x -y) \amp \sin(2x-y)\end{bmatrix}
+      </me>,
+      donc <m>\vD f(0,0) = \begin{bmatrix} 0 \amp 0 \end{bmatrix} </m>.
+    </p>
+    <p>
+      Par ailleurs,
+      <me>
+        \vD^2 f(x,y) = \begin{bmatrix} f_{xx}(x,y) \amp f_{xy}(x,y)\\ f_{yx}(x,y) \amp f_{yy}(x,y)
+      \end{bmatrix} = \begin{bmatrix} -4\cos(2x-y) \amp 2\cos(2x-y) \\ 4\cos(2x-y) \amp -\cos(2x-y)\end{bmatrix}
+      </me>,
+      et donc
+      <me>
+        \vD^2 f(0,0) = \left[\begin{array}{rr}-4\amp 2 \\ 2 \amp -1\end{array} \right]
+      </me>.
+      Le polynôme de Taylor cherché est alors
+      <md>
+        <mrow>Q(x,y) \amp = 1 + \begin{bmatrix} 0 \amp 0 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}  + \frac{1}{2} \begin{bmatrix} x \amp y \end{bmatrix} \left[\begin{array}{rr}-4\amp 2 \\ 2 \amp -1\end{array} \right]\begin{bmatrix}x\\ y \end{bmatrix}  </mrow>
+        <mrow> \amp = 1+\frac{1}{2}(-4x^2 + 4y -y^2) = 1-2x^2 +2xy -\frac{1}{2}y^2 </mrow>
+      </md>.
+    </p>
+  </statement>
+
+</example>
+<example xml:id="eg_approx_C">
+<p>
+Dans cet exemple, on trouve l'approximation quadratique de <m>f(x,y)=\sqrt{1+4x^2+y^2}</m> autour de <m>(x_0,y_0)=(1,2)</m> et l'on s'en sert pour donner une valeur approchée de <m>f(1.1,\,2.05)</m>. Nous savons que nous avons besoin de toutes les dérivées jusqu'au deuxième ordre. Calculons-les, évaluons-les au point <m>(x_0,y_0)=(1,2)</m>.
+<md>
+<mrow>
+  f(x,y)&amp;=\sqrt{1+4x^2+y^2}, &amp; f(x_0,y_0)&amp;=3,
+</mrow>
+<mrow>
+  f_x(x,y)&amp;=\frac{4x}{\sqrt{1+4x^2+y^2}}, &amp; 
+  f_x(x_0,y_0)&amp;=\frac{4}{3},
+</mrow>
+<mrow>
+  f_y(x,y)&amp;=\frac{y}{\sqrt{1+4x^2+y^2}}, &amp;
+      f_y(x_0,y_0)&amp;=\frac{2}{3},
+</mrow>
+<mrow>
+f_{xx}(x,y)&amp;=\frac{4}{\sqrt{1+4x^2+y^2}} -\frac{16x^2}{(1+4x^2+y^2)^{3/2}}, &amp;
+      f_{xx}(x_0,y_0)&amp;=\frac{4}{3} -\frac{16}{27}
+</mrow><mrow>
+  &amp;&amp;&amp;=\frac{20}{27},
+</mrow><mrow>
+f_{xy}(x,y)&amp;=-\frac{4xy}{(1+4x^2+y^2)^{3/2}}, &amp;
+      f_{xy}(x_0,y_0)&amp;= -\frac{8}{27},
+</mrow><mrow>
+f_{yy}(x,y)&amp;=\frac{1}{\sqrt{1+4x^2+y^2}} -\frac{y^2}{(1+4x^2+y^2)^{3/2}}, &amp;
+      f_{yy}(x_0,y_0)&amp;=\frac{1}{3} -\frac{4}{27}
+</mrow><mrow>
+&amp;&amp;&amp;=\frac{5}{27}
+</mrow>
+</md>.
+Remplaçons maintenant dans  <xref ref="eq-Taylor-2b"/> afin d'obtenir l'approximation quadratique de  <m>f</m> autour de <m>(x_0,y_0)</m> :
+<md>
+<mrow>
+&amp;f\big(x_0+\De x,\,y_0+\De y\big)
+</mrow><mrow>
+&amp;\hskip0.5in \approx f(x_0, y_0)
+        +f_x(x_0, y_0)\De x+f_y(x_0, y_0)\De y \cr &amp;\hskip1.0in
+    +\frac{1}{2}\bigg[f_{xx}(x_0, y_0)\De x^2
+              +2f_{xy}(x_0, y_0)\De x\De y
+               +f_{yy}(x_0, y_0)\De y^2\bigg] \cr
+&amp;\hskip0.5in= 3+\frac{4}{3} \De x+\frac{2}{3}\De y
+    +\frac{10}{27}\De x^2 -\frac{8}{27}\De x\De y+\frac{5}{54}\De y^2
+</mrow>
+</md>.
+En particulier, si l'on pose <m>\De x=0.1</m> et <m>\De y=0.05</m>,
+<md>
+<mrow>
+f(1.1,\,2.05)&amp;\approx 3 \!+\!\frac{4}{3} (0.1)\!+\!\frac{2}{3}(0.05)
+    \!+\!\frac{10}{27}(0.01) \!-\!\frac{8}{27}(0.005)\!+\!\frac{5}{54}(0.0025)
+</mrow><mrow>
+&amp;=3.1691
+</mrow>
+</md>.
+La valeur exacte, à <m>10^{-4}</m> près, est  <m>3.1690</m>. Le taux d'erreur est d'autour de  0.004 %.
+</p>
+
+</example>
+
+<example xml:id="eg_approx_D">
+<p>
+Dans cet exemple, nous calculons l'approximation quadratique de  <m>f(x,y)=e^{2x}\sin(3y)</m> autour de  <m>(x_0,y_0)=(0,0)</m> de deux façons différentes.
+</p>
+
+<p>La première utilise la formule <xref ref="eq-Taylor-2"/>. Calculons toutes les dérivées partielles jusqu'au deuxième ordre au point <m>(x_0,y_0)</m> :
+<md>
+<mrow>
+f(x,y)&amp;= e^{2x}\sin(3y), &amp;
+      f(x_0,y_0)&amp;=0,
+</mrow><mrow>
+f_x(x,y)&amp;= 2e^{2x}\sin(3y), &amp;
+      f_x(x_0,y_0)&amp;=0,
+</mrow><mrow>
+f_y(x,y)&amp;= 3e^{2x}\cos(3y), &amp;
+      f_y(x_0,y_0)&amp;=3,
+</mrow><mrow>
+f_{xx}(x,y)&amp;=4e^{2x}\sin(3y), &amp;
+      f_{xx}(x_0,y_0)&amp;=0,
+</mrow><mrow>
+f_{xy}(x,y)&amp;=6e^{2x}\cos(3y), &amp;
+      f_{xy}(x_0,y_0)&amp;= 6,
+</mrow><mrow>
+f_{yy}(x,y)&amp;=-9e^{2x}\sin(3y), &amp;\qquad
+      f_{yy}(x_0,y_0)&amp;=0
+</mrow>
+</md>,
+de sorte que l'approximation quadratique de <m>f</m> autour de <m>(0,0)</m> est
+<md>
+<mrow>
+f\big(x\,,\,y\big)
+&amp; \approx f(x, y)
+        +f_x(x, y) x+f_y(0, 0)y
+</mrow><mrow>
+&amp;\hskip1in+\frac{1}{2}\bigg[f_{xx}(0, 0)x^2
+              +2f_{xy}(0, 0) x y
+               +f_{yy}(0, 0) y^2\bigg]
+</mrow><mrow>
+&amp;=3y+6xy
+</mrow>
+</md>.
+C'est plutôt simple : il suffit de calculer un certain nombre de dérivées, de les évaluer et d'appliquer la formule <xref ref="eq-Taylor-2"/>.
+</p>
+
+<p>Mais il existe une autre façon, souvent plus efficace du point de vue des calculs. Elle utilise les résultats connus pour le calcul à une variable :
+<md>
+<mrow>
+e^{x}&amp;=1+x+\frac{1}{2!}x^2+\cdots
+\qquad \text{ et }
+\sin y &amp;=y - \frac{1}{3!}y^3+\cdots
+</mrow>
+</md>.
+Remplaçons <m>x</m> par <m>2x</m> dans la première égalité et <m>y</m> par <m>3y</m> dans la seconde. Après multiplication, et en ne gardant que les termes de degré au plus 2, nous obtenons
+<md>
+<mrow>
+f(x,y)&amp;= e^{2x}\sin(3y)\cr
+&amp;= \Big[1+(2x)+\frac{1}{2!}(2x)^2+\cdots\Big]
+   \Big[(3y) - \frac{1}{3!}(3y)^3+\cdots\Big]
+</mrow><mrow>
+&amp;= \Big[1+2x+2x^2+\cdots\Big]
+   \Big[3y - \frac{9}{2}y^3+\cdots\Big]
+</mrow><mrow>
+&amp;= 3y+6xy+6x^2y+\cdots
+   - \frac{9}{2}y^3- 9xy^3- 9x^2y^3+\cdots
+</mrow><mrow>
+&amp;=3y + 6xy + \cdots
+</mrow>
+</md>
+exactement comme dans le premier calcul.
+</p></example>
+
+<!-- 
+<exercise xml:id = "Taylor-01" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Taylor-01.pg"/>
+</exercise>
+
+<exercise xml:id = "Taylor-02" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Taylor-02.pg"/>
+</exercise>
+ -->
+
+
+</subsection>
+
+
+<subsection xml:id="pars-Borne-App-Lin">
+  <title>Une borne pour l'erreur dans l'approximation linéaire</title>
+  <p> Lorsque nous avons étudié la différentiabilité et comment utiliser l'approximation linéaire d'une fonction, nous avons vu comment calculer une valeur approchée de <m>f(\vr_0 + \De \vr)</m>, à savoir
+  <md>
+    <mrow xml:id = "Lin-approx-2d-bis" tag = "star"> f(\vr_0 + \De \vr) \approx f(\vr_0) + \vD f(\vr_0) \De \vr. </mrow>
+  </md>
+  Dans la pratique, il importe d'avoir une idée de la grandeur de l'erreur commise.
+  </p>
+  <p>
+    La formule de Taylor nous donne la réponse. On sait que, pour les fonctions à une variable, l'erreur est donnée par
+    <me>\frac{1}{2}g''(c_t)(t-t_0)^2</me>
+    pour un <m>c_t</m> entre <m>t_0</m> et  <m>t</m>.
+  </p>
+  <p>
+    Ceci s'adapte aux fonctions de plusieurs variables en suivant la même logique que précédemment. Cette fois, l'erreur sera donnée par
+    <me>
+      Hf(\vr_0 + c \vh)(\vh)
+    </me>
+    pour une valeur de  <m>c</m> entre <m>0</m> et <m>1</m>. Cette expression équivaut à
+    <me>
+      \frac{1}{2}\sum_{i,\,j\,=\,1}^n f_{x_i\, x_j}(\vr_0 + c \vh)\, h_i\, h_j
+    </me>.
+    Ainsi, si l'on peut borner les dérivées du second ordre de <m>f</m> au voisinage de <m>\vr_0</m>, on pourra borner l'erreur commise en utilisant l'approximation linéaire plutôt que la fonction elle-même.
+    </p>
+    <proposition xml:id="prop-Borne-err-LinApp">
+      <statement>
+        <p>Soit <m>f : \cD \to \R^n</m> de classe <m>C^2</m> et <m>\vr_0\in\cD</m> un point intérieur. Soit
+        <me>
+          L(\vr) = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0)
+        </me> l'approximation linéaire de <m>f</m> autour de <m>\vR_0</m>.
+      </p>
+      <p>Si <m>M\in \R</m> est tel que <m>\left|f_{x_i\, x_j}(\vr^\ast)\right| \leqslant M </m> pour tout <m>\vr^\ast</m> sur le segment joignant <m>\vr_0</m> et <m>\vr = \vr_0 +\vh</m>, alors
+      <me>
+        \left| f(\vr) - L(\vr) \right| \leqslant\frac{1}{2} M \left(\sum_{i\,=\,1}^n |h_i|\right)^2
+      </me>.
+      </p>
+      </statement>
+      <proof>
+        <p>
+          En effet, il existe un réel <m>c</m> entre <m>0</m> et <m>1</m> tel que l'erreur est
+          <md>
+            <mrow>|f(\vr) - L(\vr)| \amp = \left| f(\vr_0 + \vh) - L(\vr_0  + \vh)\right| = \left| \sum_{i,\,j\,=\,1}^n f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right| </mrow>
+            <mrow> \amp \leqslant  \sum_{i,\,j\,=\,1}^n \left| f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right|  </mrow>
+            <mrow>  \amp \leqslant \sum_{i,\,j\,=\,1}^n M |h_i|\, |h_j| = M \left( \sum_{i,\,j\,=\,1}^n |h_i|\right)^2 </mrow>
+          </md>.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      Voyons un exemple avec deux variables, c'est-à-dire <m>\vr = (x,y)</m>. Posons <m>\vh = \De \vr = (\De x, \De x) = (h_x,h_y)</m>.
+    </p>
+    <example xml:id="eg_error">
+      <title><xref ref="eg_approx_A"/>, revu</title>
+    <p>
+    Supposons que l'on veut approcher <m>\frac{(0.998)^3}{1.003}</m> comme à l'<xref ref="eg_approx_A"/> et que l'on veut une borne pour l'erreur d'approximation. C'est ce qu'on peut obtenir en appliquant ce qui précède. Soit
+    <me>
+    f(x,y)=\frac{x^3}{y}
+    </me>
+    et
+    <me>
+    x_0=1,\qquad
+    \De x=-0.002,\qquad
+    y_0=1,\qquad
+    \De y=0.003
+    </me>.
+    La valeur exacte est <m>f\big(x_0 + \De x,\,y_0+\De y\big)</m> et la valeur approchée est <m>f\big(x_0,\,y_0\big)
+           + \pdiff{f}{x}\big(x_0,\,y_0\big)\,\De x
+           + \pdiff{f}{y}\big(x_0,\,y_0\big)\,\De y</m>,
+    de sorte que l'erreur d'approximation est
+    <md>
+    <mrow>
+    \frac{1}{2}\left|
+            \frac{\partial^2 f}{\partial x^2}\big(\pmb{\g}(c)\big)\,\De x^2
+           +2\frac{\partial^2\ f}{\partial x\partial y}
+                                         \big(\pmb{\g}(c)\big) \,\De x\De y
+           + \frac{\partial^2 f}{\partial y^2}\big(\pmb{\g}(c)\big)\,\De y^2
+           \right|
+    </mrow>
+    </md>,
+    où
+       <m>\pmb{\g}(c) = (x_0, y_0) +c (\De x, \De y) =  \big(1-0.002 c\,,\,1+0.0003 c\big)</m>
+    pour un certain <m>0\leqslant  c\leqslant  1</m>. Pour notre fonction <m>f</m>,
+    <md>
+    <mrow>
+    f(x,y)&amp;=\frac{x^3}{y}, &amp;
+    \pdiff{f}{x}(x,y)&amp;=\frac{3 x^2}{y}, &amp;
+    \pdiff{f}{y}(x,y)&amp;=-\frac{x^3}{y^2},
+    </mrow><mrow>
+    \frac{\partial^2 f}{\partial x^2}(x,y)&amp;=\frac{6 x}{y}, &amp;
+    \frac{\partial^2 f}{\partial x\partial y}(x,y)&amp;=-\frac{3 x^2}{y^2}, &amp;
+    \frac{\partial^2 f}{\partial y^2}(x,y)&amp;=\frac{2 x^3}{y^3}
+    </mrow>
+    </md>.
+    Nous ne savons pas ce que  <m>\pmb{\g}(c)=\big(1-0.002 c\,,\,1+0.0003 c\big)</m> vaut, mais nous savons que  <m>0\leqslant  c\leqslant  1</m>, de sorte que la composante  <m>x</m> de <m>\pmb{\g}(c)</m> est inférieure à <m>1</m> et que la composante <m>y</m> de <m>\pmb{\g}(c)</m> est plus grande que <m>1</m>. Ainsi,
+    <md>
+    <mrow>
+    \left|\frac{\partial^2 f}{\partial x^2}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 6, &amp;
+    \left|\frac{\partial^2 f}{\partial x\partial y}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 3, &amp;
+    \left|\frac{\partial^2 f}{\partial y^2}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 2.
+    </mrow>
+    </md>
+    Nous pouvons donc choisir <m>M = 6</m>. On a alors, en vertu de la <xref ref="prop-Borne-err-LinApp"/>, que l'erreur vérifie
+    <md>
+    <mrow>
+    \text{erreur}
+    &amp;\leqslant \frac{1}{2} 6 \left(|\De x^2|  + |\De y|\right)^2
+    </mrow><mrow>
+    &amp; = 3\left(0.002 + 0.003\right)^2
+    </mrow><mrow>
+    &amp;= 0.000075
+    </mrow>
+    </md>.
+    Remarquons que cette borne est large, dans le sens que nous pouvons utiliser les valeurs maximales pour chacune des dérivées secondes, à savoir <m>6,3</m> et <m>2</m>, plutôt que la même valeur <m>6</m>. En effet, cette approche donnerait plutôt
+    <md>
+    <mrow>
+    \text{erreur}
+    &amp;\leqslant \frac{1}{2}\left[6\De x^2  +2\times 3 |\De x\,\De y| +2\De y^2\right]
+    </mrow><mrow>
+    &amp;\leqslant 3(0.002)^2 + 3(0.002)(0.003) +(0.003)^2
+    </mrow><mrow>
+    &amp;= 0.000039
+    </mrow>
+    </md>.
+    Pour des fins de comparaison, l'erreur est <m> 0.0000389</m>, à <m>10^{-7}</m> près.
+    </p></example>
+
+
+
+</subsection>
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Taylor.ptx"/>
+
+</section>

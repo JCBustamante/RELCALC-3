@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_lin_approx">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021, juin 2022-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Différentiabilité et approximations linéaires</title>
+<subsection xml:id="pars-Diffte-motiv">
+  <title>Motivation</title>
+  <p>
+    Soit <m>f</m> une fonction d'une variable réelle et <m>\cC</m> son graphe, c'est-à-dire la courbe d'équation <m>y=f(x)</m>. Si <m>f</m> est dérivable en <m>x_0</m>, près du point <m>(x_0, f(x_0))</m>, la courbe <m>\cC</m> ressemble à une droite, la tangente à <m>\cC</m> en ce point. L'équation de la tangente en question est
+    <md>
+      <mrow xml:id="eqn-Tgt1-var" tag = "star">
+      \amp y = y_0 + f'(x_0)(x-x_0)
+      </mrow>
+    </md>,
+   et la fonction <m>L(x) = f(x_0) + f'(x_0)(x-x_0)</m> est <em> l'approximation linéaire de <m>f</m> en <m>x_0</m></em><fn>Quoiqu'il serait plus exact de dire qu'il s'agit de <em>l'approximation affine de <m>f</m> en <m>x_0</m>.</em></fn>.
+ </p>
+
+
+<figure>
+  <caption>Graphe de <m>f(x) = x^3-15x^2+71x-65 </m> et de son approximation linéaire en <m>x=7/2</m> </caption>
+  <sidebyside widths="45% 45%">
+    <image xml:id="sageplot-approx-lin">
+      <sageplot>
+        var('x')
+        g(x) = (x-3)*(x-5)*(x-7)+40
+        f(x) = derivative(g,x)
+        g1 = plot(g, (x, 0, 8), axes_labels=['$x$', '$y$'], 
+                fontsize = 16, axes_labels_size = 1.6,  xmin=0, xmax=8, ymin=0, ymax=50)
+        g2 = plot(f(3.5)*(x-3.5)+g(3.5), (x,0, 8), rgbcolor='red')
+        g3 = point((3.5, g(3.5)),rgbcolor='black', pointsize=30)
+        graph = g1+g2+g3
+        graph
+      </sageplot>
+    </image>
+    <image xml:id="sageplot-approx-lin-zoom">
+      <sageplot>
+        var('x')
+        g(x) = (x-3)*(x-5)*(x-7)+40
+        f(x) = derivative(g,x)
+        g1 = plot(g, (x, 3.2, 3.8), axes_labels=['$x$', '$y$'],
+                fontsize = 16, axes_labels_size = 1.6, xmin=3.2, xmax=3.8, ymin=41, ymax=44)
+        g2 = plot(f(3.5)*(x-3.5)+g(3.5), (x,3.2, 3.8), rgbcolor='red')
+        g3 = point((3.5, g(3.5)),rgbcolor='black', pointsize=30)
+        graph = g1+g2+g3
+        graph
+      </sageplot>
+    </image>
+
+  </sidebyside>
+</figure>
+
+
+
+<p>
+  De même, supposons que nous avons une surface <m>\cS</m> donnée par <m>z=f(x,y)</m> qui est suffisamment lisse au point <m>(x_0,y_0,f(x_0,y_0))</m>. Plus on regarde <m>\cS</m> de près, plus elle aura l'air d'une portion de plan, qu'on conviendra d'appeler le <em>plan tangent</em> à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>.
+</p>
+<p>
+  Nous avons vu que les vecteurs <m>(1,0,f_x(x_0,y_0))</m> et <m>(0,1,f_y(x_0,y_0))</m> sont tangents à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>. Ils sont clairement non colinéaires, de sorte que leur produit vectoriel est un vecteur normal pour le plan tangent. <md>
+  <mrow>
+  \begin{bmatrix}1\\ 0\\ f_x(x_0,y_0)\end{bmatrix} \times \begin{bmatrix}0\\1 \\f_y(x_0,y_0)\end{bmatrix}&amp;=\det\left[\begin{matrix}\vi&amp; 1 &amp;0 \\
+                     \vj &amp; 0 &amp; 1  \\
+                     \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)\end{matrix}\right]
+  </mrow><mrow>
+  &amp;=-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk
+  </mrow>
+  </md>
+  </p>
+
+  <p>Le plan tangent à la surface  <m>z=f(x,y)</m> au point  <m>\big(x_0\,,\,y_0\,,\,f(x_0,y_0)\big)</m> est le plan passant par ce point et ayant pour vecteur normal <m>-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk</m>. L'équation du plan est donc
+  <me>
+  -f_x(x_0,y_0)\,(x-x_0) - f_y(x_0,y_0)\,(y-y_0) +\big(z-f(x_0,y_0)\big) =0
+  </me>,
+  ou encore
+  <me>
+  z = f(x_0,y_0) + f_x(x_0,y_0)\,(x-x_0) + f_y(x_0,y_0)\,(y-y_0)
+  </me>.
+  </p>
+  <p>
+    Pour résumer, on a le principe suivant.
+  </p>
+  <principle xml:id="principle-Plan-tg-idee">
+    <title>Quelques idées à retenir</title>
+    <p>
+      Soit <m>f</m> une fonction ayant des dérivées partielles en un point <m>(x_0,y_0)</m>.
+      <ol>
+        <li>
+          <p>
+            L'application définie par
+            <me>
+              L(x,y) = f(x_0,y_0) + f_x(x_0,y_0)\,(x-x_0) + f_y(x_0,y_0)\,(y-y_0)
+            </me>
+            sera appelée <terms>l'approximation linéaire de <m>f</m> en <m>(x_0,y_0)</m></terms>.
+            </p>
+        </li>
+        <li>
+          <p>
+            Le plan d'équation <m>z = L(x,y)</m> sera appelé le <terms>plan tangent à la surface <m>\cS : z = f(x,y)</m> en <m>x_0,y_0,f(x_0,y_0)</m></terms>.
+          </p>
+        </li>
+        <li>
+          <p>Le vecteur <m>-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk</m> est orthogonal à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>. La droite passant par <m>(x_0,y_0,f(x_0,z_0))</m> et dirigée par ce vecteur est la <terms>droite normale à <m>\cS</m> en ce point</terms>.
+
+          </p>
+        </li>
+      </ol>
+
+    </p>
+  </principle>
+
+
+
+  <p>
+  Remarquons aussi que si nous écrivons  <m>\vD f(x_0,y_0) = \begin{bmatrix}f_x(x_0,y_0) \amp f_y(x_0,y_0)\end{bmatrix}</m>, <m>\vr =  x\, \vi + y\, \vj</m> et <m>\vr_0 =x_0\, \vi + y_0\, \vj</m>, cette équation devient simplement
+  <me>
+    z= f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0)
+  </me>,
+  que nous comparerons à l'équation <xref ref="eqn-Tgt1-var"/> pour la droite tangente à une courbe d'équation <m>y = f(x)</m>.
+</p>
+<p>
+  Finalement, notons que, pour la discussion qui précède, seule l'existence des dérivées partielles a été nécessaire. Or, on sait que ceci n'est même pas une garantie de la continuité des fonctions! On ne peut donc pas espérer que l'approximation linéaire soit une bonne approximation, utile pour les applications.
+</p>
+
+</subsection>
+
+<subsection xml:id="pars-Differentiabilite">
+  <title>La différentiabilité</title>
+
+  <p>
+    Nous avons vu comment calculer l'approximation linéaire d'une fonction <m>f</m> autour d'un point <m>\vr_0</m>. Dans les applications, il importe de savoir à quel point il s'agit d'une bonne approximation.
+  </p>
+
+  <p>
+    Regardons le cas des fonctions à une variable. Supposons donc que nous avons une fonction <m>f</m>, dérivable en <m>x_0</m>. Son approximation linéaire en <m>x_0</m> est
+    <me>
+      L(x) = f(x_0) + f'(x_0)(x-x_0)
+    </me>.
+  </p>
+
+  <p>
+    La fonction et son approximation linéaire coïncident en <m>x_0</m>. Par ailleurs, on s'attend à ce que, pour <m>x</m> près de <m>x_0</m>, l'erreur commise lorsqu'on remplace <m>f(x)</m> par <m>L(x)</m> soit petite. Plus formellement, nous devons comparer l'écart <m>|f(x) - L(x)|</m> à <m>|x-x_0|</m>, c'est-à-dire que nous devons considérer le rapport
+    <md>
+      <mrow>\frac{|f(x) - L(x)|}{|x-x_0|} \amp  = \frac{f(x) - f(x_0) - f'(x_0)(x-x_0)}{|x-x_0|}</mrow>
+      <mrow> \amp  = \left|\frac{f(x) - f(x_0)}{x-x_0} - f'(x_0)\right|</mrow>
+    </md>.
+    Mais d'après la définition de <m>f'(x_0)</m>, cette quantité tend vers <m>0</m> lorsque <m>x\to x_0</m>. Ainsi, pour une fonction d'une variable, son approximation linéaire, aussitôt qu'elle existe, est une bonne approximation.
+  </p>
+
+  <p>
+    Ceci nous mène à la définition suivante.
+  </p>
+
+  <definition xml:id="def-Differentiabilite">
+    <statement>
+      <p>Soit <m>f:\cD \to \R</m> une fonction avec <m>\cD\subseteq \R^n</m> et <m>\vr_0</m> un point intérieur de <m>\cD</m>. La fonction <m>f</m> est <em>différentiable en </em> <m>\vr_0</m> s'il existe une matrice <m>T\in \R^{1\times n}</m> (c'est-à-dire une matrice à une rangée et à <m>n</m> colonnes) telle que
+      <me>
+        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} =0
+      </me>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+  Cette définition ne nous dit pas quelle est la matrice <m>T</m>, qu'il faut comprendre comme une transformation linéaire de <m>\R^n</m> à <m>\R</m>. Plus précisément, c'est la partie linéaire de la transformation affine <m>\vr \mapsto f(\vr_0) + T(\vr - \vr_0)</m>. Comme on s'y attend, on peut montrer que <m>T</m> est donnée par les dérivées partielles de <m>f</m> évaluées en <m>\vr_0</m>.
+  </p>
+  <theorem xml:id="thm-Diff-Df">
+    <statement>
+      <p>Soit <m>f</m> différentiable en <m>\vr_0</m> et <m>T = \left[\begin{matrix}t_1 \amp t_2\amp \cdots \amp t_n \end{matrix}\right]</m> comme dans la <xref ref="def-Differentiabilite"/>. Alors,
+      <me>
+        T = \vD f(\vr_0)
+      </me>,
+      ou encore <m>t_i = \pdiff{f}{x_i}(\vr_0)</m> pour <m>i\in \{1,\ldots, n\}</m>.
+      </p>
+      <p>
+        La matrice <m> \vD f(\vr_0)</m> est la <em>dérivée de <m>f</m> en <m>\vr_0</m></em>, et la fonction <m>L : \R^n \to \R</m> définie par <m>L(\vr) = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0)</m> est appelée l'approximation linéaire de <m>f</m> autour de <m>\vr_0</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Soit <m>f</m> différentiable en <m>\vr_0</m> et <m>T</m> comme dans la définition. Avant de poursuivre, notons que <m>T \ve_1 = t_1</m>.
+      </p>
+      <p>
+        Par ailleurs, posons <m>\vr = \vr_0 + h\ve_1</m>, nous aurons alors, en vertu de la différentiabilité de <m>f</m>, que
+      </p>
+      <md>
+        <mrow>0 \amp =   \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} </mrow>
+        <mrow> \amp  =   \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - T (h\ve_1)|}{|h\ve_1|}</mrow>
+        <mrow>  \amp = \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - h t_1|}{|h|} </mrow>
+        <mrow>  \amp= \lim_{h \to 0} \left|\frac{f(\vr) - f(\vr_0)}{h} - t_1 \right| </mrow>
+      </md>.
+      <p>
+        Ceci montre que <m>t_1 = \pdiff{f}{x_1}(\vr_0)</m>. Le reste de la preuve se fait de la même façon.
+      </p>
+    </proof>
+
+  </theorem>
+
+  <p>
+    Il est commun de poser <m>\De \vr = \vr - \vr_0</m>, de sorte que l'expression pour l'approximation linéaire devient
+    <me>
+      L(\vr_0 + \De \vr) = f(\vr_0) + \vD f(\vr_0)\De \vr
+    </me>.
+    </p>
+    <p>
+      Voyons un exemple.
+    </p>
+
+  <example xml:id="eg_approx_AA">
+  <p>
+  Soit <m>\vr = x \vi + y \vj</m> et   <m> f(\vr) = f(x,y) = \sqrt{x^2+y^2} </m>. Alors,
+  <md>
+  <mrow>
+  \pdiff{f}{x}(x,y)&amp;=\frac{1}{2}\,\frac{2x}{\sqrt{x^2+y^2}}, &amp;
+      f_x(x_0,y_0)&amp;=\frac{x_0}{\sqrt{x_0^2+y_0^2}},
+  </mrow><mrow>
+  \pdiff{f}{y}(x,y)&amp;=\frac{1}{2}\,\frac{2y}{\sqrt{x^2+y^2}}, &amp;
+      f_y(x_0,y_0)&amp;=\frac{y_0}{\sqrt{x_0^2+y_0^2}}.
+  </mrow>
+  </md>
+  Ainsi, <m>\displaystyle \vD f(\vr_0) = \begin{bmatrix}\frac{x_0}{\sqrt{x_0^2 + y_0^2}} \amp \frac{y_0}{\sqrt{x_0^2 + y_0^2}}   \end{bmatrix}</m>, et l'approximation linéaire cherchée est
+  <md>
+    <mrow> L(\vr) \amp= f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0) </mrow>
+    <mrow> \amp = \sqrt{x_0^2 +y_0^2}+ \begin{bmatrix}\frac{x_0}{\sqrt{x_0^2 + y_0^2}} \amp \frac{y_0}{\sqrt{x0^2 + y_0^2}}   \end{bmatrix} \begin{bmatrix}x-x_0\\ y-y_0\end{bmatrix}</mrow>
+    <mrow>  \amp= \sqrt{x_0^2+y_0^2}
+           + \frac{x_0}{\sqrt{x_0^2+y_0^2}} (x-x_0)
+           + \frac{y_0}{\sqrt{x_0^2+y_0^2}} (y-y_0) </mrow>
+  </md>,
+</p>
+  <p>
+    ou encore
+    <me>
+      L(x_0 + \De x, y_0 + \De y) = \sqrt{x_0^2+y_0^2}
+             + \frac{x_0}{\sqrt{x_0^2+y_0^2}}\, \De x
+             + \frac{y_0}{\sqrt{x_0^2+y_0^2}}\, \De y
+    </me>.
+  </p>
+
+
+
+  </example>
+
+  <!-- <exercise xml:id = "approx_lineaire_1_SL" component = "webwork">
+    <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/approx_lineaire_1_SL.pg"/>
+  </exercise> -->
+
+
+<p>
+  Avant de poursuivre, notons que la définition de différentiabilité est la même pour les fonctions à valeurs vectorielles, c'est-à-dire les fonctions de la forme <m>f :\cD \subseteq \R^n \to \R^m</m>. Dans ce cas, pour chaque <m>\vr</m> dans le domaine de <m>f</m>, nous avons que <m>f(\vr) \in \R^m</m>, c'est-à-dire que <m>f</m> a elle-même plusieurs composantes
+  <me>
+    f(\vr) = \left[ \begin{matrix} f_1(\vr)\\ \vdots \\ f_m(\vr) \end{matrix}\right].
+  </me>
+
+Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (de si peu!) le contenu de ce manuel.
+</p>
+<theorem xml:id="thm-Diffte-Gral">
+  <statement>
+    <p>Soit <m>f : \cD \subseteq \R^n \to \R^m</m> une fonction différentiable et <m>T\in \R^{m\times n}</m> une matrice telle que
+    <me>
+        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} =0.
+    </me>
+    Alors, toutes les dérivées partielles de toutes les composantes de <m>f</m> existent en <m>\vr_0</m>, et <m>T</m> est la matrice
+    <me>
+      \vD f(\vr_0) = \left[ \begin{matrix} \pdiff{f_1}{x_1} \amp \cdots \amp \pdiff{f_1}{x_n}\\ \pdiff{f_2}{x_1} \amp \ddots \amp \pdiff{f_2}{x_n}\\
+      \vdots \amp \vdots \amp \vdots \\
+      \pdiff{f_m}{x_1} \amp \cdots\amp \pdiff{f_m}{x_n} \end{matrix}\right].
+    </me>
+    Dans ce cas, l'approximation linéaire de <m>f</m> autour de <m>\vr_0</m> est <m>L(\vr) = f(\vr_0) + \vD f (\vr_0) (\vr - \vr_0)</m>. Encore une fois, la matrice <m>\vD f(\vr_0)</m> est la <em>dérivée de <m>f</m> en <m>\vr_0</m></em>.
+    </p>
+  </statement>
+</theorem>
+<p>
+  Nous pouvons regarder la définition du chemin tangent (voir la <xref ref="def-TUnitaire"/>) d'un autre œil. En effet, si <m>\vr : I \to \R^m</m> est un chemin, nous aurons
+  <me>
+    \vr(t) = \begin{bmatrix} x_1(t)\\ \vdots \\ x_m(t) \end{bmatrix}.
+  </me>
+</p>
+<p>
+  Dans ce cas, <m>\vD \vr(t_0)</m> est la matrice de <m>\R^{n\times 1}</m>, c'est-à-dire le vecteur colonne à  <m>m</m> composantes
+  <me>
+    \vD \vr(t_0) = \left[ \begin{matrix} x'_1(t_0)\\ \vdots \\ x'_m(t_0) \end{matrix}\right] = \vr'(t_0).
+  </me>
+  Il s'agit précisément du vecteur vitesse associé au chemin <m>\vr</m>. L'approximation linéaire de <m>\vr</m> est
+  <me>
+    L(t) = \vr(t_0) + \vD\vr(t_0)(t-t_0) = \vr(t_0) + \vr'(t_0)(t-t_0)
+  </me>,
+  c'est-à-dire le chemin tangent.
+</p>
+
+<p>
+  Notons que, pour les fonctions d'une seule variable, l'existence de la dérivée en un point équivaut à la différentiabilité en ce point. Avec des fonctions de plusieurs variables, les choses changent. Nous verrons plus bas un exemple de fonction dont les dérivées partielles existent, mais qui n'est pourtant pas différentiable. Pire, nous avons vu à l'<xref ref="eg_partials_DDD"/> qu'il est possible d'avoir des dérivées partielles sans même avoir la continuité!
+</p>
+<p>
+  La notion de différentiabilité telle que définie ci-haut peut être difficile à vérifier. Heureusement, nous disposons du résultat suivant.
+</p>
+
+<theorem xml:id="thm-C1-differentiable">
+  <statement>
+    <p>Soit <m>f:\cD\to \R</m> une fonction de classe <m>C^1</m>, c'est-à-dire que toutes les dérivées partielles du premier ordre sont continues. Alors, <m>f</m> est différentiable sur <m>\cD</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  Voyons quelques exemples.
+</p>
+
+<example xml:id="eg_cone-non-diff">
+  <statement>
+    <p>
+      Soit <m>f(x,y) = \sqrt{x^2 +y^2}</m>. Voir qu'elle n'est pas différentiable à l'origine.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <sidebyside widths="50% 40%">
+        <p>
+      Pour commencer, notons que le graphe de <m>f</m> est la moitié supérieure d'un cône. À l'origine, il n'y a pas de plan qui épouse bien la forme du cône : nous avons un coin prononcé, le graphe ne s'aplatit pas.
+        </p>
+        <image xml:id="sageplot-cone-diff-surf">
+            <sageplot variant="3d" aspect="1.0">
+              var('x,y,z')
+
+              f(x,y) = sqrt(x^2+y^2)
+
+              cm = colormaps.Spectral
+              zmin, zmax = 0,1
+              def c(x,y,z):
+                  return float((f(x,y)-zmin)/(zmax-zmin))
+              S= implicit_plot3d(z==f(x,y), (x,-1,1), (y,-1,1), (z,zmin,zmax), color = (c,cm),
+                                     region=lambda x,y,z:x^2+y^2+z^2 > 0.000000001,plot_points = 70, frame = False)
+
+              S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
+              S += text3d("x", (1.3,0,0), color = "black")
+              S += arrow3d((0,0,0),(0,1.2,0), color = "black",  width= 0.5)
+              S += text3d("y", (0,1.3,0), color = "black")
+              S += arrow3d((0,0,0),(0,0,0.8), color = "black", width = 0.5)
+              S += text3d("z", (0,0,0.9), color = "black")
+              S
+            </sageplot>
+        </image>
+        <!-- <image source="/images/Jupyter-sage/Cone-differentiable.png"/> -->
+      </sidebyside>
+
+    </p>
+    <p>
+      De façon plus analytique, calculons les dérivées partielles en <m>(0,0)</m>. Nous avons, d'après la définition,
+      <md>
+        <mrow>f_x(0,0)  \amp = \lim_{x\to 0}\frac{f(x,0) - f(0,0)}{x} = \lim_{x\to 0} \frac{\sqrt{x^2}}{x} = \lim_{x\to 0} \frac{|x|}{x}</mrow>
+      </md>,
+      et cette limite n'existe pas. De même, <m>f_y(0,0)</m> n'existe pas. Ainsi, l'approximation linéaire n'existe pas à l'origine. La fonction ne peut pas être différentiable en ce point.
+    </p>
+
+    <p>
+      Par ailleurs, étudions les courbes de niveau de <m>f</m>. D'une part, les courbes de niveau autour de l'origine : on voit bien qu'il s'agit de cercles. D'autre part, dans les deux autres figures, on a les courbes de niveau autour du point <m>(1/2, 1/2)</m>, avec deux facteurs d'agrandissement différents. En ce point, la fonction est différentiable. On observe que plus on regarde de près, plus ces courbes de niveau ressemblent à des droites, c'est-à-dire aux courbes de niveau des fonctions linéaires. C'est ce qu'on entend par <q>linéarité locale de <m>f</m></q>.
+
+        <figure>
+          <caption> Les courbes de niveau de <m>f</m>. À gauche, autour de l'origine. Les courbes sont des cercles. Au centre et à droite, les courbes de niveau autour de <m>(1/2,1/2)</m>. À mesure qu'on regarde de plus près, ces courbes se voient de plus en plus comme des droites.
+          </caption>
+          <sidebyside widths="30% 30% 30%">
+          <image xml:id="sageplot-cone-diff-a">
+              <sageplot>
+                var('x,y')
+                f(x,y) = sqrt(x^2 + y^2)
+                C = contour_plot(f ,(-0.2,0.2), (-0.2,0.2), axes = True,
+                  cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2), label_colors="black", label_inline=True,
+                  label_fontsize=16,
+                  gridlines=True, axes_labels=["$x$","$y$"],
+                  ticks = [[round(-0.2,1), round(-0.1,1) , 0, 
+                  round(0.1,1), round(0.2,1)],[round(-0.2,1), round(-0.1,1) , 0, round(0.1,1), round(0.2,1)]],
+                  tick_formatter = "latex", fontsize= 16)
+                C
+              </sageplot>
+          </image>
+          <image xml:id="sageplot-cone-diff-b">
+            <sageplot>
+              var('x,y')
+              f(x,y) = sqrt(x^2 + y^2)
+              C = contour_plot(f ,(0.3,0.7), (0.3,0.7), axes = True,
+                 contours = [0.5, 0.55, 0.6, 0.65, 0.7,0.75],
+                 cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2),
+                 label_colors="black", label_inline=True, label_fontsize=16,
+                 gridlines= [[0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7], [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7]], axes_labels=["$x$","$y$"],
+                 ticks = [[round(0.3,1),round(0.35,1), round(0.4,1), round(0.45,1) ,round(0.5,1) ,round(0.55,1) ,round(0.6,1), round(0.65,1)], [round(0.3,1),round(0.35,1), round(0.4,1), round(0.45,1) ,round(0.5,1) ,round(0.55,1) ,round(0.6,1), round(0.65,1)]],
+                 tick_formatter = "latex", fontsize= 16)
+              C
+            </sageplot>
+          </image>
+          <image xml:id="sageplot-cone-diff-c">
+              <sageplot>
+                var('x,y')
+                f(x,y) = sqrt(x^2 + y^2)
+                C = contour_plot(f ,(0.45,0.55), (0.45,0.55), axes = True,
+                 cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2),
+                 label_colors="black", label_inline=True, label_fontsize=16,
+                 gridlines= True,
+                 axes_labels=["$x$","$y$"],
+                 tick_formatter = "latex", fontsize= 16)
+                C
+              </sageplot>
+          </image>
+          </sidebyside>
+        </figure>
+
+
+
+    </p>
+  </solution>
+</example>
+
+
+<example xml:id="eg_cont-non-diff">
+  <statement>
+    <p>Considérer la fonction définie par <m>f(x,y) = \frac{xy}{\sqrt{x^2 + y^2}}</m> lorsque <m>(x,y) \ne (0,0)</m> et que <m>f(0,0) = 0</m>. Montrer que les dérivées partielles existent à l'origine, mais que la fonction n'est pas différentiable en ce point.
+
+    </p>
+  </statement>
+  <solution>
+    <p>Notons tout d'abord qu'il est aisé de montrer (par exemple en utilisant les coordonnées polaires) que la fonction <m>f</m> est continue à l'origine. On trouve son graphe ci-après, on remarque notamment qu'elle est sévèrement froissée à l'origine.
+    <figure xml:id="fig-Non-diff-mais-partielles">
+        <caption>La fonction <m> f(x,y)= \frac{xy}{\sqrt{x^+ y^2}}</m> possède des dérivées partielles, mais n'est pas différentiable à l'origine.</caption>
+        <image width="80%" xml:id = "img-Non-diff-mais-partielles">
+          <sageplot variant="3d" aspect="1.0">
+            var("x,y,z")
+            h(x,y)= x*y/sqrt(x^2 + y^2)
+            cm = colormaps.Spectral
+            zmin, zmax = -0.7, 0.7
+            def c(x,y,z):
+                    return float((h(x,y)-zmin)/(zmax-zmin))
+            S = implicit_plot3d(z==h, (x,-1,1), (y,-1,1), (z,zmin,zmax),
+              color = (c,cm), 
+              region=lambda x,y,z: x^2+y^2+z^2 > 0.001, 
+              frame = False)
+            S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
+            S += text3d("x", (1.3,0,0), color = "black")
+            S += arrow3d((0,0,0),(0,1.2,0), color = "black",  width= 0.5)
+            S += text3d("y", (0,1.3,0), color = "black")
+            S += arrow3d((0,0,0),(0,0,0.8), color = "black", width = 0.5)
+            S += text3d("z", (0,0,0.9), color = "black")
+            S
+          </sageplot>
+        </image>
+    </figure>
+    </p>
+    <p>
+      Par ailleurs, on calcule les dérivées partielles aisément :
+      <me>
+        f_x(0,0) = \lim_{x\to 0} \frac{f(x,0) - f(0,0)}{x} = \lim_{x\to 0} \frac{0-0}{x} =0.
+      </me>
+      On calcule de même <m>f_y(0,0) = 0</m>.
+
+      Ainsi, <m>L(\vr)</m>, l'approximation linéaire de <m>f</m> autour de <m>(0,0)</m>, est la fonction constante égale à zéro.
+    </p>
+    <p>
+      Ci-bas, on trouve les courbes de niveau de la fonction <m>f</m> près de l'origine. On voit tout de suite qu'elles ne ressemblent pas à celles d'une fonction linéaire. Ceci suggère que la fonction <m>f</m> n'est pas différentiable en <m>(0,0)</m>. Voyons ceci de façon plus formelle.
+      <figure xml:id="figure-Non-differentiable">
+        <caption>Les courbes de niveau de <m>f</m> près de l'origine, vues de près. Elles ne ressemblent pas à celles d'une fonction linéaire.</caption>
+         <image xml:id="sageplot-Non-differentiable" width="80%">
+           <description>Courbes de niveau d'une fonction non différentiable.</description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x*y/sqrt(x^2+ y^2)
+            C = contour_plot(f ,(-0.2,0.2), (-0.2,0.2), axes = True,
+              cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2), label_colors="black", label_inline=True,
+              label_fontsize=12, gridlines=True, axes_labels=["$x$","$y$"],
+              tick_formatter = "latex",
+              ticks = [[round(-0.2,1),round(-0.1,1), 0, round(0.1,1), 
+              round(0.2,1)], [round(-0.2,1),round(-0.1,1) ,0, round(0.1,1),
+              round(0.2,1)]],
+              fontsize= 12)
+            C
+          </sageplot>
+        </image>
+      </figure>
+    </p>
+    <p>
+      En effet, nous avons
+      <me>
+        \frac{|f(\vr) - L(\vr)|}{\vr - \vZero} = \frac{|f(\vr)|}{|\vr|} = \frac{\frac{xy}{\sqrt{x^2 + y^2}}}{\sqrt{x^2 + y^2}} = \frac{xy}{x^2 + y^2}
+      </me>,
+      et cette quantité ne tend pas vers <m>0</m> lorsque <m>(x,y)\to (0,0)</m>.
+    </p>
+    <p>
+      À la lumière du <xref ref="thm-C1-differentiable"/>, nous pouvons conclure qu'au moins une des dérivées partielles de la fonction <m>f</m> n'est pas continue à l'origine.
+    </p>
+
+
+
+  </solution>
+</example>
+
+<p>
+  Si une fonction <m>f</m> est différentiable autour d'un point, c'est qu'elle peut être bien approchée par une fonction linéaire près de ce point. Ces dernières étant continues partout, on a, sans surprise :
+</p>
+
+<theorem xml:id="thm-Diff-continue">
+  <statement>
+    <p>Soit <m>f:\cD \to \R</m> une fonction différentiable en un point intérieur <m>\vr_0\in \cD</m>. Alors, <m>f</m> est continue en <m>\vr_0</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  Notons encore une fois qu'il est possible d'avoir l'existence des dérivées partielles sans la continuité, comme à l'<xref ref="eg_partials_DDD"/>, et l'existence des dérivées partielles sans la différentiabilité, comme à l'<xref ref="eg_cont-non-diff"/>. Par ailleurs, il est possible d'avoir des fonctions qui sont différentiables, sans être de classe <m>C^1</m> (on voit un tel exemple plus bas, il s'agit d'une fonction d'une seule variable).
+</p>
+
+<example>
+  <statement>
+    <p>
+      Soit la fonction <m>f</m> définie par
+      <me>
+      f(x,y)=\begin{cases}
+                   x^2 \sin (1/x)&amp;\text{ si } x\ne 0 \\
+                          0&amp;\text{si } x=0
+              \end{cases}
+      </me>.
+      Utiliser les définitions pour montrer que <m>f</m> est continue et différentiable en <m>x=0</m>, mais que sa dérivée n'est pas continue en ce point.
+
+
+    </p>
+  </statement>
+</example>
+
+<p>
+  Les règles usuelles pour le calcul des dérivées tiennent encore pour les fonctions à plusieurs variables.
+</p>
+<theorem xml:id="thm-Derivee">
+  <statement>
+    <p>Soit <m>\cD\subseteq \R</m> et <m>f,g:\cD \to \R</m> différentiables en un point <m>\vr_0</m> à l'intérieur de <m>\cD</m>. Alors :
+    </p>
+    <ol>
+      <li>
+        <p>
+          Pour <m>c\in \R</m>, la fonction <m>cf : \vr \mapsto c f(\vr)</m> est différentiable en <m>\vr_0</m>, et <me>\vD(cf)(\vr_0) = c\,\vD(f)(\vr_0)</me>;
+        </p>
+      </li>
+      <li>
+        <p>
+          La fonction <m>f+g : \vr \mapsto f(\vr) + g(\vr)</m> est différentiable en <m>\vr_0</m>, et <me>\vD(f+g)(\vr_0) = \vD f (\vr_0) + \vD g(\vr_0)</me>;
+        </p>
+      </li>
+      <li>
+        <p>
+          Si <m>m=1</m>, on peut multiplier les résultats des fonctions <m>f</m> et <m>g</m>. La fonction <m>fg : \vr \mapsto f(\vr)\, g(\vr)</m> est différentiable en <m>\vr_0</m>, et <me>\vD(fg)(\vr_0) = \vD f(\vr_0)\, g(\vr_0) + f(\vr_0)\, \vD g(\vr_0)</me>;
+        </p>
+      </li>
+      <li>
+        <p>Si <m>m=1</m> et que <m>g(\vr) \ne 0 </m> sur <m>\cD</m>, alors la fonction <m>\frac{f}{g}:\vr \mapsto \frac{f(\vr)}{g(\vr)}</m> est différentiable en <m>\vr_0</m>, et <me>
+          \vD\left(\frac{f}{g}\right)(\vr_0) = \frac{\vD f (\vr_0)\, g(\vr_0) - f(\vr_0)\,\vD g(\vr_0)}{g(\vr_0)^2}
+        </me>.
+
+
+        </p>
+      </li>
+    </ol>
+
+  </statement>
+</theorem>
+</subsection>
+
+
+
+
+<subsection xml:id="pars-erreurs-lin">
+  <title>La différentielle et l'estimation des erreurs</title>
+
+
+<p>
+  Soit <m>f : \cD \to \R</m> différentiable en <m>\vr_0</m>, et posons <m>\De \vr = \vr - \vr_0</m>. Pour tout <m>\e \gt 0</m>, nous avons que, lorsque <m>\De \vr</m> est suffisamment petit,
+  <me>
+    \frac{|f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)|}{|\De \vr|} \lt \e
+  </me>,
+  c'est-à-dire
+  <me>
+    |f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)| \lt \e |\De \vr|.
+  </me>
+ De là, on tire un version raffinée du <xref ref="principle-continuite"/>.
+</p>
+<principle xml:id="principle-App-Lin">
+  <statement>
+    <p> Si <m>f</m> est différentiable en <m>\vr_0</m>, on peut estimer les valeurs de <m>f</m> près de <m>\vr_0</m> au moyen de son approximation linéaire
+    <md>
+      <mrow xml:id = "Lin-approx-2d" tag = "star"> f(\vr_0 + \De \vr) \approx f(\vr_0) + \vD f(\vr_0) \De \vr. </mrow>
+    </md>
+
+    </p>
+  </statement>
+</principle>
+
+<!--
+<p> Spécialisons ce qui précède définition aux cas communs <m>n=2, 3</m>
+  <ul>
+    <li>
+      <p>
+        Lorsque <m>n=2</m> et <m>f</m> est <m>f(x,y)</m>, l'approximation linéaire autour de <m>(x_0,y_0)</m> est
+        <md>
+            <mrow>
+                L\big(x,y\big)
+                &amp;= f\big(x_0\,,\,y_0\big)
+         + \pdiff{f}{x}\big(x_0\,,\,y_0\big)\,\De x
+         + \pdiff{f}{y}\big(x_0\,,\,y_0\big)\,\De y
+  </mrow>
+  </md>
+  ou, si on garde à l'esprit le point d'évaluation des dérivées partielles
+  <md>
+    <mrow>L(x,y) =f(x_0,y_0) +  \pdiff{f}{x}(x-x_0) + \pdiff{f}{y}(y-y_0) \amp </mrow>
+  </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Lorsque <m>n=3</m> et <m>f</m> est <m>f(x,y,z)</m>, l'approximation linéaire autour de <m>(x_0,y_0,z_0)</m> est
+        <md>
+        <mrow>
+        &amp;L\big(x,y,z)
+        </mrow><mrow>
+        &amp;\hskip0.25in= f\big(x_0\,,\,y_0\,,\,z_0\big)
+               + \pdiff{f}{x}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De x
+               + \pdiff{f}{y}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De y
+        </mrow><mrow>
+        &amp;\hskip2in                + \pdiff{f}{z}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De z
+        </mrow>
+        </md>
+        ou, si on garde à l'esprit le point d'évaluation des dérivées partielles
+        <md>
+          <mrow>L(x,y) = f(x_0,y_0,z_0) + \pdiff{f}{x}(x-x_0) + \pdiff{f}{y}(y-y_0) + \pdiff{f}{z}(z-z_0)\amp </mrow>
+        </md>
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  On retrouve notamment l'équation du plan tangent à la surface <m>z = f(x,y)</m> au point <m>(x_0,y_0,f(x_0,y_0))</m>.
+</p>
+
+-->
+
+
+
+<p>
+  Remarquons que si nous posons <m>\De f = f(\vr) - f(\vr_0)</m>, alors <xref ref="Lin-approx-2d"/> s'écrit<fn>Qu'on comparera à <m>\De g \approx g'(t_0) \De g</m>, expression commune dans les cours de calcul à une variable.</fn>
+  <me>
+      \De f \approx \vD f (\vr_0) \De \vr
+  </me>.
+</p>
+
+<p>
+  Pour les fonctions à deux variables, si l'on pose <m>z = f(x,y)</m>, il est usuel d'écrire
+  <me>
+      \De z \approx \vD f (\vr_0) \De \vr = \pdiff{f}{x}(x_0,y_0)\De x + \pdiff{f}{y}(x_0,y_0)\De y
+  </me>,
+et une adaptation évidente est faite si l'on a une fonction de trois variables et l'on pose <m>w=f(x,y,z)</m>.
+</p>
+
+<p>
+  Il faut bien noter que <m>\De f = f(\vr)- f(\vr_0)</m> est la variation réelle de <m>f</m> lorsque le point d'évaluation passe de <m>\vr_0</m> à <m>\vr</m>. Par ailleurs, la quantité <m>\vD f(\vr_0)(\vr - \vr_0)</m> est la variation dans l'approximation linéaire de <m>f</m>. Cette quantité est souvent appelée la <em>différentielle de <m>f</m> en <m>\vr_0</m></em>, et l'on écrit
+  <me>
+      df = \vD f(\vr_0) \De \vr.
+  </me>
+  Comme l'écart <m> \De \vr</m> est arbitraire (et par analogie avec l'usage dans le contexte des fonctions à une variable), on écrit <m>d\vr</m> au lieu de <m>\De \vr</m>, et la formule ci-haut devient
+
+  <md>
+    <mrow xml:id = "Diff" tag = "dstar">        
+      df = \vD f(\vr_0) d\vr,\amp </mrow>
+  </md>
+
+
+  qu'on comparera avec la formule <m>dg = g'(t_0)\, dt</m> vue dans les cours de calcul différentiel des fonctions à une variable.
+
+</p>
+
+<figure xml:id="F_10_4_differential" >
+  <caption>La différentielle <m>df</m> approche la variation <m>\De f</m> de <m>f(x,y)</m>. Figure provenant de "Active Calculus".</caption>
+  <image width="70%" source="images/AC3-images/fig_10_4_tangent_10" />
+</figure>
+
+<p>
+  De nouveau, et au risque de paraître redondants, spécialisons <xref ref="Diff"/> aux fonctions à deux ou trois variables.
+  <ul>
+    <li>
+      <p>
+        Pour les fonctions à deux variables,
+        <md>
+          <mrow>df \amp = f_x(x_0,y_0)dx + f_y(x_0,y_0)dy </mrow>
+          <mrow> \amp = \pdiff{f}{x}(x_0,y_0)dx + \pdiff{f}{y}(x_0,y_0)dx </mrow>
+        </md>,
+        ou encore
+        <me>
+            df = f_x dx + f_y dy = \pdiff{f}{x}dx + \pdiff{f}{y} dy
+        </me>.
+
+      </p>
+    </li>
+    <li>
+      <p>
+        Pour les fonctions à trois variables,
+        <md>
+          <mrow>df \amp = f_x(x_0,y_0)dx + f_y(x_0,y_0)dy + f_z(x_0,y_0) dz</mrow>
+          <mrow> \amp = \pdiff{f}{x}(x_0,y_0,z_0)dx + \pdiff{f}{y}(x_0,y_0,z_0)dy + \pdiff{f}{z}(x_0,y_0,z_0)dz </mrow>
+        </md>,
+        ou encore
+        <me>
+            df = f_x\, dx + f_y\, dy + f_z\, dz = \pdiff{f}{x}\,dx + \pdiff{f}{y}\, dy + \pdiff{f}{z}\, dz
+        </me>.
+
+      </p>
+    </li>
+  </ul>
+</p>
+<!-- 
+<exercise xml:id="differentielle_1" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/differentielle_1.pg"/>
+</exercise>
+
+<exercise xml:id="differentielle_3" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/differentielle_3.pg"/>
+</exercise>
+ -->
+
+
+
+
+<definition xml:id="def_error">
+    <title>Erreurs</title>
+<statement><p>
+Soit <m>Q</m> une quantité approchée par  <m>Q+\De Q</m>. Alors :
+<ul>
+<li>
+l'erreur absolue dans l'approximation est <m>|\De Q|</m>;
+</li>
+<li>
+l'erreur relative dans l'approximation est  <m>\left|\frac{\De Q}{Q}\right|</m>;
+</li>
+<li>
+le pourcentage d'erreur est
+<m>100\left|\frac{\De Q}{Q}\right|</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>Voyons maintenant quelques exemples.
+</p>
+
+<example xml:id="eg_approx_A">
+<statement>
+<p>
+Trouver une valeur approchée de  <m>\frac{(0.998)^3}{1.003}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Soit  <m>f(x,y) = \dfrac{x^3}{y}</m>. Nous allons trouver une valeur approchée de  <m>f(0.998,\,1.003)</m>. On calcule aisément
+<m>f(1,1) = \frac{1^3}{1}=1 </m>
+et, puisque
+<me>
+\pdiff{f}{x}=\frac{3x^2}{y}\qquad \text{et}\qquad
+\pdiff{f}{y}=-\frac{x^3}{y^2}
+</me>,
+on trouve aussi
+<me>
+
+\pdiff{f}{x}(1,1) = 3\frac{1^2}{1}=3 \qquad \text{et} \qquad
+\pdiff{f}{y}(1,1)  = 1\frac{1^3}{1^2}=-1
+
+</me>.
+Ainsi, on pose  <m>\De x=-0.002</m> et <m>\De y=0.003</m>, ce qui donne
+<md>
+<mrow>
+\frac{0.998^3}{1.003}
+&amp;=f(0.998,\,1.003)
+=f(1+\De x,\,1+\De y)
+</mrow><mrow>
+&amp;\approx f\big(1,1\big)
+       + \pdiff{f}{x}\big(1,1\big)\,\De x
+       + \pdiff{f}{y}\big(1,1\big)\,\De y
+</mrow><mrow>
+&amp;\approx 1 +3(-0.002)-1(0.003)
+=0.991
+</mrow>
+</md>.
+On comparera cette valeur à la valeur exacte avec 7 décimales, à savoir  <m>0.9910389</m>.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_approx_B">
+<statement>
+<p>
+Trouver une valeur approchée de <m>(4.2)^{1/2} + (26.7)^{1/3} + (256.4)^{1/4}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Soit <m>f(x,y,z) = x^{1/2} + y^{1/3} + z^{1/4}</m>. Afin d'approcher
+<m>f(4.2\,,\,26.7\,,\,256.4)</m>, nous calculons
+<md>
+<mrow>
+f(4,27,256) &amp;= (4)^{1/2} + (27)^{1/3} + (256)^{1/4} = 2+3+4 =9
+</mrow>
+</md>,
+et puisque
+<me>
+\pdiff{f}{x}=\frac{1}{2x^{1/2}},\qquad
+\pdiff{f}{y}=\frac{1}{3y^{2/3}}\text{ et }\qquad
+\pdiff{f}{z}=\frac{1}{4z^{3/4}}
+</me>,
+on trouve facilement
+<md>
+<mrow>
+\pdiff{f}{x}(4,27,256) &amp;= \frac{1}{2(4)^{1/2}} =\frac{1}{2}\times\frac{1}{2},
+</mrow><mrow>
+\pdiff{f}{y}(4,27,256) &amp;= \frac{1}{3(27)^{2/3}}=\frac{1}{3}\times\frac{1}{9},
+</mrow><mrow>
+\pdiff{f}{z}(4,27,256) &amp;= \frac{1}{4(256)^{3/4}}=\frac{1}{4}\times\frac{1}{64}
+</mrow>
+</md>.
+Ainsi, si l'on pose  <m>\De x=0.2</m>, <m>\De y=-0.3</m> et <m>\De z=0.4</m>, on aura
+<md>
+<mrow>
+&amp;(4.2)^{1/2} + (26.7)^{1/3} + (256.4)^{1/4}
+=f(4.2,\,26.7,\,256.4)
+</mrow><mrow>
+&amp;\hskip0.5in=f(4+\De x,\,27+\De y,\,256+\De z)
+</mrow><mrow>
+&amp;\hskip0.5in\approx f\big(4,27,256\big)
+       + \pdiff{f}{x}\big(4,27,256\big)\,\De x
+       + \pdiff{f}{y}\big(4,27,256\big)\,\De y
+</mrow><mrow>
+&amp;\hskip1in  + \pdiff{f}{z}\big(4,27,256\big)\,\De z
+</mrow><mrow>
+&amp;\hskip0.5in\approx 9 +\frac{0.2}{2\times2}-\frac{0.3}{3\times9}
+            +\frac{0.4}{4\times64}
+ = 9+\frac{1}{20}-\frac{1}{90}+\frac{1}{640}
+</mrow><mrow>
+&amp;\hskip0.5in=9.0405
+</mrow>
+</md>
+arrondi à <m>10^{-5}</m>. On peut calculer avec une calculatrice ou un ordinateur que la valeur à <m>10^{-5}</m> près est <m>9.03980</m>.
+</p>
+
+<p>Ceci fait une différence de
+<me>
+100\frac{9.0405-9.0398}{9}\%
+=0.008\ \%
+</me>.
+Remarquons que nous aurions pu, dans ce cas, utiliser les techniques de calcul différentiel à une variable pour approcher <m>(4.2)^{1/2}</m>, <m>(26.7)^{1/3}</m>  et  <m>(256.4)^{1/4}</m>, puis additionner les résultats. En fait, ce qu'on a fait est équivalent.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_error_C">
+<statement>
+<sidebyside widths="65% 28%">
+  <p>
+  Un triangle a des côtés de longueur <m>a=10.1</m> cm et <m>b=19.8</m> cm formant un angle de <m>35^\circ</m>. On veut calculer une valeur approchée de l'aire du triangle.
+  </p>
+  <image source="images/CLP-figs/triangleError"/>
+
+</sidebyside>
+
+</statement>
+
+<solution>
+<p>
+Le triangle a pour hauteur  <m>h=a\sin\theta</m>, de sorte que l'aire est
+<me>
+A(a,b,\theta) = \frac{1}{2} bh =\frac{1}{2} ab\sin\theta
+</me>.
+Le facteur <m>\sin\theta</m> dans cette formule cache un piège. Nous devons calculer la dérivée de <m>\sin\theta</m>, mais la formule usuelle <m>\diff{}{\theta}\sin\theta =\cos\theta</m> n'est vraie que si  <m>\theta</m> est mesuré en radians <mdash/> pas en degrés.
+</p>
+
+<p>Nous devons donc transformer  <m>35^\circ</m> en
+<me>
+35^\circ = (30+5) \frac{\pi}{180}\ \text{radians}
+         =\Big(\frac{\pi}{6} + \frac{\pi}{36}\Big)\ \text{radian}
+</me>
+Nous devons donc approcher la valeur de
+<m>A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36}\big)</m>.
+Nous allons choisir naturellement
+<md>
+<mrow>
+a_0&amp;=10,    &amp;  b_0&amp;=20,    &amp; \theta_0&amp;=\frac{\pi}{6},
+</mrow><mrow>
+\De a&amp;=0.1, &amp; \De b&amp;=-0.2, &amp; \De\theta&amp;=\frac{\pi}{36}
+</mrow>
+</md>.
+On évalue donc
+<md>
+<mrow>
+A\big(a_0,b_0,\theta_0\big)
+&amp;=\frac{1}{2}a_0b_0\sin\theta_0 =\frac{1}{2}(10)(20)\frac{1}{2}=50,
+</mrow><mrow>
+\pdiff{A}{a}\big(a_0,b_0,\theta_0\big)
+&amp;=\frac{1}{2}b_0\sin\theta_0 =\frac{1}{2}(20)\frac{1}{2} =5,
+</mrow><mrow>
+\pdiff{A}{b}\big(a_0,b_0,\theta_0\big)
+&amp;=\frac{1}{2}a_0\sin\theta_0 =\frac{1}{2}(10)\frac{1}{2} =\frac{5}{2},
+</mrow><mrow>
+\pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)
+&amp;=\frac{1}{2}a_0b_0\cos\theta_0 =\frac{1}{2}(10)(20)\frac{\sqrt{3}}{2}
+ = 50\,\sqrt{3}
+</mrow>
+</md>,
+de sorte que l'approximation linéaire est
+<md>
+<mrow>
+\text{Aire} &amp; = A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36}\big)
+              = A(a_0+\De a,\,b_0+\De b,\,\theta_0+\De\theta\big)
+</mrow><mrow>
+&amp;\approx A\big(a_0,b_0,\theta_0\big)
+    + \pdiff{A}{a}\big(a_0,b_0,\theta_0\big)\De a
+    + \pdiff{A}{b}\big(a_0,b_0,\theta_0\big)\De b
+</mrow><mrow>
+&amp;\hskip1in + \pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)\De\theta
+</mrow><mrow>
+&amp;=50 +5\times 0.1  +\frac{5}{2}\times (-0.2) +50\sqrt{3}\frac{\pi}{36}
+</mrow><mrow>
+&amp;=50 +\frac{5}{10}  -\frac{5}{10} +50\sqrt{3}\frac{\pi}{36}
+</mrow><mrow>
+&amp;=50\left(1+\sqrt{3}\frac{\pi}{36}\right)
+</mrow><mrow>
+&amp;\approx 57.56
+</mrow>
+</md>
+à deux décimales près. La valeur exacte, à deux décimales près, est <m>57.35</m>. Notre approximation entraîne une erreur d'à peu près
+<me>
+100\ \frac{57.56-57.35}{57.35}\%
+=0.37\ \%
+</me>.
+</p>
+</solution>
+</example>
+
+<!-- 
+<exercise xml:id = "differentielle_prob_1" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/differentielle_prob_1.pg"/>
+</exercise> -->
+
+
+<p>Une autre application des erreurs dues aux approximations linéaires est l'étude de comment les erreurs faites lors de mesures se propagent lors de calculs qui utilisent ces valeurs. Voyons un exemple.
+</p>
+
+
+
+<example xml:id="eg_error_D"><title><xref ref="eg_error_C"/>, suite</title>
+<p>
+Supposons que, comme à l'<xref ref="eg_error_C"/>, nous voulons déterminer l'aire d'un triangle en mesurant les longueurs de deux côtés et l'angle qu'ils forment, avec la formule
+<m>
+A(a,b,\theta) = \frac{1}{2} ab\sin\theta
+</m>.
+Bien entendu, dans le monde réel<fn>Dans notre <q>monde réel</q>, tout le monde utilise le calcul.</fn>, on ne peut pas mesurer les longueurs et les angles de façon exacte. Ainsi, si l'on a besoin de connaître l'aire avec une erreur relative d'au plus 1 %,  le problème devient : <q>Avec quelle précision doit-on calculer les longueurs et l'angle si l'on veut que l'aire calculée n'ait pas une erreur supérieure à 1 %?</q>
+</p>
+
+<p>Soit  <m>a_0</m> et  <m>b_0</m> les longueurs exactes des côtés et
+<m>\theta_0</m> celle de l'angle, ainsi que  <m>a_0+\De a</m>, <m>b_0+\De b</m> et <m>\theta_0+\De\theta</m> les valeurs mesurées, de sorte que <m>\De a</m>, <m>\De b</m> et <m>\De\theta</m> représentent les erreurs de nos mesures. Alors, l'erreur dans l'aire calculée sera approximativement
+<md>
+<mrow>
+\De A &amp;\approx \pdiff{A}{a}\big(a_0,b_0,\theta_0\big)\,\De a
+    + \pdiff{A}{b}\big(a_0,b_0,\theta_0\big)\,\De b
+    + \pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)\,\De\theta
+</mrow><mrow>
+&amp;=\frac{\De a}{2} b_0\sin\theta_0
+   +\frac{\De b}{2} a_0\sin\theta_0
+   +\frac{\De \theta}{2} a_0b_0\cos\theta_0
+</mrow>
+</md>,
+et le pourcentage d'erreur sera
+<md>
+<mrow>
+100\frac{|\De A|}{A(a_0,b_0,\theta_0)}
+&amp;\approx \left|  100\frac{\De a}{a_0} + 100\frac{\De b}{b_0}
+                  +100\De\theta\frac{\cos\theta_0}{\sin\theta_0} \right|
+</mrow>
+</md>.
+En vertu de l'inégalité du triangle, à savoir <m>|u+v|\leqslant |u|+|v|</m>, et du fait que
+<m>|uv|=|u|\ |v|</m>,
+<md>
+<mrow>
+&amp;\left|  100\frac{\De a}{a_0} + 100\frac{\De b}{b_0}
+                  +100\De\theta\frac{\cos\theta_0}{\sin\theta_0} \right|
+</mrow><mrow>
+&amp;\hskip1in\leqslant  100\left|\frac{\De a}{a_0}\right| + 100\left|\frac{\De b}{b_0} \right|
+             +100|\De\theta|\ \left|\frac{\cos\theta_0}{\sin\theta_0} \right|
+</mrow>
+</md>.
+Nous voulons que cette quantité soit inférieure à <m>1</m>.
+</p>
+
+<p>Bien entendu, nous ne connaissons pas exactement  <m>a_0</m>, <m>b_0</m> ni <m>\theta_0</m>. Mais supposons que nous avons confiance dans le fait que  <m>a_0\geqslant 10</m>, <m>b_0\geqslant 10</m> et  <m>\frac{\pi}{6}\leqslant \theta_0 \leqslant \frac{\pi}{2}</m>, de sorte que
+<m>\cot\theta_0\leqslant  \cot\frac{\pi}{6}=\sqrt{3}\leqslant 2</m>. Alors,
+<md>
+<mrow>
+100\left|\frac{\De a}{a_0}\right|&amp;\leqslant 100\left|\frac{\De a}{10}\right|
+                                 = 10\,|\De a|,
+</mrow><mrow>
+ 100\left|\frac{\De b}{b_0} \right|&amp;\leqslant  100\left|\frac{\De b}{10} \right|
+                                = 10\,|\De b|,
+</mrow><mrow>
+100|\De\theta|\ \left|\frac{\cos\theta_0}{\sin\theta_0} \right|
+       &amp;\leqslant 100|\De\theta|\ 2
+       =200\,|\De\theta|
+</mrow>
+</md>
+et
+<md>
+<mrow>
+100\frac{|\De A|}{A(a_0,b_0,\theta_0)}
+\lesssim 10\,|\De a| + 10\,|\De b| +200\,|\De\theta|
+</mrow>
+</md>,
+de sorte qu'il suffira d'avoir des erreurs de mesure <m>|\De a|</m>, <m>|\De b|</m> et <m>|\De\theta|</m> vérifiant
+<me>
+10\,|\De a| + 10\,|\De b| +200\,|\De\theta| \lt 1
+</me>.
+</p></example>
+
+<example xml:id="eg_errors_in_measurement">
+<statement>
+
+<p>Supposons que trois variables sont mesurées avec un pourcentage d'erreur <m>\veps_1,\ \veps_2</m> et <m>\veps_3</m> respectivement. En d'autres termes, si la valeur exacte de la variable  <m>i</m> est <m>x_i</m> et que l'erreur mesurée de cette même variable est <m>x_i+\De x_i</m>, alors
+<me>
+100\ \left|\frac{\De x_i}{x_i}\right|=\veps_i
+</me>.
+Supposons de plus qu'une quantité  <m>P</m> se calcule comme le produit de trois variables. Ainsi, la valeur exacte de  <m>P</m> est
+<m>
+P(x_1,x_2,x_3)=x_1x_2x_3
+</m>,
+et la valeur calculée à partir des mesures est  <m>P(x_1+\De x_1,\,x_2+\De x_2,\,x_3+\De x_3)</m>.
+Quel est le pourcentage d'erreur dans cette valeur calculée de <m>P</m>?
+</p>
+</statement>
+
+<solution>
+<p>Le pourcentage d'erreur dans la valeur calculée
+<m>P(x_1+\De x_1,\,x_2+\De x_2,\,x_3+\De x_3)</m> est
+<me>
+100\ \left|\frac{P(x_1+\De x_1,\,x_2+\De x_2,\,x_3+\De x_3)-P(x_1,x_2,x_3)}
+               {P(x_1,x_2,x_3)}\right|
+</me>.
+On peut obtenir une valeur approchée beaucoup plus simple qui est souvent suffisante dans les applications. L'approximation linéaire donne
+<md>
+<mrow>
+P(x_1+\De &amp;x_1,\,x_2+\De x_2,\,x_3+\De x_3)
+</mrow><mrow>
+&amp;\approx P(x_1,x_2,x_3) +P_{x_1}(x_1,x_2,x_3)\,\De x_1
++P_{x_2}(x_1,x_2,x_3)\,\De x_2
+</mrow><mrow>
+&amp;\hskip1in+P_{x_3}(x_1,x_2,x_3)\,\De x_3
+</mrow>
+</md>.
+Les trois dérivées partielles sont <md alignment="alignat">
+<mrow>
+P_{x_1}(x_1,x_2,x_3)&amp;=\pdiff{}{x_1}\big[x_1x_2x_3\big]
+&amp;=x_2x_3,\cr
+P_{x_2}(x_1,x_2,x_3)&amp;=\pdiff{}{x_2}\big[x_1x_2x_3\big]
+&amp;=x_1x_3,\cr
+P_{x_3}(x_1,x_2,x_3)&amp;=\pdiff{}{x_3}\big[x_1x_2x_3\big]
+&amp;=x_1x_2
+</mrow>
+</md>.
+Ainsi,
+<md>
+<mrow>
+&amp;P(x_1+\De x_1,\,x_2+\De x_2,\,x_3+\De x_3)
+</mrow><mrow>
+&amp;\hskip1in\approx P(x_1,x_2,x_3) +x_2x_3\,\De x_1+x_1x_3\,\De x_2+x_1x_2\,\De x_3
+</mrow>
+</md>,
+et le pourcentage d'erreur (approchée) pour  <m>P</m> est
+<md>
+<mrow>
+&amp;100\ \left|
+  \frac{P(x_1+\De x_1,x_2+\De x_2,x_3+\De x_3)-P(x_1,x_2,x_3)}{P(x_1,x_2,x_3)}
+   \right|
+</mrow><mrow>
+&amp;\hskip0.5in
+\approx
+       100\ \left|
+         \frac{x_2x_3\De x_1+x_1x_3\De x_2+x_1x_2\De x_3}{P(x_1,x_2,x_3)}
+       \right|
+</mrow><mrow>
+&amp;\hskip0.5in
+=100\  \left|\frac{x_2x_3\De x_1+x_1x_3\De x_2+x_1x_2\De x_3}{x_1x_2x_3}\right|
+</mrow><mrow>
+&amp;\hskip0.5in=\left|100\frac{\De x_1}{x_1}+100\frac{\De x_2}{x_2}
+         +100\frac{\De x_3}{x_3}\right|
+</mrow><mrow>
+&amp;\hskip0.5in\leqslant  \veps_1+\veps_2+\veps_3
+</mrow>
+</md>.
+Plus généralement, si l'on prend  <m>n</m> variables plutôt que <m>3</m>, le pourcentage d'erreur dans le produit devient approximativement
+<m>\
+\smsum\limits_{i=1}^n\veps_i.
+\ </m>
+C'est la base de la règle du pouce en sciences expérimentales qui dit que quand on prend des produits, les pourcentages d'erreur s'additionnent.
+</p>
+
+<p>Encore plus généralement, si l'on prend un  produit
+  <m>\prod_{i=1}^n x_i^{m_i}</m>, alors le pourcentage d'erreur dans ce produit est approximativement
+<m>\
+\smsum\limits_{i=1}^n|m_i|\veps_i.
+\ </m>
+</p>
+</solution>
+</example>
+
+</subsection>
+
+
+<xi:include  href="./Problemes/Prob-sec-Differentiabilite.ptx"/>
+
+
+
+</section>

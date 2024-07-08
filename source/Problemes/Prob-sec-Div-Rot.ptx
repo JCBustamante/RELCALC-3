@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+    <exercise>
+          <statement><p>
+          Est-ce que <m>\vnabla\times \vF</m> doit être perpendiculaire à <m>\vF</m>?
+          </p></statement>
+
+          <hint><p>
+          Calculer <m>\vnabla\times \vF</m> pour quelques champs de vecteurs simples.
+          </p></hint>
+
+          <answer><p>
+          Non.
+          </p></answer>
+
+          <solution><p>
+          No.  The vector field <m>\vF(x,y,z) = \vi +y\,\vk</m> has
+          <md>
+          <mrow>
+          \vnabla\times \vF
+          &amp;=\det\left[\begin{matrix} \vi &amp; \vj &amp; \vk
+          </mrow><mrow>
+                                     \pdiff{}{x} &amp; \pdiff{}{y} &amp; \pdiff{}{z}
+          </mrow><mrow>
+                                     1 &amp; 0 &amp; y
+                      \end{matrix}\right]
+          </mrow><mrow>
+          &amp;=\vi
+          </mrow>
+          </md>
+          has dot product <m>1</m> with <m>\vF(x,y,z)</m> (for all <m>x</m>, <m>y</m>, <m>z</m>) and
+          so is not perpendicular to it.
+          </p></solution>
+        </exercise>
+
+    <exercise>
+      <statement><p>
+      Évaluer <m>\vnabla\cdot\vF</m> et <m>\vnabla\times\vF</m> pour chacun des champs de vecteurs suivants.
+      <ol marker = "(a)">
+      <li> <m>\vF=x\,\vi+y\,\vj+z\,\vk</m>
+      </li>
+      <li> <m>\vF=xy^2\vi-yz^2\vj+zx^2\vk</m>
+      </li>
+      <li> <m>\vF=\frac{x\vi+y\vj}{\sqrt{x^2+y^2}}</m>
+                     (le vecteur polaire de base <m>\hat{\bf r}</m> en 2D)
+      </li>
+      <li>
+      <m>\vF=\frac{-y\vi+x\vj}{\sqrt{x^2+y^2}}</m>
+            (le vecteur polaire de base <m>\hat{\pmb{\theta}}</m> en 2D)
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\vnabla\cdot\vF=3</m>, <m>\vnabla\times\vF=\vZero</m>
+      </p>
+
+      <p>(b) <m>\vnabla\cdot\vF=y^2-z^2+x^2</m>,
+          <m>\vnabla\times\vF=2yz\,\vi-2xz\,\vj-2xy\,\vk</m>
+      </p>
+
+      <p>(c) <m>\vnabla\cdot\vF=\frac{1}{\sqrt{x^2+y^2}}</m>,
+          <m>\vnabla\times\vF=\vZero</m>
+      </p>
+
+      <p>(d) <m>\vnabla\cdot\vF=0</m>, <m>\vnabla\times\vF=\frac{\vk}{\sqrt{x^2+y^2}}</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a)
+      By definition
+      <md>
+      <mrow>
+      \vnabla\cdot(x\,\vi+y\,\vj+z\,\vk)
+      &amp;=\pdiff{}{x}\big(x\big)
+        +\pdiff{}{y}\big(y\big)
+        +\pdiff{}{z}\big(z\big)
+      =  3
+      </mrow><mrow>
+      \vnabla\times(x\,\vi+y\,\vj+z\,\vk)
+      &amp;=\det\left[\begin{matrix}\vi &amp; \vj &amp; \vk \\
+                        \pdiff{}{x} &amp;
+                        \pdiff{}{y} &amp;
+                        \pdiff{}{z} \\
+                        x &amp; y &amp; z\end{matrix}\right]
+      = \vZero
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      By definition
+      <md>
+      <mrow>
+      \vnabla\cdot(xy^2\vi-yz^2\vj+zx^2\vk)
+      &amp;=\pdiff{}{x}\big(xy^2\big)
+        +\pdiff{}{y}\big(-yz^2\big)
+        +\pdiff{}{z}\big(zx^2\big)
+      </mrow><mrow>
+      &amp;=y^2-z^2+x^2
+      </mrow><mrow>
+      \vnabla\times(xy^2\vi-yz^2\vj+zx^2\vk)
+      &amp;=\det\left[\begin{matrix}\vi &amp; \vj &amp; \vk \\
+                        \pdiff{}{x} &amp;
+                        \pdiff{}{y} &amp;
+                        \pdiff{}{z} \\
+                        xy^2 &amp; -yz^2 &amp; zx^2\end{matrix}\right]
+      </mrow><mrow>
+      &amp;= 2yz\,\vi-2xz\,\vj-2xy\,\vk
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c)
+      By definition
+      <md>
+      <mrow>
+      &amp;\vnabla\cdot\left(\frac{x}{\sqrt{x^2+y^2}}\vi+\frac{y}{\sqrt{x^2+y^2}}\vj\right)
+      </mrow><mrow>
+      &amp;\hskip0.5in=\pdiff{}{x}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
+        +\pdiff{}{y}\left(\frac{y}{\sqrt{x^2+y^2}}\right)
+      </mrow><mrow>
+      &amp;\hskip0.5in= \frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+         +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}
+      </mrow><mrow>
+      &amp;\hskip0.5in=\frac{1}{\sqrt{x^2+y^2}}
+      </mrow><mrow>
+      &amp;\vnabla\times\left(\frac{x}{\sqrt{x^2+y^2}}\vi+\frac{y}{\sqrt{x^2+y^2}}\vj\right)
+      </mrow><mrow>
+      &amp;\hskip0.5in=\det\left[\begin{matrix}\vi &amp; \vj &amp; \vk \\
+                        \pdiff{}{x} &amp;
+                        \pdiff{}{y} &amp;
+                        \pdiff{}{z} \\
+                        \frac{x}{\sqrt{x^2+y^2}} &amp;
+                        \frac{y}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
+      </mrow><mrow>
+      &amp;\hskip0.5in=\left(- \frac{xy}{{[x^2+y^2]}^{3/2}}+ \frac{xy}{{[x^2+y^2]}^{3/2}}\right)\vk
+      </mrow><mrow>
+      &amp;\hskip0.5in= \vZero
+      </mrow>
+      </md>
+      </p>
+
+      <p>(d)
+      By definition
+      <md>
+        <mrow>
+        &amp;\vnabla\cdot\left(-\frac{y}{\sqrt{x^2+y^2}}\vi+\frac{x}{\sqrt{x^2+y^2}}\vj\right)
+        </mrow><mrow>
+        &amp;\hskip0.3in=\pdiff{}{x}\left(-\frac{y}{\sqrt{x^2+y^2}}\right)
+          +\pdiff{}{y}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
+        </mrow><mrow>
+        &amp;\hskip0.3in=  \frac{xy}{{[x^2+y^2]}^{3/2}}
+           - \frac{xy}{{[x^2+y^2]}^{3/2}}
+        </mrow><mrow>
+        &amp;\hskip0.3in=0
+        </mrow><mrow>
+        &amp;\vnabla\times\left(-\frac{y}{\sqrt{x^2+y^2}}\vi
+                                 +\frac{x}{\sqrt{x^2+y^2}}\vj\right)
+        </mrow><mrow>
+        &amp;\hskip0.3in=\det\left[\begin{matrix}\vi &amp; \vj &amp; \vk \\
+                          \pdiff{}{x} &amp;
+                          \pdiff{}{y} &amp;
+                          \pdiff{}{z} \\
+                          -\frac{y}{\sqrt{x^2+y^2}} &amp;
+                          \frac{x}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
+        </mrow><mrow>
+        &amp;\hskip0.3in=\!\left(\!\frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+           +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}\!\right)\!\vk
+
+        </mrow><mrow>
+        &amp;\hskip0.3in= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \vk
+        </mrow>
+        <mrow>
+          &amp;\hskip0.3in= \frac{\vk}{\sqrt{x^2+y^2}
+        </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M317 2015A</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Calculer et simplifier <m>\vnabla\cdot\big(\frac{\vr}{r}\big)</m>
+      pour <m>\vr=(x,y,z)</m> et <m>r=|(x,y,z)|</m>. Exprimer la réponse en termes de <m>r</m>.
+      </li>
+      <li>
+      Calculer <m>\vnabla\times\big(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\big)</m>.
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\frac{2}{r}</m></p><p>
+      (b) <m>\big(xe^{xy}-2x\big)\,\vi+y\big(1-e^{xy}\big)\,\vj+z\,\vk</m>
+      </p></answer>
+
+      <solution><p> (a)
+       We are to compute the divergence of <m>\frac{\vr}{r}
+      =\frac{x\,\vi+y\,\vj+z\,\vk}{[x^2+y^2+z^2]^{1/2}}</m>. Since
+      <md>
+      <mrow>
+      \pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{1/2}}
+      &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+                  -\frac{1}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow><mrow>
+      &amp;=\frac{y^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow><mrow>
+      \pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{1/2}}
+      &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+                  -\frac{1}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow><mrow>
+      &amp;=\frac{x^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow><mrow>
+      \pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{1/2}}
+      &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+                  -\frac{1}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow><mrow>
+      &amp;=\frac{x^2+y^2}{{[x^2+y^2+z^2]}^{3/2}}
+      </mrow>
+      </md>
+      the specified divergence is
+      <md>
+      <mrow>
+      \vnabla\left(\frac{\vr}{r}\right) &amp;= \frac{2x^2+2y^2+2z^2}{{[x^2+y^2+z^2]}^{3/2}}
+                                     =\frac{2r^2}{r^3}
+                                     =\frac{2}{r}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      <md>
+      <mrow>
+      \vnabla\times\big(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\big)
+      &amp;=\det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\\
+           \pdiff{}{x}&amp;
+              \pdiff{}{y}&amp;
+              \pdiff{}{z}\\
+      yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=\big(xe^{xy}-2x\big)\,\vi-\big(ye^{xy}-y\big)\,\vj+z\,\vk
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <!-- Section 4.1 CLP4 -->
+
+    <exercise> <!-- <title><fromexam>M317 2012J</fromexam></title> -->
+      <statement><p>
+      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions montré ci-dessous.
+      </p>
+      <sidebyside width="85%">
+        <image source="images/CLP4-figs/pfigs/OE12J_2"/>
+      </sidebyside>
+
+      <p><ol marker = "(a)">
+      <li>
+        <p>
+          En supposant que le champ vectoriel dans l'image est un champ de forces, le travail effectué par le champ vectoriel sur une particule se déplaçant du point <m>A</m> au point <m>B</m>
+          le long du chemin donné est :
+          <ol marker="(A)" cols = "2">
+            <li>
+              positif;
+            </li>
+            <li>
+              négatif;
+            </li>
+            <li>
+              nul;
+            </li>
+            <li>
+              Pas assez d'information pour le déterminer.
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Quel énoncé est <q>le plus vrai</q> à propos de l'intégrale de ligne <m>\int_{C_2} \vF\cdot\dee{\vr}</m> ?
+          <ol marker = "(A)" cols = "2">
+            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \gt 0</m>
+            </li>
+            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>
+            </li>
+            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \lt 0</m>
+            </li>
+            <li> Pas assez d'information pour le déterminer.
+            </li>
+          </ol>
+        </p>
+      </li>
+
+
+      <li>
+        <p>
+        <m>\vnabla\cdot\vF</m> au point <m>N</m> (dans la figure) est:
+          <ol marker="(A)" cols = "2">
+            <li>
+              positif;
+            </li>
+            <li>
+              négatif;
+            </li>
+            <li>
+              nul;
+            </li>
+            <li>
+              pas assez d'information pour le déterminer.
+            </li>
+        </ol>
+      </p>
+      </li>
+      <li>
+        <p> <m>Q_x - P_y</m> au point <m>Q</m> est:
+        <ol marker="(A)" cols = "2">
+          <li>
+            positif;
+          </li>
+          <li>
+            négatif;
+          </li>
+          <li>
+            nul;
+          </li>
+          <li>
+            pas assez d'information pour le déterminer.
+          </li>
+        </ol>
+        </p>
+      </li>
+
+      <li>
+        <p>  En supposant que <m>\vF = P\,\vi + Q\,\vj</m>, lequel des énoncés suivants est correct à propos de <m>\frac{\partial P}{\partial x}</m> au point <m>D</m>?
+        <ol marker="(A)">
+          <li> <m>\frac{\partial P}{\partial x}=0</m> en <m>D</m>
+          </li>
+          <li> <m>\frac{\partial P}{\partial x} \gt 0</m> en <m>D</m>
+          </li>
+          <li> <m>\frac{\partial P}{\partial x} \lt 0</m> en <m>D</m>
+          </li>
+          <li> Le signe de <m>\frac{\partial P}{\partial x}</m>
+          en <m>D</m> ne peut être déterminé avec l'information donnée.
+        </li>
+        </ol>
+        </p>
+      </li>
+      </ol>
+      </p>
+      </statement>
+
+      <answer><p>
+      (a) A</p><p>
+      (b) B</p><p>
+      (c) C</p><p>
+      (d) A</p><p>
+      (e) B
+      </p></answer>
+
+      <solution><p>
+      (a)
+      A. The angle between <m>\vF</m> and <m>\dee{\vr}</m> is less than <m>90^\circ</m>
+      along the entire path. So <m>\vF\cdot\dee{\vr} \gt 0</m> along the entire path and
+      the work is positive.
+      </p>
+
+      <p>(b)
+      B. <m>\vF</m> is perpendicular to <m>\dee{\vr}</m> along all of <m>C_2</m>.
+      So <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>.
+      </p>
+
+      <p>(c)
+      C. It looks like <m>P_x=Q_y=0</m> at <m>N</m>. So <m>\vnabla\cdot\vF=0</m> at <m>N</m>.
+      </p>
+
+      <p>(d)
+      A. At <m>Q</m>, the vertical component of <m>\vF</m> is increasing from left to right
+      (so that <m>Q_x \gt 0</m>) and the horizontal component of <m>\vF</m>  is decreasing
+      from bottom to top (so that <m>P_y \lt 0</m>). So <m>Q_x - P_y \gt 0</m> at <m>N</m>.
+      </p>
+
+      <p>(e)
+      B. At <m>D</m>,  the horizontal component of <m>\vF</m>  is increasing
+      from left to right, so that <m>P_x \gt 0</m>.
+      </p></solution>
+    </exercise>
+    <!-- Solution et réponse correspondent -->
+    <exercise>
+      <statement><p>
+      Vérifier les identités vectorielles suivantes.
+      <ol marker = "(a)">
+      <li>
+      <m>\vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f</m>
+      </li>
+      <li>
+      <m>\vnabla\cdot(\vF\times\vG)
+                            =\vG\cdot(\vnabla\times\vF)-
+                             \vF\cdot(\vnabla\times\vG)</m>
+      </li>
+      <li>
+      <m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <hint><p>
+      Pour les parties (a) et (b), écrire les définitions des côtés gauche et droit et observer qu'ils sont égaux.
+      La partie (c) peut être réalisée facilement en utilisant d'autres identités vectorielles plus simples.
+      </p></hint>
+
+      <answer>
+        <p>
+        (a) Par la règle du produit,
+        <md>
+        <mrow>
+        \vnabla\cdot(f\vF)
+        &amp;=\pdiff{}{x}(fF_1)
+         +\pdiff{}{y}(fF_2)
+         +\pdiff{}{z}(fF_3)
+        </mrow><mrow>
+        &amp;=\phantom{+}f\pdiff{F_1}{x}
+         +f\pdiff{F_2}{y}
+         +f\pdiff{F_3}{z}
+        </mrow><mrow>
+        &amp;\phantom{=}+F_1\pdiff{f}{x}
+         +F_2\pdiff{f}{y}
+         +F_3\pdiff{f}{z}
+        </mrow><mrow>
+        &amp;=f\,\vnabla\cdot\vF+\vF\cdot\vnabla f
+        </mrow>.
+        </md>
+        </p>
+
+        <p>(b) Encore, par la règle du produit,
+        <md>
+        <mrow>
+        &amp;\vnabla\cdot(\vF\times\vG)
+        </mrow><mrow>&amp;\hskip0.25in=\pdiff{}{x}(F_2G_3-F_3G_2)
+         +\pdiff{}{y}(F_3G_1-F_1G_3)
+         +\pdiff{}{z}(F_1G_2-F_2G_1)
+        </mrow><mrow>
+        &amp;\hskip0.25in=\phantom{+}\pdiff{F_2}{x}G_3
+                -\pdiff{F_3}{x}G_2
+         +\pdiff{F_3}{y}G_1
+                - \pdiff{F_1}{y}G_3
+         +\pdiff{F_1}{z}G_2
+               - \pdiff{F_2}{z}G_1
+        </mrow><mrow>
+        &amp;\hskip0.25in\phantom{=}+F_2\pdiff{G_3}{x}
+               -F_3\pdiff{G_2}{x}
+         +F_3\pdiff{G_1}{y}
+               -F_1\pdiff{G_3}{y}
+         +F_1\pdiff{G_2}{z}
+              - F_2\pdiff{G_1}{z}
+        </mrow><mrow>
+        &amp;\hskip0.25in=\phantom{+}
+          \left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
+          +\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
+          +\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3
+        </mrow><mrow>
+        &amp;\hskip0.25in\phantom{=}
+          -F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
+          -F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
+          -F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)
+        </mrow><mrow>
+        &amp;=\vG\cdot(\vnabla\times\vF)-
+                               \vF\cdot(\vnabla\times\vG)
+        </mrow>.
+        </md>
+        </p>
+
+        <p>(c) Se rappeler que <m>\vnabla^2(fg) = \vnabla\cdot\big[\vnabla(fg)\big]</m>.
+        Premièrement,
+        <md>
+        <mrow>
+        \vnabla(fg)
+        &amp;=\vi\pdiff{}{x}(fg)
+         +\vj\pdiff{}{y}(fg)
+         +\vk\pdiff{}{z}(fg)
+        </mrow><mrow>
+        &amp;=\phantom{+}\vi g\pdiff{f}{x}
+         +\vj g\pdiff{f}{y}
+         +\vk g\pdiff{f}{z}
+        </mrow><mrow>
+        &amp;\phantom{=}+\vi f\frac{\partial g}{\partial x}
+         +\vj f\frac{\partial g}{\partial y}
+         +\vk f\frac{\partial g}{\partial z}
+        </mrow><mrow>
+        &amp;=g\vnabla f+f\vnabla g
+        </mrow>.
+        </md>
+        Donc, par la partie (a), deux fois,
+        <md>
+        <mrow>
+        \vnabla^2(fg)
+        &amp; = \vnabla\cdot\big(g\vnabla f\big)
+           +\vnabla\cdot\big(f\vnabla g\big)
+        </mrow><mrow>
+        &amp;= g\big(\vnabla\cdot \vnabla f\big)
+                  + \big(\vnabla g\big)\cdot\big(\vnabla f\big)
+           +f\big(\vnabla\cdot\vnabla g\big)
+               + \big(\vnabla f\big)\cdot\big(\vnabla g\big)
+        </mrow><mrow>
+        &amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
+        </mrow>.
+        </md>
+        </p>
+      </answer>
+
+      <solution><p>
+      (a) Par la règle du produit,
+      <md>
+      <mrow>
+      \vnabla\cdot(f\vF)
+      &amp;=\pdiff{}{x}(fF_1)
+       +\pdiff{}{y}(fF_2)
+       +\pdiff{}{z}(fF_3)
+      </mrow><mrow>
+      &amp;=\phantom{+}f\pdiff{F_1}{x}
+       +f\pdiff{F_2}{y}
+       +f\pdiff{F_3}{z}
+      </mrow><mrow>
+      &amp;\phantom{=}+F_1\pdiff{f}{x}
+       +F_2\pdiff{f}{y}
+       +F_3\pdiff{f}{z}
+      </mrow><mrow>
+      &amp;=f\,\vnabla\cdot\vF+\vF\cdot\vnabla f
+      </mrow>.
+      </md>
+      </p>
+
+      <p>(b) Encore, par la règle du produit,
+      <md>
+      <mrow>
+      &amp;\vnabla\cdot(\vF\times\vG)
+      </mrow><mrow>&amp;\hskip0.25in=\pdiff{}{x}(F_2G_3-F_3G_2)
+       +\pdiff{}{y}(F_3G_1-F_1G_3)
+       +\pdiff{}{z}(F_1G_2-F_2G_1)
+      </mrow><mrow>
+      &amp;\hskip0.25in=\phantom{+}\pdiff{F_2}{x}G_3
+              -\pdiff{F_3}{x}G_2
+       +\pdiff{F_3}{y}G_1
+              - \pdiff{F_1}{y}G_3
+       +\pdiff{F_1}{z}G_2
+             - \pdiff{F_2}{z}G_1
+      </mrow><mrow>
+      &amp;\hskip0.25in\phantom{=}+F_2\pdiff{G_3}{x}
+             -F_3\pdiff{G_2}{x}
+       +F_3\pdiff{G_1}{y}
+             -F_1\pdiff{G_3}{y}
+       +F_1\pdiff{G_2}{z}
+            - F_2\pdiff{G_1}{z}
+      </mrow><mrow>
+      &amp;\hskip0.25in=\phantom{+}
+        \left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
+        +\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
+        +\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3
+      </mrow><mrow>
+      &amp;\hskip0.25in\phantom{=}
+        -F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
+        -F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
+        -F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)
+      </mrow><mrow>
+      &amp;=\vG\cdot(\vnabla\times\vF)-
+                             \vF\cdot(\vnabla\times\vG)
+      </mrow>.
+      </md>
+      </p>
+
+      <p>(c) Se rappeler que <m>\vnabla^2(fg) = \vnabla\cdot\big[\vnabla(fg)\big]</m>.
+      Premièrement,
+      <md>
+      <mrow>
+      \vnabla(fg)
+      &amp;=\vi\pdiff{}{x}(fg)
+       +\vj\pdiff{}{y}(fg)
+       +\vk\pdiff{}{z}(fg)
+      </mrow><mrow>
+      &amp;=\phantom{+}\vi g\pdiff{f}{x}
+       +\vj g\pdiff{f}{y}
+       +\vk g\pdiff{f}{z}
+      </mrow><mrow>
+      &amp;\phantom{=}+\vi f\frac{\partial g}{\partial x}
+       +\vj f\frac{\partial g}{\partial y}
+       +\vk f\frac{\partial g}{\partial z}
+      </mrow><mrow>
+      &amp;=g\vnabla f+f\vnabla g
+      </mrow>.
+      </md>
+      Donc, par la partie (a), deux fois,
+      <md>
+      <mrow>
+      \vnabla^2(fg)
+      &amp; = \vnabla\cdot\big(g\vnabla f\big)
+         +\vnabla\cdot\big(f\vnabla g\big)
+      </mrow><mrow>
+      &amp;= g\big(\vnabla\cdot \vnabla f\big)
+                + \big(\vnabla g\big)\cdot\big(\vnabla f\big)
+         +f\big(\vnabla\cdot\vnabla g\big)
+             + \big(\vnabla f\big)\cdot\big(\vnabla g\big)
+      </mrow><mrow>
+      &amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
+      </mrow>.
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise xml:id="poisson"> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
+      <statement><p>
+      Dans ce qui suit, on utilise la notation
+      <m>\vr = x\,\vi + y\,\vj + z\,\vk</m>, <m>r = |\vr|</m>, et <m>k</m> est un nombre
+      <m>k = 0, 1, -1, 2, -2, \dots</m>
+      <ol marker = "(a)">
+      <li>
+      Trouver la valeur <m>k</m> pour laquelle <m>\vnabla (r^k) = -3\frac{\vr}{r^5}.      </m>
+      </li>
+      <li>
+      Trouver la valeur <m>k</m> pour laquelle
+      <m>
+      \vnabla  \cdot (r^k\vr) = 5r^2.
+      </m>
+      </li>
+      <li>
+      Trouver la valeur <m>k</m> pour laquelle
+      <m>
+      \vnabla^2 (r^k) = \frac{2}{r^4}.
+      </m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      (c) peut être fait de façon efficace en utilisant (a) et (b).
+      </p></hint>
+
+      <answer><p>
+      (a) <m>k=-3</m></p><p>
+      (b) <m>k=2</m></p><p>
+      (c) <m>k=-2</m>
+      </p></answer>
+
+      <solution><p> (a)
+      Since <m>r^k=\big(x^2+y^2+z^2\big)^{k/2}</m>,
+      <md>
+      <mrow>
+      \pdiff{}{x} r^k
+         &amp; = 2x\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+           = k\ (\vr\cdot\vi)\ r^{k-2}
+      </mrow><mrow>
+      \pdiff{}{y} r^k
+         &amp; = 2y\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+           = k\ (\vr\cdot\vj)\ r^{k-2}
+      </mrow><mrow>
+      \pdiff{}{z} r^k
+         &amp; = 2z\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+           = k\ (\vr\cdot\vk)\ r^{k-2}
+      </mrow>
+      </md>
+      We want <m>k=-3</m>.
+      </p>
+
+      <p>(b) Using the computation in part (a)
+      <md>
+      <mrow>
+      \vnabla  \cdot (r^k\vr)
+      &amp;= \pdiff{}{x} (x r^k)
+        + \pdiff{}{y} (y r^k)
+        + \pdiff{}{z} (z r^k)
+      </mrow><mrow>
+      &amp;= 3r^k + x \pdiff{}{x} r^k
+        + y \pdiff{}{y} r^k
+        + z \pdiff{}{z} r^k
+      </mrow><mrow>
+      &amp;= 3r^k + x \big(kx\ r^{k-2}\big)
+        + y \big(ky\ r^{k-2}\big)
+        + z \big(kz\ r^{k-2}\big)
+      </mrow><mrow>
+      &amp;= \big(3+k\big)r^k
+      </mrow>
+      </md>
+      We want <m>k=2</m>.
+      </p>
+
+      <p>(c) Recalling that
+      <m>\vnabla^2 = \vnabla\cdot\vnabla</m>,
+      <md>
+      <mrow>
+      \vnabla^2 (r^k )
+      &amp;=\vnabla\cdot\big(\vnabla(r^k)\big)
+      </mrow><mrow>
+      &amp;=\vnabla\cdot(k r^{k-2}\,\vr) &amp;\text{by part (a)}
+      </mrow><mrow>
+      &amp;=k(3+k-2)r^{k-2} &amp;\text{by part (b),  but with <m>k</m> replaced by <m>k-2</m>}
+      </mrow>
+      </md>
+      We want <m>k=-2</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M317 2017A</fromexam></title> -->
+      <statement><p>
+      Soit <m>\vr</m> le champ de vecteurs <m>\vr = x\,\vi + y\,\vj + z\,\vk</m> et soit
+      <m>r</m> la fonction <m>r = |\vr|</m>. Soit <m>\va</m> le vecteur <em>constant</em>
+      <m>\va = a_1\,\vi + a_2\,\vj + a_3\,\vk</m>. Calculer et simplifier
+      les quantités suivantes.
+      Les réponses doivent être exprimées en termes de <m>\va</m>, <m>\vr</m> et <m>r</m>. Il ne devrait pas y avoir de
+      <m>x</m>, <m>y</m> ou <m>z</m> dans les réponses.
+      <ol marker = "(a)" cols = "2">
+      <li>
+      <m>\vnabla\cdot\vr</m>
+      </li>
+      <li>
+      <m>\vnabla(r^2)</m>
+      </li>
+      <li>
+      <m>\vnabla\times(\vr\times\va)</m>
+      </li>
+      <li>
+      <m>\vnabla\cdot\big(\vnabla(r)\big)</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>3</m></p><p>
+      (b) <m>2\vr</m></p><p>
+      (c) <m>-2\va</m></p><p>
+      (d) <m>\frac{2}{r}</m>
+      </p></answer>
+
+      <solution><p> (a)
+      <me>
+      \vnabla\cdot\vr
+      =\pdiff{x}{x}
+        +\pdiff{y}{y}
+        +\pdiff{z}{z}
+      =3
+      </me>
+      </p>
+
+      <p>(b)
+      <me>
+        \vnabla(r^2)
+        =\left(\vi\pdiff{}{x}
+          +\vj\pdiff{}{y}
+          +\vk\pdiff{}{z} \right)
+        \big(x^2+y^2+z^2\big)
+        =2x\,\vi +2y\,\vj +2\,\vk
+        =2\vr
+      </me>
+      </p>
+
+      <p>(c) Since
+      <me>
+      \vr\times\va = \det\left[\begin{matrix}
+                               \vi &amp; \vj &amp; \vk \\
+                                x  &amp;  y  &amp; z   \\
+                               a_1 &amp; a_2 &amp; a_3
+                               \end{matrix}\right]
+                    =\vi\big(a_3y\!-\!a_2z\big)
+                    +\vj\big(a_1z\!-\!a_3x\big)
+                    +\vk\big(a_2x\!-\!a_1y\big)
+      </me>
+      we have
+      <md>
+      <mrow>
+      \vnabla\times(\vr\times\va)
+      &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk \\
+           \pdiff{}{x}&amp;
+              \pdiff{}{y}&amp;
+              \pdiff{}{z} \\
+          a_3y-a_2z&amp; a_1z-a_3x &amp; a_2x-a_1y\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=-2a_1\,\vi -2a_2\,\vj -2a_3\,\vk
+      </mrow><mrow>
+       &amp;=-2\va
+      </mrow>
+      </md>
+      </p>
+
+      <p>(d) Since
+      <md>
+      <mrow>
+      \vnabla(r) &amp;= \left(\vi\pdiff{}{x}
+        +\vj\pdiff{}{y}
+        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{1/2}
+      </mrow><mrow>
+      &amp;=\vi\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+        +\vj\frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
+        +\vk\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+      </mrow>
+      </md>
+      we have
+      <md>
+      <mrow>
+      \vnabla\cdot\big(\vnabla(r)\big)
+      &amp;= \pdiff{}{x} \frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+         +\pdiff{}{y} \frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
+      </mrow><mrow>
+      &amp;\hskip1in +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
+      </mrow><mrow>
+      &amp;=  \frac{3}{\big(x^2+y^2+z^2\big)^{1/2}}
+         -\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{3/2}}
+      </mrow><mrow>
+      &amp; =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}
+      </mrow><mrow>
+      &amp; =\frac{2}{r}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M317 2017D</fromexam></title> -->
+      <statement><p>
+      Soit <m> \vr = x\,\vi + y\,\vj + z\,\vk </m> et <m> r = |\vr|</m>.
+      <ol marker = "(a)">
+      <li>
+      Calculer <m>a</m>, où <m>\vnabla\big(\frac{1}{r}\big) =- r^a\,\vr</m>.
+      </li>
+      <li>
+      Calculer <m>a</m>, où <m>\vnabla\cdot\big(r\,\vr\big) = ar</m>.
+      </li>
+      <li>
+      Calculer <m>a</m>, où <m>\vnabla\cdot\big(\vnabla(r^3)\big) = ar</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>a=-3</m></p><p>
+      (b) <m>a=4</m></p><p>
+      (c) <m>a=12</m>
+      </p></answer>
+
+      <solution><p> (a)
+      Since
+      <md>
+      <mrow>
+      &amp;\vnabla\left(\frac{1}{r}\right)
+      = \left(\vi\pdiff{}{x}
+        +\vj\pdiff{}{y}
+        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{-1/2}
+      </mrow><mrow>
+      &amp;\hskip0.25in=-\vi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
+        -\vj\frac{y}{\big(x^2+y^2+z^2\big)^{3/2}}
+        -\vk\frac{z}{\big(x^2+y^2+z^2\big)^{3/2}}
+      </mrow><mrow>
+      &amp;\hskip0.25in=-\vi\frac{x}{r^3}
+        -\vj\frac{y}{r^3}
+        -\vk\frac{x}{r^3}
+      </mrow>
+      </md>
+      we have <m>a=-3</m>.
+      </p>
+
+      <p>(b) Since
+      <md>
+      <mrow>
+      \vnabla\cdot\big(r\,\vr\big)
+      &amp;= \pdiff{}{x} \Big[\big(x^2+y^2+z^2\big)^{1/2}x\Big]
+         +\pdiff{}{y}\Big[\big(x^2+y^2+z^2\big)^{1/2}y\Big]
+      </mrow><mrow>
+      &amp;\hskip1in +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]
+      </mrow><mrow>
+      &amp;=  3\big(x^2+y^2+z^2\big)^{1/2}
+         +\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{1/2}}
+      </mrow><mrow>
+      &amp; =4\big(x^2+y^2+z^2\big)^{1/2}
+      </mrow><mrow>
+      &amp; =4r
+      </mrow>
+      </md>
+      we have <m>a=4</m>.
+      </p>
+
+      <p>(c) Since
+      <md>
+      <mrow>
+      &amp;\vnabla(r^3) = \left(\vi\pdiff{}{x}
+        +\vj\pdiff{}{y}
+        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{3/2}
+      </mrow><mrow>
+      &amp;\hskip0.1in=\vi\,3x\big(x^2+y^2+z^2\big)^{1/2}
+        +\vj\,3y\big(x^2+y^2+z^2\big)^{1/2}
+        +\vk\,3z\big(x^2+y^2+z^2\big)^{1/2}
+      </mrow><mrow>
+      &amp;\hskip0.1in=3r\vr
+      </mrow>
+      </md>
+      we have
+      <md>
+      <mrow>
+      \vnabla\cdot\big(\vnabla(r^3)\big)
+      &amp;= \vnabla\cdot\big(3r\vr\big)
+      = 3\,\vnabla\cdot\big(r\vr\big)
+      = 3\,\big(4r\big) \qquad\text{by part (b)}
+      </mrow><mrow>
+      &amp;=  12 r
+      </mrow>
+      </md>
+      so that <m>a=12</m>.
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+      Trouver, si possible, un champ de vecteurs <m>\vA</m> qui a pour composante <m>\vk</m>
+      <m>A_3=0</m> et qui est un potentiel vectoriel pour
+      <ol marker = "(a)">
+      <li> <m>\vF=(1+yz)\vi+(2y+zx)\vj+(3z^2+xy)\vk</m>.
+      </li>
+      <li> <m>\vG= yz\vi+zx\vj+xy\vk</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\vF</m> ne peut avoir un potentiel vectoriel.
+      </p>
+
+      <p>(b) Deux solutions possibles sont
+      <m>\vA=\frac{1}{2}(z^2-y^2)x\vi-\frac{1}{2} yz^2\vj</m> et
+      <m>\vA=\frac{1}{2} xz^2\vi+\frac{1}{2}(x^2-z^2)y\vj</m>.
+      </p>
+
+      </answer>
+
+      <solution><p>
+      (a) Since
+      <m>\vnabla\cdot\vF
+      =\pdiff{}{x}(1+yz)+\pdiff{}{y}(2y+zx)+\pdiff{}{z}(3z^2+xy)=2+6z\ne 0</m>,
+      <m>\vF</m> fails the screening test and cannot have a vector potential.
+      </p>
+
+      <p>(b) The vector field <m>\vA=A_1\vi+A_2\vj</m> is a vector
+      potential for <m>\vG</m> if and only if <m>\vG=\vnabla\times\vA</m>,
+      which is the case if and only if
+      <md alignment="alignat">
+      <mrow>
+      -\pdiff{A_2}{z}&amp;= yz\quad &amp;
+            \iff&amp;\quad&amp;
+            &amp;A_2=-\frac{1}{2} yz^2+B_2(x,y)
+      </mrow><mrow>
+      \pdiff{A_1}{z}&amp;=zx &amp;
+             \iff&amp;\quad &amp;
+            &amp;A_1=\phantom{-}\frac{1}{2} xz^2+B_1(x,y)
+      </mrow><mrow>
+      \pdiff{A_2}{x}-\pdiff{A_1}{y} &amp;=xy &amp;
+           \iff&amp; &amp;  &amp;
+         \pdiff{B_2}{x} -\pdiff{B_1}{y}=xy
+      </mrow>
+      </md>
+      There are infinitely many solutions to <m>\pdiff{B_2}{x}
+      -\pdiff{B_1}{y}=xy</m>. In fact <m>B_2</m> is completely arbitrary.
+      If one chooses <m>B_2=0</m>, then <m>B_1=-\frac{1}{2} xy^2</m> does the job. If one chooses
+      <m>B_1=0</m>, then <m>B_2=\frac{1}{2} x^2y</m> does the job. Thus two solutions are
+      <m>\vA=\frac{1}{2}(z^2-y^2)x\vi-\frac{1}{2} yz^2\vj</m> and
+      <m>\vA=\frac{1}{2} xz^2\vi+\frac{1}{2}(x^2-z^2)y\vj</m>.
+      </p></solution>
+    </exercise>
+
+    <exercise> <!-- <title><fromexam>M317 2006D</fromexam></title> -->
+      <statement><p>
+      Soit
+      <md>
+      <mrow>
+      \vF = \frac{-z}{x^2+z^2}\,\vi +y\,\vj +\frac{x}{x^2+z^2}\,\vk
+      </mrow>.
+      </md>
+      </p>
+
+      <p><ol marker = "(a)">
+      <li>
+      Déterminer le domaine de <m>\vF</m>.
+      </li>
+      <li>
+      Déterminer le rotationnel de <m>\vF</m>. Simplifier si possible.
+      </li>
+      <li>
+      Déterminer la divergence de <m>\vF</m>. Simplifier si possible.
+      </li>
+      <li>
+      Est-ce que <m>\vF</m> est conservatif? Donner une raison pour la réponse.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>D=\Set{(x,y,z)}{x^2+z^2\ne 0}</m></p><p>
+      (b) <m>\vnabla\times\vF=\vZero</m> sur <m>D</m></p><p>
+      (c) <m>\vnabla\cdot\vF=1</m> sur <m>D</m>
+      </p>
+
+      <p>(d) <m>\vF</m> n'est pas conservatif sur le domaine <m>D</m> de la partie (a).
+      </p>
+
+      </answer>
+
+      <solution><p>(a) <m>\vF</m> is well-defined wherever the denominator
+      <m>x^2+z^2</m> is nonzero. So the (largest possible) domain is
+      <md>
+      <mrow>
+      D=\Set{(x,y,z)}{x^2+z^2\ne 0}
+      </mrow>
+      </md>
+      </p>
+
+      <p> (b)
+      As preliminary computations, let's find
+      <md>
+      <mrow>
+      \pdiff{}{z}\left(\frac{-z}{x^2+z^2}\right)
+      &amp;=\frac{-1}{x^2+z^2}-\frac{2z(-z)}{{(x^2+z^2)}^2}
+      =\frac{-x^2+z^2}{{(x^2+z^2)}^2}
+
+      </mrow><mrow>
+      \pdiff{}{x}\left(\frac{x}{x^2+z^2}\right)
+      &amp;=\frac{1}{x^2+z^2}-\frac{2x(x)}{{(x^2+z^2)}^2}
+      =\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+      </mrow>
+      </md>
+      So the curl of <m>\vF</m> is
+      <md>
+      <mrow>
+      \vnabla\times\vF
+      &amp;=\det\left[\begin{matrix}
+      \vi &amp;\vj &amp;\vk \\
+      \tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                      \tfrac{\partial }{\partial z} \\
+      \frac{-z}{x^2+z^2} &amp; y &amp; \frac{x}{x^2+z^2}
+      \end{matrix}
+      \right]
+      =-\left(\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+        -\frac{-x^2+z^2}{{(x^2+y^2)}^2}\right)\vj
+      </mrow><mrow>
+      &amp;=\vZero
+      </mrow>
+      </md>
+      <em>on the domain of <m>\vF</m></em>.
+      </p>
+
+      <p> (c)
+      As preliminary computations, let's find
+      <md>
+      <mrow>
+      \pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
+      &amp;=-\frac{2x(-z)}{{(x^2+z^2)}^2}
+      =\frac{2xz}{{(x^2+z^2)}^2}
+       </mrow><mrow>
+      \pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+      &amp;=-\frac{2z(x)}{{(x^2+z^2)}^2}
+      =\frac{-2xz}{{(x^2+y^2)}^2}
+      </mrow>
+      </md>
+      So the divergence of <m>\vF</m> is
+      <md>
+      <mrow>
+      \vnabla\cdot\vF
+      &amp;=\pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
+        +\pdiff{}{y}\left(y\right)
+        + \pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+      =1
+      </mrow>
+      </md>
+      </p>
+
+      <p> (d)
+      By part (b), the vector field passes the conservative field screening test
+      <m>\vnabla\times\vF=\vZero</m>. But we should still be suspicious because
+      of the similarity of <m>\vF</m> to the vector field of
+      Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="ex-green-bord-x2"/>.
+      </p>
+
+      <p>So let's compute the line integral of <m>\vF</m> around the (closed) circle
+      <m>y=0</m>, <m>x^2+z^2=1</m>, parametrized by
+      <me>
+      \vr(t) = \cos t\,\vi +\sin t\,\vk\qquad
+      \vr'(t) = -\sin t\,\vi +\cos t\,\vk
+      </me>
+      The line integral is
+      <md>
+      <mrow>
+      \int_C \vF \cdot \dee{\vr}
+      &amp;=\int_0^{2\pi}\!\!\big\{
+             \overbrace{-\sin t}^{\frac{-z}{x^2+z^2}}\,\vi
+            +\overbrace{\cos t}^{\frac{x}{x^2+y^2}}\,\vk\big\}
+                 \cdot
+        \big\{\overbrace{-\sin t\,\vi +\cos t\,\vk}^{\vr'(t)}\big\}\dee{t}
+      </mrow><mrow>
+      &amp;= \int_0^{2\pi}\dee{t}
+      =2\pi
+      </mrow>
+      </md>
+      As the integral of <m>\vF</m> around the simple closed curve <m>\cC</m>
+      is not zero, <m>\vF</m> cannot be conservative on <m>D</m>.
+      See Theorem <xref ref="thm_pathIndepConserv"/> and
+      Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="ex-green-bord-x2"/>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    
+    <exercise> <!-- <title><fromexam>M317 2004A</fromexam></title> -->
+      <statement><p>
+      Un physicien étudie un champ de vecteurs <m>\vF</m> dans son laboratoire. Il sait, d'après des considérations théoriques, que <m>\vF</m> doit être de la forme
+      <m>\vF=\nabla\times\vG</m>, pour un certain champ de vecteurs lisse <m>\vG</m>. Des expériences
+      montrent également que <m>\vF</m> doit être de la forme
+      <me>
+      \vF(x,y,z)=(xz+xy)\vi+\alpha(yz-xy)\vj+\beta(yz+xz)\vk
+      </me>,
+      où <m>\alpha</m> et <m>\beta</m> sont des constantes.
+      <ol marker = "(a)">
+      <li>
+      Déterminer <m>\alpha</m> et <m>\beta</m>.
+      </li>
+      <li>
+      Des expériences supplémentaires montrent que <m>\vG=xyz\vi-xyz\vj+g(x,y,z)\vk</m>.
+      Trouver la fonction inconnue <m>g(x,y,z)</m>.
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <answer><p>
+      (a) <m>\alpha=\beta=-1</m>
+      </p>
+
+      <p>(b)  N'importe quelle fonction de la forme <m>g(x,y,z)=xyz+w(z)</m> fonctionne.
+      </p></answer>
+
+      <solution><p>
+      (a)
+      By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a,
+      <me>
+      \nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
+      </me>
+      So we must have
+      <md>
+      <mrow>
+      0&amp;=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\vi+\alpha(yz-xy)\vj+\beta(yz+xz)\vk\big)
+      </mrow><mrow>
+      &amp;=(z+y)+\alpha(z-x)+\beta(y+x)
+      </mrow>
+      </md>
+      This is true for all <m>(x,y,z)</m> if and only if <m>\alpha=\beta=-1</m>.
+      </p>
+
+      <p>(b) Since
+      <md>
+      <mrow>
+      \nabla\times\vG&amp;=\nabla\times\big(xyz\vi-xyz\vj+g(x,y,z)\vk\big)
+      </mrow><mrow>
+      &amp;=(g_y+xy)\,\vi-(g_x-xy)\,hj+(-yz-xz)\,\vk
+      </mrow>
+      </md>
+      we will have that <m>\nabla\times\vG=\vF</m> if and only if
+      <md>
+      <mrow>
+      &amp;(g_y+xy)\,\vi-(g_x-xy)\,\vj+(-yz-xz)\,\vk
+      </mrow><mrow>
+      &amp;\hskip1in=(xz+xy)\,\vi-(yz-xy)\,\vj-(yz+xz)\,\vk
+      </mrow>
+      </md>
+      which is the case if and only if
+      <me>
+      g_y=xz,\quad g_x=yz
+      </me>
+      The first equation, <m>g_y=xz</m>, is satisfied if and only if <m>g=xyz+h(x,z)</m>.
+      The second equation is also satisfied if and only if
+      <m>g_x=yz+h_x(x,z)=yz</m>. This is the case if and only if <m>h_x(x,z)=0</m>. That
+      is, if and only if <m>h</m> is independent of <m>x</m>. Equivalently, if and only
+      if <m>h(x,z)=w(z)</m> for some function <m>w(z)</m>. So, in fact, any function of
+      the form <m>g(x,y,z)=xyz+w(z)</m> will work.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- La réponse et la solution correspondent omis la longue discussion -->
+
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+
+    <!-- Solution et réponse correspondent pour (a) -->
+    <exercise>
+      <statement><p>
+      Un corps rigide effectue une rotation à une vitesse angulaire de <m>\Om</m> rad/s
+      autour d'un axe passant par l'origine et de direction <m>\hat{\bf a}</m>. Lorsqu'on se tient à
+      la tête de <m>\hat{\bf a}</m> en regardant vers l'origine, la rotation
+      est en sens antihoraire. Soit <m>\vOm=\Om\hat{\bf a}</m>.
+      <ol marker = "(a)">
+      <li>
+      Montrer que la vitesse scalaire d'un point <m>\vr=(x,y,z)</m> sur le corps est <m>\vOm\times\vr</m>.
+      </li>
+      <li>
+      Évaluer <m>\vnabla\times(\vOm\times\vr)</m> et
+      <m>\vnabla\cdot(\vOm\times\vr)</m>, en traitant <m>\vOm</m> comme une constante.
+      </li>
+      <li>
+      Trouver la vitesse des personnes étudiantes dans une classe située à la
+      latitude <m>49^\circ</m> N due à la rotation de la Terre. Ignorer les mouvements
+      de la Terre autour du Soleil, du Soleil dans la Galaxie et ainsi de suite. Le rayon
+      de la Terre est de 6378 km.
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      (a) Trouver la longueur et la direction du vecteur vitesse.
+      Vérifier alors que <m>\vOm\times\vr</m> a cette longueur et direction.
+      </p></hint>
+
+      <answer><p>
+      (a)
+      Dénoter par <m>\theta</m> l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>.
+      Le point <m>\vr</m> est à une distance de <m>\ell=|\vr|\,\sin\theta</m> de l'axe de
+      rotation. Donc, lorsque le corps effectue une rotation, le point balaie un cercle de rayon
+      <m>\ell</m> centré sur l'axe de rotation.
+      </p>
+
+      <sidebyside width="30%">
+        <image source="images/CLP4-figs/pfigs/rigid"/>
+      </sidebyside>
+
+      <p>
+        En une seconde, le point balaie
+      un arc de ce cercle qui sous-tend un angle de <m>\Om</m> radians. Cet arc
+      est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
+      <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta</m>. Ainsi, le point
+      se déplace à une vitesse <m>\Om|\vr|\,\sin\theta</m>. Le vecteur vitesse du point
+      doit avoir une longueur de <m>\Om|\vr|\,\sin\theta</m> et une direction perpendiculaire
+      à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
+      <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
+      et a une longueur de
+      <m>\
+      |\vOm|\,|\vr|\,\sin\theta
+      =\Om|\vr|\,\sin\theta
+      \ </m>
+      comme voulu. Donc, le vecteur de vélocité est soit
+      <m>\vOm\times\vr</m> soit son négatif. Par la règle de la main droite, c'est <m>\vOm\times\vr</m>.
+      </p>
+
+      <p>(b) <m>\vnabla\times(\vOm\times\vr)=2 \vOm, \qquad \vnabla\cdot(\vOm\times\vr)=0</m>
+      </p><p>
+      (c) <m>1095</m> km/h
+      </p>
+
+      </answer>
+
+      <solution><p>
+        (a)
+        Dénoter par <m>\theta</m> l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>.
+        Le point <m>\vr</m> est à une distance de <m>\ell=|\vr|\,\sin\theta</m> de l'axe de
+        rotation. Donc, lorsque le corps effectue une rotation, le point balaie un cercle de rayon
+        <m>\ell</m> centré sur l'axe de rotation.
+        </p>
+  
+        <sidebyside width="30%">
+          <image source="images/CLP4-figs/pfigs/rigid"/>
+        </sidebyside>
+  
+        <p>
+          En une seconde, le point balaie
+        un arc de ce cercle qui sous-tend un angle de <m>\Om</m> radians. Cet arc
+        est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
+        <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta</m>. Ainsi, le point
+        se déplace à une vitesse <m>\Om|\vr|\,\sin\theta</m>. Le vecteur vitesse du point
+        doit avoir une longueur de <m>\Om|\vr|\,\sin\theta</m> et une direction perpendiculaire
+        à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
+        <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
+        et a une longueur de
+        <m>\
+        |\vOm|\,|\vr|\,\sin\theta
+        =\Om|\vr|\,\sin\theta
+        \ </m>
+        comme voulu. Donc, le vecteur vitesse est soit
+        <m>\vOm\times\vr</m> soit son négatif. Par la règle de la main droite, c'est <m>\vOm\times\vr</m>.
+        </p>
+
+      <p>(b) By vector identities
+      <md>
+      <mrow>
+      \vnabla\cdot(\vF\times\vG)
+         &amp;=\vG\cdot(\vnabla\times\vF)-\vF\cdot(\vnabla\times\vG)
+      </mrow><mrow>
+      \vnabla\times(\vF\times\vG)
+         &amp;=\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
+      +(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG
+      </mrow>
+      </md>
+      (which are Theorems <xref ref="thm_divIdentities"/>(d)
+      and <xref ref="thm_curlIdentities"/>(d))
+      and the assumption that <m>\vOm</m> is constant
+      <md>
+      <mrow>
+      \vnabla\times(\vOm\times\vr)
+      &amp;=\vOm(\vnabla\cdot\vr)-(\vnabla\cdot\vOm)\vr
+      +(\vr\cdot\vnabla)\vOm-(\vOm\cdot\vnabla)\vr
+      </mrow><mrow>
+      &amp;=\vOm(\vnabla\cdot\vr)-(\vOm\cdot\vnabla)\vr
+      </mrow><mrow>
+      \vnabla\cdot(\vOm\times\vr)&amp;=
+      \vr\cdot(\vnabla\times\vOm)-
+      \vOm\cdot(\vnabla\times\vr)
+      =-\vOm\cdot(\vnabla\times\vr)
+      </mrow>
+      </md>
+      Substituting in
+      <md>
+      <mrow>
+      \vnabla\cdot\vr&amp;=\pdiff{x}{x}+
+      \pdiff{y}{y}+\pdiff{z}{z}=3
+      </mrow><mrow>
+      \vnabla\times\vr
+      &amp;=\big(\pdiff{z}{y}-\pdiff{y}{z}\big)\vi+
+      \big(\pdiff{x}{z}-\pdiff{z}{x}\big)\vj
+      +\big(\pdiff{y}{x}-\pdiff{x}{y}\big)\vk
+      =\vZero
+      </mrow><mrow>
+      (\vOm\cdot\vnabla)\vr&amp;=
+      \big(\Om_1\pdiff{}{x}
+      +\Om_2\pdiff{}{y}
+      +\Om_3\pdiff{}{z}\big)
+      \big(x\vi+y\vj+z\vk\big)
+      </mrow><mrow>
+      &amp;=\Om_1\vi+\Om_2\vj+\Om_3\vk=\vOm
+      </mrow>
+      </md>
+      gives
+      <me>
+      \vnabla\times(\vOm\times\vr)=2\,\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0
+      </me>
+      </p>
+
+      <p>(c)
+      The students are a distance <m>6378\sin(90^\circ- 49^\circ)=
+      6378\cos(49^\circ)=4184</m> km from the axis of rotation. The rate of rotation
+      is <m>\Om =\frac{2\pi}{24}</m> radians per hour. In each hour the students
+      sweep out an arc of <m>\frac{2\pi}{24}</m> radians from a circle of radius
+      <m>4184</m> km. Their speed is <m>\frac{2\pi}{24}\times 4184=1095</m>km/h.
+      </p></solution>
+    </exercise>
+
+    <!-- Solution et réponse correspondent -->
+    <exercise>
+      <statement><p>
+      Supposer que le champ de vecteurs <m>\vF</m> vérifie <m>\vnabla\cdot \vF=0</m> dans
+      <m>\R^3</m> au complet. Soit
+      <me>
+      \vr(t)=tx\,\vi+ty\,\vj+tz\,\vk,\qquad 0\leqslant t\leqslant 1
+      </me>
+      une paramétrisation de la droite allant de l'origine à <m>(x,y,z)</m>. Définir
+      <me>
+      \vG(x,y,z)=\int_0^1 t\,\vF\big(\vr(t)\big)\times\frac{d\vr}{dt}(t)\,dt
+      </me>.
+      Montrer que <m>\vnabla\times \vG=\vF</m> sur <m>\R^3</m>.
+      </p></statement>
+
+      <answer><p>
+      Il faut montrer que <m>\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1</m>. Les autres composantes sont
+      similaires. Premièrement,
+      <md>
+      <mrow>
+      t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
+      &amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\vi+y\,\vj+z\,\vk\big)
+      </mrow><mrow>
+      &amp;=t\det\left[\begin{matrix}\vi  &amp; \vj &amp; \vk
+      </mrow><mrow>
+                           F_1 &amp; F_2 &amp; F_3
+      </mrow><mrow>
+                           x &amp; y &amp; z\end{matrix}\right]
+      </mrow>.
+      </md>
+      En lisant les composantes <m>\vk</m> et <m>\vj</m> du déterminant, ça donne
+      <md>
+      <mrow>
+      G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt
+      </mrow>.
+      <mrow>
+      G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+      </mrow>.
+      </md>
+      Donc,
+      <md>
+      <mrow>
+      \pdiff{G_3}{y}
+      &amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
+      \frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
+      -\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt
+      </mrow>.
+      <mrow>
+      \pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
+      \frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
+      -\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
+      -F_1\big(tx,ty,tz\big)\Big]\,dt
+      </mrow>.
+      </md>
+      de sorte que
+      <md>
+      <mrow>
+      \pdiff{G_3}{y}-\pdiff{G_2}{z}
+      &amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)
+      </mrow><mrow>
+      &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+      +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
+      </mrow><mrow>
+      &amp;\hskip1in
+      -t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+      -t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+      </mrow>.
+      </md>
+      Comme, par hypothèse,
+         <m>\vnabla\cdot\vF=\frac{\partial F_1}{\partial x}
+         +\frac{\partial F_2}{\partial y}
+         +\frac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
+      <md>
+      <mrow>
+      -t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+      +\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
+      =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+      </mrow>,
+      </md>
+      de telle sorte que
+      <md>
+      <mrow>
+      &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
+      </mrow><mrow>
+      &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
+       +t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
+      +t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+      </mrow><mrow>
+      &amp;\hskip3.5in
+      +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+      </mrow><mrow>
+      &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
+      =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
+      </mrow><mrow>
+      &amp;\hskip0.25in= F_1(x,y,z)
+      </mrow>.
+      </md>
+      </p></answer>
+
+      <solution><p>
+        Il faut montrer que <m>\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1</m>. Les autres composantes sont
+        similaires. Premièrement,
+        <md>
+        <mrow>
+        t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
+        &amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\vi+y\,\vj+z\,\vk\big)
+        </mrow><mrow>
+        &amp;=t\det\left[\begin{matrix}\vi  &amp; \vj &amp; \vk
+        </mrow><mrow>
+                             F_1 &amp; F_2 &amp; F_3
+        </mrow><mrow>
+                             x &amp; y &amp; z\end{matrix}\right]
+        </mrow>.
+        </md>
+        En lisant les composantes <m>\vk</m> et <m>\vj</m> du déterminant, ça donne
+        <md>
+        <mrow>
+        G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt
+        </mrow>.
+        <mrow>
+        G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+        </mrow>.
+        </md>
+        Donc,
+        <md>
+        <mrow>
+        \pdiff{G_3}{y}
+        &amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
+        \frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
+        -\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt
+        </mrow>.
+        <mrow>
+        \pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
+        \frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
+        -\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
+        -F_1\big(tx,ty,tz\big)\Big]\,dt
+        </mrow>.
+        </md>
+        de sorte que
+        <md>
+        <mrow>
+        \pdiff{G_3}{y}-\pdiff{G_2}{z}
+        &amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)
+        </mrow><mrow>
+        &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+        +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
+        </mrow><mrow>
+        &amp;\hskip1in
+        -t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+        -t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+        </mrow>.
+        </md>
+        Comme, par hypothèse,
+           <m>\vnabla\cdot\vF=\frac{\partial F_1}{\partial x}
+           +\frac{\partial F_2}{\partial y}
+           +\frac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
+        <md>
+        <mrow>
+        -t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+        +\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
+        =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+        </mrow>,
+        </md>
+        de telle sorte que
+        <md>
+        <mrow>
+        &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
+        </mrow><mrow>
+        &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
+         +t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
+        +t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+        </mrow><mrow>
+        &amp;\hskip3.5in
+        +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+        </mrow><mrow>
+        &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
+        =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
+        </mrow><mrow>
+        &amp;\hskip0.25in= F_1(x,y,z)
+        </mrow>.
+        </md>
+        </p></solution>
+    </exercise>
+
+
+  </exercisegroup>
+
+</exercises>

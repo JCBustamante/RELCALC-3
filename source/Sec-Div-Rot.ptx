@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-rot-div">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Le rotationnel et la divergence</title>
+
+<introduction>
+  Dans cette section, nous nous intéressons au calcul différentiel des champs vectoriels. Plus précisément, nous considérons le rotationnel et la divergence d'un champ de vecteurs. Si l'on pense au champ comme un à champ de vitesses, il s'agit de mesures qui permettent, jusqu'à un certain point, de caractériser ce champ par sa tendance à créer des rotations (sans déplacement) ou comme une source. Ces quantités seront intimement liées aux intégrales de flux rencontrées dans la section précédente, à savoir la circulation d'un champ (en lien avec le rotationnel) et le flux d'un champ à travers une courbe (en lien avec la divergence).
+</introduction>
+
+
+<subsection xml:id="pars-rot">
+  <title>Le rotationnel</title>
+  <p>
+    Nous voulons mesurer la tendance que notre champ <m>\vF</m> a à créer un tourbillon en un point <m>(x_0,y_0)</m> donné. Imaginons que nous disposons d'une roue à palettes, que nous déposons sur la surface de notre liquide. La roue ne peut pas bouger vers un autre point, mais le liquide peut faire tourner la roue.
+  </p>
+
+  <figure xml:id = "OpenStax-roue">
+  <image source="images/OpenStax/CNX_Calc_Figure_16_05_005" width = "75%"/>
+  <caption>Un champ de vitesses d'un liquide peut avoir tendance à créer un tourbillon en un point donné. La rotation a un axe dirigé par le vecteur <m>\vn</m>, normal au plan de rotation. Dans le cas des champs dans <m>\R^2</m>, cet axe est le vecteur <m>\vk</m>. Figure tirée de <em>Calculus Volume 3, d'OpenStax</em><xref ref="Strang-2018"/>.</caption>
+  </figure>
+
+  <p>
+  Considérons la trajectoire orientée dans le sens contraire des aiguilles d'une montre <m>\cC</m>, formée par :
+  <ul>
+    <li>
+      <p>
+        <m>\cC_1</m>, le segment joignant <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_2</m>, le segment joignant <m>(x_0+\De x,y_0)</m> à <m>(x_0+\De x, y_0+ \De y)</m>,
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_3</m>, le segment joignant <m>(x_0+\De x,y_0 + \De y)</m> à <m>(x_0, y_0+ \De y)</m>, et finalement
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_4</m>, le segment joignant <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.
+      </p>
+    </li>
+  </ul>
+  </p>
+
+  <p>
+    Ainsi, nous avons le flux de <m>\vF</m> autour de <m>\cC</m>:
+    <me>
+      \oint_{\cC} \vF \cdot \dee{\vr} = \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr}.
+    </me>
+  </p>
+  <image xml:id="sageplot-idee-rot" width="85%">
+    <description>Une trajectoire rectangulaire</description>
+   <sageplot>
+    var('x,y')
+    Dx=2
+    Dy=1
+    P(x,y) = (-y+x-1)/sqrt((x-1)^2 + y^2)
+    Q(x,y) = (y+x-1)/sqrt((x-1)^2 + y^2)
+    Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.2,2.2), (y,-0.2,1.2),
+      color = "grey", plot_points=12, frame = False, zorder = -1)
+    Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1,
+      axes = False)
+    Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1)
+    Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1)
+    Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1)
+    Fig += arrow2d((0.9,0), (1.1,0), color = "red", zorder =1)
+    Fig += arrow2d((2,0.4), (2,0.6), color = "red", zorder =1)
+    Fig += arrow2d((1.1,1), (0.9,1), color = "red", zorder =1)
+    Fig += arrow2d((0,0.7), (0,0.5), color = "red", zorder =1)
+    Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.1), color = "blue",
+      fontsize = 14)
+    Fig += text("$\\mathcal{C}_2$", (Dx+0.1,Dy-0.2), color = "blue",
+      fontsize = 14)
+    Fig += text("$\\mathcal{C}_3$", (0.3,Dy-0.1), color = "blue",
+      fontsize = 14)
+    Fig += text("$\\mathcal{C}_4$", (-0.1,0.1), color = "blue", fontsize = 14)
+    Fig += text("$(x_0,y_0)$", (0,-0.1), fontsize = 14, color = "black",
+      zorder = 2, background_color = "white")
+    Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.1), fontsize = 14,
+      color = "black", zorder = 0, background_color = "white")
+    Fig += text("$(x_0+ \\Delta x,y_0 + \\Delta y)$", (Dx,Dy+0.1),
+      fontsize = 14, color = "black", zorder = 0, background_color = "white")
+    Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 14,
+      color = "black", zorder = 0, background_color = "white")
+    Fig
+   </sageplot>
+  </image>
+
+
+
+
+
+  <p>
+    Comme d'habitude, nous supposons <m>\De x</m> et  <m>\De y</m> petits et que les composantes du champ <m>\vF</m> sont continues et possèdent des dérivées partielles continues. Sur chacun des segments, nous voulons une approximation de <m>\vF \cdot \De \vr</m>, ce que nous obtenons en choisissant un point d'échantillonnage pour l'évaluation du champ <m>\vF</m> sur chaque portion du trajet.
+  </p>
+
+  <p>
+    <tabular>
+                    <row header="yes" bottom="major">
+                        <cell>Portion</cell>
+                        <cell>Point évaluation</cell>
+                        <cell> <m>\De \vr</m></cell>
+                        <cell halign = "center"> <m>\vF \cdot \De \vr</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>\cC_1</m>, bas</cell>
+                        <cell> <m>(x_0,y_0)</m></cell>
+                        <cell> <m>\phantom{-}\De x\,\vi</m></cell>
+                        <cell halign = "center"> <m>P(x_0,y_0)\De x</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>\cC_2</m>, droite</cell>
+                        <cell> <m>(x_0+\De x,y_0)</m></cell>
+                        <cell> <m>\phantom{-}\De y\,\vj</m></cell>
+                        <cell halign = "center"><m>Q(x_0+\De x,y_0)\De y</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>\cC_3</m>, haut</cell>
+                        <cell> <m>(x_0,y_0 + \De y)</m></cell>
+                        <cell> <m>-\De x\,\vi</m></cell>
+                        <cell halign = "center"> <m>-P(x_0,y_0 + \De y)\De x</m></cell>
+                    </row>
+                    <row>
+                        <cell><m>\cC_4</m>, gauche</cell>
+                        <cell> <m>(x_0,y_0)</m></cell>
+                        <cell> <m>-\De y\,\vj</m></cell>
+                        <cell halign = "center"> <m>-Q(x_0,y_0)\De y</m></cell>
+                    </row>
+    </tabular>
+  </p>
+
+  <p>
+    Ainsi, le flux correspondant aux portions horizontales du trajet est
+    <md>
+      <mrow> \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} \amp\approx \left[(P(x_0,y_0) - P(x_0, y_0 + \De y)\right] \De x </mrow>
+      <mrow>  \amp  = -\left[P(x_0, y_0 + \De y) - P(x_0,y_0) \right]\De x</mrow>
+      <mrow> \amp\approx -\pdiff{P}{y}(x_0, y_0) \De y\, \De x, </mrow>
+    </md>
+    puisque nous avons l'hypothèse de la continuité de la dérivée partielle <m>\pdiff{P}{y}</m>.
+
+  </p>
+  <p>
+    De la même façon, le flux correspondant aux composantes verticales de la trajectoire est
+    <md>
+      <mrow> \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr} \amp\approx \left[(Q(x_0 + \De x,y_0) - P(x_0, y_0)\right] \De y </mrow>
+      <mrow> \amp\approx \pdiff{Q}{y}(x_0, y_0) \De x\, \De y, </mrow>
+    </md>
+    puisque nous avons l'hypothèse de la continuité de la dérivée partielle <m>\pdiff{Q}{x}</m>.
+  </p>
+  <p>
+    Le flux total est donc
+    <md>
+      <mrow> \oint_{\cC} \vF \cdot \dee{\vr} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot \dee{\vr}  \approx \left[\pdiff{P}{y}(x_0, y_0) - \pdiff{Q}{x} (x_0,y_0)\right]\De y \De x.</mrow>
+    </md>
+    La <em>densité de circulation</em>, c'est-à-dire le flux par unité d'aire, est donc
+    <me>
+      \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{P}{y} - \pdiff{Q}{x}.
+    </me>
+  </p>
+
+  <!-- <p>
+
+  </p>
+  <p>
+    <term>Début nouveau</term>
+  </p> -->
+  <example>
+    <statement>
+      <p>
+        Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est
+        <me>
+          \pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x.
+        </me>
+      </p>
+
+      <p>
+        Le champ est représenté dans la figure ci-bas. Notons que toutes les flèches sont verticales vers le bas. On pourrait donc penser que ce champ représente une translation et que le rotationnel devrait être nul. En bout de ligne, ce n'est pas à une figure comme celle-ci qu'on pense lorsque l'idée d'un tourbillon est considérée.
+      </p>
+
+
+      <figure xml:id="fig-rot-translation">
+      <caption>Le champ <m>\vv = (x^2 - 1)\vj</m></caption>
+      <image xml:id="sageplot-rot-translation" width="75%">
+        <description>Un champ vectoriel .</description>
+        <sageplot>
+          var('x,y')
+          Fig = plot_vector_field((0,x^2 -1), (x,-0.9,0.9),(y,-0.3,1),
+                        color = "steelblue", axes = True,
+                        axes_labels = ['$x$','$y$'],
+                        axes_labels_size=1.4, #aspect_ratio = 1,
+                        ticks = [[],[]],
+                        frame= False,
+                        plot_points = 11,
+                        headlength = 3,
+                        headwidth = 3,
+                        headaxislength = 3, zorder=2)
+          Fig += point([(0.45,0.52), (-0.45,0.52)], color = "red", size = 20)
+          Fig += text("$A$", (0.45,0.58), color = "red", fontsize = 14)
+          Fig += text("$B$", (-0.45,0.58), color = "red", fontsize = 14)
+          Fig
+        </sageplot>
+      </image>
+      </figure>
+
+
+      <p>
+        Cependant, pensons à notre roue à palettes. S'il est vrai qu'elle voyagerait en suivant une translation donnée par des lignes droites vers le bas (les lignes de courant de ce champ sont effectivement ces droites), elle voyagerait en tournant sur elle-même. Au point <m>A</m>, par exemple, la vitesse du fluide à la droite de la roulette est légèrement inférieure à celle à la gauche (mais toujours près de <m>A</m>). Il en résulterait une faible rotation dans le sens contraire des aiguilles d'une montre. Ceci correspond au fait que <m>x_A \gt 0</m>, et donc la densité de circulation en ce point vaut <m>2x_A \gt 0</m>.
+      </p>
+      <p>
+        Autour du point <m>B</m>, la situation est inversée.
+      </p>
+    </statement>
+  </example>
+
+<!-- 
+  <p>
+    <term>Fin nouveau</term>
+  </p> -->
+
+
+
+<example>
+  <statement>
+    <p>Considérons le champ de vecteurs <m>\vF = \sin y \, \vi + \cos x\, \vj </m>. Son rotationnel (à proprement parler sa composante <m>\vk</m>) est <m>\pdiff{}{x}\cos x - \pdiff{}{y}\sin y = -(\sin x + \cos y)</m>.
+    </p>
+    <p>
+      La figure ci-bas montre
+      <ul>
+        <li>
+          <p>
+            le champ <m>\vF</m>, indiqué par les flèches noires;
+          </p>
+        </li>
+        <li>
+          <p>
+            les courbes de niveau de la fonction <m>-(\sin x + \cos y)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+      <image xml:id="sageplot-rot-illustration" width="85%">
+        <description>Un champ, et la composante <m>\vk</m> de son rotationnel</description>
+       <sageplot>
+        var('x,y')
+        Fig =contour_plot(-cos(y)-sin(x), (x,-3*pi/2,3*pi/2),
+          (y,-3*pi/2,3*pi/2), cmap = "Spectral", zorder = -1, colorbar=True )
+        Fig += plot_vector_field((sin(y), cos(x)), (x,-3*pi/2,3*pi/2),
+          (y,-3*pi/2,3*pi/2), color='black', ticks=[pi/2,pi/2],
+          tick_formatter=[pi,pi], aspect_ratio = 1, plot_points=15, zorder =3)
+        Fig
+       </sageplot>
+      </image>
+    <p> On observe notamment que les valeurs élevées du rotationnel, ce qui correspond aux zones bleues, par exemple près du point <m>(-\pi/2,\pi)</m>, correspondent aux endroits où le champ a une forte tendance à tourbillonner (sur lui même) dans le sens antihoraire.  De la même façon, les zones rouges correspondent aux endroits où le tourbillon est fort en intensité, mais tourne dans le sens horaire. La droite qui joint <m>(-3\pi/2,\pi)</m> à <m>(\pi, -3\pi/2)</m>, par exemple, correspond à une zone de faible rotation, nous avons plutôt une tendance à un mouvement de translation sur cette région.
+
+    </p>
+  </statement>
+
+</example>
+
+
+
+<!-- <p>
+
+</p>
+<p>
+  <term>Début nouveau</term>
+</p> -->
+<p>
+  Pour les champs à 3 composantes, les choses sont passablement plus complexes. S'il est vrai qu'une rotation dans le plan ne peut avoir comme axe qu'un point (ou une droite perpendiculaire au plan passant par ce point si l'on tient à voir les choses en trois dimensions), dans l'espace, les axes de rotation peuvent avoir n'importe quelle orientation. La densité de circulation doit tenir compte de ceci, on devra avoir une densité de circulation pour chaque axe! Pour cette raison, il devra s'agir d'un champ de vecteurs à son tour.
+</p>
+<p>
+  On peut effectuer un raisonnement comme celui qui a mené à la notion de densité de circulation pour les champs à trois composantes. Ceci mène à la définition suivante.
+</p>
+
+<definition xml:id="def_curl">
+<statement><p>
+Le <terms>rotationnel</terms> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est le champ <m>\vnabla\times\vF(x,y,z)</m>, aussi noté <m>\rot \vF</m>, défini par
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\Big(\frac{\partial R }{\partial y} -\frac{\partial Q }{\partial z} \Big)\vi
++\Big(\frac{\partial P}{\partial z} -\frac{\partial R }{\partial x} \Big)\vj
++\Big(\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y} \Big)\vk
+</mrow><mrow>
+&amp;=\det\left[\begin{matrix}
+                \vi &amp; \pdiff{}{x} &amp; P \\
+                \vj &amp; \pdiff{}{y} &amp; Q \\
+                \vk &amp; \pdiff{}{z}&amp; R
+            \end{matrix}\right]
+</mrow>
+</md>.
+
+<ul>
+  <li>
+    <p>
+      En particulier, lorsqu'on a affaire à un champ dans le plan, le rotationnel devient <m>\displaystyle\Big(\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y} \Big)\vk</m>. C'est un champ dont une seule composante est non nulle. Pour cette raison, on commet souvent l'abus de langage qui consiste à dire que le rotationnel de <m>\vF(x,y) = P(x,y)\, \vi + Q(x,y)\, \vj</m> est la quantité <m>\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y}</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      L'utilisation du déterminant est en réalité un procédé mnémotechnique, souvent utilisé afin de faire les calculs, puisqu'il est facile de se tromper dans les signes.
+    </p>
+  </li>
+</ul>
+</p>
+</statement>
+</definition>
+
+<example xml:id="ex-rot-3d">
+  <statement>
+    <p>Soit <m>\vF(x,y,z) = (x^2 -y)\, \vi + 4z\, \vj + x^2\, \vk </m>. Calculer le rotationnel de <m>\vF</m>.
+
+    </p>
+
+    <p>On calcule directement
+      <md>
+        <mrow>\rot \vF = \vnabla \times \vF \amp = \begin{vmatrix}
+                        \vi &amp; \pdiff{}{x} &amp; x^2-y  \\
+                        \vj &amp; \pdiff{}{y} &amp; 4z \\
+                        \vk &amp; \pdiff{}{z}&amp; x^2
+                    \end{vmatrix}   </mrow>
+                    <mrow>  \amp =\left(\pdiff{x^2}{y} - \pdiff{}{z}(4z) \right)\vi - \left(\pdiff{x^2}{x} - \pdiff{}{y}(x^2 - y)\right)\vj </mrow>
+                    <mrow>  \amp+ \left(\pdiff{}{x}(4z) -\pdiff{}{y}(x^2 - y) \right)\vk </mrow>
+                    <mrow>  \amp=-4\,\vi -2x\, \vj + \vk </mrow>.
+
+      </md>
+
+    </p>
+  </statement>
+</example>
+
+<p>
+  Nous savons que le champ gradient d'une fonction <m>f</m> donne la direction de plus forte augmentation de la valeur de cette fonction. Nous verrons dans la <xref ref="sec_Indep-traj"></xref> d'autres raisons pour lesquelles il est important de pouvoir décider si un champ est un champ gradient ou pas.
+</p>
+
+<p>
+  Une des utilités du rotationnel est qu'il peut être utilisé pour dépister les champs gradients. En effet, le résultat suivant nous dit que ceux-ci sont irrotationnels<fn>C'est-à-dire que leur rotationnel est nul.</fn>.
+</p>
+
+<theorem xml:id="thm-rot-grad-zero">
+  <statement>
+    <p>Soit <m>f</m> une fonction de classe <m>C^2</m>, alors
+    <me>
+      \vnabla \times \vnabla f = \vZero,
+    </me>
+    ou encore
+    <me>
+      \rot (\grad f ) = \vZero.
+    </me>
+
+
+
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Soit <m>f</m> une fonction de classe <m>C^2</m>. Alors, <m>\vnabla f = f_x\, \vi + f_y\, \vj + f_z\, \vk</m>, de sorte que
+      <md>
+        <mrow>\vnabla \times \vnabla f \amp =  \begin{vmatrix}
+                        \vi &amp; \pdiff{}{x} &amp; f_x  \\
+                        \vj &amp; \pdiff{}{y} &amp; f_y \\
+                        \vk &amp; \pdiff{}{z}&amp; f_z
+                    \end{vmatrix}   </mrow>
+        <mrow> \amp = \left(\pdiff{f_z}{y} - \pdiff{f_y}{z}\right)\vi + \left(\pdiff{f_x}{z} - \pdiff{f_z}{x}\right)\vj  = \left(\pdiff{f_y}{x} - \pdiff{f_x}{y}\right)\vk</mrow>
+        <mrow>  \amp = \left(f_{zy} - f_{yz}\right)\vi + \left(f_{xz} - f_{zx}\right)\vj  + \left(f_{yx} - f_{xy}\right)\vk</mrow>.
+      </md>
+      Or, <m>f</m> étant supposée de classe <m>C^2</m>, le <xref ref="thm_mixed_partials"/> donne l'égalité des dérivées partielles croisées, et la conclusion suit.
+
+    </p>
+  </proof>
+
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      Nous avons vu à l'<xref ref="ex-non-conserv"></xref> qu'il n'existe pas de fonction <m>f</m> telle que <m>\vnabla f = xy\, \vi + (y^2 +1)\, \vj</m>.
+    </p>
+    <p>
+      Avec les notations et les concepts introduits dans cette section, nous pouvons revoir ceci comme suit : posons <m>\vG = xy\, \vi + (y^2 +1)\, \vj </m>. Comme <m>\vnabla \times \vG = -x\,\vk</m>, qui est non nul, le champ <m>\vG</m> n'est pas irrotationnel. Il ne peut donc pas être un champ gradient.
+    </p>
+  </statement>
+</example>
+
+<!-- 
+
+<p>
+  <term>Fin nouveau</term>
+</p> -->
+
+
+
+<!-- WeBWork à inclure>
+Library/Michigan/Chap20Sec3/Q02.pg
+Je peux traduire
+-->
+
+
+</subsection>
+
+<subsection xml:id="pars-div">
+  <title>La divergence</title>
+
+  <p>
+    Nous voulons maintenant savoir dans quelle mesure le champ <m>\vF</m> se comporte comme une source  (voir <xref ref="eg_ptSource">l'exemple</xref> ) dans un voisinage d'un point <m>(x_0,y_0)</m> donné. Ceci revient à considérer le flux de <m>\vF</m> <em>à travers</em> une courbe fermée <m>\cC</m>.
+  </p>
+  <p>
+    Pour ceci, nous considérons la trajectoire fermée orientée dans le sens des aiguilles d'une montre <m>\cC</m>, formée par
+  </p>
+  <ul>
+    <li>
+      <p>
+        <m>\cC_1</m>, le segment joignant <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_2</m>, le segment joignant <m>(x_0+\De x,y_0)</m> à <m>(x_0+\De x, y_0+ \De y)</m>,
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_3</m>, le segment joignant <m>(x_0+\De x,y_0 + \De y)</m> à <m>(x_0, y_0+ \De y)</m>, et finalement
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\cC_4</m>, le segment joignant <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.
+      </p>
+    </li>
+  </ul>
+<p>
+  Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
+  <me>
+      \int_{\cC} \vF \cdot \vn \, \dee{s} = \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn \, \dee{s}.
+  </me>
+</p>
+<p>
+  Comme précédemment, nous faisons une approximation de <m>\vF \cdot \vn</m> sur chaque portion de la trajectoire en choisissant un point d'évaluation pour <m>\vF</m>. Par ailleurs, la longueur de chaque portion de déplacement est <m>\De s =  \De x</m> ou <m>\De s= \De y</m>, selon qu'on se trouve sur une portion horizontale ou verticale.
+</p>
+<image xml:id="sageplot-idee-div" width="85%">
+  <description>Une trajectoire rectangulaire</description>
+ <sageplot>
+  var('x,y')
+  Dx=2
+  Dy=1
+  P(x,y) = (-y+x-1)/sqrt((x-1)^2 + y^2)
+  Q(x,y) = (y+x-1)/sqrt((x-1)^2 + y^2)
+  Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.2,2.2), (y,-0.2,1.2),
+    color = "grey", plot_points=12, frame = False, zorder = -1)
+  Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1,
+    axes = False)
+  Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1)
+  Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1)
+  Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1)
+  Fig += arrow2d((0.9,0), (0.9, -0.2), color = "red", zorder =1)
+  Fig += arrow2d((2,0.4), (2.2,0.4), color = "red", zorder =1)
+  Fig += arrow2d((1.1,1), (1.1,1.2), color = "red", zorder =1)
+  Fig += arrow2d((0,0.7), (-0.2,0.7), color = "red", zorder =1)
+  Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.1), color = "blue",
+    fontsize = 14)
+  Fig += text("$\\mathcal{C}_2$", (Dx+0.1,Dy-0.2), color = "blue",
+    fontsize = 14)
+  Fig += text("$\\mathcal{C}_3$", (0.3,Dy-0.1), color = "blue",
+    fontsize = 14)
+  Fig += text("$\\mathcal{C}_4$", (-0.1,0.1), color = "blue", fontsize = 14)
+  Fig += text("$(x_0,y_0)$", (0,-0.1), fontsize = 14, color = "black",
+    zorder = 2, background_color = "white")
+  Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.1), fontsize = 14,
+    color = "black", zorder = 0, background_color = "white")
+  Fig += text("$(x_0+ \\Delta x,y_0 + \\Delta y)$", (Dx,Dy+0.1),
+    fontsize = 14, color = "black", zorder = 0, background_color = "white")
+  Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 14,
+    color = "black", zorder = 0, background_color = "white")
+  Fig
+ </sageplot>
+</image>
+
+
+<p>
+  <tabular>
+                  <row header="yes" bottom="major">
+                      <cell>Portion</cell>
+                      <cell>Point évaluation</cell>
+                      <cell> <m> \vn</m></cell>
+                      <cell halign = "center"> <m>\vF \cdot \vn\ \De s</m></cell>
+                  </row>
+                  <row>
+                      <cell><m>\cC_1</m>, bas</cell>
+                      <cell> <m>(x_0,y_0)</m></cell>
+                      <cell> <m>-\vj</m></cell>
+                      <cell halign = "center"> <m>-Q(x_0,y_0)\De x</m></cell>
+                  </row>
+                  <row>
+                      <cell><m>\cC_2</m>, droite</cell>
+                      <cell> <m>(x_0+\De x,y_0)</m></cell>
+                      <cell> <m>\phantom{-} \vi</m></cell>
+                      <cell halign ="center"><m>P(x_0+\De x,y_0)\De y</m></cell>
+                  </row>
+                  <row>
+                      <cell><m>\cC_3</m>, haut</cell>
+                      <cell> <m>(x_0,y_0 + \De y)</m></cell>
+                      <cell> <m>\phantom{-} \vj</m></cell>
+                      <cell halign = "center"> <m>Q(x_0,y_0 + \De y)\De x</m></cell>
+                  </row>
+                  <row>
+                      <cell><m>\cC_4</m>, gauche</cell>
+                      <cell> <m>(x_0,y_0)</m></cell>
+                      <cell> <m>-\vi</m></cell>
+                      <cell halign = "center"> <m>-P(x_0,y_0)\De y</m></cell>
+                  </row>
+  </tabular>
+</p>
+<p>
+  Ainsi, le flux correspondant aux portions horizontales du trajet est
+  <md>
+    <mrow> \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn\,  \dee{s} \amp\approx \left[-Q(x_0,y_0) + Q(x_0, y_0 + \De y)\right] \De x </mrow>
+    <mrow> \amp\approx \pdiff{Q}{y}(x_0, y_0) \De y\, \De x, </mrow>
+  </md>
+  puisque nous avons supposé la continuité de <m>\pdiff{Q}{y}</m>.
+</p>
+<p>
+  De la même façon, le flux correspondant aux portions verticales est
+  <md>
+    <mrow> \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn\,  \dee{s} \amp\approx \left[P(x_0+\De x,y_0) - P(x_0, y_0)\right] \De y </mrow>
+    <mrow> \amp\approx \pdiff{P}{x}(x_0, y_0) \De x\, \De y. </mrow>
+  </md>
+</p>
+<p>
+  Le flux total est donc
+  <md>
+    <mrow> \oint_{\cC} \vF \cdot \vn \dee{s} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot  \vn\, \dee{s}  \approx \left[\pdiff{P}{x}(x_0, y_0) + \pdiff{Q}{y} (x_0,y_0)\right]\De y \De x.</mrow>
+  </md>
+  La <em>densité de flux à travers</em>, c'est-à-dire le flux par unité d'aire, est donc
+  <me>
+    \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{P}{x} + \pdiff{Q}{y}.
+  </me>
+</p>
+
+<definition xml:id="def_div">
+<statement><p>
+La <terms>divergence</terms> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est le champ  <m>\vnabla \cdot \vF(x,y,z)</m>, aussi noté <m>\div \vF</m>, et est le champ défini par
+
+<md>
+  <mrow>\vnabla \cdot \vF \amp = \pdiff{P}{x} + \pdiff{Q}{y} + \pdiff{R}{z}. </mrow>
+</md>
+
+
+<ul>
+    <li>
+      <p>
+        En particulier, lorsqu'on a affaire à un champ dans le plan, la divergence est   <m>\displaystyle \pdiff{P}{x} + \pdiff{Q}{y}</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        À nouveau, l'écriture <m>\vnabla \cdot \vF</m> est un léger abus de notation, on conçoit <m>\vnabla</m> comme un vecteur formel,  <m>\vnabla = \pdiff{}{x}\vi + \pdiff{}{y}\vj + \pdiff{}{z}\vk</m>.
+      </p>
+    </li>
+</ul>
+
+
+</p>
+</statement>
+</definition>
+
+<p>
+  Il faut noter que la difergence d'un champ vectorielune fonction à valeurs scalaires, à différence du rotationnel qui, lui, est un champ vectoriel.
+</p>
+
+
+<!-- WeBWork à inclure>
+Devoir 12, problème 4
+-->
+
+
+<example>
+  <statement>
+    <p>Soit <m>\vF(x,y) = -y\, \vi + x\, \vj</m>. Alors sa divergence est
+    <me>
+    \div \vF = \vnabla \cdot \vF = \pdiff{}{x}(-y) + \pdiff{}{y}(x) = 0
+    </me>
+    </p>
+  </statement>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Calculer la divergence du champ de vecteurs <m>\vF = x^2 y \, \vi + z \,\vj + xyz\, \vk</m>.
+
+    </p>
+
+  </statement>
+  <solution>
+    <p> On calcule directement :
+      <me>
+        \vnabla \cdot \vF = \pdiff{}{x}(x^2y) + \pdiff{}{y} (z)\,\vj + \pdiff{}{z}(xyz) = 2xy + 0 + xy = 3xy.
+      </me>
+
+
+    </p>
+  </solution>
+</example>
+
+
+<p>
+  Tout comme le rotationnel permet de dépister les champs gradients, la divergence permet de dépister les champs rotationnels. En effet, la divergence d'un tel champ est nulle, ce qu'on exprime en disant que les champs rotationnels sont <em><q>incompressibles</q></em>.
+</p>
+
+<theorem xml:id="thm-div-rot-zero">
+  <statement>
+    <p>Soit <m>\vF = P\, \vi + Q\, \vj + R\, \vk</m> un champ de classe <m>C^2</m>. Alors
+    <me>
+      \vnabla \cdot (\vnabla \times \vF) = 0
+    </me>
+    ou encore
+    <me>
+      \div (\rot(\vF)) =0
+    </me>
+
+    </p>
+  </statement>
+  <proof>
+    <p>En effet, avec les notations de l'énoncé, nous avons
+      <me>
+        \rot(\vF) = \vnabla \times \vF =(R_y-Q_z)\,\vi + (R_x-P_z)\,\vj + (Q_x - P_y)\,\vk
+      </me>
+      et donc
+      <md>
+        <mrow>\vnabla \cdot (\vnabla \times \vF) \amp = \pdiff{}{x}(R_y - Q_z)  + \pdiff{}{y}(R_x - P_z) + \pdiff{}{z}(Q_x - P_y)</mrow>
+        <mrow> \amp = R_{yx} - Q_{zx} + R_{xy} - P_{zy} + Q_{xz} - P_{yz}</mrow>
+        <mrow>  \amp = 0 </mrow>
+      </md>
+      où la dernière égalité vient encore une fois du <xref ref="thm_mixed_partials">Théorème de Clairault - Schwarz</xref>
+
+
+    </p>
+  </proof>
+
+</theorem>
+
+<example>
+  <statement>
+    <p>
+      Montrer qu'il n'existe pas de champ dont le rotationnel soit <m>\vF = x\, \vi + y\, \vj + z\vk</m>
+    </p>
+  </statement>
+  <solution>
+    <p>En effet, on calcule  <m>\vnabla \cdot \vF =\pdiff{x}{x} + \pdiff{y}{y} + \pdiff{z}{z} = 3.</m>
+
+    </p>
+  </solution>
+</example>
+
+
+
+
+</subsection>
+
+
+<!-- <p>
+
+</p>
+<p>
+  <term>Début nouveau</term>
+</p>
+<p>
+</p> -->
+
+<subsection>
+  <title>Le laplacien, et quelques identités</title>
+  
+  <p>
+    Il existe un autre opérateur différentiel souvent rencontré en sciences : il s'agit du <term>laplacien</term><fn>Pierre-Simon Laplace (1749-1827) était un mathématicien et astronome français. Il est également le Laplace de l'équation de Laplace, de la transformée de Laplace et de l'estimateur de Laplace-Bayes. Il fut l'examinateur de Napoléon lorsque celui-ci fréquentait l'École militaire de Paris.</fn>. À la différence des autres opérateurs, il peut agir sur les fonctions ou sur les champs. De plus, il fait intervenir les dérivées du deuxième ordre.
+  </p>
+  
+  <definition xml:id="def-laplacien">
+    <statement>
+      <ol marker = "(a)">
+        <li>
+          <p>
+            Si <m>f : (x,y,z)\mapsto f(x,y,z)</m> est une fonction à valeurs scalaires, alors son laplacien est
+            <me>
+              \Delta f= \vnabla^2 f =\vnabla\cdot\vnabla f
+              = \frac{\partial^2 f}{\partial x^2}
+              +\frac{\partial^2 f}{\partial y^2}
+              +\frac{\partial^2 f}{\partial z^2}
+              </me>.         
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>\vF : (x,y,z) \mapsto \vF(x,y,z)</m> est un champ de vecteurs, alors son laplacien est le champ de vecteurs 
+            <me>
+              \Delta\vF= \vnabla^2\vF =\vnabla\cdot\vnabla \vF
+              = \frac{\partial^2 \vF}{\partial x^2}
+              +\frac{\partial^2 \vF}{\partial y^2}
+              +\frac{\partial^2 \vF}{\partial z^2}
+              </me>.
+          </p>
+        </li>
+      </ol>    
+    </statement>
+  </definition>
+  <p>
+    Remarquons que le laplacien d'une fonction est une fonction, tandis que celui d'un champ est un champ, en contraste avec ce que les autres opérateurs font.
+  </p>
+
+
+  <p>
+    Les opérateurs gradient, divergence, rotationnel et laplacien héritent des propriétés de la dérivation, mais, pour nos nouveaux opérateurs, nous avons un grand nombre de propriétés. Nous en donnons une liste de certaines identités. Les preuves viendront plus tard, mais il sera utile d'avoir un aide-mémoire<fn>Qui non seulement économise de l'espace, mais aide aussi à la compréhension.</fn>. Dans ce qui suit, nous utilisons la couleur bleue pour les identités qui sont souvent utilisées.
+  </p>
+
+  <theorem xml:id="thm_gradIdentities"><title>Identités pour le gradient</title>
+    <statement><p>
+    <ol marker="(a)">
+    <li>
+    <m>\color{blue}{\vnabla(f+g)=\vnabla f+\vnabla g}</m>
+    </li>
+    <li>
+    <m>\color{blue}{\vnabla(cf)=c\,\vnabla f}</m>, pour toute <em>constante</em> <m>c</m>
+    </li>
+    <li>
+    <m>\color{blue}{\vnabla(fg)=(\vnabla f)g+ f(\vnabla g)}</m>
+    </li>
+    <li>
+    <m>\vnabla(f/g)=\big(g\,\vnabla f-f\,\vnabla g\big)/g^2</m> aux points <m>\vx</m> où  <m>g(\vx)\ne 0</m>
+    </li>
+    <li><p>
+      Si <m>\vF</m> et <m>\vG</m> sont deux champs de vecteurs, le gradient de la <em>fonction (à valeurs scalaires)</em> <m>\vF \cdot \vG</m> est donné par 
+    <m>\vnabla(\vF\cdot\vG)=\vF\times(\vnabla\times\vG)-
+    (\vnabla\times\vF)\times\vG+(\vG\cdot\vnabla)\vF+(\vF\cdot\vnabla)\vG</m>.
+    </p>
+    
+    <p>Ici<fn>Il s'agit de la seule définition qui a du sens; par exemple, 
+    <m>\vG\cdot(\vnabla\vF)</m> n'a pas de sens parce que nous ne pouvons pas calculer le gradient d'un champ.
+    </fn>,
+    <me>
+    (\vG\cdot\vnabla)\vF
+    =\vG_1\frac{\partial\vF}{\partial x}
+     +\vG_2\frac{\partial\vF}{\partial y}
+     +\vG_3\frac{\partial\vF}{\partial z}
+    </me></p>
+    </li>
+    </ol>
+    </p></statement>
+    </theorem>
+    
+    <theorem xml:id="thm_divIdentities"><title>Identités pour la divergence</title>
+    <statement><p>
+    <ol marker="(a)">
+    <li>
+    <m>\color{blue}{\vnabla\cdot(\vF+\vG)=\vnabla\cdot\vF+\vnabla \cdot\vG}</m>
+    </li>
+    <li>
+    <m>\color{blue}{\vnabla\cdot(c\vF)=c\,\vnabla\cdot\vF}</m>, pour toute <em>constante</em> <m>c</m>
+    </li>
+    <li>
+      <m>\color{blue}{\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF}</m>
+    </li>
+    <li>
+    <m>\vnabla\cdot(\vF\times\vG)=(\vnabla\times\vF)\cdot\vG
+                              - \vF\cdot(\vnabla\times\vG)</m>
+    </li>
+    </ol>
+    </p></statement>
+    </theorem>
+    
+    <theorem xml:id="thm_curlIdentities"><title>Identités pour le rotationnel</title>
+    <statement><p>
+    <ol marker="(a)">
+    <li>
+    <m>\color{blue}{\vnabla\times(\vF+\vG)=\vnabla\times\vF+\vnabla \times\vG} </m>
+    </li>
+    <li>
+    <m>\color{blue}{\vnabla\times(c\vF)=c\,\vnabla\times\vF} </m>, pour toute  <em>constante</em> <m>c</m>
+    </li>
+    <li>
+    <m>\color{blue}{\vnabla\times(f\vF)=(\vnabla f)\times\vF+f\,\vnabla\times\vF} </m>
+    </li>
+    <li><p>
+    <m>\vnabla\times(\vF\times\vG)
+    =\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
+    +(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG</m>
+    </p>
+    
+    <p>Ici, 
+    <me>
+    (\vG\cdot\vnabla)\vF
+    =\vG_1\frac{\partial\vF}{\partial x}
+     +\vG_2\frac{\partial\vF}{\partial y}
+     +\vG_3\frac{\partial\vF}{\partial z}
+    </me></p>
+    </li>
+    </ol>
+    </p></statement>
+    </theorem>
+
+
+    <theorem xml:id="thm_laplaceIdentities"><title>Identités pour le laplacien</title>
+      <statement><p>
+      <ol marker="(a)">
+      <li>
+      <m>\color{blue}{ \vnabla^2(f+g)=\vnabla^2 f+\vnabla^2 g }</m>
+      </li>
+      <li>
+      <m>\color{blue}{\vnabla^2(cf)=c\,\vnabla^2 f}</m>, pour toute <em>constante</em> <m>c</m>
+      </li>
+      <li>
+      <m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>
+      </li>
+      </ol>
+      </p></statement>
+      </theorem>
+      
+      <theorem xml:id="thm_degTwoIdentities"><title>Autres identités du deuxième ordre</title>
+      <statement><p>
+      <ol marker="(a)">
+      <li>
+      <m>\color{blue}{\vnabla\cdot(\vnabla\times\vF)=0 \qquad}</m>
+       (divergence d'un rotationnel, c'est la formule du <xref ref="thm-div-rot-zero"></xref>)
+      
+      </li>
+      <li>
+      <m>\color{blue}{\vnabla\times(\vnabla f)=0 \qquad}</m>
+       (rotationnel d'un gradient, c'est la formule du <xref ref="thm-rot-grad-zero"></xref>)
+      </li>
+      <li>
+      <m>\vnabla\cdot\big(f\{\vnabla g\times\vnabla h\}\big)
+                   =\vnabla f\cdot(\vnabla g\times\vnabla h)</m>
+      </li>
+      <li>
+      <m>\vnabla\cdot(f\vnabla g-g\vnabla f)=f\,\vnabla^2g-g\,\vnabla^2f</m>
+      </li>
+      <li>
+      <m>\vnabla\times(\vnabla\times\vF)=\vnabla(\vnabla\cdot\vF)-\vnabla^2\vF \qquad</m>
+      (rotationnel d'un rotationnel)
+      </li>
+      </ol>
+      </p></statement>
+      </theorem>
+  
+<p>    
+      <alert>Aide-mémoire.</alert>
+      La plupart des identités listées ci-haut, (en fait toutes sauf le <xref ref="thm_gradIdentities"/>e, le <xref ref="thm_curlIdentities"/>d et le <xref ref="thm_degTwoIdentities"/>) sont faciles à imaginer. Il faut simplement combiner la linéarité, les règles des produits avec les faits suivants :
+      <ul>
+      <li>
+      Si le terme de gauche est un vecteur  (ou un scalaire), alors le terme de droite doit aussi être un vecteur (ou un scalaire), et
+      </li>
+      <li>
+        les seuls produits valables entre des vecteurs sont le produit scalaire et le produit vectoriel, et 
+      </li>
+      <li>
+        le produit d'un scalaire avec un scalaire ou un vecteur ne peut ni être un produit scalaire ni un produit vectoriel, et 
+      </li>
+      <li>
+        <m>\vA\times\vB = - \vB\times\vA</m>, le produit vectoriel est anticommutatif.
+      </li>
+      </ul>
+      Par exemple, considérons le <xref ref="thm_divIdentities"/>c, qui dit que 
+      <m>\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF</m>.
+      <ul>
+      <li>
+      Le terme de gauche, <m>\vnabla\cdot(f\vF)</m>, est un scalaire, de sorte que celui de droite doit être un scalaire également.
+      </li>
+      <li>
+      Le terme de gauche,  <m>\vnabla\cdot(f\vF)</m>, est la dérivée du produit de  <m>f</m> et <m>\vF</m>, de sorte que, imitant la règle du produit, le terme de droite sera la somme de deux termes : l'un d'eux avec <m>\vF</m> multiplié par la <q>dérivée</q> de <m>f</m>, et un autre avec  <m>f</m> multiplié par la <q>dérivée</q> de <m>\vF</m>.
+      </li>
+      <li>
+      La <q>dérivée</q> de  <m>f</m> doit être <m>\vnabla f</m>, car  <m>\vnabla\cdot f</m> et <m>\vnabla\times f</m> n'ont pas de sens. Pour obtenir un scalaire et non avec un vecteur, on doit prendre le produit scalaire de  <m>\vnabla f</m> et <m>\vF</m>. Ainsi, le terme voulu est  <m>(\vnabla f)\cdot\vF</m>.
+      </li>
+      <li>
+      La <q>dérivée</q> de <m>\vF</m> doit être  <m>\vnabla\cdot\vF</m>
+      ou <m>\vnabla\times\vF</m>. Nous avons aussi besoin de multiplier par le scalaire <m>f</m> pour obtenir un scalaire. Ainsi, la <q>dérivée</q> doit être un scalaire, c'est-à-dire <m>f\{\vnabla\cdot\vF\}</m>.
+      </li>
+      <li>
+      Notre intuition est donc 
+      <m>\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF</m>,
+      qui est, heureusement, correct.
+      </li>
+      </ul>
+      </p>
+
+
+
+
+</subsection>
+<!-- 
+<subsection>
+  <title>Potentiels </title>
+  
+</subsection>
+
+
+<p>
+  <term>Fin nouveau</term>
+</p>
+ -->
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Div-Rot.ptx"/>
+
+</section>

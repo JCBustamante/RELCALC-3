@@ -1,0 +1,356 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-Tangentes">
+  <title>Tangentes aux courbes paramétriques</title>
+<introduction> Nous nous intéressons dans cette section aux dérivées des fonctions vectorielles <m>\vr : I \subseteq \R \to \R^n</m> et à leur signification.
+</introduction>
+
+<definition xml:id="def__curve_deriv">
+<statement><p>
+Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point intérieur de <m>I</m><fn>Ceci veut dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>.</fn>. La <terms> dérivée de <m>\vr</m> en <m>t_0</m></terms> est
+</p>
+
+<sidebyside widths="50% 35%" valign="middle">
+<p>
+<me>
+\vr'(t_0) =  \diff{\vr}{t}(t_0)=\lim_{h\rightarrow 0}\frac{\vr(t_0+h)-\vr(t_0)}{h}
+</me>
+</p>
+<image source="images/CLP-figs/parCurveDerivAJC"/>
+</sidebyside>
+<p>
+lorsque la limite existe. En particulier, si
+<m>\vr(t_0)=x(t_0)\,\vi + y(t_0)\,\vj+z(t_0)\,\vk</m>, alors
+<me>
+\vr'(t_0)=x'(t_0)\,\vi+y'(t_0)\,\vj+z'(t_0)\,\vk .
+
+</me>
+En somme, pour dériver une fonction vectorielle, on doit simplement dériver chacune de ses composantes.
+</p></statement>
+</definition>
+
+<p>On pense souvent à <m>\vr(t)</m> comme à la position d'une particule au temps <m>t</m>. Dans ce contexte, on aura que <m>\vr'(t)</m> est le <terms>vecteur vitesse instantané</terms> au temps <m>t</m> et l'on écrira souvent <m>\vv(t)</m> au lieu de <m>\vr'(t)</m>, voire <m>\vv</m> au lieu de <m>\vr'</m>.
+</p>
+
+
+<p>Bien entendu, la dérivation interagit avec les opérations arithmétiques usuelles de façon évidente. Seuls le produit scalaire et le produit vectoriel demandent une attention particulière. Voyons quelques exemples.
+</p>
+<example xml:id="eg_diffDot">
+<p>
+Soit, pour <m>t\in \R</m>,
+<md>
+<mrow>
+\va(t)&amp;= t^2\,\vi + t^4\,\vj + t^6\,\vk, &amp; &amp; \vb(t)= e^{-t}\,\vi + e^{-3t}\,\vj + e^{-5t}\,\vk,
+</mrow><mrow>
+\g(t)&amp;= t^2, &amp; &amp;s(t)= \sin t.
+</mrow>
+</md>
+Nous allons calculer plusieurs dérivées, utilisons donc un peu de couleur pour rendre les calculs plus lisibles. Lorsque nous ferons appel à la règle de différentiation du produit, à savoir
+<me>
+\diff{}{t}\big[f(t)\,g(t)\big]
+={\color{blue}{f'(t)}}\,g(t) + f(t)\,{\color{blue}{g'(t)}},
+</me>
+nous utiliserons la couleur bleue pour mettre en évidence les facteurs  <m>f'(t)</m> et <m>g'(t)</m>.
+
+<md>
+<mrow>
+\g(t)\,\vb(t) &amp; = t^2e^{-t}\,\vi + t^2 e^{-3t}\,\vj + t^2 e^{-5t}\,\vk
+</mrow>
+</md>
+donne
+<md>
+<mrow>
+\diff{}{t}\big[\g(t)\vb(t)\big]
+&amp;=\big[{\color{blue}{2t}} e^{-t}{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}\big]\vi
+  +\big[{\color{blue}{2t}} e^{-3t}{\color{blue}{-3}}t^2{\color{blue}{e^{-3t}}}\big]\vj
+  +\big[{\color{blue}{2t}} e^{-5t}{\color{blue}{-5}}t^2{\color{blue}{e^{-5t}}}\big]\vk
+</mrow><mrow>
+&amp;={\color{blue}{2t}}\big\{e^{-t}\,\vi + e^{-3t}\,\vj + e^{-5t}\,\vk\big\}
++ t^2{\color{blue}{\big\{-e^{-t}\,\vi -3 e^{-3t}\,\vj -5 e^{-5t}\,\vk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\g'(t)}}\vb(t)+\g(t){\color{blue}{\vb'(t)}},
+</mrow>
+</md>
+et
+<md>
+<mrow>
+\va(t)\cdot\vb(t) &amp; = t^2e^{-t} + t^4 e^{-3t} + t^6 e^{-5t}
+</mrow>
+</md>
+donne
+<md>
+<mrow>
+\diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+&amp;=\big[{\color{blue}{2t}} e^{-t}{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}\big]
+  +\big[{\color{blue}{4t^3}} e^{-3t}{\color{blue}{-3}}t^4{\color{blue}{e^{-3t}}}\big]
+  +\big[{\color{blue}{6t^5}} e^{-5t}{\color{blue}{-5}}t^6{\color{blue}{e^{-5t}}}\big]
+</mrow><mrow>
+&amp;=\big[{\color{blue}{2t}} e^{-t}+{\color{blue}{4t^3}} e^{-3t}+{\color{blue}{6t^5}} e^{-5t}\big]
+  +\big[{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}
+         {\color{blue}{-3}}t^4{\color{blue}{e^{-3t}}}
+         {\color{blue}{-5}}t^6{\color{blue}{e^{-5t}}}\big]
+</mrow><mrow>
+&amp;={\color{blue}{\big\{2t\,\vi+4t^3\,\vj+6t^5\,\vk\big\}}}\cdot
+           \big\{e^{-t}\,\vi + e^{-3t}\,\vj + e^{-5t}\,\vk\big\}\\&amp;\hskip0.5in
+  +\big\{t^2\,\vi + t^4\,\vj + t^6\,\vk\big\}\cdot
+         {\color{blue}{\big\{-e^{-t}\,\vi-3e^{-3t}\,\vj-5e^{-5t}\,\vk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\va'(t)}}\cdot\vb(t)+\va(t)\cdot{\color{blue}{\vb'(t)}},
+</mrow>
+</md>
+et
+<md>
+<mrow>
+\va(t)\times\vb(t)
+&amp;=\det\left[\begin{matrix}\vi&amp; \vj &amp;\vk\\
+                            t^2 &amp; t^4 &amp; t^6\\
+                            e^{-t} &amp; e^{-3t} &amp; e^{-5t}\end{matrix}\right]
+</mrow><mrow>
+&amp;=\vi\big(t^4 e^{-5t}-t^6 e^{-3t})
+  -\vj(t^2 e^{-5t}- t^6 e^{-t})
+   +\vk(t^2 e^{-3t}-t^4 e^{-t})
+</mrow>
+</md>
+donne
+<md>
+<mrow>
+&amp;\diff{}{t}\big[\va(t)\times\vb(t)\big]
+</mrow><mrow>
+&amp;=\ \vi\big(\ {\color{blue}{4t^3}} e^{-5t}\ \ -\ {\color{blue}{6t^5}} e^{-3t})
+  \ -\ \vj(\ {\color{blue}{2t}} e^{-5t}\ -\  {\color{blue}{6t^5}} e^{-t})
+   +\vk(\ {\color{blue}{2t}} e^{-3t}\ -\ {\color{blue}{4t^3}} e^{-t}) \\&amp;\hskip0.1in
+ +\vi\big({\color{blue}{-5}}t^4 {\color{blue}{e^{-5t}}}{\color{blue}{+3}}t^6 {\color{blue}{e^{-3t}}})
+  -\vj({\color{blue}{-5}}t^2 {\color{blue}{e^{-5t}}}{\color{blue}{+}} t^6 {\color{blue}{e^{-t}}})
+   +\vk({\color{blue}{-3}}t^2 {\color{blue}{e^{-3t}}}{\color{blue}{+}}t^4 {\color{blue}{e^{-t}}})
+</mrow><mrow>
+&amp;={\color{blue}{\big\{2t\,\vi+4t^3\,\vj+6t^5\,\vk\big\}}}\times
+           \big\{e^{-t}\,\vi + e^{-3t}\,\vj + e^{-5t}\,\vk\big\}\\&amp;\hskip0.5in
+  +\big\{t^2\,\vi + t^4\,\vj + t^6\,\vk\big\}\times
+         {\color{blue}{\big\{-e^{-t}\,\vi-3e^{-3t}\,\vj-5e^{-5t}\,\vk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\va'(t)}}\times\vb(t)+\va(t)\times{\color{blue}{\vb'(t)}}
+</mrow>
+</md>
+et
+<md>
+<mrow>
+\va\big(s(t)\big)
+&amp;=(\sin t)^2\,\vi +(\sin t)^4\,\vj + (\sin t)^6\,\vk
+</mrow><mrow>
+\implies \diff{}{t}\big[\va\big(s(t)\big)\big]
+&amp;=2(\sin t)\cos t\,\vi +4(\sin t)^3\cos t\,\vj + 6(\sin t)^5\cos t\,\vk
+</mrow><mrow>
+&amp;=\big\{2(\sin t)\,\vi +4(\sin t)^3\vj + 6(\sin t)^5\vk\big\}\cos t
+</mrow><mrow>
+&amp;=\va'\big(s(t)\big)\,s'(t).
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Bien entendu, ces exemples sont des cas particuliers de règles générales. Le même type de calculs que précédemment fournit la preuve (de la plupart) du théorème ci-bas.
+</p>
+
+<theorem xml:id="thm_DIFFalgebra"><title>Propriétés de la dérivation</title>
+<statement><p>
+Soit <m>I\subseteq\R</m> un intervalle, <ul>
+<li>
+<m>\va,\ \vb : I \to \R^n</m> des fonctions dérivables,
+</li>
+<li>
+ <m>\alpha,\beta \in \mathbb{R}</m> des constantes,
+</li>
+<li>
+ <m>\g :  I \to \R</m> et <m>s : J\to I</m> (avec <m>J\subseteq \R</m> un intervalle)<fn>De sorte que la composition <m>\va(s(t))</m> a un sens.</fn> dérivables.
+</li>
+</ul>
+Alors,
+<md alignment="alignat">
+<mrow>
+&amp;\text{(a)}\quad &amp;&amp;\diff{}{t}\big[\alpha\,\va(t)+\beta\,\vb(t)\big]
+         =\alpha\,\va'(t)+\beta\,\vb'(t);
+           &amp;&amp;\text{(linéarité)}
+</mrow><mrow>
+&amp;\text{(b)} &amp;&amp;\diff{}{t}\big[\g(t)\vb(t)\big]
+         =\g'(t)\vb(t)+\g(t)\vb'(t);
+           &amp;&amp;\text{(mult. par scalaire)}
+
+</mrow><mrow>
+&amp;\text{(c)} &amp;&amp;\diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+         =\va'(t)\cdot\vb(t)+\va(t)\cdot\vb'(t);
+           &amp;&amp;\text{(produit scalaire)}
+
+</mrow><mrow>
+&amp;\text{(d)} &amp;&amp;\diff{}{t}\big[\va(t)\times\vb(t)\big]
+         =\va'(t)\times\vb(t)+\va(t)\times\vb'(t);
+           \ \ &amp;&amp;\text{(produit vectoriel)}
+</mrow><mrow>
+&amp;\text{(e)} &amp;&amp;\diff{}{t}\big[\va\big(s(t)\big)\big]
+         =\va'\big(s(t)\big)\,s'(t).
+           &amp;&amp;\text{(composition)}
+</mrow>
+</md>
+</p>
+
+</statement>
+</theorem>
+
+
+<sidebyside widths="50% 35%">
+  <p>L'interprétation géométrique est claire. La dérivée  <m>\vr'(t_0)</m> est la limite de  <m>\frac{\vr(t_0+h)-\vr(t_0)}{h}</m> lorsque <m>h\rightarrow 0</m>.  Le numérateur, <m>\vr(t_0+h)-\vr(t_0)</m>, est représenté par le vecteur ayant <m>\vr(t_0+h)</m> pour but et <m>\vr(t_0)</m> comme origine.
+  </p>
+
+<image source="images/CLP-figs/parCurveDerivAJC"/>
+</sidebyside>
+
+
+
+<p>
+  Lorsque  <m>h</m> est très petit, ce vecteur a la direction du vecteur tangent à la courbe <m>\plan{C}_{\vr}</m> au point <m>\vr(t_0)</m>. À la limite, ce vecteur donne la direction de cette tangente. Comme, de plus, elle passe par le point correspondant à <m>\vr(t_0)</m>, on peut déduire aisément une équation vectorielle.
+<md>
+  <mrow xml:id="tgt" tag = "star">
+    \vx(t) = \vr(t_0) + t\, \vr'(t_0)
+    </mrow>
+</md>
+Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_0</m>, ce sont donc des vecteurs constants.
+
+</p>
+
+<definition xml:id="def-TUnitaire">
+<statement>
+  <p>
+    Soit <m>\vr : I \to \R</m> un chemin et <m>t_0</m> un point intérieur de <m>I</m>.
+    <ol marker = "(a)">
+      <li>
+        Si <m>\vr(t_0) \ne \vZero</m>, le vecteur <terms>tangent unitaire</terms> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{|\vr'(t_0)|}\vr'(t_0)</m>.
+      </li>
+      <li>
+        Le <em>chemin tangent</em> à <m>\vr</m> en <m>t_0</m> est le chemin <m>\vL(t) = \vr(t_0) + (t-t_0)\vr'(t_0)</m>.
+</li>
+
+</ol>
+</p>
+</statement>
+</definition>
+<observation>
+  <ul>
+    <li>
+      <p>
+        Nous allons souvent écrire <m>\vr'</m> ou <m>\vT</m> afin d'alléger les notations. Nous devrons avoir à l'esprit qu'il s'agit de fonctions vectorielles, donc qu'il y a un point d'évaluation qui devra être déduit du contexte.
+      </p>
+    </li>
+    <li>
+      <p>
+        S'il est vrai que l'équation <xref ref="tgt"/> fournit un paramétrage de la droite tangente à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <terms>chemin tangent</terms> est une fonction vectorielle, et elle donne aussi un paramétrage de la droite tangente. De plus, <m>\vL</m> coïncide avec <m>\vr</m> <terms>jusqu'au premier ordre</terms>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
+        <me>
+          f(t) \approx L(t) = f(t_0) + f'(t_0)(t-t_0).
+        </me>
+
+      </p>
+    </li>
+  </ul>
+</observation>
+
+
+
+
+
+<example>
+  <statement>
+    <ol>
+      <li>
+        <p>Soit <m>\vr(t) = t^3\, \vi + t^2\, \vj</m>. La courbe associée a pour équation cartésienne <m>x^2 = y^3</m>. On a <m>\vr'(t) = 3t^2 \, \vi + 2t\, \vj</m>. En particulier, le point <m>(0,0)</m> correspond à <m>t=0</m>, et <m>\vr'(0) = \vZero</m>. La courbe admet un <terms>point de rebroussement</terms> en ce point, c'est-à-dire que le vecteur tangent unitaire change subitement de direction.
+      </p>
+
+      <figure xml:id="figure-rebrousssement">
+        <caption>La courbe <m>\vr(t) = t^3 \vi + t^2\vj</m></caption>
+         <image xml:id="sageplot-Rebroussement" width="80%">
+           <description>La courbe admet un point de rebroussement à l'origine</description>
+          <sageplot>
+            var('t')
+            C =parametric_plot([t^3, t^2], (t,-1,1), color = "blue", axes_labels=['$x$', '$y$'], ticks = [[-1,(-0.5).n(digits = 1), 0, (0.5).n(digits=1), 1], [0.5.n(digits = 1),1]],tick_formatter="latex", fontsize = 14)
+            C
+          </sageplot>
+        </image>
+      </figure>
+    </li>
+
+
+      <li>
+        <p>
+          Soit <m>\vr(t) = e^-t\, \cos t\, \vi + e^-t\ \sin t\, \vj + e^-t\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
+         </p>
+
+          <p>
+            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <me>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </me>
+            de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
+            <me>
+            \vx(t) =  \vp_0 + t \vr'(0) = \tvect{1}{0}{1} + t \tvect{-1}{1}{-1}.
+            </me>
+            Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
+
+
+          </p>
+      </li>
+    </ol>
+  </statement>
+</example>
+
+<example xml:id="Chem-norm-cste">
+  <statement>
+    <p>Montrer que si <m>\vr</m> est un chemin de norme constante, alors <m>\vr</m> et <m>\vr'</m> sont toujours orthogonaux.
+    </p>
+  </statement>
+  <solution>
+    <p>Soit <m>\vr</m> un chemin tel que <m>|\vr| = c</m>. Nous avons alors
+    <md>
+      <mrow>|\vr|^2  = c^2  \amp  \iff \vr \cdot \vr = c^2</mrow>
+      <mrow> \amp\implies (\vr \cdot \vr)' = 0 </mrow>
+      <mrow> \amp \iff 2 \vr \cdot \vr' =0, </mrow>
+    </md>
+ et la conclusion suit.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="Angle-courbes">
+  <statement>
+    <p>En quels points les courbes données par <m>\vr_1(t) = t\, \vi + (1-t)\, \vj  + (3+t^2)\, \vk</m> et par <m>\vr_2 (t) = (3-t)\,\vi + (2-t)\,\vj + t^2 \, \vk</m> se coupent-elles? Quel angle forment-elles au point d'intersection?
+
+    </p>
+  </statement>
+  <solution>
+    <p>S'il est vrai que le paramètre <m>t</m> est utilisé dans la définition des deux courbes, afin de trouver le point commun, on doit résoudre l'équation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du paramètre au point commun n'a aucune raison d'être la même pour les deux courbes<fn>De façon imagée, on pense aux deux courbes comme aux trajectoires décrites par deux particules. Le point commun aux deux trajectoires n'est pas nécessairement un point de collision : les deux particules passent par un même point, mais pas nécessairement au même moment. L'équation <m>\vr_1(t) = \vr_2(t)</m> cherche à trouver un point de collision.</fn>. Le système d'équations résultant est
+    </p>
+    <md>
+      <mrow> t\amp = 3-s, </mrow>
+      <mrow> 1-t \amp = 2-s, </mrow>
+      <mrow> 3+t^2  \amp = s^2. </mrow>.
+    </md>
+    <p>
+    On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
+    <me>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
+    </me>
+    </p>
+    <p> L'angle formé par les courbes est l'angle formé par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
+    <md>
+    <mrow> \vr_1'(t) = \tvect{1}{-1}{2t} \amp \amp  \text{ et } \amp \amp  \vr_2'(s) = \tvect{-1}{-1}{2s}. </mrow>
+    <mrow> \amp </mrow>.
+    </md>
+    Au point commun, ces vecteurs sont
+    </p>
+    <md>
+      <mrow>\vr_1'(1) = \tvect{1}{-1}{2} \amp \amp \text{ et } \amp \amp \vr_2'(2) = \tvect{-1}{-1}{4}. </mrow>
+      <mrow> \amp </mrow>.
+    </md>
+    <p>
+      L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus"/>. On a donc
+    </p>
+    <me>
+    \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{|\vr_1'(1)|\, |\vr_2'(2)|} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.
+    </me>
+  </solution>
+</example>
+
+<xi:include  href="./Problemes/Prob-sec-Tangentes.ptx"/>
+</section>

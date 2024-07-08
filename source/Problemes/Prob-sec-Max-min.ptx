@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+    <!-- No 1 -->
+    <exercise> <!-- <title><fromexam>M200 2016D</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li><p>
+      Quelques courbes de niveau de la fonction <m>f(x,y)</m> sont esquissées dans le plan <m>xy</m> ci-dessous.
+      </p>
+
+      <sidebyside width="75%">
+        <image source="images/CLP-figs/pfigs/OE16D_2a"/>
+      </sidebyside>
+
+      <p>
+      Pour chacun des énoncés ci-dessous, encercler la lettre de
+      <alert>tous</alert> les points dans le diagramme où la situation s'applique.
+      Par exemple, si l'énoncé était <q>Ces points sont sur l'axe <m>y</m></q>, vous encercleriez <m>P</m> et <m>U</m>, mais aucune des autres lettres.
+      Vous pouvez prendre pour acquis qu'un maximum local se produit au point <m>T</m>.
+      <md>
+        <mrow>
+        \text{(i) }&amp; \vnabla f\text{ est nul} &amp; &amp;\text{P R S T U}
+        </mrow><mrow>
+        \text{(ii) }&amp; f \text{ a un point de selle} &amp; &amp;\text{P R S T U}
+        </mrow><mrow>
+        \text{(iii) }&amp; \text{ la dérivée partielle $f_y$ est positive} &amp; &amp;\text{P R S T U}
+        </mrow><mrow>
+        \text{(iv) }&amp; \text{ la dérivée directionnelle de $f$ dans la
+                         direction $\llt 0,-1\rgt$ is} &amp; &amp;\text{P R S T U}
+        </mrow><mrow>
+                  &amp; \text{ négative} &amp; &amp;
+        </mrow>
+      </md>
+      </p></li>
+      <li><p>
+      Le diagramme ci-dessous montre trois <q>traces <m>y</m></q> d'un graphe <m>z=F(x,y)</m> esquissé
+      sur les axes <m>xz</m>. (Autrement dit, les intersections de la surface  <m>z=F(x,y)</m> avec les trois plans (<m>y=1.9</m>, <m>y=2</m>, <m>y=2.1</m>). Pour chaque énoncé ci-dessous, encercler le bon mot.
+      <md>
+        <mrow>
+        \text{(i) }&amp; \text{ la dérivée partielle de premier ordre}\ F_x(1,2)\ \text{est} &amp; &amp;
+        \text{positive/négative/nulle}
+        </mrow><mrow>
+        \text{(ii) }&amp; F \text{ a un point critique en } (2,2) &amp;
+                 &amp;\text{vrai/faux}
+        </mrow><mrow>
+        \text{(iii) }&amp; \text{ la dérivée partielle de deuxième ordre}\ F_x(1,2)\ \text{est} &amp; &amp;\text{positive/négative/nulle}
+        </mrow>
+      </md>
+      </p>
+      <sidebyside width="66%">
+        <image source="images/CLP-figs/pfigs/OE16D_2b"/>
+      </sidebyside>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+        (a) (i) <m>T</m>, <m>U</m>
+        </p>
+
+        <p>(a) (ii) <m>U</m>
+        </p>
+
+        <p>(a) (iii) <m>S</m>
+        </p>
+
+        <p>(a) (iv) <m>S</m>
+        </p>
+
+        <p>(b) (i) <m>F_x(1,2) \gt 0</m>
+        </p>
+
+        <p>(b) (ii) <m>F</m> n'a <em>pas</em> de point critique en <m>(2,2)</m>.
+        </p>
+
+        <p>(b) (iii) <m>F_{xy}(1,2) \lt 0</m>
+      </p></answer>
+
+      <solution><p>
+      a) (i) <m>\vnabla f</m> is zero at critical points.
+              The point <m>T</m> is a local maximum and the point <m>U</m> is
+              a saddle point. The remaining points <m>P</m>, <m>R</m>, <m>S</m>, are not
+              critical points.
+      </p>
+
+      <p>(a) (ii) Only <m>U</m> is a saddle point.
+      </p>
+
+      <p>(a) (iii) We have <m>f_y(x,y) \gt 0</m> if <m>f</m> increases as you move vertically upward
+                through <m>(x,y)</m>. Looking at the diagram, we see
+      <md>
+      <mrow>
+      f_y(P)  &amp;\lt 0&amp;
+      f_y(Q)  &amp;\lt 0&amp;
+      f_y(R) &amp;=0</mrow><mrow>
+      f_y(S)  &amp;\gt 0&amp;
+      f_y(T) &amp;=0&amp;
+      f_y(U) &amp;=0
+      </mrow>
+      </md>
+      So only <m>S</m> works.
+      </p>
+
+      <p>(a) (iv) The directional derivative of <m>f</m> in the direction <m>\llt 0,-1\rgt</m>
+                 is <m>\vnabla f\cdot \llt 0,-1\rgt =-f_y</m>. It is negative if and
+                 only if <m>f_y \gt 0</m>. So, again, only <m>S</m> works.
+      </p>
+
+      <p>(b) (i) The function <m>z=F(x,2)</m> is increasing at <m>x=1</m>,
+           because the <m>y=2.0</m> graph in the diagram has positive slope at <m>x=1</m>.
+           So <m>F_x(1,2) \gt 0</m>.
+      </p>
+
+      <p>(b) (ii) The function <m>z=F(x,2)</m> is also increasing (though slowly) at <m>x=2</m>,
+           because the <m>y=2.0</m> graph in the diagram has positive slope at <m>x=2</m>.
+           So <m>F_x(2,2) \gt 0</m>. So <m>F</m> does <em>not</em> have a critical point
+           at <m>(2,2)</m>.
+      </p>
+
+      <p>(b) (iii) From the diagram the looks like
+                      <m>F_x(1,1.9)  \gt  F_x(1,2.0)  \gt  F_x(1,2.1)</m>.
+            That is, it looks like the slope of the <m>y=1.9</m> graph at <m>x=1</m>
+                   is larger than the slope of the <m>y=2.0</m> graph at <m>x=1</m>,
+                   which in turn
+                   is larger than the slope of the <m>y=2.1</m> graph at <m>x=1</m>.
+           So it looks like <m>F_x(1,y)</m> decreases as <m>y</m> increases through <m>y=2</m>,
+           and consequently <m>F_{xy}(1,2) \lt 0</m>.
+      </p></solution>
+    </exercise>
+    <!-- No 3 -->
+    <exercise> <!-- <title><fromexam>M200 2005D</fromexam></title> -->
+      <statement><p>
+      Soit <m>z = f(x,y) = {(y^2 - x^2)}^2</m>.
+      <ol marker = "(a)">
+      <li>
+      Faire une esquisse raisonnablement précise des courbes de niveau dans le plan <m>xy</m> de <m>z = f(x,y)</m> pour <m>z = 0</m>, <m>1</m> et <m>16</m>. Assurez-vous de montrer les unités sur les axes de coordonnées.
+      </li>
+      <li>
+      Vérifiez que <m>(0,0)</m> est un point critique pour <m>z = f(x,y)</m>, et
+      déterminez de la partie (a) ou directement de la formule pour <m>f(x,y)</m>
+      si <m>(0, 0)</m> est un minimum local, un maximum local ou un point de selle.
+      </li>
+      <li>
+      Pouvez-vous utiliser le test de la dérivée seconde afin de déterminer si le point critique
+      <m>(0, 0)</m> est un minimum local, un maximum local ou
+      un point de selle? Donnez des raisons pour votre réponse.
+      </li>
+      </ol>
+      </p>
+
+      </statement>
+
+      <hint><p>
+      Écrivez les équations des courbes de niveau spécifiées.
+      </p></hint>
+
+      <answer>
+      <sidebyside widths="10% 60%">
+      <p>(a)</p>
+      <image source="images/CLP-figs/pfigs/OE05D_5"/>
+      </sidebyside>
+      <p>
+      (b) <m>(0,0)</m> est un minimum local (et aussi absolu).
+      </p>
+
+      <p>(c)
+      Notez que
+      <md alignment="alignat">
+      <mrow>
+      f_{xx}(x,y) &amp;=-4y^2+12x^2\qquad&amp;
+               f_{xx}(x,y)&amp;=0
+      </mrow><mrow>
+      f_{yy}(x,y) &amp;= 12y^2-4x^2\qquad&amp;
+               f_{yy}(x,y)&amp;=0
+      </mrow><mrow>
+      f_{xy}(x,y) &amp;=-8xy\qquad&amp;
+               f_{xx}(x,y)&amp;=0
+      </mrow>
+      </md>
+      Comme
+      <m>
+      f_{xx}(0,0)f_{yy}(0,0)-f_{xy}(0,0)^2=0
+      </m>,
+      le test de la dérivée seconde (<xref ref="thm_second_deriv_test"/>) ne dit rien.
+      </p></answer>
+
+      <solution><p>
+      (a)
+      <ul>
+      <li>
+      The level curve <m>z=0</m> is <m>y^2-x^2=0</m>, which is the pair
+      of <m>45^\circ</m> lines <m>y=\pm x</m>.
+      </li>
+      <li>
+      When <m>C \gt 0</m>, the level curve
+      <m>z=C^4</m> is <m>{(y^2-x^2)}^2=C^4</m>, which is the pair of hyperbolae
+      <m>y^2-x^2=C^2</m>, <m>y^2-x^2=-C^2</m> or
+      <me>
+      y=\pm\sqrt{x^2+C^2}\qquad x=\pm\sqrt{y^2+C^2}
+      </me>
+      The hyperbola  <m>y^2-x^2=C^2</m> crosses the <m>y</m>--axis (i.e. the line <m>x=0</m>)
+      at <m>(0,\pm C)</m>.
+      The hyperbola  <m>y^2-x^2=-C^2</m> crosses the <m>x</m>--axis (i.e. the line <m>y=0</m>)
+      at <m>(\pm C,0)</m>.
+      </li>
+      </ul>
+      Here is a sketch showing the level curves <m>z=0</m>, <m>z=1</m> (i.e. <m>C=1</m>),
+      and <m>z=16</m> (i.e. <m>C=2</m>).
+      </p>
+      <sidebyside width="60%">
+        <image source="images/CLP-figs/pfigs/OE05D_5"/>
+      </sidebyside>
+
+      <p>
+      (b)
+      As <m>f_x(x,y)=-4x(y^2-x^2)</m> and <m>f_y(x,y)=4y(y^2-x^2)</m>, we have
+      <m>f_x(0,0) = f_y(0,0) = 0</m> so that <m>(0,0)</m> is a critical point. Note that
+      <ul>
+      <li>
+      <m>f(0,0)=0</m>,
+      </li>
+      <li>
+      <m>f(x,y)\geqslant 0</m> for all <m>x</m> and <m>y</m>.
+      </li>
+      </ul>
+      So <m>(0,0)</m> is a local (and also absolute) minimum.
+      </p>
+
+      <p>(c)
+      Notez que
+      <md alignment="alignat">
+      <mrow>
+      f_{xx}(x,y) &amp;=-4y^2+12x^2\qquad&amp;
+               f_{xx}(x,y)&amp;=0
+      </mrow><mrow>
+      f_{yy}(x,y) &amp;= 12y^2-4x^2\qquad&amp;
+               f_{yy}(x,y)&amp;=0
+      </mrow><mrow>
+      f_{xy}(x,y) &amp;=-8xy\qquad&amp;
+               f_{xx}(x,y)&amp;=0
+      </mrow>
+      </md>
+      Comme
+      <m>
+      f_{xx}(0,0)f_{yy}(0,0)-f_{xy}(0,0)^2=0
+      </m>,
+      le test de la dérivée seconde (<xref ref="thm_second_deriv_test"/>) ne dit rien.
+      </p></solution>
+    </exercise>
+
+    <!-- No 5 -->
+    <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
+      <statement><p>
+      Utilisez le test de la dérivée seconde pour trouver toutes les valeurs de la constante <m>c</m>
+      pour lesquelles la fonction <m>z = x^2 + cxy + y^2</m> admet un point de selle en <m>(0,0)</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>|c| \gt 2</m>
+      </p></answer>
+
+      <solution><p>
+      Write <m>f(x,y) = x^2 +cxy +y^2</m>. Then
+      <md>
+      <mrow>
+      f_x(x,y)&amp;= 2x+cy &amp; f_x(0,0) = 0
+      </mrow><mrow>
+      f_y(x,y)&amp;= cx+2y &amp; f_y(0,0) = 0
+      </mrow><mrow>
+      f_{xx}(x,y) &amp;= 2
+      </mrow><mrow>
+      f_{xy}(x,y) &amp;= c
+      </mrow><mrow>
+      f_{yy}(x,y) &amp;= 2
+      </mrow>
+      </md>
+      As <m>f_x(0,0)=f_y(0,0)=0</m>, we have that <m>(0,0)</m> is always a critical point
+      for <m>f</m>. According to the Second Derivative Test, <m>(0,0)</m> is also a saddle point
+      for <m>f</m> if
+      <md>
+      <mrow>
+      f_{xx}(0,0) f_{yy}(0,0) - f_{xy}(0,0)^2  \lt 0
+      \iff 4-c^2  \lt 0
+      \iff |c| \gt 2
+      </mrow>
+      </md>
+      </p>
+
+      <p>As a remark, the Second Derivative Test provides no information
+      when the expression
+      <m>f_{xx}(0,0) f_{yy}(0,0) - f_{xy}(0,0)^2 =0</m>, i.e. when <m>c=\pm 2</m>.
+      But when <m>c=\pm 2</m>,
+      <me>
+      f(x,y) =  x^2 \pm 2xy + y^2 =(x\pm y)^2
+      </me>
+      and <m>f</m> has a local minimum, not a saddle point, at <m>(0,0)</m>.
+      </p></solution>
+    </exercise>
+
+    <!-- No 6 -->
+    <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
+      <statement>
+      <p>
+      Trouvez et classifiez tous les points critiques de la fonction
+      <me>
+      f(x, y) = x^3 - y^3 - 2xy + 6.
+      </me>
+      </p>
+      </statement>
+
+      <answer>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{point}}{\text{critique}}</m> </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,0)</m> </cell><cell> point de selle  </cell>
+      </row><row>
+      <cell>      <m>\left(-\frac{2}{3},\frac{2}{3}\right)</m> </cell><cell> maximum local </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </answer>
+
+      <solution><p>
+      To find the critical points we will need the gradient of <m>f</m>, and to
+      apply the second derivative test of
+      Theorem <xref ref="thm_second_deriv_test"/>
+      we will need all second order partial derivatives. So we need all
+      partial derivatives of <m>f</m> up to order two.
+      Here they are.
+      <md alignment="alignat">
+      <mrow>
+      f&amp;=x^3 - y^3 - 2xy + 6
+      </mrow><mrow>
+      f_x&amp;=3x^2-2y   &amp; f_{xx}&amp;=6x \qquad &amp; f_{xy}&amp;= -2
+      </mrow><mrow>
+      f_y&amp;=-3y^2-2x \qquad &amp; f_{yy}&amp;=-6y\qquad &amp; f_{yx}&amp;= -2
+      </mrow>
+      </md>
+      The critical points are the solutions of
+      <me>
+      f_x=3x^2-2y=0   \qquad
+      f_y=-3y^2-2x = 0
+      </me>
+      Substituting <m>y=\frac{3}{2}x^2</m>, from the first equation, into the
+      second equation gives
+      <md>
+      <mrow>
+      -3\left(\frac{3}{2}x^2\right)^2-2x =0
+      &amp;\iff -2x\left(\frac{3^3}{2^3}x^3+1\right)=0
+      </mrow><mrow>
+      &amp;\iff x=0,\ -\frac{2}{3}
+      </mrow>
+      </md>
+      So there are two critical points: <m>(0,0)</m>,
+              <m>\left(-\frac{2}{3},\frac{2}{3}\right)</m>.
+      </p>
+
+      <p>The classification is</p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col />  <col halign="center"/>  <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                <m>f_{xx}</m> </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,0)</m>  </cell><cell> <m>0\times 0 -(-2)^2  \lt  0</m> </cell><cell>   </cell><cell> saddle point  </cell>
+      </row><row>
+      <cell>      <m>\left(-\frac{2}{3},\frac{2}{3}\right)</m>  </cell><cell> <m>(-4)\times (-4)-(-2)^2 \gt 0</m> </cell><cell>
+                            <m>-4</m> </cell><cell> local max </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </solution>
+    </exercise>
+
+    <!-- No 7 -->
+    <exercise> <!-- <title><fromexam>M200 2007A</fromexam></title> -->
+      <statement><p>
+      Trouvez tous les points critiques pour <m>f(x,y) = x(x^2 + xy + y^2 - 9)</m>.
+      Également, trouvez les points parmi ces points qui donnent des maximums locaux pour
+      <m>f(x,y)</m>, qui donnent des minimum locaux, et qui donnent des points de selles.
+      </p></statement>
+
+      <answer>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>   </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,3)</m>  </cell><cell>   point de selle  </cell>
+      </row><row>
+      <cell>      <m>(0,-3)</m>  </cell><cell>  point de selle </cell>
+      </row><row>
+      <cell>       <m>(-2,1)</m>  </cell><cell>  maximum local </cell>
+      </row><row>
+      <cell>       <m>(2,-1)</m>  </cell><cell>  minimum local </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </answer>
+
+      <solution><p>
+      To find the critical points we will need the
+      gradient of <m>f</m>, and to apply the second derivative test of
+      Theorem <xref ref="thm_second_deriv_test"/>
+      we will need all
+      second order partial derivatives. So we need all partial derivatives of
+      <m>f</m> up to order two.
+      Here they are.
+      <md alignment="alignat">
+      <mrow>
+      f&amp;=x^3 + x^2y + xy^2 - 9x
+      </mrow><mrow>
+      f_x&amp;=3x^2+2xy+y^2-9 \qquad   &amp; f_{xx}&amp;=6x+2y \qquad &amp; f_{xy}&amp;= 2x+2y
+      </mrow><mrow>
+      f_y&amp;=x^2+2xy  &amp; f_{yy}&amp;=2x\qquad &amp; f_{yx}&amp;= 2x+2y
+      </mrow>
+      </md>
+      (Of course, <m>f_{xy}</m> and <m>f_{yx}</m> have to be the same. It is still
+      useful to compute both, as a way to catch some mechanical errors.)
+      </p>
+
+      <p>The critical points are the solutions of
+      <md alignment="alignat">
+      <mrow>
+      f_x&amp;=3x^2+2xy+y^2-9&amp;&amp;=0  \tag{E1}
+      </mrow><mrow>
+      f_y&amp;=x(x+2y) &amp;&amp;= 0  \tag{E2}
+      </mrow>
+      </md>
+      Equation (E2) is satisfied if at least one of <m>x=0</m>, <m>x=-2y</m>.
+      <ul>
+      <li> If <m>x=0</m>, equation (E1) reduces to <m>y^2-9=0</m>,
+      which is satisfied if <m>y=\pm 3</m>.
+      </li>
+      <li> If <m>x=-2y</m>, equation (E1) reduces to
+      <md>
+      <mrow>
+      0=3(-2y)^2+2(-2y)y+y^2-9=9y^2-9
+      </mrow>
+      </md>
+      which is satisfied if <m>y=\pm 1</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>So there are four critical points: <m>(0,3)</m>, <m>(0,-3)</m>, <m>(-2,1)</m> and <m>(2,-1)</m>.
+      The classification is</p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col />  <col halign="center"/>  <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                <m>f_{xx}</m> </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,3)</m>  </cell><cell>
+                 <m>(6)\times (0)-(6)^2 \lt  0</m> </cell><cell>   </cell><cell>
+                                                      saddle point  </cell>
+      </row><row>
+      <cell>      <m>(0,-3)</m>  </cell><cell>
+             <m>(-6)\times (0)-(-6)^2 \lt 0</m> </cell><cell>  </cell><cell>
+                                                      saddle point </cell>
+      </row><row>
+      <cell>       <m>(-2,1)</m>  </cell><cell>
+             <m>(-10)\times (-4)-(-2)^2 \gt 0</m> </cell><cell>  <m>-10</m> </cell><cell>
+                                                      local max </cell>
+      </row><row>
+      <cell>       <m>(2,-1)</m>  </cell><cell>
+             <m>(10)\times (4)-(2)^2 \gt 0</m>   </cell><cell> <m>10</m> </cell><cell>
+                                                      local min </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </solution>
+    </exercise>
+
+    <!-- No 9 -->
+    <exercise>
+      <statement><p>
+      Trouvez et classifiez tous les points critiques de <m>f(x,y)=x^2+y^2+x^2y+4</m>.
+      </p></statement>
+
+      <answer>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+      </row><row>
+      <cell>       <m>(0,0)</m>           </cell><cell>    Minimum local  </cell>
+      </row><row>
+      <cell>      <m>(\sqrt{2},-1)</m>   </cell><cell> point de selle  </cell>
+      </row><row>
+      <cell>      <m>(-\sqrt{2},-1)</m>  </cell><cell> point de selle  </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </answer>
+
+      <solution><p>
+      To find the critical points we will need the
+      gradient of <m>f</m>, and to apply the second derivative test of
+      Theorem <xref ref="thm_second_deriv_test"/>
+      we will need all second order partial derivatives. So we need
+      all partial derivatives of <m>f</m> up to order two. Here they are.
+      <md alignment="alignat">
+      <mrow>
+      f&amp;=x^2+y^2+x^2y+4
+      </mrow><mrow>
+      f_x&amp;=2x+2xy\qquad &amp; f_{xx}&amp;=2+2y\qquad &amp; f_{xy}&amp;= 2x
+      </mrow><mrow>
+      f_y&amp;=2y+x^2 &amp; f_{yy}&amp;=2
+      </mrow>
+      </md>
+      The critical points are the solutions of
+      <md alignment="alignat">
+      <mrow>
+      &amp; &amp; &amp;f_x=0  &amp; &amp;f_y=0
+      </mrow><mrow>
+      &amp;\iff\quad &amp; &amp;2x(1+y)=0  &amp; &amp;2y+x^2=0
+      </mrow><mrow>
+      &amp;\iff &amp; &amp;x=0\text{ or }y=-1\qquad &amp; &amp;2y+x^2=0
+      </mrow>
+      </md>
+      When <m>x=0</m>, <m>y</m> must be <m>0</m>. When <m>y=-1</m>, <m>x^2</m> must be <m>2</m>.
+      So, there are three critical points: <m>(0,0)</m>, <m>\big(\pm\sqrt{2},-1\big)</m>.
+      </p>
+
+      <p>The classification is</p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center" />  <col halign="center"/>  <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                <m>f_{xx}</m> </cell><cell> type
+      </cell>
+      </row><row>
+      <cell>       <m>(0,0)</m>  </cell><cell>  <m>2\times 2-0^2 \gt 0</m> </cell><cell>  <m>2 \gt 0</m>  </cell><cell> local min </cell>
+      </row><row>
+      <cell>       <m>(\sqrt{2},-1)</m> </cell><cell> <m>0\times 2-(2\sqrt{2})^2 \lt 0</m> </cell><cell>  </cell><cell> saddle point  </cell>
+      </row><row>
+      <cell>      <m>(-\sqrt{2},-1)</m> </cell><cell> <m>0\times 2-(-2\sqrt{2})^2 \lt 0</m> </cell><cell> </cell><cell> saddle point </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </solution>
+    </exercise>
+
+    <!-- No 10 -->
+    <exercise> <!-- <title><fromexam>M200 2008D</fromexam></title> -->
+      <statement><p>
+      Trouvez tous les points de selles, les minimums locaux et maximums locaux de la fonction
+      <me>
+         f(x,y) = x^3 + x^2 - 2xy + y^2 - x.
+      </me>
+      </p></statement>
+
+      <answer>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>   </cell><cell> minimum local  </cell>
+      </row><row>
+      <cell>      <m>-\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>  </cell><cell> point de selle </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </answer>
+
+      <solution><p>
+      To find the critical points we will need the
+      gradient of <m>f</m>, and to apply the second derivative test of
+      Theorem <xref ref="thm_second_deriv_test"/>
+      we will need all
+      second order partial derivatives. So we need all partial derivatives of
+      <m>f</m> up to order two.
+      Here they are.
+      <md alignment="alignat">
+      <mrow>
+      f&amp;=x^3 + x^2 - 2xy + y^2 - x
+      </mrow><mrow>
+      f_x&amp;=3x^2+2x-2y-1 \qquad   &amp; f_{xx}&amp;=6x+2 \qquad &amp; f_{xy}&amp;= -2
+      </mrow><mrow>
+      f_y&amp;=-2x+2y  &amp; f_{yy}&amp;=2\qquad &amp; f_{yx}&amp;= -2
+      </mrow>
+      </md>
+      (Of course, <m>f_{xy}</m> and <m>f_{yx}</m> have to be the same. It is still
+      useful to compute both, as a way to catch some mechanical errors.)
+      </p>
+
+      <p>The critical points are the solutions of
+      <md alignment="alignat">
+      <mrow>
+      f_x&amp;=3x^2+2x-2y-1&amp;&amp;=0  \tag{E1}
+      </mrow><mrow>
+      f_y&amp;=-2x+2y &amp;&amp;= 0  \tag{E2}
+      </mrow>
+      </md>
+      Substituting <m>y=x</m>, from (E2), into (E1) gives
+      <md>
+      <mrow>
+      3x^2-1=0
+      \iff x=\pm\frac{1}{\sqrt{3}}=0
+      </mrow>
+      </md>
+      So there are two critical points: <m>\pm\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>.
+      </p>
+
+      <p>The classification is</p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center" />  <col halign="center"/>  <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                <m>f_{xx}</m> </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>  </cell><cell>
+                 <m>(2\sqrt{3}+2)\times (2)-(-2)^2 \gt  0</m> </cell><cell>  <m>2\sqrt{3}+2 \gt 0</m>  </cell><cell> local min  </cell>
+      </row><row>
+      <cell>      <m>-\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>  </cell><cell>
+             <m>(-2\sqrt{3}+2)\times (2)-(-2)^2 \lt 0</m> </cell><cell>  </cell><cell> saddle point </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </solution>
+    </exercise>
+
+    <!-- No 11 -->
+    <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
+      <statement><p>
+      Pour la surface
+      <me>
+      z = f (x, y) = x^3 + xy^2 - 3x^2 - 4y^2 + 4
+      </me>
+      Trouvez et classifiez (maximum local, minimum local ou point de selle) tous les points critiques de <m>f(x,y)</m>.
+      </p></statement>
+
+      <answer>
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,0)</m>  </cell><cell>  maximum local  </cell>
+      </row><row>
+      <cell>      <m>(2,0)</m>  </cell><cell>  point de selle </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </answer>
+
+      <solution><p>
+      To find the critical points we will need the gradient of <m>f</m> and to
+      apply the second derivative test of
+      Theorem <xref ref="thm_second_deriv_test"/>
+      we will need all second order partial derivatives. So we need all
+      partial derivatives of <m>f</m> up to order two.
+      Here they are.
+      <md alignment="alignat">
+      <mrow>
+      f&amp;=x^3 + xy^2 - 3x^2 - 4y^2 + 4
+      </mrow><mrow>
+      f_x&amp;=3x^2+y^2-6x\qquad   &amp; f_{xx}&amp;=6x-6 \qquad &amp; f_{xy}&amp;= 2y
+      </mrow><mrow>
+      f_y&amp;=2xy -8y &amp; f_{yy}&amp;=2x-8\qquad &amp; f_{yx}&amp;= 2y
+      </mrow>
+      </md>
+      (Of course, <m>f_{xy}</m> and <m>f_{yx}</m> have to be the same. It is still
+      useful to compute both, as a way to catch some mechanical errors.)
+      </p>
+
+      <p>The critical points are the solutions of
+      <me>
+      f_x=3x^2+y^2-6x=0   \qquad
+      f_y=2(x-4)y = 0
+      </me>
+      The second equation is satisfied if at least one of <m>x=4</m>, <m>y=0</m>
+      are satisfied.
+      <ul>
+      <li>
+      If <m>x=4</m>, the first equation reduces to <m>y^2=-24</m>, which has no real solutions.
+      </li>
+      <li>
+      If <m>y=0</m>, the first equation reduces to <m>3x(x-2)=0</m>, which is
+      satisfied if either <m>x=0</m> or <m>x=2</m>.
+      </li>
+      </ul>
+      So there are two critical points: <m>(0,0)</m>, <m>(2,0)</m>.
+      </p>
+
+      <p>The classification is</p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col halign="center" />  <col halign="center"/>  <col halign="center"/> <col />
+      <row>
+      <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                <m>f_{xx}</m> </cell><cell> type </cell>
+      </row><row>
+      <cell>
+               <m>(0,0)</m>  </cell><cell> <m>(-6)\times(-8)-(0)^2 \gt  0</m> </cell><cell>  <m>-6</m>  </cell><cell> local max  </cell>
+      </row><row>
+      <cell>      <m>(2,0)</m>  </cell><cell> <m>6\times(-4)-(0)^2 \lt 0</m> </cell><cell>   </cell><cell> saddle point </cell>
+      </row>
+      </tabular></sidebyside>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <!-- No 12 -->
+    <exercise>
+      <statement><p>
+      Trouvez la valeur maximale et minimale de <m>f(x,y)=xy-x^3y^2</m> lorsque <m>(x,y)</m>
+      se trouve dans le carré <m>0\leqslant x\leqslant 1</m>, <m>0\leqslant y\leqslant 1</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\text{min}=0\qquad
+      \text{max}=\frac{2}{3\sqrt{3}}\approx0.385</m>
+      </p></answer>
+
+      <solution><p>
+      The specified function and its first order derivatives are
+      <md>
+      <mrow>
+      f(x,y)=xy-x^3y^2\qquad
+      f_x(x,y)=y-3x^2y^2\qquad
+      f_y(x,y)=x-2x^3y
+      </mrow>
+      </md>
+      <ul>
+      <li><p>
+      First, we find the critical points.
+      <md alignment="alignat">
+      <mrow>
+      f_x&amp;=0 &amp; &amp;\quad\iff\quad  &amp;y(1-3x^2y)&amp;=0 &amp;
+               &amp;\quad\iff\quad &amp; &amp;y=0 \text{ or } 3x^2y=1
+      </mrow><mrow>
+      f_y&amp;=0 &amp; &amp;\quad\iff\quad  &amp;x(1-2x^2y)&amp;=0 &amp;
+               &amp;\quad\iff\quad &amp; &amp;x=0 \text{ or } 2x^2y=1
+      </mrow>
+      </md>
+      <ul>
+      <li>
+      If <m>y=0</m>, we cannot have <m>2x^2y=1</m>, so we must have <m>x=0</m>.
+      </li>
+      <li>
+      If <m>3x^2y=1</m>, we cannot have <m>x=0</m>, so we must have <m>2x^2y=1</m>. Dividing
+      gives <m>1=\frac{3x^2y}{2x^2y}=\frac{3}{2}</m> which is impossible.
+      </li>
+      </ul>
+      So the only critical point in the square is <m>(0,0)</m>. There <m>f=0</m>.
+      </p></li>
+      <li>
+      Next, we look at the part of the boundary with <m>x=0</m>. There <m>f=0</m>.
+      </li>
+      <li>
+      Next, we look at the part of the boundary with <m>y=0</m>. There <m>f=0</m>.
+      </li>
+      <li>
+      Next, we look at the part of the boundary with <m>x=1</m>. There <m>f=y-y^2</m>.
+      As <m>\diff{}{y}(y-y^2)=1-2y</m>, the max and min of <m>y-y^2</m> for
+      <m>0\leqslant y\leqslant 1</m> must occur either at <m>y=0</m>, where <m>f=0</m>, or at <m>y=\half</m>,
+      where <m>f=\frac{1}{4}</m>, or at <m>y=1</m>, where <m>f=0</m>.
+      </li>
+      <li>
+      Next, we look at the part of the boundary with <m>y=1</m>. There <m>f=x-x^3</m>.
+      As <m>\diff{}{x}(x-x^3)=1-3x^2</m>, the max and min of <m>x-x^3</m> for
+      <m>0\leqslant x\leqslant 1</m> must occur either at <m>x=0</m>, where <m>f=0</m>, or
+      at <m>x=\frac{1}{\sqrt{3}}</m>, where <m>f=\frac{2}{3\sqrt{3}}</m>,
+      or at <m>x=1</m>, where <m>f=0</m>.
+      </li>
+      </ul>
+      All together, we have the following candidates for max and min.
+      </p>
+
+      <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+      <col />  <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+               <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+               <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+      <row>
+      <cell>      point
+             </cell><cell><m>(0,0)</m>
+             </cell><cell><m>x=0</m>
+             </cell><cell><m>y=0</m>
+             </cell><cell><m>(1,0)</m>
+             </cell><cell><m>(1,\half)</m>
+             </cell><cell><m>(1,1)</m>
+             </cell><cell><m>(0,1)</m>
+             </cell><cell><m>(\frac{1}{\sqrt{3}},1)</m>
+             </cell><cell><m>(1,1)</m> </cell>
+      </row><row>
+      <cell>        value of <m>f</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>\frac{1}{4}</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>0</m>
+             </cell><cell><m>\frac{2}{3\sqrt{3}}</m>
+             </cell><cell><m>0</m> </cell>
+      </row><row>
+      <cell>        </cell><cell>min
+             </cell><cell>min
+             </cell><cell>min
+             </cell><cell>min
+             </cell><cell>
+             </cell><cell>min
+             </cell><cell>min
+             </cell><cell>max
+             </cell><cell>min </cell>
+      </row>
+      </tabular></sidebyside>
+
+      <p>
+      The largest and smallest values of <m>f</m> in this table are
+      <me>
+      \text{min}=0\qquad
+      \text{max}=\frac{2}{3\sqrt{3}}\approx0.385
+      </me>
+      </p></solution>
+    </exercise>
+    <!-- No 13 -->
+    <exercise>
+        <statement><p>
+        La température à tous les points dans le disque <m>x^2+y^2\leqslant 1</m> est donnée par
+        <m>T(x,y)=(x+y)e^{-x^2-y^2}</m>. Trouvez la température maximale et minimale
+        dans le disque.
+        </p></statement>
+
+        <hint><p>
+        Une façon de procéder pour s'occuper de la frontière <m>x^2+y^2=1</m> est de la paramétrer
+        par <m>x=\cos\theta</m>, <m>y=\sin\theta</m>, <m>0\le\theta \lt 2\pi</m>.
+        </p></hint>
+
+        <answer><p>
+        <m>
+        \text{min}=-\frac{1}{\sqrt{e}}\qquad
+        \text{max}=\frac{1}{\sqrt{e}}
+        </m>
+        </p></answer>
+
+        <solution><p>
+        The specified temperature and its first order derivatives are
+        <md>
+        <mrow>
+        T(x,y)&amp;=(x+y)e^{-x^2-y^2}
+        </mrow><mrow>
+        T_x(x,y)&amp;=(1-2x^2-2xy)e^{-x^2-y^2}
+        </mrow><mrow>
+        T_y(x,y)&amp;=(1-2xy-2y^2)e^{-x^2-y^2}
+        </mrow>
+        </md>
+        <ul>
+        <li>
+        First, we find the critical points.
+        <md alignment="alignat">
+        <mrow>
+        T_x&amp;=0 &amp; &amp;\quad\iff\quad &amp; 2x(x+y)&amp;=1
+        </mrow><mrow>
+        T_y&amp;=0 &amp; &amp;\quad\iff\quad &amp; 2y(x+y)&amp;=1
+        </mrow>
+        </md>
+        As <m>x+y</m> may not vanish, this forces <m>x=y</m> and then <m>x=y=\pm\half</m>.
+        So the only critical points are <m>(\half,\half)</m> and <m>(-\half,-\half)</m>.
+        </li>
+        <li>
+         On the boundary <m>x=\cos\theta</m> and <m>y=\sin\theta</m>,
+        so <m>T=(\cos\theta+\sin\theta)e^{-1}</m>.
+        This is a periodic function and so takes its max and min at zeroes of
+        <m>\diff{T}{\theta}=\big(-\sin\theta+\cos\theta\big)e^{-1}</m>. That is,
+        when <m>\sin\theta=\cos\theta</m>,
+        which forces <m>\sin\theta=\cos\theta=\pm\frac{1}{\sqrt{2}}</m>.
+        </li>
+        </ul>
+        All together, we have the following candidates for max and min.
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col />  <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+                 <col halign="center"/>
+        <row>
+        <cell>      point
+               </cell><cell><m>(\half,\half)</m>
+               </cell><cell><m>(-\half,-\half)</m>
+               </cell><cell><m>(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})</m>
+               </cell><cell><m>(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}})</m> </cell>
+        </row><row>
+        <cell>        value of <m>T</m>
+               </cell><cell><m>\frac{1}{\sqrt{e}}\approx0.61</m>
+               </cell><cell><m>-\frac{1}{\sqrt{e}}</m>
+               </cell><cell><m>\frac{\sqrt{2}}{e}\approx0.52</m>
+               </cell><cell><m>-\frac{\sqrt{2}}{e}</m> </cell>
+        </row><row>
+        <cell>        </cell><cell>max
+               </cell><cell>min
+               </cell><cell>
+               </cell><cell>
+               </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        The largest and smallest values of <m>T</m> in this table are
+        <me>
+        \text{min}=-\frac{1}{\sqrt{e}}\qquad
+        \text{max}=\frac{1}{\sqrt{e}}
+        </me>
+        </p></solution>
+      </exercise>
+
+    <!-- No 14 -->
+    <exercise> <!-- <title><fromexam>M200 2010A</fromexam></title> -->
+        <statement><p>
+        <ol marker = "(a)">
+        <li>
+        Pour la fonction <m>z = f (x, y) = x^3 + 3xy + 3y^2 - 6x - 3y - 6</m>.
+        Trouvez et classifiez (maximum local, minimum local ou point de selle) tous les points critiques de
+        <m>f(x, y)</m>.
+        </li>
+        <li><p>
+        Les images ci-dessous illustrent les ensembles de niveau de <m>f (x, y) = c</m> des fonctions de la liste aux hauteurs
+        <m>c = 0, 0.1, 0.2, \ldots , 1.9, 2</m>.
+        Étiquettez les images avec la fonction correspondante et identifier les points critiques dans chaque image. (Notez que dans certains cas, les points critiques peuvent ne pas être déjà identifiés dans l'image dessinée.
+        Dans ces cas, vous devez les ajouter à l'image.)
+        <ol marker="(i)">
+        <li>
+        <m>f(x, y) = (x^2 + y^2 - 1)(x - y) + 1</m>
+        </li>
+        <li>
+        <m>f(x, y) = \sqrt{x^2 + y^2}</m>
+        </li>
+        <li>
+        <m>f(x, y) = y(x + y)(x - y) + 1</m>
+        </li>
+        <li>
+        <m>f(x, y) = x^2 + y^2</m>
+        </li>
+        </ol></p>
+        </li>
+        </ol>
+        </p>
+        <sidebyside width="22%">
+        <image source="images/CLP-figs/pfigs/level3"/>
+        <image source="images/CLP-figs/pfigs/level1"/>
+        <image source="images/CLP-figs/pfigs/level4"/>
+        <image source="images/CLP-figs/pfigs/level2"/>
+        </sidebyside>
+        </statement>
+
+        <answer><p>
+        (a)
+        </p>
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <row>
+        <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(\frac{3}{2},-\frac{1}{4})</m>  </cell><cell> minimum local  </cell>
+        </row><row>
+        <cell>      <m>(-1,1)</m>    </cell><cell> point de selle </cell>
+        </row>
+        </tabular></sidebyside>
+
+
+        <p>(b)</p>
+        <sbsgroup widths="10% 40%">
+        <sidebyside>
+        <p>(i)</p> <image source="images/CLP-figs/pfigs/level1b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(ii)</p>  <image source="images/CLP-figs/pfigs/level2b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(iii)</p> <image source="images/CLP-figs/pfigs/level3b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(iv)</p>  <image source="images/CLP-figs/pfigs/level4b"/>
+        </sidebyside>
+        </sbsgroup>
+        </answer>
+
+        <solution><p>
+        (a)
+        To find the critical points we will need the
+        gradient of <m>f</m> and to apply the second derivative test of
+        Theorem <xref ref="thm_second_deriv_test"/>
+        we will need all
+        second order partial derivatives. So we need all partial derivatives of
+        <m>f</m> up to order two.
+        Here they are.
+        <md alignment="alignat">
+        <mrow>
+        f&amp;=x^3 + 3xy + 3y^2 - 6x - 3y - 6
+        </mrow><mrow>
+        f_x&amp;=3x^2+3y-6   &amp; f_{xx}&amp;=6x \qquad &amp; f_{xy}&amp;= 3
+        </mrow><mrow>
+        f_y&amp;=3x+6y-3 \qquad &amp; f_{yy}&amp;=6\qquad &amp; f_{yx}&amp;= 3
+        </mrow>
+        </md>
+        </p>
+
+        <p>The critical points are the solutions of
+        <me>
+        f_x=3x^2+3y-6=0   \qquad
+        f_y=3x+6y-3 = 0
+        </me>
+        Subtracting the second equation from <m>2</m> times the first equation gives
+        <me>
+        6x^2-3x-9=0
+        \iff
+        3(2x-3)(x+1)=0
+        \iff x=\frac{3}{2},\ -1
+        </me>
+        Since <m>y=\frac{1-x}{2}</m> (from the second equation),
+        the critical points are <m>(\frac{3}{2},-\frac{1}{4})</m>, <m>(-1,1)</m> and
+        the classification is
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col halign="center"/> <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                  <m>f_{xx}</m> </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(\frac{3}{2},-\frac{1}{4})</m>  </cell><cell> <m>(9)\times(6)-(3)^2 \gt  0</m> </cell><cell> <m>9</m>
+                               </cell><cell> local min  </cell>
+        </row><row>
+        <cell>      <m>(-1,1)</m>  </cell><cell> <m>(-6)\times (6)-(3)^2 \lt 0</m> </cell><cell>   </cell><cell> saddle point </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        (b) Both of the functions  <m>f(x, y) = \sqrt{x^2 + y^2}</m> (i.e. (ii))
+        and  <m>f(x, y) = x^2 + y^2</m> (i.e. (iv)) are invariant under rotations
+        around the <m>(0,0)</m>. So their level curves are circles centred on
+        the origin. In polar coordinates <m>\sqrt{x^2 + y^2}</m> is <m>r</m>.
+        So the sketched level curves of the function in (ii) are
+        <m>r = 0, 0.1, 0.2, \ldots , 1.9, 2</m>. They are equally spaced.
+        So at this point, we know that the third picture goes with (iv)
+        and the fourth picture goes with (ii).
+        </p>
+
+        <p>Notice that the lines <m>x=y</m>, <m>x=-y</m> and <m>y=0</m> are all level curves
+        of the function <m>f(x, y) = y(x + y)(x - y) + 1</m> (i.e. of (iii))
+        with <m>f=1</m>. So the first picture goes with (iii). And the second picture
+        goes with (i).
+        </p>
+
+        <p>Here are the pictures with critical points marked on them.
+        There are saddle points where level curves cross and there
+        are local max's or min's at <q>bull's eyes</q>.
+        </p>
+
+        <sbsgroup widths="10% 40%">
+        <sidebyside>
+        <p>(i)</p> <image source="images/CLP-figs/pfigs/level1b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(ii)</p>  <image source="images/CLP-figs/pfigs/level2b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(iii)</p> <image source="images/CLP-figs/pfigs/level3b"/>
+        </sidebyside>
+        <sidebyside>
+        <p>(iv)</p>  <image source="images/CLP-figs/pfigs/level4b"/>
+        </sidebyside>
+        </sbsgroup>
+        </solution>
+      </exercise>
+
+    <!-- No 17 -->
+    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
+        <statement><p>
+        Trouvez la valeur du maximum et minimum absolu
+        de la fonction
+        <m>f(x, y) = 5 + 2x - x^2 - 4y^2</m> sur la région rectangulaire
+        <me>
+        R = \Set{(x, y)}{ -1\leqslant x\leqslant3,\  -1\leqslant y\leqslant1}
+        </me>
+        </p></statement>
+
+        <answer><p>
+        Le minimum est <m>-2</m> et le maximum est <m>6</m>.
+        </p></answer>
+
+        <solution><p>
+        The maximum and minimum must either occur at a critical point or on
+        the boundary of <m>R</m>.
+        <ul>
+        <li>
+        The critical points are the solutions of
+        <md>
+        <mrow>
+        0&amp;=f_x(x,y) = 2-2x
+        </mrow><mrow>
+        0&amp;=f_y(x,y) = -8y
+        </mrow>
+        </md>
+        So the only critical point is <m>(1,0)</m>.
+        </li>
+        <li>
+        On the side <m>x=-1</m>, <m>-1\leqslant y\leqslant 1</m> of the boundary of <m>R</m>
+        <me>
+        f(-1,y) = 2-4y^2
+        </me>
+        This function decreases as <m>|y|</m> increases. So its maximum value
+        on <m>-1\leqslant y\leqslant 1</m> is achieved at <m>y=0</m> and its minimum value is achieved
+        at <m>y=\pm 1</m>.
+        </li>
+        <li>
+        On the side <m>x=3</m>, <m>-1\leqslant y\leqslant 1</m> of the boundary of <m>R</m>
+        <me>
+        f(3,y) = 2-4y^2
+        </me>
+        This function decreases as <m>|y|</m> increases. So its maximum value
+        on <m>-1\leqslant y\leqslant 1</m> is achieved at <m>y=0</m> and its minimum value is achieved
+        at <m>y=\pm 1</m>.
+        </li>
+        <li>
+        On both sides <m>y=\pm 1</m>, <m>-1\leqslant x\leqslant 3</m> of the boundary of <m>R</m>
+        <me>
+        f(x,\pm 1) = 1+2x-x^2 = 2 -(x-1)^2
+        </me>
+        This function decreases as <m>|x-1|</m> increases. So its maximum value
+        on <m>-1\leqslant x\leqslant 3</m> is achieved at <m>x=1</m> and its minimum value is achieved
+        at <m>x= 3</m> and <m>x=-1</m> (both of whom are a distance <m>2</m> from <m>x=1</m>).
+        </li>
+        </ul>
+        So we have the following candidates for the locations of the min and max
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col /> <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+                <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+        <row>
+        <cell> point
+               </cell><cell><m>(1,0)</m>
+               </cell><cell><m>(-1,0)</m>
+               </cell><cell><m>(1,\pm 1)</m>
+               </cell><cell><m>(-1,\pm 1)</m>
+               </cell><cell><m>(3,0)</m>
+               </cell><cell><m>(3,\pm 1)</m> </cell>
+        </row><row>
+        <cell>        value of <m>f</m>
+               </cell><cell><m>6</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>-2</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>-2</m> </cell>
+        </row><row>
+        <cell>        </cell><cell>max
+               </cell><cell>
+               </cell><cell>
+               </cell><cell>min
+               </cell><cell>
+               </cell><cell>min </cell>
+        </row>
+        </tabular></sidebyside>
+
+
+        <p>
+        So the minimum is <m>-2</m> and the maximum is <m>6</m>.
+        </p></solution>
+      </exercise>
+
+    <!-- No 21 -->
+    <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
+        <statement><p>
+        Considérez la fonction
+        <me>
+        f(x,y)=2x^3 - 6xy + y^2 +4y
+        </me>
+        <ol marker = "(a)">
+        <li>
+        Trouvez et classifiez tous les points critiques de <m>f(x,y)</m>.
+        </li>
+        <li>
+        Trouvez la valeur maximale et minimale de <m>f(x,y)</m> dans le triangle dont les sommets sont
+        <m>(1,0)</m>, <m>(0,1)</m> et <m>(1,1)</m>.
+        </li>
+        </ol>
+        </p></statement>
+
+        <answer><p>
+        (a) <m>(1,1)</m> est un point de selle et <m>(2,4)</m> est un minimum local
+        </p>
+
+        <p>(b) Le minimum et maximum sont <m>\frac{19}{27}</m> et <m>5</m>, respectivement.
+        </p></answer>
+
+        <solution><p>
+         (a) Since
+        <md alignment="alignat">
+        <mrow>
+        f&amp;=2x^3 - 6xy + y^2 +4y
+        </mrow><mrow>
+        f_x&amp;=6x^2-6y &amp; f_{xx}&amp;=12x\qquad &amp;&amp; f_{xy}&amp;= -6
+        </mrow><mrow>
+        f_y&amp;=-6x+2y+4\qquad &amp; f_{yy}&amp;=2
+        </mrow>
+        </md>
+        the critical points are the solutions of
+        <md alignment="alignat">
+        <mrow>
+        &amp; &amp; &amp;f_x=0\qquad &amp; &amp;f_y=0
+        </mrow><mrow>
+        &amp;\iff\qquad&amp; &amp;y=x^2\qquad &amp; &amp;y-3x+2=0
+        </mrow><mrow>
+        &amp;\iff&amp; &amp;y=x^2 &amp; &amp;x^2-3x+2=0
+        </mrow><mrow>
+        &amp;\iff&amp; &amp;y=x^2 &amp; &amp;x=1\text{ or }2
+        </mrow>
+        </md>
+        So, there are two critical points: <m>(1,1),\ (2,4)</m>.
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col halign="center"/> <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                  <m>f_{xx}</m> </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(1,1)</m>  </cell><cell> <m>12\times 2-(-6)^2 \lt 0</m> </cell><cell>    </cell><cell> saddle point </cell>
+        </row><row>
+        <cell>      <m>(2,4)</m>  </cell><cell> <m>24\times 2-(-6)^2 \gt 0</m> </cell><cell> <m>24</m> </cell><cell> local min </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        (b)
+        There are no critical points in the interior of the allowed region,
+        so both the maximum and the minimum occur only on the boundary. The boundary
+        consists of the line segments (i) <m>x=1</m>, <m>0\leqslant y\leqslant 1</m>, (ii) <m>y=1</m>, <m>0\le
+        x\leqslant 1</m> and (iii) <m>y=1-x</m>, <m>0\leqslant x\leqslant 1</m>.
+        </p>
+
+        <sidebyside width="40%">
+        <image source="images/CLP-figs/pfigs/OE04Q4"/>
+        </sidebyside>
+
+        <p>
+        <ul>
+        <li>
+        First, we look at the part of the boundary with <m>x=1</m>. There <m>f=y^2-2y+2</m>.
+        As <m>\diff{}{y}(y^2-2y+2)=2y-2</m> vanishes only at <m>y=1</m>,
+        the max and min of <m>y^2-2y+2</m> for <m>0\leqslant y\leqslant 1</m> must occur either at <m>y=0</m>,
+        where <m>f=2</m>, or at <m>y=1</m>, where <m>f=1</m>.
+        </li>
+        <li>
+        Next, we look at the part of the boundary with <m>y=1</m>. There <m>f=2x^3-6x+5</m>.
+        As <m>\diff{}{x}(2x^3-6x+5)=6x^2-6</m>,
+        the max and min of <m>2x^3-6x+5</m> for <m>0\leqslant x\leqslant 1</m> must occur either at <m>x=0</m>,
+        where <m>f=5</m>, or at <m>x=1</m>, where <m>f=1</m>.
+        </li>
+        <li>
+        Next, we look at the part of the boundary with <m>y=1-x</m>. There
+        <md>
+        <mrow>
+        f=2x^3-6x(1-x)+(1-x)^2+4(1-x)=2x^3+7x^2-12x+5
+        </mrow>
+        </md>
+        As
+        <md>
+        <mrow>
+        \diff{}{x}(2x^3+7x^2-12x+5)&amp;=6x^2+14x-12
+                                       =2\big(3x^2+7x-6\big)
+        </mrow><mrow>
+                                   &amp;=2(3x-2)(x+3)
+        </mrow>
+        </md>
+        the max and min of <m>2x^3+7x^2-12x+5</m> for <m>0\leqslant x\leqslant 1</m> must occur either at <m>x=0</m>,
+        where <m>f=5</m>, or at <m>x=1</m>, where <m>f=2</m>, or at <m>x=\frac{2}{3}</m>, where <md>
+        <mrow>
+        f=2(\frac{8}{27})-6(\frac{2}{3})(\frac{1}{3})+\frac{1}{9}+\frac{4}{3}
+        =\frac{16-36+3+36}{27}
+        =\frac{19}{27}
+        </mrow>
+        </md>
+        </li>
+        </ul>
+        So all together, we have the following candidates for max and min, with the
+        max and min indicated.
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col /> <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+                <col halign="center"/>
+        <row>
+        <cell>      point
+               </cell><cell><m>(1,0)</m>
+               </cell><cell><m>(1,1)</m>
+               </cell><cell><m>(0,1)</m>
+               </cell><cell><m>\big(\frac{2}{3},\frac{1}{3}\big)</m> </cell>
+        </row><row>
+        <cell>        value of <m>f</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>1</m>
+               </cell><cell><m>5</m>
+               </cell><cell><m>\frac{19}{27}</m></cell>
+        </row><row>
+        <cell>        </cell><cell>
+               </cell><cell>
+               </cell><cell> max
+               </cell><cell> min</cell>
+        </row>
+        </tabular></sidebyside>
+
+        </solution>
+      </exercise>
+
+    <!-- No 25 -->
+    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+        <statement><p>
+        Une plaque en métal est en forme de demi-disque borné par l'axe <m>x</m> et la moitié supérieure de <m>x^2+y^2=4</m>. La température au
+        point <m>(x,y)</m> est donnée par <m>T(x,y)=\ln\big(1+x^2+y^2\big)-y</m>. Trouvez le point le plus froid sur la plaque, en expliquant vos étapes soigneusement. (Note:
+        <m>\ln 2\approx 0.693</m>, <m>\ln 5\approx 1.609</m>)
+        </p></statement>
+
+        <answer><p>
+        La température la plus froide est <m>-0.391</m> et le point le plus froid est <m>(0,2)</m>.
+        </p></answer>
+
+        <solution><p>
+        The coldest point must be either on the boundary of the plate
+        or in the interior of the plate.
+        <ul>
+        <li>
+        On the semi--circular part of the boundary <m>0\leqslant y\leqslant 2</m> and
+        <m>x^2+y^2=4</m> so that <m>T=\ln\big(1+x^2+y^2\big)-y=\ln 5-y</m>. The smallest
+        value of <m>\ln 5-y</m> is taken when <m>y</m> is as large as possible,
+        i.e. when <m>y=2</m>, and is <m>\ln 5 -2\approx -0.391</m>.
+        </li>
+        <li>
+        On the flat part of the boundary, <m>y=0</m> and
+        <m>-2\leqslant x\leqslant 2</m> so that <m>T=\ln\big(1+x^2+y^2\big)-y=\ln\big(1+x^2\big)</m>.
+        The smallest value of <m>\ln\big(1+x^2\big)</m> is taken when <m>x</m> is as small as possible, i.e. when <m>x=0</m>, and is <m>0</m>.
+        </li>
+        <li>
+        If the coldest point is in the interior of the plate,
+        it must be at a critical point of <m>T(x,y)</m>. Since
+        <md>
+        <mrow>
+        T_x(x,y)=\frac{2x}{1+x^2+y^2}\qquad
+        T_y(x,y)=\frac{2y}{1+x^2+y^2}-1
+        </mrow>
+        </md>
+        a critical point must have <m>x=0</m> and <m>\frac{2y}{1+x^2+y^2}-1=0</m>,
+        which is the case if and only if <m>x=0</m> and <m>2y-1-y^2=0</m>. So the only
+        critical point is <m>x=0,\ y=1</m>, where <m>T=\ln 2-1\approx -0.307</m>.
+        </li>
+        </ul>
+        Since <m>-0.391 \lt -0.307 \lt 0</m>, the coldest temperture is <m>-0.391</m> and the
+        coldest point is <m>(0,2)</m>.
+        </p></solution>
+      </exercise>
+
+    <!-- No 32 -->
+    <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
+        <statement><p>
+        La température <m>T(x,y)</m> à un point du plan <m>xy</m> est donnée par
+        <me>
+        T(x,y) = 20 - 4x^2 - y^2
+        </me>
+        <ol marker = "(a)">
+        <li>
+        Trouvez la valeur maximale et minimale de <m>T(x,y)</m> sur le disque <m>D</m>
+        défini par <m>x^2 + y^2\leqslant4</m>.
+        </li>
+        <li>
+        Supposons qu'une fourmi vit sur le disque <m>D</m>. Si la fourmi est initiallement au point
+        <m>(1, 1)</m>, dans quelle direction doit-elle se déplacer afin que la température croît le plus vite possible?
+        </li>
+        <li>
+        Supposons que la fourmi se déplace à une vitesse <m>\vv = -2\vi - \vj</m>.
+        Quel est le taux de variation de la température lorsqu'elle passe par <m>(1, 1)</m>?
+        </li>
+        <li>
+        Supposons que la fourmi est contrainte à rester sur la courbe <m>y = 2 - x^2</m>.
+        Où devrait-elle aller si elle veut être le plus au chaud possible?
+        </li>
+        </ol>
+        </p></statement>
+
+        <answer><p>
+        (a) La valeur maximale et minimale de <m>T(x,y)</m> dans <m>x^2+y^2\leqslant 4</m>
+             sont <m>20</m> (à <m>(0,0)</m>) et  <m>4</m> (à <m>(\pm 2,0)</m>), respectivement.
+        </p>
+
+        <p>(b) <m>\frac{1}{\sqrt{17}}\llt -4,-1\rgt</m>
+        </p><p>
+        (c) <m>18</m></p><p>
+        (d) <m>(0,2)</m>
+        </p></answer>
+
+        <solution><p>
+        (a)
+        The maximum and minimum can occur either in the interior
+            of the disk or on the boundary of the disk. The boundary
+            of the disk is the circle <m>x^2+y^2=4</m>.
+        <ul>
+        <li> Any absolute max or min in the interior of the disk
+              must also be a local max or min and, since there are no
+              singular points, must also be a critical point of <m>h</m>.
+              Since <m>T_x=-8x</m> and <m>T_y=-2y</m>, the only critical point is
+              <m>(x,y)=(0,0)</m>, where <m>T=20</m>.  Since <m>4x^2+y^2\geqslant 0</m>,
+              we have <m>T(x,y)=20-4x^2-y^2\leqslant 20</m>. So the maximum value
+              of <m>T</m> (even in <m>\R^2</m>) is <m>20</m>.
+        </li>
+        <li> At each point of <m>x^2+y^2=4</m> we have
+                   <m>T(x,y)=20-4x^2-y^2=20 -4x^2-(4-x^2)=16-3x^2</m>
+                   with <m>-2\leqslant x\leqslant 2</m>. So <m>T</m> is a minimum when <m>x^2</m> is a maximum.
+                   Thus the minimum value of <m>T</m> on the disk is <m>16-3(\pm 2)^2=4</m>.
+        </li>
+        </ul>
+        So all together, the maximum and minimum values of <m>T(x,y)</m> in <m>x^2+y^2\leqslant 4</m>
+             are <m>20</m> (at <m>(0,0)</m>) and  <m>4</m> (at <m>(\pm 2,0)</m>), respectively.
+        </p>
+
+        <p>(b) To increase its temperature as quickly as possible, the ant should
+            move in the direction of the temperature gradient
+            <m>\vnabla T(1,1)=\llt -8x,-2y\rgt\Big|_{(x,y)=(1,1)}=\llt -8,-2\rgt</m>.
+            A unit vector in that direction is <m>\frac{1}{\sqrt{17}}\llt -4,-1\rgt</m>.
+        </p>
+
+        <p>(c) The ant's rate f increase of temperature (per unit time) is
+        <md>
+        <mrow>
+         \vnabla T(1,1)\cdot\llt -2,-1\rgt
+        =\llt -8,-2\rgt\cdot\llt -2,-1\rgt
+        =18
+        </mrow>
+        </md>
+        </p>
+
+        <p>(d) We are being asked to find the <m>(x,y)=(x,2-x^2)</m> which maximizes
+        <md>
+        <mrow>
+        T\big(x,2-x^2\big) =20 -4x^2-\big(2-x^2\big)^2
+                           = 16-x^4
+        </mrow>
+        </md>
+        The maximum of <m>16-x^4</m> is obviously <m>16</m> at <m>x=0</m>. So the ant should
+        go to <m>\big(0,2-0^2\big)=(0,2)</m>.
+        </p></solution>
+      </exercise>
+
+    <!-- No 33 -->
+    <exercise> <!-- <title><fromexam>M200 2014A</fromexam></title> -->
+        <statement><p>
+        Considérez la fonction
+        <me>
+        f (x,y) = 3kx^2 y + y^3 - 3x^2 - 3y^2 + 4
+        </me>
+        où <m>k  \gt  0</m> est une constante.
+        Trouvez et classifiez tous les points critiques de <m>f(x,y)</m> comme étant un minimum local,
+        un maximum local, un point de selle ou un point de type indéterminé.
+        Distinguer prudemment les cas <m>k  \lt  \frac{1}{2}</m>, <m>k = \frac{1}{2}</m>
+        et <m>k  \gt  \frac{1}{2}</m>.
+        </p></statement>
+
+        <answer><p>
+        <em>Cas <m>k \lt \frac{1}{2}</m>:</em>
+        </p>
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <row>
+        <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>   </cell><cell> maximum local  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>   </cell><cell> point de selle </cell>
+        </row>
+        </tabular></sidebyside>
+        <p>
+        <em>Cas <m>k=\frac{1}{2}</m>:</em>
+        </p>
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <row>
+        <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>  </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>   </cell><cell> maximum local  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>   </cell><cell> indéterminé </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        <em>Cas <m>k \gt \frac{1}{2}</m>:</em>
+        </p>
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{Point}}{\text{critique}}</m>   </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>    </cell><cell> maximum local  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>    </cell><cell> minimum local </cell>
+        </row><row>
+        <cell>       <m>\left(\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m>
+        </cell><cell> point de selle </cell>
+        </row><row>
+        <cell>       <m>\left(-\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m>
+        </cell><cell> point de selle </cell>
+        </row>
+        </tabular></sidebyside>
+
+        </answer>
+
+        <solution><p>
+        To find the critical points we will need the
+        gradient of <m>f</m> and to apply the second derivative test of
+        Theorem <xref ref="thm_second_deriv_test"/>
+        we will need all
+        second order partial derivatives. So we need all partial derivatives of
+        <m>f</m> up to order two.
+        Here they are.
+        <md alignment="alignat">
+        <mrow>
+        f&amp;=3kx^2 y + y^3 - 3x^2 - 3y^2 + 4
+        </mrow><mrow>
+        f_x&amp;=6kxy-6x   &amp; f_{xx}&amp;=6ky-6 \qquad &amp; f_{xy}&amp;= 6kx
+        </mrow><mrow>
+        f_y&amp;=3kx^2+3y^2-6y \qquad &amp; f_{yy}&amp;=6y-6\qquad &amp; f_{yx}&amp;= 6kx
+        </mrow>
+        </md>
+        (Of course, <m>f_{xy}</m> and <m>f_{yx}</m> have to be the same. It is still
+        useful to compute both, as a way to catch some mechanical errors.)
+        </p>
+
+        <p>The critical points are the solutions of
+        <me>
+        f_x=6x(ky-1)=0   \qquad
+        f_y=3kx^2+3y^2-6y = 0
+        </me>
+        The first equation is satisfied if at least one of <m>x=0</m>, <m>y=\frac{1}{k}</m>
+        are satisfied. (Recall that <m>k \gt 0</m>.)
+        <ul>
+        <li>
+        If <m>x=0</m>, the second equation reduces to <m>3y(y-2)=0</m>, which is
+        satisfied if either <m>y=0</m> or <m>y=2</m>.
+        </li>
+        <li>
+        If <m>y=\frac{1}{k}</m>, the second equation reduces to
+        <m>3kx^2+\frac{3}{k^2}-\frac{6}{k}=3kx^2+\frac{3}{k^2}(1-2k)=0</m>.
+        </li>
+        </ul>
+        </p>
+
+        <p><em>Case <m>k \lt \frac{1}{2}</m>:</em>
+        If <m>k \lt \frac{1}{2}</m>, then <m>\frac{3}{k^2}(1-2k) \gt 0</m> and the equation
+        <m>3kx^2+\frac{3}{k^2}(1-2k)=0</m> has no real solutions. In this case
+        there are two critical points: <m>(0,0)</m>, <m>(0,2)</m> and the classification is
+        </p>
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col halign="center"/> <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                  <m>f_{xx}</m> </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>  </cell><cell> <m>(-6)\times(-6)-(0)^2 \gt  0</m> </cell><cell> <m>-6</m>   </cell><cell> local max  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>  </cell><cell> <m>(12k-6)\times 6-(0)^2 \lt 0</m> </cell><cell>   </cell><cell> saddle point </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        <em>Case <m>k=\frac{1}{2}</m>:</em>
+        If <m>k=\frac{1}{2}</m>, then <m>\frac{3}{k^2}(1-2k)=0</m> and the equation
+        <m>3kx^2+\frac{3}{k^2}(1-2k)=0</m> reduces to <m>3kx^2=0</m> which has as its only solution <m>x=0</m>. We have already seen this third critical point, <m>x=0</m>, <m>y=\frac{1}{k}=2</m>.
+        So there are again two critical points: <m>(0,0)</m>, <m>(0,2)</m> and
+        the classification is
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col halign="center"/> <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                  <m>f_{xx}</m> </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>  </cell><cell> <m>(-6)\times(-6)-(0)^2 \gt  0</m> </cell><cell> <m>-6</m>   </cell><cell> local max  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>  </cell><cell> <m>(12k-6)\times 6-(0)^2=0</m> </cell><cell>   </cell><cell> unknown </cell>
+        </row>
+        </tabular></sidebyside>
+
+        <p>
+        <em>Case <m>k \gt \frac{1}{2}</m>:</em>
+        If <m>k \gt \frac{1}{2}</m>, then <m>\frac{3}{k^2}(1-2k) \lt 0</m> and the equation
+        <m>3kx^2+\frac{3}{k^2}(1-2k)=0</m> reduces to <m>3kx^2=\frac{3}{k^2}(2k-1)</m>
+        which has two solutions, namely <m>x=\pm\sqrt{\frac{1}{k^3}(2k-1)}</m>.
+        So there are four critical points: <m>(0,0)</m>, <m>(0,2)</m>,
+        <m>\left(\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m> and
+        <m>\left(-\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m> and
+        the classification is
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col halign="center"/>  <col halign="center"/> <col halign="center"/>  <col />
+        <row>
+        <cell>   <m>\Atop{\text{critical}}{\text{point}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                                  <m>f_{xx}</m> </cell><cell> type </cell>
+        </row><row>
+        <cell>
+                 <m>(0,0)</m>  </cell><cell> <m>(-6)\times(-6)-(0)^2 \gt  0</m> </cell><cell> <m>-6</m>   </cell><cell> local max  </cell>
+        </row><row>
+        <cell>      <m>(0,2)</m>  </cell><cell> <m>(12k-6)\times 6-(0)^2 \gt 0</m> </cell><cell> <m>12k-6 \gt 0</m> </cell><cell> local min </cell>
+        </row><row>
+        <cell>       <m>\left(\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m>
+                       </cell><cell> <m>(6-6)\times (\frac{6}{k}-6)-( \gt  0)^2 \lt 0</m> </cell><cell>   </cell><cell> saddle point </cell>
+        </row><row>
+        <cell>       <m>\left(-\sqrt{\frac{1}{k^3}(2k-1)}\,,\,\frac{1}{k}\right)</m>
+                       </cell><cell> <m>(6-6)\times (\frac{6}{k}-6)-( \lt  0)^2 \lt 0</m> </cell><cell>   </cell><cell> saddle point </cell>
+        </row>
+        </tabular></sidebyside>
+
+        </solution>
+      </exercise>
+
+    <!-- No 34 -->
+    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+        <statement><p>
+        <ol marker = "(a)">
+        <li>
+        Montrez que la fonction
+        <m>f(x,y)=2x+4y+\frac{1}{xy}</m>
+        admet exactement un point critique dans le premier quadrant <m>x \gt 0</m>, <m>y \gt 0</m>, et
+        trouvez sa valeur en ce point.
+        </li>
+        <li>
+        Utilisez le test de la dérivée seconde pour classifier les points critiques de la partie (a).
+        </li>
+        <li>
+        Ainsi, expliquer pourquoi l'inégalité <m>2x+4y+\frac{1}{xy}\geqslant 6</m>
+        est valide pour tous les nombres réels positifs <m>x</m> et <m>y</m>.
+        </li>
+        </ol>
+        </p></statement>
+
+        <answer><p>
+        (a) <m>x=1</m>, <m>y=\half</m>, <m>f\big(1,\half\big)=6</m>
+        </p><p>
+        (b) minimum local
+        </p>
+
+        <p>(c) Lorsque <m>x</m> ou <m>y</m> tend à l'infinie, l'autre étant supérieur ou égal à zéro,
+        <m>2x+4y</m> tend vers <m>+\infty</m>. Lorsque <m>(x,y)</m> tend vers n'importe quel point de la partie positive de l'axe <m>x</m> et <m>y</m>, <m>\frac{1}{xy}</m> tend vers <m>+\infty</m>.
+        Ainsi, lorsque <m>x</m> ou <m>y</m> tend vers la frontière du premier quadrant
+        (en comptant l'infini comme faisant partie à la frontière), <m>f(x,y)</m> tend vers <m>+\infty</m>.
+        Ceci résulte au fait que <m>\big(1,\half\big)</m> est un minimum global
+        pour <m>f</m> dans le premier quadrant. Ainsi, <m>f(x,y)\geqslant f\big(1,\half\big)=6</m>
+        pour tout <m>x,y \gt 0</m>.
+        </p></answer>
+
+        <solution><p>
+        (a) For <m>x,y \gt 0</m>,
+        <md>
+        <mrow>
+        f_x&amp;=2-\frac{1}{x^2y}=0\iff y=\frac{1}{2x^2}\cr
+        f_y&amp;=4-\frac{1}{xy^2}=0
+        </mrow>
+        </md>
+        Substituting <m>y=\frac{1}{2x^2}</m>, from the first equation, into the second gives
+        <m>
+        4-4x^3=0
+        </m>
+        which forces <m>x=1</m>, <m>y=\half</m>. At <m>x=1</m>, <m>y=\half</m>,
+        <me>
+        f\big(1,\half\big)=2+2+2=6
+        </me>
+        </p>
+
+        <p>(b) The second derivatives are
+        <me>
+        f_{xx}(x,y)=\frac{2}{x^3y}\qquad
+        f_{xy}(x,y)=\frac{1}{x^2y^2}\qquad
+        f_{yy}(x,y)=\frac{2}{xy^3}
+        </me>
+        In particular
+        <me>
+        f_{xx}\big(1,\half\big)=4\qquad
+        f_{xy}\big(1,\half\big)=4\qquad
+        f_{yy}\big(1,\half\big)=16
+        </me>
+        Since <m>f_{xx}\big(1,\half\big)f_{yy}\big(1,\half\big)-
+                         f_{xy}\big(1,\half\big)^2=4\times 16-4^2=48 \gt 0</m> and <m>f_{xx}\big(1,\half\big)=4 \gt 0</m>,
+        the point <m>\big(1,\half\big)</m> is a local minimum.
+        </p>
+
+        <p>(c) As <m>x</m> or <m>y</m> tends to infinity (with the other at least zero),
+        <m>2x+4y</m> tends to <m>+\infty</m>. As <m>(x,y)</m> tends to any point on the first quadrant part of the <m>x</m>- and <m>y</m>--axes, <m>\frac{1}{xy}</m> tends to <m>+\infty</m>.
+        Hence as <m>x</m> or <m>y</m> tends to the boundary of the first quadrant
+        (counting infinity as part of the boundary), <m>f(x,y)</m> tends to <m>+\infty</m>.
+        As a result <m>\big(1,\half\big)</m> is a global (and not just local) minimum
+        for <m>f</m> in the first quadrant. Hence <m>f(x,y)\geqslant f\big(1,\half\big)=6</m>
+        for all <m>x,y \gt 0</m>.
+        </p></solution>
+      </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+
+    <!-- No 4 --> <!-- La solution et la réponse en (c) correspondent -->
+    <exercise>
+      <statement><p>
+      Si <m>t_0</m> est un minimum ou maximum local de la fonction lisse <m>\ f(t)\ </m>
+      d'une variable (<m>t</m> parcourt les nombres réels), alors <m>\ f'(t_0)=0.</m>
+      Il existe une condition nécessaire analogue pour déterminer si <m>\vx_0</m> est le minimum ou maximum local
+      d'une fonction lisse <m>\ g(\vx)\ </m> <alert>restreint</alert> aux points sur
+      la droite <m>\ \vx=\va+t\vd\ .</m> Le test devrait faire intervenir la fonction <m>g(\vx)</m>.
+      </p>
+
+      </statement>
+
+      <hint><p>
+      Définissez <m>f(t)=g(\va+t\vd)</m>.
+      </p></hint>
+
+      <answer><p>
+      <m>\vnabla g(\vx_0)\cdot\vd=0</m>, i.e. <m>\vnabla g(\vx_0)\perp\vd</m>, et <m>\vx_0=\va+t_0\vd</m> pour un <m>t_0</m>.
+      La deuxième condition est pour assurer que <m>x_0</m> se trouve sur la droite.
+      </p></answer>
+
+      <solution><p>
+       Define <m>f(t)=g(\va+t\vd)</m> and determine <m>t_0</m> by
+      <m>\vx_0=\va+t_0\vd</m>. Then <m>f'(t)=\vnabla g(\va+t\vd)\cdot\vd</m>.
+      To see this, write <m>\va=\llt a_1,a_2,a_3\rgt</m> and <m>\vd=\llt d_1,d_2,d_3\rgt</m>.
+      Then
+      <me>
+      f(t)=g(a_1+td_1,a_2+td_2,a_3+td_3)
+      </me>
+      So, by the chain rule,
+      <md>
+      <mrow>
+      f'(t) &amp;= \pdiff{g}{x}(a_1+td_1,a_2+td_2,a_3+td_3)\,d_1
+      </mrow><mrow>&amp;\hskip1in
+             +\pdiff{g}{y}(a_1+td_1,a_2+td_2,a_3+td_3)\,d_2
+      </mrow><mrow>&amp;\hskip1in
+             +\pdiff{g}{z}(a_1+td_1,a_2+td_2,a_3+td_3)\,d_3
+      </mrow><mrow>
+           &amp;=\vnabla g(\va+t\vd)\cdot\vd
+      </mrow>
+      </md>
+      Then <m>\vx_0</m> is a local
+      max or min of the restriction of <m>g</m>  to the specified line if and only
+      if <m>t_0</m> is a local max or min of <m>f(t)</m>. If so, <m>f'(t_0)</m>  necessarily
+      vanishes. So if <m>\vx_0</m> is a local
+      max or min of the restriction of <m>g</m>  to the specified line,
+      then <m>\vnabla g(\vx_0)\cdot\vd=0</m>, i.e. <m>\vnabla g(\vx_0)\perp\vd</m>, and <m>\vx_0=\va+t_0\vd</m> for some <m>t_0</m>.
+      The second condition is to ensure that <m>x_0</m> lies on the line.
+      </p></solution>
+    </exercise>
+
+  </exercisegroup>
+
+
+</exercises>

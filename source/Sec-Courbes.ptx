@@ -1,0 +1,458 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Courbes">
+  <title>Courbes</title>
+
+  <p>Dans cette section et celle qui suit, nous allons étudier des fonctions à valeurs vectorielles d'une variable réelle, c'est-à-dire qu'à un scalaire <m>t</m>, nous associerons un vecteur <m>\vr(t)</m>. Nous avons déjà rencontré ce genre de construction lorsque nous avons considéré les équations paramétriques de droites, à la <xref ref="sec-1-5-Droites-plans"/>. En effet, étant donné <m>\vp_0</m> et <m>\vd</m> fixes, on peut considérer l'expression
+  <me>
+    \vp_0 + t \vd
+  </me>
+  comme étant une fonction qui, au paramètre <m>t</m>, associe un vecteur.
+</p>
+<p>
+  Plus généralement, soit <m>I\subseteq \R</m> un intervalle. Un <terms><em>chemin</em></terms> dans  <m>\R^n</m> est une fonction.
+</p>
+<md>
+  <mrow>\vr :\ \amp  I \longrightarrow \R^n</mrow>
+  <mrow>   \amp t \longmapsto \vr(t)</mrow>
+</md>
+<p>
+  Bien entendu, les cas les plus intéressants pour nous seront :
+</p>
+<ul>
+  <li>
+    <p>
+      <m>n=2</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj = \dvect{x(t)}{y(t)}</m>;
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>n=3</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj + z(t)\vk  = \tvect{x(t)}{y(t)}{z(t)}</m>.
+    </p>
+  </li>
+</ul>
+<p>
+  Il est très utile de penser qu'un chemin donne en effet la position d'un mobile, <m>\vr(t)</m> à l'instant <m>t</m>. Cette interprétation n'est pas strictement nécessaire, mais elle aide beaucoup à la compréhension des concepts.
+</p>
+
+<p>
+  Étant donné un chemin <m>\vr</m>, son image, que l'on notera <m>\plan{C}_\vr</m> ou <m>\plan{C}</m>, c'est-à-dire l'ensemble
+
+<me>
+  \plan{C}_\vr = \{ \vr(t)| t\in I\},
+</me>
+décrit une <terms>courbe</terms> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <terms>paramétrage</terms> de la courbe.
+</p>
+
+<sidebyside width="30%">
+  <image source="images/CLP-figs/parCurve"/>
+  </sidebyside>
+
+
+
+<p>
+  Il faut noter qu'une même courbe peut admettre plusieurs paramétrages différents, ce qui soulève des questions délicates. Pour l'instant, voyons quelques exemples.
+</p>
+
+
+
+
+
+  <example xml:id="eg_paramCircle"><title>Paramétrage du cercle  <m>x^2+y^2=a^2</m></title>
+  <p>
+  S'il est vrai qu'on utilise souvent  <m>t</m> comme paramètre, il n'y a aucune raison d'utiliser la lettre <m>t</m> et de penser que le paramètre est le temps. Par exemple, considérons le cercle  <m>x^2+y^2=a^2</m>. Il est naturel d'utiliser l'angle <m>\theta</m> de la figure ci-bas comme paramètre.
+  </p>
+
+  <sidebyside width="50%">
+  <image source="images/CLP-figs/parCircle"/>
+  </sidebyside>
+
+  <p>
+  Ceci donne  <m> \vr(\theta) = a\cos\theta\vi +a\sin\theta\vj,\qquad
+  0\leqslant  \theta\leqslant  2\pi. </m>
+  Il s'agit d'un paramétrage du cercle <m>x^2+y^2=a^2</m>.
+  </p>
+
+<p>
+  En effet, ici, nous avons <m>x(\theta) = a\cos \theta,\, y(\theta) =a\sin \theta</m>, de sorte que
+
+</p><me>
+  x(\theta)^2 + y(\theta)^2 = (a\cos \theta)^2 + (a\sin\theta)^2 = a^2.
+</me>
+<p>
+Ceci montre que la courbe associée à notre fonction <m>\vr</m> est contenue dans le cercle.
+
+De simples considérations géométriques montrent que lorsque <m>\theta</m> parcourt <m>[0,2\pi]</m>, <m>\vr(\theta)</m> parcourt le cercle au complet.
+  </p>
+
+  <p>Il faut faire preuve de prudence : savoir que <m>\vr(t)</m> fait partie  d'une courbe
+   ne garantit pas que, à mesure que  <m>t</m> parcourt le domaine de <m>\vr</m>, le vecteur <m>\vr(t)</m> parcourt la courbe en entier. Par exemple, si <m>t</m> parcourt <m>\R</m>,  <m>\frac{2}{\pi}\arctan(t)</m> parcourt l'intervalle <m>]-1,1[</m>. De l'équation <m>x^2 + y^2 = a^2</m>, on tire <m>y = \pm \sqrt{a^2 - x^2}</m>. Ainsi, pour tout  <m>t</m>,
+  <me>
+  \vr(t) = x(t)\vi + y(t)\vj
+         = a\frac{2}{\pi}\arctan(t)\vi  +
+                  a\sqrt{1-\frac{4}{\pi^2}\arctan^2(t)}\vj
+  </me>
+  est correctement défini et satisfait  <m>x(t)^2+y(t)^2=a^2</m>. Mais ce chemin n'est pas un paramétrage du cercle, puisque  <m>y(t)\geqslant 0</m>.
+  </p>
+
+  </example>
+
+
+<example xml:id="eg_paramCircleB"><title>Paramétrage de  <m>(x-h)^2+(y-k)^2=a^2</m></title>
+<p>
+On peut modifier le paramétrage de l'<xref ref="eg_paramCircle"/> pour obtenir celui du cercle de rayon <m>a</m> centré à <m>(h,k)</m>.
+
+Une façon de procéder est de refaire l'esquisse de l'<xref ref="eg_paramCircle"/> avec le cercle translaté de sorte à avoir son centre à la bonne position.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/parCirclehk"/>
+</sidebyside>
+
+<p>
+Cette translation  s'obtient en additionnant le vecteur <m>h\vi + k\vj</m>. Ainsi,
+<me>
+\vr(\theta) = \left(h+a\cos\theta\right)\vi + \left(k+a\sin\theta\right)\vj\qquad
+0\leqslant  \theta\leqslant  2\pi
+</me>
+est un paramétrage du cercle <m>(x-h)^2+(y-k)^2=a^2</m>.
+</p>
+
+<p>
+Une seconde façon de procéder est de remarquer que l'on peut transformer l'identité  <m>\cos^2 t + \sin^2 t=1</m> pour qu'elle devienne l'équation du cercle  <m>(x-h)^2+(y-k)^2=a^2</m>, en
+<ul>
+<li>
+multipliant l'identité par  <m>a^2</m> pour obtenir
+<m>(a\cos t)^2 +(a\sin t)^2 =a^2</m>, et ensuite
+</li><li>
+en posant  <m>\ a\cos t=x-h\ </m> et <m>\ a\sin t=y-k</m>, ce qui transforme <m>(a\cos t)^2 +(a\sin t)^2 =a^2</m> en  <m>(x-h)^2+(y-k)^2=a^2</m>.
+</li>
+</ul>
+</p>
+</example>
+
+<example xml:id="eg_paramEllipse"><title>Paramétrage de  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et de  <m>x^{2/3}+y^{2/3}=a^{2/3}</m></title>
+
+<p>
+On peut obtenir des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et  <m>x^{2/3}+y^{2/3}=a^{2/3}</m> en partant de l'identité <m>\cos^2 t + \sin^2 t=1</m>, comme on l'a fait dans la seconde partie de l'exemple précédent.
+<ul>
+<li>
+Si l'on pose <m>\ \cos t=\frac{x}{a}\ </m> et <m>\ \sin t=\frac{y}{b} </m>, alors l'égalité  <m>\cos^2 t +\sin^2 t =1</m> devient  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>.
+</li><li>
+Si l'on pose <m>\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}</m>, et
+<m>\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}</m>, alors
+<m>\cos^2 t +\sin^2 t =1</m> devient <m>\frac{x^{2/3}}{a^{2/3}}+\frac{y^{2/3}}{a^{2/3}}=1</m>.
+</li>
+</ul>
+Ainsi,
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= (a\cos t)\,\vi + (b\sin t)\, \vj, \qquad &amp;0\leqslant  t\leqslant  2\pi
+</mrow><mrow>
+\vr(t) &amp;= (a\cos^3 t)\,\vi + (a\sin^3 t)\, \vj &amp;0\leqslant  t\leqslant  2\pi
+</mrow>
+</md>
+sont des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>
+et <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. Afin de voir que, si <m>t</m> parcourt <m>[0,2\pi]</m>, alors  <m>\vr(t)</m> parcourt la courbe au complet, considérons les figures ci-bas.
+</p>
+<sidebyside widths="45% 46%" valign="middle">
+<image source="images/CLP-figs/parEllipse"/>
+<image source="images/CLP-figs/astroid4"/>
+</sidebyside>
+<p>
+La courbe <m>x^{2/3}+y^{2/3}=a^{2/3}</m> est appelée une <terms>astroïde</terms>. Son équation suggère qu'elle devrait ressembler à un cercle, mais ce n'est pas évident qu'elle admette les coins. Nous aborderons ces aspects plus tard, <em>tangentiellement</em> seulement.
+</p>
+<!--
+<p>
+We will not explain here why they arise. The astroid is studied in some
+detail in Example <xref ref="eg_astroid"/>.
+In particular, the above sketch is carefully developed there.
+</p>
+-->
+</example>
+
+<example xml:id="eg_paramMessy"><title>Paramétrage de <m>e^y=1+x^2</m></title>
+<p>
+Une méthode simple qui peut être utilisée pour paramétrer une courbe donnée par une équation de la forme <m>f(x,y)=0</m> consiste à utiliser  <m>x</m> ou <m>y</m> comme paramètre et à isoler pour l'autre variable. Dans cet exemple, puisqu'on peut résoudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux côtés, on obtient <m>y=\ln\big(1+x^2\big)</m>, on utilise  <m>x</m> comme paramètre en posant <m>t=x</m>. Ceci donne le paramétrage
+<me>
+\vr(t) = t\,\vi + \ln(1+t^2)\,\vj \qquad -\infty\lt t\lt \infty.
+</me>
+</p>
+</example>
+
+<example xml:id="eg_paramCircleC"><title>Nouveau paramétrage de <m>x^2+y^2=a^2</m></title>
+<p>
+Il est aussi fréquent qu'on puisse utiliser  <m>x</m> ou <m>y</m> pour paramétrer une partie d'une courbe, mais pas toute la courbe. Un exemple simple est fourni par le cercle <m>x^2+y^2=a^2</m>.
+Pour chaque <m>-a\lt x\lt a</m>, il existe deux points sur le cercle dont l'abscisse est  <m>x</m>.
+
+Ainsi, on ne peut pas utiliser <m>x</m> pour paramétrer le cercle au complet. La situation avec <m>y</m> est la même. Cependant,
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= t\,\vi + \sqrt{a^2-t^2}\, \vj,\qquad &amp;-a\lt t\lt a
+</mrow><mrow>
+\vr(t) &amp;= t\,\vi -\sqrt{a^2-t^2}\, \vj\qquad &amp;-a\lt t\lt a
+</mrow>
+</md>
+sont des paramétrages de la moitié supérieure et de la moitié inférieure<fn>En réalité, les deux points <m>(-a,0)</m> et <m>(a,0)</m> manquent, dans les deux cas.</fn> du cercle, respectivement. Elles utilisent toutes les deux <m>x</m> comme paramètre, et
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= \sqrt{a^2-t^2}\,\vi +t\,\vj,\qquad &amp;-a\lt t\lt a
+</mrow><mrow>
+\vr(t) &amp;= -\sqrt{a^2-t^2}\,\vi + t\, \vj \qquad &amp;-a\lt t\lt a
+</mrow>
+</md>
+sont des paramétrages de la moitié droite et la moitié gauche du cercle respectivement. Cette fois, on utilise <m>y</m> comme paramètre.
+</p>
+</example>
+
+<!--
+<example xml:id="eg_unparam"><title>Unparametrization of  <m>\vr(t)=(\cos t, 7-t)</m></title>
+<p>In this example, we will undo the parametrization <m>\vr(t)=(\cos t, 7-t)</m>
+and find the Cartesian equation of the curve in question. We may rewrite the
+parametrization as
+<md>
+<mrow>
+x&amp;=\cos t
+</mrow><mrow>
+y&amp;=7-t
+</mrow>
+</md>
+Note that we can eliminate the parameter <m>t</m> simply by using the second equation
+to solve for <m>t</m> as a function of <m>y</m>. Namely <m>t=7-y</m>. Substituting this
+into the first equation  gives us the Cartesian equation
+<me>
+x=\cos(7-y)
+</me>
+</p>
+</example>
+-->
+
+  <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  <m>z=x^2+2y^2</m> est la courbe montrée dans la figure ci-bas.
+  </p>
+
+
+  <figure>
+    <caption>L'intersection d'un ellipsoïde avec un paraboloïde</caption>
+    <image xml:id="sageplot3d-ellipsoide-paraboloide" width="60%">
+
+      <sageplot variant="3d" aspect="1.0">
+        var('x,y,z')
+
+        f(x,y,z) = x^2+y^2/2+z^2/3
+        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,3),texture ='orange',frame = False)
+
+        g(x,y) = x^2+2*y^2
+        paraboloide = implicit_plot3d(z==g,(x,-2,2),(y,-2,2),(z,0,2.5), opacity = 0.65, texture ='lightblue', frame = False)
+
+        h = solve([f==1 , z==g], x,y)
+        ep = 0.00000001
+        intersection = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 3,color='red')
+        intersection += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 3,color = 'red')
+        intersection += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3, color = 'red')
+        intersection += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3,color='red')
+
+        S = ellipsoide + paraboloide + intersection
+
+        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
+        S += text3d("x", (1.7,0,0), color = "black")
+        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
+        S += text3d("y", (0,1.7,0), color = "black")
+        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
+        S += text3d("z", (0,0,3.1), color = "black")
+        S
+      </sageplot>
+    </image>
+  </figure>
+  <!-- <sidebyside width="60%">
+  <image source="images/CLP-figs/stokes6"/>
+  </sidebyside> -->
+
+  <p>
+  Une façon de paramétrer de telles courbes est de choisir une des trois coordonnées <m>x</m>, <m>y</m>, <m>z</m> comme paramètre et de résoudre les équations donnant les surfaces pour les deux autres coordonnées en termes du paramètre. Voyons deux exemples.
+  </p>
+
+  <example xml:id="eg_paramIntersect">
+  <p>
+  L'ensemble des points  <m>(x,y,z)</m> vérifiant
+  <md alignment="alignat">
+  <mrow>
+   x^3&amp;-e^{3y}           &amp;&amp;=0,
+  </mrow><mrow>
+   x^2&amp;-e^{y} +z &amp;&amp;=0
+  </mrow>
+  </md>
+  est une courbe. On choisit d'utiliser <m>y</m> comme paramètre et l'on considère
+  <md alignment="alignat">
+  <mrow>
+   x^3&amp;    &amp;&amp;=e^{3y},
+  </mrow><mrow>
+   x^2&amp;+z  &amp;&amp;=e^{y}
+  </mrow>
+  </md>
+  comme un système de deux équations dont les inconnues sont <m>x</m> et <m>z</m>, en traitant  <m>y</m> comme une constante.
+
+  On résout la première équation pour  <m>x</m>, puis l'on remplace dans la seconde équation et l'on résout pour <m>z</m>.
+  <md alignment="alignat">
+  <mrow>
+   x^3&amp;    &amp;&amp;=e^{3y}  &amp;&amp;\implies x=e^y
+  </mrow><mrow>
+   x^2&amp;+z  &amp;&amp;=e^{y}   &amp;&amp; &amp;&amp;\implies e^{2y}+z=e^y \implies z=e^y-e^{2y}
+  </mrow>
+  </md>
+  Ainsi,
+  <me>
+  \vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk
+  </me>
+  est un paramétrage de la courbe.
+
+
+
+
+  </p>
+  <figure>
+
+    <caption> Courbe paramétrée par   <m>\vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk</m> </caption>
+    <image width="60%">
+      <sageplot variant="3d" aspect="1.0">
+        var('x,y,z')
+        f(x,y,z) = x^3-exp(3*y)
+        g(x,y,z) = x^2-exp(y)+z
+        h = solve ([f == 0,g == 0],x,z)
+        ellipsoide = implicit_plot3d(f,(x,-2,2),(y,-2,2),(z,-2,1),opacity = 0.65,texture ='orange',frame = False)
+        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,-2,1), opacity = 0.65, texture ='lightblue', frame = False)
+        S = parametric_plot3d((x.subs(h[2][0]),y,z.subs(h[2][1])), (y,-2,0.70), thickness = 3,color='red')
+        S += ellipsoide
+        S += paraboloide
+        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
+        S += text3d("x", (1.7,0,0), color = "black")
+        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
+        S += text3d("y", (0,1.7,0), color = "black")
+        S += arrow3d((0,0,0),(0,0,1.2), color = "black", width = 0.5)
+        S += text3d("z", (0,0,1.3), color = "black")
+        S
+      </sageplot>
+    </image>
+  </figure>
+</example>
+
+
+  <example xml:id="eg_paramIntersectB">
+  <p>
+  L'exemple précédent était truqué de sorte que les équations étaient faciles à résoudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut même être impossible de le faire. Voyons un exemple un peu plus réaliste. Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
+  <md alignment="alignat">
+  <mrow>
+   x^2+\frac{y^2}{2}+\frac{z^2}{3}&amp;=1,
+  </mrow><mrow>
+   x^2+2y^2&amp;=z,
+  </mrow>
+  </md>
+  qui est la courbe bleue dans la figure ci-haut. On remplace <m>x^2=z-2y^2</m> (de la seconde équation) dans la première, ce qui donne
+  <me>
+  -\frac{3}{2}y^2+z+\frac{z^2}{3}=1.
+  </me>
+  Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <me>
+  -\frac{3}{2}y^2 + \frac{1}{3}\Big(z+\frac{3}{2}\Big)^2 = \frac{7}{4}.
+  </me>
+  Si, par exemple, on s'intéresse aux points <m>(x,y,z)</m> sur la courbe qui vérifient en plus   <m>y\geqslant 0</m>, on peut résoudre pour avoir  <m>y</m> en fonction de  <m>z</m>.
+  <me>
+  y=\sqrt{\frac{2}{9}\Big(z+\frac{3}{2}\Big)^2-\frac{14}{12}}
+  </me>
+  Alors, <m>x^2=z-2y^2</m> donne aussi  <m>x</m> en fonction de  <m>z</m>. Si  <m>x\geqslant 0</m>,
+  <md>
+  <mrow>
+  x&amp;=\sqrt{z-\frac{4}{9}\Big(z+\frac{3}{2}\Big)^2+\frac{14}{6}}
+  </mrow><mrow>
+  &amp;=\sqrt{\frac{4}{3}-\frac{4}{9}z^2-\frac{1}{3}z}.
+  </mrow>
+  </md>
+  Les autres signes de  <m>x</m> et <m>y</m> peuvent être obtenus avec les signes adéquats devant les racines carrées. Dans notre exemple, <m>(x,y,z)</m> se trouve sur la courbe, c'est-à-dire qu'il vérifie les équations originelles, si et seulement si  <m>(\pm x,\pm y, z)</m> appartiennent à la courbe.
+  </p>
+  <figure>
+    <caption>Quatre segments de la courbe donnés par les différents signes de <m>x</m> et <m>y</m></caption>
+    <image width="60%">
+      <sageplot variant="3d" aspect="1.0">
+        var('x,y,z')
+        f(x,y,z) = x^2+y^2/2+z^2/3
+        g(x,y,z) = x^2+2*y^2 - z
+        h = solve ([f == 1,g == 0],x,y)
+        ep = 0.0000001
+        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,2),texture ='orange',frame = False)
+        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,0,2), opacity = 0.65, texture ='lightblue', frame = False)
+        S = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 3,color='red')
+        S += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 3,color = 'blue')
+        S += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3, color = 'green')
+        S += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3,color='black')
+        S += ellipsoide
+        S += paraboloide
+        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
+        S += text3d("x", (1.7,0,0), color = "black")
+        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
+        S += text3d("y", (0,1.7,0), color = "black")
+        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
+        S += text3d("z", (0,0,3.1), color = "black")
+        S
+      </sageplot>
+    </image>
+  </figure>
+  </example>
+
+  <example xml:id="Param-intersec">
+      <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
+      </p>
+      <image xml:id="sageplot3d-plan-cone" width="60%">
+      <description>L'intersection d'un plan avec un cône</description>
+      <sageplot variant="3d" aspect="1.0">
+        var('u,v,r,t')
+        Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
+          texture = "lightblue", frame = False)
+        Fig += parametric_plot3d([r*cos(t), r*sin(t),r], (r,0, 2),(t,0,2*pi),
+          mesh = True, texture = "orange", opacity = 0.75)
+        Fig += parametric_plot3d([r,(r^2 - 1)/2,(r^2 + 1)/2], (r,-2,2),
+          color = "red", thickness = 5)
+        Fig
+      </sageplot>
+    </image>
+
+
+
+
+
+      <!--
+      <figure>
+      <caption>L'intersection du plan <m>z=1+y</m> et le cône <m>z^2 = x^2+y^2</m> est une parabole.</caption>
+      <interactive xml:id="geogebra-plan-cone" platform="geogebra" width="100%" aspect="1:1">
+      <slate xml:id="plan-cone" surface="geogebra" source="GeoGebra/Cone-plan-param.ggb" aspect="1:1">
+      </slate>
+      </interactive>
+      </figure>
+    -->
+      <ul>
+        <li>
+          <p>
+            Pour commencer, on peut élever au carré <m>z</m> de l'équation du plan et remplacer dans celle du cône, ce qui mène à
+          </p>
+          <me>
+            (1+y)^2 = x^2 + y^2 \implies 1+2y= x^2.
+          </me>
+          <p>
+          De là, on tire <m>x = \pm \sqrt{1+2y}</m>.
+          Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme paramètre pour obtenir
+          </p>
+          <me>
+            \vr(t) = \sqrt{1+2t}\, \vi + t\, \vj + (1+t)\,\vk \qquad t\in \R.
+          </me>
+          <p>
+            Il faut noter qu'on a en réalité deux paramétrages, selon le signe choisi pour la racine carrée dans l'expression de <m>x</m>. Chacun des deux paramétrages présente une moitié de la courbe (il s'agit en fait d'une parabole).
+          </p>
+        </li>
+        <li>
+          <p>
+            On peut choisir d'utiliser <m>x = s</m> comme paramètre. De notre équation <m>1+2y = x^2</m>, on tire <m>y= \frac{1}{2}(s^2-1)</m>, et l'équation du plan fournit <m>z = \frac{1}{2}(s^2 + 1)</m>. On a donc un autre paramétrage :
+          </p>
+          <me>
+            \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad t\in \R.
+          </me>
+
+        </li>
+      </ul>
+  </example>
+<xi:include  href="./Problemes/Prob-sec-Courbes.ptx"/>
+</section>

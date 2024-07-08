@@ -1,0 +1,1391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_polars">
+
+
+<!-- Traduit et adapté par Juan Carlos Bustamante, Septembre 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Intégrales doubles en coordonnées polaires</title>
+<introduction>
+
+<p>Jusqu'à présent, lorsque nous avons défini les intégrales doubles, nous avons toujours subdivisé la région d'intégration en petits sous-rectangles à l'aide de droites parallèles aux axes de coordonnées.
+</p>
+
+<sidebyside width="28%">
+<image source="images/CLP-figs/intDecomp3"/>
+</sidebyside>
+
+<p>
+  Il n'y a rien qui nous oblige à subdiviser la région de la sorte. En effet, lorsque les régions sont circulaires et centrées à l'origine, il sera souvent avantageux d'utiliser des coordonnées polaires au lieu des coordonnées cartésiennes habituelles.</p>
+
+</introduction>
+
+
+<subsection xml:id="pars-polar_coords">
+  <title>Coordonnées polaires </title>
+
+
+
+<p>Commençons par un rappel sur les coordonnées polaires.
+</p>
+
+<definition xml:id="def_polars">
+<statement><p>
+Les coordonnées polaires d'un point  <m>(x,y)</m> dans le plan <m>Oxy</m> sont
+<md>
+<mrow>
+r&amp;=\text{ la distance de }(0,0)\text{ à }(x,y),
+</mrow><mrow>
+\theta&amp;=\text{ l'angle orienté (sens antihoraire) entre l'axe des $x$}
+</mrow><mrow>
+      &amp; \qquad \text{ et le segment de droite joignant le point $(0,0)$ à $(x,y)$.}
+</mrow>
+</md>
+</p>
+
+<sidebyside width="25%">
+<image source="images/CLP-figs/polar"/>
+</sidebyside>
+</statement>
+</definition>
+
+<p>
+  Les coordonnées polaires et cartésiennes sont reliées par les formules suivantes, qu'on déduit avec un peu de trigonométrie.
+</p>
+
+<fact xml:id="eqn_polars">
+  <statement>
+    <p>
+<md>
+<mrow>
+x&amp;=r\cos\theta &amp;
+y&amp;=r\sin\theta
+</mrow><mrow>
+    r&amp;=\sqrt{x^2+y^2} &amp;
+    \tan\theta&amp;=\frac{y}{x}
+    </mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+Les deux figures suivantes montrent des droites formées de points dont l'angle <m>\theta</m> est constant et où <m>r</m> varie (figure de gauche), et des courbes formées de points où <m>r</m> est constant et dont l'angle <m>\theta</m> varie (figure de droite).
+</p>
+
+<figure>
+  <caption>Graphes des courbes <m>\theta = </m>constante,  et <m>r = </m>constante.</caption>
+  <sidebyside widths="45% 45%">
+    <image xml:id="sageplot-pol-t-cst">
+      <sageplot>
+        var('t')
+        Fig = plot([])
+        for j in range(10):
+          Fig += parametric_plot([t*cos(j*pi/10), t*sin(j*pi/10)], (t,-1,1),
+            axes = True, axes_labels = ['$x$','$y$'],  
+            axes_labels_size = 2, ticks =[[],[]], 
+            color = "steelblue", thickness = 0.75)
+        Fig    
+      </sageplot>
+    </image>
+    <image xml:id="sageplot-por-r-cst">
+      <sageplot>
+        Fig = plot([])
+        for j in range(7):
+          Fig += polar_plot(j/7, (x,0,2*pi), axes = True, 
+            axes_labels = ['$x$','$y$'], ticks =[[],[]], axes_labels_size = 2, color = "steelblue", thickness = 0.75)
+        Fig    
+      </sageplot>
+    </image>
+
+  </sidebyside>
+</figure>
+<!-- 
+<sidebyside width="30%">
+<image source="images/CLP-figs/polarThJC"/>
+<image source="images/CLP-figs/polarRJC"/>
+</sidebyside> -->
+
+
+<p>Notons que l'angle  <m>\theta</m> est seulement défini jusqu'à un multiple de <m>2\pi</m>. Par exemple, le point  <m>(1,0)</m> sur l'axe  des <m>x</m> peut avoir un angle <m>\theta=0</m>, mais aussi <m>\theta=2\pi</m> ou <m>\theta=4\pi</m>. De plus, il est parfois pertinent d'avoir des angles négatifs. Lorsque <m>\theta \leqslant 0</m>, l'angle doit être mesuré dans le sens horaire. Par exemple, le point  <m>(0,-1)</m> sur la portion négative de l'axe des <m>y</m> peut avoir <m>\theta=-\frac{\pi}{2}</m>, mais aussi <m>\theta=\frac{3\pi}{2}</m>.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/polarNegTh"/>
+</sidebyside>
+
+
+<p>Il est donc judicieux d'étendre les définitions de <m>x=r\cos\theta</m> et <m>y=r\sin\theta</m> même lorsque <m>r</m> est négatif. Par exemple, la figure ci-dessous montre  <m>(x,y)</m> avec  <m>r=1</m>, <m>\theta=\frac{\pi}{4}</m> et avec  <m>r=-1</m>, <m>\theta=\frac{\pi}{4}</m>.
+</p>
+
+<sidebyside width="66%">
+<image source="images/CLP-figs/polarNeg"/>
+</sidebyside>
+
+<p>
+Les deux points se trouvent sur la droite faisant un angle de <m>\pi/4</m> radian avec l'axe des abscisses, et les deux points se trouvent à la même distance de l'origine, mais de part et d'autre de l'origine.
+</p>
+</subsection>
+
+
+
+<subsection xml:id="pars-polar_curves">
+  <title>Courbes en coordonnées polaires</title>
+
+
+
+<p>Voyons quelques exemples de tracés de courbes définies par leurs équations en coordonnées polaires.
+</p>
+
+<example xml:id="eg_cardioid"><title>La cardioïde</title>
+<p>
+Il s'agit de la courbe d'équation
+<m>
+r(\theta)= 1+\cos\theta
+</m>.
+    Nous commençons par étudier les valeurs que prend <m>1+\cos\theta</m> lorsque <m>\theta</m> varie. Le graphe de
+ <m>y=1+\cos\theta</m> est
+</p>
+
+<sidebyside width="55%">
+<image source="images/CLP-figs/cosGraphP1"/>
+</sidebyside>
+<p>
+Prenons maintenant quelques valeurs communes de  <m>\theta</m>, calculons les valeurs de <m>r</m> correspondantes et traçons ces points.
+</p>
+
+<p><ul>
+<li>
+Lorsque <m>\theta=0</m>, nous avons <m>r=1+\cos 0 = 1+1=2</m>. Afin d'illustrer le point avec <m>\theta=0</m> et <m>r=2</m>, commençons par tracer la demi-droite formée de tous les points avec <m>\theta=0</m> et <m>r \gt 0</m>. Il s'agit précisément de l'axe des <m>x</m>, en gris dans la figure de gauche ci-dessous. Puis, nous devons placer un point sur cette demi-droite, à une distance  <m>r= 2</m> de l'origine. Nous avons donc notre premier point, c'est le point rouge dans la figure.
+</li>
+<li><p>
+Augmentons maintenant la valeur de  <m>\theta</m>, jusqu'à <m>\theta=\frac{\pi}{6}</m>. Alors,  <m>r=1+\cos\theta</m> diminue à
+<m>r=1+\cos\frac{\pi}{6} = 1+\frac{\sqrt{3}}{2}\approx 1.87</m>. Pour illustrer le point avec  <m>\theta=\frac{\pi}{6}</m> et <m>r\approx 1.87</m>, nous traçons en premier lieu la demi-droite formée des points vérifiant <m>\theta=\frac{\pi}{6}</m> et <m>r \gt 0</m>. Il s'agit de la demi-droite oblique, en gris dans la deuxième figure ci-dessous. Puis, nous plaçons un point à  une distance d'environ <m>1.87</m> de l'origine. C'est notre second point rouge dans la figure.
+</p>
+
+<sidebyside widths="28% 28% 40%">
+    <image source="images/CLP-figs/cardioid1"/>
+    <image source="images/CLP-figs/cardioid2"/>
+        <image source="images/CLP-figs/cardioid3"/>
+</sidebyside>
+
+</li>
+<li><p>
+Augmentons ensuite  <m>\theta</m> davantage, par exemple :
+<ul>
+<li>
+          <m>\theta=\frac{2\pi}{6}=\frac{\pi}{3}</m>,
+</li>
+<li>
+          puis <m>\theta=\frac{3\pi}{6}=\frac{\pi}{2}</m>,
+</li>
+<li>
+          puis <m>\theta=\frac{4\pi}{6}=\frac{2\pi}{3}</m>,
+</li>
+<li>
+          puis <m>\theta=\frac{5\pi}{6}</m>,
+</li>
+<li>
+          puis <m>\theta=\frac{6\pi}{6}=\pi</m>.
+</li>
+</ul>
+Au fur et à mesure que <m>\theta</m> augmente, <m>r(\theta)=1+\cos\theta</m> diminue à  <m>r=1</m> lorsque <m>\theta=\frac{\pi}{2}</m>, et finalement jusqu'à <m>r=0</m>, soit lorsque <m>\theta=\pi</m>.
+
+Pour chacune des valeurs de  <m>\theta</m>, nous traçons d'abord la demi-droite avec la valeur donnée de <m>\theta</m> et <m>r\geqslant 0</m>. Il s'agit des demi-droites grises dans la figure de droite ci-dessus. Puis, nous plaçons un point rouge à une distance  <m>r=1+\cos\theta</m> de l'origine. Ce sont les points rouges dans la figure.
+</p>
+</li>
+<li><p>
+Nous pouvons continuer ce processus pour  <m>\pi\leqslant \theta\leqslant  2\pi</m>. Par contre, en regardant le graphique de la fonction <m>\cos\theta</m>, nous remarquons que la courbe de <m>\cos\theta</m> définie sur  <m>\pi\leqslant \theta\leqslant  2\pi</m> est une réflexion par rapport à la droite verticale <m>\theta=\pi</m> de la courbe définie sur  <m>0\leqslant \theta\leqslant  \pi</m>.
+</p>
+
+<sidebyside width="55%">
+<image source="images/CLP-figs/cosGraphR"/>
+</sidebyside>
+
+<p>
+En termes plus précis, nous avons <m>\cos(\pi+\theta) =\cos(\pi-\theta)</m>,
+de sorte que <m>r(\pi+\theta) = r(\pi-\theta)</m>. Nous obtenons donc la figure ci-après.
+</p>
+
+
+
+<sidebyside width="28%">
+<image source="images/CLP-figs/cardiod4"/>
+</sidebyside>
+</li>
+<li><p>
+Finalement, nous relions les points rouges pour obtenir la courbe ci-dessous. Cette courbe est appelée une  <em>cardioïde</em> puisqu'elle ressemble à un cœur<fn>Plutôt le cœur d'un(e) mathématicien(ne). Le mot  <q>cardioïde</q> vient du mot grec  <m>\kappa \alpha \rho \delta \iota \alpha</m>, qui signifie <q>qui a la forme d'un cœur</q>.</fn>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/cardiodF"/>
+</sidebyside>
+</li>
+</ul>
+</p></example>
+
+
+<example xml:id="eg_rose"><title>La rosace à trois pétales</title>
+<p>
+Utiliser la même procédure pour esquisser le graphe de
+<m>
+r=\sin(3\theta)
+</m>.
+ De nouveau, il est utile d'esquisser le graphe de <m>\sin(3\theta)</m>. Pour <m>0\leqslant \theta\leqslant  2\pi</m>, nous avons
+</p>
+
+<sidebyside width="60%">
+<image source="images/CLP-figs/sin3Graph"/>
+</sidebyside>
+
+
+<p>Étant donné que  <m>r(\theta+\pi) = \sin (3\theta+3\pi) = -\sin(3\theta)=-r(\theta)</m>, la partie de la courbe <m>r</m> définie sur <m>\pi\leqslant \theta\leqslant  2\pi</m> se répète sur <m>0\leqslant \theta\leqslant  \pi</m>. Nous nous intéresserons donc seulement à l'intervalle <m>0\leqslant \theta\leqslant  \pi</m>.
+    </p>
+<p>
+<ul>
+<li><p>
+Nous allons d'abord considérer  <m>0\leqslant \theta\leqslant \frac{\pi}{3}</m>, de sorte que
+<m>0\leqslant  3\theta \leqslant \pi</m>. Sur cet intervalle, la relation <m>r(\theta)=\sin(3\theta)</m>
+<ul>
+<li>
+          commence à  <m>r(0)=0</m>, puis
+</li>
+<li>
+          <m>r</m> augmente au fur et à mesure que  <m>\theta</m> augmente, jusqu'à ce que
+</li>
+<li>
+          <m>3\theta=\frac{\pi}{2}</m>, soit <m>\theta=\frac{\pi}{6}</m>,
+          où <m>r\big(\frac{\pi}{6}\big)=1</m>, et ensuite
+</li>
+<li>
+          <m>r</m> diminue lorsque <m>\theta</m> continue d'augmenter, jusqu'à ce que
+</li>
+<li>
+         <m>3\theta=\pi</m>, soit <m>\theta=\frac{\pi}{3}</m>,
+          donc <m>r\big(\frac{\pi}{3}\big)=0</m> de nouveau.
+</li>
+</ul>
+Voici une table de quelques valeurs de  <m>r(\theta)</m> pour
+  <m>0\leqslant  \theta\leqslant \frac{\pi}{3}</m>. Remarquons que nous avons choisi des valeurs de <m>\theta</m> pour lesquelles <m>\sin(3\theta)</m> se calcule aisément.
+</p>
+
+<sidebyside>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>\theta</m> </cell><cell> <m>3\theta</m> </cell><cell> <m>r(\theta)</m> </cell>
+</row><row>
+<cell>0        </cell><cell>     0     </cell><cell>    0      </cell>
+</row><row>
+<cell><m>\frac{\pi}{12}</m>  </cell><cell> <m>\frac{\pi}{4}</m>  </cell><cell>
+                  <m>\frac{1}{\sqrt{2}}\approx  0.71</m>   </cell>
+</row><row>
+<cell><m>\frac{2 \pi}{12}</m>  </cell><cell> <m>\frac{\pi}{2}</m>  </cell><cell>  <m>1</m>   </cell>
+</row><row>
+<cell><m>\frac{3 \pi}{12}</m>  </cell><cell> <m>\frac{3\pi}{4}</m>  </cell><cell>
+                  <m>\frac{1}{\sqrt{2}}\approx  0.71</m>   </cell>
+</row><row>
+<cell><m>\frac{4 \pi}{12}</m>  </cell><cell> <m>\pi</m>  </cell><cell>  <m>0</m>   </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+Voici un dessin illustrant les points correspondants (figure de gauche) ainsi qu'une figure de la courbe définie sur <m>0\leqslant  \theta\leqslant \frac{\pi}{3}</m>.
+</p>
+
+<sidebyside widths="43% 40%" valign="middle">
+<image source="images/CLP-figs/rose1"/>
+<image source="images/CLP-figs/rose1b"/>
+</sidebyside>
+
+</li>
+<li><p>
+Ensuite, considérons <m>\frac{\pi}{3}\leqslant\theta\leqslant \frac{2\pi}{3}</m>, de sorte que <m>\pi\leqslant  3\theta \leqslant 2\pi</m>. Sur cet intervalle,  <m>r(\theta)=\sin(3\theta)</m>
+ <ul>
+<li>
+          commence à <m>r\big(\frac{\pi}{3}\big)=0</m>, puis
+</li>
+<li>
+          <m>r</m> diminue lorsque  <m>\theta</m> augmente, jusqu'à ce que
+</li>
+<li>
+         <m>3\theta=\frac{3\pi}{2}</m>, soit <m>\theta=\frac{\pi}{2}</m>,
+          où <m>r\big(\frac{\pi}{2}\big)=-1</m>, puis
+</li>
+<li>
+          <m>r</m> augmente lorsque  <m>\theta</m> augmente encore, jusqu'à ce que
+</li>
+<li>
+         <m>3\theta=2\pi</m>, soit <m>\theta=\frac{2\pi}{3}</m>,
+          donc <m>r\big(\frac{2\pi}{3}\big)=0</m> de nouveau.
+</li>
+</ul>
+Nous obtenons maintenant, pour la première fois, des valeurs négatives de <m>r(\theta)</m>. La figure de gauche ci-dessous illustre, pour chaque
+<m>\theta = \frac{4\pi}{12}=\frac{\pi}{3}</m>, <m>\frac{5\pi}{12}</m>,
+<m>\ \frac{6\pi}{12}=\frac{\pi}{2}</m>, <m>\ \frac{7\pi}{12}</m> et
+<m>\ \frac{8\pi}{12}=\frac{2\pi}{3}</m>,
+<ul>
+<li>
+          la demi-droite pointillée formée des points pour cette valeur de
+           <m>\theta</m> et <m>r \lt 0</m>, et
+</li>
+<li>
+          le point rouge correspondant à cette valeur de <m>\theta</m> et <m>r(\theta)=\sin(3\theta)</m>.
+</li>
+</ul>
+La figure de droite illustre la courbe <m>r=\sin(3\theta)</m> définie sur <m>\frac{\pi}{3}\leqslant \theta\leqslant  \frac{2\pi}{3}</m>.
+</p>
+
+<sidebyside widths="40% 40%">
+<image source="images/CLP-figs/rose2"/>
+<image source="images/CLP-figs/rose2b"/>
+</sidebyside>
+
+</li>
+<li><p>
+Finalement, considérons <m>\frac{2\pi}{3}\leqslant\theta\leqslant \pi</m>, de sorte que
+<m>2\pi\leqslant  3\theta \leqslant 3\pi</m>. Sur cet intervalle,  <m>r(\theta)=\sin(3\theta)</m>
+<ul>
+<li>
+          commence à  <m>r\big(\frac{2\pi}{3}\big)=0</m>, puis
+</li>
+<li>
+          <m>r</m> augmente lorsque  <m>\theta</m> augmente aussi, jusqu'à ce que
+</li>
+<li>
+         <m>3\theta=\frac{5\pi}{2}</m>, soit <m>\theta=\frac{10\pi}{12}</m>,
+          où <m>r\big(\frac{5\pi}{2}\big)=1</m>, et alors
+</li>
+<li>
+          <m>r</m> diminue lorsque  <m>\theta</m> continue d'augmenter, jusqu'à ce que
+</li>
+<li>
+         <m>3\theta=3\pi</m>, soit <m>\theta=\frac{12\pi}{12}=\pi</m>,
+         donc  <m>r\big(\pi\big)=0</m> de nouveau.
+</li>
+</ul>
+La figure de gauche ci-dessous illustre, pour chaque
+<m>\theta = \frac{8\pi}{12}=\frac{2\pi}{3}</m>, <m>\frac{9\pi}{12}</m>,
+<m>\ \frac{10\pi}{12}</m>, <m>\ \frac{11\pi}{12}</m> et <m>\ \frac{12\pi}{12}=\pi</m>,
+<ul>
+<li>
+          la demi-droite formée des points pour cette valeur de
+           <m>\theta</m> et <m>r\geqslant 0</m>, et
+</li>
+<li>
+           le point rouge correspondant à cette valeur de  <m>\theta</m> et <m>r(\theta)=\sin(3\theta)</m>.
+</li>
+</ul>
+La figure de droite illustre la courbe <m>r=\sin(3\theta)</m> définie sur <m>\frac{2\pi}{3}\leqslant \theta\leqslant  \pi</m>.
+</p>
+
+<sidebyside widths="40% 40%">
+<image source="images/CLP-figs/rose3"/>
+<image source="images/CLP-figs/rose3b"/>
+</sidebyside>
+</li>
+</ul>
+En ajoutant les trois courbes ensemble, nous obtenons la courbe complète qui se nomme la  <q>rosace à trois pétales</q>.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/rose3F"/>
+</sidebyside>
+
+
+<!--
+<p>
+Il existe une famile infinie de courbes sembalbles, There is an infinite family of similar rose curves (also called rhodonea<fn>The name rhodenea first appeared in the 1728 publication
+<em>Flores geometrici</em> of the Italian monk, theologian, mathematician
+and engineer, Guido Grandi (1671<ndash/> 1742).</fn>
+ curves).
+</p>
+-->
+
+</example>
+
+</subsection>
+
+
+<subsection xml:id="pars-polar_integrals">
+  <title>Intégrales en coordonnées polaires</title>
+
+<p>Revenons au problème de l'utilisation des coordonnées polaires pour calculer des intégrales doubles. Jusqu'à présent, nous avons utilisé des coordonnées cartésiennes, cela implique que nos domaines d'intégration ont été divisés en sous-rectangles avec les côtés déterminés par des droites <m>x=</m> constante et <m>y=</m> constante. Sur ces sous-rectangles, nous avons fait l'hypothèse que l'intégrande <m>f(x,y)</m> est essentiellement constant (ce qui s'explique par la continuité). Pour utiliser les coordonnées polaires, nous allons maintenant diviser la région d'intégration avec des droites <m>\theta =</m> constante et des courbes <m>r=</m> constante. Le plan <m>Oxy</m> est ainsi découpé en des formes qui ressemblent approximativement à des rectangles.
+</p>
+
+<sidebyside width="35%">
+<image source="images/CLP-figs/polarRTh"/>
+</sidebyside>
+
+<p>
+Voici un agrandissement d'un de ces <q>sous-rectangles</q> approximatifs.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/polarA"/>
+</sidebyside>
+
+<p>
+Un des côtés a une largeur de  <m>\dee{r}</m>, la distance séparant les courbes  <m>r</m> = constante. L'autre côté est un arc de cercle de rayon  <m>r</m> qui sous-tend l'angle au centre <m>\dee{\theta}</m>, l'angle séparant deux droites consécutives d'équation <m>\theta</m> = constante. Puisque la circonférence du cercle est  <m>2\pi r</m> et puisque l'angle <m>\dee{\theta}</m> est la portion <m>\frac{\dee{\theta}}{2\pi}</m> d'un cercle complet<fn>Il faut mesurer les angles en radians.</fn>, l'autre côté de ce rectangle approximatif est de longueur
+<m>\frac{\dee{\theta}}{2\pi}2\pi r = r\dee{\theta}</m>. Ainsi, l'aire approximative de ce sous-rectangle polaire est donnée par la formule suivante.
+</p>
+
+<fact xml:id="eq_dA_polar">
+<statement>
+<p>
+<m>
+\dee{A} = r\,\dee{r}\,\dee{\theta}
+</m>
+</p>
+</statement>
+</fact>
+<p>
+En comparaison, rappelons que, avec les coordonnées cartésiennes, nous avions <m>\dee{A}
+=\dee{x}\,\dee{y}</m>.
+</p>
+
+<p>Dans ce calcul informel, il y a plusieurs détails techniques qui ont été omis. Cependant, l'utilisation de cette procédure dans la définition rigoureuse d'une intégrale, c'est-à-dire dans laquelle on définit <m>\dee{r}</m> et
+<m>\dee{\theta}</m> comme des constantes multipliées par <m>\frac{1}{n}</m>, suivies d'une limite lorsque
+<m>n\rightarrow \infty</m>, donne, après passage à la limite, une erreur nulle.
+
+
+<!--
+ A sample argument,
+in which we see the error going to zero in the limit <m>n\rightarrow\infty</m>,
+is provided in the (optional) section §<xref ref="sec_integral_error"/>.
+-->
+
+</p>
+
+<example xml:id="eg_polar_mass">
+  <title>Masse</title>
+<statement>
+<p>
+Soit  <m>0\leqslant  a \lt b\leqslant  2\pi</m> des constantes et  <m>\cR</m> la région
+<me>
+\cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
+               B(\theta)\leqslant r\leqslant  T(\theta)},
+</me>
+où <m>T(\theta)</m> et <m>B(\theta)</m> sont des fonctions continues et vérifient  <m>B(\theta)\leqslant T(\theta)</m> pour tout  <m>a\leqslant \theta\leqslant  b</m>. Trouver la masse de  <m>\cR</m> si la densité est  <m>f(x,y)</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+La figure ci-dessous, à gauche, est une esquisse de  <m>\cR</m>. Notons que  <m>r=T(\theta)</m> est la courbe extérieure, et <m>r=B(\theta)</m>, la courbe intérieure.
+</p>
+
+<sidebyside>
+<image source="images/CLP-figs/polarMass"/>
+<image source="images/CLP-figs/polarMass2"/>
+</sidebyside>
+
+<p>Divisons <m>\cR</m> en quartiers (comme des pointes de pizza) en traçant plusieurs droites avec <m>\theta</m> constant, dont les valeurs de <m>\theta</m> diffèrent d'une petite quantité  <m>\dee{\theta}</m>. La figure de droite, ci-haut, montre un de ces quartiers, borné par des lignes bleues.
+</p>
+
+<p>On peut diviser un de ces quartiers en sous-rectangles polaires, en traçant plusieurs cercles avec  <m>r</m> constant, dont les valeurs de <m>r</m> sont séparées par une petite quantité  <m>\dee{r}</m>. La figure ci-dessous montre un de ces sous-rectangles polaires en noir.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/polarMass3"/>
+</sidebyside>
+
+
+<p>Concentrons-nous maintenant sur un de ces sous-rectangles polaires, disons celui qui contient le point de coordonnées polaires <m>(r,\ \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar"/> précédente :
+<ul>
+<li>
+L'aire de ce sous-rectangle est approximativement donnée par <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>.
+</li>
+<li>
+Comme la densité de masse du sous-rectangle est essentiellement
+           <m>f(x,y)=f\big(r\cos\theta,\,r\sin\theta\big)</m>,
+la masse de ce sous-rectangle est essentiellement
+         <m>f\big(r\cos\theta,\,r\sin\theta\big)\,r\,\dee{r}\,\dee{\theta}</m>.
+</li>
+<li>
+Afin de trouver la masse d'un quartier, par exemple celui dont l'angle (polaire) varie de <m>\theta</m> à  <m>\theta+\dee{\theta}</m>, nous additionnons simplement les masses des sous-rectangles composant ce quartier. Cela se fait en intégrant par rapport à <m>r</m>, de sa valeur inférieure, soit <m>B(\theta)</m>, jusqu'à sa valeur supérieure, soit <m>T(\theta)</m>. La masse du quartier est alors
+<me>
+\left[ \int_{B(\theta)}^{T(\theta)}
+       f\big(r\cos\theta\,\,r\sin\theta\big) r\,\dee{r}\right]\ \dee{\theta}.
+</me>
+</li>
+<li>
+Finalement, afin de calculer la masse de  <m>\cR</m>, nous n'avons qu'à additionner les masses des différents quartiers, ce qui correspond à intégrer par rapport à <m>\theta</m>, de sa valeur la plus petite jusqu'à sa valeur la plus grande sur <m>\cR</m>, soit de <m>a</m> à  <m>b</m>.
+</li>
+</ul>
+En conclusion,
+<me>
+\text{Masse}(\cR) = \int_a^b
+             \int_{B(\theta)}^{T(\theta)}
+                   f\big(r\cos\theta,\,r\sin\theta\big) r\, \dee{r}\, \dee{\theta}.
+</me>
+Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains détails techniques nécessaires pour établir une démarche rigoureuse. La preuve rigoureuse de la <xref ref="eq_polar_mass"/> peut être obtenue avec ces mêmes idées de base, mais nécessite de résoudre certaines erreurs d'approximation. Cela est fait au paragraphe <xref ref="pars-integral_error" text="custom">Justification de la formule du calcul de l'aire en coordonnées polaires</xref>, plus bas.
+
+</p>
+</solution>
+
+</example>
+
+<p>De l'exemple précédent découle la formule du calcul de la masse de la région
+<me>
+\cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
+               B(\theta)\leqslant r\leqslant  T(\theta)}
+</me>
+avec densité <m>f(x,y)</m>, c'est-à-dire
+</p>
+<fact xml:id="eq_polar_mass">
+<statement>
+<p>
+<me>
+\text{Masse }(\cR) = \int_a^b
+             \int_{B(\theta)}^{T(\theta)}
+                   f\big(r\cos\theta,\,r\sin\theta\big)\ r\, \dee{r}\,\dee{\theta}.
+</me>
+</p>
+</statement>
+</fact>
+
+<!-- WeBWork à inclure>
+WeBWork 9, question 4
+-->
+<!-- 
+<exercise xml:id="int_double_app_III" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/int_double_app_III.pg"/>
+</exercise> -->
+
+
+
+<p>Nous pouvons d'emblée adapter l'exemple afin de calculer des aires. Ainsi, si nous posons la densité à <m>1</m>, la formule de l'aire de la région
+<me>
+\cR = \Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b, 0\leqslant  r \leqslant R(\theta)}
+</me>
+est
+</p>
+<fact xml:id="eq_polar_area">
+<statement>
+<p>
+<me>
+\text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta},
+</me>
+</p>
+</statement>
+</fact>
+<p>
+  Voyons un exemple illustrant ce calcul.
+</p>
+
+
+<example xml:id="eg_polar_area"><title>Calcul d'aire en coordonnées polaires</title>
+<statement>
+<p>
+Soit  <m>0\leqslant  a \lt b\leqslant  2\pi</m> deux constantes. Trouver l'aire de la région
+<me>
+\cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
+              0\leqslant  r\leqslant  B(\theta)},
+</me>
+où <m>R(\theta)\geqslant 0</m> est une fonction continue.
+</p>
+</statement>
+
+<solution>
+<p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass"/>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=R(\theta)</m>,
+<md>
+<mrow>
+\text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
+</mrow>
+</md>
+On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
+<me>
+\text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
+</me>
+L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
+<xref ref="eq_polar_area"/> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
+(avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/polarArea3"/>
+</sidebyside>
+
+<p>
+Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area"/> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_area_rose"><title>Aire en coordonnées polaires</title>
+<statement>
+<p>
+Calculer l'aire de la région du plan bornée par la rosace à trois pétales
+<m>r=\sin(3\theta)</m>.
+</p>
+</statement>
+
+<solution>
+<p>En observant la dernière figure de l'<xref ref="eg_rose"/>, nous devons calculer le triple de l'aire de la région
+<me>
+\cR=\Set{(r\cos\theta,r\sin\theta)}{0\leqslant \theta\leqslant  \frac{\pi}{3},\
+              0\leqslant  r\leqslant  \sin(3\theta)}.
+</me>
+Ainsi, par la <xref ref="eq_polar_area"/>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
+et <m>R(\theta) =\sin(3\theta)</m>,
+<md>
+<mrow>
+\text{Aire}(\cR)
+  &amp;=\frac{1}{2} \int_0^{\frac{\pi}{3}} \sin^2(3\theta)\  \dee{\theta}
+</mrow><mrow>
+  &amp;=\frac{1}{4} \int_0^{\frac{\pi}{3}} \big(1-\cos(6\theta)\big)
+                           \  \dee{\theta}
+</mrow><mrow>
+  &amp;= \frac{1}{4}\left[\theta -\frac{1}{6}\sin(6\theta)\right]
+                     _0^{\frac{\pi}{3}}
+</mrow><mrow>
+  &amp;=\frac{\pi}{12}.
+</mrow>
+</md>
+Dans la première étape, nous avons appliqué l'identité de l'angle double
+<m>\cos(2\phi) = 1-2\sin^2(\phi)</m>. Sans surprise, les identités trigonométriques apparaissent souvent lorsque les coordonnées polaires sont utilisées.
+</p>
+</solution>
+</example>
+
+<!-- WeBWork à inclure>
+Devoir 9, question 2
+-->
+
+<!-- 
+<exercise xml:id="coord_pol_VI_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/coord_pol_VI_SL.pg"/>
+</exercise>
+ -->
+
+
+<example xml:id="eg_polar_volume"><title>Volume avec coordonnées polaires</title>
+<statement>
+<p>
+Un trou cylindrique de rayon <m>b</m> est percé symétriquement au centre d'une sphère en métal de rayon <m>a\geqslant b</m>. Calculer le volume du métal qui aura été enlevé.
+</p>
+</statement>
+
+<solution>
+<p>
+Utilisons un système de coordonnées avec le centre de la sphère à l'origine <m>(0,0,0)</m> et dont l'axe du cylindre coïncide avec l'axe des <m>z</m>. Notamment, la sphère est donnée par  <m>x^2+y^2+z^2\leqslant  a^2</m>.
+</p>
+
+<p>Voici une esquisse de la portion de la sphère dans le premier octant. Le trou percé dans la sphère est tracé en rouge. Par symétrie, le volume total du métal enlevé sera huit fois le volume de la partie enlevée du premier octant.
+</p>
+
+<sidebyside width="66%">
+<image source="images/CLP-figs/appleCore"/>
+</sidebyside>
+
+<p>
+Nous devons donc multiplier par huit le volume du solide
+<me>
+\cV_1 = \Set{(x,y,z)}{(x,y)\in\cR_1,\ 0\leqslant  z\leqslant \sqrt{a^2-x^2-y^2}}
+</me>
+avec comme région de base
+<me>
+\cR_1 = \Set{(x,y)}{x^2+y^2\leqslant  b^2,\ x\geqslant 0,\ y\geqslant 0}.
+</me>
+
+En coordonnées polaires :
+<md>
+<mrow>
+\cV_1 &amp;= \Set{(r\cos\theta,r\sin\theta,z)}{(r\cos\theta,r\sin\theta)\in\cR_1,\
+                   0\leqslant  z\leqslant \sqrt{a^2-r^2}},
+</mrow><mrow>
+\cR_1 &amp;= \Set{(r\cos\theta,r\sin\theta)}{0\leqslant  r\leqslant  b,\
+                    0\leqslant \theta\leqslant \frac{\pi}{2}}.
+</mrow>
+</md>
+
+
+
+Nous suivons notre stratégie habituelle : diviser, additionner puis obtenir une intégrale lors du passage à la limite. Nous découpons la région <m>\cR_1</m> en petits morceaux et additionnons le volume des portions au-dessus de chacun de ces morceaux.
+<ul>
+<li><p>
+Divisons donc <m>\cR_1</m> en secteurs en traçant plusieurs droites avec
+<m>\theta</m> constant dont les valeurs diffèrent d'une petite quantité <m>\dee{\theta}</m>. La figure de gauche ci-dessous montre un de ces secteurs, en bleu.
+</p>
+
+<sidebyside>
+<image source="images/CLP-figs/appleCore1"/>
+<image source="images/CLP-figs/appleCore2"/>
+</sidebyside>
+</li>
+<li>
+Concentrons-nous sur un de ces secteurs, qu'on divise à son tour en <q>sous-rectangles approximatifs</q> en traçant plusieurs cercles avec <m>r</m> constant. Les différentes valeurs de <m>r</m> diffèrent d'une petite quantité <m>\dee{r}</m>. La figure de droite ci-dessus montre un de ces <q>sous-rectangles approximatifs</q>, en noir.
+</li>
+<li><p>
+Regardons de plus près un de ces rectangles. Il contient un point dont les coordonnées polaires sont <m>(r, \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar"/>:
+<ul>
+<li>
+L'aire de ce petit sous-rectangle est essentiellement <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>.
+</li>
+<li><p>
+La portion de  <m>\cV_1</m> qui se trouve au-dessus de ce sous-rectangle est essentiellement un parallélépipède dont la hauteur est
+           <m>\sqrt{a^2-r^2}</m>
+et dont la base a une aire de  <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>. Ce solide est tracé en noir dans la figure ci-dessous. Ainsi, le volume de la portion de  <m>\cV_1 </m> qui se trouve au-dessus de notre <q>sous-rectangle</q> est essentiellement
+<m>\sqrt{a^2-r^2}\,r\,\dee{r}\,\dee{\theta}</m>.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP-figs/appleCore3"/>
+</sidebyside>
+</li>
+</ul></p>
+</li>
+<li><p>
+Afin d'obtenir le volume de  <m>\cV_1</m>, nous devons donc calculer
+
+<me>
+  \int_0^{pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta}.
+</me>
+
+Notons que l'intégrale à l'intérieur est indépendante de <m>\theta</m>, ce qui s'explique par le fait que le volume du solide obtenu (tracé en bleu dans la figure ci-dessous) ne change pas lorsque <m>\theta</m> varie, c'est-à-dire lorsque nous effectuons une rotation par rapport à l'axe des <m>z</m>. On peut donc la sortir de l'intégrale extérieure afin d'obtenir le produit de deux intégrales (on peut comparer ce résultat au <xref ref="thm_factorize"/>).
+<md>
+<mrow>
+\int_0^{\pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta} &amp;=
+ \left[ \int_0^{\pi/2} \dee{\theta} \right] \left[\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r} \right]
+ </mrow>
+ <mrow> &amp;= \frac{\pi}{2}  \int_{a^2}^{a^2-b^2}  \frac{\sqrt{u}}{-2}\, \dee{u},
+</mrow><mrow>
+&amp;\hskip0.5in   \text{où } u= a^2-r^2,
+</mrow><mrow>
+&amp;=  \frac{\pi}{2} \left[\frac{u^{3/2}}{-3}\right]_{a^2}^{a^2-b^2}
+</mrow><mrow>
+&amp;=  \frac{\pi}{6} \left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]
+</mrow>
+</md>
+
+</p>
+
+<sidebyside width="66%">
+<image source="images/CLP-figs/appleCore4"/>
+</sidebyside>
+</li>
+<li>
+  Finalement, nous devons multiplier par huit cette valeur. Le volume total du métal enlevé est donc
+<md>
+<mrow>
+\text{Volume}(\cV)
+&amp;=8\,\text{Volume}(\cV_1)
+</mrow><mrow>
+&amp;=\frac{4\pi}{3}\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right].
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+<p>Nous pouvons faire quelques vérifications avant de poursuivre.
+<ul>
+<li>
+Si le rayon du trou est  <m>b=0</m>, aucun métal n'est enlevé. Notre réponse est cohérente avec ce cas particulier.
+</li>
+<li>
+Si le rayon du trou est  <m>b=a</m>, le rayon du trou est celui de la sphère, de sorte qu'on enlève tout le métal contenu dans la sphère. À nouveau, dans ce cas, notre réponse donne <m>\frac{4}{3}\pi a^3</m>, le volume de la sphère.
+</li>
+<li>  Si les deux rayons sont mesurés en mètres, le volume du solide enlevé, <m>\frac{4\pi}{3}\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]</m>,
+a des unités de mètres cubes, comme il se doit.
+</li>
+</ul>
+</p>
+</solution>
+</example>
+
+<p>Les deux problèmes précédents ont été énoncés, ou presque, en coordonnées polaires. Voyons maintenant comment passer des coordonnées rectangulaires aux coordonnées polaires, et reconnaître quand il est utile de le faire.
+</p>
+
+
+<example xml:id="eg_change_to_polar"><title>Passage aux coordonnées polaires</title>
+<statement>
+<p>
+Transformer l'intégrale  <m>\displaystyle \int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}</m> en coordonnées polaires et l'évaluer.
+</p>
+</statement>
+
+<solution>
+<p>
+  Commençons par établir une expression du domaine d'intégration en coordonnées polaires.
+</p>
+
+
+<p>De l'intégrale donnée, <m>\displaystyle \int_0^1 \int_0^x y \sqrt{x^2 + y^2}\ \dee{y}\,\dee{x}</m>, on déduit que la région d'intégration est
+<me>
+\cD=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 0\leqslant  y\leqslant  x},
+</me>
+qui est esquissée dans la figure de gauche ci-dessous. Il s'agit d'un triangle rectangle.
+</p>
+
+<sidebyside widths="40% 40%">
+<image source="images/CLP-figs/convPolarA"/>
+<image source="images/CLP-figs/convPolarC"/>
+</sidebyside>
+<p>
+Voyons maintenant comment chacune des droites qui forment la frontière de cette région s'exprime en coordonnées polaires.
+<ul>
+<li>
+L'axe des abscisses  <m>y=r\sin\theta=0</m> est simplement <m>\theta=0</m>.
+</li>
+<li>
+La droite <m>x=1</m> est  <m>r\cos\theta=1</m> ou encore  <m>r=\frac{1}{\cos\theta}</m>.
+</li>
+<li>
+Finalement, dans le premier quadrant, la droite
+<md>
+<mrow>
+y=x
+\iff
+r\sin\theta = r\cos\theta
+\iff
+\tan\theta=\frac{\sin\theta}{\cos\theta}=1
+\iff
+\theta=\frac{\pi}{4}.
+</mrow>
+</md>
+</li>
+</ul>
+Ainsi, en coordonnées polaires, on peut écrire le domaine d'intégration sous la forme
+<me>
+\cR=\Big\{(r,\theta)\ \Big|\ 0\leqslant \theta\leqslant \frac{\pi}{4},\
+             0\leqslant  r\leqslant  \frac{1}{\cos\theta}\Big\}.
+</me>
+</p>
+
+<p>
+  Transformons maintenant l'intégrande <m>y\sqrt{x^2+y^2}</m>. Nous avons <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m> et <m>\dee{x}\,\dee{y}=\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, de sorte que l'intégrande (incluant <m>\dee{A}</m>) devient
+  <md>
+  <mrow>
+  y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}
+  =(r\sin\theta)\cdot r\cdot r\, \dee{r}\,\dee{\theta}
+  =r^3\sin\theta\,\dee{r}\,\dee{\theta}.
+  </mrow>
+  </md>
+</p>
+
+<p>
+
+
+
+
+
+Nous pouvons maintenant écrire notre intégrale en coordonnées polaires.
+
+
+
+<!--
+We can now slice up <m>\cR</m> using polar coordinates.
+<ul>
+<li><p>
+Divide <m>\cR</m> into wedges by drawing in many lines of constant
+<m>\theta</m>, with the various values of <m>\theta</m> differing by a tiny
+amount <m>\dee{\theta}</m>. The figure on the right above shows one such wedge.
+<ul>
+<li>
+The first wedge has <m>\theta=0</m>.
+</li>
+<li>
+The last wedge has <m>\theta=\frac{\pi}{4}</m>.
+</li>
+</ul></p>
+</li>
+<li><p>
+Concentrate on any one wedge. Subdivide the wedge further into
+approximate rectangles by drawing in many circles of constant <m>r</m>,
+with the various values of <m>r</m> differing by a tiny amount <m>\dee{r}</m>.
+The figure on the right above shows one such approximate rectangle, in black.
+<ul>
+<li>
+The rectangle that contains the point with polar coordinates <m>r</m> and
+<m>\theta</m> has area (essentially) <m>r\,\dee{r}\,\dee{\theta}</m>.
+</li>
+<li>
+The first rectangle has <m>r=0</m>.
+</li>
+<li>
+The last rectangle has <m>r=\frac{1}{\cos\theta}</m>.
+</li>
+</ul></p>
+</li>
+</ul>
+-->
+<md>
+<mrow>
+\int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}
+&amp;=\int_0^{\pi/4}\int_{0}^{\frac{1}{\cos\theta}} r^3 \sin \theta\ \dee{r}\, \dee{\theta}</mrow>
+</md>
+L'intégrale par rapport à  <m>r</m> traite  <m>\theta</m> comme une constante, on peut donc sortir <m>\sin\theta</m> de l'intégrale intérieure.
+<md>
+<mrow>
+\int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}
+&amp;=\int_0^{\pi/4} \sin\theta\int_0^{\frac{1}{\cos\theta}}
+     r^3\ \dee{r}\, \dee{\theta}\
+</mrow><mrow>
+&amp;=\frac{1}{4}\int_0^{\pi/4} \sin\theta\frac{1}{\cos^4\theta}\, \dee{\theta}
+</mrow>
+</md>
+Effectuons le changement de variables.
+<me>
+u=\cos\theta,\ \dee{u}=-\sin\theta\ \dee{\theta}
+</me>
+Lorsque  <m>\theta=0</m>, <m>u=\cos\theta=1</m> et, lorsque  <m>\theta=\frac{\pi}{4}</m>,
+<m>u=\cos\theta=\frac{1}{\sqrt{2}}</m>. Ainsi,
+<md>
+<mrow>
+\int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}
+&amp;=\frac{1}{4}\int_1^{1/\sqrt{2}} -\frac{1}{u^4}\ \dee{u}
+</mrow><mrow>
+&amp;=-\frac{1}{4}\left[\frac{u^{-3}}{-3}\right]_1^{1/\sqrt{2}}
+=\frac{1}{12}\left[2\sqrt{2}-1\right].
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+<!-- WeBWork à inclure>
+Devoir n.9, question 3
+
+Le problème ne fonctionne pas à cause de la macro parserMultiAnswer.pl
+
+<exercise xml:id="coord_pol_X_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/coord_pol_X_SL.pg"/>
+</exercise>
+-->
+
+
+<!-- Cet exemple  devrait devenir un prblème plutôt
+
+<example xml:id="eg_change_to_polar_B"><title>Changing to Polar Coordinates</title>
+<statement>
+<p>
+Evaluate <m>\displaystyle\int_0^\infty e^{-x^2}\ \dee{x}</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+This is actually a trick question. In fact it is a famous trick
+question<fn>The solution is attributed to the French Mathematician
+Sim\'eon Denis Poisson (1781 <ndash/> 840) and was published in the textbook
+<em>Cours d'Analyse de l'\'ecole polytechnique</em> by
+Jacob Karl Franz Sturm (1803 <ndash/> 1855).</fn>.
+</p>
+
+<p>The integrand <m>e^{-x^2}</m> does not have an antiderivative that can
+be expressed in terms of elementary functions<fn>On the other hand it is the core of the function
+<m>\text{erf}
+(z)=\frac{2}{\sqrt{\pi}}\int_0^z e^{-t^2}\ \dee{t}</m>, which
+gives Gaussian (i.e. bell curve) probabilities.
+<q>erf</q> stands for <q>error function</q>.</fn>.
+So we cannot evaluate this integral using the usual Calculus II methods.
+However we can evaluate it's square
+<md>
+<mrow>
+\left[\int_0^\infty e^{-x^2}\ \dee{x}\right]^2
+=\int_0^\infty e^{-x^2}\ \dee{x}\   \int_0^\infty e^{-y^2}\ \dee{y}
+=\int_0^\infty \dee{x} \int_0^\infty \dee{y}\ e^{-x^2-y^2}
+</mrow>
+</md>
+precisely because this double integral can be easily
+evaluated just by changing to polar coordinates!
+The domain of integration is the first quadrant
+<m>\Set{(x,y)}{x\geqslant 0,\ y\geqslant 0}</m>. In polar coordinates,
+<m>\dee{x}\dee{y} = r\,\dee{r}\dee{\theta}</m> and the first  quadrant is
+<me>
+\Set{(r\cos\theta\,,\,r\sin\theta)}{r\geqslant 0,\ 0\leqslant \theta\leqslant  \frac{\pi}{2}}
+</me>
+So
+<md>
+<mrow>
+\left[\int_0^\infty e^{-x^2}\ \dee{x}\right]^2
+=\int_0^\infty \dee{x} \int_0^\infty \dee{y}\ e^{-x^2-y^2}
+=\int_0^{\pi/2}\dee{\theta}\int_0^\infty \dee{r}\ r\, e^{-r^2}
+</mrow>
+</md>
+As <m>r</m> runs all the way to <m>+\infty</m>, this is an improper integral,
+so we should be a little bit careful.
+<md>
+<mrow>
+\left[\int_0^\infty e^{-x^2}\ \dee{x}\right]^2
+&amp;=\lim_{R\rightarrow\infty}
+            \int_0^{\pi/2}\dee{\theta}\int_0^R \dee{r}\ r\, e^{-r^2}
+</mrow><mrow>
+&amp;=\lim_{R\rightarrow\infty}
+    \int_0^{\pi/2}\dee{\theta}\int_0^{R^2} \frac{\dee{u}}{2}\ e^{-u} \qquad
+   \text{where } u= r^2,\ \dee{u} =2r\,\dee{r}
+</mrow><mrow>
+&amp;=\lim_{R\rightarrow\infty}
+    \int_0^{\pi/2}\dee{\theta}\ \left[-\frac{e^{-u}}{2}\right]_0^{R^2}
+</mrow><mrow>
+&amp;=\lim_{R\rightarrow\infty} \frac{\pi}{2}
+                 \left[\frac{1}{2}-\frac{e^{-R^2}}{2}\right]
+</mrow><mrow>
+&amp;=\frac{\pi}{4}
+</mrow>
+</md>
+and so we get the famous result
+<md>
+<mrow>
+\int_0^\infty e^{-x^2}\ \dee{x} =\frac{\sqrt{\pi}}{2}
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+-->
+
+<example xml:id="eg_area_polar">
+<statement>
+<p> Trouver l'aire de la région à l'intérieur du cercle
+<m>r=4\cos\theta</m>, mais à gauche de la droite  <m>x=1</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Avant de commencer, vérifions que  <m>r=4\cos\theta</m> est effectivement un cercle et trouvons à quoi ressemble ce cercle. Dès lors, nous convertissons l'équation <m>r=4\cos\theta</m> en coordonnées cartésiennes. En multipliant les deux côtés par  <m>r</m>, nous obtenons
+<md>
+<mrow>
+r^2=4r\cos\theta
+\iff x^2+y^2 =4x
+\iff (x-2)^2 + y^2 = 4.
+</mrow>
+</md>
+Ainsi, <m>r=4\cos\theta</m> est le cercle de rayon  <m>2</m> centré en  <m>(2,0)</m>. Nous devons également trouver les points d'intersection du cercle <m>r=4\cos\theta</m> avec la droite  <m>x=r\cos\theta=1</m>. En ces points,<md>
+<mrow>
+r\cos\theta=1\text{ et }\ r=4\cos\theta
+&amp;\implies \frac{1}{\cos\theta} = 4\cos\theta
+</mrow><mrow>
+&amp;\implies \cos^2\theta = \frac{1}{4}
+</mrow><mrow>
+&amp;\implies \cos\theta =\frac{1}{2}\qquad\text{puisque }r\cos\theta=1  \gt  0
+</mrow><mrow>
+&amp;\implies \theta = \pm \frac{\pi}{3}.
+</mrow>
+</md>
+Voici une esquisse de la région qui nous intéresse, nommons-la <m>\cR</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/comPolarA"/>
+</sidebyside>
+
+
+<p>Nous pourrions déterminer l'aire de <m>\cR</m> en utilisant un peu de géométrie élémentaire, puisqu'il s'agit d'un secteur circulaire duquel nous avons enlevé un triangle.
+</p>
+
+<sidebyside width="28%">
+<image source="images/CLP-figs/comPolarAA"/>
+</sidebyside>
+
+<p>
+Continuons cependant notre calcul en utilisant une intégrale double en coordonnées polaires.
+</p>
+
+
+<p>Puisque <m>\cR</m> est symétrique par rapport à l'axe des abscisses, l'aire de  <m>\cR</m> est deux fois l'aire de la portion de <m>\cR</m> qui se trouve au-dessus de l'axe des <m>x</m>. Nommons <m>\cR_1</m> cette moitié supérieure de  <m>\cR</m>. Notons que la droite  <m>x=1</m> en coordonnées polaires s'écrit sous la forme
+<m>r=\frac{1}{\cos\theta}</m>. Voici une esquisse de  <m>\cR_1</m>.
+</p>
+
+<sidebyside width="60%">
+<image source="images/CLP-figs/comPolarB"/>
+</sidebyside>
+<p>
+Remarquons que, sur <m>\cR_1</m>, pour tout <m>\theta</m> fixé entre
+<m>0</m> et <m>\frac{\pi}{2}</m>,
+<ul>
+<li>
+si <m>\theta \lt \frac{\pi}{3}</m>, alors <m>r</m> varie de  <m>0</m> à
+<m>\frac{1}{\cos\theta}</m>, tandis que
+</li>
+<li>
+si <m>\theta \gt \frac{\pi}{3}</m>, alors  <m>r</m> varie de <m>0</m> à
+<m>4\cos\theta</m>.
+</li>
+</ul>
+Ceci nous oblige naturellement à séparer en deux notre domaine d'intégration, soit à <m>\theta =\frac{\pi}{3}</m> :
+<md>
+<mrow>
+\text{Aire}(\cR_1)&amp; =
+     \int_0^{\pi/3}\int_0^{1/\cos\theta}r\ \dee{r}\,\dee{\theta}
+     +\int_{\pi/3}^{\pi/2}\int_0^{4\cos\theta}r\ \dee{r}\,\dee{\theta}.
+</mrow>
+</md>
+Puisque<m>\displaystyle \int r\ \dee{r}=\frac{r^2}{2}+C</m>,
+<md>
+<mrow>
+\text{Aire}(\cR_1)
+&amp;=\int_0^{\pi/3} \frac{\sec^2\theta}{2}\, \dee{\theta}
+   +\int_{\pi/3}^{\pi/2} 8\cos^2\theta\, \dee{\theta}
+</mrow><mrow>
+&amp;=\frac{1}{2}\tan\theta\Big|_0^{\pi/3}
+      +4\int_{\pi/3}^{\pi/2} \big[1+\cos(2\theta)\big]\ \dee{\theta}
+</mrow><mrow>
+&amp;=\frac{\sqrt{3}}{2} +4\left[\theta+\frac{\sin(2\theta)}{2}\right]_{\pi/3}^{\pi/2}
+</mrow><mrow>
+&amp;=\frac{\sqrt{3}}{2} +4\left[\frac{\pi}{6}-\frac{\sqrt{3}}{4}\right]
+</mrow><mrow>
+&amp;=\frac{2\pi}{3}-\frac{\sqrt{3}}{2},
+</mrow>
+</md>
+et finalement
+<md>
+<mrow>
+\text{Aire}(\cR)=2\text{Aire}(\cR_1) = \frac{4\pi}{3}-\sqrt{3}.
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+
+<!--
+<example xml:id="eg_area_polar_HS">
+  <title>Optional <mdash/> Example <xref ref="eg_area_polar"/> by high school geometry</title>
+<p>
+We'll now again compute the area of the region <m>\cR</m> that is
+inside the circle <m>r=4\cos\theta</m> and to the left of the line <m>x=1</m>.
+That was the region of interest in Example <xref ref="eg_area_polar"/>.
+This time we'll just use some geometry. Think of <m>\cR</m> as being
+the wedge <m>\cW</m>, of the figure on the left below, with the triangle
+<m>\cT</m>, of the figure on the right below, removed.
+</p>
+
+<sidebyside>
+<image source="images/CLP-figs/comPolarC"/>
+<image source="images/CLP-figs/comPolarD"/>
+</sidebyside>
+
+<p>
+<ul>
+<li>
+First we'll get the area of <m>\cW</m>. The cosine of the angle between the
+<m>x</m> axis and the radius vector from <m>C</m> to <m>A</m> is <m>\frac{1}{2}</m>. So that
+angle is <m>\frac{\pi}{3}</m> and <m>\cW</m> subtends an angle of <m>\frac{2\pi}{3}</m>.
+The entire circle has area <m>\pi 2^2</m>, so that <m>\cW</m>, which is the fraction
+<m>\frac{2\pi/3}{2\pi}=\frac{1}{3}</m> of the full circle, has area
+<m>\frac{4\pi}{3}</m>.
+</li>
+<li>
+Now we'll get the area of the triangle <m>\cT</m>. Think of <m>\cT</m> as having
+base <m>BD</m>. Then the length of the base of <m>\cT</m> is <m>2\sqrt{3}</m>
+and the height of <m>\cT</m> is <m>1</m>. So <m>\cT</m> has area <m>\frac{1}{2}(2\sqrt{3})(1)
+=\sqrt{3}</m>.
+</li>
+</ul>
+All together
+<md>
+<mrow>
+\text{Aire}(\cR)
+&amp;=\text{Aire}(\cW)-\text{Aire}(\cT)
+=\frac{4\pi}{3}-\sqrt{3}
+</mrow>
+</md>
+</p>
+
+</example>
+
+-->
+
+
+
+</subsection>
+
+
+<subsection xml:id="pars-integral_error">
+  <title>Justification de la formule du calcul de l'aire en coordonnées polaires</title>
+
+<p>Nous avons précédemment établi la formule du calcul de l'aire en coordonnées polaires, la <xref ref="eq_polar_area"/>, de façon peu rigoureuse. Nous avons notamment utilisé le terme <q>essentiellement</q> à plus d'une reprise. Voyons maintenant la justification rigoureuse pour arriver à cette formule.
+</p>
+
+
+
+
+
+<p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass"/> et dans l'<xref ref="eg_polar_area"/>, nous avons établi la formule
+<me>
+A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
+</me>
+pour l'aire de la région
+<me>
+\cR=\Set{\big(r\cos\theta,r\sin\theta\big)}
+     {a\leqslant \theta\leqslant  b,\ 0\leqslant  r\leqslant  R(\theta)}.
+</me>
+
+</p>
+  <p>Tout au long de l'argumentation, nous avons approximé l'aire de la région ombragée par  <m>\dee{A} = r\,\dee{r}\,\dee{\theta}</m>.
+  </p>
+<sidebyside widths="40%">
+<image source="images/CLP-figs/polarA"/>
+</sidebyside>
+
+    <p>Nous allons justifier cette approximation sous l'hypothèse qu'il existe <m>M</m> et  <m>L\in \R</m> tels que
+<me>
+0\leqslant  R(\theta)\leqslant M \qquad\text{et}\qquad |R'(\theta)|\leqslant L
+</me>
+pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>R(\theta)</m> est borné et que sa dérivée existe et est bornée également.
+</p>
+
+<p> On divise l'intervalle  <m>a\leqslant  \theta\leqslant  b</m> en <m>n</m> sous-intervalles de même longueur  <m>\De\theta=\frac{b-a}{n}</m>. Soit <m>\theta_i^*</m> le milieu du
+<m>i^{\text{ième}}</m> sous-intervalle. Sur ce  <m>i^{\text{ième}}</m> intervalle, <m>\theta</m> varie de
+<m>\theta_i^*-\frac{1}{2}\De\theta</m> à <m>\theta_i^*+\frac{1}{2}\De\theta</m>, donc <m>\big|\theta-\theta_i^*\big|\leqslant \frac{1}{2}\De\theta</m>.
+</p>
+
+<p>En vertu du théorème des accroissements finis,
+<md>
+<mrow>
+R(\theta)-R(\theta_i^*)  = R'(c) (\theta-\theta_i^*)
+</mrow>
+</md>
+pour un certain <m>c \in \, ]\theta ,\ \theta_i^*[ </m>. Comme  <m>|R'(\theta)|\leqslant L</m>, nous avons
+<me>
+\big|R(\theta)-R(\theta_i^*)\big|  \leqslant L \big|\theta-\theta_i^*\big|.
+\tag{$*$}
+</me>
+Ceci nous dit que la différence entre  <m>R(\theta)</m> et <m>R(\theta_i^*)</m>
+ne peut pas être beaucoup plus grande que <m>\big|\theta-\theta_i^*\big|</m>.
+</p>
+
+<p>Sur le  <m>i^{\text{ième}}</m> sous-intervalle, le rayon <m>r=R(\theta)</m> prend des valeurs <m>R(\theta)</m> avec  <m>\theta</m> vérifiant  <m>\big|\theta-\theta_i^*\big|\leqslant\frac{1}{2}\De\theta</m>.
+En vertu de  <m>(*)</m>, toutes ces valeurs de <m>R(\theta)</m> se situent entre
+<m>r_i=R(\theta_i^*)-\frac{1}{2} L\De\theta</m> et
+<m>R_i=R(\theta_i^*) +\frac{1}{2} L\De\theta</m>. En conséquence, la portion de  <m>\cR</m> définie par  <m>\theta</m> dans le <m>i^{\text{ième}}</m> sous-intervalle, à savoir
+<me>
+\cR_i=\Set{\big(r\cos\theta,r\sin\theta\big)}
+     {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
+           \ 0\leqslant  r\leqslant  R(\theta)},
+</me>
+doit contenir complètement le secteur circulaire
+<me>
+\Set{\big(r\cos\theta,r\sin\theta\big)}
+     {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
+           \ 0\leqslant  r\leqslant  r_i}
+</me>
+et doit être complètement contenue dans le secteur circulaire
+<me>
+\Set{\big(r\cos\theta,r\sin\theta\big)}
+     {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
+           \ 0\leqslant  r\leqslant  R_i}.
+</me>
+</p>
+
+<sidebyside widths="33% 33%">
+<image source="images/CLP-figs/polarArea"/>
+<image source="images/CLP-figs/polarArea2"/>
+</sidebyside>
+
+<p>
+Nous avons donc un secteur circulaire plus petit et un autre secteur circulaire plus grand que la région <m>\cR_i</m> à approximer. L'aire d'un disque de rayon <m>\rho</m> est <m>\pi\rho^2</m>. Sachant qu'un secteur circulaire de rayon <m>\rho</m> qui sous-tend un angle  <m>\De \theta</m> est la fraction <m>\frac{\De\theta}{2\pi}</m> du disque, alors l'aire d'un secteur circulaire est  <m>\frac{\De\theta}{2\pi}\pi\rho^2 = \frac{\De\theta}{2}\rho^2</m>.
+</p>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/sectorArea"/>
+</sidebyside>
+
+<p>
+Ainsi, l'aire de  <m>\cR_i</m> est bornée par
+<me>
+\frac{1}{2}\De\theta\, r_i^2
+    =\frac{1}{2}\De\theta\left[R(\theta_i^*)-\frac{1}{2} L\De\theta\right]^2
+\quad\text{et}\quad
+\frac{1}{2}\De\theta\, R_i^2
+    =\frac{1}{2}\De\theta\left[R(\theta_i^*)+\frac{1}{2} L\De\theta\right]^2.
+</me>
+En développant
+<me>
+\left[R(\theta_i^*)\pm \frac{1}{2} L\De\theta\right]^2
+=R(\theta_i^*)^2 \pm L R(\theta_i^*)\De\theta +\frac{1}{4} L^2\De\theta^2
+</me>
+et puisque <m>0\leqslant  R(\theta)\leqslant M</m>, nous remarquons que
+<md>
+<mrow>
+R(\theta_i^*)^2 - L M\De\theta +\frac{1}{4} L^2\De\theta^2\hskip2in
+</mrow><mrow>
+\leqslant \left[R(\theta_i^*)\pm \frac{1}{2} L\De\theta\right]^2\le
+</mrow><mrow>
+\hskip2in R(\theta_i^*)^2 + L M\De\theta +\frac{1}{4} L^2\De\theta^2.
+</mrow>
+</md>
+Ainsi, en multipliant par  <m>\frac{\De\theta}{2}</m>, on revient à borner l'aire de <m>\cR_i</m> :
+<md>
+<mrow>
+\frac{1}{2} R(\theta_i^*)^2\De\theta - \frac{1}{2} L M\De\theta^2
+           +\frac{1}{8} L^2\De\theta^3\hskip2in
+</mrow><mrow>\leqslant\text{Aire}(\cR_i)\le
+</mrow><mrow>
+\hskip2in\frac{1}{2} R(\theta_i^*)^2\De\theta
+        + \frac{1}{2} L M\De\theta^2 +\frac{1}{8} L^2\De\theta^3.
+</mrow>
+</md>
+L'aire totale  <m>A</m> est donc bornée comme suit :
+<md>
+<mrow>
+\sum_{i=1}^n\left[ \frac{1}{2} R(\theta_i^*)^2\De\theta
+    - \frac{1}{2} L M\De\theta^2 +\frac{1}{8} L^2\De\theta^3\right]\hskip2in
+</mrow><mrow>
+\leqslant A\le
+</mrow><mrow>
+\hskip2in\sum_{i=1}^n\left[\frac{1}{2} R(\theta_i^*)^2\De\theta
+       + \frac{1}{2} L M\De\theta^2 +\frac{1}{8} L^2\De\theta^3\right],
+</mrow>
+</md>
+et
+<md>
+<mrow>
+\frac{1}{2}\sum_{i=1}^n R(\theta_i^*)^2\De\theta
+  - \frac{1}{2}  n L M\De\theta^2 +\frac{1}{8} n L^2\De\theta^3\hskip2in
+</mrow><mrow>
+\leqslant A\le
+</mrow><mrow>
+\hskip2in \frac{1}{2}\sum_{i=1}^n R(\theta_i^*)^2\De\theta + \frac{1}{2} n L M\De\theta^2 +\frac{1}{8}
+nL^2\De\theta^3.
+</mrow>
+</md>
+Sachant que <m>\De \theta=\frac{b-a}{n}</m>,
+<md>
+<mrow>
+\frac{1}{2}\sum_{i=1}^n R(\theta_i^*)^2\De\theta
+\!-\! \frac{ L M}{2}\frac{(b\!-\!a)^2}{n}
+\!+\!\frac{L^2}{8} \frac{(b\!-\!a)^3}{n^2}\hskip2in
+</mrow><mrow>
+\leqslant A\leqslant
+</mrow><mrow>
+\hskip2in\frac{1}{2}\sum_{i=1}^n R(\theta_i^*)^2\De\theta
+   \!+\! \frac{ L M}{2}\frac{(b\!-\!a)^2}{n}
+   \!+\! \frac{L^2}{8} \frac{(b\!-\!a)^3}{n^2}.
+</mrow>
+</md>
+Maintenant, évaluons la limite lorsque  <m>n\rightarrow\infty</m>. Étant donné que
+<md>
+<mrow>
+&amp;\lim_{n\rightarrow\infty}\left[
+   \frac{1}{2}\sum_{i=1}^n R(\theta_i^*)^2\De\theta
+   \pm \frac{ L M}{2}\frac{(b-a)^2}{n}
+   +\frac{L^2}{8} \frac{(b-a)^3}{n^2}\right]
+\cr
+&amp;\hskip1in=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
+\pm \lim_{n\rightarrow\infty}\frac{ L M}{2}\frac{(b-a)^2}{n}
++\lim_{n\rightarrow\infty}\frac{L^2}{8} \frac{(b-a)^3}{n^2}
+</mrow><mrow>
+&amp;\hskip1in=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta \qquad
+\text{(car $L, M, a$ et $b$ sont des constantes)},
+</mrow>
+</md>
+nous avons
+<me>
+A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta,
+</me>
+soit exactement ce que nous voulions obtenir.
+</p>
+</subsection>
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Coordonnes-polaires.ptx"/>
+
+
+</section>

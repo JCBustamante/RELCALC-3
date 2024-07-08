@@ -1,0 +1,490 @@
+<section xml:id="S2-1-Plusieurs-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Fonctions de plusieurs variables</title>
+<introduction>
+Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. Une telle fonction est une règle qui associe exactement une quantité (un nombre ou un vecteur par exemple) à une valeur donnée. On étudie les fonctions réelles d'une variable réelle et leurs applications à l'aide de graphiques, des limites, de leurs dérivées ou de leurs intégrales notamment. Nous verrons que la plupart des idées du calcul à une variable trouvent leur place avec plusieurs variables. Bien entendu, certains ajustements seront nécessaires.
+</introduction>
+
+<definition xml:id="def-Fonctions-2-3-vars">
+  <statement>
+        <p>
+         Une <em>fonction de plusieurs variables à valeurs réelles</em>, disons <m>f</m>, est la donnée d'une région <m>\plan{D} \subseteq \R^n</m> et d'une règle qui, à chaque point <m>\vr \in \plan{D}</m>, fait correspondre un nombre réel <m>f(\vr)</m>. Le domaine de <m>f</m> est l'ensemble <m>\plan{D}</m>, tandis que son image est l'ensemble des valeurs prises par <m>f</m>, c'est-à-dire <m>\{ f(\vr)| \vr\in \plan{D}\}</m>; il s'agit d'un sous-ensemble de <m>\R</m>. On écrit dans ce cas
+         <md>
+           <mrow>f : \amp  \plan{D}\ \longrightarrow \R</mrow>
+           <mrow> \amp  \vr \longmapsto f(\vr)</mrow>
+         </md>
+         et on lit  <q><m>f</m> va de <m>\plan{D}</m> dans <m>\R</m> et applique (ou envoie) <m>\vr</m> sur <m>f(\vr)</m></q>.
+         <ul>
+           <li>
+             <p> Dans le cas <m>n=2</m>, on aura que <m>\plan{D}</m> est une région du plan <m>\R^2</m> et l'on écrira <m>f(x,y)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2)</m> au lieu de <m>f(\vx)</m>.
+             </p>
+           </li>
+           <li>
+             <p>Dans le cas <m>n=3</m>, on aura que <m>\plan{D}</m> est une région de l'espace <m>\R^3</m> et l'on écrira <m>f(x,y,z)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2,x_3)</m> au lieu de <m>f(\vx)</m>.
+             </p>
+           </li>
+         </ul>
+         Si seule la règle est donnée sans préciser le domaine, on conviendra que le domaine est le plus grand ensemble de points <m>\vr</m> tel que l'expression donnée est un nombre réel.
+        </p>
+  </statement>
+</definition>
+
+<example>
+  <statement> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
+  <ol>
+    <li>
+      <p>Trouver le domaine de <m>f</m> et le représenter graphiquement.
+      </p>
+    </li>
+    <li>
+      <p>
+        Calculer <m>f(1/4,1/4)</m>.
+      </p>
+    </li>
+  </ol>
+
+  </statement>
+  <solution>
+      <ol>
+        <li>
+        <p> La présence des termes <m>\sqrt{x}</m> et <m>\sqrt{y}</m> impose d'avoir <m>x\geqslant 0</m> et <m>y\geqslant 0</m>, de sorte que le domaine se trouve dans le premier quadrant. Par ailleurs, il faut aussi avoir <m>4-x^2 - 4y^2 \gt 0</m>. L'équation <m>x^2 + 4y^2 = 4</m> définit une ellipse, la région qui nous intéresse est donc la partie du premier quadrant contenant l'origine, limitée par l'ellipse <m>(x/2)^2 + y^2 = 1</m>. Les segments de droite correspondant aux axes font partie du domaine, mais pas la portion de l'ellipse.
+        </p>
+        </li>
+        <li>
+          <p>
+            Un calcul direct nous donne
+            <md>
+              <mrow>f(1/4,1/4) \amp= \sqrt{1/4} + \sqrt{1/4} + \ln (4-1/16 - 4/16) </mrow>
+              <mrow> \amp = 1 + \ln (59 /16).</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+      <figure xml:id="figure-domaine-fxy">
+        <caption>Le domaine de la fonction <m>f(x,y)= \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></caption>
+         <image xml:id="sageplot-domainefxy" width="80%">
+           <description>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></description>
+          <sageplot>
+            var('x')
+            Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
+              axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]])
+            Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
+            Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
+            Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 16, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
+            Fig
+          </sageplot>
+        </image>
+      </figure>
+
+  </solution>
+</example>
+
+<subsection xml:id="pars-Graphes-niveau">
+    <title>Graphes et ensembles de niveau</title>
+    <p>
+  Lorsqu'on étudie une fonction d'une variable, on la représente à l'aide de sa courbe associée, ou son graphe. Si <m>f : [a,b] \to \R</m> est donnée, la courbe est l'ensemble <m>\{(x,y)\in \R^2 |y= f(x), x\in [a,b] \}</m>. Cette définition se généralise aux fonctions de plusieurs variables.
+    </p>
+
+
+    <definition xml:id="def-Graphe">
+        <statement>
+            <p>Soit <m>\plan{D}\subseteq \R^2</m> et <m>f:\plan{D} \to \R</m> une fonction donnée. Le <terms><em>graphe de <m>f</m></em></terms> est l'ensemble
+            <me>
+                \{(x,y,z)\in \R^3| z = f(x,y), (x,y)\in  \plan{D}\}.
+            </me>
+            Notons qu'il s'agit d'une surface dans <m>\R^3</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+      Remarquons qu'il est habituel d'identifier le domaine <m>\cD</m>, qui est une partie de <m>\R^2</m>, à un sous-ensemble de <m>\R^3</m>, à savoir
+      <me>
+        \{(x,y,0)\in \R^3| (x,y)\in  \plan{D}\}.
+      </me>
+    </p>
+    <p>
+      De façon plus générale, on peut définir le graphe d'une fonction <m>f</m> définie sur une partie <m>\plan{D}</m> de <m>\R^n</m> comme l'ensemble des points <m>(\vx, f(\vx))</m> de <m>\R^n \times \R</m> qu'on identifie naturellement à <m>\R^{n+1}</m>.
+    </p>
+<example>
+  <statement>
+    <p>
+      Supposons que nous lançons un projectile du niveau du sol (avec un bâton de golf, un canon...). Supposons que notre projectile ne tourne pas et qu'il est soumis seulement à la force gravitationnelle <m>g</m>. Dans ces conditions, la distance horizontale que le projectile voyagera, disons <m>z</m>, dépend de la vitesse initiale, disons <m>x</m> (en mètres par seconde), et de l'angle de tir, disons <m>y</m> (en radians). On aura alors <m>z = f(x,y) = \frac{1}{g} x^2 \sin 2y</m>.
+    </p>
+
+<!--    <figure xml:id="Discontinuous-function">
+        <caption>La surface de <m> f(x,y)= \frac{1}{g} x^2 \sin 2y</m>
+        </caption>
+
+        <interactive xml:id="Dist-projectile" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+              @interact
+              def figure():
+                  var("x,y")
+                  S = plot3d(1/10*x^2 *sin(2*y), (x,0,100), (y,0,pi/2), color = "orange", mesh = True, opacity = 0.65)
+                  show(S)
+          </slate>
+        </interactive>
+
+    </figure>
+    -->
+  </statement>
+
+</example>
+
+
+<p>
+  Lorsqu'on étudie une fonction à plusieurs variables, on s'intéresse au rôle isolé de chacune des variables. Si, par exemple, on s'intéresse à <m>f(x,y)</m> et que l'on fixe la valeur de la variable <m>x</m> à <m>x=x_0</m>, on obtient une fonction de la seconde variable : <m>g(y) = f(x_0, y)</m>. De la même façon, nous avons une fonction <m>h(x)= f(x,y_0)</m> lorsque <m>y_0</m> est fixée. La courbe de la fonction <m>z=h(x)</m>, tracée sur le plan vertical (parallèle à l'axe des <m>x</m>) d'équation <m>y=y_0</m>, fait partie de la surface <m>\plan{S}</m> d'équation <m>z=f(x,y)</m>. Cette courbe est en fait l'intersection du plan <m>y=y_0</m> avec la surface <m>\plan{S}</m>. Avant d'illustrer ces concepts à l'<xref ref="eg_traces">exemple</xref> , donnons une définition plus précise.
+</p>
+
+
+<definition xml:id="def-Traces">
+  <statement>
+    <p>Soit <m>f(x,y)</m> une fonction de deux variables définie sur une région <m>\plan{D}</m> et <m>(x_0,y_0)\in \plan{D}</m>. Alors,
+    <ul>
+      <li>
+        <p>
+          la trace de <m>f</m> dans la direction des <m>x</m>, à la valeur <m>y=y_0</m>, est la courbe d'équation <m>z=f(x,y_0)</m> dans le plan <m>y=y_0</m>;
+        </p>
+      </li>
+      <li>
+        <p>la trace de <m>f</m> dans la direction des <m>y</m>, à la valeur <m>x=x_0</m>, est la courbe d'équation <m>z=f(x_0,y)</m> dans le plan <m>x=x_0</m>.
+        </p>
+      </li>
+    </ul>
+
+    </p>
+  </statement>
+</definition>
+
+<example xml:id="eg_traces">
+  <statement>
+    <p>
+      Considérons la fonction <m>f(x,y) = x^2 \sin 2y</m>. Nous avons alors quelques traces :
+      <ul>
+        <li>
+          <p>
+          Dans la direction des <m>x</m>, elles sont données par les courbes d'équation
+          </p>
+           <ul>
+            <li>
+              <p>
+              <m>z=f(x,0) = 0</m> à la valeur <m>y=0</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z=f(x,\pi/6) = x^2 \sin \pi/3 = x^2 \sqrt{3}/2</m> à la valeur <m>y=\pi/6</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z=f(x,3\pi/4) =  x^2 \sin 2\pi/2 = -x^2 </m> à la valeur <m>y=3\pi /4</m>.
+              </p>
+            </li>
+
+          </ul>
+          <p>
+          On voit tout de suite qu'il s'agit de paraboles, à l'exception des  traces à <m>y=0, y=\pi/2, y=\pi</m>. Dans ces cas, on a des droites horizontales.
+          </p>
+        </li>
+        <li>
+          <p>
+            Dans la direction des <m>y</m>, les traces sont données par les courbes d'équation
+          </p>
+          <ul>
+           <li>
+             <p>
+             <m>z=f(0,y) = 0</m> à la valeur <m>x=0</m>;
+             </p>
+           </li>
+           <li>
+             <p>
+               <m>z=f(5,y) =  25 \sin 2y </m> à la valeur <m>x=5</m>;
+             </p>
+           </li>
+           <li>
+             <p>
+               <m>z=f(10,y) = 100\sin 2y </m> à la valeur <m>x=10</m>.
+             </p>
+           </li>
+         </ul>
+         <p>
+         Dans ce cas, il s'agit de courbes sinusoïdales.
+         </p>
+        </li>
+      </ul>
+
+      <figure xml:id="Traces-ggb"> 
+        <caption>La surface d'équation <m>z=x^2\sin 2y </m> ainsi que quelques traces</caption>
+        <interactive xml:id="Traces" platform="geogebra" aspect="7:5" preview="images/GeoGebra-Statique/Trace-statique.png">
+        <slate surface="geogebra" source = "GeoGebra/Traces.ggb" aspect="7:5">
+        setWidth(600)
+        setHeight(428)
+      </slate>
+        </interactive>
+        </figure>
+    </p>
+  </statement>
+</example>
+
+
+
+<!-- Cet exercice ne compile pas comme il faut!
+<exercise>
+  <webwork source ="Library/Union/setMVtraces/trace-3b.pg"/>
+</exercise>
+-->
+<p>
+La méthode des traces permet de visualiser et d'esquisser une surface d'équation <m>z=f(x,y)</m>. En effet, on conçoit la surface comme un amoncellement de courbes (les traces). Ceci a été fait en considérant les coupes de la surface par des plans d'équation <m>x=x_0</m> ou <m>y=y_0</m>.
+</p>
+
+<p>
+  On voit maintenant une autre méthode, apparentée à ce qui est souvent fait en cartographie, où l'on considère les lignes de niveau constant du terrain, ou en météorologie, où l'on considère les courbes isothermes. Ceci correspond à faire les coupes selon des plans horizontaux d'équation <m>z=z_0</m> et à faire la projection sur le plan <m>z=0</m>.
+</p>
+
+
+<p>
+  <figure xml:id="fig-sage3d-Traces-horizontales" >
+  <caption>Une surface <m>z=f(x,y)</m> ainsi que quelques courbes de niveau et quelques traces horizontales</caption>
+  <image xml:id="sageplot-Traces-horizontales" width = "60%">
+  <description>Une surface et des traces horizontales</description>
+  <sageplot variant="3d" aspect="1.0">
+    var('x y z')
+    g(x,y,z) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+    f = z==g
+    S = plot3d(g(x,y), (x,-2,2),(y,-2,2), mesh=0, color = "orange", opacity = 0.5, frame = False, projection = "orthographic")
+    levels=srange(2,7,0.5)
+    Contours = Graphics()
+    for zlevel in levels:
+            S+=implicit_plot3d(g(x,y,z)-zlevel, (x,-2,2),(y,-2,2),(z,zlevel - 0.02,zlevel + 0.02), color = "brown")
+    for zlevel in levels:
+            Contours+=implicit_plot3d(f(x,y,zlevel), (x,-2,2),(y,-2,2),(z,-     0.03,+0.03),thickness=3, color = "blue")
+    S +=Contours
+    S += arrow3d((0,0,0),(2,0,0), color = "black")
+    S += text3d("x", (2.2,0,0), color = "black")
+    S += arrow3d((0,0,0),(0,3,0), color = "black")
+    S += text3d("y", (0,3.2,0), color = "black")
+    S += arrow3d((0,0,0),(0,0,7), color = "black")
+    S += text3d("z", (0,0,7.2), color = "black")
+    S += plot3d(0, (x,-2,2),(y,-2,2), color = "blue", opacity=0.25)
+    S
+  </sageplot>
+  </image>
+  </figure>
+</p>
+
+
+<p>
+<definition xml:id="def-C-niveau">
+  <statement>
+    <p>Soit <m>f</m> une fonction de deux variables définie sur une région <m>\plan{D}</m>. Pour un réel <m>k</m> donné, la <terms><em>courbe de niveau <m>k</m> de <m>f</m></em></terms> est l'ensemble
+    <me>
+      f^{-1}(k) = \{(x,y)\in \plan{D}|\,f(x,y) = k\}
+    </me>.
+    </p>
+  </statement>
+</definition>
+
+</p>
+
+
+<p>
+On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>.
+</p>
+<p>
+La figure ci-après montre le diagramme des courbes de niveau de la fonction considérée à la <xref ref="fig-sage3d-Traces-horizontales"/>.
+</p>
+
+<figure xml:id="Courbes-niveau">
+    <caption>Un diagramme de courbes de niveau</caption>
+    <image xml:id="C-niveau" width="60%">
+        <sageplot>
+          var('x,y')
+          g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+          C = contour_plot(g(x,y), (x,-2,2),(y,-2,2),
+            cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+            axes = True, fill = True,
+            labels = True, label_colors = "black",
+            label_inline = True, label_fontsize = 8,
+            gridlines = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, tick_formatter = "latex")
+          C
+        </sageplot>
+    </image>
+</figure>
+
+<example>
+    <p>
+        Étudier les courbes de niveau des fonctions <m>f_1(x,y) = x^2 + y^2</m> et <m>f_2(x,y) = \sqrt{x^2 + y^2}</m>.
+      </p>
+
+  <ul>
+    <li>
+      <p>
+        Pour <m>f_1</m>, on doit étudier les courbes d'équation <m>x^2 + y^2 = k</m>. On voit tout de suite que l'ensemble solution de cette équation est vide pour <m>k\lt 0</m>, réduit à l'origine si <m>k=0</m> et représente le cercle de rayon <m>\sqrt{k}</m> centré à l'origine si <m>k\gt 0 </m>. Par ailleurs, les traces dans la direction des <m>x</m>  ou des <m>y</m> sont des paraboles des formes <m>z=x^2 + y_0^2</m> ou <m>z= x_0^2 + y^2</m>. La surface d'équation <m>z=f_1(x,y)</m> est un paraboloïde.
+      </p>
+    </li>
+    <li>
+      <p>
+        Pour <m>f_2</m>, on étudie les courbes d'équation <m>\sqrt{ x^2 + y^2}= k</m>. À nouveau, aucune solution pour <m>k\lt 0</m>, l'origine lorsque <m>k=0</m> et un cercle centré à l'origine pour <m>k\gt 0 </m>, mais de rayon <m>k</m> cette fois. Les traces dans la direction des <m>x</m> et des <m>y</m> sont données par <m>z= \sqrt{x^2} = |x|</m> et <m>z=|y|</m>. La surface obtenue cette fois est la moitié supérieure d'un cône.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+  <sidebyside widths="45% 45%">
+  <figure xml:id="fig-Cone-Niveau">
+    <caption>Le graphe et les courbes de niveau de <m>z=\sqrt{x^2 + y^2}</m> </caption>
+    <image xml:id="sageplot3d-Cone-Niveau" width="40%">
+      <description>Graphe et courbes de niveau</description>
+      <sageplot variant="3d" aspect="1.0">
+        r,t = var('r t')
+        def col2(r,t):
+          return r^2
+        S = parametric_plot3d([r*cos(t), r*sin(t), r^2],(r,0,1), (t,0,2*pi),  color=(col2,colormaps.Spectral), plot_points = 80, frame = False)
+        S += parametric_plot3d([r*cos(t), r*sin(t), 0],(r,0,1), (t,0,2*pi),     color=(col2,colormaps.Spectral), plot_points = 80)
+        S
+      </sageplot>
+    </image>
+  </figure>
+  <figure xml:id="fig-Parab-Niveau">
+    <caption>Le graphe et les courbes de niveau de <m>z=x^2 + y^2</m></caption>
+    <image xml:id="sageplot3d-Parab_Niveau" width="40%">
+      <description>Un graphe et ses courbes de niveau.</description>
+      <sageplot variant="3d" aspect="1.0">
+        r,t = var('r t')
+        def col2(r,t):
+          return r
+        S = parametric_plot3d([r*cos(t), r*sin(t), r],(r,0,1), (t,0,2*pi),  color=(col2,colormaps.Spectral), plot_points = 80, frame = False)
+        S += parametric_plot3d([r*cos(t), r*sin(t), 0],(r,0,1), (t,0,2*pi),     color=(col2,colormaps.Spectral), plot_points = 80)
+        S
+      </sageplot>
+    </image>
+  </figure>
+
+  </sidebyside>
+
+  </p>
+
+
+</example>
+
+<!-- 
+<exercise xml:id = "courbes_niveau_match_1" component = "webwork">
+  <webwork source = "BPL/CCDMD/Calcul_avance-01fonctions_plusieurs_variables/courbes_niveau_match_1.pg"/>
+</exercise> -->
+
+
+
+</subsection>
+
+
+<subsection xml:id="pars-trois-variables">
+  <title>Fonctions de trois variables</title>
+
+  <p>
+  Les notions vues pour les fonctions de 2 variables s'appliquent <em>mutatis mutandis</em> aux fonctions de 3 variables.
+  </p>
+
+  <p>
+    La représentation d'une fonction de 3 variables par son graphe n'est pas pratique. En effet, si <m>f(x,y,z)</m> est donnée, son graphe défini par <m>w = f(x,y,z)</m> est un sous-ensemble de <m>\R^4</m>.
+  </p>
+  <p>
+    Cependant, la notion d'ensemble de niveau a une interprétation très concrète. Pour les fonctions à deux variables, les ensembles de niveau sont les solutions d'équation de la forme <m>f(x,y)=k</m>, ce sont donc des courbes. Notons qu'il n'est pas toujours possible d'isoler une des variables en fonction de l'autre, c'est-à-dire de donner une équation de la forme <m>y = \phi(x)</m> pour une telle courbe. Pour une fonction à trois variables, on s'intéresse aux solutions d'équation de la forme <m>f(x,y,z)= k</m>.
+  </p>
+
+<definition xml:id="def-S-niveau">
+  <statement>
+    <p>Soit <m>f</m> une fonction de trois variables définie sur une région <m>\plan{D}\subseteq \R^3</m>. Pour un réel <m>k</m> donné, l'<terms><em>ensemble de niveau <m>k</m> de <m>f</m></em></terms> est l'ensemble
+    <me>
+      f^{-1}(k) = \{(x,y,z)\in \plan{D}|\,f(x,y,z) = k\}
+    </me>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  L'ensemble de niveau <m>k</m> est donc une surface de l'espace <m>\R^3</m>.
+</p>
+
+<p>
+  
+Remarquons que si une surface <m>\plan{S}</m> est donnée explicitement par une équation de la forme <m>z= f(x,y)</m>, alors on peut poser <m>F(x,y,z) = z- f(x,y)</m>, et la même surface <m>\plan{S}</m> peut être considérée comme la surface de niveau <m>0</m> pour la fonction <m>F</m>. Les ensembles de niveau de la fonction <m>f</m> sont, quant à eux, des courbes d'équation <m>f(x,y) =k</m>.
+
+</p>
+
+<example>
+  <statement>
+    <p>
+      Déterminer les surfaces de niveau de la fonction <m>f(x,y,z) = x^2+ y^2 -z^2</m>.
+    </p>
+
+    <p> On s'intéresse aux solutions de
+      <md>
+      <mrow xml:id="Surf-niv" tag = "star">
+      \amp       x^2 + y^2 -z^2 = k </mrow>
+      </md>
+    pour différentes valeurs de <m>k</m>.
+    <ul>
+      <li>
+        <p>
+          Si <m>k=0</m>, alors l'équation <xref ref="Surf-niv"/> devient <m>x^2+ y^2 = z^2</m>. La surface correspondante est le cône circulaire dont l'axe est l'axe <m>Oz</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Supposons <m>k\lt 0</m>, disons <m>k=-c^2</m> pour un certain <m>c \gt 0</m>. L'équation <xref ref="Surf-niv"/> devient <m>x^2 - y^2 -z^2 = -c^2</m>. Les sections de la surface correspondante par les plans <m>x=0</m> ou <m>y=0</m> sont les hyperboles <m>z^2 - z^2 = -c^2</m> et <m>y^2 - z^2 = -c^2</m> des plans <m>x=0</m> ou <m>y=0</m>. Ces hyperboles coupent l'axe <m>Oz</m>. Les sections par le plan <m>z= z_0</m> sont vides lorsque <m>z_0^2 \lt c^2</m> et sont des cercles de rayon <m>\sqrt{z_0^2 - c^2 }</m> sinon. Les surfaces de niveau sont donc des hyperboloïdes à deux nappes.
+        </p>
+      </li>
+      <li>
+        <p>
+          Supposons maintenant <m>k\gt 0 </m>, disons <m>k=c^2</m> pour un certain <m>c\gt 0</m>. L'équation <xref ref="Surf-niv"/> devient <m>x^2+ y^2 -z^2 = c^2</m>. Les sections par les plans <m>x=0</m> ou <m>y=0</m> sont encore des hyperboles dans les plans <m>Oxz</m> et <m>Oyz</m>, mais, cette fois, leurs équations sont <m>x^2- z^2 = c^2</m> ou <m>y^2 - z^2 = c^2</m> respectivement. Elles ne coupent pas l'axe <m>Oz</m>, mais les axes <m>Ox</m> ou <m>Oy</m>. Les sections par le plan <m>z=z_0</m> sont des cercles, et ce, peu importe la valeur de <m>z_0</m>. Dans ce cas, les surfaces de niveau sont des hyperboloïdes à une nappe.
+        </p>
+      </li>
+    </ul>
+
+    </p>
+
+    <figure xml:id="fig-Surf-Niveau">
+        <caption>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
+        <image xml:id="sageplot3d-Surf-niveau" width="80%">
+          <description>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m></description>
+          <sageplot variant="3d" aspect="1.5">
+            var('s,t')
+            Fig  = parametric_plot3d([s*cos(t), s*sin(t), sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85, frame = True)
+            Fig += parametric_plot3d([s*cos(t), s*sin(t), -sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85)
+            Fig += parametric_plot3d([s*cos(t), s*sin(t), s], (s,0,3.6), (t,pi/6, 11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
+            Fig += parametric_plot3d([s*cos(t), s*sin(t), -s],(s,0,3.6),(t,pi/6,11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
+            Fig +=  parametric_plot3d([2*cos(t)*cosh(s), 2*sin(t)*cosh(s), 2*sinh(s)],(s,-1.3,1.3), (t,pi/4,7*pi/4), mesh = True, color = "lightblue", opacity = 0.45)
+            Fig
+          </sageplot>
+        </image>
+      </figure>
+
+
+<!--
+<figure xml:id="Surf-niveau">
+    <caption>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
+    <interactive xml:id="S-niveau" platform="sage" width="100%" aspect="1:1">
+    <slate surface="sage">
+          var('s,t')
+          @interact
+          def figure():
+            H1 = parametric_plot3d([s*cos(t), s*sin(t), sqrt(s^2 +4)],(s,0,3),(t,0,2*pi), mesh = True, color ="orange", opacity = 0.85)
+            H2 = parametric_plot3d([s*cos(t), s*sin(t), -sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85)
+            C1 = parametric_plot3d([s*cos(t), s*sin(t), s],(s,0,3.6),(t,pi/6, 11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
+            C2 = parametric_plot3d([s*cos(t), s*sin(t), -s],(s,0,3.6),(t,pi/6,11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
+            H3 = parametric_plot3d([2*cos(t)*cosh(s), 2*sin(t)*cosh(s), 2*sinh(s)],(s,-1.3,1.3), (t,pi/4,7*pi/4), mesh = True, color = "lightblue", opacity = 0.45)
+            show(H1+H2 +C1+C2+H3, frame = False)
+      </slate>
+    </interactive>
+</figure>
+-->
+</statement>
+  </example>
+<p>
+  <aside>Il faut plein de figures. Voir par exemple p.122 de Stewart. Aussi les hyperboles dont on parle dans l'exemple.</aside>
+</p>
+
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Fonctions.ptx"/>
+  </section>

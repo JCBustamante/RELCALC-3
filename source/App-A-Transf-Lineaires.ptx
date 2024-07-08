@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="Mat-Tranf-Lin" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrices et transformations linéaires</title>
+  <definition xml:id="def-Transf-Lin">
+      <statement>
+          <p>Une transformation linéaire de <m>\R^n</m> dans <m>\R^m</m> est une application <m>T : \R^n \to \R^m</m> telle que <m>T(a\vu + b\vv ) = a T(\vu) + bT(\vv)</m> pour tout <m>a,b\in \R</m> et tout <m>\vu, \vv \in \R^n</m>.
+          </p>
+      </statement>
+  </definition>
+  <p>
+      En somme, dire qu'une application <m>T</m> est linéaire revient à dire qu'elle se comporte bien par rapport aux combinaisons linéaires. En particulier, nous devons avoir que <m>T(\vZero) = \vZero</m>.
+  </p>
+
+  <p>
+      Voyons quelques exemples.
+  </p>
+
+
+  <example>
+    <statement>
+        <ol>
+
+        <li>
+          <p>
+            Une transformation linéaire de <m>\R</m> dans <m>\R</m> est tout simplement une fonction de la forme <m>f : x \mapsto ax</m>, pour un certain <m>a\in \R</m>.
+          </p>
+        </li>
+       <li>
+          <p>
+            Soit <m>\vu \in \R^2</m> un vecteur fixé. Alors, la transformation <m>T: \R \to \R^2</m> donnée par <m>t\mapsto t\vu </m> est une transformation linéaire.
+          </p>
+        </li>
+         <li>
+          <p>
+            Soit <m>\vu \in \R^2</m> un vecteur fixé. Alors, la transformation <m>T: \R^2 \to \R</m> donnée par <m>\vx \mapsto \vu \cdot \vx = \vu^{T}\vx</m> est une transformation linéaire.
+          </p>
+        </li>
+        <li>
+          <p>
+            Si <m>A</m> est une matrice à <m>m</m> rangées et à <m>n</m> colonnes, alors la multiplication par <m>A</m> fournit une transformation linéaire <m>T_A : \R^n \to \R^m</m> donnée par <m>\vx \mapsto A\vx</m>. Le fait qu'il s'agisse d'une transformation linéaire résulte des propriétés de la multiplication matricielle.
+          </p>
+        </li>
+
+
+
+        </ol>
+
+    </statement>
+  </example>
+
+<p>
+  Dans tous les exemples ci-haut, nous avons que la transformation linéaire considérée est donnée par la multiplication par une matrice. En effet, même dans le premier cas, celui des transformations <m>\R \to \R</m>, on peut considérer le nombre <m>a</m> comme une matrice à une rangée et à une colonne.
+</p>
+<p>
+  Ceci n'est pas une coïncidence.
+</p>
+<theorem xml:id="thm-Transf-Lin-Matrices">
+    <statement>
+        <p>Soit <m>T : \R^n \to \R^m</m> une transformation linéaire. Alors, il existe une unique <m>m\times n</m> matrice <m>M_T</m> telle que <m>T(\vx) = M_T \vx</m>.
+        </p>
+    </statement>
+</theorem>
+<p>
+  Nous ne donnerons pas la preuve ici, cela relève plutôt d'un cours d'algèbre linéaire. Contentons-nous de dire que les colonnes de la matrice <m>M_T</m> sont précisément les images des vecteurs de la base canonique <m>\ve_1,\ldots, \ve_n</m>. Il faut noter qu'il s'agit de vecteurs dans <m>\R^m</m>. Plus précisément,
+  <me>
+      M_T = \left[ \begin{matrix} T(\ve_1) \amp T(\ve_2) \amp \cdots \amp T(\ve_n)\end{matrix}\right].
+  </me>
+
+</p>
+
+
+  <p>
+    Voyons un exemple.
+  </p>
+
+  <example>
+    <p>
+      Soit <m>\theta \in [0,2\pi]</m> fixe et <m>T_\theta : \R^2 \to \R^2</m> la rotation d'angle <m>\theta</m> autour de l'origine. Voyons que <m>T_\theta</m> est linéaire et trouvons la matrice correspondante.
+    </p>
+
+    <p>
+      Soit <m>\vu</m> et <m>\vb</m> deux vecteurs de <m>\R^2</m> qu'on suppose non colinéaires pour commencer. Alors, <m>\vu + \vv</m> est la diagonale (passant par l'origine) du parallélogramme déterminé par <m>\vu</m> et <m>\vv</m>. Si l'on applique <m>T_\j</m> au parallélogramme,  on obtient un deuxième parallélogramme dont l'origine est un des sommets. Ses côtés sont <m>T_\j(\vu)</m> et <m>T_\j(\vv)</m>, et la diagonale passant par l'origine est <m>T_\j(\vu) + T_\j(\vv)</m>. Cette diagonale est l'image par <m>T_\j</m> de la diagonale <m>\vu + \vv </m> du parallélogramme original, c'est-à-dire <m>T_{\j}(\vu + \vv ) = T_{\j}(\vu) + T_{\j}(\vv)</m>.
+
+      Si les vecteurs <m>\vu</m> et <m>\vv</m> sont colinéaires, ils sont multiples l'un de l'autre. Voyons comment <m>T_\j</m> se comporte dans ce cas.
+    </p>
+    <p>
+      Pour <m>a\in \R</m> et <m>\vu \in \R^2</m>, le vecteur <m>T_\j(a\vu)</m> s'obtient en faisant d'abord la multiplication de <m>\vu</m> par <m>a</m>, puis la rotation. Ceci revient à faire la rotation d'abord, puis à effectuer la multiplication par le scalaire <m>a</m>. En d'autres termes, <m>T_\j(a\vu) = a T_\j(\vu)</m>.
+    </p>
+    <p>Voyons maintenant la matrice associée à <m>T_\j</m>. L'image par <m>T_\j</m> du vecteur <m>\ve_1 =\dvect{1}{0}</m> est le vecteur <m>\dvect{\cos \j}{\sin \j}</m>. De même, l'image de <m>\ve_2 = \dvect{0}{1}</m> est <m>\dvect{-\sin \j}{\cos \j}</m>. Ainsi, la matrice associée à <m>T_\j</m> est
+    <me>
+      M_\j = \left[\begin{matrix}\cos \j \amp -\sin \j\\ \sin\j \amp \cos \j \end{matrix}\right].
+    </me>
+    </p>
+
+
+
+  </example>
+
+  <p>
+    Il est immédiat de démontrer que, si <m>S:\R^n \to \R^m</m> et <m>T:\R^m \to \R^p</m> sont des transformations linéaires, alors il en va de même pour la composition <m>T\circ S: \R^n \to \R^p</m> définie par <m>\vx \mapsto T(S(\vx))</m>. Qui plus est, la matrice de <m>T \circ S</m> s'obtient en multipliant les matrices de <m>T</m> et de <m>S</m>. Plus précisément,
+    <me>
+      M_{T\circ S} = \underbrace{M_T M_S}_{\text{produit matriciel}}.
+    </me>
+  </p>
+
+  <p>On apprend, dans les cours de calcul différentiel à une variable, que <em>l'approximation linéaire </em> d'une fonction <m>f</m> en un point <m>x_0</m> est la fonction <m>L(x) = f(x_0) + f'(x_0)(x-x_0)</m>. Le graphe de la fonction <m>L</m> est la tangente à la courbe <m>y=f(x)</m> au point <m>(x_0,f(x_0))</m>. L'appellation <em>approximation linéaire</em> comporte un léger abus de notation. En effet, la fonction <m>L</m> n'est généralement pas une fonction linéaire, puisque <m>L(0) = f(x_0) - f'(x_0)x_0</m>, qui n'est généralement pas <m>0</m>. À proprement parler, il s'agit d'une fonction <em>affine</em>.
+    </p>
+    <p>
+    Si les transformations linéaires sont données par la multiplication par une matrice, les transformations affines comportent en plus un terme additif. Une transformation affine <m>T : \R^m \to \R^n</m> est une transformation donnée par <m>T(\vx) = A\vx + \vb</m>, où <m>A</m> est une matrice (la partie linéaire de <m>T</m>) et où <m>\vb</m> est un vecteur de <m>\R^n</m>. Il s'agit en fait de <m>T(\vZero)</m>.
+    </p>
+
+
+
+</section>

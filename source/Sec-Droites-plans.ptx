@@ -1,0 +1,404 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-1-5-Droites-plans">
+  <title>Droites et plans</title>
+<subsection xml:id="subsec-droites2d">
+  <title>Droites dans le plan</title>
+  <p>
+  Une droite <m>\plan{D}</m> dans le plan peut être spécifiée en donnant un point <m>P_0=(x_0,y_0)</m> par lequel elle passe, et sa direction. Cette dernière peut, à son tour, être spécifiée en donnant un vecteur <m>\vn</m> qui est orthogonal à <m>\plan{D}</m>. On dira que <m>\vn</m> est un vecteur normal pour <m>\plan{D}</m>. On peut aussi spécifier un vecteur directeur <m>\vd</m> pour <m>\plan{D}</m>.
+  </p>
+  <figure>
+    <sidebyside widths="40% 40%" valign="middle">
+      <image source="images/CLP-figs/twodLineNormal"/>
+      <image source="images/CLP-figs/twodLine"/>
+    </sidebyside>
+  </figure>
+
+
+  <ul>
+      <li>
+        <p>
+         Un point <m>X(x,y)</m> appartient à la droite <m>\plan{D}</m> si et seulement si les vecteurs <m>\vx - \vp_0 = \overrightarrow{P_0X}</m> et <m>\vn</m> sont orthogonaux, c'est-à-dire si et seulement si
+        <me>\vn \cdot \overrightarrow{P_0X}  =0,
+        </me>
+        ce qui donne à son tour
+        <men xml:id ="eq-normale">
+          \vn \cdot (\vx - \vp_0)  = 0\,\, \text {    ou encore   } \,\, \vn \cdot \vx = \vn \cdot \vp_0.
+        </men>
+        Ces deux équations équivalentes sont <term>l'équation normale</term> de <m>\plan{D}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Si <m>\vn = a\vi + b\vj</m> et <m>P_0=(x_0, y_0)</m>, ces équations deviennent simplement
+          <men xml:id="general2d">
+            a(x-x_0) +b(y-y_0) = 0 \,\, \text{ et }\,\, ax + by = ax_0 + by_0.
+          </men>
+
+          L'<term>équation générale</term> d'une droite dans le plan est une équation de la forme
+          <men>
+            ax + by + c =0.
+          </men>
+          Il est important de noter que les coefficients de <m>x</m> et <m>y</m> dans une telle équation donnent un vecteur normal pour la droite.
+
+        </p>
+      </li>
+      <li>
+        <p>
+          Si l'on veut plutôt donner un vecteur directeur pour <m>\plan{D}</m>, il suffit de considérer <m>\vd</m> tel que <m>\vd \cdot \vn =0</m>. On peut choisir par exemple <m>\vd = -b\vi + a \vj</m>. Un point  <m>X(x,y)</m> appartient à la droite si et seulement si les vecteurs <m>\vx - \vp_0 = \overrightarrow{P_0X}</m> et <m>\vd</m> sont parallèles, c'est-à-dire si et seulement s'il existe un scalaire <m>t</m> tel que
+          <me>
+            \overrightarrow{P_0X} = t \vd
+          </me>
+          ou encore
+          <men xml:id="dte-vect">
+            \vx = \vp_0 + t\vd.
+          </men>
+          C'est ce qu'on appelle une <term>équation vectorielle</term> de la droite, ou encore un <term>paramétrage </term> de celle-ci. Il faut noter que cette équation n'est pas unique. En effet, si <m>\vp_0'</m> est le vecteur position d'un autre point sur la droite et que <m>\vd'</m> est un autre vecteur direction pour <m>\plan{D}</m>, c'est-à-dire un vecteur colinéaire à <m>\vd</m>, alors l'équation
+          <me>
+            \vx = \vp_0' + t\vd'
+          </me>
+          est également une équation paramétrique de <m>\plan{D}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          La relation de parallélisme entre <m>\overrightarrow{P_0X}</m> et <m>\vd</m> s'exprime aussi en disant que le déterminant des deux vecteurs est nul. Ceci se traduit à son tour par
+          <me>
+            \left|\begin{array}{cr} x-x_0 \amp -b \\ y-y_0 \amp a\end{array}\right|=0 \,\, \text{ ou encore }\,\,  a(x-x_0) + b(y-y_0) = 0,
+          </me>
+          qui est l'équation <xref ref = "general2d"/>.
+        </p>
+      </li>
+    </ul>
+</subsection>
+<subsection xml:id="subsec-Plans">
+  <title>Plans dans l'espace</title>
+  <p>
+    Afin de spécifier un plan <m>\plan{P}</m> dans l'espace, il n'est pas suffisant de donner un point <m>P_0(x_0,y_0,z_0)</m> et un vecteur parallèle au plan. En effet, la droite passant par ce point et dirigée par ce vecteur sera contenue dans le plan, mais le plan pourrait tourner autour de cette droite. Cette dernière ne détermine donc pas le plan. Par contre, donner un point et un vecteur orthogonal à <m>\plan{P}</m> suffit à déterminer ce dernier.
+  </p>
+  <figure>
+    <sidebyside widths="36% 45%" valign="middle">
+      <image source="images/CLP-figs/threedPlane"/>
+      <image source="images/CLP-figs/threedPlane2"/>
+    </sidebyside>
+  </figure>
+<ul>
+  <li>
+    <p>
+      Si <m>\vn</m> et <m>P_0</m> sont donnés, alors le point <m>X</m> appartient au plan <m>\plan{P}</m> passant par <m>P_0</m> de vecteur normal <m>\vn</m> si et seulement si les vecteurs  <m>\vx - \vp_0 = \overrightarrow{P_0X}</m> et <m>\vn</m> sont orthogonaux, c'est-à-dire si et seulement si
+     <m>\vn \cdot \overrightarrow{P_0X}  =0,
+     </m>
+     ce qui donne exactement l'équation <xref ref="eq-normale"/>, qu'on appellera encore <term> l'équation normale du plan</term>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Dans ce contexte, on aura <m>\vn = a\vi + b\vj +c \vk</m> et <m>P_0(x_0,y_0,z_0)</m>, de sorte qu'après développement du produit scalaire, l’équation devient
+
+    <md>
+      <mrow> \amp \amp a(x-x_0)+b(y-y_0) + c(y-y_0) = 0 </mrow>
+      <mrow> \text{ ou }\amp \amp ax + by+cz = ax_0 +by_0 + cz_0. </mrow>
+    </md>
+  </p>
+    <p>
+      L'équation générale d'un plan dans l'espace est une équation de la forme
+      <me>
+        ax + by + cz+d=0.
+      </me>
+      De nouveau, il faut noter que les coefficients de <m>x,y,z</m> fournissent un vecteur normal pour le plan <m>\plan{P}</m>.
+    </p>
+    </li>
+    <li>
+      <p>
+        Comme cela a été mentionné plus haut, la notion de vecteur directeur pour un plan dans l'espace est délicate. Cependant, si <m>P_0, U,V</m> sont trois points non alignés sur un plan <m>\plan{P}</m>, alors les vecteurs <m>\vv = \overrightarrow{P_0V}</m> et <m>\vu = \overrightarrow{P_0U}</m> sont linéairement indépendants, ils engendrent donc un plan. Ainsi, un point <m>X</m> appartient à <m>\plan{P}</m> si et seulement s'il existe des scalaires <m>s,t</m> tels que
+        <me>
+          \overrightarrow{P_0X} = s\vu + t\vv
+        </me>
+        ou encore
+          <men xml:id ="Plan-eq-param">
+            \vx = \vp_0 + s\vu + t\vv.
+          </men>
+          Cette équation sera appelée une <term>équation vectorielle</term> ou une <term>équation paramétrique</term> du plan <m>\plan{P}</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+         L'équation <xref ref =  "Plan-eq-param"/> dit que les vecteurs  <m>\overrightarrow{P_0X}, \vv</m> et <m>\vu</m> sont linéairement dépendants. Ceci, à nouveau, s'exprime par
+         <me>
+           \text{det} \left(\overrightarrow{P_0X}, \vv, \vu\right) = 0.
+         </me>
+         Lorsqu'on développe le déterminant, on obtient l'équation générale du plan.
+      </p>
+    </li>
+</ul>
+
+</subsection>
+
+<subsection xml:id="pars-dte-espace">
+  <title>Droites dans l'espace</title>
+<p>
+  Tout comme dans le plan, une droite peut être spécifiée dans l'espace au moyen d'un point par lequel elle passe, et d'un vecteur directeur. Le même raisonnement que celui menant à l'équation <xref ref="dte-vect"/> tient, l'équation vectorielle a la même forme, il faut ajouter une composante aux vecteurs.
+
+  Ici encore, la relation de parallélisme entre <m>\vx - \vp_0</m> et <m>\vd</m> pourrait s’exprimer en disant que le produit vectoriel est nul.  Cependant, si <m>\vd = \a \vi + \b \vj + \g \vk</m>, alors l'équation vectorielle <xref ref="dte-vect"/> se traduit par trois équations scalaires :
+
+  <md>
+<mrow>
+x-x_0 = t \a, \qquad
+y-y_0 = t \b, \qquad
+z-z_0 = t \g.
+</mrow>
+</md>
+Si l'on suppose de plus que les composantes <m>\a, \b</m> et <m>\g</m> de <m>\vd</m> sont non nulles, on <terms> élimine le paramètre</terms> <m>t</m>, c'est-à-dire qu'on isole <m>t</m> en fonction des autres quantités, pour obtenir
+<md>
+  <mrow>
+  \frac{x-x_0}{\a}=\frac{y-y_0}{\b}=\frac{z-z_0}{\g},
+  </mrow>
+  </md>
+  ce qu'il est commun d'appeler les <terms>équations symétriques</terms> de la droite. Voici quelques exemples.
+</p>
+
+<example xml:id="eg_line_equations">
+  <p>
+  L'ensemble des points <m>(x,y,z)</m> vérifiant <m>x+y+z=2</m> forme un plan, et l'équation  <m>x-y=0</m> définit un second plan.  Les points <m>(x,y,z)</m> qui vérifient les deux équations appartiennent donc à l'intersection des deux plans. Les vecteurs normaux, à savoir <m>\vd_1 = \vi + \vj +\vk</m> et <m>\vd_2 = \vi-\vj</m>, sont non colinéaires, de sorte que les plans ne sont pas parallèles. Leur intersection est donc une droite. Nous allons trouver les équations de cette droite.
+  </p>
+
+  <p>Afin d'esquisser <m>x+y+z=2</m>, nous observons que si deux parmi <m>x,y,z</m> sont nuls, alors le troisième doit valoir <m>2</m>. Ainsi,  <m>(0,0,2)</m>,
+  <m>(0,2,0)</m> et <m>(2,0,0)</m> appartiennent au plan  <m>x+y+z=2</m>. Le plan  <m>x-y=0</m> contient tout l'axe  <m>Oz</m>, puisque  <m>(0,0,z)</m> vérifie <m>x-y=0</m> pour tout <m>z</m>.
+  Voici quelques esquisses montrant partiellement les deux plans.
+</p>
+
+<sidebyside widths="50% 40%" valign="middle">
+<image source="images/CLP-figs/planeIntA"/>
+<image source="images/CLP-figs/planeIntB"/>
+</sidebyside>
+
+<p>
+  Et voici l'intersection.
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/planeInt"/>
+</sidebyside>
+
+<p>
+  <em>Méthode 1.</em> Chaque point sur la ligne a une valeur distincte de
+  <m>z</m>. Nous allons utiliser  <m>z</m> comme paramètre (nous pourrions en faire autant avec <m>x</m> ou <m>y</m>, rien ne nous oblige à utiliser le nom <m>t</m> pour le paramètre, mais c'est ce que nous ferons). Posons donc <m>t=z</m>. Si <m>(x,y,z)</m> se trouve sur la droite, alors  <m>z=t</m>, et
+  <md>
+  <mrow>
+  x+y+t&amp;=2,
+  </mrow><mrow>
+  x-y\phantom{\ \,+t}&amp;=0.
+  </mrow>
+  </md>
+  La seconde équation force <m>y=x</m>. En remplaçant dans la première, on obtient
+  <md>
+  <mrow>
+  2x+t=2 \implies x=y=1-\tfrac{t}{2},
+  </mrow>
+  </md>
+  de sorte que l'équation est
+  <md>
+  <mrow>
+  x=1-\frac{t}{2},\
+  y=1-\frac{t}{2},\
+  z=t\qquad\text{ ou  }\qquad      \tvect{x}{y}{z}= \tvect{1}{1}{0} + t \tvect{-1/2}{-1/2}{1}.
+  </mrow>
+  </md>
+  </p>
+
+
+  <p>
+    <em>Méthode 2.</em> Nous commençons par trouver un point sur la droite, disons le point vérifiant  <m>z=0</m> (n'importe quelle valeur fonctionnerait, mais <m>0</m> rend les calculs faciles). Si  <m>(x,y,z)</m> se trouve sur la droite et que <m>z=0</m>, alors
+  <md>
+  <mrow>
+  x+y&amp;=2,
+  </mrow><mrow>
+  x-y&amp;=0.
+  </mrow>
+  </md>
+  La seconde équation donne <m>y=x</m>. Après substitution dans la première équation, on obtient
+  <md>
+  <mrow>
+  2x=2 \implies x=y=1.
+  </mrow>
+  </md>
+  Ceci donne que  <m>(1,1,0)</m> se trouve sur <m>\plan{L}</m>. Trouvons maintenant un vecteur directeur, <m>\vd</m>.
+  <ul>
+  <li>Soit <m>\vd</m> un vecteur direction pour <m>\plan{L}</m>. Étant donné que <m>\plan{L}</m> est contenu dans le plan <m>x+y+z=2</m>, le vecteur <m>\vd </m> doit être orthogonal au vecteur normal du plan :
+  <m>x+y+z=2</m>, c'est-à-dire  <m>\vi + \vj + \vk </m>.
+  </li>
+  <li>
+   De la même façon, <m>\plan{L}</m> est contenu dans le plan <m>x-y=0</m>, un vecteur directeur doit être orthogonal au vecteur normal du plan, c'est-à-dire <m>\vi - \vj </m>.
+  </li>
+  </ul>
+  Ainsi, on doit choisir un vecteur directeur <m>\vd</m> qui est orthogonal à la fois à <m>\vi + \vj + \vk </m> et à <m>\vi - \vj</m>. Le produit vectoriel fournit un tel vecteur :
+  <md>
+  <mrow>
+  \vd&amp;=\tvect{1}{-1}{0} \times\tvect{1}{1}{1}
+  </mrow>
+  <mrow>
+    &amp; =\det\left[ \begin{array}{rrr}\vi &amp;1&amp;1\\ \vj&amp; -1&amp; 1 \\ \vk &amp; 0 &amp; 1 \end{array} \right] = -\vi + -\vj +2 \vk
+  </mrow>
+  </md>
+  Nous avons un point sur la droite, ainsi qu'un vecteur directeur, nous pouvons donc donner une équation paramétrique pour <m>\plan{L}</m>.
+  <md>
+  <mrow>
+  \left( x-1,y-1,z\right) =t\left( -1,-1,2\right) \qquad\text{ ou }\qquad
+  x=1-t,\ y=1-t,\ z=2t.
+  </mrow>
+  </md>
+  Ceci peut avoir l'air différent de notre solution précédente; nous verrons qu'il s'agit de deux équations vectorielles de la même droite. Avant, explorons une troisième méthode.
+  </p>
+
+  <p>
+    <em>Méthode 3.</em> Nous commençons par trouver deux points sur <m>\plan{L}</m>.  Nous savons déjà que <m>(1,1,0)</m> se trouve sur notre droite. Nous pouvons penser, à partir de la figure ci-haut, que <m>(0,0,2)</m> fait partie de <m>\plan{L}</m> aussi. C'est en effet le cas, puisque  <m>(0,0,2)</m> vérifie les deux équations, <m>x+y+z=2</m> et <m>x-y=0</m>. Notons que nous aurions pu aussi trouver  <m>(0,0,2)</m> en imposant   <m>x=0</m>  et en résolvant <m>y+z=x+y+z=2</m>, <m>-y=x-y=0</m> pour  <m>z</m> et <m>y</m>. Nous avons donc un vecteur directeur pour la droite : le vecteur déplacement allant de  <m>(0,0,2)</m> à <m>(1,1,0)</m>, c'est-à-dire  <m>\left( 1-0,1-0,0-2\right) =\left( 1,1,-2\right) </m>. Puisque  <m>(0,0,2)\in \plan{L}</m> et que <m>\tvect{1}{1}{-1} </m> est un vecteur directeur, nous obtenons l'équation
+  <md>
+  <mrow>
+  \left( x-0,y-0,z-2\right) =t\left( 1,1,-2\right) \qquad\text{ou}\qquad
+  x=t,\ y=t,\ z=2-2t.
+  </mrow>
+  </md>
+  Ceci est semblable, sans être identique à nos solutions précédentes. Voyons comment tout ceci se tient.
+  </p>
+
+  <p>
+    <em>Comparons.</em>
+  Les équations paramétriques obtenues par les trois méthodes sont différentes. Ceci a lieu simplement parce que nous avons utilisé des paramètres différents dans ces trois méthodes, même si nous l'avons toujours nommé <m>t</m>. Pour clarifier la relation entre les trois réponses, dénotons par <m>t_1</m> le paramètre pour la première méthode, <m>t_2</m> celui pour la deuxième, et <m>t_3</m> celui pour la dernière. Les équations paramétriques deviennent donc :
+
+  <md alignment="alignat">
+  <mrow>
+  &amp;\text{Méthode 1 :}\qquad &amp;
+     x&amp;=1-\frac{t_1}{2},\qquad &amp;
+     y&amp;=1-\frac{t_1}{2},\qquad &amp;
+     z&amp;=t_1;
+  </mrow><mrow>
+  &amp;\text{Méthode 2 :}\qquad &amp;
+     x&amp;=1-t_2,\qquad &amp;
+     y&amp;=1-t_2,\qquad &amp;
+     z&amp;=2t_2;
+  </mrow><mrow>
+  &amp;\text{Méthode 3 :}\qquad &amp;
+     x&amp;=t_3\qquad &amp;
+     y&amp;=t_3\qquad &amp;
+     z&amp;=2-2t_3.
+  </mrow>
+  </md>
+  La substitution <m>t_1=2t_2</m> dans la solution de la méthode 1 donne les équations de la méthode 2, et la substitution  <m>t_3=1-t_2</m> dans l'équation de la méthode 3 donne l'équation de la méthode 2. Les trois donnent la même droite, mais paramétrée de façon différente.
+  </p>
+
+  </example>
+
+<warning xml:id="warn_line_normal">
+  <title>Une droite dans <m>\R^3</m> admet une infinité de vecteurs normaux linéairement indépendants </title>
+<p>Par exemple, la droite
+  <me>
+  \vx = \tvect{1}{1}{0} + t\tvect{1}{2}{-2}
+  </me>
+  a comme vecteur directeur <m>\vd = \vi+2\vj-2\vk</m>. N'importe quel vecteur orthogonal à <m>\vd </m> est orthogonal à la droite. Un vecteur <m>\vn =n_1\vi +  n_2\vj + n_3\vk </m> est orthogonal à <m>\vd</m> si et seulement si
+  <me>
+  0=\vd \cdot \vn  = n_1+2n_2-2n_3.
+  </me>
+  L'ensemble des vecteurs <m>\vn</m> vérifiant cette condition est un plan contenant, entre autres, les vecteurs  <m>\tvect{2}{-1}{0}</m>, <m>\tvect{0}{1}{1}</m> et  <m>\tvect{2}{0}{1}</m>.
+</p>
+</warning>
+
+<p>Les deux exemples qui suivent montrent comment calculer la distance d'un point à une droite.</p>
+<example xml:id="eg_VPdistance-point-line">
+  <p>
+  Dans cet exemple, on calcule la distance du point <m>(2,3,-1)</m> à la droite <m>\plan{D}</m>.
+<me>
+  \vx = \tvect{1}{2}{3} + t \tvect{1}{1}{2}
+</me>
+Le vecteur de <m>(2,3,-1)</m> à <m>(1+t\,,\,2+t\,,\,3+2t)</m> sur la droite <m>\plan{D}</m> est
+  <m>  \tvect{t-1}{t-1}{2t+4}</m>.
+  Le carré de la distance entre  <m>(2,3,-1)</m> et le point de coordonnées
+  <m>(1+t\,,\,2+t\,,\,3+2t)</m>  appartenant à  <m>\plan{D}</m> est
+  <me>
+  d(t)^2 = (t-1)^2 +(t-1)^2 +(2t+4)^2.
+  </me>
+  Le point sur  <m>\plan{D}</m> qui est le plus près de  <m>(2,3,-1)</m> est celui pour lequel la valeur de  <m>t</m> vérifie
+  <md>
+  <mrow>
+  0=  [d(t)^2]' = 2(t-1) +2(t-1) + 2(2)(2t+4).
+  \tag{\(*\)}</mrow>
+  </md>
+  </p>
+
+  <p>Avant de résoudre cette équation pour trouver  <m>t</m>, remarquons que l'équation (divisée par <m>2</m>) donne
+  <me>
+  \tvect{1}{1}{2}\cdot \tvect{t-1}{t-1}{2t+4} = 0,
+  </me>
+  c'est-à-dire que <em>le vecteur de  <m>(2,3,-1)</m> au point de  <m>\plan{D}</m> le plus proche de  <m>(2,3,-1)</m> est orthogonal au vecteur directeur de <m>\plan{D}</m></em>.
+  </p>
+
+  <p>Reprenons le calcul. L'équation <m>(*)</m> conduit à <m>12t+12=0</m>, de sorte que la valeur qui minimise <m>d(t)^2</m> est <m>t=-1</m>, et la distance est alors
+  <md>
+  <mrow>
+  d(-1) =\sqrt{(-1-1)^2+(-1-1)^2+(-2+4)^2}
+  =\sqrt{12}.
+  </mrow>
+  </md>
+  </p>
+
+</example>
+
+
+<example xml:id="eg_VPdistance-point-line-bis">
+  <title> <xref ref="eg_VPdistance-point-line"/> revisité</title>
+  <p>
+  Dans cet exemple, on présente une autre méthode pour trouver la distance entre le point <m>(2,3,-1)</m> et la droite <m>\plan{D}</m>.
+  <me>
+    \vx = \tvect{1}{2}{3} + t \tvect{1}{1}{2}
+  </me>
+  Dans la figure ci-dessous,  <m>Q</m> est le point <m>(2,3,-1)</m>.
+</p>
+  <sidebyside width="45%">
+  <image source="images/CLP-figs/pointDistProjB"/>
+  </sidebyside>
+<p>
+  Si l'on mène une perpendiculaire de <m>Q</m> à <m>\plan{D}</m>, celle-ci coupe   <m>\plan{D}</m> au point <m>N</m>, qui est le point de  <m>\plan{D}</m> le plus proche de  <m>Q</m>. Ainsi, la distance de <m>Q</m> à <m>\plan{D}</m> est exactement la distance de  <m>Q</m> à <m>N</m>, c'est-à-dire la norme du vecteur <m>\overrightarrow{QN}</m>. Dans la figure ci-haut, <m>\vw = \overrightarrow{QN}</m>. Comme  <m>\vw</m> doit être orthogonal au vecteur directeur de <m>\plan{D}</m>, à savoir <m>\vw</m>, il doit être orthogonal à  <m>\vd</m>. Cependant, comme on l'a vu à la
+  <xref ref="warn_line_normal"/>, il y a une infinité de tels vecteurs pointant dans des directions différentes, tous orthogonaux à <m>\vd</m>. Ainsi, on pourrait penser qu'il est très difficile de déterminer la direction de  <m>\vw</m>.
+  </p>
+
+  <p>Heureusement, ce n'est pas le cas, voici la stratégie.
+  <ul>
+  <li>
+  Choisissons un point quelconque sur <m>\plan{D}</m>, disons  <m>P</m>.
+  </li>
+  <li>
+  Il est aisé de trouver le vecteur <m>\overrightarrow{PN}</m>,  c'est simplement la projection de <m>\overrightarrow{PQ}</m> (c'est-à-dire <m>\vw</m>) sur <m>\vd</m>.
+  </li>
+  <li>
+  Une fois que nous connaissons <m>\proj_{\vd}\,\vv</m>, nous pourrons calculer
+  <me>
+  \vw = {\proj}_{\vd}\,\vv -\vv ,
+  </me>
+  </li>
+  <li>
+  et alors la distance de <m>Q</m> à la droite <m>\plan{D}</m> sera simplement  <m>|\vw|</m>.
+  </li>
+  </ul>
+</p>
+<p>
+  Voici les calculs. On choisit la valeur <m>t=0</m> pour avoir <m>P=(1,2,3)</m>, de sorte que <m>\overrightarrow{PQ} = \vq -\vp </m> est
+  <me>
+  \vv = \tvect{2-1}{3-2}{-1-3} = \tvect{1}{1}{-4}.
+  </me>
+  La  projection de <m>\vv=\tvect{1}{1}{-4}</m> sur <m>\vd=\tvect{1}{1}{2}</m> est alors
+  <me>
+  {\proj}_{\vd}\,\vv
+  =\frac{\tvect{1}{1}{-4}\cdot\tvect{1}{1}{2}}{\tvect{1}{1}{2} \cdot \tvect{1}{1}{2} } \tvect{ 1}{1}{2} =\frac{-6}{6}\tvect{1}{1}{2}
+  =\tvect{-1}{-1}{-2},
+  </me>
+  et alors
+  <me>
+  \vw = {\proj}_{\vd}\,\vv -\vv
+      = \tvect{-1}{-1}{-2}-\tvect{1}{1}{-4}
+      = \tvect{-2}{-2}{2},
+  </me>
+  et finalement la distance entre  <m>Q</m> et la droite <m>\plan{D}</m> est
+  <m>  |\vw| =2\sqrt{3} </m>.
+  </p>
+</example>
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Droites-plans.ptx"/>
+</section>

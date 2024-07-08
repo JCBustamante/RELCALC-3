@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+    <exercise>
+      <statement><p>
+      Paramétrer la surface donnée par <m>z=e^{x+1}+xy</m> en fonction de <m>x</m> et <m>y</m>.
+      <!-- Parametrize the surface given by <m>z=e^{x+1}+xy</m> in terms of <m>x</m> and <m>y</m>. -->
+      </p></statement>
+      <hint><p>
+      Votre réponse devrait être de la forme <m>\vr(x,y)= \psi_1(x,y)\vi + \psi_2(x,y)\vj + \psi_3(x,y)\vk </m>.
+      <!-- Your answer will have the form <m>\vr(x,y)= \psi_1(x,y)\vi + \psi_2(x,y)\vj + \psi_3(x,y)\vk </m>. -->
+      </p></hint>
+      <answer><p>
+       <m>\vr(x,y)= x\vi + y\vj + (e^{x+1}+xy)\vk </m>
+      </p></answer>
+      <solution><p>
+      Cette paramétrisation est presque trivial. Nous savons quelle sera de la forme <m>\vr(x,y)= \psi_1(x,y)\vi + \psi_2(x,y)\vj + \psi_3(x,y)\vk </m> où <m>\psi_1</m> représente la composante en <m>x</m> (i.e. <m>x</m>), <m>\psi_2</m> représente la composante en <m>y</m> (i.e. <m>y</m>), et <m>\psi_3</m> représente la composante en <m>z</m> (i.e. <m>e^{x+1}+xy</m>). Donc, <m>\vr(x,y)= x\vi + y\vj + (e^{x+1}+xy)\vk </m>
+      <!-- This parametrization is almost trivial. We know it will have the form <m>\vr(x,y)= \psi_1(x,y)\vi + \psi_2(x,y)\vj + \psi_3(x,y)\vk </m> where <m>\psi_1</m> gives the <m>x</m>-component (i.e. <m>x</m>), <m>\psi_2</m> gives the <m>y</m>-component (i.e. <m>y</m>), and <m>\psi_3</m> gives the <m>z</m>-component (i.e. <m>e^{x+1}+xy</m>). So, -->
+       <!-- <m>\vr(x,y)= x\vi + y\vj + (e^{x+1}+xy)\vk </m> -->
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <!-- <title><fromexam>M317 2010D</fromexam></title> -->
+      <statement><p>
+      Soit <m>S</m> la surface donnée par
+      <me>
+      \vr(u, v) = \big( u + v, \, u^2 + v^2, \, u - v \big),\qquad
+      -2 \leqslant   u \leqslant   2,\ -2 \leqslant   v \leqslant   2
+      </me>.
+      C'est une surface familière. De quelle surface s'agit-il ? C'est peut-être juste une portion des surfaces suivantes... :
+      Sphère /
+      Hélicoïde /
+      Ellipsoïde /
+      Selle /
+      Bol parabolique /
+      Cylindre /
+      Cône /
+      Plan.
+      <!-- Let <m>S</m> be the surface given by
+      <me>
+      \vr(u, v) = \big( u + v\,,\, u^2 + v^2 \,,\, u - v\big),\qquad
+      -2 \leqslant   u \leqslant   2,\ -2 \leqslant   v \leqslant   2
+      </me>
+      This is a surface you are familiar with. What surface is it (it may be
+      just a portion of one of the following)?
+      sphere /
+      helicoid /
+      ellipsoid /
+      saddle /
+      parabolic bowl /
+      cylinder /
+      cone /
+      plane -->
+      </p></statement>
+
+      <answer><p>
+        Bol parabolique.
+        <!-- parabolic bowl -->
+      </p></answer>
+
+      <solution><p>
+        Our parametrization is
+        <md>
+        <mrow>
+        x(u,v) &amp;= u+v
+        </mrow><mrow>
+        y(u,v) &amp;= u^2+v^2
+        </mrow><mrow>
+        z(u,v) &amp;= u-v
+        </mrow>
+        </md>
+        <ul>
+        <li>
+        Adding <m>x(u,v)</m> and <m>z(u,v)</m> gives <m>x(u,v)+z(u,v) = 2u</m>.
+        </li>
+        <li>
+        Subtracting <m>z(u,v)</m> from <m>x(u,v)</m> gives <m>x(u,v)-z(u,v) = 2v</m>.
+        </li>
+        </ul>
+        So <m>u=\frac{1}{2}\big(x(u,v)+z(u,v)\big)</m> and
+                <m>v=\frac{1}{2}\big(x(u,v)-z(u,v)\big)</m>. So on our surface
+        <md>
+        <mrow>
+        y(u,v) &amp;= u^2+v^2 = \frac{1}{4}\big(x(u,v)+z(u,v)\big)^2
+                          +\frac{1}{4}\big(x(u,v)-z(u,v)\big)^2
+        </mrow><mrow>
+         &amp;= \frac{1}{2} x(u,v)^2 + \frac{1}{2} z(u,v)^2
+        </mrow>
+        </md>
+        All points of our surface lie on <m>2y= x^2+z^2</m>. This is a parabolic bowl:
+        <ul>
+        <li>
+        no points have <m>y \lt 0</m> and
+        </li>
+        <li>
+        the <m>y=Y</m> (with <m>Y \gt  0</m>) cross-section is the circle
+        <m>x^2+z^2=2Y</m>, <m>y=Y</m>
+        </li>
+        <li>
+        the <m>x=0</m> cross-section is the parabola <m>2y=z^2</m>, <m>x=0</m>
+        </li>
+        <li>
+        the <m>z=0</m> cross-section is the parabola <m>2y=x^2</m>, <m>z=0</m>
+        </li>
+        </ul>
+        </p>
+
+        <sidebyside width="34%">
+          <image source="pfigs/parabolicBowl"/>
+        </sidebyside>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <!-- <title><fromexam>M317 2009A</fromexam></title> -->
+      <statement><p>
+        Supposer que <m>S</m> est la partie de l'hyperboloïde <m>x^2 + y^2 - 2z^2 = 1</m>
+        qui est à l'intérieur du cylindre <m>x^2 + y^2 = 9</m> et au-dessus du plan <m>z=1</m>
+        (c'est-à-dire tel que <m>z \geqslant 1</m>).
+
+        <!-- Suppose <m>S</m> is the part of the hyperboloid <m>x^2 + y^2 - 2z^2 = 1</m>
+        that lies inside the cylinder <m>x^2 + y^2 = 9</m> and above the plane <m>z = 1</m>
+        (i.e. for which <m>z \geqslant   1</m>). -->
+        </p>
+
+        <p>
+          Parmi les éléments suivants, lesquels sont des paramétrages de <m>S</m>?
+          <!-- Which of the following are parameterizations of <m>S</m>? -->
+        </p>
+
+        <p><ol marker = "(a)" >
+        <li>
+        La fonction vectorielle
+        <!-- The vector function -->
+        <me>
+        \vr(u,v) = u\,\vi   + v\,\vj  +\frac{\sqrt{u^2+v^2-1}}{\sqrt{2}}\,\vk
+        </me>
+        avec domaine <m>D=\Set{(u,v)}{ 2 \leqslant   u^2+v^2 \leqslant   9}</m>.
+        <!-- with domain <m>D=\Set{(u,v)}{ 2 \leqslant   u^2+v^2 \leqslant   9}</m>. -->
+        </li>
+        <li>
+        La fonction vectorielle
+        <!-- The vector function -->
+        <me>
+        \vr(u,v) = u\sin v\,\vi   - u\cos v\,\vj  +\sqrt{\frac{u^2}{2}-\frac{1}{2}}\,\vk
+        </me>
+        avec domaine <m>D=\Set{(u,v)}{ \sqrt{3} \leqslant   u\leqslant    3,\ 0\leqslant    v\leqslant    2\pi}</m>.
+        <!-- with domain <m>D=\Set{(u,v)}{ \sqrt{3} \leqslant   u\leqslant    3,\ 0\leqslant    v\leqslant    2\pi}</m>. -->
+        </li>
+        <li>
+        La fonction vectorielle
+        <!-- The vector function -->
+        <me>
+        \vr(u,v) = \sqrt{1+2v^2}\cos u\,\vi   + \sqrt{1+2v^2} \sin u\,\vj  +v\,\vk
+        </me>
+        avec domaine <m>D=\Set{(u,v)}{ 0\leqslant    u\leqslant    2\pi,\ 1\leqslant    v\leqslant    2}</m>.
+        <!-- with domain <m>D=\Set{(u,v)}{ 0\leqslant    u\leqslant    2\pi,\ 1\leqslant    v\leqslant    2}</m>. -->
+        </li>
+        <li>
+        La fonction vectorielle
+        <!-- The vector function -->
+        <me>
+        \vr(u,v) = \sqrt{1+u}\sin v\,\vi   + \sqrt{1+u} \cos v\,\vj
+                                          +\sqrt{\frac{u}{2}}\,\vk
+        </me>
+        avec domaine <m>D=\Set{(u,v)}{ 2\leqslant    u\leqslant    8,\ 0\leqslant    v\leqslant    2\pi}</m>.
+        <!-- with domain <m>D=\Set{(u,v)}{ 2\leqslant    u\leqslant    8,\ 0\leqslant    v\leqslant    2\pi}</m>. -->
+        </li>
+        <li>
+        La fonction vectorielle
+        <!-- The vector function -->
+        <me>
+        \vr(u,v) = \sqrt{u}\cos v\,\vi   - \sqrt{u} \sin v\,\vj
+                                          +\frac{\sqrt{u+1}}{\sqrt{2}}\,\vk
+        </me>
+        avec domaine <m>D=\Set{(u,v)}{ 3\leqslant    u\leqslant    9,\ 0\leqslant    v\leqslant    2\pi}</m>.
+        <!-- with domain <m>D=\Set{(u,v)}{ 3\leqslant    u\leqslant    9,\ 0\leqslant    v\leqslant    2\pi}</m>. -->
+        </li>
+        </ol>
+      </p></statement>
+
+      <hint><p>
+        D'abord, penser au propriétés que <m>\vr(u,v)</m> doit avoir afin d'être une paramétrisation.
+        <!-- First think about what properties <m>\vr(u,v)</m> has to have in order to be
+        a parametrization.  -->
+      </p></hint>
+
+      <answer><p>
+        (a) Non.</p><p>
+        (b) Oui.</p><p>
+        (c) Oui.</p><p>
+        (d) Oui.</p><p>
+        (e) Non.
+      </p></answer>
+
+      <solution><p>
+        Note that, since <m>x^2+y^2=1+2z^2</m> on <m>S</m>, the condition <m>z\geqslant   1</m> is
+        equivalent to <m>x^2+y^2\geqslant   3</m>, <m>z\geqslant   0</m>. So the hyperboloid is
+        <m>\Set{(x,y,z)}{x^2+y^2=1+2z^2,\ 3\leqslant    x^2+y^2\leqslant    9, z\geqslant   0}</m>.
+        </p>
+
+        <p>(a) No. Under this parametrization, the condition <m>3\leqslant    x^2+y^2\leqslant    9</m>
+        is <m>3\leqslant    u^2+v^2\leqslant    9</m>, not <m>2\leqslant    u^2+v^2\leqslant    9</m>.
+        </p>
+
+        <p> (b) Yes. Under this parametrization, <m>x=u\sin v</m>, <m>y=-u\cos v</m>
+        and <m>z=\sqrt{\frac{u^2}{2}-\frac{1}{2}}</m>. So
+        <ul>
+        <li>
+        <m>x^2+y^2-2z^2 = u^2-2\leqslant   ft(\frac{u^2}{2}-\frac{1}{2}\right) = 1</m>,
+        as desired.
+        </li>
+        <li>  The condition <m>x^2+y^2\leqslant    9</m> is equivalent to <m>u\leqslant    3</m>, since
+        <m>u\geqslant   0</m>.
+        </li>
+        <li>  The condition <m>x^2+y^2\geqslant   3</m> is equivalent to <m>u\geqslant  \sqrt{3}</m>,
+        since <m>u\geqslant   0</m>.
+        </li>
+        <li>  <m>z=\sqrt{\frac{u^2}{2}-\frac{1}{2}}\geqslant   0</m>
+        </li>
+        </ul>
+        </p>
+
+        <p> (c) Yes. Under this parametrization, <m>x=\sqrt{1+2v^2}\cos u</m>,
+        <m>y=\sqrt{1+2v^2}\sin u</m> and <m>z=v</m>. So
+        <ul>
+        <li>
+        <m>x^2+y^2-2z^2 = 1+2v^2 -2v^2 = 1</m>,
+        as desired.
+        </li>
+        <li>  The condition <m>x^2+y^2\leqslant    9</m> is equivalent to <m>1+2v^2\leqslant    9</m>,
+        which is equivalent to <m>v\leqslant    2</m>, since <m>v\geqslant   0</m>.
+        </li>
+        <li>  The condition <m>x^2+y^2\geqslant   3</m>  is equivalent to <m>1+2v^2\geqslant   3</m>,
+        which is equivalent to <m>v\geqslant   1</m>, since <m>v\geqslant   0</m>.
+        </li>
+        <li>  <m>z=v\geqslant   0</m>
+        </li>
+        </ul>
+        </p>
+
+        <p> (d) Yes. Under this parametrization, <m>x=\sqrt{1+u}\sin v</m>,
+        <m>y=\sqrt{1+u}\cos v</m> and <m>z=\sqrt{u/2}</m>. So
+        <ul>
+        <li>
+        <m>x^2+y^2-2z^2 = 1+u -2(u/2) = 1</m>,
+        as desired.
+        </li>
+        <li>  The condition <m>x^2+y^2\leqslant    9</m> is equivalent to <m>1+u\leqslant    9</m>,
+        which is equivalent to <m>u\leqslant    8</m>.
+        </li>
+        <li>  The condition <m>x^2+y^2\geqslant   3</m>  is equivalent to <m>1+u\geqslant   3</m>,
+        which is equivalent to <m>u\geqslant   2</m>.
+        </li>
+        <li>  <m>z=\sqrt{u/2}\geqslant   0</m>
+        </li>
+        </ul>
+        </p>
+
+        <p> (e) No. Under this parametrization, <m>x=\sqrt{u}\cos v</m>,
+        <m>y=-\sqrt{u}\sin v</m> and <m>z=\sqrt{(u+1)/2}</m>. So
+        <ul>
+        <li>
+        <m>x^2+y^2-2z^2 = u -2(u+1)/2 = -1</m>, not <m>+1</m>
+        </li>
+        </ul>
+        </p>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+
+    <exercise>
+      <!-- <title><fromexam>M317 2008A</fromexam></title> -->
+      <statement><p>
+        Supposons que la surface <m>S</m> est la partie de la sphère <m>x^2 + y^2 + z^2 = 2</m>
+        qui se trouve à l'intérieur du cylindre
+        <m>x^2 + y^2 = 1</m> pour lequel <m>z \geqslant 0</m>.
+        Parmi les éléments suivants, lesquels sont des paramétrages de <m>S</m> ?
+
+      <!-- Suppose the surface <m>S</m> is the part of the sphere <m>x^2 + y^2 + z^2 = 2</m>
+      that lies inside the cylinder
+      <m>x^2 + y^2 = 1</m> and for which <m>z \geqslant   0</m>.
+      Which of the following are parameterizations of <m>S</m>? -->
+      </p>
+
+      <p><ol marker = "(a)" >
+      <li><p>
+      <me>\vr(\phi,\theta) = 2\sin \phi\cos\theta\,\vi   +2\cos \phi\,\vj
+                          +2\sin \phi\sin\theta\,\vk  </me>,
+      <me>0\leqslant   \phi\leqslant   \frac{\pi}{4},\ 0\leqslant   \theta\leqslant   2\pi</me>
+      </p>
+      </li>
+      <li><p>
+      <me>\vr(x,y) = x\,\vi  -y\,\vj  +\sqrt{2-x^2-y^2}\,\vk  </me>,
+      <me>x^2+y^2\leqslant    1</me>
+      </p>
+      </li>
+      <li><p>
+      <me>\vr(u,\theta) = u\sin\theta\,\vi   +u\cos \theta\,\vj
+                          +\sqrt{2-u^2}\,\vk  </me>,
+      <me>0\leqslant    u\leqslant    2,\ 0\leqslant   \theta\leqslant   2\pi</me>
+      </p>
+      </li>
+      <li><p>
+      <me>\vr(\phi,\theta) = \sqrt{2}\sin \phi\cos\theta\,\vi
+                         +\sqrt{2}\sin \phi\sin\theta\,\vj
+                          +\sqrt{2}\cos \phi\,\vk  </me>,
+      <me>0\leqslant   \phi\leqslant   \frac{\pi}{4},\ 0\leqslant   \theta\leqslant   2\pi</me>
+      </p>
+      </li>
+      <li><p>
+      <me>\vr(\phi,z) = -\sqrt{2-z^2}\sin \phi\,\vi
+                         +\sqrt{2-z^2}\cos \phi\,\vj
+                          +z\,\vk  </me>,
+      <me>0\leqslant   \phi\leqslant   2\pi,\ 1\leqslant    z\leqslant   \sqrt{2}</me>
+      </p>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+        D'abord, penser au propriétés que <m>\vr(u,v)</m> doit avoir afin d'être une paramétrisation.
+      <!-- First think about what properties <m>\vr</m> has to have in order to be
+      a parametrization. -->
+      </p></hint>
+
+      <answer><p>
+      (a) Non.</p><p>
+      (b) Oui.</p><p>
+      (c) Non.</p><p>
+      (d) Oui.</p><p>
+      (e) Oui.
+      </p></answer>
+
+      <solution><p>
+      (a) No. <m>z=\sin\phi\sin \theta</m> is negative when
+      <m>0  \lt \phi\leqslant   \frac{\pi}{4}</m>, <m>\pi  \lt  \theta  \lt 2\pi</m>.
+      </p>
+
+      <p>(b) Yes. Note that <m>x^2+\big(-y\big)^2+\big(\sqrt{2-x^2-y^2}\big)^2=2</m>
+      and that, for <m>x^2+y^2\leqslant    1</m>, we have both <m>x^2+(-y)^2\leqslant    1</m> and
+      <m>\sqrt{2-x^2-y^2}\geqslant   0</m>.
+      </p>
+
+      <p>(c) No. <m>(u\sin\theta)^2+(u\cos\theta)^2=u^2 \gt 1</m> for <m>1 \lt u\leqslant    2</m>.
+      Also <m>\sqrt{2-u^2}</m> is not defined for <m>\sqrt{2} \lt u\leqslant    2</m>.
+      </p>
+
+      <p>(d) Yes. Note that
+      <ul>
+      <li>
+      <m>\big(\sqrt{2}\sin \phi\cos\theta\big)^2
+       +\big(\sqrt{2}\sin \phi\sin\theta\big)^2
+       +\big(\sqrt{2}\cos \phi\big)^2=2</m>
+      </li>
+      <li>
+      For <m>0\leqslant   \phi\leqslant   \frac{\pi}{4}</m>, we have <m>z=\sqrt{2}\cos \phi \gt 0</m>.
+      </li>
+      <li>
+      As <m>\phi</m> runs from <m>0</m> to <m>\frac{\pi}{4}</m>, <m>r(\phi)=\sqrt{2}\sin\phi</m>
+      runs from <m>0</m> to <m>1</m>, so that
+              <m>\big(x=r(\phi)\cos\theta\,,\,y=r(\phi)\sin\theta\big)</m>
+      covers all of <m>x^2+y^2\leqslant   1</m> as <m>\phi</m> runs from <m>0</m> to <m>\frac{\pi}{4}</m>
+      and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>(e)
+      Yes. Note that
+      <ul>
+      <li>
+      <m>\big(-\sqrt{2-z^2}\sin \phi\big)^2
+       +\big(\sqrt{2-z^2}\cos \phi\big)^2
+       +\big(z\big)^2=2</m>
+      </li>
+      <li>
+      For <m>1\leqslant    z\leqslant   \sqrt{2}</m>, we have obviously have <m>z \gt 0</m>.
+      </li>
+      <li>
+      As <m>z</m> runs from <m>1</m> to <m>\sqrt{2}</m>, <m>r(z)=\sqrt{2-z^2}</m>
+      runs from <m>1</m> to <m>0</m>, so that <m>\big(x=-r(z)\sin\phi\,,\,y=r(z)\cos\phi\big)</m>
+      covers all of <m>x^2+y^2\leqslant   1</m> as <m>z</m> runs from <m>1</m> to <m>\sqrt{2}</m>
+      and <m>\phi</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      </p></solution>
+    </exercise>
+
+    <exercise>
+      <!-- <title>
+      <fromexam>M317 2005D</fromexam></title> -->
+      <statement><p>
+      Soit <m>S</m> la partie du paraboloïde <m>z + x^2 + y^2 = 4</m> comprise entre
+      les plans <m>z = 0</m> et <m>z = 1</m>. Pour chacun des éléments suivants, indiquer
+      s'il paramètre correctement ou non la surface <m>S</m>.
+      <!-- Let <m>S</m> be the part of the paraboloid <m>z + x^2 + y^2 = 4</m> lying between
+      the planes <m>z = 0</m> and <m>z = 1</m>. For each of the following, indicate
+      whether or not it correctly parameterizes the surface <m>S</m>. -->
+      <ol marker = "(a)" >
+      <li>
+      <m>\vr(u,v) = u\,\vi  + v\,\vj  + (4 - u^2 - v^2)\,\vk </m>,
+      <m>0 \leqslant   u^2 + v^2 \leqslant   1</m>
+      </li>
+      <li>
+      <m>\vr(u,v) = (\sqrt{4-u}\,\cos v)\,\vi  + (\sqrt{4-u}\, \sin v)\,\vj  + u\,\vk </m>,
+
+      <m>0 \leqslant   u \leqslant   1</m>, <m>0 \leqslant   v \leqslant   2\pi</m>
+      </li>
+      <li>
+      <m>\vr(u, v) = (u \cos v)\,\vi  + (u \sin v)\,\vj  + (4 - u^2 )\,\vk </m>,
+      <m>\sqrt{3} \leqslant   u \leqslant   2</m>, <m>0 \leqslant   v \leqslant   2\pi</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+        D'abord, penser au propriétés que <m>\vr(u,v)</m> doit avoir afin d'être une paramétrisation.
+      <!-- First think about what properties <m>\vr(u,v)</m> has to have in order to be
+      a parametrization. -->
+      </p></hint>
+
+      <answer><p>
+      (a) Non.</p><p>
+      (b) Oui.</p><p>
+      (c) Oui.
+      </p></answer>
+
+      <solution><p>
+      (a) No. When <m>u=v=0</m>, <m>z=4</m> is not between <m>0</m> and <m>1</m>.
+      </p>
+
+      <p>(b) Yes. Note that when <m>x=\sqrt{4-u}\,\cos v</m>,
+                              <m>y=\sqrt{4-u}\,\sin v</m> and
+                              <m>z= u</m> with
+                              <m>0 \leqslant   u \leqslant   1</m>, <m>0 \leqslant   v \leqslant   2\pi</m>,
+      <ul>
+      <li>
+        <m>z+x^2+y^2=4</m>
+      </li>
+      <li>
+        <m>0\leqslant    z=u\leqslant    1</m>
+      </li>
+      <li>
+        For each fixed <m>z=u</m> between <m>0</m> and <m>1</m>,
+        <m>(x,y)</m> runs once around the circle <m>x^2+y^2 =4-z =4-u</m>
+         as <m>v</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      </p>
+
+      <p>(c) Yes. Note that when <m>x=u\,\cos v</m>,
+                              <m>y=u\,\sin v</m> and
+                              <m>z= 4-u^2</m>, with
+                              <m>\sqrt{3} \leqslant   u \leqslant   2</m>, <m>0 \leqslant   v \leqslant   2\pi</m>
+      <ul>
+      <li>
+        <m>z+x^2+y^2=4</m>
+      </li>
+      <li>
+        <m>0\leqslant    z=4-u^2\leqslant    1</m>
+      </li>
+      <li>
+        For each fixed <m>z=4-u^2</m> between <m>0</m> and <m>1</m>,
+        <m>(x,y)</m> runs once around the circle <m>x^2+y^2 =4-z =u^2</m>
+         as <m>v</m> runs from <m>0</m> to <m>2\pi</m>.
+      </li>
+      </ul>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement><p>
+
+      Paramétrer un solide de rotation autour d'une droite non parallèle à un axe. Montrer d'abord que le plan qui tourne est normal à cet axe.
+      <!-- Parametrize a solid of rotation about a line not parallel to an axis. Maybe first show that the plane you're rotating is normal to that axis. -->
+      </p>
+
+      <p><ol marker = "(a)" >
+      <li>
+        Donner une équation paramétrique pour le cercle de rayon 1, centré en <m>(2,2,4)</m> et situé dans le plan <m>x=y</m>.
+        <!-- Give a parametric equation for the circle of radius 1, centred at <m>(2,2,4)</m>, lying in the plane <m>x=y</m>. -->
+      </li>
+      <li>
+
+        Donner une équation paramétrique pour la surface formée en faisant tourner le cercle de la partie (a) autour de la droite <m>\vr(t)=4\vi +4\vj +t\vk </m>.
+        <!-- Give a parametrized equation for the surface formed by rotating the circle from part (a) about the line <m>\vr(t)=4\vi +4\vj +t\vk </m>. -->
+      </li>
+      </ol>
+      </p><sidebyside width="33%">
+      <image><latex-image>\begin{tikzpicture}
+      \draw[help lines, - \gt ] (0,0)--(0,3.25) node[above]{$z$};
+      \draw[help lines, - \gt ] (0,0)--(3.5,-1) node[right]{$x$};
+      \draw[help lines, - \gt ] (0,0)--(3.5,1) node[right]{$y$};
+      \fill[opacity=0.2, blue] (0,0)rectangle(3,3);
+      \draw (1,2) node[red,vertex]{};
+      \draw[red] (1,1.5) node[label=below:{$(2,2,4)$}]{};
+      \draw (1,2) node[shape=circle,draw, fill, fill opacity=0.2, minimum size=1cm]{};
+      \draw[ \lt - \gt , very thick] (2,-.5)--(2,3.5) node[above]{$\vr(t)=(4,4,t)$};
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside></statement>
+
+      <answer><p>
+      (a) <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, <m>0 \leqslant   \theta \leqslant   2\pi</m>.
+      </p></answer>
+      <solution><p>
+      (a) In the sketch below, the point <m>(x,y,z)</m> deviates from the centre <m>(2,2,4)</m> by <m>\sin\theta</m> units in the <m>\vk </m> direction, and by <m>\cos\theta</m> units in the <m>\sqrt \frac1{\sqrt 2}(\vi +\vj )</m> direction. So, <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>.
+      </p>
+
+      <sidebyside width="59%">
+      <image><latex-image>\begin{tikzpicture}
+      \draw[help lines, - \gt ] (0,0)--(0,6.25) node[above]{$z$};
+      \draw[help lines, - \gt ] (0,0)--(6.5,-1) node[right]{$x$};
+      \draw[help lines, - \gt ] (0,0)--(6.5,1) node[right]{$y$};
+      \fill[opacity=0.2, blue] (0,0)rectangle(6,6);
+      \YEycoord{4}{4}
+      \draw (1.8,-.2)--(1.8,-.4) node[below]{2};
+      \draw (1.8,.2)--(1.8,.4) node[above]{2};
+      \draw[dashed] (1.8,-.3)--(3.6,0)--(1.8,.3);
+      \draw[red] (3.6,4) node[vertex,label=below:{$(2,2,4)$}](C){};
+      \draw (C) node[shape=circle,draw, fill, fill opacity=0.2, minimum size=2cm]{};
+      \draw[- \gt ] (C)--(4.6,4) node[right]{\(\frac1{\sqrt 2}(\vi +\vj )\)};
+      \draw[] (C)--(4.3,4.7)node[vertex, label=above right:{$(x,y,z)$}]{};
+      \draw (C)+(.4,.2) node{$\theta$};
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside><p>
+      So, we can parametrize the circle as <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, with <m>0 \leqslant   \theta \leqslant   2\pi</m>.
+      </p>
+
+      <p><alert>Remark</alert>: it's easy to check that this equation satisfies the two properties we desire. Since the <m>x</m>- and <m>y</m> coordinates match, it's in the plane <m>x=y</m>. To check that it's a circle centred at <m>(2,2,4)</m>, we note the distance from <m>(x,y,z)</m> to <m>(2,2,4)</m> is:
+      <md>
+      <mrow>
+      d&amp;=\sqrt{(x-2)^2+(y-2)^2+(z-4)^2}
+      </mrow><mrow>
+      &amp;=\sqrt{\leqslant  ft(\frac1{\sqrt 2}\cos\theta\right)^2+\leqslant  ft(\frac1{\sqrt 2}\cos\theta\right)^2+\leqslant  ft(\sin\theta\right)^2}
+      </mrow><mrow>
+      &amp;=\sqrt{\frac12\cos^2\theta+\frac12\cos^2\theta+\sin^2\theta}=\sqrt{\cos^2\theta+\sin^2\theta}
+      </mrow><mrow>
+      &amp;=1
+      </mrow>
+      </md>
+      So, our points all have distance one from the same point <mdash/> that is, they lie on a circle of radius 1.
+      </p>
+
+      <p>(b) Consider a point <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, rotating <m>\phi</m> radians about the line <m>x=y=4</m>.
+      </p><sidebyside width="68%">
+      <image><latex-image>\begin{tikzpicture}
+      \draw[thick,  \lt - \gt ] (0,-3)--(0,3) node[above]{$\vr(t)=(4,4,t)$};
+      \draw (-4,0) node[vertex, label=below:{$(2,2,4)$}](C){};
+      \draw (C) node[shape=circle, draw, minimum size=4cm]{};
+      \draw (C)+(1.4,1.4) node[vertex, label=left:{$(x,y,z)$}](X){};
+      \draw (X) arc (180:540:2.6cm and 1cm);
+      \draw (X) arc (180:250:2.6cm and 1cm) node[vertex](Y){};
+      \draw[dashed] (X)--(0,1.4) node[midway, above]{R}--(Y);
+      \draw (-.5,1.2) node{$\phi$};
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside><p>
+      The new position of the point has the same height, <m>z=4+\sin\theta</m>. Its distance from the line <m>x=y=4</m> is also preserved:
+      <md>
+      <mrow>
+      R&amp;=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2}
+      </mrow><mrow>
+      &amp;=\sqrt{(\frac1{\sqrt 2}\cos\theta-2)^2+(\frac1{\sqrt 2}\cos\theta-2)^2+0)}
+      </mrow><mrow>
+      &amp;=\cos\theta-2\sqrt2
+      </mrow>
+      </md>
+      </p>
+
+      <p>The circle traced out by a point <m>(x,y,z)=(2+\frac1{\sqrt2}\cos\theta,2+\frac{1}{\sqrt 2} \cos \theta,4+\sin\theta)</m> on the circle is centred at <m>(4,4,z)</m> with radius <m>\sqrt2(4-x)</m>, so it has equation <m>x=4+\sqrt2(2-\sqrt2\cos\theta)\cos\phi</m>, <m>y=4+\sqrt2(2-\sqrt2\cos\theta)\sin\phi</m>, <m>z=4\sin\theta</m>.
+      </p></solution>
+    </exercise>
+
+    <!-- Ces exercices viennent de Marsden - Tromba -->
+
+    <exercise>
+      <statement>
+        <p> Pour les surfaces données par les paramétrages suivants, donner l'équation du plan tangent au point spécifié.
+          <ol marker = "(a)">
+            <li>
+              <p><m>\vr(u,v) = 2u\vi + (x^2 + v) \vj + v^2\vk</m> au point <m>(0,1,1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\vr(u,v) = u^2\vi + u\sin e^v\, \vj + \frac{1}{3}u\cos e^v \, \vk</m> au point <m>(13, -2,1)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      </exercise>
+
+    <!-- Manque les réponses
+    <exercise>
+      <statement>
+        <p>
+          Associer chacune des fonctions vectorielles avec la surface qui les rerpésente.
+          <ol marker = "(a)">
+            <li>
+              <p><m>\vr(u,v) = u\cos v\, \vi + u \sin v\, \vj +(4-u\cos v - u\sin v)\vk)</m> pour <m>u\in [0,1],\ v\in [2,2\pi]</m>
+
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\vr(u,v) = u\cos v \, \vi + u\sin v\, \vj +(4-u^2)\vk</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\vr(u,v) = u\vi + v \vj + \frac{1}{3}(12-8u-3v)\vk</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\vr(u,v) = (u^2 + 6u +11)\cos v\, \vi + u,\vj + (u^2 +6u+11)\sin v\, \vk</m>
+              </p>
+            </li>
+          </ol>
+          <ol marker = "(a)">
+            <li>
+              <p>
+                Bla
+              </p>
+            </li>
+            <li>
+              <p>
+                Bla
+              </p>
+            </li>
+            <li>
+              <p>
+                Bla
+              </p>
+            </li>
+            <li>
+              <p>
+                Bla
+              </p>
+            </li>
+          </ol>
+
+        </p>
+      </statement>
+
+    </exercise> -->
+
+    <exercise>
+      <statement>
+        <p>Trouver une équation du plan tangent à la surface donnée par <m>\vr(u,v) = u^2 \vi + v^2 \vj + (u^2 + v^2)\vk</m> au point correspondant à <m>(u,v) = (1,1)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Soit <m>\cS</m> la surface donnée par <m>z = 3x^2 + 8xy</m>.
+          <ol marker = "(a)">
+            <li>
+              <p>La surface est le graphe d'une fonction de deux variables. Utiliser ceci pour trouver une équation du plan tangent au point <m>(1,0,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Trouver un paramétrage de <m>\cS</m> et l'utiliser pour trouver l'équation du plan tangent au point <m>(1,0,3)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p> Soit <m>\cS</m> la surface <m>\vr(u,\j) = r\cos \j\, \vi + r\cos \j\, \vj + \vj\, \vk </m> avec <m>0\leqslant  r \leqslant 1</m> et <m>0\leqslant  \j \leqslant 4</m>.
+        </p>
+        <ol marker = "(a)">
+          <li>
+            <p>
+              Esquisser et décrire la surface <m>\cS</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Trouver un vecteur normal unitaire à <m>\cS</m> en un point quelconque <m>(x_0,y_0,z_0)\in \cS</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Trouver l'équation du plan tangent à <m>\cS</m> au point <m>(x_0,y_0,z_0) </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Si <m>(x_0,y_0,z_0)\in \cS</m>, montrer que le segment de longueur <m>1</m> joignant <m>(x_0,y_0,z_0)</m> à l'axe des <m>z</m> est contenu dans <m>\cS</m> et dans le plan tangent trouvé précédemment.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Soit <m>\cS</m> la sphère de rayon <m>2</m> centrée à l'origine. Calculer l'équation du plan tangent à <m>\cS</m> au point <m>(1,1,\sqrt{2})</m> en considérant <m>\cS</m> comme :
+        </p>
+        <ol marker = "(a)">
+          <li>
+            <p>
+              une surface paramétrée par <m>\vr(\j, \f) = 2\cos \j \, \sin \f\, \vi + 2 \sin \j\, \sin \f\, \vj + 2\cos \f\, \vk</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              une surface de niveau de la fonction <m>f(x,y,z) = x^2 + y^2 + z^2</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              le graphe de la fonction <m>g(x,y) = \sqrt{4-x^2  - y^2}</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p> Soit <m>\cH</m> l'hyperboloïde <m>x^2 + y^2 -z^2 =25</m>.
+          <ol marker = "(a)">
+            <li>
+              <p>Trouver un paramétrage de <m>\cH</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Trouver une équation du plan tangent à <m>\cH</m> au point <m>(x_0,y_0,0)</m> (où <m>x_0^2 + y_0^2 = 25</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                Montrer que les droites passant par <m>(x_0,y_0,0)</m> et dirigées par les vecteurs <m>\vu = -y_0\vi + x_0 \vk + 5\vk</m> et <m>\vv = y_0\vi - x_0 \vj + 5\vk</m> sont contenues dans <m>\cH</m> et dans le plan tangent calculé dans la partie précédente.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+    </exercise>
+
+  </exercisegroup>
+
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+    <exercise>
+      <statement>
+        <p>
+          Une surface peut être paramétrée par une application <m>\vr : \cD \to \R^3</m>, où <m>\cD \subseteq \R^2</m>. Les résultats vus au <xref ref="C-2"/> suggèrent que la dérivée de <m>\vr</m> devrait donner une approximation linéaire correspondant au plan tangent. Dans ce problème, ceci sera démontré.
+        </p>
+
+        <p> Soit <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj + z(u,v)\vk</m> un paramétrage d'une surface <m>\cS</m>, où <m>\vr</m> est différentiable. On dénote par <m>\vr_u</m> et <m>\vr_v</m> les dérivées partielles de <m>\vr</m>.
+          <ol marker = "(a)">
+            <li>
+              <p>
+                Sous l'hypothèse que <m>\vr_u(u_0,v_0) \times \vr_v(u_0,v_0) \ne \vZero</m>, montrer que l'image de la transformation linéaire donnée par <m>\vD \vr (u_0,v_0)</m> (c'est l'espace colonne de cette matrice) est le plan engendré par <m>\vr_u</m> et <m>\vr_v</m>.
+              </p>
+            </li>
+            <li>
+              <p>Montrer qu'un vecteur  <m>\vw</m> est orthogonal à <m>\vr_u\times \vr_v</m> si et seulement s'il se trouve dans l'image de <m>\vD \vr (u_0,v_0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Démontrer que le plan tangent à la surface est le plan donné (voir ceci comme une surface paramétrée) par
+                <md>
+                  <mrow>(u,v)  \amp \mapsto \vr(u_0,v_0) + \vD \vr(u_0, v_0)\begin{bmatrix}u-u_0\\ v-v_0\end{bmatrix} </mrow>.
+                </md> 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+    <!-- Exercices venant de CLP-4, section 3.1 -->
+
+
+
+
+
+
+</exercises>

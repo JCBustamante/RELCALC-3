@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_chgt-vars">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, Octobre 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Changements de variables pour les intégrales multiples</title>
+
+<subsection xml:id="pars-intro-chgt-var">
+  <title>Quelques rappels</title>
+
+
+
+<p>
+  Une des techniques les plus utiles pour calculer des intégrales (simples) est le changement de variables, qu'on peut énoncer comme suit.
+  <fact xml:id="fact-Chgt-var">
+    <statement>
+      <p> Soit <m>f</m> une fonction intégrable et <m>g</m> une fonction différentiable. On pose  <m>x=g(u)</m>, alors
+      <md>
+        <mrow xml:id="chgt-var-1" tag="star">  
+          \int_a^b f(g(u)) \, g'(u) \dee{u} = \int_{g(a)}^{g(b)} f(x) \dee{x} </mrow>
+      </md>.
+      </p>
+    </statement>
+  </fact>
+</p>
+<p>
+  Remarquons que, dans la pratique, lorsque nous effectuons un changement de variables, nous partons de l'intégrale de gauche dans l'équation <xref ref="chgt-var-1"/>, puis
+  <ol>
+    <li>
+    <p>
+      nous établissons les limites de l'intervalle d'intégration pour la nouvelle variable <m>u</m> en commençant à <m>g(a)</m> et en terminant à <m>g(b)</m>;
+    </p>
+  </li>
+    <li>
+      <p>
+        nous faisons la substitution <m>g(u) \to x</m>;
+      </p>
+    </li>
+    <li>
+      <p>
+        nous tenons compte de l'élément différentiel en substituant <m>g'(u)\,\dee{u} \to \dee{x}</m>. Ceci ressemble à une <q>simplification</q>
+        <me>
+          g'(u)\, \dee{u} = \frac{\dee{x}}{\dee{u}}\, \dee{u} = \dee{x}.
+        </me>
+        Il faut bien comprendre cependant que cette <q>simplification</q> est seulement un procédé mnémotechnique, il ne s'agit pas de divisions.
+      </p>
+    </li>
+  </ol>
+</p>
+<p>
+  On démontre la validité de cette formule au moyen du théorème fondamental du calcul. Cette approche s'adapte mal au cas des intégrales multiples, mais on peut comprendre ceci autrement.
+  <ol>
+    <li>
+      <p>
+        Lorsque la variable <m>u</m> parcourt l'intervalle <m>[a,b]</m>, la variable <m>x = g(u)</m> parcourt un intervalle, commençant à <m>g(a)</m> et finissant à <m>g(b)</m>. Il se peut que l'ordre des extrémités soit échangé (si <m>g</m> est décroissante par exemple). Il est aussi possible que <m>x</m> sorte de cet intervalle, en dépassant <m>g(b)</m>, mais elle doit revenir à <m>g(b)</m>. Au niveau de l'intégrale, ces deux passages s'annuleront.
+      </p>
+    </li>
+    <li>
+      <p>
+        Une variation <m>\De u</m>, par exemple une longueur d'intervalle, est transformée approximativement en une variation <m>\De x = g'(u^\ast)\De u</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        L'intégrande <m>f(g(u))</m> est transformé en <m>f(x)</m>.
+      </p>
+    </li>
+
+  </ol>
+</p>
+<p>
+  Voyons comment adapter cette approche aux intégrales doubles.
+</p>
+</subsection>
+
+
+<subsection xml:id="pars-chgt-var-2">
+  <title>Changement de variables pour les intégrales doubles</title>
+  <p>
+    Supposons donc que nous avons une région <m>\cR</m> dans le plan <m>Oxy</m> et que nous voulons effectuer un changement de variables. Ceci revient à nous donner une transformation <m>\vr</m> définie sur une partie du plan <m>Ouv</m>, donnée par <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m> et qui couvre la région <m>\vr</m>.
+  </p>
+  <p>
+    Comme précédemment, l'idée de base est d'analyser l'effet de la transformation <m>\vr</m> sur un petit élément d'aire <m>\De u\, \De v</m> en utilisant l'approximation linéaire. On suppose par surcroît que <m>\vr</m> est différentiable, ce qui garantit que cette approximation est bonne.
+  </p>
+  <p>
+    Considérons donc un rectangle <m>\cS</m> dans le plan <m>Ouv</m> dont les sommets sont les points <m>S_0(u_0,v_0), S_1(u_0+\De u,v_0), S_2(u_0,v_0 + \De v)</m> et <m>S_3(u_0 + \De u, v_0+ \De v)</m>. Les points images de ces points dans le plan <m>Oxy</m> par la transformation <m>\vr</m> sont alors
+    <md>
+      <mrow>P_0=\vr(S_0), \amp \amp  P_1 = \vr(S_1), \amp \amp P_2 = \vr(S_2), \amp \amp P_3 = \vr(S_3) </mrow>
+    </md>.
+  </p>
+  <figure xml:id="fig-chgt-var-2">
+      <caption>Le changement de variables est donné par une fonction <m>\vr</m> qui transforme un rectangle en une région qui est approximativement un parallélogramme.</caption>
+      <image xml:id="sageplot-chgt-vars-2" width="100%">
+          <sageplot>
+            Du = 2
+            Dv = 1
+            u0 = 1
+            v0 = 1
+            Fig = polygon([(u0,v0), (u0+Du,v0),(u0+Du, v0+Dv),(u0, v0+Dv)],
+              color = "blue", thickness= 1, fill = False,
+              xmin=-0.56, xmax=12, ymin=-0.56, ymax = 4)
+            Fig += text("$S_0(u_0,v_0)$", (u0, v0-0.2), color= "black",
+              axes= False, gridlines = True)
+            Fig += text("$S_1(u_0+\\Delta u,v_0)$", (u0+Du, v0-0.2),
+              color = "black")
+            Fig += text("$S_2(u_0,v_0 + \\Delta v)$", (u0, v0+0.2+Dv),
+              color= "black")
+            Fig += text("$S_3(u_0+\\Delta u, v_o+\\Delta v)$", (u0+1.5*Du, v0+0.2+Dv), color= "black")
+            Fig += text("$u$", (4, -0.2), color= "black")
+            Fig += text("$v$", (0, 3.2), color= "black")
+            Fig += arrow((0,0), (0,3), color = "black", width=1, arrowsize = 2)
+            Fig += arrow((0,0), (4,0), color = "black", width =1, arrowsize = 2)
+            Fig += arrow((7,0), (7,3),color = "black", width =1, arrowsize = 2)
+            Fig += arrow((7,0), (11,0),color = "black", width =1, arrowsize = 2)
+            Fig += text("$x$", (11, -0.2), color= "black")
+            Fig += text("$y$", (7, 3.2), color= "black")
+            path = [[(8,1),(8.5,1.5),(9.5,1.5),(10,1.2)], [(9.5,2),(10,3),(10.2,3.2)], [(9.5,3.5),(8.2,3.2),(8,3)], [(7.8,2.8),(7.5,1.2), (8,1)],[(8,1)]]
+            b = bezier_path(path, linestyle='solid',color ='blue')
+            Fig += b
+            Fig += text("$P_0 = \\mathbf{r}(S_0)$", (8, v0-0.2), color= "black")
+            Fig += text("$P_1 = \\mathbf{r}(S_1) $", (10, v0), color= "black")
+            Fig += text("$P_3 = \\mathbf{r}(S_3)$", (11, 3.3), color= "black")
+            Fig += text("$P_2 = \\mathbf{r}(S_2) $", (7.8, 3.4), color= "black")
+            Fig += arrow(path = [[(4,3),(4.5,3.2),(5.5,3.2),(6,3)]], width =2, arrowsize = 2, color = "black")
+            Fig += text("$\\mathbf{r}$", (5, 3.5), color= "black")
+            Fig
+          </sageplot>
+      </image>
+  </figure>
+  <p>
+    Nous avons alors l'approximation linéaire de <m>\vr</m> autour de <m>S_0 = (u_0,v_0)</m>. Pour une variation <m>\pmb{\De}S= (\De u, \De v)</m> près de <m>S_0</m>,
+    <me>
+      \vr(S_0 + \pmb{\De}S) \approx \vr(S_0)+ \vD\vr(S_0)\pmb{\De}S
+    </me>,
+    ou encore
+    <me>
+      \vr(u_0+\De u, v_0+\De v) \simeq \vr(u_0,v_0) + \pdiff{\vr}{u}(u_0,v_0)\De u + \pdiff{\vr}{v}(u_0,v_0)\De v
+    </me>,
+    ce qui, à son tour, peut s'écrire composante à composante :
+    <md>
+      <mrow> x(u_0+\De u, v_0+ \De v) \simeq x(u_0,v_0) + \pdiff{x}{u}(u_0,v_0)\De u + \pdiff{x}{v}(u_0,v_0)\De v, \amp </mrow>
+      <mrow> y(u_0+\De u, v_0+\De v) \simeq y(u_0,v_0) + \pdiff{y}{u}(u_0,v_0)\De u + \pdiff{y}{v}(u_0,v_0)\De v \amp </mrow>
+    </md>.
+    Ainsi, on invoque trois fois ces formules pour obtenir
+    <md alignment="alignat">
+    <mrow>
+    \vp_0&amp;=\vr(u_0,\,v_0),
+    </mrow><mrow>
+    \vp_1&amp;=\vr(u_0+\De u, v_0)
+       &amp;&amp;\approx \vr(u_0,\,v_0)
+       &amp;&amp;+\pdiff{\vr}{u}(u_0,\,v_0)\,\De u,
+    </mrow><mrow>
+    \vp_2&amp;=\vr(u_0, v_0+\De v)
+       &amp;&amp;\approx \vr(u_0,\,v_0) &amp;&amp;
+       &amp;&amp;+\pdiff{\vr}{v}(u_0,\,v_0)\,\De v,
+    </mrow><mrow>
+    \vp_3&amp;=\vr(u_0+\De u, v_0+\De v)
+       &amp;&amp;\approx\vr(u_0,\,v_0)
+       &amp;&amp;+\pdiff{\vr}{u}(u_0,\,v_0)\,\De u
+       &amp;&amp;+\pdiff{\vr}{v}(u_0,\,v_0)\,\De v
+    </mrow>
+    </md>.
+  </p>
+  <p>
+    Notons que nous avons laissé tomber les termes de degré 2 ou plus dans l'approximation de Taylor de <m>\vr</m>. Nous ne le ferons pas ici, mais il est possible de démontrer que ces termes ont une contribution nulle à l'intégrale : le passage à la limite les annule.
+  </p>
+  <p>
+    L'image de notre région <m>\cS</m> de départ peut être approchée par le quadrilatère de <m>\vr(S_0), \vr(S_1), \vr(S_2)</m> et <m>\vr(S_3)</m>, qui est lui-même approximativement un parallélogramme, puisque
+    <md>
+      <mrow>\overrightarrow{P_0P_1} \amp= \vp_1 - \vp_0  \approx \pdiff{\vr}{u}(S_0)\De u \approx \vp_3 - \vp_2 = \overrightarrow{P_3P_2}, </mrow>
+      <mrow>\overrightarrow{P_0P_2} \amp= \vp_2 - \vp_0  \approx \pdiff{\vr}{v}(S_0)\De v \approx \vp_3 - \vp_1 = \overrightarrow{P_1P_3}  </mrow>
+    </md>.
+  </p>
+  <p>
+    L'aire du parallélogramme en question est la norme du produit vectoriel des vecteurs correspondant aux côtés du parallélogramme<fn>Qu'on considère comme des vecteurs de <m>\R^3</m>, en ajoutant une troisième composante nulle.</fn>. Or, nous avons
+    <md>
+      <mrow>\pdiff{\vr}{u}(S_0) \amp = \pdiff{x}{u}(S_0)\vi + \pdiff{y}{u}(S_0)\vj + 0\vk, </mrow>
+      <mrow> \pdiff{\vr}{v}(S_0) \amp = \pdiff{x}{v}(S_0)\vi + \pdiff{y}{v}(S_0)\vj + 0\vk </mrow>
+    </md>.
+    Afin d'alléger l'écriture, omettons le point d'évaluation des dérivées partielles. Nous devons calculer le produit vectoriel
+    <me>
+      \left(\pdiff{\vr}{u}\De u\right)\times \left(\pdiff{\vr}{v}\De v\right) = \begin{vmatrix}\vi \amp \pdiff{x}{u} \amp \pdiff{x}{v}\\ \vj \amp \pdiff{y}{u}\amp \pdiff{y}{v}\\ \vk \amp 0\amp 0\end{vmatrix}\De u\, \De v = \left(\pdiff{x}{u} \pdiff{y}{v} - \pdiff{y}{u}\pdiff{x}{v} \right) \De u\, \De v \, \vk.
+    </me>
+    Le vecteur <m>\vk</m> étant unitaire, l'aire qui nous intéresse est donc
+    <me>
+    \left|\pdiff{x}{u} \pdiff{y}{v} - \pdiff{y}{u}\pdiff{x}{v} \right|\ \De u \, \De v = \left| \det \begin{bmatrix} \pdiff{x}{u}\amp \pdiff{x}{v}\\ \pdiff{y}{u}\amp\pdiff{y}{v}\end{bmatrix}\right| \De u\, \De v.
+    </me>
+    </p>
+    <p>
+      Ceci nous mène à la définition suivante.
+    </p>
+    <definition xml:id="def-Jacobian">
+      <statement>
+        <p>Étant donné une transformation <m>\vr</m> donnée par <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m>, son <terms>jacobien</terms> est le déterminant
+        <me>
+          \pdiff{(x,y)}{(u,v)} = \begin{vmatrix} \pdiff{x}{u}(u,v)\amp \pdiff{x}{v}(u,v)\\ \pdiff{y}{u}(u,v)\amp\pdiff{y}{v}(u,v)\end{vmatrix}
+        </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Avec ces notations, la petite région <m>\cS</m> du plan <m>Ouv</m> est transformée en une région <m>\cR</m> du plan <m>Oxy</m> dont l'aire vaut
+      <me>
+        \De A = \left|\pdiff{(x,y)}{(u,v)}\right|\De u \, \De v
+      </me>.
+
+    </p>
+    <p>
+      Prenons maintenant une région générale <m>\cS</m> dans <m>Ouv</m> telle que lorsque <m>(u,v)</m> parcourt <m>\cS</m>, alors <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m> parcourt <m>\cR</m> une seule fois<fn>
+        En réalité, on peut affaiblir un peu cette condition : les points du bord de <m>\cR</m> pourraient être atteints plus d'une fois. En termes précis, on dira que la transformation <m>\vr</m> est <em>injective</em> sur <m>cS</m>, sauf peut-être sur son bord.
+      </fn>.
+      On divise <m>\cS</m> en plusieurs rectangles <m>\cS_{ij}</m>, puis on dénote par <m>\cR_{ij}</m> leurs images par <m>\vr</m>.
+    </p>
+    <p>
+      Quand nous avons construit les intégrales doubles, nous avons considéré des divisions du domaine d'intégration <m>\cR</m> en rectangles pour construire les sommes de Riemann. Il se trouve que cette division peut être faite de façon plus générale, les rectangles ne sont pas nécessaires. Ici, nous allons utiliser les <m>\cR_{ij}</m> comme sous-régions. L'aire de chacune de ces régions sera notée <m>\De A_{ij}</m>. Ainsi,
+    </p>
+    <md>
+      <mrow>\iint_{\cR} f(x,y)\ \dee{A} \amp \approx \sum_{i=1}^m\sum_{j=1}^n f(x_i,y_j) \De A_{ij} </mrow>
+      <mrow> \amp\approx \sum_{i=1}^m \sum_{j=1}^m f(x(u_i,v_j), y(u_i, v_j))\left|\pdiff{(x,y)}{(u,v)}(u_i, v_i)\right| \De u\, \De v </mrow>
+    </md>.
+    <p>
+      Cette double somme est une somme de Riemann pour l'intégrale
+      <me>
+        \iint_\cS f(\vr(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v}
+      </me>.
+    </p>
+    <theorem xml:id="thm-Chgt-var2">
+      <statement>
+        <p>Soit <m>\cS</m> et <m>\cR</m> deux régions élémentaires des plans <m>Ouv</m> et <m>Oxy</m> respectivement, <m>\vr : \cS \to \cR</m> une transformation de classe <m>C^1</m> telle que <m>\vr(u,v)</m> parcourt <m>\cR</m> une seule fois lorsque <m>(u,v)</m> parcourt <m>\cS</m>, et <m>f</m> une fonction continue sur <m>\cR</m>, alors
+        <md>
+          <mrow xml:id="eq-chgt-2" tag = "dstar"> \iint_\cS f(\vr(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v} \amp = \iint_{\cR} f(x,y)\ \dee{x}\, \dee{y}.  </mrow>
+          <mrow> \amp </mrow>
+        </md>
+        Avec les composantes et les variables écrites explicitement, ceci devient
+        <me>
+          \iint_\cS f(x(u,v), y(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v} = \iint_{\cR} f(x,y)\ \dee{x}\, \dee{y}.
+        </me>
+        </p>
+        <p>
+          En particulier,
+          <md>
+            <mrow xml:id="eq_dA" tag = "dagger"> \dee{A}\amp =  \left|\pdiff{(x,y)}{(u,v)}\right|\, \dee{u}\, \dee{v}. </mrow>
+            <mrow> \amp </mrow>
+          </md>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Nous verrons quelques exemples, mais avant faisons la remarque qui suit.
+    </p>
+
+    <remark>
+      <p>
+        Nous avons que la dérivée de la transformation <m>\vr</m> est la matrice des dérivées partielles de ses composantes par rapport aux différentes variables, à savoir
+        <me>
+          \vD(\vr) = \begin{bmatrix} \pdiff{x}{u}\amp \pdiff{x}{v}\\ \pdiff{y}{u}\amp \pdiff{y}{v}\end{bmatrix}.
+        </me>
+        Ainsi, le jacobien de la transformation <m>\vr</m> est simplement le déterminant de la matrice <m>\vD(\vr)</m>.
+      </p>
+      <p>
+        Ainsi, les formules  <xref ref="chgt-var-1"/> et <xref ref="eq-chgt-2"/> sont très similaires.
+      </p>
+
+
+    </remark>
+    <p>
+      Regardons maintenant quelques exemples. Commençons par regarder les coordonnées polaires à nouveau.
+    </p>
+
+    <example xml:id="eg_polar_dA"><title><m>\dee{A}</m> en coordonnées polaires</title>
+    <p>
+    Les coordonnées polaires peuvent être interprétées comme une transformation <m>\pmb{\phi}(r,\theta) = x(r, \theta)\vi + y(r,\theta)\vj</m> avec
+    <md>
+    <mrow>
+    x(r,\theta) &amp;= r\cos\theta,
+    </mrow><mrow>
+    y(r,\theta) &amp;= r\sin\theta
+    </mrow>
+    </md>.
+    Puisque
+    <md>
+    <mrow>
+    \pdiff{x}{r}&amp;=\cos\theta,   &amp;\pdiff{y}{r}&amp;=\sin\theta,
+    </mrow><mrow>
+    \pdiff{x}{\theta}&amp;=-r\sin\theta,   &amp;\pdiff{y}{\theta}&amp;=r\cos\theta
+    </mrow>
+    </md>,
+    <xref ref="eq_dA"/>, avec <m>r</m> dans le rôle de  <m>u</m> et avec <m>\theta</m> dans celui de  <m>v</m>, donne alors
+    <md>
+    <mrow>
+    \dee{A} &amp;= \left|\det\left[\begin{matrix}\cos\theta &amp;\sin\theta \\
+                                       -r\sin\theta &amp; r\cos\theta
+           \end{matrix}\right]\right| \dee{r}\dee{\theta}
+       =\big(r\cos^2\theta + r\sin^2\theta\big)\,\dee{r}\dee{\theta}
+    </mrow><mrow>
+      &amp;= r\,\dee{r}\,\dee{\theta}
+    </mrow>
+    </md>,
+    qui est exactement ce que nous avons trouvé dans la <xref ref="eq_dA_polar"/>.
+    </p></example>
+
+
+    <example xml:id="eg_parabolic_dA"><title><m>\dee{A}</m> en coordonnées paraboliques</title>
+    <p>
+    Les <q>coordonnées paraboliques</q> sont données par
+    <md>
+    <mrow>
+    x(u,v) = \frac{u^2-v^2}{2}, &amp; &amp;
+    y(u,v) = uv
+    </mrow>
+    </md>.
+    Le nom vient de ce que les courbes obtenues lorsque <m>u</m> ou <m>v</m> sont constantes sont des paraboles.
+    <figure xml:id="fig-chgt-var-paraboliques">
+        <caption>Les courbes obtenues en faisant <m>u=</m> constante, ou <m>v=</m> constante, sont des paraboles.</caption>
+        <image xml:id="sageplot-chgt-vars-par" width="100%">
+            <sageplot>
+              var('u,v')
+              Fig = sum([parametric_plot([(u^2 - v^2)/2, u*v], (v,-2.1,2.1),
+                color = "blue", xmin=-2,xmax=2, ymin=-1, ymax=1,
+                ticks = [[],[]], axes_labels=['$x$', '$y$']) for u in srange(-2,2,0.25)])
+              Fig += sum([parametric_plot([(u^2 - v^2)/2, u*v], (u,-2.1,2.1), color = "red") for v in srange(-2,2,0.25)])
+              Fig
+            </sageplot>
+        </image>
+    </figure>
+
+    On calcule aisément
+    <md>
+    <mrow>
+    \pdiff{x}{u}&amp;= u,   &amp;\pdiff{y}{u}&amp;=v,
+    </mrow><mrow>
+    \pdiff{x}{v}&amp;=-v,   &amp;\pdiff{y}{v}&amp;=u
+    </mrow>
+    </md>,
+    et <xref ref="eq_dA"/> donne alors
+    <md>
+    <mrow>
+    \dee{A} &amp;= \left|\det\left[\begin{matrix} u &amp; v \\
+                                             -v &amp; u
+           \end{matrix}\right]\right| \dee{u}\dee{v}
+       = (u^2+v^2)\,\dee{u}\,\dee{v}
+    </mrow>
+    </md>.
+    </p>
+
+    </example>
+
+    <!-- WeBWork à inclure>
+    Active Calculus, 11.9.5, n.1
+    Exercise 1
+https://activecalculus.org/multi/S-11-9-Change-of-Variable.html#ex-11-9-WW-Jacobian-2
+RELCALC3-pretext/Chap_Integrales/Chgt-var-01.pg
+Library/Michigan/Chap16Sec7/Q01.pg
+    
+    <exercise xml:id="Chgt-var-01" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Integrales/Chgt-var-01.pg"/>
+    </exercise>
+-->
+
+    <p>Utiliser en pratique le <xref ref="thm-Chgt-var2"/> peut être complexe. Afin de choisir le changement de variables à effectuer, on doit tenir compte tant de la région d'intégration que de l'intégrande. Voyons un premier exemple.
+    </p>
+
+    <example xml:id="exa_2d_sub">
+      <statement>
+        <p>Soit <m>\cR</m> la région à l'intérieur du parallélogramme limité par les droites <m>y=2x,\ y=2x-2,\ y=x</m> et <m>y=x+1</m>. Calculer la valeur de <m>\displaystyle \iint_\cR xy \ \dee{A}.</m>
+
+        </p>
+      </statement>
+      <solution>
+        <p>Bien que l'intégrande soit simple, la région d'intégration suggère de faire un changement de variables. En effet, le bord du parallélogramme est donné par les droites d'équations <m>y-2x = 0, \ y-2x=-2,\ y-x=0</m> et <m>y-x = 1</m>.
+      </p>
+      <sidebyside widths="45% 45%">
+        <image xml:id="sageplot-chgt-vars-exc-R">
+            <sageplot>
+              Fig = polygon2d([(-2,0), (0,0), (0,1),(-2,1)], color = "red",
+                alpha = 0.25, axes_labels=['$u$', '$v$'], tick_formatter = "latex", ticks = [[-2],[1]])
+              Fig += polygon2d([(-2,0), (0,0), (0,1),(-2,1)], color = "red",
+                fill = False, axes = True, xmin=-2.1,xmax = 0.2, ymin = -0.2, ymax = 1.2)
+              Fig += text("$\\mathcal{S}$", (-1,0.5), color= "black",
+                figsize = 3)
+              Fig
+            </sageplot>
+        </image>
+        <image xml:id="sageplot-chgt-vars-exc-S">
+            <sageplot>
+              Fig = polygon2d([(0,0), (2,2), (3,4),(1,2)], color = "blue",
+                alpha = 0.25, axes_labels=['$x$', '$y$'],
+                tick_formatter = "latex", ticks = [[1],[1]])
+              Fig += polygon2d([(0,0), (2,2), (3,4),(1,2)], color = "blue", fill=False)
+              Fig += text("$y=x$", (1.2,0.85), color= "black", fontsize = 14)
+              Fig += text("$y=x+1$", (1.2,2.85), color= "black", fontsize = 14)
+              Fig += text("$y=2x-2$", (2.7,2.5), color= "black", fontsize = 14)
+              Fig += text("$y=2x$", (0.4,1.5), color= "black", fontsize = 14)
+              Fig += text("$\\mathcal{R}$", (1.5,2), color= "black", figsize=6)
+              Fig
+            </sageplot>
+        </image>
+      </sidebyside>
+
+      <p>
+
+        Ceci suggère de poser <m>u=y-2x</m> et <m>v= y-x</m>. Notons qu'il s'agit d'un changement de variables qui est linéaire, puisque nous pouvons également écrire
+        <me>
+           \begin{bmatrix} u\\ v\end{bmatrix} = \left[\begin{array}{rr}-2\amp 1 \\-1 \amp 1\end{array}\right] \begin{bmatrix}x\\ y\end{bmatrix}
+        </me>.
+        </p>
+        <p>
+          La région <m>\cS</m> du plan <m>Ouv</m> qui correspond à <m>\cR</m> est le rectangle limité par les droites d'équations <m>u=0,\, u=-2,\, v=0</m> et <m>v=1</m>.
+        </p>
+        <p>
+          Nous devons exprimer <m>x,y</m> en fonction de <m>u,v</m>. Dans notre cas, le changement de variables est une transformation linéaire, nous pouvons donc simplement inverser la matrice :
+          <me>
+            \begin{bmatrix}x\\ y\end{bmatrix} = \left[\begin{array}{rr}-2\amp 1\\ -1\amp 1 \end{array}\right]^{-1}, \begin{bmatrix}u\\ v\end{bmatrix} = \left[\begin{array}{rr}-1\amp 1\\-1\amp 2 \end{array} \right] \begin{bmatrix}u\\ v\end{bmatrix}
+          </me>,
+          c'est-à-dire <m>x=-u+v</m> et <m>y= -u+2v</m>.
+
+          Le jacobien de la transformation est alors
+          <me>
+            \pdiff{(x,y)}{(u,v)} = \left|\begin{array}{rr}-1\amp 1\\-1\amp 2 \end{array} \right| = -1.
+          </me>
+
+
+        </p>
+
+        <p>
+          L'intégrande est
+          <me>
+            f(x,y) = xy = (-u+v)(-u+2v) = u^2 -3uv+2v^2
+          </me>.
+        </p>
+        <p>
+          Nous pouvons maintenant invoquer le <xref ref="thm-Chgt-var2"/> et effectuer les calculs:
+          <md>
+            <mrow>\iint_{\cR} xy \dee{x}\, \dee{y} \amp = \iint_{\cS} \left(u^2-3uv+2v^2\right) |-1| \dee{u}\, \dee{v}  = \iint_{\cS} u^2-3uv+2v^2 \dee{u}\, \dee{v}  </mrow>
+            <mrow> \amp= \int_0^1 \int_{-2}^0 u^2 -3uv+2v^2 \ \dee{u}\, \dee{v} = \int_0^1 \left[\frac{u^3}{3} -\frac{3u^2v}{2} + 2uv^2\right]_{u=-2}^{u=0}\ \dee{v}</mrow>
+            <mrow>  \amp= \int_0^1 \frac{8}{3}  6v + 4v^2 \ \dee{v} = \left[\frac{4}{3}v^3+3v^2 +\frac{8}{3}v\right]_{v=0}^{v=1} </mrow>
+            <mrow>  \amp =7</mrow>
+          </md>.
+        </p>
+
+      </solution>
+    </example>
+
+    <!-- WeBWork à inclure>
+    Devoir n.9, question 5.
+    RELCALC3/set08/Rochester-setVectorCalculus1-UR_VC_11.pg
+    
+    <exercise xml:id="Chgt-var-02" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Integrales/Chgt-var-02.pg"/>
+    </exercise>
+    -->
+
+
+    <example xml:id="eg_2d_sub">
+    <statement>
+    <p>
+    Évaluer <me>
+    \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}, \qquad\text{où }
+    \cR=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 1+x\leqslant  y\leqslant  2+2x}
+    </me>.
+    </p>
+    </statement>
+
+    <solution>
+    <p> On peut simplifier l'intégrande considérablement en faisant la substitution
+    <md>
+    <mrow>
+    s&amp;=x,                    &amp; x&amp;=s,
+    </mrow><mrow>
+    t&amp;=\frac{y}{1+x},       &amp; y&amp;=t(1+x) = t(1+s)
+    </mrow>
+    </md>.
+    Notons que ce changement de variables n'est pas un changement linéaire. À gauche, nous avons l'expression de <m>(s,t)</m> en termes de <m>(x,y)</m>. À droite, ce sont <m>(x,y)</m> qui sont données en fonction de <m>(s,t)</m>. Pour obtenir ceci, il faut simplement isoler les variables. Notons que ceci nous permet d'obtenir l'intégrande en fonction de <m>(s,t)</m>.
+
+    Bien entendu, afin d'effectuer le calcul, nous devons aussi :
+    <ul>
+    <li> exprimer le domaine d'intégration <m>\cS</m> en fonction des variables <m>s</m> et <m>t</m>, puis
+    </li>
+    <li> calculer le jacobien de la transformation afin d'exprimer  <m>\dee{x}\,\dee{y}</m> en termes de  <m>\dee{s}\,\dee{t}</m>.
+    </li>
+    </ul>
+    </p>
+
+    <p>
+    Le jacobien de la transformation est
+    <md>
+      <mrow> \pdiff{(x,y)}{(s,t)} = \begin{vmatrix} \pdiff{x}{s}\amp \pdiff{x}{t}\\ \pdiff{y}{s}\amp \pdiff{y}{t}\end{vmatrix} =  \begin{vmatrix} 1 \amp t\\ 0 \amp 1+2\end{vmatrix} = (1+s)</mrow>
+    </md>.
+    </p>
+
+    <p>Afin d'étudier l'effet du changement de variables <m>(x,y)\mapsto (s,t)</m> sur le domaine <m>\cR</m>, considérons son bord, puis voyons comment ce bord est exprimé en termes de  <m>s</m> et <m>t</m>. Voici <m>\cR</m> dans le plan  <m>Oxy</m>.
+    </p>
+
+    <sidebyside width="50%">
+    <image source="images/CLP-figs/genSub"/>
+    </sidebyside>
+
+    <p>
+    Cette région est un quadrilatère, ses côtés sont :
+    <ul>
+    <li>
+    À gauche, une portion de la droite <m>x=0</m>. Comme nous avons <m>x=s</m>, en termes de  <m>s</m> et <m>t</m>, nous devons avoir <m>s=0</m>.
+    </li>
+    <li>
+    À droite, une portion de la droite  <m>x=1</m>. Nous devons avoir <m>s=1</m>.
+    </li>
+    <li>
+    Le bord inférieur est une portion de la droite <m>y=1+x</m>, où  <m>\frac{y}{1+x}=1</m>. Puisque  <m>t=\frac{y}{1+x}</m>, la portion du bord qui correspond en termes de  <m>s</m> et <m>t</m> est  <m>t=1</m>.
+    </li>
+    <li>
+    Le bord supérieur est une portion de la droite <m>y=2(1+x)</m>, ou encore <m>\frac{y}{1+x}=2</m>. En termes de  <m>s</m> et <m>t</m>, la portion correspondante est  <m>t=2</m>.
+    </li>
+    </ul>
+    <!--
+    Here is another copy of the sketch of <m>\cR</m>. But this time
+    the equations of its four sides are expressed in terms of <m>s</m> and <m>t</m>.
+
+
+    <sidebyside width="40%">
+    <image source="images/CLP-figs/genSubB"/>
+    </sidebyside>
+  -->
+  </p>
+
+    <p>
+    Ainsi, la région <m>\cS</m> dans le plan <m>Ost</m> qui correspond à <m>\cR</m> est
+    <me>
+    \cS = \Set{(s,t)}{0\leqslant  s\leqslant  1,\ 1\leqslant  t\leqslant  2}
+    </me>.
+    </p>
+
+
+    <p>
+      Nous avons maintenant tous les ingrédients pour appliquer le <xref ref="thm-Chgt-var2"/>. Notons que le jacobien de la transformation est <m>1+s</m>, qui est positif sur <m>\cS</m>. Ainsi,
+    <md>
+    <mrow>
+    \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}
+    &amp;=\int_0^1\int_1^2 t (1+s) \dee{t}\, \dee{s}
+    </mrow>
+    <mrow>  \amp= \left[\int_0^1 1+s\, \dee{s} \right]\left[\int_1^2 t\, \dee{t}\right]  </mrow>
+    <mrow>  \amp= \left[s+\frac{s^2}{2}\right]_{s=0}^1\cdot \left[\frac{t^2}{2}\right]_{t=1}^2  = \frac{3}{2}\cdot \frac{3}{2}</mrow>
+    <mrow>
+    &amp;=\frac{9}{4}
+    </mrow>
+    </md>.
+    </p>
+    </solution>
+    </example>
+
+    <example xml:id="ex-chgt-vars-3">
+      <statement>
+        <p> Soit <m>\cR</m> la région du premier quadrant limitée par les courbes <m>xy=1,\ xy = 9</m> et par les droites <m>y=x,\, y=4x</m>. Calculer <m>\displaystyle \iint_{\cR} \sqrt{\frac{y}{x}} + \sqrt{xy}\ \dee{A}</m>.
+
+        </p>
+      </statement>
+      <solution>
+        <p>Considérons le changement de variables
+          <me>
+            \begin{bmatrix}x\\y\end{bmatrix} = \vr(u,v) = \begin{bmatrix} u/v\\ uv\end{bmatrix} \qquad \text{ ou encore } \qquad \begin{bmatrix}u\\v \end{bmatrix}  = \begin{bmatrix}\sqrt{xy}\\ \sqrt{y/x}\end{bmatrix}.
+          </me>
+        </p>
+        <p>
+          Ce changement de variables rend l'intégrande très simple, puisque
+          <me>
+            \sqrt{\frac{y}{x}} + \sqrt{xy} = \sqrt{v^2} + \sqrt{u^2} = v+u
+          </me>.
+        </p>
+        <p>
+          Le jacobien se calcule aisément :
+          <me>
+            \pdiff{(x,y)}{(u,v)} = \begin{vmatrix} \pdiff{x}{u} \amp \pdiff{x}{v}\\ \pdiff{y}{u} \amp \pdiff{y}{v}\end{vmatrix} = \begin{vmatrix}1/v \amp -u/v^2 \\ v\amp u \end{vmatrix} = 2u/v
+          </me>.
+        </p>
+        <p>
+          La région <m>\cR</m> qui nous intéresse est limitée par <m>4</m> courbes qui se coupent aux points <m>P_1(1,1),\ P_2(3,3),\ P_3(\frac{3}{2},6)</m> et <m>P_4(\frac{1}{2},2)</m>. Chacun de ces points, à son tour, correspond à deux points différents du plan <m>Ouv</m> sous la transformation <m>\vr</m> choisie :
+
+          <md>
+            <mrow>
+            P_1=\vr(S_1) = \vr(S_1'), \amp \text{ où } S_1(1,1), S'_1(-1,-1),</mrow>
+            <mrow>
+            P_2=\vr(S_2) = \vr(S_2'), \amp \text{ où } S_2(3,1), S'_1(-3,-1),</mrow>
+            <mrow>
+            P_3=\vr(S_3) = \vr(S_3'), \amp \text{ où } S_3(3,2), S'_1(-3,-2),</mrow>
+            <mrow>
+            P_4=\vr(S_4) = \vr(S_4'), \amp \text{ où } S_4(1,2), S'_1(-1,-2)</mrow>
+          </md>.
+        </p>
+        <sidebyside widths="45% 45%">
+          <image xml:id="sageplot-chgt-vars-exd-R">
+              <sageplot>
+                Fig =  polygon([(1,1),(1,2), (3,2),(3,1)], color = "red",
+                  fill = True, alpha = 0.25, aspect_ratio="automatic",
+                  fontsize =10,axes_labels_size = 1.2,
+                  ticks = [[1,2,3],[1]], tick_formatter = "latex",
+                  axes_labels=['$u$', '$v$'], figsize=3)
+                Fig += polygon([(1,1),(1,2), (3,2),(3,1)], color = "red",
+                  fill = False)
+                Fig += polygon([(-1,1),(-1,2), (-3,2),(-3,1)], color = "red",
+                  fill = False)
+                Fig += polygon([(-1,-1),(-1,-2), (-3,-2),(-3,-1)],
+                  color = "red", fill = False)
+                Fig += polygon([(1,-1),(1,-2), (3,-2),(3,-1)], color = "red",
+                  fill = False)
+                Fig += line([(-3.25,2),(3.25,2)], color = "red",
+                  linestyle = "dotted")
+                Fig += line([(-3.25,1),(3.25,1)], color = "red",
+                  linestyle = "dotted")
+                Fig += line([(-3.25,-1),(3.25,-1)], color = "red",
+                  linestyle = "dotted")
+                Fig += line([(-3.25,-2),(3.25,-2)], color = "red",
+                  linestyle ="dotted")
+                Fig += line([(-3,2.25),(-3,-2.25)], color = "red",
+                  linestyle = "dotted")
+                Fig += text("$\\mathcal{S}$", (2,1.5), color = "red")
+                Fig += text("$\\mathcal{S}'$", (-2,-1.5), color = "red")
+                Fig += point([(1,1),(3,1), (3,2), (1,2), (-1,-1),(-3,-1),
+                  (-3,-2), (-1,-2) ], color = "black", size=15, zorder = 2)
+                Fig += text("$S_1$", (1,0.75), color = "red")
+                Fig += text("$S_2$", (3,0.75), color = "red")
+                Fig += text("$S_3$", (3,2.25), color = "red")
+                Fig += text("$S_4$", (1,2.25), color = "red")
+                Fig += text("$S_1'$", (-1,-0.75), color = "red")
+                Fig += text("$S_2'$", (-3.25,-0.75), color = "red")
+                Fig += text("$S_3'$", (-3.25,-2.25), color = "red")
+                Fig += text("$S_4'$", (-1,-2.25), color = "red")
+                Fig
+              </sageplot>
+          </image>
+          <image xml:id="sageplot-chgt-vars-exd-S">
+              <sageplot>
+                var('x,y')
+                xmin = -4
+                xmax = 4
+                ymin = -6
+                ymax = 6
+                Fig =  plot(1/x, (x,xmin,xmax), detect_poles = True,
+                  color = "steelblue", ymin=ymin, ymax=ymax, aspect_ratio="automatic", fontsize =10,
+                  axes_labels_size = 1.2, ticks = [[1],[1]],
+                  tick_formatter = "latex", axes_labels=['$x$', '$y$'],
+                  thickness = 0.75, figsize = 6, zorder = 0)
+                Fig += plot(9/x, (x,xmin,xmax), detect_poles = True,
+                  color = "darkblue", ymin=ymin, ymax=ymax,thickness = 0.75)
+                Fig += plot(x, (x,xmin,xmax), thickness = 0.75)
+                Fig += plot(4*x, (x,xmin,xmax),thickness = 0.75)
+                L = [(1,1), (3,3)] + [(j,9/j) for j in (3,2.9,.., 3/2)] + [(0.5,2)] + [(j,1/j) for j in (0.5, 0.6,..1)]
+                Fig += polygon(L, fill = True, alpha = 0.35,zorder=2)
+                L1 = [(-1,-1), (-3,-3)] + [(-j,-9/j) for j in (3,2.9,.., 3/2)] +[(-0.5,-2)] + [(-j,-1/j) for j in (0.5, 0.6,..1)]
+                Fig += polygon(L1, fill = True, alpha = 0.15)
+                Fig += text("$xy=1$", (3,0.7), color= "steelblue")
+                Fig += text("$xy=9$", (4,1.9), color= "darkblue")
+                Fig += text("$y=x$", (4,4.4), rotation=45.0)
+                Fig += text("$y=4x$", (0.8,4.5), rotation=76.0)
+                Fig += text("$\\mathcal{R}$", (1.5,3))
+                Fig += text("$P_1$", (1,0.5))
+                Fig += text("$P_2$", (3.5,3))
+                Fig += text("$P_3$", (2,6))
+                Fig += text("$P_4$", (-1,2), zorder = 2)
+                Fig += arrow((-0.7,2),(0.3,2), width= 0.5, arrowsize = 1.5)
+                Fig += point([(1,1),(1/2,2), (3,3), (3/2,6)], color = "black",
+                  size=15, zorder = 2)
+                Fig
+              </sageplot>
+          </image>
+        </sidebyside>
+        <p>
+          Par ailleurs, la droite <m>y=x</m> correspond à <m>v^2 = 1</m>, c'est-à-dire à la paire de droites <m>v=\pm 1</m>. La droite <m>y=4x</m> correspond à la paire de droites <m>v= \pm 2</m>. De même, l'hyperbole <m>xy = 1</m> correspond à <m>u^2 = 1</m>, c'est-à-dire à la paire de droites <m>u=\pm 1</m>, et l'hyperbole <m>xy=9</m> correspond à la paire de droites <m>u=\pm 3</m>.  Nous avons donc deux régions <m>\cS</m> et <m>\cS'</m> du plan <m>Ouv</m> qui correspondent à <m>cR</m> sous la transformation choisie. Afin de calculer l'intégrale qui nous intéresse, nous devons choisir l'une d'entre elles. Choisissons <m>\cS = \{(u,v)| 1\leqslant  u \leqslant 3,\ 1\leqslant  v \leqslant 2 \}</m>. Notons que, sur cette région, le jacobien de la transformation est positif et que nous pouvons calculer notre intégrale :
+        </p>
+        <md>
+          <mrow>\iint_{\cR}\sqrt{\frac{y}{x}} +\sqrt{xy}\ \dee{x}\, \dee{y}  \amp= \iint_{\cS} (u+v) \frac{2u}{v}\dee{u}\, \dee{v} = 2 \int_1^2\int_1^3 \frac{u^2}{v} + u\  \dee{u}\, \dee{v}</mrow>
+          <mrow> \amp = 2 \int_1^2 \left[\frac{u^3}{3v}+ \frac{u^2}{2}\right]_{u=1}^{u=3}\ \dee{v} = 2\int_1^2 \frac{26}{3v} + 4\ \dee{v}  </mrow>
+          <mrow>  \amp= 2 \left[ \frac{26}{3}\ln v + 4v \right]_{v=1}^{v=2} = \frac{52}{3}\ln 2 +8  </mrow>
+        </md>.
+
+
+      </solution>
+      <solution>
+        <p>
+          Un autre changement de variables est possible. On peut poser <m>v=xy</m> et <m>u=y/x</m>. Les calculs sont d'une complexité équivalente. Cependant, au niveau des régions d'intégration, on n'a pas à se soucier de la duplication des courbes. On laisse en exercice le calcul par cette méthode.
+        </p>
+      </solution>
+    </example>
+
+    <!-- WeBWork à inclure>
+    Devoir n.9, question 7.
+    RELCALC3/set08/Hope-Multi2_11-04-MV-Int-change-var_Change-variables-05.pg
+
+    N'A PAS L'AIR COMPATIBLE AVEC PTX
+    <exercise xml:id="Chgt-var-03" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Integrales/Chgt-var-03.pg"/>
+    </exercise>
+     -->
+
+
+</subsection>
+<subsection xml:id="pars-chgt-var-3">
+  <title>Changements de variables pour les intégrales triples</title>
+
+  <p>
+    Il existe une généralisation naturelle du <xref ref="thm-Chgt-var2"/> pour les intégrales triples (et même en plus haute dimension). Elles sont établies exactement de la même façon que ce qu'on a fait plus haut. Pour les intégrales triples, la pierre angulaire de la construction est le fait établi au <xref ref="cor-produit-mixte"/>, qui exprime le volume d'un parallélépipède comme un déterminant.
+  </p>
+
+
+
+  <sidebyside width="20%">
+  <image source="images/CLP-figs/piped"/>
+  </sidebyside>
+
+  <p>
+  Si l'on pose
+  <md>
+    <mrow> \begin{bmatrix}x\\ y\\ z \end{bmatrix} \amp= \begin{bmatrix}x(u,v,w)\\y(u,v,w)\\ z(u,v,w)\end{bmatrix}  </mrow>
+  </md>
+  lorsqu'on passe des coordonnées <m>u,v,w</m> aux coordonnées <m>x,y,z</m>, on aura aussi un jacobien, ce sera un déterminant <m>3\times 3</m>.
+  </p>
+  <definition xml:id="def-Jacobian-3">
+    <statement>
+      <p>Étant donné une transformation <m>\vr</m> donnée par <m>\vr(u,v,w) = x(u,v,w)\vi + y(u,v,w)\vj + z(u,v,w)\vk</m>, son <terms>jacobien</terms> est le déterminant
+      <me>
+        \pdiff{(x,y,z)}{(u,v,v)} = \begin{vmatrix} \pdiff{x}{u} \amp \pdiff{x}{v}\amp \pdiff{x}{w} \\ \pdiff{y}{u}\amp\pdiff{y}{v} \amp \pdiff{y}{w} \\\pdiff{z}{u}\amp\pdiff{z}{v} \amp \pdiff{z}{w} \end{vmatrix}
+      </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Nous avons bien entendu l'énoncé analogue du <xref ref="thm-Chgt-var2"/> pour les intégrales triples, à savoir :
+  </p>
+
+  <theorem xml:id="thm-Chgt-var3">
+    <statement>
+      <p>Soit <m>\cS</m> et <m>\cR</m> deux régions élémentaires dans <m>Ouvw</m> et <m>Oxyz</m> respectivement, <m>\vr : \cS \to \cR</m> une transformation de classe <m>C^1</m> telle que <m>\vr(u,v,w)</m> parcourt <m>\cR</m> une seule fois lorsque <m>(u,v,w)</m> parcourt <m>\cS</m>, et <m>f</m> une fonction continue sur <m>\cR</m>, alors
+      <md>
+        <mrow xml:id="eq-chgt-3" tag = "tstar"> \iiint_\cS f(\vr(u,v,w))\left|\pdiff{(x,y,z)}{(u,v,w)}\right| \dee{u}\, \dee{v}\, \dee{w} \amp 
+        </mrow>
+        <mrow>
+          = \iiint_{\cR} f(x,y,z)\ \dee{x}\, \dee{y}\, \dee{z}. </mrow>
+      </md>
+      Avec les composantes et les variables écrites explicitement, ceci devient
+      <md>
+        <mrow> \iiint_\cS f(x(u,v,w), y(u,v,w), z(u,v,w)) \left|\pdiff{(x,y,z)}{(u,v,w)}\right| \dee{u}\, \dee{v}\, \dee{w} \amp </mrow>
+        <mrow> \qquad = \iiint_{\cR} f(x,y,z)\ \dee{x}\, \dee{y}\, \dee{z}\amp </mrow>
+      </md>.
+
+      </p>
+      <p>
+        En particulier,
+        <md>
+          <mrow xml:id="eq_dV" tag ="ddagger"> 
+            \dee{V}\amp =  \left|\pdiff{(x,y,z)}{(u,v,z)}\right|\, \dee{u}\, \dee{v}\, \dee{w} </mrow>
+          </md>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Voyons quelques exemples.
+  </p>
+  <example xml:id="eg_cylindrical_dV"><title><m>\dee{V}</m> en coordonnées cylindriques </title>
+  <p>
+  Les coordonnées cylindriques se calculent au moyen de
+  <md>
+  <mrow>
+  x(r,\theta,z) &amp;= r\cos\theta,
+  </mrow><mrow>
+  y(r,\theta,z) &amp;= r\sin\theta,
+  </mrow><mrow>
+  z(r,\theta,z) &amp; = z
+  </mrow>
+  </md>.
+  Puisque
+  <md>
+  <mrow>
+  \pdiff{x}{r}&amp;=\cos\theta,   &amp;\pdiff{y}{r}&amp;=\sin\theta, &amp;\pdiff{z}{r}&amp;=0,
+  </mrow><mrow>
+  \pdiff{x}{\theta}&amp;=-r\sin\theta,  &amp;\pdiff{y}{\theta}&amp;=r\cos\theta,
+                 &amp;\pdiff{z}{\theta}&amp;=0,
+  </mrow><mrow>
+  \pdiff{x}{z}&amp;= 0 , &amp;\pdiff{y}{z}&amp;=0,
+                 &amp;\pdiff{z}{z}&amp;=1
+  </mrow>
+  </md>,
+  le <xref ref="thm-Chgt-var3"/>, mais avec <m>r</m> dans le rôle de <m>u</m> et avec <m>\theta</m> dans celui de <m>v</m>, donne
+  <md>
+    <mrow>\pdiff{(x,y,z)}{(r, \theta,z)} \amp=\left| \begin{array}{rrr} \cos \theta \amp \sin \theta \amp 0 \\ -r\sin \theta \amp r\cos \theta \amp 0\\0 \amp 0 \amp 1\end{array}\right| = \left| \begin{array}{rr} \cos \theta \amp \sin \theta \\ -r\sin \theta \amp r\cos \theta \end{array}\right| </mrow>
+    <mrow> \amp = r\cos^2\theta + r\sin^2\theta = r </mrow>
+  </md>,
+  et donc
+<me>
+  \dee{V} = r \dee{r}\, \dee{\theta}\, \dee{z},
+</me>
+exactement ce que nous avions trouvé dans la <xref ref="eq_dV_cylindrical"/>.
+  </p></example>
+
+  <example xml:id="eg_spherical_dV"><title><m>\dee{V}</m> en coordonnées sphériques</title>
+  <p>
+ Les coordonnées sphériques sont données par
+  <md>
+  <mrow>
+  x(\rho,\theta,\varphi) &amp;= \rho\,\cos\theta\,\sin\varphi,
+  </mrow><mrow>
+  y(\rho,\theta,\varphi) &amp;= \rho\,\sin\theta\,\sin\varphi,
+  </mrow><mrow>
+  z(\rho,\theta,\varphi) &amp; =  \rho\,\cos\varphi
+  </mrow>
+  </md>.
+  Puisque
+  <md>
+  <mrow>
+  \pdiff{x}{\rho}&amp;=\cos\theta\,\sin\varphi,
+           &amp;\pdiff{y}{\rho}&amp;=\sin\theta\,\sin\varphi,
+           &amp;\pdiff{z}{\rho}&amp;=\cos\varphi,
+  </mrow><mrow>
+  \pdiff{x}{\theta}&amp;=-\rho\,\sin\theta\,\sin\varphi,
+           &amp;\pdiff{y}{\theta}&amp;=\rho\,\cos\theta\,\sin\varphi,
+                 &amp;\pdiff{z}{\theta}&amp;=0,
+  </mrow><mrow>
+  \pdiff{x}{\varphi}&amp;= \rho\,\cos\theta\,\cos\varphi,
+            &amp;\pdiff{y}{\varphi}&amp;=\rho\,\sin\theta\,\cos\varphi,
+                 &amp;\pdiff{z}{\varphi}&amp;=-\rho\,\sin\varphi
+  </mrow>
+  </md>,
+ l'égalité <xref ref="eq_dV"/>, avec <m>\rho</m> dans le rôle de <m>u</m>, avec <m>\theta</m> dans le rôle de <m>v</m> et avec <m>\varphi</m> dans celui de <m>w</m>, donne
+  <md>
+  <mrow>
+  \dee{V} &amp;= \left|\det\left[\begin{matrix}\cos\theta\,\sin\varphi
+                                         &amp; \sin\theta\,\sin\varphi
+                                         &amp;\cos\varphi \\
+                                     -\rho\,\sin\theta\,\sin\varphi
+                                     &amp;\rho\,\cos\theta\,\sin\varphi
+                                     &amp;0 \\
+                                      \rho\,\cos\theta\,\cos\varphi
+                                    &amp;\rho\,\sin\theta\,\cos\varphi
+                                    &amp;-\rho\,\sin\varphi
+         \end{matrix}\right]\right| \dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </mrow><mrow>
+  &amp;= \left|\cos\theta\,\sin\varphi\det\left[\begin{matrix}
+                             \rho\,\cos\theta\,\sin\varphi&amp;0 \\
+                           \rho\,\sin\theta\,\cos\varphi  &amp;-\rho\,\sin\varphi
+                             \end{matrix}\right] \right.
+  </mrow><mrow> &amp;\hskip1in\left.
+          -\sin\theta\,\sin\varphi\det\left[\begin{matrix}
+                               -\rho\,\sin\theta\,\sin\varphi &amp;0 \\
+                                \rho\,\cos\theta\,\cos\varphi &amp;-\rho\,\sin\varphi
+                             \end{matrix}\right] \right.
+  </mrow><mrow> &amp;\hskip1in\left.
+          +\cos\varphi\det\left[\begin{matrix}
+                         -\rho\,\sin\theta\,\sin\varphi
+                                     &amp;\rho\,\cos\theta\,\sin\varphi  \\
+                          \rho\,\cos\theta\,\cos\varphi
+                                            &amp;\rho\,\sin\theta\,\cos\varphi
+                             \end{matrix}\right]
+      \right| \dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </mrow><mrow>
+     &amp;=\rho^2 \big|-\cos^2\theta \sin^3\varphi
+                   - \sin^2\theta\sin^3\varphi
+                   -\sin\varphi\cos^2\varphi
+            \big|\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </mrow><mrow>
+     &amp;=\rho^2 \big|-\sin\varphi \sin^2\varphi
+                   -\sin\varphi\cos^2\varphi
+            \big|\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </mrow><mrow>
+    &amp;= \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
+  </mrow>
+  </md>,
+  qui est exactement ce qui a été établi dans  la <xref ref="eq_dV_spherical"/>.
+  </p></example>
+
+  <!-- WeBWork à inclure>
+  Active Calculus 11.9.5, n2
+  Exercise 2
+https://activecalculus.org/multi/S-11-9-Change-of-Variable.html#ex-11-9-WW-Jacobian-3
+Library/Michigan/Chap16Sec7/Q05.pg
+  
+  <exercise xml:id="Chgt-var-04" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Integrales/Chgt-var-04.pg"/>
+  </exercise>
+-->
+
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Chgt-var.ptx"/>
+
+
+</section>

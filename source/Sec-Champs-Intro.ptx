@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_champs_intro">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Champs de vecteurs </title>
+
+
+<subsection xml:id="pars-Champs">
+  <title>Champs de vecteurs</title>
+  <!-- <p>
+
+  </p>
+  <p>
+    <term>Début nouveau</term>
+  </p> -->
+  <p>
+    Nous avons déjà rencontré la notion de champ gradient d'une fonction <m>f</m> de deux ou trois variables, à la <xref ref="sec_gradient"/>. Il s'agit d'une nouvelle fonction <m>\vnabla f</m> qui à chaque point <m>\vr</m> associe un vecteur <m>\vnabla f(\vr)</m>. Au-delà des champs gradients et de leur utilité pour le calcul des dérivées directionnelles, la notion de champ de vecteurs est très utile pour modéliser plusieurs phénomènes. Pensons par exemple à la force <m>\vF</m> qui s'exerce sur une particule qui se déplace. La force <m>\vF</m> peut varier en fonction de la position de la particule (pensons à la proximité d'une charge électrique). De même, imaginons un fluide qui s'écoule dans une région du plan ou de l'espace. À chaque point de cette région, le fluide possède une vitesse spécifique; celle-ci variera en fonction d'éventuels obstacles rencontrés par le fluide et de la géométrie du milieu d'écoulement. Ceci motive la définition suivante.
+  </p>
+
+
+  <!-- <p>
+    <term>Fin nouveau</term>
+  </p> -->
+
+
+
+  <definition xml:id="def_vectorField">
+  <statement><p>
+      Soit <m>\cD \subseteq \R^n</m> une région donnée. Un <em>champ de vecteurs</em> sur <m>\cD</m> est une fonction <m>\vF : \cD \to \R^n</m> qui à chaque point <m>\vr</m> de <m>\cD</m> associe un vecteur <m>\vF(\vr)</m>.
+  </p>
+  <p>
+    Les cas qui nous intéressent davantage sont :
+    <ol>
+      <li>
+        <p>
+          Lorsque <m>n=2</m>, <m>\cD</m> est une région du plan. Dans ce cas, le champ <m>\vF</m> s'écrit au moyen de ses composantes <m> \vF = P\vi + Q\vj</m>, c'est-à-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj</m>, ou encore <m>\vF(x,y) = P(x,y)\vi + Q(x,y)\vj</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Lorsque <m>n=3</m>, <m>\cD</m> est une région de l'espace. Dans ce cas, on écrit <m> \vF = P\vi + Q\vj + R\vk </m>, c'est-à-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj + R(\vr)\vk</m>, ou encore <m>\vF(x,y,z) = P(x,y,z)\vi + Q(x,y,z)\vj + R(x,y,z)\vk</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+  </definition>
+
+  <p>
+    On représente les champs de vecteurs au moyen de diagrammes. Cette représentation est surtout utile en deux dimensions, elle consiste à considérer un certain nombre de points sur la région <m>\cD</m> et d'en dessiner, au point <m>\vr \in \cD</m>, le vecteur <m>\vF(\vr)</m> ou un multiple scalaire de celui-ci (la constante sera la même pour tous les points).
+  </p>
+
+  <!-- <p>
+
+  </p>
+  <p>
+    <term>Début nouveau</term>
+  </p> -->
+  <example>
+    <statement>
+      <p>
+        Soit <m>\vF(x,y) = (1-y^2)\vi + 0 \vj</m> défini pour <m>-1 \leqslant y \leqslant 1</m>.
+      </p>
+
+      <p>
+        Notons que la composante verticale du champ est nulle, de sorte qu'en tout point les flèches représentant ce champ seront horizontales. De plus, lorsque <m>y = \pm 1</m>, on aura <m>\vF(x,y) = \vZero</m>. Par ailleurs, les composantes du champ ne dépendent pas de la variable <m>x</m>. Ceci entraîne que le champ est invariant par translation horizontale. Notons aussi que la composante horizontale du champ, <m>1-y^2</m>, est toujours positive (les flèches pointent toujours vers la droite) et maximale lorsque <m>y=0</m>.
+      </p>
+
+
+      <figure xml:id="fig_flux-canal">
+      <caption>Le champ <m>\vv = (1-y^2)\vi </m></caption>
+      <image xml:id="sageplot-flux-canal" width="75%">
+        <description>Le flux dans un canal.</description>
+        <sageplot>
+          var('x,y')
+          Fig = plot_vector_field((1-y^2,0), (x,-2,2),(y,-0.95,0.95),
+                        color = "steelblue", axes = True,
+                        axes_labels = ['$x$','$y$'],
+                        axes_labels_size=2, #aspect_ratio = 1,
+                        ticks = [[],[]],
+                        frame= False,
+                        plot_points = 11,
+                        headlength = 3,
+                        headwidth = 3,
+                       headaxislength = 3, zorder = 2)
+          Fig += line([(-2,1), (2,1)], color = "darkgrey", ymin = -1.5, ymax = 1.5)
+          Fig += line([(-2,-1), (2,-1)], color = "darkgrey", ymin = -1.5, ymax = 1.5)
+          Fig
+        </sageplot>
+      </image>
+      </figure>
+      <p>
+        Ce champ peut être utilisé pour modéliser l'écoulement d'un fluide le long d'un canal se trouvant sur la bande horizontale <m>-1 \leqslant y \leqslant 1</m>. La vitesse du fluide est plus grande au milieu du canal, le frottement avec la paroi entraîne un ralentissement à mesure qu'on s'éloigne du milieu.
+      </p>
+
+    </statement>
+
+  </example>
+
+  <!-- <p>
+    <term>Fin nouveau</term>
+  </p> -->
+
+
+  <example xml:id="eg_ptSource"><title>La source ponctuelle</title>
+    <p>
+      Imaginons que
+      <ul>
+        <li>
+          tout l'espace est rempli avec un fluide incompressible, disons de l'eau;
+        </li>
+        <li>
+          d'une façon à déterminer, on trouve un moyen de produire plus d'eau à l'origine, disons <m>4\pi m</m> litres par seconde;
+        </li>
+        <li>
+          ceci force l'eau à couler vers l'extérieur, créant un <q>flux</q> symétrique en s'éloignant de l'origine.
+        </li>
+      </ul>
+
+      Voyons quel est le champ de vecteurs résultant, <m>\vv(x,y,z)</m>. Comme le flux est symétrique, la vitesse au point  <m>(x,y,z)</m>
+
+      <ul>
+        <li>
+          doit pointer en s'éloignant de l'origine, c'est-à-dire que le vecteur de direction du champ <m>\vv(x,y,z)</m> doit être le vecteur unitaire radial :
+          <me>
+            \hat\vr(x,y,z) = \frac{x\vi + y\vj + z\vk}{\sqrt{x^2+y^2+z^2}}
+  </me>.
+  </li>
+  <li>
+  La norme de la vitesse, <m>|\vv(x,y,z)|</m>, doit dépendre seulement de la distance à l'origine, c'est-à-dire qu'elle doit être fonction de
+  <me>
+  r(x,y,z) = \sqrt{x^2+y^2+z^2}
+  </me>.
+  </li>
+  </ul>
+  Ainsi, le champ de vitesses est de la forme
+  <me>
+  \vv(x,y,z) = v\big(r(x,y,z)\big)\,\hat\vr(x,y,z)
+  </me>.
+  Nous devons simplement déterminer la fonction  <m>v(r)</m>. Fixons  <m>r \geqslant0</m> et concentrons-nous sur la sphère  <m>x^2+y^2+z^2=r^2</m>. Elle est esquissée dans la figure ci-bas.
+  </p>
+
+  <sidebyside width="35%">
+
+  <image  source="images/CLP4-figs/waterField2JC"/>
+  </sidebyside>
+
+  <p>
+  Pendant un très bref laps de temps de <m>dt</m> secondes, <m>4\pi m\,dt</m> litres d'eau sont créés à l'origine (le point rouge au centre). Puisque l'eau est incompressible, <m>4\pi m\,dt</m> litres d'eau doivent sortir à travers la sphère pendant cet intervalle de temps, afin de faire de la place pour la nouvelle eau.
+  </p>
+
+  <p>En tout point de la sphère, l'eau s'écoule vers l'extérieur avec vitesse  <m>v(r)</m>. Ainsi, pendant ce laps de temps, l'eau près de la surface de la sphère bouge d'une distance <m>v(r)\,dt</m>. En particulier, l'eau qui se trouvait dans la croûte mince <m>r-v(r)\,dt \leqslant \sqrt{x^2+y^2+z^2} \leqslant r\ \ </m> au début sort  à travers la sphère <m>\sqrt{x^2+y^2+z^2} = r</m> pendant cet intervalle de temps. La croûte est esquissée en gris dans la figure. Le volume d'eau dans la partie grise est essentiellement l'aire de  <m>4\pi r^2</m> multipliée par l'épaisseur, c'est-à-dire  <m>v(r)\,dt</m>. Ainsi, l'égalité de volumes donne
+  <me>
+  4\pi m\,dt =  (4\pi r^2) \big(v(r)\,dt\big)
+  \implies v(r) = \frac{4\pi m}{4\pi r^2} =\frac{m}{r^2}
+  </me>.
+  Notre champ de vitesses est donc
+  <me>
+  \vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
+  </me>.
+  Si notre monde avait été de dimension deux plutôt que trois et que la source fournissait  <m>2\pi m</m> litres par seconde, le même argument mène à
+  <me>
+  2\pi m\,dt =  (2\pi r) \big(v(r)\,dt\big)
+  \implies v(r) = \frac{2\pi m}{2\pi r} =\frac{m}{r}
+  </me>,
+  et le champ de vitesses est <me>
+  \vv(x,y) = \frac{m}{r(x,y)}\,\hat\vr(x,y)\qquad
+  r(x,y) = \sqrt{x^2+y^2}\qquad
+  \hat\vr(x,y) = \frac{x\vi + y\vj}{\sqrt{x^2+y^2}}
+  </me>.
+  La représentation de ce champ est obtenue comme suit. Pour chaque  <m>(x,y)</m>, le vecteur <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m> est dessiné avec son origine en <m>(x,y)</m>. Notons que  <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
+  <ul>
+  <li>
+  pointe en direction opposée à l'origine,
+  </li>
+  <li><p>
+  a une norme  <m>\frac{m}{r(x,y)}</m> qui
+  <ul>
+  <li>
+  dépend seulement de  <m>r=|(x,y)|</m>, et
+  </li>
+  <li>
+  est très longue lorsque  <m>(x,y)</m> est près de l'origine, et
+  </li>
+  <li>
+  a une norme décroissante  <m>\frac{1}{r}</m> lorsque  <m>r=|(x,y)|</m> grandit.
+  </li>
+  </ul></p>
+  </li>
+  </ul>
+  Voici une esquisse de quelques-uns de ces vecteurs.
+  </p>
+  <figure xml:id="fig_sourceField">
+  <caption>Le champ <m>\vv = \frac{m}{|\vr|}\vr</m></caption>
+  <image xml:id="sageplot-source" width="65%">
+    <description>Le champ source</description>
+    <sageplot>
+      var('x,y')
+      Fig = plot_vector_field((x/sqrt(x^2 + y^2),y/sqrt(x^2 + y^2)),
+          (x,-2,2),(y,-2,2), color = "steelblue", axes = True,
+          axes_labels = ['$x$','$y$'],
+          axes_labels_size=1.4, aspect_ratio = 1,
+          ticks = [[],[]],
+          frame= False,
+          plot_points = 10)
+      Fig
+    </sageplot>
+  </image>
+  </figure>
+
+  <!--
+  <figure xml:id="fig_sourceField">
+  <caption></caption>
+  <sidebyside width="66%">
+  <image source="images/CLP4-figs/waterField"/>
+  </sidebyside>
+  </figure>
+  -->
+
+  <p>Notons que, lorsque <m>|(x,y)|\rightarrow 0</m>, la norme de la vitesse <m>|\vv(x,y)|\rightarrow\infty</m>. Ceci est une conséquence de notre simplification qui consiste à penser que l'eau est produite en un seul point.
+  </p></example>
+
+  <example xml:id="eg_Vortex"><title>Le tourbillon</title>
+  <p>
+  Dans cet exemple, nous allons esquisser le champ de vecteurs
+  <me>
+  \vv(x,y) = \Om\big(-y\vi +x\vj\big)
+  </me>,
+  où <m>\Om</m> est une constante positive. Nous allons donner une procédure efficace pour produire une esquisse grossière, elle sera suffisante pour avoir une idée réaliste du contexte. Cette procédure se généralise à d'autres champs de vecteurs.
+  </p>
+
+  <p>
+  Pour commencer, concentrons-nous sur la composante horizontale <m>\vi\cdot\vv(x,y)</m> de notre champ. Voyons dans quelle région  du plan <m>Oxy</m> celle-ci est positive, négative ou nulle.
+  <me>
+  \vi\cdot\vv(x,y)
+  =-\Om y\ \
+  \begin{cases}
+     =0 &amp;\text{si } y=0\\
+      \lt 0 &amp;\text{si } y \geqslant0\\
+      \geqslant0 &amp;\text{si } y \lt 0
+  \end{cases}
+  </me>
+  Nous en faisons autant avec la composante verticale.
+  <me>
+  \vj\cdot\vv(x,y)
+  = \Om x\ \
+  \begin{cases}
+     =0 &amp;\text{si } x=0 \\
+      \lt 0 &amp;\text{si } x \lt 0 \\
+      \geqslant0 &amp;\text{si } x \geqslant0
+  \end{cases}
+  </me>
+  Ceci partitionne naturellement le plan  <m>Oxy</m> en 9 morceaux, selon que chacune de ces composantes est positive, négative ou nulle :
+  <ul>
+  <li>
+  <m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv \geqslant0</m>
+  sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>
+  </li>,
+  <li>
+  <m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv=0</m>
+  sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>
+  </li>,
+  <li>
+  <m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv \lt 0</m>
+  sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \lt 0\ \big\}</m>
+  </li>,
+  <li>
+  <m>\vi\cdot\vv=0</m> et <m>\vj\cdot\vv \geqslant0</m>
+  sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y=0,\ x \geqslant0\ \big\}</m>
+  </li>,
+  <li>
+  et ainsi de suite. </li>
+  </ul>
+  Pensons maintenant à  <m>\vv(x,y)</m> comme la vitesse au point <m>(x,y)</m> d'un fluide.
+  <ul>
+  <li><p>
+  Regardons le premier point ci-haut. Il nous dit que, sur la première des 9 régions, c'est-à-dire,  sur <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>, qui est le quatrième quadrant, la vitesse horizontale  <m>\vi\cdot\vv \geqslant0</m>. Ceci veut dire que le fluide bouge vers la droite. Nous signifions ceci dans notre esquisse par une flèche qui va horizontalement vers la droite (il s'agit de la flèche bleue dans la figure ci-bas). La composante verticale  <m>\vj\cdot\vv \geqslant0</m>, ce qui signifie que le fluide bouge aussi vers le haut. On signifie ceci par la flèche verticale vers le haut (c'est la flèche rouge).
+  </p>
+
+  <sidebyside width="43%">
+  <image source="images/CLP4-figs/phaseVortex4"/>
+  </sidebyside>
+  </li>
+
+  <li><p>
+  Par la suite, concentrons-nous sur le deuxième point dans la liste ci-haut. Il nous dit que, sur la deuxième région, c'est-à-dire sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>, qui est la moitié inférieure de l'axe  <m>Oy</m>, la composante horizontale  <m>\vi\cdot\vv \geqslant0</m>, ce qui veut dire que le fluide bouge vers la droite. On indique ceci par une flèche horizontale vers la droite dont la source est un point sur la moitié inférieure de l'axe <m>Oy</m> (c'est la deuxième flèche bleue dans la figure ci-après). La composante verticale est  <m>\vj\cdot\vv=0</m>, ce qui veut dire que le fluide n'a pas de vitesse verticale. On indique ceci par l'absence de flèche verticale ayant pour source un point sur la partie inférieure de l'axe des <m>y</m>.
+  </p>
+
+  <sidebyside width="43%">
+  <image source="images/CLP4-figs/phaseVortex5"/>
+  </sidebyside>
+  </li>
+  <li>
+  On poursuit de la sorte.
+  </li>
+  </ul>
+  Lorsque nous aurons considéré les 9 régions, nous aurons l'esquisse suivante.
+  </p>
+
+  <figure xml:id="fig_vortexCrude">
+    <caption></caption>
+  <sidebyside width="43%">
+  <image source="images/CLP4-figs/phaseVortex1"/>
+  </sidebyside>
+  </figure>
+
+  <p>
+  De ceci, on voit que, par exemple, dans le premier quadrant,
+  <ul>
+  <li>
+     le fluide bouge vers la gauche et vers le haut,
+  </li><li>
+     le fluide croise l'axe  <m>x</m> verticalement (donc, près de l'axe <m>x</m>, les flèches seront presque verticales), et
+  </li><li>
+     le fluide croise l'axe des <m>y</m> horizontalement (donc, près de l'axe <m>y</m>, les flèches seront presque horizontales), et
+  </li><li>
+     il y a un point, à savoir <m>(0,0)</m>, où le champ de vitesses est exactement <m>\vZero</m>. De plus, <m>\vv(x,y)=\Omega(-y\vi+x\vj)</m> est plus petit lorsque <m>(x,y)</m> est plus près de <m>(0,0)</m>, et <m>\vv(x,y)</m> a une grande norme lorsque <m>(x,y)</m> est loin de <m>(0,0)</m>.
+  </li>
+  </ul>
+  Avec toute cette information, nous pouvons esquisser notre champ de vecteurs.
+  </p>
+  <figure xml:id ="fig-sageplot-vortex">
+  <caption>Le champ <m>\vv = \Omega(-y\vi + x\vj)</m></caption>
+  <image xml:id="sageplot-vortex" width="75%">
+    <description>Le champ vortex</description>
+    <sageplot>
+      var('x,y')
+      Fig = plot_vector_field((-y,x),
+          (x,-2,2),(y,-2,2),
+          color = "steelblue", axes = True,
+          axes_labels = ['$x$','$y$'],
+          axes_labels_size=1.4, aspect_ratio = 1,
+          ticks = [[],[]],
+          frame= False,
+          plot_points = 10)
+      Fig
+   </sageplot>
+  </image>
+  </figure>
+
+
+  <!--
+  <figure xml:id="fig_vortexField">
+  <caption></caption>
+  <sidebyside width="70%">
+  <image source="images/CLP4-figs/vortexField"/>
+  </sidebyside>
+  </figure>
+  -->
+
+  <p>
+  Ceci montre le champ qui <em>tourbillonne</em> autour de l'origine, d'où son nom.
+  </p></example>
+
+  <p>
+    Si <m>f</m> est une fonction de deux ou trois variables, alors son gradient <m>\vnabla f</m> définit un champ de vecteurs (là où il existe !). Nous avons déjà considéré le gradient à la <xref ref="sec_gradient"/>, mais d'un point de vue un peu différent. Supposons que nous ayons une fonction de deux variables, <m>f(x,y)</m>. Son champ gradient est le champ de vecteurs <m>\vnabla f = f_x \vi + f_y \vj</m> ou, plus explicitement, <m>\vnabla f(x,y) = f_x(x,y)\vi + f_y(x,y)\vj</m>. De la même façon, si l'on a une fonction de trois variables <m>f</m>, son gradient est <m>\vnabla f = f_x\vi + f_y\vj + f_z \vk</m>, ou encore <m>\vnabla f(x,y,z) = f_x(x,y,z)\vi + f_y(x,y,z)\vj + f_z(x,y,z)\vk</m>.
+  </p>
+
+  <example xml:id="Gradient">
+    <statement>
+      <p>Soit <m>f(x,y) = x\sin y + y</m>. Son champ gradient est <m>\vnabla f(x,y) = \sin y\, \vi + (x\cos y + 1)\vj</m>. La figure ci-après, à gauche, montre le champ gradient. Dans la figure de droite, on trouve le champ gradient <m>\vnabla f</m> ainsi que les courbes de niveau de <m>f</m>.
+      </p>
+
+      <sidebyside widths="45% 45%">
+          <image xml:id="sageplot-int-ligne-eg3a">
+            <description>Le champ gradient de <m>f(x,y) = x\sin y + y</m>
+              </description>
+           <sageplot>
+              var('x,y')
+              f(x,y) = x*sin(y) + y
+
+              Champ =  plot_vector_field((diff(f,x),diff(f,y)),
+                  (x,-pi,pi), (y,-pi,pi), axes = True, color = "blue",
+                  plot_points = 14, headlength=3, headwidth=3,
+                  headaxislength=3, axes_labels = ['$x$','$y$'],
+                  axes_labels_size=1, aspect_ratio = 1,
+                  ticks=[pi/2, pi/2], tick_formatter=[pi, pi], figsize=4)
+              Champ
+           </sageplot>
+         </image>
+         <image xml:id="sageplot-int-ligne-eg3b">
+           <description>Le champ gradient de <m>f(x,y) = x\sin y + y</m> ainsi que ses courbes de niveau</description>
+          <sageplot>
+              var('x,y')
+              f(x,y) = x*sin(y) + y
+              Fig = contour_plot(f,(x,-pi,pi), (y,-pi,pi),
+                  zorder = -2, cmap = "Oranges", contours = 17)
+              Fig += plot_vector_field((diff(f,x),diff(f,y)),
+                 (x,-pi,pi), (y,-pi,pi), axes = True, color = "blue",
+                 plot_points = 14, headlength=3, headwidth=3,
+                 headaxislength=3, axes_labels = ['$x$','$y$'],
+                 axes_labels_size=1, aspect_ratio = 1,zorder = 2,
+                 ticks=[pi/2, pi/2], tick_formatter=[pi, pi], figsize=4)
+              Fig
+          </sageplot>
+        </image>
+      </sidebyside>
+
+      <p>
+        On remarque que la norme du gradient est plus grande là où les courbes de niveau de <m>f</m> sont le plus près les unes des autres. Ceci résulte du fait que la norme du gradient est la dérivée directionnelle de la fonction dans la direction du gradient. Plus cette dérivée est grande, plus la valeur de <m>f</m> change vite.
+      </p>
+
+    </statement>
+   </example>
+   <!-- WeBWork à inclure>
+   Library/FortLewis/Calc3/17-3-Vector-fields/HGM5-17-3-27-Vector-fields.pg
+   Je peux traduire.
+   -->
+   <!-- <p>
+
+   </p>
+   <p>
+     <term>Début nouveau</term>
+   </p> -->
+
+
+   <p>
+     Dans les sections qui suivent, nous devront faire face au problème de décider si un champ <m>\vF</m> est est un champ gradient ou pas. Nous reviendrons sur ce point. Contentons-nous de donner un exemple.
+   </p>
+
+
+   <!-- <p>
+     <term>Fin nouveau</term>
+   </p> -->
+
+   <example xml:id="ex-non-conserv">
+     <statement>
+       <p>Montrer  qu'il n'existe pas de fonction <m>f</m> continue telle que <m>\vnabla f(x,y) = xy\, \vi + (y^2+1)\, \vj  = P(x,y)\,\vi + Q(x,y)\,\vj</m>.
+       </p>
+     </statement>
+     <solution>
+       <p>Si <m>f</m> était une telle fonction, ses dérivées partielles seraient <m>P</m> et <m>Q</m>, qui sont de classe <m>C^1</m>. On devrait donc avoir <m>f</m> de classe <m>C^2</m>. Ainsi, en vertu du théorème de Clairaut,
+       <me>
+           \pdiff{P}{y} = \frac{\partial^2 f}{\partial y\, \partial x} = \frac{\partial^2 f}{\partial x\, \partial y} = \frac{\partial Q}{\partial x}
+       </me>.
+       Or, <m>\pdiff{P}{y} = 2y</m> et <m>\pdiff{Q}{x} = y</m>. Ainsi, une telle fonction <m>f</m> ne peut pas exister.
+       </p>
+     </solution>
+   </example>
+
+  <!-- <p>
+
+   </p>
+   <p>
+     <term>Début nouveau</term>
+   </p> -->
+   <p>
+    En trois dimensions, le concept est le même. La représentation graphique est toujours de mise, même si elle pourrait être un peu plus difficile à interpréter. Dans ce cas, il est commun d'utiliser aussi des couleurs pour les flèches.
+   </p>
+
+
+
+   <example>
+     <statement>
+       <p>
+         On considère le champ de vecteurs <m>\vF = y\vi +  \vj +(z^2 -1) \vk</m>.
+       </p>
+       <p>
+         La composante <m>y</m> du champ est constante, les flèches pointent toujours dans la direction des <m>y</m> positifs. Les deux autres composantes dépendent de la position.
+       </p>
+       <figure xml:id="fig-Champ-3d-ex">
+           <caption>Représentation graphique du champ de vecteurs <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </caption>
+           <image xml:id="sageplot3d-Champ-3d-ex" width="80%">
+             <description>Le champ de vecteurs  <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </description>
+             <sageplot variant="3d" aspect="1.5">
+              var('x,y,z')
+              Fig = plot_vector_field3d((y,1,z^2-1),
+                (x,-1.5,1.5),(y,-1.5,1.5), (z,-1.5,1.5), frame= True, plot_points = 7, headlength = 5, width = 1)
+              Fig
+             </sageplot>
+           </image>
+         </figure>
+
+     </statement>
+   </example>
+   <!-- <p>
+     <term>Fin nouveau</term>
+   </p> -->
+
+
+</subsection>
+
+
+<!-- <p>
+
+</p>
+<p>
+  <term>Début nouveau</term>
+</p> -->
+
+
+<subsection xml:id="pars-lignes-courant">
+  <title>Les lignes de courant</title>
+
+  <p>
+    Étant donné un champ de vecteurs <m>\vF</m>, une ligne de courant de <m>\vF</m> est une courbe paramétrée <m>\cC</m> telle que, en tout point de <m>\cC</m>, le vecteur vitesse est donné par <m>\vF</m> évalué en ce point. Si le champ est le champ de vitesses d'un fluide et que l'on dépose un objet qui flotte en un point donné, la ligne de courant passant par ce point représente la trajectoire que cet objet suivrait, mené par le courant.
+  </p>
+
+  <figure xml:id="fig-courant-def">
+    <caption>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
+    </caption>
+    <image xml:id="sageplot3d-courant-def" width="80%">
+      <sageplot>
+        var('x,y')
+        Fig = plot_vector_field((cos(x+y),x), (x,-2,2),(y,-2,2),
+                      color = "grey", axes = True,
+                      axes_labels = ['$x$','$y$'],
+                      axes_labels_size=1.4, #aspect_ratio = 1,
+                      ticks = [[],[]],
+                      frame= False,
+                      plot_points = 20,
+                      headlength = 3,
+                      headwidth = 3,
+                     headaxislength = 3)
+        Fig += streamline_plot((cos(x+y),x), (x,-2,2),(y,-2,2),
+                      color = "red", density = 0.4)
+        Fig
+      </sageplot>
+
+      <description>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
+      </description>
+
+
+    </image>
+  </figure>
+
+    <p>
+      Plus précisément, si <m>\vF = p\vi + Q \vj</m> est donné et <m>\cC</m> est une ligne de courant paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, alors le vecteur vitesse est <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> et il doit vérifier
+    </p>
+    <md>
+      <mrow>x'(t) = P(x(t), y(t) )\amp  \text{ et } \amp y'(t) = Q(x(t),y(t)) </mrow>
+    </md>
+    ou, de façon plus concise,
+
+
+    <md>
+      <mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow>.
+    </md>
+
+    <example xml:id = "ex-courant-a">
+      <statement>
+        <p>Montrer que la courbe paramétrée par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
+        </p>
+
+        <p>
+          En effet,  <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> donne
+          <me>
+            \vr'(t) = C_1 e^t\, \vi - C_2 e^{-t}\, \vj = x(t)\vi + y(t) \vj .
+          </me>
+        </p>
+
+        <p>
+          Remarquons que différentes valeurs de <m>C_1</m> et <m>C_2</m> donnent différentes lignes de courant. L'interprétation est claire : non seulement il faut connaître la vitesse <m>\vF</m>, mais il faut aussi connaître un point sur la trajectoire, ce qui permet de déterminer <m>C_1</m> et <m>C_2</m>.
+        </p>
+
+        <figure xml:id="fig-courant-exa">
+          <caption>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
+          </caption>
+          <image xml:id="sageplot-courant-exa" width="80%">
+            <sageplot>
+              var('x,y')
+              Fig = plot_vector_field((x,-y), (x,-2,2),(y,-2,2),
+                            color = "grey", axes = True,
+                            axes_labels = ['$x$','$y$'],
+                            axes_labels_size=1.4, #aspect_ratio = 1,
+                            ticks = [[],[]],
+                            frame= False,
+                            plot_points = 20,
+                            headlength = 3,
+                            headwidth = 3,
+                           headaxislength = 3)
+              Fig += streamline_plot((x,-y), (x,-2,2),(y,-2,2),
+                            color = "red", density = 0.4)
+              Fig
+            </sageplot>
+
+            <description>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
+            </description>
+
+
+          </image>
+        </figure>
+
+
+        <p>
+          Dans cet exemple, nous avons <m>x(t) \cdot y(t) = C_1 C_2 </m>, de sorte que les lignes de courant se trouvent sur des hyperboles d'équations <m>xy = k</m>. Notons que l'équation <m>xy = 0</m> a pour courbe la réunion des deux axes. Chaque demi-axe est à lui tout seul une ligne de courant.
+        </p>
+
+
+      </statement>
+    </example>
+    <p>
+      Voyons maintenant comment trouver les lignes de courant d'un champ donné.
+    </p>
+
+    <example xml:id="ex-courant-b">
+      <statement>
+        <p>
+          Trouver les lignes de courant du champ de vecteurs <m>\vF(x,y) = -2y\,\vi + x\, \vj</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>Supposons que nous avons une ligne de courant <m>\vr(t) = x(t) \,\vi + y(t) \, \vj</m>.  Puisqu'il s'agit d'une ligne de courant, nous devons avoir
+        </p>
+        <me>
+          x'(t) \vi + y'(t) = -2y(t)\vi + x(t)\vj.
+        </me>
+        <p>
+          Ainsi, lorsque <m>y(t)\ne 0</m>, on aura
+          <me>
+            \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{x'(t)}{y'(t)}.
+          </me>
+        Ainsi, la courbe vérifie l'équation différentielle
+        <me>
+          \frac{dy}{dy} = \frac{x}{-2y}
+        </me>
+        ou encore
+        <me>
+          2y\frac{dy}{dx} = -x.
+        </me>
+        En intégrant les deux côtés par rapport à <m>x</m>, on obtient
+        <me>
+          \int 2y \frac{dy}{dx}\, dx = \int -x\, dx, \text{ d'où } y^2 = \frac{-x^2}{2} + C,
+        </me>
+        où <m>C</m> regroupe les constantes d'intégration. On reconnaît l'équation d'une ellipse
+        <me>
+          \frac{x^2}{2} + y^2 = C.
+        </me>
+        </p>
+        <figure xml:id="fig-courant-exc">
+          <caption>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>, en gris, et une ligne de courant, en rouge
+          </caption>
+          <image xml:id="sageplot-courant-exc" width="80%">
+            <sageplot>
+              var('x,y')
+              Fig = implicit_plot(x^2/2 + y^2 ==1, (x,-2,2), (y,-1,1),
+                color = "red", zorder = -1)
+              Fig += plot_vector_field((-2*y,x), (x,-2,2),(y,-1.3,1.3),
+                        color = "grey", axes = True,
+                        axes_labels = ['$x$','$y$'],
+                        axes_labels_size=1.8, #aspect_ratio = 1,
+                        ticks = [[1],[1]],
+                        frame= False,
+                        plot_points = 20,
+                        headlength = 3,
+                        headwidth = 3,
+                        headaxislength = 3, zorder=2)
+              Fig
+            </sageplot>
+
+            <description>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>.
+            </description>
+
+
+          </image>
+        </figure>
+        <p>
+          On peut paramétrer une telle ellipse en posant <m>\vr(u) = \sqrt{2C}\cos u \, \vi + \sqrt{C}\sin u\, \vj</m>. En effet, on calcule
+          <me>
+            \frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C.
+          </me>
+
+        </p>
+        <p>
+          Cependant, on a
+          <md>
+            <mrow>   x'(u)\vi + y'(u) \vj \amp = -\sqrt{2C}\sin u\, \vi + \sqrt{C}\cos u\, \vj</mrow>
+            <mrow> \amp = -\sqrt{2}y(u) \vi + \frac{1}{\sqrt{2}}x(u)</mrow>.
+          </md>
+          On remarque que ce vecteur n'est pas égal à <m>-2y(u)\vi + x(u) \vj</m>, il lui est seulement proportionnel. Ce paramétrage ne vérifie donc pas la définition des lignes de courant. Cependant, posons plutôt <m>\vr(t) = \sqrt{2C}\cos (t\sqrt{2})\, \vi + \sqrt{C}\sin (t\sqrt{2})\, \vj</m>. On vérifie aisément qu'il s'agit d'un paramétrage de l'ellipse et, par ailleurs, la condition de la définition des lignes de courant est satisfaite.
+        </p>
+
+      </solution>
+    </example>
+    <p>
+      En général il est difficile de déterminer les lignes de courant d'un champ de vecteurs. Il s'agit de quelque chose qui est plutôt abordé dans les cours d'équations différentielles ou de mathématiques avancées.
+    </p>
+
+
+
+
+</subsection>
+
+<!-- <p>
+  <term>Fin nouveau</term>
+</p> -->
+
+
+
+<xi:include  href="./Problemes/Prob-sec-Champs-Intro.ptx"/>
+
+
+
+
+
+</section>

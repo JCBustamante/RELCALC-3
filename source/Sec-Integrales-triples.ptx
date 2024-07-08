@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_int_triples">
+
+<title>Intégrales triples</title>
+<introduction>
+<p>
+    Les intégrales des fonctions à trois variables sur une région <m>\cE</m> de <m>\R^3</m> sont définies en suivant la même procédure que celle pour les fonctions à deux variables. On divise <m>\cE</m> en plusieurs petites régions qui ont la forme de parallélépipèdes rectangulaires, puis on multiplie le volume de ces petites régions par la valeur prise par <m>f</m> sur un point d'échantillonnage se trouvant dans chacune des régions. On additionne le tout pour obtenir une intégrale triple après un passage à la limite.
+
+    Cependant, l'interprétation est un peu différente. Une façon de concevoir ceci consiste à penser que <m>f</m> est une fonction de densité de masse. L'intégrale résultante donnera alors la masse totale du solide. Si <m>f</m> vaut 1, cette intégrale mesurera le volume de la région considérée.
+</p>
+</introduction>
+
+<subsection xml:id="pars-triples-boites">
+    <title>Parallélépipèdes rectangulaires</title>
+
+    <p>
+    Supposons pour commencer que <m>\cE</m> est un parallélépipède rectangulaire, c'est-à-dire <m>\cE = [a,b]\times [c,d] \times [r,s]</m>. On divise l'intervalle <m>[a,b]</m> en <m>n</m> sous-intervalles de longueur <m>\De x = \frac{b-a}{n}</m>. Ceci revient à poser <m>x_i = a + i \De x</m>, où <m>i\in\{0,1,\ldots, n\}</m>. On effectue la même démarche pour les intervalles <m>[c,d]</m> et <m>[r,s]</m>, que l'on divise en <m>m</m> et <m>l</m> sous-intervalles de longueurs <m>\De y = \frac{d-c}{m}</m> et <m>\De z = \frac{s-r}{l}</m> respectivement, et en posant <m>y_j = c+j\De y</m>, où <m>0\leqslant  j \leqslant m </m>, et <m>z_l = r+k\De y</m>, où <m>0\leqslant  k \leqslant l </m>.
+    </p>
+
+    <p>
+      Pour <m>i,j,k</m> fixes, on considère la  boîte <m>[x_{i-1},x_i]\times [y_{j-1},y_j] \times [z_{k-1},z_k]</m>, à l'intérieur de laquelle on choisit un point d'échantillonnage <m>\vp_{ijk}^* = (x_{ijk}^*,\, y_{ijk}^*,\, z_{ijk}^*)</m>. Le volume de la boîte est <m>\De V = \De z\,\De y\, \De x</m>. Ce volume est multiplié par la valeur de <m>f(x_{ijk}^*,\, y_{ijk}^*,\, z_{ijk}^*)</m> pour former la triple somme de Riemann
+      <me>
+                \sum_{i,j,k} f(\vp_{ijk}^*) \De V= \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{ijk}^*,y_{ijk}^*,z_{ijk}^*)  \De z\,\De y\, \De x
+      </me>.
+
+        Lorsque <m>n,m</m> et <m>l</m> tendent vers l'infini, avec un peu de chance, la somme ci-dessus tend vers un nombre réel, peu importe le point d'échantillonnage choisi. On dira alors que <m>f</m> est intégrable. La continuité de <m>f</m> est une condition suffisante pour assurer l'intégrabilité.
+    </p>
+
+    <definition xml:id="def-int-3">
+        <statement>
+            <p>Soit <m>\cE = \{(x,y,z)\in \R^3 |\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f</m> une fonction continue dans une région contenant <m>\cE</m>. Alors, <m>f</m> est intégrable sur <m>\cE</m>, et l'intégrale de <m>f</m> sur <m>\cE</m> est
+            <me>
+                 \iiint_{\cE} f(x,y,z)\ dV = \lim_{n,m,l\to \infty} \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{ijk}^*,y_{ijk}^*,z_{ijk}^*)  \De z\,\De y\, \De x
+            </me>.
+            On écrit aussi, de façon plus concise, <m>\displaystyle \iiint_\cE f\ dV</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Le choix du point d'échantillonnage et l'indépendance de ce choix laissent beaucoup de liberté. Un choix particulièrement pratique consiste à choisir les <m>x_{ijk}^*</m> qui dépendent de <m>i</m> seulement, soit <m>x_{ijk}^* = x_i^*</m>, et à faire la même chose pour les autres coordonnées de <m>\vp_{ijk}^*</m>. La triple somme de Riemann modifiée en conséquence devient
+        <me>
+            \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{i}^*,y_{j}^*,z_{k}^*)  \De z\,\De y\, \De x.
+        </me>
+        On voit immédiatement que la somme intérieure est à son tour une somme de Riemann pour une intégrale simple :
+        <me>
+            \lim_{l\to \infty}\sum_{k=1}^l f(x_i^*,y_j^*,z_k^*) = \int_r^s f(x_i^*,y_j^*,z)\ \dee{z}
+        </me>.
+        Cette intégrale est une fonction de <m>x_i^*</m> et <m>y_j^*</m> seulement, disons <m>g(x_i^*,y_j^*)</m>.
+    </p>
+    <p>
+      Remplaçons dans la triple somme originale, ce qui nous donne
+      <me>
+          \sum_{i=1}^n\sum_{j=1}^m g(x_i^* y_j^*)\De y\, \De x
+      </me>,
+      qui est à son tour une somme de Riemann pour l'intégrale double
+      <me>
+          \int_a^b \int_c^d g(x,y) \, \dee{y}\ \dee{x}.
+      </me>
+      Une fois la substitution de <m>g</m> par son expression comme une intégrale par rapport à <m>z</m> faite, nous obtenons (si toutes ces intégrales existent) le résultat suivant.
+
+      <theorem xml:id="thm-Fubini3d">
+          <statement>
+              <p>Soit <m>\cE = \{(x,y,z)\in \R^3|\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f</m> continue sur <m>\cE</m>. Alors,
+              <me>
+                  \iiint_\cE f\ \dee{V} = \int_a^b \int_c^d \int_r^s f(x,y,z)\dee{z}\,\dee{y}\,\dee{x} = \int_c^d\int_a^b\int_r^s f(x,y,z)\ \dee{z}\, \dee{x}\, \dee{y}
+              </me>.
+              </p>
+          </statement>
+      </theorem>
+
+      Notons que la deuxième égalité suit du théorème de Fubini pour les intégrales doubles. Par ailleurs, rien ne nous oblige à considérer la somme par rapport à <m>k</m> comme étant la somme intérieure dans notre argument précédent. Il y a en fait 6 ordres possibles d'intégration. Le théorème de Fubini dit, plus généralement, que le résultat est indépendant de l'ordre d'intégration.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Soit <m>\cE = \{(x,y,z)\in \R^3|\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f(x,y,z) = xz+y^3</m>. Calculer l'intégrale <m>\displaystyle \iiint_\cE f\, \dee{V}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>Nous avons, en vertu du <xref ref="thm-Fubini3d"/> :
+        <md>
+          <mrow>\iiint_\cR f \, \dee{V} \amp = \int_0^1 \int_1^2\int_0^3 (xz+y^3) \ \dee{x}\, \dee{y}\, \dee{x} = \int_0^1\int_1^2 \left[\frac{1}{2}xz^2 + y^3z\right]_{z=1}^{z=3}\ \dee{y}\, \dee{x} </mrow>
+          <mrow>  \amp =  \int_0^1 \int_1^2 \left(\frac{1}{2}9x + 3y^3\right) \dee{y}\, \dee{x} = \int_0^1 \left[\frac{9}{2}xy + \frac{3}{4} y^3 \right]_{y=1}^{y=2}\ \dee{x} </mrow>
+          <mrow>  \amp =  \frac{1}{4}\left[ 9x^2 + 45x \right]_{x=0}^{x=1} = \frac{27}{2} </mrow>
+        </md>.
+        </p>
+      </solution>
+      <solution>
+        <p>
+        Remarquons que nous aurions pu procéder autrement, non seulement pour ce qui est l'ordre d'intégration, mais aussi en analogie avec ce qui a été vu au <xref ref="thm_factorize"/> pour les intégrales doubles. En effet, notre domaine d'intégration est un parallélépipède rectangle, alors
+        <md>
+          <mrow> \iiint_\cR f \, \dee{V} \amp = \int_0^1 \int_1^2\int_0^3 (xz+y^3) \ \dee{x}\, \dee{y}\, \dee{x}
+          </mrow>
+          <mrow> \amp =\left[\int_0^1 x\dee{x}\right] \left[\int_1^2 \dee{y} \right] \left[\int_0^3 z\dee{z}\right] + \left[\int_0^1 \dee{x}\right]\left[\int_1^2 y^3 \dee{y} \right]\left[\int_0^3 \dee{z}\right]   </mrow>
+          <mrow>  \amp = \frac{1}{2}\cdot 1 \cdot  \frac{9}{2} + 1\cdot \frac{15}{4}\cdot 3 = \frac{27}{2} </mrow>
+        </md>.
+        </p>
+      </solution>
+    </example>
+
+    <!-- WeBWork à inclure>
+    Acrive Calculus, 11.7.3, n1
+    Exercise 1
+    https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-triple-cube
+    Library/FortLewis/Calc3/16-3-Triple-integrals/HGM5-16-3-04-Triple-integrals.pg
+    -->
+<!--     
+    <exercise xml:id = "Integrales-triples-01" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-01.pg"/>
+    </exercise> -->
+
+</subsection>
+
+<subsection xml:id="pars-Triples-gen">
+    <title>Régions plus générales</title>
+    <p>
+    Pour considérer des régions plus générales, c'est-à-dire qui ne sont pas nécessairement des boîtes rectangulaires, mais qui sont tout de même bornées, on procède comme suit. Nous incluons cette région, disons <m>\cR</m>, dans un parallélépipède rectangle <m>\cB</m> et nous définissons une nouvelle fonction <m>\tilde{f}</m> qui coïncide avec <m>f</m> (que nous supposons continue) sur <m>\cE</m>, mais qui vaut <m>0</m> ailleurs. On définit alors
+    <me>
+        \iiint_\cE f\ \dee{V} = \iiint_\cB \tilde{f}\, \dee{V}.
+    </me>
+    La fonction <m>\tilde{f}</m> n'est pas continue, mais si <m>\cE</m> est <em>raisonnable</em>, cette intégrale existe. Dans la pratique, on s'intéresse aux intégrales de fonctions sur des régions qui sont relativement simples. La difficulté pour l'évaluation de ces intégrales est surtout dans l'écriture des bornes. Il importe donc d'avoir des descriptions convenables des régions d'intégration et de leurs frontières.
+    </p>
+
+    <p>Une région <em>élémentaire</em> dans <m>\R^2</m> est une région obtenue en permettant à l'une des coordonnées de parcourir un intervalle, la valeur de la seconde coordonnée étant bornée par deux fonctions continues par morceaux définies qui dépendent de la première variable. Plus formellement, une région élémentaire du plan est une région définie selon une des formes suivantes.
+      <md>
+        <mrow xml:id="x-simple-2d" tag = "star"> \{(x,y)\in \R^2| a\leqslant  x \leqslant b,\ u_1(x) \leqslant y \leqslant u_2(x)  \} \amp </mrow>
+        <mrow xml:id="y-simple-2d" tag = "dstar"> \{(x,y)\in \R^2| c\leqslant  y \leqslant d,\ v_1(y) \leqslant x \leqslant v_2(y)  \} \amp </mrow>
+      </md>
+    </p>
+    <definition xml:id="def-Elementaire-3">
+      <statement>
+        <p>
+         Une région <terms>élémentaire</terms> dans <m>\R^3</m> est une région obtenue en permettant à l'une des trois coordonnées de varier entre les valeurs de deux fonctions (continues par morceaux) des deux autres coordonnées. Ces fonctions ont pour domaine une région élémentaire de <m>\R^2</m> (les régions <m>\cD</m> ci-bas).
+         <md>
+             <mrow xml:id="z-simple-3d" tag = "dagger"> \{(x,y,z)\in \R^3| (x,y)\in \cD \subset Oxy, \phi_1(x,y) \leqslant z \leqslant \phi_2(x,y) \}  </mrow>
+            <mrow xml:id="y-simple-3d" tag = "ddagger"> \{(x,y,z)\in \R^3| (x,z)\in \cD \subset  Oxz, \psi_1(x,z) \leqslant y \leqslant \psi_2(x,z) \} </mrow>
+            <mrow xml:id="x-simple-3d" tag = "tdagger"> \{(x,y,z)\in \R^3| (y,z)\in \cD \subset Oyz, \eta_1(y,z) \leqslant x \leqslant \eta_2(y,z) \} </mrow>
+             </md>
+
+        </p>
+      </statement>
+    </definition>
+
+
+
+    <p>
+      Supposons, par exemple, que <m>\cE</m> est de la forme <xref ref="z-simple-3d"/> et que, à son tour, <m>\cD</m> est de la forme <xref ref="x-simple-2d"/>. Notre intégrale triple s'écrit
+      <md>
+        <mrow>\iiint_\cE f\ \dee{V}  \amp = \iint_\cD \left(\int_{\phi_1(x,y)}^{\phi_2(x,y)} f(x,y,z) \, \dee{z} \right)\, \dee{A} </mrow>
+        <mrow> \amp = \int_a^b \int_{u_1(x)}^{u_2(x)}\int _{\phi_1(x,y)}^{\phi_2(x,y)} f(x,y,z) \, \dee{z}\, \dee{y}\, \dee{x} </mrow>
+      </md>.
+      Bien entendu, il y a plusieurs autres configurations possibles, 6 au total. Tout dépend de la façon dont le domaine d'intégration <m>\cE</m> est donné.
+    </p>
+    <p>
+      Les intégrales triples ont des propriétés analogues à celles des intégrales doubles, énoncées dans le <xref ref="thm_Int2darith"/>. En pratique, les régions qui nous intéressent sont des régions qui peuvent être découpées en un nombre fini de régions élémentaires. Comme que mentionné ci-dessus, la complexité dans l'évaluation d'une intégrale triple est souvent d'établir les bornes d'intégration. Voyons quelques exemples.
+    </p>
+
+<example xml:id="Int-3-ex1">
+  <statement>
+    <p>Soit <m>\cE</m> la région de <m>\R^3</m> bornée en dessous par le plan <m>Oxy</m>, au-dessus par le plan <m>y+z=1</m> et qui se trouve à l'intérieur du cylindre parabolique <m>y=x^2</m>. Écrire les bornes d'intégration pour les intégrales pour les ordres d'intégration <m>\dee{z}\, \dee{y}\,\dee{x}</m> et <m>\dee{y}\, \dee{z}\,\dee{x}</m>.
+    <sidebyside width="100%" align = "center">
+    <figure xml:id="eg-Int-3-ex1">
+        <caption>La région <m>\cE</m> de <m>\R^3</m>. Afin d'écrire les bornes pour les intégrales demandées, on projettera  la région sur le plan <m>Oxy</m> d'abord, puis sur le plan <m>Oxz</m>.</caption>
+
+        <image xml:id="ex-int-triple-bornes" platform="sage" width="100%">
+
+          <sageplot variant="3d" aspect="1.0">
+            var('x,y,z')
+            Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
+            Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
+            Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
+            Projxy = parametric_plot3d([x,0, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.25,frame = False)
+            Fig = Base + Cyl + Plan+ Projxy
+            Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
+            Fig += text3d("x", (1.4,0,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
+            Fig += text3d("y", (0,1.4,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
+            Fig += text3d("z", (0,0,1.4), color = "black",frame = False)
+            Fig
+          </sageplot>
+        </image>
+
+
+    </figure>
+    </sidebyside>
+
+
+
+    </p>
+  </statement>
+  <solution>
+
+      <sidebyside widths="40% 50%">
+          <p>Commençons par décrire <m>\cE</m> comme une région élémentaire, en laissant varier <m>z</m> entre <m>z=0 = \phi_1(x,y)</m> et <m>z=1-y = \phi_2(x,y)</m> (puisque <m>z</m> varie entre le plan <m>z=0</m> et le plan <m>y+z=1</m>). Notons que ces deux plans se coupent lorsque <m>0 = 1-y</m>, c'est-à-dire selon la droite <m>y=1</m>. Afin de décrire <m>\cE</m> sous la forme <xref ref="z-simple-3d"/>, nous la projetons sur le plan <m>Oxy</m>, obtenant la région  <m>\cD</m>.
+
+          </p>
+          <image xml:id="sageplot-Int-3-eg-1a">
+              <sageplot>
+                  var('x,y')
+                  F = plot(x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$y$'], ticks =[[-1,1],[1]], color = "blue",
+                  fill = "max", fillcolor = "blue", fillalpha= 0.2, fontsize = 20)
+                  F +=text("$\\mathcal{D} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ x^2\\, \\leqslant\\, y \\, \\leqslant\\, 1$", (0.5,0.9),  fontsize=20, zorder=2, color= "black")
+                  F
+               </sageplot>
+          </image>
+
+      </sidebyside>
+      <p>Cette projection est la région bornée par <m>y=x^2</m> et <m>y=1</m>,
+          <me>
+              \cD =\{(x,y) \in \R^2 | -1 \leqslant x \leqslant 1, x^2 \leqslant y \leqslant 1 \}
+          </me>.
+          Pour chaque <m>(x,y)\in \cD</m>, les points de <m>\cE</m> ont une coordonnée <m>z</m> vérifiant <m>0\leqslant  z \leqslant 1-y</m>. Ainsi, l'intégrale qui nous intéresse est
+          <me>
+              \int_{-1}^1 \int_{x^2}^1\int_0^{1-y} f(x,y,z)\ \dee{z}\, \dee{y}\, \dee{x}.
+          </me>
+      </p>
+      <p>
+        Pour le second ordre d'intégration, projetons maintenant <m>\cE</m> sur le plan <m>Oxz</m>.
+      </p>
+      <sidebyside widths="40% 50%">
+          <p>
+             La courbe d'intersection du cylindre <m>y=x^2</m> et du plan <m>z=1-y</m> devient la parabole <m>z=1-x^2</m> du plan <m>y=0</m>. Ainsi, la projection de <m>\cE</m> sur <m>Oxz</m> est la région <m>\cR</m> de ce plan bornée par les courbes <m>z=1-x^2</m> et <m>z=0</m>.
+          </p>
+          <image xml:id="sageplot-Int-3-eg-1b">
+              <sageplot>
+                  var('x,y')
+                  F = plot(1-x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$z$'], ticks =[[-1,1],[1]], color = "green", fill = True, fillcolor = "green", fillalpha= 0.2, fontsize = 20)
+                  F +=text("$\\mathcal{R} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ 0\\, \\leqslant\\, z\\, \\leqslant\\, 1-x^2$", (0.5,0.1),  fontsize=20, zorder=2, color= "black")
+                  F
+              </sageplot>
+          </image>
+
+      </sidebyside>
+      <p>
+        <me>
+            \cR = \{(x,z)\in \R^2| -1\leqslant  x \leqslant 1,\ 0\leqslant  z \leqslant 1-x^2\}
+        </me>
+        Pour chaque <m>(x,z)\in \cR</m>, les points de <m>\cE</m> ont une coordonnée <m>y</m> vérifiant <m>x^2\leqslant  y\leqslant  1-z</m>. En effet, situons-nous au point <m>(x,0,z)</m> et déplaçons-nous selon la direction des <m>y</m>. Nous entrons dans <m>\cE</m> lorsque nous atteignons le cylindre <m>y=x^2</m> et nous quittons <m>\cE</m> lorsque nous atteignons le plan <m>y=1-z</m>. L'intégrale qui nous intéresse est donc
+        <me>
+            \int_{-1}^1 \int_{0}^{1-x^2}\int_{x^2}^{1-z} f(x,y,z)\ \dee{y}\, \dee{z}\, \dee{x}.
+        </me>
+      </p>
+
+
+  </solution>
+</example>
+
+<!-- WeBWork à inclure>
+Devoir n.10, question 2
+-->
+<!-- 
+<exercise xml:id = "int_triple_coord_cart_1_SL" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-05integrales_triples/int_triple_coord_cart_1_SL.pg"/>
+</exercise>
+ -->
+
+<example>
+  <statement>
+    <p>
+      Soit <m>I = \int_0^2 \int_0^{2-y}\int_0^{(2-y)/2} f(x,y,z)\, \dee{x}\, \dee{z}\, \dee{y}</m>, où <m>f</m> est une fonction intégrable. Écrire les intégrales itérées équivalentes dans les ordres d'intégration <m>\dee{y}\, \dee{x}\, \dee{z}</m> et <m>\dee{x}\, \dee{y}\, \dee{z}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Afin de nous faire une idée du domaine d'intégration, nommons-le <m>\cE</m>. Il convient de remarquer que
+      <ul>
+      <li>
+        <p>
+          la valeur de <m>y</m> (intégrale extérieure) varie globalement entre <m>0</m> et <m>2</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          pour chaque <m>y</m> dans cet intervalle, la valeur de <m>z</m> varie entre <m>0</m> et <m>2-y</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          pour chaque <m>(y,z)</m> vérifiant ces conditions, la valeur de <m>x </m> varie entre <m>0</m> et <m>\tfrac{2-y}{2}</m>.
+        </p>
+      </li>
+      </ul>
+      La région d'intégration est donc
+      <me>
+      \cE=\Set{(x,y,z)}{ 0\leqslant  y\leqslant  2,\
+                       0\leqslant  z\leqslant  2-y,\
+                       0\leqslant  x\leqslant  \tfrac{2-y}{2}}
+      \tag{$*$}</me>.
+    </p>
+
+    <p>
+      Afin de faire une esquisse de <m>\cE</m>, considérons les portions de cette région qui coupent les plans d'équation <m>y=Y</m>, avec <m>Y\in[0,2]</m>. Nous faisons ceci, car <m>y</m> est la dernière variable d'intégration. Nous devons avoir, d'après la description de <m>\cE</m>  ci-dessus, <m>0\leqslant  x \leqslant 1-Y/2</m> et <m>0\leqslant  z \leqslant 2-Y</m>. Cela revient à dire que les sections sont des rectangles dont les côtés ont pour longueur <m>1-Y/2</m> et <m>2-Y</m>. Par exemple, à <m>Y=0</m>, c'est-à-dire dans le plan <m>Oxz</m>, la portion de <m>\cE</m> est un rectangle dont les sommets sont <m>(0,0,0),\, (0,0,2),\, (1,0,2)</m> et <m>(1,0,0)</m>.
+    </p>
+
+    <sidebyside widths="30% 30%" valign="middle">
+      <image source="images/CLP-figs/xchange2"/>
+      <image source="images/CLP-figs/xchange5"/>
+</sidebyside>
+
+    <p>
+      De plus, <m>Y</m> varie entre <m>0</m> et <m>2</m>. Ainsi, notre solide <m>\cE</m> est formé d'un amoncellement de rectangles comme ceux décrits ci-dessus, les uns à côté des autres, empilés verticalement le long de l'axe des <m>y</m>. À mesure que l'on avance le long de cet axe, les rectangles rapetissent, et, lorsque <m>y=2</m>, le rectangle devient un point. Voici une esquisse de <m>\cE</m> dans laquelle apparaît un de ces rectangles.
+    </p>
+
+    <sidebyside width="50%">
+    <image source="images/CLP-figs/xchange4"/>
+    </sidebyside>
+
+    <p>
+      Pour écrire une intégrale avec <m>z</m> comme dernière variable d'intégration, nous coupons <m>\cE</m> avec des plans <m>z=Z</m> qui sont perpendiculaires à l'axe <m>Oz</m>. De la figure ci-dessus, on déduit que cette coupe est non vide lorsque <m>0\leqslant  Z \leqslant 2</m>. De même, de l'expression de <m>\cE</m> <m>(\ast)</m>, nous avons qu'un point <m>(x,y,Z)</m> se trouve dans <m>\cE</m> si et seulement si
+      <md>
+        <mrow> 0\leqslant  y \leqslant 2, \amp \amp  y \leqslant 2-Z, \amp \amp  0\leqslant  x, \amp \amp  2x+y\leqslant  2.</mrow>
+      </md>
+
+      La figure de gauche ci-dessous montre une esquisse d'une vue d'en haut de cette découpe, montrant les points <m>(x,y)</m> vérifiant ces contraintes. La figure de droite montre l'ensemble des <m>(x,y,Z)</m> qui vérifient ces mêmes contraintes.
+    </p>
+
+    <sidebyside widths="45% 45%">
+      <image source="images/CLP-figs/xchange3"/>
+      <image source="images/CLP-figs/xchange6"/>
+    </sidebyside>
+
+    <p>
+      Pour exprimer <m>I</m> dans l'ordre d'intégration <m>\dee{x}\, \dee{y}\, \dee{z}</m>, on subdivise la portion de <m>\cE</m> se trouvant à <m>z=Z</m> en des rectangles verticaux parallèles à l'axe des <m>x</m>.
+    </p>
+
+    <sidebyside width="50%">
+      <image source="images/CLP-figs/xchange3v"/>
+    </sidebyside>
+
+    <p>
+      Nous avons alors que <m>y</m> varie de <m>0</m> à <m>2-Z</m> et que, pour chaque <m>y</m> dans cet intervalle, <m>x</m> varie entre <m>0</m> et <m>\frac{2-y}{2}</m>. Ainsi, nous avons
+      <me>
+        I = \int_0^2 \int_0^{2-z}\int_0^{(2-y)/2} f(x,y,z)\, \dee{x} \dee{y}\, \dee{z}
+      </me>.
+    </p>
+
+    <p>
+      Voyons maintenant comment exprimer <m>I</m> dans l'ordre <m>\dee{y}\, \dee{x}\, \dee{z}</m>. Nous subdivisons la section de <m>\cE</m> se trouvant à <m>z=Z</m> en des rectangles horizontaux parallèles à l'axe des <m>y</m>, comme qu'illustré dans la figure ci-dessous.
+    </p>
+
+    <sidebyside width="66%">
+      <image source="images/CLP-figs/xchange3h"/>
+    </sidebyside>
+
+    <p>
+      La valeur de <m>x</m> varie entre <m>0</m> et <m>1</m>, mais, pour <m>y</m>, nous devons distinguer deux cas. En effet,
+      <ul>
+        <li>
+          <p>
+            lorsque <m>x</m> varie entre <m>0</m> et <m>z/2</m>, <m>y</m> varie entre <m>0</m> et <m>2-z</m>, puis
+          </p>
+        </li>
+        <li>
+          <p>
+            lorsque <m>x</m> varie entre <m>z/2</m> et <m>1</m>, <m>y</m> varie entre <m>0</m> et <m>2-2x</m>.
+          </p>
+        </li>
+      </ul>
+      Ainsi,
+      <me>
+        I = \int_0^2 \int_0^{z/2} \int_0^{2-z} f(x,y,z)\, \dee{y}\, \dee{x}\, \dee{z} + \int_0^2 \int_{z/2}^1 \int_0^{2-2x} f(x,y,z)\, \dee{y}\, \dee{x}\, \dee{z}
+      </me>.
+    </p>
+  </solution>
+</example>
+
+<!-- WeBWork à inclure>
+Devoir 10, question 1.
+-->
+<!-- 
+<exercise xml:id = "int_triple_coord_cart_10" component = "webwork">
+  <webwork source ="BPL/CCDMD/Calcul_avance-05integrales_triples/int_triple_coord_cart_10.pg"/>
+</exercise> -->
+
+
+</subsection>
+
+<subsection xml:id="pars-app-Int-3">
+  <title>Applications des intégrales triples</title>
+  <p>
+    Si une intégrale de la forme <m>\displaystyle \int_a^bf(x)\, \dee{x}</m> permet de calculer une aire (affectée d'un signe) et que, de la même façon, une intégrale double <m>\displaystyle \iint_{\cD}f(x,y)\, \dee{A}</m> permet de calculer un volume (affecté d'un signe), une intégrale triple <m>\displaystyle \iiint_\cE f(x,y,z)\, \dee{V}</m> permet de calculer un <em>hypervolume</em>. En effet, le graphe de <m>f(x,y,z)</m> est un sous-ensemble de <m>\R^4</m>, le domaine d'intégration <m>\cE</m> est contenu dans <m>\R^3</m>.
+  </p>
+  <p>
+    Cependant, d'autres interprétations que nous avons déjà rencontrées admettent leurs analogues avec des intégrales triples. Par exemple, on peut tout de même calculer des volumes, des masses, des centres de masse et des moments d'inertie. Pour la suite, supposons que <m>\cE</m> est soit une région élémentaire, soit une réunion finie de régions élémentaires.
+    <ul>
+      <li>
+        <p>
+          <alert>Volume.</alert> Si <m>\cE</m> est donnée, son volume est obtenu en considérant la fonction <m>f(x,y,z)=1</m> dans la <xref ref="def-int-3"/>, c'est-à-dire
+          <me>
+            \text{V}(\cE) = \iiint_{\cE} \ \dee{V}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Masse.</alert> Si la région <m>\cE</m> est occupée par un solide dont la densité au point <m>\vp = (x,y,z)</m> est donnée par une fonction <m>\rho(x,y,z)</m> (qu'on se doit de supposer intégrable), alors la masse totale du solide est donnée par
+          <me>
+          \text{Masse}(\cE) = \iiint_{\cE} \rho\ \dee{V} = \iiint_{\cE} \rho(x,y,z)\, \dee{V}
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Centre de masse.</alert> Le centre de masse de la région <m>\cE</m> considérée au paragraphe précédent s'obtient de la même façon que pour les intégrales doubles, à savoir
+          <md>
+          <mrow>
+          \bar x &amp; =  \frac{\displaystyle\iiint_\cE x\, \rho\, \dee{V}}
+                                {\displaystyle \iiint_\cE \ \rho\, \dee{V}}
+                  =\frac{\displaystyle \iiint_\cE x\ \rho(x,y,z)\, \dee{V}}
+                                      {\text{Masse}(\cE)},
+          </mrow><mrow>
+          \bar y &amp; = \frac{\displaystyle \iiint_\cE y\, \rho\, \dee{V}}
+                               {\displaystyle \iiint_\cE \ \rho\, \dee{V}}
+                  =\frac{\displaystyle \iiint_\cE y\ \rho(x,y)\, \dee{V}}
+                                  {\text{Masse}(\cE)},
+          </mrow>
+          <mrow>
+          \bar z &amp; =\frac{\displaystyle \iiint_\cE z\, \rho\, \dee{V}}
+                                {\displaystyle \iiint_\cE \ \rho\, \dee{V}}
+                  =\frac{\displaystyle \iiint_\cE z\ \rho(x,y,z)\, \dee{V}}
+                                      {\text{Masse}(\cE)}
+          </mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Valeur moyenne.</alert> Tout comme nous l'avons vu à la <xref ref="def_AVaverage"/> pour les fonctions de deux variables, nous pouvons calculer la valeur moyenne d'une fonction intégrable <m>f(x,y,z)</m> sur une région <m>\cE</m> de <m>\R^3</m>. Celle-ci est donnée par
+          <md>
+            <mrow>  \bar{f} \amp = \frac{\displaystyle \iiint_\cE f \, \dee{V}}{\displaystyle \iiint_\cE\, \dee{V}} = \frac{\displaystyle \iiint_\cE f(x,y,z) \, \dee{v}}{\displaystyle \iiint_\cE\, \dee{V}}
+             </mrow>
+          </md>.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+<example xml:id="eg_application-int3">
+  <statement>
+    <p>Considérer la région <m>\cE</m> de l'<xref ref="Int-3-ex1"/> et supposer qu'elle est occupée par un solide dont la densité de masse au point <m>(x,y,z)</m> est donnée par <m>\rho(x,y,z) = ky</m>, où <m>k</m> est une constante positive. Calculer :
+
+    <ol marker="(a)">
+      <li>
+        <p> Le volume de <m>\cE</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          La masse de <m>\cE</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          Les coordonnées de son centre de masse.
+        </p>
+      </li>
+    </ol>
+
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol marker="(a)">
+        <li>
+          <p>
+            Le volume est donné par
+            <md>
+              <mrow>V(\cE)  \amp = \iiint_{\cE} \, \dee{V}  = \int_{-1}^1\int_{x^2}^{1}\int_0^{1-y}\ \dee{z}\, \dee{y}\, \dee{x}</mrow>
+              <mrow> \amp = \int_{-1}^1 \int_{x^2}^1 z\Big\vert_{z=0}^{z=1-y} \dee{y}\, \dee{x} = \int_{-1}^1\int_{x^2}^1 1-y \ \dee{y}\, \dee{x}</mrow>
+              <mrow>  \amp = \int_{-1}^{1} \left.\left[ y-\frac{y^2}{2} \right]\right|_{y=x^2}^{y=1}\ \dee{x}  = \int_{-1}^2 \frac{1}{2}-x^2 + \frac{x^4}{2} \ \dee{x}</mrow>
+              <mrow>  \amp = \left.\left[\frac{x}{2} - \frac{x^2}{3}+\frac{x^5}{10} \right]\right|_{-1}^1 = \frac{8}{15}</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            La masse totale du solide est
+            <md>
+              <mrow>M \amp =\iiint_{\cE} \rho(x,y,z)\ \dee{V} = \iiint_{\cE} k y \dee{V}</mrow>
+              <mrow> \amp = k \int_{-1}^1\int_{x^2}^1\int_0^{1-y} y \ \dee{z}\, \dee{y}\, \dee{x}  = k\int_{-1}^1 \int_{x^2}^1 \left[yz \right]\Big\vert_{z=0}^{z=1-y}\ \dee{y}\, \dee{x}</mrow>
+              <mrow>  \amp = k \int_{-1}^1 \int_{x^2}^1 y-y^2\ \dee{y}\, \dee{x} = k \int_{-1}^1 \left.\left[\frac{y^2}{2}-\frac{y^3}{3}\right]\right|_{y=x^2}^{y=1} \ \dee{x}</mrow>
+              <mrow>  \amp= k \int_{-1}^1 \frac{x^6}{3} -\frac{x^4}{2} +\frac{1}{6}\ \dee{x} = k\left.\left[\frac{x^7}{21}-\frac{x^5}{10}+\frac{x}{6}\right]\right|_{x=-1}^{x=1} </mrow>
+              <mrow>  \amp = \frac{8k}{35} </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Afin de calculer les coordonnées du centre de masse, nous aurons besoin des intégrales suivantes :
+            <sidebyside widths="30% 30% 30%">
+              <p>
+                <me>
+                  \iiint_{\cE}x\rho\ \dee{V},
+                </me>
+              </p>
+              <p>
+                <me>
+                  \iiint_{\cE}y\rho\ \dee{V},
+                </me>
+              </p>
+              <p>
+                <me>
+                  \iiint_{\cE}z\rho\ \dee{V}
+                </me>.
+              </p>
+
+            </sidebyside>
+            Allons-y.
+            <ul>
+              <li>
+                <p>
+                  On peut conclure sans calculs que <m>\displaystyle \iiint_{\cE} kxy\ \dee{V} = 0</m>. En effet, la région d'intégration est invariante sous la transformation <m>(x,y,z)\mapsto (-x,y,z)</m>. De plus, la fonction à intégrer, à savoir <m>f(x,y,z) = xy</m>, est une fonction impaire comme fonction de <m>x</m>, c'est-à-dire <m>f(-x,y,z) = -f(x,y,z)</m>.
+                </p>
+              </li>
+              <li>
+                <p>Notre deuxième intégrale doit être calculée :
+                <md>
+                    <mrow>\iiint_{\cE} y \rho \ \dee{V} \amp = \int_{-1}^1 \int_{x^2}^1 \int_{0}^{1-y} k y^2 \ \dee{z}\, \dee{y}\, \dee{x}  </mrow>
+                    <mrow> \amp = k\int_{-1}^1 \int_{x^2}^1 \left[y^2 z\right]_{z=0}^{z=1-y} \dee{y}\, \dee{x}</mrow>
+                    <mrow>  \amp=\int_{-1}^1 \int_{x^2}^1 y^2(1-y)\ \dee{y}\, \dee{x} </mrow>  
+                    <mrow> \amp = k \int_{-1}^1\left[\frac{y^3}{3}- \frac{y^4}{4}\right]_{y=x^2}^{y=1}\, \dee{x}
+                    </mrow>
+                    <mrow>  \amp =  k\int_{-1}^1 \frac{x^8}{4}-\frac{x^6}{3}+\frac{1}{12}\ \dee{x}  </mrow>
+                    <mrow> \amp = k \left[\frac{x^9}{36} - \frac{x^7}{21}+\frac{x}{12}\right]_{x=-1}^{x=1}
+                    </mrow>
+                    <mrow>  \amp= \frac{8k}{63} </mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>De même, on calcule la troisième intégrale :
+                  <md>
+                    <mrow>\iiint_{\cE} z\rho \ \dee{V} \amp= \int_{-1}^1\int_{x^2}^1 \int_{0}^{1-y} k zy \ \dee{z}\, \dee{y}\, \dee{x}
+                    </mrow>
+                    <mrow>  \amp= k \int_{-1}^1\int_{x^2}^1 \left[\frac{1}{2}yz^2\right]_{z=0}^{z=1-y}\ \dee{y}\, \dee{x} </mrow>
+                    <mrow> \amp = k\int_{-1}^1 \int_{x^2}^1 \frac{y^3}{2}-y^2 + \frac{y}{2} \ \dee{y}\, \dee{x} </mrow>
+                    <mrow>  \amp= k \int_{-1}^1 \left[\frac{y^4}{8} - \frac{y^3}{3}+ \frac{y^2}{4}\right]_{y=x^2}^y=1</mrow>
+                    <mrow>  \amp= k \int_{-1}^1 \frac{-x^8}{8}+\frac{x^6}{3} - \frac{x^4}{4}+\frac{1}{24}\ \dee{x} </mrow>
+                    <mrow>  \amp=k \left[\frac{-x^9}{72}+\frac{x^7}{21}-\frac{x^5}{20}+\frac{x}{24} \right]_{x=-1}^{x=1} = \frac{16k}{315}</mrow>
+                  </md>.
+                </p>
+              </li>
+            </ul>
+            Ainsi, les coordonnées du centre de masse sont
+            <md>
+              <mrow>\bar x \amp= \frac{0}{M} = 0, </mrow>
+              <mrow> \bar y \amp= \frac{8k}{63}\times \frac{35}{8k} = \frac{35}{63} = \frac{5}{9},</mrow>
+              <mrow> \bar z \amp= \frac{16k}{315}\times \frac{35}{8k} = \frac{2}{9} </mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+
+<!-- WeBWork à inclure>
+Active Calculus, 11.7.3, n.4
+Exercise 4
+https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-average-value
+Library/272/setStewart15_7/problem_5.pg
+-->
+
+<!-- 
+<exercise xml:id = "Integrales-triples-02" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-02.pg"/>
+</exercise> -->
+
+<!-- WeBWork à inclure>
+Active Calculus 11.7.3, n.7
+Exercise 7
+https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-moment
+Library/Michigan/Chap16Sec3/Q61.pg
+-->
+<!-- 
+<exercise xml:id = "Integrales-triples-03" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-03.pg"/>
+</exercise> -->
+
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Integrales-triples.ptx"/>
+
+</section>

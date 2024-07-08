@@ -1,0 +1,2081 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_max">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par Juan Carlos Bustamantem août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Valeurs maximales et minimales</title>
+<introduction>
+
+<p>Une des principales applications du calcul différentiel des fonctions à une variable  est l'optimisation, c'est-à-dire trouver des valeurs maximales ou minimales d'une fonction (d'une variable). Nous reprenons ce sujet dans le contexte des fonctions à 2 variables ou plus, en mettant l'accent sur les fonctions de deux variables.  Avant de commencer, il convient de donner certaines définitions qui seront cruciales par la suite.
+</p>
+
+<definition xml:id="def_local_max_min">
+<statement><p>
+Soit <m>\plan{D} \subseteq \R^n</m> et <m>f:\plan{D} \to \R</m>. Soit <m>\vr_0 \in \plan{D}</m>.
+<ul>
+<li>
+<m>\vr_0</m> est un  <em>point de maximum local de </em> <m>f</m> si
+<m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
+Plus précisément, <m>\vr_0</m> est un maximum local de  <m>f</m> s'il existe
+ <m>\e \gt 0</m> tel que <m>f(\vr)\leqslant f(\vr_0)</m> lorsque <m>|\vr - \vr_0| \lt \e </m>.
+</li>
+<li>
+<m>\vr_0</m> est un <em>point de minimum local de </em> <m>f</m> si
+<m>f(\vr)\geqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
+</li>
+<li>
+Les valeurs prises par <m>f</m> aux points de minimum ou de maximum locaux sont appelées les <em>valeurs extrémales</em> de <m>f</m>.
+</li>
+<li>
+<m>\vr_0</m> est un  <em> point de maximum global</em>, ou un
+<em>point de maximum absolu</em>, de <m>f</m> si
+<m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> dans  <m>\plan{D}</m>.
+</li>
+<li>
+<m>\vr_0</m> est un <em>point de minimum global</em>, ou un
+<em>point de minimum absolu</em>, de <m>f</m> si
+<m>f(\vr)\geqslant f(\vr_0)</m> pour tout  <m>\vr</m> dans  <m>\plan{D}</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+</introduction>
+
+
+<subsection xml:id="pars-Max-min-loc">
+  <title> Maximums et minimums locaux</title>
+<p>
+Une des premières choses qu'on fait lorsqu'on étudie les techniques d'optimisation des fonctions d'une variable est de se demander :
+<ul>
+<li>
+Si l'on suppose que la valeur maximale de  <m>f(x)</m> est <m>f(a)</m>, que peut-on déduire de <m>a</m>?
+</li>
+</ul>
+Peu de temps après, on a la réponse :
+<ul>
+<li>
+Si <m>f</m> admet un maximum local en <m>x=a</m>, c'est-à-dire que <m>f(x) \leqslant f(a)</m> lorsque <m>x</m> est près de <m>a</m>, et que <m>f</m> est dérivable en <m>a</m>, alors  <m>f'(a)=0</m>.
+</li>
+</ul>
+</p>
+
+<sidebyside width="50%">
+<image source="images/CLP-figs/localMaxA"/>
+</sidebyside>
+
+<p>
+    Voyons pourquoi ceci est vrai. Supposons donc que <m>f</m> admet un maximum en <m>a</m>, donc pour <m>h</m> petit tel que  <m>h \gt 0</m>,
+<me>
+f(a\!+\!h)\leqslant f(a)
+\implies f(a\!+\!h)-f(a)\leqslant 0
+\implies \frac{f(a\!+\!h)-f(a)}{h}\leqslant 0\quad\text{si } h \gt 0
+</me>.
+On prend la limite lorsque <m>h\rightarrow 0</m> et l'on conclut que <m>f'(a)\leqslant 0</m>.
+De la même façon<fn>Rappelons que si  <m>h\lt 0</m> et que <m>A\leqslant  B</m>, alors <m>hA\geqslant hB</m> puisque le produit de deux nombres négatifs est positif, donc
+  <m>h\lt 0,\ A\leqslant  B
+    \implies A-B\leqslant  0
+    \implies h(A-B)\geqslant 0
+    \implies hA\geqslant hB</m>.
+  </fn>,
+pour tout <m>h</m> petit tel que  <m>h \lt 0</m>,
+<me>
+  f(a\!+\!h)\leqslant f(a)
+  \implies f(a\!+\!h)-f(a)\leqslant 0
+  \implies \frac{f(a\!+\!h)-f(a)}{h}\geqslant 0\quad\text{ si } h \lt 0
+</me>.
+À nouveau, on prend la limite lorsque  <m>h\rightarrow 0</m> pour conclure que  <m>f'(a)\geqslant 0</m>.
+Ainsi, on a les deux inégalités  <m>f'(a)\geqslant 0</m> et <m>f'(a)\leqslant 0</m>, ce qui donne <m>f'(a)=0</m>.
+</p>
+
+<p>On aura sans doute remarqué que, pour que cet argument tienne, on a besoin seulement d'avoir  <m>f(x)\leqslant f(a)</m> pour  <m>x</m> près de <m>a</m>, pas nécessairement pour tout <m>x</m>. En effet, dans les inégalités ci-haut, on a utilisé seulement
+<m>f(a+h)</m> avec <m>h</m> petit. Nous pouvons donc raffiner notre résultat :
+<ul>
+<li>
+Si <m>f(a)</m> est un maximum local pour  <m>f(x)</m> et que <m>f</m> est différentiable en <m>a</m>, alors <m>f'(a)=0</m>.
+</li>
+</ul>
+Le même argument s'applique pour les points de minimum :
+<ul>
+<li>
+Si <m>f(a)</m> est un minimum local <m>f(x)</m> et que <m>f</m> est différentiable en <m>a</m>, alors <m>f'(a)=0</m>.
+</li>
+</ul>
+</p>
+
+<p>
+    Voyons maintenant comment utiliser ces idées dans le contexte des fonctions à plusieurs variables. Supposons donc que <m>f</m> admet un maximum local en un point <m>\vr_0</m>, autour duquel <m>f</m> est définie (c'est-à-dire que <m>\vr_0</m> est un point intérieur du domaine de <m>f</m>). La figure ci-bas illustre le cas des fonctions à deux variables.
+</p>
+
+
+<figure>
+<caption>La fonction <m>f</m> est définie dans la région <m>R</m> qui contient <m>\vr_0=(a,b)</m> comme point intérieur</caption>
+<sidebyside width="60%">
+<image source="images/CLP-figs/max"/>
+</sidebyside>
+</figure>
+
+
+
+<p>
+La valeur de <m>f(\vr)</m> doit donc décroître lorsque  <m>\vr</m> se déplace en partant de  <m>\vr_0</m> dans <em>n'importe quelle</em> direction. Peu importe quel vecteur de direction (que l'on peut supposer unitaire)  <m>\vd</m> qu'on choisit, la dérivée directionnelle de  <m>f</m> en <m>\vr_0</m> dans la direction de  <m>\vd</m> doit donc être inférieure ou égale à zéro. Plus formellement,
+<md>
+<mrow>
+D_\vd f(\vr_0) = \vnabla f(\vr_0)\cdot\vd \leqslant 0.
+</mrow>
+</md>
+Pour la même raison, la dérivée directionnelle de <m>f</m> en <m>\vr_0</m> dans la direction de <m>-\vd</m> doit aussi être négative ou nulle :
+<md>
+<mrow>
+D_{-\vd} f(\vr_0) = \vnabla f(\vr_0)\cdot(-\vd)\leqslant 0,
+\quad\text{ce qui donne }\quad \vnabla f(\vr_0)\cdot\vd \geqslant 0
+</mrow>
+</md>.
+Puisque  <m>\vnabla f(\vr)\cdot\vd </m> doit être positif ou nul, et négatif ou nul, ce produit scalaire doit être nul. Ceci est vrai pour n'importe quel vecteur de direction <m>\vd</m>. En particulier, si l'on choisit <m> \vd = \vi</m>, ceci force la première composante de
+<m>\vnabla f(\vr_0)</m> à être nulle. Le même argument avec <m>\vd = \vj</m> (ou avec les vecteurs de base requis en dimensions supérieures) donne que toutes les composantes de <m>\vnabla f(\vr_0)</m> doivent être nulles.
+
+Nous avons établi que <m>\vnabla f(\vr_0)=\vZero</m>. Le même argument fonctionne lorsqu'on a un point de minimum local en <m>\vr_0</m>.
+</p>
+
+<theorem xml:id="thm_stationary_point">
+<statement><p>
+    Soit <m>\plan{D}\subseteq \R^n</m> et <m>f:\plan{D}\to \R</m> différentiable en <m>\vr_0</m>, un point de <m>\plan{D}</m>. Si
+<ul>
+<li>
+<m>\vr_0</m> est un point intérieur de  <m>\plan{D}</m>, et que
+</li>
+<li>
+<m>\vr_0</m> est un point de maximum ou de minimum local pour <m>f</m>, et que
+</li>
+<li>
+ <m>f</m> est différentiable en <m>\vr_0</m>,
+</li>
+</ul>
+alors
+<me>
+\vnabla f(\vr_0) = \vZero.
+</me>
+</p></statement>
+</theorem>
+
+
+<definition xml:id="def_critical_point">
+<statement><p>
+Soit <m>f : \plan{D} \to \R</m>  et <m>\vr_0\in \plan{D}</m>. Alors,
+<ul>
+<li> si <m>\vnabla f(\vr_0)</m> existe et est nul, on dit que  <m>\vr_0</m> est un point critique (ou point stationnaire) de <m>f</m> et,
+</li>
+<li> si <m>\vnabla f(\vr_0)</m> n'existe pas, on dit que  <m>\vr_0</m> est un point singulier de <m>f</m>.
+
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<warning xml:id="warn_critical_point">
+<p>
+Il faut noter que plusieurs auteur(e)s combinent les deux notions et disent que <m>\vr_0</m> est un point critique si <m>\vnabla f (\vr_0) </m> est nul ou n'existe pas.
+</p>
+</warning>
+
+<warning xml:id="warn_saddle">
+<p>
+Le <xref ref="thm_stationary_point"/> nous dit que tout maximum ou minimum local à l'intérieur du domaine d'une fonction différentiable doit être un point critique. Ce résultat  <em>ne nous dit pas</em> que tout point critique est soit un maximum soit un minimum local. Déjà pour les fonctions à une variable, on peut avoir des points d'inflexion, par exemple.
+</p>
+</warning>
+
+<p>Nous verrons dans l'<xref ref="eg_maxminA"/> et dans l'<xref ref="eg_maxminC"/> qu'il y a des points critiques qui ne sont ni des points de maximum local ni de minimum local. Cependant, le <xref ref="thm_stationary_point"/> est très utile puisque, souvent, une fonction ne possède qu'un nombre relativement restreint de points critiques. Pour trouver les points de maximum ou de minimum local, on doit donc considérer ces points critiques. Nous reviendrons plus tard sur la question de déterminer si un point critique est un point de maximum ou de minimum local (ou aucun des deux). Commençons par trouver quelques points critiques.
+</p>
+
+<example xml:id="eg_MXMNlocalA"><title><m>f(x,y)=x^2-2xy+2y^2+2x-6y+12</m></title>
+<statement>
+<p>
+Trouver les points critiques de  <m>f(x,y)=x^2-2xy+2y^2+2x-6y+12</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Pour trouver les points critiques, nous trouvons le gradient, en calculant les dérivées partielles de <m>f(x,y)</m> :
+<md>
+<mrow>
+f_x(x,y)&amp;= 2x-2y+2 \qquad \text{ et } \qquad &amp;
+f_y(x,y)= -2x+4y-6
+</mrow>
+</md>.
+Les points critiques sont les solutions du système d'équations
+<me>
+2x-2y+2=0,\qquad -2x+4y-6=0
+</me>,
+ou, de façon équivalente,
+<md>
+<mrow>
+x-y&amp;=-1,
+</mrow><mrow>
+-x+2y&amp;=3
+</mrow>
+</md>.
+Il s'agit d'un système linéaire de deux équations avec deux inconnues (<m>x</m> et <m>y</m>). Un calcul immédiat donne l'unique solution : <m>x=1</m>, <m>y=2</m>.
+
+</p>
+</solution>
+</example>
+
+<p>
+    L'exemple précédent était très simple, car les équations étaient linéaires, ce qui est une conséquence du fait que <m>f(x,y)</m> était un polynôme de degré 2. Voyons un autre exemple.
+</p>
+
+<example xml:id="eg_MXMNlocalB"><title><m>f(x,y)=2x^3 - 6xy + y^2 +4y </m></title>
+<statement>
+<p>
+Trouver tous les points critiques de <m>f(x,y)=2x^3 - 6xy + y^2 +4y </m>.
+</p>
+</statement>
+<solution>
+<p>
+    Comme dans l'exemple précédent, nous commençons par calculer le gradient, donc les dérivées partielles:
+<me>
+f_x=6x^2-6y,   \qquad
+f_y=-6x+2y+4
+</me>.
+Ainsi, les points critiques sont les solutions de
+<me>
+6x^2-6y=0,   \qquad
+-6x+2y+4 = 0
+</me>.
+La première équation équivaut à  <m>y=x^2</m>, qui exprime  <m>y</m> comme fonction de <m>x</m>. On remplace <m>y=x^2</m> dans la seconde équation, ce qui donne
+<md>
+<mrow>
+-6x+2y+4 = 0
+&amp;\iff -6x+2x^2+4 = 0
+\iff x^2-3x+2=0
+</mrow><mrow>
+&amp;\iff (x-1)(x-2)=0
+</mrow><mrow>
+&amp;\iff x=1\text{ ou }2
+</mrow>
+</md>.
+Lorsque <m>x=1</m>, <m>y=1^2=1</m>, et lorsque <m>x=2</m>, <m>y=2^2=4</m>.
+Il y a donc deux points critiques :  <m>(1,1),\ (2,4)</m>.
+</p>
+
+
+</solution>
+</example>
+
+<!-- 
+<exercise xml:id = "max-min-03" component = "webwork" >
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-03.pg"/>
+</exercise>
+ -->
+
+
+<p>Voyons un exemple un peu plus complexe.
+
+</p>
+
+<example xml:id="eg_MXMNlocalC"><title><m>f(x,y) = xy(5x+y-15)</m></title>
+<statement>
+<p>
+Trouver les points critiques de <m>f(x,y)=xy(5x+y-15) </m>.
+</p>
+</statement>
+
+<solution>
+<p>Les dérivées partielles de  <m>f(x,y)=xy(5x+y-15)</m> sont
+<md alignment="alignat">
+<mrow>
+f_x(x,y)
+&amp;\ =\ y(5x+y-15)+xy(5)
+&amp;&amp;\ =\ y(5x+y-15)+y(5x)
+</mrow><mrow>
+&amp;\ =\  y(10x+y-15),
+</mrow><mrow>
+f_y(x,y)
+&amp;\ =\ x(5x+y-15)+xy(1)
+&amp;&amp;\ =\ x(5x+y-15)+ x(y)
+</mrow><mrow>
+&amp;\ =\ x(5x+2y-15)
+</mrow>
+</md>.
+Les points critiques sont les solutions de  <m>f_x(x,y)=f_y(x,y)=0</m>.
+Nous devons donc trouver tous les  <m>x,y</m> qui vérifient les équations
+<md>
+<mrow>
+         y(10x+y-15)&amp;=0,\tag{E1}
+</mrow><mrow>
+         x(5x+2y-15)&amp;=0\tag{E2}
+</mrow>
+</md>.
+La première équation, <m>y(10x+y-15)=0</m>, est vérifiée si au moins un des deux facteurs, <m>y</m> ou <m>(10x+y-15)</m>, est nul. Ainsi, la première équation est satisfaite si l'une des équations suivantes l'est :
+<md>
+<mrow>
+y&amp;=0, \tag{E1a}
+</mrow><mrow>
+10x+y&amp;=15 \tag{E1b}
+</mrow>
+</md>.
+
+La seconde équation, <m>x(5x+2y-15)=0</m>, est satisfaite si au moins un des deux facteurs, <m>x</m>  ou <m>(5x+2y-15)</m>, est nul. Ainsi, la seconde équation est satisfaite si l'une des deux équations suivantes l'est :
+<md>
+<mrow>
+x&amp;=0, \tag{E2a}
+</mrow><mrow>
+5x+2y&amp;=15 \tag{E2b}
+</mrow>
+</md>.
+</p>
+
+<p>Ainsi, les deux équations vérifiées par les points critiques, (E1) et (E2), sont satisfaites si et seulement si l'une parmi (E1a), (E1b) est satisfaite, et l'une parmi (E2a), (E2b) l'est aussi. Ainsi, les deux équations (E1) et (E2) sont satisfaites si et seulement si au moins une des quatre possibilités suivantes a lieu.
+<ul>
+<li>
+(E1a) et  (E2a) sont satisfaites
+si et seulement si  <m>x=y=0</m>.
+</li>
+<li>
+(E1a) et (E2b) sont satisfaites
+si et seulement si  <m>y=0,\ 5x+2y=15 \iff y=0,\ 5x=15</m>.
+</li>
+<li>
+(E1b) et (E2a) sont satisfaites
+si et seulement si  <m>10x+y=15,\ x=0 \iff y=15,\ x=0</m>.
+</li>
+<li>
+(E1b) et (E2b) sont satisfaites
+si et seulement si  <m>10x+y=15,\ 5x+2y=15</m>. Nous pouvons utiliser, par exemple, la deuxième de ces équations pour isoler  <m>x</m> en termes de <m>y</m> : <m>x =\frac{1}{5}(15-2y)</m>.
+Lorsqu'on remplace ceci dans la première équation, on obtient  <m>2(15-2y)+y=15</m>, qu'on résout pour <m>y</m>. Ceci donne <m>-3y=15-30</m>, et donc <m>y=5</m>, et alors
+<m>x=\frac{1}{5}(15-2\times 5)=1</m>.
+</li>
+</ul>
+En conclusion, les points critiques sont <m>(0,0)</m>, <m>(3,0)</m>, <m>(0,15)</m> et <m>(1,5)</m>.
+</p>
+
+<p>Une façon plus compacte d'écrire ce qui a été fait est :
+<md alignment="alignat">
+<mrow>
+            &amp;f_x(x,y)=0\hskip6.75em
+             \text{et}\hskip1.5em
+             f_y(x,y)=0
+</mrow><mrow>
+\iff\qquad  &amp;y(10x+y-15)=0\hskip3.25em
+             \text{et}\hskip1.5em
+              x(5x+2y-15)=0
+</mrow><mrow>
+\iff\qquad &amp; \big\{y=0\text{  ou  }10x+y=15\big\}\hskip1.5em
+            \text{et}\hskip1.5em
+            \big\{x=0\text{ ou }5x+2y=15\big\}
+</mrow><mrow>
+\iff\qquad &amp; \big\{y=0,\ x=0\big\}\text{ ou }
+       \big\{y=0,\ 5x+2y=15\big\}
+</mrow><mrow>
+       &amp;\text{ ou }\big\{10x+y=15,\ x=0\big\}\text{ ou }
+       \big\{10x+y=15,\ 5x+2y=15\big\}
+</mrow><mrow>
+\iff\qquad &amp; \big\{x=y=0\big\}\text{ ou }
+       \big\{y=0,\ x=3\big\}
+   </mrow><mrow>
+       &amp;\text{ ou }\big\{x=0,\ y=15\big\}\text{ ou }
+       \big\{x=1,\ y=5\big\}
+</mrow>
+</md>.
+</p>
+</solution>
+</example>
+
+<p>
+  Essayons maintenant un exemple pratique  <mdash/> quelque chose de la vie réelle... en fait la <q>vie réelle</q> d'un(e) mathématicien(e).
+</p>
+
+<example xml:id="eg_MXMNbrewery">
+<statement>
+<p>
+  Dans une certaine communauté, deux brasseries sont en concurrence, de sorte que les ventes de l'une influencent négativement les profits de l'autre. Si la brasserie <m>A</m> produit <m>x</m> litres de bière par mois et que la brasserie <m>B</m> en produit <m>y</m>, alors les profits des brasseries sont donnés par
+<me>
+P=2x-\frac{2x^2+y^2}{10^6}\qquad \text{et} \qquad
+Q=2y-\frac{4y^2+x^2}{2\times 10^6}
+</me>
+  respectivement. Trouver la somme des deux profits si chaque brasserie fixe sa production de façon indépendante pour maximiser son revenu et prend pour acquis que la concurrence en fait autant. Par la suite, on suppose que les brasseries se comportent comme un cartel. Trouver la somme des profits si les brasseries collaborent pour maximiser cette somme<fn>Ce genre de chose est illégal.</fn>.
+</p>
+</statement>
+
+<solution>
+<p>
+ Si <m>A</m> ajuste  <m>x</m> pour maximiser  <m>P</m> (pour <m>y</m> fixe) et que <m>B</m> ajuste <m>y</m> pour maximiser  <m>Q</m> (pour  <m>x</m> fixe), alors <m>x</m> et <m>y</m> sont déterminés par les équations
+<md>
+<mrow>
+P_x&amp;=2-\tfrac{4x}{10^6}=0, \tag{E1}
+</mrow><mrow>
+Q_y&amp;=2-\tfrac{8y}{2\times 10^6}=0 \tag{E2}
+</mrow>
+</md>.
+L'équation (E1) donne   <m>x=\half 10^6</m>, et l'équation  (E2) donne  <m>y=\half 10^6</m>.
+Connaissant  <m>x</m> et <m>y</m>, on peut déterminer  <m>P</m>, <m>Q</m>  et le profit total :
+<md>
+<mrow>
+P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)
+</mrow><mrow>
+   &amp;=10^6\big(1+1-\tfrac{5}{8}-\tfrac{3}{4}\big)
+                       =\tfrac{5}{8}10^6
+</mrow>
+</md>.
+Ensuite, si le tandem   <m>(A,B)</m> ajuste <m>(x,y)</m> afin de maximiser  <m>P+Q =2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)</m>,  alors <m>x</m> et <m>y</m> sont déterminés par
+<md>
+<mrow>
+(P+Q)_x&amp;=2-\tfrac{5x}{10^6}=0, \tag{E1}
+</mrow><mrow>
+(P+Q)_y&amp;=2-\tfrac{6y}{10^6}=0 \tag{E2}
+</mrow>
+</md>.
+L'équation (E1) donne  <m>x=\tfrac{2}{5} 10^6</m>, et l'équation (E2) donne   <m>y=\tfrac{1}{3} 10^6</m>.
+De nouveau, connaissant  <m>x</m> et <m>y</m>, on peut déterminer le profit total :
+<md>
+<mrow>
+P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)
+</mrow><mrow>
+   &amp;=10^6\big(\tfrac{4}{5}+\tfrac{2}{3}-\tfrac{2}{5}-\tfrac{1}{3}\big)
+                       =\tfrac{11}{15}10^6
+</mrow>
+</md>.
+Ainsi, la coopération bénéficie aux deux brasseries.
+</p>
+</solution>
+</example>
+<p>
+Voyons un exemple un peu plus géométrique.
+</p>
+
+<example xml:id="eg_MXMNtapezoidalFence">
+<statement>
+<p>
+  Des plis à angle égal sont réalisés à distance égale des deux extrémités d'une clôture de 100 mètres de long afin que la clôture à trois segments qui en résulte puisse être placée le long d'un mur existant pour former une enceinte de forme trapézoïdale. Quelle est la plus grande surface possible pour une telle enceinte?
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/fenceA"/>
+</sidebyside>
+</statement>
+
+<solution>
+<p>
+ Ce problème est de nature très géométrique. Commençons par faire une esquisse détaillée et par donner des noms aux variables qui nous occupent.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/fence"/>
+   <image source="images/CLP-figs/fenceB"/>
+</sidebyside>
+
+<p>
+  L'aire de la région renfermée par la clôture est l'aire à l'intérieur du rectangle bleu (figure de droite ci-haut) plus l'aire des deux triangles bleus :
+<md>
+<mrow>
+A(x,\theta)
+&amp;=(100-2x)x\sin\theta+2\cdot\half\cdot x\sin\theta\cdot x\cos\theta
+</mrow><mrow>
+&amp;=(100x-2x^2)\sin\theta+ x^2\sin\theta\ \cos\theta
+</mrow>
+</md>.
+Pour maximiser l'aire, nous devons résoudre
+<md>
+<mrow>
+0=\pdiff{A}{x}&amp;=(100-4x)\sin\theta+2x\sin\theta\cos\theta,
+</mrow><mrow>
+0=\pdiff{A}{\theta}
+   &amp;=(100x-2x^2)\cos\theta+x^2\big\{\cos^2\theta-\sin^2\theta\big\}
+</mrow>
+</md>.
+Remarquons que les deux termes dans la première équation contiennent le facteur <m>\sin\theta</m> et que tous les termes dans la seconde équation contiennent le facteur <m>x</m>. Si l'un de <m>\sin\theta</m> ou <m>x</m> est nul, alors l'aire  <m>A(x,\theta)</m> le sera aussi, de sorte que nous n'aurons certainement pas un maximum. Ainsi, divisons la première équation par  <m>\sin\theta</m>, et la seconde par <m>x</m>, ce qui donne
+<md>
+<mrow>
+(100-4x)+2x\cos\theta&amp;=0, \tag{E1}
+</mrow><mrow>
+(100-2x)\cos\theta+x\big\{\cos^2\theta-\sin^2\theta\big\}&amp;=0 \tag{E2}
+</mrow>
+</md>.
+  Ces équations peuvent paraître un peu effrayantes, mais il n'y a aucune raison de paniquer. Elles ne sont pas si méchantes qu'elles en ont l'air, puisque <m>\theta</m> intervient seulement à travers <m>\cos\theta</m> et <m>\sin^2\theta</m>, qui peut être exprimé en termes de  <m>\cos\theta</m>. Qui plus est, on peut éliminer  <m>\cos\theta</m>  si l'on remarque que la première équation force <m>\cos\theta=-\frac{100-4x}{2x}</m>, et donc <m>\sin^2\theta=1-\cos^2\theta=1-\frac{(100-4x)^2}{4x^2}</m>.
+
+  En remplaçant dans la seconde équation, on obtient
+<md alignment="alignat">
+<mrow>
+&amp; &amp; -(100-2x)\frac{100-4x}{2x}+x\left[\frac{(100-4x)^2}{2x^2}-1\right]&amp;=0
+</mrow><mrow>
+&amp;\implies\quad &amp; -(100-2x)(100-4x)+(100-4x)^2-2x^2&amp;=0
+</mrow><mrow>
+&amp;\implies &amp; 6x^2-200x&amp;=0
+</mrow><mrow>
+&amp;\implies &amp; x=\frac{100}{3}
+\quad\cos\theta=-\frac{-100/3}{200/3}=\frac{1}{2}\quad
+\theta&amp;=60^\circ
+</mrow>
+</md>,
+ de sorte que l'aire maximale est
+<me>
+A= \Big(100\frac{100}{3}-2\frac{100^2}{3^2}\Big)\frac{\sqrt{3}}{2}
+           \ +\ \frac{1}{2} \frac{100^2}{3^2}\frac{\sqrt{3}}{2}
+\ =\ \frac{2500}{\sqrt{3}}
+</me>.
+</p>
+</solution>
+</example>
+
+<p> Voyons maintenant un exemple très pratique en statistiques : trouver la droite qui s'ajuste le mieux à un ensemble de points donnés.
+</p>
+
+<example xml:id="eg_MXMNlinReg"><title>Régression linéaire</title>
+<statement>
+<p>
+  Une expérience donne lieu à  <m>n</m> observations <m>\ (x_i,y_i),\ i=1,2,\cdots,n</m>. Nous voulons trouver la droite  <m>\ y=mx+b\ </m> qui s'ajuste le <q>mieux</q> à ces points.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP-figs/regression"/>
+</sidebyside>
+
+<p>
+La définition de <q>s'ajuste le mieux</q> est que la droite  <q>minimise l'erreur quadratique moyenne</q>, c'est-à-dire qu'elle minimise la quantité
+<me>
+E(m,b)=\sum_{i\,=\,1}^n (mx_i+b-y_i)^2
+</me>.
+Remarquons que
+<ul>
+<li>
+le <m>i^{\text{ième}}</m> terme dans <m>E(m,b)</m> est le carré de la différence entre  <m>y_i</m>, qui est la <m>i^{\rm ième}</m> valeur observée de  <m>y</m>, et <m>\Big[mx+b\Big]_{x\,=\,x_i}</m>, qui est l'approximation de  <m>y_i</m> donnée par la droite  <m>y=mx+b</m>;
+</li>
+<li>
+tous les termes de la somme sont positifs, indépendamment de si les points <m>(x_i,y_i)</m> se trouvent au-dessus ou au-dessous de la droite.
+</li>
+</ul>
+Notre problème maintenant est de trouver les valeurs de <m>m</m> et <m>b</m> qui minimisent  <m>E(m,b)</m>.
+
+Cette technique pour trouver la droite est appelée <q>régression linéaire</q> et elle est utilisée <em>abondamment</em><fn>
+  Elle est été utilisée depuis longtemps. Elle a été introduite par le mathématicien français Adrien-Marie Legendre (1752-1833) en 1805 et par le mathématicien et physicien allemand Carl Friedrich Gauss (1777-1855) en 1809.
+</fn>,
+même dans le monde réel <mdash/> pas seulement dans le monde réel des mathématicien(e)s<mdash/> le vrai monde réel dans lequel on trouve du travail.
+</p>
+</statement>
+
+<solution>
+<p>
+  Nous devons choisir  <m>m</m> et <m>b</m> de sorte à minimiser  <m>E(m,b)</m>. Déterminons donc quand les dérivées partielles de <m>E</m> s'annulent:
+    <md alignment="alignat">
+      <mrow>
+        0&amp;=\frac{\partial E}{\partial m}&amp;&amp;=\sum_{i\,=\,1}^n 2(mx_i+b-y_i)x_i &amp;&amp;=m\Big[\smsum_{i\,=\,1}^n 2x^2_i\Big]+b\Big[\smsum_{i\,=\,1}^n 2x_i\Big] -\Big[\smsum_{i\,=\,1}^n 2x_iy_i\Big],
+      </mrow>
+      <mrow>
+        0&amp;=\frac{\partial E}{\partial b}&amp;&amp;=\sum_{i\,=\,1}^n 2(mx_i+b-y_i)
+        &amp;&amp;=m\Big[\smsum_{i\,=\,1}^n 2x_i\Big]+b\Big[\smsum_{i\,=\,1}^n 2\Big]-\Big[\smsum_{i\,=\,1}^n 2y_i\Big]
+      </mrow>
+    </md>.
+
+  Il y a beaucoup de symboles ici, mais il faut rappeler que les <m>x_i</m> et les  <m>y_i</m> sont des constantes. Les seules inconnues sont  <m>m</m> et <m>b</m>. Afin de mettre l'accent sur ce fait, et pour alléger l'écriture, posons
+  <me>
+    S_x=\smsum_{i\,=\,1}^n x_i,\qquad
+    S_y=\smsum_{i\,=\,1}^n y_i,\qquad
+    S_{x^2}=\smsum_{i\,=\,1}^n x^2_i,\qquad
+    S_{xy}=\smsum_{i\,=\,1}^n x_iy_i
+    </me>.
+  Les équations qui définissent les points critiques pour la fonction <m>E</m> sont, après simplification d'un facteur <m>2</m> :
+    <md>
+      <mrow>
+      S_{x^2}\, m+S_x\, b&amp;=S_{xy}, \tag{E1}
+      </mrow><mrow>
+      S_{x}\, m+n\, b&amp;=S_{y}      \tag{E2}
+      </mrow>
+    </md>.
+
+    Il s'agit d'équations linéaires en  <m>m</m> et <m>b</m>. Elles peuvent être résolues de plusieurs façons. L'une d'elles est  d'utiliser (E2)  pour isoler <m>b</m> en termes de  <m>m</m>,
+
+    <me>
+      b=\frac{1}{n}\big(S_y-S_xm\big)\tag{E3}
+      </me>,
+  puis de remplacer dans (E1) pour obtenir
+    <me>
+    S_{x^2}\, m+\frac{1}{n}S_x\, \big(S_y-S_xm\big)=S_{xy}\quad\implies\quad \big(nS_{x^2} -S_x^2\big) m = nS_{xy}-S_xS_y
+    </me>
+  pour  <m>m</m>. On peut résoudre cette équation pour  <m>m</m> et remplacer à nouveau dans (E3) pour obtenir  <m>b</m>. Ceci donne
+    <md>
+      <mrow>
+        m\amp=\frac{nS_{xy}-S_xS_y}{nS_{x^2} -S_x^2},
+      </mrow>
+      <mrow>
+      b\amp=\frac{S_y}{n}\,\frac{nS_{x^2} -S_x^2}{nS_{x^2} -S_x^2} -\frac{S_x}{n}\,\frac{nS_{xy}-S_xS_y}{nS_{x^2} -S_x^2} =\frac{nS_yS_{x^2}-nS_xS_{xy}}{n(nS_{x^2} -S_x^2)}
+      </mrow>
+      <mrow> \amp=-\frac{S_xS_{xy}-S_yS_{x^2}}{nS_{x^2} -S_x^2}
+      </mrow>
+</md>.
+
+<!--
+Another way to solve the system of equations is
+<md alignment="alignat">
+<mrow>
+n\text{(E1)}-S_x\text{(E2)}:&amp;\quad \Big[nS_{x^2} -S_x^2\Big]m&amp;&amp;=nS_{xy}-S_xS_y
+</mrow><mrow>
+-S_x\text{(E1)}+S_{x^2}\text{(E2)}:&amp;\quad
+          \Big[nS_{x^2} -S_x^2\Big]b&amp;&amp;=-S_xS_{xy}+S_yS_{x^2}
+</mrow>
+</md>
+which gives the same solution.
+-->
+</p>
+
+<p>Ainsi, étant donné un ensemble de points, on a besoin d'un peu d'arithmétique <mdash/> pas de calcul différentiel <mdash/> pour appliquer les formules ci-haut afin d'obtenir la droite de meilleur ajustement. Bien entendu, on n'a pas besoin de calcul différentiel pour appliquer les formules, on en a besoin pour comprendre d'où elles viennent. La même technique peut être étendue à d'autres types de problèmes d'ajustement : des points comportant un nombre arbitraire de coordonnées, ou encore l'ajustement par une courbe d'un type donné, par exemple une régression polynomiale, exponentielle...
+</p>
+</solution>
+</example>
+</subsection>
+
+
+<subsection xml:id="pars-Derivee-seconde">
+  <title>Le test de la dérivée seconde : la matrice hessienne</title>
+<p>
+  Considérons maintenant le problème de déterminer si un point critique est un point de maximum ou de minimum local. À nouveau, regardons ce qui est connu pour les fonctions d'une seule variable. Supposons donc que  <m>x=a</m> est un point critique d'une fonction  <m>g(x)</m>. Toute fonction suffisamment lisse peut être bien approchée, dans un voisinage de  <m>a</m>, par les quelques premiers termes de son expansion de Taylor:
+<me>
+g(x) = g(a) + g'(a)\,(x-a) + \tfrac{1}{2} g''(a)\,(x-a)^2
+         +\tfrac{1}{3!} g^{(3)}(a)\, (x-a)^3 + \cdots
+</me>.
+Si <m>a</m> est un point critique, nous avons  <m>g'(a)=0</m> et
+<me>
+g(x) = g(a) + \tfrac{1}{2} g''(a)\,(x-a)^2
+         +\tfrac{1}{3!} g^{(3)}(a)\, (x-a)^3 + \cdots
+</me>.
+Si  <m>g''(a)\ne 0</m>, <m>g(x)</m> aura l'allure de
+<m>g(a) + \tfrac{1}{2} g''(a)\,(x-a)^2 </m> lorsque <m>x</m> est près de
+<m>a</m>. En particulier,
+<ul>
+<li>
+si <m>g''(a) \gt 0</m>, alors <m>g(x) \gt g(a)</m> lorsque <m>x</m> est près de (mais sans être égal à) <m>a</m>, de sorte que  <m>a</m> sera un minimum local, et
+</li>
+<li>
+si  <m>g''(a) \lt 0</m>, alors  <m>g(x) \lt g(a)</m> lorsque <m>x</m> est près de (mais sans être égal à) <m>a</m>, de sorte que <m>a</m> sera un point de minimum local,
+mais
+</li>
+<li>
+si <m>g''(a)=0</m>, aucune conclusion ne peut être tirée sans un peu de travail supplémentaire.
+</li>
+</ul>
+Une analyse semblable, mais passablement plus complexe, peut être faite pour les fonctions de plus de deux variables. Voyons quelques exemples qui peuvent servir comme échauffement.
+</p>
+
+<example xml:id="eg_maxminB"><title><m>f(x,y)= x^2+3xy+3y^2-6x-3y-6</m></title>
+<p>
+Soit <m>f(x,y)= x^2+3xy+3y^2-6x-3y-6</m>. Le gradient de <m>f</m> est
+<me>
+\vnabla f(x,y) = \big(2x+3y-6\big)\,\vi +\big(3x+6y-3\big)\,\vj
+</me>,
+de sorte que <m>(x,y)</m> est un point critique de <m>f</m> si et seulement si
+<md>
+<mrow>
+2x+3y&amp;=6,\tag{E1}
+</mrow><mrow>
+3x+6y&amp;=3\tag{E2}
+</mrow>
+</md>.
+On multiplie la première équation par 2 et l'on soustrait la seconde pour obtenir <me>
+x=9\tag{2(E1) - (E2)}
+</me>.
+Puis, on remplace <m>x=9</m> dans la première équation :
+<me>
+2\times 9+3y=6\implies
+y=-4
+</me>,
+de sorte que <m>f(x,y)</m> admet exactement un point critique à <m>(9\,,\,-4)</m>.
+</p>
+<p>
+  Voyons le diagramme des courbes de niveau de <m>f</m> autour du point critique.
+</p>
+<figure xml:id="figure-eg_maxminB">
+    <caption>Les courbes de niveau de <m>f(x,y) = f(x,y)= x^2+3xy+3y^2-6x-3y-6</m> autour de <m>(9,-4)</m></caption>
+    <image xml:id="sageplot-eg_maxminB" width="60%">
+        <description>Les courbes de niveau de <m>f</m> autour de <m>(9,-4)</m></description>
+        <sageplot>
+          var('x,y')
+          f(x,y) = x^2 + 3*x*y + 3*y^2 -6*x - 3*y- 6
+          C =  contour_plot(f ,(8,10), (-5,-3), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
+                 label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
+                 contours=[-26.8, -26.5, -26, -25, -24, -21],
+                 axes_labels=["$x$","$y$"], axes_labels_size=2, tick_formatter = "latex", fontsize= 12)
+          C += text('$\\bullet$', (9,-4), fontsize=14, color='black')
+          C += text('$-27$', (9.1,-4.1), fontsize=12, color='black')
+          C
+        </sageplot>
+    </image>
+</figure>
+
+
+
+<p>
+  Nous avons que <m>f(9,4) = -27</m>, et le diagramme des courbes de niveau nous montre que, autour de <m>(9,4)</m>, les valeurs de <m>f</m> sont supérieures à <m>-27</m>. Il s'agirait donc d'un minimum local. Voyons ceci de façon un peu plus formelle. Une bonne façon de le faire consiste à faire le changement de variables<fn>
+    Ceci équivaut à translater le graphe de sorte à avoir le point critique à <m>(0,0)</m>.
+  </fn>,
+<me>
+x=9+\De x,\qquad
+y=-4+\De y
+</me>,
+et d'étudier le comportement de  <m>f</m> pour <m>\De x</m> et <m>\De y</m> près de  zéro.
+<md>
+<mrow>
+f\big(9+\De x,\,-4+\De y\big)
+&amp;=(9+\De x)^2+3(9+\De x)(-4+\De y)+3(-4+\De y)^2
+</mrow><mrow>
+&amp;\hskip1in-6(9+\De x)-3(-4+\De y)-6
+</mrow><mrow>
+&amp;= (\De x)^2 +3\De x\,\De y+3(\De y)^2 - 27
+</mrow>
+</md>
+Et une bonne façon d'étudier le signe d'expressions quadratiques comme
+<m>(\De x)^2 +3\De x\,\De y+3(\De y)^2</m> est de compléter les carrés<fn>
+  À présent, vous avez certainement rencontré une complétion de carrés pour une seule variable, comme
+  <m> x^2 +3x +3 = \left(x+\frac{3}{2}\right)^2 - \frac{9}{4} +3 </m>.
+</fn>.
+Lorsque plus d'une variable est présente, comme <m>\De x</m> et <m>\De y</m>, on peut simplement prétendre que l'une d'elles est une constante et compléter le carré comme dans le cas d'une seule variable. Par exemple, si l'on considère que <m>\De y</m> est constante,
+<md>
+<mrow>
+(\De x)^2 +3\De x\,\De y+3(\De y)^2
+&amp;=\left(\De x +\frac{3}{2}\De y\right)^2
+           + \left(3-\frac{9}{4}\right)(\De y)^2
+</mrow><mrow>
+&amp;=\left(\De x +\frac{3}{2}\De y\right)^2  + \frac{3}{4}(\De y)^2
+</mrow>
+</md>.
+À présent, nous avons exprimé
+<me>
+f\big(9+\De x,\,-4+\De y\big)
+  = \left(\De x +\frac{3}{2}\De y\right)^2  + \frac{3}{4}(\De y)^2 -27
+</me>.
+Comme les plus petites valeurs de  <m>\left(\De x +\frac{3}{2}\De y\right)^2</m>
+et <m>\frac{3}{4}(\De y)^2</m> sont toutes les deux nulles, nous avons
+<me>
+f(x,y)=f\big(9+\De x,\,-4+\De y\big)\geqslant -27 =f(9,-4)
+</me>
+pour tout  <m>(x,y)</m>, de sorte que  <m>(9,-4)</m> est un minimum local, et global, de  <m>f</m>.
+</p>
+
+</example>
+
+<p>
+  On a déjà rencontré des exemples de fonctions à une variable où un point critique n'est pas un point de minimum ni de maximum local. Voyons quelques exemples montrant que ceci peut aussi arriver pour les fonctions à plusieurs variables. Nous commençons avec l'exemple le plus simple qui soit.
+</p>
+
+<example xml:id="eg_maxminA"><title><m>f(x,y)=x^2-y^2</m></title>
+<p>
+Les dérivées partielles de  <m>f(x,y)=x^2-y^2</m> sont
+<m>f_x(x,y)=2x</m> et <m>f_y(x,y)=-2y</m>. Ainsi, le seul point critique est  <m>(0,0)</m>. Voyons maintenant s'il s'agit d'un minimum local, d'un maximum local ou d'aucun des deux. Commençons avec <m>(x,y)</m>
+à <m>(0,0)</m> et déplaçons <m>(x,y)</m> en nous éloignant de  <m>(0,0)</m>, puis voyons ce qui arrive avec  <m>f(x,y)</m>. À l'origine,  <m>f(0,0)=0</m>. On peut se déplacer dans plusieurs directions.
+
+</p>
+<figure xml:id="figure-eg_maxminA">
+    <caption>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>. Si, en partant de <m>(0,0)</m>, on se déplace le long de l'axe des <m>x</m>, la valeur de <m>f</m> augmente. La situation est différente le long de l'axe des <m>y</m>.</caption>
+    <image xml:id="sageplot-eg_maxminA" width="60%">
+        <description>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>. </description>
+        <sageplot>
+          var('x,y')
+          f(x,y) = x^2 - y^2
+          C =  contour_plot(f ,(-3.5,3.5), (-3.5,3.5), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
+                 label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
+                  contours = [-9,-4,-1,0,1,4,9], axes = True,
+                 axes_labels=["$x$","$y$"], axes_labels_size=1.5, tick_formatter = "latex", fontsize= 10)
+          C
+        </sageplot>
+    </image>
+</figure>
+<p>
+<ul>
+<li>
+Commençons par déplacer <m>(x,y)</m> le long de l'axe des <m>x</m>. Alors,  <m>(x,y)=(x,0)</m> et   <m>f(x,y)=f(x,0)=x^2</m>, de sorte que la valeur de <m>f</m> grandit, ce qui signifie que  <m>(0,0)</m> ne peut pas être un maximum local pour <m>f</m>.
+</li>
+<li>
+À présent, déplaçons  <m>(x,y)</m> en nous éloignant de  <m>(0,0)</m> le long de l'axe des <m>y</m>. Alors, <m>(x,y)=(0,y)</m> et  <m>f(x,y)=f(0,y)=-y^2</m>. Ainsi, quand on commence avec  <m>y=0</m> et qu'on fait grandir <m>|y|</m>, la valeur de  <m>f</m> décroît, ce qui veut dire que   <m>(0,0)</m> ne peut pas être un minimum local pour <m>f</m>.
+</li>
+</ul>
+Ainsi, se déplacer à partir de  <m>(0,0)</m> dans une direction entraîne une augmentation de la valeur de <m>f</m>, tandis que se déplacer à partir de <m>(0,0)</m> dans une autre direction entraîne une diminution de la valeur de <m>f</m>.
+
+En conséquence, <m>(0,0)</m> n'est pas un point de minimum local ni un point de maximum local pour <m>f</m>. On appelle ces points des <em>points de selle</em> puisque le graphe de  <m>f</m> ressemble à une selle pour cheval (la définition précise suit). Voici quelques graphes montrant l'allure du graphe de <m>f</m>.
+</p>
+
+<sidebyside widths="40% 40%" valign="middle">
+<image source="images/CLP-figs/hyperbolic_paraboloid"/>
+  <image source="images/CLP-figs/hypPara"/>
+</sidebyside>
+
+<!--
+<p>
+The figure below show some level curves of <m>f</m>. Observe from the level
+curves that
+<ul>
+<li>
+<m>f</m> increases as you leave <m>(0,0)</m> walking along the <m>x</m> axis
+</li>
+<li>
+<m>f</m> decreases as you leave <m>(0,0)</m> walking along the <m>y</m> axis
+</li>
+</ul>
+</p>
+
+<sidebyside width="70%">
+<image source="images/CLP-figs/hypParaLevel"/>
+</sidebyside>
+-->
+
+</example>
+
+<p>De façon approximative, si un point critique <m>(a,b)</m> n'est ni un point de minimum local ni un point de maximum local, alors il s'agit d'un point de selle. Pour que  <m>(a,b)</m> ne soit pas un point de maximum local, <m>f</m> doit prendre des valeurs plus grandes que  <m>f(a,b)</m> en certains points près de  <m>(a,b)</m>. Pour que  <m>(a,b)</m> ne soit pas un point de minimum local, <m>f</m> doit prendre des valeurs plus petites que <m>f(a,b)</m> en certains points près de <m>(a,b)</m>.
+</p>
+
+<definition xml:id="def_saddle_point">
+<statement><p>
+Soit <m>\vr_0</m> un point critique d'une fonction <m>f</m>. Alors, <m>\vr_0</m> est appelé un <em>point de selle</em> pour <m>f</m> si, pour tout  <m>\e \gt 0</m>,
+<ul>
+<li>
+il existe au moins un point  <m>\vr</m> tel que  <m>|\vr- \vr_0| \lt \e</m> et  <m>f(\vr) \gt f(\vr_0)</m>, et
+</li>
+<li>
+il existe au moins un point  <m>\vr </m> tel que  <m>|\vr- \vr_0| \lt \e</m> et  <m>f(\vr) \lt f(\vr_0)</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+
+<p>Voyons un autre exemple de point de selle. On a besoin de travailler un peu plus pour le voir.
+</p>
+
+<example xml:id="eg_maxminC"><title><m>f(x,y)= x^2-2xy-y^2+4y-2</m></title>
+<p>
+Considérer  <m>f(x,y)= x^2-2xy-y^2+4y-2</m>. Le gradient de <m>f</m> est
+<me>
+\vnabla f(x,y) = \big(2x-2y\big)\,\vi +\big(-2x-2y+4\big)\,\vj
+</me>.
+Ainsi,  <m>(x,y)</m> est un point critique de  <m>f</m> si et seulement si
+<md>
+<mrow>
+2x-2y&amp;=0,
+</mrow><mrow>
+-2x-2y&amp;=-4
+</mrow>
+</md>.
+La première équation donne  <m>x=y</m>. Remplacer dans la seconde équation donne
+<me>
+-2y-2y=-4\implies
+x=y=1
+</me>.
+Ainsi, <m>f(x,y)</m> admet précisément un point critique à <m>(1,1)</m>.
+</p>
+
+<p>Pour déterminer si  <m>f</m> admet un point de minimum local, de maximum local ou un point de selle en  <m>(1,1)</m>, procédons comme dans l'<xref ref="eg_maxminB"/>.
+On fait le changement de variables,
+<me>
+x=1+\De x,\qquad
+y=1+\De y
+</me>,
+ce qui donne
+<md>
+<mrow>
+&amp;f\big(1+\De x,\,1+\De y\big)
+</mrow><mrow>&amp;\hskip0.5in=(1+\De x)^2-2(1+\De x)(1+\De y)-(1+\De y)^2 + 4(1+\De y)-2
+</mrow><mrow>
+&amp;\hskip0.5in= (\De x)^2 -2\De x\,\De y-(\De y)^2
+</mrow>
+</md>.
+Après complétion des carrés,
+<me>
+f\big(1+\De x,\,1+\De y\big)
+=(\De x)^2 -2\De x\,\De y-(\De y)^2
+=\left(\De x - \De y\right)^2  -2 (\De y)^2
+</me>.
+Notons que  <m>f</m> a été écrite comme la différence de deux carrés, comme la fonction  <m>f</m> de l'<xref ref="eg_maxminA"/>.
+<ul>
+<li>
+Si <m>\De x</m> et <m>\De y</m> sont tels que le premier carré
+<m>\left(\De x - \De y\right)^2</m> est non nul, mais que le second carré <m>(\De y)^2</m> est nul, alors  <m>f\big(1+\De x,\,1+\De y\big)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
+En somme, lorsque <m>\De y=0</m>,  <m>\De x\ne \De y</m>, alors
+<m>f\big(1+\De x,\,1+\De y\big)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
+</li>
+<li>
+Aussi, si  <m>\De x</m> et <m>\De y</m> sont tels que le premier carré <m>\left(\De x - \De y\right)^2</m> est nul, mais que le second carré  <m>(\De y)^2</m> ne l'est pas, alors <m>f\big(1+\De x,\,1+\De y\big)=- 2(\De y)^2    \lt  0 = f(1,1)</m>.
+En somme, lorsque  <m>\De x=\De y\ne 0</m>, alors
+<m>f\big(1+\De x,\,1+\De y\big) =- 2(\De y)^2  \lt  0 = f(1,1)</m>.
+</li>
+</ul>
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/saddle"/>
+</sidebyside>
+
+<p>
+Ainsi,
+<ul>
+<li>
+<m>f(x,y) \gt f(1,1)</m> pour tous les points sur la ligne bleue, et
+</li>
+<li>
+<m>f(x,y) \lt f(1,1)</m> pour tous les points sur la ligne rouge.
+</li>
+</ul>
+On conclut que  <m>(1,1)</m> est le seul point critique pour <m>f</m> et qu'il s'agit d'un point de selle.
+</p>
+
+</example>
+
+
+<p>
+  Les trois exemples qui précèdent montrent comment procéder pour classifier les points critiques des fonctions quadratiques (de deux variables, mais la même gymnastique de complétion de carrés fonctionne avec un nombre arbitraire de variables).
+</p>
+
+<p>
+  Bien entendu, il existe des fonctions qui ne sont pas des fonctions quadratiques. Cependant, avec l'approximation quadratique, on peut utiliser les mêmes idées de façon plus générale.
+</p>
+
+<p>
+  Supposons que <m>(a,b)</m> est un point critique pour une fonction  <m>f(x,y)</m>. Pour  <m>\De x</m> et <m>\De y</m> petits, l'approximation quadratique de la <xref ref="def-Taylor-2"/> donne
+<me>
+\begin{split}
+&amp;f\big(a + \De x,\,b+\De y\big) \\
+&amp;\hskip0.25in\approx f\big(a\,,\,b\big)
+       + f_x\big(a,\,b\big)\,\De x
+       + f_y\big(a,\,b\big)\,\De y \\
+&amp;\hskip0.75in +\frac{1}{2}\left\{
+        f_{xx}\big(a,b\big)\,\De x^2
+       +2f_{xy}\big(a,b\big) \,\De x\De y
+       + f_{yy}\big(a,b\big)\,\De y^2 \right\}\\
+&amp;\hskip0.25in= f\big(a\,,\,b\big)
+        +\frac{1}{2}\left\{
+        f_{xx}\big(a,b\big)\,\De x^2
+       +2f_{xy}\big(a,b\big) \,\De x\De y
+       + f_{yy}\big(a,b\big)\,\De y^2 \right\}.
+\end{split}\tag{$*$}
+</me>
+Puisque  <m>(a,b)</m> est un point critique, <m>f_x(a,b)=f_y(a,b)=0</m>. Alors, avec la technique de l'<xref ref="eg_maxminB"/> et de l'<xref ref="eg_maxminC"/>,
+on obtient<fn>
+  Il y a des résultats analogues pour plus de variables. Cependant, il vaut mieux les formuler en utilisant le langage de l'algèbre linéaire.
+</fn> : voir les détails plus bas.
+</p>
+
+<theorem xml:id="thm_second_deriv_test"><title>Test de la dérivée seconde</title>
+<statement><p>Soit <m>\vr = (x,y)</m> et <m>\vr_0 = (x_0,y_0)</m> un point critique de <m>f</m> tel qu'il existe  <m>\e \gt 0</m> de sorte que toutes les dérivées partielles jusqu'au deuxième ordre de <m>f</m> sont continues en tout point vérifiant <m>|\vr - \vr_0| \lt \e</m>.
+
+Soit <m>Hf(\vr) = \left[\begin{matrix}f_{xx}(\vr) \amp f_{xy}(\vr)\\ f_{yx}(\vr) \amp f_{yy}(\vr) \end{matrix}\right]</m> la matrice hessienne de <m>f</m>, et définissons
+<me>
+D(\vr) = \det Hf(\vr)  = f_{xx}(\vr)\,f_{yy}(\vr) - f_{xy}(\vr)^2
+</me>,
+que nous appelons <em>hessien de <m>f</m> en <m>\vr</m></em> (ou <em>discriminant de <m>f</m> en <m>\vr</m></em>). Alors :
+<ul>
+  <li>
+    <p>
+      si  <m>D(\vr_0) \gt 0 </m>, on a un point d'extremum local en <m>\vr_0</m>, et
+        <ul>
+      <li>
+        <p>
+          si <m>f_{xx}(\vr_0) \gt 0</m>, alors <m>f</m> admet un minimum local en <m>\vr_0</m>,
+        </p>
+      </li>
+      <li>
+        <p>
+          si  <m>f_{xx}(\vr_0) \lt 0</m>, alors <m>f</m>admet un maximum local en  <m>\vr_0</m>;
+        </p>
+      </li>
+    </ul>
+    </p>
+  </li>
+  <li> si <m>D(\vr_0)\lt 0</m>, alors <m>f</m> admet un point de selle en <m>\vr_0</m>;
+  </li>
+  <li>
+    si <m>D(\vr_0)=0</m>, on ne peut rien conclure.
+  </li>
+  </ul>
+</p></statement>
+</theorem>
+
+<proof>
+  <title><q>Démonstration</q></title>
+
+
+<p>
+  Nous mettons des guillemets autour du mot <q>Démonstration</q>, car nous ne justifierons pas le fait qu'il suffit d'analyser l'approximation quadratique dans l'équation <nbsp/><m>(*)</m>.
+
+  Pour alléger l'écriture, omettons l'argument  <m>\vr_0 = (x_0,y_0)</m>.
+
+  Si <m>f_{xx}(\vr_0)\ne 0</m>, alors, après complétion des carrés, on peut écrire
+<md>
+<mrow>
+&amp;f_{xx}\,\De x^2
+       +2f_{xy}\,\De x\De y
+       + f_{yy}\,\De y^2
+</mrow><mrow>
+&amp;\hskip0.5in=f_{xx}\left(\De x
+       +\frac{f_{xy}}{f_{xx}}\De y\right)^2
+       +\left(f_{yy}-\frac{f_{xy}^2}{f_{xx}}\right)\,\De y^2
+</mrow><mrow>
+&amp;\hskip0.5in=\frac{1}{f_{xx}}\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
+                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+</mrow>
+</md>.
+De la même façon, si <m>f_{yy}(\vr_0)\ne 0</m>,
+<md>
+<mrow>
+&amp;f_{xx}\,\De x^2
+       +2f_{xy}\,\De x\De y
+       + f_{yy}\,\De y^2
+</mrow><mrow>
+&amp;\hskip0.5in=\frac{1}{f_{yy}}\left\{\big(f_{xy}\,\De x+f_{yy}\,\De y\big)^2
+                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De x^2\right\}
+</mrow>
+</md>.
+Il faut remarquer que ceci ne tient plus si  <m>f_{xx}(\vr_0)=f_{yy}(\vr_0)=0</m>. Nous allons traiter ce cas plus loin. Qui plus est, remarquons que
+<ul>
+<li><p>
+si <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \gt 0</m>, alors  <m>f_{xx}</m> et  <m>f_{yy}</m> doivent être non nulles et du même signe. De plus, si <m>\De x</m>
+ou <m>\De y</m> sont non nuls,
+<md>
+<mrow>
+\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
+                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+&amp; \gt 0\quad\text{et}
+</mrow><mrow>
+\left\{\big(f_{xy}\,\De x+f_{yy}\,\De y\big)^2
+                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De x^2\right\}
+&amp; \gt 0
+</mrow>
+</md>,
+de sorte que, en vertu de <m>(*)</m>,
+<ul>
+<li>
+si <m>f_{xx}(\vr_0) \gt 0</m>, alors <m>\vr_0</m> est un point de minimum local, et
+</li>
+<li>
+si <m>f_{xx}(\vr_0) \lt 0</m>, alors  <m>\vr_0</m> est un point de maximum local;
+</li>
+</ul></p>
+</li>
+<li>
+si  <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \lt 0</m> et <m>f_{xx}</m> est non nulle, alors
+<me>
+\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
+                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+</me>
+est strictement positive lorsque <m>\De x\ne 0</m> et <m>\De y= 0</m>, et est strictement négative lorsque  <m>f_{xx}\,\De x+f_{xy}\,\De y=0</m> et <m>\De y\ne 0</m>, de sorte que <m>\vr_0</m>  est un point de selle.
+
+De la même façon, <m>\vr_0</m> est un point de selle si <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \lt 0</m> et que <m>f_{yy}</m> est non nulle;
+</li>
+<li>
+finalement, si <m>f_{xy}\ne 0</m> et <m>f_{xx}=f_{yy}=0</m>, alors
+<me>
+f_{xx}\,\De x^2
+       +2f_{xy}\,\De x\,\De y
+       + f_{yy}\,\De y^2
+=2f_{xy}\,\De x\,\De y
+</me>
+est strictement positive pour un signe de  <m>\De x\,\De y</m> et strictement négative pour l'autre signe de  <m>\De x\,\De y</m>. Ainsi, <m>\vr_0</m> est un point de selle à nouveau.
+</li>
+</ul>
+</p></proof>
+
+
+<p>
+  On peut se demander pourquoi, dans la classification des points de maximum/minimum local du <xref ref="thm_second_deriv_test"/>, <m>f_{xx}(\vr_0)</m> apparaît, mais pas  <m>f_{yy}(\vr_0)</m>.
+
+  La réponse est simplement que <m>x</m> vient avant <m>y</m> dans l'ordre alphabétique. On peut aussi bien  utiliser <m>f_{yy}(\vr_0)</m>. La raison pour ceci est que si <m>D(\vr_0) \gt 0</m> (comme dans le premier point du théorème), alors, puisque <m>D(\vr_0) = f_{xx}(\vr_0)\,f_{yy}(\vr_0) - f_{xy}(\vr_0)^2 \gt 0</m>, on doit nécessairement  avoir <m>f_{xx} (\vr_0)\, f_{yy}(\vr_0) \gt 0</m>, de sorte que <m>f_{xx}(\vr_0)</m> et  <m>f_{yy}(\vr_0)</m> doivent être toutes les deux du même signe.
+</p>
+
+<p>
+  On peut aussi se demander pourquoi on ne peut rien conclure lorsque  <m>D(\vr_0)=0</m> et ce qui arrive dans ce cas. Le test de la dérivée seconde pour les fonctions d'une variable a été établi exactement de la même façon : on fait l'approximation par le polynôme de Taylor de degré 2 en <m>(x-x_0)</m> et <m>(y-y_0)</m>, puis on analyse le comportement du polynôme quadratique près de  <m>\vr_0 = (x_0,y_0)</m>. Pour que ceci fonctionne, les apports à <m>f(\vr) = f(x,y)</m> des termes de degré 2 en  <m>(x-x_0)</m> et <m>(y-y_0)</m> doivent être plus importants que les contributions à  <m>f(x,y)</m> des termes de degré trois ou plus en <m>(x-0)</m> et <m>(y-y_0)</m> lorsque  <m>(x-x_0)</m> et <m>(y-y_0)</m> sont petits. Si ce n'est pas le cas, par exemple lorsque les termes de la fonction <m>f(x,y)</m> qui sont de degré 2 en <m>(x-x_0)</m> et <m>(y-y_0)</m> ont des coefficients nuls, alors notre argument ne tiendra plus la route. C'est exactement ce qui arrive lorsque <m> D(\vr_0)=0</m>. Voici quelques exemples. Les fonctions
+<md>
+<mrow>
+f_1(x,y)&amp;=x^4+y^4,&amp; f_2(x,y)&amp;=-x^4-y^4,
+</mrow><mrow>
+f_3(x,y)&amp;=x^3+y^3,&amp; f_4(x,y)&amp;=x^4-y^4
+</mrow>
+</md>
+admettent toutes <m>(0,0)</m> comme seul point critique et, dans tous les cas, on a <m>D(0,0)=0</m>. La première fonction, <m>f_1</m>, admet un minimum, la deuxième, <m>f_2</m>, admet un maximum, tandis que la troisième et la quatrième admettent un point de selle.
+</p>
+
+<p>Voici des esquisses des diagrammes de courbes de niveau de ces 4 fonctions (pour les figures, elles ont toutes été nommées <m>f</m>).
+</p>
+
+<sbsgroup>
+<sidebyside width="40%">
+<image source="images/CLP-figs/f1LevelJC"/>
+<image source="images/CLP-figs/f2LevelJC"/>
+</sidebyside>
+<sidebyside width="40%">
+<image source="images/CLP-figs/f3LevelJC"/>
+<image source="images/CLP-figs/f4LevelJC"/>
+</sidebyside>
+</sbsgroup>
+
+
+<example xml:id="eg_MXMNlocalBb"><title><m>f(x,y)=2x^3 - 6xy + y^2 +4y </m></title>
+<statement>
+<p>
+Trouver et classifier les points critiques de  <m>f(x,y)=2x^3 - 6xy + y^2 +4y </m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Prenons de l'avance <mdash/> puisque nous devons calculer le gradient pour trouver les points critiques, et la matrice hessienne pour calculer le hessien et appliquer le test des dérivées secondes du  <xref ref="thm_second_deriv_test"/> <mdash/> et calculons les dérivées partielles d'ordre 1 et 2 :
+<md alignment="alignat">
+<mrow>
+f&amp;=2x^3 - 6xy + y^2 +4y,
+</mrow><mrow>
+f_x&amp;=6x^2-6y,   &amp; f_{xx}&amp;=12x, \qquad &amp; f_{xy}&amp;= -6,
+</mrow><mrow>
+f_y&amp;=-6x+2y+4, \qquad &amp; f_{yy}&amp;=2,\qquad &amp; f_{yx}&amp;= -6
+</mrow>
+</md>.
+Bien entendu, <m>f_{xy}</m> et <m>f_{yx}</m> coïncident. C'est néanmoins utile de calculer les deux, en guise de vérification.
+</p>
+
+<p>Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalB"/>, que les points critiques sont  <m>(1,1),\ (2,4)</m>. Leur classification est :
+</p>
+<sidebyside>
+<tabular  left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>  <col halign="center"/> <col />
+<row>
+<cell>
+    <m>\Atop{\text{point}}{\text{critique}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+                                                          <m>f_{xx}</m> </cell><cell> type </cell>
+</row><row>
+<cell>
+     <m>(1,1)</m>  </cell><cell> <m>12\times 2-(-6)^2 \lt 0</m> </cell><cell>    </cell><cell> point de selle   </cell>
+</row><row>
+<cell>
+     <m>(2,4)</m>  </cell><cell> <m>24\times 2-(-6)^2 \gt 0</m> </cell><cell> 24 </cell><cell> min. local </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+Nous pouvons laisser l'entrée <m>f_{xx}</m> de la première rangée vide puisque
+<ul>
+<li>
+nous savions déjà que  <m>f_{xx}(1,1) f_{yy}(1,1)-f_{xy}^2(1,1) \lt 0</m>, et
+</li>
+<li>
+nous savions, du <xref ref="thm_second_deriv_test"/>, que <m>f_{xx}(1,1) f_{yy}(1,1)-f_{xy}^2(1,1) \lt 0</m>, ce qui est suffisant pour garantir que <m>(1,1)</m> est un point de selle.
+</li>
+</ul>
+Voici les courbes de niveau <m>f(x,y)</m>.
+</p>
+
+<sidebyside width="75%">
+<image source="images/CLP-figs/fALevel"/>
+</sidebyside>
+
+<p>
+Ces courbes ne sont pas nécessaires pour répondre à la question, mais elles peuvent donner une idée de l'aspect du graphe de  <m>f</m>.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_MXMNlocalCc"><title><m>f(x,y) = xy(5x+y-15)</m></title>
+<statement>
+<p>
+Trouver et classifier les points critiques de  <m>f(x,y)=xy(5x+y-15)</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Nous avons déjà trouvé les dérivées partielles
+<me>
+f_x(x,y)= y(10x+y-15),\qquad\qquad
+f_y(x,y)= x(5x+2y-15)
+</me>
+de  <m>f(x,y)</m> dans l'<xref ref="eg_MXMNlocalC"/>. De nouveau, pour classifier les points critiques, il nous faut les dérivées secondes. Elles sont :
+<md alignment="alignat">
+<mrow>
+f_{xx}(x,y)&amp;= 10y,
+</mrow><mrow>
+f_{yy}(x,y)&amp;= 2x,
+</mrow><mrow>
+f_{xy}(x,y)&amp;= (1)(10x+y-15)+y(1) &amp;= 10x+2y-15,
+</mrow><mrow>
+f_{yx}(x,y)&amp;= (1)(5x+2y-15)+x(5) &amp;= 10x+2y-15
+</mrow>
+</md>.
+Nous avons, à nouveau, calculé <m>f_{xy}</m> et <m>f_{yx}</m> afin de nous prémunir d'erreurs mécaniques.
+
+Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalC"/>, que les points critiques sont <m>(0,0),\ (0,15),\ (3,0)</m> et <m>(1,5)</m>. La classification est :
+</p>
+
+
+<sidebyside>
+  <tabular left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>  <col halign="center"/> <col />
+<row>
+<cell>
+    <m>\Atop{\text{point}}{\text{critique}}</m>  </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell>
+<m>f_{xx}</m> </cell><cell> type </cell>
+</row><row>
+<cell>
+   <m>(0,0)</m>  </cell><cell> <m>0\times0-(-15)^2 \lt 0</m> </cell><cell> </cell><cell> point de selle </cell>
+</row><row>
+<cell>
+   <m>(0,15)</m> </cell><cell> <m>150\times0-15^2 \lt 0</m> </cell><cell> </cell><cell> point de selle </cell>
+</row><row>
+<cell>
+   <m>(3,0)</m>  </cell><cell> <m>0\times 6-15^2 \lt 0</m>  </cell><cell> </cell><cell> point de selle </cell>
+</row><row>
+<cell>
+   <m>(1,5)</m>  </cell><cell> <m>50\times 2-5^2 \gt 0</m> </cell><cell> 75 </cell><cell> min. local </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+Voici une esquisse des courbes de niveau de  <m>f</m>. La fonction  <m>f</m> prend des valeurs négatives dans les régions ombragées, et positives dans les autres régions.
+</p>
+
+<sidebyside>
+<image source="images/CLP-figs/fBLevel"/>
+</sidebyside>
+
+<p>
+  De nouveau, ceci n'est pas nécessaire pour répondre à cette question, mais cela peut donner une idée de l'allure du graphe de <m>f</m>.
+</p>
+</solution>
+</example>
+<!-- 
+<exercise xml:id = "max-min-01" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-01.pg"/>
+</exercise> -->
+
+<example xml:id="eg_max_min_A">
+<statement>
+<p>
+Trouver et classifier les points critiques de  <m>f(x,y)=x^3+xy^2-3x^2-4y^2+4</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Nous connaissons la mécanique maintenant. Calculons les dérivées partielles jusqu'à l'ordre 2.
+<md>
+<mrow>
+f&amp;=x^3+xy^2-3x^2-4y^2+4
+</mrow><mrow>
+f_x&amp;=3x^2+y^2-6x &amp; f_{xx}&amp;=6x-6 &amp; f_{xy}&amp;= 2y
+</mrow><mrow>
+f_y&amp;=2xy-8y &amp; f_{yy}&amp;=2x-8  &amp; f_{yx}&amp;= 2y
+</mrow>
+</md>
+Les points critiques sont les solutions de  <m>f_x=0</m> et <m>f_y=0</m>, c'est-à-dire
+<md>
+<mrow>
+f_x&amp;=3x^2+y^2-6x=0, \tag{E1}
+</mrow><mrow>
+f_y&amp;=2y(x-4)=0 \tag{E2}
+</mrow>
+</md>.
+La seconde équation, <m>2y(x-4)=0 </m>, est vérifiée si et seulement si au moins une des deux équations <m>y=0</m> ou <m>x=4</m> l'est.
+<ul>
+<li>
+Lorsque <m>y=0</m>, l'équation (E1) force <m>x</m> à vérifier
+<me>
+0=3x^2+0^2-6x=3x(x-2)
+</me>,
+de sorte que  <m>x=0</m> ou <m>x=2</m>.
+</li>
+<li>
+Lorsque <m>x=4</m>, l'équation (E1) force <m>y</m> à vérifier
+<me>
+0=3\times 4^2+y^2-6\times 4=24+y^2
+</me>,
+ce qui est impossible.
+</li>
+</ul>
+Ainsi, il y a deux points critiques : <m>(0,0),\ (2,0)</m>. Voici le tableau qui donne la classification.
+</p>
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>  <col halign="center"/> <col />
+<row>
+<cell>
+<m>\Atop{\rm point}{\rm critique}</m> </cell><cell> <m>f_{xx}f_{yy}-f_{xy}^2</m> </cell><cell> <m>f_{xx}</m> </cell><cell> type </cell>
+</row><row>
+<cell>
+<m>(0,0)</m> </cell><cell> <m>(-6)\times (-8)-0^2 \gt 0</m> </cell><cell> <m>-6 \lt 0</m> </cell><cell> max. local </cell>
+</row><row>
+<cell>
+<m>(2,0)</m> </cell><cell> <m>6\times(-4)-0^2 \lt 0</m> </cell><cell> </cell><cell> point de selle </cell>
+</row>
+</tabular>
+</sidebyside>
+</solution>
+</example>
+
+<!--
+<exercise>
+  <webwork source = "RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-04.pg"/>
+</exercise>
+-->
+
+<!--
+<exercise>
+  <webwork source = "BPL/CCDMD/Calcul_avance-03optimisation/pts_critiques_18.pg"/>
+</exercise>
+-->
+
+<example xml:id="eg_max_min_B">
+<statement>
+<p>
+  Un fabricant veut produire des boîtes rectangulaires (sans couvercle) d'un certain volume, <m>V</m>, en utilisant le moins de matériel possible. Trouver les dimensions de la boîte.
+</p>
+</statement>
+
+<solution>
+<p>
+Soit  <m>x</m>, <m>y</m> et <m>z</m> la longueur, la largeur et la hauteur de la boîte, respectivement.
+</p>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/box"/>
+</sidebyside>
+
+<p>
+La boîte a deux côtés d'aire  <m>xz</m>, deux côtés d'aire <m>yz</m> et un fond d'aire <m>xy</m>. Ainsi, l'aire totale est
+<me>
+S = 2xz + 2yz + xy
+</me>.
+Cependant, les dimensions ne sont pas indépendantes. La contrainte d'avoir un volume <m>V</m>  se traduit par <me>
+xyz = V
+</me>.
+Nous pouvons utiliser cette contrainte pour éliminer une variable. Puisque  <m>z</m> se trouve à la fin de l'alphabet, éliminons  <m>z</m> en remplaçant
+<m>z=\frac{V}{xy}</m>. Nous devons donc trouver les valeurs de  <m>x</m> et
+<m>y</m> qui minimisent la fonction
+<me>
+S(x,y) = \frac{2V}{y} + \frac{2V}{x} + xy
+</me>.
+Commençons par trouver les points critiques de  <m>S</m>. Puisque
+<md>
+<mrow>
+S_x(x,y) &amp;= -\frac{2V}{x^2} + y,
+</mrow><mrow>
+S_y(x,y) &amp;= -\frac{2V}{y^2} + x
+</mrow>
+</md>,
+<m>(x,y)</m> est un point critique si et seulement si
+<md>
+<mrow>
+x^2y&amp;=2V, \tag{E1}
+</mrow><mrow>
+xy^2&amp;=2V \tag{E2}
+</mrow>
+</md>.
+On résout (E1) pour <m>y</m>, ce qui donne  <m>y=\frac{2V}{x^2}</m>. En remplaçant dans (E2), on obtient
+<me>
+x\frac{4V^2}{x^4}=2V \implies
+x^3 = 2V \implies  x = \root{3}\of{2V}\quad\text{et}\quad
+                   y = \frac{2V}{(2V)^{2/3}} = \root{3}\of{2V}
+</me>.
+Comme il n'y a qu'un point critique, on peut espérer qu'il donne lieu à un minimum<fn>
+  En effet, on peut utiliser le fait que <m>0 \lt x \lt \infty</m>, que <m>0 \lt y \lt \infty</m> et que <m>S\rightarrow\infty</m> lorsque <m>x\rightarrow 0</m> et <m>y\rightarrow 0</m> et lorsque <m>x\rightarrow \infty</m> et <m>y\rightarrow\infty</m> pour prouver que le seul point critique donne un minimum global.
+</fn>.
+Utilisons le test de la dérivée seconde. Les dérivées partielles requises sont
+<md>
+<mrow>
+S_{xx}(x,y)&amp;=\frac{4V}{x^3}, &amp;
+    S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2,
+</mrow><mrow>
+S_{xy}(x,y)&amp;=1,&amp;
+    S_{xy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=1,
+</mrow><mrow>
+S_{yy}(x,y)&amp;=\frac{4V}{y^3}, &amp;
+    S_{yy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2
+</mrow>
+</md>.
+Alors,
+<md>
+<mrow>
+S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)\
+S_{yy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)
+-S_{xy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)^2
+&amp;=3 \gt 0,
+</mrow><mrow>
+S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2 \gt 0
+</mrow>
+</md>,
+et, en vertu du <xref ref="thm_second_deriv_test"/>,
+<m>\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)</m> est un point de minimum local. Ainsi, les dimensions requises sont
+<me>
+x=y=\root{3}\of{2V},\qquad
+z=\root{3}\of{\frac{V}{4}}
+</me>.
+Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose : la fonction <m>S(x,y)</m> est symétrique en  <m>x</m> et <m>y</m>. Puisque la boîte n'a pas de couvercle, la symétrie ne dépend pas de  <m>z</m>.
+</p>
+</solution>
+</example>
+
+</subsection>
+
+<subsection xml:id="pars-Abs-max-min">
+<title>Maximums et minimums absolus</title>
+
+
+<p>
+  Un point de minimum ou de maximum local n'a aucune raison d'être un point de minimum ou de maximum global. En fait, il n'y a aucune raison pour qu'une fonction qui admet des minimums et des maximums locaux admette un minimum ou un maximum global, même pour des fonctions à une variable.
+</p>
+
+<p>
+  Commençons par faire un bref rappel de ce qui arrive pour les fonctions d'une variable définies sur un intervalle de <m>\R</m>.
+</p>
+
+<p>
+  Pour fixer les idées, supposons que nous voulons trouver les extremums d'une fonction <m>f(x)</m> sur l'intervalle <m>0\leqslant  x\leqslant  1</m>. Si une valeur extrémale est atteinte à une valeur   <m>x=a</m> à l'intérieur de l'intervalle  (c'est-à-dire telle que <m>0 \lt a \lt 1</m>), alors  <m>a</m> est aussi un point de maximum ou de minimum local. Si <m>f'(a)</m> existe, alors on doit avoir <m>f'(a)=0</m>, c'est-à-dire que <m>a</m> est un point critique pour <m>f</m>. Cependant, si l'extremum global est atteint à un point de la frontière de l'intervalle, c'est-à-dire  <m>a=0</m> ou <m>a=1</m>, alors  <m>a</m> n'a pas besoin d'être un point critique de  <m>f</m>.
+
+  Ceci arrive, par exemple, avec  <m>f(x)=x</m>. La valeur maximale de  <m>f(x)</m> sur  <m>0\leqslant  x\leqslant  1</m> est <m>1</m> et est atteinte à  <m>x=1</m>, mais <m>f'(x)=1</m> ne s'annule jamais, de sorte que <m>f</m> n'a pas de point critique.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/absMaxMin"/>
+</sidebyside>
+
+<p>
+  Ainsi, afin de trouver le maximum et le minimum d'une fonction  <m>f(x)</m> sur <m>[0,1]</m>, on procède comme suit :
+  <ol>
+  <li><p> Dresser une liste des points candidats <m>0\leqslant  a\leqslant  1</m> où les maximums/minimums peuvent être atteints, en trouvant les valeurs de <m>a</m> où :
+   <ol>
+     <li> <m>0 \lt a \lt 1</m> et <m>f'(a)=0</m>, ou
+    </li>
+    <li> <m>0 \lt a \lt 1</m> et  <m>f'(a)</m> n'existe pas (c'est-à-dire les points singuliers de <m>f</m>), ou
+    </li>
+    <li> <m>a</m> est un point du bord du domaine, c'est-à-dire  <m>a=0</m> ou <m>a=1</m>;
+    </li>
+    </ol></p>
+    </li>
+    <li> Évaluer <m>f(a)</m> à chacun des points <m>a</m> de la liste du point précédent. La valeur la plus grande est le maximum absolu; la plus petite, le minimum absolu.
+  </li>
+  </ol>
+</p>
+
+<p>
+  La procédure pour trouver le maximum et le minimum d'une fonction <m>f</m> de plusieurs variables sur un ensemble donné est similaire. Commençons par le cas d'une fonction <m>f(x,y)</m> de deux variables sur le disque  <m>x^2+y^2\leqslant  1</m>. Comme précédemment :
+<ol>
+<li><p> Dresser la liste des points candidats <m>\vr_0 = (x_0,y_0)</m> sur le disque où un maximum ou un minimum peut être atteint (voir notamment le <xref ref="thm_stationary_point"/>):
+<ol>
+<li> <m>\vr_0 = (x_0,y_0)</m> est un point à l'intérieur du disque (c'est-à-dire, dans notre exemple, que <m>x_0^2+y_0^2 \lt 1</m>) et <m>\vnabla f(\vr_0) = \vZero</m>, ou
+</li>
+<li> <m>\vr_0 </m> est un point intérieur, et l'une des dérivées partielles  <m>f_x(\vr_0)</m> ou <m>f_y(\vr_0)</m> n'existe pas, ou
+</li>
+<li><p>
+  <m>\vr_0 </m> est un point sur le bord du disque<fn>
+    Il devrait être clair que la frontière, ou le bord, du disque est l'ensemble des points <m>\vr</m> tels que  <m>|\vr| =  1</m>, c'est-à-dire le cercle. Plus généralement, un point <m>\vr</m>  est un point de la frontière d'un ensemble  <m>S</m> s'il existe une suite de points de <m>S</m> qui converge vers <m>\vr </m> et qu'il existe aussi une suite de points du complément de <m>S</m> qui converge vers <m>\vr</m>.
+  </fn>
+  et peut donner lieu à un maximum ou à un minimum (plus de détails plus bas);
+</p>
+</li>
+</ol></p>
+</li>
+<li>
+  Puis, évaluer  <m>f</m> sur chacun des points de la liste de candidats. La valeur la plus grande est le maximum global; la plus petite, le minimum global.
+</li>
+</ol>
+
+Le bord d'un ensemble comme le disque est une courbe (le cercle). Cette courbe est de dimension 1. On peut trouver le maximum de  <m>f(x,y)</m> sur cette courbe en transformant <m>f(x,y)</m> en une fonction d'une seule variable (sa restriction à la courbe) puis grâce aux techniques usuelles du calcul à une variable. Ceci est illustré dans les exemples ci-après.
+</p>
+
+<example xml:id="eg_MXMNabsA">
+<statement>
+<p>
+  Trouver le maximum et le minimum de  <m>T(x,y)=(x+y)e^{-x^2-y^2}</m> sur la région définie par <m>x^2+y^2\leqslant  1</m> (c'est-à-dire le disque unité).
+</p>
+</statement>
+
+<solution>
+<p>
+  Suivons notre procédure. Trouvons d'abord les points critiques, puis les points de non-dérivabilité et finalement le bord du domaine.
+</p>
+
+<p><em>Points critiques à l'intérieur du domaine :</em> Pour trouver les points critiques à l'intérieur du domaine, on calcule le gradient <m>\vnabla T</m> de <m>T</m> :
+<me>
+T_x(x,y)=(1-2x^2-2xy)e^{-x^2-y^2},\qquad
+T_y(x,y)=(1-2xy-2y^2)e^{-x^2-y^2}
+</me>.
+Puisque l'exponentielle  <m>e^{-x^2-y^2}</m> ne s'annule jamais, les points critiques sont les solutions de
+<md alignment="alignat">
+<mrow>
+T_x&amp;=0 &amp;\quad&amp;\iff\quad &amp; 2x(x+y)&amp;=1,
+</mrow><mrow>
+T_y&amp;=0 &amp; &amp;\iff &amp; 2y(x+y)&amp;=1
+</mrow>
+</md>.
+<ul>
+<li>
+Puisque <m>2x(x+y)</m> et <m>2y(x+y)</m> sont non nuls, on peut diviser ces équations, ce qui donne  <m>\frac{x}{y}=1</m>,  et donc <m>x=y</m>.
+</li>
+<li>
+On remplace dans une des deux équations, ce qui donne <m>2x(2x)=1</m>, et donc  <m>x=y=\pm\frac{1}{2}</m>.
+</li>
+</ul>
+Ainsi, les seuls points critiques sont <m>(\frac{1}{2},\frac{1}{2})</m>
+et <m>(-\frac{1}{2},-\frac{1}{2})</m>. Ils sont tous les deux à l'intérieur du domaine.
+</p>
+
+<p><em>Points singuliers :</em> Dans ce problème, il n'y a pas de point singulier. Les dérivées partielles de <m>T</m> existent partout.
+</p>
+
+<p><em>Bord du domaine :</em>
+Les points du bord du domaine sont ceux vérifiant <m>x^2+y^2=1</m>, c'est-à-dire les points du cercle unité. On peut utiliser le paramétrage familier du cercle, <m>x=\cos t</m> et <m>y=\sin t</m>. Ceci rendra la formule pour <m>T</m> sur le bord du domaine plus simple :
+<me>
+T = (\cos t+\sin t)e^{-\cos^2 t -\sin^2 t}
+=(\cos t+\sin t)e^{-1}
+</me>.
+Il suffit donc d'étudier les variations de <m>T(t) = (\cos t + \sin t)e^{-1}</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/optExampleAa"/>
+</sidebyside>
+
+<p>
+<me>
+\frac{dT}{dt}=\big(-\sin t+\cos t\big)e^{-1}
+</me>
+Ainsi, <m>(\cos t+\sin t)e^{-1}</m> atteint son maximum ou son minimum lorsque
+<ul>
+<li>
+ <m>\sin t=\cos t</m>,
+</li>
+<li>
+c'est-à-dire lorsque  <m>x=y</m> et <m>x^2+y^2=1</m>,
+</li>
+<li>
+ce qui, à son tour, force <m>x^2+x^2=1</m>, d'où <m>x=y=\pm\tfrac{1}{\sqrt{2}}</m>.
+</li>
+</ul>
+En somme, nous avons les candidats suivants pour les maximums et minimums.
+</p>
+
+
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>  <col halign="center"/> <col halign="center"/> <col halign="center"/>
+<row>
+<cell>
+       point
+       </cell><cell><m>(\half,\half)</m>
+     </cell><cell><m>(-\half,-\half)</m>
+       </cell><cell><m>(\tfrac{1}{\sqrt{2}},\tfrac{1}{\sqrt{2}})</m>
+       </cell><cell><m>(-\tfrac{1}{\sqrt{2}},-\tfrac{1}{\sqrt{2}})</m> </cell>
+</row><row>
+<cell>
+       valeur de <m>T</m>
+       </cell><cell><m>\tfrac{1}{\sqrt{e}}\approx0.61</m>
+        </cell><cell><m>-\tfrac{1}{\sqrt{e}}</m>
+       </cell><cell><m>\tfrac{\sqrt{2}}{e}\approx0.52</m>
+       </cell><cell><m>-\tfrac{\sqrt{2}}{e}</m> </cell>
+</row><row>
+<cell>
+       </cell><cell> max.
+       </cell><cell> min.
+       </cell><cell> </cell><cell> </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+La figure ci-après montre le domaine, les courbes de niveau, les points critiques et les points candidats sur le bord. Il est conseillé de faire une figure comme celle-ci (les courbes de niveau en moins), afin de s'assurer de ne pas inclure d'éventuels points critiques qui se trouveraient à l'extérieur du domaine.
+</p>
+
+<figure xml:id="figure-eg_MXMNabsA">
+    <caption>Les courbes de niveau ainsi que les points critiques et les valeurs de <m>(x+y)e^{-x^2-y^2} </m> </caption>
+    <image xml:id="sageplot-eg_MXMNabsA" width="80%">
+        <description>Les courbes de niveau ainsi que les points critiques et les valeurs extrémales de <m>(x+y)e^{-x^2-y^2}</m>.</description>
+         <sageplot>
+          var('x,y')
+          f(x,y)= (x+y)*exp(-x^2 -y^2)
+          C = contour_plot(f ,(-1.3,1.3), (-1.3,1.3), cmap = "Spectral",
+            labels = True,  label_fmt=lambda x: "$%s$"%round(x,2),
+            contours = 11, label_colors="black", label_inline=True, label_fontsize=10, fill = True, axes = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, gridlines = True,            ticks = [[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1],[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1]],tick_formatter="latex", fontsize= 10, region=lambda x,y: 1.001 > x^2 + y^2 )
+          C += parametric_plot([cos(x), sin(x)], (x,0,2*pi), color = "black", thickness = 1.5, zorder = 2)
+          C +=  point([(-0.5,-0.5), (-1/sqrt(2), -1/sqrt(2)), (0.5,0.5),
+            (1/sqrt(2), 1/sqrt(2)) ], marker = "X",  size = 40, color = "black", zorder = 3)
+          C+= text("$f=-\\frac{\\sqrt{2}}{e}$", (-1,-1.2), color = "black")
+          C+= arrow((-1,-1.1), (-0.707,-0.707), color= "grey",
+            arrowsize = 2, width = 1)
+          C+= text("$f=\\frac{\\sqrt{2}}{e}$", (1,1.2), color = "black")
+          C+= arrow((1,1.1), (0.707,0.707), color= "grey",
+            arrowsize = 2, width = 1)
+          C+= text("$f=e^{-1/2}$", (0.4,1.2), color = "black")
+          C+= arrow((0.4,1.1), (1/2,1/2), color= "grey",
+            arrowsize = 2, width = 1)
+          C+= text("$f=-e^{-1/2}$", (-0.4,-1.2), color = "black")
+          C+= arrow((-0.4,-1.1), (-1/2,-1/2), color= "grey",
+            arrowsize = 2, width = 1)
+          C
+         </sageplot>
+     </image>
+ </figure>
+
+
+<!--
+<sidebyside width="60%">
+<image source="images/CLP-figs/optExampleA"/>
+</sidebyside>
+-->
+</solution>
+</example>
+
+<p>Dans l'exemple précédent, nous avons analysé le comportement de  <m>f</m> sur le bord du domaine grâce au paramétrage  <m>x=\cos t</m>, <m>y=\sin t</m>
+ du cercle <m>x^2+y^2=1</m>. Il arrive souvent qu'un tel paramétrage ne mène pas à une expression aussi commode de la fonction considérée. Pire, certaines courbes peuvent ne pas avoir de paramétrage sympathique.
+</p>
+<p>
+  L'exemple qui suit montre une autre façon de traiter le bord du domaine.
+</p>
+
+<example xml:id="eg_MXMNabsB">
+<statement>
+<p>
+Trouver le maximum et le minimum de <m>f(x,y)=x^3+xy^2-3x^2-4y^2+4</m> sur le disque <m>x^2+y^2\leqslant 1</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+De nouveau, commençons par trouver les points critiques et les points singuliers, et analysons le bord du domaine.
+</p>
+
+<p><em>Points critiques à l'intérieur :</em>
+Si <m>f</m> prend son maximum ou son minimum en un point à l'intérieur du disque, c'est-à-dire vérifiant <m>x^2+y^2 \lt 1</m>, alors ce point doit être un point critique de <m>f</m> ou un point singulier.
+Pour trouver les points critiques de <m>f</m><fn>
+  Nous l'avons déjà fait à l'<xref ref="eg_max_min_A"/> mais, pour le bénéfice du lectorat, faisons-le à nouveau.
+</fn>,
+nous devons calculer les dérivées partielles :
+<md>
+<mrow>
+f_x=3x^2+y^2-6x, \qquad
+f_y=2xy-8y
+</mrow>
+</md>.
+Les points critiques sont les solutions de
+<md>
+<mrow>
+f_x&amp;=3x^2+y^2-6x=0, \tag{E1}
+</mrow><mrow>
+f_y&amp;=2y(x-4)=0 \tag{E2}
+</mrow>
+</md>.
+La seconde équation, <m>2y(x-4)=0 </m>, est satisfaite si et seulement si  au moins une des égalités  <m>y=0</m> ou <m>x=4</m> tient.
+<ul>
+<li>
+Lorsque <m>y=0</m>, l'équation (E1) force <m>x</m> à satisfaire
+<me>
+0=3x^2+0^2-6x=3x(x-2)
+</me>,
+de sorte que  <m>x=0</m> ou <m>x=2</m>.
+</li>
+<li>
+Lorsque  <m>x=4</m>, l'équation (E1) force <m>y</m> à satisfaire
+<me>
+0=3\times 4^2+y^2-6\times 4=24+y^2
+</me>,
+ce qui est impossible.
+</li>
+</ul>
+Ainsi, il y a seulement deux points critiques :  <m>(0,0),\ (2,0)</m>. Parmi ceux-ci, seul <m>(0,0)</m> est un point à l'intérieur du domaine.
+</p>
+
+<p><em>Points singuliers :</em>  Dans ce problème, il n'y a pas de point singulier.
+</p>
+
+<p><em>Bord du domaine :</em>
+Sur le bord du domaine,  <m>x^2+y^2=1</m>, on peut encore paramétrer le cercle  <m>x=\cos t</m> et <m>y=\sin t</m>. Cependant, on utilise une autre méthode pour illustrer différentes techniques<fn>
+  Même si vous avez du mal à croire qu'on <q>ne peut pas avoir trop d'outils</q>, il est plutôt dangereux de se fier seulement à l'un d'eux.
+</fn>.
+Nous savons que <m>(x,y)</m> vérifie
+<m>x^2+y^2=1</m>, d'où <m>y^2=1-x^2</m>. Si l'on regarde la formule pour <m>f(x,y)</m>, on remarque qu'elle contient seulement des puissances paires de <m>y</m><fn>
+  S'il y avait eu des puissances impaires, on pourrait considérer deux cas séparés, <m>y\geqslant 0</m> et <m>y\leqslant 0</m>, et remplacer  <m>y=\sqrt{1-x^2}</m> dans le premier cas, puis  <m>y=-\sqrt{1-x^2}</m> dans le second.
+</fn>,
+de sorte qu'on peut éliminer <m>y</m> en remplaçant  <m>y^2=1-x^2</m> dans la formule
+<me>
+f=x^3+x(1-x^2)-3x^2-4(1-x^2)+4=x+x^2
+</me>.
+Le maximum et le minimum de  <m>x+x^2</m> pour <m>-1\leqslant  x\leqslant  1</m> doivent être atteints :
+<ul>
+<li>  lorsque  <m>x=-1</m> (<m>\Rightarrow y=f=0</m>), ou
+</li>
+<li> lorsque  <m>x=+1</m> (<m>\Rightarrow y=0</m>, <m>f=2</m>), ou
+</li>
+<li>  lorsque <m>0=\frac{d}{dx}(x+x^2)=1+2x</m> (<m>\Rightarrow x=-\half</m>,
+<m>y=\pm\sqrt{\frac{3}{4}}</m>, <m>f=-\frac{1}{4}</m>).
+</li>
+</ul>
+Voici une esquisse montrant les points que nous avons identifiés jusqu'à présent.
+</p>
+
+<sidebyside width="60%">
+<image source="images/CLP-figs/optExampleB"/>
+</sidebyside>
+
+<p>
+Nous avons déjà mentionné que le point  <m>(2,0)</m> n'appartient pas au domaine qui nous intéresse. Ainsi, en bout de ligne, nous avons les candidats suivants pour les maximum et minimum.
+</p>
+
+<sidebyside>
+<tabular  left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+<row>
+<cell> point
+       </cell><cell><m>(0,0)</m>
+       </cell><cell><m>(-1,0)</m>
+       </cell><cell><m>(1,0)</m>
+       </cell><cell><m>\big(-\half,\pm\tfrac{\sqrt{3}}{2}\big)</m> </cell>
+</row><row>
+<cell> valeur de <m>f</m>
+       </cell><cell><m>4</m>
+       </cell><cell><m>0</m>
+       </cell><cell><m>2</m>
+       </cell><cell><m>-\tfrac{1}{4}</m> </cell>
+</row><row>
+<cell> </cell><cell>max.
+       </cell><cell>
+       </cell><cell>
+       </cell><cell>min. </cell>
+</row>
+</tabular>
+</sidebyside>
+</solution>
+</example>
+
+<!-- 
+<exercise xml:id = "max-min-05" component = "webwork">
+  <webwork source = "RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-05.pg"/>
+</exercise> -->
+
+
+
+<example xml:id="eg_MXMNabsC">
+<statement>
+<p>
+Trouver les valeurs maximale et minimale de  <m>f(x,y)=xy-x^3y^2</m> lorsque <m>(x,y)</m> parcourt le carré <m>0\leqslant  x\leqslant  1,\ 0\leqslant  y\leqslant 1</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+Comme d'habitude, on étudie les points critiques, les points singuliers et le bord du domaine.
+</p>
+
+<p><em>Points critiques à l'intérieur du domaine :</em> Si <m>f</m> atteint son maximum ou son minimum à un point à l'intérieur du carré, c'est-à-dire vérifiant <m>0 \lt x \lt 1</m> et <m>0 \lt y \lt 1</m>, alors ce point doit être un point critique ou un point singulier de <m>f</m>.
+
+Pour calculer les points critiques, on calcule les dérivées partielles :
+<me>
+f_x(x,y)=y-3x^2y^2,\qquad
+f_y(x,y)=x-2x^3y
+</me>.
+Les points critiques sont les solutions de
+<md alignment="alignat">
+<mrow>
+f_x&amp;=0 &amp; &amp;\quad\iff\quad  &amp;y(1-3x^2y)=0 &amp;
+         &amp;\quad\iff\quad &amp; &amp;y=0 \ \text{ ou }\  3x^2y=1,
+</mrow><mrow>
+f_y&amp;=0 &amp; &amp;\quad\iff\quad  &amp;x(1-2x^2y)=0 &amp;
+          &amp;\quad\iff\quad &amp; &amp;x=0 \ \text{ ou }\  2x^2y=1
+</mrow>
+</md>.
+<ul>
+<li>
+Si  <m>y=0</m>, on ne peut avoir  <m>2x^2y=1</m>; ainsi, on doit avoir  <m>x=0</m>.
+</li>
+<li>
+Si <m>3x^2y=1</m>, il est impossible d'avoir  <m>x=0</m>, de sorte qu'il faut <m>2x^2y=1</m>. Après division, on obtient  <m>1=\tfrac{3x^2y}{2x^2y}=\tfrac{3}{2}</m>, ce qui est impossible.
+</li>
+</ul>
+Ainsi, le seul point critique sur le carré est  <m>(0,0)</m>. En ce point, on a  <m>f=0</m>.
+</p>
+
+<p><em>Points singuliers :</em>  Il n'y en a aucun.
+</p>
+
+<p><em>Bord du domaine :</em>
+La région est un carré; son bord est composé de ses 4 côtés.
+<ul>
+<li>
+Pour commencer, on regarde la partie du bord qui vérifie <m>x=0</m>. Sur tout ce côté, la valeur de <m>f</m>  est <m>0</m>.
+</li>
+<li>
+On regarde maintenant la portion du bord correspondant à  <m>y=0</m>. À nouveau, sur cette portion du bord, la valeur de <m>f</m> est <m>0</m>.
+</li>
+<li><p>
+On poursuit avec la portion du bord où <m>y=1</m>, où l'on a  <m>f(x,1)=x-x^3</m>. Pour trouver le maximum et le minimum de  <m>f(x,y)</m> sur cette portion, on doit trouver le maximum et le minimum de  <m>x-x^3</m> lorsque
+ <m>0\leqslant  x\leqslant  1</m>.
+</p>
+
+<p>Rappelons que, en général le maximum et le minimum d'une fonction continue <m>h(x)</m> sur un intervalle <m>a\leqslant  x\leqslant  b</m> doivent être atteints soit à <m>x=a</m>, à <m>x=b</m> ou à un point  <m>x</m> où
+<m>h'(x)=0</m> ou <m>h'(x)</m> n'existent pas. Dans notre cas,
+<m>\tfrac{d}{dx}(x-x^3)=1-3x^2</m>, de sorte que les maximum et minimum pour  <m>x-x^3</m> avec <m>0\leqslant  x\leqslant  1</m>  doivent être atteints :
+<ul>
+<li>
+à  <m>x=0</m>, où <m>f</m> vaut <m>0</m>, ou
+</li>
+<li>
+à <m>x=\tfrac{1}{\sqrt{3}}</m>, où <m>f</m> vaut <m>\tfrac{2}{3\sqrt{3}}</m>, ou
+</li>
+<li>
+à <m>x=1</m>, où <m>f</m>  vaut <m>0</m>.
+</li>
+</ul></p>
+</li>
+<li><p>
+Finalement, on étudie la portion du bord du carré où  <m>x=1</m>, où l'on a  <m>f(1,y)=y-y^2</m>.
+Puisque  <m>\tfrac{d}{dy}(y-y^2)=1-2y</m>, le seul point critique de  <m>y-y^2</m> se trouve à  <m>y=\frac{1}{2}</m>. Ainsi, le maximum et le minimum pour  <m>y-y^2</m> avec <m>0\leqslant  y\leqslant  1</m> doivent avoir lieu  :
+<ul>
+<li>
+ à  <m>y=0</m>, où <m>f</m> vaut <m>0</m>, ou
+</li>
+<li>
+à <m>y=\half</m>,  où <m>f</m> vaut <m>\tfrac{1}{4}</m>, ou
+</li>
+<li>
+à  <m>y=1</m>, où <m>f</m> vaut  <m>0</m>.
+</li>
+</ul></p>
+</li>
+</ul>
+En bout de ligne, nous avons les candidats suivants pour le maximum et le minimum de <m>f</m>. Les valeurs extrémales sont indiquées.
+</p>
+
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+<row>
+<cell> point
+       </cell><cell><m>(0,0)</m>
+       </cell><cell><m>{\scriptstyle(0,0 \leqslant  y \leqslant  1)}</m>
+       </cell><cell><m>{\scriptstyle(0 \leqslant  x \leqslant  1,0)}</m>
+       </cell><cell><m>(1,0)</m>
+       </cell><cell><m>(1,\half)</m>
+       </cell><cell><m>(1,1)</m>
+       </cell><cell><m>(0,1)</m>
+       </cell><cell><m>(\tfrac{1}{\sqrt{3}},1)</m> </cell>
+</row><row>
+<cell> valeur de  <m>f</m>
+       </cell><cell>0
+       </cell><cell>0
+       </cell><cell>0
+       </cell><cell>0
+       </cell><cell><m>\tfrac{1}{4}</m>
+       </cell><cell>0
+       </cell><cell>0
+       </cell><cell><m>\tfrac{2}{3\sqrt{3}}\approx0.385</m> </cell>
+</row><row>
+<cell> </cell><cell>min.
+       </cell><cell>min.
+       </cell><cell>min.
+       </cell><cell>min.
+       </cell><cell>
+       </cell><cell>min.
+       </cell><cell>min.
+       </cell><cell>max. </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/optExampleC"/>
+</sidebyside>
+</solution>
+</example>
+
+<example xml:id="eg_MXMNabsCC">
+<statement>
+<p>
+Trouver le maximum et le minimum de <m>f(x,y)=xy+2x+y</m> lorsque  <m>(x,y)</m> parcourt le triangle de sommets  <m>(0,0)</m>, <m>(1,0)</m> et
+<m>(0,2)</m>, tel qu'indiqué dans la figure ci-après.</p>
+
+<sidebyside width="33%">
+<image source="images/CLP-figs/optExampleCCa"/>
+</sidebyside>
+
+</statement>
+
+<solution>
+<p>
+Comme d'habitude, on examine les points critiques, les points singuliers et le bord du domaine.
+</p>
+
+<p><em>Points critiques à l'intérieur du domaine :</em> Si <m>f</m> atteint son maximum ou son minimum à un point à l'intérieur du domaine, ce point doit être un point critique ou un point singulier de <m>f</m>. Les points critiques sont les solutions de
+<me>
+f_x(x,y)=y+2=0,\qquad
+f_y(x,y)=x+1=0
+</me>.
+Ainsi, il y a exactement un point critique, à savoir <m>(-1,-2)</m>. Ce point se trouve à l'extérieur du domaine, il n'est donc pas un candidat au maxiumum ni au minimum.
+</p>
+
+<p><em>Points singuliers :</em>  Il n'y en a aucun.
+</p>
+
+<p><em>Bord du domaine :</em>
+La région est un triangle (et son intérieur), de sorte que son bord est formé par trois segments.
+<ul>
+<li>
+Pour commencer, regardons le segment joignant  <m>(0,0)</m> à <m>(0,2)</m>. Sur ce segment, on a  <m>x=0</m>, de sorte que  <m>f(0,y)=y</m>. La plus petite valeur de  <m>f</m> sur ce côté est  <m>f=0</m> au point  <m>(0,0)</m>, et la plus grande valeur de <m>f</m> sur ce côté est <m>f=2</m> au point  <m>(0,2)</m>.
+</li>
+<li>
+Ensuite, considérons le côté joignant <m>(0,0)</m> à <m>(1,0)</m>. Sur ce côté,  <m>y=0</m>, de sorte que  <m>f(x,0)=2x</m>. La plus petite valeur de  <m>f</m> sur ce côté est <m>f=0</m> au point  <m>(0,0)</m>, et la plus grande valeur de <m>f</m> sur ce côté est  <m>f=2</m> au point <m>(1,0)</m>.
+</li>
+<li><p>
+ Finalement, regardons le segment joignant <m>(0,2)</m> à <m>(1,0)</m>. Notre première tâche est de trouver l'équation de la droite qui passe par  <m>(0,2)</m> et <m>(1,0)</m>. Prenons ceci comme prétexte pour faire une petite révision et trouvons cette équation de trois façons différentes.
+<ul>
+<li><p> <em>Méthode 1 :</em>
+On sait qu'une droite non verticale du plan <m>xy</m> admet une équation de la forme <m>y=mx + b</m>, où <m>b</m> est l'ordonnée à l'origine <m>y</m> et où <m>m</m> est la pente. Dans notre cas, la droite croise l'axe des  <m>y</m> à <m>y=2</m>, et donc <m>b=2</m>. La droite passe par  <m>(0,2)</m> et <m>(1,0)</m>, donc sa pente est
+<m>m=\frac{\De y}{\De x}=\frac{0-2}{1-0}=-2</m>. Ainsi, le troisième côté du triangle se trouve sur la droite d'équation  <m>y=2-2x</m> et vérifie en plus  <m>0\leqslant  x\leqslant  1</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="images/CLP-figs/optExampleCCc"/>
+</sidebyside>
+</li>
+<li>
+ <em>Méthode 2 :</em>  Toute droite du plan  <m>xy</m> admet une équation  <m>ax+by=c</m>. Dans ce cas, <m>(0,0)</m> <em>n'est pas</em> sur la droite, de sorte que <m>c\ne 0</m>, et l'on peut diviser l'équation par  <m>c</m>, ce qui donne <m>\frac{a}{c}x+\frac{b}{c}y=1</m>. Posons  <m>\frac{a}{c}=A</m> et  <m>\frac{b}{c}=B</m>. Ainsi, puisque la droite ne passe pas par l'origine, elle admet une équation de la forme  <m>Ax+By=1</m>.
+
+ Afin d'avoir que <m>(0,2)</m> se trouve sur la droite, <m>x=0</m>, <m>y=2</m> doit être une solution de <m>Ax+By=1</m>, c'est-à-dire <m>Ax\big|_{x\,=\,0}+By\big|_{y\,=\,2}=1</m>, de sorte que  <m>B=\frac{1}{2}</m>. Afin d'avoir que <m>(1,0)</m> se trouve sur la droite,  <m>x=1</m>, <m>y=0</m> doit être une solution de
+<m>Ax+By=1</m>, c'est-à-dire  <m>Ax\big|_{x\,=\,1}+By\big|_{y\,=\,0}=1</m>, ce qui donne  <m>A=1</m>. Ainsi, l'équation de la droite est  <m>x+\frac{1}{2}y=1</m>, ou encore <m>y=2-2x</m>.
+</li>
+<li>
+ <em>Méthode 3 :</em> Le vecteur joignant
+<m>(0,2)</m> à <m>(1,0)</m> est  <m>\llt 1-0\,,\,0-2\rgt = \llt 1,-2\rgt</m>. Il s'agit d'un vecteur directeur pour la droite. Un point sur celle-ci est <m>(0,2)</m>. Ainsi, un paramétrage de cette droite est
+(voir <xref ref="dte-vect"/>)
+<me>
+\llt x-0,\,y-2\rgt = t\llt 1,-2\rgt\qquad\text{ou}\qquad
+x=t,\ y=2-2t
+</me>.
+</li>
+</ul>
+Chacune de ces trois méthodes<fn>
+  Dans la troisième, on a changé le nom de <m>x</m> pour  <m>t</m>.
+</fn>
+donne que le côté du triangle qui joint  <m>(0,2)</m> à <m>(1,0)</m> est <m>y=2-2x</m> avec <m>0\leqslant  x\leqslant  1</m>. Sur ce côté du triangle, nous avons
+<me>
+f(x,2-2x) = x(2-2x)+2x+(2-2x)
+          = -2x^2 +2x+2
+</me>.
+Posons  <m>g(x) = -2x^2 +2x+2</m>. Le maximum et le minimum de  <m>g(x)</m> pour
+<m>0\leqslant  x\leqslant  1</m>, et donc le maximum et le minimum pour <m>f</m> sur l'hypoténuse du triangle, doivent être atteints :
+<ul>
+<li> à <m>x=0</m>, où l'on a <m>f(0,2)=g(0)=2</m>, ou
+</li>
+<li> à <m>x=1</m>, où l'on a <m>f(1,0)=g(1)=2</m>, ou
+</li>
+<li> lorsque <m>0=g'(x) = -4x+2</m>, c'est-à-dire  <m>x=\frac{1}{2}</m>, <m>y=2-\frac{2}{2}=1</m>, et où l'on a
+<me>
+f\left(\frac{1}{2},1\right)=g\left(\frac{1}{2}\right)=-\frac{2}{4}+\frac{2}{2}+2
+       =\frac{5}{2}
+</me>.
+</li>
+</ul></p>
+</li>
+</ul>
+En combinant ce qui précède, nous avons les candidats suivants pour les maximum et minimum de <m>f</m>.
+</p>
+
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<col />  <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+         <col halign="center"/>
+<row>
+<cell> point
+       </cell><cell><m>(0,0)</m>
+       </cell><cell><m>(0,2)</m>
+       </cell><cell><m>(1,0)</m>
+       </cell><cell><m>(\frac{1}{2},1)</m>
+       </cell>
+</row><row>
+<cell> valeur de <m>f</m>
+       </cell><cell>0
+       </cell><cell>2
+       </cell><cell>2
+       </cell><cell> <m>\frac{5}{2}</m></cell>
+</row><row>
+<cell> </cell><cell>min.
+       </cell><cell>
+       </cell><cell>
+       </cell><cell>max. </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<sidebyside width="35%">
+<image source="images/CLP-figs/optExampleCCb"/>
+</sidebyside>
+</solution>
+</example>
+<!-- 
+<exercise xml:id ="max-min-02" component = "webwork">
+  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-02.pg"/>
+</exercise> -->
+
+<example xml:id="eg_MXMNabsD">
+<statement>
+<p>
+Trouver les points les plus hauts et les points les plus bas de la portion de la surface <m>\ z=\sqrt{x^2+y^2}\ </m> se trouvant sur le carré <m>\ |x|\leqslant 1</m>, <m>|y|\leqslant 1 </m>.
+</p>
+</statement>
+
+<solution>
+<p>
+La fonction  <m>\ f(x,y)=\sqrt{x^2+y^2}\ </m> admet une interprétation géométrique simple : il s'agit de la distance séparant le point <m>(x,y)</m> de l'origine. Ainsi,
+<ul>
+<li>
+le minimum de <m>f(x,y)</m> est atteint au point sur le carré qui est le plus près de l'origine, c'est-à-dire l'origine elle-même. Ainsi, <m>(0,0,0)</m> est le point le plus bas sur la surface, et sa hauteur est <m>0</m>.
+</li>
+<li>
+le maximum de <m>f(x,y)</m> est atteint aux points sur le carré se trouvant le plus loin de l'origine, c'est-à-dire les 4 coins du carré <m>\big(\pm 1,\pm 1\big)</m>. À ces points,  <m>z=\sqrt{2}</m>. Ainsi, les points les plus hauts sur la surface sont <m>(\pm 1,\pm 1,\sqrt{2})</m>.
+</li>
+</ul>
+Même si nous avons déjà répondu à la question, il sera illustratif de voir ce qu'il serait arrivé si nous avions suivi notre protocole usuel. Les dérivées partielles de  <m>f(x,y)=\sqrt{x^2+y^2}</m> sont définies pour
+<m>(x,y)\ne (0,0)</m> et sont
+<me>
+f_x(x,y) =\frac{x}{\sqrt{x^2+y^2}},\qquad
+f_y(x,y) =\frac{y}{\sqrt{x^2+y^2}}
+</me>.
+<ul>
+<li><p>
+Il n'y a pas de point critique, puisque
+<ul>
+<li>
+     <m>f_x=0</m> seulement pour  <m>x=0</m>, et
+</li>
+<li>
+     <m>f_y=0</m> seulement pour  <m>y=0</m>, mais
+</li>
+<li>
+     <m>(0,0)</m> n'est pas un point critique puisque  <m>f_x</m> et <m>f_y</m> ne sont pas définies en ce point.
+</li>
+</ul></p>
+</li>
+<li>
+Il y a un point singulier, à savoir <m>(0,0)</m>. La valeur minimale de  <m>f</m> est atteinte en ce point singulier.
+</li>
+<li>
+Le bord du carré est formé de ses 4 côtés. L'un d'eux est
+<me>
+\Set{(x,y)}{x=1,\ -1\leqslant  y\leqslant  1}
+</me>.
+Sur ce côté, <m>f=\sqrt{1+y^2}</m>. Étant donné que <m>\sqrt{1+y^2}</m> croît avec <m>|y|</m>, la plus petite valeur de  <m>f</m> sur ce côté est  <m>1</m> (lorsque <m>y=0</m>), et la plus grande est <m>\sqrt{2}</m> (lorsque <m>y=\pm 1</m>). La même chose arrive pour les trois autres côtés du carré. La valeur maximale de  <m>f</m> est atteinte aux 4 coins. Remarquons que  <m>f_x</m> et <m>f_y</m> sont toutes les deux non nulles en ces points.
+</li>
+</ul>
+</p>
+</solution>
+</example>
+
+</subsection>
+
+<xi:include  href="./Problemes/Prob-sec-Max-min.ptx"/>
+
+</section>

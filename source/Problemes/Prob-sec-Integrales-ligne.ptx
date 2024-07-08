@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <exercise>
+      <statement><p>
+      Évaluer <m>\int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}</m> en sens antihoraire autour du carré ayant pour sommets
+      <m>(0,0)</m>, <m>(1,0)</m>, <m>(1,1)</m> et <m>(0,1)</m>.
+      </p></statement>
+
+      <hint><p>
+      Le haut et le bas du carré peuvent être facilement paramétrés en utilisant <m>x</m>
+      comme paramètre. Les deux autres côtés peuvent être facilement paramétrés en utilisant <m>y</m>  comme paramètre.
+      </p></hint>
+      <answer><p>
+      <m>\frac{1}{6}</m>
+      </p></answer>
+      <solution><p>
+      The square has four sides, each of which is a line segment.
+      <ul>
+      <li>
+      On the first side, <m>y=0</m> and <m>\dee{y}=0</m>. That is, we may parametrize
+      the first side by <m>\vr(x)=x\,\vi</m> with <m>0\leqslant x\leqslant 1</m>.
+      </li>
+      <li>
+      On the second side, <m>x=1</m> and <m>\dee{x}=0</m>. We may parametrize
+      the second side by <m>\vr(y)=\vi+y\,\vj</m> with <m>0\leqslant y\leqslant 1</m>.
+      </li>
+      <li>
+      On the third side, <m>y=1</m> and <m>\dee{y}=0</m>. We may parametrize the
+      third side by <m>\vr(x)=x\,\vi+\vj</m> with <m>x</m> running from <m>1</m> to <m>0</m>.
+      </li>
+      <li>
+      On the final side, <m>x=0</m> and <m>\dee{x}=0</m>.  We may parametrize the
+      fourth side by <m>\vr(y)=y\,\vj</m> with <m>y</m> running from <m>1</m> to <m>0</m>.
+      </li>
+      </ul>
+      </p>
+
+      <sidebyside width="30%">
+        <image source="images/CLP-figs/pfigs/square"/>
+      </sidebyside>
+
+      <p>
+      So
+      <md>
+      <mrow>
+      \int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}
+      &amp;=\int_0^1 x^2\times 0^2\,\dee{x} +\int_0^1 1^3\times y\,\dee{y}
+      +\int_1^0 x^2\times 1^2\,\dee{x}
+      </mrow><mrow>&amp;\hskip2in+\int_1^0 0^3\times y\,\dee{y}
+      </mrow><mrow>
+      &amp;=\frac{1}{2}-\frac{1}{3}
+      =\frac{1}{6}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.4 No 9 -->
+    <exercise>
+      <statement><p>
+      Considérer le champ de vecteurs
+      <me>
+      \vF(x, y) = (e^x \cos y + x^2, \, x^2y + 3).
+      </me>
+      Évaluer l'intégrale de ligne <m>\int_C\vF\cdot \dee{\vr}</m> le long de la courbe orientée <m>C</m> obtenue en se déplaçant de <m>(0, 0)</m> à <m>(1,0)</m> à
+      <m>(1, \pi)</m> et finalement à <m>(0, \pi)</m> le long de segments droits.
+      </p></statement>
+
+      <answer><p>
+      <m>2(e-1)+\frac{\pi^2}{2}+3\pi</m>
+      </p></answer>
+
+      <solution><p>
+      Note that:
+      <ul>
+      <li>
+      Along the line segment from <m>(0, 0)</m> to <m>(1,0)</m>, <m>x</m> increases
+      from <m>0</m> to <m>1</m>, while <m>y</m> is held fixed at <m>y=0</m>.
+      So we may parametrize this segment by <m>\vr(x) = x\,\vi</m>, <m>0\leqslant x\leqslant 1</m>.
+      </li>
+      <li>
+      Along the line segment from <m>(1, 0)</m> to <m>(1,\pi)</m>, <m>y</m> increases
+      from <m>0</m> to <m>\pi</m>, while <m>x</m> is held fixed at <m>x=1</m>.
+      So we may parametrize this segment by <m>\vr(x) = \vi + y\,\vj</m>, <m>0\leqslant y\le\pi</m>.
+      </li>
+      <li>
+      Along the line segment from <m>(1, \pi)</m> to <m>(0,\pi)</m>, <m>x</m> decreases
+      from <m>1</m> to <m>0</m>, while <m>y</m> is held fixed at <m>y=\pi</m>.
+      So we may parametrize this segment by <m>\vr(x) = x\,\vi+\pi\,\vj</m>
+      with <m>x</m> running from <m>1</m> to <m>0</m>.
+      </li>
+      </ul>
+      Hence
+      <md>
+      <mrow>
+      \int_C \vV\cdot \dee{\vr}
+      &amp;=\int_0^1 \vV(x,0)\cdot\vi\ \dee{x}+\int_0^\pi \vV(1,y)\cdot\vj\ \dee{y}
+      +\int_1^0 \vV(x,\pi)\cdot\vi\ \dee{x}
+      </mrow><mrow>
+      &amp;=\int_0^1 (e^x+x^2)\ \dee{x}
+               +\int_0^\pi (y+3)\ \dee{y}+\int_1^0 (-e^x+x^2)\ \dee{x}\cr
+      &amp;=2\int_0^1 e^x\ \dee{x}+\int_0^\pi (y+3)\ \dee{y}
+      </mrow><mrow>
+      &amp;=2(e-1)+\frac{\pi^2}{2}+3\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.4 No 10 -->
+    <exercise>
+      <statement><p>
+      Évaluer <m>\int_\cC\vF\cdot \dee{\vr}</m> pour
+      <ol marker = "(a)">
+      <li>
+      <m>\vF(x,y)=xy\,\vi-x^2\,\vj</m> le long de <m>y=x^2</m> de <m>(0,0)</m> à <m>(1,1)</m>;
+      </li>
+      <li>
+      <m>\vF(x,y,z)=(x-z)\,\vi+(y-z)\,\vj-(x+y)\,\vk</m> le long du chemin polygonal de
+      <m>(0,0,0)</m> à <m>(1,0,0)</m> à <m>(1,1,0)</m> à <m>(1,1,1)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>-\frac{1}{4}</m> </p><p>
+      (b) <m>-1</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      We may parametrize the curve by <m>\vr(t)=t\,\vi+t^2\,\vj</m> with <m>0\leqslant t\leqslant 1</m>.
+      Then <m>\vv(t)=\diff{\vr}{t}(t)=\vi+2t\,\vj</m> and
+      <m>\vF\big(x(t),y(t)\big)=t^3\,\vi-t^2\,\vj</m> so
+      <md>
+      <mrow>
+      \int_\cC\vF\cdot \dee{\vr}
+      &amp;=\int_0^1 \vF\big(x(t),y(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+      =\int_0^1\big[t^3\,\vi-t^2\,\vj\big]
+      \cdot\big[\vi+2t\,\vj\big]\,\dee{t}
+      </mrow><mrow>
+      &amp;=\int_0^1\big[-t^3\big]\,\dee{t}
+      </mrow><mrow>
+      &amp;=-\frac{1}{4}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) The path is the union of three line segments.
+      <ul>
+      <li>
+      On the first segment of the path <m>y=z=0</m> so <m>\vF</m> simplifies
+      to <m>x\,\vi-x\,\vk</m> and <m>\dee{\vr}=\vi\ \dee{x}</m> (i.e. we can parametrize
+      the first segment of the path by <m>\vr(x)=x\,\vi</m> with <m>0\leqslant x\leqslant 1</m>),
+      so <m>\vF\cdot \dee{\vr}=x\,\dee{x}</m>.
+      </li>
+      <li>
+      On the second segment of the path <m>x=1</m>, <m>z=0</m> so <m>\vF</m> simplifies
+      to <m>\vi+y\vj-(1+y)\vk</m> and <m>\dee{\vr}=\vj\, \dee{y}</m>
+      (parametrize the second segment of the path by <m>
+      \vr(y)=\vi+y\,\vj</m> with <m>0\leqslant y\leqslant 1</m>),
+      so <m>\vF\cdot \dee{\vr}=y\,\dee{y}</m>.
+      </li>
+      <li>
+      On the final segment of the path <m>x=y=1</m> so <m>\vF</m> simplifies
+      to <m>(1-z)\vi+(1-z)\vj-2\vk</m> and <m>\dee{\vr}=\vk\, \dee{z}</m>
+      (parametrize the third segment of the path by <m>
+      \vr(z)=\vi+\vj+z\,\vk</m> with <m>0\leqslant z\leqslant 1</m>),
+      so <m>\vF\cdot \dee{\vr}=-2\,\dee{z}</m>.
+      </li>
+      </ul>
+      So
+      <me>
+      \int_\cC\vF\cdot \dee{\vr}=\int_0^1 x\,\dee{x}
+                 +\int_0^1 y\,\dee{y}+\int_0^1(-2)\,\dee{z}
+      =\frac{1}{2}+\frac{1}{2}-2
+      =-1
+      </me>
+      </p></solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.4 No 14 -->
+    <exercise> <!-- <title><fromexam>M317 2016D</fromexam></title> -->
+      <statement><p>
+      Trouver le travail effectué par le champ de forces
+      <m>\vF(x,y,z) = (x - y^2, \, y - z^2, \, z - x^2)</m> sur une particule
+      se déplaçant le long du segment droit allant de <m>(0, 0, 1)</m> à <m>(2, 1, 0)</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{7}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      Parametrize the line segment by
+      <me>
+      \vr(t) = (0,0,1) + t\big\{(2,1,0)-(0,0,1)\big\}
+             = \big(2t,t,1-t\big)\qquad
+      0\leqslant t\leqslant 1
+      </me>
+      so that <m>\vr(0) = (0,0,1)</m> is the initial point of the line segment and
+      <m>\vr(1) = (2,1,0)</m> is the final point of the segment. Then
+      <me>
+      \vr'(t) = (2,1,-1)\qquad
+      </me>
+      and the work is
+      <md>
+      <mrow>
+      \int\vF\cdot\dee{\vr}
+      &amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
+      </mrow><mrow>
+      &amp;=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
+      </mrow><mrow>
+      &amp;=\int_0^1\big(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\big)\,\dee{t}
+      </mrow><mrow>
+      &amp;=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
+      </mrow><mrow>
+      &amp;=\frac{1}{3}+4-2
+      =\frac{7}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.4 No 17 -->
+    <exercise> <!-- <title><fromexam>M317 2010D</fromexam></title> -->
+      <statement><p>
+      Soit <m>C</m> la moitié supérieure du cercle unité centré en <m>(1, 0)</m>
+      (c'est-à-dire la partie du cercle se situant au-dessus de l'axe <m>x</m>),
+      orientée en sens horaire. Calculer l'intégrale de ligne
+      <m>\int_C xy\,\dee{y}</m>.
+      </p></statement>
+
+      <hint><p>
+      Esquisser <m>C</m>, évaluez une intégrale trigonométrique, une substitution pourrait être de mise.
+      </p></hint>
+
+      <answer><p>
+      <m>-\frac{2}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      We are being asked to evaluate the line integral
+      <m>\int_C\vF\cdot\dee{\vr}</m> with <m>C</m> being the specified semi-circle and
+      <m>\vF=xy\,\vj</m>. As <m>\vnabla\times\vF\ne\vZero</m>, the vector field <m>\vF</m>
+      is not conservative. So we'll evaluate the integral directly.
+      First, using the figure,
+      </p>
+
+      <sidebyside width="56%">
+      <image source="images/CLP-figs/pfigs/OE10D_2"/>
+      </sidebyside>
+
+      <p>
+      we parametrize <m>C</m> by
+      <me>
+      \vr(\theta) =
+      \big(x(\theta)\,,\,y(\theta)\big)
+      =(1-\cos\theta)\,\vi +\sin\theta\,\vj\qquad 0\le\theta\le\pi
+      </me>
+      So the integral is
+      <md>
+      <mrow>
+      \int_C xy\,\dee{y}
+      =\int_0^\pi x(\theta)\,y(\theta)\, y'(\theta)\ \dee{\theta}
+      =\int_0^\pi (1-\cos\theta)\,\sin\theta\,\cos\theta \ \dee{\theta}
+      </mrow>
+      </md>
+      Making the substitution <m>u=\cos\theta</m>, <m>\dee{u} =-\sin\theta\,\dee{\theta}</m>,
+      <m>u(0)=1</m>, <m>u(\pi)=-1</m>,
+      <md>
+      <mrow>
+      \int_C xy\,\dee{y}
+      &amp;=\int_1^{-1} (1-u)\, u\, (-\dee{u})
+      =\int_{-1}^1 (u-u^2)\,\dee{u}
+      </mrow><mrow>
+      &amp;=-2 \int_0^1 u^2\,\dee{u}
+      =-2 \frac{1^3}{3}=-\frac{2}{3}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+      <solution>
+      <p>
+      We can write <m>x</m> in terms of <m>y</m> over <m>C</m> in two pieces:
+      <ul>
+      <li> Let <m>C_1</m> be the quarter-circle <m>x=1-\sqrt{1-y^2}</m> as <m>y</m> goes from 0 to 1,  and
+      </li>
+      <li> Let <m>C_2</m> be the quarter-circle <m>x=1+\sqrt{1-y^2}</m> as <m>y</m> goes from 1 to 0.
+      </li>
+      </ul>
+      Then:
+      <md>
+      <mrow>
+      \int_C xy\dee{y} &amp;=\int_{C_1} xy\dee{y}+\int_{c_2}xy\dee{y}
+      </mrow><mrow>
+      &amp;=\int_0^1\left(1-\sqrt{1-y^2}\right)y\,\dee{y}+\int_1^0\left(1+\sqrt{1-y^2}\right)y\,\dee{y}
+      </mrow><mrow>
+      &amp;=\int_0^1 y\,\dee{y}-\int_0^1y\sqrt{1-y^2}\,\dee{y}+\int_1^0y\,\dee{y}+\int_1^0 y\sqrt{1-y^2}\,\dee{y}
+      </mrow><mrow>
+      &amp;=-2\int_0^1 y\sqrt{1-y^2}\,\dee{y}
+      </mrow>
+      <intertext>Using the substitution <m>u=1-y^2</m>, <m>\dee{u} =-2y\,\dee{y}</m>:
+      </intertext><mrow>
+      &amp;=\int_1^0u^{1/2}\dee{u}=-\frac23
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+  </exercisegroup>
+
+</exercises>

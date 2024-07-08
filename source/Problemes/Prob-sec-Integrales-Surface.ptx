@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+
+    <!-- No 2 section 3.3.6 CLP4 -->
+    <!-- Solution b) et réponse coïncident -->
+    <exercise>
+      <statement><p>
+      Soit <m>a,b,c  \gt  0</m>. Dénoter par <m>S</m> le triangle ayant pour sommets <m>(a,0,0)</m>,
+      <m>(0,b,0)</m> et <m>(0,0,c)</m>.
+      <ol marker = "(a)">
+      <li>
+      Trouver l'aire de la surface <m>S</m> de trois façons différentes, chacune en utilisant la
+      <xref ref="eq_SUdSgraph"/>.
+      </li>
+      <li>
+      Dénoter par <m>T_{xy}</m> la projection de <m>S</m> sur le plan <m>xy</m> (c'est le triangle ayant pour sommets <m>(0,0,0)</m>, <m>(a,0,0)</m> et <m>(0,b,0)</m>). De façon similaire, utiliser
+      <m>T_{xz}</m> pour dénoter la projection de <m>S</m> sur le plan <m>xz</m> et
+      <m>T_{yz}</m> pour dénoter la projection de <m>S</m> sur le plan <m>yz</m>. Montrer que
+      <me>
+      \text{Aire}(S) =\sqrt{\text{Aire}(T_{xy})^2
+                           +\text{Aire}(T_{xz})^2
+                           +\text{Aire}(T_{yz})^2
+                           }.
+      </me>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Le triangle est une partie du plan <m>\frac{x}{a}+\frac{y}{b} +\frac{z}{c}=1</m>.
+      </p></hint>
+
+      <answer><p>
+      (a) <m>\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}</m>
+      </p>
+
+      <p>(b) La solution de la partie (a) donne
+      <me>
+      \text{Aire}(T_{xy})=\frac{ab}{2}, \qquad
+      \text{Aire}(T_{xz})=\frac{ac}{2}, \qquad
+      \text{Aire}(T_{yz})=\frac{bc}{2}.
+      </me>
+      Ainsi,
+      <md>
+      <mrow>
+      \text{Aire}(S)
+      &amp;=\sqrt{\frac{a^2b^2}{4}+\frac{a^2c^2}{4}+\frac{b^2c^2}{4}}
+      </mrow><mrow>
+      &amp;=\sqrt{\text{Aire}(T_{xy})^2
+                           +\text{Aire}(T_{xz})^2
+                           +\text{Aire}(T_{yz})^2
+                           }.
+      </mrow>
+      </md>
+      </p></answer>
+
+      <solution><p>
+      Note that all three vertices <m>(a,0,0)</m>, <m>(0,b,0)</m> and <m>(0,0,c)</m> lie on
+      the plane <m>\frac{x}{a}+\frac{y}{b} +\frac{z}{c}=1</m>. So the triangle is
+      part of that plane.
+      </p>
+
+      <p><em>Method 1.</em>
+       <m>S</m> is the part of the surface <m>z=f(x,y)</m> with
+      <m>f(x,y) = c\left(1-\frac{x}{a}-\frac{y}{b}\right)</m>
+      and with <m>(x,y)</m> running over the triangle <m>T_{xy}</m> in the <m>xy</m>-plane
+      with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,b,0)</m>.
+      Hence by the first part of (<xref ref="eq_SUdSgraph"/>),
+      <md>
+      <mrow>
+      \text{Area}(S)&amp;=\iint_{T_{xy}} \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;=\iint_{T_{xy}}\ \sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\
+      \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;=\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ A(T_{xy})
+      </mrow>
+      </md>
+      where <m>A(T_{xy})</m> is the area of <m>T_{xy}</m>. Since the triangle <m>T_{xy}</m>
+      has base <m>a</m> and height <m>b</m> (see the figure below), it has
+      area <m>\frac{1}{2}ab</m>. So
+      <me>
+      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ ab
+       =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+      </me>
+      </p>
+
+      <sidebyside width="45%">
+        <image source="pfigs/triangleProjection"/>
+      </sidebyside>
+
+      <p>
+      <em>Method 2.</em>
+       <m>S</m> is the part of the surface <m>x=g(y,z)</m> with
+      <m>g(y,z) = a\left(1-\frac{y}{b}-\frac{z}{c}\right)</m>
+      and with <m>(y,z)</m> running over the triangle <m>T_{yz}</m> in the <m>yz</m>-plane
+      with vertices <m>(0,0,0)</m> <m>(0,b,0)</m> and <m>(0,0,c)</m>.
+      Hence by the second part of (<xref ref="eq_SUdSgraph"/>),
+      <md>
+      <mrow>
+      \text{Area}(S)&amp;=\iint_{T_{yz}} \sqrt{1+g_y(y,z)^2+g_z(y,z)^2}\ \dee{y}\,\dee{z}
+      </mrow><mrow>
+      &amp;=\iint_{T_{yz}}\ \sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\
+      \dee{y}\,\dee{z}
+      </mrow><mrow>
+      &amp;=\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ A(T_{yz})
+      </mrow>
+      </md>
+      where <m>A(T_{yz})</m> is the area of <m>T_{yz}</m>. Since <m>T_{yz}</m> has base <m>b</m> and
+      height <m>c</m>, it has area <m>\frac{1}{2}bc</m>. So
+      <me>
+      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ bc
+       =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+      </me>
+      </p>
+
+      <p><em>Method 3.</em>
+       <m>S</m> is the part of the surface <m>y=h(x,z)</m> with
+      <m>h(x,z) = b\left(1-\frac{x}{a}-\frac{z}{c}\right)</m>
+      and with <m>(x,z)</m> running over the triangle <m>T_{xz}</m> in the <m>xz</m>-plane
+      with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,0,c)</m>.
+      Hence by the third part of (<xref ref="eq_SUdSgraph"/>),
+      <md>
+      <mrow>
+      \text{Area}(S)&amp;=\iint_{T_{xz}} \sqrt{1+h_x(x,z)^2+h_z(x,z)^2}\ \dee{x}\,\dee{z}
+      </mrow><mrow>
+      &amp;=\iint_{T_{xz}}\ \sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\
+      \dee{x}\,\dee{z}
+      </mrow><mrow>
+      &amp;=\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ A(T_{xz})
+      </mrow>
+      </md>
+      where <m>A(T_{xz})</m> is the area of <m>T_{xz}</m>. Since <m>T_{xz}</m> has base <m>a</m> and
+      height <m>c</m>, it has area <m>\frac{1}{2}ac</m>. So
+      <me>
+      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ bc
+       =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+      </me>
+      </p>
+
+      <p>(b) La solution de la partie (a) donne
+      <me>
+      \text{Aire}(T_{xy})=\frac{ab}{2}, \qquad
+      \text{Aire}(T_{xz})=\frac{ac}{2}, \qquad
+      \text{Aire}(T_{yz})=\frac{bc}{2}, \qquad
+      </me>
+      Ainsi,
+      <md>
+      <mrow>
+      \text{Aire}(S)
+      &amp;=\sqrt{\frac{a^2b^2}{4}+\frac{a^2c^2}{4}+\frac{b^2c^2}{4}}
+      </mrow><mrow>
+      &amp;=\sqrt{\text{Aire}(T_{xy})^2
+                           +\text{Aire}(T_{xz})^2
+                           +\text{Aire}(T_{yz})^2
+                           }.
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- No 3 section 3.3.6 CLP4 -->
+    <exercise>
+        <statement><p>
+        Soit <m>a,h \gt 0</m>. Dénoter par <m>\cS</m> la partie du cylindre <m>x^2+z^2=a^2</m> avec
+        <m>x\geqslant  0</m>, <m>0\leqslant y\leqslant h</m> et <m>z\geqslant  0</m>.
+        </p>
+
+        <sidebyside width="38%">
+          <image source="images/CLP4-figs/pfigs/cylinderQ"/>
+        </sidebyside>
+
+        <p>
+        <ol marker = "(a)">
+        <li>
+        Trouver l'aire de la surface <m>S</m> sans faire de calcul.
+        </li>
+        <li>
+        Paramétriser <m>S</m> par
+        <me>
+        \vr(\theta,y) = a\,\cos\theta\ \vi +y\,\vj +a\sin\theta\ \vk, \quad
+        0\le\theta\le\frac{\pi}{2},\
+        0\leqslant y\leqslant h.
+        </me>
+        Trouver l'aire de la surface <m>S</m> en utilisant la <xref ref="eq_SUdSparam"/>.
+        </li>
+        </ol>
+        </p>
+
+        </statement>
+
+        <hint><p>
+        Applatir <m>S</m>.
+        </p></hint>
+
+        <answer><p>
+        <m>\frac{\pi ah}{2}</m>
+        </p></answer>
+
+        <solution><p>
+        (a)
+        Think of the cylinder as being a piece of paper that has been partially rolled
+        up. If you flatten the piece of paper out, you get a rectangle
+        with the length of one side being <m>h</m> and the length of the other side
+        being one quarter of the circumference of a circle of radius <m>a</m>,
+        i.e. <m>\frac{1}{4}(2\pi a)=\frac{\pi a}{2}</m>. So the area of <m>S</m> is
+        <m>\frac{\pi a h}{2}</m>.
+        </p>
+
+        <p>(b) <m>S</m> is parametrized by
+        <me>
+        x(\theta,y)=a\cos\theta\qquad
+        y(\theta,y)=y\qquad
+        z(\theta,z)=a\sin\theta
+        </me>
+        with <m>(\theta,y)</m> running over
+        <m>0\leqslant \theta\leqslant \frac{\pi}{2},\ 0\leqslant y\leqslant h</m>. Then,
+        by (<xref ref="eq_SUdSparam"/>),
+        <md>
+        <mrow>
+        \Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
+        &amp;=(-a\sin\theta,0,a\cos\theta)
+        </mrow><mrow>
+        \Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)
+        &amp;=(0,1,0)
+        </mrow><mrow>
+        \dee{S}
+        &amp;=
+         \left|\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
+        \times\Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)\right|\,
+             \dee{\theta}\, \dee{y}
+        </mrow><mrow>
+        &amp;=\big|(-a\cos\theta,0,-a\sin\theta)\big|\,\dee{\theta}\,\dee{y}
+        </mrow><mrow>
+        &amp;=a\,\dee{\theta}\,\dee{y}
+        </mrow>
+        </md>
+        So
+        <md>
+        <mrow>
+        \text{Area}(S)&amp;=\iint_S\dee{S}
+        =\int_0^{\pi/2}\dee{\theta}\int_0^h\dee{y}\ a
+        =a\left(\frac{\pi}{2}\right)h
+        </mrow>
+        </md>
+        </p>
+
+        </solution>
+      </exercise>
+
+    <!-- No 4 section 3.3.6 CLP4 -->
+    <exercise>
+      <statement><p>
+      Soit <m>S</m> la partie de la surface <m>z = xy</m> se trouvant à l'intérieur du cylindre
+      <m>x^2 + y^2 = 3</m>. Trouver le moment d'inertie de <m>S</m> autour de l'axe
+      <m>z</m>, c'est-à-dire
+      <me>
+            I =  \iint_S (x^2 + y^2)\ \dee{S}.
+      </me>
+      </p></statement>
+
+      <answer><p>
+      <m>\frac{116}{15}\pi</m>
+      </p></answer>
+
+      <solution><p>
+      The surface is <m>z=f(x,y)</m> with <m>f(x,y)=xy</m>. So, by
+      (<xref ref="eq_SUdSgraph"/>),
+      <me>
+      \dee{S}=\sqrt{1+f_x^2+f_y^2}\ \dee{x}\,\dee{y}
+               =\sqrt{1+x^2+y^2}\ \dee{x}\,\dee{y}
+      </me>
+      and
+      <md>
+      <mrow>
+      I &amp;=  \iint_S (x^2 + y^2)\ \dee{S}
+        = \iint_{x^2+y^2\leqslant 3} (x^2 + y^2)\ \sqrt{1+x^2+y^2}\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+        &amp;= \int_0^{2\pi}\dee{\theta}\int_0^{\sqrt{3}} \dee{r}\ r\ r^2\sqrt{1+r^2}
+      </mrow>
+      </md>
+      We switched to polar coordinates in the last step.
+      Making the change of variables <m>u=1+r^2</m>, <m>\dee{u}=2r\,\dee{r}</m>
+      <md>
+      <mrow>
+      I &amp;= \pi \int_1^{4} \dee{u}\ (u-1)\sqrt{u}
+      =\pi\left[\frac{2}{5}u^{5/2}-\frac{2}{3}u^{3/2}\right]_1^4
+      </mrow><mrow>
+      &amp;=\pi\left[\frac{64}{5}-\frac{16}{3}-\frac{2}{5}+\frac{2}{3}\right]
+      </mrow><mrow>
+      &amp;=\frac{116}{15}\pi
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- No 16 section 3.3.6 CLP4 -->
+    <exercise>
+      <statement><p>
+      Évaluer, pour chacun des cas suivants,
+      le flux <m>\ \iint_S\vF\cdot\vn \,\dee{S}</m>, où <m>\vn</m> est
+      la normale extérieure à la surface <m>S</m>.
+      <ol marker = "(a)">
+      <li>
+      <m>\ \vF={(x^2+y^2+z^2)}^n(x\,\vi+y\,\vj+z\,\vk)\ </m>,
+      et la surface <m>S</m> est la sphère <m>x^2+y^2+z^2=a^2</m>.
+      </li>
+      <li>
+      <m>\ \vF=x\,\vi+y\,\vj+z\,\vk\ </m>, et <m>S</m> est la surface de la boîte rectangulaire <m>0\leqslant x\leqslant a</m>, <m>0\leqslant y\le
+      b</m>, <m>0\leqslant z\leqslant c</m>.
+      </li>
+      <li>
+      <m>\ \vF=y\,\vi+z\,\vk\ </m>, et <m>S</m> est la surface du cône solide <m>0\leqslant z\leqslant 1-\sqrt{x^2+y^2}</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      (a) L'intégrale peut être facilement évaluée en utilisant le fait que la sphère
+      a un aire de <m>4\pi a^2</m>.
+      </p>
+
+      <p>(c) Utiliser les coordonnées cylindriques pour la partie supérieure du cône.
+      </p></hint>
+
+      <answer><p>
+      (a) <m>4\pi a^{2n+3}</m></p><p>
+      (b) <m>3abc</m></p><p>
+      (c) <m>\frac{\pi}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) The surface is <m>g(x,y,z)=x^2+y^2+z^2-a^2=0</m>. So,
+      on the surface of the sphere,
+      <md>
+      <mrow>
+      &amp;\vn =\frac{\vnabla g}{|\vnabla g|}=\frac{x\vi+y\vj+z\vk}{\sqrt{x^2+y^2+z^2}}
+      </mrow><mrow>
+      &amp;\implies\   \vF\cdot\vn = \big(x^2+y^2+z^2\big)^{n++1-1/2}
+      ={\big(a^2\big)}^{n+1/2}=a^{2n+1}
+      </mrow><mrow>
+      &amp;\implies\  \iint_S\vF\cdot\vn \,\dee{S}\ =a^{2n+1}\iint_S\,\dee{S}
+      =a^{2n+1}\text{Area}(S)
+      =4\pi a^{2n+3}
+      </mrow>
+      </md>
+      since the surface area of a sphere of radius <m>a</m> is <m>4\pi a^2</m>.
+      </p>
+
+      <p>(b) The box has six faces.
+      <md>
+      <mrow>
+      S_1&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=c}\
+         \text{with outward normal } \vn=\vk
+      </mrow><mrow>
+      S_2&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=0}\
+         \text{with outward normal } \vn=-\vk
+      </mrow><mrow>
+      S_3&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=b}\
+         \text{with outward normal } \vn=\vj
+      </mrow><mrow>
+      S_4&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=0}\
+         \text{with outward normal } \vn=-\vj
+      </mrow><mrow>
+      S_5&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=a}\
+         \text{with outward normal } \vn=\vi
+      </mrow><mrow>
+      S_6&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=0}\
+         \text{with outward normal } \vn=-\vi
+      </mrow>
+      </md>
+      </p>
+
+      <sidebyside width="55%">
+      <image source="pfigs/cubeDTT"/>
+      </sidebyside>
+
+      <p>
+      For <m>S_1</m>, i.e. the <m>z=c</m> face, and <m>S_2</m>, i.e. the <m>z=0</m> face,
+      <md alignment="alignat">
+      <mrow>
+      \int_{\Atop{z=c}{\rm face}}\vF\cdot\vn\, \dee{S}
+      &amp;=\int_{\Atop{z=c}{\rm face}}\big(x\,\vi+y\,\vj+c\,\vk\big)\cdot \vk \  \dee{x}\,\dee{y}
+      &amp;&amp;=c\int_{\Atop{z=c}{\rm face}}\dee{x}\,\dee{y}
+      =abc
+      </mrow><mrow>
+      \int_{\Atop{z=0}{\rm face}}\vF\cdot\vn\, \dee{S}
+      &amp;=\int_{\Atop{z=0}{\rm face}}\big(x\,\vi+y\,\vj+0\,\vk\big)\cdot(-\vk)\  \dee{x}\,\dee{y}
+      &amp;&amp;=0
+      </mrow>
+      </md>
+      because the <m>z=c</m> face has area <m>ab</m>.
+      Similarly,
+      <me>
+      \int_{\Atop{x=0}{\rm face}}\vF\cdot\vn\, \dee{S}
+      =\int_{\Atop{y=0}{\rm face}}\vF\cdot\vn\, \dee{S}
+      =0\qquad
+      \int_{\Atop{x=a}{\rm face}}\vF\cdot\vn\, \dee{S}
+      =\int_{\Atop{y=b}{\rm face}}\vF\cdot\vn\, \dee{S}
+      =abc
+      </me>
+      The total flux is <m>3abc</m>.
+      </p>
+
+      <p>(c)
+      The base of the cone is <m>\Set{(x,y,z)}{x^2+y^2\le1,\ z=0}</m>
+      and has (outward) normal <m>\vn=-\vk</m>. So
+      The flux through the base is
+      <me>
+      \int_{{\rm base}}\vF\cdot\vn\, \dee{S}
+      =\iint_{x^2+y^2\leqslant 1}(y\vi)\cdot(-\vk)\,\dee{x}\,\dee{y}=0
+      </me>
+      In cylindrical coordinates
+      <m>x=r\cos\theta</m>,
+      <m>y=r\sin\theta</m>,
+      <m>z=z</m>
+      and the equation <m>z=1-\sqrt{x^2+y^2}</m> of the top part of the cone
+      becomes <m>z=1-r</m>. So we may parametrize the top part of the cone by
+      <me>
+      \vr(r,\theta)=r\cos\theta\,\vi+r\sin\theta\,\vj
+      +(1-r)\,\vk
+      \qquad\text{with } 0\le\theta\leqslant 2\pi,\ 0\leqslant r\leqslant 1
+      </me>
+      Then
+      <md>
+      <mrow>
+      \pdiff{\vr}{r}&amp;=\cos\theta\,\vi+\sin\theta\,\vj-\vk
+      </mrow><mrow>
+      \pdiff{\vr}{\theta}&amp;=-r\sin\theta\,\vi+r\cos\theta\,\vj
+      </mrow><mrow>
+      \pdiff{\vr}{r}\times\pdiff{\vr}{\theta}
+      &amp;=\det\left[\begin{matrix}
+                          \vi   &amp; \vj   &amp; \vk
+      </mrow><mrow>
+                     \cos\theta &amp; \sin\theta &amp; -1
+      </mrow><mrow>
+                     -r\sin\theta &amp; r\cos\theta &amp; 0 \end{matrix}\right]
+      </mrow><mrow>
+      &amp;= -r\cos\theta\,\vi-r\sin\theta\,\vj+r\,\vk
+      </mrow><mrow>
+      \implies \vn\,\dee{S}&amp;=\pdiff{\vr}{r}\times\pdiff{\vr}{\theta}
+                            \, \dee{r}\,\dee{\theta}
+      </mrow><mrow>
+      &amp;=\big(-r\cos\theta\,\vi-r\sin\theta\,\vj+r\vk\big)\, \dee{r}\,\dee{\theta}
+      </mrow>
+      </md>
+      by (<xref ref="SUR_paramGraph"/>).
+      We have the orientation correct because the <m>\vk</m> component of <m>\vn</m> is
+      positive. The flux through the top, as well as the total flux, is
+      <md>
+      <mrow>
+      &amp;\int_{{\rm top}}\vF\cdot\vn\, \dee{S}
+      </mrow><mrow>
+      &amp;\hskip0.25in=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\
+                         \big(\overbrace{r\sin\theta}^{y}\,\vi
+                         +\overbrace{(1-r)}^{z}\,\vk\big)
+      \cdot\big(-r\cos\theta\,\vi-r\sin\theta\,\vj+r\,\vk\big)
+      </mrow><mrow>
+      &amp;\hskip0.25in=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\ \big(-r^2\sin\theta\cos\theta+r(1-r)\big)
+      </mrow><mrow>
+      &amp;\hskip0.25in= -\bigg[\int_0^1 \dee{r}\ r^2\bigg]
+               \bigg[\int_0^{2\pi}\dee{\theta}\ \frac{1}{2}\sin(2\theta)\bigg]
+         +2\pi \int_0^1 \dee{r}\big[r-r^2\big]
+      </mrow><mrow>
+      &amp;\hskip0.25in=-\frac{1}{3}\times 0+2\pi\Big[\frac{1}{2}-\frac{1}{3}\Big]
+      =\frac{\pi}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+
+    <!-- No 8 Section 3.3.6 CLP4 -->
+    <exercise> <!-- <title><fromexam>M253 2016D</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Pour trouver l'aire d'une surface <m>z = f (x,y)</m> au-dessus d'une région <m>D</m>, on intègre <m>\iint_D F(x,y)\ \dee{A}</m>. Qu'est-ce que <m>F(x,y)</m> en termes de <m>f</m>?
+      </li>
+      <li><p>
+      Considérer l'<q>Étoile de la mort</q>, une boule de rayon <m>2</m> centrée à l'origine avec une autre boule de rayon <m>2</m> centrée à <m>(0, 0, 2\sqrt{3})</m> coupée de celle-ci. Le diagramme ci-dessous montre la tranche où <m>y = 0</m>.
+      </p>
+
+      <sidebyside width="40%">
+        <image source="images/CLP4-figs/pfigs/OE253_16D_2"/>
+      </sidebyside>
+
+      <p>
+      <ol marker="(i)">
+      <li>
+      Les Rebelles veulent peindre une partie de la surface de l'Étoile de la mort en rose vif; plus précisément la partie concave (indiquée par une ligne épaisse dans le schéma).
+      Pour les aider à déterminer la quantité de peinture nécessaire, remplir soigneusement les parties manquantes de cette intégrale :
+      <me>
+      \text{Aire} =
+      \int_{\fbox{\(\vphantom{L}\qquad\)}}^{\fbox{\(\vphantom{L}\qquad\)}}
+      \int_{\fbox{\(\vphantom{L}\qquad\)}}^{\fbox{\(\vphantom{L}\qquad\)}}
+      \fbox{\(\vphantom{L}\qquad\qquad\qquad\)}\ \dee{r}\,\dee{\theta}.
+      </me>
+      </li>
+      <li>
+      Quelle est l'aire totale de l'Étoile de la mort ?
+      </li>
+      </ol></p>
+      </li>
+      </ol>
+      </p>
+      </statement>
+
+      <hint><p>
+      La surface totale de (b) (ii) peut être déterminée sans évaluer d'intégrales.
+      </p></hint>
+
+      <answer><p>
+      (a)  <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>
+      </p><p>
+      (b) (i) <m>\int_0^{2\pi}\int_0^1\ \frac{2r}{\sqrt{4-r^2}}\dee{r}\dee{\theta}</m>
+      </p><p>
+      (b) (ii) <m>\frac{32\pi}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      By (<xref ref="eq_SUdSgraph"/>),
+      <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>.
+      </p>
+
+      <p>(b)  (i) The <q>dimple</q> to be painted is part of the upper sphere
+      <m>x^2+y^2+\big(z-2\sqrt{3}\big)^2=4</m>. It is on the bottom half of the sphere
+      and so has equation <m>z=f(x,y)=2\sqrt{3}-\sqrt{4-x^2-y^2}</m>. Note that
+      <md>
+      <mrow>
+      f_x(x,y) = \frac{x}{\sqrt{4-x^2-y^2}}\qquad
+      f_y(x,y) = \frac{y}{\sqrt{4-x^2-y^2}}
+      </mrow>
+      </md>
+      The point on the dimple with the largest value of <m>x</m> is
+      <m>(1,0,\sqrt{3})</m>. (It is marked by a dot in the figure above.) The dimple
+      is invariant under rotations around the <m>z</m>--axis and so has <m>(x,y)</m>
+      running over <m>x^2+y^2\leqslant 1</m>. So, by
+      (<xref ref="eq_SUdSgraph"/>),
+      <md>
+      <mrow>
+      \text{Surface area}
+      &amp;= \iint_{x^2+y^2\leqslant 1}\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;= \iint_{x^2+y^2\leqslant 1}\sqrt{1+\frac{x^2}{4-x^2-y^2}
+                                      +\frac{y^2}{4-x^2-y^2}}\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;= \iint_{x^2+y^2\leqslant 1}\frac{2}{\sqrt{4-x^2-y^2}}\ \dee{x}\,\dee{y}
+      </mrow>
+      </md>
+      Switching to polar coordinates,
+      <md>
+      <mrow>
+      \text{Surface area}
+      &amp;= \int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\ \frac{2r}{\sqrt{4-r^2}}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) (ii) Observe that if we flip the dimple up by reflecting it
+      in the plane <m>z=\sqrt{3}</m>, as in the figure below, the <q>Death Star</q>
+      becomes a perfect ball of radius <m>2</m>.
+      </p>
+      <sidebyside width="45%">
+      <image source="pfigs/OE253_16D_2a"/>
+      </sidebyside>
+
+      <p>
+      The area of the pink dimple in the figure above is identical to the area
+      of the blue cap in that figure. So the total surface area of the
+      Death Star is exactly the surface area of a sphere of radius <m>2</m> and so
+      is <m>\frac{4}{3}\pi 2^3=\frac{32\pi}{3}</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- No 18 section 3.3.6 CLP4 -->
+    <exercise> <!-- <title><fromexam>M317 2000A</fromexam></title> -->
+      <statement><p>
+      Soit <m>\cS</m> la partie de la surface <m>x^2+y^2+2z=2</m> se trouvant au-dessus du carré
+      <m>-1\leqslant x\leqslant 1</m>, <m>-1\leqslant y\leqslant 1</m>.
+      <ol marker = "(a)">
+      <li>
+      Trouver <m>\ds\iint_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
+      </li>
+      <li>
+      Trouver le flux de <m>\vF=x\vi+y\vj+z\vk</m> vers le haut à travers <m>\cS</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\frac{8}{3}</m></p><p>
+      (b) <m>\frac{16}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      Let <m>G(x,y,z) = x^2+y^2+2z</m>. Then,
+      by (<xref ref="eq_SUdSimplicit"/>),
+      <md>
+      <mrow>
+      \vn\,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\vk}\ \dee{x}\dee{y}
+      =\frac{2x\vi+2y\vj+2\vk}{2}\,\dee{x}\dee{y}
+      =(x\vi+y\vj+\vk)\,\dee{x}\dee{y}
+      </mrow>
+      </md>
+      so that
+      <md>
+      <mrow>
+      \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}
+      &amp;=\frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \sqrt{1+x^2+y^2}\,\dee{x}\dee{y}
+      =(x^2+y^2)\ \dee{x}\dee{y}
+      </mrow>
+      </md>
+      and
+      <md>
+      <mrow>
+      \vF\cdot\vn\,\dee{S}
+      &amp;=\big[x\vi+y\vj+z\vk\big]\cdot\big[x\vi+y\vj+\vk\big]\,\dee{x}\dee{y}
+      =\big[x^2+y^2+z\big]\,\dee{x}\dee{y}
+      </mrow><mrow>
+      &amp;=\Big[1+\frac{1}{2}(x^2+y^2)\Big]\,\dee{x}\dee{y}
+      </mrow>
+      </md>
+      since <m>z=1-\half(x^2+y^2)</m> on <m>\cS</m>.
+      </p>
+
+      <p>(a)
+      <md>
+      <mrow>
+      \iint_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}
+      &amp;=\iint_\cS (x^2+y^2)\ \dee{x}\dee{y}
+      =4\int_0^1\dee{x}\int_0^1\dee{y}\ (x^2+y^2)
+      </mrow><mrow>
+      &amp;=4\int_0^1\dee{x}\ \big(x^2+\frac{1}{3}\big)
+      =4\Big(\frac{1}{3}+\frac{1}{3}\Big)
+      =\frac{8}{3}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      <me>
+      \iint_\cS \vF\cdot\vn\,\dee{S}
+      =\int_{-1}^1\dee{x}\int_{-1}^1\dee{y}\ \Big[1+\frac{1}{2}(x^2+y^2)\Big]
+      =2\times 2+\frac{1}{2}\times\frac{8}{3}
+      =\frac{16}{3}
+      </me>
+      </p></solution>
+    </exercise>
+
+    <!-- No 24 section 3.3.6 CLP4 -->
+    <exercise> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
+      <statement><p>Évaluer le flux
+      <me>
+      \iint_S \vF \cdot\vn\, \dee{S},
+      </me>
+      où <m>\vF(x, y, z) = (x+1)\,\vi + (y +1)\,\vj + 2z\,\vk</m> et
+      <m>S</m> est la partie du paraboloïde <m>z = 4-x^2 -y^2</m>
+      se trouvant au-dessus du triangle <m>0\leqslant x\leqslant1</m>, <m>0\leqslant y\leqslant1 - x</m>.
+      <m>S</m> est orientée de telle sorte que son vecteur unitaire a une composante <m>z</m> négative.
+      </p></statement>
+
+      <hint><p>
+      Revoir la <xref ref="eq_SUdSgraph"/>.
+      </p></hint>
+
+      <answer><p>
+      <m>-\frac{14}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      By (<xref ref="eq_SUdSgraph"/>), with
+      <m>f(x,y) = 4-x^2-y^2</m>,
+      <md>
+      <mrow>
+      \vn\,\dee{S} &amp;=\pm \big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
+      </mrow><mrow>
+      &amp;=\pm\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+      </mrow>
+      </md>
+      To get the downward pointing normal, we want the minus sign.
+      Set
+      <me>
+      T=\Set{(x,y)}{0\leqslant x\le1,\ 0\leqslant y\leqslant 1-x}
+      </me>
+      Then
+      <md>
+      <mrow>
+      \iint_S \vF \cdot\vn\, \dee{S}
+      &amp;=-\iint_T \big(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\big)
+             \cdot\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+      </mrow><mrow>
+      &amp;=-\iint_T \big(8+2x+2y\big)\,\dee{x}\dee{y}
+      </mrow><mrow>
+      &amp;=-\int_0^1\dee{x}\int_0^{1-x}\dee{y}\ \big(8+2x+2y\big)
+      </mrow><mrow>
+      &amp;=-\int_0^1\dee{x}\ \big(8(1-x)+2x(1-x)+(1-x)^2\big)
+      </mrow><mrow>
+      &amp;=-\int_0^1\dee{x}\ \big(9-8x-x^2\big)
+      </mrow><mrow>
+      &amp;=-\Big(9-4-\frac{1}{3}\Big)=-\frac{14}{3}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+  </exercisegroup>
+
+
+  <!-- TODO : est une repetition exercice 23 de sec 4.5 -->
+  <!-- <exercisegroup> -->
+    <!-- <title>Pour aller plus loin</title> -->
+
+    <!-- No 1 section 4.4.3 CLP4 -->
+    <!-- Solution et réponse coïncident -->
+    <!--
+    <exercise>
+      <statement><p>
+      Soit <m>R</m> le carré
+      <md>
+      <mrow>
+      R=\Set{(x,y)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1}
+      </mrow>
+      </md>
+      et soit <m>f(x,y)</m> ayant des premières dérivées partielles continues.
+      <ol marker = "(a)">
+      <li>
+      Utiliser le théorème fondamental du calcul pour montrer que
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      =\int_0^1 f(x,1)\ \dee{x}
+        - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </li>
+      <li>
+      Utiliser le théorème de Green pour montrer que
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      =\int_0^1 f(x,1)\ \dee{x}
+        - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p> (a)
+      En exprimant la partie de gauche comme une intégrale itérée,
+      avec <m>y</m> comme étant la variable intérieure, on a
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=\int_0^1\int_0^1\
+                      \frac{\partial f}{\partial y}(x,y)\dee{y}\dee{x}
+      </mrow><mrow>
+      &amp;=\int_0^1\ \big[f(x,1)-f(x,0)\big]\dee{x}
+      </mrow><mrow>
+      &amp;\hskip1in\text{par le théorème fondamental du calcul}
+      </mrow><mrow>
+      &amp;=\int_0^1 f(x,1)\ \dee{x} - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      Définir <m>F_1(x,y)=f(x,y)</m> et <m>F_2(x,y)=0</m>. Alors, par le théorème de Green
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=-\iint_R\Big[\frac{\partial F_2}{\partial x}(x,y)
+                      -\frac{\partial F_1}{\partial y}(x,y)\Big]\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;=-\int_{\partial R}\big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+      </mrow><mrow>
+      &amp;=-\int_{\partial R}f(x,y)\,\dee{x}
+      </mrow>
+      </md>
+      La frontière de <m>R</m>, orientée en sens antihoraire, est l'union de quatre segments de droite.
+      </p>
+
+      <sidebyside widths="45% 30%" valign="middle">
+      <p>
+        <md>
+        <mrow>C_1 \text{ de } (0,0) \text{ à } (1,0)</mrow>
+        <mrow>C_2 \text{ de } (1,0) \text{ à } (1,1)</mrow>
+        <mrow>C_3 \text{ de } (1,1) \text{ à } (0,1)</mrow>
+        <mrow>C_4 \text{ de } (0,1) \text{ à } (0,0)</mrow>
+        </md>
+      </p>
+      <image source="images/CLP4-figs/pfigs/domainSquare"/>
+      </sidebyside>
+
+
+      <p>
+      Maintenant <m>x</m> est constant sur <m>C_2</m> et <m>C_4</m> de telle sorte que
+      <me>
+      \int_{C_2}f(x,y)\,\dee{x} = \int_{C_4}f(x,y)\,\dee{x} =0
+      </me>
+      Dons, en utilisant <m>-C_3</m> pour dénoter le segment de droite allant de <m>(0,1)</m> à <m>(1,1)</m>
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=-\left[\int_{C_1}f(x,y)\,\dee{x}+\int_{C_3}f(x,y)\,\dee{x}\right]
+      </mrow><mrow>
+      &amp;=\int_{-C_3}f(x,y)\,\dee{x}-\int_{C_1}f(x,y)\,\dee{x}
+      </mrow><mrow>
+      &amp;=\int_0^1 f(x,1)\ \dee{x}  - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </p></answer>
+
+      <solution><p> (a)
+      En exprimant la partie de gauche comme une intégrale itérée,
+      avec <m>y</m> comme étant la variable intérieure, on a
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=\int_0^1\dee{x}\left[\int_0^1\dee{y}\
+                      \frac{\partial f}{\partial y}(x,y)\right]
+      </mrow><mrow>
+      &amp;=\int_0^1\dee{x}\ \big[f(x,1)-f(x,0)\big]
+      </mrow><mrow>
+      &amp;\hskip1in\text{by the fundamental theorem of calculus}
+      </mrow><mrow>
+      &amp;=\int_0^1 f(x,1)\ \dee{x} - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      Définir <m>F_1(x,y)=f(x,y)</m> et <m>F_2(x,y)=0</m>. Alors, par le théorème de Green
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=-\iint_R\Big[\frac{\partial F_2}{\partial x}(x,y)
+                      -\frac{\partial F_1}{\partial y}(x,y)\Big]\ \dee{x}\,\dee{y}
+      </mrow><mrow>
+      &amp;=-\int_{\partial R}\big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+      </mrow><mrow>
+      &amp;=-\int_{\partial R}f(x,y)\,\dee{x}
+      </mrow>
+      </md>
+      La frontière de <m>R</m>, orientée en sens antihoraire, est l'union de quatre segments de droite.
+      </p>
+
+      <sidebyside widths="45% 30%" valign="middle">
+      <p>
+        <md>
+        <mrow>C_1 \text{ de } (0,0) \text{ à } (1,0)</mrow>
+        <mrow>C_2 \text{ de } (1,0) \text{ à } (1,1)</mrow>
+        <mrow>C_3 \text{ de } (1,1) \text{ à } (0,1)</mrow>
+        <mrow>C_4 \text{ de } (0,1) \text{ à } (0,0)</mrow>
+        </md>
+      </p>
+      <image source="pfigs/domainSquare"/>
+      </sidebyside>
+
+
+      <p>
+      Maintenant <m>x</m> est constant sur <m>C_2</m> et <m>C_4</m> de telle sorte que
+      <me>
+      \int_{C_2}f(x,y)\,\dee{x} = \int_{C_4}f(x,y)\,\dee{x} =0
+      </me>
+      Dons, en utilisant <m>-C_3</m> pour dénoter le segment de droite allant de <m>(0,1)</m> à <m>(1,1)</m>
+      <md>
+      <mrow>
+      \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+      &amp;=-\left[\int_{C_1}f(x,y)\,\dee{x}+\int_{C_3}f(x,y)\,\dee{x}\right]
+      </mrow><mrow>
+      &amp;=\int_{-C_3}f(x,y)\,\dee{x}-\int_{C_1}f(x,y)\,\dee{x}
+      </mrow><mrow>
+      &amp;=\int_0^1 f(x,1)\ \dee{x}  - \int_0^1 f(x,0)\ \dee{x}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup> -->
+
+</exercises>

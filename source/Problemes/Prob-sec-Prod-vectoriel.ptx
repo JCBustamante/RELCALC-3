@@ -1,0 +1,2224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+
+
+<exercises>
+
+  <exercisegroup>
+    <title>Pour se pratiquer</title>
+    <!--
+    <exercise>
+    <statement><p>
+    Verify by direct computation that
+    <ol marker = "(a)">
+    <li>
+    <m>\vi\times\vj=\vk</m>, <m>\vj\times\vk=\vi</m>, <m>\vk\times\vi=\vj</m>
+    </li>
+    <li>
+    <m>\va\cdot(\va\times\vb)=\vb\cdot(\va\times\vb)=\vZero</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    See the solution.
+    </p></answer>
+
+    <solution><p>
+    (a)
+    <md alignment="alignat">
+
+
+    <mrow>
+    \vi\times\vj\amp =\det\left[\begin{matrix}\vi \amp \vj \amp \vk \\    1\amp 0\amp 0\\0\amp 1\amp 0\end{matrix}\right]
+    </mrow>
+    <mrow>
+    \amp =\vi(0\times 0-0\times 1)
+    -\vj(1\times 0-0\times 0)
+    +\vk(1\times 1-0\times 0)
+    </mrow>
+    <mrow>
+    \amp=\vk
+    </mrow><mrow>
+    \vj\times\vk&amp;=\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    \\                     0&amp;1&amp;0
+    \\                     0&amp;0&amp;1\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(1\times 1-0\times 0)
+    -\vj(0\times 1-0\times 0)
+    +\vk(0\times 0-1\times 0)
+    </mrow><mrow>
+    &amp;=\vi
+    </mrow><mrow>
+    \vk\times\vi&amp;=\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    \\                     0&amp;0&amp;1
+    \\                     1&amp;0&amp;0\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(0\times 0-1\times 0)
+    -\vj(0\times 0-1\times 1)
+    +\vk(0\times 0-0\times 1)
+    </mrow><mrow>
+    &amp;=\vj
+    </mrow>
+
+    </md>
+    </p>
+
+    <p>(b)
+    <md alignment="alignat">
+    <mrow>
+    \va\cdot(\va\times\vb)
+    &amp;=a_1\big(a_2b_3-a_3b_2\big)
+      -a_2\big(a_1b_3-a_3b_1\big)
+      +a_3\big(a_1b_2-a_2b_1\big)
+    &amp;&amp;=0
+    </mrow><mrow>
+    \vb\cdot(\va\times\vb)
+    &amp;=b_1\big(a_2b_3-a_3b_2\big)
+      -b_2\big(a_1b_3-a_3b_1\big)
+      +b_3\big(a_1b_2-a_2b_1\big)
+    &amp;&amp;=0
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel (voir la solution) -->
+    <exercise>
+    <statement><p>
+    Vérifier par calcul direct que
+    <ol marker = "(a)">
+    <li>
+    <m>\vi\times\vj=\vk</m>, <m>\vj\times\vk=\vi</m>, <m>\vk\times\vi=\vj</m>
+    </li>
+    <li>
+    <m>\va\cdot(\va\times\vb)=\vb\cdot(\va\times\vb)=\vZero</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <!--
+    <answer><p>
+    Voir la solution.
+    </p></answer>
+    -->
+    <solution><p>
+    (a)
+    <md alignment="alignat">
+
+
+    <mrow>
+    \vi\times\vj\amp =\det\left[\begin{matrix}\vi \amp \vj \amp \vk \\    1\amp 0\amp 0\\0\amp 1\amp 0\end{matrix}\right]
+    </mrow>
+    <mrow>
+    \amp =\vi(0\times 0-0\times 1)
+    -\vj(1\times 0-0\times 0)
+    +\vk(1\times 1-0\times 0)
+    </mrow>
+    <mrow>
+    \amp=\vk
+    </mrow><mrow>
+    \vj\times\vk&amp;=\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    \\                     0&amp;1&amp;0
+    \\                     0&amp;0&amp;1\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(1\times 1-0\times 0)
+    -\vj(0\times 1-0\times 0)
+    +\vk(0\times 0-1\times 0)
+    </mrow><mrow>
+    &amp;=\vi
+    </mrow><mrow>
+    \vk\times\vi&amp;=\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    \\                     0&amp;0&amp;1
+    \\                     1&amp;0&amp;0\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(0\times 0-1\times 0)
+    -\vj(0\times 0-1\times 1)
+    +\vk(0\times 0-0\times 1)
+    </mrow><mrow>
+    &amp;=\vj
+    </mrow>
+
+    </md>
+    </p>
+
+    <p>(b)
+    <md alignment="alignat">
+    <mrow>
+    \va\cdot(\va\times\vb)
+    &amp;=a_1\big(a_2b_3-a_3b_2\big)
+      -a_2\big(a_1b_3-a_3b_1\big)
+      +a_3\big(a_1b_2-a_2b_1\big)
+    &amp;&amp;=0
+    </mrow><mrow>
+    \vb\cdot(\va\times\vb)
+    &amp;=b_1\big(a_2b_3-a_3b_2\big)
+      -b_2\big(a_1b_3-a_3b_1\big)
+      +b_3\big(a_1b_2-a_2b_1\big)
+    &amp;&amp;=0
+    </mrow>
+    </md>
+    </p></solution>
+  </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Compute the areas of the parallelograms determined by the
+    following vectors.
+    <ol marker = "(a)">
+    <li>
+    <m>\llt -3,1\rgt,\ \llt 4,3\rgt</m>
+    </li>
+    <li>
+    <m>\llt 4,2\rgt,\ \llt 6,8\rgt</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Review  <xref ref="cor-Aire"/>.
+    </p></hint>
+
+    <answer><p>
+    <ol marker = "(a)">
+      <li><m>13</m></li>
+      <li><m>20</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p> (a)
+    By <xref ref="cor-Aire"/>, the area is
+    <md>
+    <mrow>
+    \left| \det\left[\begin{matrix}-3&amp;1
+    </mrow><mrow> 4&amp;3 \end{matrix}\right] \right|
+      &amp;=\big|-3\times 3-1\times 4\big| = |-13| = 13
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b)
+    By <xref ref="cor-Aire"/>, the area is
+    <md>
+    <mrow>
+    \left|\det\left[\begin{matrix} 4&amp;2
+    </mrow><mrow> 6&amp;8 \end{matrix}\right]\right|
+    &amp;=\big|4\times 8-2\times 6\big|
+    = 20
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel -->
+    <exercise>
+      <statement><p>
+        Calculez les aires des parallélogrammes déterminés par les vecteurs suivants
+        vecteurs suivants.
+      <ol marker = "(a)">
+      <li>
+      <m>\llt -3,1\rgt,\ \llt 4,3\rgt</m>
+      </li>
+      <li>
+      <m>\llt 4,2\rgt,\ \llt 6,8\rgt</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Voir  <xref ref="cor-Aire"/>.
+      </p></hint>
+
+      <answer><p>
+      <ol marker = "(a)">
+        <li><m>13</m></li>
+        <li><m>20</m></li>
+      </ol>
+      </p></answer>
+
+      <solution><p> (a)
+      Par <xref ref="cor-Aire"/>, l'aire est
+      <md>
+      <mrow>
+      \left| \det\left[\begin{matrix}-3&amp;1
+      </mrow><mrow> 4&amp;3 \end{matrix}\right] \right|
+        &amp;=\big|-3\times 3-1\times 4\big| = |-13| = 13
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      Par <xref ref="cor-Aire"/>, l'aire est
+      <md>
+      <mrow>
+      \left|\det\left[\begin{matrix} 4&amp;2
+      </mrow><mrow> 6&amp;8 \end{matrix}\right]\right|
+      &amp;=\big|4\times 8-2\times 6\big|
+      = 20
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!--
+    <exercise><title><fromexam>M200 2014A</fromexam></title>
+    <statement><p>
+    Consider the plane <m>W</m>, defined by:
+    <me>
+    W\ :\ -x + 3y + 3z = 6,\qquad
+    </me>
+    Find the area of the parallelogram on <m>W</m> defined by
+    <m>0\leqslant x\leqslant3</m>, <m>0\leqslant y\leqslant2</m>.
+    </p></statement>
+
+    <hint><p>
+    Determine the four corners of the parallelogram.
+    </p></hint>
+
+    <answer><p>
+    <m>2\sqrt{19}</m>
+    </p></answer>
+
+    <solution><p>
+    Note that
+    <ul>
+    <li> the point on <m>W</m> with <m>x=0</m>, <m>y=0</m> obeys
+                             <m>-0+3(0)+3z=6</m> and so has <m>z=2</m>
+    </li>
+    <li> the point on <m>W</m> with <m>x=0</m>, <m>y=2</m> obeys
+                             <m>-0+3(2)+3z=6</m> and so has <m>z=0</m>
+    </li>
+    <li> the point on <m>W</m> with <m>x=3</m>, <m>y=0</m> obeys
+                             <m>-3+3(0)+3z=6</m> and so has <m>z=3</m>
+    </li>
+    <li> the point on <m>W</m> with <m>x=3</m>, <m>y=2</m> obeys
+                             <m>-3+3(2)+3z=6</m> and so has <m>z=1</m>
+    </li>
+    </ul>
+    So the four corners of the parallelogram are
+    <m>(0,0,2)</m>, <m>(0,2,0)</m>, <m>(3,0,3)</m> and <m>(3,2,1)</m>. The vectors
+    <md>
+    <mrow>
+    \vd_1&amp;=\llt 0-0 \,,\, 2-0 \,,\, 0-2 \rgt = \llt 0 \,,\, 2 \,,\, -2\rgt
+    </mrow><mrow>
+    \vd_2&amp;=\llt 3-0 \,,\, 0-0 \,,\, 3-2 \rgt = \llt 3 \,,\, 0 \,,\, 1\rgt
+    </mrow>
+    </md>
+    form two sides of the paralleogram. So the area of the parallelogram is
+    <md>
+    <mrow>
+    \big|\vd_1\times\vd_2\big|
+    =\left|\det\left[\begin{matrix}
+                         \vi &amp; \vj &amp; \vk
+    </mrow><mrow>
+                         0   &amp;  2  &amp; -2
+    </mrow><mrow>
+                         3   &amp;  0  &amp;  1
+                    \end{matrix}\right]\right|
+    =\left| 2\,\vi - 6\,\vj -6\vk  \right|
+    =\sqrt{76}
+    =2\sqrt{19}
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel -->
+    <exercise>
+      <!-- <title><fromexam>M200 2014A</fromexam></title> -->
+      <statement><p>
+      Considérez le plan <m>W</m>, défini par:
+      <me>
+      W\ :\ -x + 3y + 3z = 6,\qquad
+      </me>
+      Trouver l'aire du parallélogramme sur <m>W</m> défini par
+      <m>0\leqslant  x\leqslant  3</m>, <m>0\leqslant  y\leqslant  2</m>.
+      </p></statement>
+
+      <hint><p>
+      Déterminez les quatre coins du parallélogramme.
+      </p></hint>
+
+      <answer><p>
+      <m>2\sqrt{19}</m>
+      </p></answer>
+
+      <solution><p>
+        Notez que
+        <ul>
+        <li>le point sur <m>W</m> avec <m>x=0</m>, <m>y=0</m> obéit à la règle suivante:
+                                 <m>-0+3(0)+3z=6</m> et a donc <m>z=2</m>.
+        </li>
+        <li>Le point sur <m>W</m> avec <m>x=0</m>, <m>y=2</m> obéit à:
+                                 <m>-0+3(2)+3z=6</m> donc <m>z=0</m>.
+        </li>
+        <li>Le point sur <m>W</m> avec <m>x=3</m>, <m>y=0</m> obéit à:
+                                 <m>-3+3(0)+3z=6</m> donc <m>z=3</m>.
+        </li>
+        <li>Le point sur <m>W</m> avec <m>x=3</m>, <m>y=2</m> obéit à:
+                                 <m>-3+3(2)+3z=6</m> donc <m>z=1</m>.
+        </li>
+        </ul>
+        Donc les quatre coins du parallélogramme sont
+        <m>(0,0,2)</m>, <m>(0,2,0)</m>, <m>(3,0,3)</m> et <m>(3,2,1)</m>. Les vecteurs
+      <md>
+      <mrow>
+      \vd_1&amp;=\llt 0-0 \,,\, 2-0 \,,\, 0-2 \rgt = \llt 0 \,,\, 2 \,,\, -2\rgt
+      </mrow><mrow>
+      \vd_2&amp;=\llt 3-0 \,,\, 0-0 \,,\, 3-2 \rgt = \llt 3 \,,\, 0 \,,\, 1\rgt
+      </mrow>
+      </md>
+      forment deux côtés du parallélogramme. L'aire du parallélogramme est donc de
+      <md>
+      <mrow>
+      \big|\vd_1\times\vd_2\big|
+      =\left|\det\left[\begin{matrix}
+                           \vi &amp; \vj &amp; \vk
+      </mrow><mrow>
+                           0   &amp;  2  &amp; -2
+      </mrow><mrow>
+                           3   &amp;  0  &amp;  1
+                      \end{matrix}\right]\right|
+      =\left| 2\,\vi - 6\,\vj -6\vk  \right|
+      =\sqrt{76}
+      =2\sqrt{19}
+      </mrow>
+      </md>
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Compute the volumes of the parallelepipeds determined by the
+    following vectors.
+    <ol marker = "(a)">
+    <li>
+     <m>\llt 4,1,-1\rgt,\ \llt -1,5,2\rgt,\ \llt 1,1,6\rgt</m>
+    </li>
+    <li>
+      <m>\llt -2,1,2\rgt,\ \llt 3,1,2\rgt,\ \llt 0,2,5\rgt</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    Review §<xref ref="cor-produit-mixte"/>.
+    </p></hint>
+
+    <answer><p>
+    <ol marker = "(a)">
+      <li><m>126</m></li>
+      <li><m>5</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    (a)
+    By <xref ref="cor-produit-mixte"/>, the volume is
+    <md>
+    <mrow>
+    &amp;\left| \det\left[\begin{matrix}
+              4&amp;1&amp;-1
+    </mrow><mrow>
+             -1&amp;5&amp;2
+    </mrow><mrow>
+              1&amp;1&amp;6\end{matrix}\right] \right|
+    </mrow><mrow>
+    &amp;\hskip0.5in=\left| 4\det\left[\begin{matrix}
+              5&amp;2
+    </mrow><mrow>
+              1&amp;6 \end{matrix}\right]
+            -1\det\left[\begin{matrix}
+             -1&amp;2
+    </mrow><mrow>
+              1&amp;6 \end{matrix}\right]
+            +(-1)\det\left[\begin{matrix}
+             -1&amp;5
+    </mrow><mrow>1&amp;1\end{matrix}\right]\right| \\
+    &amp;\hskip0.5in= \big|4(30-2)-1(-6-2)-1(-1-5)\big| = 4\times28+8+6
+    </mrow><mrow>
+    &amp;\hskip0.5in=126
+    </mrow>
+    </md>
+    </p>
+
+    <p>(b)
+    By <xref ref="cor-produit-mixte"/>, the volume is
+    <md>
+    <mrow>
+    &amp;\left|\det\left[\begin{matrix}
+           -2&amp;1&amp;2
+    </mrow><mrow>
+           3&amp;1&amp;2
+    </mrow><mrow>
+           0&amp;2&amp;5\end{matrix}\right] \right|
+    </mrow><mrow>
+    &amp;\hskip0.5in=\left|-2\det\left[\begin{matrix}
+              1&amp;2
+    </mrow><mrow>
+              2&amp;5\end{matrix}\right]
+            -1\det\left[\begin{matrix}
+              3&amp;2
+    </mrow><mrow>
+              0&amp;5\end{matrix}\right]
+           +2\det\left[\begin{matrix}
+             3&amp;1
+    </mrow><mrow>
+             0&amp;2\end{matrix}\right] \right|
+    </mrow><mrow>
+    &amp;\hskip0.5in=\big|-2(5-4)-1(15-0)+2(6-0)\big| =\big|-2-15+12\big|=\big|-5\big|
+    </mrow><mrow>
+    &amp;\hskip0.5in=5
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel -->
+    <exercise>
+      <statement><p>
+        Calculez les volumes des parallélépipèdes déterminés par les vecteurs suivants:
+      <ol marker = "(a)">
+      <li>
+       <m>\llt 4,1,-1\rgt,\ \llt -1,5,2\rgt,\ \llt 1,1,6\rgt</m>
+      </li>
+      <li>
+        <m>\llt -2,1,2\rgt,\ \llt 3,1,2\rgt,\ \llt 0,2,5\rgt</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Voir <xref ref="cor-produit-mixte"/>.
+      </p></hint>
+
+      <answer><p>
+      <ol marker = "(a)">
+        <li><m>126</m></li>
+        <li><m>5</m></li>
+      </ol>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      Par <xref ref="cor-produit-mixte"/>, le volume est
+      <md>
+      <mrow>
+      &amp;\left| \det\left[\begin{matrix}
+                4&amp;1&amp;-1
+      </mrow><mrow>
+               -1&amp;5&amp;2
+      </mrow><mrow>
+                1&amp;1&amp;6\end{matrix}\right] \right|
+      </mrow><mrow>
+      &amp;\hskip0.5in=\left| 4\det\left[\begin{matrix}
+                5&amp;2
+      </mrow><mrow>
+                1&amp;6 \end{matrix}\right]
+              -1\det\left[\begin{matrix}
+               -1&amp;2
+      </mrow><mrow>
+                1&amp;6 \end{matrix}\right]
+              +(-1)\det\left[\begin{matrix}
+               -1&amp;5
+      </mrow><mrow>1&amp;1\end{matrix}\right]\right| \\
+      &amp;\hskip0.5in= \big|4(30-2)-1(-6-2)-1(-1-5)\big| = 4\times28+8+6
+      </mrow><mrow>
+      &amp;\hskip0.5in=126
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      Par <xref ref="cor-produit-mixte"/>, le volume est
+      <md>
+      <mrow>
+      &amp;\left|\det\left[\begin{matrix}
+             -2&amp;1&amp;2
+      </mrow><mrow>
+             3&amp;1&amp;2
+      </mrow><mrow>
+             0&amp;2&amp;5\end{matrix}\right] \right|
+      </mrow><mrow>
+      &amp;\hskip0.5in=\left|-2\det\left[\begin{matrix}
+                1&amp;2
+      </mrow><mrow>
+                2&amp;5\end{matrix}\right]
+              -1\det\left[\begin{matrix}
+                3&amp;2
+      </mrow><mrow>
+                0&amp;5\end{matrix}\right]
+             +2\det\left[\begin{matrix}
+               3&amp;1
+      </mrow><mrow>
+               0&amp;2\end{matrix}\right] \right|
+      </mrow><mrow>
+      &amp;\hskip0.5in=\big|-2(5-4)-1(15-0)+2(6-0)\big| =\big|-2-15+12\big|=\big|-5\big|
+      </mrow><mrow>
+      &amp;\hskip0.5in=5
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Compute <m>\llt 1,2,3\rgt\times\llt 4,5,6\rgt</m>.
+    </p></statement>
+
+    <answer><p>
+    <m>-3\vi+6\vj-3\vk</m>
+    </p></answer>
+
+    <solution><p>
+    <md>
+    <mrow>
+    &amp;\llt 1,2,3\rgt\times\llt 4,5,6\rgt
+     =\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    </mrow><mrow>
+                         1&amp;2&amp;3
+    </mrow><mrow>
+                         4&amp;5&amp;6\end{matrix}\right]
+    </mrow><mrow>
+    &amp;\hskip0.5in=\vi\,(2\times 6-3\times 5)
+    -\vj\,(1\times 6-3\times 4)
+    +\vk\,(1\times 5-2\times 4)
+    </mrow><mrow>
+    &amp;\hskip0.5in=-3\,\vi+6\,\vj-3\,\vk
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 produit vectoriel -->
+    <exercise>
+      <statement><p>
+      Calculez le produit vectoriel <m>\llt 1,2,3\rgt\times\llt 4,5,6\rgt</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>-3\vi+6\vj-3\vk</m>
+      </p></answer>
+
+      <solution><p>
+      <md>
+      <mrow>
+      &amp;\llt 1,2,3\rgt\times\llt 4,5,6\rgt
+       =\det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+      </mrow><mrow>
+                           1&amp;2&amp;3
+      </mrow><mrow>
+                           4&amp;5&amp;6\end{matrix}\right]
+      </mrow><mrow>
+      &amp;\hskip0.5in=\vi\,(2\times 6-3\times 5)
+      -\vj\,(1\times 6-3\times 4)
+      +\vk\,(1\times 5-2\times 4)
+      </mrow><mrow>
+      &amp;\hskip0.5in=-3\,\vi+6\,\vj-3\,\vk
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Calculate the following cross products.
+    <ol marker = "(a)">
+    <li> <m>\llt 1,-5,2\rgt \times\llt -2,1,5\rgt </m>
+    </li>
+    <li> <m>\llt 2,-3,-5\rgt \times\llt 4,-2,7\rgt </m>
+    </li>
+    <li> <m>\llt -1,0,1\rgt \times\llt 0,4,5\rgt </m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol marker = "(a)">
+    <li><m>\llt -27,-9,-9\rgt</m></li>
+    <li><m>\llt -31,-34,8\rgt</m></li>
+    <li><m>\llt -4,5,-4\rgt</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    <md>
+    <mrow>
+    &amp;
+    \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr1&amp;-5&amp;2\cr-2&amp;1&amp;5\end{matrix}\right]
+    \notag</mrow><mrow>
+    &amp;\hskip0.5in=\vi\det\left[\begin{matrix}-5&amp;2\cr1&amp;5\end{matrix}\right]
+    -\vj\det\left[\begin{matrix}1&amp;2\cr-2&amp;5\end{matrix}\right]
+    +\vk\det\left[\begin{matrix}1&amp;-5\cr-2&amp;1\end{matrix}\right]\notag
+    </mrow><mrow>
+    &amp;\hskip0.5in=\vi(-25-2)-\vj(5+4)+\vk(1-10)
+    = \llt -27,-9,-9\rgt \tag{a}
+    </mrow>
+    <mrow>
+    &amp;
+    \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr2&amp;-3&amp;-5\cr4&amp;-2&amp;7\end{matrix}\right]
+    \notag</mrow><mrow>
+    &amp;\hskip0.5in=\vi\det\left[\begin{matrix}-3&amp;-5\cr-2&amp;7\end{matrix}\right]
+    -\vj\det\left[\begin{matrix}2&amp;-5\cr4&amp;7\end{matrix}\right]
+    +\vk\det\left[\begin{matrix}2&amp;-3\cr4&amp;-2\end{matrix}\right]\notag
+    </mrow><mrow>
+    &amp;\hskip0.5in=\vi(-21-10)-\vj(14+20)+\vk(-4+12)
+    = \llt -31,-34,8\rgt \tag{b}
+    </mrow>
+    <mrow>
+    &amp;
+    \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;0&amp;1\cr0&amp;4&amp;5\end{matrix}\right]
+    \notag</mrow><mrow>
+    &amp;\hskip0.5in=\vi\det\left[\begin{matrix}0&amp;1\cr4&amp;5\end{matrix}\right]
+    -\vj\det\left[\begin{matrix}-1&amp;1\cr0&amp;5\end{matrix}\right]
+    +\vk\det\left[\begin{matrix}-1&amp;0\cr0&amp;4\end{matrix}\right] \notag
+    </mrow><mrow>
+    &amp;\hskip0.5in=\vi(0-4)-\vj(-5-0)+\vk(-4-0)
+    = \llt -4,5,-4\rgt \tag{c}
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel -->
+    <exercise>
+      <statement><p>
+      Calculez les produits vectoriels suivants:
+      <ol marker = "(a)">
+      <li> <m>\llt 1,-5,2\rgt \times\llt -2,1,5\rgt </m>
+      </li>
+      <li> <m>\llt 2,-3,-5\rgt \times\llt 4,-2,7\rgt </m>
+      </li>
+      <li> <m>\llt -1,0,1\rgt \times\llt 0,4,5\rgt </m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      <ol marker = "(a)">
+      <li><m>\llt -27,-9,-9\rgt</m></li>
+      <li><m>\llt -31,-34,8\rgt</m></li>
+      <li><m>\llt -4,5,-4\rgt</m></li>
+      </ol>
+      </p></answer>
+
+      <solution><p>
+      <md>
+      <mrow>
+      &amp;
+      \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr1&amp;-5&amp;2\cr-2&amp;1&amp;5\end{matrix}\right]
+      \notag</mrow><mrow>
+      &amp;\hskip0.5in=\vi\det\left[\begin{matrix}-5&amp;2\cr1&amp;5\end{matrix}\right]
+      -\vj\det\left[\begin{matrix}1&amp;2\cr-2&amp;5\end{matrix}\right]
+      +\vk\det\left[\begin{matrix}1&amp;-5\cr-2&amp;1\end{matrix}\right]\notag
+      </mrow><mrow>
+      &amp;\hskip0.5in=\vi(-25-2)-\vj(5+4)+\vk(1-10)
+      = \llt -27,-9,-9\rgt \tag{a}
+      </mrow>
+      <mrow>
+      &amp;
+      \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr2&amp;-3&amp;-5\cr4&amp;-2&amp;7\end{matrix}\right]
+      \notag</mrow><mrow>
+      &amp;\hskip0.5in=\vi\det\left[\begin{matrix}-3&amp;-5\cr-2&amp;7\end{matrix}\right]
+      -\vj\det\left[\begin{matrix}2&amp;-5\cr4&amp;7\end{matrix}\right]
+      +\vk\det\left[\begin{matrix}2&amp;-3\cr4&amp;-2\end{matrix}\right]\notag
+      </mrow><mrow>
+      &amp;\hskip0.5in=\vi(-21-10)-\vj(14+20)+\vk(-4+12)
+      = \llt -31,-34,8\rgt \tag{b}
+      </mrow>
+      <mrow>
+      &amp;
+      \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;0&amp;1\cr0&amp;4&amp;5\end{matrix}\right]
+      \notag</mrow><mrow>
+      &amp;\hskip0.5in=\vi\det\left[\begin{matrix}0&amp;1\cr4&amp;5\end{matrix}\right]
+      -\vj\det\left[\begin{matrix}-1&amp;1\cr0&amp;5\end{matrix}\right]
+      +\vk\det\left[\begin{matrix}-1&amp;0\cr0&amp;4\end{matrix}\right] \notag
+      </mrow><mrow>
+      &amp;\hskip0.5in=\vi(0-4)-\vj(-5-0)+\vk(-4-0)
+      = \llt -4,5,-4\rgt \tag{c}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Let <m>\vp=\llt -1,4,2\rgt ,\ \vq=\llt 3,1,-1\rgt ,\ \vr=\llt 2,-3,-1\rgt </m>.
+    Check, by direct computation, that
+    <ol marker = "(a)">
+    <li> <m>\vp\times\vp=\vZero</m>
+    </li>
+    <li> <m>\vp\times\vq=-\vq\times\vp</m>
+    </li>
+    <li> <m>\vp\times(3\vr)=3(\vp\times\vr)</m>
+    </li>
+    <li> <m>\vp\times(\vq+\vr) = \vp\times\vq+\vp\times\vr</m>
+    </li>
+    <li> <m>\vp\times(\vq\times\vr) \ne (\vp\times\vq)\times\vr</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    (a) See the solution.
+    </p>
+
+    <p>(b) <m>\vp\times\vq = -\vq\times\vp = \llt -6,5,-13\rgt</m>
+    </p>
+
+    <p>(c) <m>\vp \times (3\vr) = 3(\vp\times\vr) =  \llt 6,9,-15\rgt</m>
+    </p>
+
+    <p>(d) <m>\vp\times(\vq+\vr) = \vp\times\vq+\vp\times\vr =  \llt -4,8,-18\rgt</m>
+    </p>
+
+    <p>(e) <m>\vp\times(\vq\times\vr) = \llt -46,-19,15\rgt</m>,
+        <m>(\vp\times\vq)\times\vr = \llt -44,-32,8\rgt</m>
+    </p>
+
+    </answer>
+
+    <solution><p>
+    <md>
+    <mrow>
+    \vp\times\vp
+    &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr-1&amp;4&amp;2\end{matrix}\right] \tag{a}
+    </mrow><mrow>
+    &amp;=\vi(4\times2-2\times4)-\vj(2-(-2))
+    +\vk(-4-(-4)) \notag
+    </mrow><mrow>
+    &amp;= \llt 0,0,0\rgt \notag
+    </mrow>
+    <mrow>
+    \vp\times\vq
+    &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr3&amp;1&amp;-1\end{matrix}\right]\tag{b}
+    </mrow><mrow>
+    &amp;=\vi(-4-2)-\vj(1-6)
+    +\vk(-1-12)\notag
+    </mrow><mrow>
+    &amp;= \llt -6,5,-13\rgt\notag
+    </mrow><mrow>
+    \vq\times\vp
+    &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr3&amp;1&amp;-1\cr-1&amp;4&amp;2\end{matrix}\right]\notag
+    </mrow><mrow>
+    &amp;=\vi(2+4)-\vj(6-1)
+    +\vk(12+1)\notag
+    </mrow><mrow>
+    &amp;
+    = \llt 6,-5,13\rgt \notag
+    </mrow>
+    <mrow>
+    \vp\!\times\!(3\vr)
+    &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr6&amp;-9&amp;-3\end{matrix}\right]\tag{c}
+    </mrow><mrow>
+    &amp;=\vi(-12+18)-\vj(3-12)
+    +\vk(9-24)
+    \notag
+    </mrow><mrow>
+    &amp;
+    = \llt 6,9,-15\rgt \notag
+    </mrow><mrow>
+    3(\vp\times\vr)
+    &amp;= 3\det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr2&amp;-3&amp;-1\end{matrix}\right]\notag
+    </mrow><mrow>
+    &amp;=3\Big(\vi(-4+6)-\vj(1-4)
+    +\vk(3-8) \Big)
+    \notag
+    </mrow><mrow>
+    &amp;= \llt 6,9,-15\rgt \notag
+    </mrow>
+    </md>
+    (d) As <m>\vq+\vr=\llt 5,-2,-2\rgt </m>
+    <md>
+    <mrow>
+    \vp\times(\vq+\vr)
+    &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr5&amp;-2&amp;-2\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(-8+4)-\vj(2-10)
+    +\vk(2-20)
+    </mrow><mrow>
+    &amp;=  \llt -4,8,-18\rgt
+    </mrow>
+    </md>
+    (e) Using the values of <m>\vp\times\vq</m> and <m>3(\vp\times\vr)</m> computed
+    in parts (b) and (c)
+    <me>
+    \vp\times\vq+\vp\times\vr=\llt -6,5,-13\rgt +\frac{1}{3}\llt 6,9,-15\rgt
+     = \llt -4,8,-18\rgt
+    </me>
+    <md>
+    <mrow>
+    \vq\times\vr
+    &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr3&amp;1&amp;-1\cr2&amp;-3&amp;-1\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(-1-3)-\vj(-3+2)
+    +\vk(-9-2)
+    </mrow><mrow>
+    &amp;= \llt -4,1,-11\rgt
+    </mrow>
+    <mrow>
+    \vp\times(\vq\times\vr)
+    &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr-4&amp;1&amp;-11\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(-44-2)-\vj(11+8)
+    +\vk(-1+16)
+    </mrow><mrow>
+    &amp;= \llt -46,-19,15\rgt
+    </mrow>
+    <mrow>
+    (\vp\times\vq)\times\vr
+    &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-6&amp;5&amp;-13\cr2&amp;-3&amp;-1\end{matrix}\right]
+    </mrow><mrow>
+    &amp;=\vi(-5-39)-\vj(6+26)
+    +\vk(18-10)
+    </mrow><mrow>
+    &amp;= \llt -44,-32,8\rgt
+    </mrow>
+    </md>
+    </p>
+    </solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel (Voir la solution (a)) -->
+    <exercise>
+      <statement><p>
+      Soit <m>\vp=\llt -1,4,2\rgt ,\ \vq=\llt 3,1,-1\rgt ,\ \vr=\llt 2,-3,-1\rgt </m>.
+      Vérifiez, par calcul direct, que
+      <ol marker = "(a)">
+      <li> <m>\vp\times\vp=\vZero</m>
+      </li>
+      <li> <m>\vp\times\vq=-\vq\times\vp</m>
+      </li>
+      <li> <m>\vp\times(3\vr)=3(\vp\times\vr)</m>
+      </li>
+      <li> <m>\vp\times(\vq+\vr) = \vp\times\vq+\vp\times\vr</m>
+      </li>
+      <li> <m>\vp\times(\vq\times\vr) \ne (\vp\times\vq)\times\vr</m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      <!--
+      (a) Voir la solution.-->
+      </p>
+
+      <p>(b) <m>\vp\times\vq = -\vq\times\vp = \llt -6,5,-13\rgt</m>
+      </p>
+
+      <p>(c) <m>\vp \times (3\vr) = 3(\vp\times\vr) =  \llt 6,9,-15\rgt</m>
+      </p>
+
+      <p>(d) <m>\vp\times(\vq+\vr) = \vp\times\vq+\vp\times\vr =  \llt -4,8,-18\rgt</m>
+      </p>
+
+      <p>(e) <m>\vp\times(\vq\times\vr) = \llt -46,-19,15\rgt</m>,
+          <m>(\vp\times\vq)\times\vr = \llt -44,-32,8\rgt</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      <md>
+      <mrow>
+      \vp\times\vp
+      &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr-1&amp;4&amp;2\end{matrix}\right] \tag{a}
+      </mrow><mrow>
+      &amp;=\vi(4\times2-2\times4)-\vj(2-(-2))
+      +\vk(-4-(-4)) \notag
+      </mrow><mrow>
+      &amp;= \llt 0,0,0\rgt \notag
+      </mrow>
+      <mrow>
+      \vp\times\vq
+      &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr3&amp;1&amp;-1\end{matrix}\right]\tag{b}
+      </mrow><mrow>
+      &amp;=\vi(-4-2)-\vj(1-6)
+      +\vk(-1-12)\notag
+      </mrow><mrow>
+      &amp;= \llt -6,5,-13\rgt\notag
+      </mrow><mrow>
+      \vq\times\vp
+      &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr3&amp;1&amp;-1\cr-1&amp;4&amp;2\end{matrix}\right]\notag
+      </mrow><mrow>
+      &amp;=\vi(2+4)-\vj(6-1)
+      +\vk(12+1)\notag
+      </mrow><mrow>
+      &amp;
+      = \llt 6,-5,13\rgt \notag
+      </mrow>
+      <mrow>
+      \vp\!\times\!(3\vr)
+      &amp;= \det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr6&amp;-9&amp;-3\end{matrix}\right]\tag{c}
+      </mrow><mrow>
+      &amp;=\vi(-12+18)-\vj(3-12)
+      +\vk(9-24)
+      \notag
+      </mrow><mrow>
+      &amp;
+      = \llt 6,9,-15\rgt \notag
+      </mrow><mrow>
+      3(\vp\times\vr)
+      &amp;= 3\det\left[ \begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr2&amp;-3&amp;-1\end{matrix}\right]\notag
+      </mrow><mrow>
+      &amp;=3\Big(\vi(-4+6)-\vj(1-4)
+      +\vk(3-8) \Big)
+      \notag
+      </mrow><mrow>
+      &amp;= \llt 6,9,-15\rgt \notag
+      </mrow>
+      </md>
+      (d) As <m>\vq+\vr=\llt 5,-2,-2\rgt </m>
+      <md>
+      <mrow>
+      \vp\times(\vq+\vr)
+      &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr5&amp;-2&amp;-2\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=\vi(-8+4)-\vj(2-10)
+      +\vk(2-20)
+      </mrow><mrow>
+      &amp;=  \llt -4,8,-18\rgt
+      </mrow>
+      </md>
+      (e) En utilisant les valeurs de <m>\vp\times\vq</m> et de <m>3(\vp\times\vr)</m> calculées
+      dans les parties (b) et (c)
+      <me>
+      \vp\times\vq+\vp\times\vr=\llt -6,5,-13\rgt +\frac{1}{3}\llt 6,9,-15\rgt
+       = \llt -4,8,-18\rgt
+      </me>
+      <md>
+      <mrow>
+      \vq\times\vr
+      &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr3&amp;1&amp;-1\cr2&amp;-3&amp;-1\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=\vi(-1-3)-\vj(-3+2)
+      +\vk(-9-2)
+      </mrow><mrow>
+      &amp;= \llt -4,1,-11\rgt
+      </mrow>
+      <mrow>
+      \vp\times(\vq\times\vr)
+      &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-1&amp;4&amp;2\cr-4&amp;1&amp;-11\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=\vi(-44-2)-\vj(11+8)
+      +\vk(-1+16)
+      </mrow><mrow>
+      &amp;= \llt -46,-19,15\rgt
+      </mrow>
+      <mrow>
+      (\vp\times\vq)\times\vr
+      &amp;= \det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\cr-6&amp;5&amp;-13\cr2&amp;-3&amp;-1\end{matrix}\right]
+      </mrow><mrow>
+      &amp;=\vi(-5-39)-\vj(6+26)
+      +\vk(18-10)
+      </mrow><mrow>
+      &amp;= \llt -44,-32,8\rgt
+      </mrow>
+      </md>
+      </p>
+      </solution>
+    </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Calculate the area of the triangle with vertices <m>(0,0,0)</m>,
+    <m>(1,2,3)</m> and <m>(3,2,1)</m>.
+    </p></statement>
+
+    <answer><p>
+    <m>2\sqrt{6}</m>
+    </p></answer>
+
+    <solution><p>
+    Denote by <m>\theta</m> the angle between the two vectors
+    <m>\va=\llt 1,2,3\rgt</m> and <m>\vb=\llt 3,2,1\rgt</m>. The area of the triangle is one
+    half times the length, <m>|\va|</m>, of its base times its height
+    <m>h=|\vb|\sin\theta</m>.
+    </p>
+    <sidebyside width="28%">
+      <image source="images/CLP-figs/pfigs/sec_1_2_triangle"/>
+    </sidebyside>
+
+    <p>
+    Thus the area of the triangle is  <m>\half|\va|\,|\vb|\,\sin\theta</m>.
+    By property 2 of the cross product in Theorem <xref ref="cor-Aire"/>,
+     <m>|\va\times\vb|=|\va|\,|\vb|\,\sin\theta</m>. So
+    <md>
+    <mrow>
+    \text{area} &amp;= \half|\va\times\vb|
+    =\half|\llt 1,2,3\rgt\times\llt 3,2,1\rgt|
+    </mrow><mrow>
+    &amp;=\half | \vi\,(2-6)-\vj\,(1-9) +\vk\,(2-6)|
+    </mrow><mrow>
+    &amp;=\half\sqrt{16+64+16}
+    </mrow><mrow>
+    &amp;=2\sqrt{6}
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel. -->
+
+    <exercise>
+      <statement><p>
+        Calculez l'aire du triangle dont les sommets sont <m>(0,0,0)</m>,
+        <m>(1,2,3)</m> et <m>(3,2,1)</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>2\sqrt{6}</m>
+      </p></answer>
+
+      <solution><p>
+        On désigne par <m>\theta</m> l'angle entre les deux vecteurs
+        <m>\va=\llt 1,2,3\rgt</m> et <m>\vb=\llt 3,2,1\rgt</m>. L'aire du triangle est égale à la
+        moitié de la longueur, <m>|\va|</m>, de sa base multipliée par sa hauteur
+        <m>h=|\vb|\sin\theta</m>.
+      </p>
+      <sidebyside width="28%">
+        <image source="images/CLP-figs/pfigs/sec_1_2_triangle"/>
+      </sidebyside>
+
+      <p>
+      Ainsi, l'aire du triangle est  <m>\half|\va|\,|\vb|\,\sin\theta</m>.
+      Par la propriété 2 du produit vectoriel du Théorème <xref ref="cor-Aire"/>,
+       <m>|\va\times\vb|=|\va|\,|\vb|\,\sin\theta</m>. Ainsi,
+      <md>
+      <mrow>
+      \text{aire} &amp;= \half|\va\times\vb|
+      =\half|\llt 1,2,3\rgt\times\llt 3,2,1\rgt|
+      </mrow><mrow>
+      &amp;=\half | \vi\,(2-6)-\vj\,(1-9) +\vk\,(2-6)|
+      </mrow><mrow>
+      &amp;=\half\sqrt{16+64+16}
+      </mrow><mrow>
+      &amp;=2\sqrt{6}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+  </exercisegroup>
+
+
+<exercisegroup>
+  <title>Pour mieux comprendre</title>
+  <!--
+  <exercise>
+  <statement><p>
+  Show that the area of the parallelogram determined by the
+  vectors <m>\va</m> and <m>\vb</m> is <m>|\va\times \vb|</m>.
+  </p>
+  <sidebyside width="33%">
+    <image source="images/CLP-figs/pfigs/sec_1_2_pgramA"/>
+  </sidebyside>
+  </statement>
+
+  <answer><p>
+  See the solution.
+  </p></answer>
+
+  <solution><p>
+   The area of a parallelogram is the length of its
+  base time its height.
+  </p>
+  <sidebyside width="33%">
+    <image source="images/CLP-figs/pfigs/sec_1_2_pgramB"/>
+  </sidebyside>
+
+  <p>
+  We can choose the base to be <m>\va</m>. Then, if <m>\theta</m>
+  is the angle between its sides <m>\va</m> and <m>\vb</m>, its height is
+  <m>|\vb|\sin\theta</m>.
+  So
+  <me>
+  \text{area} = |\va||\vb|\sin\theta=|\va\times\vb|
+  </me>
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+  <exercise>
+    <statement><p>
+    Montrer que l'aire du parallélogramme déterminée par les
+    vecteurs <m>\va</m> et <m>\vb</m> est <m>|\va\times \vb|</m>.
+    </p>
+    <sidebyside width="33%">
+      <image source="images/CLP-figs/pfigs/sec_1_2_pgramA"/>
+    </sidebyside>
+    </statement>
+    <solution><p>
+     L'aire du parallélogramme est la longueur de sa base multipliée par sa hauteur.
+    </p>
+    <sidebyside width="33%">
+      <image source="images/CLP-figs/pfigs/sec_1_2_pgramB"/>
+    </sidebyside>
+
+    <p>
+    On peut choisir la base comme étant <m>\va</m>. Alors, si <m>\theta</m>
+    est l'angle entre ses côtés <m>\va</m> et <m>\vb</m>, sa hauteur est
+    <m>|\vb|\sin\theta</m>.
+    Ainsi,
+    <me>
+    \text{Aire} = |\va||\vb|\sin\theta=|\va\times\vb|
+    </me>
+    </p></solution>
+  </exercise>
+
+    <!--
+    <exercise>
+    <statement><p>
+    Show that the volume of the parallelepiped determined by the
+    vectors <m>\va,\ \vb</m> and <m>\vc</m> is
+    <me>
+        |\va\cdot(\vb\times\vc)|
+    </me>
+    </p>
+
+    <sidebyside width="25%">
+    <image source="images/CLP-figs/pfigs/piped"/>
+    </sidebyside>
+    </statement>
+
+    <answer><p>
+    See the solution
+    </p></answer>
+
+    <solution><p>
+    The volume of a parallelepiped is the area of its
+    base time its height. We can choose the base to be the parallelogram
+    determined by the vectors <m>\vb</m> and <m>\vc</m>. It has area <m>|\vb\times\vc|</m>.
+    The vector <m>\vb\times\vc</m> is perpendicular to the base.
+    </p>
+    <sidebyside width="60%">
+    <image source="images/CLP-figs/pfigs/pipedVolume"/>
+    </sidebyside>
+
+    <p>
+      Denote by
+    <m>\theta</m> the angle between <m>\va</m> and the perpendicular <m>\vb\times\vc</m>.
+    The height of the parallelepiped is <m>|\va| |\cos\theta|</m>. So
+    <me>
+    \text{volume} = |\va|\, |\cos\theta|\, |\vb\times\vc|
+    =|\va\cdot(\vb\times\vc)|
+    </me>
+    </p></solution>
+    </exercise>
+    -->
+    <!-- Section 1.4 Produit vectoriel (Voir la solution)-->
+
+  <exercise>
+    <statement><p>
+      Montrez que le volume du parallélépipède déterminé par les vecteurs <m>\va,\ \vb</m> et <m>\vc</m> est
+    <me>
+        |\va\cdot(\vb\times\vc)|.
+    </me>
+    </p>
+
+    <sidebyside width="25%">
+    <image source="images/CLP-figs/pfigs/piped"/>
+    </sidebyside>
+    </statement>
+
+    <!--
+    <answer><p>
+    Voir la solution.
+    </p></answer>
+    -->
+    <solution><p>
+      Le volume d'un parallélépipède est l'aire de sa base multipliée par sa hauteur. Nous pouvons choisir la base comme étant le parallélogramme
+      déterminé par les vecteurs <m>\vb</m> et <m>\vc</m>. Il a pour aire <m>|\vb\times\vc|</m>.
+      Le vecteur <m>\vb\times\vc</m> est perpendiculaire à la base.
+    </p>
+    <sidebyside width="60%">
+    <image source="images/CLP-figs/pfigs/pipedVolume"/>
+    </sidebyside>
+
+    <p>
+      Dénoté par
+      <m>\theta</m> l'angle entre <m>\va</m> et la perpendiculaire <m>\vb\times\vc</m>.
+      La hauteur du parallélépipède est <m>|\va| |\cos\theta|</m>. Donc
+    <me>
+    \text{volume} = |\va|\, |\cos\theta|\, |\vb\times\vc|
+    =|\va\cdot(\vb\times\vc)|
+    </me>
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise xml:id="PRB_Qnine">
+  <statement><p>
+  Consider the following statement: <q>The vector <m>\va\times(\vb\times\vc)</m>
+  is of the form <m>\a\vb+\b\vc</m> for some real numbers <m>\a</m> and <m>\b</m>.</q>
+  If the statement is true, prove it. If the statement is false, give a
+  counterexample.
+  </p>
+
+  </statement>
+
+  <answer><p>
+  True.
+  </p></answer>
+
+  <solution><p>
+  This statement is true. In the event that <m>\vb</m> and
+  <m>\vc</m> are parallel, <m>\vb\times\vc=\vZero</m> so that
+  <m>\va\times(\vb\times\vc)=\vZero=0\vb+0\vc</m>, so we may assume
+  that <m>\vb</m> and <m>\vc</m> are not parallel. Then as <m>\a</m> and <m>\b</m> run
+  over <m>\R</m>, the vector <m>\a\vb+\b \vc</m> runs over the plane that
+  contains the origin and the vectors <m>\vb</m> and <m>\vc</m>. Call this plane
+  <m>P</m>. Because
+  <m>\vd=\vb\times\vc</m> is nonzero and perpendicular to both
+  <m>\vb</m> and <m>\vc</m>, <m>P</m> is the plane that contains the origin
+  and is perpendicular to <m>\vd</m>. As <m>\va\times(\vb\times\vc)=\va\times\vd</m> is always perpendicular to <m>\vd</m>, it lies in <m>P</m>.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel -->
+  <exercise xml:id="PRB_Qnine">
+    <statement><p>
+      Considérons l'énoncé suivant : <q>Le vecteur <m>\va\times(\vb\times\vc)</m>
+      est de la forme <m>\a\vb+\b\vc</m> pour certains nombres réels <m>\a</m> et <m>\b</m>.</q>
+      Si l'affirmation est vraie, prouvez-la. Si l'affirmation est fausse, donnez un
+      contre-exemple.
+    </p>
+
+    </statement>
+
+    <answer><p>
+    Vraie.
+    </p></answer>
+
+    <solution><p>
+      Cette affirmation est vraie. Dans le cas où <m>\vb</m> et
+      <m>\vc</m> sont parallèles, <m>\vb\times\vc=\vZero</m> de sorte que
+      <m>\va\times(\vb\times\vc)=\vZero=0\vb+0\vc</m>, on peut donc supposer
+      que <m>\vb</m> et <m>\vc</m> ne sont pas parallèles. Puis, lorsque <m>\a</m> et <m>\b</m> passent par <m>R</m>.
+      sur <m>\R</m>, le vecteur <m>\a\vb+\b \vc</m> passe sur le plan qui contient
+      contient l'origine et les vecteurs <m>\vb</m> et <m>\vc</m>. On appelle ce plan
+      <m>P</m>. Parce que
+      <m>\vd=\vb\times\vc</m> est non nul et perpendiculaire aux deux vecteurs
+      <m>\vb</m> et <m>\vc</m>, <m>P</m> est le plan qui contient l'origine
+      et qui est perpendiculaire à <m>\vd</m>. Comme <m>\va\times(\vb\times\vc)=\va\times\vd</m> est toujours perpendiculaire à <m>\vd</m>, il est situé dans <m>P</m>.
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  What geometric conclusions can you draw from
+  <m>\va\cdot(\vb\times\vc)=\llt 1,2,3\rgt</m>?
+  </p></statement>
+
+  <answer><p>
+  None. The given equation is nonsense.
+  </p></answer>
+
+  <solution><p>
+  None. The given equation is nonsense. The left hand side is
+  a number while the right hand side is a vector.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel -->
+  <exercise>
+    <statement><p>
+      Quelles conclusions géométriques pouvez-vous tirer de
+      <m>\va\cdot(\vb\times\vc)=\llt 1,2,3\rgt</m> ?
+    </p></statement>
+
+    <answer><p>
+    Aucune. L'équation donnée n'a aucun sens.
+    </p></answer>
+
+    <solution><p>
+      Aucune. L'équation donnée n'a pas de sens. Le côté gauche est
+      un nombre alors que le côté droit est un vecteur.
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  What geometric conclusions can you draw from
+  <m>\va\cdot(\vb\times\vc)=0</m>?
+  </p></statement>
+
+  <answer><p>
+  If <m>\vb</m> and <m>\vc</m> are parallel, then <m>\va\cdot(\vb\times\vc)=0</m> for all <m>\va</m>.
+  If <m>\vb</m> and <m>\vc</m> are not parallel, then <m>\va</m> must be of the form
+  <m>\a\vb+\b\vc</m> with <m>\a</m> and <m>\b</m> real numbers.
+  </p></answer>
+
+  <solution><p>
+  If <m>\vb</m> and <m>\vc</m> are parallel, then <m>\vb\times\vc=\vZero</m>
+  and <m>\va\cdot(\vb\times\vc)=0</m> for all <m>\va</m>.
+  If <m>\vb</m> and <m>\vc</m> are not parallel, <m>\va\cdot(\vb\times\vc)=0</m>
+  if and only if <m>\va</m> is perpendicular to <m>\vd=\vb\times\vc</m>.
+  As we saw in question <xref ref="PRB_Qnine"/>, the set of all vectors perpendicular to
+  <m>\vd</m> is the plane consisting of all vectors of the form
+  <m>\a\vb+\b\vc</m> with <m>\a</m> and <m>\b</m> real numbers. So <m>\va</m> must
+  be of this form.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel -->
+  <exercise>
+    <statement><p>
+      Quelles conclusions géométriques pouvez-vous tirer de
+      <m>\va\cdot(\vb\times\vc)=0</m> ?
+    </p></statement>
+
+    <answer><p>
+      Si <m>\vb</m> et <m>\vc</m> sont parallèles, alors <m>\va\cdot(\vb\times\vc)=0</m> pour tout <m>\va</m>.
+      Si <m>\vb</m> et <m>\vc</m> ne sont pas parallèles, alors <m>\va</m> doit être de la forme
+      <m>\a\vb+\b\vc</m> avec <m>\a</m> et <m>\b</m> des nombres réels.
+    </p></answer>
+
+    <solution><p>
+      Si <m>\vb</m> et <m>\vc</m> sont parallèles, alors <m>\vb\times\vc=\vZero</m>
+      et <m>\va\cdot(\vb\times\vc)=0</m> pour tout <m>\va</m>.
+      Si <m>\vb</m> et <m>\vc</m> ne sont pas parallèles, <m>\va\cdot(\vb\times\vc)=0</m>
+      si et seulement si <m>\va</m> est perpendiculaire à <m>\vd=\vb\times\vc</m>.
+      Comme nous l'avons vu à la question <xref ref="PRB_Qnine"/>, l'ensemble de tous les vecteurs perpendiculaires à <m>\vd</m> est le plan constitué de tous les vecteurs de la forme
+      <m>\a\vb+\b\vc</m> avec <m>\a</m> et <m>\b</m> nombres réels. Donc <m>\va</m> doit être de cette forme.
+    </p></solution>
+  </exercise>
+
+  <!--
+  </exercisegroup>
+  <exercisegroup><introduction><application/></introduction>
+  -->
+
+  <!--
+  <exercise>
+  <statement><p>
+  Show that <m>\va\cdot(\vb\times\vc)
+                           =(\va\times\vb)\cdot\vc</m>.
+  </p></statement>
+
+  <answer><p>
+  See the solution.
+  </p></answer>
+
+  <solution><p> By definition, the left and right hand sides are
+  <md>
+  <mrow>
+  \va\cdot(\vb\times\vc)
+  &amp;=\llt a_1,a_2,a_3\rgt \cdot\llt b_2c_3-b_3c_2, b_3c_1-b_1c_3, b_1c_2-b_2c_1\rgt
+  </mrow>
+  <mrow>
+  &amp;=a_1b_2c_3 - a_1b_3c_2 + a_2b_3c_1 - a_2b_1c_3 + a_3b_1c_2 - a_3b_2c_1
+  \tag{lhs}
+  </mrow>
+  <mrow>
+  (\va\times\vb)\cdot\vc
+  &amp;=\llt a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1\rgt \cdot\llt c_1,c_2,c_3\rgt \notag
+  </mrow>
+  <mrow>
+  &amp;=a_2b_3c_1 - a_3b_2c_1 + a_3b_1c_2 - a_1b_3c_2 + a_1b_2c_3 - a_2b_1c_3
+  \tag{rhs}
+  </mrow>
+  </md>
+  (lhs) and (rhs) are the same.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+  <!-- <exercise>
+    Cet exercice a été rajouté comme un énoncé dans le texte.
+    <statement><p>
+    Montrer que <m>\va\cdot(\vb\times\vc)
+                             =(\va\times\vb)\cdot\vc</m>.
+    </p></statement>
+
+    
+    <answer><p>
+    Voir la solution.
+    </p></answer>
+    
+    <solution><p> Par définition, les côtés gauche et droit sont
+    <md>
+    <mrow>
+    \va\cdot(\vb\times\vc)
+    &amp;=\llt a_1,a_2,a_3\rgt \cdot\llt b_2c_3-b_3c_2, b_3c_1-b_1c_3, b_1c_2-b_2c_1\rgt
+    </mrow>
+    <mrow>
+    &amp;=a_1b_2c_3 - a_1b_3c_2 + a_2b_3c_1 - a_2b_1c_3 + a_3b_1c_2 - a_3b_2c_1
+    \tag{lhs}
+    </mrow>
+    <mrow>
+    (\va\times\vb)\cdot\vc
+    &amp;=\llt a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1\rgt \cdot\llt c_1,c_2,c_3\rgt \notag
+    </mrow>
+    <mrow>
+    &amp;=a_2b_3c_1 - a_3b_2c_1 + a_3b_1c_2 - a_1b_3c_2 + a_1b_2c_3 - a_2b_1c_3
+    \tag{rhs}
+    </mrow>
+    </md>
+    le côté gauche et le côté droit sont les mêmes.
+    </p></solution>
+  </exercise> -->
+
+  <!--
+  <exercise>
+  <statement><p>
+  Show that <m>\va\times(\vb\times\vc)
+  =(\va\cdot\vc)\vb-(\va\cdot\vb)\vc</m>.
+  </p></statement>
+
+  <answer><p>
+  See the solution.
+  </p></answer>
+
+  <solution><p>
+  By definition,
+  <md>
+  <mrow>
+  \vb\times\vc
+  \ =\ &amp;(b_2c_3-b_3c_2)\vi-(b_1c_3-b_3c_1)\vj
+      +(b_1c_2-b_2c_1)\vk
+  </mrow>
+  <intertext>so that the left and right hand sides are</intertext><mrow>
+  &amp;\va\times(\vb\times\vc)
+  \ =\ \det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+  </mrow><mrow>
+                       a_1&amp;a_2&amp;a_3
+  </mrow><mrow>
+              b_2c_3-b_3c_2&amp;-b_1c_3+b_3c_1&amp;b_1c_2-b_2c_1\end{matrix}\right]
+  </mrow><mrow>
+  &amp;\hskip0.5in= \vi\,[a_2(b_1c_2-b_2c_1)-a_3(-b_1c_3+b_3c_1)]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ -\vj\,[a_1(b_1c_2-b_2c_1)-a_3(b_2c_3-b_3c_2)]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ +\vk\,[a_1(-b_1c_3+b_3c_1)-a_2(b_2c_3-b_3c_2)]&amp;{\rm (lhs)}
+  </mrow><mrow>
+  &amp;(\va\cdot\vc)\vb-(\va\cdot\vb)\vc
+  </mrow><mrow>
+  &amp;\hskip0.5in=(a_1c_1+a_2c_2+a_3c_3)(b_1\vi+b_2\vj+b_3\vk)
+  </mrow><mrow>
+  &amp;\hskip1.0in
+  -(a_1b_1+a_2b_2+a_3b_3)(c_1\vi+c_2\vj+c_3\vk)
+  </mrow><mrow>
+  &amp;\hskip0.5in=
+  \vi\,[a_1b_1c_1+a_2b_1c_2+a_3b_1c_3-a_1b_1c_1-a_2b_2c_1-a_3b_3c_1]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ +\vj\,[a_1b_2c_1+a_2b_2c_2+a_3b_2c_3-a_1b_1c_2-a_2b_2c_2-a_3b_3c_2]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ +\vk\,[a_1b_3c_1+a_2b_3c_2+a_3b_3c_3-a_1b_1c_3-a_2b_2c_3-a_3b_3c_3]\cr
+  &amp;\hskip0.5in =
+  \vi\,[a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ +\vj\,[a_1b_2c_1+a_3b_2c_3-a_1b_1c_2-a_3b_3c_2]
+  </mrow><mrow>
+  &amp;\hskip0.5in\ +\vk\,[a_1b_3c_1+a_2b_3c_2-a_1b_1c_3-a_2b_2c_3]
+  &amp;{\rm (rhs)}
+  </mrow>
+  </md>
+  (lhs) and (rhs) are the same.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+  <!-- Ajouté comme exposé-
+  <exercise>
+    <statement><p>
+    Montrer que <m>\va\times(\vb\times\vc)
+    =(\va\cdot\vc)\vb-(\va\cdot\vb)\vc</m>.
+    </p></statement>
+
+    
+    <answer><p>
+    Voir la solution.
+    </p></answer>
+    
+    <solution><p>
+    Par définition,
+    <md>
+    <mrow>
+    \vb\times\vc
+    \ =\ &amp;(b_2c_3-b_3c_2)\vi-(b_1c_3-b_3c_1)\vj
+        +(b_1c_2-b_2c_1)\vk
+    </mrow>
+    <intertext>de sorte que les côtés gauche et droit sont</intertext><mrow>
+    &amp;\va\times(\vb\times\vc)
+    \ =\ \det\left[\begin{matrix}\vi&amp;\vj &amp;\vk
+    </mrow><mrow>
+                         a_1&amp;a_2&amp;a_3
+    </mrow><mrow>
+                b_2c_3-b_3c_2&amp;-b_1c_3+b_3c_1&amp;b_1c_2-b_2c_1\end{matrix}\right]
+    </mrow><mrow>
+    &amp;\hskip0.5in= \vi\,[a_2(b_1c_2-b_2c_1)-a_3(-b_1c_3+b_3c_1)]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ -\vj\,[a_1(b_1c_2-b_2c_1)-a_3(b_2c_3-b_3c_2)]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ +\vk\,[a_1(-b_1c_3+b_3c_1)-a_2(b_2c_3-b_3c_2)]&amp;{\rm (lhs)}
+    </mrow><mrow>
+    &amp;(\va\cdot\vc)\vb-(\va\cdot\vb)\vc
+    </mrow><mrow>
+    &amp;\hskip0.5in=(a_1c_1+a_2c_2+a_3c_3)(b_1\vi+b_2\vj+b_3\vk)
+    </mrow><mrow>
+    &amp;\hskip1.0in
+    -(a_1b_1+a_2b_2+a_3b_3)(c_1\vi+c_2\vj+c_3\vk)
+    </mrow><mrow>
+    &amp;\hskip0.5in=
+    \vi\,[a_1b_1c_1+a_2b_1c_2+a_3b_1c_3-a_1b_1c_1-a_2b_2c_1-a_3b_3c_1]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ +\vj\,[a_1b_2c_1+a_2b_2c_2+a_3b_2c_3-a_1b_1c_2-a_2b_2c_2-a_3b_3c_2]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ +\vk\,[a_1b_3c_1+a_2b_3c_2+a_3b_3c_3-a_1b_1c_3-a_2b_2c_3-a_3b_3c_3]\cr
+    &amp;\hskip0.5in =
+    \vi\,[a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ +\vj\,[a_1b_2c_1+a_3b_2c_3-a_1b_1c_2-a_3b_3c_2]
+    </mrow><mrow>
+    &amp;\hskip0.5in\ +\vk\,[a_1b_3c_1+a_2b_3c_2-a_1b_1c_3-a_2b_2c_3]
+    &amp;{\rm (rhs)}
+    </mrow>
+    </md>
+    le côté gauche et le côté droit sont les mêmes.
+    </p></solution>
+  </exercise> -->
+
+  <!--
+  <exercise>
+  <statement><p>
+  Derive a formula for <m>(\va\times\vb)\cdot(\vc\times\vd)</m>
+  that involves dot but not cross products.
+  </p></statement>
+
+  <answer><p>
+  <m>(\va\times\vb)\cdot(\vc\times\vd)=
+  (\va\cdot\vc)(\vb\cdot\vd)
+  -(\va\cdot\vd)(\vb\cdot\vc)</m>
+  </p></answer>
+
+  <solution><p>
+  Attention! Ces propriétésne sont plus la! La référence est forcément plus bonne. On enlève cet exo?
+  By properties 9 and 10 of Theorem
+   <xref ref="thm_crossPppties"/>,
+
+  <md>
+  <mrow>
+  &amp;(\va\times\vb)\cdot(\vc\times\vd)
+  =\va\cdot[\vb\times(\vc\times\vd)]
+  &amp;\text{(by property 9 with } \vc\rightarrow (\vc\times\vd))
+  </mrow><mrow>
+  &amp;\hskip0.5in=\va\cdot[(\vb\cdot\vd)\vc-(\vb\cdot\vc)\vd]
+  &amp;\text{(by property 10)}\cr
+  &amp;\hskip0.5in=(\va\cdot\vc)(\vb\cdot\vd)
+  -(\va\cdot\vd)(\vb\cdot\vc)
+  </mrow>
+  </md>
+  So
+  <me>
+  (\va\times\vb)\cdot(\vc\times\vd)=
+  (\va\cdot\vc)(\vb\cdot\vd)
+  -(\va\cdot\vd)(\vb\cdot\vc)
+  </me>
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel -->
+  <exercise>
+    <statement><p>
+    Trouvez une formule pour <m>(\va\times\vb)\cdot(\vc\times\vd)</m>
+    qui fait intervenir les produits scalaires mais pas les produits vectoriels.
+    </p></statement>
+
+    <answer><p>
+    <m>(\va\times\vb)\cdot(\vc\times\vd)=
+    (\va\cdot\vc)(\vb\cdot\vd)
+    -(\va\cdot\vd)(\vb\cdot\vc)</m>
+    </p></answer>
+
+    <solution><p>
+    <!-- Attention! Ces propriétés ne sont plus la! La référence n'est forcément plus bonne. On enlève cet exo?
+    By properties 9 and 10 of Theorem -->
+    <!-- <xref ref="thm_crossPppties"/>,
+    -->
+    <md>
+    <mrow>
+    &amp;(\va\times\vb)\cdot(\vc\times\vd)
+    =\va\cdot[\vb\times(\vc\times\vd)]
+    &amp;\text{(by property 9 with } \vc\rightarrow (\vc\times\vd))
+    </mrow><mrow>
+    &amp;\hskip0.5in=\va\cdot[(\vb\cdot\vd)\vc-(\vb\cdot\vc)\vd]
+    &amp;\text{(by property 10)}\cr
+    &amp;\hskip0.5in=(\va\cdot\vc)(\vb\cdot\vd)
+    -(\va\cdot\vd)(\vb\cdot\vc)
+    </mrow>
+    </md>
+    donc
+    <me>
+    (\va\times\vb)\cdot(\vc\times\vd)=
+    (\va\cdot\vc)(\vb\cdot\vd)
+    -(\va\cdot\vd)(\vb\cdot\vc)
+    </me>
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  A prism has the six vertices
+  <md alignment="alignat">
+  <mrow>
+  A&amp;=(1,0,0)\qquad   &amp;  A'&amp;=(5,0,1)
+  </mrow><mrow>
+  B&amp;=(0,3,0)   &amp;  B'&amp;=(4,3,1)
+  </mrow><mrow>
+  C&amp;=(0,0,4)   &amp;  C'&amp;=(4,0,5)
+  </mrow>
+  </md>
+  <ol marker = "(a)">
+  <li>
+    Verify that three of the faces are parallelograms.
+    Are they rectangular?
+  </li>
+  <li>
+    Find the length of <m>AA'</m>.
+  </li>
+  <li>
+    Find the area of the triangle <m>ABC</m>.
+  </li>
+  <li>
+     Find the volume of the prism.
+  </li>
+  </ol>
+  </p></statement>
+
+  <answer><p>
+  <ol>
+    <li>
+      <p>
+    <ul>
+    <li><m>AA'B'B</m> is a parallelogram, but not a rectangle.</li>
+    <li><m>AA'C'C</m> is a rectangle.</li>
+    <li><m>BB'C'C</m> is a parallelogram, but not a rectangle.</li>
+    </ul>
+    </p>
+  </li>
+  <li><m>\sqrt{17}</m></li>
+  <li><m>\frac{13}{2}</m></li>
+  <li><m>\frac{51}{2}</m></li>
+  </ol>
+  </p>
+
+  </answer>
+
+  <solution><p>
+  (a) <m>AA'=\llt 4,0,1\rgt </m> and <m>BB'=\llt 4,0,1\rgt </m> are opposite sides
+  of the quadrilateral <m>AA'B'B</m>. They have the same length
+  and direction. The same is true for <m>AB=\llt -1,3,0\rgt </m> and
+  <m>A'B'=\llt -1,3,0\rgt </m>. So <m>AA'B'B</m> is a parallelogram. Because,
+  <m>AA'\cdot AB=\llt 4,0,1\rgt \cdot\llt -1,3,0\rgt =-4\ne 0</m>,
+  the neighbouring edges of <m>AA'B'B</m> are not perpendicular and so <m>AA'B'B</m>
+  is <em>not</em> a rectangle.
+  </p>
+
+  <p>Similarly, the quadilateral <m>ACC'A'</m> has opposing sides
+  <m>AA'=\llt 4,0,1\rgt =CC'=\llt 4,0,1\rgt </m> and
+  <m>AC=\llt -1,0,4\rgt =A'C'=\llt -1,0,4\rgt </m> and so is
+  a parallelogram. Because <m>AA'\cdot AC=\llt 4,0,1\rgt \cdot\llt -1,0,4\rgt = 0</m>, the neighbouring edges of <m>ACC'A'</m> are perpendicular, so
+  <m>ACC'A'</m> <em>is</em> a rectangle.
+  </p>
+
+  <p>Finally, the quadilateral <m>BCC'B'</m> has opposing sides
+  <m>BB'=\llt 4,0,1\rgt =CC'=\llt 4,0,1\rgt </m> and
+  <m>BC=\llt 0,-3,4\rgt =B'C'=\llt 0,-3,4\rgt </m> and so is
+  a parallelogram. Because <m>BB'\cdot BC=\llt 4,0,1\rgt \cdot\llt 0,-3,4\rgt
+  = 4\ne 0</m>, the neighbouring edges of <m>BCC'B'</m> are not perpendicular, so
+  <m>BCC'B'</m> is <em>not</em> a rectangle.
+  </p>
+
+  <p>(b) The length of <m>AA'</m> is <m>|\llt 4,0,1\rgt |=\sqrt{16+1}=\sqrt{17}</m>.
+  </p>
+
+  <p>(c) The area of a triangle is one half its base times its height.
+  That is, one half times <m>|AB|</m> times <m>|AC|\sin\theta</m>, where
+  <m>\theta</m> is the angle between <m>AB</m> and <m>AC</m>. This is precisely
+  <m>\half |AB\times AC|=\half|\llt -1,3,0\rgt \times\llt -1,0,4\rgt |
+  =\half |\llt 12,4,3\rgt|=\frac{13}{2}</m>.
+  </p>
+
+  <p>(d) The volume of the prism is the area of its base <m>ABC</m>,
+   times its height, which is the length of <m>AA'</m> times the cosine of the
+  angle between <m>AA'</m> and the normal to <m>ABC</m>. This coincides with
+  <m>\half \llt 12,4,3\rgt \cdot\llt 4,0,1\rgt =\half(48+3)=\frac{51}{2}</m>, which is
+  one half times the length of <m>\llt 12,4,3\rgt </m> (the area of <m>ABC</m>)
+  times the length of <m>\llt 4,0,1\rgt </m> (the length of <m>AA'</m>) times the
+  cosine of the angle between <m>\llt 12,4,3\rgt </m> and
+  <m>\llt 4,0,1\rgt </m> (the angle between the normal to <m>ABC</m> and <m>AA'</m>).
+  </p>
+
+  </solution>
+  </exercise>
+  -->
+  <!-- Section 1.4 Produit vectoriel -->
+
+  <exercise>
+    <statement><p>
+    Un prisme a les six sommets suivants
+    <md alignment="alignat">
+    <mrow>
+    A&amp;=(1,0,0)\qquad   &amp;  A'&amp;=(5,0,1)
+    </mrow><mrow>
+    B&amp;=(0,3,0)   &amp;  B'&amp;=(4,3,1)
+    </mrow><mrow>
+    C&amp;=(0,0,4)   &amp;  C'&amp;=(4,0,5)
+    </mrow>
+    </md>
+    <ol marker = "(a)">
+    <li>
+    Vérifier que trois des faces sont des parallélogrammes.
+    Sont-ils rectangulaires ?
+    </li>
+    <li>
+      Trouvez la longueur de <m>AA'</m>.
+    </li>
+    <li>
+      Trouvez l'aire du triangle <m>ABC</m>.
+    </li>
+    <li>
+       Trouvez le volume du prisme.
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol>
+      <li>
+        <p>
+      <ul>
+      <li><m>AA'B'B</m> est un parallélogramme, mais n'est pas un rectangle.</li>
+      <li><m>AA'C'C</m> est un rectangle.</li>
+      <li><m>BB'C'C</m> est un parallélogramme, mais n'est pas un rectangle.</li>
+      </ul>
+      </p>
+    </li>
+    <li><m>\sqrt{17}</m></li>
+    <li><m>\frac{13}{2}</m></li>
+    <li><m>\frac{51}{2}</m></li>
+    </ol>
+    </p>
+
+    </answer>
+
+    <solution><p>
+    (a) <m>AA'=\llt 4,0,1\rgt </m> and <m>BB'=\llt 4,0,1\rgt </m> are opposite sides
+    of the quadrilateral <m>AA'B'B</m>. They have the same length
+    and direction. The same is true for <m>AB=\llt -1,3,0\rgt </m> and
+    <m>A'B'=\llt -1,3,0\rgt </m>. So <m>AA'B'B</m> is a parallelogram. Because,
+    <m>AA'\cdot AB=\llt 4,0,1\rgt \cdot\llt -1,3,0\rgt =-4\ne 0</m>,
+    the neighbouring edges of <m>AA'B'B</m> are not perpendicular and so <m>AA'B'B</m>
+    is <em>not</em> a rectangle.
+    </p>
+
+    <p>Similarly, the quadilateral <m>ACC'A'</m> has opposing sides
+    <m>AA'=\llt 4,0,1\rgt =CC'=\llt 4,0,1\rgt </m> and
+    <m>AC=\llt -1,0,4\rgt =A'C'=\llt -1,0,4\rgt </m> and so is
+    a parallelogram. Because <m>AA'\cdot AC=\llt 4,0,1\rgt \cdot\llt -1,0,4\rgt = 0</m>, the neighbouring edges of <m>ACC'A'</m> are perpendicular, so
+    <m>ACC'A'</m> <em>is</em> a rectangle.
+    </p>
+
+    <p>Finally, the quadilateral <m>BCC'B'</m> has opposing sides
+    <m>BB'=\llt 4,0,1\rgt =CC'=\llt 4,0,1\rgt </m> and
+    <m>BC=\llt 0,-3,4\rgt =B'C'=\llt 0,-3,4\rgt </m> and so is
+    a parallelogram. Because <m>BB'\cdot BC=\llt 4,0,1\rgt \cdot\llt 0,-3,4\rgt
+    = 4\ne 0</m>, the neighbouring edges of <m>BCC'B'</m> are not perpendicular, so
+    <m>BCC'B'</m> is <em>not</em> a rectangle.
+    </p>
+
+    <p>(b) The length of <m>AA'</m> is <m>|\llt 4,0,1\rgt |=\sqrt{16+1}=\sqrt{17}</m>.
+    </p>
+
+    <p>(c) The area of a triangle is one half its base times its height.
+    That is, one half times <m>|AB|</m> times <m>|AC|\sin\theta</m>, where
+    <m>\theta</m> is the angle between <m>AB</m> and <m>AC</m>. This is precisely
+    <m>\half |AB\times AC|=\half|\llt -1,3,0\rgt \times\llt -1,0,4\rgt |
+    =\half |\llt 12,4,3\rgt|=\frac{13}{2}</m>.
+    </p>
+
+    <p>(d) The volume of the prism is the area of its base <m>ABC</m>,
+     times its height, which is the length of <m>AA'</m> times the cosine of the
+    angle between <m>AA'</m> and the normal to <m>ABC</m>. This coincides with
+    <m>\half \llt 12,4,3\rgt \cdot\llt 4,0,1\rgt =\half(48+3)=\frac{51}{2}</m>, which is
+    one half times the length of <m>\llt 12,4,3\rgt </m> (the area of <m>ABC</m>)
+    times the length of <m>\llt 4,0,1\rgt </m> (the length of <m>AA'</m>) times the
+    cosine of the angle between <m>\llt 12,4,3\rgt </m> and
+    <m>\llt 4,0,1\rgt </m> (the angle between the normal to <m>ABC</m> and <m>AA'</m>).
+    </p>
+
+    </solution>
+  </exercise>
+
+</exercisegroup>
+
+
+<!--
+</exercisegroup>
+<exercisegroup><introduction><procedural/></introduction>
+-->
+
+
+<!--
+<exercise><title><fromexam>M200 2003D</fromexam></title>
+<statement><p>
+ A particle <m>P</m> of unit mass whose position in space at time
+<m>t</m> is <m>\vr(t)</m> has angular momentum <m>L(t)=\vr(t)\times\vr'(t)</m>.
+If <m>\vr''(t)=\rho(t)\vr(t)</m> for a scalar function <m>\rho</m>, show that
+<m>L</m> is constant, i.e. does not change with time. Here <m>'</m> denotes
+<m>\diff{}{t}</m>.
+</p></statement>
+
+<hint><p>
+Evaluate <m>\diff{L}{t}</m> by differentiating <m>\vr(t)\times\vr'(t)</m>.
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+The derivative of <m>L</m> is
+<md>
+<mrow>
+\diff{L}{t}&amp;=\diff{}{t}\big(\vr(t)\times\vr'(t)\big)
+=\vr'(t)\times\vr'(t)+\vr(t)\times\vr''(t)
+</mrow><mrow>
+&amp;=\vr'(t)\times\vr'(t)+\vr(t)\times\big(\rho(t)\vr(t)\big)
+</mrow>
+</md>
+Both terms vanish because the cross product of any two parallel vectors
+is zero. So <m>\diff{L}{t}=0</m> and <m>L(t)</m> is independent of <m>t</m>.
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+
+<exercisegroup>
+  <title>Pour aller plus loin</title>
+<exercise>
+  <!-- <title><fromexam>M200 2003D</fromexam></title> -->
+  <statement><p>
+    Une particule <m>P</m> de masse unitaire dont la position dans l'espace au temps
+   <m>t</m> est <m>\vr(t)</m> a un moment angulaire <m>L(t)=\vr(t)\times\vr'(t)</m>.
+   Si <m>\vr''(t)=\rho(t)\vr(t)</m> pour une fonction scalaire <m>\rho</m>, montrez que
+   <m>L</m> est constante, c'est-à-dire qu'elle ne varie pas avec le temps. Ici <m>'</m> désigne
+   <m>\diff{}{t}</m>.
+  </p></statement>
+
+  <hint><p>
+  Évaluez <m>\diff{L}{t}</m> en dérivant <m>\vr(t)\times\vr'(t)</m>.
+  </p></hint>
+  <!--
+  <answer><p>
+  Voir la solution.
+  </p></answer>
+  -->
+  <solution><p>
+  La dérivée de <m>L</m> est
+  <md>
+  <mrow>
+  \diff{L}{t}&amp;=\diff{}{t}\big(\vr(t)\times\vr'(t)\big)
+  =\vr'(t)\times\vr'(t)+\vr(t)\times\vr''(t)
+  </mrow><mrow>
+  &amp;=\vr'(t)\times\vr'(t)+\vr(t)\times\big(\rho(t)\vr(t)\big)
+  </mrow>
+  </md>
+  Les deux termes disparaissent car le produit vectoriel de deux vecteurs parallèles quelconques
+  est nul. Donc <m>\diff{L}{t}=0</m> et <m>L(t)</m> est indépendant de <m>t</m>.
+  </p></solution>
+</exercise>
+
+<!--
+<exercise xml:id="prb_pythagorous">
+<statement><p>
+(Three dimensional Pythagorean Theorem) A solid body in space
+with exactly four vertices is called a tetrahedron. Let <m>A</m>, <m>B</m>, <m>C</m> and
+<m>D</m> be the areas of the four faces of a tetrahedron. Suppose that the
+three edges meeting at the vertex opposite the face of area <m>D</m> are
+perpendicular to each other. Show that <m>D^2=A^2+B^2+C^2</m>.
+</p>
+
+<sidebyside width="28%">
+  <image source="images/CLP-figs/pfigs/tetrahedron"/>
+</sidebyside>
+</statement>
+
+<hint><p>
+Choose coordinate axes so that the vertex opposite
+the face of area <m>D</m> is at the origin. Denote  by <m>\va</m>, <m>\vb</m> and
+<m>\vc</m> the vertices opposite the sides of area <m>A</m>, <m>B</m> and <m>C</m> respectively.
+Express <m>A</m>, <m>B</m>, <m>C</m> and <m>D</m>, which are areas of triangles, as one half
+times cross products of vectors built from <m>\va</m>, <m>\vb</m> and <m>\vc</m>.
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+Choose our coordinate axes so that the vertex opposite
+the face of area <m>D</m> is at the origin. Denote  by <m>\va</m>, <m>\vb</m> and
+<m>\vc</m> the vertices opposite the sides of area <m>A</m>, <m>B</m> and <m>C</m> respectively.
+Then the face of area <m>A</m> has edges <m>\vb</m> and <m>\vc</m> so that
+<m>A=\half |\vb\times\vc|</m>. Similarly <m>B=\half|\vc\times\va|</m> and
+<m>C=\half|\va\times \vb|</m>. The face of area <m>D</m> is the triangle
+spanned by <m>\vb-\va</m> and <m>\vc-\va</m> so that
+<md>
+<mrow>
+D&amp;=\half|(\vb-\va)\times(\vc-\va)|\cr
+&amp;=\half|\vb\times \vc-\va\times\vc-\vb\times\va|
+</mrow><mrow>
+&amp;=\half|\vb\times \vc+\vc\times\va+\va\times\vb|
+</mrow>
+</md>
+By hypothesis, the vectors <m>\va</m>, <m>\vb</m> and <m>\vc</m> are all perpendicular
+to each other. Consequently the vectors <m>\vb\times \vc</m> (which is
+a scalar times <m>\va</m>), <m>\vc\times\va</m> (which is a scalar times
+<m>\vb</m>) and <m>\va\times\vb</m> (which is a scalar times <m>\vc</m>)
+are also mutually perpendicular. So, when we multiply out
+<me>
+D^2=\frac{1}{4}\big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot\big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+</me>
+all the cross terms vanish, leaving
+<md>
+<mrow>
+D^2&amp;=\frac{1}{4}\big[(\vb\times \vc)\cdot(\vb\times \vc)
++(\vc\times\va)\cdot(\vc\times\va)
++(\va\times\vb)\cdot(\va\times\vb)\big]
+</mrow><mrow>
+&amp;=A^2+B^2+C^2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+
+<exercise xml:id="prb_pythagorous">
+  <statement><p>
+  (Théorème de Pythagore à trois dimensions) Un corps solide dans l'espace
+  avec exactement quatre sommets est appelé un tétraèdre. Soit <m>A</m>, <m>B</m>, <m>C</m> et
+  <m>D</m> les aires des quatre faces d'un tétraèdre. Supposons que les
+  trois arêtes se rejoignant au sommet opposé à la face d'aire <m>D</m> sont
+  perpendiculaires l'une à l'autre. Montrez que <m>D^2=A^2+B^2+C^2</m>.
+  </p>
+
+  <sidebyside width="28%">
+    <image source="images/CLP-figs/pfigs/tetrahedron"/>
+  </sidebyside>
+  </statement>
+
+  <hint><p>
+  Choisissez des axes de coordonnées de sorte que le sommet opposé
+  à la face d'aire <m>D</m> est à l'origine. Notons <m>\va</m>, <m>\vb</m> et
+  <m>\vc</m> les sommets opposés aux côtés d'aires <m>A</m>, <m>B</m> et <m>C</m> respectivement.
+  Exprimez <m>A</m>, <m>B</m>, <m>C</m> et <m>D</m>, qui sont des aires de triangles, comme la moitié
+  des produits vectoriels de vecteurs construits à partir de <m>\va</m>, <m>\vb</m> et <m>\vc</m>.
+  </p></hint>
+
+  <answer><p>
+  Voir la solution.
+  </p></answer>
+
+  <solution><p>
+  Choisissons nos axes de coordonnées de sorte que le sommet opposé à
+  la face d'aire <m>D</m> est à l'origine. Denotons par <m>\va</m>, <m>\vb</m> et
+  <m>\vc</m> les sommets opposés aux côtés d'aires <m>A</m>, <m>B</m> et <m>C</m> respectivement.
+  Puis la face de la région d'aire <m>A</m> à pour arêtes <m>\vb</m> et <m>\vc</m> de telle sorte que
+  <m>A=\half |\vb\times\vc|</m>. De façon similaire <m>B=\half|\vc\times\va|</m> et
+  <m>C=\half|\va\times \vb|</m>. La face de la région d'aire <m>D</m> est le triangle
+  engendré par <m>\vb-\va</m> et <m>\vc-\va</m> de telle sorte que
+  <md>
+  <mrow>
+  D&amp;=\half|(\vb-\va)\times(\vc-\va)|\cr
+  &amp;=\half|\vb\times \vc-\va\times\vc-\vb\times\va|
+  </mrow><mrow>
+  &amp;=\half|\vb\times \vc+\vc\times\va+\va\times\vb|
+  </mrow>
+  </md>
+  Par hypothèse, les vecteurs <m>\va</m>, <m>\vb</m> et <m>\vc</m> sont tous perpendiculaires
+  les uns aux autres. Par conséquent, les vecteurs <m>\vb\times \vc</m> (qui est
+  un scalaire fois <m>\va</m>), <m>\vc\times\va</m> (qui est
+  un scalaire fois <m>\vb</m>) et <m>\va\times\vb</m> (qui est
+  un scalaire fois <m>\vc</m>),
+  sont aussi mutuellement perpendiculaires. Donc, lorsque nous multiplions
+  <me>
+  D^2=\frac{1}{4}\big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot\big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+  </me>
+  tous les produits vectoriels disparaissent, laissant
+  <md>
+  <mrow>
+  D^2&amp;=\frac{1}{4}\big[(\vb\times \vc)\cdot(\vb\times \vc)
+  +(\vc\times\va)\cdot(\vc\times\va)
+  +(\va\times\vb)\cdot(\va\times\vb)\big]
+  </mrow><mrow>
+  &amp;=A^2+B^2+C^2
+  </mrow>
+  </md>
+  </p></solution>
+</exercise>
+
+<!--
+<exercise>
+<statement><p>
+(Three dimensional law of cosines)  Let <m>A</m>, <m>B</m>, <m>C</m> and
+<m>D</m> be the areas of the four faces of a tetrahedron. Let
+<m>\a</m> be the angle between the faces with areas <m>B</m> and <m>C</m>,
+<m>\b</m> be the angle between the faces with areas <m>A</m> and <m>C</m> and
+<m>\g</m> be the angle between the faces with areas <m>A</m> and <m>B</m>.
+(By definition, the angle between two faces is the angle between the normal vectors to the faces.)
+ Show that
+<me>
+D^2=A^2+B^2+C^2-2BC\cos\a-2AC\cos\b-2AB\cos\g
+</me>
+</p></statement>
+
+<hint><p>
+  Do problem <xref ref="prb_pythagorous"/> first.
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+As in problem <xref ref="prb_pythagorous"/>,
+<me>
+D^2=\frac{1}{4}
+  \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot
+  \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+</me>
+But now <m>(\vb\times \vc)\cdot(\va\times\vc)</m>, instead of vanishing,
+is <m>|\vb\times \vc|=2A</m> times <m>|\va\times\vc|=2B</m> times
+the cosine of the angle between <m>\vb\times \vc</m> (which is perpendicular
+to the face of area <m>A</m>) and <m>\va\times\vc</m> (which is perpendicular
+to the face of area <m>B</m>). That is
+<md>
+<mrow>
+(\vb\times \vc)\cdot(\va\times\vc)&amp;=4 AB\cos \g
+</mrow><mrow>
+(\va\times \vb)\cdot(\vc\times\vb)&amp;=4 AC\cos \b
+</mrow><mrow>
+(\vb\times \va)\cdot(\vc\times\va)&amp;=4 BC\cos \a
+</mrow>
+</md>
+(If you're worried about the signs, that is, if you are worried about
+why <m>(\vb\times \vc)\cdot(\va\times\vc)=4 AB\cos \g</m>
+rather than <m>(\vb\times \vc)\cdot(\vc\times\va)=4 AB\cos \g</m>,
+note  that when <m>\va\approx\vb</m>,
+<m>(\vb\times \vc)\cdot(\va\times\vc)\approx|\vb\times\vc|^2</m> is positive and
+<m>(\vb\times \vc)\cdot(\vc\times\va) \approx -|\vb\times\vc|^2</m> is negative.) Now, expanding out
+<md>
+<mrow>
+D^2\ =\ &amp;\frac{1}{4}
+   \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot
+   \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+</mrow><mrow>
+=\ &amp;\frac{1}{4}\big[(\vb\times \vc)\cdot(\vb\times \vc)
+     +(\vc\times\va)\cdot(\vc\times\va)
+     +(\va\times\vb)\cdot(\va\times\vb)
+</mrow><mrow>
+&amp;+2(\vb\times \vc)\cdot(\vc\times \va)
+ +2(\vb\times \vc)\cdot(\va\times \vb)
+ +2(\vc\times \va)\cdot(\va\times \vb)\big]
+</mrow><mrow>
+=\ &amp;A^2+B^2+C^2-2 AB\cos \g-2 AC\cos \b-2 BC\cos \a
+</mrow>
+</md>
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.4 Produit vectoriel (Voir la solution) -->
+
+<exercise>
+  <statement><p>
+  (Loi des cosinus en trois dimensions) Soient <m>A</m>, <m>B</m>, <m>C</m> et
+  <m>D</m> les aires des quatre faces d'un tétrahèdre. Soit
+  <m>\a</m> l'angle entre les faces d'aires <m>B</m> et <m>C</m>, soit
+  <m>\b</m> l'angle entre les faces d'aires <m>A</m> et <m>C</m> et soit
+  <m>\g</m> l'angle entre les faces d'aires <m>A</m> et <m>B</m>.
+  (Par définition, l'angle entre deux faces est l'angle entre les vecteurs normaux aux faces).
+  Montrez que
+  <me>
+  D^2=A^2+B^2+C^2-2BC\cos\a-2AC\cos\b-2AB\cos\g
+  </me>
+  </p></statement>
+
+  <hint><p>
+  Faire l'<xref ref="prb_pythagorous"/> en premier.
+  </p></hint>
+
+  <answer><p>
+  Voir la solution.
+  </p></answer>
+
+  <solution><p>
+  Comme dans le problème <xref ref="prb_pythagorous"/>,
+  <me>
+  D^2=\frac{1}{4}
+    \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot
+    \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+  </me>
+  Par contre, maintenant <m>(\vb\times \vc)\cdot(\va\times\vc)</m>, au lieu de disparaître,
+  est <m>|\vb\times \vc|=2A</m> multiplié par <m>|\va\times\vc|=2B</m> multiplié par
+  le cosinus de l'angle entre <m>\vb\times \vc</m> (qui est perpendiculaire
+  à la face d'aire <m>A</m>) et <m>\va\times\vc</m> (qui est perpendiculaire
+  à la face d'aire <m>B</m>). C'est-à-dire
+  <md>
+  <mrow>
+  (\vb\times \vc)\cdot(\va\times\vc)&amp;=4 AB\cos \g
+  </mrow><mrow>
+  (\va\times \vb)\cdot(\vc\times\vb)&amp;=4 AC\cos \b
+  </mrow><mrow>
+  (\vb\times \va)\cdot(\vc\times\va)&amp;=4 BC\cos \a
+  </mrow>
+  </md>
+  (Si vous vous inquiétez des signes, c'est-à-dire si vous vous demandez
+  pourquoi <m>(\vb\times \vc)\cdot(\va\times\vc)=4 AB\cos \g</m>
+  plutôt que <m>(\vb\times \vc)\cdot(\vc\times\va)=4 AB\cos \g</m>,
+  notez que lorsque <m>\va\approx\vb</m>,
+  <m>(\vb\times \vc)\cdot(\va\times\vc)\approx|\vb\times\vc|^2</m> est positif et
+  <m>(\vb\times \vc)\cdot(\vc\times\va) \approx -|\vb\times\vc|^2</m> est négatif). Maintenant, l'expansion
+  <md>
+  <mrow>
+  D^2\ =\ &amp;\frac{1}{4}
+     \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]\cdot
+     \big[\vb\times \vc+\vc\times\va+\va\times\vb\big]
+  </mrow><mrow>
+  =\ &amp;\frac{1}{4}\big[(\vb\times \vc)\cdot(\vb\times \vc)
+       +(\vc\times\va)\cdot(\vc\times\va)
+       +(\va\times\vb)\cdot(\va\times\vb)
+  </mrow><mrow>
+  &amp;+2(\vb\times \vc)\cdot(\vc\times \va)
+   +2(\vb\times \vc)\cdot(\va\times \vb)
+   +2(\vc\times \va)\cdot(\va\times \vb)\big]
+  </mrow><mrow>
+  =\ &amp;A^2+B^2+C^2-2 AB\cos \g-2 AC\cos \b-2 BC\cos \a
+  </mrow>
+  </md>
+  </p></solution>
+</exercise>
+</exercisegroup>
+<!--
+</exercisegroup>
+-->
+</exercises>

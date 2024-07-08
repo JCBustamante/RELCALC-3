@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+  <!--
+  <exercise>
+  <statement><p>
+  Determine whether the given pair of vectors is perpendicular
+  <ol marker = "(a)">
+  <li>
+  <m>\llt 1,3,2\rgt ,\ \llt 2,-2,2\rgt </m>
+  </li>
+  <li>
+  <m>\llt -3,1,7\rgt ,\ \llt 2,-1,1\rgt </m>
+  </li>
+  <li>
+  <m>\llt 2,1,1\rgt ,\ \llt -1,4,2\rgt </m>
+  </li>
+  </ol>
+  </p></statement>
+
+  <hint><p>
+  Review Theorem <xref ref="prop-Prop-scalaire"/>.
+  </p></hint>
+
+  <answer><p>
+  <ol marker = "(a)">
+    <li>perpendicular</li>
+    <li>perpendicular</li>
+    <li>not perpendicular</li>
+  </ol>
+  </p></answer>
+
+  <solution><p>
+  By property 7 of Theorem <xref ref="prop-Prop-scalaire"/>,
+  <md alignment="alignat">
+  <mrow>
+  \llt 1,3,2\rgt \cdot\llt 2,-2,2\rgt
+  &amp;=1\times2-3\times 2+2\times2=0
+  \tag{a}
+  </mrow><mrow>
+  \llt -3,1,7\rgt \cdot\llt 2,-1,1\rgt
+  &amp;=-3\times2-1\times 1+7\times1=0
+  \tag{b}
+  </mrow><mrow>
+  \llt 2,1,1\rgt \cdot\llt -1,4,2\rgt
+  &amp;=-2\times1+1\times 4+1\times2=4\ne 0
+  \tag{c}
+  </mrow>
+  </md>
+  says that the vectors of parts (a) and (b) are perpendicular, while the vectors of part (c) are not perpendicular.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 produit scalaire. Vérifier les références dans l'indice et la solution. -->
+
+<exercisegroup>
+  <title>Pour se pratiquer</title>
+  <exercise>
+      <statement><p>
+      Déterminer si oui ou non les paires de vecteurs sont orthogonaux.
+      <ol marker = "(a)">
+      <li>
+      <m>\llt 1,3,2\rgt ,\ \llt 2,-2,2\rgt </m>
+      </li>
+      <li>
+      <m>\llt -3,1,7\rgt ,\ \llt 2,-1,1\rgt </m>
+      </li>
+      <li>
+      <m>\llt 2,1,1\rgt ,\ \llt -1,4,2\rgt </m>
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Revoir  <xref ref="prop-Prop-scalaire"/>.
+      </p></hint>
+
+      <answer><p>
+      <ol marker = "(a)">
+        <li>perpendiculaire</li>
+        <li>perpendiculaire</li>
+        <li>non perpendiculaire</li>
+      </ol>
+      </p></answer>
+
+      <solution><p>
+      Par la propriété 7 du Théorème <xref ref="prop-Prop-scalaire"/>,
+      <md alignment="alignat">
+      <mrow>
+      \llt 1,3,2\rgt \cdot\llt 2,-2,2\rgt
+      &amp;=1\times2-3\times 2+2\times2=0
+      \tag{a}
+      </mrow><mrow>
+      \llt -3,1,7\rgt \cdot\llt 2,-1,1\rgt
+      &amp;=-3\times2-1\times 1+7\times1=0
+      \tag{b}
+      </mrow><mrow>
+      \llt 2,1,1\rgt \cdot\llt -1,4,2\rgt
+      &amp;=-2\times1+1\times 4+1\times2=4\ne 0
+      \tag{c}
+      </mrow>
+      </md>
+      dit que les vecteurs des parties (a) et (b) sont perpendiculaires, tandis que les vecteurs de la partie (c) ne sont pas perpendiculaires.
+      </p></solution>
+    </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Let <m>\va=\llt a_1,a_2\rgt</m>. Compute the projection of <m>\va</m> on
+  <m>\vi</m> and <m>\vj</m>.
+  </p></statement>
+
+  <answer><p>
+  <m>\text{proj}_{\vi}\va=a_1\vi</m>
+  <m>\text{proj}_{\vj}\va=a_2\vj</m>.
+  </p></answer>
+
+  <solution><p>
+  <m>\text{proj}_{\vi}\va=(\va\cdot\vi)\vi
+  =a_1\vi</m> and
+  <m>\text{proj}_{\vj}\va=(\va\cdot\vj)\vj
+  =a_2\vj</m>.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire -->
+  <exercise>
+    <statement><p>
+    Soit <m>\va=\llt a_1,a_2\rgt</m>. Calculer la projection de <m>\va</m> sur
+    <m>\vi</m> et <m>\vj</m>.
+    </p></statement>
+
+    <answer><p>
+    <m>\text{proj}_{\vi}\va=a_1\vi</m>
+    <m>\text{proj}_{\vj}\va=a_2\vj</m>.
+    </p></answer>
+
+    <solution><p>
+    <m>\text{proj}_{\vi}\va=(\va\cdot\vi)\vi
+    =a_1\vi</m> et
+    <m>\text{proj}_{\vj}\va=(\va\cdot\vj)\vj
+    =a_2\vj</m>.
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Does the triangle with vertices <m>(1,2,3),\ (4,0,5)</m> and <m>(3,6,4)</m>
+  have a right angle?
+  </p></statement>
+
+  <answer><p>
+  Yes.
+  </p></answer>
+
+  <solution><p>
+  The vector from <m>(1,2,3)</m> to <m>(4,0,5)</m> is <m>\llt 3,-2,2\rgt</m>.
+  The vector from <m>(1,2,3)</m> to <m>(3,6,4)</m> is <m>\llt 2,4,1\rgt</m>.
+  The dot product between these two vectors is
+  <m>\llt 3,-2,2\rgt\cdot\llt 2,4,1\rgt=0</m>,
+  so the vectors are perpendicular and the triangle does contain a right
+  angle.
+  </p>
+
+  </solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire -->
+  <exercise>
+    <statement><p>
+    Est-ce que le triangle avec sommets <m>(1,2,3),\ (4,0,5)</m> et <m>(3,6,4)</m>
+    a un angle droit?
+    </p></statement>
+
+    <answer><p>
+    Oui.
+    </p></answer>
+
+    <solution><p>
+    Le vecteur de <m>(1,2,3)</m> à <m>(4,0,5)</m> est <m>\llt 3,-2,2\rgt</m>.
+    Le vecteur de <m>(1,2,3)</m> à <m>(3,6,4)</m> est <m>\llt 2,4,1\rgt</m>.
+    Le produit scalaire entre ces vecteurs est
+    <m>\llt 3,-2,2\rgt\cdot\llt 2,4,1\rgt=0</m>,
+    donc les vecteurs sont perpendiculaires et le triangle contient un angle droit.
+    </p>
+
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement><p>
+      Calculez le produit scalaire des vecteurs <m>\va</m> et <m>\vb</m>.
+      Trouvez l'angle entre eux.
+    <ol marker = "(a)">
+    <li> <m>\va=\llt 1,2\rgt ,\ \vb=\llt -2,3\rgt </m>
+    </li>
+    <li> <m>\va=\llt -1,1\rgt ,\ \vb=\llt 1,1\rgt </m>
+    </li>
+    <li> <m>\va=\llt 1,1\rgt ,\ \vb=\llt 2,2\rgt </m>
+    </li>
+    <li> <m>\va=\llt 1,2,1\rgt ,\ \vb=\llt -1,1,1\rgt </m>
+    </li>
+    <li> <m>\va=\llt -1,2,3\rgt ,\ \vb=\llt 3,0,1\rgt </m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <md alignment="alignat">
+    <mrow>
+    \va\cdot\vb&amp;=4\qquad &amp;
+    \theta &amp;= 60.25^\circ
+    \tag{a}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=0 &amp;
+    \theta &amp;= 90^\circ
+    \tag{b}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=4 &amp;
+    \theta &amp;= 0^\circ
+    \tag{c}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=2 &amp;
+    \theta &amp;= 61.87^\circ
+    \tag{d}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=0 &amp;
+    \theta &amp;= 90^\circ
+    \tag{e}
+    </mrow>
+    </md>
+    </p></answer>
+
+    <solution><p>
+    <md alignment="alignat">
+    <mrow>
+    \va\cdot\vb&amp;=\llt 1,2\rgt\cdot\llt -2,3\rgt=4\qquad &amp;
+    \cos\theta&amp;=\frac{4}{\sqrt{5}\sqrt{13}}=.4961
+    \notag</mrow><mrow>
+    &amp; &amp; \implies\theta &amp;= 60.25^\circ
+    \tag{a}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=\llt -1,1\rgt\cdot\llt 1,1\rgt=0\qquad &amp;
+    \cos\theta&amp;=\frac{0}{\sqrt{2}\sqrt{2}}=0
+    \notag</mrow><mrow>
+    &amp; &amp; \implies\theta &amp;= 90^\circ
+    \tag{b}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=\llt 1,1\rgt\cdot\llt 2,2\rgt=4\qquad &amp;
+    \cos\theta&amp;=\frac{4}{\sqrt{2}\sqrt{8}}=1
+    \notag</mrow><mrow>
+    &amp; &amp; \implies\theta &amp;= 0^\circ
+    \tag{c}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=\llt 1,2,1\rgt\cdot\llt -1,1,1\rgt=2\qquad &amp;
+    \cos\theta&amp;=\frac{2}{\sqrt{6}\sqrt{3}}=.4714
+    \notag</mrow><mrow>
+    &amp; &amp; \implies\theta &amp;= 61.87^\circ
+    \tag{d}
+    </mrow><mrow>
+    \va\cdot\vb&amp;=\llt -1,2,3\rgt\cdot\llt 3,0,1\rgt=0\qquad &amp;
+    \cos\theta&amp;=\frac{0}{\sqrt{14}\sqrt{10}}=0
+    \notag</mrow><mrow>
+    &amp; &amp; \implies\theta &amp;= 90^\circ
+    \tag{e}
+    </mrow>
+    </md>
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Determine the angle between the vectors <m>\va</m> and <m>\vb</m> if
+  <ol marker = "(a)">
+  <li>
+     <m>\va=\llt 1,2\rgt,\ \vb=\llt 3,4\rgt</m>
+  </li>
+  <li>
+     <m>\va=\llt 2,1,4\rgt,\ \vb=\llt 4,-2,1\rgt</m>
+  </li>
+  <li>
+    <m>\va=\llt 1,-2,1\rgt,\ \vb=\llt 3,1,0\rgt</m>
+  </li>
+  </ol>
+  </p></statement>
+
+  <answer><p>
+  <ol marker = "(a)">
+    <li><m>10.3^\circ</m></li>
+    <li><m>61.6^\circ</m></li>
+    <li><m>82.6^\circ</m></li>
+  </ol>
+  </p></answer>
+
+  <solution><p>
+  By property 6 of Theorem <xref ref="prop-Prop-scalaire"/>,
+  <md alignment="alignat">
+  <mrow>
+  &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+          =\frac{1\times 3+2\times 4}{\sqrt{1+4}\sqrt{9+16}}
+          =\frac{11}{5\sqrt{5}}= .9839
+  \notag</mrow><mrow>
+  &amp;\hskip1in\implies\  \theta=10.3^\circ
+  \tag{a}
+  </mrow><mrow>
+  &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+          =\frac{2\times 4-1\times 2+4\times 1}{\sqrt{4+1+16}\sqrt{16+4+1}}
+          =\frac{10}{21}= .4762
+  \notag</mrow><mrow>
+  &amp;\hskip1in\implies\  \theta=61.6^\circ
+  \tag{b}
+  </mrow><mrow>
+   &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+          =\frac{1\times 3-2\times 1+1\times 0}{\sqrt{1+4+1}\sqrt{9+1}}
+          =\frac{1}{\sqrt{60}}= .1291
+  \notag</mrow><mrow>
+  &amp;\hskip1in\implies\  \theta=82.6^\circ
+  \tag{c}
+  </mrow>
+  </md>
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire -->
+  <exercise>
+    <statement><p>
+    Déterminez l'angle entre les vecteurs <m>\va</m> et <m>\vb</m> si
+    <ol marker = "(a)">
+    <li>
+       <m>\va=\llt 1,2\rgt,\ \vb=\llt 3,4\rgt</m>
+    </li>
+    <li>
+       <m>\va=\llt 2,1,4\rgt,\ \vb=\llt 4,-2,1\rgt</m>
+    </li>
+    <li>
+      <m>\va=\llt 1,-2,1\rgt,\ \vb=\llt 3,1,0\rgt</m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol marker = "(a)">
+      <li><m>10.3^\circ</m></li>
+      <li><m>61.6^\circ</m></li>
+      <li><m>82.6^\circ</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    Par la propriété 6 du Théorème <xref ref="prop-Prop-scalaire"/>,
+    <md alignment="alignat">
+    <mrow>
+    &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+            =\frac{1\times 3+2\times 4}{\sqrt{1+4}\sqrt{9+16}}
+            =\frac{11}{5\sqrt{5}}= .9839
+    \notag</mrow><mrow>
+    &amp;\hskip1in\implies\  \theta=10.3^\circ
+    \tag{a}
+    </mrow><mrow>
+    &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+            =\frac{2\times 4-1\times 2+4\times 1}{\sqrt{4+1+16}\sqrt{16+4+1}}
+            =\frac{10}{21}= .4762
+    \notag</mrow><mrow>
+    &amp;\hskip1in\implies\  \theta=61.6^\circ
+    \tag{b}
+    </mrow><mrow>
+     &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+            =\frac{1\times 3-2\times 1+1\times 0}{\sqrt{1+4+1}\sqrt{9+1}}
+            =\frac{1}{\sqrt{60}}= .1291
+    \notag</mrow><mrow>
+    &amp;\hskip1in\implies\  \theta=82.6^\circ
+    \tag{c}
+    </mrow>
+    </md>
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Determine all values of <m>y</m> for which the given vectors are perpendicular.
+  <ol marker = "(a)">
+  <li>
+  <m>\llt 2,4\rgt ,\ \llt 2,y\rgt </m>
+  </li>
+  <li>
+  <m>\llt 4,-1\rgt ,\ \llt y,y^2\rgt </m>
+  </li>
+  <li>
+  <m>\llt 3,1,1\rgt ,\ \llt 2,5y,y^2\rgt </m>
+  </li>
+  </ol>
+  </p></statement>
+
+  <answer><p>
+  <ol marker = "(a)">
+    <li><m>-1</m></li>
+    <li><m>0,4</m></li>
+    <li><m>-2,-3</m></li>
+  </ol>
+  </p></answer>
+
+  <solution><p>
+  <md alignment="alignat">
+  <mrow>
+  &amp;\llt 2,4\rgt \cdot\llt 2,y\rgt =2\times2+4\times y=4+4y=0
+     &amp;&amp;\ \iff\  y=-1
+  \tag{a}
+  </mrow><mrow>
+  &amp;\llt 4,-1\rgt \cdot\llt y,y^2\rgt =4\times y-1\times y^2=4y-y^2=0
+     &amp;&amp;\ \iff\  y=0,4
+  \tag{b}
+  </mrow><mrow>
+  &amp;\llt 3,1,1\rgt \cdot\llt 2,5y,y^2\rgt
+    =6+5y+y^2=0
+     &amp;&amp;\ \iff\  y=-2,-3
+  \tag{c}
+  </mrow>
+  </md>
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire -->
+  <exercise>
+    <statement><p>
+    Déterminer toutes les valeurs de <m>y</m> pour lesquelles les vecteurs donnés sont orthogonaux.
+    <ol marker = "(a)">
+    <li>
+    <m>\llt 2,4\rgt ,\ \llt 2,y\rgt </m>
+    </li>
+    <li>
+    <m>\llt 4,-1\rgt ,\ \llt y,y^2\rgt </m>
+    </li>
+    <li>
+    <m>\llt 3,1,1\rgt ,\ \llt 2,5y,y^2\rgt </m>
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol marker = "(a)">
+      <li><m>-1</m></li>
+      <li><m>0,4</m></li>
+      <li><m>-2,-3</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    <md alignment="alignat">
+    <mrow>
+    &amp;\llt 2,4\rgt \cdot\llt 2,y\rgt =2\times2+4\times y=4+4y=0
+       &amp;&amp;\ \iff\  y=-1
+    \tag{a}
+    </mrow><mrow>
+    &amp;\llt 4,-1\rgt \cdot\llt y,y^2\rgt =4\times y-1\times y^2=4y-y^2=0
+       &amp;&amp;\ \iff\  y=0,4
+    \tag{b}
+    </mrow><mrow>
+    &amp;\llt 3,1,1\rgt \cdot\llt 2,5y,y^2\rgt
+      =6+5y+y^2=0
+       &amp;&amp;\ \iff\  y=-2,-3
+    \tag{c}
+    </mrow>
+    </md>
+    </p></solution>
+  </exercise>
+
+</exercisegroup>
+<!--
+<exercise>
+<statement><p>
+Consider the following statement: <q>If <m>\va\ne\vZero</m>
+and if <m>\va\cdot\vb=\va\cdot\vc</m> then <m>\vb=\vc</m>.</q>
+If the statment is true, prove it. If the statement is false, give a
+counterexample.
+</p></statement>
+
+<answer><p>
+This statement is false. One counterexample is <m>\va=\llt 1,0,0\rgt </m>,
+<m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>. Then <m>\va\cdot\vb=\va\cdot\vc=0</m>, but <m>\vb\ne\vc</m>. There are <em>many</em> other counterexamples.
+</p></answer>
+
+<solution><p>
+This statement is false. The two numbers
+<m>\va\cdot\vb</m>, <m>\va\cdot\vc</m> are equal if and only if
+<m>\va\cdot(\vb-\vc)= 0</m>. This in turn is the case if and only
+if <m>\va</m> is perpendicular to <m>\vb-\vc</m> (under the convention that
+<m>\vZero</m> is perpendicular to all vectors). For example,
+if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>, then <m>\vb-\vc=\llt 0,1,-1\rgt</m> is perpendicular to <m>\va</m> so that
+<m>\va\cdot\vb=\va\cdot\vc</m>.
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.3 Produit scalaire -->
+<exercisegroup>
+  <title>Pour mieux comprendre</title>
+  <exercise>
+    <statement><p>
+      Considérons l'énoncé suivant : <q>Si <m>\va\ne\vZero</m>
+      et si <m>\va\cdot\vb=\va\cdot\vc</m>, alors <m>\vb=\vc</m>.</q>
+      Si l'affirmation est vraie, prouvez-la. Si l'affirmation est fausse, donnez un
+      contre-exemple.
+    </p></statement>
+
+    <answer><p>
+      Cette affirmation est fausse. Un contre-exemple est <m>\va=\llt 1,0,0\rgt </m>,
+      <m>\vb=\llt 0,1,0\rgt ,\vc=\llt 0,0,1\rgt </m>. Alors <m>\va\cdot\vb=\va\cdot\vc=0</m>, mais <m>\vb\ne\vc</m>. Il y a <em>beaucoup</em> d'autres contre-exemples.
+    </p></answer>
+
+    <solution><p>
+      Cette affirmation est fausse. Les deux nombres
+      <m>\va\cdot\vb</m> et <m>\va\cdot\vc</m> sont égaux si et seulement si
+      <m>\va\cdot(\vb-\vc)= 0</m>. Ceci est à son tour le cas si et seulement
+      si <m>\va</m> est perpendiculaire à <m>\vb-\vc</m> (sous la convention que
+      <m>\vZero</m> est perpendiculaire à tous les vecteurs). Par exemple,
+      si <m>\va=\llt 1,0,0\rgt</m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt</m>, alors <m>\vb-\vc=\llt 0,1,-1\rgt</m> est perpendiculaire à <m>\va</m> de sorte que
+      <m>\va\cdot\vb=\va\cdot\vc</m>.
+    </p></solution>
+  </exercise>
+
+  <exercise>
+    <statement><p>
+    Une bille est posée sur le plan <m>ax+by+cz=d</m>. Le système de coordonnées
+    a été choisi de sorte que l'axe positif <m>z</m> pointe vers le haut.
+    Le coefficient <m>c</m> est non nul et les coefficients <m>a</m> et <m>b</m> sont non
+    tous nuls.
+    Dans quel sens roule la bille?
+    Pourquoi les conditions <q><m>c\ne 0</m></q> et <q><m>a,b</m></q> n'ont-elles pas toutes deux été imposées à zéro?
+    </p></statement>
+
+    <answer><p>
+    La bille roule dans le sens <m>\llt ac,bc,-a^2-b^2\rgt</m>.
+    Si <m>c=0</m>, le plan est vertical. Dans ce cas, le marbre
+    ne roule pas, il tombe tout droit. Si <m>a=b=0</m>, le plan est horizontal.
+    Dans ce cas, la bille ne roule pas, elle reste immobile.
+    </p></answer>
+
+    <solution><p>
+    The marble is subject to two forces. The first, gravity, is
+    <m>-mg\,\vk</m> with <m>m</m> being the mass of the marble. The second is the normal
+    force imposed by the plane. This forces acts in a direction perpendicular
+    to the plane. One vector normal to the plane is <m>a\,\vi+b\,\vj+c\,\vk</m>.
+    So the force due to the plane is <m>T\llt a,b,c\rgt</m> with <m>T</m> determined  by the
+    property that the net force perpendicular to the plane must be exactly
+    zero, so that the marble remains on the plane, neither digging into nor
+    flying off of it. The projection of the gravitational force onto the normal
+    vector <m>\llt a,b,c\rgt</m> is
+    <me>
+    \frac{-mg\llt 0,0,1\rgt\cdot\llt a,b,c\rgt}{|\llt a,b,c\rgt|^2}\llt a,b,c\rgt
+    =\frac{-mgc}{a^2+b^2+c^2}\llt a,b,c\rgt
+    </me>
+    The condition that determines <m>T</m> is thus
+    <me>
+    T\llt a,b,c\rgt+\frac{-mgc}{a^2+b^2+c^2}\llt a,b,c\rgt =0
+    \implies T=\frac{mgc}{a^2+b^2+c^2}
+    </me>
+    The total force on the marble is then (ignoring friction - which will
+    have no effect on the direction of motion)
+    <md>
+    <mrow>
+    T\llt a,b,c\rgt-mg\llt 0,0,1\rgt&amp;=\frac{mgc}{a^2+b^2+c^2}\llt a,b,c\rgt-mg\llt 0,0,1\rgt\cr
+    &amp;=mg\frac{c\llt a,b,c\rgt-\llt 0,0,a^2+b^2+c^2\rgt}{a^2+b^2+c^2}\cr
+    &amp;=mg\frac{\llt ac,bc,-a^2-b^2\rgt}{a^2+b^2+c^2}\cr
+    </mrow>
+    </md>
+    The direction of motion <m>\llt ac,bc,-a^2-b^2\rgt</m>. If you want to turn
+    this into a unit vector, just divide by <m>\sqrt{(a^2+b^2)(a^2+b^2+c^2)}</m>.
+    Note that the direction vector in perpendicular <m>\llt a,b,c\rgt</m> and hence is parallel
+    to the plane. If <m>c=0</m>, the plane is vertical. In this case, the marble
+    doesn't roll - it falls straight down. If <m>a=b=0</m>, the plane is horizontal.
+     In this case, the marble doesn't roll <mdash/> it remains stationary.
+    </p></solution>
+  </exercise>
+
+  <exercise>
+    <statement><p>
+    Trouvez l'angle entre la diagonale d'un cube et la diagonale
+    d'une de ses faces.
+    </p></statement>
+
+    <answer><p>
+    <m>35.26^\circ</m> ou <m>90^\circ</m> ou <m>144.74^\circ</m>
+    </p></answer>
+
+    <solution><p>
+    Supposons que le cube ait une hauteur, une longueur et une largeur <m>s</m>.
+    Nous pouvons choisir nos axes de coordonnées de sorte que les sommets
+    du cube se trouvent à <m>(0,0,0)</m>, <m>(s,0,0)</m>, <m>(0,s,0)</m>, <m>(0,0,s)</m>,
+    <m>(s,s,0)</m>, <m>(0,s,s)</m>, <m>(s,0,s)</m> et <m>(s,s,s)</m>.
+    </p>
+
+    <p>We'll start with a couple of examples. The diagonal from <m>(0,0,0)</m>
+    to <m>(s,s,s)</m> is <m>\llt s,s,s\rgt</m>. One face of the cube has vertices <m>(0,0,0)</m>,
+    <m>(s,0,0)</m>, <m>(0,s,0)</m> and <m>(s,s,0)</m>. One diagonal of this face runs from
+    <m>(0,0,0)</m> to <m>(s,s,0)</m> and hence is <m>\llt s,s,0\rgt</m>. The angle between
+    <m>\llt s,s,s\rgt</m> and <m>\llt s,s,0\rgt</m> is
+    <md>
+    <mrow>
+    \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt s,s,0\rgt}
+                        {|\llt s,s,s\rgt|\,|\llt s,s,0\rgt|}\right)
+    &amp;=\arccos\left(\frac{2s^2}{\sqrt{3}s\,\sqrt{2}s}\right)
+    =\arccos\left(\frac{2}{\sqrt{6}}\right)
+    </mrow><mrow>
+    &amp;\approx 35.26^\circ
+    </mrow>
+    </md>
+    A second diagonal for the face with vertices  <m>(0,0,0)</m>,
+    <m>(s,0,0)</m>, <m>(0,s,0)</m> and <m>(s,s,0)</m> is that running from
+    <m>(s,0,0)</m> to <m>(0,s,0)</m>. This diagonal is <m>\llt -s,s,0\rgt</m>. The angle between
+    <m>\llt s,s,s\rgt</m> and <m>\llt -s,s,0\rgt</m> is
+    <md>
+    <mrow>
+    \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt -s,s,0\rgt}
+                   {|\llt s,s,s\rgt|\,|\llt -s,s,0\rgt|}\right)
+    &amp;=\arccos\left(\frac{0}{\sqrt{3}s\,\sqrt{2}s}\right)
+    =\arccos(0)</mrow><mrow>
+    &amp;=90^\circ
+    </mrow>
+    </md>
+    </p>
+
+    <p>Now we'll consider the general case.
+    Note that every component of every vertex of the cube is either <m>0</m> or
+    <m>s</m>. In general, two vertices of the cube are at
+    opposite ends of a diagonal of the cube if all three components of the
+    two vertices are different. For example, if one end of the diagonal is
+    <m>(s,0,s)</m>, the other end is <m>(0,s,0)</m>. The diagonals of the cube are all
+    of the form <m>\llt \pm s,\pm s,\pm s\rgt</m>. All of these diagonals are of length <m>\sqrt{3}s</m>.
+    Two vertices are on the same face of the cube if one of their components
+    agree. They are on opposite ends of a diagonal for the face if their other
+    two components differ. For example <m>(0,s,s)</m> and <m>(s,0,s)</m> are both on
+    the face with <m>z=s</m>.  Because the <m>x</m> components <m>0,\ s</m> are different
+    and the <m>y</m> components <m>s,\ 0</m> are different, <m>(0,s,s)</m> and <m>(s,0,s)</m>
+    are the ends of a diagonal of the face with <m>z=s</m>. The diagonals of the
+    faces with <m>z=0</m> or <m>z=s</m> are <m>\llt \pm s,\pm s,0\rgt</m>. The diagonals of the
+    faces with <m>y=0</m> or <m>y=s</m> are <m>\llt \pm s,0, \pm s\rgt</m>. The diagonals of the
+    faces with <m>x=0</m> or <m>x=s</m> are <m>\llt 0,\pm s,\pm s\rgt</m>. All of these diagonals
+    have length <m>\sqrt{2}s</m>. The dot product of one the cube diagonals
+    <m>\llt \pm s,\pm s,\pm s\rgt</m> with one of the face diagonals  <m>\llt \pm s,\pm s,0\rgt</m>,
+     <m>\llt \pm s,0, \pm s\rgt</m>, <m>\llt 0,\pm s,\pm s\rgt</m> is of the form <m>\pm s^2\pm s^2+0</m>
+    and hence must be either <m>2s^2</m> or <m>0</m> or <m>-2s^2</m>. In general, the angle
+    between a cube diagonal and a face diagonal is
+    <md>
+    <mrow>
+    \arccos\left(\frac{2s^2 \text{ or } 0 \text{ or } -2s^2}{\sqrt{3}s\,\sqrt{2}s}\right)
+    &amp;=\arccos\left(\frac{2 \text{ or } 0 \text{ or } or -2}{\sqrt{6}}\right)
+    </mrow><mrow>
+    &amp;\approx
+    5.26^\circ \text{ or } 90^\circ \text{ or } 144.74^\circ.
+    </mrow>
+    </md>
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Consider the three points <m>O=(0,0)</m>, <m>A=(a,0)</m> and <m>B=(b,c)</m>.
+  <ol marker = "(a)">
+  <li><p>
+  Sketch, in a single figure,
+  <ul>
+  <li>
+  the triangle with vertices <m>O</m>, <m>A</m> and <m>B</m>, and
+  </li>
+  <li>
+  the circumscribing circle for the triangle (i.e. the circle that goes
+  through all three vertices), and
+  </li>
+  <li><p>
+  the vectors
+  <ul>
+  <li>
+  <m>\overrightarrow{OA}</m>, from <m>O</m> to <m>A</m>,
+  </li>
+  <li>
+  <m>\overrightarrow{OB}</m>, from <m>O</m> to <m>B</m>,
+  </li>
+  <li>
+  <m>\overrightarrow{OC}</m>, from <m>O</m> to <m>C</m>, where <m>C</m> is the centre of the circumscribing circle.
+  </li>
+  </ul></p>
+  </li>
+  </ul>
+  Then add to the sketch and evaluate, from the sketch,
+  <ul>
+  <li>
+  the projection of the vector <m>\overrightarrow{OC}</m> on the vector
+  <m>\overrightarrow{OA}</m>, and
+  </li>
+  <li>
+  the projection of the vector <m>\overrightarrow{OC}</m> on the vector
+  <m>\overrightarrow{OB}</m>.
+  </li>
+  </ul></p>
+  </li>
+  <li> Determine <m>C</m>.
+  </li>
+  <li><p>
+  Evaluate, using the formula <xref ref="def-Projection"/>,
+  <ul>
+  <li>
+  the projection of the vector <m>\overrightarrow{OC}</m> on the vector
+  <m>\overrightarrow{OA}</m>, and
+  </li>
+  <li>
+  the projection of the vector <m>\overrightarrow{OC}</m> on the vector
+  <m>\overrightarrow{OB}</m>.
+  </li>
+  </ul></p>
+  </li>
+  </ol>
+  </p></statement>
+
+  <hint><p>
+  (a)
+  The three line segments from <m>C</m> to <m>O</m>, from <m>C</m> to <m>A</m> and from <m>C</m> to <m>B</m>
+  all have exactly the same length, namely the radius of the circumscribing
+  circle.
+  </p>
+
+  <p>(b)
+  Let <m>(\bar x,\bar y)</m> be the coordinates of <m>C</m>.
+  Write down the equations that say that <m>(\bar x,\bar y)</m> is
+  equidistant from the three vertices <m>O</m>, <m>A</m> and <m>B</m>.
+  </p></hint>
+
+  <answer><p>
+  (a), (c)
+  </p>
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/pfigs/circumA"/>
+  </sidebyside>
+  <p>
+  <m>\text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+      =\overrightarrow{OP_A}=\llt a/2,0\rgt</m>
+  <m>\text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+      =\overrightarrow{OP_A}=\llt b/2,c/2\rgt</m>
+  </p>
+
+  <p>(b) The centre of the circumscribing circle is <m>(\bar x,\bar y)</m> with
+  <m>\bar x=\frac{a}{2}</m> and
+  <m> \bar y =\frac{b^2+c^2-ab}{2c}</m>.
+  </p></answer>
+
+  <solution><p>
+  (a) The sketch for part (a) is on the left below.
+  To sketch the projections, we dropped perpendiculars
+  <ul>
+  <li>
+  from <m>C</m> to the line from <m>O</m> to <m>A</m>, and
+  </li>
+  <li>
+  from <m>C</m> to the line from <m>O</m> to <m>B</m>.
+  </li>
+  </ul>
+  By definition,
+  <ul>
+  <li>
+  <m>\text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}</m>
+  is the vector <m>\overrightarrow{OP_A}</m> from <m>O</m> to the point <m>P_A</m>, where
+  the perpendicular from <m>C</m> to the line from <m>O</m> to <m>A</m> hits the line,
+  and
+  </li>
+  <li>
+  <m>\text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}</m>
+  is the vector <m>\overrightarrow{OP_B}</m> from <m>O</m> to the point <m>P_B</m>, where
+  the perpendicular from <m>C</m> to the line from <m>O</m> to <m>B</m> hits the line.
+  </li>
+  </ul>
+  </p>
+  <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/circumA"/>
+         <image source="images/CLP-figs/pfigs/circum"/>
+  </sidebyside>
+  <p>
+  To evaluate the projections we observe that the three lines from
+  <m>C</m> to <m>O</m>, from <m>C</m> to <m>A</m> and from <m>C</m> to <m>B</m> all have exactly the same length
+  (namely the radius of the circumscribing circle). Consequently
+  (see the figure on the right above),
+  <ul>
+  <li>
+  the triangle <m>OCA</m> is an isoceles triangle, so that <m>P_A</m> is exactly the
+  midpoint of the line segement from <m>O</m> to <m>A</m>. That is, <m>P_A</m> is <m>(a/2,0)</m> and
+  <me>
+  \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+      =\overrightarrow{OP_A}=\llt a/2,0\rgt
+  </me>
+  </li>
+  <li>
+  Similarly, the triangle <m>OCB</m> is an isoceles triangle, so that <m>P_B</m> is
+  exactly the midpoint of the line segement from <m>O</m> to <m>B</m>. That is <m>P_A</m> is <m>(b/2,c/2)</m> and
+  <me>
+  \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+      =\overrightarrow{OP_B}=\llt b/2,c/2\rgt
+  </me>
+  </li>
+  </ul>
+  </p>
+
+  <p>(b)
+  Call the centre of the circumscribing circle <m>(\bar x,\bar y)</m>.
+  This centre must be equidistant from the three vertices.
+  So
+  <md>
+  <mrow>
+  \bar x^2+\bar y^2=(\bar x-a)^2+\bar y^2=(\bar x-b)^2+(\bar y-c)^2
+  </mrow>
+  </md>
+  or, subtracting <m>\bar x^2+\bar y^2</m> from all three expression,
+  <md>
+  <mrow>
+  0=a^2-2a\bar x=b^2-2b\bar x+c^2-2c\bar y
+  </mrow>
+  </md>
+  which implies
+  <me>
+  \bar x=\frac{a}{2}\qquad\qquad \bar y
+  =\frac{b^2+c^2-2b\bar x}{2c}=\frac{b^2+c^2-ab}{2c}
+  </me>
+  </p>
+
+  <p>(c) From part (b), we have
+  <md>
+  <mrow>
+  \overrightarrow{OA}\cdot\overrightarrow{OC}
+  &amp;=\llt a,0\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
+  =\frac{a^2}{2}=\frac{1}{2}|\overrightarrow{OA}|^2
+  </mrow><mrow>
+  \overrightarrow{OB}\cdot\overrightarrow{OC}
+  &amp;=\llt b,c\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
+  =\frac{ab}{2}+\frac{b^2+c^2-ab}{2}=\frac{b^2+c^2}{2}
+  </mrow><mrow>
+  &amp;=\frac{1}{2}|\overrightarrow{OB}|^2
+  </mrow>
+  </md>
+  So, by  <xref ref="def-Projection"/>,
+  <md>
+  <mrow>
+  \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+  &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{|\overrightarrow{OA}|^2}
+             \overrightarrow{OA}
+  =\frac{1}{2}\overrightarrow{OA}
+  =\llt a/2,0\rgt
+  </mrow><mrow>
+  \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+  &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{|\overrightarrow{OB}|^2}
+             \overrightarrow{OB}
+  =\frac{1}{2}\overrightarrow{OB}
+  =\llt b/2,c/2\rgt
+  </mrow>
+  </md>
+  </p>
+
+  </solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire et vérifier les références -->
+  <exercise>
+    <statement><p>
+    Considérons les trois points <m>O=(0,0)</m>, <m>A=(a,0)</m> et <m>B=(b,c)</m>.
+    <ol marker = "(a)">
+    <li><p>
+    Esquisser, en une seule figure,
+    <ul>
+    <li>
+    le triangle formé des sommets <m>O</m>, <m>A</m> et <m>B</m>, et
+    </li>
+    <li>
+    le cercle circonscrit pour le triangle (c'est-à-dire le cercle passant par les trois sommets), et
+    </li>
+    <li><p>
+    les vecteurs
+    <ul>
+    <li>
+    <m>\overrightarrow{OA}</m>, de <m>O</m> à <m>A</m>,
+    </li>
+    <li>
+    <m>\overrightarrow{OB}</m>, de <m>O</m> à <m>B</m>,
+    </li>
+    <li>
+    <m>\overrightarrow{OC}</m>, de <m>O</m> à <m>C</m>, où <m>C</m> est le centre du cercle circonscrit.
+    </li>
+    </ul></p>
+    </li>
+    </ul>
+    Ensuite, ajouter l'esquisse et evaluer, à partir de l'esquisse,
+    <ul>
+    <li>
+    la projection du vecteur <m>\overrightarrow{OC}</m> sur le vecteur
+    <m>\overrightarrow{OA}</m>, et
+    </li>
+    <li>
+    la projection du vecteur <m>\overrightarrow{OC}</m> sur le vecteur
+    <m>\overrightarrow{OB}</m>.
+    </li>
+    </ul></p>
+    </li>
+    <li> Déterminer <m>C</m>.
+    </li>
+    <li><p>
+    Évaluer, en utilisant la formule <xref ref="def-Projection"/>,
+    <ul>
+    <li>
+    la projection du vecteur <m>\overrightarrow{OC}</m> sur le vecteur
+    <m>\overrightarrow{OA}</m>, et
+    </li>
+    <li>
+    la projection du vecteur <m>\overrightarrow{OC}</m> sur le vecteur
+    <m>\overrightarrow{OB}</m>.
+    </li>
+    </ul></p>
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    (a)
+    Les trois segments de droite allant de <m>C</m> à <m>O</m>, de <m>C</m> à <m>A</m> et de <m>C</m> à <m>B</m>.
+    ont toutes exactement la même longueur, à savoir le rayon du cercle circonscrit.
+    </p>
+
+    <p>(b)
+      Soit <m>(\bar x,\bar y)</m> les coordonnées de <m>C</m>.
+      Écrivez les équations qui disent que <m>(\bar x,\bar y)</m> est
+      équidistante des trois sommets <m>O</m>, <m>A</m> et <m>B</m>.
+    </p></hint>
+
+    <answer><p>
+    (a), (c)
+    </p>
+    <sidebyside width="40%">
+    <image source="images/CLP-figs/pfigs/circumA"/>
+    </sidebyside>
+    <p>
+    <m>\text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+        =\overrightarrow{OP_A}=\llt a/2,0\rgt</m>
+    <m>\text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+        =\overrightarrow{OP_A}=\llt b/2,c/2\rgt</m>
+    </p>
+
+    <p>(b) Le centre du cercle circonscrit est <m>(\bar x,\bar y)</m> avec
+    <m>\bar x=\frac{a}{2}</m> et
+    <m> \bar y =\frac{b^2+c^2-ab}{2c}</m>.
+    </p></answer>
+
+    <solution><p>
+    (a) La figure de la partie (a) est à gauche ci-dessous.
+    Pour esquisser les projections, nous avons laissé tomber les perpendiculaires
+    <ul>
+    <li>
+    de <m>C</m> à la ligne de <m>O</m> à <m>A</m>, et
+    </li>
+    <li>
+    de <m>C</m> à la ligne de <m>O</m> à <m>B</m>.
+    </li>
+    </ul>
+    Par définition,
+    <ul>
+    <li>
+    <m>\text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}</m>
+    est le vecteur <m>\overrightarrow{OP_A}</m> de <m>O</m> au point <m>P_A</m>, où
+    la perpendiculaire de <m>C</m> à la droite de <m>O</m> à <m>A</m> touche la droite,
+    et
+    </li>
+    <li>
+    <m>\text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}</m>
+    est le vecteur <m>\overrightarrow{OP_B}</m> de <m>O</m> au point <m>P_B</m>, où
+    la perpendiculaire de <m>C</m> à la droite de <m>O</m> à <m>B</m> rencontre la droite.
+    </li>
+    </ul>
+    </p>
+    <sidebyside width="40%">
+      <image source="images/CLP-figs/pfigs/circumA"/>
+           <image source="images/CLP-figs/pfigs/circum"/>
+    </sidebyside>
+    <p>
+      Pour évaluer les projections, nous observons que les trois lignes de
+      <m>C</m> à <m>O</m>, de <m>C</m> à <m>A</m> et de <m>C</m> à <m>B</m> ont toutes exactement la même longueur.
+      (à savoir le rayon du cercle circonscrit). Par conséquent,
+      (voir la figure de droite ci-dessus),
+    <ul>
+    <li>
+      le triangle <m>OCA</m> est un triangle isocèle, de sorte que <m>P_A</m> soit exactement le
+      milieu du segment de ligne de <m>O</m> à <m>A</m>. Autrement dit, <m>P_A</m> est <m>(a/2,0)</m> et
+    <me>
+    \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+        =\overrightarrow{OP_A}=\llt a/2,0\rgt
+    </me>
+    </li>
+    <li>
+      De même, le triangle <m>OCB</m> est un triangle isocèle, de sorte que <m>P_B</m> est
+      exactement le point médian du segment de droite allant de <m>O</m> à <m>B</m>. Autrement dit, <m>P_A</m> est <m>(b/2,c/2)</m> et
+    <me>
+    \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+        =\overrightarrow{OP_B}=\llt b/2,c/2\rgt
+    </me>
+    </li>
+    </ul>
+    </p>
+
+    <p>(b)
+      Appelons le centre du cercle circonscrit <m>(\bar x,\bar y)</m>.
+      Ce centre doit être équidistant des trois sommets.
+      Donc
+    <md>
+    <mrow>
+    \bar x^2+\bar y^2=(\bar x-a)^2+\bar y^2=(\bar x-b)^2+(\bar y-c)^2
+    </mrow>
+    </md>
+    ou, en soustrayant <m>\bar x^2+\bar y^2</m> des trois expressions,
+    <md>
+    <mrow>
+    0=a^2-2a\bar x=b^2-2b\bar x+c^2-2c\bar y
+    </mrow>
+    </md>
+    ce qui implique
+    <me>
+    \bar x=\frac{a}{2}\qquad\qquad \bar y
+    =\frac{b^2+c^2-2b\bar x}{2c}=\frac{b^2+c^2-ab}{2c}
+    </me>
+    </p>
+
+    <p>(c) De la partie (b), on a
+    <md>
+    <mrow>
+    \overrightarrow{OA}\cdot\overrightarrow{OC}
+    &amp;=\llt a,0\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
+    =\frac{a^2}{2}=\frac{1}{2}|\overrightarrow{OA}|^2
+    </mrow><mrow>
+    \overrightarrow{OB}\cdot\overrightarrow{OC}
+    &amp;=\llt b,c\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
+    =\frac{ab}{2}+\frac{b^2+c^2-ab}{2}=\frac{b^2+c^2}{2}
+    </mrow><mrow>
+    &amp;=\frac{1}{2}|\overrightarrow{OB}|^2
+    </mrow>
+    </md>
+    Ainsi, par  <xref ref="def-Projection"/>,
+    <md>
+    <mrow>
+    \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
+    &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{|\overrightarrow{OA}|^2}
+               \overrightarrow{OA}
+    =\frac{1}{2}\overrightarrow{OA}
+    =\llt a/2,0\rgt
+    </mrow><mrow>
+    \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
+    &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{|\overrightarrow{OB}|^2}
+               \overrightarrow{OB}
+    =\frac{1}{2}\overrightarrow{OB}
+    =\llt b/2,c/2\rgt
+    </mrow>
+    </md>
+    </p>
+
+    </solution>
+  </exercise>
+  <exercise>
+    <statement><p>
+    Soit <m>\vu=-2\vi+5\vj</m> et <m>\vv=\a\vi-2\vj</m>. Trouver <m>\a</m> tel que
+    <ol marker = "(a)">
+    <li>
+      <m>\vu</m> et <m>\vv</m>  soient orthogonaux,
+    </li>
+    <li>
+       <m>\vu</m> et <m>\vv</m> soient colinéaires,
+    </li>
+    <li>
+       L'angle entre <m>\vu</m> et <m>\vv</m> est de <m>60^\circ</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol>
+      <li><m>-5</m></li>
+      <li><m>0.8</m></li>
+      <li>Aucun</li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    (a)
+       On veut <m>0=\vu\cdot\vv=-2\a-10</m> ou <m>\a=-5</m>.
+    </p>
+
+    <p>(b)
+       On veut <m>-2/\a=5/(-2)</m> ou <m>\a=0.8</m>.
+    </p>
+
+    <p>(c)
+       On veut <m>\vu\cdot\vv=-2\a-10
+                 =|\vu|\,|\vv|\,\cos 60^\circ
+                 =\sqrt{29}\,\sqrt{\a^2+4}\,\half</m>. En élevant au carré les deux cotés
+    <md alignment="alignat">
+    <mrow>
+    &amp; &amp; 4\a^2+40\a+100&amp;=\frac{29}{4}(\a^2+4)
+    </mrow><mrow>
+    &amp;\implies\quad &amp;  13\a^2-160\a-284&amp;=0
+    </mrow><mrow>
+    &amp;\implies\quad &amp; \a &amp;=\frac{160\pm\sqrt{160^2+4\times13\times284}}{26}
+    </mrow><mrow>
+    &amp;&amp;&amp;\approx 13.88\text{ or }-1.574
+    </mrow>
+    </md>
+    Ces deux <m>\alpha</m> donnent <m>\vu\cdot\vv \lt 0</m> donc aucun <m>a</m> ne fonctionne.
+    </p></solution>
+  </exercise>
+
+  <!--
+  <exercise>
+  <statement><p>
+  Define <m>\va=\llt 1,2,3\rgt</m> and <m>\vb=\llt 4,10,6\rgt</m>.
+  <ol marker = "(a)">
+  <li>
+     Find the component of <m>\vb</m> in the direction <m>\va</m>.
+  </li>
+  <li>
+     Find the projection of <m>\vb</m> on <m>\va</m>.
+  </li>
+  <li>
+    Find the projection of <m>\vb</m> perpendicular to <m>\va</m>.
+  </li>
+  </ol>
+  </p></statement>
+
+  <answer><p>
+  <ol marker = "(a)">
+    <li><m>\frac{42}{\sqrt{14}}</m></li>
+    <li><m>\llt 3,6,9\rgt</m></li>
+    <li><m>\llt 1,4,-3\rgt</m></li>
+  </ol>
+  </p></answer>
+
+  <solution><p>
+  (a) The component of <m>\vb</m> in the direction <m>\va</m> is
+  <me>
+  \vb\cdot\frac{\va}{|\va|}
+  =\frac{1\times 4+2\times 10+3\times 6}{\sqrt{1+4+9}}
+  = \frac{42}{\sqrt{14}}
+  </me>
+  </p>
+
+  <p>(b) The projection of <m>\vb</m> on <m>\va</m> is a vector of length
+  <m>42/\sqrt{14}</m> in direction <m>\va/|\va|</m>, namely
+  <m>\frac{42}{14}\llt 1,2,3\rgt=\llt 3,6,9\rgt</m>.
+  </p>
+
+  <p>(c) The projection of <m>\vb</m> perpendicular to <m>\va</m>
+  is <m>\vb</m> minus its projection on <m>\va</m>, namely
+  <m>\llt 4,10,6\rgt-\llt 3,6,9\rgt=\llt 1,4,-3\rgt</m>.
+  </p></solution>
+  </exercise>
+  -->
+  <!-- Section 1.3 Produit scalaire -->
+  <exercise>
+    <statement><p>
+    Définissez <m>\va=\llt 1,2,3\rgt</m> et <m>\vb=\llt 4,10,6\rgt</m>.
+    <ol marker = "(a)">
+    <li>
+       Trouvez la composante de <m>\vb</m> dans la direction de <m>\va</m>.
+    </li>
+    <li>
+       Trouver la projection de <m>\vb</m> sur <m>\va</m>.
+    </li>
+    <li>
+      Trouvez la projection de <m>\vb</m> perpendiculaire à <m>\va</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <answer><p>
+    <ol marker = "(a)">
+      <li><m>\frac{42}{\sqrt{14}}</m></li>
+      <li><m>\llt 3,6,9\rgt</m></li>
+      <li><m>\llt 1,4,-3\rgt</m></li>
+    </ol>
+    </p></answer>
+
+    <solution><p>
+    (a) La composante de <m>\vb</m> dans la direction <m>\va</m> est de
+    <me>
+    \vb\cdot\frac{\va}{|\va|}
+    =\frac{1\times 4+2\times 10+3\times 6}{\sqrt{1+4+9}}
+    = \frac{42}{\sqrt{14}}
+    </me>
+    </p>
+
+    <p>(b) La projection de <m>\vb</m> sur <m>\va</m> est un vecteur de longueur
+    <m>42/\sqrt{14}</m> dans la direction <m>\va/|\va|</m>, soit
+    <m>\frac{42}{14}\llt 1,2,3\rgt=\llt 3,6,9\rgt</m>.
+    </p>
+
+    <p>(c) La projection de <m>\vb</m> perpendiculaire à <m>\va</m>
+    est <m>\vb</m> moins sa projection sur <m>\va</m>, à savoir
+    <m>\llt 4,10,6\rgt-\llt 3,6,9\rgt=\llt 1,4,-3\rgt</m>.
+    </p></solution>
+  </exercise>
+
+</exercisegroup>
+<!--
+</exercisegroup>
+<exercisegroup><introduction><procedural/></introduction>
+-->
+
+<!--
+<exercise>
+<statement><p>
+Compute the dot product of the vectors <m>\va</m> and <m>\vb</m>.
+Find the angle between them.
+<ol marker = "(a)">
+<li> <m>\va=\llt 1,2\rgt ,\ \vb=\llt -2,3\rgt </m>
+</li>
+<li> <m>\va=\llt -1,1\rgt ,\ \vb=\llt 1,1\rgt </m>
+</li>
+<li> <m>\va=\llt 1,1\rgt ,\ \vb=\llt 2,2\rgt </m>
+</li>
+<li> <m>\va=\llt 1,2,1\rgt ,\ \vb=\llt -1,1,1\rgt </m>
+</li>
+<li> <m>\va=\llt -1,2,3\rgt ,\ \vb=\llt 3,0,1\rgt </m>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+<md alignment="alignat">
+<mrow>
+\va\cdot\vb&amp;=4\qquad &amp;
+\theta &amp;= 60.25^\circ
+\tag{a}
+</mrow><mrow>
+\va\cdot\vb&amp;=0 &amp;
+\theta &amp;= 90^\circ
+\tag{b}
+</mrow><mrow>
+\va\cdot\vb&amp;=4 &amp;
+\theta &amp;= 0^\circ
+\tag{c}
+</mrow><mrow>
+\va\cdot\vb&amp;=2 &amp;
+\theta &amp;= 61.87^\circ
+\tag{d}
+</mrow><mrow>
+\va\cdot\vb&amp;=0 &amp;
+\theta &amp;= 90^\circ
+\tag{e}
+</mrow>
+</md>
+</p></answer>
+
+<solution><p>
+<md alignment="alignat">
+<mrow>
+\va\cdot\vb&amp;=\llt 1,2\rgt\cdot\llt -2,3\rgt=4\qquad &amp;
+\cos\theta&amp;=\frac{4}{\sqrt{5}\sqrt{13}}=.4961
+\notag</mrow><mrow>
+&amp; &amp; \implies\theta &amp;= 60.25^\circ
+\tag{a}
+</mrow><mrow>
+\va\cdot\vb&amp;=\llt -1,1\rgt\cdot\llt 1,1\rgt=0\qquad &amp;
+\cos\theta&amp;=\frac{0}{\sqrt{2}\sqrt{2}}=0
+\notag</mrow><mrow>
+&amp; &amp; \implies\theta &amp;= 90^\circ
+\tag{b}
+</mrow><mrow>
+\va\cdot\vb&amp;=\llt 1,1\rgt\cdot\llt 2,2\rgt=4\qquad &amp;
+\cos\theta&amp;=\frac{4}{\sqrt{2}\sqrt{8}}=1
+\notag</mrow><mrow>
+&amp; &amp; \implies\theta &amp;= 0^\circ
+\tag{c}
+</mrow><mrow>
+\va\cdot\vb&amp;=\llt 1,2,1\rgt\cdot\llt -1,1,1\rgt=2\qquad &amp;
+\cos\theta&amp;=\frac{2}{\sqrt{6}\sqrt{3}}=.4714
+\notag</mrow><mrow>
+&amp; &amp; \implies\theta &amp;= 61.87^\circ
+\tag{d}
+</mrow><mrow>
+\va\cdot\vb&amp;=\llt -1,2,3\rgt\cdot\llt 3,0,1\rgt=0\qquad &amp;
+\cos\theta&amp;=\frac{0}{\sqrt{14}\sqrt{10}}=0
+\notag</mrow><mrow>
+&amp; &amp; \implies\theta &amp;= 90^\circ
+\tag{e}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.3 Produit scalaire -->
+
+<!--
+<exercise>
+<statement><p>
+Let <m>\vu=-2\vi+5\vj</m> and <m>\vv=\a\vi-2\vj</m>. Find <m>\a</m> so that
+<ol marker = "(a)">
+<li>
+   <m>\vu\perp\vv</m>
+</li>
+<li>
+   <m>\vu \| \vv</m>
+</li>
+<li>
+   The angle between <m>\vu</m> and <m>\vv</m> is <m>60^\circ</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+<ol>
+  <li><m>-5</m></li>
+  <li><m>0.8</m></li>
+  <li>none</li>
+</ol>
+</p></answer>
+
+<solution><p>
+(a)
+   We want <m>0=\vu\cdot\vv=-2\a-10</m> or <m>\a=-5</m>.
+</p>
+
+<p>(b)
+   We want <m>-2/\a=5/(-2)</m> or <m>\a=0.8</m>.
+</p>
+
+<p>(c)
+   We want <m>\vu\cdot\vv=-2\a-10
+             =|\vu|\,|\vv|\,\cos 60^\circ
+             =\sqrt{29}\,\sqrt{\a^2+4}\,\half</m>. Squaring both sides gives
+<md alignment="alignat">
+<mrow>
+&amp; &amp; 4\a^2+40\a+100&amp;=\frac{29}{4}(\a^2+4)
+</mrow><mrow>
+&amp;\implies\quad &amp;  13\a^2-160\a-284&amp;=0
+</mrow><mrow>
+&amp;\implies\quad &amp; \a &amp;=\frac{160\pm\sqrt{160^2+4\times13\times284}}{26}
+</mrow><mrow>
+&amp;&amp;&amp;\approx 13.88\text{ or }-1.574
+</mrow>
+</md>
+Both of these <m>\a</m>'s give <m>\vu\cdot\vv \lt 0</m> so no <m>\a</m> works.
+</p></solution>
+</exercise>
+-->
+<!-- Section 1.3 Produit scalaire -->
+
+<!--
+</exercisegroup>
+<exercisegroup><introduction><application/></introduction>
+-->
+
+<!--
+</exercisegroup>
+-->
+
+
+
+</exercises>

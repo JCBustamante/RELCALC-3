@@ -1,0 +1,1389 @@
+<section xml:id="sec-Derivees-Partielles" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dérivées partielles</title>
+<subsection xml:id="pars-partial-Motivaton">
+  <title>Motivation</title>
+
+  <p>
+    Nous sommes maintenant en mesure de définir les dérivées partielles des fonctions de plusieurs variables.
+
+    Avant de le faire, rappelons-nous de comment la dérivée <m>f'(a)</m> d'une fonction d'une variable a été définie. On imagine que l'on se déplace le long de l'axe des abscisses dans la direction positive et que l'on mesure, par exemple, la température que l'on note <m>f(x)</m>. Le taux de variation instantané de température lorsque l'on passe par <m>x=a</m> est
+
+  <me>
+  f'(a) = \diff{f}{x}(a) =\lim_{h\rightarrow 0}\frac{f(a+h) - f(a)}{h}
+        =\lim_{x\rightarrow a}\frac{f(x) - f(a)}{x-a}
+  </me>.
+  </p>
+
+  <p>
+    On suppose maintenant que l'on se déplace sur le plan <m>Oxy</m> et que la température au point <m>(x,y)</m> est <m>f(x,y)</m>. On peut passer à travers le point <m>(x,y) = (a,b)</m> en se déplaçant de plusieurs façons. Il semble irréaliste de penser que le taux de variation de la température perçue si l'on se déplace parallèlement à l'axe des <m>x</m> doit être égal au taux mesuré pour un déplacement parallèle à l'axe des <m>y</m>. Nous considérerons d'autres directions de déplacement plus tard.
+  </p>
+  <p>
+  <figure xml:id="Partielles-motivation">
+      <caption>Les courbes isothermes sur une région du plan. Si l'on se situe au point <m>(x,y)=(-1,-1)</m>, la température ressentie est d'autour de <m>5.75</m>. Si l'on se déplace dans la direction des <m>x</m> croissants, la température a tendance à augmenter. Si, à partir de ce même point, on se déplace plutôt dans la direction des <m>y</m> croissants, la variation est beaucoup plus faible, la température reste autour de <m>5.75</m>.</caption>
+      <image xml:id="sageplot-Partielles-motiv" width="60%">
+          <sageplot>
+            g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+            C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+            axes = True, fill = True,
+            labels = True, label_colors="black", label_inline=True, label_fontsize=8, gridlines=True, axes_labels=["$x$","$y$"])
+            C+=arrow((-1,-1), (-0.5,-1), color = "black", thickness = 0.5, arrowsize=2)
+            C+=arrow((-1,-1), (-1,-0.5), color = "black", thickness = 0.5, arrowsize=2)
+            C
+          </sageplot>
+      </image>
+  </figure>
+  </p>
+</subsection>
+
+<subsection xml:id="pars-partielles-Defs">
+  <title>Définition des dérivées partielles</title>
+    <p>
+    Supposons que nous passons par le point <m>(x,y)=(a,b)</m> et que nous nous déplaçons parallèlement à l'axe des <m>x</m> (dans la direction positive). Notre ordonnée, <m>y</m>, reste constante : elle prend toujours la valeur <m>y=b</m>. Ainsi, on peut penser à la température comme à une fonction d'une seule variable <m>B(x) = f(x,b)</m> et l'on mesure le taux de variation de cette température :
+  <me>
+  \diff{B}{x}(a) = \lim_{h\rightarrow 0}\frac{B(a+h) - B(a)}{h}
+        = \lim_{h\rightarrow 0}\frac{f(a+h,b) - f(a,b)}{h}
+  </me>.
+  On appelle ceci la <q>dérivée partielle de <m>f</m> par rapport à <m>x</m> au point <m>(a,b)</m></q>  et l'on écrit <m>\pdiff{f}{x}(a,b)</m>. Ici,
+  <ul>
+  <li>
+  le symbole <m>\partial</m>, qu'on lit <q>partielle</q>, signifie que l'on s'intéresse à une fonction de plus d'une variable;
+  </li>
+  <li>
+  le <m>x</m> dans <m>{\pdiff{f}{x}}</m> indique qu'on dérive ou différentie par rapport à  <m>x</m>, pendant que  <m>y</m> est fixe, c'est-à-dire traitée comme une constante;
+  </li>
+  <li>
+  <m>{\pdiff{f}{x}}</m> se lit <q> partielle de  <m>f</m> par rapport à <m>x</m></q>.
+  </li>
+  </ul>
+  On prendra soin de ne pas écrire  <m>\diff{}{x}</m> lorsque <m>\pdiff{}{x}</m> est requis.  Nous verrons plus tard des situations dans lesquelles <m>\diff{}{x}f</m> et <m>\pdiff{}{x}f</m> sont définies, mais ont des significations différentes.
+  </p>
+
+  <p>Si, d'autre part, on passe par le point <m>(x,y)=(a,b)</m>, mais en se déplaçant parallèlement à l'axe des <m>y</m> (dans la direction positive), alors notre abscisse, <m>x</m>, sera constante, prenant toujours la valeur <m>x=a</m>. Ainsi, on peut penser à la température comme à une fonction d'une seule variable  <m>A(y) = f(a,y)</m> et l'on observe le taux de variation de température :
+  <me>
+  \diff{A}{y}(b) = \lim_{h\rightarrow 0}\frac{A(b+h) - A(b)}{h}
+        = \lim_{h\rightarrow 0}\frac{f(a,b+h) - f(a,b)}{h}
+  </me>.
+  On appelle ceci la <q>dérivée partielle de  <m>f</m> par rapport à <m>y</m> au point <m>(a,b)</m></q> et l'on écrit  <m>\pdiff{f}{y}(a,b)</m>.
+  </p>
+
+  <p>
+    Tout comme dans le cas des dérivées ordinaires <m>\diff{f}{x}(x)</m>, il est usuel de traiter les dérivées partielles de <m>f(x,y)</m> comme des fonctions de <m>(x,y)</m> simplement en évaluant la dérivée partielle au point <m>(x,y)</m> plutôt qu'en <m>(a,b)</m>.
+  </p>
+
+  <definition xml:id="def_partials"><title>Dérivées partielles</title>
+  <statement><p>
+  Les dérivées partielles par rapport à  <m>x</m> et à  <m>y</m> d'une fonction  <m>f(x,y)</m> sont
+  <md>
+  <mrow>
+  \pdiff{f}{x}(x,y)
+    &amp;= \lim_{h\rightarrow 0}\frac{f(x+h,y) - f(x,y)}{h},
+  </mrow>
+  <mrow>
+  \pdiff{f}{y}(x,y)
+    &amp;= \lim_{h\rightarrow 0}\frac{f(x,y+h) - f(x,y)}{h}
+  </mrow>
+  </md>
+  respectivement, lorsque les limites existent. Les dérivées partielles de fonctions de plus de deux variables sont définies de façon analogue.
+  </p></statement>
+  </definition>
+
+
+  <p>Les dérivées partielles sont très utilisées, et il existe plusieurs notations qui peuvent être mieux ou moins bien adaptées à un contexte donné.</p>
+
+  <definition xml:id="notn_partial">
+  <statement><p>
+  La dérivée partielle <m>\pdiff{f}{x}(x,y)</m> d'une fonction <m>f(x,y)</m> est aussi notée
+  <me>
+  \pdiff{f}{x},\qquad
+  f_x(x,y),\qquad
+  f_x,\qquad
+  D_xf(x,y),\qquad
+  D_xf,\qquad
+  D_1 f(x,y),\qquad
+  D_1 f
+  </me>.
+  L'indice  <m>1</m> dans <m>D_1 f</m> signifie que  <m>f</m> est différentiée par rapport à sa première variable. La dérivée partielle  <m>\pdiff{f}{x}(a,b)</m> est aussi notée <m> \pdiff{f}{x}\big|_{(a,b)} </m>,
+  où la barre verticale et l'indice <m>(a,b)</m> servent à indiquer que   <m>\pdiff{f}{x}</m> est évaluée au point <m>(x,y)=(a,b)</m>.
+  </p>
+
+  <p>
+  La notation <m>{\left(\pdiff{f}{x}\right)}_{\!y}</m> est utilisée pour rendre explicite le fait que la variable <m>y</m> est maintenue constante<fn>
+    Il existe des applications dans lesquelles il y a plusieurs variables qui ne peuvent pas varier de façon indépendante. Par exemple, la pression, le volume et la température d'un gaz idéal sont liés par l'équation  <m>PV= \text{(constante)} T</m>. Dans ces applications, savoir quelles sont les variables qui sont maintenues fixes peut être ambigu.</fn>.
+  </p>
+  </statement>
+  </definition>
+</subsection>
+
+
+
+<subsection xml:id="pars-Partielles-geom">
+  <title>Interprétation géométrique des dérivées partielles </title>
+  <p>
+  Nous allons maintenant voir l'interprétation géométrique de la  dérivée partielle
+  <me>
+  \pdiff{f}{x}(a,b)  = \lim_{h\rightarrow 0}\frac{f(a+h,b) - f(a,b)}{h}
+  </me>
+  en termes du graphe <m>z=f(x,y)</m> de la fonction <m>f(x,y)</m>.
+  Ce graphe est illustré dans la figure ci-bas. Il ressemble à une partie d'une sphère un peu déformée dans le premier octant.
+  </p>
+
+  <p>La définition de  <m>\pdiff{f}{x}(a,b)</m> fait intervenir seulement des points sur le graphe qui satisfont <m>y=b</m>, c'est-à-dire des points sur la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan <m>y=b</m>. Il s'agit de la courbe rouge dans la figure. Les deux segments verticaux bleus ont des hauteurs  <m>f(a,b)</m> et
+  <m>f(a+h,b)</m>, qui sont les deux termes dans le numérateur de  <m>\frac{f(a+h,b) - f(a,b)}{h}</m>.
+  </p>
+
+  <sidebyside width="80%">
+  <image source="images/CLP-figs/xderiv"/>
+  </sidebyside>
+
+  <p>
+  Une vue de côté (en regardant du côté gauche de l'axe des <m>y</m>) est esquissée dans la figure ci-après.
+  </p>
+
+  <sidebyside width="70%">
+  <image source="images/CLP-figs/xderivSide"/>
+  </sidebyside>
+
+  <p>
+    De nouveau, les deux segments verticaux bleus ont des longueurs  <m>f(a,b)</m> et <m>f(a+h,b)</m>, qui sont les deux termes du numérateur de  <m>\frac{f(a+h,b) - f(a,b)}{h}</m>. Ainsi, le numérateur <m>f(a+h,b) - f(a,b)</m> et le dénominateur  <m>h</m> sont respectivement la variation verticale et la variation horizontale de la courbe  <m>z=f(x,b)</m> de  <m>x=a</m> à <m>x=a+h</m>. Ainsi, <m>\pdiff{f}{x}(a,b)</m> est précisément la <em>pente de (la tangente à) la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan  <m>y=b</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+  De la même façon, <m>\pdiff{f}{y}(a,b)</m> est la
+  <em>pente de (la tangente à) la courbe intersection de la surface
+  <m>z=f(x,y)</m> avec le plan  <m>x=a</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+  </p>
+
+  <!-- Cet exercice fonctionne, mais est-il pertinent? -->
+  <!--
+  <exercise xml:id= "Derivees-Partielles-01" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-01.pg"/>
+  </exercise>
+  -->
+
+
+    <!-- <exercise xml:id="Derivees-Partielles-02" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-02.pg"/>
+    </exercise> -->
+
+
+
+  </subsection>
+
+
+<subsection xml:id="pars-partielles-evaluation">
+  <title>Évaluation des dérivées partielles</title>
+
+
+
+  <p>
+  Il suit de la discussion ci-haut que l'on peut calculer les dérivées partielles  <m>\pdiff{}{x}</m> en tirant profit de ce que l'on connaît au sujet des dérivées usuelles <m>\diff{}{x}</m>. Plus précisément :
+  <ul>
+  <li>
+  Pour évaluer  <m>\pdiff{f}{x}(x,y)</m>, on traite  <m>y</m> dans <m>f(x,y)</m> comme une constante et l'on dérive la fonction de <m>x</m> qui en résulte selon les règles usuelles.
+  </li>
+  <li>
+  Pour évaluer   <m>\pdiff{f}{y}(x,y)</m>, on traite <m>x</m> dans <m>f(x,y)</m> comme une constante et l'on dérive la fonction de <m>y</m> qui en résulte selon les règles usuelles.
+  </li>
+  <li>
+  Pour évaluer <m>\pdiff{f}{x}(a,b)</m>, on traite <m>y</m> dans <m>f(x,y)</m> comme une constante et l'on dérive par rapport à <m>x</m> selon les règles usuelles, puis on évalue en <m>x=a</m>, <m>y=b</m>.
+  </li>
+  <li>
+  Pour évaluer <m>\pdiff{f}{y}(a,b)</m>, on traite <m>x</m> dans <m>f(x,y)</m> comme une constante et l'on dérive par rapport à <m>y</m> selon les règles usuelles, puis on évalue en <m>x=a</m>, <m>y=b</m>.
+  </li>
+  </ul>
+Voyons quelques exemples.
+  </p>
+
+  <example xml:id="eg_partials_A">
+  <p>
+  Soit
+  <me>
+  f(x,y) = x^3+y^2+ 4xy^2
+  </me>.
+  Alors, puisque  <m>\pdiff{}{x}</m> traite  <m>y</m> comme une constante,
+  <md>
+  <mrow>
+  \pdiff{f}{x}
+  &amp;= \pdiff{}{x}(x^3) + \pdiff{}{x}(y^2) +\pdiff{}{x}(4xy^2)
+  </mrow><mrow>
+  &amp;= 3x^2+0 + 4y^2\pdiff{}{x}(x) = 3x^2 +4y^2
+  </mrow>
+  </md>,
+  et puisque <m>\pdiff{}{y}</m> traite <m>x</m> comme une constante,
+  <md>
+  <mrow>
+  \pdiff{f}{y}
+  &amp;= \pdiff{}{y}(x^3) + \pdiff{}{y}(y^2) +\pdiff{}{y}(4xy^2)
+  </mrow><mrow>
+  &amp;= 0 + 2y + 4x\pdiff{}{y}(y^2) = 2y+8xy
+  </mrow>
+  </md>.
+  En particulier, à <m>(x,y)=(1,0)</m>, ces dérivées partielles prennent les valeurs
+  <md alignment="alignat">
+  <mrow>
+  \pdiff{f}{x}(1,0) &amp;= 3(1)^2 +4(0)^2&amp;=3
+  \qquad \text{ et } \qquad
+  \pdiff{f}{y}(1,0) &amp;= 2(0) +8(1)(0)\ &amp;=0.
+  </mrow>
+  </md>
+  </p></example>
+
+
+  <example xml:id="eg_partials_B">
+  <p>
+  Soit
+  <m>
+  f(x,y) = y\cos x + xe^{xy}
+  </m>.
+  Alors, puisque <m>\pdiff{}{x}</m> traite <m>y</m> comme une constante,
+  <m>\pdiff{}{x} e^{yx}=y e^{yx}</m> et
+  <md>
+  <mrow>
+  \pdiff{f}{x}(x,y) &amp;= y\pdiff{}{x}(\cos x) + e^{xy}\pdiff{}{x}(x)
+                           +x\pdiff{}{x}\big(e^{xy}\big)
+                           \qquad\text{(règle du produit)}
+  </mrow><mrow>
+                    &amp;= -y\sin x + e^{xy} +xye^{xy},
+                    </mrow><mrow>
+  \pdiff{f}{y}(x,y) &amp;= \cos x\pdiff{}{y}(y) + x\pdiff{}{y}\big(e^{xy}\big)
+  </mrow><mrow>
+                    &amp;= \cos x + x^2e^{xy}
+  </mrow>
+  </md>.
+  </p>
+  </example>
+<!-- 
+  <exercise xml:id="Derivees-Partielles-06" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-06.pg"/>
+  </exercise> -->
+
+
+
+
+
+
+  <p>
+  Voyons maintenant une fonction de quatre variables.
+  </p>
+  <example xml:id="eg_partials_C">
+  <p>
+  Soit
+  <me>
+  f(x,y,z,t) = x\sin(y+2z) +t^2e^{3y}\ln z
+  </me>.
+  Alors,
+  <md>
+  <mrow>
+  \pdiff{f}{x}(x,y,z,t) &amp;= \sin(y+2z),
+  </mrow><mrow>
+  \pdiff{f}{y}(x,y,z,t) &amp;= x\cos(y+2z) +3t^2e^{3y}\ln z,
+  </mrow><mrow>
+  \pdiff{f}{z}(x,y,z,t) &amp;= 2x\cos(y+2z) +t^2e^{3y}/z,
+  </mrow><mrow>
+  \pdiff{f}{t}(x,y,z,t) &amp;= 2te^{3y}\ln z
+  </mrow>
+  </md>.
+  </p>
+  </example>
+
+<!-- 
+  <exercise xml:id = "Derivees-Partielles-03" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-03.pg"/>
+  </exercise> -->
+
+
+  <p>
+  Voyons maintenant un exemple plus complexe : la fonction prend une valeur particulière à  <m>(0,0)</m>. Afin de calculer les dérivées partielles, il faut utiliser la définition.
+  </p>
+
+
+
+
+  <example xml:id="eg_partials_D">
+    <title>Calcul par la définition</title>
+
+
+  <p>
+  Soit
+  <me>
+  f(x,y)=\begin{cases}
+               \frac{\cos x-\cos y}{x-y}&amp;\text{si } x\ne y \\
+                      0&amp;\text{si } x=y
+          \end{cases}
+  </me>.
+  Si  <m>b\ne a</m>, alors pour tout  <m>(x,y)</m> suffisamment près de <m>(a,b)</m>,
+  <m>f(x,y) = \frac{\cos x-\cos y}{x-y}</m>, et l'on peut calculer les dérivées partielles de <m>f</m> au point <m>(a,b)</m> avec les règles usuelles de calcul. Cependant, les choses sont différentes si <m>(a,b)=(0,0)</m>.
+  Pour calculer  <m>f_x(0,0)</m>, on doit faire  <m>y=0</m> et trouver la dérivée de
+  <me>
+  f(x,0) = \begin{cases}
+               \frac{\cos x-1}{x}&amp;\text{si } x\ne 0 \\
+                      0&amp;\text{si } x=0
+          \end{cases}
+  </me>
+  par rapport à <m>x</m> au point <m>x=0</m>. Comme on ne peut pas utiliser les règles usuelles, on doit utiliser la définition pour calculer la dérivée : <md>
+  <mrow>
+  f_x(0,0) &amp;= \lim_{h\rightarrow 0}\frac{f(h,0)-f(0,0)}{h}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{\frac{\cos h-1}{h}-0}{h}
+           &amp;\qquad\text{($h\ne 0$ dans la limite)}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{\cos h-1}{h^2}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{-\sin h}{2h}
+           &amp;\qquad\text{(l'Hôpital)}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{-\cos h}{2}
+           &amp;\qquad\text{(l'Hôpital)}
+  </mrow><mrow>
+           &amp;=-\frac{1}{2}.
+  </mrow>
+  </md>
+  On peut évaluer la limite de <m>\frac{\cos h-1}{h^2} </m> en substituant dans la série de Taylor
+  <me>
+  \cos h = 1 -\frac{h^2}{2}+\frac{h^4}{4!} -\cdots
+  </me>
+  </p>
+  <p>
+  On peut aussi utiliser la séries de Taylor pour comprendre le comportement de  <m>f(x,y)</m> lorsque <m>(x,y)</m> est près de  <m>(0,0)</m>. Pour  <m>x\ne y</m>,
+  <md>
+  <mrow>
+  \frac{\cos x-\cos y}{x-y}
+  &amp;=\frac{\left[1-\frac{x^2}{2!} +\frac{x^4}{4!}-\cdots\right]
+           -\left[1-\frac{y^2}{2!} +\frac{y^4}{4!}-\cdots\right]}{x-y}
+  </mrow><mrow>
+  &amp;=\frac{-\frac{x^2-y^2}{2!} +\frac{x^4-y^4}{4!}-\cdots}{x-y}
+  </mrow><mrow>
+  &amp;= -\frac{1}{2!}\frac{x^2-y^2}{x-y} +\frac{1}{4!}\frac{x^4-y^4}{x-y}-\cdots
+  </mrow><mrow>
+  &amp;= -\frac{x+y}{2!} +\frac{x^3+x^2y+xy^2+y^3}{4!}-\cdots
+  </mrow>
+  </md>
+  De sorte que  <m>(x,y)</m> près de <m>(0,0)</m>,
+  <me>
+  f(x,y)\approx\begin{cases}
+                   -\frac{x+y}{2} &amp;\text{si } x\ne y \\
+                                0 &amp;\text{si } x=y
+               \end{cases}
+  </me>.
+  Ainsi, il semble (et c'est en fait le cas) que
+  <ul>
+  <li>
+  <m>f(x,y)</m> est continue à <m>(0,0)</m>, et
+  </li><li>
+  <m>f(x,y)</m> n'est pas continue à <m>(a,a)</m> lorsque <m>a\ne 0</m> et que <m>a</m> est petit, et
+  </li><li>
+  <m>f_x(0,0)=f_y(0,0)=-\frac{1}{2}</m>.
+  </li>
+  </ul>
+  </p>
+
+  </example>
+  <p>
+    Remarquons que cet exemple montre que l'existence des dérivées partielles n'entraîne pas la continuité, contrairement au cas des fonctions à une variable où la dérivabilité en un point entraîne la continuité. Nous pouvons examiner davantage cet exemple.
+  </p>
+
+  <example xml:id="eg_partials_DD">
+    <title>L'<xref ref="eg_partials_D"/> revisité</title>
+
+
+  <p>Soit à nouveau
+
+  <me>
+  f(x,y)=\begin{cases}
+               \frac{\cos x-\cos y}{x-y}&amp;\text{si } x\ne y \\
+                      0&amp;\text{si } x=y
+          \end{cases}
+  </me>.
+  On calcule <m>f_y(x,y)</m> pour tout <m>(x,y)</m>.
+  </p>
+
+  <p> <em>Le cas <m>y\ne x</m> :</em>
+  Lorsque  <m>y\ne x</m>,
+  <md>
+  <mrow>
+  f_y(x,y) &amp; = \pdiff{}{y}\frac{\cos x-\cos y}{x-y}
+  </mrow><mrow>
+           &amp;=\frac{(x-y)\pdiff{}{y}(\cos x-\cos y)
+                    - (\cos x-\cos y)\pdiff{}{y}(x-y) }{(x-y)^2}
+  </mrow><mrow>
+          &amp;\hskip2in\text{(quotient)}
+  </mrow><mrow>
+           &amp;=\frac{(x-y)\sin y
+                    + \cos x-\cos y }{(x-y)^2}
+  </mrow>
+  </md>.
+  </p>
+
+  <p><em>Le cas <m>y= x</m> :</em>
+  Lorsque <m>y = x</m>,
+  <md>
+  <mrow>
+  f_y(x,y) &amp;= \lim_{h\rightarrow 0}\frac{f(x,y+h)-f(x,y)}{h}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{f(x,x+h)-f(x,x)}{h}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{\frac{\cos x-\cos(x+h)}{x-(x+h)}-0}{h}
+           &amp;\qquad\text{(puisque $h\ne 0$ dans la limite)}
+  </mrow><mrow>
+           &amp;= \lim_{h\rightarrow 0}\frac{\cos(x+h)-\cos x}{h^2}.
+  </mrow>
+  </md>
+  On applique maintenant la règle de l'Hôpital, en gardant à l'esprit que, pour le calcul de cette limite, <m>x</m> est une constante et  <m>h</m> est la variable : on doit donc dériver par rapport à <m>h</m>.
+  <md>
+  <mrow>
+  f_y(x,y)  &amp;= \lim_{h\rightarrow 0}\frac{-\sin(x+h)}{2h}
+  </mrow>
+  </md>
+  Notons, d'une part, que si  <m>x</m> n'est pas un multiple entier de <m>\pi</m>, alors le numérateur <m>-\sin(x+h)</m>  <em>ne tend pas </em> vers  zéro lorsque <m>h</m> tend vers zéro, et la limite définissant <m>f_y(x,y)</m> n'existe pas. D'autre part, si <m>x</m> est un multiple entier de <m>\pi</m>,
+  alors le numérateur et le dénominateur tendent vers zéro lorsque <m>h</m> le fait, et l'on peut appliquer la règle de l'Hôpital de nouveau.
+  <md>
+  <mrow>
+  f_y(x,y)  &amp;= \lim_{h\rightarrow 0}\frac{-\cos(x+h)}{2}
+  </mrow><mrow>
+           &amp;=-\frac{\cos x}{2}
+  </mrow>
+  </md>
+  </p>
+
+  <p><em>En conclusion :</em>
+  <me>
+  f_y(x,y)=\begin{cases}
+               \frac{(x-y)\sin y
+                    + \cos x-\cos y }{(x-y)^2}&amp;\text{si } x\ne y\\
+  -\frac{\cos x}{2}&amp;\text{si } x=y  = k\pi,\ k\in \Z \\
+  \text{n'existe pas}&amp;\text{si } x=y  \text{ avec } x \ne k\pi, k \in \Z
+           \end{cases}
+  </me>.
+  </p>
+  </example>
+
+
+  <example xml:id="eg_partials_DDD"><title>Les dérivées partielles sans la continuité</title>
+  <p>
+  Dans cet exemple, on verra que la fonction
+  <me>
+  f(x,y)=\begin{cases}
+               \frac{x^2}{x-y}&amp;\text{si } x\ne y \\
+                      0&amp;\text{si } x=y
+          \end{cases}
+  </me>
+  <em>n'est pas</em> continue à <m>(0,0)</m>, mais que les deux dérivées partielles <m>f_x(0,0)</m> et <m>f_y(0,0)</m> existent. Calculons les dérivées partielles. Par définition,
+  <md>
+  <mrow>
+  f_x(0,0)&amp;=\lim_{h\rightarrow 0}\frac{f(0+h,0)-f(0,0)}{h}
+           =\lim_{h\rightarrow 0}\frac{\overbrace{\tfrac{h^2}{h-0}}^{h}-\,0}{h}
+           =\lim_{h\rightarrow 0}1,
+  </mrow><mrow>
+           &amp;=1
+  </mrow><mrow>
+  f_y(0,0)&amp;=\lim_{h\rightarrow 0}\frac{f(0,0+h)-f(0,0)}{h}
+           =\lim_{h\rightarrow 0}\frac{\frac{0^2}{0-h}-0}{h}
+           =\lim_{h\rightarrow 0}0
+  </mrow><mrow>
+           &amp;=0
+  </mrow>
+  </md>,
+  de sorte que les dérivées partielles <m>f_x(0,0)</m> et <m>f_y(0,0)</m> existent.
+  </p>
+
+  <p>Pour voir que, néanmoins, <m>f(x,y)</m> n'est pas continue à <m>(0,0)</m>, on considère la limite de <m>f(x,y)</m> lorsque <m>(x,y)</m> tend vers  <m>(0,0)</m> le long de la courbe  <m>y=x-x^3</m>.
+  Cette limite est
+  <md>
+  <mrow>
+  \lim_{x\rightarrow 0} f\big(x,x-x^3\big)
+  =\lim_{x\rightarrow 0} \frac{x^2}{x-(x-x^3)}
+  =\lim_{x\rightarrow 0} \frac{1}{x}
+  </mrow>
+  </md>,
+  qui n'existe pas. En effet, lorsque  <m>x</m> tend vers  <m>0</m> par la droite, <m>\frac{1}{x}</m> tend vers  <m>+\infty</m>, et lorsque <m>x</m> tend vers  <m>0</m> par la gauche, <m>\frac{1}{x}</m> tend vers <m>-\infty</m>.
+  </p>
+
+  <p>Regardons de plus près comment ceci est possible. Il se trouve que  <m>f_x(0,0)</m> fait intervenir seulement des valeurs de  <m>f(x,y)</m> avec <m>y=0</m>. D'une part, comme <m>f(x,0)=x</m>, pour toute valeur de  <m>x</m>, on a que
+  <m>f(x,0)</m> est continue et différentiable. Quelque chose de semblable arrive pour
+  <m>f_y(0,0)</m>. D'autre part, le mauvais comportement de <m>f(x,y)</m> pour  <m>(x,y)</m> près de
+  <m>(0,0)</m> se présente seulement lorsque <m>x</m> et <m>y</m> sont tous les deux non nuls.
+  </p>
+
+  </example>
+
+<!--
+Cet exemple pourrai venir après la règle de la chaîne car il utilise la dérivation implicite
+
+
+
+  <p>
+    Our next example uses implicit differentiation.
+  </p>
+
+  <example xml:id="eg_partials_E">
+  <p>
+  The equation
+  <me>
+  z^5 + y^2 e^z +e^{2x}=0
+  </me>
+  implicitly determines <m>z</m> as a function of <m>x</m> and <m>y</m>.
+  That is, the function <m>z(x,y)</m> obeys
+  <me>
+  z(x,y)^5 + y^2 e^{z(x,y)} +e^{2x}=0
+  </me>
+  For example, when <m>x=y=0</m>, the equation reduces to
+  <me>
+  z(0,0)^5=-1
+  </me>
+  which forces<fn>The only real number <m>z</m> which obeys <m>z^5=-1</m>
+  is <m>z=-1</m>. However there are four other complex numbers which also obey
+  <m>z^5=-1</m>.</fn>
+   <m>z(0,0)=-1</m>. Let's find the partial derivative <m>\pdiff{z}{x}(0,0)</m>.
+  </p>
+
+  <p>We are not going to be able to explicitly solve the equation for <m>z(x,y)</m>.
+  All we know is that
+  <me>
+  z(x,y)^5 + y^2 e^{z(x,y)} + e^{2x} =0
+  </me>
+  for all <m>x</m> and <m>y</m>. We can turn this into an equation for <m>\pdiff{z}{x}(0,0)</m>
+  by differentiating<fn>You should have already seen this technique,
+  called implicit differentiation, in your first Calculus course. It is covered
+  in Section 2.11 in the CLP-1 text.</fn>
+   the whole equation with respect to <m>x</m>,
+  giving
+  <me>
+  5z(x,y)^4\ \pdiff{z}{x}(x,y) + y^2 e^{z(x,y)}\ \pdiff{z}{x}(x,y) +2e^{2x}  =0
+  </me>
+  and then setting <m>x=y=0</m>, giving
+  <me>
+  5z(0,0)^4\ \pdiff{z}{x}(0,0) +2  =0
+  </me>
+  As we already know that <m>z(0,0)=-1</m>,
+  <me>
+  \pdiff{z}{x}(0,0) = -\frac{2}{5z(0,0)^4} =-\frac{2}{5}
+  </me>
+  </p>
+  </example>
+
+-->
+
+
+  <p>
+Voyons maintenant un exemple de dérivée partielle déguisée en limite.
+  </p>
+
+  <example xml:id="eg_partials_F">
+  <p>
+  Dans cet exemple, nous allons évaluer la limite
+  <me>
+  \lim_{z\rightarrow 0}\frac{(x+y+z)^3-(x+y)^3}{(x+y)z}.
+  </me>
+  L'observation cruciale est que, lorsque l'on prend la limite pour <m>z\rightarrow 0</m>,  <m>x</m> et <m>y</m> sont fixes. Ainsi, ils ne varient pas à mesure que <m>z</m> devient de plus en plus petit. De plus, cette limite est exactement de la forme de celles qui apparaissent dans la  définition des dérivées partielles (voir <xref ref="def_partials"/>).
+  </p>
+
+  <p>Soit
+  <me>
+  f(x,y,z) = \frac{(x+y+z)^3}{(x+y)}
+  </me>.
+  Alors,
+  <md>
+  <mrow>
+  \lim_{z\rightarrow 0}\frac{(x+y+z)^3-(x+y)^3}{(x+y)z}
+  &amp;=\lim_{z\rightarrow 0}\frac{f(x,y,z)-f(x,y,0)}{z}
+  </mrow><mrow>
+  &amp;=\lim_{h\rightarrow 0}\frac{f(x,y,0+h)-f(x,y,0)}{h}
+  </mrow><mrow>
+  &amp;=\pdiff{f}{z}(x,y,0)
+  </mrow><mrow>
+  &amp;={\left[\pdiff{}{z}\frac{(x+y+z)^3}{x+y}\right]}_{z=0}
+  </mrow>
+  </md>.
+  Rappelons que  <m>\pdiff{}{z}</m> traite <m>x</m> et <m>y</m> comme des constantes et donc que nous évaluons une fonction de la forme
+  <m>\frac{({\rm const}+z)^3}{\rm const}</m>. Ainsi,
+  <md>
+  <mrow>
+  \lim_{z\rightarrow 0}\frac{(x+y+z)^3-(x+y)^3}{(x+y)z}
+  &amp;={\left.3\frac{(x+y+z)^2}{x+y}\right|}_{z=0}
+  </mrow><mrow>
+  &amp;=3(x+y)
+  </mrow>
+  </md>.
+  </p>
+
+  </example>
+  <p>
+    Quoique les ressemblances avec le cas des fonctions à une variable soient grandes, nous avons déjà rencontré une différence significative : l'existence des dérivées partielles ne garantit pas la continuité.
+  </p>
+
+  <p>
+    Voyons maintenant une autre différence qui est souvent source d'erreur. Si <m>y=y(x)</m> est donnée et que l'on peut résoudre pour <m>x</m> en fonction de <m>y</m> et écrire <m>x = x(y)</m>, alors on aura
+    <me>
+    \diff{x}{y} = \frac{1}{\diff{y}{x}}.
+    </me>
+
+    Il est tentant de penser que ceci tient, car il suffit <q>d'inverser une fraction </q>, mais il n'en est rien. La validité de la formule ci-haut repose sur la dérivation des fonctions composées. L'exemple suivant montre que la formule analogue pour les fonctions à plusieurs variables n'est pas valable, c'est-à-dire qu'on n'a généralement pas l'égalité
+    <me>
+    \pdiff{z}{u} = \frac{1}{\pdiff{u}{z}}.
+    </me>
+    Comme dans le cas des fonctions à une variable, la règle de dérivation des fonctions composées fournira un résultat semblable, mais nous devons patienter quelques sections avant de le présenter.
+  </p>
+
+  <example xml:id="eg_partials_G">
+  <p>
+    Rappelons que les coordonnées rectangulaires et les coordonnées polaires (pour <m>(x,y)\ne (0,0)</m> et <m>r \gt 0</m>) sont liées par les formules:
+  </p>
+  <sidebyside width="20%" valign="middle">
+  <p>
+  <md>
+  <mrow>
+  x&amp;=r\cos\theta,
+  </mrow><mrow>
+  y&amp;=r\sin\theta,
+  </mrow><mrow>
+  r&amp;=\sqrt{x^2+y^2},
+  </mrow><mrow>
+  \tan\theta&amp;=\frac{y}{x}
+  </mrow>
+  </md>.
+  </p>
+  <image source="images/CLP-figs/polar"/>
+  </sidebyside>
+
+  <p>
+  Nous allons utiliser les fonctions
+  <me>
+  x(r,\theta) = r\cos\theta\qquad
+  \text{et}\qquad
+  r(x,y) = \sqrt{x^2+y^2}
+  </me>.
+  Fixons un point <m>(x_0,y_0)\ne (0,0)</m>, et soit <m>(r_0,\theta_0)</m>, <m>0\le\theta_0 \lt 2\pi</m> ses coordonnées polaires. On a alors
+  <md>
+  <mrow>
+  \pdiff{x}{r}(r,\theta) = \cos\theta,\qquad
+  \pdiff{r}{x}(x,y) = \frac{x}{\sqrt{x^2+y^2}}
+  </mrow>
+  </md>.
+  Voyons sous quelles conditions nous avons <m>\pdiff{x}{r} = \left(\pdiff{r}{x}\right)^{-1}</m>. Nous avons
+  <md>
+  <mrow>
+  \pdiff{x}{r}(r_0,\theta_0)=\left(\pdiff{r}{x}(x_0,y_0)\right)^{-1}
+  &amp;\iff \cos\theta_0= \left(\frac{x_0}{\sqrt{x_0^2+y_0^2}}\right)^{-1}
+                    = \left(\cos\theta_0\right)^{-1}
+  </mrow><mrow>
+  &amp;\iff \cos^2\theta_0= 1
+  </mrow><mrow>
+  &amp;\iff \theta_0=0,\pi
+  </mrow>
+  </md>.
+  Ceci suffit à montrer que l'égalité ne tient pas toujours quand d'autres variables interviennent.
+  </p>
+
+  <p>Cependant, on peut comprendre ce qu'il arrive à l'aide d'une figure. Par définition, les dérivées partielles
+  <md>
+  <mrow>
+  \pdiff{x}{r}(r_0,\theta_0)
+    &amp;= \lim_{\dee{r}\rightarrow 0}
+           \frac{x(r_0+\dee{r},\theta_0) - x(r_0,\theta_0)}{\dee{r}},
+  </mrow><mrow>
+  \pdiff{r}{x}(x_0,y_0)
+    &amp;= \lim_{\dee{x}\rightarrow 0}
+           \frac{r(x_0+\dee{x},y_0) - r(x_0,y_0)}{\dee{x}}
+  </mrow>
+  </md>,
+  où nous avons écrit <m>dr</m> ou <m>dx</m> au lieu du <m>h</m> de la  <xref ref="def_partials"/>.
+  </p>
+
+  <p>D'une part, lorsqu'on calcule <m>\pdiff{x}{r}(r_0,\theta_0)</m>, <m>\theta_0</m> est maintenu constant, <m>r</m> varie d'une petite quantité <m>\dee{r}</m>, et la variation résultante en <m>x</m> est calculée par   <m>\dee{x}=x(r_0+\dee{r},\theta_0) - x(r_0,\theta_0)</m>.
+  Dans la figure de gauche, <m>\dee{r}</m> est la longueur du segment orange, et <m>\dee{x}</m> est la longueur du segment bleu.
+  </p>
+
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/dxdrdrdx1"/>
+  <image source="images/CLP-figs/dxdrdrdx2"/>
+  </sidebyside>
+
+  <p>
+    D'autre part, lorsqu'on calcule <m>\pdiff{r}{x}</m>, <m>y</m> est maintenu fixe, tandis que  <m>x</m> change d'une petite quantité <m>\dee{x}</m>, et la variation résultante en <m>r</m> est donnée par  <m>\dee{r} = r(x_0+\dee{x},y_0) - r(x_0,y_0)</m>. Dans la figure de droite ci-haut, <m>\dee{x}</m> est la longueur du segment rose tandis que   <m>\dee{r}</m> est la longueur du segment orange.
+  </p>
+
+  <p>
+    Ci-bas, on présente les deux figures ensemble. Nous avons arrangé les choses pour avoir le même  <m>\dee{r}</m> dans les calculs. Afin que les deux  <m>\dee{r}</m> soient le même, les deux  <m>\dee{x}</m> doivent être différents  (sauf si <m>\theta_0=0,\pi</m>). Ainsi, en général,
+  <m>\pdiff{x}{r}(r_0,\theta_0)\ne \big(\pdiff{r}{x}(x_0,y_0)\big)^{-1}</m>.
+  </p>
+
+  <sidebyside width="40%">
+  <image source="images/CLP-figs/dxdrdrdx3"/>
+  </sidebyside>
+  </example>
+<!-- 
+  <exercise xml:id = "Derivees-Partielles-04" component = "webwork">
+    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-04.pg"/>
+  </exercise> -->
+
+<!--
+Cet exemple doit venir après, une fois que la règle de la chaîne aura éte faite
+
+  <example xml:id="eg_partials_GG"><title>Optional <mdash/> <xref ref="eg_partials_G"/>, continued</title>
+  <p>
+  The inverse function theorem, for functions of one variable, says that,
+  if <m>y(x)</m> and <m>x(y)</m> are inverse functions, meaning that <m>y\big(x(y)\big)=y</m>
+  and <m>x\big(y(x)\big)=x</m>, and are differentiable with <m>\diff{y}{x}\ne 0</m>, then
+  <me>
+  \diff{x}{y}(y) = \frac{1}{\diff{y}{x}\big(x(y)\big)}
+  </me>
+  To see this, just apply <m>\diff{}{y}</m> to both sides of <m>y\big(x(y)\big)=y</m>
+  to get <m>\diff{y}{x}\big(x(y)\big)\ \diff{x}{y}(y)=1</m>, by the chain rule
+  (see Theorem 2.9.3 in the CLP-1 text).
+  In the CLP-1 text, we used this to compute the derivatives of the logarithm
+  (see Theorem 2.10.1 in the CLP-1 text) and
+  of the inverse trig functions (see Theorem 2.12.7
+  in the CLP-1 text).
+  </p>
+
+  <p>We have just seen, in Example <xref ref="eg_partials_G"/>, that we can't be too naive in extending the single variable inverse function theorem to functions of two (or more) variables. On the other hand, there is such an extension, which we will now illustrate, using Cartesian and polar coordinates. For simplicity, we'll restrict our attention to <m>x \gt 0</m>, <m>y \gt 0</m>, or equivalently, <m>r \gt 0</m>, <m>0 \lt \theta \lt \frac{\pi}{2}</m>.
+  The functions which convert between Cartesian and polar coordinates are
+  </p>
+
+  <sidebyside widths="40% 20%" valign="middle">
+  <p>
+  <md alignment="alignat">
+  <mrow>
+  x(r,\theta)&amp;=r\cos\theta\qquad&amp;
+                     r(x,y)&amp;=\sqrt{x^2+y^2}
+  </mrow><mrow>
+  y(r,\theta)&amp;=r\sin\theta&amp;
+                    \theta(x,y)&amp;=\arctan\left(\frac{y}{x}\right)
+  </mrow>
+  </md>
+  </p>
+  <image source="images/CLP-figs/polar"/>
+  </sidebyside>
+
+  <p>
+    The two functions on the left convert from polar to Cartesian coordinates and the two functions on the right convert from Cartesian to polar coordinates.
+  The inverse function theorem (for functions of two variables) says that,
+  <ul>
+  <li>
+  if you form the first order partial derivatives of the left hand functions
+  into the matrix
+  <me>
+  \left[\begin{matrix}
+        \pdiff{x}{r}(r,\theta) &amp; \pdiff{x}{\theta}(r,\theta) \\
+        \pdiff{y}{r}(r,\theta) &amp; \pdiff{y}{\theta}(r,\theta)
+        \end{matrix}\right]
+  =\left[\begin{matrix}
+        \cos\theta &amp; -r\sin\theta \\
+        \sin\theta &amp;  r\cos\theta
+        \end{matrix}\right]
+  </me>
+  </li>
+  <li>
+  and you form the first order partial derivatives of the right hand functions
+  into the matrix
+  <me>
+  \left[\begin{matrix}
+        \pdiff{r}{x}(x,y) &amp; \pdiff{r}{y}(x,y) \\
+        \pdiff{\theta}{x}(x,y) &amp; \pdiff{\theta}{y}(x,y)
+        \end{matrix}\right]
+  =\left[\begin{matrix}
+        \frac{x}{\sqrt{x^2+y^2}} &amp; \frac{y}{\sqrt{x^2+y^2}} \\
+        \frac{-\frac{y}{x^2}}{1+(\frac{y}{x})^2} &amp;
+                           \frac{\frac{1}{x}}{1+(\frac{y}{x})^2}
+        \end{matrix}\right]
+  =\left[\begin{matrix}
+        \frac{x}{\sqrt{x^2+y^2}} &amp; \frac{y}{\sqrt{x^2+y^2}} \\
+        \frac{-y}{x^2+y^2} &amp;  \frac{x}{x^2+y^2}
+        \end{matrix}\right]
+  </me>
+  </li>
+  <li>
+  and if you evaluate the second matrix at <m>x=x(r,\theta)</m>, <m>y=y(r,\theta)</m>,
+  <me>
+  \left[\begin{matrix}
+        \pdiff{r}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
+                       \pdiff{r}{y}\big(x(r,\theta),y(r,\theta)\big) \\
+        \pdiff{\theta}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
+                        \pdiff{\theta}{y}\big(x(r,\theta),y(r,\theta)\big)
+        \end{matrix}\right]
+  =\left[\begin{matrix}
+        \cos\theta &amp; \sin\theta \\
+        -\frac{\sin\theta}{r} &amp; \frac{\cos\theta}{r}
+        \end{matrix}\right]
+  </me>
+  </li>
+  <li>
+  and if you multiply<fn>Matrix multiplication is usually covered in courses on linear algebra, which you may or may not have taken. That's why this example is optional.</fn>
+   the two matrices together
+  <md>
+  <mrow>
+  &amp;\left[\begin{matrix}
+        \pdiff{r}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
+                       \pdiff{r}{y}\big(x(r,\theta),y(r,\theta)\big) \\
+        \pdiff{\theta}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
+                        \pdiff{\theta}{y}\big(x(r,\theta),y(r,\theta)\big)
+        \end{matrix}\right]\
+        \left[\begin{matrix}
+        \pdiff{x}{r}(r,\theta) &amp; \pdiff{x}{\theta}(r,\theta) \\
+        \pdiff{y}{r}(r,\theta) &amp; \pdiff{y}{\theta}(r,\theta)
+        \end{matrix}\right]
+  </mrow><mrow>
+  &amp;=\left[\begin{matrix}
+        \cos\theta &amp; \sin\theta \\
+        -\frac{\sin\theta}{r} &amp; \frac{\cos\theta}{r}
+        \end{matrix}\right]\
+       \left[\begin{matrix}
+        \cos\theta &amp; -r\sin\theta \\
+        \sin\theta &amp;  r\cos\theta
+        \end{matrix}\right]\
+  </mrow><mrow>
+  &amp;=\left[\begin{matrix}
+        (\cos\theta)(\cos\theta) + (\sin\theta)(\sin\theta)
+              &amp;(\cos\theta)(-r\sin\theta)+(\sin\theta)(r\cos\theta)
+                                                                \\
+        (-\frac{\sin\theta}{r})(\cos\theta)+(\frac{\cos\theta}{r})(\sin\theta) &amp;
+        (-\frac{\sin\theta}{r})(-r\sin\theta) + (\frac{\cos\theta}{r})(r\cos\theta)
+        \end{matrix}\right]
+  </mrow>
+  </md>
+  </li>
+  <li>
+  then the result is the identity matrix
+  <me>
+  \left[\begin{matrix}
+        1 &amp; 0 \\
+        0 &amp; 1
+        \end{matrix}\right]
+  </me>
+  and indeed it is!
+  </li>
+  </ul>
+  This two variable version of the inverse function theorem can be derived by applying the derivatives <m>\pdiff{}{r}</m> and <m>\pdiff{}{\theta}</m> to the equations
+  <md>
+  <mrow>
+  r\big(x(r,\theta),y(r,\theta)\big) &amp;=r
+  </mrow><mrow>
+  \theta\big(x(r,\theta),y(r,\theta)\big) &amp;=\theta
+  </mrow>
+  </md>
+  and using the two variable version of the chain rule, which we will see in &#xA7;<xref ref="sec_chain_rule"/>.
+  </p>
+
+  </example>
+</subsection>
+-->
+
+<!--
+  <xi:include href="../problems/prob_s2.2.ptx" />
+-->
+
+
+
+
+  </subsection>
+
+<!-- Ajout du paragraphe sur les dérivées d'ordre supérieur -->
+
+<subsection xml:id="pars-Ordre-superieur">
+    <title>Dérivées d'ordre supérieur</title>
+    <p>Nous avons déjà observé dans les cours de calcul précédents que si <m>f(x)</m> est une fonction <m>x</m>, alors sa dérivée, <m>\diff{f}{x}(x)</m>,
+    en est une aussi et peut donc être dérivée pour obtenir la dérivée seconde <m>\difftwo{f}{x}(x)</m>, qui peut à son tour être dérivée pour obtenir la dérivée tierce <m>f^{(3)}(x)</m>, et ainsi de suite.
+    </p>
+
+    <p>On peut faire la même chose pour les fonctions de plus de deux variables. Si  <m>f(x,y)</m> est une fonction de  <m>x</m> et <m>y</m>, alors ses dérivées partielles  <m>\pdiff{f}{x}(x,y)</m> et <m>\pdiff{f}{y}(x,y)</m> sont aussi des fonctions de  <m>x</m> et <m>y</m>. Elles peuvent donc être dérivées par rapport à <m>x</m> et à <m>y</m>. Ainsi, il y a quatre possibles dérivées du deuxième ordre pour <m>f</m>, les voici avec les différentes notations qu'on utilise :
+    <md alignment="alignat">
+    <mrow>
+    \pdiff{}{x}\left(\pdiff{f}{x}\right)(x,y)
+       &amp;=\frac{\partial^2 f}{\partial x^2}(x,y) &amp;= f_{xx}(x,y),
+    </mrow><mrow>
+    \pdiff{}{y}\left(\pdiff{f}{x}\right)(x,y)
+       &amp;=\frac{\partial^2\ f}{\partial y\partial x}(x,y) &amp;= f_{xy}(x,y),
+    </mrow><mrow>
+    \pdiff{}{x}\left(\pdiff{f}{y}\right)(x,y)
+       &amp;=\frac{\partial^2\ f}{\partial x\partial y}(x,y) &amp;= f_{yx}(x,y),
+    </mrow><mrow>
+    \pdiff{}{y}\left(\pdiff{f}{y}\right)(x,y)
+       &amp;=\frac{\partial^2 f}{\partial y^2}(x,y) &amp;= f_{yy}(x,y)
+    </mrow>
+    </md>.
+    Notons que, dans  <m>\frac{\partial^2\ f}{\partial y\,\partial x}
+    =\frac{\partial^2}{\partial y\,\partial x}f</m>, la dérivée qui est le plus près de <m>f</m>, dans ce cas <m>\pdiff{}{x}</m>, est effectuée en premier.
+    </p>
+    <p>
+    Lorsqu'on écrit <m>f_{xy}</m>, la dérivée par rapport à la variable apparaissant le plus près de <m>f</m>, dans ce cas <m>x</m>, est appliquée en premier.
+    </p>
+
+    <example xml:id="eg_higher_order_A">
+    <p>
+    Soit  <m>f(x,y) = e^{my}\cos(nx)</m>. Alors,
+    <md>
+    <mrow>
+    f_x &amp;=  -n e^{my}\sin(nx), &amp;
+    f_y &amp;=   m e^{my}\cos(nx),
+    </mrow><mrow>
+    f_{xx}  &amp;=   -n^2 e^{my}\cos(nx), &amp;
+    f_{yx} &amp;=   -m n e^{my}\sin(nx),
+    </mrow><mrow>
+    f_{xy}  &amp;=   -m n e^{my}\sin(nx), &amp;
+    f_{yy} &amp;=   m^2 e^{my}\cos(nx)
+    </mrow>
+    </md>.
+    </p></example>
+
+
+    <example xml:id="eg_higher_order_B">
+    <p>
+    Soit <m>f(x,y) = e^{\a x+\b y}</m>. Alors,
+    <md>
+    <mrow>
+    f_x &amp;=  \a e^{\a x+\b y}, &amp;
+    f_y &amp;=  \b e^{\a x+\b y},
+    </mrow><mrow>
+    f_{xx}  &amp;= \a^2  e^{\a x+\b y}, &amp;
+    f_{yx} &amp;=   \b \a e^{\a x+\b y},
+    </mrow><mrow>
+    f_{xy}  &amp;=  \a \b  e^{\a x+\b y}, &amp;
+    f_{yy} &amp;=  \b^2 e^{\a x+\b y}
+    </mrow>
+    </md>.
+    Plus généralement, pour tout choix d'entiers <m>m,n\geqslant 0</m>,
+    <me>
+    \frac{\partial^{m+n} f}{\partial x^m\, \partial y^n}
+         = \a^m\b^n e^{\a x+\b y}
+    </me>.
+    </p></example>
+
+<!-- 
+    <exercise xml:id="clairault_2" component = "webwork">
+      <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/clairault_2.pg"/>
+    </exercise> -->
+
+
+    <example xml:id="eg_higher_order_C">
+    <p>
+    Si <m>f(x_1,x_2,x_3,x_4) = x_1^4\, x_2^3\, x_3^2\, x_4</m>, alors
+    <md>
+    <mrow>
+    \frac{\partial^4\  f}
+              {\partial x_1\, \partial x_2\,\partial x_3\,\partial x_4}
+       &amp;=  \frac{\partial^3 \ }
+              {\partial x_1\, \partial x_2\,\partial x_3}
+                             \left( x_1^4\, x_2^3\, x_3^2\right)
+    </mrow><mrow>
+       &amp;=  \frac{\partial^2 \ }
+              {\partial x_1\, \partial x_2}
+                             \left( 2\ x_1^4\, x_2^3\, x_3\right)
+    </mrow><mrow>
+       &amp;=  \pdiff{}{x_1}
+                             \left( 6\ x_1^4\, x_2^2\, x_3\right)
+    </mrow><mrow>
+       &amp;=   24\ x_1^3\, x_2^2\, x_3
+    </mrow>
+    </md>
+    et
+    <md>
+    <mrow>
+    \frac{\partial^4\ f}
+              {\partial x_4\, \partial x_3\,\partial x_2\,\partial x_1}
+       &amp;=  \frac{\partial^3 \ }
+              {\partial x_4\, \partial x_3\,\partial x_2}
+                             \left( 4 x_1^3\, x_2^3\, x_3^2\,x_4\right)
+    </mrow><mrow>
+       &amp;=  \frac{\partial^2 \ }
+              {\partial x_4\, \partial x_3}
+                             \left( 12\ x_1^3\, x_2^2\, x_3^2\,x_4\right)
+    </mrow><mrow>
+       &amp;=  \pdiff{}{x_4}
+                             \left( 24\ x_1^3\, x_2^2\, x_3\,x_4\right)
+    </mrow><mrow>
+       &amp;=   24\ x_1^3\, x_2^2\, x_3
+    </mrow>
+    </md>.
+    </p></example>
+
+<!-- 
+    <exercise xml:id="deriv_part_8_SL" component = "webwork">
+      <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/deriv_part_8_SL.pg"/>
+    </exercise> -->
+
+
+
+
+    <remark>
+    <p>
+      Remarquons que
+    </p>
+    <ol>
+      <li> dans l'<xref ref="eg_higher_order_A"/>,
+      <m>
+      f_{xy}= f_{yx} = -m n e^{my}\sin(nx)
+      </m>;
+      </li>
+      <li>
+        <p>
+          dans l'<xref ref="eg_higher_order_B"/>,
+           <m>
+           f_{xy}= f_{yx} = \a \b  e^{\a x+\b y}
+           </m>;
+        </p>
+      </li>
+      <li>
+        <p>dans l'<xref ref="eg_higher_order_C"/>,
+       <me>
+       \frac{\partial^4\  f}
+                 {\partial x_1\, \partial x_2\,\partial x_3\,\partial x_4}
+       = \frac{\partial^4\ f}
+                 {\partial x_4\, \partial x_3\,\partial x_2\,\partial x_1}
+       = 24\ x_1^3\, x_2^2\, x_3
+       </me>.
+        </p>
+      </li>
+    </ol>
+     <p>
+       Dans tous ces exemples, l'ordre pour le calcul des dérivées partielles est sans importance. Le théorème ci-après<fn>
+       L'histoire de ce théorème important est assez alambiquée. Voir <q>A Note on the History of Mixed Partial Derivatives </q>, par Thomas James Higgins, publié dans <em>Scripta Mathematica</em> <alert>7</alert> (1940), 59-62. Le théorème est nommé en l'honneur du mathématicien, astronome et géophysicien français Alexis Clairaut (1713-1765) et de Hermann Schwarz (1843-1921), un mathématicien allemand.
+       </fn>
+       montre qu'il ne s'agit pas d'un accident.
+     </p>
+    </remark>
+
+
+
+    <theorem xml:id="thm_mixed_partials"> <title>Théorème de Clairaut-Schwarz
+    </title>
+    <statement><p>
+    Soit <m>f</m> une fonction de deux variables telle que les dérivées partielles
+    <m>\frac{\partial^2  f }{\partial x\partial y}</m> et
+    <m>\frac{\partial^2 f}{\partial y\partial x}</m> existent et sont continues dans un voisinage de  <m>(x_0,y_0)</m><fn>C'est-à-dire qu'il existe <m>\e \gt 0</m> tel que les dérivées secondes sont continues en tout point <m>(x,y)</m> vérifiant <m>\sqrt{(x-x_0)^2 + (y-y_0)^2} \lt \e</m>.</fn>. Alors,
+    <me>
+    \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0)
+    =\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0)
+    </me>.
+    </p></statement>
+    <proof>
+
+        <p>
+        Voici une des grandes lignes de la preuve du  <xref ref="thm_mixed_partials"/>. Les détails (numérotés) se trouvent dans le paragraphe ci-bas.
+        </p>
+        <p>
+          Fixons deux réels <m>x_0</m> et <m>y_0</m>, et définissons
+          <me>
+          F(h,k)
+          =\frac{1}{hk}\big[f(x_0+h,y_0+k)-f(x_0,y_0+k)-f(x_0+h,y_0)+f(x_0,y_0)\big]
+          </me>.
+          On définit <m>F(h,k)</m> de cette façon parce que les dérivées partielles <m>\frac{\partial^2 f}{\partial x\partial y}(x_0,y_0)</m> et  <m>\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0)</m> sont limites de <m>F(h,k)</m> lorsque <m>h,k\rightarrow 0</m>. Précisément, on montre dans l'élément (1) (voir les détails dans le paragraphe suivant) que
+        <md>
+        <mrow>
+        \pdiff{}{y}
+        \pdiff{f}{x}(x_0,y_0)
+             &amp;= \lim_{k\rightarrow 0}\lim_{h\rightarrow 0}F(h,k),
+        </mrow><mrow>
+        \pdiff{}{x}
+        \pdiff{f}{y}(x_0,y_0)
+        &amp;= \lim_{h\rightarrow 0}\lim_{k\rightarrow 0}F(h,k)
+        </mrow>
+        </md>.
+        Remarquez que les deux membres de droite sont identiques sauf pour l'ordre des passages aux limites.
+        </p>
+        <p>En vertu du théorème des accroissements finis (4 fois),
+        <md>
+        <mrow>
+        F(h,k)\ &amp;\eqf{(2)}\ \frac{1}{h}
+        \left[\pdiff{f}{y}(x_0+h,y_0+\theta_1k)
+        -\pdiff{f}{y}(x_0,y_0+\theta_1k)\right]\cr
+        \ &amp;\eqf{(3)}\ \pdiff{}{x}
+        \pdiff{f}{y}(x_0+\theta_2 h,y_0+\theta_1k)\cr
+        F(h,k)\ &amp;\eqf{(4)}\ \frac{1}{k}
+        \left[\pdiff{f}{x}(x_0+\theta_3h,y_0+k)
+        -\pdiff{f}{x}(x_0+\theta_3h,y_0)\right]\cr
+        \ &amp;\eqf{(5)}\ \pdiff{}{y}
+        \pdiff{f}{x}(x_0+\theta_3 h,y_0+\theta_4k)\cr
+        </mrow>
+        </md>
+        pour certains réels <m>0 \lt \theta_1,\theta_2,\theta_3,\theta_4 \lt 1</m>.
+        Tous les réels <m>\theta_1,\theta_2,\theta_3,\theta_4</m> dépendent de <m>x_0,y_0,h,k</m>. Ainsi,
+        <me>
+        \pdiff{}{x}
+        \pdiff{f}{y}(x_0+\theta_2 h,y_0+\theta_1k)
+        =\pdiff{}{y}
+        \pdiff{f}{x}(x_0+\theta_3 h,y_0+\theta_4k)
+        </me>
+        pour tout <m>h</m> et <m>k</m>. En prenant la limite lorsque <m>(h,k) \rightarrow(0,0) </m> et en vertu de la continuité des dérivées partielles au point  <m>(x_0,y_0)</m>, on obtient
+        <me>
+        \lim_{(h,k)\rightarrow (0,0)} F(h,k)
+        =\pdiff{}{x}
+        \pdiff{f}{y}(x_0,y_0)
+        =\pdiff{}{y}
+        \pdiff{f}{x}(x_0,y_0)
+        </me>,
+        comme on voulait. Afin de compléter la preuve, on doit justifier les détails (1), (2), (3), (4) et (5).
+        </p>
+        <p>
+          <alert> Les détails. </alert>
+      <ol marker="(1)">
+      <li>
+      Par définition,
+      <md>
+      <mrow>
+      &amp;\pdiff{}{y}
+      \pdiff{f}{x}(x_0,y_0)
+      =\lim_{k\rightarrow 0}\frac{1}{k}
+      \left[\pdiff{f}{x}(x_0,y_0+k)
+      -\pdiff{f}{x}(x_0,y_0)\right]\cr
+      &amp;=\lim_{k\rightarrow 0}\frac{1}{k}
+      \left[\lim_{h\rightarrow 0}\frac{f(x_0+h,y_0+k)-f(x_0,y_0+k)}{h}
+      -\lim_{h\rightarrow 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}\right]\cr
+      &amp;=\lim_{k\rightarrow 0}\lim_{h\rightarrow 0}
+      \frac{f(x_0+h,y_0+k)-f(x_0,y_0+k)-f(x_0+h,y_0)+f(x_0,y_0)}{hk}\cr
+      &amp;= \lim_{k\rightarrow 0}\lim_{h\rightarrow 0}F(h,k)
+      </mrow>
+      </md>.
+      De la même façon,
+      <md>
+      <mrow>
+      &amp;\pdiff{}{x}
+      \pdiff{f}{y}(x_0,y_0)
+      =\lim_{h\rightarrow 0}\frac{1}{h}
+      \left[\pdiff{f}{y}(x_0+h,y_0)
+      -\pdiff{f}{y}(x_0,y_0)\right]\cr
+      &amp;=\lim_{h\rightarrow 0}\frac{1}{h}
+      \left[\lim_{k\rightarrow 0}\frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)}{k}
+      -\lim_{k\rightarrow 0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}{k}\right]\cr
+      &amp;=\lim_{h\rightarrow 0}\lim_{k\rightarrow 0}
+      \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+f(x_0,y_0)}{hk}\cr
+      &amp;= \lim_{h\rightarrow 0}\lim_{k\rightarrow 0}F(h,k)
+      </mrow>
+      </md>.
+      </li>
+      <li><p>
+      Le théorème des accroissements finis dit que, pour toute fonction dérivable  <m>\varphi(x)</m>,
+      <ul>
+      <li> la pente de la droite joignant les points <m>\big(x_0,\varphi(x_0)\big)</m> et <m>\big(x_0+k,\varphi(x_0+k)\big)</m> sur la courbe de  <m>\varphi</m>
+      </li>
+      </ul>
+      est la même que
+      <ul>
+      <li>
+      la pente de la tangente à la courbe en un point d'abscisse comprise entre <m>x_0</m> et <m>x_0+k</m>,
+      </li>
+      </ul>
+      c'est-à-dire qu'il existe un <m>\theta_1</m> vérifiant  <m>0 \lt \theta_1 \lt 1</m> tel que
+      <me>
+      \frac{\varphi(x_0+k)-\varphi(x_0)}{k}=\frac{d\varphi}{dx}(x_0+\theta_1 k)
+      </me>.
+      </p>
+
+      <sidebyside width="50%">
+      <image source="images/CLP-figs/mvt"/>
+      </sidebyside>
+
+      <p>
+      Utilisons le théorème des accroissements finis appliqué à la fonction <m>G(y)=f(x_0+h,y)-f(x_0,y)</m> (donc avec <m>y</m> dans le rôle de <m>x</m>), ce qui donne
+      <md>
+      <mrow>
+      \frac{G(y_0+k)-G(y_0)}{k}
+      &amp;=\diff{G}{y}(y_0+\theta_1 k)
+      \qquad (\text{pour un certain } 0 \lt \theta_1 \lt 1)
+      </mrow><mrow>
+      &amp;=\pdiff{f}{y}(x_0+h,y_0+\theta_1k)
+      -\pdiff{f}{y}(x_0,y_0+\theta_1k)
+      </mrow>
+      </md>.
+      Ainsi, pour un certain <m>0 \lt \theta_1 \lt 1</m>,
+      <md>
+      <mrow>
+      F(h,k)\ &amp;=\ \frac{1}{h}
+      \left[\frac{G(y_0+k)-G(y_0)}{k}\right]
+      </mrow><mrow>
+      &amp;=\frac{1}{h}
+      \left[\pdiff{f}{y}(x_0+h,y_0+\theta_1k)
+      -\pdiff{f}{y}(x_0,y_0+\theta_1k)\right]
+      </mrow>
+      </md>.</p>
+      </li>
+      <li>
+      Définissons <m>H(x)=\pdiff{f}{y}(x,y_0+\theta_1k)</m>. En vertu du théorème des accroissements finis,
+      <md>
+      <mrow>
+      F(h,k)\ &amp;=\ \frac{1}{h}\left[H(x_0+h)-H(x_0)\right]
+      </mrow>
+      <mrow>
+      &amp;=\ \diff{H}{x}(x_0+\theta_2 h)
+      \qquad (\text{pour un certain } 0 \lt \theta_2 \lt 1)
+      </mrow><mrow>
+      &amp;=\pdiff{}{x}
+      \pdiff{f}{y}(x_0+\theta_2 h,y_0+\theta_1k)
+      </mrow>
+      </md>.
+      </li>
+      <li>
+      Définissons <m>A(x)=f(x,y_0+k)-f(x,y_0)</m>. En vertu du théorème des accroissements finis,
+      <md>
+      <mrow>
+      F(h,k)\ &amp;=\ \frac{1}{k} \left[\frac{A(x_0+h)-A(x_0)}{h}\right]
+      </mrow><mrow>
+      &amp;=\ \frac{1}{k}\diff{A}{x}(x_0+\theta_3 h)
+      \qquad (\text{pour un certain } 0 \lt \theta_3 \lt 1)
+      </mrow><mrow>
+      &amp;=\frac{1}{k}
+      \left[\pdiff{f}{x}(x_0+\theta_3h,y_0+k)
+      -\pdiff{f}{x}(x_0+\theta_3h,y_0)\right]
+      </mrow>
+      </md>.
+      </li>
+      <li>
+      Définissons <m>B(y)=\pdiff{f}{x}(x_0+\theta_3h,y)</m>. En vertu du théorème des accroissements finis,
+      <md>
+      <mrow>
+      F(h,k)\ &amp;=\ \frac{1}{k}\left[B(y_0+k)-B(y_0)\right]
+      </mrow><mrow>
+      &amp;=\ \diff{B}{y}(y_0+\theta_4 k)
+      \qquad (\text{pour un certain } 0 \lt \theta_4 \lt 1)
+      </mrow><mrow>
+      &amp;=\pdiff{}{y}
+      \pdiff{f}{x}(x_0+\theta_3 h,y_0+\theta_4k)
+      </mrow>
+      </md>.
+      </li>
+      </ol>
+      Ceci complète la démonstration du <xref ref="thm_mixed_partials"/>.
+      </p>
+
+      </proof>
+
+    </theorem>
+<!-- 
+    <exercise xml:id = "Derivees-Partielles-05" component = "webwork">
+      <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Derivees-Partielles-05.pg"/>
+    </exercise> -->
+
+    <example><title>Un exemple où  <m>\frac{\partial^2\ f}{\partial x\partial y}(x_0,y_0)
+      \ne\frac{\partial^2\ f}{\partial y\partial x}(x_0,y_0)</m>
+    </title>
+      <statement>
+        <p>Dans le  <xref ref="thm_mixed_partials"/>, nous avons montré que
+        <m>
+        \frac{\partial^2 f }{\partial x\partial y}(x_0,y_0)
+        =\frac{\partial^2 f }{\partial y\partial x}(x_0,y_0)
+        </m>
+        <alert>si</alert> les dérivées partielles <m>\frac{\partial^2 f }{\partial x\partial y}</m> et <m>\frac{\partial^2 f }{\partial y\partial x}</m> existent et sont continues en  <m>(x_0,y_0)</m>. Cet exemple montre que ces hypothèses ne peuvent pas être relâchées : si
+        <m>\frac{\partial^2 f }{\partial x\partial y}</m> et
+        <m>\frac{\partial^2 f }{\partial y\partial x}</m>
+        sont discontinues en  <m>(x_0,y_0)</m>, alors on peut avoir
+        <m>
+        \frac{\partial^2 f }{\partial x\partial y}(x_0,y_0)
+        \ne\frac{\partial^2 f }{\partial y\partial x}(x_0,y_0)</m>.
+        </p>
+
+        <p>Considérons la fonction
+        <me>f(x,y) = \begin{cases} xy\frac{x^2-y^2}{x^2+y^2}  \amp \text{si } (x,y)\ne (0,0)\\
+          0\amp \text{si } (x,y) = (0,0) \end{cases}</me>.
+        La fonction est continue partout. Remarquons aussi que  <m>f(x,0)=0</m> pour tout  <m>x</m> et que <m>f(0,y)=0</m> pour tout <m>y</m>. Calculons les dérivées partielles du premier ordre. Pour  <m>(x,y)\ne (0,0)</m>,
+        <md>
+        <mrow>
+        \pdiff{f}{x}(x,y)
+          &amp;= {\color{blue}{y\frac{x^2-y^2}{x^2+y^2}}} +xy\frac{2x}{x^2+y^2}
+              - xy\frac{2x(x^2-y^2)}{{(x^2+y^2)}^2}
+        </mrow><mrow>
+          &amp;\ = {\color{blue}{y\frac{x^2-y^2}{x^2+y^2}}}  + xy\frac{4xy^2}{{(x^2+y^2)}^2},
+        </mrow><mrow>
+        \pdiff{f}{y}(x,y)
+          &amp;= {\color{blue}{x\frac{x^2-y^2}{x^2+y^2}}} -xy\frac{2y}{x^2+y^2}
+              - xy\frac{2y(x^2-y^2)}{{(x^2+y^2)}^2}
+        </mrow><mrow>
+          &amp;\ = {\color{blue}{x\frac{x^2-y^2}{x^2+y^2}}}  - xy\frac{4yx^2}{{(x^2+y^2)}^2}
+        </mrow>
+        </md>.
+        Pour  <m>(x,y)= (0,0)</m>,
+        <md alignment="alignat">
+        <mrow>
+        \pdiff{f}{x}(0,0)
+          \amp = \left[\diff{}{x}f(x,0)\right]_{x=0}
+          \amp = \left[\diff{}{x} 0\right]_{x=0}
+          \amp = 0,
+        </mrow><mrow>
+        \pdiff{f}{y}(0,0)
+          \amp = \left[\diff{}{y}f(0,y)\right]_{y=0}
+          \amp = \left[\diff{}{y} 0\right]_{y=0}
+          \amp =0
+        </mrow>
+        </md>.
+        En somme, les dérivées partielles du premier ordre sont
+        <md>
+        <mrow>
+        f_x(x,y)\amp =\begin{cases}
+                 y\frac{x^2-y^2}{x^2+y^2}  + \frac{4x^2y^3}{{(x^2+y^2)}^2}
+                                                 \amp \text{si } (x,y)\ne (0,0)\\
+                      0                          \amp \text{si } (x,y)=(0,0)
+                  \end{cases}
+        </mrow>,
+        <mrow>
+        f_y(x,y)&amp;=\begin{cases}
+                  x\frac{x^2-y^2}{x^2+y^2}  - \frac{4x^3y^2}{{(x^2+y^2)}^2}
+                                                 &amp; \text{si } (x,y)\ne (0,0)\\
+                      0                          &amp; \text{si } (x,y)=(0,0)
+                   \end{cases}
+        </mrow>
+        </md>.
+        Les fonctions  <m>\pdiff{f}{x}(x,y)</m> et <m>\pdiff{f}{y}(x,y)</m> sont continues. Par ailleurs, on calcule
+        <md>
+        <mrow>
+        \frac{\partial^2\ f}{\partial x\partial y}(0,0)
+        &amp;=\left[\diff{}{x} f_y(x,0)\right]_{x=0}
+        =\lim_{h\rightarrow 0}\frac{1}{h}\left[f_y(h,0)-f_y(0,0)\right]
+        </mrow><mrow>
+        &amp;=\lim_{h\rightarrow 0}\frac{1}{h}\left[h\frac{h^2-0^2}{h^2+0^2}-0\right]
+        =1,
+        </mrow>
+        <mrow>
+        \frac{\partial^2\ f}{\partial y\partial x}(0,0)
+        &amp;=\left[\diff{}{y} f_x(0,y)\right]_{y=0}
+        =\lim_{k\rightarrow 0}\frac{1}{k}\left[f_x(0,k)-f_x(0,0)\right]
+        </mrow><mrow>
+        &amp;=\lim_{k\rightarrow 0}\frac{1}{k}\left[k\frac{0^2-k^2}{0^2+k^2}-0\right]
+        =-1
+        </mrow>
+        </md>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>Soit <m>f(x,y)</m> où <m>f</m> est une fonction de classe <m>C^2</m>. Si <m>x(u,v) = u^2 + v^2</m> et que <m>y(u,v) = 2uv</m>, alors on considère <m>F(u,v)=f(x(u,v),y(u,v))</m>. Calculer <m>\pdiff{F}{u}</m> et <m>\frac{\partial^2 F}{\partial u^2}</m>.
+        </p>
+        <p>
+          Le calcul de la dérivée du premier ordre est immédiat, on a
+          <md>
+            <mrow> \pdiff{F}{u} \amp =   \pdiff{f}{x} \pdiff{x} +  \pdiff{f}{y} \pdiff{y}{u} = \pdiff{f}{x} \cdot 2u + \pdiff{f}{y}\cdot 2v</mrow>
+            <mrow> \amp = 2 \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right) </mrow>
+          </md>.
+        </p>
+        <p>
+          Afin de calculer la dérivée du deuxième ordre, nous devons dériver de nouveau et tenir compte de la règle du produit dans un premier temps :
+          <md>
+            <mrow>\frac{\partial^2 F}{\partial u^2}  \amp = \pdiff{}{u}\pdiff{F}{u} = 2 \pdiff{}{u} \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right)</mrow>
+            <mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 0 \pdiff{f}{y} + 2v \pdiff{}{u} \pdiff{f}{y} </mrow>
+            <mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}</mrow>
+          </md>.
+        </p>
+        <p>
+          Or, il faut bien comprendre que les dérivées partielles <m>\diff{f}{x}</m> et <m>\pdiff{f}{y}</m> sont évaluées en <m>(x(u,v), y(u,v))</m>, ce qui donne le sens aux expressions <m>\pdiff{}{u} \pdiff{f}{y} </m> et <m>\pdiff{}{u} \pdiff{f}{y}</m>. On calcule alors
+          <md>
+            <mrow> \pdiff{}{u} \pdiff{f}{x} \amp = \pdiff{}{x}\left(\pdiff{f}{x}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{x}\right)\, \pdiff{y}{u}  = \frac{\partial^2 f}{\partial x^2}\ 2u + \frac{\partial^2f}{\partial y\, \partial x}\ 2v </mrow>,
+            <mrow> \pdiff{}{u} \pdiff{f}{y} \amp = \pdiff{}{x}\left(\pdiff{f}{y}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{y}\right)\, \pdiff{y}{u} = \frac{\partial^2 f}{\partial x \, \partial y}\ 2u + \frac{\partial^2f}{\partial y^2}\ 2v  </mrow>
+          </md>.
+        </p>
+        <p>
+          La fonction <m>f</m> étant de classe <m>C^2</m>, les dérivées partielles mixtes sont égales. Ainsi, on obtient
+          <md>
+            <mrow>\frac{\partial^2 F}{\partial u^2} \amp =2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}   </mrow>
+            <mrow> \amp  =2 \pdiff{f}{x} + 2u \left[ \frac{\partial^2 f}{\partial x^2}\ 2u + \frac{\partial^2f}{\partial y\, \partial x}\ 2v \right] + 2v \left[ \frac{\partial^2 f}{\partial x \, \partial y}\ 2u + \frac{\partial^2f}{\partial y^2}\ 2v  \right] </mrow>
+            <mrow>  \amp = 2\pdiff{f}{x} + 4u^2 \frac{\partial^2 f}{\partial x^2} + 8uv \frac{\partial^2 f}{\partial x\, \partial y} + 4v^2 \frac{\partial^2 f }{\partial y^2} </mrow>
+          </md>.
+        </p>
+
+
+      </statement>
+    </example>
+
+
+
+</subsection>
+
+
+<xi:include  href="./Problemes/Prob-sec-Derivees-Partielles.ptx"/>
+
+
+  </section>

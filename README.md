@@ -1,4 +1,5 @@
-# RELCALC-2
+# RELCALC-3
+
 ## Calcul multivariable (et vectoriel) : une pproche libre
 
 Il s'agit d'un texte pour un cours standard de calcul multuivariable et vectoriel. Il peut servir au niveau collégial, ou universitaire.

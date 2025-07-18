@@ -509,7 +509,7 @@
   </p>
   <theorem xml:id="thm-Grad-tgt-2d">
     <statement>
-      <p>Soit <m>\cD \subseteq \R^n</m>, <m>f :\cD \to \R</m> différentiable et <m>\vr_0 = (x_0,y_0)</m> un point sur la courbe de niveau <m>f(\vr) = c</m>. Alors,
+      <p>Soit <m>\cD \subseteq \R^2</m>, <m>f :\cD \to \R</m> différentiable et <m>\vr_0 = (x_0,y_0)</m> un point sur la courbe de niveau <m>f(\vr) = c</m>. Alors,
       <ol>
         <li>
           <p>
@@ -551,7 +551,7 @@
       </p>
     </statement>
     <solution>
-      <p>Soit <m>f(x,y) = \sqrt{x} + \sqrt{y})</m> et <m>(x_0,y_0)\in \vC</m>. Le gradient de <m>f</m> est
+      <p>Soit <m>f(x,y) = \sqrt{x} + \sqrt{y})</m> et <m>(x_0,y_0)\in \cC</m>. Le gradient de <m>f</m> est
       <me>
         f_x(x,y) \vi + f_y (x,y) \vj = \frac{1}{2\sqrt{x}} \vi + \frac{1}{2\sqrt{y}}\vj.
       </me>
@@ -594,11 +594,11 @@
                 C += implicit_plot(
                   f.gradient()(x0,y0)*vector([x-x0, y-y0]) ==  0, (x,0,7), (y,0,7), frame = False, axes = True, color ="red")
                 C += point([x0,y0], size = 30, color = "red")
-                C += text("$P_0(x_0, y_0)$",(x0,y0+0.75), fontsize=12,
+                C += text("$P_0(x_0, y_0)$",(x0,y0+0.75), fontsize=14,
                   zorder=2, color= "black")
-                C += text("$y^\\ast$",(0.2,3.2), fontsize=12, zorder=2,
+                C += text("$y^\\ast$",(0.2,3.2), fontsize=14, zorder=2,
                   color= "black")
-                C += text("$x^\\ast$",(6,-0.5), fontsize=12, zorder=2,
+                C += text("$x^\\ast$",(6,-0.5), fontsize=14, zorder=2,
                   color= "black")
                 C
               </sageplot>

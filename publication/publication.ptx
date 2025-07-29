@@ -33,7 +33,7 @@
     <!-- Set which marked elements are included in this version: -->
     <!-- See
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
-    <!-- <version include="videos labs"/> -->
+    <version include="sol-privees"/>
   </source>
 
   <numbering>
@@ -71,10 +71,11 @@
     <!-- links the html version of asymptote graphics.    -->
     <asymptote links="no" />
     <cover front="images/logos/1-Couv-CalculMultivariable.pdf" back = "images/logos/4-Couv-CalculMultivariable.pdf" />
+  
     <!-- Set @formatted to "no" to remove formatting on worksheets: -->
     <worksheets formatted="yes" />
-    <exercise-inline statement="yes" hint="no" answer="no" solution="no" />
-    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/>
+    <exercise-inline statement="yes" hint="no" answer="no" solution="yes" />
+    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "yes"/>
   </latex>
 
   <html>
@@ -103,6 +104,8 @@
       exercise-worksheet="no"
       exercise-readingquestion="no"
     />
+     <exercise-inline statement="yes" hint="no" answer="no" solution="yes" />
+    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "yes"/>
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->

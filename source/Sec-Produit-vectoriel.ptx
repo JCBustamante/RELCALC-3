@@ -1,7 +1,10 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Produit-vectoriel">
   <title>Produit vectoriel</title>
   <introduction>
-    Dans cette section, nous étudierons une seconde <q>multiplication</q>, définie pour des vecteurs dans <m>\R^3</m> (contrairement au produit scalaire qui est défini sans égard à la dimension des vecteurs). Le produit vectoriel est souvent défini au moyen de ses applications en physique, mais il a aussi une très claire interprétation géométrique. L'approche qu'on retient relève plutôt de l'algèbre linéaire : on tire profit des propriétés des déterminants.
+    <p>
+    Dans cette section, nous étudierons une seconde <q>multiplication</q>, définie pour des vecteurs dans <m>\R^3</m> (contrairement au produit scalaire qui est défini sans égard à la dimension des vecteurs). Le produit vectoriel est souvent défini au moyen de ses applications en physique, mais il a aussi une très claire interprétation géométrique. L'approche qu'on retient relève plutôt de l'algèbre linéaire : on tire profit des propriétés des déterminants.  
+    </p>
+    
   </introduction>
   <p>
     Étant donné deux vecteurs fixes <m>\va,\vb\in \R^3</m>, on peut définir une application <m>\phi :\R^3 \to \R</m> par la formule
@@ -118,9 +121,10 @@
               \left(a_1 ^2 + a_2^2+a_3^2\right)\left(b_1^2+ b_2^2+b_3^2\right)- \left(a_1 b_1 + a_2 b_2 + a_3 b_3\right)^2,
             </me>
             qui à son tour est égal à
-            <me>
-              |\va|^2 |\vb|^2  - (\va \cdot \vb)^2 = |\va|^2 |\vb|^2 - |\va|^2 |\vb|^2 \cos^2 \theta = |\va|^2 |\vb|^2 (1-\cos^2 \theta),
-            </me>
+            <md>
+              <mrow> |\va|^2 |\vb|^2  - (\va \cdot \vb)^2 \amp = |\va|^2 |\vb|^2 - |\va|^2 |\vb|^2 \cos^2 \theta </mrow>
+              <mrow> \amp =   |\va|^2 |\vb|^2 (1-\cos^2 \theta)</mrow>
+            </md>
             et le résultat suit de ce que <m>1-\cos^2 \theta = \sin^2\theta</m>, et nous considérons l'angle <m>\theta \in [0,\pi]</m>, de sorte que son sinus est positif.
 
           </p>
@@ -286,23 +290,25 @@ Les propriétés 2 et 5 de la <xref ref = "prop-ppt-vect"/> nous disent que si <
           (\va\cdot\vc)\vb-(\va\cdot\vb)\vc
           \ =\ &amp;(a_1c_1+a_2c_2+a_3c_3)(b_1\vi +b_2\vj +b_3\vk )
           </mrow><mrow>
-          &amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\vi +c_2\vj +c_3\vk )
+          &amp;-(a_1b_1+a_2b_2+a_3b_3)(c_1\vi +c_2\vj +c_3\vk )
           </mrow><mrow>
           =\ &amp;
           \vi \ \big[{\color{blue}{a_1b_1c_1}}
                   +a_2b_1c_2+a_3b_1c_3-
-                  {\color{blue}{a_1b_1c_1}}
-                  -a_2b_2c_1-a_3b_3c_1\big]
+                  {\color{blue}{a_1b_1c_1}}</mrow><mrow> 
+              &amp;    -a_2b_2c_1-a_3b_3c_1\big]
           </mrow><mrow>
           {+}&amp;\vj \ \big[a_1b_2c_1
                 +{\color{blue}{a_2b_2c_2}}
-                +a_3b_2c_3-a_1b_1c_2
-                -{\color{blue}{a_2b_2c_2}}
+                +a_3b_2c_3-a_1b_1c_2</mrow><mrow>
+              &amp;    
+                -{\color{blue}{a_2b_2c_2}}    
                 -a_3b_3c_2\big]
           </mrow><mrow>
           {+}&amp;\vk \ \big[a_1b_3c_1+a_2b_3c_2
                     +{\color{blue}{a_3b_3c_3}}
-                    -a_1b_1c_3-a_2b_2c_3
+                    -a_1b_1c_3</mrow><mrow>
+                      &amp;-a_2b_2c_3
                     -{\color{blue}{a_3b_3c_3}}\big]
           </mrow><mrow>
           {=}\ &amp;
@@ -313,7 +319,7 @@ Les propriétés 2 et 5 de la <xref ref = "prop-ppt-vect"/> nous disent que si <
           {+}&amp;\vk \ [a_1b_3c_1+a_2b_3c_2-a_1b_1c_3-a_2b_2c_3]
           </mrow>
           </md>
-          La ernière expression que nous avons pour le terme de gauche est équivalente à la dernière expression que nous avons pour le terme de droite.
+          La dernière expression que nous avons pour le terme de gauche est équivalente à la dernière expression que nous avons pour le terme de droite.
         </p>
       </li>
     </ol>

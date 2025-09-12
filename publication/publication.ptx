@@ -33,8 +33,8 @@
     <!-- Set which marked elements are included in this version: -->
     <!-- See
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
-    <version include="sol-privees"/>
-  </source>
+    <!-- <version include="sol-privees"/> -->
+      </source>
 
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
@@ -72,16 +72,16 @@
     <asymptote links="no" />
     <cover front="images/logos/1-Couv-CalculMultivariable.pdf" back = "images/logos/4-Couv-CalculMultivariable.pdf" />
   
+
     <!-- Set @formatted to "no" to remove formatting on worksheets: -->
-    <worksheets formatted="yes" />
-    <exercise-inline statement="yes" hint="no" answer="no" solution="yes" />
-    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "yes"/>
+    <!-- <worksheets formatted="yes" />   -->
+    <!-- <exercise-inline statement="yes" hint="no" answer="no" solution="no" /> -->
+    <!-- <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/> --> 
   </latex>
 
   <html>
     <platform host="web"/>
     <!-- The host above could also be "runestone" -->
-
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
     <knowl
@@ -104,16 +104,16 @@
       exercise-worksheet="no"
       exercise-readingquestion="no"
     />
-     <exercise-inline statement="yes" hint="no" answer="no" solution="yes" />
-    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "yes"/>
+     <exercise-inline statement="yes" hint="no" answer="no" solution="no" />
+    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/>
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <css
-        style="oscarlevin"
-        colors="blue_green"
+        theme="salem"
+        palette="leaves"
         knowls="default"
         toc="default"
         banner="default"

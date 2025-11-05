@@ -8,7 +8,7 @@
   comme étant une fonction qui, au paramètre <m>t</m>, associe un vecteur.
 </p>
 <p>
-  Plus généralement, soit <m>I\subseteq \R</m> un intervalle. Un <terms><em>chemin</em></terms> dans  <m>\R^n</m> est une fonction.
+  Plus généralement, soit <m>I\subseteq \R</m> un intervalle. Un <term><em>chemin</em></term> dans  <m>\R^n</m> est une fonction.
 </p>
 <md>
   <mrow>\vr :\ \amp  I \longrightarrow \R^n</mrow>
@@ -39,7 +39,7 @@
 <me>
   \plan{C}_\vr = \{ \vr(t)| t\in I\},
 </me>
-décrit une <terms>courbe</terms> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <terms>paramétrage</terms> de la courbe.
+décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <term>paramétrage</term> de la courbe.
 </p>
 
 <sidebyside width="30%">
@@ -158,7 +158,7 @@ et <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. Afin de voir que, si <m>t</m> parcourt <m>[0,
 <image source="images/CLP-figs/astroid4"/>
 </sidebyside>
 <p>
-La courbe <m>x^{2/3}+y^{2/3}=a^{2/3}</m> est appelée une <terms>astroïde</terms>. Son équation suggère qu'elle devrait ressembler à un cercle, mais ce n'est pas évident qu'elle admette les coins. Nous aborderons ces aspects plus tard, <em>tangentiellement</em> seulement.
+La courbe <m>x^{2/3}+y^{2/3}=a^{2/3}</m> est appelée une <term>astroïde</term>. Son équation suggère qu'elle devrait ressembler à un cercle, mais ce n'est pas évident qu'elle admette les coins. Nous aborderons ces aspects plus tard, <em>tangentiellement</em> seulement.
 </p>
 <!--
 <p>
@@ -397,33 +397,25 @@ x=\cos(7-y)
   <example xml:id="Param-intersec">
       <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
       </p>
-      <image xml:id="sageplot3d-plan-cone" width="60%">
-      <description>L'intersection d'un plan avec un cône</description>
-      <sageplot variant="3d" aspect="1.0">
-        var('u,v,r,t')
-        Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
-          texture = "lightblue", frame = False)
-        Fig += parametric_plot3d([r*cos(t), r*sin(t),r], (r,0, 2),(t,0,2*pi),
-          mesh = True, texture = "orange", opacity = 0.75)
-        Fig += parametric_plot3d([r,(r^2 - 1)/2,(r^2 + 1)/2], (r,-2,2),
-          color = "red", thickness = 5)
-        Fig
+      <figure xml:id="plan-cone">
+        <caption>Le plan <m>z = 1+y</m> et le cône <m>z^2 = x^2+ y^2</m>
+        </caption>
+        
+        <image xml:id="sageplot3d-plan-cone" width="60%">
+          <description>L'intersection d'un plan avec un cône</description>
+          <sageplot variant="3d" aspect="1.0">
+            var('u,v,r,t')
+            Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
+              texture = "lightblue", frame = False)
+            Fig += parametric_plot3d([r*cos(t), r*sin(t),r], (r,0, 2),(t,0,2*pi), mesh = True, texture = "orange", opacity = 0.75)
+            Fig += parametric_plot3d([r,(r^2 - 1)/2,(r^2 + 1)/2], (r,-2,2),
+              color = "red", thickness = 5)
+            Fig
       </sageplot>
     </image>
-
-
-
-
-
-      <!--
-      <figure>
-      <caption>L'intersection du plan <m>z=1+y</m> et le cône <m>z^2 = x^2+y^2</m> est une parabole.</caption>
-      <interactive xml:id="geogebra-plan-cone" platform="geogebra" width="100%" aspect="1:1">
-      <slate xml:id="plan-cone" surface="geogebra" source="GeoGebra/Cone-plan-param.ggb" aspect="1:1">
-      </slate>
-      </interactive>
       </figure>
-    -->
+
+
       <ul>
         <li>
           <p>

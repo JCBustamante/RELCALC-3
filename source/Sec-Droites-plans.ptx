@@ -6,13 +6,14 @@
   Une droite <m>\plan{D}</m> dans le plan peut être spécifiée en donnant un point <m>P_0=(x_0,y_0)</m> par lequel elle passe, et sa direction. Cette dernière peut, à son tour, être spécifiée en donnant un vecteur <m>\vn</m> qui est orthogonal à <m>\plan{D}</m>. On dira que <m>\vn</m> est un vecteur normal pour <m>\plan{D}</m>. On peut aussi spécifier un vecteur directeur <m>\vd</m> pour <m>\plan{D}</m>.
   </p>
   <figure>
+    <caption>Un droite, un vecteur normal et un vecteur directeur.</caption>
     <sidebyside widths="40% 40%" valign="middle">
       <image source="images/CLP-figs/twodLineNormal"/>
       <image source="images/CLP-figs/twodLine"/>
     </sidebyside>
   </figure>
 
-
+  <p>
   <ul>
       <li>
         <p>
@@ -68,6 +69,7 @@
         </p>
       </li>
     </ul>
+  </p>
 </subsection>
 <subsection xml:id="subsec-Plans">
   <title>Plans dans l'espace</title>
@@ -75,12 +77,14 @@
     Afin de spécifier un plan <m>\plan{P}</m> dans l'espace, il n'est pas suffisant de donner un point <m>P_0(x_0,y_0,z_0)</m> et un vecteur parallèle au plan. En effet, la droite passant par ce point et dirigée par ce vecteur sera contenue dans le plan, mais le plan pourrait tourner autour de cette droite. Cette dernière ne détermine donc pas le plan. Par contre, donner un point et un vecteur orthogonal à <m>\plan{P}</m> suffit à déterminer ce dernier.
   </p>
   <figure>
+    <caption>Un point et vecteur <m>\vd</m> parallèle au plan ne suffisent pas à le spécifier.</caption>
     <sidebyside widths="36% 45%" valign="middle">
       <image source="images/CLP-figs/threedPlane"/>
       <image source="images/CLP-figs/threedPlane2"/>
     </sidebyside>
   </figure>
-<ul>
+  <p>
+    <ul>
   <li>
     <p>
       Si <m>\vn</m> et <m>P_0</m> sont donnés, alors le point <m>X</m> appartient au plan <m>\plan{P}</m> passant par <m>P_0</m> de vecteur normal <m>\vn</m> si et seulement si les vecteurs  <m>\vx - \vp_0 = \overrightarrow{P_0X}</m> et <m>\vn</m> sont orthogonaux, c'est-à-dire si et seulement si
@@ -128,8 +132,8 @@
          Lorsqu'on développe le déterminant, on obtient l'équation générale du plan.
       </p>
     </li>
-</ul>
-
+    </ul>
+  </p>  
 </subsection>
 
 <subsection xml:id="pars-dte-espace">
@@ -146,13 +150,13 @@ y-y_0 = t \b, \qquad
 z-z_0 = t \g.
 </mrow>
 </md>
-Si l'on suppose de plus que les composantes <m>\a, \b</m> et <m>\g</m> de <m>\vd</m> sont non nulles, on <terms> élimine le paramètre</terms> <m>t</m>, c'est-à-dire qu'on isole <m>t</m> en fonction des autres quantités, pour obtenir
+Si l'on suppose de plus que les composantes <m>\a, \b</m> et <m>\g</m> de <m>\vd</m> sont non nulles, on <term> élimine le paramètre</term> <m>t</m>, c'est-à-dire qu'on isole <m>t</m> en fonction des autres quantités, pour obtenir
 <md>
   <mrow>
   \frac{x-x_0}{\a}=\frac{y-y_0}{\b}=\frac{z-z_0}{\g},
   </mrow>
   </md>
-  ce qu'il est commun d'appeler les <terms>équations symétriques</terms> de la droite. Voici quelques exemples.
+  ce qu'il est commun d'appeler les <term>équations symétriques</term> de la droite. Voici quelques exemples.
 </p>
 
 <example xml:id="eg_line_equations">

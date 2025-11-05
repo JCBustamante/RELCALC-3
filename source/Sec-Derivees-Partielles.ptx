@@ -1339,44 +1339,8 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
         </p>
       </statement>
     </example>
-    <example>
-      <statement>
-        <p>Soit <m>f(x,y)</m> où <m>f</m> est une fonction de classe <m>C^2</m>. Si <m>x(u,v) = u^2 + v^2</m> et que <m>y(u,v) = 2uv</m>, alors on considère <m>F(u,v)=f(x(u,v),y(u,v))</m>. Calculer <m>\pdiff{F}{u}</m> et <m>\frac{\partial^2 F}{\partial u^2}</m>.
-        </p>
-        <p>
-          Le calcul de la dérivée du premier ordre est immédiat, on a
-          <md>
-            <mrow> \pdiff{F}{u} \amp =   \pdiff{f}{x} \pdiff{x} +  \pdiff{f}{y} \pdiff{y}{u} = \pdiff{f}{x} \cdot 2u + \pdiff{f}{y}\cdot 2v</mrow>
-            <mrow> \amp = 2 \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right) </mrow>
-          </md>.
-        </p>
-        <p>
-          Afin de calculer la dérivée du deuxième ordre, nous devons dériver de nouveau et tenir compte de la règle du produit dans un premier temps :
-          <md>
-            <mrow>\frac{\partial^2 F}{\partial u^2}  \amp = \pdiff{}{u}\pdiff{F}{u} = 2 \pdiff{}{u} \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right)</mrow>
-            <mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 0 \pdiff{f}{y} + 2v \pdiff{}{u} \pdiff{f}{y} </mrow>
-            <mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}</mrow>
-          </md>.
-        </p>
-        <p>
-          Or, il faut bien comprendre que les dérivées partielles <m>\diff{f}{x}</m> et <m>\pdiff{f}{y}</m> sont évaluées en <m>(x(u,v), y(u,v))</m>, ce qui donne le sens aux expressions <m>\pdiff{}{u} \pdiff{f}{y} </m> et <m>\pdiff{}{u} \pdiff{f}{y}</m>. On calcule alors
-          <md>
-            <mrow> \pdiff{}{u} \pdiff{f}{x} \amp = \pdiff{}{x}\left(\pdiff{f}{x}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{x}\right)\, \pdiff{y}{u}  = \frac{\partial^2 f}{\partial x^2}\ 2u + \frac{\partial^2f}{\partial y\, \partial x}\ 2v </mrow>,
-            <mrow> \pdiff{}{u} \pdiff{f}{y} \amp = \pdiff{}{x}\left(\pdiff{f}{y}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{y}\right)\, \pdiff{y}{u} = \frac{\partial^2 f}{\partial x \, \partial y}\ 2u + \frac{\partial^2f}{\partial y^2}\ 2v  </mrow>
-          </md>.
-        </p>
-        <p>
-          La fonction <m>f</m> étant de classe <m>C^2</m>, les dérivées partielles mixtes sont égales. Ainsi, on obtient
-          <md>
-            <mrow>\frac{\partial^2 F}{\partial u^2} \amp =2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}   </mrow>
-            <mrow> \amp  =2 \pdiff{f}{x} + 2u \left[ \frac{\partial^2 f}{\partial x^2}\ 2u + \frac{\partial^2f}{\partial y\, \partial x}\ 2v \right] + 2v \left[ \frac{\partial^2 f}{\partial x \, \partial y}\ 2u + \frac{\partial^2f}{\partial y^2}\ 2v  \right] </mrow>
-            <mrow>  \amp = 2\pdiff{f}{x} + 4u^2 \frac{\partial^2 f}{\partial x^2} + 8uv \frac{\partial^2 f}{\partial x\, \partial y} + 4v^2 \frac{\partial^2 f }{\partial y^2} </mrow>
-          </md>.
-        </p>
 
-
-      </statement>
-    </example>
+    
 
 
 

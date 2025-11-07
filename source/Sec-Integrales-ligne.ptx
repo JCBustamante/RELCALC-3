@@ -114,7 +114,10 @@
         </ul>
     </p>
 
-    <remark> Dans la définition donnée, <m>\displaystyle \int_{\cC}f\, \dee{s}</m>  est définie en termes du paramétrage de la courbe, mais le chemin <m>\vr</m> n'apparaît pas dans le terme défini. Ceci laisse penser que, même si <m>\vr</m> apparaît dans la formule, deux paramétrages différents pour la courbe <m>\cC</m> donnent le même résultat. C'est en effet le cas, c'est-à-dire que l'intégrale de ligne dépend de la courbe et non du paramétrage. Cette question sera abordée plus tard.
+    <remark> 
+      <p>
+        Dans la définition donnée, <m>\displaystyle \int_{\cC}f\, \dee{s}</m>  est définie en termes du paramétrage de la courbe, mais le chemin <m>\vr</m> n'apparaît pas dans le terme défini. Ceci laisse penser que, même si <m>\vr</m> apparaît dans la formule, deux paramétrages différents pour la courbe <m>\cC</m> donnent le même résultat. C'est en effet le cas, c'est-à-dire que l'intégrale de ligne dépend de la courbe et non du paramétrage. Cette question sera abordée plus tard.
+      </p>
     </remark>
 
 <p>
@@ -141,7 +144,7 @@
 
           </p>
              <image xml:id="sageplot-int-ligne-eg1">
-               <description>Le segment de <m>(0,1)</m> à <m>(1,0)</m></description>
+               <description><p>Le segment de <m>(0,1)</m> à <m>(1,0)</m></p></description>
               <sageplot>
                   var('x,y')
                   Fig = arrow2d((0,1), (1/2,1/2), color = "blue",
@@ -251,7 +254,7 @@ Devoir 11, Problème 1
         <p>
           Comme précédemment, on a un paramétrage de <m>\cC_2</m> donné par <m>\vr_2(t) = \vi + \vj +t\vk</m> pour <m>t\in [0,1]</m>. Ceci donne <m>\vr_2'(t) = \vk</m>, et donc <m>|\vr_2'(t)| = 1</m>, et donc
           <md>
-            <mrow>\int_{\cC_2} f\, \dee{s} \amp= \int_0^1 \left(1+1^2-t^2\right) \cdot 1 \, \dee{t} = \int_0^1 2-t^2 \, \dee{t} = 5/3</mrow>.
+            <mrow>\int_{\cC_2} f\, \dee{s} \amp= \int_0^1 \left(1+1^2-t^2\right) \cdot 1 \, \dee{t} = \int_0^1 2-t^2 \, \dee{t} = 5/3.</mrow>
           </md>
         </p>
       </li>
@@ -439,7 +442,7 @@ Devioir 11, Problème 2
     </ol>
     </p>
     <image xml:id="sageplot-int-ligne-eg4" width = "75%">
-      <description>Le champ et les trois trajectoires</description>
+      <description><p>Le champ et les trois trajectoires</p></description>
      <sageplot>
         var('x,y')
         f(x) =sqrt(x)
@@ -544,7 +547,8 @@ Devioir 11, Problème 2
     </example>
 
     <example xml:id="eg_workIntegralB">
-    <p>
+    <statement>
+      <p>
       Soit  <m>\vF(x,y) = 2y\,\vi + 3x\,\vj</m>. Calculer les intégrales curvilignes de <m>\vF</m> le long des trajectoires suivantes.
       <ol marker="(a)">
           <li>
@@ -555,6 +559,9 @@ Devioir 11, Problème 2
           </li>
       </ol>
     </p>
+      
+    </statement>  
+    
 
     <solution>
     <p>
@@ -634,7 +641,7 @@ Devioir 11, Problème 2
     </fact>
 
     <p>
-      L'intégrale de ligne qui nous occupe calcule la somme des projections du champ <m>\vF</m> tangentiellement à la courbe <m>\cC</m>. Pour cette raison, on appelle souvent cette intégrale le <terms><em>flux de <m>\vF</m> le long de <m>\cC</m></em></terms>, ou encore la <terms><em>circulation de <m>\vF</m> le long de <m>\cC</m></em></terms>. Il sera utile de penser en ces termes.
+      L'intégrale de ligne qui nous occupe calcule la somme des projections du champ <m>\vF</m> tangentiellement à la courbe <m>\cC</m>. Pour cette raison, on appelle souvent cette intégrale le <term><em>flux de <m>\vF</m> le long de <m>\cC</m></em></term>, ou encore la <term><em>circulation de <m>\vF</m> le long de <m>\cC</m></em></term>. Il sera utile de penser en ces termes.
     </p>
 
     <p>
@@ -679,7 +686,7 @@ Devioir 11, Problème 2
               <p>On divise <m>\cC</m> en trois portions, chacune correspondant à un des côtés du triangle : <m>\cC_1</m> le segment allant de <m>(0,0)</m> à <m>(1,0)</m>, <m>\cC_2</m> le segment allant de <m>(1,0)</m> à <m>(0,1)</m>, puis <m>\cC_3</m> celui de <m>(0,1)</m> à <m>(0,0)</m>. Dans la figure ci-contre, nous avons aussi le champ de vecteurs <m>\vF(x,y) = (x-y)\vi + (x+y)\vj</m>.
               </p>
               <image xml:id="sageplot-int-ligne-Pdx">
-                <description>La trajectoire et le champ</description>
+                <description><p>La trajectoire et le champ</p></description>
                <sageplot>
                 var('x,y')
                 C =  arrow2d((0,0), (1/2,0), color = "red", arrowsize = 3,
@@ -708,6 +715,7 @@ Devioir 11, Problème 2
              </image>
 
           </sidebyside>
+          <p>
           <ul>
             <li>
               <p>
@@ -739,10 +747,12 @@ Devioir 11, Problème 2
               </p>
             </li>
           </ul>
+
+          </p>
           <p>Il vient alors que <m>\int_{\cC} (x-y)\dee{x}  + (x+y)\dee{y} = 1+\frac{1}{2}-\frac{1}{2}</m>.
           </p>
           <p>
-            Le fait que l'intégrale sur <m>\cC_3</m> soit négative et les deux autres positives peut être lu dans le graphique ci-haut. En effet, pendant la portion du trajet le long de <m>\cC_3</m>, on observe que le champ <m>\vF</m> pointe en s'opposant au déplacement : en effet, le champ a une composante verticale positive, tandis que le déplacement se fait vers le bas.
+            Le fait que l'intégrale sur <m>\cC_3</m> soit négative et les deux autres positives peut être lu dans le graphique ci-haut. En effet, pendant la portion du trajet le long de <m>\cC_3</m>, on observe que le champ <m>\vF</m> pointe en s'opposant au déplacement : le champ a une composante verticale positive, tandis que le déplacement se fait vers le bas.
           </p>
       </solution>
     </example>
@@ -779,7 +789,7 @@ Devioir 11, Problème 2
     </example>
 
     <p>
-      Supposons maintenant nous voulons calculer le taux d'entrée ou de sortie d'un fluide dans une région du plan limitée par une courbe fermée <m>\cC</m>. Si <m>\vF</m> est le champ de vitesses du fluide, on ne doit plus projeter <m>\vF</m> tangentiellement à <m>\cC</m> (ce qu'on fait lorsqu'on calcule <m>\vF \cdot \vT</m>), mais plutôt projeter <m>\vF</m> sur un vecteur <m>\vn </m> unitaire et orthogonal à la courbe en chaque point. Dans ce cas, le <terms><em>flux de <m>\vF</m>à travers <m>\cC</m></em></terms> sera donné par
+      Supposons maintenant nous voulons calculer le taux d'entrée ou de sortie d'un fluide dans une région du plan limitée par une courbe fermée <m>\cC</m>. Si <m>\vF</m> est le champ de vitesses du fluide, on ne doit plus projeter <m>\vF</m> tangentiellement à <m>\cC</m> (ce qu'on fait lorsqu'on calcule <m>\vF \cdot \vT</m>), mais plutôt projeter <m>\vF</m> sur un vecteur <m>\vn </m> unitaire et orthogonal à la courbe en chaque point. Dans ce cas, le <term><em>flux de <m>\vF</m>à travers <m>\cC</m></em></term> sera donné par
       <me>
           \int_{\cC} \vF \cdot \vn\, \dee{s}
       </me>.

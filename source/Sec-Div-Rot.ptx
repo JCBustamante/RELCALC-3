@@ -9,7 +9,9 @@
 <title>Le rotationnel et la divergence</title>
 
 <introduction>
-  Dans cette section, nous nous intéressons au calcul différentiel des champs vectoriels. Plus précisément, nous considérons le rotationnel et la divergence d'un champ de vecteurs. Si l'on pense au champ comme un à champ de vitesses, il s'agit de mesures qui permettent, jusqu'à un certain point, de caractériser ce champ par sa tendance à créer des rotations (sans déplacement) ou comme une source. Ces quantités seront intimement liées aux intégrales de flux rencontrées dans la section précédente, à savoir la circulation d'un champ (en lien avec le rotationnel) et le flux d'un champ à travers une courbe (en lien avec la divergence).
+  <p>
+     Dans cette section, nous nous intéressons au calcul différentiel des champs vectoriels. Plus précisément, nous considérons le rotationnel et la divergence d'un champ de vecteurs. Si l'on pense au champ comme un à champ de vitesses, il s'agit de mesures qui permettent, jusqu'à un certain point, de caractériser ce champ par sa tendance à créer des rotations (sans déplacement) ou comme une source. Ces quantités seront intimement liées aux intégrales de flux rencontrées dans la section précédente, à savoir la circulation d'un champ (en lien avec le rotationnel) et le flux d'un champ à travers une courbe (en lien avec la divergence).
+    </p>
 </introduction>
 
 
@@ -57,7 +59,7 @@
     </me>
   </p>
   <image xml:id="sageplot-idee-rot" width="85%">
-    <description>Une trajectoire rectangulaire</description>
+    <description><p> Une trajectoire rectangulaire</p></description>
    <sageplot>
     var('x,y')
     Dx=2
@@ -140,7 +142,7 @@
   <p>
     Ainsi, le flux correspondant aux portions horizontales du trajet est
     <md>
-      <mrow> \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} \amp\approx \left[(P(x_0,y_0) - P(x_0, y_0 + \De y)\right] \De x </mrow>
+      <mrow> \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} \amp\approx \left[P(x_0,y_0) - P(x_0, y_0 + \De y)\right] \De x </mrow>
       <mrow>  \amp  = -\left[P(x_0, y_0 + \De y) - P(x_0,y_0) \right]\De x</mrow>
       <mrow> \amp\approx -\pdiff{P}{y}(x_0, y_0) \De y\, \De x, </mrow>
     </md>
@@ -150,7 +152,7 @@
   <p>
     De la même façon, le flux correspondant aux composantes verticales de la trajectoire est
     <md>
-      <mrow> \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr} \amp\approx \left[(Q(x_0 + \De x,y_0) - P(x_0, y_0)\right] \De y </mrow>
+      <mrow> \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr} \amp\approx \left[Q(x_0 + \De x,y_0) - P(x_0, y_0)\right] \De y </mrow>
       <mrow> \amp\approx \pdiff{Q}{y}(x_0, y_0) \De x\, \De y, </mrow>
     </md>
     puisque nous avons l'hypothèse de la continuité de la dérivée partielle <m>\pdiff{Q}{x}</m>.
@@ -158,11 +160,11 @@
   <p>
     Le flux total est donc
     <md>
-      <mrow> \oint_{\cC} \vF \cdot \dee{\vr} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot \dee{\vr}  \approx \left[\pdiff{P}{y}(x_0, y_0) - \pdiff{Q}{x} (x_0,y_0)\right]\De y \De x.</mrow>
+      <mrow> \oint_{\cC} \vF \cdot \dee{\vr} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot \dee{\vr}  \approx \left[ \pdiff{Q}{x} (x_0,y_0)-\pdiff{P}{y}(x_0, y_0) \right]\De y \De x.</mrow>
     </md>
     La <em>densité de circulation</em>, c'est-à-dire le flux par unité d'aire, est donc
     <me>
-      \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{P}{y} - \pdiff{Q}{x}.
+      \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{Q}{x} - \pdiff{P}{y}.
     </me>
   </p>
 
@@ -189,7 +191,8 @@
       <figure xml:id="fig-rot-translation">
       <caption>Le champ <m>\vv = (x^2 - 1)\vj</m></caption>
       <image xml:id="sageplot-rot-translation" width="75%">
-        <description>Un champ vectoriel .</description>
+        <description><p>
+           Un champ vectoriel.</p></description>
         <sageplot>
           var('x,y')
           Fig = plot_vector_field((0,x^2 -1), (x,-0.9,0.9),(y,-0.3,1),
@@ -248,7 +251,8 @@
     </p>
 
       <image xml:id="sageplot-rot-illustration" width="85%">
-        <description>Un champ, et la composante <m>\vk</m> de son rotationnel</description>
+        <description><p> Un champ, et la composante <m>\vk</m> de son rotationnel</p>
+        </description>
        <sageplot>
         var('x,y')
         Fig =contour_plot(-cos(y)-sin(x), (x,-3*pi/2,3*pi/2),
@@ -330,8 +334,7 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
                     \end{vmatrix}   </mrow>
                     <mrow>  \amp =\left(\pdiff{x^2}{y} - \pdiff{}{z}(4z) \right)\vi - \left(\pdiff{x^2}{x} - \pdiff{}{y}(x^2 - y)\right)\vj </mrow>
                     <mrow>  \amp+ \left(\pdiff{}{x}(4z) -\pdiff{}{y}(x^2 - y) \right)\vk </mrow>
-                    <mrow>  \amp=-4\,\vi -2x\, \vj + \vk </mrow>.
-
+                    <mrow>  \amp=-4\,\vi -2x\, \vj + \vk.</mrow>
       </md>
 
     </p>
@@ -371,7 +374,7 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
                         \vk &amp; \pdiff{}{z}&amp; f_z
                     \end{vmatrix}   </mrow>
         <mrow> \amp = \left(\pdiff{f_z}{y} - \pdiff{f_y}{z}\right)\vi + \left(\pdiff{f_x}{z} - \pdiff{f_z}{x}\right)\vj  = \left(\pdiff{f_y}{x} - \pdiff{f_x}{y}\right)\vk</mrow>
-        <mrow>  \amp = \left(f_{zy} - f_{yz}\right)\vi + \left(f_{xz} - f_{zx}\right)\vj  + \left(f_{yx} - f_{xy}\right)\vk</mrow>.
+        <mrow>  \amp = \left(f_{zy} - f_{yz}\right)\vi + \left(f_{xz} - f_{zx}\right)\vj  + \left(f_{yx} - f_{xy}\right)\vk.</mrow>
       </md>
       Or, <m>f</m> étant supposée de classe <m>C^2</m>, le <xref ref="thm_mixed_partials"/> donne l'égalité des dérivées partielles croisées, et la conclusion suit.
 
@@ -416,6 +419,7 @@ Je peux traduire
   <p>
     Pour ceci, nous considérons la trajectoire fermée orientée dans le sens des aiguilles d'une montre <m>\cC</m>, formée par
   </p>
+  <p>
   <ul>
     <li>
       <p>
@@ -438,6 +442,7 @@ Je peux traduire
       </p>
     </li>
   </ul>
+  </p>
 <p>
   Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
   <me>
@@ -448,7 +453,9 @@ Je peux traduire
   Comme précédemment, nous faisons une approximation de <m>\vF \cdot \vn</m> sur chaque portion de la trajectoire en choisissant un point d'évaluation pour <m>\vF</m>. Par ailleurs, la longueur de chaque portion de déplacement est <m>\De s =  \De x</m> ou <m>\De s= \De y</m>, selon qu'on se trouve sur une portion horizontale ou verticale.
 </p>
 <image xml:id="sageplot-idee-div" width="85%">
-  <description>Une trajectoire rectangulaire</description>
+  <description><p>
+    Une trajectoire rectangulaire.
+  </p> </description>
  <sageplot>
   var('x,y')
   Dx=2
@@ -488,13 +495,13 @@ Je peux traduire
 
 <p>
   <tabular>
-                  <row header="yes" bottom="major">
+     <row header="yes" bottom="major">
                       <cell>Portion</cell>
                       <cell>Point évaluation</cell>
                       <cell> <m> \vn</m></cell>
                       <cell halign = "center"> <m>\vF \cdot \vn\ \De s</m></cell>
-                  </row>
-                  <row>
+      </row>
+      <row>
                       <cell><m>\cC_1</m>, bas</cell>
                       <cell> <m>(x_0,y_0)</m></cell>
                       <cell> <m>-\vj</m></cell>

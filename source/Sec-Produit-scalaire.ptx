@@ -2,8 +2,17 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Prd-scalaire">
   <title>Produit scalaire : angles et distances</title>
 <introduction>
-  Dans cette section et celle qui suit, nous allons étudier deux <em>produits</em> avec les vecteurs. Le premier est le  <em>produit scalaire</em>, qui a comme résultat un nombre<fn> D'où le nom : le résultat est un scalaire.</fn>, le second est le <em>produit vectoriel</em>, défini pour les vecteurs dans <m>\R^3</m>, dont le résultat est un autre vecteur. Tous les deux nous seront extrêmement utiles par la suite.
+  <p>
+    Dans cette section et celle qui suit, nous allons étudier deux <em>produits</em> avec les vecteurs. Le premier est le  <em>produit scalaire</em>, qui a comme résultat un nombre<fn> D'où le nom : le résultat est un scalaire.</fn>, le second est le <em>produit vectoriel</em>, défini pour les vecteurs dans <m>\R^3</m>, dont le résultat est un autre vecteur. Tous les deux nous seront extrêmement utiles par la suite.
+  </p>
+  
 </introduction>
+
+<subsection xml:id="subsec-produit-scalaire">
+  <title>Produit scalaire</title>
+
+
+
 
 <p>
 Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de composantes. Cependant, dans le cadre de ce texte, nous utiliserons souvent les vecteurs à deux ou trois composantes. Afin d'alléger l'écriture<fn>Et surtout puisque nous présumons que le lecteur ou la lectrice générique de ce texte a suivi un cours d'algèbre linéaire.</fn>, nous exposons la théorie pour les vecteurs dans <m>\R^n</m>, nous laissons au lectorat le soin de faire les spécialisations aux cas <m>n=2</m> ou <m>n=3</m>.
@@ -23,8 +32,8 @@ Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de c
 </definition>
 
 <example>
-  <statement>
-<ol>
+  <p>
+    <ol>
     <li>
       <p>
         Soit <m>\va = (3,1,-2)</m> et <m>\vb = (1,-1,1)</m>. Calculer <m>\va \cdot \vb</m>.
@@ -36,11 +45,12 @@ Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de c
       </p>
     </li>
 
-</ol>
+    </ol>
+ </p>
 
-  </statement>
-
+ <p>
   <solution>
+    <p>
     <ol>
       <li>
         <p>
@@ -53,12 +63,21 @@ Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de c
       </li>
       <li>
         <p> Nous avons cette fois :
-          <me>(\vi + 2\vj)\cdot (-2\vi + \vj) = 1\times (-2) + 2 \times (-1) = -4. </me><aside> Noter qu'ici on peut considérer nos vecteurs comme étant des vecteurs de <m>\R^2</m>, ou, en complétant avec <m>+0\vk</m>, comme des vecteurs de <m>\R^3</m>. Le résultat est le  même. </aside>
+          <me>(\vi + 2\vj)\cdot (-2\vi + \vj) = 1\times (-2) + 2 \times (-1) = -4. </me>
         </p>
       </li>
     </ol>
+    </p>
   </solution>
+ </p>
 </example>
+<!--
+<p>
+<aside> <p>Noter qu'ici on peut considérer nos vecteurs comme étant des vecteurs de <m>\R^2</m>, ou, en complétant avec <m>+0\vk</m>, comme des vecteurs de <m>\R^3</m>. Le résultat est le même. </p>
+</aside>
+</p>
+-->
+
 
 <proposition xml:id="prop-Prop-scalaire">
   <statement>
@@ -101,7 +120,12 @@ Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de c
 -->
 </proposition>
 
-<remark>Si le point <m>P</m> a pour coordonnées <m>(x,y,z)</m>, alors le vecteur <m>\vp=(x,y,z)</m> est tel que <m>\vp\cdot \vp = x^2 + y^2+z^2</m>. Ceci revient, en vertu du théorème de Pythagore, à dire que la distance de <m>P</m> à l'origine est donnée par <m>\sqrt{\vp\cdot \vp}</m>. Ceci nous mène à la définition de la norme d'un vecteur. </remark>
+<remark>
+  <p>
+    Si le point <m>P</m> a pour coordonnées <m>(x,y,z)</m>, alors le vecteur <m>\vp=(x,y,z)</m> est tel que <m>\vp\cdot \vp = x^2 + y^2+z^2</m>. Ceci revient, en vertu du théorème de Pythagore, à dire que la distance de <m>P</m> à l'origine est donnée par <m>\sqrt{\vp\cdot \vp}</m>. Ceci nous mène à la définition de la norme d'un vecteur.
+    
+  </p>
+   </remark>
 
 
 <definition xml:id="def-norme">
@@ -139,7 +163,9 @@ On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norm
     <me>
       |k\va | = |k| \, |\va|.
     </me>
+    <!-- 
     <aside> Le terme de droite est le produit de la valeur absolue de <m>k</m> par la norme de <m>\va</m></aside>
+    -->
     </p>
   </statement>
   <!--
@@ -160,6 +186,9 @@ On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norm
 En effet, en vertu de la <xref ref="prop-prop-norme"/>, le vecteur <m>\va'</m> est unitaire et il pointe dans la même direction que <m>\va</m>, puisqu'il s'agit d'un multiple scalaire de celui-ci.  On dit alors que <m>\va</m> a été <term>normalisé</term>.
 </p>
 
+
+
+
 <p>Une des principales utilités du produit scalaire est son lien avec les angles, traduite dans le résultat suivant.
 </p>
 
@@ -178,25 +207,22 @@ En effet, en vertu de la <xref ref="prop-prop-norme"/>, le vecteur <m>\va'</m> e
 <proof>
   <p>Afin d'établir ce résultat, on calcule  <m>|\va-\vb|^2</m> de deux façons différentes.
 
-La première consiste à calculer  <m>|\va-\vb|^2</m> au moyen du produit scalaire, c'est-à-dire
-<md>
-<mrow>
-|\va-\vb|^2\ &amp;=\ (\va-\vb\,)\cdot(\va-\vb\,)
-</mrow><mrow>
-&amp;=\ \va\cdot\va-\va\cdot\vb-\vb\cdot\va
-+\vb\cdot\vb
-</mrow><mrow>
-&amp;=\ |\va|^2+|\vb|^2-2\va\cdot\vb.
-</mrow>
-</md>
+    La première consiste à calculer  <m>|\va-\vb|^2</m> au moyen du produit scalaire, c'est-à-dire
+    <md>
+    <mrow> |\va-\vb|^2\ &amp;=\ (\va-\vb\,)\cdot(\va-\vb\,)</mrow>
+    
+    <mrow> &amp;=\ \va\cdot\va-\va\cdot\vb-\vb\cdot\va +\vb\cdot\vb </mrow> 
+    
+    <mrow> &amp;=\ |\va|^2+|\vb|^2-2\va\cdot\vb. </mrow>
+    </md>
 
-Par ailleurs, la seconde façon de calculer <m>|\va-\vb|^2</m> fait appel à l'interprétation d'une norme comme distance et découle de la loi des cosinus pour les triangles.
-</p>
+  Par ailleurs, la seconde façon de calculer <m>|\va-\vb|^2</m> fait appel à l'interprétation d'une norme comme distance et découle de la loi des cosinus pour les triangles.
+  </p>
 <sidebyside width="42%">
   <image source="images/CLP-figs/cosineL"/>
 </sidebyside>
 
-Si l'on applique la loi des cosinus à un triangle dont un sommet est à l'origine et que deux côtés adjacents sont déterminés par les vecteurs <m>\va</m> et <m>\vb</m> (voir la figure ci-haut), le troisième côté est donné par <m>\va - \vb</m>, d'où
+<p>Si l'on applique la loi des cosinus à un triangle dont un sommet est à l'origine et que deux côtés adjacents sont déterminés par les vecteurs <m>\va</m> et <m>\vb</m> (voir la figure ci-haut), le troisième côté est donné par <m>\va - \vb</m>, d'où
 <me>
   |\va - \vb|^2 = |\va|^2 + |\vb|^2 - 2|\va|\, |\vb| \cos \theta .
 </me>
@@ -206,9 +232,16 @@ En combinant ces deux résultats, on obtient
    |\va|^2+|\vb|^2-2\va\cdot\vb = |\va|^2 + |\vb|^2 - 2|\va|\, |\vb| \cos \theta,
 </me>
 et le résultat suit après simplifications.
+</p>
+
 </proof>
 </theorem>
 
+</subsection>
+
+
+<subsection xml:id="subsec-Projections">
+  <title>Projections</title>
 
 <p>
 Le résultat du <xref ref="thm-cosinus"/> permet d'utiliser le produit scalaire pour déterminer si deux vecteurs sont orthogonaux ou pas, c'est-à-dire si l'angle qu'ils forment est  <m>\frac{\pi}{2}</m><fn>La notion d'orthogonalité a été généralisée aux ensembles de fonctions, par exemple. Ceci joue un rôle très important dans les mathématiques appliquées plus avancées. La généralisation du produit scalaire est celle d'un <q>produit intérieur</q>.</fn>. De la même façon, on peut utiliser le produit scalaire pour calculer l'angle formé par deux vecteurs (le cosinus de cet angle en réalité). Notamment, si le produit scalaire est positif, il en va de même pour le cosinus, de sorte que l'angle est un angle aigu. Naturellement, un produit scalaire négatif signifie que l'angle est obtus.
@@ -342,6 +375,10 @@ En vertu de la <xref ref= "def-Projection"/> avec <m>\va=\left( 0,3\right)</m> e
 </p>
 
 </example>
+  
+
+</subsection>
+
 
 <xi:include  href="./Problemes/Prob-sec-Prod-scalaire.ptx"/>
 

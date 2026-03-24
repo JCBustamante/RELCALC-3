@@ -12,12 +12,8 @@
     <chunking level="2" />
     <!-- Depth for table of contents.  0 means no TOC -->
     <tableofcontents level="2" />
-    <!-- Visibility of exercise components where they first appear.          -->
-    <!-- There are four components (statement/hint/answer/solution) for each -->
-    <!-- of five exercise types (inline/divisional/worksheet/reading/        -->
-    <!-- project). Some examples:                                            -->
-    <exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
     <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/>
+    <solution visible="no"/>
     <!-- Style of fill-in-the-blanks: -->
     <fillin textstyle="underline" mathstyle="shade" />
     <!-- You can set a watermark: -->
@@ -33,8 +29,8 @@
     <!-- Set which marked elements are included in this version: -->
     <!-- See
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
-    <!-- <version include="sol-privees"/> -->
-      </source>
+
+  </source>
 
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
@@ -63,6 +59,8 @@
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
   <!-- included in cross-references                                 -->
   <latex print="no" sides="two" font-size="10" draft="no">
+    <exercise-inline statement="yes" hint="yes" answer="yes" solution="no" />
+    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/>
     <!-- Control text justification and bottom page behavior: -->
     <page>
       <geometry>letterpaper, left = 15mm, right=45mm, ignoreheadfoot, </geometry>
@@ -83,6 +81,9 @@
   </latex>
 
   <html>
+    <exercise-inline statement="yes" hint="yes" answer="no" solution="no"/>
+    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "no"/>
+    <solution visible="no"/>
     <platform host="web"/>
     <!-- The host above could also be "runestone" -->
     <!-- Whether to knowl a particular elements is set here    -->
@@ -107,8 +108,7 @@
       exercise-worksheet="no"
       exercise-readingquestion="no"
     />
-     <exercise-inline statement="yes" hint="no" answer="no" solution="yes" />
-    <exercise-divisional statement="yes" hint="no" answer = "yes" solution = "yes"/>
+    
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->

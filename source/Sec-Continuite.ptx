@@ -136,8 +136,10 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
 
   </statement>
 </example>
-
+<p>
 Le phénomène observé dans l'exemple précédent fournit un critère permettant de décider qu'une limite n'existe pas.
+  
+</p>
 
 <remark>
   <title>Critère des deux trajectoires</title>
@@ -155,7 +157,7 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
 <p>
   Une mise en garde s'impose cependant : si deux trajectoires donnent la même limite, il n'est pas possible de conclure que la limite existe. L'exemple suivant montre cette situation.
 </p>
-<example>
+<example xml:id="ex-Lim-NE2">
   <statement>
     <p>
       Considérer <m>f(x,y) = \frac{xy^2}{x^2 + y^4}</m> et étudier la limite de <m>f</m> lorsque <m>(x,y) </m> tend vers <m>(0,0)</m>.
@@ -293,7 +295,7 @@ Dans la pratique, il est fastidieux d'étudier les limites en utilisant la défi
     <statement>
       <p>Soit <m>\plan{D}\subseteq \R^n</m> et <m>f,g:\plan{D} \to \R</m> telles que <m>\lim_{\vx \to \va}f(\vx) = L_1</m> et <m>\lim_{\vx \to \va} g(\vx) = L_2</m>. Alors, pour tout <m>\a\in \R</m>, nous avons
       </p>
-      <ol>
+      <ol marker = "(a)" cols = "2">
         <li>
           <p>
             <m>\displaystyle \lim_{\vx \to \va} (\a f)(\vx) = \a L_1</m>;
@@ -455,7 +457,7 @@ y&amp;=r\sin\theta
   <theorem xml:id="thm-Prop-Continues">
       <title>Propriétés des fonctions continues</title>
       <statement>
-        <p>Soit <m>\va \in \plan{D}\subseteq \R^n</m> et <m>f,g:\plan{D} \to \R</m> deux fonctions continues en  <m>\va</m> et <m>\a \in \R</m>. Alors, il en va de même pour les fonctions <m>\a f,\ f+g,\ fg</m>. Si, en plus, <m>g(\va)\ne 0</m>, alors la fonction <m>\left(\frac{f}{g}\right)</m> est aussi continue en <m>\va</m>.
+        <p>Soit <m>\va \in \plan{D}\subseteq \R^n</m> et <m>f,g:\plan{D} \to \R</m> deux fonctions continues en  <m>\va</m> et <m>\a \in \R</m>. Alors, il en va de même pour les fonctions <m>\a f,\ f+g,\ fg</m>. Si, en plus, <m>g(\va)\ne 0</m>, alors la fonction <m>\frac{f}{g}</m> est aussi continue en <m>\va</m>.
       </p>
       </statement>
   </theorem>
@@ -488,7 +490,7 @@ y&amp;=r\sin\theta
     <statement>
       <p>Soit <m>\plan{D}\subseteq \R^n</m> et <m>f:\plan{D}\to \R</m> une fonction continue.
       </p>
-      <ol>
+      <ol marker = "(a)">
         <li>
           <p>
             Si l'image de <m>f</m> est contenue dans une partie <m>\plan{U}</m> de <m>\R</m> et que <m>\f : \plan{U} \to \R </m> est continue, alors <m>\f \circ f : \plan{D} \to \R </m> est une fonction continue également.

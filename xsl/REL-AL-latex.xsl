@@ -27,13 +27,14 @@
 
 <!-- Supprimer les solutions des exemples (example/problem/question)
        dans la sortie LaTeX, mais laisser les exercices intacts. -->
-  <xsl:template match="example/solution | problem/solution | question/solution"/>
-
+<!--  <xsl:template match="example/solution | problem/solution | question/solution"/>
+-->
 
   <!-- Supprimer les démonstrations des théorèmes/propositions/corollaires
        dans la sortie LaTeX (PDF), mais laisser les autres preuves intactes -->
-  <xsl:template match="theorem/proof | proposition/proof | corollary/proof"/>
-
+  
+  <!--    <xsl:template match="theorem/proof | proposition/proof | corollary/proof"/>
+    --> 
 
 
 <xsl:param name="debug.exercises.forward" select="'no'"/>

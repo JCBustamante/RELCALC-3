@@ -28,7 +28,6 @@
   <me>
     |\vr(t_{i+1}) - \vr(t_i)| = \sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2}.
   </me>
-  </p>
 
 <p>
   Si l'on suppose que les composantes de la fonction <m>\vr</m>, c'est-à-dire les fonctions <m>x</m> et <m>y</m>, sont dérivables, le théorème de la moyenne donne l'existence de <m>t_i^\ast, t_i^{\ast \ast} \in[t_1, t_{i+1}]</m> tels que
@@ -435,6 +434,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
     </p>
   </li>
 </ul>
+<p>
 Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses à ces deux questions sont positives. La première sera traitée dans les problèmes, et, pour la seconde, nous avons besoin de revenir sur la fonction de longueur d'arc.
 </p>
 <!-- Il faudrait rajouter quelque chose comme l'exercic 15 p. 234 de Marsden-Tromba dans un exercice -->
@@ -548,6 +548,7 @@ Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses 
     \vr(t(s)) = t(s)\,\vi  + \cosh t(s)\, \vj =  \arcsinh s\, \vi + \sqrt{1+s^2}\, \vj.
   </me>
     Dans la figure de droite, on observe quelques points correspondant à des valeurs également espacées de l'abscisse curviligne.
+    </p>
   </statement>
 
 </example>
@@ -708,7 +709,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
 <proposition xml:id="prop-Formules-K">
   <statement>
     <p>Soit <m>\vr : [a,b] \to \R^3</m> un chemin régulier. Alors,
-    <ol>
+    <ol marker = "(a)">
       <li>
         <p>
           <m>\vv \times \va = v^3 (\vT \times \vK);</m>
@@ -828,7 +829,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           <mrow> \amp = (b^2 - a^2)2\sin t\, \cos t</mrow>
           <mrow>  \amp = (b^2-a^2) \sin 2t. </mrow>
         </md>
-        <p>
+      
           Cette expression s'annule lorsque <m>t=0,\pi/2,\pi</m> ou <m>\pi
         </m>. Si l'on suppose que <m>a\gt b</m>, on aura des minimums pour <m>c(t)</m>, donc des maximums pour <m>\kappa(t)</m> à <m>t=0, \pi</m>, et des maximums pour <m>c(t)</m>, donc des minimums à <m>t=\pi/2, 3\pi/2</m>. La signification géométrique est claire : l'ellipse est le plus courbée lorsqu'elle coupe l'axe des abscisses, et le moins courbée lorsqu'elle coupe l'axe des ordonnées<fn>Noter que cette situation changera si <m>b\gt a</m>.</fn>.
         </p>
@@ -840,14 +841,13 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           <me>
             (\vv \times \va) \times \vv = \left| \begin{array}{ccc}\vi \amp 0 \amp -a\sin t\\ \vj \amp 0 \amp \phantom{-}b\cos t\\ \vk \amp ab \amp 0\end{array}\right| = \ctvec{-ab\cos t}{-a^2 b\sin t}{0} = -ab \ctvec{b\cos t}{a\sin t}{0}.
           </me>
-<p>
+          <p>
           Il vient alors que <m>\vK = \frac{-ab}{v^4}\left(b\cos t \, \vi + a\sin t \vj\right)</m>. Ainsi, le centre du cercle osculateur se trouve à
-</p>
+          </p>
           <md>
             <mrow>\vr+ \frac{1}{\kappa^2}\vK \amp  = \vr + \frac{v^6}{a^2 b^2}\vK</mrow>
             <mrow> \amp  = \left[\begin{array}{c}a \cos t\\ b\sin t \\0\end{array}\right] - \frac{v^2}{ab}\left[\begin{array}{cc}b \cos t \\ a\sin t\\ 0 \end{array}\right].</mrow>
           </md>
-        </p>
       </li>
     </ol>
     </p>
@@ -894,8 +894,8 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
 <me>
   \vK(t) = \frac{1}{\left(1+f'(t)^2\right)^2}\ctvec{-f''(t)f'(t)}{f''(t)}{0} \implies \kappa(t) = |\vK(t)| = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}.
 </me>
-  <p> On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure a le même signe que la dérivée seconde, <m>f''</m>. Ceci fournit une autre preuve, s'il en faut, du fait que lorsqu'une fonction admet une dérivée seconde positive, sa courbe est courbée vers le haut, et inversement.
-  </p>
+On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure a le même signe que la dérivée seconde, <m>f''</m>. Ceci fournit une autre preuve, s'il en faut, du fait que lorsqu'une fonction admet une dérivée seconde positive, sa courbe est courbée vers le haut, et inversement.
+
 
 </solution>
 

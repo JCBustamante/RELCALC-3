@@ -1435,9 +1435,9 @@ Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose :
 
 <p>
   Ainsi, afin de trouver le maximum et le minimum d'une fonction  <m>f(x)</m> sur <m>[0,1]</m>, on procède comme suit :
-  <ol>
+  <ol marker = "(a)">
   <li><p> Dresser une liste des points candidats <m>0\leqslant  a\leqslant  1</m> où les maximums/minimums peuvent être atteints, en trouvant les valeurs de <m>a</m> où :
-   <ol>
+   <ol marker = "(a)">
      <li> <m>0 \lt a \lt 1</m> et <m>f'(a)=0</m>, ou
     </li>
     <li> <m>0 \lt a \lt 1</m> et  <m>f'(a)</m> n'existe pas (c'est-à-dire les points singuliers de <m>f</m>), ou
@@ -1453,9 +1453,9 @@ Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose :
 
 <p>
   La procédure pour trouver le maximum et le minimum d'une fonction <m>f</m> de plusieurs variables sur un ensemble donné est similaire. Commençons par le cas d'une fonction <m>f(x,y)</m> de deux variables sur le disque  <m>x^2+y^2\leqslant  1</m>. Comme précédemment :
-<ol>
+<ol marker = "(a)">
 <li><p> Dresser la liste des points candidats <m>\vr_0 = (x_0,y_0)</m> sur le disque où un maximum ou un minimum peut être atteint (voir notamment le <xref ref="thm_stationary_point"/>):
-<ol>
+<ol marker = "(a)">
 <li> <m>\vr_0 = (x_0,y_0)</m> est un point à l'intérieur du disque (c'est-à-dire, dans notre exemple, que <m>x_0^2+y_0^2 \lt 1</m>) et <m>\vnabla f(\vr_0) = \vZero</m>, ou
 </li>
 <li> <m>\vr_0 </m> est un point intérieur, et l'une des dérivées partielles  <m>f_x(\vr_0)</m> ou <m>f_y(\vr_0)</m> n'existe pas, ou
@@ -1589,7 +1589,7 @@ La figure ci-après montre le domaine, les courbes de niveau, les points critiqu
           f(x,y)= (x+y)*exp(-x^2 -y^2)
           C = contour_plot(f ,(-1.3,1.3), (-1.3,1.3), cmap = "Spectral",
             labels = True,  label_fmt=lambda x: "$%s$"%round(x,2),
-            contours = 11, label_colors="black", label_inline=True, label_fontsize=10, fill = True, axes = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, gridlines = True,            ticks = [[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1],[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1]],tick_formatter="latex", fontsize= 10, region=lambda x,y: 1.001 > x^2 + y^2 )
+            contours = 11, label_colors="black", label_inline=True, label_fontsize=10, fill = True, axes = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, gridlines = True,            ticks = [[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1],[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1]],tick_formatter="latex", fontsize= 10, région=lambda x,y: 1.001 > x^2 + y^2 )
           C += parametric_plot([cos(x), sin(x)], (x,0,2*pi), color = "black", thickness = 1.5, zorder = 2)
           C +=  point([(-0.5,-0.5), (-1/sqrt(2), -1/sqrt(2)), (0.5,0.5),
             (1/sqrt(2), 1/sqrt(2)) ], marker = "X",  size = 40, color = "black", zorder = 3)

@@ -61,7 +61,7 @@
       </figure>
       <p>
         Le bord de <m>\cE</m> est formé de <m>3</m> surfaces :
-        <ol>
+        <ol marker = "(a)">
           <li>
             <p>
               <m>\cS_1 :</m> la portion du plan <m>z=0</m> limitée par les inégalités <m>-1\leqslant  x \leqslant  1</m> et <m>x^2 \leqslant  y  \leqslant  1</m>. Dans cette région, le vecteur normal à la surface est <m>\vn_1 = - \vk</m> (en orange dans la figure). C'est le bord inférieur de <m>\cE</m>, en orange dans la figure.
@@ -80,11 +80,7 @@
         </ol>
       </p>
     </statement>
-    <solution>
-      <p>
-
-      </p>
-    </solution>
+    
   </example>
 
 </subsection>
@@ -102,7 +98,7 @@
 
 
     <statement>
-      <p>Soit <m>\cE</m> une région simple de <m>\R^3</m> et <m>\cS = \partial \cE</m> orientée vers l'extérieur de <m>\cE</m>. Soit <m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur une region contenant <m>\cE</m> dans son intérieur. Alors
+      <p>Soit <m>\cE</m> une région simple de <m>\R^3</m> et <m>\cS = \partial \cE</m> orientée vers l'extérieur de <m>\cE</m>. Soit <m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur une région contenant <m>\cE</m> dans son intérieur. Alors
       <me>
         \iint_{\partial \cE} \vF \cdot d\vS = \iiint_ \cE \vnabla \cdot \vF\, dV
       </me>
@@ -127,7 +123,7 @@
       </p>
     </statement>
     <solution>
-      <p>Soit <m>\cE</m> la boule unité, c'est à dire la région de <m>\R^3</m> verifiant <m>x^2+ y^2 + z^2 \leqslant  1</m>. Nous avons <m>\partial \cE = \cS</m> est la sphère donnée.
+      <p>Soit <m>\cE</m> la boule unité, c'est à dire la région de <m>\R^3</m> vérifiant <m>x^2+ y^2 + z^2 \leqslant  1</m>. Nous avons <m>\partial \cE = \cS</m> est la sphère donnée.
       </p>
       <p>
         Par ailleurs, écrivons <m>\vF = P\,\vi + Q \,\vj + R\, \vk</m>. Nous calculons alors
@@ -151,7 +147,7 @@
   <example>
     <statement>
       <p>
-        Soit <m>\cE</m> la région limitée par le cylindre <m>y=x^2</m> et les plans <m>z=0</m> et <m>y+z=1</m> (c'est la région de l'<xref ref="ex-region-3d-bord"> exemple </xref>, voir aussi la   <xref ref="fig-region3d-bord">figure </xref>)
+        Soit <m>\cE</m> la région limitée par le cylindre <m>y=x^2</m> et les plans <m>z=0</m> et <m>y+z=1</m> (c'est la région de l'<xref ref="ex-region-3d-bord"> exemple </xref>, voir aussi la   <xref ref="fig-region3d-bord">figure </xref>). Calculer le flux de <m>\vF = xy\,\vi + y^2\, \vj + x^2\, \vk</m> à travers la surface <m>\cS = \partial \cE</m>, orientée vers l'extérieur de <m>\cE</m>.
       </p>
     </statement>
     <solution>
@@ -164,7 +160,7 @@
         Le Théorème de la divergence nous permet de ramener le calcul de l'intégrale de flux à une intégrale triple. À l'<xref ref="Int-3-ex1">exemple</xref> nous avons déjà considéré cette région et établi les bornes d'intégration. On obtient alors
       </p>
       <md>
-        <mrow>\iint_{\cS} \vF \cdot d\vS = \iint_{\cE} \vnabla \cdot \vF\, dV \amp = \iiint_{\cE} 3y \, dV </mrow>
+        <mrow>\iint_{\cS} \vF \cdot d\vS = \iiint_{\cE} \vnabla \cdot \vF\, dV \amp = \iiint_{\cE} 3y \, dV </mrow>
         <mrow> \amp = \int_{-1}^{1} \int_{x^2}^1 \int_0^{1-y} 3y\, dz\, dy\, dx</mrow>
         <mrow>  \amp = 3 \int_{-1}^1 \int_{x^2}^1 y(1-y)\, dy\, dx </mrow>
         <mrow>  \amp = 3 \int_{-1}^1 \frac{1}{3}x^6 - \frac{1}{2}x^4 + \frac{1}{6}</mrow>
@@ -862,7 +858,7 @@ qui est precisément ce que nous voulions.
       </ul>
 
 
-    Soit  <m>\cV\subset\cB</m>  <em>n'importe quelle</em><fn>Il faut tout de même que sa frontrière soit sufisament raisonnable pour pouvoir appliquer nos théorèmes</fn> partie dans notre objet, soit <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entere</em> dans  <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\big(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\big)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>V</m> à travers toute sa fonritère <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
+    Soit  <m>\cV\subset\cB</m>  <em>n'importe quelle</em><fn>Il faut tout de même que sa frontière soit suffisamment raisonnable pour pouvoir appliquer nos théorèmes</fn> partie dans notre objet, soit <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entre</em> dans  <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\big(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\big)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>V</m> à travers toute sa frontière <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
   </p>
 
   <sidebyside widths="45% 27%" valign="middle">
@@ -954,7 +950,7 @@ Ici <m>T_0</m> est la température moyenne à long terme, <m>T_A\cos(\sigma t)</
 </sidebyside>
 
 <p>
-  Nous mesurons le temps en jours, de sorte que <m>\delta =2\pi</m> et <m>\sigma =\frac{2\pi}{1\ {\rm an}}=\frac{2\pi}{365{\rm jours}}</m>. Alors  <m>T_A\cos(\sigma t)</m> a une période d'un an et <m>T_D\cos(\delta t)</m> a une pédiode d'un jour. La solution du problème à valeurs initiales (HE)+(BC) peut être trouvée avec la méthode de séparation des variables, un sujet standard dans les cours d'équations différentielles. La solution est
+  Nous mesurons le temps en jours, de sorte que <m>\delta =2\pi</m> et <m>\sigma =\frac{2\pi}{1\ {\rm an}}=\frac{2\pi}{365{\rm jours}}</m>. Alors  <m>T_A\cos(\sigma t)</m> a une période d'un an et <m>T_D\cos(\delta t)</m> a une période d'un jour. La solution du problème à valeurs initiales (HE)+(BC) peut être trouvée avec la méthode de séparation des variables, un sujet standard dans les cours d'équations différentielles. La solution est
   <md>
     <mrow>
     T(z,t)&amp;=T_0
@@ -970,7 +966,7 @@ Il est routinier de vérfier que (SLN) est en effet solution de  (HE) et (BC).
 </p>
 
 <p>
-  Voyons maintenant ce qu'on peut tirer de la solution de (SLN). Pour une profondeur fixe <m>z</m>, la moyenne par rapport au temps de  <m>T(z,t)</m> est <m>T_0</m> (simplement parceque la valeur moyenne de la fonction cosinus est nulle), la même que la température moyenne à la surface, c'est à dire lorsque <m>z=0</m>.
+  Voyons maintenant ce qu'on peut tirer de la solution de (SLN). Pour une profondeur fixe <m>z</m>, la moyenne par rapport au temps de  <m>T(z,t)</m> est <m>T_0</m> (simplement parce que la valeur moyenne de la fonction cosinus est nulle), la même que la température moyenne à la surface, c'est à dire lorsque <m>z=0</m>.
 </p>
 
 <p>Le terme
@@ -981,7 +977,7 @@ Il est routinier de vérfier que (SLN) est en effet solution de  (HE) et (BC).
     introduit une oscillation de période un an, tout comme  <m>T_A\cos(\sigma t)</m>
   </li>
   <li>
-    a une amplitude  <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}</m> qui vaut  <m>T_A</m> à la surface et décroît exponentiellement à mesure que  <m>z</m> grandit. Un acroissement de la profondeur  <m>z</m> de <m>\sqrt{\frac{2\alpha}{\sigma}}</m> entraîne une diminution de l'amplitude de l'oscillation d'un facteur <m>\frac{1}{e}</m>. Ces deux preières observations sont probablement en accord avec notre intuition, mais la solution a aussi une troisième propriété, qui est peut être moins évidente.
+    a une amplitude  <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}</m> qui vaut  <m>T_A</m> à la surface et décroît exponentiellement à mesure que  <m>z</m> grandit. Un acroissement de la profondeur  <m>z</m> de <m>\sqrt{\frac{2\alpha}{\sigma}}</m> entraîne une diminution de l'amplitude de l'oscillation d'un facteur <m>\frac{1}{e}</m>. Ces deux premières observations sont probablement en accord avec notre intuition, mais la solution a aussi une troisième propriété, qui est peut être moins évidente.
   </li>
   <li>
     Elle a un décalage dans le temps de <m>\frac{z}{\sqrt{2\alpha\sigma}}</m> par rapport à  <m>T_A\cos(\sigma t)</m>. Le terme pour la surface, <m>T_A\cos(\sigma t)</m> atteint son maximum lorsque <m>t=0,\ \frac{2\pi}{\sigma},\ \frac{4\pi}{\sigma},\ \cdots</m>. À une profondeur <m>z</m> le terme correspondant  <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}

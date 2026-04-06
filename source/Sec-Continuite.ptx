@@ -98,7 +98,7 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
               zmin, zmax = -1, 1
               def c(x,y,z):
                   return float((f(x,y)-zmin)/(zmax-zmin))
-              fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
+              fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
               fig
              </sageplot>
         </image>
@@ -192,7 +192,7 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
           zmin, zmax = -0.5, 0.5
           def c(x,y,z):
               return float((f(x,y)-zmin)/(zmax-zmin))
-          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 90)
+          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 90)
           fig
         </sageplot>
       </image>
@@ -258,7 +258,7 @@ Voyons maintenant un exemple d'une limite qui existe.
           zmin, zmax = -1, 1
           def c(x,y,z):
               return float((f(x,y)-zmin)/(zmax-zmin))
-          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
+          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2>0.00001, frame = False, plot_points = 70)
           fig
          </sageplot>
     </image>

@@ -329,7 +329,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
               def c(x,y,z):
                   return float((f(x,y)-zmin)/(zmax-zmin))
               S= implicit_plot3d(z==f(x,y), (x,-1,1), (y,-1,1), (z,zmin,zmax), color = (c,cm),
-                                     region=lambda x,y,z:x^2+y^2+z^2 > 0.000000001,plot_points = 70, frame = False)
+                                     région=lambda x,y,z:x^2+y^2+z^2 > 0.000000001,plot_points = 70, frame = False)
 
               S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
               S += text3d("x", (1.3,0,0), color = "black")
@@ -430,7 +430,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
                     return float((h(x,y)-zmin)/(zmax-zmin))
             S = implicit_plot3d(z==h, (x,-1,1), (y,-1,1), (z,zmin,zmax),
               color = (c,cm), 
-              region=lambda x,y,z: x^2+y^2+z^2 > 0.001, 
+              région=lambda x,y,z: x^2+y^2+z^2 > 0.001, 
               frame = False)
             S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
             S += text3d("x", (1.3,0,0), color = "black")

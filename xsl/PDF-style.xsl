@@ -183,43 +183,64 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <xsl:template match="&THEOREM-LIKE;|&AXIOM-LIKE;" mode="tcb-style">
-    <xsl:text>
-      enhanced, 
-      frame hidden,
-      parbox=false,
-      borderline={1pt}{0mm}{Periwinkle!40},
-      sharp corners, 
-      colback=Periwinkle!5, 
-      colbacktitle=Periwinkle!40, 
-      coltitle=black, 
-      boxed title style={sharp corners, frame hidden},
-      fonttitle=\bfseries, 
-      attach boxed title to top left={xshift=4mm,yshift=-4mm,yshifttext=-2mm},
-      top=3mm,
-      after skip=1em,
-    </xsl:text>
+  enhanced,
+breakable,
+frame hidden,
+parbox=false,
+borderline west={1.5pt}{0mm}{UdeSVertFonce},
+colback=white,
+coltitle=black,
+fonttitle=\bfseries,
+boxed title style={
+  colback=UdeSVertFonce!12!white,
+  colframe=UdeSVertFonce,
+  sharp corners
+},
+attach boxed title to top left={xshift=2.5mm,yshift=-1mm},
+boxed title size=title,
+top=2mm,
+bottom=2mm,
+left=2.5mm,
+right=2mm,
+before skip=1em,
+after skip=1em,
 </xsl:template>
+
+
 
 <xsl:template match="proof" mode="tcb-style">
-    <xsl:text>bwminimalstyle, parbox=false, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space\space}, width=.98\linewidth&#xa;</xsl:text>
+  <xsl:text>
+    bwminimalstyle,
+    parbox=false,
+    fonttitle=\normalfont\bfseries,
+    attach title to upper,
+    after title={\space\space},
+    width=.98\linewidth,
+    left=2.5mm,
+    after upper={\hfill\textcolor{UdeSVertFonce}{\(\blacksquare\)}}
+  </xsl:text>
 </xsl:template>
 
+
 <xsl:template match="definition" mode="tcb-style">
-    <xsl:text>
-      enhanced, 
-      frame hidden,
-      parbox=false,
-      borderline={1pt}{1pt}{junglegreen!40},
-      sharp corners, 
-      colback=junglegreen!5, 
-      colbacktitle=junglegreen!40, 
-      coltitle=black, 
-      boxed title style={sharp corners, frame hidden},
-      fonttitle=\bfseries, 
-      attach boxed title to top left={xshift=4mm,yshift=-4mm,yshifttext=-2mm},
-      top=3mm,
-      after skip=1em,
-    </xsl:text>
+   <xsl:text>
+  enhanced,
+  breakable,
+  frame hidden,
+  parbox=false,
+  borderline west={1.5pt}{0mm}{UdeSVertFonce},
+  colback=white,
+  coltitle=black,
+  fonttitle=\bfseries,
+  boxed title style={frame hidden, colback=white},
+  attach boxed title to top left={xshift=0mm,yshift=-1mm},
+  top=1.5mm,
+  bottom=1.5mm,
+  left=2mm,
+  right=2mm,
+  before skip=1em,
+  after skip=1em,
+</xsl:text> 
 </xsl:template>
 
 
@@ -230,27 +251,95 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
 <!-- EXAMPLE-LIKE: "example", "question", "problem" -->
 <!-- Default tcolorbox, but with tricolor titles    -->
 <!-- Each just slightly different                   -->
+<xsl:template match="exercise[boolean(&INLINE-EXERCISE-FILTER;)]" mode="tcb-style">  
+<xsl:text>
+  enhanced,
+  breakable,
+  frame hidden,
+  parbox=false,
+  borderline west={1.5pt}{0mm}{UdeSOcre},
+  colback=white,
+  coltitle=black,
+  fonttitle=\bfseries,
+  boxed title style={frame hidden, colback=white},
+  attach boxed title to top left={xshift=0mm,yshift=-1mm},
+  top=1.5mm,
+  bottom=1.5mm,
+  left=2mm,
+  right=2mm,
+  before skip=1em,
+  after skip=1em,
+  overlay={
+  \ifodd\value{page}
+    % page impaire → marge extérieure à droite
+    \node[anchor=west] at ([xshift=3mm]frame.north east)
+      {\includegraphics[height=12mm]{external//logos/WebWork.png}};
+  \else
+    % page paire → marge extérieure à gauche
+    \node[anchor=east] at ([xshift=-3mm]frame.north west)
+      {\includegraphics[height=12mm]{external//logos/WebWork.png}};
+  \fi
+},
+</xsl:text>
+</xsl:template>
 
-<!-- Example styling from CLP -->
-<xsl:template match="&EXAMPLE-LIKE;|exercise[boolean(&INLINE-EXERCISE-FILTER;)]" mode="tcb-style">
-    <xsl:text>
-      enhanced,
-      breakable,
-      parbox=false,
-      frame hidden,
-      borderline west={1pt}{0mm}{MidnightBlue},
-      overlay unbroken and last={
-        \draw[MidnightBlue, line width=.5pt] (frame.south west) -- (frame.south east);
-      },
-      colback=white,
-      coltitle=white,
-      fonttitle=\bfseries\sffamily,
-      attach boxed title to top left={xshift=0mm},
-      boxed title style={colback=MidnightBlue, sharp corners, colframe=MidnightBlue},
-      boxed title size=title,
-      after skip=1em,
-      before skip=1em,
-    </xsl:text>
+
+
+<xsl:template match="example" mode="tcb-style">  
+<xsl:text>
+  enhanced,
+  breakable,
+  frame hidden,
+  parbox=false,
+  borderline west={1.5pt}{0mm}{UdeSOcre},
+  colback=white,
+  coltitle=black,
+  fonttitle=\bfseries,
+  boxed title style={frame hidden, colback=white},
+  attach boxed title to top left={xshift=0mm,yshift=-1mm},
+  top=1.5mm,
+  bottom=1.5mm,
+  left=2mm,
+  right=2mm,
+  before skip=1em,
+  after skip=1em,
+</xsl:text>
+</xsl:template>
+
+
+
+
+
+<xsl:template match="&THEOREM-LIKE;|&AXIOM-LIKE;" mode="tcb-style">
+  <xsl:text>
+    enhanced,
+    breakable,
+    frame hidden,
+    parbox=false,
+    borderline west={1.5pt}{0mm}{UdeSVertFonce},
+    colback=white,
+    coltitle=black,
+    fonttitle=\bfseries,
+    arc=1mm,
+    boxed title style={
+      colback=UdeSVertFonce!12!white,
+      colframe=UdeSVertFonce,
+      arc=1mm
+    },
+    attach boxed title to top left={xshift=0pt,yshift=-1.5mm},
+    boxed title size=title,
+    top=2mm,
+    bottom=2mm,
+    left=2.5mm,
+    right=2mm,
+    before skip=1em,
+    after skip=1em,
+    overlay={
+      \draw[UdeSVertFonce,line width=1.5pt]
+        ([yshift=0mm]frame.south west) --
+        ([xshift=3mm,yshift=0mm]frame.south west);
+            },
+  </xsl:text>
 </xsl:template>
 
 <xsl:template match="&PROJECT-LIKE;" mode="tcb-style">
@@ -303,19 +392,23 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
  <!--by category, and remarks have sharp corners    -->
 <xsl:template match="&REMARK-LIKE;" mode="tcb-style">
   <xsl:text>
-    runintitlestyle,
-    enhanced, 
-    frame hidden,
-    parbox=false,
-    borderline={3pt}{0mm}{Thistle!20},
-    borderline west={3pt}{0mm}{Thistle!50},
-    sharp corners, 
-    colback=Thistle!20, 
-    colbacktitle=Thistle!20, 
-    coltitle=black, 
-    top=2mm,
-    after title={\space\space},
-  </xsl:text>
+  enhanced,
+  breakable,
+  frame hidden,
+  parbox=false,
+  borderline west={1.5pt}{0mm}{gray!50!black},
+  colback=white,
+  coltitle=black,
+  fonttitle=\bfseries,
+  boxed title style={frame hidden, colback=white},
+  attach boxed title to top left={xshift=0mm,yshift=-1mm},
+  top=1.5mm,
+  bottom=1.5mm,
+  left=2mm,
+  right=2mm,
+  before skip=1em,
+  after skip=1em,
+</xsl:text>
 </xsl:template>
 
 <xsl:template match="&ASIDE-LIKE;" mode="tcb-style">
@@ -335,6 +428,61 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
       after title={\space}, 
       after skip=1em
     </xsl:text>
+</xsl:template>
+
+
+
+<!-- <xsl:template match="warning" mode="tcb-style">
+  <xsl:text>
+    enhanced,
+    breakable,
+    frame hidden,
+    parbox=false,
+    borderline west={1.5pt}{0mm}{UdeSOcre},
+    colback=UdeSOcre!6!white,
+    coltitle=black,
+    fonttitle=\bfseries,
+    boxed title style={
+      colback=UdeSOcre!18!white,
+      colframe=UdeSOcre,
+      sharp corners
+    },
+    attach boxed title to top left={xshift=0pt,yshift=-1mm},
+    boxed title size=title,
+    top=2mm,
+    bottom=2mm,
+    left=2.5mm,
+    right=2mm,
+    before skip=1em,
+    after skip=1em,
+  </xsl:text>
+</xsl:template> -->
+
+<xsl:template match="warning" mode="tcb-style">
+  <xsl:text>
+    enhanced,
+    breakable,
+    frame hidden,
+    parbox=false,
+    borderline west={1.5pt}{0mm}{UdeSOcre},
+    colback=white,
+    coltitle=black,
+    fonttitle=\bfseries,
+    arc=1mm,
+    boxed title style={
+      colback=UdeSOcre!18!white,
+      colframe=UdeSOcre,
+      arc=1mm
+    },
+    attach boxed title to top left={xshift=0pt,yshift=-1.5mm},
+    boxed title size=title,
+    top=2mm,
+    bottom=2mm,
+    left=2.5mm,
+    right=2mm,
+    before skip=1em,
+    after skip=1em,
+  </xsl:text>
 </xsl:template>
 
 <!-- %%%%%%%%%%%%%%%% -->

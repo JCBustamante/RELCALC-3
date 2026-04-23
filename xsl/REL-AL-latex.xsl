@@ -25,16 +25,6 @@
 <xsl:import href="PDF-style.xsl" />
 <!-- Assumes next file can be found in mathbook/user -->
 
-<!-- Supprimer les solutions des exemples (example/problem/question)
-       dans la sortie LaTeX, mais laisser les exercices intacts. -->
-<!--  <xsl:template match="example/solution | problem/solution | question/solution"/>
--->
-
-  <!-- Supprimer les démonstrations des théorèmes/propositions/corollaires
-       dans la sortie LaTeX (PDF), mais laisser les autres preuves intactes -->
-  
-  <!--    <xsl:template match="theorem/proof | proposition/proof | corollary/proof"/>
-    --> 
 
 
 <xsl:param name="debug.exercises.forward" select="'no'"/>
@@ -46,6 +36,8 @@
   <xsl:param name="exercise.text.answer"    select="'no'"/>
   <xsl:param name="exercise.text.solution"  select="'no'"/>
 
+  <!-- DEPOT: masquer les <answer> des <example> (mais garder les <solution>) -->
+  <xsl:template match="example/answer"/>
 
 <!-- Hack 2024-08-21 to improve layout of matching exercises -->
 <xsl:template match="exercise/matches/match" mode="matching-statement">
@@ -90,11 +82,27 @@
     <xsl:text>\input{external/latex-preamble-styles}&#xa;</xsl:text>
 </xsl:param> -->
 
-
-<xsl:param name="latex.preabmle.early">
-
+<xsl:param name="latex.preamble.early">
+  <xsl:text>% --- REL-AL: define worksheet-section (7 args) ---&#xa;</xsl:text>
+  <xsl:text>\usepackage{xparse}&#xa;</xsl:text>
+  <xsl:text>\NewDocumentEnvironment{worksheet-section}{mmmmmmm}{%&#xa;</xsl:text>
+  <xsl:text>% #1 = type-name (ex: Feuille d'activités)&#xa;</xsl:text>
+  <xsl:text>% #2,#4 = titres (souvent identiques)&#xa;</xsl:text>
+  <xsl:text>% #7 = identifiant&#xa;</xsl:text>
+  <xsl:text>\par\bigskip\noindent{\large\bfseries #1}\par&#xa;</xsl:text>
+  <xsl:text>\noindent{\bfseries #2}\par\medskip&#xa;</xsl:text>
+  <xsl:text>\refstepcounter{section}&#xa;</xsl:text>
+  <xsl:text>\addcontentsline{toc}{section}{\protect\numberline{\thesection}#2}&#xa;</xsl:text>
+  <xsl:text>\phantomsection\label{#7}\hypertarget{#7}{}&#xa;</xsl:text>
+  <xsl:text>}{%&#xa;</xsl:text>
+  <xsl:text>\par\bigskip&#xa;</xsl:text>
+  <xsl:text>}&#xa;</xsl:text>
+  <xsl:text>% --- DEPOT palette (UdeS) ---&#xa;</xsl:text>
+  <xsl:text>\PassOptionsToPackage{dvipsnames,svgnames,table}{xcolor}&#xa;</xsl:text>
+  <xsl:text>\usepackage{xcolor}&#xa;</xsl:text>
+  <xsl:text>\definecolor{UdeSVertFonce}{HTML}{018849}&#xa;</xsl:text>
+  <xsl:text>\definecolor{UdeSOcre}{HTML}{E5A939}&#xa;</xsl:text>
 </xsl:param>
-
 
 <!-- Override default frontmatter pages: -->
 

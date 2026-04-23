@@ -406,6 +406,41 @@
       </solution>
     </exercise>
 
+    <exercise>
+      <statement>
+        <p>
+          La figure ci-dessous montre la région dans le premier octant limitée par les plans <m>x=0, y=0, z=0, y+z=2</m> et le cylindre parabolique <m>x=4-y^2</m>. Écrivez les intégrales triples dans les 6 ordres d'intégration possibles pour trouver le volume de cette région.
+        </p>
+        <p>
+          <image xml:id="im-ex-triples" platform="sage" width="85%">
+          <sageplot variant="3d" aspect="1.5">
+            var('s,t')
+            Fig =  parametric_plot3d((1-s)*vector([0,t,0]) + s*vector([4-t^2,t,0]), (s,0,1), (t,0,2), color = "orange", opacity = 0.55)
+            Fig +=  parametric_plot3d((1-s)*vector([0,t,0]) + s*vector([4-t^2,t,0]) + vector([0,0,2-t]), (s,0,1), (t,0,2), color = "crimson", opacity = 0.25)
+            Fig += parametric_plot3d([4-t^2, t, s*(2-t)], (t,0,2), (s,0,1), color = "steelblue", opacity = 0.65)
+            Fig += parametric_plot3d([0,t,s*(2-t)], (t,0,2), (s,0,1), color = "grey", opacity = 0.65)
+            Fig += parametric_plot3d([s,0,t], (s,0,4), (t,0,2), color = "green", opacity = 0.25)
+
+            Fig += parametric_plot3d([4-t^2,t,0], (t,0,2), color = "darkblue", thickness= 2)
+            Fig += parametric_plot3d([4-t^2,t,2-t], (t,0,2), color = "darkblue", thickness= 2)
+            Fig += parametric_plot3d([0,t,2-t], (t,0,2), color = "darkblue", thickness= 2)
+            Fig += parametric_plot3d([t,0,2], (t,0,4), color = "darkblue", thickness= 2)
+            Fig += parametric_plot3d([4,0,t], (t,0,2), color = "darkblue", thickness= 2)
+
+
+            Fig += arrow3d((0,0,0),(4.5,0,0), width=0.75, color = "black",frame = False)
+            Fig += text3d("x", (4.7,0,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,2.5,0), width=0.75, color = "black",frame = False)
+            Fig += text3d("y", (0,2.7,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,0,2.5), width=0.75, color = "black",frame = False)
+            Fig += text3d("z", (0,0,2.7), color = "black", projection ="orthographic")
+            Fig
+          </sageplot>
+        </image>
+        </p>
+      </statement>
+    </exercise>
+
     <exercise> <!-- <title><fromexam>M200 2011A</fromexam></title> -->
       <statement><p>
       Soit <m>E</m> la portion du premier octant qui se trouve au-dessus du plan <m>z = x + y</m>
@@ -1567,15 +1602,31 @@
 
         <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
           <statement><p>
-          Soit <m>E</m> la région à l'intérieur du cylindre <m>x^2 + y^2 = 1</m>,
-          sous le plan <m>z = y</m> et au-dessus du plan <m>z = -1</m>. Exprimez
+          Soit <m>E</m> la région à l'intérieur du cylindre <m>x^2 + y^2 = 1</m>, sous le plan <m>z = y</m> et au-dessus du plan <m>z = -1</m>. Exprimez
           l'intégrale
-          <me>
+          </p>
+          <md>
           \iiint_E f(x,y,z)\ \dee{V}
-          </me>
-          comme trois intégrales itérées différentes correspondantes à l'ordre d'intégration: (a) <m>\dee{z}\, \dee{x}\, \dee{y}</m>,
-          (b) <m>\dee{x}\, \dee{y}\, \dee{z}</m>, and (c) <m>\dee{y}\, \dee{z}\, \dee{x}</m>.
-          </p></statement>
+          </md>
+          comme trois intégrales itérées différentes correspondantes à l'ordre d'intégration: 
+          <ol marker = "(a)" cols="3">
+            <li>
+              <p><m>\dee{z}\, \dee{x}\, \dee{y}</m>,
+                
+              </p>
+            </li>
+            <li>
+              <p><m>\dee{x}\, \dee{y}\, \dee{z}</m>
+                
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dee{y}\, \dee{z}\, \dee{x}</m>
+              </p>
+            </li>
+          </ol>
+          </statement>
 
           <answer><p>
           (a) <m>\int_{-1}^1\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}

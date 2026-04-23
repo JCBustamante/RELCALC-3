@@ -1,0 +1,109 @@
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+
+
+## Tagged by tda2d
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Differentiation of multivariable functions)
+## DBsection(Limits and continuity)
+## Date(01/30/2011)
+## Institution(Hope College)
+## Author(Paul Pearson)
+## Level(4)
+## KEYWORDS('Multivariable','limit')
+## Traduit et adapté par JC Bustamante, avril 2026
+
+
+###########################
+#  Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserPopUp.pl",
+  "parserDifferenceQuotient.pl",
+  "unionMessages.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric")->variables->add(r=>"Real",'theta'=>"Real",y=>"Real");
+Context()->variables->set(r=>{limits=>[0.1,4]});
+
+$n = list_random(2.1, 2.25, 2.5);
+$nm2 = $n - 2;
+
+$a = non_zero_random(2,9,1);
+
+$f = Formula("$a x^$n / (x^2 + y^2)");
+
+$answer1 = DifferenceQuotient("$a r^$nm2 (cos(theta))^$n","r");
+
+
+$THETA_MESSAGE =
+  $BITALIC.$BSMALL.
+  "Utiliser ${LQ}theta${RQ} pour \(\theta\)." .
+  $ESMALL.$EITALIC;
+
+$THETA_MESSAGE = "" if $displayMode eq 'TeX';
+
+###########################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Étudier le comportement de
+\( \displaystyle
+f(x,y) = $f
+\)
+lorsque \( (x,y) \) tend vers \( (0,0) \).
+$BR
+$BR
+(a) En passant en coordonnées polaires, on trouve
+$BR
+$BR
+\( \displaystyle
+\lim_{(x,y) \to (0,0)} \Big( $f \Big)
+=
+\lim_{r \to 0^+,\ \theta\ \text{quelconque}}
+\Big(
+\)
+\{ ans_rule(30) \}
+\( \Big) = \)
+\{ ans_rule(10) \}.
+$PAR
+$THETA_MESSAGE
+$INFINITY_MESSAGE
+$DNE_MESSAGE
+$BR
+$BR
+(b) Puisque \( f(0,0) \) n'est pas définie, \( f \) a une discontinuité en \( (x,y) = (0,0) \). Est-il possible de définir une fonction \( g : \mathbb{R}^2 \to \mathbb{R} \) telle que \( g(x,y) = f(x,y) \) pour tout \( (x,y) \ne (0,0) \) et que \( g \) soit continue partout ? Si oui, quelle serait la valeur de \( g(0,0) \) ? S'il n'existe pas de telle fonction continue \( g \), écrire DNE.
+$BR
+$BR
+\( g(0,0) = \)
+\{ ans_rule(10) \}
+END_TEXT
+Context()->normalStrings;
+
+
+############################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( Compute("0")->cmp() );
+ANS( Compute("0")->cmp() );
+
+
+
+ENDDOCUMENT();

@@ -95,26 +95,25 @@
 
 
 <example xml:id="eg_paramCircleTan"><title>Périmètre d'un cercle</title>
-<p>
-En général, il peut être difficile de calculer une longueur. En guise d'exemple facile, calculons le périmètre du cercle <m>x^2+y^2=a^2</m>. Nous allons aussi trouver le vecteur tangent unitaire en tout point. Nous avons un paramétrage
-<me>
-\vr(\theta) = a\cos\theta\, \vi + a\sin\theta\, \vj\qquad
-0\leqslant  \theta\leqslant  2\pi
-</me>
-de l'<xref ref="eg_paramCircle"/>. En vertu du   <xref ref="thm-Longueur"/>, avec le paramètre <m>\theta</m> au lieu de  <m>t</m>,
-<md>
-<mrow>
-\vr'(\theta) &amp;= -a\sin\theta\,\vi + a\cos\theta\, \vj,
-</mrow><mrow>
-|\vr'(\theta)| &amp; = a.
-</mrow>
-</md>
-Ainsi, la longueur totale est
-<me>
-  L =\int_{0}^{2\pi} a\, dt = 2\pi a,
-</me>
-ce qui est cohérent avec la formule bien connue<fn>Les premières écritures connues d'une approximation de  <m>\pi</m>, en  Égypte et à Babylone, sont datées entre 1900 et 1600 av. J.-C. Le premier algorithme permettant de calculer rigoureusement  <m>\pi</m> a été développé par Archimède vers 250 av, J.-C. Le premier usage du symbole  <m>\pi</m> pour désigner le rapport entre le périmètre et le diamètre d'un cercle remonte à William Jones, en 1706.</fn>.
-</p>
+  <p>
+    En général, il peut être difficile de calculer une longueur. En guise d'exemple facile, calculons le périmètre du cercle <m>x^2+y^2=a^2</m>. Nous allons aussi trouver le vecteur tangent unitaire en tout point. Nous avons un paramétrage
+    <me>
+      \vr(\theta) = a\cos\theta\, \vi + a\sin\theta\, \vj\qquad 0\leqslant  \theta\leqslant  2\pi
+    </me>
+    de l'<xref ref="eg_paramCircle"/>. En vertu du   <xref ref="thm-Longueur"/>, avec le paramètre <m>\theta</m> au lieu de  <m>t</m>,
+  <md>
+    <mrow>
+    \vr'(\theta) &amp;= -a\sin\theta\,\vi + a\cos\theta\, \vj,
+    </mrow><mrow>
+    |\vr'(\theta)| &amp; = a.
+    </mrow>
+    </md>
+    Ainsi, la longueur totale est
+    <me>
+      L =\int_{0}^{2\pi} a\, dt = 2\pi a,
+    </me>
+    ce qui est cohérent avec la formule bien connue<fn>Les premières écritures connues d'une approximation de  <m>\pi</m>, en  Égypte et à Babylone, sont datées entre 1900 et 1600 av. J.-C. Le premier algorithme permettant de calculer rigoureusement  <m>\pi</m> a été développé par Archimède vers 250 av, J.-C. Le premier usage du symbole  <m>\pi</m> pour désigner le rapport entre le périmètre et le diamètre d'un cercle remonte à William Jones, en 1706.</fn>.
+    </p>
 
 <sidebyside width="50%">
 <image source="images/CLP-figs/parCircleTJC"/>
@@ -239,204 +238,61 @@ vector.
 </example>
 -->
 
-<example xml:id="eg_astroid"><title>Périmètre de l'astroïde</title>
-<p>
-Nous avons vu, à l'<xref ref="eg_paramEllipse"/>, un paramétrage de l'astroïde d'équation<fn>Ne pas confondre <em>astroïde</em> et <em>astéroïde</em>, bien que les deux mots aient comme origine commune le mot grec pour <em>étoile</em>.</fn>
-<m>
-x^{2/3}+y^{2/3} = a^{2/3}
-</m>.
-Nous avons un paramétrage
-<me>
-\vr(t) = a\cos^3t\,\vi + a\sin^3 t\,\vj.
-</me>
-Afin d'utiliser le   <xref ref="thm-Longueur"/>, calculons :
-<md>
-<mrow>
-\vr(t) &amp;= a\cos^3t\,\vi + a\sin^3 t\,\vj,
-</mrow><mrow>
-\vr'(t) &amp;= -3a\sin t\cos^2t\,\vi + 3a\sin^2 t\cos t\,\vj,
-</mrow><mrow>
-\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
-= \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}
-</mrow><mrow>
-&amp; = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)}
-</mrow><mrow>
- &amp;=3a\big|\sin t\cos t\big|,
-</mrow><mrow>
-\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t)|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\vi+\sin t\,\vj\big)
-
-</mrow><mrow>
- &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\vi+\sin t\,\vj\big).
-</mrow>
-</md>
-Ici, <m>\sgn\!\big(\!\sin t\cos t\big)</m> dénote  <q>le signe de <m>\sin t\cos t</m></q>, c'est-à-dire <m>+1</m> lorsque <m>\sin t\cos t \gt 0</m> et <m>-1</m> lorsque <m>\sin t\cos t \lt 0</m>. Ainsi,
-<md>
-<mrow>
-\vT(t) &amp;=\begin{cases}-\cos t\, \vi +\sin t \, \vj &amp;\text{si  } 0 \lt  t \lt \frac{\pi}{2} \text{ ou }  \pi \lt  t \lt \frac{3\pi}{2}
-</mrow><mrow>
-                           \cos t \,\vi -\sin t\, \vj&amp;\text{si }  \frac{\pi}{2} \lt t \lt \pi
-                                          \text{ ou }  \frac{3\pi}{2} \lt t \lt 2\pi
-                \end{cases}.
-</mrow>
-</md>
-</p>
-
-<p>Avant de faire une esquisse et de calculer son périmètre, faisons quelques remarques qui vont nous simplifier la tâche. Pour commencer, <m>\vr(0) = \vr(2\pi) </m>, de sorte qu'il s'agit d'une courbe fermée. Puis,
-<ul>
-
-<li><p>
-Les signes des composantes de <m>\vr(t)</m> sont les signes des composantes de
-<m>\cos t\,\vi +\sin t\,\vj</m>, ce qui nous donne une idée du quadrant dans lequel <m>\vr(t)</m> se trouve, et les signes des composantes de <m>\vr'(t)</m> sont les signes des composantes de
-<m>-\sin t\,\vi +\cos t\,\vj</m>, ce qui nous donne une idée de comment les composantes varient. Ainsi, l'astroïde est une courbe fermée et, en plus,
-<ul>
-<li>
-lorsque <m>0\leqslant  t\leqslant  \frac{\pi}{2}</m>, <m>\vr(t)</m> se trouve dans le premier quadrant et se déplace vers le haut et la gauche lorsque  <m>t</m> croît;
-</li>
-<li>
-lorsque <m>\frac{\pi}{2}\leqslant t\leqslant  \pi</m>, <m>\vr(t)</m> se trouve dans le deuxième quadrant et se déplace vers le bas et la gauche lorsque  <m>t</m> croît;
-</li>
-<li>
-lorsque <m>\pi\leqslant  t\leqslant  \frac{3\pi}{2}</m>, <m>\vr(t)</m> se trouve au troisième quadrant et se déplace vers le bas et la droite lorsque  <m>t</m> croît; et
-</li>
-<li>
-lorsque <m>\frac{3\pi}{2}\leqslant t\leqslant  2\pi</m>, <m>\vr(t)</m> se trouve dans le quatrième quadrant et se déplace vers le haut et la droite lorsque <m>t</m> croît.
-</li>
-<li>
-Ainsi, la courbe fait le tour de l'origine exactement une fois lorsque <m>t</m> varie de <m>0</m> à <m>2\pi</m>.
-</li>
-</ul></p>
-</li>
-<li>
+<example xml:id="eg_peri_astroide"><title>Le périmètre de l'astroïde</title>
+<statement>
   <p>
-Quelque chose de particulier arrive lorsque  <m>\sin t\cos t</m> s'annule en changeant de signe, c'est-à-dire lorsque <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. En effet, <m>\vT(t)</m> change de direction abruptement. Plus précisément,
-<md>
-<mrow>
-\lim_{t\rightarrow 0-}\vT(t)
-&amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)
-</mrow>  
-<mrow>
-      \amp = \lim_{t\rightarrow 0-} \big(-\cos t\,\vi+\sin t\,\vj\big)
-=\vi,
-</mrow><mrow>
-\lim_{t\rightarrow 0+}\vT(t)
-&amp;= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)
-</mrow>  
-<mrow>
-      \amp =\lim_{t\rightarrow 0+}\big(-\cos t\,\vi+\sin t\,\vj\big)
-=-\vi
-</mrow>
-</md>
-et
-<md>
-<mrow>
-\lim_{t\rightarrow \pi/2-}\vT(t)
-&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)</mrow>  
-<mrow>
-      \amp =\lim_{t\rightarrow \pi/2-}\big(-\cos t\,\vi+\sin t\,\vj\big)
-=\vj,
-</mrow><mrow>
-\lim_{t\rightarrow \pi/2+}\vT(t)
-&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)</mrow>  
-<mrow>
-      \amp = \lim_{t\rightarrow \pi/2+}\big(-\cos t\,\vi+\sin t\,\vj\big)
-=-\vj,
-</mrow>
-</md>
-et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> dans la courbe pour <m>t=0</m>, c'est-à-dire à <m>\vr(0) = a\vi</m> et à  <m>t=\frac{\pi}{2}</m>, c'est-à-dire à <m>\vr(\frac{\pi}{2}) = a\vj</m>, et ainsi de suite. En somme, s'il est vrai que l'astroïde ressemble à un cercle, elle possède des points de rebroussement à <m>\pm a\vi</m> et à <m>\pm a\vj</m>. Voici une figure.
-</p>
+    Calculer le périmètre de l'astroïde d'équation <m>x^{2/3}+y^{2/3}=a^{2/3}</m>.
+  </p>
+</statement>
+<solution>
+  <p>
+  Nous avons vu à l'<xref ref="eg_paramEllipse" text="global">exemple</xref> que l'astroïde d'équation <m>x^{2/3}+y^{2/3}=a^{2/3}</m> peut être paramétrée par <m>\vr(t) = (a\cos^3 t)\vi + (a\sin^3 t)\vj</m> avec <m>t\in[0,2\pi]</m>. De plus, à l'<xref ref="eg_astroid" text = "global">exemple</xref> nous avons calculé que <m>\|\vr'(t)\| = 3a|\sin t\, \cos t|</m>. Par ailleurs,     l'astroïde est invariante sous les réflexions par rapport aux axes de coordonnées, c'est-à-dire que <m>x^{2/3}+y^{2/3} = a^{2/3}</m> est invariante par les transformations  <m>x\mapsto-x</m> et aussi <m>y\mapsto -y</m>. Ainsi, pour trouver le périmètre, il suffit de trouver la longueur de la portion de la courbe dans le premier quadrant et de multiplier par <m>4</m>.
+  </p>
+      <md>
+      <mrow>
+      L
+      &amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
+      = 4\int_0^{\pi/2}3a\sin t\cos t\ \dee{t}
+      </mrow><mrow>
+      &amp; = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
+      =6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}
+      </mrow><mrow>
+      &amp;=6a
+      </mrow>
+      </md>
+</solution>
 
-
-
-
-<figure>
-  <caption>L'astroïde</caption>
-  <interactive xml:id="Astroide-rebroussement" platform="geogebra" width="100%" aspect="4:3" preview="images/GeoGebra-Statique/Astroide-statique.png">
-  <slate xml:id="Astroide" surface="geogebra" source="GeoGebra/Astroide.ggb" aspect="4:3">
-    setSize(500, 420)
-    enableShiftDragZoom(false);
-  </slate>
-  </interactive>
-</figure>
-
-<!--
-<sidebyside width="60%">
-<image source="images/CLP-figs/astroid4"/>
-</sidebyside>
--->
-</li>
-<li> L'astroïde est invariante sous les réflexions par rapport aux axes de coordonnées, c'est-à-dire que <m>x^{2/3}+y^{2/3} = a^{2/3}</m> est invariante par les transformations  <m>x\mapsto-x</m> et aussi <m>y\mapsto -y</m>. Ainsi, pour trouver le périmètre, il suffit de trouver la longueur de la portion de la courbe dans le premier quadrant et de multiplier par <m>4</m>.
-<md>
-<mrow>
-L
-&amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
- = 4\int_0^{\pi/2}3a\sin t\cos t\ \dee{t}
-</mrow><mrow>
- &amp; = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
-=6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}
-</mrow><mrow>
- &amp;=6a
-</mrow>
-</md>
-</li>
-</ul>
-</p>
-
+  
 </example>
-<example xml:id="eg_zeroSpeed"><title><m>\vr'(t)=\vZero</m></title>
-<p>
-Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebroussement lorsque <m>\vr'(t)</m> s'annule. Cet exemple montre qu'il peut pratiquement tout arriver lorsque <m>\vr'(t)=\vZero</m>.
-</p>
+  <!-- Probleme 5 du devoir 1 Mat298-A25   -->
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Longueur-courbure/Longueur-prob1.pg" parse="text"/></webwork>
+</exercise>  
 
-<p>Supposons que nous nous promenons, et la position au temps <m>t</m> est donnée par <m>\vr(t)</m>. Si, à un instant donné, la vitesse est non nulle, il est difficile de changer de direction de déplacement de façon discontinue<fn>Pour que la vitesse change de façon discontinue, l'accélération  doit être infinie.</fn>. D'autre part, lorsque <m>\vr'(t)=0</m>, on ne bouge pas, et il est facile d'effectuer un changement de direction. On peut par exemple <em>rebrousser chemin</em>, faire un virage brusque ou ne pas changer de direction du tout. Voici quelques exemples. Dans tous les cas, on a <m>\vr'(0)=0</m>.
-<md alignment="alignat">
-<mrow>
-\vr_1(t) &amp;= t^5\,\vi + t^2\,\vj &amp;
-\vr_1'(t)&amp;= 5t^4\, \vi  + 2t\, \vj
-</mrow><mrow>
-\vr_2(t) &amp;= \begin{cases} t^2\,\vi &amp; \text{si }  t\geqslant 0 \\
-                        t^2\,\vj &amp; \text{si } t\leqslant  0
-          \end{cases}\qquad &amp;
-\vr_2'(t)&amp;= \begin{cases} 2t\, \vi &amp; \text{si }  t\geqslant 0 \\
-                        2t\vj &amp; \text{si } t\leqslant  0
-          \end{cases}
-</mrow><mrow>
-\vr_3(t) &amp;= t^3\,\vi &amp;
-\vr_3'(t) &amp;= 3t^2\,\vi
-</mrow>
-</md>
-</p>
 
-<sidebyside widths="30% 18% 23%" valign="middle">
-<image source="images/CLP4-figs/cuspA"/>
-<image source="images/CLP4-figs/cuspB"/>
-<image source="images/CLP4-figs/nocusp"/>
-</sidebyside>
-
-</example>
 </subsection>
 
 
 <subsection xml:id="pars-Absc-curviligne">
   <title>L'abscisse curviligne</title>
-<p>
-  Jusqu'à présent, nous avons utilisé les chemins (objets algébriques, ce sont des fonctions) pour étudier des courbes (objets géométriques). Qui plus est, nous avons déjà mentionné le fait qu'une courbe donnée peut être paramétrée de plusieurs façons différentes. Deux questions, au moins, se posent naturellement :
-</p>
-<ul>
-  <li>
-    <p>
-      Est-ce que la longueur d'une courbe est indépendante du paramétrage utilisé? La formule du <xref ref="thm-Longueur"/> fait intervenir de façon essentielle le paramétrage de la courbe, mais, logiquement, la longueur devrait être indépendante.
-    </p>
-  </li>
-  <li>
-    <p>
-      Existe-t-il une façon <q>canonique</q> ou <q>naturelle</q> de paramétrer une courbe?
-    </p>
-  </li>
-</ul>
-<p>
-Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses à ces deux questions sont positives. La première sera traitée dans les problèmes, et, pour la seconde, nous avons besoin de revenir sur la fonction de longueur d'arc.
-</p>
+  <p>
+    Jusqu'à présent, nous avons utilisé les chemins (objets algébriques, ce sont des fonctions) pour étudier des courbes (objets géométriques). Qui plus est, nous avons déjà mentionné le fait qu'une courbe donnée peut être paramétrée de plusieurs façons différentes. Deux questions, au moins, se posent naturellement :
+  </p>
+  <ul>
+    <li>
+      <p>
+        Est-ce que la longueur d'une courbe est indépendante du paramétrage utilisé? La formule du <xref ref="thm-Longueur"/> fait intervenir de façon essentielle le paramétrage de la courbe, mais, logiquement, la longueur devrait être indépendante.
+      </p>
+    </li>
+    <li>
+      <p>
+        Existe-t-il une façon <q>canonique</q> ou <q>naturelle</q> de paramétrer une courbe?
+      </p>
+    </li>
+  </ul>
+  <p>
+    Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses à ces deux questions sont positives. La première sera traitée dans les problèmes, et, pour la seconde, nous avons besoin de revenir sur la fonction de longueur d'arc.
+  </p>
 <!-- Il faudrait rajouter quelque chose comme l'exercic 15 p. 234 de Marsden-Tromba dans un exercice -->
 
 <proposition xml:id="prop-s-inversible">
@@ -480,6 +336,13 @@ Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses 
     </p>
   </statement>
 </example>
+
+  <!-- Probleme 6 du devoir 1 Mat298-A25   -->
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Longueur-courbure/Longueur-prob2.pg" parse="text"/></webwork>
+</exercise>  
+
+
 <example xml:id="ex-reparam-2-bis"><title>Reparamétrage naturel : la chaînette</title>
 
 
@@ -620,6 +483,13 @@ Par ailleurs, le <em><term>vecteur normal principal</term></em>  est un vecteur 
     </p>
   </statement>
 </example>
+
+ <!-- Probleme 7 du devoir 1 Mat298-A25   -->
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Longueur-courbure/Longueur-prob3.pg" parse="text"/></webwork>
+</exercise>  
+
+
 <p>
 Nous l'avons vu, la courbure est le changement de direction; or, un changement de direction requiert une accélération. Afin de préciser ce lien, convenons d'écrire <m>\vv = \vr', \va = \vv', v = |\vv|</m>. Ainsi, <m>\vv</m> et <m>\va</m> sont les vecteurs vitesse et accélération, tandis que <m>v</m> est la vitesse scalaire.
 </p>

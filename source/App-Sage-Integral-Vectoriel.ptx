@@ -1,10 +1,10 @@
-<appendix xml:id="sec-Sage-Integral" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Intégrales multiples</title>
-
+<?xml version="1.0"?>
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Sage-Integral">
+  <title>Int&#xE9;grales multiples</title>
   <section>
-    <title>Intégration</title>
+    <title>Int&#xE9;gration</title>
     <p>
-      On aura intérêt à regarder <url href="https://doc.sagemath.org/html/en/reference/calculus/sage/symbolic/integration/integral.html">la documentation</url>, car il y a bien de subtitlités. Disons pour commencer que dans SageMath, afin de calculer une intégrale, qu'elle soit définie ou pas on utilise la commande <c>integrate(...)</c>. Pour une intégrale indéfinie, c'est à dire <m>\int f(x)\, dx</m>, on fait <c>integrate(f,x)</c>, pour une intégrale définie <m>\int_a^b f(x)\, dx</m> on fait plutôt <c>integrate(f,x,a,b)</c>. Il faut cependant noter que les constantes d'intégration seront ommises. 
+      On aura int&#xE9;r&#xEA;t &#xE0; regarder <url href="https://doc.sagemath.org/html/en/reference/calculus/sage/symbolic/integration/integral.html">la documentation</url>, car il y a bien de subtitlit&#xE9;s. Disons pour commencer que dans SageMath, afin de calculer une int&#xE9;grale, qu'elle soit d&#xE9;finie ou pas on utilise la commande <c>integrate(...)</c>. Pour une int&#xE9;grale ind&#xE9;finie, c'est &#xE0; dire <m>\int f(x)\, dx</m>, on fait <c>integrate(f,x)</c>, pour une int&#xE9;grale d&#xE9;finie <m>\int_a^b f(x)\, dx</m> on fait plut&#xF4;t <c>integrate(f,x,a,b)</c>. Il faut cependant noter que les constantes d'int&#xE9;gration seront ommises. 
     </p>
     <sage>
       <input>
@@ -16,38 +16,32 @@
       </input>
     </sage>
     <p>
-      Sans aller trop loin, disons que des fois dans ce bas monde on doit se contenter d'une approximation numérique pour une intégrale. Dans ce cas c'est la commande <c>numerical_integral(...)</c> qu'il faut utiliser. Par exemple, l'intégrale 
+      Sans aller trop loin, disons que des fois dans ce bas monde on doit se contenter d'une approximation num&#xE9;rique pour une int&#xE9;grale. Dans ce cas c'est la commande <c>numerical_integral(...)</c> qu'il faut utiliser. Par exemple, l'int&#xE9;grale 
       <me>
         \int_0^{2\pi} \sqrt{2\sin^2 t + 8 \cos^2 t -4\sin t\, \cos t}\, dt
       </me>
-      ne peut pas être évaluée analytiquement, mais 
+      ne peut pas &#xEA;tre &#xE9;valu&#xE9;e analytiquement, mais 
     </p>
     <sage>
       <input>
         var('t')
         numerical_integral(sqrt(2*sin(t)^2 + 8*cos(t)^2 - 4*sin(t)*cos(t)), 0, 2*pi)
-      </input>      
+      </input>
     </sage>
     <p>
-      donne comme sortie une paire de nombres. La première est une valeur approchée de l'intégrale, la deuxième une borne pour l'erreur.
+      donne comme sortie une paire de nombres. La premi&#xE8;re est une valeur approch&#xE9;e de l'int&#xE9;grale, la deuxi&#xE8;me une borne pour l'erreur.
     </p>
-
-  
   </section>
-
   <section>
-    <title>Intégrales doubles et triples</title>
+    <title>Int&#xE9;grales doubles et triples</title>
     <p>
-      Comme dans la vraie vie, on calcule une intégrale double en itérant des intégrales simples. Voyons l'intégrale double de l'<xref ref="eg_dblInt_D">exemple</xref>, à savoir <m>\displaystyle\int_{-1}^2\int_{x^2}^{x+2}\dee{y}\,\dee{x}</m>  
-    </p> 
+      Comme dans la vraie vie, on calcule une int&#xE9;grale double en it&#xE9;rant des int&#xE9;grales simples. Voyons l'int&#xE9;grale double de l'<xref ref="eg_dblInt_D">exemple</xref>, &#xE0; savoir <m>\displaystyle\int_{-1}^2\int_{x^2}^{x+2}\dee{y}\,\dee{x}</m>  
+    </p>
     <sage>
       <input>
         var('x,y')
         integrate(integrate(1,y,x^2, x+2),x,-1,2)
       </input>
     </sage>
-     
-      
   </section>
-      
 </appendix>

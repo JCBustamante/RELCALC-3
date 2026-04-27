@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_champs_intro">
   <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
@@ -13,7 +14,7 @@
     <term>Début nouveau</term>
   </p> -->
     <p>
-    Nous avons déjà rencontré la notion de champ gradient d'une fonction <m>f</m> de deux ou trois variables, à la <xref ref="sec_gradient" text="global">section</xref>. Il s'agit d'une nouvelle fonction <m>\vnabla f</m> qui à chaque point <m>\vr</m> associe un vecteur <m>\vnabla f(\vr)</m>. Au-delà des champs gradients et de leur utilité pour le calcul des dérivées directionnelles, la notion de champ de vecteurs est très utile pour modéliser plusieurs phénomènes. Pensons par exemple à la force <m>\vF</m> qui s'exerce sur une particule qui se déplace. La force <m>\vF</m> peut varier en fonction de la position de la particule (pensons à la proximité d'une charge électrique). De même, imaginons un fluide qui s'écoule dans une région du plan ou de l'espace. À chaque point de cette région, le fluide possède une vitesse spécifique; celle-ci variera en fonction d'éventuels obstacles rencontrés par le fluide et de la géométrie du milieu d'écoulement. Ceci motive la définition suivante.
+    Nous avons d&#xE9;j&#xE0; rencontr&#xE9; la notion de champ gradient d'une fonction <m>f</m> de deux ou trois variables, &#xE0; la <xref ref="sec_gradient" text="global">section</xref>. Il s'agit d'une nouvelle fonction <m>\vnabla f</m> qui &#xE0; chaque point <m>\vr</m> associe un vecteur <m>\vnabla f(\vr)</m>. Au-del&#xE0; des champs gradients et de leur utilit&#xE9; pour le calcul des d&#xE9;riv&#xE9;es directionnelles, la notion de champ de vecteurs est tr&#xE8;s utile pour mod&#xE9;liser plusieurs ph&#xE9;nom&#xE8;nes. Pensons par exemple &#xE0; la force <m>\vF</m> qui s'exerce sur une particule qui se d&#xE9;place. La force <m>\vF</m> peut varier en fonction de la position de la particule (pensons &#xE0; la proximit&#xE9; d'une charge &#xE9;lectrique). De m&#xEA;me, imaginons un fluide qui s'&#xE9;coule dans une r&#xE9;gion du plan ou de l'espace. &#xC0; chaque point de cette r&#xE9;gion, le fluide poss&#xE8;de une vitesse sp&#xE9;cifique; celle-ci variera en fonction d'&#xE9;ventuels obstacles rencontr&#xE9;s par le fluide et de la g&#xE9;om&#xE9;trie du milieu d'&#xE9;coulement. Ceci motive la d&#xE9;finition suivante.
   </p>
     <!-- <p>
     <term>Fin nouveau</term>
@@ -21,20 +22,20 @@
     <definition xml:id="def_vectorField">
       <statement>
         <p>
-      Soit <m>\cD \subseteq \R^n</m> une région donnée. Un <em>champ de vecteurs</em> sur <m>\cD</m> est une fonction <m>\vF : \cD \to \R^n</m> qui à chaque point <m>\vr</m> de <m>\cD</m> associe un vecteur <m>\vF(\vr)</m>.
+      Soit <m>\cD \subseteq \R^n</m> une r&#xE9;gion donn&#xE9;e. Un <em>champ de vecteurs</em> sur <m>\cD</m> est une fonction <m>\vF : \cD \to \R^n</m> qui &#xE0; chaque point <m>\vr</m> de <m>\cD</m> associe un vecteur <m>\vF(\vr)</m>.
   </p>
         <p>
-    Les cas qui nous intéressent davantage sont :
+    Les cas qui nous int&#xE9;ressent davantage sont :
     <ol marker="(a)"><li><p>
-          Lorsque <m>n=2</m>, <m>\cD</m> est une région du plan. Dans ce cas, le champ <m>\vF</m> s'écrit au moyen de ses composantes <m> \vF = P\vi + Q\vj</m>, c'est-à-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj</m>, ou encore <m>\vF(x,y) = P(x,y)\vi + Q(x,y)\vj</m>.
+          Lorsque <m>n=2</m>, <m>\cD</m> est une r&#xE9;gion du plan. Dans ce cas, le champ <m>\vF</m> s'&#xE9;crit au moyen de ses composantes <m> \vF = P\vi + Q\vj</m>, c'est-&#xE0;-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj</m>, ou encore <m>\vF(x,y) = P(x,y)\vi + Q(x,y)\vj</m>.
         </p></li><li><p>
-          Lorsque <m>n=3</m>, <m>\cD</m> est une région de l'espace. Dans ce cas, on écrit <m> \vF = P\vi + Q\vj + R\vk </m>, c'est-à-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj + R(\vr)\vk</m>, ou encore <m>\vF(x,y,z) = P(x,y,z)\vi + Q(x,y,z)\vj + R(x,y,z)\vk</m>.
+          Lorsque <m>n=3</m>, <m>\cD</m> est une r&#xE9;gion de l'espace. Dans ce cas, on &#xE9;crit <m> \vF = P\vi + Q\vj + R\vk </m>, c'est-&#xE0;-dire <m>\vF(\vr) = P(\vr)\vi + Q(\vr)\vj + R(\vr)\vk</m>, ou encore <m>\vF(x,y,z) = P(x,y,z)\vi + Q(x,y,z)\vj + R(x,y,z)\vk</m>.
         </p></li></ol>
   </p>
       </statement>
     </definition>
     <p>
-    On représente les champs de vecteurs au moyen de diagrammes. Cette représentation est surtout utile en deux dimensions, elle consiste à considérer un certain nombre de points sur la région <m>\cD</m> et d'en dessiner, au point <m>\vr \in \cD</m>, le vecteur <m>\vF(\vr)</m> ou un multiple scalaire de celui-ci (la constante sera la même pour tous les points).
+    On repr&#xE9;sente les champs de vecteurs au moyen de diagrammes. Cette repr&#xE9;sentation est surtout utile en deux dimensions, elle consiste &#xE0; consid&#xE9;rer un certain nombre de points sur la r&#xE9;gion <m>\cD</m> et d'en dessiner, au point <m>\vr \in \cD</m>, le vecteur <m>\vF(\vr)</m> ou un multiple scalaire de celui-ci (la constante sera la m&#xEA;me pour tous les points).
   </p>
     <!-- <p>
 
@@ -45,10 +46,10 @@
     <example>
       <statement>
         <p>
-        Soit <m>\vF(x,y) = (1-y^2)\vi + 0 \vj</m> défini pour <m>-1 \leqslant y \leqslant 1</m>.
+        Soit <m>\vF(x,y) = (1-y^2)\vi + 0 \vj</m> d&#xE9;fini pour <m>-1 \leqslant y \leqslant 1</m>.
       </p>
         <p>
-        Notons que la composante verticale du champ est nulle, de sorte qu'en tout point les flèches représentant ce champ seront horizontales. De plus, lorsque <m>y = \pm 1</m>, on aura <m>\vF(x,y) = \vZero</m>. Par ailleurs, les composantes du champ ne dépendent pas de la variable <m>x</m>. Ceci entraîne que le champ est invariant par translation horizontale. Notons aussi que la composante horizontale du champ, <m>1-y^2</m>, est toujours positive (les flèches pointent toujours vers la droite) et maximale lorsque <m>y=0</m>.
+        Notons que la composante verticale du champ est nulle, de sorte qu'en tout point les fl&#xE8;ches repr&#xE9;sentant ce champ seront horizontales. De plus, lorsque <m>y = \pm 1</m>, on aura <m>\vF(x,y) = \vZero</m>. Par ailleurs, les composantes du champ ne d&#xE9;pendent pas de la variable <m>x</m>. Ceci entra&#xEE;ne que le champ est invariant par translation horizontale. Notons aussi que la composante horizontale du champ, <m>1-y^2</m>, est toujours positive (les fl&#xE8;ches pointent toujours vers la droite) et maximale lorsque <m>y=0</m>.
       </p>
         <figure xml:id="fig_flux-canal">
           <caption>Le champ <m>\vv = (1-y^2)\vi </m></caption>
@@ -73,7 +74,7 @@
           </image>
         </figure>
         <p>
-        Ce champ peut être utilisé pour modéliser l'écoulement d'un fluide le long d'un canal se trouvant sur la bande horizontale <m>-1 \leqslant y \leqslant 1</m>. La vitesse du fluide est plus grande au milieu du canal, le frottement avec la paroi entraîne un ralentissement à mesure qu'on s'éloigne du milieu.
+        Ce champ peut &#xEA;tre utilis&#xE9; pour mod&#xE9;liser l'&#xE9;coulement d'un fluide le long d'un canal se trouvant sur la bande horizontale <m>-1 \leqslant y \leqslant 1</m>. La vitesse du fluide est plus grande au milieu du canal, le frottement avec la paroi entra&#xEE;ne un ralentissement &#xE0; mesure qu'on s'&#xE9;loigne du milieu.
       </p>
       </statement>
     </example>
@@ -87,20 +88,20 @@
       <ul><li>
           tout l'espace est rempli avec un fluide incompressible, disons de l'eau;
         </li><li>
-          d'une façon à déterminer, on trouve un moyen de produire plus d'eau à l'origine, disons <m>4\pi m</m> litres par seconde;
+          d'une fa&#xE7;on &#xE0; d&#xE9;terminer, on trouve un moyen de produire plus d'eau &#xE0; l'origine, disons <m>4\pi m</m> litres par seconde;
         </li><li>
-          ceci force l'eau à couler vers l'extérieur, créant un <q>flux</q> symétrique en s'éloignant de l'origine.
+          ceci force l'eau &#xE0; couler vers l'ext&#xE9;rieur, cr&#xE9;ant un <q>flux</q> sym&#xE9;trique en s'&#xE9;loignant de l'origine.
         </li></ul>
 
-      Voyons quel est le champ de vecteurs résultant, <m>\vv(x,y,z)</m>. Comme le flux est symétrique, la vitesse au point  <m>(x,y,z)</m>
+      Voyons quel est le champ de vecteurs r&#xE9;sultant, <m>\vv(x,y,z)</m>. Comme le flux est sym&#xE9;trique, la vitesse au point  <m>(x,y,z)</m>
 
       <ul><li>
-          doit pointer en s'éloignant de l'origine, c'est-à-dire que le vecteur de direction du champ <m>\vv(x,y,z)</m> doit être le vecteur unitaire radial :
+          doit pointer en s'&#xE9;loignant de l'origine, c'est-&#xE0;-dire que le vecteur de direction du champ <m>\vv(x,y,z)</m> doit &#xEA;tre le vecteur unitaire radial :
           <me>
             \hat\vr(x,y,z) = \frac{x\vi + y\vj + z\vk}{\sqrt{x^2+y^2+z^2}}
   </me>.
   </li><li>
-  La norme de la vitesse, <m>|\vv(x,y,z)|</m>, doit dépendre seulement de la distance à l'origine, c'est-à-dire qu'elle doit être fonction de
+  La norme de la vitesse, <m>|\vv(x,y,z)|</m>, doit d&#xE9;pendre seulement de la distance &#xE0; l'origine, c'est-&#xE0;-dire qu'elle doit &#xEA;tre fonction de
   <me>
   r(x,y,z) = \sqrt{x^2+y^2+z^2}
   </me>.
@@ -109,15 +110,15 @@
   <me>
   \vv(x,y,z) = v\big(r(x,y,z)\big)\,\hat\vr(x,y,z)
   </me>.
-  Nous devons simplement déterminer la fonction  <m>v(r)</m>. Fixons  <m>r \geqslant0</m> et concentrons-nous sur la sphère  <m>x^2+y^2+z^2=r^2</m>. Elle est esquissée dans la figure ci-bas.
+  Nous devons simplement d&#xE9;terminer la fonction  <m>v(r)</m>. Fixons  <m>r \geqslant0</m> et concentrons-nous sur la sph&#xE8;re  <m>x^2+y^2+z^2=r^2</m>. Elle est esquiss&#xE9;e dans la figure ci-bas.
   </p>
       <sidebyside width="35%">
         <image source="images/CLP4-figs/waterField2JC"/>
       </sidebyside>
       <p>
-  Pendant un très bref laps de temps de <m>dt</m> secondes, <m>4\pi m\,dt</m> litres d'eau sont créés à l'origine (le point rouge au centre). Puisque l'eau est incompressible, <m>4\pi m\,dt</m> litres d'eau doivent sortir à travers la sphère pendant cet intervalle de temps, afin de faire de la place pour la nouvelle eau.
+  Pendant un tr&#xE8;s bref laps de temps de <m>dt</m> secondes, <m>4\pi m\,dt</m> litres d'eau sont cr&#xE9;&#xE9;s &#xE0; l'origine (le point rouge au centre). Puisque l'eau est incompressible, <m>4\pi m\,dt</m> litres d'eau doivent sortir &#xE0; travers la sph&#xE8;re pendant cet intervalle de temps, afin de faire de la place pour la nouvelle eau.
   </p>
-      <p>En tout point de la sphère, l'eau s'écoule vers l'extérieur avec vitesse  <m>v(r)</m>. Ainsi, pendant ce laps de temps, l'eau près de la surface de la sphère bouge d'une distance <m>v(r)\,dt</m>. En particulier, l'eau qui se trouvait dans la croûte mince <m>r-v(r)\,dt \leqslant \sqrt{x^2+y^2+z^2} \leqslant r\ \ </m> au début sort  à travers la sphère <m>\sqrt{x^2+y^2+z^2} = r</m> pendant cet intervalle de temps. La croûte est esquissée en gris dans la figure. Le volume d'eau dans la partie grise est essentiellement l'aire de  <m>4\pi r^2</m> multipliée par l'épaisseur, c'est-à-dire  <m>v(r)\,dt</m>. Ainsi, l'égalité de volumes donne
+      <p>En tout point de la sph&#xE8;re, l'eau s'&#xE9;coule vers l'ext&#xE9;rieur avec vitesse  <m>v(r)</m>. Ainsi, pendant ce laps de temps, l'eau pr&#xE8;s de la surface de la sph&#xE8;re bouge d'une distance <m>v(r)\,dt</m>. En particulier, l'eau qui se trouvait dans la cro&#xFB;te mince <m>r-v(r)\,dt \leqslant \sqrt{x^2+y^2+z^2} \leqslant r\ \ </m> au d&#xE9;but sort  &#xE0; travers la sph&#xE8;re <m>\sqrt{x^2+y^2+z^2} = r</m> pendant cet intervalle de temps. La cro&#xFB;te est esquiss&#xE9;e en gris dans la figure. Le volume d'eau dans la partie grise est essentiellement l'aire de  <m>4\pi r^2</m> multipli&#xE9;e par l'&#xE9;paisseur, c'est-&#xE0;-dire  <m>v(r)\,dt</m>. Ainsi, l'&#xE9;galit&#xE9; de volumes donne
   <me>
   4\pi m\,dt =  (4\pi r^2) \big(v(r)\,dt\big)
   \implies v(r) = \frac{4\pi m}{4\pi r^2} =\frac{m}{r^2}
@@ -126,7 +127,7 @@
   <me>
   \vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
   </me>.
-  Si notre monde avait été de dimension deux plutôt que trois et que la source fournissait  <m>2\pi m</m> litres par seconde, le même argument mène à
+  Si notre monde avait &#xE9;t&#xE9; de dimension deux plut&#xF4;t que trois et que la source fournissait  <m>2\pi m</m> litres par seconde, le m&#xEA;me argument m&#xE8;ne &#xE0;
   <me>
   2\pi m\,dt =  (2\pi r) \big(v(r)\,dt\big)
   \implies v(r) = \frac{2\pi m}{2\pi r} =\frac{m}{r}
@@ -136,17 +137,17 @@
   r(x,y) = \sqrt{x^2+y^2}\qquad
   \hat\vr(x,y) = \frac{x\vi + y\vj}{\sqrt{x^2+y^2}}
   </me>.
-  La représentation de ce champ est obtenue comme suit. Pour chaque  <m>(x,y)</m>, le vecteur <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m> est dessiné avec son origine en <m>(x,y)</m>. Notons que  <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
+  La repr&#xE9;sentation de ce champ est obtenue comme suit. Pour chaque  <m>(x,y)</m>, le vecteur <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m> est dessin&#xE9; avec son origine en <m>(x,y)</m>. Notons que  <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
   <ul><li>
-  pointe en direction opposée à l'origine,
+  pointe en direction oppos&#xE9;e &#xE0; l'origine,
   </li><li><p>
   a une norme  <m>\frac{m}{r(x,y)}</m> qui
   <ul><li>
-  dépend seulement de  <m>r=|(x,y)|</m>, et
+  d&#xE9;pend seulement de  <m>r=|(x,y)|</m>, et
   </li><li>
-  est très longue lorsque  <m>(x,y)</m> est près de l'origine, et
+  est tr&#xE8;s longue lorsque  <m>(x,y)</m> est pr&#xE8;s de l'origine, et
   </li><li>
-  a une norme décroissante  <m>\frac{1}{r}</m> lorsque  <m>r=|(x,y)|</m> grandit.
+  a une norme d&#xE9;croissante  <m>\frac{1}{r}</m> lorsque  <m>r=|(x,y)|</m> grandit.
   </li></ul></p></li></ul>
   Voici une esquisse de quelques-uns de ces vecteurs.
   </p>
@@ -175,7 +176,7 @@
   </sidebyside>
   </figure>
   -->
-      <p>Notons que, lorsque <m>|(x,y)|\rightarrow 0</m>, la norme de la vitesse <m>|\vv(x,y)|\rightarrow\infty</m>. Ceci est une conséquence de notre simplification qui consiste à penser que l'eau est produite en un seul point.
+      <p>Notons que, lorsque <m>|(x,y)|\rightarrow 0</m>, la norme de la vitesse <m>|\vv(x,y)|\rightarrow\infty</m>. Ceci est une cons&#xE9;quence de notre simplification qui consiste &#xE0; penser que l'eau est produite en un seul point.
   </p>
     </example>
     <example xml:id="eg_Vortex">
@@ -185,10 +186,10 @@
   <me>
   \vv(x,y) = \Om\big(-y\vi +x\vj\big)
   </me>,
-  où <m>\Om</m> est une constante positive. Nous allons donner une procédure efficace pour produire une esquisse grossière, elle sera suffisante pour avoir une idée réaliste du contexte. Cette procédure se généralise à d'autres champs de vecteurs.
+  o&#xF9; <m>\Om</m> est une constante positive. Nous allons donner une proc&#xE9;dure efficace pour produire une esquisse grossi&#xE8;re, elle sera suffisante pour avoir une id&#xE9;e r&#xE9;aliste du contexte. Cette proc&#xE9;dure se g&#xE9;n&#xE9;ralise &#xE0; d'autres champs de vecteurs.
   </p>
       <p>
-  Pour commencer, concentrons-nous sur la composante horizontale <m>\vi\cdot\vv(x,y)</m> de notre champ. Voyons dans quelle région  du plan <m>Oxy</m> celle-ci est positive, négative ou nulle.
+  Pour commencer, concentrons-nous sur la composante horizontale <m>\vi\cdot\vv(x,y)</m> de notre champ. Voyons dans quelle r&#xE9;gion  du plan <m>Oxy</m> celle-ci est positive, n&#xE9;gative ou nulle.
   <me>
   \vi\cdot\vv(x,y)
   =-\Om y\ \
@@ -208,7 +209,7 @@
       \geqslant0 &amp;\text{si } x \geqslant0
   \end{cases}
   </me>
-  Ceci partitionne naturellement le plan  <m>Oxy</m> en 9 morceaux, selon que chacune de ces composantes est positive, négative ou nulle :
+  Ceci partitionne naturellement le plan  <m>Oxy</m> en 9 morceaux, selon que chacune de ces composantes est positive, n&#xE9;gative ou nulle :
   <ul><li><m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv \geqslant0</m>
   sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>
   </li>,
@@ -223,15 +224,15 @@
   </li>,
   <li>
   et ainsi de suite. </li></ul>
-  Pensons maintenant à  <m>\vv(x,y)</m> comme la vitesse au point <m>(x,y)</m> d'un fluide.
+  Pensons maintenant &#xE0;  <m>\vv(x,y)</m> comme la vitesse au point <m>(x,y)</m> d'un fluide.
   <ul><li><p>
-  Regardons le premier point ci-haut. Il nous dit que, sur la première des 9 régions, c'est-à-dire,  sur <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>, qui est le quatrième quadrant, la vitesse horizontale  <m>\vi\cdot\vv \geqslant0</m>. Ceci veut dire que le fluide bouge vers la droite. Nous signifions ceci dans notre esquisse par une flèche qui va horizontalement vers la droite (il s'agit de la flèche bleue dans la figure ci-bas). La composante verticale  <m>\vj\cdot\vv \geqslant0</m>, ce qui signifie que le fluide bouge aussi vers le haut. On signifie ceci par la flèche verticale vers le haut (c'est la flèche rouge).
+  Regardons le premier point ci-haut. Il nous dit que, sur la premi&#xE8;re des 9 r&#xE9;gions, c'est-&#xE0;-dire,  sur <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>, qui est le quatri&#xE8;me quadrant, la vitesse horizontale  <m>\vi\cdot\vv \geqslant0</m>. Ceci veut dire que le fluide bouge vers la droite. Nous signifions ceci dans notre esquisse par une fl&#xE8;che qui va horizontalement vers la droite (il s'agit de la fl&#xE8;che bleue dans la figure ci-bas). La composante verticale  <m>\vj\cdot\vv \geqslant0</m>, ce qui signifie que le fluide bouge aussi vers le haut. On signifie ceci par la fl&#xE8;che verticale vers le haut (c'est la fl&#xE8;che rouge).
   </p><sidebyside width="43%"><image source="images/CLP4-figs/phaseVortex4"/></sidebyside></li><li><p>
-  Par la suite, concentrons-nous sur le deuxième point dans la liste ci-haut. Il nous dit que, sur la deuxième région, c'est-à-dire sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>, qui est la moitié inférieure de l'axe  <m>Oy</m>, la composante horizontale  <m>\vi\cdot\vv \geqslant0</m>, ce qui veut dire que le fluide bouge vers la droite. On indique ceci par une flèche horizontale vers la droite dont la source est un point sur la moitié inférieure de l'axe <m>Oy</m> (c'est la deuxième flèche bleue dans la figure ci-après). La composante verticale est  <m>\vj\cdot\vv=0</m>, ce qui veut dire que le fluide n'a pas de vitesse verticale. On indique ceci par l'absence de flèche verticale ayant pour source un point sur la partie inférieure de l'axe des <m>y</m>.
+  Par la suite, concentrons-nous sur le deuxi&#xE8;me point dans la liste ci-haut. Il nous dit que, sur la deuxi&#xE8;me r&#xE9;gion, c'est-&#xE0;-dire sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>, qui est la moiti&#xE9; inf&#xE9;rieure de l'axe  <m>Oy</m>, la composante horizontale  <m>\vi\cdot\vv \geqslant0</m>, ce qui veut dire que le fluide bouge vers la droite. On indique ceci par une fl&#xE8;che horizontale vers la droite dont la source est un point sur la moiti&#xE9; inf&#xE9;rieure de l'axe <m>Oy</m> (c'est la deuxi&#xE8;me fl&#xE8;che bleue dans la figure ci-apr&#xE8;s). La composante verticale est  <m>\vj\cdot\vv=0</m>, ce qui veut dire que le fluide n'a pas de vitesse verticale. On indique ceci par l'absence de fl&#xE8;che verticale ayant pour source un point sur la partie inf&#xE9;rieure de l'axe des <m>y</m>.
   </p><sidebyside width="43%"><image source="images/CLP4-figs/phaseVortex5"/></sidebyside></li><li>
   On poursuit de la sorte.
   </li></ul>
-  Lorsque nous aurons considéré les 9 régions, nous aurons l'esquisse suivante.
+  Lorsque nous aurons consid&#xE9;r&#xE9; les 9 r&#xE9;gions, nous aurons l'esquisse suivante.
   </p>
       <figure xml:id="fig_vortexCrude">
         <caption/>
@@ -244,11 +245,11 @@
   <ul><li>
      le fluide bouge vers la gauche et vers le haut,
   </li><li>
-     le fluide croise l'axe  <m>x</m> verticalement (donc, près de l'axe <m>x</m>, les flèches seront presque verticales), et
+     le fluide croise l'axe  <m>x</m> verticalement (donc, pr&#xE8;s de l'axe <m>x</m>, les fl&#xE8;ches seront presque verticales), et
   </li><li>
-     le fluide croise l'axe des <m>y</m> horizontalement (donc, près de l'axe <m>y</m>, les flèches seront presque horizontales), et
+     le fluide croise l'axe des <m>y</m> horizontalement (donc, pr&#xE8;s de l'axe <m>y</m>, les fl&#xE8;ches seront presque horizontales), et
   </li><li>
-     il y a un point, à savoir <m>(0,0)</m>, où le champ de vitesses est exactement <m>\vZero</m>. De plus, <m>\vv(x,y)=\Omega(-y\vi+x\vj)</m> est plus petit lorsque <m>(x,y)</m> est plus près de <m>(0,0)</m>, et <m>\vv(x,y)</m> a une grande norme lorsque <m>(x,y)</m> est loin de <m>(0,0)</m>.
+     il y a un point, &#xE0; savoir <m>(0,0)</m>, o&#xF9; le champ de vitesses est exactement <m>\vZero</m>. De plus, <m>\vv(x,y)=\Omega(-y\vi+x\vj)</m> est plus petit lorsque <m>(x,y)</m> est plus pr&#xE8;s de <m>(0,0)</m>, et <m>\vv(x,y)</m> a une grande norme lorsque <m>(x,y)</m> est loin de <m>(0,0)</m>.
   </li></ul>
   Avec toute cette information, nous pouvons esquisser notre champ de vecteurs.
   </p>
@@ -279,15 +280,15 @@
   </figure>
   -->
       <p>
-  Ceci montre le champ qui <em>tourbillonne</em> autour de l'origine, d'où son nom.
+  Ceci montre le champ qui <em>tourbillonne</em> autour de l'origine, d'o&#xF9; son nom.
   </p>
     </example>
     <p>
-    Si <m>f</m> est une fonction de deux ou trois variables, alors son gradient <m>\vnabla f</m> définit un champ de vecteurs (là où il existe !). Nous avons déjà considéré le gradient à la <xref ref="sec_gradient" text="global">section</xref>, mais d'un point de vue un peu différent. Supposons que nous ayons une fonction de deux variables, <m>f(x,y)</m>. Son champ gradient est le champ de vecteurs <m>\vnabla f = f_x \vi + f_y \vj</m> ou, plus explicitement, <m>\vnabla f(x,y) = f_x(x,y)\vi + f_y(x,y)\vj</m>. De la même façon, si l'on a une fonction de trois variables <m>f</m>, son gradient est <m>\vnabla f = f_x\vi + f_y\vj + f_z \vk</m>, ou encore <m>\vnabla f(x,y,z) = f_x(x,y,z)\vi + f_y(x,y,z)\vj + f_z(x,y,z)\vk</m>.
+    Si <m>f</m> est une fonction de deux ou trois variables, alors son gradient <m>\vnabla f</m> d&#xE9;finit un champ de vecteurs (l&#xE0; o&#xF9; il existe !). Nous avons d&#xE9;j&#xE0; consid&#xE9;r&#xE9; le gradient &#xE0; la <xref ref="sec_gradient" text="global">section</xref>, mais d'un point de vue un peu diff&#xE9;rent. Supposons que nous ayons une fonction de deux variables, <m>f(x,y)</m>. Son champ gradient est le champ de vecteurs <m>\vnabla f = f_x \vi + f_y \vj</m> ou, plus explicitement, <m>\vnabla f(x,y) = f_x(x,y)\vi + f_y(x,y)\vj</m>. De la m&#xEA;me fa&#xE7;on, si l'on a une fonction de trois variables <m>f</m>, son gradient est <m>\vnabla f = f_x\vi + f_y\vj + f_z \vk</m>, ou encore <m>\vnabla f(x,y,z) = f_x(x,y,z)\vi + f_y(x,y,z)\vj + f_z(x,y,z)\vk</m>.
   </p>
     <example xml:id="Gradient">
       <statement>
-        <p>Soit <m>f(x,y) = x\sin y + y</m>. Son champ gradient est <m>\vnabla f(x,y) = \sin y\, \vi + (x\cos y + 1)\vj</m>. La figure ci-après, à gauche, montre le champ gradient. Dans la figure de droite, on trouve le champ gradient <m>\vnabla f</m> ainsi que les courbes de niveau de <m>f</m>.
+        <p>Soit <m>f(x,y) = x\sin y + y</m>. Son champ gradient est <m>\vnabla f(x,y) = \sin y\, \vi + (x\cos y + 1)\vj</m>. La figure ci-apr&#xE8;s, &#xE0; gauche, montre le champ gradient. Dans la figure de droite, on trouve le champ gradient <m>\vnabla f</m> ainsi que les courbes de niveau de <m>f</m>.
       </p>
         <sidebyside widths="45% 45%">
           <image xml:id="sageplot-int-ligne-eg3a">
@@ -324,7 +325,7 @@
           </image>
         </sidebyside>
         <p>
-        On remarque que la norme du gradient est plus grande là où les courbes de niveau de <m>f</m> sont le plus près les unes des autres. Ceci résulte du fait que la norme du gradient est la dérivée directionnelle de la fonction dans la direction du gradient. Plus cette dérivée est grande, plus la valeur de <m>f</m> change vite.
+        On remarque que la norme du gradient est plus grande l&#xE0; o&#xF9; les courbes de niveau de <m>f</m> sont le plus pr&#xE8;s les unes des autres. Ceci r&#xE9;sulte du fait que la norme du gradient est la d&#xE9;riv&#xE9;e directionnelle de la fonction dans la direction du gradient. Plus cette d&#xE9;riv&#xE9;e est grande, plus la valeur de <m>f</m> change vite.
       </p>
       </statement>
     </example>
@@ -340,7 +341,7 @@
    </p> 
    -->
     <p>
-     Dans les sections qui suivent, nous devront faire face au problème de décider si un champ <m>\vF</m> est est un champ gradient ou pas. Nous reviendrons sur ce point. Contentons-nous de donner un exemple.
+     Dans les sections qui suivent, nous devront faire face au probl&#xE8;me de d&#xE9;cider si un champ <m>\vF</m> est est un champ gradient ou pas. Nous reviendrons sur ce point. Contentons-nous de donner un exemple.
    </p>
     <!-- <p>
      <term>Fin nouveau</term>
@@ -351,7 +352,7 @@
        </p>
       </statement>
       <solution>
-        <p>Si <m>f</m> était une telle fonction, ses dérivées partielles seraient <m>P</m> et <m>Q</m>, qui sont de classe <m>C^1</m>. On devrait donc avoir <m>f</m> de classe <m>C^2</m>. Ainsi, en vertu du théorème de Clairaut,
+        <p>Si <m>f</m> &#xE9;tait une telle fonction, ses d&#xE9;riv&#xE9;es partielles seraient <m>P</m> et <m>Q</m>, qui sont de classe <m>C^1</m>. On devrait donc avoir <m>f</m> de classe <m>C^2</m>. Ainsi, en vertu du th&#xE9;or&#xE8;me de Clairaut,
        <me>
            \pdiff{P}{y} = \frac{\partial^2 f}{\partial y\, \partial x} = \frac{\partial^2 f}{\partial x\, \partial y} = \frac{\partial Q}{\partial x}
        </me>.
@@ -366,18 +367,18 @@
      <term>Début nouveau</term>
    </p> -->
     <p>
-    En trois dimensions, le concept est le même. La représentation graphique est toujours de mise, même si elle pourrait être un peu plus difficile à interpréter. Dans ce cas, il est commun d'utiliser aussi des couleurs pour les flèches.
+    En trois dimensions, le concept est le m&#xEA;me. La repr&#xE9;sentation graphique est toujours de mise, m&#xEA;me si elle pourrait &#xEA;tre un peu plus difficile &#xE0; interpr&#xE9;ter. Dans ce cas, il est commun d'utiliser aussi des couleurs pour les fl&#xE8;ches.
    </p>
     <example>
       <statement>
         <p>
-         On considère le champ de vecteurs <m>\vF = y\vi +  \vj +(z^2 -1) \vk</m>.
+         On consid&#xE8;re le champ de vecteurs <m>\vF = y\vi +  \vj +(z^2 -1) \vk</m>.
        </p>
         <p>
-         La composante <m>y</m> du champ est constante, les flèches pointent toujours dans la direction des <m>y</m> positifs. Les deux autres composantes dépendent de la position.
+         La composante <m>y</m> du champ est constante, les fl&#xE8;ches pointent toujours dans la direction des <m>y</m> positifs. Les deux autres composantes d&#xE9;pendent de la position.
        </p>
         <figure xml:id="fig-Champ-3d-ex">
-          <caption>Représentation graphique du champ de vecteurs <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </caption>
+          <caption>Repr&#xE9;sentation graphique du champ de vecteurs <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </caption>
           <image xml:id="sageplot3d-Champ-3d-ex" width="80%">
             <description>Le champ de vecteurs  <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </description>
             <sageplot variant="3d" aspect="1.5">
@@ -401,7 +402,7 @@
   <term>Début nouveau</term>
 </p> -->
   <subsection xml:id="pars-lignes-courant"><title>Les lignes de courant</title><p>
-    Étant donné un champ de vecteurs <m>\vF</m>, une ligne de courant de <m>\vF</m> est une courbe paramétrée <m>\cC</m> telle que, en tout point de <m>\cC</m>, le vecteur vitesse est donné par <m>\vF</m> évalué en ce point. Si le champ est le champ de vitesses d'un fluide et que l'on dépose un objet qui flotte en un point donné, la ligne de courant passant par ce point représente la trajectoire que cet objet suivrait, mené par le courant.
+    &#xC9;tant donn&#xE9; un champ de vecteurs <m>\vF</m>, une ligne de courant de <m>\vF</m> est une courbe param&#xE9;tr&#xE9;e <m>\cC</m> telle que, en tout point de <m>\cC</m>, le vecteur vitesse est donn&#xE9; par <m>\vF</m> &#xE9;valu&#xE9; en ce point. Si le champ est le champ de vitesses d'un fluide et que l'on d&#xE9;pose un objet qui flotte en un point donn&#xE9;, la ligne de courant passant par ce point repr&#xE9;sente la trajectoire que cet objet suivrait, men&#xE9; par le courant.
   </p><figure xml:id="fig-courant-def"><caption>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
     </caption><image xml:id="sageplot3d-courant-def" width="80%"><sageplot>
         var('x,y')
@@ -420,22 +421,22 @@
         Fig
       </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
       </description></image></figure><p>
-      Plus précisément, si <m>\vF = p\vi + Q \vj</m> est donné et <m>\cC</m> est une ligne de courant paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, alors le vecteur vitesse est <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> et il doit vérifier
+      Plus pr&#xE9;cis&#xE9;ment, si <m>\vF = p\vi + Q \vj</m> est donn&#xE9; et <m>\cC</m> est une ligne de courant param&#xE9;tr&#xE9;e par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, alors le vecteur vitesse est <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> et il doit v&#xE9;rifier
     </p><md><mrow>x'(t) = P(x(t), y(t) )\amp  \text{ et } \amp y'(t) = Q(x(t),y(t)) </mrow></md>
-    ou, de façon plus concise,
+    ou, de fa&#xE7;on plus concise,
 
 
     <md><mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow>.
     </md>
 
-    <example xml:id="ex-courant-a"><statement><p>Montrer que la courbe paramétrée par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
+    <example xml:id="ex-courant-a"><statement><p>Montrer que la courbe param&#xE9;tr&#xE9;e par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
         </p><p>
           En effet,  <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> donne
           <me>
             \vr'(t) = C_1 e^t\, \vi - C_2 e^{-t}\, \vj = x(t)\vi + y(t) \vj .
           </me>
         </p><p>
-          Remarquons que différentes valeurs de <m>C_1</m> et <m>C_2</m> donnent différentes lignes de courant. L'interprétation est claire : non seulement il faut connaître la vitesse <m>\vF</m>, mais il faut aussi connaître un point sur la trajectoire, ce qui permet de déterminer <m>C_1</m> et <m>C_2</m>.
+          Remarquons que diff&#xE9;rentes valeurs de <m>C_1</m> et <m>C_2</m> donnent diff&#xE9;rentes lignes de courant. L'interpr&#xE9;tation est claire : non seulement il faut conna&#xEE;tre la vitesse <m>\vF</m>, mais il faut aussi conna&#xEE;tre un point sur la trajectoire, ce qui permet de d&#xE9;terminer <m>C_1</m> et <m>C_2</m>.
         </p><figure xml:id="fig-courant-exa"><caption>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
           </caption><image xml:id="sageplot-courant-exa" width="80%"><sageplot>
               var('x,y')
@@ -454,10 +455,10 @@
               Fig
             </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
             </description></image></figure><p>
-          Dans cet exemple, nous avons <m>x(t) \cdot y(t) = C_1 C_2 </m>, de sorte que les lignes de courant se trouvent sur des hyperboles d'équations <m>xy = k</m>. Notons que l'équation <m>xy = 0</m> a pour courbe la réunion des deux axes. Chaque demi-axe est à lui tout seul une ligne de courant.
+          Dans cet exemple, nous avons <m>x(t) \cdot y(t) = C_1 C_2 </m>, de sorte que les lignes de courant se trouvent sur des hyperboles d'&#xE9;quations <m>xy = k</m>. Notons que l'&#xE9;quation <m>xy = 0</m> a pour courbe la r&#xE9;union des deux axes. Chaque demi-axe est &#xE0; lui tout seul une ligne de courant.
         </p></statement></example>
     <p>
-      Voyons maintenant comment trouver les lignes de courant d'un champ donné.
+      Voyons maintenant comment trouver les lignes de courant d'un champ donn&#xE9;.
     </p>
 
     <example xml:id="ex-courant-b"><statement><p>
@@ -470,7 +471,7 @@
           <me>
             \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{x'(t)}{y'(t)}.
           </me>
-        Ainsi, la courbe vérifie l'équation différentielle
+        Ainsi, la courbe v&#xE9;rifie l'&#xE9;quation diff&#xE9;rentielle
         <me>
           \frac{dy}{dy} = \frac{x}{-2y}
         </me>
@@ -478,11 +479,11 @@
         <me>
           2y\frac{dy}{dx} = -x.
         </me>
-        En intégrant les deux côtés par rapport à <m>x</m>, on obtient
+        En int&#xE9;grant les deux c&#xF4;t&#xE9;s par rapport &#xE0; <m>x</m>, on obtient
         <me>
-          \int 2y \frac{dy}{dx}\, dx = \int -x\, dx, \text{ d'où } y^2 = \frac{-x^2}{2} + C,
+          \int 2y \frac{dy}{dx}\, dx = \int -x\, dx, \text{ d'o&#xF9; } y^2 = \frac{-x^2}{2} + C,
         </me>
-        où <m>C</m> regroupe les constantes d'intégration. On reconnaît l'équation d'une ellipse
+        o&#xF9; <m>C</m> regroupe les constantes d'int&#xE9;gration. On reconna&#xEE;t l'&#xE9;quation d'une ellipse
         <me>
           \frac{x^2}{2} + y^2 = C.
         </me>
@@ -504,7 +505,7 @@
               Fig
             </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>.
             </description></image></figure><p>
-          On peut paramétrer une telle ellipse en posant <m>\vr(u) = \sqrt{2C}\cos u \, \vi + \sqrt{C}\sin u\, \vj</m>. En effet, on calcule
+          On peut param&#xE9;trer une telle ellipse en posant <m>\vr(u) = \sqrt{2C}\cos u \, \vi + \sqrt{C}\sin u\, \vj</m>. En effet, on calcule
           <me>
             \frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C.
           </me>
@@ -513,10 +514,10 @@
           Cependant, on a
           <md><mrow>   x'(u)\vi + y'(u) \vj \amp = -\sqrt{2C}\sin u\, \vi + \sqrt{C}\cos u\, \vj</mrow><mrow> \amp = -\sqrt{2}y(u) \vi + \frac{1}{\sqrt{2}}x(u)</mrow>.
           </md>
-          On remarque que ce vecteur n'est pas égal à <m>-2y(u)\vi + x(u) \vj</m>, il lui est seulement proportionnel. Ce paramétrage ne vérifie donc pas la définition des lignes de courant. Cependant, posons plutôt <m>\vr(t) = \sqrt{2C}\cos (t\sqrt{2})\, \vi + \sqrt{C}\sin (t\sqrt{2})\, \vj</m>. On vérifie aisément qu'il s'agit d'un paramétrage de l'ellipse et, par ailleurs, la condition de la définition des lignes de courant est satisfaite.
+          On remarque que ce vecteur n'est pas &#xE9;gal &#xE0; <m>-2y(u)\vi + x(u) \vj</m>, il lui est seulement proportionnel. Ce param&#xE9;trage ne v&#xE9;rifie donc pas la d&#xE9;finition des lignes de courant. Cependant, posons plut&#xF4;t <m>\vr(t) = \sqrt{2C}\cos (t\sqrt{2})\, \vi + \sqrt{C}\sin (t\sqrt{2})\, \vj</m>. On v&#xE9;rifie ais&#xE9;ment qu'il s'agit d'un param&#xE9;trage de l'ellipse et, par ailleurs, la condition de la d&#xE9;finition des lignes de courant est satisfaite.
         </p></solution></example>
     <p>
-      En général il est difficile de déterminer les lignes de courant d'un champ de vecteurs. Il s'agit de quelque chose qui est plutôt abordé dans les cours d'équations différentielles ou de mathématiques avancées.
+      En g&#xE9;n&#xE9;ral il est difficile de d&#xE9;terminer les lignes de courant d'un champ de vecteurs. Il s'agit de quelque chose qui est plut&#xF4;t abord&#xE9; dans les cours d'&#xE9;quations diff&#xE9;rentielles ou de math&#xE9;matiques avanc&#xE9;es.
     </p>
 
 

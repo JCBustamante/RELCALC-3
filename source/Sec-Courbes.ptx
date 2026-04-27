@@ -1,18 +1,19 @@
+<?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Courbes">
-  <title>Courbes paramétriques et leurs tangentes</title>
+  <title>Courbes param&#xE9;triques et leurs tangentes</title>
   <introduction>
     <p>
-    Dans cette section et celle qui suit nous étudions les courbes paramétriques, c'est-à-dire les courbes qui sont données par des fonctions à valeurs vectorielles d'une variable réelle. Nous allons aussi étudier les tangentes à ces courbes, et les notions de vitesse et d'accélération associées à un chemin. 
+    Dans cette section et celle qui suit nous &#xE9;tudions les courbes param&#xE9;triques, c'est-&#xE0;-dire les courbes qui sont donn&#xE9;es par des fonctions &#xE0; valeurs vectorielles d'une variable r&#xE9;elle. Nous allons aussi &#xE9;tudier les tangentes &#xE0; ces courbes, et les notions de vitesse et d'acc&#xE9;l&#xE9;ration associ&#xE9;es &#xE0; un chemin. 
   </p>
   </introduction>
   <subsection xml:id="subsec-chemins">
     <title>Courbes et chemins</title>
     <p>
-      À la <xref ref="sec-1-5-Droites-plans" text="global">section</xref> nous avons étudié les droites au moyen de leurs équations paramétriques. En  effet, étant donné <m>\vp_0</m> et <m>\vd</m> fixes, on a considéré l'équation de la droite passant par <m>\vp_0</m> dans la direction de <m>\vd</m>. On peut considérer l'expression
+      &#xC0; la <xref ref="sec-1-5-Droites-plans" text="global">section</xref> nous avons &#xE9;tudi&#xE9; les droites au moyen de leurs &#xE9;quations param&#xE9;triques. En  effet, &#xE9;tant donn&#xE9; <m>\vp_0</m> et <m>\vd</m> fixes, on a consid&#xE9;r&#xE9; l'&#xE9;quation de la droite passant par <m>\vp_0</m> dans la direction de <m>\vd</m>. On peut consid&#xE9;rer l'expression
         <md>
           \vp_0 + t \vd
         </md>
-    comme étant une fonction qui, au paramètre <m>t</m>, associe un vecteur.
+    comme &#xE9;tant une fonction qui, au param&#xE8;tre <m>t</m>, associe un vecteur.
 </p>
     <definition xml:id="def-chemin">
       <statement>
@@ -26,39 +27,39 @@
       </statement>
     </definition>
     <p>
-  Bien entendu, les cas les plus intéressants pour nous seront :
+  Bien entendu, les cas les plus int&#xE9;ressants pour nous seront :
 </p>
     <ul>
       <li>
-        <p><m>n=2</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj = \dvect{x(t)}{y(t)}</m>;
+        <p><m>n=2</m> et, dans ce cas, nous &#xE9;crirons <m>\vr(t) = x(t)\vi + y(t)\vj = \dvect{x(t)}{y(t)}</m>;
     </p>
       </li>
       <li>
-        <p><m>n=3</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj + z(t)\vk  = \tvect{x(t)}{y(t)}{z(t)}</m>.
+        <p><m>n=3</m> et, dans ce cas, nous &#xE9;crirons <m>\vr(t) = x(t)\vi + y(t)\vj + z(t)\vk  = \tvect{x(t)}{y(t)}{z(t)}</m>.
     </p>
       </li>
     </ul>
     <p>
-  Il est très utile de penser qu'un chemin donne en effet la position d'un mobile, <m>\vr(t)</m> à l'instant <m>t</m>. Cette interprétation n'est pas strictement nécessaire, mais elle aide beaucoup à la compréhension des concepts.
+  Il est tr&#xE8;s utile de penser qu'un chemin donne en effet la position d'un mobile, <m>\vr(t)</m> &#xE0; l'instant <m>t</m>. Cette interpr&#xE9;tation n'est pas strictement n&#xE9;cessaire, mais elle aide beaucoup &#xE0; la compr&#xE9;hension des concepts.
 </p>
     <p>
-  Étant donné un chemin <m>\vr</m>, son image, que l'on notera <m>\plan{C}_\vr</m> ou <m>\plan{C}</m>, c'est-à-dire l'ensemble
+  &#xC9;tant donn&#xE9; un chemin <m>\vr</m>, son image, que l'on notera <m>\plan{C}_\vr</m> ou <m>\plan{C}</m>, c'est-&#xE0;-dire l'ensemble
 
 <me>
   \plan{C}_\vr = \{ \vr(t)| t\in I\},
 </me>
-décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <term>paramétrage</term> de la courbe.
+d&#xE9;crit une <term>courbe</term> dans <m>\R^n</m>. R&#xE9;ciproquement, on dira que le chemin <m>\vr</m> est un <term>param&#xE9;trage</term> de la courbe.
 </p>
     <sidebyside width="30%">
       <image source="images/CLP-figs/parCurve"/>
     </sidebyside>
     <p>
-  Il faut noter qu'une même courbe peut admettre plusieurs paramétrages différents, ce qui soulève des questions délicates. Pour l'instant, voyons quelques exemples.
+  Il faut noter qu'une m&#xEA;me courbe peut admettre plusieurs param&#xE9;trages diff&#xE9;rents, ce qui soul&#xE8;ve des questions d&#xE9;licates. Pour l'instant, voyons quelques exemples.
 </p>
     <example xml:id="eg_paramCircle">
-      <title>Paramétrage du cercle  <m>x^2+y^2=a^2</m></title>
+      <title>Param&#xE9;trage du cercle  <m>x^2+y^2=a^2</m></title>
       <p>
-  S'il est vrai qu'on utilise souvent  <m>t</m> comme paramètre, il n'y a aucune raison d'utiliser la lettre <m>t</m> et de penser que le paramètre est le temps. Par exemple, considérons le cercle  <m>x^2+y^2=a^2</m>. Il est naturel d'utiliser l'angle <m>\theta</m> de la figure ci-bas comme paramètre.
+  S'il est vrai qu'on utilise souvent  <m>t</m> comme param&#xE8;tre, il n'y a aucune raison d'utiliser la lettre <m>t</m> et de penser que le param&#xE8;tre est le temps. Par exemple, consid&#xE9;rons le cercle  <m>x^2+y^2=a^2</m>. Il est naturel d'utiliser l'angle <m>\theta</m> de la figure ci-bas comme param&#xE8;tre.
   </p>
       <sidebyside width="50%">
         <image source="images/CLP-figs/parCircle"/>
@@ -66,7 +67,7 @@ décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que l
       <p>
   Ceci donne  <m> \vr(\theta) = a\cos\theta\vi +a\sin\theta\vj,\qquad
   0\leqslant  \theta\leqslant  2\pi. </m>
-  Il s'agit d'un paramétrage du cercle <m>x^2+y^2=a^2</m>.
+  Il s'agit d'un param&#xE9;trage du cercle <m>x^2+y^2=a^2</m>.
   </p>
       <p>
   En effet, ici, nous avons <m>x(\theta) = a\cos \theta,\, y(\theta) =a\sin \theta</m>, de sorte que
@@ -76,26 +77,26 @@ décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que l
   x(\theta)^2 + y(\theta)^2 = (a\cos \theta)^2 + (a\sin\theta)^2 = a^2.
 </me>
       <p>
-Ceci montre que la courbe associée à notre fonction <m>\vr</m> est contenue dans le cercle.
+Ceci montre que la courbe associ&#xE9;e &#xE0; notre fonction <m>\vr</m> est contenue dans le cercle.
 
-De simples considérations géométriques montrent que lorsque <m>\theta</m> parcourt <m>[0,2\pi]</m>, <m>\vr(\theta)</m> parcourt le cercle au complet.
+De simples consid&#xE9;rations g&#xE9;om&#xE9;triques montrent que lorsque <m>\theta</m> parcourt <m>[0,2\pi]</m>, <m>\vr(\theta)</m> parcourt le cercle au complet.
   </p>
       <p>Il faut faire preuve de prudence : savoir que <m>\vr(t)</m> fait partie  d'une courbe
-   ne garantit pas que, à mesure que  <m>t</m> parcourt le domaine de <m>\vr</m>, le vecteur <m>\vr(t)</m> parcourt la courbe en entier. Par exemple, si <m>t</m> parcourt <m>\R</m>,  <m>\frac{2}{\pi}\arctan(t)</m> parcourt l'intervalle <m>]-1,1[</m>. De l'équation <m>x^2 + y^2 = a^2</m>, on tire <m>y = \pm \sqrt{a^2 - x^2}</m>. Ainsi, pour tout  <m>t</m>,
+   ne garantit pas que, &#xE0; mesure que  <m>t</m> parcourt le domaine de <m>\vr</m>, le vecteur <m>\vr(t)</m> parcourt la courbe en entier. Par exemple, si <m>t</m> parcourt <m>\R</m>,  <m>\frac{2}{\pi}\arctan(t)</m> parcourt l'intervalle <m>]-1,1[</m>. De l'&#xE9;quation <m>x^2 + y^2 = a^2</m>, on tire <m>y = \pm \sqrt{a^2 - x^2}</m>. Ainsi, pour tout  <m>t</m>,
   <me>
   \vr(t) = x(t)\vi + y(t)\vj
          = a\frac{2}{\pi}\arctan(t)\vi  +
                   a\sqrt{1-\frac{4}{\pi^2}\arctan^2(t)}\vj
   </me>
-  est correctement défini et satisfait  <m>x(t)^2+y(t)^2=a^2</m>. Mais ce chemin n'est pas un paramétrage du cercle, puisque  <m>y(t)\geqslant 0</m>.
+  est correctement d&#xE9;fini et satisfait  <m>x(t)^2+y(t)^2=a^2</m>. Mais ce chemin n'est pas un param&#xE9;trage du cercle, puisque  <m>y(t)\geqslant 0</m>.
   </p>
     </example>
     <example xml:id="eg_paramCircleB">
-      <title>Paramétrage de  <m>(x-h)^2+(y-k)^2=a^2</m></title>
+      <title>Param&#xE9;trage de  <m>(x-h)^2+(y-k)^2=a^2</m></title>
       <p>
-On peut modifier le paramétrage de l'<xref ref="eg_paramCircle" text="global">exemple</xref> pour obtenir celui du cercle de rayon <m>a</m> centré à <m>(h,k)</m>.
+On peut modifier le param&#xE9;trage de l'<xref ref="eg_paramCircle" text="global">exemple</xref> pour obtenir celui du cercle de rayon <m>a</m> centr&#xE9; &#xE0; <m>(h,k)</m>.
 
-Une façon de procéder est de refaire l'esquisse de l'<xref ref="eg_paramCircle" text="global">exemple</xref> avec le cercle translaté de sorte à avoir son centre à la bonne position.
+Une fa&#xE7;on de proc&#xE9;der est de refaire l'esquisse de l'<xref ref="eg_paramCircle" text="global">exemple</xref> avec le cercle translat&#xE9; de sorte &#xE0; avoir son centre &#xE0; la bonne position.
 </p>
       <sidebyside width="50%">
         <image source="images/CLP-figs/parCirclehk"/>
@@ -106,12 +107,12 @@ Cette translation  s'obtient en additionnant le vecteur <m>h\vi + k\vj</m>. Ains
 \vr(\theta) = \left(h+a\cos\theta\right)\vi + \left(k+a\sin\theta\right)\vj\qquad
 0\leqslant  \theta\leqslant  2\pi
 </me>
-est un paramétrage du cercle <m>(x-h)^2+(y-k)^2=a^2</m>.
+est un param&#xE9;trage du cercle <m>(x-h)^2+(y-k)^2=a^2</m>.
 </p>
       <p>
-Une seconde façon de procéder est de remarquer que l'on peut transformer l'identité  <m>\cos^2 t + \sin^2 t=1</m> pour qu'elle devienne l'équation du cercle  <m>(x-h)^2+(y-k)^2=a^2</m>, en
+Une seconde fa&#xE7;on de proc&#xE9;der est de remarquer que l'on peut transformer l'identit&#xE9;  <m>\cos^2 t + \sin^2 t=1</m> pour qu'elle devienne l'&#xE9;quation du cercle  <m>(x-h)^2+(y-k)^2=a^2</m>, en
 <ul><li>
-multipliant l'identité par  <m>a^2</m> pour obtenir
+multipliant l'identit&#xE9; par  <m>a^2</m> pour obtenir
 <m>(a\cos t)^2 +(a\sin t)^2 =a^2</m>, et ensuite
 </li><li>
 en posant  <m>\ a\cos t=x-h\ </m> et <m>\ a\sin t=y-k</m>, ce qui transforme <m>(a\cos t)^2 +(a\sin t)^2 =a^2</m> en  <m>(x-h)^2+(y-k)^2=a^2</m>.
@@ -119,11 +120,11 @@ en posant  <m>\ a\cos t=x-h\ </m> et <m>\ a\sin t=y-k</m>, ce qui transforme <m>
 </p>
     </example>
     <example xml:id="eg_paramEllipse">
-      <title>Paramétrage de  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et de  <m>x^{2/3}+y^{2/3}=a^{2/3}</m></title>
+      <title>Param&#xE9;trage de  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et de  <m>x^{2/3}+y^{2/3}=a^{2/3}</m></title>
       <p>
-On peut obtenir des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et  <m>x^{2/3}+y^{2/3}=a^{2/3}</m> en partant de l'identité <m>\cos^2 t + \sin^2 t=1</m>, comme on l'a fait dans la seconde partie de l'exemple précédent.
+On peut obtenir des param&#xE9;trages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> et  <m>x^{2/3}+y^{2/3}=a^{2/3}</m> en partant de l'identit&#xE9; <m>\cos^2 t + \sin^2 t=1</m>, comme on l'a fait dans la seconde partie de l'exemple pr&#xE9;c&#xE9;dent.
 <ul><li>
-Si l'on pose <m>\ \cos t=\frac{x}{a}\ </m> et <m>\ \sin t=\frac{y}{b} </m>, alors l'égalité  <m>\cos^2 t +\sin^2 t =1</m> devient  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>.
+Si l'on pose <m>\ \cos t=\frac{x}{a}\ </m> et <m>\ \sin t=\frac{y}{b} </m>, alors l'&#xE9;galit&#xE9;  <m>\cos^2 t +\sin^2 t =1</m> devient  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>.
 </li><li>
 Si l'on pose <m>\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}</m>, et
 <m>\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}</m>, alors
@@ -135,15 +136,15 @@ Ainsi,
 </mrow><mrow>
 \vr(t) &amp;= (a\cos^3 t)\,\vi + (a\sin^3 t)\, \vj &amp;0\leqslant  t\leqslant  2\pi
 </mrow></md>
-sont des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>
-et <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. Afin de voir que, si <m>t</m> parcourt <m>[0,2\pi]</m>, alors  <m>\vr(t)</m> parcourt la courbe au complet, considérons les figures ci-bas.
+sont des param&#xE9;trages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>
+et <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. Afin de voir que, si <m>t</m> parcourt <m>[0,2\pi]</m>, alors  <m>\vr(t)</m> parcourt la courbe au complet, consid&#xE9;rons les figures ci-bas.
 </p>
       <sidebyside widths="45% 46%" valign="middle">
         <image source="images/CLP-figs/parEllipse"/>
         <image source="images/CLP-figs/astroid4"/>
       </sidebyside>
       <p>
-La courbe <m>x^{2/3}+y^{2/3}=a^{2/3}</m> est appelée une <term>astroïde</term>. Son équation suggère qu'elle devrait ressembler à un cercle, mais ce n'est pas évident qu'elle admette les coins. Nous aborderons ces aspects plus tard.
+La courbe <m>x^{2/3}+y^{2/3}=a^{2/3}</m> est appel&#xE9;e une <term>astro&#xEF;de</term>. Son &#xE9;quation sugg&#xE8;re qu'elle devrait ressembler &#xE0; un cercle, mais ce n'est pas &#xE9;vident qu'elle admette les coins. Nous aborderons ces aspects plus tard.
 </p>
       <!--
 <p>
@@ -154,33 +155,33 @@ In particular, the above sketch is carefully developed there.
 -->
     </example>
     <example xml:id="eg_paramMessy">
-      <title>Paramétrage de <m>e^y=1+x^2</m></title>
+      <title>Param&#xE9;trage de <m>e^y=1+x^2</m></title>
       <p>
-Une méthode simple qui peut être utilisée pour paramétrer une courbe donnée par une équation de la forme <m>f(x,y)=0</m> consiste à utiliser  <m>x</m> ou <m>y</m> comme paramètre et à isoler pour l'autre variable. Dans cet exemple, puisqu'on peut résoudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux côtés, on obtient <m>y=\ln\big(1+x^2\big)</m>, on utilise  <m>x</m> comme paramètre en posant <m>t=x</m>. Ceci donne le paramétrage
+Une m&#xE9;thode simple qui peut &#xEA;tre utilis&#xE9;e pour param&#xE9;trer une courbe donn&#xE9;e par une &#xE9;quation de la forme <m>f(x,y)=0</m> consiste &#xE0; utiliser  <m>x</m> ou <m>y</m> comme param&#xE8;tre et &#xE0; isoler pour l'autre variable. Dans cet exemple, puisqu'on peut r&#xE9;soudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux c&#xF4;t&#xE9;s, on obtient <m>y=\ln\big(1+x^2\big)</m>, on utilise  <m>x</m> comme param&#xE8;tre en posant <m>t=x</m>. Ceci donne le param&#xE9;trage
 <me>
 \vr(t) = t\,\vi + \ln(1+t^2)\,\vj \qquad -\infty\lt t\lt \infty.
 </me>
 </p>
     </example>
     <example xml:id="eg_paramCircleC">
-      <title>Nouveau paramétrage de <m>x^2+y^2=a^2</m></title>
+      <title>Nouveau param&#xE9;trage de <m>x^2+y^2=a^2</m></title>
       <p>
-Il est aussi fréquent qu'on puisse utiliser  <m>x</m> ou <m>y</m> pour paramétrer une partie d'une courbe, mais pas toute la courbe. Un exemple simple est fourni par le cercle <m>x^2+y^2=a^2</m>.
+Il est aussi fr&#xE9;quent qu'on puisse utiliser  <m>x</m> ou <m>y</m> pour param&#xE9;trer une partie d'une courbe, mais pas toute la courbe. Un exemple simple est fourni par le cercle <m>x^2+y^2=a^2</m>.
 Pour chaque <m>-a\lt x\lt a</m>, il existe deux points sur le cercle dont l'abscisse est  <m>x</m>.
 
-Ainsi, on ne peut pas utiliser <m>x</m> pour paramétrer le cercle au complet. La situation avec <m>y</m> est la même. Cependant,
+Ainsi, on ne peut pas utiliser <m>x</m> pour param&#xE9;trer le cercle au complet. La situation avec <m>y</m> est la m&#xEA;me. Cependant,
 <md alignment="alignat"><mrow>
 \vr(t) &amp;= t\,\vi + \sqrt{a^2-t^2}\, \vj,\qquad &amp;-a\lt t\lt a
 </mrow><mrow>
 \vr(t) &amp;= t\,\vi -\sqrt{a^2-t^2}\, \vj\qquad &amp;-a\lt t\lt a
 </mrow></md>
-sont des paramétrages de la moitié supérieure et de la moitié inférieure<fn>En réalité, les deux points <m>(-a,0)</m> et <m>(a,0)</m> manquent, dans les deux cas.</fn> du cercle, respectivement. Elles utilisent toutes les deux <m>x</m> comme paramètre, et
+sont des param&#xE9;trages de la moiti&#xE9; sup&#xE9;rieure et de la moiti&#xE9; inf&#xE9;rieure<fn>En r&#xE9;alit&#xE9;, les deux points <m>(-a,0)</m> et <m>(a,0)</m> manquent, dans les deux cas.</fn> du cercle, respectivement. Elles utilisent toutes les deux <m>x</m> comme param&#xE8;tre, et
 <md alignment="alignat"><mrow>
 \vr(t) &amp;= \sqrt{a^2-t^2}\,\vi +t\,\vj,\qquad &amp;-a\lt t\lt a
 </mrow><mrow>
 \vr(t) &amp;= -\sqrt{a^2-t^2}\,\vi + t\, \vj \qquad &amp;-a\lt t\lt a
 </mrow></md>
-sont des paramétrages de la moitié droite et la moitié gauche du cercle respectivement. Cette fois, on utilise <m>y</m> comme paramètre.
+sont des param&#xE9;trages de la moiti&#xE9; droite et la moiti&#xE9; gauche du cercle respectivement. Cette fois, on utilise <m>y</m> comme param&#xE8;tre.
 </p>
     </example>
     <!--
@@ -204,10 +205,10 @@ x=\cos(7-y)
 </p>
 </example>
 -->
-    <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  <m>z=x^2+2y^2</m> est la courbe montrée dans la figure ci-bas.
+    <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipso&#xEF;de <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le parabolo&#xEF;de  <m>z=x^2+2y^2</m> est la courbe montr&#xE9;e dans la figure ci-bas.
   </p>
     <figure>
-      <caption>L'intersection d'un ellipsoïde avec un paraboloïde</caption>
+      <caption>L'intersection d'un ellipso&#xEF;de avec un parabolo&#xEF;de</caption>
       <image xml:id="sageplot3d-ellipsoide-paraboloide" width="60%">
         <sageplot variant="3d" aspect="1.0">
         var('x,y,z')
@@ -241,25 +242,25 @@ x=\cos(7-y)
   <image source="images/CLP-figs/stokes6"/>
   </sidebyside> -->
     <p>
-  Une façon de paramétrer de telles courbes est de choisir une des trois coordonnées <m>x</m>, <m>y</m>, <m>z</m> comme paramètre et de résoudre les équations donnant les surfaces pour les deux autres coordonnées en termes du paramètre. Voyons deux exemples.
+  Une fa&#xE7;on de param&#xE9;trer de telles courbes est de choisir une des trois coordonn&#xE9;es <m>x</m>, <m>y</m>, <m>z</m> comme param&#xE8;tre et de r&#xE9;soudre les &#xE9;quations donnant les surfaces pour les deux autres coordonn&#xE9;es en termes du param&#xE8;tre. Voyons deux exemples.
   </p>
     <example xml:id="eg_paramIntersect">
       <p>
-  L'ensemble des points  <m>(x,y,z)</m> vérifiant
+  L'ensemble des points  <m>(x,y,z)</m> v&#xE9;rifiant
   <md alignment="alignat"><mrow>
    x^3&amp;-e^{3y}           &amp;&amp;=0,
   </mrow><mrow>
    x^2&amp;-e^{y} +z &amp;&amp;=0
   </mrow></md>
-  est une courbe. On choisit d'utiliser <m>y</m> comme paramètre et l'on considère
+  est une courbe. On choisit d'utiliser <m>y</m> comme param&#xE8;tre et l'on consid&#xE8;re
   <md alignment="alignat"><mrow>
    x^3&amp;    &amp;&amp;=e^{3y},
   </mrow><mrow>
    x^2&amp;+z  &amp;&amp;=e^{y}
   </mrow></md>
-  comme un système de deux équations dont les inconnues sont <m>x</m> et <m>z</m>, en traitant  <m>y</m> comme une constante.
+  comme un syst&#xE8;me de deux &#xE9;quations dont les inconnues sont <m>x</m> et <m>z</m>, en traitant  <m>y</m> comme une constante.
 
-  On résout la première équation pour  <m>x</m>, puis l'on remplace dans la seconde équation et l'on résout pour <m>z</m>.
+  On r&#xE9;sout la premi&#xE8;re &#xE9;quation pour  <m>x</m>, puis l'on remplace dans la seconde &#xE9;quation et l'on r&#xE9;sout pour <m>z</m>.
   <md alignment="alignat"><mrow>
    x^3&amp;    &amp;&amp;=e^{3y}  &amp;&amp;\implies x=e^y
   </mrow><mrow>
@@ -269,14 +270,14 @@ x=\cos(7-y)
   <me>
   \vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk
   </me>
-  est un paramétrage de la courbe.
+  est un param&#xE9;trage de la courbe.
 
 
 
 
   </p>
       <figure>
-        <caption> Courbe paramétrée par   <m>\vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk</m> </caption>
+        <caption> Courbe param&#xE9;tr&#xE9;e par   <m>\vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk</m> </caption>
         <image width="80%">
           <sageplot variant="3d" aspect="1.0">
         var('x,y,z')
@@ -301,20 +302,20 @@ x=\cos(7-y)
     </example>
     <example xml:id="eg_paramIntersectB">
       <p>
-  L'exemple précédent était truqué de sorte que les équations étaient faciles à résoudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut même être impossible de le faire. Voyons un exemple un peu plus réaliste. Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
+  L'exemple pr&#xE9;c&#xE9;dent &#xE9;tait truqu&#xE9; de sorte que les &#xE9;quations &#xE9;taient faciles &#xE0; r&#xE9;soudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut m&#xEA;me &#xEA;tre impossible de le faire. Voyons un exemple un peu plus r&#xE9;aliste. Consid&#xE9;rons l'ensemble des <m>(x,y,z)</m> v&#xE9;rifiant
   <md alignment="alignat"><mrow>
    x^2+\frac{y^2}{2}+\frac{z^2}{3}&amp;=1,
   </mrow><mrow>
    x^2+2y^2&amp;=z,
   </mrow></md>
-  qui est la courbe bleue dans la figure ci-haut. On remplace <m>x^2=z-2y^2</m> (de la seconde équation) dans la première, ce qui donne
+  qui est la courbe bleue dans la figure ci-haut. On remplace <m>x^2=z-2y^2</m> (de la seconde &#xE9;quation) dans la premi&#xE8;re, ce qui donne
   <me>
   -\frac{3}{2}y^2+z+\frac{z^2}{3}=1.
   </me>
-  Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <me>
+  Apr&#xE8;s compl&#xE9;tion des carr&#xE9;s (pour <m>z</m>), ceci &#xE9;quivaut &#xE0;   <me>
   -\frac{3}{2}y^2 + \frac{1}{3}\Big(z+\frac{3}{2}\Big)^2 = \frac{7}{4}.
   </me>
-  Si, par exemple, on s'intéresse aux points <m>(x,y,z)</m> sur la courbe qui vérifient en plus   <m>y\geqslant 0</m>, on peut résoudre pour avoir  <m>y</m> en fonction de  <m>z</m>.
+  Si, par exemple, on s'int&#xE9;resse aux points <m>(x,y,z)</m> sur la courbe qui v&#xE9;rifient en plus   <m>y\geqslant 0</m>, on peut r&#xE9;soudre pour avoir  <m>y</m> en fonction de  <m>z</m>.
   <me>
   y=\sqrt{\frac{2}{9}\Big(z+\frac{3}{2}\Big)^2-\frac{14}{12}}
   </me>
@@ -324,10 +325,10 @@ x=\cos(7-y)
   </mrow><mrow>
   &amp;=\sqrt{\frac{4}{3}-\frac{4}{9}z^2-\frac{1}{3}z}.
   </mrow></md>
-  Les autres signes de  <m>x</m> et <m>y</m> peuvent être obtenus avec les signes adéquats devant les racines carrées. Dans notre exemple, <m>(x,y,z)</m> se trouve sur la courbe, c'est-à-dire qu'il vérifie les équations originelles, si et seulement si  <m>(\pm x,\pm y, z)</m> appartiennent à la courbe.
+  Les autres signes de  <m>x</m> et <m>y</m> peuvent &#xEA;tre obtenus avec les signes ad&#xE9;quats devant les racines carr&#xE9;es. Dans notre exemple, <m>(x,y,z)</m> se trouve sur la courbe, c'est-&#xE0;-dire qu'il v&#xE9;rifie les &#xE9;quations originelles, si et seulement si  <m>(\pm x,\pm y, z)</m> appartiennent &#xE0; la courbe.
   </p>
       <figure>
-        <caption>Quatre segments de la courbe donnés par les différents signes de <m>x</m> et <m>y</m></caption>
+        <caption>Quatre segments de la courbe donn&#xE9;s par les diff&#xE9;rents signes de <m>x</m> et <m>y</m></caption>
         <image width="60%">
           <sageplot variant="3d" aspect="1.0">
         var('x,y,z')
@@ -355,13 +356,13 @@ x=\cos(7-y)
       </figure>
     </example>
     <example xml:id="Param-intersec">
-      <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
+      <p> Trouver un param&#xE9;trage de la courbe intersection du c&#xF4;ne <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
       </p>
       <figure xml:id="plan-cone">
-        <caption>Le plan <m>z = 1+y</m> et le cône <m>z^2 = x^2+ y^2</m>
+        <caption>Le plan <m>z = 1+y</m> et le c&#xF4;ne <m>z^2 = x^2+ y^2</m>
         </caption>
         <image xml:id="sageplot3d-plan-cone" width="80%">
-          <description>L'intersection d'un plan avec un cône</description>
+          <description>L'intersection d'un plan avec un c&#xF4;ne</description>
           <sageplot variant="3d" aspect="1.0">
             var('u,v,r,t')
             Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
@@ -376,25 +377,25 @@ x=\cos(7-y)
       <ul>
         <li>
           <p>
-            Pour commencer, on peut élever au carré <m>z</m> de l'équation du plan et remplacer dans celle du cône, ce qui mène à
+            Pour commencer, on peut &#xE9;lever au carr&#xE9; <m>z</m> de l'&#xE9;quation du plan et remplacer dans celle du c&#xF4;ne, ce qui m&#xE8;ne &#xE0;
           </p>
           <me>
             (1+y)^2 = x^2 + y^2 \implies 1+2y= x^2.
           </me>
           <p>
-          De là, on tire <m>x = \pm \sqrt{1+2y}</m>.
-          Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme paramètre pour obtenir
+          De l&#xE0;, on tire <m>x = \pm \sqrt{1+2y}</m>.
+          Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme param&#xE8;tre pour obtenir
           </p>
           <me>
             \vr(t) = \sqrt{1+2t}\, \vi + t\, \vj + (1+t)\,\vk \qquad t\in \R.
           </me>
           <p>
-            Il faut noter qu'on a en réalité deux paramétrages, selon le signe choisi pour la racine carrée dans l'expression de <m>x</m>. Chacun des deux paramétrages présente une moitié de la courbe (il s'agit en fait d'une parabole).
+            Il faut noter qu'on a en r&#xE9;alit&#xE9; deux param&#xE9;trages, selon le signe choisi pour la racine carr&#xE9;e dans l'expression de <m>x</m>. Chacun des deux param&#xE9;trages pr&#xE9;sente une moiti&#xE9; de la courbe (il s'agit en fait d'une parabole).
           </p>
         </li>
         <li>
           <p>
-            On peut choisir d'utiliser <m>x = s</m> comme paramètre. De notre équation <m>1+2y = x^2</m>, on tire <m>y= \frac{1}{2}(s^2-1)</m>, et l'équation du plan fournit <m>z = \frac{1}{2}(s^2 + 1)</m>. On a donc un autre paramétrage :
+            On peut choisir d'utiliser <m>x = s</m> comme param&#xE8;tre. De notre &#xE9;quation <m>1+2y = x^2</m>, on tire <m>y= \frac{1}{2}(s^2-1)</m>, et l'&#xE9;quation du plan fournit <m>z = \frac{1}{2}(s^2 + 1)</m>. On a donc un autre param&#xE9;trage :
           </p>
           <me>
             \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad t\in \R.
@@ -410,10 +411,10 @@ x=\cos(7-y)
     </webwork>
   </exercise>
   <subsection xml:id="subsec-tangentes">
-    <title>Tangentes aux courbes paramétriques</title>
+    <title>Tangentes aux courbes param&#xE9;triques</title>
     <definition xml:id="def__curve_deriv">
       <statement>
-        <p>Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point intérieur de <m>I</m><fn>Ceci veut dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>.</fn>. La <term> dérivée de <m>\vr</m> en <m>t_0</m></term> est
+        <p>Soit <m>\vr : I \to \R^n</m> une fonction &#xE0; valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point int&#xE9;rieur de <m>I</m><fn>Ceci veut dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>.</fn>. La <term> d&#xE9;riv&#xE9;e de <m>\vr</m> en <m>t_0</m></term> est
     </p>
         <sidebyside widths="50% 35%" valign="middle">
           <p>
@@ -435,15 +436,15 @@ x=\cos(7-y)
       \vr'(t_0)=x'(t_0)\,\vi+y'(t_0)\,\vj+z'(t_0)\,\vk .
 
       </me>
-      En somme, pour dériver une fonction vectorielle, on doit simplement dériver chacune de ses composantes.
+      En somme, pour d&#xE9;river une fonction vectorielle, on doit simplement d&#xE9;river chacune de ses composantes.
       </p>
       </statement>
     </definition>
     <p>
-    On pense souvent à <m>\vr(t)</m> comme à la position d'une particule au temps <m>t</m>. Dans ce contexte, on aura que <m>\vr'(t)</m> est le <term>vecteur vitesse instantané</term> au temps <m>t</m> et l'on écrira souvent <m>\vv(t)</m> au lieu de <m>\vr'(t)</m>, voire <m>\vv</m> au lieu de <m>\vr'</m>.
+    On pense souvent &#xE0; <m>\vr(t)</m> comme &#xE0; la position d'une particule au temps <m>t</m>. Dans ce contexte, on aura que <m>\vr'(t)</m> est le <term>vecteur vitesse instantan&#xE9;</term> au temps <m>t</m> et l'on &#xE9;crira souvent <m>\vv(t)</m> au lieu de <m>\vr'(t)</m>, voire <m>\vv</m> au lieu de <m>\vr'</m>.
   </p>
     <p>
-    Bien entendu, la dérivation interagit avec les opérations arithmétiques usuelles de façon évidente. Seuls le produit scalaire et le produit vectoriel demandent une attention particulière. Voyons quelques exemples.
+    Bien entendu, la d&#xE9;rivation interagit avec les op&#xE9;rations arithm&#xE9;tiques usuelles de fa&#xE7;on &#xE9;vidente. Seuls le produit scalaire et le produit vectoriel demandent une attention particuli&#xE8;re. Voyons quelques exemples.
   </p>
     <example xml:id="eg_diffDot">
       <p>
@@ -453,12 +454,12 @@ x=\cos(7-y)
     </mrow><mrow>
     \g(t)&amp;= t^2, &amp; &amp;s(t)= \sin t.
     </mrow></md>
-    Nous allons calculer plusieurs dérivées, utilisons donc un peu de couleur pour rendre les calculs plus lisibles. Lorsque nous ferons appel à la règle de différentiation du produit, à savoir
+    Nous allons calculer plusieurs d&#xE9;riv&#xE9;es, utilisons donc un peu de couleur pour rendre les calculs plus lisibles. Lorsque nous ferons appel &#xE0; la r&#xE8;gle de diff&#xE9;rentiation du produit, &#xE0; savoir
     <me>
     \diff{}{t}\big[f(t)\,g(t)\big]
     ={\color{blue}{f'(t)}}\,g(t) + f(t)\,{\color{blue}{g'(t)}},
     </me>
-    nous utiliserons la couleur bleue pour mettre en évidence les facteurs  <m>f'(t)</m> et <m>g'(t)</m>.
+    nous utiliserons la couleur bleue pour mettre en &#xE9;vidence les facteurs  <m>f'(t)</m> et <m>g'(t)</m>.
 
     <md><mrow>
     \g(t)\,\vb(t) &amp; = t^2e^{-t}\,\vi + t^2 e^{-3t}\,\vj + t^2 e^{-5t}\,\vk
@@ -542,21 +543,21 @@ x=\cos(7-y)
     </p>
     </example>
     <p>
-    Bien entendu, ces exemples sont des cas particuliers de règles générales. Le même type de calculs que précédemment fournit la preuve (de la plupart) du théorème ci-bas.
+    Bien entendu, ces exemples sont des cas particuliers de r&#xE8;gles g&#xE9;n&#xE9;rales. Le m&#xEA;me type de calculs que pr&#xE9;c&#xE9;demment fournit la preuve (de la plupart) du th&#xE9;or&#xE8;me ci-bas.
   </p>
     <theorem xml:id="thm_DIFFalgebra">
-      <title>Propriétés de la dérivation</title>
+      <title>Propri&#xE9;t&#xE9;s de la d&#xE9;rivation</title>
       <statement>
         <p>
-Soit <m>I\subseteq\R</m> un intervalle, <ul><li><m>\va,\ \vb : I \to \R^n</m> des fonctions dérivables,
+Soit <m>I\subseteq\R</m> un intervalle, <ul><li><m>\va,\ \vb : I \to \R^n</m> des fonctions d&#xE9;rivables,
 </li><li><m>\alpha,\beta \in \mathbb{R}</m> des constantes,
-</li><li><m>\g :  I \to \R</m> et <m>s : J\to I</m> (avec <m>J\subseteq \R</m> un intervalle)<fn>De sorte que la composition <m>\va(s(t))</m> a un sens.</fn> dérivables.
+</li><li><m>\g :  I \to \R</m> et <m>s : J\to I</m> (avec <m>J\subseteq \R</m> un intervalle)<fn>De sorte que la composition <m>\va(s(t))</m> a un sens.</fn> d&#xE9;rivables.
 </li></ul>
 Alors,
 <md alignment="alignat"><mrow>
 &amp;\text{(a)}\quad &amp;&amp;\diff{}{t}\big[\alpha\,\va(t)+\beta\,\vb(t)\big]
          =\alpha\,\va'(t)+\beta\,\vb'(t);
-           &amp;&amp;\text{(linéarité)}
+           &amp;&amp;\text{(lin&#xE9;arit&#xE9;)}
 </mrow><mrow>
 &amp;\text{(b)} &amp;&amp;\diff{}{t}\big[\g(t)\vb(t)\big]
          =\g'(t)\vb(t)+\g(t)\vb'(t);
@@ -580,28 +581,28 @@ Alors,
       </statement>
     </theorem>
     <sidebyside widths="50% 35%">
-      <p>L'interprétation géométrique est claire. La dérivée  <m>\vr'(t_0)</m> est la limite de  <m>\frac{\vr(t_0+h)-\vr(t_0)}{h}</m> lorsque <m>h\rightarrow 0</m>.  Le numérateur, <m>\vr(t_0+h)-\vr(t_0)</m>, est représenté par le vecteur ayant <m>\vr(t_0+h)</m> pour but et <m>\vr(t_0)</m> comme origine.
+      <p>L'interpr&#xE9;tation g&#xE9;om&#xE9;trique est claire. La d&#xE9;riv&#xE9;e  <m>\vr'(t_0)</m> est la limite de  <m>\frac{\vr(t_0+h)-\vr(t_0)}{h}</m> lorsque <m>h\rightarrow 0</m>.  Le num&#xE9;rateur, <m>\vr(t_0+h)-\vr(t_0)</m>, est repr&#xE9;sent&#xE9; par le vecteur ayant <m>\vr(t_0+h)</m> pour but et <m>\vr(t_0)</m> comme origine.
   </p>
       <image source="images/CLP-figs/parCurveDerivAJC"/>
     </sidebyside>
     <p>
-  Lorsque  <m>h</m> est très petit, ce vecteur a la direction du vecteur tangent à la courbe <m>\plan{C}_{\vr}</m> au point <m>\vr(t_0)</m>. À la limite, ce vecteur donne la direction de cette tangente. Comme, de plus, elle passe par le point correspondant à <m>\vr(t_0)</m>, on peut déduire aisément une équation vectorielle.
+  Lorsque  <m>h</m> est tr&#xE8;s petit, ce vecteur a la direction du vecteur tangent &#xE0; la courbe <m>\plan{C}_{\vr}</m> au point <m>\vr(t_0)</m>. &#xC0; la limite, ce vecteur donne la direction de cette tangente. Comme, de plus, elle passe par le point correspondant &#xE0; <m>\vr(t_0)</m>, on peut d&#xE9;duire ais&#xE9;ment une &#xE9;quation vectorielle.
 <md><mrow xml:id="tgt" tag="star">
     \vx(t) = \vr(t_0) + t\, \vr'(t_0)
     </mrow></md>
-Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_0</m>, ce sont donc des vecteurs constants.
+Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont &#xE9;valu&#xE9;es au point <m>t=t_0</m>, ce sont donc des vecteurs constants.
 
 </p>
     <example xml:id="ex-tangente">
       <statement>
         <p>
-      Soit le chemin <m>\vr(t) = e^{-t}\vi + e^t \vj + (\cos t)\vk </m> et <m>\cC_\vr</m> la courbe correspondante. Trouver une équation de la droite tangente à <m>\cC_\vr</m> au point correspondant <m>(1,1,1)</m>.
+      Soit le chemin <m>\vr(t) = e^{-t}\vi + e^t \vj + (\cos t)\vk </m> et <m>\cC_\vr</m> la courbe correspondante. Trouver une &#xE9;quation de la droite tangente &#xE0; <m>\cC_\vr</m> au point correspondant <m>(1,1,1)</m>.
     </p>
       </statement>
       <solution>
         <p>
-      Le point <m>(1,1,1)</m> correspond à <m>t=0</m>. Par ailleurs, <me>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </me>
-      de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'équation de la droite tangente est donc
+      Le point <m>(1,1,1)</m> correspond &#xE0; <m>t=0</m>. Par ailleurs, <me>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </me>
+      de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'&#xE9;quation de la droite tangente est donc
       <md><mrow>
       \vx(t) &amp;= \vr(0) + t\,\vr'(0)\\
             &amp;= (1,1,1) + t(-1,1,0).
@@ -618,27 +619,27 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
     <definition xml:id="def-TUnitaire">
       <statement>
         <p>
-    Soit <m>\vr : I \to \R</m> un chemin et <m>t_0</m> un point intérieur de <m>I</m>.
+    Soit <m>\vr : I \to \R</m> un chemin et <m>t_0</m> un point int&#xE9;rieur de <m>I</m>.
     <ol marker="(a)"><li>
         Si <m>\vr(t_0) \ne \vZero</m>, le vecteur <term>tangent unitaire</term> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{|\vr'(t_0)|}\vr'(t_0)</m>.
       </li><li>
-        Le <em>chemin tangent</em> à <m>\vr</m> en <m>t_0</m> est le chemin <m>\vL(t) = \vr(t_0) + (t-t_0)\vr'(t_0)</m>.
+        Le <em>chemin tangent</em> &#xE0; <m>\vr</m> en <m>t_0</m> est le chemin <m>\vL(t) = \vr(t_0) + (t-t_0)\vr'(t_0)</m>.
 </li></ol>
 </p>
       </statement>
     </definition>
     <example xml:id="eg_astroid">
-      <title>L'astroïde (en détail)</title>
+      <title>L'astro&#xEF;de (en d&#xE9;tail)</title>
       <p>
-Nous avons vu, à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, un paramétrage de l'astroïde d'équation<fn>Ne pas confondre <em>astroïde</em> et <em>astéroïde</em>, bien que les deux mots aient comme origine commune le mot grec pour <em>étoile</em>.</fn>
+Nous avons vu, &#xE0; l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, un param&#xE9;trage de l'astro&#xEF;de d'&#xE9;quation<fn>Ne pas confondre <em>astro&#xEF;de</em> et <em>ast&#xE9;ro&#xEF;de</em>, bien que les deux mots aient comme origine commune le mot grec pour <em>&#xE9;toile</em>.</fn>
 <m>
 x^{2/3}+y^{2/3} = a^{2/3}
 </m>.
-Nous avons un paramétrage
+Nous avons un param&#xE9;trage
 <me>
 \vr(t) = a\cos^3t\,\vi + a\sin^3 t\,\vj.
 </me>
-Afin d'utiliser le   <xref ref="thm-Longueur" text="global">théorème</xref>, calculons :
+Afin d'utiliser le   <xref ref="thm-Longueur" text="global">th&#xE9;or&#xE8;me</xref>, calculons :
 <md><mrow>
 \vr(t) &amp;= a\cos^3t\,\vi + a\sin^3 t\,\vj,
 </mrow><mrow>
@@ -657,7 +658,7 @@ Afin d'utiliser le   <xref ref="thm-Longueur" text="global">théorème</xref>, c
 </mrow><mrow>
  &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\vi+\sin t\,\vj\big).
 </mrow></md>
-Ici, <m>\sgn\!\big(\!\sin t\cos t\big)</m> dénote  <q>le signe de <m>\sin t\cos t</m></q>, c'est-à-dire <m>+1</m> lorsque <m>\sin t\cos t \gt 0</m> et <m>-1</m> lorsque <m>\sin t\cos t \lt 0</m>. Ainsi,
+Ici, <m>\sgn\!\big(\!\sin t\cos t\big)</m> d&#xE9;note  <q>le signe de <m>\sin t\cos t</m></q>, c'est-&#xE0;-dire <m>+1</m> lorsque <m>\sin t\cos t \gt 0</m> et <m>-1</m> lorsque <m>\sin t\cos t \lt 0</m>. Ainsi,
 <md><mrow>
 \vT(t) &amp;=\begin{cases}-\cos t\, \vi +\sin t \, \vj &amp;\text{si  } 0 \lt  t \lt \frac{\pi}{2} \text{ ou }  \pi \lt  t \lt \frac{3\pi}{2}
 </mrow><mrow>
@@ -666,23 +667,23 @@ Ici, <m>\sgn\!\big(\!\sin t\cos t\big)</m> dénote  <q>le signe de <m>\sin t\cos
                 \end{cases}.
 </mrow></md>
 </p>
-      <p>Avant de faire une esquisse, faisons quelques remarques qui vont nous simplifier la tâche. Pour commencer, <m>\vr(0) = \vr(2\pi) </m>, de sorte qu'il s'agit d'une courbe fermée. Puis,
+      <p>Avant de faire une esquisse, faisons quelques remarques qui vont nous simplifier la t&#xE2;che. Pour commencer, <m>\vr(0) = \vr(2\pi) </m>, de sorte qu'il s'agit d'une courbe ferm&#xE9;e. Puis,
 <ul><li><p>
 Les signes des composantes de <m>\vr(t)</m> sont les signes des composantes de
-<m>\cos t\,\vi +\sin t\,\vj</m>, ce qui nous donne une idée du quadrant dans lequel <m>\vr(t)</m> se trouve, et les signes des composantes de <m>\vr'(t)</m> sont les signes des composantes de
-<m>-\sin t\,\vi +\cos t\,\vj</m>, ce qui nous donne une idée de comment les composantes varient. Ainsi, l'astroïde est une courbe fermée et, en plus,
+<m>\cos t\,\vi +\sin t\,\vj</m>, ce qui nous donne une id&#xE9;e du quadrant dans lequel <m>\vr(t)</m> se trouve, et les signes des composantes de <m>\vr'(t)</m> sont les signes des composantes de
+<m>-\sin t\,\vi +\cos t\,\vj</m>, ce qui nous donne une id&#xE9;e de comment les composantes varient. Ainsi, l'astro&#xEF;de est une courbe ferm&#xE9;e et, en plus,
 <ul><li>
-lorsque <m>0\leqslant  t\leqslant  \frac{\pi}{2}</m>, <m>\vr(t)</m> se trouve dans le premier quadrant et se déplace vers le haut et la gauche lorsque  <m>t</m> croît;
+lorsque <m>0\leqslant  t\leqslant  \frac{\pi}{2}</m>, <m>\vr(t)</m> se trouve dans le premier quadrant et se d&#xE9;place vers le haut et la gauche lorsque  <m>t</m> cro&#xEE;t;
 </li><li>
-lorsque <m>\frac{\pi}{2}\leqslant t\leqslant  \pi</m>, <m>\vr(t)</m> se trouve dans le deuxième quadrant et se déplace vers le bas et la gauche lorsque  <m>t</m> croît;
+lorsque <m>\frac{\pi}{2}\leqslant t\leqslant  \pi</m>, <m>\vr(t)</m> se trouve dans le deuxi&#xE8;me quadrant et se d&#xE9;place vers le bas et la gauche lorsque  <m>t</m> cro&#xEE;t;
 </li><li>
-lorsque <m>\pi\leqslant  t\leqslant  \frac{3\pi}{2}</m>, <m>\vr(t)</m> se trouve au troisième quadrant et se déplace vers le bas et la droite lorsque  <m>t</m> croît; et
+lorsque <m>\pi\leqslant  t\leqslant  \frac{3\pi}{2}</m>, <m>\vr(t)</m> se trouve au troisi&#xE8;me quadrant et se d&#xE9;place vers le bas et la droite lorsque  <m>t</m> cro&#xEE;t; et
 </li><li>
-lorsque <m>\frac{3\pi}{2}\leqslant t\leqslant  2\pi</m>, <m>\vr(t)</m> se trouve dans le quatrième quadrant et se déplace vers le haut et la droite lorsque <m>t</m> croît.
+lorsque <m>\frac{3\pi}{2}\leqslant t\leqslant  2\pi</m>, <m>\vr(t)</m> se trouve dans le quatri&#xE8;me quadrant et se d&#xE9;place vers le haut et la droite lorsque <m>t</m> cro&#xEE;t.
 </li><li>
-Ainsi, la courbe fait le tour de l'origine exactement une fois lorsque <m>t</m> varie de <m>0</m> à <m>2\pi</m>.
+Ainsi, la courbe fait le tour de l'origine exactement une fois lorsque <m>t</m> varie de <m>0</m> &#xE0; <m>2\pi</m>.
 </li></ul></p></li><li><p>
-Quelque chose de particulier arrive lorsque  <m>\sin t\cos t</m> s'annule en changeant de signe, c'est-à-dire lorsque <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. En effet, <m>\vT(t)</m> change de direction abruptement. Plus précisément,
+Quelque chose de particulier arrive lorsque  <m>\sin t\cos t</m> s'annule en changeant de signe, c'est-&#xE0;-dire lorsque <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. En effet, <m>\vT(t)</m> change de direction abruptement. Plus pr&#xE9;cis&#xE9;ment,
 <md><mrow>
 \lim_{t\rightarrow 0-}\vT(t)
 &amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)
@@ -708,8 +709,8 @@ et
       \amp = \lim_{t\rightarrow \pi/2+}\big(-\cos t\,\vi+\sin t\,\vj\big)
 =-\vj,
 </mrow></md>
-et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> dans la courbe pour <m>t=0</m>, c'est-à-dire à <m>\vr(0) = a\vi</m> et à  <m>t=\frac{\pi}{2}</m>, c'est-à-dire à <m>\vr(\frac{\pi}{2}) = a\vj</m>, et ainsi de suite. En somme, s'il est vrai que l'astroïde ressemble à un cercle, elle possède des points de rebroussement à <m>\pm a\vi</m> et à <m>\pm a\vj</m>. Voici une figure.
-</p><figure><caption>L'astroïde</caption><interactive xml:id="Astroide-rebroussement" platform="geogebra" width="100%" aspect="4:3" preview="images/GeoGebra-Statique/Astroide-statique.png"><slate xml:id="Astroide" surface="geogebra" source="GeoGebra/Astroide.ggb" aspect="4:3">
+et ainsi de suite. Ceci trahit la pr&#xE9;sence de <em>points de rebroussement</em> dans la courbe pour <m>t=0</m>, c'est-&#xE0;-dire &#xE0; <m>\vr(0) = a\vi</m> et &#xE0;  <m>t=\frac{\pi}{2}</m>, c'est-&#xE0;-dire &#xE0; <m>\vr(\frac{\pi}{2}) = a\vj</m>, et ainsi de suite. En somme, s'il est vrai que l'astro&#xEF;de ressemble &#xE0; un cercle, elle poss&#xE8;de des points de rebroussement &#xE0; <m>\pm a\vi</m> et &#xE0; <m>\pm a\vj</m>. Voici une figure.
+</p><figure><caption>L'astro&#xEF;de</caption><interactive xml:id="Astroide-rebroussement" platform="geogebra" width="100%" aspect="4:3" preview="images/GeoGebra-Statique/Astroide-statique.png"><slate xml:id="Astroide" surface="geogebra" source="GeoGebra/Astroide.ggb" aspect="4:3">
     setSize(500, 420)
     enableShiftDragZoom(false);
   </slate></interactive></figure><!--
@@ -723,12 +724,12 @@ et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> 
       <ul>
         <li>
           <p>
-        Nous allons souvent écrire <m>\vr'</m> ou <m>\vT</m> afin d'alléger les notations. Nous devrons avoir à l'esprit qu'il s'agit de fonctions vectorielles, donc qu'il y a un point d'évaluation qui devra être déduit du contexte.
+        Nous allons souvent &#xE9;crire <m>\vr'</m> ou <m>\vT</m> afin d'all&#xE9;ger les notations. Nous devrons avoir &#xE0; l'esprit qu'il s'agit de fonctions vectorielles, donc qu'il y a un point d'&#xE9;valuation qui devra &#xEA;tre d&#xE9;duit du contexte.
       </p>
         </li>
         <li>
           <p>
-        S'il est vrai que l'équation <xref ref="tgt"/> fournit un paramétrage de la droite tangente à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <term>chemin tangent</term> est une fonction vectorielle, et elle donne aussi un paramétrage de la droite tangente. De plus, <m>\vL</m> coïncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
+        S'il est vrai que l'&#xE9;quation <xref ref="tgt"/> fournit un param&#xE9;trage de la droite tangente &#xE0; la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <term>chemin tangent</term> est une fonction vectorielle, et elle donne aussi un param&#xE9;trage de la droite tangente. De plus, <m>\vL</m> co&#xEF;ncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-&#xE0;-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la d&#xE9;finition de <m>\vL</m> avec la formule donnant l'approximation lin&#xE9;aire d'une fonction <m>f</m> en un point  <m>t_0</m>, &#xE0; savoir
         <me>
           f(t) \approx L(t) = f(t_0) + f'(t_0)(t-t_0).
         </me>
@@ -746,9 +747,9 @@ et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> 
         <m>\vr'(t)=\vZero</m>
       </title>
       <p>
-Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebroussement lorsque <m>\vr'(t)</m> s'annule. Cet exemple montre qu'il peut pratiquement tout arriver lorsque <m>\vr'(t)=\vZero</m>.
+Nous avons vu dans l'exemple pr&#xE9;c&#xE9;dent que l'astro&#xEF;de a des points de rebroussement lorsque <m>\vr'(t)</m> s'annule. Cet exemple montre qu'il peut pratiquement tout arriver lorsque <m>\vr'(t)=\vZero</m>.
 </p>
-      <p>Supposons que nous nous promenons, et la position au temps <m>t</m> est donnée par <m>\vr(t)</m>. Si, à un instant donné, la vitesse est non nulle, il est difficile de changer de direction de déplacement de façon discontinue<fn>Pour que la vitesse change de façon discontinue, l'accélération  doit être infinie.</fn>. D'autre part, lorsque <m>\vr'(t)=0</m>, on ne bouge pas, et il est facile d'effectuer un changement de direction. On peut par exemple <em>rebrousser chemin</em>, faire un virage brusque ou ne pas changer de direction du tout. Voici quelques exemples. Dans tous les cas, on a <m>\vr'(0)=0</m>.
+      <p>Supposons que nous nous promenons, et la position au temps <m>t</m> est donn&#xE9;e par <m>\vr(t)</m>. Si, &#xE0; un instant donn&#xE9;, la vitesse est non nulle, il est difficile de changer de direction de d&#xE9;placement de fa&#xE7;on discontinue<fn>Pour que la vitesse change de fa&#xE7;on discontinue, l'acc&#xE9;l&#xE9;ration  doit &#xEA;tre infinie.</fn>. D'autre part, lorsque <m>\vr'(t)=0</m>, on ne bouge pas, et il est facile d'effectuer un changement de direction. On peut par exemple <em>rebrousser chemin</em>, faire un virage brusque ou ne pas changer de direction du tout. Voici quelques exemples. Dans tous les cas, on a <m>\vr'(0)=0</m>.
 <md alignment="alignat"><mrow>
 \vr_1(t) &amp;= t^5\,\vi + t^2\,\vj &amp;
 \vr_1'(t)&amp;= 5t^4\, \vi  + 2t\, \vj
@@ -774,12 +775,12 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       <statement>
         <ol marker="(a)">
           <li>
-            <p>Soit <m>\vr(t) = t^3\, \vi + t^2\, \vj</m>. La courbe associée a pour équation cartésienne <m>x^2 = y^3</m>. On a <m>\vr'(t) = 3t^2 \, \vi + 2t\, \vj</m>. En particulier, le point <m>(0,0)</m> correspond à <m>t=0</m>, et <m>\vr'(0) = \vZero</m>. La courbe admet un <term>point de rebroussement</term> en ce point, c'est-à-dire que le vecteur tangent unitaire change subitement de direction.
+            <p>Soit <m>\vr(t) = t^3\, \vi + t^2\, \vj</m>. La courbe associ&#xE9;e a pour &#xE9;quation cart&#xE9;sienne <m>x^2 = y^3</m>. On a <m>\vr'(t) = 3t^2 \, \vi + 2t\, \vj</m>. En particulier, le point <m>(0,0)</m> correspond &#xE0; <m>t=0</m>, et <m>\vr'(0) = \vZero</m>. La courbe admet un <term>point de rebroussement</term> en ce point, c'est-&#xE0;-dire que le vecteur tangent unitaire change subitement de direction.
       </p>
             <figure xml:id="figure-rebrousssement">
               <caption>La courbe <m>\vr(t) = t^3 \vi + t^2\vj</m></caption>
               <image xml:id="sageplot-Rebroussement" width="80%">
-                <description>La courbe admet un point de rebroussement à l'origine</description>
+                <description>La courbe admet un point de rebroussement &#xE0; l'origine</description>
                 <sageplot>
             var('t')
             C =parametric_plot([t^3, t^2], (t,-1,1), color = "blue", axes_labels=['$x$', '$y$'], ticks = [[-1,(-0.5).n(digits = 1), 0, (0.5).n(digits=1), 1], [0.5.n(digits = 1),1]],tick_formatter="latex", fontsize = 14)
@@ -790,15 +791,15 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
           </li>
           <li>
             <p>
-          Soit <m>\vr(t) = e^-t\, \cos t\, \vi + e^-t\ \sin t\, \vj + e^-t\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
+          Soit <m>\vr(t) = e^-t\, \cos t\, \vi + e^-t\ \sin t\, \vj + e^-t\, \vk</m>. Trouvons la droite tangente &#xE0; la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
          </p>
             <p>
-            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <me>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </me>
-            de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
+            Le point <m>P_0</m> correspond &#xE0; la valeur <m>t=0</m>. Par ailleurs, <me>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </me>
+            de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un param&#xE9;trage de tangente
             <me>
             \vx(t) =  \vp_0 + t \vr'(0) = \tvect{1}{0}{1} + t \tvect{-1}{1}{-1}.
             </me>
-            Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
+            Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent &#xE0; <m>\vr</m> en <m>t_0</m>.
 
 
           </p>
@@ -825,23 +826,23 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       </webwork>
     </exercise>
     <example xml:id="Angle-courbes">
-      <title>L'angle formépar deux courbes</title>
+      <title>L'angle form&#xE9;par deux courbes</title>
       <statement>
-        <p>En quels points les courbes données par <m>\vr_1(t) = t\, \vi + (1-t)\, \vj  + (3+t^2)\, \vk</m> et par <m>\vr_2 (t) = (3-t)\,\vi + (2-t)\,\vj + t^2 \, \vk</m> se coupent-elles? Quel angle forment-elles au point d'intersection?
+        <p>En quels points les courbes donn&#xE9;es par <m>\vr_1(t) = t\, \vi + (1-t)\, \vj  + (3+t^2)\, \vk</m> et par <m>\vr_2 (t) = (3-t)\,\vi + (2-t)\,\vj + t^2 \, \vk</m> se coupent-elles? Quel angle forment-elles au point d'intersection?
 
     </p>
       </statement>
       <solution>
-        <p>S'il est vrai que le paramètre <m>t</m> est utilisé dans la définition des deux courbes, afin de trouver le point commun, on doit résoudre l'équation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du paramètre au point commun n'a aucune raison d'être la même pour les deux courbes<fn>De façon imagée, on pense aux deux courbes comme aux trajectoires décrites par deux particules. Le point commun aux deux trajectoires n'est pas nécessairement un point de collision : les deux particules passent par un même point, mais pas nécessairement au même moment. L'équation <m>\vr_1(t) = \vr_2(t)</m> cherche à trouver un point de collision.</fn>. Le système d'équations résultant est
+        <p>S'il est vrai que le param&#xE8;tre <m>t</m> est utilis&#xE9; dans la d&#xE9;finition des deux courbes, afin de trouver le point commun, on doit r&#xE9;soudre l'&#xE9;quation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du param&#xE8;tre au point commun n'a aucune raison d'&#xEA;tre la m&#xEA;me pour les deux courbes<fn>De fa&#xE7;on imag&#xE9;e, on pense aux deux courbes comme aux trajectoires d&#xE9;crites par deux particules. Le point commun aux deux trajectoires n'est pas n&#xE9;cessairement un point de collision : les deux particules passent par un m&#xEA;me point, mais pas n&#xE9;cessairement au m&#xEA;me moment. L'&#xE9;quation <m>\vr_1(t) = \vr_2(t)</m> cherche &#xE0; trouver un point de collision.</fn>. Le syst&#xE8;me d'&#xE9;quations r&#xE9;sultant est
     </p>
         <md><mrow> t\amp = 3-s, </mrow><mrow> 1-t \amp = 2-s, </mrow><mrow> 3+t^2  \amp = s^2. </mrow>.
     </md>
         <p>
-    On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
+    On remplace <m>t=3-s</m> de la premi&#xE8;re &#xE9;quation dans la deuxi&#xE8;me pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisi&#xE8;me &#xE9;quation &#xE9;galement. Ainsi, le point commun est celui qui correspond &#xE0;
     <me>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
     </me>
     </p>
-        <p> L'angle formé par les courbes est l'angle formé par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
+        <p> L'angle form&#xE9; par les courbes est l'angle form&#xE9; par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
     <md><mrow> \vr_1'(t) = \tvect{1}{-1}{2t} \amp \amp  \text{ et } \amp \amp  \vr_2'(s) = \tvect{-1}{-1}{2s}. </mrow><mrow> \amp </mrow>.
     </md>
     Au point commun, ces vecteurs sont
@@ -849,7 +850,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
         <md><mrow>\vr_1'(1) = \tvect{1}{-1}{2} \amp \amp \text{ et } \amp \amp \vr_2'(2) = \tvect{-1}{-1}{4}. </mrow><mrow> \amp </mrow>.
     </md>
         <p>
-      L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">théorème</xref>. On a donc
+      L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">th&#xE9;or&#xE8;me</xref>. On a donc
     </p>
         <me>
     \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{|\vr_1'(1)|\, |\vr_2'(2)|} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.

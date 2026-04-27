@@ -1,34 +1,32 @@
-<section xml:id="sec-Vecteurs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Vecteurs">
   <title>Vecteurs</title>
-<introduction>
-  <p>
-    Dans plusieurs applications, on s'occupe de <em>quantités</em> qui ne sont pas des nombres, mais qui ont une <em>direction</em> et une <em>grandeur</em>. Ces quantités sont appelées des vecteurs. Il est habituel de représenter un vecteur par une flèche.  Si l'on se déplace, la grandeur du déplacement sera la distance, la direction étant évidente. De la même façon, la vitesse sera caractérisée par la rapidité et par la direction du déplacement.
-  </p>
-</introduction>
-
-
-<subsection xml:id="pars-vect-reps">
-  <title>Quelques exemples</title>
-<ul>
-  <li>
-      <p>Il est naturel de dessiner le vecteur vitesse d'une particule en mouvement avec sa source à la position de la particule (qui peut changer). Le diagramme ci-après montre la position d'une particule et son vecteur vitesse à deux moments différents.
-      </p>
-      <figure>
-        <caption>Une particule en mouvement et son vecteur vitesse</caption>
-        <sidebyside width="29%">
-        <image source="images/CLP-figs/movingParticle"/>
-        </sidebyside>
-          </figure>
-
-  </li>
-  <li>
+  <introduction>
     <p>
-      On suppose qu'un point se déplace le long d'une droite en partant d'un point <m>P</m> pour terminer au point <m>Q</m>. Le  <term> vecteur déplacement</term> correspondant, <m>\vv</m> dessiné dans la figure ci-après, a sa source en <m>P</m> et son but en <m>Q</m>. On écrit alors <m>\vv =\overrightarrow{PQ}</m>. On remarque qu'il est parfaitement possible d'avoir une autre paire de points, <m>R</m> et <m>S</m>, tels que le déplacement nécessaire pour aller de <m>R</m> à <m>S</m> soit le même, c'est-à-dire <m>\vv  =\overrightarrow{PQ} = \overrightarrow{RS}</m>, sans que le segment <m>RS</m> soit le même que le segment <m>PQ</m>. Le vecteur nul, <m>\vZero</m>, est le déplacement trivial, il n'a pas de sens, et toute flèche le représentant a une longueur nulle.
+    Dans plusieurs applications, on s'occupe de <em>quantit&#xE9;s</em> qui ne sont pas des nombres, mais qui ont une <em>direction</em> et une <em>grandeur</em>. Ces quantit&#xE9;s sont appel&#xE9;es des vecteurs. Il est habituel de repr&#xE9;senter un vecteur par une fl&#xE8;che.  Si l'on se d&#xE9;place, la grandeur du d&#xE9;placement sera la distance, la direction &#xE9;tant &#xE9;vidente. De la m&#xEA;me fa&#xE7;on, la vitesse sera caract&#xE9;ris&#xE9;e par la rapidit&#xE9; et par la direction du d&#xE9;placement.
+  </p>
+  </introduction>
+  <subsection xml:id="pars-vect-reps">
+    <title>Quelques exemples</title>
+    <ul>
+      <li>
+        <p>Il est naturel de dessiner le vecteur vitesse d'une particule en mouvement avec sa source &#xE0; la position de la particule (qui peut changer). Le diagramme ci-apr&#xE8;s montre la position d'une particule et son vecteur vitesse &#xE0; deux moments diff&#xE9;rents.
+      </p>
+        <figure>
+          <caption>Une particule en mouvement et son vecteur vitesse</caption>
+          <sidebyside width="29%">
+            <image source="images/CLP-figs/movingParticle"/>
+          </sidebyside>
+        </figure>
+      </li>
+      <li>
+        <p>
+      On suppose qu'un point se d&#xE9;place le long d'une droite en partant d'un point <m>P</m> pour terminer au point <m>Q</m>. Le  <term> vecteur d&#xE9;placement</term> correspondant, <m>\vv</m> dessin&#xE9; dans la figure ci-apr&#xE8;s, a sa source en <m>P</m> et son but en <m>Q</m>. On &#xE9;crit alors <m>\vv =\overrightarrow{PQ}</m>. On remarque qu'il est parfaitement possible d'avoir une autre paire de points, <m>R</m> et <m>S</m>, tels que le d&#xE9;placement n&#xE9;cessaire pour aller de <m>R</m> &#xE0; <m>S</m> soit le m&#xEA;me, c'est-&#xE0;-dire <m>\vv  =\overrightarrow{PQ} = \overrightarrow{RS}</m>, sans que le segment <m>RS</m> soit le m&#xEA;me que le segment <m>PQ</m>. Le vecteur nul, <m>\vZero</m>, est le d&#xE9;placement trivial, il n'a pas de sens, et toute fl&#xE8;che le repr&#xE9;sentant a une longueur nulle.
     </p>
-    <figure xml:id="rep-vecteurs">
-        <caption>Plusieurs flèches représentent le même vecteur</caption>
-        <image xml:id="sageplot-rep-vecteurs" width="80%">
-            <description>Plusieurs flèches représentent le même vecteur</description>
+        <figure xml:id="rep-vecteurs">
+          <caption>Plusieurs fl&#xE8;ches repr&#xE9;sentent le m&#xEA;me vecteur</caption>
+          <image xml:id="sageplot-rep-vecteurs" width="80%">
+            <description>Plusieurs fl&#xE8;ches repr&#xE9;sentent le m&#xEA;me vecteur</description>
             <sageplot>
                 Figure1 = arrow((1,1), (2,2.5), color = "blue", thickness = 2, axes = False)
                 Figure1 += arrow((3,2), (4,3.5), color = "red", thickness = 2)
@@ -46,48 +44,29 @@
                 Figure1 += text('$\\mathbf{v}$', (4.8, 2.3), fontsize=14, color= "black")
                 Figure1
             </sageplot>
-        </image>
-    </figure>
-
-
-  </li>
-  <li>
-    <p>
-    Supposons que nous considérions le mouvement d'un pendule, c'est-à-dire un mobile attaché à une corde. Il y a trois forces qui s'appliquent sur le pendule : la gravité <m>\vg</m>, dirigée vers le bas, la tension <m>\vt</m> de la corde, qui ramène le pendule dans la direction de la corde, et la résistance de l'air, qui repousse le pendule dans la direction opposée à celle de son mouvement. Les trois forces s'appliquent sur le pendule. Il est alors naturel de dessiner les flèches représentant chacune des trois forces avec leur source située au mobile.
+          </image>
+        </figure>
+      </li>
+      <li>
+        <p>
+    Supposons que nous consid&#xE9;rions le mouvement d'un pendule, c'est-&#xE0;-dire un mobile attach&#xE9; &#xE0; une corde. Il y a trois forces qui s'appliquent sur le pendule : la gravit&#xE9; <m>\vg</m>, dirig&#xE9;e vers le bas, la tension <m>\vt</m> de la corde, qui ram&#xE8;ne le pendule dans la direction de la corde, et la r&#xE9;sistance de l'air, qui repousse le pendule dans la direction oppos&#xE9;e &#xE0; celle de son mouvement. Les trois forces s'appliquent sur le pendule. Il est alors naturel de dessiner les fl&#xE8;ches repr&#xE9;sentant chacune des trois forces avec leur source situ&#xE9;e au mobile.
     </p>
-    <figure>
-      <caption>Un pendule soumis à plusieurs forces</caption>
-    <sidebyside width="20%">
-    <image source="images/CLP-figs/pendulum"/>
-    </sidebyside>
-    </figure>
-
-
-  </li>
-</ul>
-</subsection>
-
-
-
-<subsection xml:id="pars-Op-vects">
-  <title>Opérations avec vecteurs</title>
-
-<p>
-Reprenons notre exemple et supposons qu'un mobile se déplace de <m>P</m> vers <m>Q</m>. Par la suite, le déplacement continue et va de <m>Q</m> vers <m>R</m> (voir la <xref ref="Chasles">figure</xref>). L'effet combiné de ces déplacements est que notre mobile est allé de <m>P</m> à <m>R</m>. Le déplacement résultant est donc <m>\overrightarrow{PR}</m>, et l'on convient qu'il s'agit de la <term>somme</term> de <m>\overrightarrow{PQ}</m> et de <m>\overrightarrow{QR}</m>, ce qu'on écrit naturellement
-</p>
-<me>
+        <figure>
+          <caption>Un pendule soumis &#xE0; plusieurs forces</caption>
+          <sidebyside width="20%">
+            <image source="images/CLP-figs/pendulum"/>
+          </sidebyside>
+        </figure>
+      </li>
+    </ul>
+  </subsection>
+  <subsection xml:id="pars-Op-vects"><title>Op&#xE9;rations avec vecteurs</title><p>
+Reprenons notre exemple et supposons qu'un mobile se d&#xE9;place de <m>P</m> vers <m>Q</m>. Par la suite, le d&#xE9;placement continue et va de <m>Q</m> vers <m>R</m> (voir la <xref ref="Chasles">figure</xref>). L'effet combin&#xE9; de ces d&#xE9;placements est que notre mobile est all&#xE9; de <m>P</m> &#xE0; <m>R</m>. Le d&#xE9;placement r&#xE9;sultant est donc <m>\overrightarrow{PR}</m>, et l'on convient qu'il s'agit de la <term>somme</term> de <m>\overrightarrow{PQ}</m> et de <m>\overrightarrow{QR}</m>, ce qu'on &#xE9;crit naturellement
+</p><me>
   \overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR}.
-</me>
-
-<p>
-  Cette relation est appelée la <term>relation de Chasles</term>, ou encore la <term>loi du triangle</term>.
-</p>
-
-<figure xml:id="Chasles">
-    <caption>La relation de Chasles, ou loi du triangle : <m>\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} </m> </caption>
-    <image xml:id="sageplot-Chasles" width="60%">
-        <description>La relation de Chasles</description>
-        <sageplot>
+</me><p>
+  Cette relation est appel&#xE9;e la <term>relation de Chasles</term>, ou encore la <term>loi du triangle</term>.
+</p><figure xml:id="Chasles"><caption>La relation de Chasles, ou loi du triangle : <m>\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} </m> </caption><image xml:id="sageplot-Chasles" width="60%"><description>La relation de Chasles</description><sageplot>
           Fig = arrow((1,1), (4,2), color = "red", thickness = 2, axes = false)
           Fig += arrow((4,2), (3,4), color = "red", thickness = 2)
           Fig += arrow((1,1), (3,4), color = "red", thickness = 2)
@@ -101,33 +80,17 @@ Reprenons notre exemple et supposons qu'un mobile se déplace de <m>P</m> vers <
           Fig += text('$\\overrightarrow{QR}$', (3.7, 3.2), fontsize=16, color='black')
           Fig += text('$\\overrightarrow{PQ} + \\overrightarrow{QR} = \\overrightarrow{PR}$', (1.5, 2.7), fontsize=18, color='black')
           Fig
-          </sageplot>
-    </image>
-</figure>
-
-
-
-
-<p>
-  Il est aussi possible de multiplier un vecteur par un scalaire <m>s</m>. Par souci de cohérence, on voudrait que <m>2\vv = \vv + \vv</m>, qui a la même direction, le même sens et une longueur double à celle de <m>\vv</m>. Par ailleurs, on voudrait que <m>-1\vv</m> additionné à <m>\vv</m> donne <m>\vZero</m> comme résultat, donc que son sens soit l'opposé de celui de <m>\vv</m>. En général, on définit la  <term> multiplication d'un vecteur <m>\vv </m> par un scalaire <m>s</m></term> comme suit :
-</p>
-
-<ul>
-<li>
+          </sageplot></image></figure><p>
+  Il est aussi possible de multiplier un vecteur par un scalaire <m>s</m>. Par souci de coh&#xE9;rence, on voudrait que <m>2\vv = \vv + \vv</m>, qui a la m&#xEA;me direction, le m&#xEA;me sens et une longueur double &#xE0; celle de <m>\vv</m>. Par ailleurs, on voudrait que <m>-1\vv</m> additionn&#xE9; &#xE0; <m>\vv</m> donne <m>\vZero</m> comme r&#xE9;sultat, donc que son sens soit l'oppos&#xE9; de celui de <m>\vv</m>. En g&#xE9;n&#xE9;ral, on d&#xE9;finit la  <term> multiplication d'un vecteur <m>\vv </m> par un scalaire <m>s</m></term> comme suit :
+</p><ul><li>
 On change la longueur de  <m>\vv</m> d'un facteur <m>|s|</m>, et
-</li>
-<li>
+</li><li>
 si <m>s \lt 0</m>, on renverse l'orientation,
-</li>
-</ul>
-comme cela est indiqué dans les deux autres figures ci-bas.
+</li></ul>
+comme cela est indiqu&#xE9; dans les deux autres figures ci-bas.
 
 
-<figure xml:id="Mult-vecteur">
-  <caption>La multiplication d'un vecteur par un scalaire </caption>
-<sidebyside widths="50% 50%" margins="auto" valign="middle">
-    <image xml:id="sageplot-Scalairep-vecteur">
-        <sageplot>
+<figure xml:id="Mult-vecteur"><caption>La multiplication d'un vecteur par un scalaire </caption><sidebyside widths="50% 50%" margins="auto" valign="middle"><image xml:id="sageplot-Scalairep-vecteur"><sageplot>
           Figure2 = arrow((1,1), (2,2), color = "red", thickness = 2, axes = false)
           Figure2 += arrow((2,2), (3,3), color = "red", thickness = 1)
           Figure2 += point((1,1), size = 40, color = 'red')
@@ -136,10 +99,7 @@ comme cela est indiqué dans les deux autres figures ci-bas.
           Figure2 += text('$\\mathbf{v}$', (1.5, 1.7), fontsize=22, color='black')
           Figure2 += text('$\\mathbf{2v}$', (2.5, 2.7), fontsize=22, color='black')
           Figure2
-        </sageplot>
-    </image>
-    <image xml:id="sageplot-Scalairen-vecteur">
-        <sageplot>
+        </sageplot></image><image xml:id="sageplot-Scalairen-vecteur"><sageplot>
           Figure3 = arrow((1,1), (2,2), color = "red", thickness = 2, axes = false)
           Figure3 += arrow((1,1), (-1,-1), color = "red", thickness = 2)
           Figure3 += point((1,1), size = 40, color = 'red')
@@ -149,10 +109,7 @@ comme cela est indiqué dans les deux autres figures ci-bas.
           Figure3 += text('$-2\\mathbf{v}$', (0, 0.2), fontsize=22, color='black')
           Figure3
 
-        </sageplot>
-    </image>
-</sidebyside>
-</figure>
+        </sageplot></image></sidebyside></figure>
 
 
 
@@ -172,9 +129,9 @@ comme cela est indiqué dans les deux autres figures ci-bas.
 
 -->
 <p>
-  Afin de soustraire <m>\vb</m> de <m>\va</m> graphiquement, on peut additionner <m>-\vb</m> (qui est obtenu de <m>\vb</m> en renversant son orientation) à <m>\va</m>.
+  Afin de soustraire <m>\vb</m> de <m>\va</m> graphiquement, on peut additionner <m>-\vb</m> (qui est obtenu de <m>\vb</m> en renversant son orientation) &#xE0; <m>\va</m>.
 
-  Une autre possibilité est de dessiner <m>\va</m> et <m>\vb</m> avec leur source à un même point, alors  <m>\va-\vb</m> est le vecteur reliant le but de  <m>\vb</m> au but de <m>\va</m>, c'est-à-dire que <m>\va-\vb</m> est le vecteur qu'il faut ajouter à  <m>\vb</m> de sorte à obtenir <m>\va</m>.
+  Une autre possibilit&#xE9; est de dessiner <m>\va</m> et <m>\vb</m> avec leur source &#xE0; un m&#xEA;me point, alors  <m>\va-\vb</m> est le vecteur reliant le but de  <m>\vb</m> au but de <m>\va</m>, c'est-&#xE0;-dire que <m>\va-\vb</m> est le vecteur qu'il faut ajouter &#xE0;  <m>\vb</m> de sorte &#xE0; obtenir <m>\va</m>.
 </p>
 
 
@@ -201,181 +158,139 @@ comme cela est indiqué dans les deux autres figures ci-bas.
 </figure>
 -->
 
-<figure xml:id="fig_soust-vect" >
-<caption>Soustraction de vecteurs </caption>
-  <sidebyside width="40%">
-
-  <image source="images/CLP-figs/subtractJC"/>
-</sidebyside>
-</figure>
+<figure xml:id="fig_soust-vect"><caption>Soustraction de vecteurs </caption><sidebyside width="40%"><image source="images/CLP-figs/subtractJC"/></sidebyside></figure>
 
 
 
 </subsection>
-
-<subsection xml:id="pars-Composantes">
-  <title>Composantes et coordonnées</title>
-  <p>
-Bien que l'approche du paragraphe précédent soit très utile en soi, notamment pour faire de la géométrie, il est très utile d'introduire un système de coordonnées afin d'utiliser la puissance de l'algèbre linéaire. On choisit donc un espace à deux ou trois dimensions dans lequel un point est choisi et désigné comme l'origine <m>O</m>, et un système de coordonnées rectangulaires associé. Chaque point <m>A</m> de notre espace aura alors ses coordonnées, <m>(a_1, a_2)</m> ou <m>(a_1,a_2,a_3)</m> selon que notre espace a deux ou trois dimensions. On écrira alors <m>A(a_1, a_2)</m> ou <m>A(a_1,a_2,a_3)</m>, confondant un point avec ses coordonnées, ou encore  <m>A(x_A,y_A)</m> ou <m>A(x_A,y_A,z_A)</m>.
+  <subsection xml:id="pars-Composantes">
+    <title>Composantes et coordonn&#xE9;es</title>
+    <p>
+Bien que l'approche du paragraphe pr&#xE9;c&#xE9;dent soit tr&#xE8;s utile en soi, notamment pour faire de la g&#xE9;om&#xE9;trie, il est tr&#xE8;s utile d'introduire un syst&#xE8;me de coordonn&#xE9;es afin d'utiliser la puissance de l'alg&#xE8;bre lin&#xE9;aire. On choisit donc un espace &#xE0; deux ou trois dimensions dans lequel un point est choisi et d&#xE9;sign&#xE9; comme l'origine <m>O</m>, et un syst&#xE8;me de coordonn&#xE9;es rectangulaires associ&#xE9;. Chaque point <m>A</m> de notre espace aura alors ses coordonn&#xE9;es, <m>(a_1, a_2)</m> ou <m>(a_1,a_2,a_3)</m> selon que notre espace a deux ou trois dimensions. On &#xE9;crira alors <m>A(a_1, a_2)</m> ou <m>A(a_1,a_2,a_3)</m>, confondant un point avec ses coordonn&#xE9;es, ou encore  <m>A(x_A,y_A)</m> ou <m>A(x_A,y_A,z_A)</m>.
   </p>
-
-<p>
-  À chaque point <m>A</m>, on associe son <term>vecteur position</term>, <m>\overrightarrow{OA}</m>, et l'on fera la convention d'écriture suivante : on désignera par une lettre minuscule en caractère gras le vecteur position corrrespondant au point dont le nom est la même lettre majuscule en caractère normal :
+    <p>
+  &#xC0; chaque point <m>A</m>, on associe son <term>vecteur position</term>, <m>\overrightarrow{OA}</m>, et l'on fera la convention d'&#xE9;criture suivante : on d&#xE9;signera par une lettre minuscule en caract&#xE8;re gras le vecteur position corrrespondant au point dont le nom est la m&#xEA;me lettre majuscule en caract&#xE8;re normal :
 </p>
-<me>
+    <me>
   \va = \overrightarrow{OA}.
 </me>
-
-<p>
-  Réciproquement, si un vecteur <m>\va</m> est dessiné avec sa source avec l'origine, alors son but se trouve au point <m>A(a_1,a_2)</m> ou <m>A(a_1,a_2, a_3)</m>. On dira alors que les coordonnées de <m>A</m> sont les composantes de <m>\va</m>, et l'on écrira ces composantes comme un vecteur colonne :
+    <p>
+  R&#xE9;ciproquement, si un vecteur <m>\va</m> est dessin&#xE9; avec sa source avec l'origine, alors son but se trouve au point <m>A(a_1,a_2)</m> ou <m>A(a_1,a_2, a_3)</m>. On dira alors que les coordonn&#xE9;es de <m>A</m> sont les composantes de <m>\va</m>, et l'on &#xE9;crira ces composantes comme un vecteur colonne :
 </p>
-<md>
-  <mrow>\va = \dvect{a_1}{a_2} \amp \amp  \text{ ou } \amp \amp \va = \tvect{a_1}{a_2}{a_3}. </mrow>
-</md>
-
-<p>
-  Il est souvent pratique, afin d'alléger l'écriture, d'écrire les vecteurs en rangées, en utilisant la notation suivante :
-  <md>
-    <mrow>\va = \dvect{a_1}{a_2}= (a_1,a_2) \amp \amp \text{ ou }\amp \amp \va = \tvect{a_1}{a_2}{a_3}  = (a_1,a_2,a_3).</mrow>
-  </md>
-  Il faut bien comprendre qu'il s'agit simplement d'une convention d'écriture; nos vecteurs seront <em>toujours</em> des vecteurs colonnes, ceci sera important lorsque les matrices entreront en jeu.
+    <md>
+      <mrow>\va = \dvect{a_1}{a_2} \amp \amp  \text{ ou } \amp \amp \va = \tvect{a_1}{a_2}{a_3}. </mrow>
+    </md>
+    <p>
+  Il est souvent pratique, afin d'all&#xE9;ger l'&#xE9;criture, d'&#xE9;crire les vecteurs en rang&#xE9;es, en utilisant la notation suivante :
+  <md><mrow>\va = \dvect{a_1}{a_2}= (a_1,a_2) \amp \amp \text{ ou }\amp \amp \va = \tvect{a_1}{a_2}{a_3}  = (a_1,a_2,a_3).</mrow></md>
+  Il faut bien comprendre qu'il s'agit simplement d'une convention d'&#xE9;criture; nos vecteurs seront <em>toujours</em> des vecteurs colonnes, ceci sera important lorsque les matrices entreront en jeu.
 
 
 </p>
-
-
-
-<p>
-  Prenons maintenant le vecteur <m>\vv = \overrightarrow{PQ}</m>, dessiné avec sa source au point <m>P(p_1,p_2,p_3)</m> et avec son but à <m>Q(q_1,q_2,q_3)</m>. Comme <m>\vv</m> est précisément le déplacement nécessaire pour aller de <m>P</m> à <m>Q</m>, on doit avoir <m>p_i + v_i = q_i</m> pour <m>i\in \{1,2,3\}</m><fn>L'expression <q><m>i\in \{1,2,3\}</m></q> doit se lire comme <q><m>i</m> dans l'ensemble formé des éléments <m>1,2,3</m></q>.</fn>. Ainsi, écrit avec ces composantes, nous avons :
+    <p>
+  Prenons maintenant le vecteur <m>\vv = \overrightarrow{PQ}</m>, dessin&#xE9; avec sa source au point <m>P(p_1,p_2,p_3)</m> et avec son but &#xE0; <m>Q(q_1,q_2,q_3)</m>. Comme <m>\vv</m> est pr&#xE9;cis&#xE9;ment le d&#xE9;placement n&#xE9;cessaire pour aller de <m>P</m> &#xE0; <m>Q</m>, on doit avoir <m>p_i + v_i = q_i</m> pour <m>i\in \{1,2,3\}</m><fn>L'expression <q><m>i\in \{1,2,3\}</m></q> doit se lire comme <q><m>i</m> dans l'ensemble form&#xE9; des &#xE9;l&#xE9;ments <m>1,2,3</m></q>.</fn>. Ainsi, &#xE9;crit avec ces composantes, nous avons :
 </p>
-
-<me>
+    <me>
   \vv = \tvect{v_1}{v_2}{v_3} = \tvect{q_1 - p_1}{q_2 - p_2}{q_3 - p_3}.
 </me>
-
-<ul>
-  <li>
-    On suppose que l'on fait un premier pas, se déplaçant de <m>a_1</m> unités parallèlement à l'axe des abscisses et de <m>a_2</m> unités parallèlement à l'axe des ordonnées.
-
-    Dans ce cas, on dira que <m>\va = \dvect{a_1}{a_2}</m> est le vecteur de déplacement pour ce premier pas. Supposons maintenant que lors d'un deuxième pas, on bouge de <m>b_1</m> unités  dans la direction des abscisses et de <m>b_2</m> unités dans la direction des ordonnées, comme cela est indiqué dans la figure de gauche ci-bas. Ainsi, le vecteur de déplacement pour le deuxième pas est  <m>\vb = \dvect{b_1}{b_2}</m>. Globalement, on s'est déplacé de <m>a_1+b_1</m> unités  parallèlement à l'axe des abscisses et de <m>a_2+b_2</m> unités parallèlement à l'axe des ordonnées. Le vecteur de déplacement pour les deux pas combinés est  <m>\dvect{a_1+b_1}{a_2+b_2}</m>.  Nous allons définir l'addition  <m>\va + \vb </m> par <m>\dvect{a_1+b_1}{a_2+b_2}</m>.
-</li>
-<li>
-    On suppose maintenant que l'on décide de se déplacer dans la même direction que, lors du premier pas, mais d'un pas deux fois plus long, comme cela est indiqué dans la figure de droite ci-bas. Ce pas sera alors de <m>2a_1</m> unités dans la direction des abscisses et de  <m>2a_2</m> unités dans la direction des ordonnées, et le vecteur de déplacement résultant sera <m>\dvect{2a_1}{2a_2}</m>. On définit alors le produit du nombre réel <m>2</m> et du vecteur <m>\va </m>, qu'on dénote <m>2\va</m>, par <me>2\va = \dvect{2a_1}{2a_2}</me>.
-</li>
-</ul>
-
-<sidebyside widths="39.4% 37.8%" valign="middle">
-  <image source="images/CLP-figs/maddvecJC"/>
-  <image source="images/CLP-figs/mscalmulJC"/>
-  </sidebyside>
-
-<p>
-En somme, l'addition des vecteurs se fait de composante à composante, et la multiplication d'un vecteur par un scalaire se fait en multipliant chacune des composantes du vecteur par le scalaire en question. Les définitions données pour les vecteurs de <m>\R^2</m> se généralisent de façon évidente à <m>\R^3</m> et à <m>\R^n</m> en général. Nous formulons les définitions dans le cas général.
-</p>
-
-<definition xml:id="def_addScalMult">
-  <title>Addition de vecteurs et multiplication par un scalaire</title>
-  <statement>
-  <p>
-    Soit <m>\va = \ctvec{a_1}{\vdots}{a_n}, \vb = \ctvec{b_1}{\vdots}{b_n}\in \R^n</m> et <m>s\in \R</m>. On définit alors
-  </p>
-  <sidebyside widths="45% 45%">
-      <ul>
-      <li>
-        <p>
-          <m>\va + \vb =\ctvec{a_1+b_1}{\vdots}{a_n + b_n}</m>,
-        </p>
-      </li>
-    </ul>
     <ul>
       <li>
-        <p>
-          <m>s\va = \ctvec{sa_1}{\vdots}{sa_n}</m>.
-        </p>
-      </li>
-      </ul>
-  </sidebyside>
+    On suppose que l'on fait un premier pas, se d&#xE9;pla&#xE7;ant de <m>a_1</m> unit&#xE9;s parall&#xE8;lement &#xE0; l'axe des abscisses et de <m>a_2</m> unit&#xE9;s parall&#xE8;lement &#xE0; l'axe des ordonn&#xE9;es.
 
-</statement>
-</definition>
-
-<p>
-Les opérations d'addition et de multiplication par un scalaire qui viennent d'être définies sont naturelles, elles héritent des propriétés usuelles des nombres réels.
+    Dans ce cas, on dira que <m>\va = \dvect{a_1}{a_2}</m> est le vecteur de d&#xE9;placement pour ce premier pas. Supposons maintenant que lors d'un deuxi&#xE8;me pas, on bouge de <m>b_1</m> unit&#xE9;s  dans la direction des abscisses et de <m>b_2</m> unit&#xE9;s dans la direction des ordonn&#xE9;es, comme cela est indiqu&#xE9; dans la figure de gauche ci-bas. Ainsi, le vecteur de d&#xE9;placement pour le deuxi&#xE8;me pas est  <m>\vb = \dvect{b_1}{b_2}</m>. Globalement, on s'est d&#xE9;plac&#xE9; de <m>a_1+b_1</m> unit&#xE9;s  parall&#xE8;lement &#xE0; l'axe des abscisses et de <m>a_2+b_2</m> unit&#xE9;s parall&#xE8;lement &#xE0; l'axe des ordonn&#xE9;es. Le vecteur de d&#xE9;placement pour les deux pas combin&#xE9;s est  <m>\dvect{a_1+b_1}{a_2+b_2}</m>.  Nous allons d&#xE9;finir l'addition  <m>\va + \vb </m> par <m>\dvect{a_1+b_1}{a_2+b_2}</m>.
+</li>
+      <li>
+    On suppose maintenant que l'on d&#xE9;cide de se d&#xE9;placer dans la m&#xEA;me direction que, lors du premier pas, mais d'un pas deux fois plus long, comme cela est indiqu&#xE9; dans la figure de droite ci-bas. Ce pas sera alors de <m>2a_1</m> unit&#xE9;s dans la direction des abscisses et de  <m>2a_2</m> unit&#xE9;s dans la direction des ordonn&#xE9;es, et le vecteur de d&#xE9;placement r&#xE9;sultant sera <m>\dvect{2a_1}{2a_2}</m>. On d&#xE9;finit alors le produit du nombre r&#xE9;el <m>2</m> et du vecteur <m>\va </m>, qu'on d&#xE9;note <m>2\va</m>, par <me>2\va = \dvect{2a_1}{2a_2}</me>.
+</li>
+    </ul>
+    <sidebyside widths="39.4% 37.8%" valign="middle">
+      <image source="images/CLP-figs/maddvecJC"/>
+      <image source="images/CLP-figs/mscalmulJC"/>
+    </sidebyside>
+    <p>
+En somme, l'addition des vecteurs se fait de composante &#xE0; composante, et la multiplication d'un vecteur par un scalaire se fait en multipliant chacune des composantes du vecteur par le scalaire en question. Les d&#xE9;finitions donn&#xE9;es pour les vecteurs de <m>\R^2</m> se g&#xE9;n&#xE9;ralisent de fa&#xE7;on &#xE9;vidente &#xE0; <m>\R^3</m> et &#xE0; <m>\R^n</m> en g&#xE9;n&#xE9;ral. Nous formulons les d&#xE9;finitions dans le cas g&#xE9;n&#xE9;ral.
 </p>
-
-<theorem xml:id="thm_addScalMult">
-  <title>Propriétés des opérations</title>
-<statement><p>
+    <definition xml:id="def_addScalMult">
+      <title>Addition de vecteurs et multiplication par un scalaire</title>
+      <statement>
+        <p>
+    Soit <m>\va = \ctvec{a_1}{\vdots}{a_n}, \vb = \ctvec{b_1}{\vdots}{b_n}\in \R^n</m> et <m>s\in \R</m>. On d&#xE9;finit alors
+  </p>
+        <sidebyside widths="45% 45%">
+          <ul>
+            <li>
+              <p><m>\va + \vb =\ctvec{a_1+b_1}{\vdots}{a_n + b_n}</m>,
+        </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p><m>s\va = \ctvec{sa_1}{\vdots}{sa_n}</m>.
+        </p>
+            </li>
+          </ul>
+        </sidebyside>
+      </statement>
+    </definition>
+    <p>
+Les op&#xE9;rations d'addition et de multiplication par un scalaire qui viennent d'&#xEA;tre d&#xE9;finies sont naturelles, elles h&#xE9;ritent des propri&#xE9;t&#xE9;s usuelles des nombres r&#xE9;els.
+</p>
+    <theorem xml:id="thm_addScalMult">
+      <title>Propri&#xE9;t&#xE9;s des op&#xE9;rations</title>
+      <statement>
+        <p>
 
 Soit <m>\va, \vb, \vc \in \R^n</m> et  <m>s,t\in \R</m>. Alors,
-<md alignment="alignat">
-  <mrow>
+<md alignment="alignat"><mrow>
 &amp; (1)\quad&amp;&amp;\va+\vb=\vb+\va, \qquad\qquad\qquad
 &amp;&amp; (2)\quad&amp;&amp;\va+(\vb+\vc)=(\va+\vb)+\vc,
-</mrow>
-<mrow>
+</mrow><mrow>
 &amp; (3) &amp;&amp;\va+\vZero =\va,
 &amp;&amp; (4) &amp;&amp;\va+(-\va)=\vZero,
-</mrow>
-<mrow>
+</mrow><mrow>
 &amp; (5) &amp;&amp;s(\va+\vb)=s\va+s\vb,
 &amp;&amp; (6) &amp;&amp;(s+t)\va=s\va+t\va,
-</mrow>
-<mrow>
+</mrow><mrow>
 &amp; (7) &amp;&amp;(st)\va = s(t\va),
 &amp;&amp; (8) &amp;&amp;1\va=\va.
-</mrow>
-</md>
-</p></statement>
-</theorem>
-
-
-<p>Les <q>vecteurs de la base canonique</q> jouent un rôle crucial.
+</mrow></md>
 </p>
-
-<definition xml:id="def_basis_vectors">
-<statement>
-<p>
-Les vecteurs de la <term><em>base canonique</em></term> sont<fn>Certain(e)s auteur(e)s écrivent  <m>\ve_1</m>, <m>\ve_2</m> et  <m>\ve_3</m> à la place de <m>\vi</m>, <m>\vj</m> et <m>\vk</m>, respectivement.</fn>
-<ul>
-  <li>
-    <p>en deux dimensions :
+      </statement>
+    </theorem>
+    <p>Les <q>vecteurs de la base canonique</q> jouent un r&#xF4;le crucial.
+</p>
+    <definition xml:id="def_basis_vectors">
+      <statement>
+        <p>
+Les vecteurs de la <term><em>base canonique</em></term> sont<fn>Certain(e)s auteur(e)s &#xE9;crivent  <m>\ve_1</m>, <m>\ve_2</m> et  <m>\ve_3</m> &#xE0; la place de <m>\vi</m>, <m>\vj</m> et <m>\vk</m>, respectivement.</fn>
+<ul><li><p>en deux dimensions :
     <m>
     \vi = \dvect{1}{0}</m> et <m>\vj =\dvect{0}{1};
     </m>
-    </p>
-  </li>
-  <li>
-    <p>
+    </p></li><li><p>
       en trois dimensions :
       <m>
       \vi = \tvect{1}{0}{0},\text{ } \vj =\tvect{0}{1}{0}
   </m> et <m>\vk =\tvect{0}{0}{1}.
       </m>
-    </p>
-  </li>
-</ul>
+    </p></li></ul>
 
 </p>
-<sidebyside widths="15% 25%">
-  <image source="images/CLP-figs/basis2dJC"/>
-  <image source="images/CLP-figs/basis3dJC"/>
-</sidebyside>
-</statement>
-</definition>
-<p>
-   Grâce aux propriétés des vecteurs, on peut notamment écrire :
+        <sidebyside widths="15% 25%">
+          <image source="images/CLP-figs/basis2dJC"/>
+          <image source="images/CLP-figs/basis3dJC"/>
+        </sidebyside>
+      </statement>
+    </definition>
+    <p>
+   Gr&#xE2;ce aux propri&#xE9;t&#xE9;s des vecteurs, on peut notamment &#xE9;crire :
 <me>
 \dvect{a_1}{a_2}  =a_1\,\vi+a_2\,\vj,\qquad\qquad
 \tvect{a_1}{a_2}{a_3} =a_1\,\vi+a_2\,\vj+a_3\,\vk.
 </me>
-Une expression qui est une somme de multiples de vecteurs, comme  <m>a_1\vi+a_2\vj</m>, est appelée une <em>combinaison linéaire</em> de ces vecteurs. Ainsi, tout vecteur peut être exprimé comme une combinaison linéaire des vecteurs de la base canonique. Ceci rend ces vecteurs de base très utiles.
+Une expression qui est une somme de multiples de vecteurs, comme  <m>a_1\vi+a_2\vj</m>, est appel&#xE9;e une <em>combinaison lin&#xE9;aire</em> de ces vecteurs. Ainsi, tout vecteur peut &#xEA;tre exprim&#xE9; comme une combinaison lin&#xE9;aire des vecteurs de la base canonique. Ceci rend ces vecteurs de base tr&#xE8;s utiles.
 
 </p>
-
-
-</subsection>
-
-<xi:include  href="./Problemes/Prob-sec-Vecteurs.ptx"/>
-
+  </subsection>
+  <xi:include href="./Problemes/Prob-sec-Vecteurs.ptx"/>
 </section>

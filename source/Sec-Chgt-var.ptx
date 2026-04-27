@@ -292,7 +292,7 @@
             &amp;= r\,\dee{r}\,\dee{\theta}
           </mrow>
         </md>,
-        qui est exactement ce que nous avons trouvé dans la <xref ref="eq_dA_polar"/>.
+        qui est exactement ce que nous avons trouvé dans la <xref ref="eq_dA_polar" text="global">formule</xref>.
       </p>
     </example>
 
@@ -354,7 +354,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
     </exercise>
 -->
 
-    <p>Utiliser en pratique le <xref ref="thm-Chgt-var2"/> peut être complexe. Afin de choisir le changement de variables à effectuer, on doit tenir compte tant de la région d'intégration que de l'intégrande. Voyons un premier exemple.
+    <p>Utiliser en pratique le <xref ref="thm-Chgt-var2" text="global">théorème</xref> peut être complexe. Afin de choisir le changement de variables à effectuer, on doit tenir compte tant de la région d'intégration que de l'intégrande. Voyons un premier exemple.
     </p>
 
     <example xml:id="exa_2d_sub">
@@ -422,7 +422,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
           </me>.
         </p>
         <p>
-          Nous pouvons maintenant invoquer le <xref ref="thm-Chgt-var2"/> et effectuer les calculs:
+          Nous pouvons maintenant invoquer le <xref ref="thm-Chgt-var2" text="global">théorème</xref> et effectuer les calculs:
           <md>
             <mrow>\iint_{\cR} xy \dee{x}\, \dee{y} \amp = \iint_{\cS} \left(u^2-3uv+2v^2\right) |-1| \dee{u}\, \dee{v}  = \iint_{\cS} u^2-3uv+2v^2 \dee{u}\, \dee{v}  </mrow>
             <mrow> \amp= \int_0^1 \int_{-2}^0 u^2 -3uv+2v^2 \ \dee{u}\, \dee{v} = \int_0^1 \left[\frac{u^3}{3} -\frac{3u^2v}{2} + 2uv^2\right]_{u=-2}^{u=0}\ \dee{v}</mrow>
@@ -524,7 +524,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
 
 
         <p>
-          Nous avons maintenant tous les ingrédients pour appliquer le <xref ref="thm-Chgt-var2"/>. Notons que le jacobien de la transformation est <m>1+s</m>, qui est positif sur <m>\cS</m>. Ainsi,
+          Nous avons maintenant tous les ingrédients pour appliquer le <xref ref="thm-Chgt-var2" text="global">théorème</xref>. Notons que le jacobien de la transformation est <m>1+s</m>, qui est positif sur <m>\cS</m>. Ainsi,
           <md>
             <mrow>
               \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}
@@ -692,7 +692,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
     <title>Changements de variables pour les intégrales triples</title>
 
     <p>
-      Il existe une généralisation naturelle du <xref ref="thm-Chgt-var2"/> pour les intégrales triples (et même en plus haute dimension). Elles sont établies exactement de la même façon que ce qu'on a fait plus haut. Pour les intégrales triples, la pierre angulaire de la construction est le fait établi au <xref ref="cor-produit-mixte"/>, qui exprime le volume d'un parallélépipède comme un déterminant.
+      Il existe une généralisation naturelle du <xref ref="thm-Chgt-var2" text="global">théorème</xref> pour les intégrales triples (et même en plus haute dimension). Elles sont établies exactement de la même façon que ce qu'on a fait plus haut. Pour les intégrales triples, la pierre angulaire de la construction est le fait établi au <xref ref="cor-produit-mixte" text="global">corollaire</xref>, qui exprime le volume d'un parallélépipède comme un déterminant.
     </p>
 
     <sidebyside width="20%">
@@ -717,7 +717,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
     </definition>
 
     <p>
-      Nous avons bien entendu l'énoncé analogue du <xref ref="thm-Chgt-var2"/> pour les intégrales triples, à savoir :
+      Nous avons bien entendu l'énoncé analogue du <xref ref="thm-Chgt-var2" text="global">théorème</xref> pour les intégrales triples, à savoir :
     </p>
 
     <theorem xml:id="thm-Chgt-var3">
@@ -773,7 +773,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
                            &amp;\pdiff{z}{z}&amp;=1
           </mrow>
         </md>,
-        le <xref ref="thm-Chgt-var3"/>, mais avec <m>r</m> dans le rôle de <m>u</m> et avec <m>\theta</m> dans celui de <m>v</m>, donne
+        le <xref ref="thm-Chgt-var3" text="global">théorème</xref>, mais avec <m>r</m> dans le rôle de <m>u</m> et avec <m>\theta</m> dans celui de <m>v</m>, donne
         <md>
           <mrow>\pdiff{(x,y,z)}{(r, \theta,z)} \amp=\left| \begin{array}{rrr} \cos \theta \amp \sin \theta \amp 0 \\ -r\sin \theta \amp r\cos \theta \amp 0\\0 \amp 0 \amp 1\end{array}\right| = \left| \begin{array}{rr} \cos \theta \amp \sin \theta \\ -r\sin \theta \amp r\cos \theta \end{array}\right| </mrow>
           <mrow> \amp = r\cos^2\theta + r\sin^2\theta = r </mrow>
@@ -782,7 +782,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
         <me>
           \dee{V} = r \dee{r}\, \dee{\theta}\, \dee{z},
         </me>
-        exactement ce que nous avions trouvé dans la <xref ref="eq_dV_cylindrical"/>.
+        exactement ce que nous avions trouvé dans la <xref ref="eq_dV_cylindrical" text="global">formule</xref>.
       </p>
     </example>
 
@@ -858,7 +858,7 @@ Library/Michigan/Chap16Sec7/Q01.pg
             &amp;= \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
           </mrow>
         </md>,
-        qui est exactement ce qui a été établi dans  la <xref ref="eq_dV_spherical"/>.
+        qui est exactement ce qui a été établi dans  la <xref ref="eq_dV_spherical" text="global">formule</xref>.
       </p>
     </example>
 

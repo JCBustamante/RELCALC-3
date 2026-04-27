@@ -1,0 +1,82 @@
+## DESCRIPTION
+##   Absolute Extrema on Closed Domain
+## ENDDESCRIPTION
+
+## Tagged by nhamblet
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Differentiation of multivariable functions)
+## DBsection(Lagrange multipliers and constrained optimization)
+## Institution(ASU)
+## MLT(RectangularBoxVolumeOptimization)
+## MLTleader(1)
+## Level(5)
+## TitleText1('Calculus: Early Transcendentals')
+## AuthorText1('Stewart')
+## EditionText1('6')
+## Section1('14.8')
+## Problem1('')
+## TitleText2('Calculus')
+## AuthorText2('Stewart')
+## EditionText2('5')
+## Section2('15.7')
+## Problem2('')
+## TitleText3('Calculus: Early Transcendentals')
+## AuthorText3('Rogawski')
+## EditionText3('1')
+## Section3('14.8')
+## Problem3('19')
+## KEYWORDS('Extrema', 'Multivariable','absolute' 'maximum' 'volume')
+
+## SOURCE
+## /local/Library/272/setStewart14_7/problem_16.pg
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "Dartmouthmacros.pl",
+  "PGcourse.pl"
+);
+ 
+
+## Do not show partial correct answers
+$showPartialCorrectAnswers = 0;
+
+$a = random(1,9);
+do {
+$b = random(1,9);
+}
+until ($b != $a);
+do {
+$c = random(1,9);
+}
+until (($c != $a) and ($c != $b));
+
+
+## Ok, we are ready to begin the problem...
+##
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+$BR
+
+Trouver le volume de la plus grande boîte rectangulaire ayant des arêtes parallèles 
+aux axes de coordonnées qui peut être inscrite dans l'ellipsoïde
+\[
+    \frac{x^2}{\{$a**2\}} + \frac{y^2}{\{$b**2\}} + \frac{z^2}{\{$c**2\}} = 1
+\]
+
+Suggestion : Utilisez la symmetrie pour ramener le problème au premier octant 
+(c'est à dire \(x, y, z \ge 0 \)), de sorte que  \( V =
+8xyz\).  
+
+Volume maximal: \{ans_rule(30)\}
+$PAR
+END_TEXT
+    ANS(num_cmp(8*$a*$b*$c/(3*sqrt(3))));
+
+
+ENDDOCUMENT();

@@ -48,7 +48,7 @@ Le mot <q>conservatif</q> est là en allusion à la <q>conservation de l'énergi
 </mrow>.
 </md>
 Ainsi, <m>\frac{1}{2} m |\vv(t)|^2 -f\big(x(t),y(t),z(t)\big)</m>, qui est appelée l'énergie
-<fn><m>\frac{1}{2} m |\vv(t)|^2</m> est l'énergie cinétique, et <m>-f</m> est l'énergie potentielle. Voir la <xref ref="warn_potential"/>.
+<fn><m>\frac{1}{2} m |\vv(t)|^2</m> est l'énergie cinétique, et <m>-f</m> est l'énergie potentielle. Voir la <xref ref="warn_potential" text="global">mise en garde</xref>.
 </fn>
 de la particule au temps <m>t</m>, ne dépend pas du temps <m>t</m> : elle est conservée. Si nous appelons l'énergie initiale <m>E</m>, c'est-à-dire <m>E=\frac{1}{2} m |\vv(0)|^2 -f\big(x(0),y(0),z(0)\big)</m>, alors <m>\frac{1}{2} m |\vv(t)|^2 -f\big(x(t),y(t),z(t)\big)=E</m> pour tout <m>t</m>, et, en particulier,
 <me> f\big(x(t),y(t),z(t)\big) = \frac{1}{2} m |\vv(t)|^2 -E \geqslant -E </me>,
@@ -103,7 +103,7 @@ où nous avons utilisé le théorème de dérivation des fonctions composées et
 </p>
   </proof>
   <p>
-Remarquons que, dans le <xref ref="thm_workIntegral"/>, la valeur <m>f(P_1)-f(P_0)</m> dans <m>\int_\cC\vF\cdot\dee{\vr}</m> dépend seulement de <m>P_0</m> et <m>P_1</m>, pas du chemin choisi. Nous allons voir plus tard, dans le <xref ref="thm_pathIndepConserv"/>, que ceci a lieu seulement pour les champs vectoriels conservatifs. Dans la section précédente, nous avons vu plusieurs exemples de champs vectoriels qui ne sont pas conservatifs. Les champs de l'<xref ref="eg_workIntegralA"/> ainsi que celui de l'<xref ref="eg_workIntegralB"/> donnent des intégrales dont la valeur dépend du chemin choisi, ils ne sont donc pas des champs conservatifs.
+Remarquons que, dans le <xref ref="thm_workIntegral" text="global">théorème</xref>, la valeur <m>f(P_1)-f(P_0)</m> dans <m>\int_\cC\vF\cdot\dee{\vr}</m> dépend seulement de <m>P_0</m> et <m>P_1</m>, pas du chemin choisi. Nous allons voir plus tard, dans le <xref ref="thm_pathIndepConserv" text="global">théorème</xref>, que ceci a lieu seulement pour les champs vectoriels conservatifs. Dans la section précédente, nous avons vu plusieurs exemples de champs vectoriels qui ne sont pas conservatifs. Les champs de l'<xref ref="eg_workIntegralA" text="global">exemple</xref> ainsi que celui de l'<xref ref="eg_workIntegralB" text="global">exemple</xref> donnent des intégrales dont la valeur dépend du chemin choisi, ils ne sont donc pas des champs conservatifs.
 </p>
   <p>Ceci nous mène à la question suivante. Soit  <m>\vF</m> un champ de vecteurs. Quand est-ce que, pour deux points fixes <m>P_0</m> et <m>P_1</m>, les intégrales
 <me>
@@ -113,7 +113,7 @@ pour toutes les courbes (lisses par morceaux) <m>\cC</m>, <m>\cC'</m> qui vont d
 <me>
 \int_{P_0}^{P_1}\vF\cdot\dee{\vr} = \int_{\cC}\vF\cdot\dee{\vr}
 </me>
-pour tout chemin <m>\cC</m> de <m>P_0</m> à <m>P_1</m>. La suite de cette section est dévouée à la relation très étroite qui existe entre l'indépendance de la trajectoire et le fait qu'un champ soit conservatif ou pas. C'est ce que nous verrons au <xref ref="thm_pathIndepConserv"/>.
+pour tout chemin <m>\cC</m> de <m>P_0</m> à <m>P_1</m>. La suite de cette section est dévouée à la relation très étroite qui existe entre l'indépendance de la trajectoire et le fait qu'un champ soit conservatif ou pas. C'est ce que nous verrons au <xref ref="thm_pathIndepConserv" text="global">théorème</xref>.
 </p>
   <p> Pour simplifier le problème, nous allons commencer par considérer des champs de vecteurs qui sont continus dans tout <m>\R^2</m> ou tout <m>\R^3</m>.
 <!--
@@ -210,16 +210,16 @@ Il suffit de montrer que
 </li></ul>
 </p>
     <p>(a)<m>\implies</m>(b) :
-Soit <m>\cC</m> une courbe fermée qui commence et se termine à <m>P_0</m>. Alors, en vertu du <xref ref="thm_workIntegral"/> avec <m>P_1 = P_0</m>,
+Soit <m>\cC</m> une courbe fermée qui commence et se termine à <m>P_0</m>. Alors, en vertu du <xref ref="thm_workIntegral" text="global">théorème</xref> avec <m>P_1 = P_0</m>,
 <me>
 \oint_\cC\vF\cdot\dee{\vr} = f(P_0) - f(P_0) = 0
 </me>.
 </p>
     <p> (b)<m>\implies</m>(c) :
-Choisissons  <m>P_0</m> un point quelconque, et soit <m>P_1=P_0</m>. Nous supposons donc que <m>\oint_\cC\vF\cdot\dee{\vr}=0</m> pour toutes les courbes qui commencent à <m>P_0</m> et qui finissent à <m>P_1</m>. En particulier,   <m>\int_\cC\vF\cdot\dee{\vr}</m> prend la même valeur sur toutes les courbes qui commencent à <m>P_0</m> et qui se terminent à <m>P_1</m>. Ainsi, le <xref ref="thm_pathIndepArbEndPoints"/> donne immédiatement la propriété (c).
+Choisissons  <m>P_0</m> un point quelconque, et soit <m>P_1=P_0</m>. Nous supposons donc que <m>\oint_\cC\vF\cdot\dee{\vr}=0</m> pour toutes les courbes qui commencent à <m>P_0</m> et qui finissent à <m>P_1</m>. En particulier,   <m>\int_\cC\vF\cdot\dee{\vr}</m> prend la même valeur sur toutes les courbes qui commencent à <m>P_0</m> et qui se terminent à <m>P_1</m>. Ainsi, le <xref ref="thm_pathIndepArbEndPoints" text="global">théorème</xref> donne immédiatement la propriété (c).
 </p>
     <p> (c)<m>\implies</m>(a) :
-Nous voulons montrer que  <m>\vF</m> est conservatif. Nous commençons par exhiber un candidat pour la fonction potentielle, <m>f</m>, et nous montrerons que nous avons effectivement <m>\vF=\vnabla f </m>. Notre choix de candidat <m>f</m> est motivé par le <xref ref="thm_workIntegral"/>. Si <m>\vF</m> est vraiment conservatif, son potentiel devra vérifier <m>\int_\cC\vF\cdot\dee{\vr} = f(P_1) - f(P_0)</m> pour toute courbe <m>\cC</m> qui démarre à <m>P_0</m> et qui finit à <m>P_1</m>. Choisissons <m>P_0 = \vZero</m>. Il est immédiat, de la <xref ref="def-Conservatif"/>, que l'ajout d'une constante à un potentiel donne toujours un potentiel. On peut donc choisir <m>f(\vZero) = 0</m>. Alors, <m>f(P_1) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>P_1</m>. Ainsi, on définit, pour tout <m>\vx</m>, <m>f(\vx) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>\vx</m>. Cette définition est correcte, puisque l'hypothèse (c) nous dit exactement que la valeur de l'intégrale est indépendante de la trajectoire.
+Nous voulons montrer que  <m>\vF</m> est conservatif. Nous commençons par exhiber un candidat pour la fonction potentielle, <m>f</m>, et nous montrerons que nous avons effectivement <m>\vF=\vnabla f </m>. Notre choix de candidat <m>f</m> est motivé par le <xref ref="thm_workIntegral" text="global">théorème</xref>. Si <m>\vF</m> est vraiment conservatif, son potentiel devra vérifier <m>\int_\cC\vF\cdot\dee{\vr} = f(P_1) - f(P_0)</m> pour toute courbe <m>\cC</m> qui démarre à <m>P_0</m> et qui finit à <m>P_1</m>. Choisissons <m>P_0 = \vZero</m>. Il est immédiat, de la <xref ref="def-Conservatif" text="global">définition</xref>, que l'ajout d'une constante à un potentiel donne toujours un potentiel. On peut donc choisir <m>f(\vZero) = 0</m>. Alors, <m>f(P_1) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>P_1</m>. Ainsi, on définit, pour tout <m>\vx</m>, <m>f(\vx) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>\vx</m>. Cette définition est correcte, puisque l'hypothèse (c) nous dit exactement que la valeur de l'intégrale est indépendante de la trajectoire.
 </p>
     <p>Vérifions à présent que <m>f</m> vérifie effectivement <m>\vF=\vnabla f</m>. Choisissons un point arbitraire et une courbe <m>\cC_{\vx}</m> allant de l'origine à <m>\vx</m>. Pour n'importe quel vecteur unitaire <m>\vu</m>, soit <m>\cD_{\vu}</m> la courbe paramétrée par
 <me>
@@ -264,7 +264,7 @@ comme on le voulait.
 </p>
   </proof>
   <p>
-  Le  <xref ref="thm_workIntegral"/> fournit une méthode pour calculer une intégrale de ligne lorsque le champ est conservatif : il suffit d'évaluer la fonction potentielle aux extrémités du chemin.
+  Le  <xref ref="thm_workIntegral" text="global">théorème</xref> fournit une méthode pour calculer une intégrale de ligne lorsque le champ est conservatif : il suffit d'évaluer la fonction potentielle aux extrémités du chemin.
 </p>
   <!-- 
 
@@ -284,7 +284,7 @@ comme on le voulait.
       </me>
     </p>
       <p>
-      En vertu du <xref ref="thm_workIntegral"/>, nous n'avons même pas besoin de connaître la trajectoire <m>\cC</m> pour calculer
+      En vertu du <xref ref="thm_workIntegral" text="global">théorème</xref>, nous n'avons même pas besoin de connaître la trajectoire <m>\cC</m> pour calculer
       <me>
         \int_{\cC} \vF \cdot d \vr = \int_{\cC} \vnabla f \cdot d\vr = f(0,1) - f(1,0) = -\frac{1}{2} - \frac{1}{2} = -1.
       </me>
@@ -306,15 +306,15 @@ comme on le voulait.
     </statement>
   </theorem>
   <proof>
-    <title>Preuve du <xref ref="thm_screenConserv"/></title>
+    <title>Preuve du <xref ref="thm_screenConserv" text="global">théorème</xref></title>
     <p>
     Nous donnons la preuve pour les champs définis sur <m>\R^2</m>. La preuve pour <m>\R^3</m> est similaire.
   </p>
     <p>
-    Le théorème de Clairaut permet, comme à l'<xref ref="ex-non-conserv"/>, de montrer que si <m>\vF = \vnabla f</m>, alors on a <m>\vnabla \times \vF = \vZero</m>.
+    Le théorème de Clairaut permet, comme à l'<xref ref="ex-non-conserv" text="global">exemple</xref>, de montrer que si <m>\vF = \vnabla f</m>, alors on a <m>\vnabla \times \vF = \vZero</m>.
   </p>
     <p>
-    Supposons donc que <m>\vF</m> vérifie <m>\frac{\partial P}{\partial y}(x,y) =  \frac{\partial Q}{\partial x}(x,y)</m> sur <em>tout le plan</em> <m>\R^2</m> et montrons que le champ est conservatif. Nous le ferons en utilisant la stratégie de notre <xref ref="ex-non-conserv"/> pour construire une fonction potentielle <m>f</m>, c'est-à-dire <m>f</m> vérifiant
+    Supposons donc que <m>\vF</m> vérifie <m>\frac{\partial P}{\partial y}(x,y) =  \frac{\partial Q}{\partial x}(x,y)</m> sur <em>tout le plan</em> <m>\R^2</m> et montrons que le champ est conservatif. Nous le ferons en utilisant la stratégie de notre <xref ref="ex-non-conserv" text="global">exemple</xref> pour construire une fonction potentielle <m>f</m>, c'est-à-dire <m>f</m> vérifiant
     <me>
       \begin{split}
       \frac{\partial f}{\partial x}(x,y) &amp;= P(x,y), \\
@@ -525,7 +525,7 @@ Je peux le traduire
 -->
   <warning xml:id="warn_screeningB">
     <p>
-    Il faut noter que, dans le <xref ref="thm_screenConserv"/>, l'hypothèse de base est que <m>\vF</m> passe le <q>test de dépistage</q> <em>sur tout</em> <m>\R^2</m> <em>ou sur tout</em> <m>\R^3</m>. L'exemple suivant, un grand classique, montre que si le champ n'est pas continu en ne serait-ce qu'un point, les conclusions ne tiennent plus.
+    Il faut noter que, dans le <xref ref="thm_screenConserv" text="global">théorème</xref>, l'hypothèse de base est que <m>\vF</m> passe le <q>test de dépistage</q> <em>sur tout</em> <m>\R^2</m> <em>ou sur tout</em> <m>\R^3</m>. L'exemple suivant, un grand classique, montre que si le champ n'est pas continu en ne serait-ce qu'un point, les conclusions ne tiennent plus.
   </p>
   </warning>
   <!-- WeBWork à inclure>

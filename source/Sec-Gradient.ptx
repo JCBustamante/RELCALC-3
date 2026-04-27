@@ -11,7 +11,7 @@
 <subsection xml:id="pars-Gradient-motiv">
   <title>Motivation</title>
   <p>
-  Dans cette section, nous nous intéressons aux fonctions <m>f</m> à valeurs dans <m>\R</m>. Supposons, pour motiver la discussion, que <m>\cD \subseteq \R^2</m> et <m>f :\cD \to \R</m> sont données. On s'intéresse à <m>\vD f</m>, mais vue à travers une lentille différente de celle de la <xref ref="sec_lin_approx"/>. Jusqu'à présent, on a surtout considéré <m>\vD f(\vr_0)</m>, la dérivée évaluée en un point, et on la comprend comme une transformation linéaire (c'est pour ça qu'il s’agit d'un vecteur rangée plutôt qu'un vecteur colonne). Le changement de point de vue consiste à considérer une fonction à valeurs dans <m>\R^2</m>, à savoir la fonction
+  Dans cette section, nous nous intéressons aux fonctions <m>f</m> à valeurs dans <m>\R</m>. Supposons, pour motiver la discussion, que <m>\cD \subseteq \R^2</m> et <m>f :\cD \to \R</m> sont données. On s'intéresse à <m>\vD f</m>, mais vue à travers une lentille différente de celle de la <xref ref="sec_lin_approx" text="global">section</xref>. Jusqu'à présent, on a surtout considéré <m>\vD f(\vr_0)</m>, la dérivée évaluée en un point, et on la comprend comme une transformation linéaire (c'est pour ça qu'il s’agit d'un vecteur rangée plutôt qu'un vecteur colonne). Le changement de point de vue consiste à considérer une fonction à valeurs dans <m>\R^2</m>, à savoir la fonction
   <me>
     (x,y)\mapsto \begin{bmatrix} \pdiff{f}{x}(x,y)\\  \pdiff{f}{y}(x,y) \end{bmatrix}
   </me>.
@@ -45,16 +45,17 @@
     </p>
   </statement>
 </definition>
+<p>
+  On représente les champs vectoriels (dans le plan) en dessinant au point <m>(x,y)</m> un vecteur représentant le vecteur <m>\vnabla f(x,y)</m>, à facteur d'échelle près. En effet, afin de ne pas surcharger la figure, il est commun d'ajuster la norme de <m>\vnabla f(x,y)</m>. 
+    </p>
 <example>
   <statement>
     <p>
       Soit <m>f(x,y) = x^2 - 2y^2</m>. Le champ gradient de <m>f</m> est <m>\vnabla f(x,y) = 2x\vi -4y\vj</m>.
     </p>
+    
     <p>
-      On représente les champs vectoriels (dans le plan) en dessinant au point <m>(x,y)</m> un vecteur représentant le vecteur <m>\vnabla f(x,y)</m>, à facteur d'échelle près. En effet, afin de ne pas surcharger la figure, il est commun d'ajuster la norme de <m>\vnabla f(x,y)</m>. Ainsi, par exemple, au point <m>(2,1)</m>, plutôt que de dessiner le vecteur <m>\vnabla f(2,1) = 4\vi - 4 \vj</m>, on représente un multiple de celui-ci.
-    </p>
-    <p>
-      La figure ci-dessous représente le champ gradient <m>\vnabla f</m> ainsi que certaines courbes de niveau de <m>f</m>.
+      La figure ci-dessous représente le champ gradient <m>\vnabla f</m> ainsi que certaines courbes de niveau de <m>f</m>. Par exemple, au point <m>(2,1)</m>, plutôt que de dessiner le vecteur <m>\vnabla f(2,1) = 4\vi - 4 \vj</m>, on représente un multiple de celui-ci.
     </p>
     <figure xml:id="fig_gradient-2d">
         <caption>Les courbes de niveau de la fonction <m>f(x,y) = x^2 - 2y^2</m> ainsi que le champ gradient de <m>f</m>, à savoir <m>\vnabla f(x,y) = 2x \vi - 4y\vj</m>. Plus bas, nous allons expliquer le lien apparent entre le gradient et les courbes de niveau. </caption>
@@ -73,14 +74,13 @@
   </statement>
 </example>
 
-<!--
-<exercise xml:id = "deriv_direct_4">
-  <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/deriv_direct_4.pg"/>
-</exercise>
--->
+ <exercise>
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Gradient/Gradient-prob1.pg" parse="text"/></webwork>
+      </exercise>  
+
 
 <p>
-  Remarquons que <m>\vnabla f(\vr_0) = \vD f(\vr_0)^T</m>, c'est simplement la transposée de la dérivée de <m>f</m>, de sorte que l'approximation linéaire de <m>f</m>  au point <m>\vr_0</m> (voir <xref ref="thm-Diffte-Gral"/>) peut s'écrire simplement
+  Remarquons que <m>\vnabla f(\vr_0) = \vD f(\vr_0)^T</m>, c'est simplement la transposée de la dérivée de <m>f</m>, de sorte que l'approximation linéaire de <m>f</m>  au point <m>\vr_0</m> (voir <xref ref="thm-Diffte-Gral" text="global">théorème</xref>) peut s'écrire simplement
   <me>
     L(\vr) = f(\vr_0) + \vnabla f(\vr_0)\cdot (\vr - \vr_0)
   </me>,
@@ -258,12 +258,9 @@
   </solution>
   </example>
 
-  <!-- Cet exercice est en anglais. Il faut le traduire ou trouver un équivalent en fraçais -->
-  <!--
-  <exercise xml:id= "Gradient-03">
-    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-03.pg"/>
-  </exercise>
-  -->
+   <exercise>
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Gradient/Gradient-prob2.pg" parse="text"/></webwork>
+      </exercise>  
 
 
   <p>
@@ -283,6 +280,13 @@
   </li>
   </ul>
   </p>
+
+    <exercise>
+    <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Gradient/Gradient-prob5.pg" parse="text"/></webwork>
+  </exercise>  
+
+
+
   <example xml:id="eg_dir_deriv_C">
   <p>
   Soit
@@ -342,11 +346,7 @@
   <image source="images/CLP-figs/dderivC"/>
   </sidebyside>
   </example>
-<!--
-  <exercise xml:id ="Gradient-01">
-    <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-01.pg"/>
-  </exercise>
--->
+
 
 
   <p>Changeons un peu les choses pour le prochain exemple. Les taux de variation en deux directions différentes sont fournis, on verra comment ceci permet de déterminer le taux de variation dans n'importe quelle direction.
@@ -409,11 +409,12 @@
   </solution>
   </example>
 
-<!--
-  <exercise xml:id ="Gradient-04">
-    <webwork source = "RELCALC3-pretext/Chap_Fonc-Multi-Variables/Gradient-04.pg"/>
-  </exercise>
--->
+
+  <exercise>
+    <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Gradient/Gradient-prob3.pg" parse="text"/></webwork>
+  </exercise>  
+
+
 
 
   <example xml:id="eg_chainRuleF"><title>Le gradient en coordonnées polaires</title>
@@ -425,7 +426,7 @@
 
   <solution>
   <p>
-    Comme c'est souvent le cas, bien comprendre la question est plus que la moitié du travail. Par la <xref ref="def-Gradient"/>, le gradient d'une fonction <m>g(x,y)</m> est le vecteur  <m>\llt g_x(x,y),g_y(x,y)\rgt</m>. Dans cette question, on nous donne une fonction <m>f(r,\theta)</m> exprimée avec les coordonnées polaires  <m>r</m> et <m>\theta</m>. Nous convertissons celle-ci en coordonnées rectangulaires et nous considérons la fonction
+    Comme c'est souvent le cas, bien comprendre la question est plus que la moitié du travail. Par la <xref ref="def-Gradient" text="global">définition</xref>, le gradient d'une fonction <m>g(x,y)</m> est le vecteur  <m>\llt g_x(x,y),g_y(x,y)\rgt</m>. Dans cette question, on nous donne une fonction <m>f(r,\theta)</m> exprimée avec les coordonnées polaires  <m>r</m> et <m>\theta</m>. Nous convertissons celle-ci en coordonnées rectangulaires et nous considérons la fonction
   <me>
   g(x,y)=f\big(r(x,y),\theta(x,y)\big)
   </me>,
@@ -500,16 +501,16 @@
   <title>Gradient et ensembles de niveau</title>
   <p>
     Considérons le cas des fonctions à deux variables et posons <m>\vr = (x,y)</m>. Nous avons déjà vu que si <m>\cC</m> est une courbe de niveau donnée par <m>f(x,y)=0</m> et que <m>\vr_0 = (x_0,y_0)\in \cC</m>, alors la tangente à <m>\cC</m> en <m>\vr_0</m> est
-    <md>
-    <mrow xml:id="Eq-tg" tag = "star" >  \vD f(\vr_0)(\vr - \vr_0) = 0 </mrow>
-    </md>,
+    <mdn>
+      <mrow xml:id="Eq-tg" tag="star">  \vD f(\vr_0)(\vr - \vr_0) \amp = 0 </mrow>
+    </mdn>,
     ou, en développant,
     <me>
       \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
     </me>
   </p>
   <p>
-    Ayant à l'esprit la <xref ref="def-Gradient"> Définition du gradient </xref>, nous obtenons plus que la moitié de la preuve du résultat suivant :
+    Ayant à l'esprit la <xref ref="def-Gradient">définition du gradient </xref>, nous obtenons plus que la moitié de la preuve du résultat suivant :
   </p>
   <theorem xml:id="thm-Grad-tgt-2d">
     <statement>
@@ -615,6 +616,12 @@
 
     </solution>
   </example>
+      <exercise>
+    <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Gradient/Gradient-prob4.pg" parse="text"/></webwork>
+  </exercise>  
+
+
+
 
   <p>
     Avec une variable de plus, nous assistons à une métamorphose :
@@ -709,13 +716,13 @@
 
   <remark xml:id="rem_tan_plane">
   <p>
-  Nous avons quelques idées au sujet des plans tangents aux surfaces <m>z=f(x,y)</m> et des approximations linéaires au  <xref ref="principle-Plan-tg-idee"/>. Il s'agit de conséquences  du <xref ref="thm_tan_plane_G"/>. En effet, il est toujours possible d'écrire l'équation <m>z=f(x,y)</m> sous la forme <m>z-f(x,y)=0</m> et d'invoquer le
-  <xref ref="thm_tan_plane_G"/> avec <m>G(x,y,z)=z-f(x,y)</m>, puisque
+  Nous avons quelques idées au sujet des plans tangents aux surfaces <m>z=f(x,y)</m> et des approximations linéaires au  <xref ref="principle-Plan-tg-idee" text="global">principe</xref>. Il s'agit de conséquences  du <xref ref="thm_tan_plane_G" text="global">théorème</xref>. En effet, il est toujours possible d'écrire l'équation <m>z=f(x,y)</m> sous la forme <m>z-f(x,y)=0</m> et d'invoquer le
+  <xref ref="thm_tan_plane_G" text="global">théorème</xref> avec <m>G(x,y,z)=z-f(x,y)</m>, puisque
 
   <me>
   \vnabla G(x_0,y_0,z_0) = -f_x(x_0,y_0)\,\vi -f_y(x_0,y_0)\,\vj +\vk
   </me>.
-  Le <xref ref="thm_tan_plane_G"/> donne alors les points du <xref ref="principle-Plan-tg-idee"/> comme une conséquence.
+  Le <xref ref="thm_tan_plane_G" text="global">théorème</xref> donne alors les points du <xref ref="principle-Plan-tg-idee" text="global">principe</xref> comme une conséquence.
   </p>
   <p>
     Il est <alert> très important </alert> de pouvoir passer d'un contexte à l'autre.
@@ -752,7 +759,7 @@ Alors, le gradient est
 \vnabla G(x,y,z) = (2x+5y)\,\vi +(5x-4y)\,\vj-\vk
 </mrow>
 </md>,
-de sorte que, en vertu du  <xref ref="thm_tan_plane_G"/>,
+de sorte que, en vertu du  <xref ref="thm_tan_plane_G" text="global">théorème</xref>,
 <m>
 \vn = \vnabla G(1,2,3) = 12\,\vi -3\,\vj-\vk
 </m>
@@ -800,7 +807,7 @@ x^2+y^2+z^2=1
 \text{ au point  }
 (0,0,1).
 </me>
- Dans ce cas, la surface est donnée par <m>G(x,y,z)=x^2+y^2+z^2=1</m>. Le gradient de  <m>G</m> est  <m>\vnabla G(x,y,z) = 2x\,\vi +2y\,\vj +2z\,\vk</m>. Afin d'invoquer correctement la partie (b) du  <xref ref="thm_tan_plane_G"/>, on doit évaluer  <m>\vnabla G(0,0,1) = 2\,\vk</m> et trouver que le plan tangent en  <m>(0,0,1)</m> est
+ Dans ce cas, la surface est donnée par <m>G(x,y,z)=x^2+y^2+z^2=1</m>. Le gradient de  <m>G</m> est  <m>\vnabla G(x,y,z) = 2x\,\vi +2y\,\vj +2z\,\vk</m>. Afin d'invoquer correctement la partie (b) du  <xref ref="thm_tan_plane_G" text="global">théorème</xref>, on doit évaluer  <m>\vnabla G(0,0,1) = 2\,\vk</m> et trouver que le plan tangent en  <m>(0,0,1)</m> est
 <md>
 <mrow>
 \vnabla G(0,0,1)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt = 0
@@ -812,7 +819,7 @@ Ceci est correct : le plan tangent à la sphère unité au pôle nord est un pla
 </p>
 
 <p>
-Cependant, si l'on applique incorrectement la partie (b) du <xref ref="thm_tan_plane_G"/>, sans évaluer <m>\vnabla G(x,y,z)</m> au point <m>(0,0,1)</m>, on trouverait que le <q>plan tangent </q> est
+Cependant, si l'on applique incorrectement la partie (b) du <xref ref="thm_tan_plane_G" text="global">théorème</xref>, sans évaluer <m>\vnabla G(x,y,z)</m> au point <m>(0,0,1)</m>, on trouverait que le <q>plan tangent </q> est
 <md>
 <mrow>
 &amp;\vnabla G(x,y,z)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt =0
@@ -910,7 +917,7 @@ x^2+ 2y^2 +3z^2 = 72,
 <p>
   De la même façon, si l'on veut minimiser  <m>x+y+3z</m>, on doit diminuer la valeur de  <m>C</m>. Le même argument mène à conclure que, au point de minimum, le plan doit être tangent à la surface.
 
-  L'<xref ref="eg_tan_plane_E"/> était semblable, mais le plan en question était <m>z=C</m>.
+  L'<xref ref="eg_tan_plane_E" text="global">exemple</xref> était semblable, mais le plan en question était <m>z=C</m>.
 </p>
 
 <p>
@@ -1001,7 +1008,7 @@ où, bien entendu, toutes les dérivées partielles doivent être évaluées en 
 </solution>
 </example>
 
-<p>Voyons l'<xref ref="eg_tan_plane_H"/> en action.
+<p>Voyons l'<xref ref="eg_tan_plane_H" text="global">exemple</xref> en action.
 </p>
 
 <example xml:id="eg_tan_plane_I">
@@ -1023,7 +1030,7 @@ Vérifions tout d'abord que le point  <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m> se t
 \big(\sqrt{3}\big)^2+1^2+1^2=5\qquad
 \big(\sqrt{3}\big)^2+1^2=4\times 1
 </me>.
-Nous trouverons le vecteur tangent voulu en utilisant la stratégie de l'<xref ref="eg_tan_plane_H"/>.
+Nous trouverons le vecteur tangent voulu en utilisant la stratégie de l'<xref ref="eg_tan_plane_H" text="global">exemple</xref>.
 </p>
 
 <p>Posons  <m>F(x,y,z) = x^2+y^2+z^2</m> et  <m>G(x,y,z) = x^2+y^2-4z</m>. Alors,

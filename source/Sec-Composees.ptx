@@ -9,6 +9,9 @@
   <title>Règle de dérivation des fonctions composées</title>
 
   <introduction>
+    <title>Le cas des fonctions à une variable</title>
+    
+    
     <p>
       La règle de dérivation des fonctions composées, souvent appelée la <q>règle de la chaîne</q>, à savoir
       <me>
@@ -22,15 +25,20 @@
       Dans cet exemple, <m>f(x)=\sin(x)</m> et <m>x(t)=t^2</m>.
     </p>
 
-    <!--
-    <exercise>
-      <webwork source ="BPL/Mathema-TIC/CDI-Calcul_differentiel-02Derivees/2-6-05_DerivChaineST.pg"/>
-    </exercise>
-    -->
+     </introduction>
+     
+      <subsection xml:id="subsec-Chaine-part">
+    <title>Le cas général</title>
+
 
     <p>
-      Nous allons généraliser la règle de dérivation des fonctions composées aux fonctions de plus d'une variable. Nous donnerons la formulation générale, en utilisant le langage matriciel développé dans la <xref ref="sec_lin_approx"/>. Ceci nous permettra de donner un énoncé concis, qui reflète exactement l'idée de base, sans nous encombrer avec des notations lourdes faisant intervenir des dérivées partielles et des sommes qui apparaissent lorsque nous évitons le langage matriciel.
+      Nous allons généraliser la règle de dérivation des fonctions composées aux fonctions de plus d'une variable. Nous donnerons la formulation générale, en utilisant le langage matriciel développé dans la <xref ref="sec_lin_approx" text="global">section</xref>. Ceci nous permettra de donner un énoncé concis, qui reflète exactement l'idée de base, sans nous encombrer avec des notations lourdes faisant intervenir des dérivées partielles et des sommes qui apparaissent lorsque nous évitons le langage matriciel. 
     </p>
+
+    <p>
+      Les formules particulières pour les cas spécifiques sont données plus bas.
+    </p>
+
     <p>
       Sommairement, l'idée à retenir est que si <m>f</m> et <m>g</m> sont différentiables (et composables), alors la composée <m>f\circ g</m> sera différentiable également, mais aussi et surtout que l'approximation linéaire de la composition <m>f\circ g</m>  est donnée par la composition des approximations linéaires <m>\vD f</m> et <m>\vD g</m>, ce qui correspond au produit matriciel. Plus précisément, nous avons le résultat suivant.
     </p>
@@ -44,6 +52,7 @@
         </p>
       </statement>
     </theorem>
+    
     <p>
       Il est important de comprendre que le terme de droite de l'égalité ci-haut est un produit matriciel
       <me>
@@ -55,16 +64,13 @@
       Voyons maintenant quelques exemples.
     </p>
 
-  </introduction>
 
-  <subsection xml:id="subsec-Chaine-part">
-    <title>Quelques cas particuliers</title>
 
     <paragraphs xml:id="pars-Chaine-chemin">
       <title>Composition avec un chemin : <m>f\circ \vr(t)</m></title>
 
       <p>
-        Soit <m>\vr(t) = x(t)\vi + y(t)\vj + z(t) \vk</m> un chemin différentiable et <m>f</m> définie sur une région de <m>\R^3</m> contenant la courbe <m>\cC_\vr</m>. Nous pouvons donc considérer <m>F = f\circ \vr</m>, c'est-à-dire <m>F(t) = f(x(t),y(t), z(t))</m>. Il s'agit d'une fonction d'une variable réelle, à valeurs réelles.  Selon le <xref ref="thm_chainRule"/>, nous avons, en tout point <m>t</m>,
+        Soit <m>\vr(t) = x(t)\vi + y(t)\vj + z(t) \vk</m> un chemin différentiable et <m>f</m> définie sur une région de <m>\R^3</m> contenant la courbe <m>\cC_\vr</m>. Nous pouvons donc considérer <m>F = f\circ \vr</m>, c'est-à-dire <m>F(t) = f(x(t),y(t), z(t))</m>. Il s'agit d'une fonction d'une variable réelle, à valeurs réelles.  Selon le <xref ref="thm_chainRule" text="global">théorème</xref>, nous avons, en tout point <m>t</m>,
         <md>
           <mrow> F'(t) \amp = \vD F(t) = \vD(f\circ \vr)(t) = \vD f(\vr(t))\ \vD \vr (t)  = \vD f(\vr(t))\ \vr'(t)
           </mrow>
@@ -130,11 +136,14 @@
         </p>
       </example>
 
-      <!--
-      <exercise xml:id="chaine-01" component = "webwork">
-        <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/chaine-01.pg"/>
-      </exercise>
-      -->
+      <exercise>
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Composees/Composees-prob1.pg" parse="text"/></webwork>
+      </exercise>  
+
+      <exercise>
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Composees/Composees-prob2.pg" parse="text"/></webwork>
+      </exercise>  
+    
     </paragraphs>
 
     <paragraphs xml:id="pars-Chaine-2-vars">
@@ -144,7 +153,7 @@
         <me>
           \vD F =  \begin{bmatrix} \pdiff{F}{s} \amp \pdiff{F}{t} \end{bmatrix}
         </me>.
-        Par ailleurs, le <xref ref="thm_chainRule"/> nous dit aussi que
+        Par ailleurs, le <xref ref="thm_chainRule" text="global">théorème</xref> nous dit aussi que
         <me>
           \vD F(s,t) = \vD (f\circ g)(s,t) = \vD f(g(s,t))\ \vD g(s,t).
         </me>
@@ -178,7 +187,7 @@
           <me>
             f(x,y)=e^{xy},\qquad x(s,t)=s, \qquad y(s,t)=\cos t
           </me>.
-          Posons  <m>F(s,t)=f\big(x(s,t),\,y(s,t)\big)</m>. Le <xref ref="thm_chainRule"/> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
+          Posons  <m>F(s,t)=f\big(x(s,t),\,y(s,t)\big)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
           <me>
             \pdiff{F}{s}(s,t)
             =  \pdiff{f}{x}\big(x(s,t),\,y(s,t)\big)\, \pdiff{x}{s}(s,t)
@@ -266,12 +275,7 @@
         </statement>
       </example>
 
-      <!--
-      <exercise>
-        <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/chaine_2.pg"/>
-      </exercise>
-      -->
-
+    
       <example>
         <statement>
           <p>Soit <m>f(x,y)</m> où <m>f</m> est une fonction de classe <m>C^2</m>. Si <m>x(u,v) = u^2 + v^2</m> et que <m>y(u,v) = 2uv</m>, alors on considère <m>F(u,v)=f(x(u,v),y(u,v))</m>. Calculer <m>\pdiff{F}{u}</m> et <m>\frac{\partial^2 F}{\partial u^2}</m>.
@@ -309,6 +313,12 @@
         </statement>
       </example>
 
+      <exercise>
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Composees/Composees-prob3.pg" parse="text"/></webwork>
+      </exercise>  
+
+
+
     </paragraphs>
   </subsection>
 
@@ -338,10 +348,10 @@
     </p>
 
     <p>
-      Dans la pratique, la différentiabilité est assurée par la continuité des dérivées partielles (c'est le <xref ref="thm-C1-differentiable"/>).
+      Dans la pratique, la différentiabilité est assurée par la continuité des dérivées partielles (c'est le <xref ref="thm-C1-differentiable" text="global">théorème</xref>).
     </p>
     <p>
-      Bien que le <xref ref="thm_chainRule"/> ne requière  pas la continuité des dérivées partielles, la preuve que nous présentons plus bas sera faite avec cette hypothèse supplémentaire.
+      Bien que le <xref ref="thm_chainRule" text="global">théorème</xref> ne requière  pas la continuité des dérivées partielles, la preuve que nous présentons plus bas sera faite avec cette hypothèse supplémentaire.
     </p>
     <example xml:id="Eg-chaine-nm">
       <statement>
@@ -366,7 +376,7 @@
       </statement>
     </example>
     <proof>
-      <title>Démonstration du <xref ref="thm_chainRule"/></title>
+      <title>Démonstration du <xref ref="thm_chainRule" text="global">théorème</xref></title>
       <p>La stratégie de la preuve suivra la progression des exemples que nous avons rencontrés, à savoir :
         <ul>
           <li>
@@ -440,7 +450,7 @@
       </p>
     </proof>
     <p>
-      Voyons une application de la règle des fonctions composées au calcul d'erreurs relatives. Nous avons vu, à la  <xref ref="def_error"/>, que l'erreur relative lors du calcul ou de la mesure de <m>f</m> est, par définition, <m>\left| \frac{\De f}{f}\right|</m>.
+      Voyons une application de la règle des fonctions composées au calcul d'erreurs relatives. Nous avons vu, à la  <xref ref="def_error" text="global">définition</xref>, que l'erreur relative lors du calcul ou de la mesure de <m>f</m> est, par définition, <m>\left| \frac{\De f}{f}\right|</m>.
     </p>
     <p>
       Près du point d'évaluation <m>\vr_0</m>, la variation <m>\De f</m> (qui résulte d'une variation <m>\De \vr</m>) est approchée par
@@ -594,12 +604,12 @@
     </theorem>
 
     <p>
-      Comme cela a été mentionné plus haut, la preuve dépasse le cadre de ce texte. C'est le point 1 qui est délicat, mais, si l'on accepte l'existence de la fonction <m>z= g(x,y)</m>, on obtient les formules du point 2 avec la règle de la chaîne, de la même façon que ce qui a été fait en  <xref ref="Dimpl2"/>, à savoir
+      Comme cela a été mentionné plus haut, la preuve dépasse le cadre de ce texte. C'est le point 1 qui est délicat, mais, si l'on accepte l'existence de la fonction <m>z= z(x,y)</m>, on obtient les formules du point 2 avec la règle de la chaîne, de la même façon que ce qui a été fait en  <xref ref="Dimpl2"/>, à savoir
       <me>
         0  = \pdiff{}{x}f(x,y,z(z,y)) = \pdiff{f}{x}\pdiff{x}{x} + \pdiff{f}{y}\pdiff{y}{x} + \pdiff{f}{z}\pdiff{z}{x}    = \pdiff{f}{x} + \pdiff{f}{z}\pdiff{z}{x}
       </me>,
       où la dernière égalité suit du fait que <m>x</m> et <m>y</m> sont indépendantes. Il vient alors que
-      <me>\pdiff{z}{x} = \frac{\pdiff{f}{x}}{\pdiff{f}{z}}.
+      <me>\pdiff{z}{x} = -\frac{\pdiff{f}{x}}{\pdiff{f}{z}}.
       </me>
       Encore une fois, il serait tentant de penser que ceci découle de <q>simplifier les fractions</q>, mais il n'en est rien.
     </p>
@@ -633,11 +643,11 @@
       </statement>
     </example>
 
-    <!--
     <exercise>
-      <webwork source ="BPL/CCDMD/Calcul_avance-02derivation/deriv_implicite_1.pg"/>
-    </exercise>
-    -->
+      <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Composees/Composees-prob4.pg" parse="text"/></webwork>
+      </exercise>  
+
+
 
   </subsection>
 
@@ -647,7 +657,7 @@
       L'approche présentée ci-haut est plutôt abstraite, dans le sens qu'elle met l'accent sur la dérivée en la considérant comme une application linéaire. D'un point de vue très pratique, il importe de pouvoir effectuer les calculs des dérivées partielles. Ci-après, on présente une démarche qui peut être utile les premières fois qu'on effectue ce genre de calculs.
       <ul>
         <li>Étape 1 :
-          Écrire  <alert>explicitement</alert> toutes les fonctions concernées et spécifier les arguments (les variables) de chacune d'elles. Il faut s'assurer que des fonctions différentes ont des noms différents. Au besoin, on pourra introduire de nouveaux noms pour certaines fonctions. Dans le cas du <xref ref="thm_chainRule"/>, cette liste est :
+          Écrire  <alert>explicitement</alert> toutes les fonctions concernées et spécifier les arguments (les variables) de chacune d'elles. Il faut s'assurer que des fonctions différentes ont des noms différents. Au besoin, on pourra introduire de nouveaux noms pour certaines fonctions. Dans le cas du <xref ref="thm_chainRule" text="global">théorème</xref>, cette liste est :
           <me>
             f(x,y),\qquad
             x(s,t),\qquad
@@ -696,7 +706,7 @@
       </ul>
     </p>
 
-    <p>Afin de s'aider à retenir les formules du <xref ref="thm_chainRule"/>, il peut être utile de penser que les variables sont des quantités physiques : <m>f</m> et <m>F</m> mesurées en grammes, <m>x</m> et <m>y</m> mesurées en mètres, et <m>s</m> et <m>t</m> mesurées en secondes. Notons alors que
+    <p>Afin de s'aider à retenir les formules du <xref ref="thm_chainRule" text="global">théorème</xref>, il peut être utile de penser que les variables sont des quantités physiques : <m>f</m> et <m>F</m> mesurées en grammes, <m>x</m> et <m>y</m> mesurées en mètres, et <m>s</m> et <m>t</m> mesurées en secondes. Notons alors que
       <ul>
         <li>
           le terme de gauche,  <m>\pdiff{F}{s}</m>, a pour unités des grammes par seconde;

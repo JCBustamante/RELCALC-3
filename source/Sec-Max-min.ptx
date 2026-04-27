@@ -9,7 +9,8 @@
 <title>Valeurs maximales et minimales</title>
 <introduction>
 
-<p>Une des principales applications du calcul différentiel des fonctions à une variable  est l'optimisation, c'est-à-dire trouver des valeurs maximales ou minimales d'une fonction (d'une variable). Nous reprenons ce sujet dans le contexte des fonctions à 2 variables ou plus, en mettant l'accent sur les fonctions de deux variables.  Avant de commencer, il convient de donner certaines définitions qui seront cruciales par la suite.
+<p>
+  Une des principales applications du calcul différentiel des fonctions à une variable  est l'optimisation, c'est-à-dire trouver des valeurs maximales ou minimales d'une fonction (d'une variable). Nous reprenons ce sujet dans le contexte des fonctions à 2 variables ou plus, en mettant l'accent sur les fonctions de deux variables.  Avant de commencer, il convient de donner certaines définitions qui seront cruciales par la suite.
 </p>
 
 <definition xml:id="def_local_max_min">
@@ -182,11 +183,11 @@ Il faut noter que plusieurs auteur(e)s combinent les deux notions et disent que 
 
 <warning xml:id="warn_saddle">
 <p>
-Le <xref ref="thm_stationary_point"/> nous dit que tout maximum ou minimum local à l'intérieur du domaine d'une fonction différentiable doit être un point critique. Ce résultat  <em>ne nous dit pas</em> que tout point critique est soit un maximum soit un minimum local. Déjà pour les fonctions à une variable, on peut avoir des points d'inflexion, par exemple.
+Le <xref ref="thm_stationary_point" text="global">théorème</xref> nous dit que tout maximum ou minimum local à l'intérieur du domaine d'une fonction différentiable doit être un point critique. Ce résultat  <em>ne nous dit pas</em> que tout point critique est soit un maximum soit un minimum local. Déjà pour les fonctions à une variable, on peut avoir des points d'inflexion, par exemple.
 </p>
 </warning>
 
-<p>Nous verrons dans l'<xref ref="eg_maxminA"/> et dans l'<xref ref="eg_maxminC"/> qu'il y a des points critiques qui ne sont ni des points de maximum local ni de minimum local. Cependant, le <xref ref="thm_stationary_point"/> est très utile puisque, souvent, une fonction ne possède qu'un nombre relativement restreint de points critiques. Pour trouver les points de maximum ou de minimum local, on doit donc considérer ces points critiques. Nous reviendrons plus tard sur la question de déterminer si un point critique est un point de maximum ou de minimum local (ou aucun des deux). Commençons par trouver quelques points critiques.
+<p>Nous verrons dans l'<xref ref="eg_maxminA" text="global">exemple</xref> et dans l'<xref ref="eg_maxminC" text="global">exemple</xref> qu'il y a des points critiques qui ne sont ni des points de maximum local ni de minimum local. Cependant, le <xref ref="thm_stationary_point" text="global">théorème</xref> est très utile puisque, souvent, une fonction ne possède qu'un nombre relativement restreint de points critiques. Pour trouver les points de maximum ou de minimum local, on doit donc considérer ces points critiques. Nous reviendrons plus tard sur la question de déterminer si un point critique est un point de maximum ou de minimum local (ou aucun des deux). Commençons par trouver quelques points critiques.
 </p>
 
 <example xml:id="eg_MXMNlocalA"><title><m>f(x,y)=x^2-2xy+2y^2+2x-6y+12</m></title>
@@ -265,11 +266,10 @@ Il y a donc deux points critiques :  <m>(1,1),\ (2,4)</m>.
 </solution>
 </example>
 
-<!-- 
-<exercise xml:id = "max-min-03" component = "webwork" >
-  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-03.pg"/>
-</exercise>
- -->
+  <!-- variation du probleme 2 du devoir 5 Mat298-A25   -->
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Max-min/Max-min-prob1.pg" parse="text"/></webwork>
+</exercise>  
 
 
 <p>Voyons un exemple un peu plus complexe.
@@ -820,7 +820,7 @@ curves that
 
 </example>
 
-<p>De façon approximative, si un point critique <m>(a,b)</m> n'est ni un point de minimum local ni un point de maximum local, alors il s'agit d'un point de selle. Pour que  <m>(a,b)</m> ne soit pas un point de maximum local, <m>f</m> doit prendre des valeurs plus grandes que  <m>f(a,b)</m> en certains points près de  <m>(a,b)</m>. Pour que  <m>(a,b)</m> ne soit pas un point de minimum local, <m>f</m> doit prendre des valeurs plus petites que <m>f(a,b)</m> en certains points près de <m>(a,b)</m>.
+<p>Si un point critique <m>(a,b)</m> n'est ni un point de minimum local ni un point de maximum local, alors il s'agit d'un point de selle. Pour que  <m>(a,b)</m> ne soit pas un point de maximum local, <m>f</m> doit prendre des valeurs plus grandes que  <m>f(a,b)</m> en certains points près de  <m>(a,b)</m>. Pour que  <m>(a,b)</m> ne soit pas un point de minimum local, <m>f</m> doit prendre des valeurs plus petites que <m>f(a,b)</m> en certains points près de <m>(a,b)</m>.
 </p>
 
 <definition xml:id="def_saddle_point">
@@ -863,7 +863,7 @@ x=y=1
 Ainsi, <m>f(x,y)</m> admet précisément un point critique à <m>(1,1)</m>.
 </p>
 
-<p>Pour déterminer si  <m>f</m> admet un point de minimum local, de maximum local ou un point de selle en  <m>(1,1)</m>, procédons comme dans l'<xref ref="eg_maxminB"/>.
+<p>Pour déterminer si  <m>f</m> admet un point de minimum local, de maximum local ou un point de selle en  <m>(1,1)</m>, procédons comme dans l'<xref ref="eg_maxminB" text="global">exemple</xref>.
 On fait le changement de variables,
 <me>
 x=1+\De x,\qquad
@@ -884,7 +884,7 @@ f\big(1+\De x,\,1+\De y\big)
 =(\De x)^2 -2\De x\,\De y-(\De y)^2
 =\left(\De x - \De y\right)^2  -2 (\De y)^2
 </me>.
-Notons que  <m>f</m> a été écrite comme la différence de deux carrés, comme la fonction  <m>f</m> de l'<xref ref="eg_maxminA"/>.
+Notons que  <m>f</m> a été écrite comme la différence de deux carrés, comme la fonction  <m>f</m> de l'<xref ref="eg_maxminA" text="global">exemple</xref>.
 <ul>
 <li>
 Si <m>\De x</m> et <m>\De y</m> sont tels que le premier carré
@@ -929,7 +929,7 @@ On conclut que  <m>(1,1)</m> est le seul point critique pour <m>f</m> et qu'il s
 </p>
 
 <p>
-  Supposons que <m>(a,b)</m> est un point critique pour une fonction  <m>f(x,y)</m>. Pour  <m>\De x</m> et <m>\De y</m> petits, l'approximation quadratique de la <xref ref="def-Taylor-2"/> donne
+  Supposons que <m>(a,b)</m> est un point critique pour une fonction  <m>f(x,y)</m>. Pour  <m>\De x</m> et <m>\De y</m> petits, l'approximation quadratique de la <xref ref="def-Taylor-2" text="global">définition</xref> donne
 <me>
 \begin{split}
 &amp;f\big(a + \De x,\,b+\De y\big) \\
@@ -947,7 +947,7 @@ On conclut que  <m>(1,1)</m> est le seul point critique pour <m>f</m> et qu'il s
        + f_{yy}\big(a,b\big)\,\De y^2 \right\}.
 \end{split}\tag{$*$}
 </me>
-Puisque  <m>(a,b)</m> est un point critique, <m>f_x(a,b)=f_y(a,b)=0</m>. Alors, avec la technique de l'<xref ref="eg_maxminB"/> et de l'<xref ref="eg_maxminC"/>,
+Puisque  <m>(a,b)</m> est un point critique, <m>f_x(a,b)=f_y(a,b)=0</m>. Alors, avec la technique de l'<xref ref="eg_maxminB" text="global">exemple</xref> et de l'<xref ref="eg_maxminC" text="global">exemple</xref>,
 on obtient<fn>
   Il y a des résultats analogues pour plus de variables. Cependant, il vaut mieux les formuler en utilisant le langage de l'algèbre linéaire.
 </fn> : voir les détails plus bas.
@@ -1074,7 +1074,7 @@ est strictement positive pour un signe de  <m>\De x\,\De y</m> et strictement n�
 
 
 <p>
-  On peut se demander pourquoi, dans la classification des points de maximum/minimum local du <xref ref="thm_second_deriv_test"/>, <m>f_{xx}(\vr_0)</m> apparaît, mais pas  <m>f_{yy}(\vr_0)</m>.
+  On peut se demander pourquoi, dans la classification des points de maximum/minimum local du <xref ref="thm_second_deriv_test" text="global">théorème</xref>, <m>f_{xx}(\vr_0)</m> apparaît, mais pas  <m>f_{yy}(\vr_0)</m>.
 
   La réponse est simplement que <m>x</m> vient avant <m>y</m> dans l'ordre alphabétique. On peut aussi bien  utiliser <m>f_{yy}(\vr_0)</m>. La raison pour ceci est que si <m>D(\vr_0) \gt 0</m> (comme dans le premier point du théorème), alors, puisque <m>D(\vr_0) = f_{xx}(\vr_0)\,f_{yy}(\vr_0) - f_{xy}(\vr_0)^2 \gt 0</m>, on doit nécessairement  avoir <m>f_{xx} (\vr_0)\, f_{yy}(\vr_0) \gt 0</m>, de sorte que <m>f_{xx}(\vr_0)</m> et  <m>f_{yy}(\vr_0)</m> doivent être toutes les deux du même signe.
 </p>
@@ -1115,7 +1115,7 @@ Trouver et classifier les points critiques de  <m>f(x,y)=2x^3 - 6xy + y^2 +4y </
 
 <solution>
 <p>
-Prenons de l'avance <mdash/> puisque nous devons calculer le gradient pour trouver les points critiques, et la matrice hessienne pour calculer le hessien et appliquer le test des dérivées secondes du  <xref ref="thm_second_deriv_test"/> <mdash/> et calculons les dérivées partielles d'ordre 1 et 2 :
+Prenons de l'avance <mdash/> puisque nous devons calculer le gradient pour trouver les points critiques, et la matrice hessienne pour calculer le hessien et appliquer le test des dérivées secondes du  <xref ref="thm_second_deriv_test" text="global">théorème</xref> <mdash/> et calculons les dérivées partielles d'ordre 1 et 2 :
 <md alignment="alignat">
 <mrow>
 f&amp;=2x^3 - 6xy + y^2 +4y,
@@ -1128,7 +1128,7 @@ f_y&amp;=-6x+2y+4, \qquad &amp; f_{yy}&amp;=2,\qquad &amp; f_{yx}&amp;= -6
 Bien entendu, <m>f_{xy}</m> et <m>f_{yx}</m> coïncident. C'est néanmoins utile de calculer les deux, en guise de vérification.
 </p>
 
-<p>Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalB"/>, que les points critiques sont  <m>(1,1),\ (2,4)</m>. Leur classification est :
+<p>Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalB" text="global">exemple</xref>, que les points critiques sont  <m>(1,1),\ (2,4)</m>. Leur classification est :
 </p>
 <sidebyside>
 <tabular  left="minor" right="minor" bottom="minor" top="minor">
@@ -1154,7 +1154,7 @@ Nous pouvons laisser l'entrée <m>f_{xx}</m> de la première rangée vide puisqu
 nous savions déjà que  <m>f_{xx}(1,1) f_{yy}(1,1)-f_{xy}^2(1,1) \lt 0</m>, et
 </li>
 <li>
-nous savions, du <xref ref="thm_second_deriv_test"/>, que <m>f_{xx}(1,1) f_{yy}(1,1)-f_{xy}^2(1,1) \lt 0</m>, ce qui est suffisant pour garantir que <m>(1,1)</m> est un point de selle.
+nous savions, du <xref ref="thm_second_deriv_test" text="global">théorème</xref>, que <m>f_{xx}(1,1) f_{yy}(1,1)-f_{xy}^2(1,1) \lt 0</m>, ce qui est suffisant pour garantir que <m>(1,1)</m> est un point de selle.
 </li>
 </ul>
 Voici les courbes de niveau <m>f(x,y)</m>.
@@ -1184,7 +1184,7 @@ Nous avons déjà trouvé les dérivées partielles
 f_x(x,y)= y(10x+y-15),\qquad\qquad
 f_y(x,y)= x(5x+2y-15)
 </me>
-de  <m>f(x,y)</m> dans l'<xref ref="eg_MXMNlocalC"/>. De nouveau, pour classifier les points critiques, il nous faut les dérivées secondes. Elles sont :
+de  <m>f(x,y)</m> dans l'<xref ref="eg_MXMNlocalC" text="global">exemple</xref>. De nouveau, pour classifier les points critiques, il nous faut les dérivées secondes. Elles sont :
 <md alignment="alignat">
 <mrow>
 f_{xx}(x,y)&amp;= 10y,
@@ -1198,7 +1198,7 @@ f_{yx}(x,y)&amp;= (1)(5x+2y-15)+x(5) &amp;= 10x+2y-15
 </md>.
 Nous avons, à nouveau, calculé <m>f_{xy}</m> et <m>f_{yx}</m> afin de nous prémunir d'erreurs mécaniques.
 
-Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalC"/>, que les points critiques sont <m>(0,0),\ (0,15),\ (3,0)</m> et <m>(1,5)</m>. La classification est :
+Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalC" text="global">exemple</xref>, que les points critiques sont <m>(0,0),\ (0,15),\ (3,0)</m> et <m>(1,5)</m>. La classification est :
 </p>
 
 
@@ -1238,10 +1238,11 @@ Voici une esquisse des courbes de niveau de  <m>f</m>. La fonction  <m>f</m> pre
 </p>
 </solution>
 </example>
-<!-- 
-<exercise xml:id = "max-min-01" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/max-min-01.pg"/>
-</exercise> -->
+
+
+<exercise>
+  <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Max-min/Max-min-prob2.pg" parse="text"/></webwork>
+</exercise>  
 
 <example xml:id="eg_max_min_A">
 <statement>
@@ -1398,7 +1399,7 @@ S_{yy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)
 S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2 \gt 0
 </mrow>
 </md>,
-et, en vertu du <xref ref="thm_second_deriv_test"/>,
+et, en vertu du <xref ref="thm_second_deriv_test" text="global">théorème</xref>,
 <m>\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)</m> est un point de minimum local. Ainsi, les dimensions requises sont
 <me>
 x=y=\root{3}\of{2V},\qquad
@@ -1454,7 +1455,7 @@ Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose :
 <p>
   La procédure pour trouver le maximum et le minimum d'une fonction <m>f</m> de plusieurs variables sur un ensemble donné est similaire. Commençons par le cas d'une fonction <m>f(x,y)</m> de deux variables sur le disque  <m>x^2+y^2\leqslant  1</m>. Comme précédemment :
 <ol marker = "(a)">
-<li><p> Dresser la liste des points candidats <m>\vr_0 = (x_0,y_0)</m> sur le disque où un maximum ou un minimum peut être atteint (voir notamment le <xref ref="thm_stationary_point"/>):
+<li><p> Dresser la liste des points candidats <m>\vr_0 = (x_0,y_0)</m> sur le disque où un maximum ou un minimum peut être atteint (voir notamment le <xref ref="thm_stationary_point" text="global">théorème</xref>):
 <ol marker = "(a)">
 <li> <m>\vr_0 = (x_0,y_0)</m> est un point à l'intérieur du disque (c'est-à-dire, dans notre exemple, que <m>x_0^2+y_0^2 \lt 1</m>) et <m>\vnabla f(\vr_0) = \vZero</m>, ou
 </li>
@@ -1641,7 +1642,7 @@ De nouveau, commençons par trouver les points critiques et les points singulier
 <p><em>Points critiques à l'intérieur :</em>
 Si <m>f</m> prend son maximum ou son minimum en un point à l'intérieur du disque, c'est-à-dire vérifiant <m>x^2+y^2 \lt 1</m>, alors ce point doit être un point critique de <m>f</m> ou un point singulier.
 Pour trouver les points critiques de <m>f</m><fn>
-  Nous l'avons déjà fait à l'<xref ref="eg_max_min_A"/> mais, pour le bénéfice du lectorat, faisons-le à nouveau.
+  Nous l'avons déjà fait à l'<xref ref="eg_max_min_A" text="global">exemple</xref> mais, pour le bénéfice du lectorat, faisons-le à nouveau.
 </fn>,
 nous devons calculer les dérivées partielles :
 <md>
@@ -1948,7 +1949,7 @@ On sait qu'une droite non verticale du plan <m>xy</m> admet une équation de la 
 <li>
  <em>Méthode 3 :</em> Le vecteur joignant
 <m>(0,2)</m> à <m>(1,0)</m> est  <m>\llt 1-0\,,\,0-2\rgt = \llt 1,-2\rgt</m>. Il s'agit d'un vecteur directeur pour la droite. Un point sur celle-ci est <m>(0,2)</m>. Ainsi, un paramétrage de cette droite est
-(voir <xref ref="dte-vect"/>)
+(voir <xref ref="dte-vect" text="global">équation</xref>)
 <me>
 \llt x-0,\,y-2\rgt = t\llt 1,-2\rgt\qquad\text{ou}\qquad
 x=t,\ y=2-2t

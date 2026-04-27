@@ -55,7 +55,7 @@ r&amp;=\text{ la distance de }(0,0)\text{ à }(x,y),
 
 <fact xml:id="eqn_polars">
   <statement>
-    <p>
+    <p>Les formules de conversion entre les coordonnées cartésiennes et les coordonnées polaires sont
 <md>
 <mrow>
 x&amp;=r\cos\theta &amp;
@@ -491,7 +491,7 @@ La figure ci-dessous, à gauche, est une esquisse de  <m>\cR</m>. Notons que  <m
 </sidebyside>
 
 
-<p>Concentrons-nous maintenant sur un de ces sous-rectangles polaires, disons celui qui contient le point de coordonnées polaires <m>(r,\ \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar"/> précédente :
+<p>Concentrons-nous maintenant sur un de ces sous-rectangles polaires, disons celui qui contient le point de coordonnées polaires <m>(r,\ \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar" text="global">formule</xref> précédente :
 <ul>
 <li>
 L'aire de ce sous-rectangle est approximativement donnée par <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>.
@@ -519,7 +519,7 @@ En conclusion,
              \int_{B(\theta)}^{T(\theta)}
                    f\big(r\cos\theta,\,r\sin\theta\big) r\, \dee{r}\, \dee{\theta}.
 </me>
-Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains détails techniques nécessaires pour établir une démarche rigoureuse. La preuve rigoureuse de la <xref ref="eq_polar_mass"/> peut être obtenue avec ces mêmes idées de base, mais nécessite de résoudre certaines erreurs d'approximation. Cela est fait au paragraphe <xref ref="pars-integral_error" text="custom">Justification de la formule du calcul de l'aire en coordonnées polaires</xref>, plus bas.
+Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains détails techniques nécessaires pour établir une démarche rigoureuse. La preuve rigoureuse de la <xref ref="eq_polar_mass" text="global">formule</xref> peut être obtenue avec ces mêmes idées de base, mais nécessite de résoudre certaines erreurs d'approximation. Cela est fait au paragraphe <xref ref="pars-integral_error" text="custom">Justification de la formule du calcul de l'aire en coordonnées polaires</xref>, plus bas.
 
 </p>
 </solution>
@@ -589,7 +589,7 @@ où <m>R(\theta)\geqslant 0</m> est une fonction continue.
 </statement>
 
 <solution>
-<p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass"/>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=R(\theta)</m>,
+<p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass" text="global">formule</xref>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=R(\theta)</m>,
 <md>
 <mrow>
 \text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
@@ -600,7 +600,7 @@ On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
 \text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
 </me>
 L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
-<xref ref="eq_polar_area"/> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
+<xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
 (avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>.
 </p>
 
@@ -609,7 +609,7 @@ L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
 </sidebyside>
 
 <p>
-Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area"/> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
+Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area" text="global">formule</xref> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
 </p>
 </solution>
 </example>
@@ -623,12 +623,12 @@ Calculer l'aire de la région du plan bornée par la rosace à trois pétales
 </statement>
 
 <solution>
-<p>En observant la dernière figure de l'<xref ref="eg_rose"/>, nous devons calculer le triple de l'aire de la région
+<p>En observant la dernière figure de l'<xref ref="eg_rose" text="global">exemple</xref>, nous devons calculer le triple de l'aire de la région
 <me>
 \cR=\Set{(r\cos\theta,r\sin\theta)}{0\leqslant \theta\leqslant  \frac{\pi}{3},\
               0\leqslant  r\leqslant  \sin(3\theta)}.
 </me>
-Ainsi, par la <xref ref="eq_polar_area"/>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
+Ainsi, par la <xref ref="eq_polar_area" text="global">formule</xref>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
 et <m>R(\theta) =\sin(3\theta)</m>,
 <md>
 <mrow>
@@ -719,7 +719,7 @@ Divisons donc <m>\cR_1</m> en secteurs en traçant plusieurs droites avec
 Concentrons-nous sur un de ces secteurs, qu'on divise à son tour en <q>sous-rectangles approximatifs</q> en traçant plusieurs cercles avec <m>r</m> constant. Les différentes valeurs de <m>r</m> diffèrent d'une petite quantité <m>\dee{r}</m>. La figure de droite ci-dessus montre un de ces <q>sous-rectangles approximatifs</q>, en noir.
 </li>
 <li><p>
-Regardons de plus près un de ces rectangles. Il contient un point dont les coordonnées polaires sont <m>(r, \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar"/>:
+Regardons de plus près un de ces rectangles. Il contient un point dont les coordonnées polaires sont <m>(r, \theta)</m>. Comme nous l'avons vu à la <xref ref="eq_dA_polar" text="global">formule</xref>:
 <ul>
 <li>
 L'aire de ce petit sous-rectangle est essentiellement <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>.
@@ -744,7 +744,7 @@ Afin d'obtenir le volume de  <m>\cV_1</m>, nous devons donc calculer
   \int_0^{pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta}.
 </me>
 
-Notons que l'intégrale à l'intérieur est indépendante de <m>\theta</m>, ce qui s'explique par le fait que le volume du solide obtenu (tracé en bleu dans la figure ci-dessous) ne change pas lorsque <m>\theta</m> varie, c'est-à-dire lorsque nous effectuons une rotation par rapport à l'axe des <m>z</m>. On peut donc la sortir de l'intégrale extérieure afin d'obtenir le produit de deux intégrales (on peut comparer ce résultat au <xref ref="thm_factorize"/>).
+Notons que l'intégrale à l'intérieur est indépendante de <m>\theta</m>, ce qui s'explique par le fait que le volume du solide obtenu (tracé en bleu dans la figure ci-dessous) ne change pas lorsque <m>\theta</m> varie, c'est-à-dire lorsque nous effectuons une rotation par rapport à l'axe des <m>z</m>. On peut donc la sortir de l'intégrale extérieure afin d'obtenir le produit de deux intégrales (on peut comparer ce résultat au <xref ref="thm_factorize" text="global">théorème</xref>).
 <md>
 <mrow>
 \int_0^{\pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta} &amp;=
@@ -1146,11 +1146,11 @@ et finalement
 
 <!--
 <example xml:id="eg_area_polar_HS">
-  <title>Optional <mdash/> Example <xref ref="eg_area_polar"/> by high school geometry</title>
+  <title>Optional <mdash/> Example <xref ref="eg_area_polar" text="global">exemple</xref> by high school geometry</title>
 <p>
 We'll now again compute the area of the région <m>\cR</m> that is
 inside the circle <m>r=4\cos\theta</m> and to the left of the line <m>x=1</m>.
-That was the région of interest in Example <xref ref="eg_area_polar"/>.
+That was the région of interest in Example <xref ref="eg_area_polar" text="global">exemple</xref>.
 This time we'll just use some geometry. Think of <m>\cR</m> as being
 the wedge <m>\cW</m>, of the figure on the left below, with the triangle
 <m>\cT</m>, of the figure on the right below, removed.
@@ -1200,14 +1200,14 @@ All together
 <subsection xml:id="pars-integral_error">
   <title>Justification de la formule du calcul de l'aire en coordonnées polaires</title>
 
-<p>Nous avons précédemment établi la formule du calcul de l'aire en coordonnées polaires, la <xref ref="eq_polar_area"/>, de façon peu rigoureuse. Nous avons notamment utilisé le terme <q>essentiellement</q> à plus d'une reprise. Voyons maintenant la justification rigoureuse pour arriver à cette formule.
+<p>Nous avons précédemment établi la formule du calcul de l'aire en coordonnées polaires, la <xref ref="eq_polar_area" text="global">formule</xref>, de façon peu rigoureuse. Nous avons notamment utilisé le terme <q>essentiellement</q> à plus d'une reprise. Voyons maintenant la justification rigoureuse pour arriver à cette formule.
 </p>
 
 
 
 
 
-<p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass"/> et dans l'<xref ref="eg_polar_area"/>, nous avons établi la formule
+<p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass" text="global">exemple</xref> et dans l'<xref ref="eg_polar_area" text="global">exemple</xref>, nous avons établi la formule
 <me>
 A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
 </me>

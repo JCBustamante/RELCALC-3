@@ -32,7 +32,7 @@ est un type de <em>problème d'optimisation avec une contrainte</em>. La fonctio
 <ul>
 <li>en isolant <m>y</m> à partir de  <m>g(x,y)=0</m> pour avoir <m>y</m> en fonction de <m>x</m> (ou réciproquement), ou
 </li>
-<li>en paramétrant la courbe <m>g(x,y)=0</m>, c'est-à-dire en écrivant les points sur la courbe sous la forme  <m>\big(x(t), y(t)\big)</m> pour certaines fonctions  <m>x(t)</m> et  <m>y(t)</m>. Par exemple, nous avons utilisé <m>x(t)=\cos t</m>, <m>y(t)=\sin t</m> pour paramétrer le cercle  <m>x^2+y^2=1</m> dans l'<xref ref="eg_MXMNabsA"/>.
+<li>en paramétrant la courbe <m>g(x,y)=0</m>, c'est-à-dire en écrivant les points sur la courbe sous la forme  <m>\big(x(t), y(t)\big)</m> pour certaines fonctions  <m>x(t)</m> et  <m>y(t)</m>. Par exemple, nous avons utilisé <m>x(t)=\cos t</m>, <m>y(t)=\sin t</m> pour paramétrer le cercle  <m>x^2+y^2=1</m> dans l'<xref ref="eg_MXMNabsA" text="global">exemple</xref>.
 </li>
 </ul>
 Cependant, très souvent, la fonction <m>g(x,y)</m> est tellement compliquée qu'on ne peut pas résoudre explicitement <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m> ni pour <m>x</m> en fonction de <m>y</m> et, en plus, on ne peut pas paramétrer <m>g(x,y)=0</m>. Parfois, on pourrait résoudre <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m>, mais la solution résultante peut être si compliquée qu'il peut être vraiment difficile, ou même virtuellement impossible, de travailler avec elle. Ce type de traitement peut devenir encore plus difficile dans les dimensions supérieures lorsque, par exemple, on souhaite optimiser une fonction <m>f(x,y,z)</m> soumise à une contrainte <m>g(x,y,z)=0</m>.
@@ -91,7 +91,7 @@ F(0) = f\circ \vr(0) = f(\vr_0)
 pour tout <m>t</m> suffisamment près de zéro, c'est-à-dire que <m>F</m> admet un minimum local à <m>t=0</m> et que, par conséquent, <m>F'(0)=0</m>.
 </p>
 
-<p> En vertu de la règle de dérivation des fonctions composées, vue au <xref ref="thm_chainRule"/>, nous avons
+<p> En vertu de la règle de dérivation des fonctions composées, vue au <xref ref="thm_chainRule" text="global">théorème</xref>, nous avons
 <md>
 <mrow>
 &amp;0=F'(0)= \left(f\circ \vr \right)'(0)  =  \vnabla f(\vr_0)\cdot \vr'_0
@@ -102,7 +102,7 @@ pour tout <m>t</m> suffisamment près de zéro, c'est-à-dire que <m>F</m> admet
 Ainsi, le vecteur <m>\vnabla f(\vr_0)</m> est orthogonal au vecteur vitesse lors du passage par <m>\vr_0</m>. Ceci est vrai pour tout chemin contenu dans  <m>\plan{S}</m> qui passe par <m>\vr_0</m> à  <m>t=0</m>. Il en résulte que <m>\vnabla f(\vr_0)</m> est orthogonal à tout vecteur tangent à <m>\plan{S}</m> en <m>\vr_0</m>.
 </p>
 
-<p>Par ailleurs, nous savons, en vertu du <xref ref="thm_tan_plane_G"/>, que <m>\vnabla g(\vr_0)</m> est aussi orthogonal à <m>\plan{S}</m> en <m>\vr_0</m>.
+<p>Par ailleurs, nous savons, en vertu du <xref ref="thm_tan_plane_G" text="global">théorème</xref>, que <m>\vnabla g(\vr_0)</m> est aussi orthogonal à <m>\plan{S}</m> en <m>\vr_0</m>.
 Ainsi, <m>\vnabla f(\vr_0)</m> et <m>\vnabla g(\vr_0)</m> doivent être des vecteurs colinéaires, c'est-à-dire que
 <me>
 \vnabla f(\vr_0) = \la \vnabla g(\vr_0)
@@ -137,7 +137,7 @@ L(x,y,z,\la)=f(x,y,z)-\la\, g(x,y,z)
 
 <observation xml:id="obs-Lagrange2">
 <p>
-Nous avons formulé et prouvé le <xref ref="thm_Lagrange"/> pour les fonctions à trois variables, c'est-à-dire l'optimisation d'une fonction <m>f</m> sur une surface <m>g=0</m>. Le même résultat tient lorsque la fonction objectif ainsi que la fonction de contrainte  sont des fonctions de deux variables : ceci revient à maximiser/minimiser une quantité <m>f(x,y)</m> sur une courbe <m>g(x,y)=0</m>. Nous verrons d'autres généralisations plus tard.
+Nous avons formulé et prouvé le <xref ref="thm_Lagrange" text="global">théorème</xref> pour les fonctions à trois variables, c'est-à-dire l'optimisation d'une fonction <m>f</m> sur une surface <m>g=0</m>. Le même résultat tient lorsque la fonction objectif ainsi que la fonction de contrainte  sont des fonctions de deux variables : ceci revient à maximiser/minimiser une quantité <m>f(x,y)</m> sur une courbe <m>g(x,y)=0</m>. Nous verrons d'autres généralisations plus tard.
 </p>
 </observation>
 
@@ -189,7 +189,7 @@ De  (E2), nous avons
 <li> Si <m>y=0</m>, alors (E3) donne  <m>x=\pm 4</m> (et même si l'on aurait pu utiliser (E1) pour trouver  <m>\la</m>, nous n'en avons pas vraiment besoin).
 </li>
 </ul>
-Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange"/>
+Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange" text="global">théorème</xref>
 (la version 2D en fait), donne que les seuls candidats possibles pour les points de maximum et de minimum de <m>f</m> sont <m>(4,0)</m> et <m>(-4,0)</m>. Pour compléter le problème, on calcule la valeur de  <m>f</m> en ces points.
 </p>
 
@@ -238,18 +238,14 @@ Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et
     </sageplot>
   </image>
 </figure>
-
-<!--
-<sidebyside width="50%">
-<image source="images/CLP-figs/lagrangeA"/>
-</sidebyside>
--->
 </solution>
 </example>
-<!-- 
-<exercise xml:id ="Lagrange-01" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Lagrange-01.pg"/>
-</exercise> -->
+
+
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Lagrange/Lagrange-prob1.pg" parse="text"/></webwork>
+</exercise>  
+
 
 
 <p>Dans les exemples précédents, la fonction objectif et la fonction de contrainte étaient données explicitement. Ce ne sera pas toujours le cas. Le prochain exemple montre comment utiliser la géométrie pour trouver les deux fonctions.
@@ -271,23 +267,23 @@ Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et
 </sidebyside>
 
 <p>Soit <m>(x,y)</m> les coordonnées du point du rectangle du premier quadrant. Les quatre coins sont alors <m>(\pm x, \pm y)</m>, de sorte que  ses côtés mesurent <m>2x</m> et  <m>2y</m>. Par ailleurs, la fonction objectif est  <m>f(x,y) = 4xy</m>. La fonction de contrainte du problème est <m>g(x,y)=x^2+2y^2-1</m>. De nouveau, pour utiliser les multiplicateurs de Lagrange, nous calculons quelques dérivées partielles :
-<me>
-f_x=4y,\qquad
-f_y=4x,\qquad
-g_x=2x,\qquad
-g_y=4y
-</me>.
-Ainsi, nous devons trouver les solutions de
-<md>
-<mrow>
-4y&amp;=\la (2x), \tag{E1}
-</mrow><mrow>
-4x&amp;=\la (4y), \tag{E2}
-</mrow><mrow>
-x^2+2y^2-1&amp;=0  \tag{E3}
-</mrow>
-</md>.
-L'équation (E1) donne <m>y=\frac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
+    <me>
+    f_x=4y,\qquad
+    f_y=4x,\qquad
+    g_x=2x,\qquad
+    g_y=4y
+    </me>.
+  Ainsi, nous devons trouver les solutions de
+    <md>
+    <mrow>
+    4y&amp;=\la (2x), \tag{E1}
+    </mrow><mrow>
+    4x&amp;=\la (4y), \tag{E2}
+    </mrow><mrow>
+    x^2+2y^2-1&amp;=0  \tag{E3}
+    </mrow>
+    </md>.
+  L'équation (E1) donne <m>y=\frac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
 <md>
 <mrow>
 4x=2\la^2 x \qquad\text{ou}\qquad
@@ -336,6 +332,12 @@ Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <
 </p>
 </solution>
 </example>
+
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Lagrange/Lagrange-prob2.pg" parse="text"/></webwork>
+</exercise>  
+
+
 
 
 <example xml:id="eg_LagrangeC">
@@ -450,11 +452,6 @@ Ainsi, les extrémités du petit demi-axe sont  <m>\pm\big(\frac{1}{\sqrt{2}},-\
 </solution>
 </example>
 
-<!--
-<exercise>
-  <webwork source = "BPL/CCDMD/Calcul_avance-03optimisation/optimisation_contrainte_4.pg"/>
-</exercise>
--->
 
 
 <example xml:id="eg_LagrangeD">
@@ -565,11 +562,6 @@ On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pou
 </solution>
 </example>
 
-<!--
-<exercise>
-  <webwork source = "BPL/CCDMD/Calcul_avance-03optimisation/optimisation_3_SL.pg"/>
-</exercise>
--->
 
 </subsection>
 
@@ -577,7 +569,7 @@ On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pou
 <title> Deux contraintes</title>
 
 <p>
-  Dans cette section, on considère l'exemple d'un problème de la forme  <q>maximiser (ou minimiser)  <m>f(x,y,z)</m> avec les deux contraintes  <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m></q>. La méthode des multiplicateurs de Lagrange, vue au <xref ref="thm_Lagrange"/>, s'adapte à ce contexte comme suit.
+  Dans cette section, on considère l'exemple d'un problème de la forme  <q>maximiser (ou minimiser)  <m>f(x,y,z)</m> avec les deux contraintes  <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m></q>. La méthode des multiplicateurs de Lagrange, vue au <xref ref="thm_Lagrange" text="global">théorème</xref>, s'adapte à ce contexte comme suit.
 </p>
 
 <theorem xml:id="thm_doubleLagrange"><title>Deux contraintes</title>
@@ -644,7 +636,7 @@ S'il y a un extremum local à <m>\vr_0</m>, alors <m>\vr_0</m> doit aussi satisf
   pour certains  <m>\la</m> et <m>\mu</m>. Ainsi, résoudre ce système de cinq équations donne les points candidats pour les extremums locaux. Nous verrons un exemple sous peu.
 </p>
 
-<proof><title>Preuve du <xref ref="thm_doubleLagrange"/></title>
+<proof><title>Preuve du <xref ref="thm_doubleLagrange" text="global">théorème</xref></title>
 <p>
 Avant de voir un exemple, justifions la validité de cette approche.  Supposons donc que le minimum est atteint à  <m>\vr_0</m>, le point gris dans la figure ci-après. Comme précédemment, imaginons que nous commençons à nous déplacer en partant de <m>\vr_0</m> le long de la courbe <m>g=h=0</m>. La trajectoire est la droite grise de la figure suivante.
 </p>
@@ -824,10 +816,12 @@ ce qui à son tour donne  <m>\mu=\frac{4}{3}</m>.
 </p>
 </solution>
 </example>
-<!-- 
-<exercise xml:id ="Lagrange-02" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Fonc-Multi-Variables/Lagrange-02.pg"/>
-</exercise> -->
+
+
+ <exercise>
+  <webwork><xi:include href="WebWork/Chap_Differentiel/Sec_Lagrange/Lagrange-prob3.pg" parse="text"/></webwork>
+</exercise>  
+
 
 
 </subsection>

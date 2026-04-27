@@ -247,7 +247,7 @@ divisons l'intervalle  <m>c\leqslant  y\leqslant  d</m> en  <m>n</m> petits sous
 Voici une vue agrandie de la <m>i^\text{ième}</m> tranche.
 </p>
 
-<sidebyside>
+<sidebyside width = "85%">
 <image source="images/CLP-figs/hSliceBB"/>
 </sidebyside>
 </li>
@@ -264,7 +264,7 @@ Ainsi, l'approximation de la masse de la <m>i^\text{ième}</m> tranche horizonta
 </md>
 </li>
 <li>
-En évaluant la limite lorsque  <m>m \to \infty</m> (de sorte que la largeur des rectangles tendent vers zéro), nous transformons la somme de Riemann en une intégrale définie<nbsp />: <md>
+En évaluant la limite lorsque  <m>m \to \infty</m> (de sorte que les largeurs des rectangles tendent vers zéro), nous transformons la somme de Riemann en une intégrale définie<nbsp />: <md>
 <mrow>
   \text{Masse }i^{\text{ième}} \text{ tranche}
           &amp;\approx \De y \int_{L(y_i^*)}^{R(y_i^*)} f\big(x,y_i^*\big)\,\dee{x}
@@ -298,7 +298,7 @@ Or, la somme de Riemann <m>\sum\limits_{i=1}^n  F(y_i^*)\,\De y</m> est une appr
 </md>
 </li>
 </ul>
-Les notations standards de la <xref ref="notn_dbl_int"/> s'appliquent aussi à cette intégrale.
+Les notations standards de la <xref ref="notn_dbl_int" text="global">définition</xref> s'appliquent aussi à cette intégrale.
 </p>
 
 
@@ -393,7 +393,7 @@ où <m>L(y)</m> et <m>R(y)</m> sont des fonctions continues, et si la densité d
 </theorem>
 
 <p>
-Nous avons, implicitement, dans le  <xref ref="thm_xy_mass"/>, que si
+Nous avons, implicitement, dans le  <xref ref="thm_xy_mass" text="global">théorème</xref>, que si
 <md>
 <mrow>
 &amp;\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\}
@@ -411,7 +411,7 @@ Ce résultat est connu sous le nom de théorème de Fubini<fn>En l'honneur du ma
 
 <!-- Il faudrati un autre contre-exemple aussi.... Stewart en a un.
 It will be discussed more in the
-optional <xref ref="sec_def_int_more"/>.
+optional <xref ref="sec_def_int_more" text="global">sous-section</xref>.
 
 
 -->
@@ -420,7 +420,7 @@ optional <xref ref="sec_def_int_more"/>.
 
 <definition xml:id="notn_double_integral_yet_again">
 <statement><p>
-Les intégrales du <xref ref="thm_xy_mass"/> sont notées
+Les intégrales du <xref ref="thm_xy_mass" text="global">théorème</xref> sont notées
 <me>
 \iint_\cR f(x,y)\,\dee{x}\dee{y}\text{ ou }\iint_\cR f(x,y)\,\dee{y}\dee{x} \text{ ou }
 \iint_\cR f(x,y)\,\dee{A}.
@@ -470,7 +470,7 @@ Ainsi,
 \cR=\Set{(x,y)}{0=a\leqslant  x\leqslant  b=1,\
         0= B(x)\leqslant y\leqslant  T(x) = 1-x}
 </me>
-et, en vertu de la partie  (a) du  <xref ref="thm_xy_mass"/>,
+et, en vertu de la partie  (a) du  <xref ref="thm_xy_mass" text="global">théorème</xref>,
 <md>
 <mrow>
 \text{Masse} &amp;= \int_a^b \left[ \int_{B(x)}^{T(x)}  f\big(x,y\big)\, \dee{y}\right]\, \dee{x}
@@ -518,7 +518,7 @@ Ainsi,
 \cR=\Set{(x,y)}{0=c\leqslant  y\leqslant  d=1,\
         0= L(y)\leqslant x\leqslant  R(y) = 1-y}
 </me>
-et, en vertu de la partie  (b) du  <xref ref="thm_xy_mass"/>,
+et, en vertu de la partie  (b) du  <xref ref="thm_xy_mass" text="global">théorème</xref>,
 <md>
 <mrow>
 \text{Masse} &amp;= \int_c^d \left[ \int_{L(y)}^{R(y)}f\big(x,y\big) \  \dee{x}\right] \dee{y} \,
@@ -564,7 +564,7 @@ RELCALC3/set07/272-setStewart15_3-problem_1a.pg
 
 <theorem xml:id="thm_Int2darith"><title>Propriétés des intégrales doubles</title>
 <statement><p>
-Soit  <m>A,B,C</m> des nombres réels. Sous les hypothèses du  <xref ref="thm_xy_mass"/>,
+Soit  <m>A,B,C</m> des nombres réels. Sous les hypothèses du  <xref ref="thm_xy_mass" text="global">théorème</xref>,
 <md>
 <mrow>
 \tag{a} \iint_\cR \left( f(x,y) + g(x,y) \right)\,\dee{A}
@@ -678,7 +678,7 @@ On peut donc affirmer avec ces hypothèses qu'une intégrale double est le produ
 
 <theorem xml:id="thm_INT2dineq"><title>Inégalités pour les intégrales</title>
 <statement><p>
-Sous les hypothèses du  <xref ref="thm_xy_mass"/> :
+Sous les hypothèses du  <xref ref="thm_xy_mass" text="global">théorème</xref> :
 <ol marker="(a)">
 <li>
 Si <m>f(x,y)\geqslant 0</m> pour tout <m>(x,y)</m> dans <m>\cR</m>, alors
@@ -723,7 +723,7 @@ m\cdot\text{Aire}(\cR)\leqslant \iint_\cR f(x,y)\,\dee{A}
 <p>Voyons maintenant quelques applications des intégrales doubles que nous venons de définir. Le problème du calcul de l'aire de la région sous une courbe et au-dessus de l'axe des <m>x</m> dans le plan, avec des intégrales simples, se transforme en celui du calcul du volume du solide sous une surface et au-dessus du plan <m>Oxy</m>, avec des intégrales doubles. Cette fois, au lieu d'interpréter la fonction <m>f(x,y)</m> comme une densité, t comme la hauteur d'un solide se trouvant au-dessus d'une région <m>\cR</m> du plan <m>Oxy</m>.</p>
 
 <p>Voyons comment cela s'applique dans la partie (b)
-du <xref ref="thm_xy_mass"/>. Le cas de la partie (a) se traitera de la même façon.
+du <xref ref="thm_xy_mass" text="global">théorème</xref>. Le cas de la partie (a) se traitera de la même façon.
 
 Supposons un solide  <m>\cV</m> défini au-dessus de la région suivante,
 <me>
@@ -1019,7 +1019,7 @@ Ainsi,
 \cR=\Set{(x,y)}{-1=a\leqslant  x\leqslant  b=1,\
         0= B(x)\leqslant y\leqslant  T(x) = 1-x^2}
 </me>
-et,  d'après la <xref ref="eqn_Volume_x_slice"/>,
+et,  d'après la <xref ref="eqn_Volume_x_slice" text="global">formule</xref>,
 <md>
 <mrow>
 \text{Volume} &amp;= \int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\ \dee{y}\,  \dee{x} = \int_{-1}^1  \int_0^{1-x^2}   x^2\sqrt{1-y}\ \dee{y}\ \,\dee{x}
@@ -1062,7 +1062,7 @@ Avec cette méthode, nous obtenons la figure ci-dessous.
   \cR=\Set{(x,y)}{0=c\leqslant  y\leqslant  d=1,\
           -\sqrt{1-y}= L(y)\leqslant x\leqslant  R(y) = \sqrt{1-y}}.
   </me>
-  Donc, d'après la <xref ref="eqn_Volume_y_slice"/>,
+  Donc, d'après la <xref ref="eqn_Volume_y_slice"  text="global">formule</xref>,
   <md>
   <mrow>
   \text{Volume} &amp;= \int_c^d  \int_{L(y)}^{R(y)}\ f\big(x,y\big)\ \dee{x}\, \dee{y}
@@ -1093,7 +1093,7 @@ Thus
 \cR=\Set{(x,y)}{0=c\leqslant  y\leqslant  d=1,\
         -\sqrt{1-y}= L(y)\leqslant x\leqslant  R(y) = \sqrt{1-y}}
 </me>
-and, by <xref ref="eqn_Volume_y_slice"/>
+and, by <xref ref="eqn_Volume_y_slice" text="global">résultat</xref>
 <md>
 <mrow>
 \text{Volume} &amp;= \int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)
@@ -1283,7 +1283,7 @@ Ainsi, le volume total du solide recherché est
 <me>
 \cR=\Set{(x,y)}{0\leqslant  y\leqslant  2,\  0\leqslant  x\leqslant  a},
 </me>
-et l'intégrande est <m>f(x,y) = \sqrt{a^2-x^2}</m>. Par conséquent, l'intégrale représente le volume du solide compris entre le plan <m>Oxy</m> et la surface <m>z=\sqrt{a^2-x^2}</m>, avec <m>(x,y) \in \cR</m>. On peut réécrire l'équation de la surface comme  <m>x^2+z^2=a^2</m>, qui représente, comme cela a été vu dans l'<xref ref="eg_dblInt_B"/>, un cylindre de rayon <m>a</m> dont l'axe est l'axe des <m>y</m>. Nous cherchons le volume de la partie de ce cylindre qui se trouve au-dessus de <m>\cR</m>, comme illustré dans la figure ci-dessous.
+et l'intégrande est <m>f(x,y) = \sqrt{a^2-x^2}</m>. Par conséquent, l'intégrale représente le volume du solide compris entre le plan <m>Oxy</m> et la surface <m>z=\sqrt{a^2-x^2}</m>, avec <m>(x,y) \in \cR</m>. On peut réécrire l'équation de la surface comme  <m>x^2+z^2=a^2</m>, qui représente, comme cela a été vu dans l'<xref ref="eg_dblInt_B" text="global">exemple</xref>, un cylindre de rayon <m>a</m> dont l'axe est l'axe des <m>y</m>. Nous cherchons le volume de la partie de ce cylindre qui se trouve au-dessus de <m>\cR</m>, comme illustré dans la figure ci-dessous.
 </p>
 
 <sidebyside width="60%">
@@ -1311,10 +1311,10 @@ RELCALC3/set07/Rochester-SetVMultIntegrals1Double-ur_vc_8_13-FR.pg
 -->
 
 <example xml:id="eg_dblInt_CC"><title>
-    <xref ref="eg_dblInt_C"/>, démarche complexe</title>
+    <xref ref="eg_dblInt_C" text="global">exemple</xref>, démarche complexe</title>
 <p>
 Il est possible, mais fastidieux, d'évaluer l'intégrale
-<m>\int_0^2\int_0^a \sqrt{a^2-x^2}\ \dee{x}\,\dee{y}</m> de l'<xref ref="eg_dblInt_C"/> avec les techniques d'intégration des fonctions à une variable. Faisons ce calcul à titre de révision.
+<m>\int_0^2\int_0^a \sqrt{a^2-x^2}\ \dee{x}\,\dee{y}</m> de l'<xref ref="eg_dblInt_C" text="global">exemple</xref> avec les techniques d'intégration des fonctions à une variable. Faisons ce calcul à titre de révision.
 </p>
 
 <p>L'intégrale à l'intérieur est  <m>\int_0^a \sqrt{a^2-x^2}\ \dee{x}</m>. La stratégie habituelle afin d'éliminer des expressions contenant des racines carrées dans l'intégrande, comme <m>\sqrt{a^2-x^2}</m>, est d'effectuer une substitution trigonométrique. Dans ce cas-ci, le changement de variables approprié est de poser
@@ -1390,7 +1390,7 @@ et que l'intégrale de départ est égale à
 =\frac{\pi a^2}{4}\int_0^2\dee{y}
 =\frac{\pi a^2}{2},
 </me>
-comme obtenu dans l'<xref ref="eg_dblInt_C"/>.
+comme obtenu dans l'<xref ref="eg_dblInt_C" text="global">exemple</xref>.
 </p>
 </example>
 

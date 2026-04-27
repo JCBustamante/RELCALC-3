@@ -1,0 +1,75 @@
+## DBsubject(Calcul différentiel et intégral à plusieurs variables)
+## DBchapter(Applications de la limite et de la dérivée)
+## KEYWORDS('applications', 'optimisation', 'point critique', 'dérivées partielles')
+## Traduit et adapté par Éric Gaul, Collège Montmorency
+## Date : avril 2017
+## Language(fr)
+
+
+###############Source################
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+## Tagged by tda2d
+## ZDBsubject(Calculus - multivariable)
+## ZDBchapter(Differentiation of multivariable functions)
+## ZDBsection(Extreme values and optimization)
+## Date(6/3/2002)
+## Level(4)
+## TitleText1('Calculus: Early Transcendentals')
+## AuthorText1('Stewart')
+## EditionText1('6')
+## Section1('14.7')
+## Problem1('2')
+## TitleText2('Calculus: Early Transcendentals')
+## AuthorText2('Rogawski')
+## EditionText2('1')
+## Section2('14.7')
+## Problem2('2')
+
+
+
+DOCUMENT();		# This should be the first executable line in the problem.
+
+loadMacros("PG.pl",      
+           "PGbasicmacros.pl",
+           "PGchoicemacros.pl",      
+           "PGanswermacros.pl",
+           "PGauxiliaryFunctions.pl"     
+          );      
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+$a = random(1, 5, 1);
+$b = random(1, 5, 1);
+$c = random(1, 5, 1);
+$d = 2*$a;
+$e = 2*$b;
+
+BEGIN_TEXT
+Soit la fonction \( f(x, y) = x^{2} + y^{2} - $d x - $e y + $c \).
+$PAR
+Trouvez les points critiques de \(f\) sur \(\mathbb{R}^{2}\) et calculez la valeur de \(f\) en chacun.
+$PAR
+$BBOLD (a) $EBOLD
+Combien de points critiques \( f \) admet-elle sur \( \mathbb{R}^{2} \) ?
+$PAR
+\(\ \ \ \) \{ ans_rule(10) \}
+$PAR
+$BBOLD (b) $EBOLD
+Coordonnées du point critique :
+\( \displaystyle (x_0,\, y_0) = \Big( \)\{ ans_rule(10) \}\(,\ \)\{ ans_rule(10) \}\( \Big) \)
+$PAR
+$BBOLD (c) $EBOLD
+Valeur de \(f\) en ce point critique :
+$PAR
+\(\ \ \ f(x_0, y_0) = \) \{ ans_rule(10) \}
+END_TEXT
+
+ANS(num_cmp(1));
+ANS(num_cmp($a));
+ANS(num_cmp($b));
+ANS(num_cmp("$c - $a**2 - $b**2"));
+
+ENDDOCUMENT();		# This should be the last executable line in the problem.

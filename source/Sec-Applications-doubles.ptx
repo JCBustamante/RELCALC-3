@@ -6,59 +6,66 @@
   <title>Applications des intégrales doubles</title>
   <introduction>
     <p>Les intégrales doubles sont très utiles non seulement pour calculer des aires, des volumes ou des masses, mais aussi pour plusieurs autres applications. En voici quelques-unes qui font intervenir les intégrales doubles.
-</p>
+  </p>
   </introduction>
+  
+  
   <subsection xml:id="pars-Moyennes">
     <title>Valeurs moyennes</title>
-    <p>Il est commun de définir et d'étudier la valeur moyenne d'une fonction d'une variable. Nous étendons cette notion aux fonctions de deux variables. Commençons par un rappel.
-</p>
+    <p>
+      Il est commun de définir et d'étudier la valeur moyenne d'une fonction d'une variable. Nous étendons cette notion aux fonctions de deux variables. Commençons par un rappel.
+    </p>
+    
     <definition xml:id="def_avg">
       <statement>
         <p>
-La moyenne d'un ensemble de  <m>n</m> nombres <m>f_1</m>, <m>f_2</m>, <m>\cdots</m>, <m>f_n</m> est
-<md><mrow>
-\bar f  =\frac{f_1+f_2+\cdots+f_n}{n}
-</mrow></md>.
-</p>
+          La moyenne d'un ensemble de  <m>n</m> nombres <m>f_1</m>, <m>f_2</m>, <m>\cdots</m>, <m>f_n</m> est
+          <md><mrow>
+          \bar f  =\frac{f_1+f_2+\cdots+f_n}{n}
+          </mrow></md>.
+        </p>
       </statement>
     </definition>
-    <p>Supposons maintenant que nous voulons calculer la valeur moyenne d'une fonction  <m>f(x,y)</m> pour <m>(x,y)</m> parcourant une région <m>\cR</m> dans le plan. Une approche naturelle afin de définir ce qu'on entend par la moyenne de <m>f</m> sur  <m>\cR</m> consiste à :
-<ul><li>
-Fixer un naturel  <m>n</m>.
-</li><li>
-Subdiviser  <m>\cR</m> en petits carrés approximatifs de côté <m>\De x=\frac{1}{n} = \De y</m>. Par exemple, cela peut se faire en subdivisant des tranches verticales en petits carrés, comme à l'<xref ref="eg_dblInt_A" text="global">exemple</xref>.
-</li><li>
-Numéroter les carrés dans n'importe quel ordre <m>R_1</m>, <m>R_2</m>, <m>\dots</m>, <m>R_N</m>, où  <m>N</m> est le nombre total de carrés.
-</li><li>
-Choisir, pour chaque  <m>1\leqslant  i\leqslant  N</m>, un point sur le  <m>i^\text{ième}</m> carré que l'on nommera  <m>(x_i^*,y_i^*)</m>, de sorte que <m>(x_i^*,y_i^*)\in R_i</m>.
-</li><li>
-La valeur moyenne de  <m>f</m> en ces points est
-<md><mrow>
-\frac{1}{N}\sum_{i=1}^N f(x_i^*,y_i^*)
-=\frac{\sum_{i=1}^N f(x_i^*,y_i^*)}{{\sum_{i=1}^N 1 }}
-=\frac{\sum_{i=1}^N f(x_i^*,y_i^*)\, \De x\,\De y}{{\sum_{i=1}^N  \De x\,\De y}}
-</mrow></md>.
+    <p>
+      Supposons maintenant que nous voulons calculer la valeur moyenne d'une fonction  <m>f(x,y)</m> pour <m>(x,y)</m> parcourant une région <m>\cR</m> dans le plan. Une approche naturelle afin de définir ce qu'on entend par la moyenne de <m>f</m> sur  <m>\cR</m> consiste à :
+        <ul><li>
+        Fixer un naturel  <m>n</m>.
+        </li><li>
+        Subdiviser  <m>\cR</m> en petits carrés approximatifs de côté <m>\De x=\frac{1}{n} = \De y</m>. Par exemple, cela peut se faire en subdivisant des tranches verticales en petits carrés, comme à l'<xref ref="eg_dblInt_A" text="global">exemple</xref>.
+        </li><li>
+        Numéroter les carrés dans n'importe quel ordre <m>R_1</m>, <m>R_2</m>, <m>\dots</m>, <m>R_N</m>, où  <m>N</m> est le nombre total de carrés.
+        </li><li>
+        Choisir, pour chaque  <m>1\leqslant  i\leqslant  N</m>, un point sur le  <m>i^\text{ième}</m> carré que l'on nommera  <m>(x_i^*,y_i^*)</m>, de sorte que <m>(x_i^*,y_i^*)\in R_i</m>.
+        </li><li>
+        La valeur moyenne de  <m>f</m> en ces points est
+        <md><mrow>
+        \frac{1}{N}\sum_{i=1}^N f(x_i^*,y_i^*)
+        =\frac{\sum_{i=1}^N f(x_i^*,y_i^*)}{{\sum_{i=1}^N 1 }}
+        =\frac{\sum_{i=1}^N f(x_i^*,y_i^*)\, \De x\,\De y}{{\sum_{i=1}^N  \De x\,\De y}}
+        </mrow></md>.
 Nous avons transformé la fraction donnant la moyenne en un rapport de sommes de Riemann.
 </li></ul>
 En ayant des sommes de Riemann, l'étape suivante est claire : il faut évaluer la limite lorsque  <m>n\rightarrow\infty</m> pour obtenir la valeur exacte, c'est-à-dire <m>\frac{\iint_\cR f(x,y)\,\dee{x}\,\dee{y}}{\iint_\cR \dee{A}}</m>. Cela nous mène à la définition suivante.
 </p>
-    <definition xml:id="def_AVaverage">
-      <statement>
-        <p>
-Soit  <m>f(x,y)</m> une fonction intégrable sur une région  <m>\cR</m> du plan. La valeur moyenne de  <m>f</m> sur <m>\cR</m> est
-<md><mrow>
-\bar f = \frac{\displaystyle\iint_\cR f(x,y)\,\dee{A}}{\displaystyle\iint_\cR \dee{A}}
-</mrow></md>.
-</p>
-      </statement>
-    </definition>
-    <example xml:id="eg_dblInt_G">
-      <title>Valeur moyenne</title>
-      <statement>
-        <p>
-Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par
-<m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne.
-</p>
+    
+
+<definition xml:id="def_AVaverage">
+  <statement>
+    <p>
+      Soit  <m>f(x,y)</m> une fonction intégrable sur une région  <m>\cR</m> du plan. La valeur moyenne de  <m>f</m> sur <m>\cR</m> est
+    <md>
+      <mrow> \bar f = \frac{\displaystyle\iint_\cR f(x,y)\,\dee{A}}{\displaystyle\iint_\cR \dee{A}}
+      </mrow></md>.
+    </p>
+  </statement>
+</definition>
+
+<example xml:id="eg_dblInt_G">
+  <title>Valeur moyenne</title>
+  <statement>
+    <p>
+      Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par <m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne. 
+    </p>
         <sidebyside width="50%">
           <image source="images/CLP-figs/halfDomeA"/>
         </sidebyside>
@@ -220,14 +227,11 @@ Thus
 
 
 -->
-    <!-- WeBWork à inclure
-Mat117 - Devoir 5, question 8
-Library/Michigan/Chap16Sec2/Q55.pg
 
-<exercise xml:id="Applications-doubles-01" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Applications-doubles-01.pg"/>
-</exercise>
--->
+<exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_App/App-prob3.pg" parse="text"/></webwork>
+    </exercise>  
+
     <p>Il n'est pas rare de vouloir calculer la valeur moyenne d'une fonction  <m>f(x,y)</m> sur une région <m>\cR</m> tout en faisant que certains points ont un rôle plus important dans le calcul de cette moyenne. Une façon de faire cela consiste à considérer une <q>fonction poids</q> <m>w(x,y) \gt 0</m> telle que le quotient
 <m>\frac{w(x_1,y_1)}{w(x_2,y_2)}</m> donne l'importance relative de
 <m>(x_1,y_1)</m> par rapport à  <m>(x_2,y_2)</m>, c'est-à-dire  que le point <m>(x_1,y_1)</m> est  <m>\frac{w(x_1,y_1)}{w(x_2,y_2)}</m> fois plus important que le point  <m>(x_2,y_2)</m> dans le calcul de la moyenne. Cela nous mène à la définition suivante.
@@ -411,18 +415,18 @@ Par symétrie, nous aurons que <m>\bar y = \bar x</m>.
   </p>
       </solution>
     </example>
+
     <example xml:id="eg_cofm_polar">
       <title><xref ref="eg_area_polar" text="global">exemple</xref> revisité</title>
       <statement>
         <p>
-Trouver le centre de gravité de la région située à l'intérieur du cercle
-<m>r=4\cos\theta</m> et à gauche de la droite <m>x=1</m>.
-</p>
+          Trouver le centre de gravité de la région située à l'intérieur du cercle <m>r=4\cos\theta</m> et à gauche de la droite <m>x=1</m>.
+        </p>
       </statement>
       <solution>
         <p>
-Nous avons vu, à l'<xref ref="eg_area_polar" text="global">exemple</xref>, que <m>r=4\cos\theta</m> est le cercle de rayon <m>2</m> centré en <m>(2,0)</m>, dont l'équation cartésienne est  <m>(x-2)^2+y^2=4</m>. Voici une esquisse de la région  <m>\cR</m> qui nous intéresse.
-</p>
+          Nous avons vu, à l'<xref ref="eg_area_polar" text="global">exemple</xref>, que <m>r=4\cos\theta</m> est le cercle de rayon <m>2</m> centré en <m>(2,0)</m>, dont l'équation cartésienne est  <m>(x-2)^2+y^2=4</m>. Voici une esquisse de la région  <m>\cR</m> qui nous intéresse.
+        </p>
         <sidebyside width="40%">
           <image source="images/CLP-figs/comPolarA"/>
         </sidebyside>
@@ -492,6 +496,15 @@ Remarquons que <m>\bar x \approx 0.59</m>, en accord avec le fait que <m>0\leqsl
 </p>
       </solution>
     </example>
+
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_App/App-prob1.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
+
     <example xml:id="eg_dblInt_J">
       <title>Calcul d'une intégrale à l'aide du centre de gravité</title>
       <statement>
@@ -545,6 +558,13 @@ Ainsi, l'aire de  <m>\cR</m> vaut <m>\pi</m>, et son centre de gravité est <m>(
 </p>
       </solution>
     </example>
+
+
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_App/App-prob2.pg" parse="text"/></webwork>
+    </exercise>  
+
   </subsection>
   <subsection xml:id="pars-Moments-inertie">
     <title>Moment d'inertie</title>

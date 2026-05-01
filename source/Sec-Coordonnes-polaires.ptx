@@ -19,16 +19,15 @@
     <definition xml:id="def_polars">
       <statement>
         <p>
-Les coordonnées polaires d'un point  <m>(x,y)</m> dans le plan <m>Oxy</m> sont
-<md><mrow>
-r&amp;=\text{ la distance de }(0,0)\text{ à }(x,y),
-</mrow><mrow>
-\theta&amp;=\text{ l'angle orienté (sens antihoraire) entre l'axe des $x$}
+          Les coordonnées polaires d'un point  <m>(x,y)</m> dans le plan <m>Oxy</m> sont
+          <md>
+            <mrow>r&amp;=\text{ la distance de }(0,0)\text{ à }(x,y),</mrow>
+            <mrow>\theta&amp;=\text{ l'angle orienté (sens antihoraire) entre l'axe des $x$}
 </mrow><mrow>
       &amp; \qquad \text{ et le segment de droite joignant le point $(0,0)$ à $(x,y)$.}
 </mrow></md>
 </p>
-        <sidebyside width="25%">
+        <sidebyside width="20%">
           <image source="images/CLP-figs/polar"/>
         </sidebyside>
       </statement>
@@ -286,7 +285,7 @@ Un des côtés a une largeur de  <m>\dee{r}</m>, la distance séparant les courb
 </p>
     <fact xml:id="eq_dA_polar">
       <statement>
-        <p>
+        <p>L'élément d'aire en coordonnées polaires est donné par
           <m>
 \dee{A} = r\,\dee{r}\,\dee{\theta}
 </m>
@@ -309,7 +308,8 @@ is provided in the (optional) section §<xref ref="sec_integral_error"/>.
 -->
 
 </p>
-    <example xml:id="eg_polar_mass">
+   
+<example xml:id="eg_polar_mass">
       <title>Masse</title>
       <statement>
         <p>
@@ -323,16 +323,19 @@ où <m>T(\theta)</m> et <m>B(\theta)</m> sont des fonctions continues et vérifi
       </statement>
       <solution>
         <p>
-La figure ci-dessous, à gauche, est une esquisse de  <m>\cR</m>. Notons que  <m>r=T(\theta)</m> est la courbe extérieure, et <m>r=B(\theta)</m>, la courbe intérieure.
-</p>
-        <sidebyside>
+          La figure ci-dessous, à gauche, est une esquisse de  <m>\cR</m>. Notons que  <m>r=T(\theta)</m> est la courbe extérieure, et <m>r=B(\theta)</m>, la courbe intérieure.
+        </p>
+    
+  <sidebyside>
           <image source="images/CLP-figs/polarMass"/>
           <image source="images/CLP-figs/polarMass2"/>
         </sidebyside>
         <p>Divisons <m>\cR</m> en quartiers (comme des pointes de pizza) en traçant plusieurs droites avec <m>\theta</m> constant, dont les valeurs de <m>\theta</m> diffèrent d'une petite quantité  <m>\dee{\theta}</m>. La figure de droite, ci-haut, montre un de ces quartiers, borné par des lignes bleues.
-</p>
-        <p>On peut diviser un de ces quartiers en sous-rectangles polaires, en traçant plusieurs cercles avec  <m>r</m> constant, dont les valeurs de <m>r</m> sont séparées par une petite quantité  <m>\dee{r}</m>. La figure ci-dessous montre un de ces sous-rectangles polaires en noir.
-</p>
+  </p>
+  
+  <p>
+    On peut diviser un de ces quartiers en sous-rectangles polaires, en traçant plusieurs cercles avec  <m>r</m> constant, dont les valeurs de <m>r</m> sont séparées par une petite quantité  <m>\dee{r}</m>. La figure ci-dessous montre un de ces sous-rectangles polaires en noir.
+  </p>
         <sidebyside width="50%">
           <image source="images/CLP-figs/polarMass3"/>
         </sidebyside>
@@ -363,33 +366,29 @@ Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains déta
 
 </p>
       </solution>
-    </example>
-    <p>De l'exemple précédent découle la formule du calcul de la masse de la région
-<me>
-\cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
-               B(\theta)\leqslant r\leqslant  T(\theta)}
-</me>
-avec densité <m>f(x,y)</m>, c'est-à-dire
+</example>
+
+<p>
+  De l'exemple précédent découle la formule du calcul de la masse de la région
+    <me>
+    \cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
+                  B(\theta)\leqslant r\leqslant  T(\theta)}
+    </me>
+  avec densité <m>f(x,y)</m>, c'est-à-dire
 </p>
-    <fact xml:id="eq_polar_mass">
+
+<fact xml:id="eq_polar_mass">
       <statement>
         <p>
           <me>
-\text{Masse }(\cR) = \int_a^b
+            \text{Masse }(\cR) = \int_a^b
              \int_{B(\theta)}^{T(\theta)}
                    f\big(r\cos\theta,\,r\sin\theta\big)\ r\, \dee{r}\,\dee{\theta}.
-</me>
+        </me>
         </p>
       </statement>
-    </fact>
-    <!-- WeBWork à inclure>
-WeBWork 9, question 4
--->
-    <!--
-<exercise xml:id="int_double_app_III">
-  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/int_double_app_III.pg"/>
-</exercise>
--->
+</fact>
+    
     <p>Nous pouvons d'emblée adapter l'exemple afin de calculer des aires. Ainsi, si nous posons la densité à <m>1</m>, la formule de l'aire de la région
 <me>
 \cR = \Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b, 0\leqslant  r \leqslant R(\theta)}
@@ -408,7 +407,8 @@ est
     <p>
   Voyons un exemple illustrant ce calcul.
 </p>
-    <example xml:id="eg_polar_area">
+    
+<example xml:id="eg_polar_area">
       <title>Calcul d'aire en coordonnées polaires</title>
       <statement>
         <p>
@@ -422,66 +422,68 @@ où <m>R(\theta)\geqslant 0</m> est une fonction continue.
       </statement>
       <solution>
         <p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass" text="global">formule</xref>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=R(\theta)</m>,
-<md><mrow>
-\text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
-</mrow></md>
-On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
-<me>
-\text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
-</me>
-L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
-<xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
-(avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>.
-</p>
-        <sidebyside width="40%">
-          <image source="images/CLP-figs/polarArea3"/>
-        </sidebyside>
-        <p>
-Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area" text="global">formule</xref> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
-</p>
+            <md><mrow>
+            \text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
+            </mrow></md>
+            On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
+            <me>
+            \text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
+            </me>
+            L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
+            <xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
+            (avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>.
+            </p>
+                    <sidebyside width="40%">
+                      <image source="images/CLP-figs/polarArea3"/>
+                    </sidebyside>
+                    <p>
+            Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area" text="global">formule</xref> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
+            </p>
       </solution>
-    </example>
-    <example xml:id="eg_area_rose">
-      <title>Aire en coordonnées polaires</title>
-      <statement>
-        <p>
-Calculer l'aire de la région du plan bornée par la rosace à trois pétales
-<m>r=\sin(3\theta)</m>.
-</p>
-      </statement>
-      <solution>
-        <p>En observant la dernière figure de l'<xref ref="eg_rose" text="global">exemple</xref>, nous devons calculer le triple de l'aire de la région
-<me>
-\cR=\Set{(r\cos\theta,r\sin\theta)}{0\leqslant \theta\leqslant  \frac{\pi}{3},\
+</example>
+    
+<example xml:id="eg_area_rose">
+<title>Aire en coordonnées polaires</title>
+  
+  <statement>
+    <p>
+      Calculer l'aire de la région du plan bornée par la rosace à trois pétales <m>r=\sin(3\theta)</m>.
+    </p>
+  </statement>
+  
+  <solution>
+    <p>
+      En observant la dernière figure de l'<xref ref="eg_rose" text="global">exemple</xref>, nous devons calculer le triple de l'aire de la région
+      <me>
+          \cR=\Set{(r\cos\theta,r\sin\theta)}{0\leqslant \theta\leqslant  \frac{\pi}{3},\
               0\leqslant  r\leqslant  \sin(3\theta)}.
-</me>
-Ainsi, par la <xref ref="eq_polar_area" text="global">formule</xref>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
-et <m>R(\theta) =\sin(3\theta)</m>,
-<md><mrow>
-\text{Aire}(\cR)
-  &amp;=\frac{1}{2} \int_0^{\frac{\pi}{3}} \sin^2(3\theta)\  \dee{\theta}
-</mrow><mrow>
-  &amp;=\frac{1}{4} \int_0^{\frac{\pi}{3}} \big(1-\cos(6\theta)\big)
+        </me>
+      Ainsi, par la <xref ref="eq_polar_area" text="global">formule</xref>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
+        et <m>R(\theta) =\sin(3\theta)</m>,
+        <md><mrow>
+        \text{Aire}(\cR)
+          &amp;=\frac{1}{2} \int_0^{\frac{\pi}{3}} \sin^2(3\theta)\  \dee{\theta}
+        </mrow><mrow>
+          &amp;=\frac{1}{4} \int_0^{\frac{\pi}{3}} \big(1-\cos(6\theta)\big)
                            \  \dee{\theta}
-</mrow><mrow>
-  &amp;= \frac{1}{4}\left[\theta -\frac{1}{6}\sin(6\theta)\right]
-                     _0^{\frac{\pi}{3}}
-</mrow><mrow>
-  &amp;=\frac{\pi}{12}.
-</mrow></md>
-Dans la première étape, nous avons appliqué l'identité de l'angle double
-<m>\cos(2\phi) = 1-2\sin^2(\phi)</m>. Sans surprise, les identités trigonométriques apparaissent souvent lorsque les coordonnées polaires sont utilisées.
-</p>
+        </mrow><mrow>
+          &amp;= \frac{1}{4}\left[\theta -\frac{1}{6}\sin(6\theta)\right]
+                            _0^{\frac{\pi}{3}}
+        </mrow><mrow>
+          &amp;=\frac{\pi}{12}.
+        </mrow></md>
+        Dans la première étape, nous avons appliqué l'identité de l'angle double <m>\cos(2\phi) = 1-2\sin^2(\phi)</m>. Sans surprise, les identités trigonométriques apparaissent souvent lorsque les coordonnées polaires sont utilisées.
+        </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Devoir 9, question 2
--->
-    <!-- 
-<exercise xml:id="coord_pol_VI_SL" component = "webwork">
-  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/coord_pol_VI_SL.pg"/>
-</exercise>
- -->
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Polaires/Polaires-prob1.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
+  
     <example xml:id="eg_polar_volume">
       <title>Volume avec coordonnées polaires</title>
       <statement>
@@ -575,8 +577,11 @@ a des unités de mètres cubes, comme il se doit.
 </p>
       </solution>
     </example>
-    <p>Les deux problèmes précédents ont été énoncés, ou presque, en coordonnées polaires. Voyons maintenant comment passer des coordonnées rectangulaires aux coordonnées polaires, et reconnaître quand il est utile de le faire.
-</p>
+
+    <p>
+      Les deux problèmes précédents ont été énoncés, ou presque, en coordonnées polaires. Voyons maintenant comment passer des coordonnées rectangulaires aux coordonnées polaires, et reconnaître quand il est utile de le faire.
+    </p>
+    
     <example xml:id="eg_change_to_polar">
       <title>Passage aux coordonnées polaires</title>
       <statement>
@@ -703,15 +708,15 @@ Lorsque  <m>\theta=0</m>, <m>u=\cos\theta=1</m> et, lorsque  <m>\theta=\frac{\pi
 </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Devoir n.9, question 3
 
-Le problème ne fonctionne pas à cause de la macro parserMultiAnswer.pl
 
-<exercise xml:id="coord_pol_X_SL" component = "webwork">
-  <webwork source ="BPL/CCDMD/Calcul_avance-04integrales_doubles/coord_pol_X_SL.pg"/>
-</exercise>
--->
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Polaires/Polaires-prob2.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
+
     <!-- Cet exemple  devrait devenir un prblème plutôt
 
 <example xml:id="eg_change_to_polar_B"><title>Changing to Polar Coordinates</title>
@@ -921,6 +926,12 @@ All together
 </example>
 
 -->
+
+        <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Polaires/Polaires-prob3.pg" parse="text"/></webwork>
+    </exercise>  
+
+
   </subsection>
   <subsection xml:id="pars-integral_error">
     <title>Justification de la formule du calcul de l'aire en coordonnées polaires</title>

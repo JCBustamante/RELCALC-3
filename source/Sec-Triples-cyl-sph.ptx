@@ -63,17 +63,7 @@ z&amp;=z
         </p>
       </statement>
     </fact>
-    <!-- WeBWork à inclure>
-Active Calculus, 11.8.6, n. 1
-Exercise 1
-https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-cylindrical-to-rectangular
-Library/ASU-topics/setCalculus/stef12_7p1.pg
--->
-    <!-- 
-<exercise xml:id = "Triples-cyl-sph-01" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-01.pg"/>
-</exercise>
- -->
+  
     <p>
   Voyons quelques surfaces données par les points dont les coordonnées cylindriques ont des valeurs constantes de <m>r</m>, <m>\theta</m> ou <m>z</m>.
 </p>
@@ -117,7 +107,7 @@ Ainsi, le volume de ces cubes approximatifs est (essentiellement<fn>
 </p>
     <fact xml:id="eq_dV_cylindrical">
       <statement>
-        <p>
+        <p>L'élément de volume en coordonnées cylindriques est donné par
           <me>
 \dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}.
 </me>
@@ -197,19 +187,19 @@ Finalement, voici l'intégrale correspondante en coordonnées cartésiennes.
 </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Active Calculus 11.8.6, n.8
-Exercise 8
-https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-cylinder-evaluate
-Library/Rochester/setVMultIntegrals5Triple/ur_vc_10_9.pg
--->
-    <!-- 
-<exercise xml:id = "Triples-cyl-sph-02" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-02.pg"/>
-</exercise> -->
-    <p>
-  Dans notre prochain exemple, nous calculons le moment d'inertie d'un cône circulaire droit. Le moment d'inertie est défini (en deux dimensions) à la   <xref ref="def_moment_of_inertia" text="global">définition</xref>. Ceci s'étend naturellement à trois dimensions.
-</p>
+   
+  <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Cyl-Sph/Cyl-Sph-prob1.pg" parse="text"/></webwork>
+  </exercise>  
+    
+  <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Cyl-Sph/Cyl-Sph-prob2.pg" parse="text"/></webwork>
+  </exercise>  
+  
+
+  <p>
+    Dans notre prochain exemple, nous calculons le moment d'inertie d'un cône circulaire droit. Le moment d'inertie est défini (en deux dimensions) à la   <xref ref="def_moment_of_inertia" text="global">définition</xref>. Ceci s'étend naturellement à trois dimensions.
+  </p>
     <fact xml:id="eqn_mom_of_inertia_3d">
       <statement>
         <p> Le moment d'inertie d'un solide <m>\cV</m> dont la densité est <m>\rho(x,y,z)</m> et dont la distance de chaque point à l'axe de rotation est <m>D(x,y,z)</m> est donné par
@@ -295,9 +285,10 @@ I_\cA
       </solution>
     </example>
   </subsection>
-  <!--
-<xi:include href="../problems/prob_s3.6.ptx" />
--->
+ 
+ 
+ 
+ 
   <subsection xml:id="sec_spherical_coords">
     <title>Coordonnées sphériques</title>
     <p>Dans l'éventualité où l'on veut, par exemple, calculer une masse d'un objet qui est invariant par les rotations autour de tout axe passant par l'origine, il est avantageux d'utiliser un autre système de coordonnées, qui est aussi une généralisation des coordonnées polaires. Il s'agit des <em>coordonnées sphériques</em>. Cette fois, on mesure une distance à l'origine, puis deux angles, celui des coordonnées polaires et celui par rapport à l'axe <m>Oz</m>. Ce qui est fait ici est analogue au système utilisé pour repérer un endroit sur le globe terrestre : le rayon de la Terre étant spécifié, on donne la longitude, c'est-à-dire l'angle par rapport au méridien de Greenwich, puis la latitude, qui mesure l'angle d'écart par rapport à l'équateur terrestre. Pour les coordonnées sphériques, la latitude est mesurée par rapport au pôle nord.
@@ -335,11 +326,13 @@ I_\cA
   </p>
     <fact xml:id="eqn_spherical">
       <statement>
-        <p><md><mrow>
-  x&amp;=\rho\sin\varphi\cos\theta, &amp;
+        <p>
+          <md>
+            <mrow> x&amp;=\rho\sin\varphi\cos\theta, &amp;
   y&amp;=\rho\sin\varphi\sin\theta, &amp;
   z&amp;=\rho\cos\varphi,
-  </mrow><mrow>
+  </mrow>
+  <mrow>
    \rho&amp;=\sqrt{x^2+y^2+z^2}, &amp;
    \theta&amp;=\arctan\frac{y}{x}, &amp;
    \varphi&amp;=\arctan\frac{\sqrt{x^2+y^2}}{z},
@@ -350,31 +343,23 @@ I_\cA
       </statement>
     </fact>
     <p>
-  Voici trois figures montrant des surfaces où
-  <ul><li><m>\rho</m> est constant, c'est-à-dire  <m>x^2+y^2+z^2=\rho^2</m>
-  avec <m>\rho</m> constant, il s'agit d'une sphère,
-  </li><li><m>\theta</m> est constant, c'est-à-dire un plan vertical, et
-  </li><li><m>\varphi</m> est constant, c'est-à-dire une surface où
-  <m>z=\sqrt{x^2+y^2}\ \tan\varphi</m> avec <m>\varphi</m> constante
-  (ceci ressemble à un entonnoir).
-  </li></ul>
-  </p>
+      Voici trois figures montrant des surfaces où
+      <ul><li><m>\rho</m> est constant, c'est-à-dire  <m>x^2+y^2+z^2=\rho^2</m>
+      avec <m>\rho</m> constant, il s'agit d'une sphère,
+      </li><li><m>\theta</m> est constant, c'est-à-dire un plan vertical, et
+      </li><li><m>\varphi</m> est constant, c'est-à-dire une surface où
+      <m>z=\sqrt{x^2+y^2}\ \tan\varphi</m> avec <m>\varphi</m> constante
+      (ceci ressemble à un entonnoir).
+      </li></ul>
+      </p>
     <sidebyside widths="30% 30% 30%" valign="middle">
       <image source="images/CLP-figs/spher2JC"/>
       <image source="images/CLP-figs/spher3JC"/>
       <image source="images/CLP-figs/spher4JC"/>
     </sidebyside>
-    <!-- WeBWork à inclure>
-Active calculus 11.8.6, n.2
-Exercise 2
-https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-spherical-to-rectangular
-Library/Rochester/setVectors5Coordinates/urvc_3_4.pg
-  -->
-    <!-- 
-  <exercise xml:id = "Triples-cyl-sph-03" component = "webwork">
-    <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-03.pg"/>
-  </exercise>
- -->
+   
+  
+  
   </subsection>
   <subsection xml:id="sec_spherical_vol">
     <title>Volume en coordonnées sphériques</title>
@@ -476,51 +461,75 @@ Ainsi, le volume est donné par
   </p>
       </solution>
     </example>
+
     <example xml:id="eg_cored_apple">
       <statement>
         <p>
-  Un trou cylindrique de rayon <m>b</m> est percé dans une pomme parfaitement symétrique dont le rayon est <m>a\geqslant b</m>. Trouver le volume restant de la pomme.
-  </p>
+          Un trou cylindrique de rayon <m>b</m> est percé dans une pomme parfaitement symétrique dont le rayon est <m>a\geqslant b</m>. Trouver le volume restant de la pomme.
+         </p>
       </statement>
+      
       <solution>
-        <p>
-  À l'<xref ref="eg_polar_volume" text="global">exemple</xref>, nous avons calculé le volume enlevé. Nous pourrions donc déduire le volume restant, le tout avec des coordonnées cylindriques. Au lieu de faire ceci, nous allons évaluer le volume avec une intégrale en coordonnées sphériques.
-  </p>
+        <p> 
+          À l'<xref ref="eg_polar_volume" text="global">exemple</xref>, nous avons calculé le volume enlevé. Nous pourrions donc déduire le volume restant, le tout avec des coordonnées cylindriques. Au lieu de faire ceci, nous allons évaluer le volume avec une intégrale en coordonnées sphériques.
+        </p>
+        
         <p>Comme à l'<xref ref="eg_polar_volume" text="global">exemple</xref>, choisissons notre système de coordonnées avec le centre de la pomme à l'origine et avec le centre de la perceuse suivant l'axe  <m>Oz</m>. Voici une esquisse de la partie de la pomme du premier octant qui reste, ainsi qu'une vue latérale.
-  </p>
+        </p>
         <sidebyside widths="50% 30%">
           <image source="images/CLP-figs/appleCoreB"/>
           <image source="images/CLP-figs/appleCoreB2"/>
         </sidebyside>
         <p>
-    Afin de calculer le volume en coordonnées sphériques, décrivons la région.
-    <ul><li><p>
-          Comme on doit effectuer un tour complet autour de l'axe <m>z</m> afin de parcourir la région, <m>\theta</m> varie entre <m>0</m> et <m>2\pi</m>.
-        </p></li><li><p>
-          L'angle <m>\varphi</m> varie entre <m>\arcsin (b/a)</m> et <m>\pi/2</m>, comme la figure de droite ci-haut le montre.
-        </p></li><li><p>Pour des valeurs de <m>\theta</m> et <m>\varphi</m> fixées, les points <m>(\rho, \theta, \varphi)</m> de notre région vérifient <m>\frac{b}{\sin\varphi} \leqslant \rho \leqslant a</m>. En effet, avec <m>\theta</m> et <m>\varphi</m> fixes, lorsque nous faisons varier <m>\rho</m>, c'est-à-dire lorsque nous quittons l'origine, nous entrons dans la région qui nous importe par la paroi intérieure du trou percé (ligne droite verticale en rouge dans la figure de droite ci-haut). Ceci correspond à  <m>\rho = \frac{b}{\sin \varphi}</m>. Puis, on quitte la région lorsqu'on rencontre la sphère de rayon <m>a</m>.
-        </p></li></ul>
-    Afin d'alléger l'écriture, posons <m>\al = \arcsin (b/a)</m>. Le volume qui nous intéresse est donc
-    <md><mrow>\text{Vol}(\cV) \amp = \iiint_{\cV} \ \dee{V} = \int_0^{2\pi}\int_{\al}^{\pi/2}\int_{\frac{b}{\sin \varphi}}^a \rho^2 \,\sin\varphi\, \dee{\rho}\, \dee{\varphi}\, \dee{\theta}
-      </mrow><mrow> \amp=\int_0^{2\pi} \int_{\al}^{\pi/2}\left[\frac{1}{3}\sin \varphi \rho^3\right]_{\rho ={b/\sin\varphi}}^{\rho = a} \ \dee{\varphi}\, \dee{\theta}
-      </mrow><mrow>  \amp=\frac{1}{3} \int_0^{2\pi}\int_{\al}^{\pi/2} \sin\varphi \left(a^3 - \frac{b^3}{\sin^3 \varphi}\right) \ \dee{\varphi}\ \dee{\theta}
-      </mrow><mrow>  \amp=\frac{2\pi}{3} \int_{\al}^{\pi/2} a^3 \sin \varphi - b^3 \csc^2 \varphi\  \dee{\varphi}
-      </mrow><mrow> \amp= \frac{2\pi}{3}\left[-a\cos \varphi + b^3\cot \varphi \right]_{\phi = \al}^{\varphi = \pi/2}
-      </mrow><mrow>  \amp= \frac{2\pi}{3} \left( a^3 \cos \al - b^3 \cot \al\right) </mrow></md>,
-  </p>
+          Afin de calculer le volume en coordonnées sphériques, décrivons la région.
+            <ul>
+              <li>
+                <p>Comme on doit effectuer un tour complet autour de l'axe <m>z</m> afin de parcourir la région, <m>\theta</m> varie entre <m>0</m> et <m>2\pi</m>.
+                </p>
+              </li>
+              
+              <li>
+                <p>
+                  L'angle <m>\varphi</m> varie entre <m>\arcsin (b/a)</m> et <m>\pi/2</m>, comme la figure de droite ci-haut le montre.
+                </p>
+              </li>
+              
+              <li>
+                <p>
+                  Pour des valeurs de <m>\theta</m> et <m>\varphi</m> fixées, les points <m>(\rho, \theta, \varphi)</m> de notre région vérifient <m>\frac{b}{\sin\varphi} \leqslant \rho \leqslant a</m>. En effet, avec <m>\theta</m> et <m>\varphi</m> fixes, lorsque nous faisons varier <m>\rho</m>, c'est-à-dire lorsque nous quittons l'origine, nous entrons dans la région qui nous importe par la paroi intérieure du trou percé (ligne droite verticale en rouge dans la figure de droite ci-haut). Ceci correspond à  <m>\rho = \frac{b}{\sin \varphi}</m>. Puis, on quitte la région lorsqu'on rencontre la sphère de rayon <m>a</m>.
+                </p>
+              </li>
+            </ul>
+        Afin d'alléger l'écriture, posons <m>\al = \arcsin (b/a)</m>. Le volume qui nous intéresse est donc
+      
+        <md>
+          <mrow>\text{Vol}(\cV) \amp = \iiint_{\cV} \ \dee{V} = \int_0^{2\pi}\int_{\al}^{\pi/2}\int_{\frac{b}{\sin \varphi}}^a \rho^2 \,\sin\varphi\, \dee{\rho}\, \dee{\varphi}\, \dee{\theta}
+          </mrow>
+          <mrow> \amp=\int_0^{2\pi} \int_{\al}^{\pi/2}\left[\frac{1}{3}\sin \varphi \rho^3\right]_{\rho ={b/\sin\varphi}}^{\rho = a} \ \dee{\varphi}\, \dee{\theta}
+          </mrow>
+          <mrow>  \amp=\frac{1}{3} \int_0^{2\pi}\int_{\al}^{\pi/2} \sin\varphi \left(a^3 - \frac{b^3}{\sin^3 \varphi}\right) \ \dee{\varphi}\ \dee{\theta}
+          </mrow>
+          <mrow>  \amp=\frac{2\pi}{3} \int_{\al}^{\pi/2} a^3 \sin \varphi - b^3 \csc^2 \varphi\  \dee{\varphi}
+          </mrow>
+          <mrow> \amp= \frac{2\pi}{3}\left[-a\cos \varphi + b^3\cot \varphi \right]_{\phi = \al}^{\varphi = \pi/2}
+          </mrow>
+          <mrow>  \amp= \frac{2\pi}{3} \left( a^3 \cos \al - b^3 \cot \al\right) 
+          </mrow></md>,
+        </p>
+        
         <p> où nous avons utilisé le fait que <m>\displaystyle \int \csc^2 \varphi \ \dee{\varphi}=  -\cot \varphi + C</m> et que  <m>\cos\frac{\pi}{2} = \cot\frac{\pi}{2}=0</m>.
-   Du triangle ci-bas, nous pouvons conclure que <m>\cos\al =\frac{\sqrt{a^2-b^2}}{a} </m> et que <m>\cot\al=\frac{\sqrt{a^2-b^2}}{b}</m>.
-  </p>
+          Du triangle ci-bas, nous pouvons conclure que <m>\cos\al =\frac{\sqrt{a^2-b^2}}{a} </m> et que <m>\cot\al=\frac{\sqrt{a^2-b^2}}{b}</m>.
+        </p>
         <sidebyside width="20%">
           <image source="images/CLP-figs/triangleApple"/>
         </sidebyside>
         <p>
-    Ainsi, le volume de la portion de pomme restante est
-    <me>
-    \text{Vol}(\cV) =\frac{4}{3}\pi\big[a^2-b^2\big]^{3/2}
-    </me>.
-  Nous pouvons faire quelques vérifications comme à l'<xref ref="eg_polar_volume" text="global">exemple</xref>.
-    <ul><li>
+          Ainsi, le volume de la portion de pomme restante est
+          <me>
+            \text{Vol}(\cV) =\frac{4}{3}\pi\big[a^2-b^2\big]^{3/2}.
+          </me>
+      Nous pouvons faire quelques vérifications comme à l'<xref ref="eg_polar_volume" text="global">exemple</xref>.
+      <ul><li>
         Si le rayon de la perceuse est  <m>b=0</m>, il n'y a rien qui est enlevé. Le volume restant doit être égal au volume de la sphère,  <m>\frac{4}{3}\pi a^3</m>. Notre réponse est cohérente avec ceci.
       </li><li>
         Si le rayon de la perceuse est  <m>b=a</m>, toute la pomme est enlevée, le volume restant est <m>0</m>. Encore une fois, notre réponse est en accord avec ceci.
@@ -529,17 +538,20 @@ Ainsi, le volume est donné par
   </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-  Active Calculus 11.8.6 n.9
-  Exercise 9
-https://activecalculus.org/multi/S-11-8-Triple-Integrals-Cylindrical-Spherical.html#ex-11-8-WW-spherical-evaluate
-Library/Rochester/setVMultIntegrals5Triple/ur_vc_10_10.pg
-  -->
-    <!-- 
-  <exercise xml:id = "Triples-cyl-sph-04" component = "webwork">
-    <webwork source ="RELCALC3-pretext/Chap_Integrales/Triples-cyl-sph-04.pg"/>
-  </exercise>
- -->
+
+     <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Cyl-Sph/Cyl-Sph-prob4.pg" parse="text"/></webwork>
+  </exercise>  
+
+
+
+     <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Cyl-Sph/Cyl-Sph-prob3.pg" parse="text"/></webwork>
+  </exercise>  
+  
+  
+
+
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Triples-Cyl-Sph.ptx"/>
 </section>

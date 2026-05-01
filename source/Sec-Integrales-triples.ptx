@@ -64,12 +64,12 @@
     <example>
       <statement>
         <p>
-          Soit <m>\cE = \{(x,y,z)\in \R^3|\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f(x,y,z) = xz+y^3</m>. Calculer l'intégrale <m>\displaystyle \iiint_\cE f\, \dee{V}</m>.
+          Soit <m>\cE = \{(x,y,z)\in \R^3|\, 0 \leqslant x \leqslant 1,\ 1\leqslant  y \leqslant 2, 0\leqslant  z \leqslant 3\}</m> et <m>f(x,y,z) = xz+y^3</m>. Calculer l'intégrale <m>\displaystyle \iiint_\cE f\, \dee{V}</m>.
         </p>
       </statement>
       <solution>
         <p>Nous avons, en vertu du <xref ref="thm-Fubini3d" text="global">théorème</xref> :
-        <md><mrow>\iiint_\cR f \, \dee{V} \amp = \int_0^1 \int_1^2\int_0^3 (xz+y^3) \ \dee{x}\, \dee{y}\, \dee{x} = \int_0^1\int_1^2 \left[\frac{1}{2}xz^2 + y^3z\right]_{z=1}^{z=3}\ \dee{y}\, \dee{x} </mrow><mrow>  \amp =  \int_0^1 \int_1^2 \left(\frac{1}{2}9x + 3y^3\right) \dee{y}\, \dee{x} = \int_0^1 \left[\frac{9}{2}xy + \frac{3}{4} y^3 \right]_{y=1}^{y=2}\ \dee{x} </mrow><mrow>  \amp =  \frac{1}{4}\left[ 9x^2 + 45x \right]_{x=0}^{x=1} = \frac{27}{2} </mrow></md>.
+        <md><mrow>\iiint_\cR f \, \dee{V} \amp = \int_0^1 \int_1^2\int_0^3 (xz+y^3) \ \dee{z}\, \dee{y}\, \dee{x} = \int_0^1\int_1^2 \left[\frac{1}{2}xz^2 + y^3z\right]_{z=1}^{z=3}\ \dee{y}\, \dee{x} </mrow><mrow>  \amp =  \int_0^1 \int_1^2 \left(\frac{1}{2}9x + 3y^3\right) \dee{y}\, \dee{x} = \int_0^1 \left[\frac{9}{2}xy + \frac{3}{4} y^3 \right]_{y=1}^{y=2}\ \dee{x} </mrow><mrow>  \amp =  \frac{1}{4}\left[ 9x^2 + 45x \right]_{x=0}^{x=1} = \frac{27}{2} </mrow></md>.
         </p>
       </solution>
       <solution>
@@ -80,16 +80,7 @@
         </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-    Acrive Calculus, 11.7.3, n1
-    Exercise 1
-    https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-triple-cube
-    Library/FortLewis/Calc3/16-3-Triple-integrals/HGM5-16-3-04-Triple-integrals.pg
-    -->
-    <!--     
-    <exercise xml:id = "Integrales-triples-01" component = "webwork">
-      <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-01.pg"/>
-    </exercise> -->
+
   </subsection>
   <subsection xml:id="pars-Triples-gen">
     <title>Régions plus générales</title>
@@ -101,8 +92,13 @@
     La fonction <m>\tilde{f}</m> n'est pas continue, mais si <m>\cE</m> est <em>raisonnable</em>, cette intégrale existe. Dans la pratique, on s'intéresse aux intégrales de fonctions sur des régions qui sont relativement simples. La difficulté pour l'évaluation de ces intégrales est surtout dans l'écriture des bornes. Il importe donc d'avoir des descriptions convenables des régions d'intégration et de leurs frontières.
     </p>
     <p>Une région <em>élémentaire</em> dans <m>\R^2</m> est une région obtenue en permettant à l'une des coordonnées de parcourir un intervalle, la valeur de la seconde coordonnée étant bornée par deux fonctions continues par morceaux définies qui dépendent de la première variable. Plus formellement, une région élémentaire du plan est une région définie selon une des formes suivantes.
-      <md><mrow xml:id="x-simple-2d" tag="star"> \{(x,y)\in \R^2| a\leqslant  x \leqslant b,\ u_1(x) \leqslant y \leqslant u_2(x)  \} \amp </mrow><mrow xml:id="y-simple-2d" tag="dstar"> \{(x,y)\in \R^2| c\leqslant  y \leqslant d,\ v_1(y) \leqslant x \leqslant v_2(y)  \} \amp </mrow></md>
+      <md>
+        <mrow xml:id="x-simple-2d" tag="star" > 
+          \{(x,y)\in \R^2| a\leqslant  x \leqslant b,\ u_1(x) \leqslant y \leqslant u_2(x)  \} \amp </mrow><mrow xml:id="y-simple-2d" tag="dstar"> \{(x,y)\in \R^2| c\leqslant  y \leqslant d,\ v_1(y) \leqslant x \leqslant v_2(y)  \} \amp 
+          </mrow>
+        </md>
     </p>
+
     <definition xml:id="def-Elementaire-3">
       <statement>
         <p>
@@ -120,87 +116,6 @@
     <p>
       Les intégrales triples ont des propriétés analogues à celles des intégrales doubles, énoncées dans le <xref ref="thm_Int2darith" text="global">théorème</xref>. En pratique, les régions qui nous intéressent sont des régions qui peuvent être découpées en un nombre fini de régions élémentaires. Comme que mentionné ci-dessus, la complexité dans l'évaluation d'une intégrale triple est souvent d'établir les bornes d'intégration. Voyons quelques exemples.
     </p>
-    <example xml:id="Int-3-ex1">
-      <statement>
-        <p>Soit <m>\cE</m> la région de <m>\R^3</m> bornée en dessous par le plan <m>Oxy</m>, au-dessus par le plan <m>y+z=1</m> et qui se trouve à l'intérieur du cylindre parabolique <m>y=x^2</m>. Écrire les bornes d'intégration pour les intégrales pour les ordres d'intégration <m>\dee{z}\, \dee{y}\,\dee{x}</m> et <m>\dee{y}\, \dee{z}\,\dee{x}</m>.
-    <sidebyside width="100%" align="center"><figure xml:id="eg-Int-3-ex1"><caption>La région <m>\cE</m> de <m>\R^3</m>. Afin d'écrire les bornes pour les intégrales demandées, on projettera  la région sur le plan <m>Oxy</m> d'abord, puis sur le plan <m>Oxz</m>.</caption><image xml:id="ex-int-triple-bornes" platform="sage" width="100%"><sageplot variant="3d" aspect="1.0">
-            var('x,y,z')
-            Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
-            Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
-            Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
-            Projxy = parametric_plot3d([x,0, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.25,frame = False)
-            Fig = Base + Cyl + Plan+ Projxy
-            Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
-            Fig += text3d("x", (1.4,0,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
-            Fig += text3d("y", (0,1.4,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
-            Fig += text3d("z", (0,0,1.4), color = "black",frame = False)
-            Fig
-          </sageplot></image></figure></sidebyside>
-
-
-
-    </p>
-      </statement>
-      <solution>
-        <sidebyside widths="40% 50%">
-          <p>Commençons par décrire <m>\cE</m> comme une région élémentaire, en laissant varier <m>z</m> entre <m>z=0 = \phi_1(x,y)</m> et <m>z=1-y = \phi_2(x,y)</m> (puisque <m>z</m> varie entre le plan <m>z=0</m> et le plan <m>y+z=1</m>). Notons que ces deux plans se coupent lorsque <m>0 = 1-y</m>, c'est-à-dire selon la droite <m>y=1</m>. Afin de décrire <m>\cE</m> sous la forme <xref ref="z-simple-3d"/>, nous la projetons sur le plan <m>Oxy</m>, obtenant la région  <m>\cD</m>.
-
-          </p>
-          <image xml:id="sageplot-Int-3-eg-1a">
-            <sageplot>
-                  var('x,y')
-                  F = plot(x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$y$'], ticks =[[-1,1],[1]], color = "blue",
-                  fill = "max", fillcolor = "blue", fillalpha= 0.2, fontsize = 20)
-                  F +=text("$\\mathcal{D} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ x^2\\, \\leqslant\\, y \\, \\leqslant\\, 1$", (0.5,0.9),  fontsize=20, zorder=2, color= "black")
-                  F
-               </sageplot>
-          </image>
-        </sidebyside>
-        <p>Cette projection est la région bornée par <m>y=x^2</m> et <m>y=1</m>,
-          <me>
-              \cD =\{(x,y) \in \R^2 | -1 \leqslant x \leqslant 1, x^2 \leqslant y \leqslant 1 \}
-          </me>.
-          Pour chaque <m>(x,y)\in \cD</m>, les points de <m>\cE</m> ont une coordonnée <m>z</m> vérifiant <m>0\leqslant  z \leqslant 1-y</m>. Ainsi, l'intégrale qui nous intéresse est
-          <me>
-              \int_{-1}^1 \int_{x^2}^1\int_0^{1-y} f(x,y,z)\ \dee{z}\, \dee{y}\, \dee{x}.
-          </me>
-      </p>
-        <p>
-        Pour le second ordre d'intégration, projetons maintenant <m>\cE</m> sur le plan <m>Oxz</m>.
-      </p>
-        <sidebyside widths="40% 50%">
-          <p>
-             La courbe d'intersection du cylindre <m>y=x^2</m> et du plan <m>z=1-y</m> devient la parabole <m>z=1-x^2</m> du plan <m>y=0</m>. Ainsi, la projection de <m>\cE</m> sur <m>Oxz</m> est la région <m>\cR</m> de ce plan bornée par les courbes <m>z=1-x^2</m> et <m>z=0</m>.
-          </p>
-          <image xml:id="sageplot-Int-3-eg-1b">
-            <sageplot>
-                  var('x,y')
-                  F = plot(1-x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$z$'], ticks =[[-1,1],[1]], color = "green", fill = True, fillcolor = "green", fillalpha= 0.2, fontsize = 20)
-                  F +=text("$\\mathcal{R} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ 0\\, \\leqslant\\, z\\, \\leqslant\\, 1-x^2$", (0.5,0.1),  fontsize=20, zorder=2, color= "black")
-                  F
-              </sageplot>
-          </image>
-        </sidebyside>
-        <p><me>
-            \cR = \{(x,z)\in \R^2| -1\leqslant  x \leqslant 1,\ 0\leqslant  z \leqslant 1-x^2\}
-        </me>
-        Pour chaque <m>(x,z)\in \cR</m>, les points de <m>\cE</m> ont une coordonnée <m>y</m> vérifiant <m>x^2\leqslant  y\leqslant  1-z</m>. En effet, situons-nous au point <m>(x,0,z)</m> et déplaçons-nous selon la direction des <m>y</m>. Nous entrons dans <m>\cE</m> lorsque nous atteignons le cylindre <m>y=x^2</m> et nous quittons <m>\cE</m> lorsque nous atteignons le plan <m>y=1-z</m>. L'intégrale qui nous intéresse est donc
-        <me>
-            \int_{-1}^1 \int_{0}^{1-x^2}\int_{x^2}^{1-z} f(x,y,z)\ \dee{y}\, \dee{z}\, \dee{x}.
-        </me>
-      </p>
-      </solution>
-    </example>
-    <!-- WeBWork à inclure>
-Devoir n.10, question 2
--->
-    <!-- 
-<exercise xml:id = "int_triple_coord_cart_1_SL" component = "webwork">
-  <webwork source ="BPL/CCDMD/Calcul_avance-05integrales_triples/int_triple_coord_cart_1_SL.pg"/>
-</exercise>
- -->
     <example>
       <statement>
         <p>
@@ -279,13 +194,92 @@ Devoir n.10, question 2
     </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Devoir 10, question 1.
--->
-    <!-- 
-<exercise xml:id = "int_triple_coord_cart_10" component = "webwork">
-  <webwork source ="BPL/CCDMD/Calcul_avance-05integrales_triples/int_triple_coord_cart_10.pg"/>
-</exercise> -->
+    
+    <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Triples/Triples-prob1.pg" parse="text"/></webwork>
+    </exercise>  
+
+    
+    <example xml:id="Int-3-ex1">
+      <statement>
+        <p>Soit <m>\cE</m> la région de <m>\R^3</m> bornée en dessous par le plan <m>Oxy</m>, au-dessus par le plan <m>y+z=1</m> et qui se trouve à l'intérieur du cylindre parabolique <m>y=x^2</m>. Écrire les bornes d'intégration pour les intégrales pour les ordres d'intégration <m>\dee{z}\, \dee{y}\,\dee{x}</m> et <m>\dee{y}\, \dee{z}\,\dee{x}</m>.
+    <sidebyside width="100%" align="center"><figure xml:id="eg-Int-3-ex1"><caption>La région <m>\cE</m> de <m>\R^3</m>. Afin d'écrire les bornes pour les intégrales demandées, on projettera  la région sur le plan <m>Oxy</m> d'abord, puis sur le plan <m>Oxz</m>.</caption><image xml:id="ex-int-triple-bornes" platform="sage" width="100%"><sageplot variant="3d" aspect="1.0">
+            var('x,y,z')
+            Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
+            Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
+            Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
+            Projxy = parametric_plot3d([x,0, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.25,frame = False)
+            Fig = Base + Cyl + Plan+ Projxy
+            Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
+            Fig += text3d("x", (1.4,0,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
+            Fig += text3d("y", (0,1.4,0), color = "black",frame = False)
+            Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
+            Fig += text3d("z", (0,0,1.4), color = "black",frame = False)
+            Fig
+          </sageplot></image></figure></sidebyside>
+
+
+
+    </p>
+      </statement>
+      <solution>
+        <sidebyside widths="40% 50%">
+          <p>Commençons par décrire <m>\cE</m> comme une région élémentaire, en laissant varier <m>z</m> entre <m>z=0 = \phi_1(x,y)</m> et <m>z=1-y = \phi_2(x,y)</m> (puisque <m>z</m> varie entre le plan <m>z=0</m> et le plan <m>y+z=1</m>). Notons que ces deux plans se coupent lorsque <m>0 = 1-y</m>, c'est-à-dire selon la droite <m>y=1</m>. Afin de décrire <m>\cE</m> sous la forme <xref ref="z-simple-3d"/>, nous la projetons sur le plan <m>Oxy</m>, obtenant la région  <m>\cD</m>.
+
+          </p>
+          <image xml:id="sageplot-Int-3-eg-1a">
+            <sageplot>
+                  var('x,y')
+                  F = plot(x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$y$'], ticks =[[-1,1],[1]], color = "blue",
+                  fill = "max", fillcolor = "blue", fillalpha= 0.2, fontsize = 20)
+                  F +=text("$\\mathcal{D} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ x^2\\, \\leqslant\\, y \\, \\leqslant\\, 1$", (0.5,0.9),  fontsize=20, zorder=2, color= "black")
+                  F
+               </sageplot>
+          </image>
+        </sidebyside>
+        <p>Cette projection est la région bornée par <m>y=x^2</m> et <m>y=1</m>,
+          <me>
+              \cD =\{(x,y) \in \R^2 | -1 \leqslant x \leqslant 1, x^2 \leqslant y \leqslant 1 \}
+          </me>.
+          Pour chaque <m>(x,y)\in \cD</m>, les points de <m>\cE</m> ont une coordonnée <m>z</m> vérifiant <m>0\leqslant  z \leqslant 1-y</m>. Ainsi, l'intégrale qui nous intéresse est
+          <me>
+              \int_{-1}^1 \int_{x^2}^1\int_0^{1-y} f(x,y,z)\ \dee{z}\, \dee{y}\, \dee{x}.
+          </me>
+      </p>
+        <p>
+        Pour le second ordre d'intégration, projetons maintenant <m>\cE</m> sur le plan <m>Oxz</m>.
+      </p>
+        <sidebyside widths="40% 50%">
+          <p>
+             La courbe d'intersection du cylindre <m>y=x^2</m> et du plan <m>z=1-y</m> devient la parabole <m>z=1-x^2</m> du plan <m>y=0</m>. Ainsi, la projection de <m>\cE</m> sur <m>Oxz</m> est la région <m>\cR</m> de ce plan bornée par les courbes <m>z=1-x^2</m> et <m>z=0</m>.
+          </p>
+          <image xml:id="sageplot-Int-3-eg-1b">
+            <sageplot>
+                  var('x,y')
+                  F = plot(1-x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$z$'], ticks =[[-1,1],[1]], color = "green", fill = True, fillcolor = "green", fillalpha= 0.2, fontsize = 20)
+                  F +=text("$\\mathcal{R} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ 0\\, \\leqslant\\, z\\, \\leqslant\\, 1-x^2$", (0.5,0.1),  fontsize=20, zorder=2, color= "black")
+                  F
+              </sageplot>
+          </image>
+        </sidebyside>
+        <p><me>
+            \cR = \{(x,z)\in \R^2| -1\leqslant  x \leqslant 1,\ 0\leqslant  z \leqslant 1-x^2\}
+        </me>
+        Pour chaque <m>(x,z)\in \cR</m>, les points de <m>\cE</m> ont une coordonnée <m>y</m> vérifiant <m>x^2\leqslant  y\leqslant  1-z</m>. En effet, situons-nous au point <m>(x,0,z)</m> et déplaçons-nous selon la direction des <m>y</m>. Nous entrons dans <m>\cE</m> lorsque nous atteignons le cylindre <m>y=x^2</m> et nous quittons <m>\cE</m> lorsque nous atteignons le plan <m>y=1-z</m>. L'intégrale qui nous intéresse est donc
+        <me>
+            \int_{-1}^1 \int_{0}^{1-x^2}\int_{x^2}^{1-z} f(x,y,z)\ \dee{y}\, \dee{z}\, \dee{x}.
+        </me>
+      </p>
+      </solution>
+    </example>
+
+    <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Triples/Triples-prob2.pg" parse="text"/></webwork>
+    </exercise>  
+    
+
+
   </subsection>
   <subsection xml:id="pars-app-Int-3">
     <title>Applications des intégrales triples</title>
@@ -382,26 +376,17 @@ Devoir 10, question 1.
         </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Active Calculus, 11.7.3, n.4
-Exercise 4
-https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-average-value
-Library/272/setStewart15_7/problem_5.pg
--->
-    <!-- 
-<exercise xml:id = "Integrales-triples-02" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-02.pg"/>
-</exercise> -->
-    <!-- WeBWork à inclure>
-Active Calculus 11.7.3, n.7
-Exercise 7
-https://activecalculus.org/multi/S-11-7-Triple-Integrals.html#ex-11-7-WW-moment
-Library/Michigan/Chap16Sec3/Q61.pg
--->
-    <!-- 
-<exercise xml:id = "Integrales-triples-03" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-triples-03.pg"/>
-</exercise> -->
+
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Triples/Triples-prob3.pg" parse="text"/></webwork>
+    </exercise>  
+
+     <exercise>
+      <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Triples/Triples-prob4.pg" parse="text"/></webwork>
+    </exercise>  
+
+
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Integrales-triples.ptx"/>
 </section>

@@ -1,0 +1,106 @@
+## DESCRIPTION
+## Intégrale triple par changement de variables
+## Solide délimité par un paraboloïde elliptique et le plan z = 0.
+## ENDDESCRIPTION
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Integration of multivariable functions)
+## DBsection(Change of variable)
+## Level(3)
+## MO(1)
+## KEYWORDS('intégrale triple','changement de variables','jacobien','paraboloïde')
+
+## source
+## Ce problème a été codé par Claude. 
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+###########################
+#  Setup
+
+Context("Numeric");
+Context()->variables->are(u => 'Real', v => 'Real', w => 'Real');
+
+# Paramètre du paraboloïde z = $A - x^2 - 4y^2.
+# On prend $A = k^2 pour que sqrt($A) soit entier (bornes propres).
+$A = list_random(4, 9, 16, 25);
+
+# Jacobien : det [ 4cos v,  -4u sin v, 0 ;
+#                  2sin v,   2u cos v, 0 ;
+#                  0,        0,        1 ]
+#          = 4cos v * 2u cos v + 4u sin v * 2 sin v = 8u
+$jac = Formula("8u");
+
+# Borne supérieure de u : paraboloïde ∩ plan z=0 donne 16u^2 = $A, u = sqrt($A)/4
+$u_max = Real("sqrt($A)/4");
+
+# Borne supérieure de w en fonction de u
+$w_max = Formula("$A - 16*u^2");
+
+# Valeur finale : pi * A^3 / 12
+$ans = Real("pi * $A**3 / 12");
+
+###########################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Évaluez l'intégrale triple
+\[
+  \iiint_D z \, dV
+\]
+où \( D \) est le solide délimité par le paraboloïde
+\( z = $A - x^2 - 4y^2 \) et le plan \( z = 0 \),
+à l'aide du changement de variables
+\[
+  x = 4u\cos v, \qquad y = 2u\sin v, \qquad z = w.
+\]
+
+$PAR
+$BBOLD (a) $EBOLD
+Calculez le jacobien du changement de variables :
+$PAR
+\(\displaystyle \frac{\partial(x,y,z)}{\partial(u,v,w)} = \)
+\{ ans_rule(20) \}
+
+$PAR
+$BBOLD (b) $EBOLD
+La borne supérieure de \( u \) (lorsque \( v \in [0, 2\pi] \)) est :
+$PAR
+\( u_{\max} = \) \{ ans_rule(15) \}
+
+$PAR
+$BBOLD (c) $EBOLD
+La borne supérieure de \( w \) en fonction de \( u \) est :
+$PAR
+\( w_{\max}(u) = \) \{ ans_rule(20) \}
+
+$PAR
+$BBOLD (d) $EBOLD
+Évaluez l'intégrale :
+$PAR
+\(\displaystyle \iiint_D z \, dV = \) \{ ans_rule(30) \}
+
+$PAR
+END_TEXT
+Context()->normalStrings;
+
+###########################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS($jac->cmp());
+ANS($u_max->cmp());
+ANS($w_max->cmp());
+ANS($ans->cmp());
+
+ENDDOCUMENT();

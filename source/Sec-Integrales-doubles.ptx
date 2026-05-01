@@ -498,6 +498,14 @@ On peut donc affirmer avec ces hypothèses qu'une intégrale double est le produ
     </p>
       </solution>
     </example>
+
+      <!-- Probleme 1 du devoir 6 Mat298-A25   -->
+  <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Doubles/Doubles-prob1.pg" parse="text"/></webwork>
+  </exercise>  
+
+
+
     <p>Comme pour les intégrales à une variable, il n'est pas toujours nécessaire de connaître la valeur exacte d'une intégrale double. Nous nous intéressons plutôt à trouver des bornes à sa valeur. Le théorème suivant fournit quelques outils simples pour obtenir  de telles bornes. Ces propriétés des intégrales à plusieurs variables sont analogues à celles des intégrales à une variable.
 </p>
     <theorem xml:id="thm_INT2dineq">
@@ -1091,14 +1099,25 @@ Ainsi,
   + \int_1^4\int_{y-2}^{\sqrt{y}}\dee{x}\, \dee{y}.
 </mrow></md>
 </p>
-    </example>
-    <p>Le but de l'exemple qui suit est de montrer que, malgré que les deux ordres d'intégration doivent donner le même résultat, ils ne sont pas toujours de difficulté semblable.
-</p>
+</example>
+
+
+  <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Doubles/Doubles-prob2.pg" parse="text"/></webwork>
+  </exercise>  
+
+
+
+
+    <p>
+      Le but de l'exemple qui suit est de montrer que, malgré que les deux ordres d'intégration doivent donner le même résultat, ils ne sont pas toujours de difficulté semblable.
+    </p>
+    
     <example xml:id="eg_dblInt_E">
       <statement>
         <p>
-Évaluer l'intégrale de  <m>\frac{\sin x}{x}</m> sur la région du plan <m>Oxy</m> qui se situe au-dessus de l'axe des abscisses, à la droite de la droite <m>y=x</m> et à la gauche de  <m>x=1</m>.
-</p>
+          Évaluer l'intégrale de  <m>\frac{\sin x}{x}</m> sur la région du plan <m>Oxy</m> qui se situe au-dessus de l'axe des abscisses, à la droite de la droite <m>y=x</m> et à la gauche de  <m>x=1</m>.
+        </p>
       </statement>
       <solution>
         <p>
@@ -1153,27 +1172,21 @@ Cette fois-ci, parce que la variable <m>x</m> est considérée comme une constan
 </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Devoir 8, question 3
-RELCALC3/set07/Michigan-Chap16-Sec2-Q35.pg
--->
-    <!-- 
-<exercise xml:id="Integrales-doubles-03" component = "webwork">
-  <webwork source ="RELCALC3-pretext/Chap_Integrales/Integrales-doubles-03.pg"/>
-</exercise>
- -->
     <p>Voici un dernier exemple afin de rappeler certaines techniques d'intégration de fonctions à une variable.
 </p>
-    <example xml:id="eg_dblInt_F">
-      <statement>
-        <p>
-Calculer le volume du solide situé sous la surface <m>z=1-3x^2-2y^2</m> et au-dessus du plan <m>Oxy</m>.
-</p>
+  
+<example xml:id="eg_dblInt_F">
+    <statement>
+      <p>
+        Calculer le volume du solide situé sous la surface <m>z=1-3x^2-2y^2</m> et au-dessus du plan <m>Oxy</m>.
+      </p>
       </statement>
+      
       <solution>
         <p>
-Avant de se précipiter dans l'intégration, il est important de se représenter une esquisse de ce solide et de cette surface.
-Pour chaque constante <m>z_0</m>, la partie de la surface <m>z=1-3x^2-2y^2</m> qui est projetée dans le plan horizontal <m>z=z_0</m> est l'ellipse <m>3x^2+2y^2=1-z_0</m>. La plus large de ces ellipses est celle qui se trouve dans le plan <m>Oxy</m> lorsque <m>z_0=0</m>, soit l'ellipse d'équation <m>3x^2+2y^2=1</m>. Au fur et à mesure que <m>z_0</m> augmente, l'ellipse se contracte jusqu'au point unique <m>(0,0,1)</m>, soit lorsque <m>z_0=1</m>. Ainsi, la surface est composée d'une superposition d'ellipses, et le solide <m>\cV</m> est donné par
+          Avant de se précipiter dans l'intégration, il est important de se représenter une esquisse de ce solide et de cette surface.
+          
+          Pour chaque constante <m>z_0</m>, la partie de la surface <m>z=1-3x^2-2y^2</m> qui est projetée dans le plan horizontal <m>z=z_0</m> est l'ellipse <m>3x^2+2y^2=1-z_0</m>. La plus large de ces ellipses est celle qui se trouve dans le plan <m>Oxy</m> lorsque <m>z_0=0</m>, soit l'ellipse d'équation <m>3x^2+2y^2=1</m>. Au fur et à mesure que <m>z_0</m> augmente, l'ellipse se contracte jusqu'au point unique <m>(0,0,1)</m>, soit lorsque <m>z_0=1</m>. Ainsi, la surface est composée d'une superposition d'ellipses, et le solide <m>\cV</m> est donné par
 <me>
 \cV =\Set{(x,y,z)}{3x^2+2y^2\leqslant  1,\ 0\leqslant  z\leqslant  1-3x^2-2y^2}.
 </me>
@@ -1255,6 +1268,11 @@ Finalement, en considérant que <m>\int_0^{\frac{\pi}{2}} \cos(4\theta)\,\dee{\t
 </p>
       </solution>
     </example>
+
+      <exercise>
+    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Doubles/Doubles-prob3.pg" parse="text"/></webwork>
+  </exercise>  
+
   </subsection>
   <subsection xml:id="sec_def_int_more">
     <title> Quelques compléments au sujet de la définition de  <m>\ \iint_\cR f(x,y)\ \dee{A}</m> </title>

@@ -1,0 +1,49 @@
+##DESCRIPTION
+## DBsubject(Calculus - multivariable)
+## DBchapter(Fundamental theorems)
+## DBsection(Green's theorem)
+## Institution(NAU)
+## Author(Nandor Sieben)
+## Level(2)
+## MO(1)
+##ENDDESCRIPTION
+# File Created: 4/2/17
+
+## SOURCE 
+## Contrib/NAU/setCalcIII/green.pg
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+Context("Numeric");
+
+{
+$a = random(2,9,1);
+$b = random(2,9,1);
+$c = non_zero_random(-9,9,1);
+redo if ($a==$b);
+$answer = Formula("$c/($b-$a)");
+redo if ($answer < 0);
+}
+
+
+
+TEXT(beginproblem());
+
+Context()->texStrings;
+BEGIN_TEXT
+Soit  \(\mathbf{F}(x,y)=($a y , $b x ) \). Trouver l'aire de la région  \( \mathcal{R}\subseteq \mathbb{R}^2 \) si la circulation de  \( \mathbf{F} \) le long de la frontière \(\partial \mathcal{R} \) de \( \mathcal{R} \) vaut  \(\int_{\partial R}\mathbf{F}\cdot \mathbf{T} \, ds = $c \).
+$BR
+aire \( (R)= \) \{ ans_rule(35) \}
+
+END_TEXT
+
+Context()->normalStrings;
+
+ANS( $answer->cmp() );
+
+ENDDOCUMENT();

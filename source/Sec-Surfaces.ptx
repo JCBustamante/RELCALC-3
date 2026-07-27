@@ -6,7 +6,7 @@
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
   <title>Surfaces</title>
   <introduction>
-    <p>Pour plusieurs applications, nous devons calculer des intégrales de surface. Un exemple évident est le calcul de l'aire d'une surface. Un peu plus généralement, on peut imaginer une surface mince faite d'un matériau de densité constante. Si l'on veut calculer la masse, le centre de gravité ou les moments d'inertie, on devra additionner de petits éléments de masse sur la surface. Un peu plus généralement, on peut vouloir calculer le flux d'un fluide à travers une surface donnée. Afin d'attaquer tous ces problèmes, on doit, dans un premier temps, spécifier la surface convenablement.
+    <p>Pour plusieurs applications, nous devons calculer des intégrales de surface. Un exemple évident est le calcul de l'aire d'une surface. Un peu plus généralement, on peut imaginer une surface mince faite d'un matériau de densité constante. Si l'on veut calculer la masse, le centre de gravité ou les moments d'inertie, on devra additionner de petits éléments de masse sur la surface. Un peu plus généralement, on peut vouloir calculer le flux d'un fluide à travers une surface donnée. Afin d'attaquer tous ces problèmes, on doit, dans un premier temps, spécifier la surface convenablement. 
 </p>
   </introduction>
   <subsection xml:id="pars-Surf-parametrees">
@@ -237,7 +237,7 @@ Remarquons que la section de ce cylindre au plan <m>Oxy</m>, et en fait à n'imp
 <me>
 \vr(\theta,z) = \cos\theta\, \vi + \sin\theta\,\vj + z\, \vk
 \qquad
-0\le\theta \leqslant 2\pi,\ \ -\infty \leqslant z \leqslant \infty.
+0\leqslant\theta \leqslant 2\pi,\ \ -\infty \leqslant z \leqslant \infty.
 </me>
 </p>
     </example>
@@ -310,68 +310,79 @@ Finalement, voici une esquisse de la portion de notre surface qui se trouve dans
         <image source="images/CLP4-figs/revB"/>
       </sidebyside>
     </example>
+    <p>
+      La même technique peut être utilisée pour obtenir un paramétrage de la surface de révolution obtenue en faisant tourner une courbe plane (peut-être elle-même paramétrée!) autour d'un axe quelonque.
+    </p>
     <example xml:id="SURdonut">
       <title>Tore</title>
       <p>
-Dans cet exemple, nous allons paramétrer la surface d'un beigne.
-</p>
+      Dans cet exemple, nous allons paramétrer la surface d'un beigne.
+      </p>
       <sidebyside width="40%">
         <image source="images/CLP4-figs/torus3d"/>
       </sidebyside>
       <p>
-Le nom formel pour un <q>beigne</q> est un <q>tore</q>. Notre stratégie sera de paramétrer d'abord sa section dans la moitié droite du plan
-<m>Oyz</m>, puis nous construirons le tore complet en faisant tourner ce cercle autour de l'axe des <m>z</m>. Le cercle en question est esquissé ci-après.
-</p>
+      Le nom formel pour un <q>beigne</q> est un <q>tore</q>. Notre stratégie sera de paramétrer d'abord sa section dans la moitié droite du plan <m>Oyz</m>, puis nous construirons le tore complet en faisant tourner ce cercle autour de l'axe des <m>z</m>. Le cercle en question est esquissé ci-après.
+      </p>
       <sidebyside width="60%">
         <image source="images/CLP4-figs/torusSection"/>
       </sidebyside>
       <p>
-Nous prendrons pour acquis que le centre du cercle se trouve à une distance <m>R</m> de l'axe <m>Oz</m> et que le cercle a lui-même un rayon  <m>r</m>. Ainsi, le point rouge se trouve à
-<md><mrow>
-x&amp;=0,
-</mrow><mrow>
-y&amp;= R + r\cos\theta,
-</mrow><mrow>
-z&amp;= r\sin\theta.
-</mrow></md>
-En particulier, le point rouge se trouve à une distance  <m>r\sin\theta</m> au-dessus du plan <m>Oxy</m> et à une distance  <m>R + r\cos\theta</m> de l'axe  <m>Oz</m>. Ainsi, quand on le fait tourner autour de l'axe <m>Oz</m>, le point rouge décrit un cercle, comme esquissé ci-après.
-</p>
+      Nous prendrons pour acquis que le centre du cercle se trouve à une distance <m>R</m> de l'axe <m>Oz</m> et que le cercle a lui-même un rayon  <m>r</m>. Ainsi, le point rouge se trouve à
+      <md><mrow>
+      x&amp;=0,
+      </mrow><mrow>
+      y&amp;= R + r\cos\theta,
+      </mrow><mrow>
+      z&amp;= r\sin\theta.
+      </mrow></md>
+      
+      En particulier, le point rouge se trouve à une distance  <m>r\sin\theta</m> au-dessus du plan <m>Oxy</m> et à une distance  <m>R + r\cos\theta</m> de l'axe  <m>Oz</m>. Ainsi, quand on le fait tourner autour de l'axe <m>Oz</m>, le point rouge décrit un cercle, comme esquissé ci-après.
+      </p>
       <sidebyside width="60%">
         <image source="images/CLP4-figs/torusRotB"/>
       </sidebyside>
       <p>
-Le cercle en question est contenu dans le plan  <m>z=r\sin\theta</m>, son centre se trouve sur l'axe <m>Oz</m> et a un rayon <m>\rho=R + r\cos\theta</m>.
-</p>
+      Le cercle en question est contenu dans le plan  <m>z=r\sin\theta</m>, son centre se trouve sur l'axe <m>Oz</m> et a un rayon <m>\rho=R + r\cos\theta</m>.
+      </p>
+      
       <p>
-Nous pouvons paramétrer ce cercle de la façon usuelle. Voici une vue d'en haut du cercle, avec le paramètre nommé  <m>\psi</m>.
-</p>
-      <sidebyside width="75%">
+      Nous pouvons paramétrer ce cercle de la façon usuelle. Voici une vue d'en haut du cercle, avec le paramètre nommé  <m>\psi</m>.
+      </p>
+      <sidebyside width="50%">
         <image source="images/CLP4-figs/torusTopJC"/>
       </sidebyside>
       <p>
-Ainsi, nous avons un paramétrage du cercle décrit par le point rouge :
-<md><mrow>
-x &amp;= \rho\cos\psi =  (R + r\cos\theta)\cos\psi,
-</mrow><mrow>
-y &amp;= \rho\sin\psi =  (R + r\cos\theta)\sin\psi,
-</mrow><mrow>
-z &amp;= r\sin\theta,
-</mrow></md>
-ou encore
-<md><mrow>
-&amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \vi
-                    + (R + r\cos\theta)\sin\psi \ \vj
-                    + r\sin\theta\ \vk
-</mrow><mrow>
-&amp; 0\leqslant  \theta,\psi  \leqslant  2\pi.
-</mrow></md>
-</p>
+      Ainsi, nous avons un paramétrage du cercle décrit par le point rouge :
+      <md><mrow>
+      x &amp;= \rho\cos\psi =  (R + r\cos\theta)\cos\psi,
+      </mrow><mrow>
+      y &amp;= \rho\sin\psi =  (R + r\cos\theta)\sin\psi,
+      </mrow><mrow>
+      z &amp;= r\sin\theta,
+      </mrow></md>
+      ou encore
+      <md><mrow>
+      &amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \vi
+                        + (R + r\cos\theta)\sin\psi \ \vj
+                        + r\sin\theta\ \vk
+      </mrow><mrow>
+      &amp; 0\leqslant  \theta,\psi  \leqslant  2\pi.
+      </mrow></md>
+      </p>
     </example>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Surfaces/Surf-prob1.pg" parse="text"/></webwork>
+    </exercise>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Surfaces/Surf-prob2.pg" parse="text"/></webwork>
+    </exercise>
+
   </subsection>
   <subsection xml:id="pars_tangentPlanes">
-    <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
-    <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
-    <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
     <title>Plans tangents</title>
     <p>
 Lorsqu'on rencontre une surface <q>compliquée</q> et qu'on veut l'étudier au voisinage d'un point, il est naturel de penser à utiliser le plan tangent en ce point.  Afin de spécifier un plan, on doit avoir
@@ -753,6 +764,11 @@ Ainsi,
 </mrow></md>
 </p>
     </example>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Surfaces/Surf-prob3.pg" parse="text"/></webwork>
+    </exercise>
+
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Surfaces.ptx"/>
 </section>

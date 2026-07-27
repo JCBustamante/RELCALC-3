@@ -301,6 +301,9 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
   Une des utilités du rotationnel est qu'il peut être utilisé pour dépister les champs gradients. En effet, le résultat suivant nous dit que ceux-ci sont irrotationnels<fn>C'est-à-dire que leur rotationnel est nul.</fn>.
 </p>
     <theorem xml:id="thm-rot-grad-zero">
+      <title>Les gradients sont irrotationnels</title>
+      
+      
       <statement>
         <p>Soit <m>f</m> une fonction de classe <m>C^2</m>, alors
     <me>
@@ -331,22 +334,20 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
     <example>
       <statement>
         <p>
-      Nous avons vu à l'<xref ref="ex-non-conserv"/> qu'il n'existe pas de fonction <m>f</m> telle que <m>\vnabla f = xy\, \vi + (y^2 +1)\, \vj</m>.
+      Nous avons vu à l'<xref ref="ex-non-conserv" text = "global">exemple</xref> qu'il n'existe pas de fonction <m>f</m> telle que <m>\vnabla f = xy\, \vi + (y^2 +1)\, \vj</m>.
     </p>
         <p>
       Avec les notations et les concepts introduits dans cette section, nous pouvons revoir ceci comme suit : posons <m>\vG = xy\, \vi + (y^2 +1)\, \vj </m>. Comme <m>\vnabla \times \vG = -x\,\vk</m>, qui est non nul, le champ <m>\vG</m> n'est pas irrotationnel. Il ne peut donc pas être un champ gradient.
     </p>
       </statement>
     </example>
-    <!-- 
+     <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Div-rot/Div-rot-prob1.pg" parse="text"/></webwork>
+    </exercise>  
 
-<p>
-  <term>Fin nouveau</term>
-</p> -->
-    <!-- WeBWork à inclure>
-Library/Michigan/Chap20Sec3/Q02.pg
-Je peux traduire
--->
+    
+
+ 
   </subsection>
   <subsection xml:id="pars-div">
     <title>La divergence</title>
@@ -524,7 +525,7 @@ La <term>divergence</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\v
       </statement>
     </definition>
     <p>
-  Il faut noter que la difergence d'un champ vectorielune fonction à valeurs scalaires, à différence du rotationnel qui, lui, est un champ vectoriel.
+  Il faut noter que la divergence d'un champ vectoriel est une fonction à valeurs scalaires, à différence du rotationnel qui, lui, est un champ vectoriel.
 </p>
     <!-- WeBWork à inclure>
 Devoir 12, problème 4
@@ -559,6 +560,9 @@ Devoir 12, problème 4
   Tout comme le rotationnel permet de dépister les champs gradients, la divergence permet de dépister les champs rotationnels. En effet, la divergence d'un tel champ est nulle, ce qu'on exprime en disant que les champs rotationnels sont <em><q>incompressibles</q></em>.
 </p>
     <theorem xml:id="thm-div-rot-zero">
+      <title>LEs rotationnels sont incompressibles</title>
+      
+      
       <statement>
         <p>Soit <m>\vF = P\, \vi + Q\, \vj + R\, \vk</m> un champ de classe <m>C^2</m>. Alors
     <me>
@@ -596,6 +600,17 @@ Devoir 12, problème 4
     </p>
       </solution>
     </example>
+
+     <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Div-rot/Div-rot-prob2.pg" parse="text"/></webwork>
+    </exercise>  
+
+     <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Div-rot/Div-rot-prob3.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
   </subsection>
   <!-- <p>
 

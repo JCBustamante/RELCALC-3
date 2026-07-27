@@ -6,60 +6,44 @@
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
   <title>Le Théorème de Green</title>
   <introduction>
-    <!-- 
-  <p>
-    <term>Début nouveau</term>
-  </p> -->
     <p>
-    Dans cette section, nous verrons le théorème de Green, formulé de deux façons différentes. Il fait le lien entre les intégrales de flux d'un champ de vecteurs et l'intégrale double du rotationnel ou la divergence de celui-ci. Il s'agit d'une version du théorème fondamental du calcul intégral pour les champs de vecteurs.
-  </p>
+      Dans cette section, nous verrons le théorème de Green, formulé de deux façons différentes. Il fait le lien entre les intégrales de flux d'un champ de vecteurs et l'intégrale double du rotationnel ou la divergence de celui-ci. Il s'agit d'une version du théorème fondamental du calcul intégral pour les champs de vecteurs.
+    </p>
+    
     <p>
     Plus précisément, le théorème de Green, dans sa forme tangentielle, stipule que le flux d'un champ <m>\vF</m> le long d'une courbe fermée (et simple) <m>\cC</m> est égal à l'intégrale double du rotationnel de <m>\vF</m> sur la région <m>\cR</m> limitée par <m>\cC</m>. Bien entendu, certaines hypothèses sont nécessaires, tant au sujet du champ de vecteurs que de la région <m>\cR</m> et de sa frontière <m>\cC</m>.
-  </p>
-    <!-- <p>
-    <term>Fin nouveau</term>
-  </p> -->
-    <p>
+   </p>
+   
+   <p>
     Par ailleurs, la version normale du théorème de Green dit que le flux de <m>\vF</m> à travers une courbe <m>\cC</m> est donné par l'intégrale double de la divergence de ce champ sur la région <m>\cR</m> limitée par <m>\cC</m>.
   </p>
   </introduction>
-  <!-- WeBWork à inclure>
-Library/Michigan/Chap20Sec3/Q02.pg
-Je peux traduire
--->
-  <!-- WeBWork à inclure>
-Devoir 12, problème 4
--->
+
   <subsection xml:id="pars-courbes-green">
-    <title>Compléments sur les courbes</title>
+    <title>Compléments sur les courbes</title>  
     <p>
-  Afin d'énoncer le théorème de Green, dans ses deux versions, nous devons donner quelques compléments d'information au sujet des courbes et des régions qu'elles délimitent.
-  </p>
+      Afin d'énoncer le théorème de Green, dans ses deux versions, nous devons donner quelques compléments d'information au sujet des courbes et des régions qu'elles délimitent.
+    </p>
+    
     <definition xml:id="def_Green">
       <statement>
         <p>
           <ol marker="(a)">
             <li>
-  Une courbe <m>\cC</m> paramétrée par  <m>\vr(t)</m>, <m>a\leqslant t\leqslant b</m>, est dite
-  <term>fermée</term> si <m>\vr(a)=\vr(b)</m>.
-  </li>
+              Une courbe <m>\cC</m> paramétrée par  <m>\vr(t)</m>, <m>a\leqslant t\leqslant b</m>, est dite <term>fermée</term> si <m>\vr(a)=\vr(b)</m>.
+            </li>
             <li>
-  La courbe  <m>\cC</m> est dite <term>simple</term> si elle ne se coupe pas elle-même. Plus précisément, si <m>a\leqslant t_1,t_2\leqslant b</m> sont tels que <m>t_1\ne t_2</m> et que <m>\{t_1,t_2\}
-  \ne\{a,b\}</m>, alors <m>\vr(t_1)\ne \vr(t_2)</m>. Ceci revient à dire que si <m>\vr(t_1)=\vr(t_2)</m>, alors <m>t_1=t_2</m> ou <m>t_1=a</m>, <m>t_2=b</m>, ou <m>t_1=b</m>, <m>t_2=a</m>.
-  </li>
+              La courbe  <m>\cC</m> est dite <term>simple</term> si elle ne se coupe pas elle-même. Plus précisément, si <m>a\leqslant t_1,t_2\leqslant b</m> sont tels que <m>t_1\ne t_2</m> et que <m>\{t_1,t_2\} \ne\{a,b\}</m>, alors <m>\vr(t_1)\ne \vr(t_2)</m>. Ceci revient à dire que si <m>\vr(t_1)=\vr(t_2)</m>, alors <m>t_1=t_2</m> ou <m>t_1=a</m>, <m>t_2=b</m>, ou <m>t_1=b</m>, <m>t_2=a</m>.
+            </li>
             <li>
-              <p>
-  La courbe  <m>\cC</m> est  <term>lisse par morceaux</term> si elle admet un paramétrage
-  <m>\vr(t)</m>
-  <ul><li>
-    continu,
-
-  </li><li>
-  différentiable, sauf peut-être à un nombre fini de points, et si
-  </li><li>
-  la dérivée est continue et non nulle, sauf peut-être à un nombre fini de points.
-  </li></ul>
-  </p>
+              <p> La courbe  <m>\cC</m> est  <term>lisse par morceaux</term> si elle admet un paramétrage <m>\vr(t)</m>
+              <ul>
+                <li>continu,</li>
+                <li> différentiable, sauf peut-être à un nombre fini de points, et si</li>
+                <li>la dérivée est continue et non nulle, sauf peut-être à un nombre fini de points.
+                </li>
+              </ul>
+              </p>
             </li>
           </ol>
         </p>
@@ -76,7 +60,7 @@ Devoir 12, problème 4
     </sidebyside>
     <p>
   Si <m>\cC</m> est une courbe fermée et simple, la région bornée qu'elle délimite, disons <m>\cR</m>, admet pour frontière justement la courbe <m>\cC</m>, et nous écrirons <m>\cC =\partial \cR</m>. Le symbole de dérivée partielle est utilisé pour frontière. Nous avons besoin d'orienter la frontière de la région <m>\cR</m>, c'est-à-dire de donner un sens de parcours. Par convention, une courbe fermée simple sera <em>orientée positivement</em> si elle est parcourue dans le sens contraire des aiguilles d'une montre. Ceci revient à dire que lorsqu'on parcourt la courbe <m>\cC</m>, la région <m>\cR</m> se trouve à gauche.
-  </p>
+    </p>
     <p>
     Finalement, notons que si <m>\cC = \partial \cR</m> , il est habituel d'écrire
     <me>
@@ -85,17 +69,19 @@ Devoir 12, problème 4
     pour l'intégrale de <m>\vF</m> sur le bord de <m>\cR</m> (une réunion de courbes!) orienté positivement.
   </p>
   </subsection>
-  <subsection xml:id="pars-Green">
+
+  <subsection xml:id="subsec-Green">
     <title>Le théorème de Green</title>
     <p>
     Nous pouvons maintenant énoncer le théorème de Green.
-  </p>
+    </p>
+    
     <theorem xml:id="thm_Green_tgt">
       <title>Théorème de Green, forme tangentielle</title>
       <statement>
-        <p>
-  Soit <m>\cR</m> une région bornée du plan telle que la frontière <m>\partial \cR</m> consiste en un nombre fini de courbes simples lisses par morceaux, avec l'orientation positive.
-  </p>
+        <p>  Soit <m>\cR</m> une région bornée du plan telle que la frontière <m>\partial \cR</m> consiste en un nombre fini de courbes simples lisses par morceaux, avec l'orientation positive.
+        </p>
+        
         <sidebyside widths="25%  27%" valign="middle">
           <image source="images/CLP4-figs/greens1"/>
           <image source="images/CLP4-figs/dcircleE"/>
@@ -252,37 +238,52 @@ Devoir 12, problème 4
 </p> -->
       </proof>
     </theorem>
-    <p> Le terme <q>forme tangentielle</q> vient de ce que l'intégrale considérée calcule la circulation du champ <m>\vF</m> autour de la courbe <m>\cC</m>. Comme nous l'avons vu à la <xref ref="fact-FdR-FTdS" text="global">résultat</xref>, ceci revient à intégrer la projection de <m>\vF</m> sur le vecteur tangent unitaire <m>\vT</m> à la courbe. Ainsi, informellement, on peut penser que le théorème de Green, dans sa version tangentielle, dit:
-  <blockquote><em>La circulation d'un champ <m>\vF</m></em> autour <em>d'une courbe <m>\cC</m> est l'intégrale du rotationnel de</em> <m>\vF</m> <em>sur la région limitée par <m>\cC</m></em>.
+    
+    <p> Le terme <q>forme tangentielle</q> vient de ce que l'intégrale considérée calcule la circulation du champ <m>\vF</m> autour de la courbe <m>\cC</m>. Comme nous l'avons vu à la <xref ref="fact-FdR-FTdS" text="global">formule</xref>, ceci revient à intégrer la projection de <m>\vF</m> sur le vecteur tangent unitaire <m>\vT</m> à la courbe. Ainsi, informellement, on peut penser que le théorème de Green, dans sa version tangentielle, dit:
+  <blockquote><em>La circulation d'un champ <m>\vF</m></em> autour <em>d'une courbe <m>\cC</m> est l'intégrale du rotationnel de </em> <m>\vF</m> <em> sur la région limitée par <m>\cC</m></em>.
   </blockquote>
   </p>
-    <p>Si le champ <m>\vF(x,y)</m> est donné par ses composantes <m>P(x,y)\, \vi + Q(x,y)\, \vj</m>, l'égalité du théorème devient :
-  <md><mrow>\int_{\partial \cR} \vF \cdot \vT\, \dee{s} \amp =  \int_{\partial \cR} \vF \cdot \dee{\vr}  = \int_{\partial \cR}  P\,\dee{x} + Q\,\dee{y}</mrow><mrow> \amp = \iint_{\cR} \rot \vF\,\dee{A} = \iint_{\cR} \pdiff{Q}{x} - \pdiff{P}{y}\, \dee{A} = \iint_{\cR} \left(\vnabla \times \vF\right)\cdot \vk\, \dee{A}. </mrow></md>
-  Toutes ces égalités sont équivalentes; chacune des formes d'écrire le théorème de Green présente ses avantages.
+    
+  <p>
+    Si le champ <m>\vF(x,y)</m> est donné par ses composantes <m>P(x,y)\, \vi + Q(x,y)\, \vj</m>, l'égalité du théorème devient :
+  
+    <md>
+      <mrow>\int_{\partial \cR} \vF \cdot \vT\, \dee{s} \amp =  \int_{\partial \cR} \vF \cdot \dee{\vr}  = \int_{\partial \cR}  P\,\dee{x} + Q\,\dee{y}</mrow>
+      <mrow> \amp = \iint_{\cR} \rot \vF\,\dee{A} = \iint_{\cR} \pdiff{Q}{x} - \pdiff{P}{y}\, \dee{A} = \iint_{\cR} \left(\vnabla \times \vF\right)\cdot \vk\, \dee{A}. </mrow>
+    </md>
+    Toutes ces égalités sont équivalentes; chacune des formes d'écrire le théorème de Green présente ses avantages.  
+  </p>
 
 
-
-  <example xml:id="eg_greenA"><statement><p>
-  Calculer
-  <m>\displaystyle   \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y},
-  </m> où <m>\cC</m> est le carré montré dans la figure.
-  </p><sidebyside width="39%"><image source="images/CLP4-figs/greensSquare"/></sidebyside></statement><solution><p>
-  Soit <m>R=\Set{(x,y)}{1\leqslant x\leqslant 2,\ 0\leqslant y\leqslant 1}</m>. En vertu du théorème de Green,
-  <md><mrow>
-  \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y}
-  &amp;=\iint_{\cR}\Big[\frac{\partial }{\partial x}(y^3+1)
+  <example xml:id="eg_greenA">
+    <statement>
+      <p>
+        Calculer <m>\displaystyle   \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y}, </m> où <m>\cC</m> est le carré montré dans la figure.
+    </p>
+    
+    <sidebyside width="39%"><image source="images/CLP4-figs/greensSquare"/>
+    </sidebyside>
+  </statement>
+  
+  <solution>
+    <p>
+      Soit <m>R=\Set{(x,y)}{1\leqslant x\leqslant 2,\ 0\leqslant y\leqslant 1}</m>. En vertu du théorème de Green,
+        <md>
+          <mrow>
+            \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y} &amp;=\iint_{\cR}\Big[\frac{\partial }{\partial x}(y^3+1)
                   - \frac{\partial }{\partial y}(x-xy)\Big]\dee{x}\dee{y}
-  </mrow><mrow>
-  &amp;=\int_1^2\dee{x}\int_0^1\dee{y}\ x
-  =\frac{x^2}{2}\bigg|_1^2
-  =\frac{3}{2}.
-  </mrow></md>
-  </p></solution></example>
+          </mrow>
+          <mrow>
+            &amp;=\int_1^2\dee{x}\int_0^1\dee{y}\ x  =\frac{x^2}{2}\bigg|_1^2=\frac{3}{2}.
+          </mrow>
+        </md>
+    </p>
+  </solution>
+  </example>
 
-
-  <!-- WeBWork à inclure>
-  Devoir 12, problème 1
-  -->
+  <exercise>
+  <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Green/Green-prob1.pg" parse="text"/></webwork>
+  </exercise>
 
   <p>
     Le théorème de Green demande d'avoir une courbe fermée. L'exemple suivant montre comment on peut s'en tirer lorsque la courbe n'est pas fermée.
@@ -337,8 +338,12 @@ Devoir 12, problème 4
         </me>
 
       </p></solution></example>
-  <p>
-    Lorsque la région <m>\cR</m> est telle que sa frontière <m>\partial \cR</m> est donnée par plus d'une courbe, une attention particulière est requise pour l'orientation des différentes courbes qui constituent <m>\partial \cR</m>. Plutôt que de penser au sens de parcours de chacune de ces courbes individuellement, il faut les considérer comme la frontière de <m>\cR</m> et les orienter de sorte à ce que lorsque nous les parcourons (debout sur le plan, avec notre tête dans la direction du vecteur <m>\vk</m>), la région <m>\cR</m> se trouve à gauche. On peut voir la figure de droite dans l'énoncé du théorème de Green. Ci-bas, on présente une situation plus générale.
+
+      
+
+
+      <p>
+        Lorsque la région <m>\cR</m> est telle que sa frontière <m>\partial \cR</m> est donnée par plus d'une courbe, une attention particulière est requise pour l'orientation des différentes courbes qui constituent <m>\partial \cR</m>. Plutôt que de penser au sens de parcours de chacune de ces courbes individuellement, il faut les considérer comme la frontière de <m>\cR</m> et les orienter de sorte à ce que lorsque nous les parcourons (debout sur le plan, avec notre tête dans la direction du vecteur <m>\vk</m>), la région <m>\cR</m> se trouve à gauche. On peut voir la figure de droite dans l'énoncé du théorème de Green. Ci-bas, on présente une situation plus générale.
     </p>
 
 
@@ -349,9 +354,15 @@ Devoir 12, problème 4
   <p>
     Ceci revient à utiliser la règle de la main droite  en chaque point de <m>\cR</m>. Le pouce de la main droite pointe dans la direction du vecteur <m>\vk</m>, les autres doigts donnent l'orientation de la frontière de <m>\cR</m>.
   </p>
-  <example xml:id="ex-green-bord-x2"><statement><p>
+  <example xml:id="ex-green-bord-x2">
+    <statement>
+      <p>
         Soit <m>\cR</m> la région du plan donnée en coordonnées polaires par <m>1\leqslant  r \leqslant 2</m> et <m>0\leqslant  \theta  \leqslant 2\pi</m>. Calculer la valeur de <m>\displaystyle\int_{\partial \cR} \left(\sin x - \frac{1}{3}y^3\right)\, \dee{x} + \left(\frac{1}{3}x^3 + \sin y\right)\, \dee{y}</m>.
-      </p><image xml:id="sageplot-eg_non-simp-connexte" width="60%"><description>Théorème de Green avec une région non simplement connexe</description><sageplot>
+      </p>
+      
+      <image xml:id="sageplot-eg_non-simp-connexte" width="60%">
+        <description>Théorème de Green avec une région non simplement connexe</description>
+        <sageplot>
         N=60
         p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
         L1 = [[p] for p in p1]
@@ -370,12 +381,15 @@ Devoir 12, problème 4
         Fig += text("$\\mathcal{C}_1$", (0.55,0.55), color = "blue",
           fontsize = 14)
         Fig
-       </sageplot></image></statement><solution><p>
+       </sageplot>
+      </image>
+    </statement>
+    
+    <solution><p>
         Le calcul par le théorème de Green se fait aisément. Posons <m>P(x,y) = \left(\sin x - \frac{1}{3}y^3\right) </m> et <m>Q(x,y) = \left(\frac{1}{3}x^3 + \sin y\right) </m>. Nous avons alors
         <md><mrow>\int_{\partial \cR} P\, \dee{x} + Q \, \dee{y} \amp = \iint_{\cR} \pdiff{Q}{x} - \pdiff{P}{y}\, \dee{A} = \iint_{\cR} x^2 + y^2 \dee{A} </mrow><mrow> \amp = \int_0^{2\pi} \int_1^2 r^3 \, \dee{r}\, \dee{\theta} = \int_0^{2\pi}\frac{15}{4}\dee{\theta} = \frac{15\pi}{2}. </mrow></md>
       </p></solution></example>
 
-</p>
     <warning xml:id="warn_Green">
       <p>
 Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="global">théorème</xref>, on exige que les composantes du champ <m>\vF</m> admettent des dérivées partielles continues en <em>chaque point de </em> <m>\cR</m>. Si ce n'est pas le cas, ne serait-ce que pour un seul point, la conclusion sera fausse. L'exemple suivant, que nous avons déjà rencontré, le montre.
@@ -415,16 +429,10 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     </p>
       </statement>
     </example>
-    <p>
+  <exercise>
+  <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Green/Green-prob3.pg" parse="text"/></webwork>
+  </exercise>
 
-</p>
-    <!-- 
-<p>
-  <term>Fin nouveau</term>
-</p> -->
-    <!-- WeBWork à inclure>
-  Devoir 12, probleme 3
-  -->
     <p>
     La <q>version normale</q> du théorème de Green traite pour sa part du flux d'un champ <m>\vF</m> à travers la frontière d'une région <m>\cR</m>, pourvu que cette frontière satisfasse aux mêmes hypothèses que celles faites pour la forme tangentielle du théorème. Nous l'avons vu, pour calculer le <q>flux à travers </q> une courbe, nous devons choisir un vecteur unitaire <m>\vn</m> orthogonal à la courbe. Pour calculer le flux à travers le bord de <m>\cR</m>, nous choisissons le vecteur <m>\vn</m> pointant vers l'extérieur de <m>\cR</m>. Comme précédemment, si <m>\partial \cR</m> est composée de plusieurs courbes, il faudra tenir compte de ceci pour faire un choix cohérent de <m>\vn</m> pour chacune de ces courbes.
   </p>
@@ -445,7 +453,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       </statement>
     </theorem>
     <p>Ainsi, le théorème de Green, dans sa forme normale, s'interprète comme :
-  <blockquote><em>Le flux d'un champ <m>\vF</m></em> à travers <em>la frontière d'une région <m>\cR</m> est l'intégrale de la divergence de </em><m>\vF</m> <em>sur la région <m>\cR</m></em>.
+  <blockquote><em>Le flux d'un champ <m>\vF</m></em> à travers <em>la frontière d'une région <m>\cR</m> est l'intégrale de la divergence de </em><m>\vF</m><em> sur la région <m>\cR</m></em>.
   </blockquote>
 </p>
     <p>
@@ -469,6 +477,16 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     </p>
       </solution>
     </example>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Green/Green-prob2.pg" parse="text"/></webwork>
+    </exercise>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Green/Green-prob4.pg" parse="text"/></webwork>
+    </exercise>
+
+
     <example>
       <statement>
         <p>
@@ -606,6 +624,10 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       </p>
       </solution>
     </example>
+
+     <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Green/Green-prob5.pg" parse="text"/></webwork>
+    </exercise>
     <example>
       <statement>
         <p>
@@ -675,6 +697,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       </p>
       </solution>
     </example>
+
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Green.ptx"/>
 </section>

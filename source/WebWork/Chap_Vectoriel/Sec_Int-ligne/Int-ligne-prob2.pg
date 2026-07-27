@@ -1,0 +1,157 @@
+##DESCRIPTION
+##  Line integrals via parametrization
+##ENDDESCRIPTION
+
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Vector calculus)
+## DBsection(Line integrals)
+## Date(10/31/09)
+## Institution(Fort Lewis College)
+## Author(Paul Pearson)
+## MLT(Line_Integrals_3)
+## MLTleader(1)
+## Level(3)
+## MO(1)
+## TitleText1('Calculus')
+## AuthorText1('Hughes-Hallett')
+## EditionText1('4')
+## Section1('18.2')
+## Problem1('')
+## TitleText2('Calculus')
+## AuthorText2('Hughes-Hallett')
+## EditionText2('5')
+## Section2('18.2')
+## Problem2('')
+## KEYWORDS('Line integrals','Path integrals')
+## SOURCE
+## Library/FortLewis/Calc3/18-2-Line-integrals-parametrized/HGM4-18-2-00-Line-integrals-parametrized.pg
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "weightedGrader.pl",
+  "PGcourse.pl"
+);
+
+install_weighted_grader();
+
+
+TEXT(beginproblem());
+
+##############################################
+#  Setup
+
+Context("Vector2D");
+Context()->variables->are(t=>"Real");
+
+#
+#  Points on the line
+#
+$a = random(2,5,1);
+$b = random(2,5,1);
+while ($a == $b) { $b = random(2,5,1); }
+
+$P = Point($a,0);
+$Q = Point(0,$b);
+$V = Vector(-($a),$b);
+
+# 
+#  Times, vectors, and lines
+#
+$Ta = Formula("t") -> reduce;
+$La = $P + $Ta * $V;
+
+
+@p = $P->value;
+@v = $V->value;
+
+$x = Formula("$p[0] + $v[0] * t") -> reduce;
+$y = Formula("$p[1] + $v[1] * t") -> reduce;
+
+#$integrand = Formula("$v[0]*(-($y)) + $v[1]*($x)") -> reduce;
+$integrand = Formula("$a * $b");
+
+$lowerlimit = Real("0");
+$upperlimit = Real("1");
+
+$integralvalue = Real("$a * $b") -> reduce;
+
+$trianglevalue = Real("-($a * $b)") -> reduce;
+
+##########################################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Soit \( \mathbf{F}(x,y) = -y \mathbf{i} + x \mathbf{j} \)
+et \( C \) le segment de droite du point
+\( P = $P \) au point \( Q = $Q \).
+$BR
+$BR
+(a) Trouver une équation paramétrique vectorielle \(\mathbf{r}(t)\) pour le
+segment \( C \) telle que les points \(P\) et \(Q\) correspondent
+à \( t = 0 \) et \( t = 1 \) respectivement.
+$BR
+\( \mathbf{r}(t) = \) \{ans_rule(40)\}
+$BR
+$BR
+(b) En utilisant la paramétrisation de la partie (a), l'intégrale de ligne
+de \( \mathbf{F} \) le long de \( C \) est
+$BR
+\( \displaystyle \int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}\,'(t) \, dt = \int_a^b \)
+\{ ans_rule(40) \}
+\( dt \)
+$BR
+avec les bornes d'intégration
+\( a = \) \{ans_rule(10) \} et
+\( b = \) \{ans_rule(10) \}
+$BR
+$BR
+(c) Évaluer l'intégrale de ligne de la partie (b).
+$BR
+\{ ans_rule(20) \}
+$BR
+$BR
+(d) Quelle est la valeur de l'intégrale de ligne de \( \mathbf{F} \)
+autour du triangle orienté dans le sens des aiguilles d'une montre
+dont les sommets sont l'origine, \(P\) et \(Q\)?
+Indice : Dessiner le champ de vecteurs et le triangle.
+$BR
+\{ ans_rule(20) \}
+END_TEXT
+Context()->normalStrings;
+
+
+##################################################
+#  Answers
+
+$showPartialCorrectAnswers = 1;
+
+#  for checking a particular vector parametric line
+sub mycheck {
+  my ($correct, $student, $ansHash) = @_;
+
+  if ( 
+       ($correct . i == $student . i) && 
+       ($correct . j == $student . j)  
+     ) 
+  { return 1; } else { return 0; }
+}
+
+WEIGHTED_ANS($La->cmp( checker=>~~&mycheck ), 20 );
+
+WEIGHTED_ANS($integrand->cmp(), 20);
+WEIGHTED_ANS($lowerlimit->cmp(), 5);
+WEIGHTED_ANS($upperlimit->cmp(), 5);
+
+WEIGHTED_ANS($integralvalue->cmp(), 40);
+WEIGHTED_ANS($trianglevalue->cmp(), 10);
+
+
+
+;
+ENDDOCUMENT();

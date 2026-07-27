@@ -1,0 +1,82 @@
+## Créé par ChatGPT
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGchoicemacros.pl",
+  "PGML.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1;
+
+$mc = new_multiple_choice();
+
+$mc->qa(
+  "Sélectionnez le champ de vecteurs dont la courbe donnée est une ligne de courant.",
+  "Champ B"
+);
+
+$mc->extra(
+  "Champ A",
+  "Champ C"
+);
+
+BEGIN_PGML
+
+On considère la courbe paramétrée
+[``
+\vr(t)=\cos(t)\,\vi+\sin(t)\,\vj+t\,\vk ,
+\qquad 0\leq t\leq 2\pi .
+``]
+
+Parmi les trois champs de vecteurs suivants, lequel admet cette courbe comme ligne de courant?
+
+[``
+\begin{aligned}
+\text{Champ A:}\qquad \vF_1(x,y,z)&=-y\,\vi+x\,\vj,\\
+\text{Champ B:}\qquad \vF_2(x,y,z)&=-y\,\vi+x\,\vj+\vk,\\
+\text{Champ C:}\qquad \vF_3(x,y,z)&=y\,\vi-x\,\vj+\vk.
+\end{aligned}
+``]
+
+[$mc->print_q]
+
+END_PGML
+
+ANS(radio_cmp($mc->correct_ans));
+
+BEGIN_PGML_SOLUTION
+
+On calcule d'abord le vecteur tangent à la courbe :
+[``
+\vr'(t)=-\sin(t)\,\vi+\cos(t)\,\vj+\vk.
+``]
+
+Ensuite, on évalue les trois champs sur la courbe
+[``
+x=\cos(t),\qquad y=\sin(t),\qquad z=t.
+``]
+
+On obtient :
+[``
+\begin{aligned}
+\vF_1(\vr(t))&=-\sin(t)\,\vi+\cos(t)\,\vj,\\
+\vF_2(\vr(t))&=-\sin(t)\,\vi+\cos(t)\,\vj+\vk,\\
+\vF_3(\vr(t))&=\sin(t)\,\vi-\cos(t)\,\vj+\vk.
+\end{aligned}
+``]
+
+Ainsi,
+[``
+\vF_2(\vr(t))=\vr'(t).
+``]
+
+La bonne réponse est donc **Champ B**.
+
+END_PGML_SOLUTION
+
+ENDDOCUMENT();

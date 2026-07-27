@@ -183,9 +183,7 @@
     </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-Devoir 11, Problème 1
--->
+   
     <p>
   Voyons maintenant un exemple avec une courbe dans l'espace. De plus, la courbe considérée est obtenue comme l'union de deux courbes. Naturellement, il faut additionner les deux résultats.
 </p>
@@ -219,6 +217,14 @@ Devoir 11, Problème 1
   </p>
       </solution>
     </example>
+
+  <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Int-ligne/Int-ligne-prob1.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
+
     <p> Nous avons motivé les intégrales de ligne par le problème du calcul de la masse d'un fil mince de densité variable donnée par une fonction <m>\rho(\vr)</m>. Ce contexte mène naturellement au problème du calcul du centre de gravité, ou des moments d'inertie d'un tel fil par rapport à différents axes de rotation. Supposons donc que la courbe <m>\cC</m>, c'est-à-dire la forme de notre fil, est une courbe dans <m>\R^3</m> (s'il s'agit d'une courbe dans <m>\R^2</m>, il faut simplement ignorer la coordonnée <m>z</m>). La masse totale est
 <me>
   \text{Masse} = \int_{\cC} \rho(x,y,z)\,  \dee{s}.
@@ -292,9 +298,7 @@ Ainsi,
 de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin entre l'extrémité inférieure et l'extrémité supérieure.
 </p>
     </example>
-    <!-- WeBWork à inclure>
-Devioir 11, Problème 2
--->
+   
   </subsection>
   <subsection xml:id="pars-Int-Champs">
     <title>Intégrales de ligne des champs de vecteurs</title>
@@ -312,10 +316,8 @@ Devioir 11, Problème 2
           Si <m>f</m> est une fonction de deux ou trois variables définie sur une région <m>\cD</m>, alors, en chaque point <m>\vr</m>, nous avons le vecteur gradient <m>\vnabla f (\vr) </m>. Nous avons donc un champ de vecteurs, le <em>champ gradient</em> de la fonction <m>f</m>.
         </p></li></ul>
   </p>
-    <!-- WeBWork à inclure>
- Library/FortLewis/Calc3/17-3-Vector-fields/HGM5-17-3-27-Vector-fields.pg
- Je peux traduire.
- -->
+   
+ 
     <p>
         Supposons que nous voulons trouver le travail effectué par une force <m>\vF(\vr)</m> qui déplace une particule le long d'un chemin <m>\vr(t)</m>. Pendant <q>l'intervalle infinitésimal</q>
         <fn>
@@ -456,6 +458,7 @@ Devioir 11, Problème 2
     <m>\int_{\cC_2}\vF\cdot\dee{\vr}</m> et <m>\int_{\cC_3}\vF\cdot\dee{\vr}</m> diffèrent.
     </p>
     </example>
+
     <example xml:id="eg_workIntegralB">
       <statement>
         <p>
@@ -503,15 +506,20 @@ Devioir 11, Problème 2
     </p>
       </solution>
     </example>
-    <!-- WeBWork à inclure>
-    Devoir 11, Problème 3
-    -->
+    
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Int-ligne/Int-ligne-prob2.pg" parse="text"/></webwork>
+    </exercise>  
+
+
+
     <p>
       Rappelons que le vecteur tangent unitaire <m>\vT</m> est tel que <m>\vr' = |\vr'|\vT</m>. Par ailleurs, l'abscisse curviligne <m>s</m> vérifie <m>\diff{s}{t} = |\vr'|</m>
       <fn>
         Et l'on écrit souvent <m>\dee{s} = |\vr'|\dee{t}</m>.
       </fn>. Ainsi, nous avons, en vertu de la définition de l'intégrale de ligne d'une fonction scalaire, la formule qui suit.
     </p>
+    
     <fact xml:id="fact-FdR-FTdS">
       <statement>
         <p>
@@ -521,6 +529,7 @@ Devioir 11, Problème 2
         </p>
       </statement>
     </fact>
+   
     <p>
       L'intégrale de ligne qui nous occupe calcule la somme des projections du champ <m>\vF</m> tangentiellement à la courbe <m>\cC</m>. Pour cette raison, on appelle souvent cette intégrale le <term><em>flux de <m>\vF</m> le long de <m>\cC</m></em></term>, ou encore la <term><em>circulation de <m>\vF</m> le long de <m>\cC</m></em></term>. Il sera utile de penser en ces termes.
     </p>
@@ -641,6 +650,11 @@ Devioir 11, Problème 2
         </p>
       </solution>
     </example>
+
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Int-ligne/Int-ligne-prob3.pg" parse="text"/></webwork>
+    </exercise>  
     <p>
       Supposons maintenant nous voulons calculer le taux d'entrée ou de sortie d'un fluide dans une région du plan limitée par une courbe fermée <m>\cC</m>. Si <m>\vF</m> est le champ de vitesses du fluide, on ne doit plus projeter <m>\vF</m> tangentiellement à <m>\cC</m> (ce qu'on fait lorsqu'on calcule <m>\vF \cdot \vT</m>), mais plutôt projeter <m>\vF</m> sur un vecteur <m>\vn </m> unitaire et orthogonal à la courbe en chaque point. Dans ce cas, le <term><em>flux de <m>\vF</m>à travers <m>\cC</m></em></term> sera donné par
       <me>
@@ -691,6 +705,10 @@ Devioir 11, Problème 2
        Remarquons que le flux vers l'extérieur est positif, en accord avec ce que nous observons dans la figure : lorsque le champ de vecteurs traverse la courbe <m>\cC</m>, il le fait en allant de l'intérieur vers l'extérieur.
       </solution>
     </example>
+
+    <exercise>
+      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Int-ligne/Int-ligne-prob4.pg" parse="text"/></webwork>
+    </exercise>  
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Integrales-ligne.ptx"/>
 </section>

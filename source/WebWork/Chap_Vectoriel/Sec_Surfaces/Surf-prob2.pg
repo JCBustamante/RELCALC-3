@@ -1,0 +1,77 @@
+## DBsubject(Calculus - multivariable)
+## DBchapter(Intégrales de surface)
+## DBsection(Surfaces paramétrées)
+## Institution(Université de Sherbrooke)
+## Author(JC Bustamante)
+## Level(2)
+## MO(1)
+## KEYWORDS('surface paramétrée', 'paraboloïde', 'coordonnées polaires')
+
+## Source
+## Problème original, RELCALC3
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+$a = list_random(1, 2, 3);
+$R = list_random(1, 2, 3);
+
+Context("Numeric");
+Context()->variables->add(r => 'Real', t => 'Real');
+
+$xcomp = Compute("r * cos(t)");
+$ycomp = Compute("$a * r^2");
+$zcomp = Compute("r * sin(t)");
+
+TEXT(beginproblem());
+
+Context()->texStrings;
+BEGIN_TEXT
+Utiliser des coordonnées polaires dans le plan \(Oxz\) pour paramétrer la portion
+du paraboloïde \(\mathcal{S} : y = $a(x^2 + z^2)\), \(x^2 + z^2 \leqslant $R^2\).
+$PAR
+Donner les trois composantes du paramétrage \(\mathbf{r}(r,t)\)
+(utiliser \(t\) pour l'angle \(\theta\)) :
+$PAR
+\(x = \) \{ans_rule(20)\}
+$PAR
+\(y = \) \{ans_rule(20)\}
+$PAR
+\(z = \) \{ans_rule(20)\}
+$PAR
+avec \(0\leqslant r\leqslant $R\) et \(0\leqslant t\leqslant 2\pi\).
+
+END_TEXT
+Context()->normalStrings;
+
+ANS($xcomp->cmp());
+ANS($ycomp->cmp());
+ANS($zcomp->cmp());
+
+Context()->texStrings;
+SOLUTION(EV3(<<'END_SOLUTION'));
+$PAR
+$SOL
+En coordonnées polaires dans le plan \(Oxz\), on pose
+\(x = r\cos\theta\) et \(z = r\sin\theta\).
+La condition \(x^2 + z^2 \leqslant $R^2\) devient \(0 \leqslant r \leqslant $R\).
+$PAR
+En substituant dans l'équation du paraboloïde \(y = $a(x^2+z^2)\), on obtient
+\[
+y = $a\bigl(r^2\cos^2\theta + r^2\sin^2\theta\bigr) = $a r^2.
+\]
+Le paramétrage est donc
+\[
+\mathbf{r}(r,\theta) = (r\cos\theta,\; $a r^2,\; r\sin\theta),
+\qquad 0\leqslant r\leqslant $R,\quad 0\leqslant\theta\leqslant 2\pi.
+\]
+
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();

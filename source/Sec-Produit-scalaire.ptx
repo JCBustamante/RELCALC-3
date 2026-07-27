@@ -3,13 +3,13 @@
   <title>Produit scalaire : angles et distances</title>
   <introduction>
     <p>
-    Dans cette section et celle qui suit, nous allons &#xE9;tudier deux <em>produits</em> avec les vecteurs. Le premier est le  <em>produit scalaire</em>, qui a comme r&#xE9;sultat un nombre<fn> D'o&#xF9; le nom : le r&#xE9;sultat est un scalaire.</fn>, le second est le <em>produit vectoriel</em>, d&#xE9;fini pour les vecteurs dans <m>\R^3</m>, dont le r&#xE9;sultat est un autre vecteur. Tous les deux nous seront extr&#xEA;mement utiles par la suite.
+    Dans cette section et celle qui suit, nous allons étudier deux <em>produits</em> avec les vecteurs. Le premier est le  <em>produit scalaire</em>, qui a comme résultat un nombre<fn> D'où le nom : le résultat est un scalaire.</fn>, le second est le <em>produit vectoriel</em>, défini pour les vecteurs dans <m>\R^3</m>, dont le résultat est un autre vecteur. Tous les deux nous seront extrêmement utiles par la suite.
   </p>
   </introduction>
   <subsection xml:id="subsec-produit-scalaire">
     <title>Produit scalaire</title>
     <p>
-Le produit scalaire est d&#xE9;fini pour des vecteurs avec un nombre arbitraire de composantes. Cependant, dans le cadre de ce texte, nous utiliserons souvent les vecteurs &#xE0; deux ou trois composantes. Afin d'all&#xE9;ger l'&#xE9;criture<fn>Et surtout puisque nous pr&#xE9;sumons que le lecteur ou la lectrice g&#xE9;n&#xE9;rique de ce texte a suivi un cours d'alg&#xE8;bre lin&#xE9;aire.</fn>, nous exposons la th&#xE9;orie pour les vecteurs dans <m>\R^n</m>, nous laissons au lectorat le soin de faire les sp&#xE9;cialisations aux cas <m>n=2</m> ou <m>n=3</m>.
+Le produit scalaire est défini pour des vecteurs avec un nombre arbitraire de composantes. Cependant, dans le cadre de ce texte, nous utiliserons souvent les vecteurs à deux ou trois composantes. Afin d'alléger l'écriture<fn>Et surtout puisque nous présumons que le lecteur ou la lectrice générique de ce texte a suivi un cours d'algèbre linéaire.</fn>, nous exposons la théorie pour les vecteurs dans <m>\R^n</m>, nous laissons au lectorat le soin de faire les spécialisations aux cas <m>n=2</m> ou <m>n=3</m>.
 </p>
     <definition xml:id="def-Prod-scalaire">
       <statement>
@@ -69,9 +69,9 @@ Le produit scalaire est d&#xE9;fini pour des vecteurs avec un nombre arbitraire 
     <proposition xml:id="prop-Prop-scalaire">
       <statement>
         <p>Soit <m>\va, \vb,\vc \in \R^n</m> et <m>s,t\in \R</m>, alors :
-    <ol marker="(a)"><li><p><m>\va \cdot \va\geqslant 0</m>, et l'&#xE9;galit&#xE9; a lieu si et seulement si <m>\va = \vZero</m> (positivit&#xE9;);
-        </p></li><li><p><m>\va \cdot \vb = \vb \cdot \va</m> (commutativit&#xE9;);
-        </p></li><li><p><m>(s\va)\cdot \vb = s (\va \cdot \vb) = \va \cdot (s\vb); </m></p></li><li><p><m>\va \cdot (\vb + \vc) = \va \cdot \vb + \va \cdot \vc</m> (distributivit&#xE9; du produit scalaire sur l'addition).
+    <ol marker="(a)"><li><p><m>\va \cdot \va\geqslant 0</m>, et l'égalité a lieu si et seulement si <m>\va = \vZero</m> (positivité);
+        </p></li><li><p><m>\va \cdot \vb = \vb \cdot \va</m> (commutativité);
+        </p></li><li><p><m>(s\va)\cdot \vb = s (\va \cdot \vb) = \va \cdot (s\vb); </m></p></li><li><p><m>\va \cdot (\vb + \vc) = \va \cdot \vb + \va \cdot \vc</m> (distributivité du produit scalaire sur l'addition).
         </p></li></ol>
 
     </p>
@@ -90,13 +90,13 @@ Le produit scalaire est d&#xE9;fini pour des vecteurs avec un nombre arbitraire 
     </proposition>
     <remark>
       <p>
-    Si le point <m>P</m> a pour coordonn&#xE9;es <m>(x,y,z)</m>, alors le vecteur <m>\vp=(x,y,z)</m> est tel que <m>\vp\cdot \vp = x^2 + y^2+z^2</m>. Ceci revient, en vertu du th&#xE9;or&#xE8;me de Pythagore, &#xE0; dire que la distance de <m>P</m> &#xE0; l'origine est donn&#xE9;e par <m>\sqrt{\vp\cdot \vp}</m>. Ceci nous m&#xE8;ne &#xE0; la d&#xE9;finition de la norme d'un vecteur.
+    Si le point <m>P</m> a pour coordonnées <m>(x,y,z)</m>, alors le vecteur <m>\vp=(x,y,z)</m> est tel que <m>\vp\cdot \vp = x^2 + y^2+z^2</m>. Ceci revient, en vertu du théorème de Pythagore, à dire que la distance de <m>P</m> à l'origine est donnée par <m>\sqrt{\vp\cdot \vp}</m>. Ceci nous mène à la définition de la norme d'un vecteur.
     
   </p>
     </remark>
     <definition xml:id="def-norme">
       <statement>
-        <p>Soit <m>\va (a_1, \ldots, a_n)\in\R^n</m>. Sa <em>norme</em> est la quantit&#xE9;
+        <p>Soit <m>\va (a_1, \ldots, a_n)\in\R^n</m>. Sa <em>norme</em> est la quantité
     <me>
       |\va| = \sqrt{\va \cdot \va} = \sqrt{\sum_{i = 1}^na_ i^2}.
     </me>
@@ -118,7 +118,7 @@ Le produit scalaire est d&#xE9;fini pour des vecteurs avec un nombre arbitraire 
       </solution>
     </example>
     <p>
-On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norme, c'est-&#xE0;-dire qu'ils &#xE9;criront <m>||\va||</m> au lieu de <m>|\va|</m>. Aussi, il faut faire attention au fait que le symbole utilis&#xE9; pour la norme est celui des valeurs absolues pour les nombres. Le contexte devrait dissiper le doute &#x2013; si tant est qu'il y en ait &#x2013; concernant cette notation : <m>|\va| </m> est la norme du vecteur <m>\va</m>, tandis que <m>|a|</m> est la valeur absolue du scalaire <m>a</m>.
+On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norme, c'est-à-dire qu'ils écriront <m>||\va||</m> au lieu de <m>|\va|</m>. Aussi, il faut faire attention au fait que le symbole utilisé pour la norme est celui des valeurs absolues pour les nombres. Le contexte devrait dissiper le doute – si tant est qu'il y en ait – concernant cette notation : <m>|\va| </m> est la norme du vecteur <m>\va</m>, tandis que <m>|a|</m> est la valeur absolue du scalaire <m>a</m>.
 </p>
     <proposition xml:id="prop-prop-norme">
       <statement>
@@ -139,17 +139,17 @@ On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norm
   </proof>
 -->
     </proposition>
-    <p>Il est souvent utile de se donner un vecteur unitaire dans une direction donn&#xE9;e. Pour ce faire, si <m>\va\ne \vZero</m> est donn&#xE9;, on consid&#xE8;re
+    <p>Il est souvent utile de se donner un vecteur unitaire dans une direction donnée. Pour ce faire, si <m>\va\ne \vZero</m> est donné, on considère
 <me>
   \va' = \frac{\va}{|\va|}.
 </me>
-En effet, en vertu de la <xref ref="prop-prop-norme" text="global">proposition</xref>, le vecteur <m>\va'</m> est unitaire et il pointe dans la m&#xEA;me direction que <m>\va</m>, puisqu'il s'agit d'un multiple scalaire de celui-ci.  On dit alors que <m>\va</m> a &#xE9;t&#xE9; <term>normalis&#xE9;</term>.
+En effet, en vertu de la <xref ref="prop-prop-norme" text="global">proposition</xref>, le vecteur <m>\va'</m> est unitaire et il pointe dans la même direction que <m>\va</m>, puisqu'il s'agit d'un multiple scalaire de celui-ci.  On dit alors que <m>\va</m> a été <term>normalisé</term>.
 </p>
-    <p>Une des principales utilit&#xE9;s du produit scalaire est son lien avec les angles, traduite dans le r&#xE9;sultat suivant.
+    <p>Une des principales utilités du produit scalaire est son lien avec les angles, traduite dans le résultat suivant.
 </p>
     <theorem xml:id="thm-cosinus">
       <statement>
-        <p>Soit <m>\va,\vb\in \R^n</m> et <m>\theta \in [0,\pi]</m> l'angle form&#xE9; par ces vecteurs (voir la figure ci-apr&#xE8;s). Alors,
+        <p>Soit <m>\va,\vb\in \R^n</m> et <m>\theta \in [0,\pi]</m> l'angle formé par ces vecteurs (voir la figure ci-après). Alors,
     <me>
       \va \cdot \vb = |\va|\, |\vb|\, \cos \theta.
     </me>
@@ -159,34 +159,34 @@ En effet, en vertu de la <xref ref="prop-prop-norme" text="global">proposition</
         </sidebyside>
       </statement>
       <proof>
-        <p>Afin d'&#xE9;tablir ce r&#xE9;sultat, on calcule  <m>|\va-\vb|^2</m> de deux fa&#xE7;ons diff&#xE9;rentes.
+        <p>Afin d'établir ce résultat, on calcule  <m>|\va-\vb|^2</m> de deux façons différentes.
 
-    La premi&#xE8;re consiste &#xE0; calculer  <m>|\va-\vb|^2</m> au moyen du produit scalaire, c'est-&#xE0;-dire
+    La première consiste à calculer  <m>|\va-\vb|^2</m> au moyen du produit scalaire, c'est-à-dire
     <md><mrow> |\va-\vb|^2\ &amp;=\ (\va-\vb\,)\cdot(\va-\vb\,)</mrow><mrow> &amp;=\ \va\cdot\va-\va\cdot\vb-\vb\cdot\va +\vb\cdot\vb </mrow><mrow> &amp;=\ |\va|^2+|\vb|^2-2\va\cdot\vb. </mrow></md>
 
-  Par ailleurs, la seconde fa&#xE7;on de calculer <m>|\va-\vb|^2</m> fait appel &#xE0; l'interpr&#xE9;tation d'une norme comme distance et d&#xE9;coule de la loi des cosinus pour les triangles.
+  Par ailleurs, la seconde façon de calculer <m>|\va-\vb|^2</m> fait appel à l'interprétation d'une norme comme distance et découle de la loi des cosinus pour les triangles.
   </p>
         <sidebyside width="42%">
           <image source="images/CLP-figs/cosineL"/>
         </sidebyside>
-        <p>Si l'on applique la loi des cosinus &#xE0; un triangle dont un sommet est &#xE0; l'origine et que deux c&#xF4;t&#xE9;s adjacents sont d&#xE9;termin&#xE9;s par les vecteurs <m>\va</m> et <m>\vb</m> (voir la figure ci-haut), le troisi&#xE8;me c&#xF4;t&#xE9; est donn&#xE9; par <m>\va - \vb</m>, d'o&#xF9;
+        <p>Si l'on applique la loi des cosinus à un triangle dont un sommet est à l'origine et que deux côtés adjacents sont déterminés par les vecteurs <m>\va</m> et <m>\vb</m> (voir la figure ci-haut), le troisième côté est donné par <m>\va - \vb</m>, d'où
 <me>
   |\va - \vb|^2 = |\va|^2 + |\vb|^2 - 2|\va|\, |\vb| \cos \theta .
 </me>
 
-En combinant ces deux r&#xE9;sultats, on obtient
+En combinant ces deux résultats, on obtient
 <me>
    |\va|^2+|\vb|^2-2\va\cdot\vb = |\va|^2 + |\vb|^2 - 2|\va|\, |\vb| \cos \theta,
 </me>
-et le r&#xE9;sultat suit apr&#xE8;s simplifications.
+et le résultat suit après simplifications.
 </p>
       </proof>
     </theorem>
   </subsection>
   <subsection xml:id="subsec-Projections"><title>Projections</title><p>
-Le r&#xE9;sultat du <xref ref="thm-cosinus" text="global">th&#xE9;or&#xE8;me</xref> permet d'utiliser le produit scalaire pour d&#xE9;terminer si deux vecteurs sont orthogonaux ou pas, c'est-&#xE0;-dire si l'angle qu'ils forment est  <m>\frac{\pi}{2}</m><fn>La notion d'orthogonalit&#xE9; a &#xE9;t&#xE9; g&#xE9;n&#xE9;ralis&#xE9;e aux ensembles de fonctions, par exemple. Ceci joue un r&#xF4;le tr&#xE8;s important dans les math&#xE9;matiques appliqu&#xE9;es plus avanc&#xE9;es. La g&#xE9;n&#xE9;ralisation du produit scalaire est celle d'un <q>produit int&#xE9;rieur</q>.</fn>. De la m&#xEA;me fa&#xE7;on, on peut utiliser le produit scalaire pour calculer l'angle form&#xE9; par deux vecteurs (le cosinus de cet angle en r&#xE9;alit&#xE9;). Notamment, si le produit scalaire est positif, il en va de m&#xEA;me pour le cosinus, de sorte que l'angle est un angle aigu. Naturellement, un produit scalaire n&#xE9;gatif signifie que l'angle est obtus.
+Le résultat du <xref ref="thm-cosinus" text="global">théorème</xref> permet d'utiliser le produit scalaire pour déterminer si deux vecteurs sont orthogonaux ou pas, c'est-à-dire si l'angle qu'ils forment est  <m>\frac{\pi}{2}</m><fn>La notion d'orthogonalité a été généralisée aux ensembles de fonctions, par exemple. Ceci joue un rôle très important dans les mathématiques appliquées plus avancées. La généralisation du produit scalaire est celle d'un <q>produit intérieur</q>.</fn>. De la même façon, on peut utiliser le produit scalaire pour calculer l'angle formé par deux vecteurs (le cosinus de cet angle en réalité). Notamment, si le produit scalaire est positif, il en va de même pour le cosinus, de sorte que l'angle est un angle aigu. Naturellement, un produit scalaire négatif signifie que l'angle est obtus.
 </p><example><p>
-Consid&#xE9;rer les vecteurs suivants :
+Considérer les vecteurs suivants :
 <me>
 \va=\left( 1,1,0 \right)\qquad
 \vb=\left( 1,0,1 \right) \qquad
@@ -206,22 +206,22 @@ Alors, les produits scalaires sont :
            &amp;&amp; = 1\times(-1) +0\times 1+1\times 1
            &amp;&amp; = 0.
 </mrow></md>
-Ceci nous permet de conclure que  <m>\vc</m> est orthogonal &#xE0; la fois &#xE0;  <m>\va</m> et &#xE0; <m>\vb</m>.
-&#xC9;tant donn&#xE9; que  <m>|\va|=|\vb|=\sqrt{1^2+1^2+0^2}=\sqrt{2}</m>, le premier produit scalaire nous dit aussi que l'angle  <m>\theta</m> form&#xE9; par <m>\va</m> et <m>\vb</m> v&#xE9;rifie
+Ceci nous permet de conclure que  <m>\vc</m> est orthogonal à la fois à  <m>\va</m> et à <m>\vb</m>.
+Étant donné que  <m>|\va|=|\vb|=\sqrt{1^2+1^2+0^2}=\sqrt{2}</m>, le premier produit scalaire nous dit aussi que l'angle  <m>\theta</m> formé par <m>\va</m> et <m>\vb</m> vérifie
 <md><mrow>
 \cos\theta =\frac{\va\cdot\vb}{|\va|\,|\vb|}=\frac{1}{2}
 \text{, de sorte que }
 \theta =\frac{\pi}{3}.
 </mrow></md>
 </p><sidebyside width="40%"><image source="images/CLP-figs/dotProdJC"/></sidebyside></example><p>
-  Notons que si <m>\va = (a_1,a_2,a_3)</m> est donn&#xE9;, alors
+  Notons que si <m>\va = (a_1,a_2,a_3)</m> est donné, alors
   <md><mrow>   \va\cdot \vi = a_1, \amp  \amp\va \cdot \vj = a_2, \amp  \amp \va \cdot \vk =a_3,</mrow></md>
-de sorte que le produit scalaire peut servir &#xE0; isoler les composantes d'un vecteur donn&#xE9; dans la direction des vecteurs de la base canonique.
+de sorte que le produit scalaire peut servir à isoler les composantes d'un vecteur donné dans la direction des vecteurs de la base canonique.
 </p><p>
-  Le m&#xEA;me probl&#xE8;me peut se poser pour d'autres directions. Voyons comment le traiter.
-</p><p>&#xC9;tant donn&#xE9; deux vecteurs <m>\va,\vb</m>, on veut d&#xE9;composer <m>\va</m> comme la somme d'un vecteur parall&#xE8;le &#xE0; <m>\vb</m>, qu'on appellera la <term>projection</term> de <m>\va</m> sur <m>\vb</m>, et d'un autre vecteur orthogonal &#xE0; <m>\vb</m>.
-</p><figure><caption>Faire une projection revient &#xE0; faire une d&#xE9;composition. Les figures illustrent la projection d'un vecteur <m>\va</m> sur un vecteur <m>\vb</m>.</caption><sidebyside widths="23% 33%" valign="middle"><image source="images/CLP-figs/projA"/><image source="images/CLP-figs/projB"/></sidebyside></figure><p>
-  Autrement dit, on veut trouver un scalaire <m>\lambda</m> et un vecteur <m>\vw</m> orthogonal &#xE0; <m>\vb</m>, tels que
+  Le même problème peut se poser pour d'autres directions. Voyons comment le traiter.
+</p><p>Étant donné deux vecteurs <m>\va,\vb</m>, on veut décomposer <m>\va</m> comme la somme d'un vecteur parallèle à <m>\vb</m>, qu'on appellera la <term>projection</term> de <m>\va</m> sur <m>\vb</m>, et d'un autre vecteur orthogonal à <m>\vb</m>.
+</p><figure><caption>Faire une projection revient à faire une décomposition. Les figures illustrent la projection d'un vecteur <m>\va</m> sur un vecteur <m>\vb</m>.</caption><sidebyside widths="23% 33%" valign="middle"><image source="images/CLP-figs/projA"/><image source="images/CLP-figs/projB"/></sidebyside></figure><p>
+  Autrement dit, on veut trouver un scalaire <m>\lambda</m> et un vecteur <m>\vw</m> orthogonal à <m>\vb</m>, tels que
 </p><men>
   \va = \lambda \vb + \vw .
 </men><p>
@@ -229,11 +229,11 @@ Afin d'isoler la valeur de <m>\lambda</m>, prenons le produit scalaire de <m>\va
 </p><me>\va \cdot \vb  = (\lambda \vb + \vw)\cdot \vb  = \lambda \vb \cdot  \va +  \vw  \cdot \vb  = \lambda \vb \cdot \vb
 </me>,
 <p>
-  o&#xF9; la derni&#xE8;re &#xE9;galit&#xE9; suit de ce que <m>\vw</m> doit &#xEA;tre orthogonal &#xE0; <m>\vb</m>,
-  de sorte que <m>\lambda = \frac{\va \cdot \vb}{\vb \cdot \vb} </m>. Ceci &#xE9;tant, il suffit de poser <m>\vw = \va  - \lambda \vb</m>. En effet, ce vecteur est orthogonal &#xE0; <m>\vb</m>, puisque
+  où la dernière égalité suit de ce que <m>\vw</m> doit être orthogonal à <m>\vb</m>,
+  de sorte que <m>\lambda = \frac{\va \cdot \vb}{\vb \cdot \vb} </m>. Ceci étant, il suffit de poser <m>\vw = \va  - \lambda \vb</m>. En effet, ce vecteur est orthogonal à <m>\vb</m>, puisque
 </p><me>
   \vw \cdot \vb = (\va  - \lambda \vb)\cdot\vb = \left(\va -  \frac{\va \cdot \vb}{\vb \cdot \vb}\vb\right)\cdot \vb =  \va \cdot \vb - \left( \frac{\va \cdot \vb}{\vb \cdot \vb}\vb\right)\cdot \vb = 0 .
-</me><definition xml:id="def-Projection"><statement><p>&#xC9;tant donn&#xE9; deux vecteurs <m>\va</m> et <m>\vb</m>, la <term>projection de <m>\va</m> sur <m>\vb</m></term> est le vecteur
+</me><definition xml:id="def-Projection"><statement><p>Étant donné deux vecteurs <m>\va</m> et <m>\vb</m>, la <term>projection de <m>\va</m> sur <m>\vb</m></term> est le vecteur
     <me>
       \proj_\vb\, \va = \left(\frac{\va \cdot \vb}{\vb \cdot \vb}\right)\vb.
     </me>
@@ -246,7 +246,7 @@ On remarquera que la norme de la projection est
 
 Par ailleurs, si <m>\vb</m> est un vecteur unitaire, la composante de <m>\va</m> dans la direction de <m>\vb</m> est simplement <m>\va \cdot \vb</m>.
 </p><example xml:id="eg_proj"><p>
-Trouver la projection de  <m>\left( 0,3\right)</m> sur  <m>\left( 1,1\right)</m>, telle qu'indiqu&#xE9;e dans la figure.
+Trouver la projection de  <m>\left( 0,3\right)</m> sur  <m>\left( 1,1\right)</m>, telle qu'indiquée dans la figure.
 </p><figure><sidebyside width="40%"><image source="images/CLP-figs/projEgJC"/></sidebyside></figure><p>
 En vertu de la <xref ref="def-Projection"/> avec <m>\va=\left( 0,3\right)</m> et <m>\vb=\left( 1,1\right)</m>, la projection est
 <md><mrow>

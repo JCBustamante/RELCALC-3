@@ -1,0 +1,77 @@
+## DESCRIPTION
+##   Curl and Gradient Vector Fields
+## ENDDESCRIPTION
+
+## Tagged by nhamblet
+
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Vector calculus)
+## DBsection(Curl and divergence)
+## Institution(ASU)
+## Level(3)
+## TitleText1('Calculus: Early Transcendentals')
+## AuthorText1('Stewart')
+## EditionText1('5')
+## Section1('16.5')
+## Problem1('')
+## TitleText2('Calculus: Early Transcendentals')
+## AuthorText2('Stewart')
+## EditionText2('6')
+## Section2('16.5')
+## Problem2('')
+## KEYWORDS('Vector Fields', 'Gradient', 'Curl')
+
+## source 
+## Library/272/setStewart16_5/problem_4.pg
+
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "Dartmouthmacros.pl",
+  "PGcourse.pl"
+);
+ 
+
+## Do NOT show partial correct answers
+$showPartialCorrectAnswers = 1;
+
+## Lots of set up goes here
+$a = non_zero_random(-9,9,1);
+$a_x = clean_scalar_string($a, "x");
+
+$b = non_zero_random(-9,9,1);
+$b_y = clean_scalar_string($b, "y");
+
+
+
+## Ok, we are ready to begin the problem...
+##
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+$BR
+Montrez que le champ de vecteurs
+\( \mathbf{F}(x,y,z) = ($b_y \cos($a_x), $a_x \sin($b_y), 0) \) n'est pas un champ gradient en calculant son rotationnel.
+$BR
+\( \mathrm{rot}(\mathbf{F}) = \nabla \times \mathbf{F} =  (\)
+\{ans_rule(20)\}, \{ans_rule(20)\},\{ans_rule(20)\}\()\).
+
+$PAR
+END_TEXT
+
+
+ANS(fun_cmp("0", vars=>3));
+ANS(fun_cmp("0", vars=>3));
+ANS(fun_cmp("$a*sin($b*y) - $b*cos($a*x)", vars=>3));
+
+
+ENDDOCUMENT();
+
+
+
+

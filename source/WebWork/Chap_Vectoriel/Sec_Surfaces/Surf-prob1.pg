@@ -1,0 +1,86 @@
+## DBsubject(Calculus - multivariable)
+## DBchapter(Intégrales de surface)
+## DBsection(Surfaces paramétrées)
+## Institution(Université de Sherbrooke)
+## Author(JC Bustamante)
+## Level(2)
+## MO(1)
+## KEYWORDS('surface paramétrée', 'surface de révolution')
+
+## Source
+## Problème original, RELCALC3
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+Context("Numeric");
+Context()->variables->add(y => 'Real');
+
+$a = random(2, 4);
+$b = random(2, 4);
+
+$g    = Compute("$a * y^2");
+$surf = Compute("$a^2 * y^4");
+
+TEXT(beginproblem());
+
+Context()->texStrings;
+BEGIN_TEXT
+Soit la surface \(\mathcal{S}\) obtenue en faisant tourner la courbe
+\(x = $a y^2\), \(z = 0\), \(0 \leqslant y \leqslant $b\),
+autour de l'axe des \(y\).
+$PAR
+Un paramétrage de \(\mathcal{S}\) prend la forme
+\[
+\mathbf{r}(y,\theta) = \bigl(g(y)\cos\theta,\; y,\; g(y)\sin\theta\bigr),
+\qquad 0\leqslant y \leqslant $b,\quad 0\leqslant\theta\leqslant 2\pi.
+\]
+$BBOLD (a) $EBOLD Trouver \(g(y)\) :
+$PAR
+\(g(y) = \) \{ans_rule(20)\}
+$PAR
+$BBOLD (b) $EBOLD Vérifier que le paramétrage satisfait bien l'équation de la surface,
+c'est-à-dire que \(x^2 + z^2 = \bigl[g(y)\bigr]^2\) donne une équation ne dépendant
+que de \(x\), \(y\) et \(z\). Quelle est la valeur de \(x^2 + z^2\) sur \(\mathcal{S}\) ?
+$PAR
+\(x^2 + z^2 = \) \{ans_rule(20)\}
+
+END_TEXT
+Context()->normalStrings;
+
+ANS($g->cmp());
+ANS($surf->cmp());
+
+Context()->texStrings;
+SOLUTION(EV3(<<'END_SOLUTION'));
+$PAR
+$SOL
+$BBOLD (a) $EBOLD
+En faisant tourner le point \(($a y^2,\, y,\, 0)\) autour de l'axe des \(y\),
+la coordonnée \(y\) reste fixée tandis que \(x = $a y^2\) joue le rôle de rayon.
+Le paramétrage est donc
+\[
+\mathbf{r}(y,\theta) = \bigl($a y^2 \cos\theta,\; y,\; $a y^2 \sin\theta\bigr),
+\]
+et \(g(y) = $a y^2\).
+$PAR
+$BBOLD (b) $EBOLD
+Sur la surface paramétrée, on a
+\[
+x^2 + z^2
+= \bigl($a y^2 \cos\theta\bigr)^2 + \bigl($a y^2 \sin\theta\bigr)^2
+= $a^2 y^4 (\cos^2\theta + \sin^2\theta)
+= $a^2 y^4.
+\]
+L'équation de la surface est donc \(x^2 + z^2 = $a^2 y^4\), ce qui ne dépend effectivement
+que de \(x\), \(y\) et \(z\).
+
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();

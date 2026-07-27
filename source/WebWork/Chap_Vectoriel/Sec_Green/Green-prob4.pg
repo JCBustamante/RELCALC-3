@@ -1,0 +1,45 @@
+##DESCRIPTION
+## DBsubject(Calculus - multivariable)
+## DBchapter(Fundamental theorems)
+## DBsection(Green's theorem)
+## Institution(NAU)
+## Author(Nandor Sieben)
+## Level(3)
+## MO(1)
+##ENDDESCRIPTION
+# File Created: 4/2/17
+
+## source 
+## /Contrib/NAU/setCalcIII/divergence2D.pg"
+
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+Context("Numeric");
+
+$a = random(2,9,1);
+$b = random(2,9,1);
+$c = random(2,9,1);
+
+$answer = Formula("$c/($a+$b)");
+
+TEXT(beginproblem());
+
+Context()->texStrings;
+BEGIN_TEXT
+Soit  \(\mathbf{F}(x,y)=($a x , $b y ) \). Trouver l'aire de la région fermée  \( \mathcal{R}\subseteq \mathbb{R}^2 \) si le flux de  \( \mathbf{F} \) à travers la frontière \(\partial\mathcal{R} \) de \( \mathcal{R} \) est \(\displaystyle\oint_{\partial\mathcal{R}}\mathbf{F} \cdot \mathbf{n}\,ds = $c \).
+$BR
+Aire\( (R)= \) \{ ans_rule(35) \}
+
+END_TEXT
+
+Context()->normalStrings;
+
+ANS( $answer->cmp() );
+
+ENDDOCUMENT();

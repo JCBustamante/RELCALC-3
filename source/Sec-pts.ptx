@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="S-1-1-Points-vecteurs">
-  <title>Points et coordonn&#xE9;es en deux et trois dimensions</title>
-  <p>Chaque point du plan peut &#xEA;tre &#xE9;tiquet&#xE9; par deux coordonn&#xE9;es<fn>C'est pourquoi le plan <m>xy</m> est dit &#xEA;tre de  <q>dimension deux</q>, le nom de chaque point &#xE9;tant une paire de nombres r&#xE9;els.</fn><m>(x,y)</m> qui sp&#xE9;cifient la position du point en termes d'unit&#xE9;s choisies par rapport &#xE0; des axes et &#xE0; une origine donn&#xE9;s.
+  <title>Points et coordonnées en deux et trois dimensions</title>
+  <p>Chaque point du plan peut être étiqueté par deux coordonnées<fn>C'est pourquoi le plan <m>xy</m> est dit être de  <q>dimension deux</q>, le nom de chaque point étant une paire de nombres réels.</fn><m>(x,y)</m> qui spécifient la position du point en termes d'unités choisies par rapport à des axes et à une origine donnés.
   </p>
   <sidebyside width="28%">
     <image source="images/CLP-figs/point2d"/>
   </sidebyside>
   <p>
-    L'ensemble des points du plan est not&#xE9;  <m>\R^2</m> (sans surprise, le <m>2</m> dans <m>\R^2</m> signifie que chaque point est &#xE9;tiquet&#xE9; par deux nombres; le <m>\R</m> dans <m>\R^2</m> veut dire que ce sont deux nombres r&#xE9;els).
+    L'ensemble des points du plan est noté  <m>\R^2</m> (sans surprise, le <m>2</m> dans <m>\R^2</m> signifie que chaque point est étiqueté par deux nombres; le <m>\R</m> dans <m>\R^2</m> veut dire que ce sont deux nombres réels).
     <!--
       Il existe des applications plus avancées (par exemple en traitement du signal, ou en mécanique quantique) où les nombres complexes sont utilisés. Le spaces de toutes les paires <m>(z_1,z_2)</m>, où <m>z_1</m> et <m>z_2</m> sont des nombres complexes est noté<m>\R^2</m>.
   -->
 
     Remarquons que :
-    <ul><li> la distance du point <m>(x,y)</m> &#xE0; l'axe des abscisses est <m>|y|</m>;
+    <ul><li> la distance du point <m>(x,y)</m> à l'axe des abscisses est <m>|y|</m>;
     </li><li> si <m>y\gt 0</m>, alors <m>(x,y)</m> se trouve au-dessus de l'axe des abscisses, et si <m>y\lt 0</m>, alors <m>(x,y)</m> se trouve au-dessous de cet axe;
-    </li><li> la distance du point <m>(x,y)</m> &#xE0; l'axe des <m>y</m> est <m>|x|</m>;
-    </li><li> si <m>x\gt 0</m>, alors <m>(x,y)</m> se trouve &#xE0; la droite de l'axe des <m>y</m>, et si <m>x\lt 0</m>, alors <m>(x,y)</m> se trouve &#xE0; la gauche de l'axe;
-    </li><li> la distance du point  <m>(x,y)</m> &#xE0; l'origine  <m>(0,0)</m> est
+    </li><li> la distance du point <m>(x,y)</m> à l'axe des <m>y</m> est <m>|x|</m>;
+    </li><li> si <m>x\gt 0</m>, alors <m>(x,y)</m> se trouve à la droite de l'axe des <m>y</m>, et si <m>x\lt 0</m>, alors <m>(x,y)</m> se trouve à la gauche de l'axe;
+    </li><li> la distance du point  <m>(x,y)</m> à l'origine  <m>(0,0)</m> est
          <m>\sqrt{x^2+y^2}</m>.
     </li></ul>
-    De la m&#xEA;me fa&#xE7;on, un point dans l'espace tridimensionnel peut &#xEA;tre &#xE9;tiquet&#xE9; par trois coordonn&#xE9;es <m>(x,y,z)</m>, tel qu'illustr&#xE9; dans les figures ci-apr&#xE8;s.
+    De la même façon, un point dans l'espace tridimensionnel peut être étiqueté par trois coordonnées <m>(x,y,z)</m>, tel qu'illustré dans les figures ci-après.
   </p>
   <sidebyside width="33%">
     <image source="images/CLP-figs/point3d"/>
     <image source="images/CLP-figs/point3db"/>
   </sidebyside>
   <p>
-    L'ensemble form&#xE9; par les points dans l'espace tridimensionnel est <m>\R^3</m>.
-    Le plan qui contient, entre autres, les axes des abscisses et des coordonn&#xE9;es est appel&#xE9; le plan  <m>xy</m>.
+    L'ensemble formé par les points dans l'espace tridimensionnel est <m>\R^3</m>.
+    Le plan qui contient, entre autres, les axes des abscisses et des coordonnées est appelé le plan  <m>xy</m>.
     <ul><li> Le plan <m>Oxy</m> est l'ensemble des points <m>(x,y,z)</m> tels que  <m>z=0</m>.
     </li><li> Le plan  <m>Oxz</m> est l'ensemble des points <m>(x,y,z)</m> tels que <m>y=0</m>.
     </li><li> Le plan <m>Oyz</m> est l'ensemble des points <m>(x,y,z)</m> tels que <m>x=0</m>.
     </li></ul>
-    Plus g&#xE9;n&#xE9;ralement :
-    <ul><li> L'ensemble des points <m>(x,y,z)</m> v&#xE9;rifiant <m>z=c</m> est un plan parall&#xE8;le au plan <m>Oxy</m> et se trouve &#xE0; une distance  <m>|c|</m> de celui-ci.
+    Plus généralement :
+    <ul><li> L'ensemble des points <m>(x,y,z)</m> vérifiant <m>z=c</m> est un plan parallèle au plan <m>Oxy</m> et se trouve à une distance  <m>|c|</m> de celui-ci.
   Si <m>c \gt 0</m>, le plan <m>z=c</m> est au-dessus du plan  <m>Oxy</m>.
   Si <m>c \lt 0</m>, le plan <m>z=c</m> est au-dessous du plan <m>Oxy</m>.
 
-  On dit que le plan  <m>z=c</m> est &#xE0; une <em>distance sign&#xE9;e</em> <m>c</m><fn>C'est-&#xE0;-dire une distance affect&#xE9;e en plus d'un signe indiquant une direction.</fn> du plan <m>Oxy</m>.
-  </li><li> L'ensemble des points <m>(x,y,z)</m> v&#xE9;rifiant <m>y=b</m> est un plan parall&#xE8;le au plan <m>Oxz</m> et se trouve &#xE0; une <em>distance sign&#xE9;e</em> <m>b</m> de celui-l&#xE0;.
-  </li><li> L'ensemble des points <m>(x,y,z)</m> v&#xE9;rifiant <m>x=a</m> est un plan parall&#xE8;le au plan <m>Oyz</m> et se trouve &#xE0; une <em>distance sign&#xE9;e</em> <m>a</m>  de celui-l&#xE0;.
+  On dit que le plan  <m>z=c</m> est à une <em>distance signée</em> <m>c</m><fn>C'est-à-dire une distance affectée en plus d'un signe indiquant une direction.</fn> du plan <m>Oxy</m>.
+  </li><li> L'ensemble des points <m>(x,y,z)</m> vérifiant <m>y=b</m> est un plan parallèle au plan <m>Oxz</m> et se trouve à une <em>distance signée</em> <m>b</m> de celui-là.
+  </li><li> L'ensemble des points <m>(x,y,z)</m> vérifiant <m>x=a</m> est un plan parallèle au plan <m>Oyz</m> et se trouve à une <em>distance signée</em> <m>a</m>  de celui-là.
   </li></ul>
 </p>
   <sidebyside>
@@ -53,17 +53,17 @@ Remarquons que les distances en dimension 3 se calculent comme en dimension 2.
 <ul><li> La distance du point <m>(x,y,z)</m> au plan <m>Oxy</m> est <m>|z|</m>;
 </li><li> La distance du point <m>(x,y,z)</m> au plan <m>Oxz</m> est <m>|y|</m>;
 </li><li> La distance du point <m>(x,y,z)</m> au plan <m>Oyz</m> est <m>|x|</m>;
-</li><li> La distance du point <m>(x,y,z)</m> &#xE0; l'origine <m>(0,0,0)</m> est
+</li><li> La distance du point <m>(x,y,z)</m> à l'origine <m>(0,0,0)</m> est
      <m>\sqrt{x^2+y^2+z^2}</m>.
 </li></ul>
-Afin de voir que la distance du point <m>(x,y,z)</m> &#xE0; l'origine <m>(0,0,0)</m> est en fait   <m>\sqrt{x^2+y^2+z^2}</m>,
+Afin de voir que la distance du point <m>(x,y,z)</m> à l'origine <m>(0,0,0)</m> est en fait   <m>\sqrt{x^2+y^2+z^2}</m>,
 <ul><li>
-on applique le th&#xE9;or&#xE8;me de Pythagore au triangle rectangle de sommets <m>(0,0,0)</m>, <m>(x,0,0)</m> et <m>(x,y,0)</m>, de sorte que la distance de  <m>(0,0,0)</m>
-&#xE0; <m>(x,y,0)</m> est <m>\sqrt{x^2+y^2}</m>, puis
+on applique le théorème de Pythagore au triangle rectangle de sommets <m>(0,0,0)</m>, <m>(x,0,0)</m> et <m>(x,y,0)</m>, de sorte que la distance de  <m>(0,0,0)</m>
+à <m>(x,y,0)</m> est <m>\sqrt{x^2+y^2}</m>, puis
 </li><li>
-on applique le th&#xE9;or&#xE8;me de Pythagore au triangle rectangle de sommets <m>(0,0,0)</m>,
+on applique le théorème de Pythagore au triangle rectangle de sommets <m>(0,0,0)</m>,
 <m>(x,y,0)</m> et <m>(x,y,z)</m>, ce qui donne que la distance de <m>(0,0,0)</m>
-&#xE0; <m>(x,y,z)</m> est <m>\sqrt{{\big(\sqrt{x^2+y^2}\big)}^2+z^2}
+à <m>(x,y,z)</m> est <m>\sqrt{{\big(\sqrt{x^2+y^2}\big)}^2+z^2}
 =\sqrt{x^2+y^2+z^2}</m>.
 </li></ul>
 </p>
@@ -71,12 +71,12 @@ on applique le th&#xE9;or&#xE8;me de Pythagore au triangle rectangle de sommets 
     <image source="images/CLP-figs/pythag3d"/>
   </sidebyside>
   <p>
-  Plus g&#xE9;n&#xE9;ralement, la distance du point <m>(x,y,z)</m> au point
+  Plus généralement, la distance du point <m>(x,y,z)</m> au point
   <m>(x',y',z')</m> est
   <me>
   \sqrt{(x-x')^2+(y-y')^2+(z-z')^2}.
   </me>
-  Remarquons que ceci fournit l'&#xE9;quation d'une sph&#xE8;re sans effort additionnel. En effet, les points d'une sph&#xE8;re sont les points &#xE9;quidistants du centre de la sph&#xE8;re. Ainsi, par exemple, l'&#xE9;quation de la sph&#xE8;re centr&#xE9;e &#xE0; <m>(1,2,3)</m> et de rayon  <m>4</m>, c'est-&#xE0;-dire l'ensemble de tous les points  <m>(x,y,z)</m> dont la distance &#xE0;  <m>(1,2,3)</m> est <m>4</m>, est
+  Remarquons que ceci fournit l'équation d'une sphère sans effort additionnel. En effet, les points d'une sphère sont les points équidistants du centre de la sphère. Ainsi, par exemple, l'équation de la sphère centrée à <m>(1,2,3)</m> et de rayon  <m>4</m>, c'est-à-dire l'ensemble de tous les points  <m>(x,y,z)</m> dont la distance à  <m>(1,2,3)</m> est <m>4</m>, est
   <me>
   (x-1)^2+(y-2)^2+(z-3)^2=16.
   </me>

@@ -168,10 +168,9 @@ the integrals.
 <md>
 <mrow>
 \vnabla\times\vF
-&amp;=\det\left[\begin{matrix} \vi &amp; \vj &amp; \vk \\
-         \frac{\partial }{\partial x} &amp; \frac{\partial }{\partial y} &amp;
-                         \frac{\partial }{\partial z} \\
-         F_1 &amp; 0 &amp; 0
+&amp;=\det\left[\begin{matrix} \vi &amp; \frac{\partial }{\partial x} &amp; F_1 \\
+         \vj &amp; \frac{\partial }{\partial y} &amp; 0 \\
+         \vk &amp; \frac{\partial }{\partial z} &amp; 0
        \end{matrix}\right]
 = \left(0,\frac{\partial F_1}{\partial z},
                 -\frac{\partial F_1}{\partial y}\right)
@@ -183,11 +182,9 @@ and
 \vn\,\dee{S}
 &amp;=\frac{\partial \vr}{\partial u} \times \frac{\partial \vr}{\partial v}
          \ \dee{u}\,\dee{v}
-=\det\left[\begin{matrix} \vi &amp; \vj &amp; \vk \\
-         \frac{\partial x}{\partial u} &amp; \frac{\partial y}{\partial u} &amp;
-                         \frac{\partial z}{\partial u} \\
-         \frac{\partial x}{\partial v} &amp; \frac{\partial y}{\partial v} &amp;
-                         \frac{\partial z}{\partial v}
+=\det\left[\begin{matrix} \vi &amp; \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+         \vj &amp; \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \\
+         \vk &amp; \frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}
        \end{matrix}\right]
 </mrow><mrow>
 &amp;=\left(\frac{\partial y}{\partial u}
@@ -709,11 +706,9 @@ Leur intersection, la courbe <m>\cC</m>, est la courbe bleue dans la figure, c'e
         <p>Nous avons
 <md><mrow>
 \vnabla\times\vF
-&amp;=\det\left[\begin{matrix}\vi&amp;\vj&amp;\vk \\
-           \frac{\partial }{\partial x}
-                 &amp;\frac{\partial }{\partial y}
-                 &amp;\frac{\partial }{\partial z} \\
-                \cos x +  y+z&amp;x+z&amp;x+y\end{matrix}\right]
+&amp;=\det\left[\begin{matrix}\vi &amp; \frac{\partial }{\partial x} &amp; \cos x + y+z \\
+           \vj &amp; \frac{\partial }{\partial y} &amp; x+z \\
+           \vk &amp; \frac{\partial }{\partial z} &amp; x+y\end{matrix}\right]
 </mrow><mrow>
 &amp;=\vi\big(1-1\big)-\vj\big(1-1\big)+\vk\big(1-1\big)
 </mrow><mrow>

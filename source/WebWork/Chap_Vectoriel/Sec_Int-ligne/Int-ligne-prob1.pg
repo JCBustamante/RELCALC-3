@@ -1,0 +1,142 @@
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+
+
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Vector calculus)
+## DBsection(Line integrals)
+## Date(01/30/2011)
+## Institution(Hope College)
+## Author(Paul Pearson)
+## Level(3)
+## KEYWORDS('line integral','arc length')
+
+## SOURCE 
+## /local/Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg
+
+
+###########################
+#  Initialization
+
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "weightedGrader.pl",
+  "PGcourse.pl"
+);
+
+install_weighted_grader();
+
+
+TEXT(beginproblem());
+
+##############################################
+#  Setup
+
+Context("Vector2D");
+Context()->variables->are(t=>"Real");
+
+#
+#  Points on the line
+#
+$a = random(2,8,1);
+do { $b = random(2,9,1); } until ($b != $a);
+
+$c = random(2,9,1);
+do { $d = random(2,9,1); } until ( $d != $c );
+
+$P = Point($a,0);
+$Q = Point(0,$b);
+$V = Vector(-($a),$b);
+
+# 
+#  Times, vectors, and lines
+#
+$Ta = Formula("t");
+$La = $P + $Ta * $V;
+$La = Formula("$P + t * $V");
+
+$x = Formula("$a - $a * t");
+$y = Formula("$b * t");
+
+$integrand = Compute("($c * $x + $d * $y) * sqrt($a^2 + $b^2)");
+
+$lowerlimit = Real("0");
+$upperlimit = Real("1");
+
+$integralvalue = Real("($a * $c + $b * $d)/2 * sqrt($a^2+$b^2)") -> reduce;
+
+
+
+##########################################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Trouvez l'intégrale de ligne par rapport à la longueur d'arc 
+\( \displaystyle \int_C ($c x + $d y) ds \), où \( C \) est
+le segment de droite dans le plan \( xy \) joignant les points \( P = $P \) 
+et \( Q = $Q \).
+$BR
+$BR
+(a) Trouvez une paramétrisation \(\vec{r}(t)\) pour le segment 
+\( C \) de sorte que les points \(P\) et \(Q\) correspondent
+à \( t = 0 \) et \( t = 1 \), respectivement.  
+$BR
+\( \vec{r}(t) = \) \{ans_rule(30)\}
+$BR
+$BR
+(b) Utilisez votre paramétrisation de (a) pour écrire l'intégrale de ligne par rapport à \(t\)
+$BR
+\( \displaystyle \int_C ($c x + $d y) ds = \int_a^b \)
+\{ ans_rule(40) \}
+\( dt \)
+$BR
+avec bornes d'intégration 
+\( a = \) \{ans_rule(10) \} et
+\( b = \) \{ans_rule(10) \}
+$BR
+$BR
+(c) Évaluez l'intégrale de ligne de la partie (b).
+$BR
+\( \displaystyle \int_C ($c x + $d y) ds = \) 
+\{ ans_rule(40) \}
+END_TEXT
+Context()->normalStrings;
+
+
+##################################################
+#  Answers
+
+$showPartialCorrectAnswers = 1;
+
+#  for checking a particular vector parametric line
+sub mycheck {
+  my ($correct, $student, $ansHash) = @_;
+
+  if ( 
+       ($correct . i == $student . i) && 
+       ($correct . j == $student . j)  
+     ) 
+  { return 1; } else { return 0; }
+}
+
+WEIGHTED_ANS($La->cmp( checker=>~~&mycheck ), 20 );
+
+WEIGHTED_ANS($integrand->cmp(), 20);
+WEIGHTED_ANS($lowerlimit->cmp(), 5);
+WEIGHTED_ANS($upperlimit->cmp(), 5);
+
+WEIGHTED_ANS($integralvalue->cmp(), 50);
+
+
+
+
+
+ENDDOCUMENT();

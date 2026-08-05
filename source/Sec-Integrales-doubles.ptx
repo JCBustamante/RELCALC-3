@@ -204,41 +204,42 @@ Or, la somme de Riemann <m>\sum\limits_{i=1}^n  F(y_i^*)\,\De y</m> est une appr
 </li></ul>
 Les notations standards de la <xref ref="notn_dbl_int" text="global">définition</xref> s'appliquent aussi à cette intégrale.
 </p>
-    <definition xml:id="notn_dbl_int_again">
+<definition xml:id="notn_dbl_int_again">
       <statement>
         <p>
           <md>
-            <mrow>
-\iint_\cR f\big(x,y\big)\,\dee{x}\,\dee{y}
-&amp;=\int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}
-</mrow>
-            <mrow>
-&amp;=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}
-=\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)
-</mrow>
+            <mrow> \iint_\cR f\big(x,y\big)\,\dee{x}\,\dee{y} &amp;=\int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}
+            </mrow>
+            <mrow> &amp;=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}.
+            </mrow>
           </md>
         </p>
       </statement>
-    </definition>
-    <p>
-Notons que<nbsp/>:
-<ul><li><p>
-Pour évaluer l'intégrale
-<m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}</m>,
-<ul><li>
-  nous évaluons en premier l'intégrale à l'intérieur
-  <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
-</li><li>
-   Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
-</li></ul></p></li><li><p>
-Pour évaluer l'intégrale
-<m>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</m>,
-<ul><li>
-  nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.
-  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.
-  Cette intégrale définie est habituellement écrite
-  <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\ \dee{x}</m>.
-  Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
+</definition>
+  
+<p>
+      Notons que<nbsp/>:
+    <ul>
+      <li><p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}</m>,
+        <ul>
+          <li> nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
+          </li>
+          
+          <li> Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
+          </li>
+        </ul>
+      </p>
+    </li>
+    <li>
+      <p> Il peut arriver que l'écriture suivante soit utilisée dans certains textes  
+        <md>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</md>,
+        
+        mais nous ne le ferons pas, autant que possible.
+      <ul>
+        <li>
+          <p>
+            Pour cette calcul, nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
+            </p>
 </li><li>
    Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d \dee{y}\,F(y)</m>, dont l'intégrande est le résultat de l'intégrale intérieure et dont les bornes d'intégration sont à la gauche de <m>\dee{y}</m>.
 </li></ul></p></li></ul>
@@ -248,23 +249,18 @@ Pour évaluer l'intégrale
     <theorem xml:id="thm_xy_mass">
       <statement>
         <p>
-Soit <m>\cR</m> une région dans le plan <m>Oxy</m> et soit <m>f(x,y)</m> une fonction continue sur <m>\cR</m>.
-<ol marker="(a)"><li> Si
-<md><mrow>
-\cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\},
-</mrow></md>
-où <m>B(x)</m> et <m>T(x)</m> sont des fonctions continues, et si la densité de masse dans <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
-<md><mrow>
-\int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x}
-&amp;=\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x}
-</mrow><mrow>
-&amp;=\int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\,\dee{y}\, \dee{x}.
-</mrow></md>
-</li><li> Si
-<me>
-\cR = \big\{\ (x,y)\ \big|\ c\leqslant  y\leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\},
-</me>
-où <m>L(y)</m> et <m>R(y)</m> sont des fonctions continues, et si la densité de masse dans  <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
+          Soit <m>\cR</m> une région dans le plan <m>Oxy</m> et soit <m>f(x,y)</m> une fonction continue sur <m>\cR</m>.
+
+          <ol marker="(a)">
+            <li> Si <m> \cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\},</m> où <m>B(x)</m> et <m>T(x)</m> sont des fonctions continues, et si la densité de masse dans <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
+            <md>
+              <mrow> \int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x} &amp;=\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x} 
+              </mrow>
+              <mrow> &amp;=\int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\,\dee{y}\, \dee{x}.
+              </mrow>
+            </md>
+            </li>
+            <li> Si <m> \cR = \big\{\ (x,y)\ \big|\ c\leqslant  \leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\}, </m> où <m>L(y)</m> et <m>R(y)</m> sont des fonctions continues, et si la densité de masse dans  <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
 <md><mrow>
 \int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}
 &amp;=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}
@@ -782,8 +778,9 @@ Or, pour  <m>x\geqslant 0</m>, l'intégrale intérieure est
 &amp;=\frac{2}{3}x^2\big(1-x^3\big),
 </mrow></md>
 de sorte que
-<md><mrow>
-\text{Volume} &amp;= 2\int_0^1 \dee{x}\ \frac{2}{3}x^2\big(1-x^3\big)
+
+    <md><mrow>
+\text{Volume} &amp;= 2\int_0^1 \frac{2}{3}x^2\big(1-x^3\big)\,\dee{x}
 =\frac{4}{3}\left[\frac{x^3}{3}-\frac{x^6}{6}\right]_0^1
 =\frac{2}{9}.
 </mrow></md>
@@ -919,7 +916,7 @@ Remarquons aussi que  <m>f(x,y)</m> ne dépend pas de  <m>y</m>. Cela facilitera
    On découpe  <m>\cR</m> en rectangles horizontaux, de largeur infinitésimale  <m>\dee{x}</m>.
 </li><li><p>
    On divise chaque rectangle en sous-rectangles de hauteur infinitésimale <m>\dee{y}</m> et de largeur <m>\dee{x}</m>. Voir la figure ci-après.
-</p><sidebyside width="66%"><image source="images/CLP-figs/cylinderEJC"/></sidebyside></li><li>
+</p><sidebyside width="50%"><image source="images/CLP-figs/cylinderEJC"/></sidebyside></li><li>
   Le volume de la partie de  <m>\cV_1</m> au-dessus du sous-rectangle centré en  <m>(x,y)</m> est approximativement égal à
    <me>
        f(x,y)\,\dee{x}\,\dee{y}=\sqrt{a^2-x^2}\ \dee{x}\,\dee{y}.
@@ -938,10 +935,11 @@ Remarquons aussi que  <m>f(x,y)</m> ne dépend pas de  <m>y</m>. Cela facilitera
         &amp;=\int_0^a  \int_0^{\sqrt{a^2-x^2}} \sqrt{a^2-x^2}\ \dee{y}\ \, \dee{x}.
 </mrow></md>
 En gardant à l'esprit que l'intégration par rapport à <m>y</m> considère <m>x</m> comme une constante, calculons le volume.
+
+
 <md><mrow>
 \text{Volume}(\cV_1)
-        &amp;=\int_0^a   \sqrt{a^2-x^2}\left[
-                 \int_0^{\sqrt{a^2-x^2}} \dee{y} \right] \ \dee{x}
+        &amp;=\int_0^a \int_0^{\sqrt{a^2-x^2}} \sqrt{a^2-x^2}\,\dee{y}\,\dee{x}
 </mrow><mrow>
         &amp;=\int_0^a   \big(a^2-x^2\big)\ \dee{x}
 </mrow><mrow>
@@ -1098,6 +1096,7 @@ Ainsi,
 =\int_0^1\int_{-\sqrt{y}}^{\sqrt{y}}\dee{x}\, \dee{y}
   + \int_1^4\int_{y-2}^{\sqrt{y}}\dee{x}\, \dee{y}.
 </mrow></md>
+
 </p>
 </example>
 

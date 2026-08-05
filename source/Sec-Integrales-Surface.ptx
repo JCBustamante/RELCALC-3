@@ -7,31 +7,39 @@
   <title>Intégrales de surface</title>
   <introduction>
     <p>Comme pour les intégrales de ligne, nous allons définir et étudier deux types d'intégrales de surface :
-<ul><li>
-  Intégrales d'une fonction à valeurs scalaires, c'est-à-dire de la forme  <m>\displaystyle \iint_{\cS} \rho\,\dee{S}</m>, qui sont utilisées pour calculer des aires ou, si <m>\rho</m> est une densité de masse, la masse d'une surface <m>\cS</m>.
-</li><li>Intégrales de la forme <m>\displaystyle \iint_{\cS} \vF\cdot\vn\,\dee{S}</m>, où
-<m>\vn(x,y,z)</m> est un vecteur unitaire normal à la surface
-<m>\cS</m> au point <m>(x,y,z)</m>. Celles-ci sont appelées des <q>intégrales de flux</q>. Nous verrons que, lorsque <m>\vv</m> est le champ de vitesses d'un fluide et que <m>\rho</m> est la densité du fluide, alors  <m>\iint_{\cS} \rho\vv\cdot\vn\,\dee{S}</m> est le taux avec lequel le fluide traverse la surface  <m>\cS</m>.
-</li></ul>
-</p>
+    <ul><li>
+      Intégrales d'une fonction à valeurs scalaires, c'est-à-dire de la forme  <m>\displaystyle \iint_{\cS} \rho\,\dee{S}</m>, qui sont utilisées pour calculer des aires ou, si <m>\rho</m> est une densité de masse, la masse d'une surface <m>\cS</m>.
+      </li><li>
+        Intégrales de la forme <m>\displaystyle \iint_{\cS} \vF\cdot\vn\,\dee{S}</m>, où <m>\vn(x,y,z)</m> est un vecteur unitaire normal à la surface <m>\cS</m> au point <m>(x,y,z)</m>. Celles-ci sont appelées des <q>intégrales de flux</q>. Nous verrons que, lorsque <m>\vv</m> est le champ de vitesses d'un fluide et que <m>\rho</m> est la densité du fluide, alors  <m>\iint_{\cS} \rho\vv\cdot\vn\,\dee{S}</m> est le taux avec lequel le fluide traverse la surface  <m>\cS</m>.
+      </li></ul>
+    </p>
   </introduction>
   <subsection xml:id="subsec-Integrales-surface">
     <title>Integrales de surface</title>
     <p>
-    Nous commençons par calculer l'élément différentiel de surface, <m>\dee{S}</m>, dans les différents contextes que nous avons traités dans la section précédente.
+    Nous commençons par calculer l'élément différentiel de surface, <m>\dee{S}</m>, dans les différents contextes que nous avons traités dans la section précédente (surface paramétrée, graphe, ou surface ensemble de niveau).
   </p>
+
+      <p> Afin d'illustrer les différentes méthodes, dans les exemples qui suivent, nous considérons la sphère <m>x^2 + y^2 + z^2= a</m> (avec <m>a \gt 0</m>) et nous calculons l'aire de la portion vérifiant <m>z\leqslant  0</m>.
+    
+    On se souvient probablement de l'enseignement secondaire que l'aire cherchée est <m>\frac{1}{2}\times 4\pi a^2=2\pi a^2</m>. Nous allons voir pourquoi ceci est vrai. Notons pour commencer que, puisque  <m>x^2+y^2 = a^2-z^2</m> sur l'hémisphère, l'ensemble des <m>(x,y)</m> pour lesquels il existe une valeur de <m>z</m> telle que <m>(x,y,z)</m> se trouve sur l'hémisphère est exactement  <m>\Set{(x,y)\in\R^2}{x^2+y^2\leqslant  a^2}</m>.
+  </p>
+
+
     <paragraphs xml:id="subsec_paramSurfaces">
       <title>Surfaces paramétrées</title>
-      <p>
-  Supposons que nous voulons intégrer sur une partie  <m>\cS</m> d'une surface qui est paramétrée par  <m>\vr(u,v)</m>. Nous commençons par couper  <m>\cS</m> en petits morceaux, avec des courbes obtenues en laissant le paramètre <m>u</m> constant (les courbes bleues dans la figure), puis en laissant le paramètre <m>v</m> constant (les courbes rouges dans la figure).
-  </p>
+    
+          
+    <p>
+      Supposons que nous voulons intégrer sur une partie  <m>\cS</m> d'une surface qui est paramétrée par  <m>\vr(u,v)</m>. Nous commençons par couper  <m>\cS</m> en petits morceaux, avec des courbes obtenues en laissant le paramètre <m>u</m> constant (les courbes bleues dans la figure), puis en laissant le paramètre <m>v</m> constant (les courbes rouges dans la figure).
+    </p>
       <sidebyside width="40%">
         <image source="images/CLP4-figs/surfaceSlice"/>
       </sidebyside>
       <p>
   Regardons de très près un de ces morceaux, dont voici une esquisse.
   </p>
-      <sidebyside width="40%">
+      <sidebyside width="35%">
         <image source="images/CLP4-figs/dSfxyJC"/>
       </sidebyside>
       <p>
@@ -82,33 +90,30 @@
       <sidebyside widths="45% 25%" valign="middle">
         <p>
           <md>
-            <mrow>
-  \overrightarrow{P_0P_1}
-  \approx \overrightarrow{P_2P_3}
-  &amp;\approx \frac{\partial\vr}{\partial u}(u_0,\,v_0)\,\dee{u},
-  </mrow>
-            <mrow>
-  \overrightarrow{P_0P_2}
-  \approx \overrightarrow{P_1P_3}
-  &amp;\approx \frac{\partial\vr}{\partial v}(u_0,\,v_0)\,\dee{v}.
-  </mrow>
+            <mrow>   \overrightarrow{P_0P_1}  \approx \overrightarrow{P_2P_3} &amp;\approx \frac{\partial\vr}{\partial u}(u_0,\,v_0)\,\dee{u},
+            </mrow>
+            <mrow>  \overrightarrow{P_0P_2} \approx \overrightarrow{P_1P_3}  &amp;\approx \frac{\partial\vr}{\partial v}(u_0,\,v_0)\,\dee{v}.
+            </mrow>
           </md>
         </p>
         <image source="images/CLP4-figs/dS2"/>
       </sidebyside>
       <p> L'aire de ce parallélogramme est
-  <md><mrow>
-  \big|\overrightarrow{P_0P_1}\times\overrightarrow{P_0P_2}\big|
-  &amp;\approx \bigg|\frac{\partial\vr}{\partial u}(u_0,\,v_0)\times
+      <md>
+        <mrow>
+          \big|\overrightarrow{P_0P_1}\times\overrightarrow{P_0P_2}\big| &amp;\approx \bigg|\frac{\partial\vr}{\partial u}(u_0,\,v_0)\times
                 \frac{\partial\vr}{\partial v}(u_0,\,v_0)\bigg|
             \dee{u}\dee{v}.
-  </mrow></md>
-  De plus, <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)</m> et <m>\frac{\partial\vr}{\partial v}(u_0,\,v_0)</m> sont des vecteurs tangents aux courbes  <m>\vr(t,\,v_0)</m> et <m>\vr(u_0,\,t)</m> respectivement. Ces deux courbes font partie de  <m>\cS</m>. Ainsi, <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)</m> et  <m>\frac{\partial\vr}{\partial v}(u_0,\,v_0)</m> sont tangents à <m>\cS</m> en <m>\vr(u_0,v_0)</m>, et le produit vectoriel
+        </mrow>
+      </md>
+  
+      De plus, <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)</m> et <m>\frac{\partial\vr}{\partial v}(u_0,\,v_0)</m> sont des vecteurs tangents aux courbes  <m>\vr(t,\,v_0)</m> et <m>\vr(u_0,\,t)</m> respectivement. Ces deux courbes font partie de  <m>\cS</m>. Ainsi, <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)</m> et  <m>\frac{\partial\vr}{\partial v}(u_0,\,v_0)</m> sont tangents à <m>\cS</m> en <m>\vr(u_0,v_0)</m>, et le produit vectoriel
   <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)\times
                 \frac{\partial\vr}{\partial v}(u_0,\,v_0)</m>
   est orthogonal à <m>\cS</m> en  <m>\vr(u_0,v_0)</m>. Nous avons alors  <m>\dee{S}</m> et <m>d\vS= \vn\,\dee{S}</m>, où  <m>\vn</m> est un vecteur unitaire normal à la surface.
   </p>
-      <fact xml:id="eq_SUdSparam">
+      
+  <fact xml:id="eq_SUdSparam">
         <statement>
           <p>
         Pour une surface paramétrée par  <m>\vr(u,v)</m>,
@@ -123,306 +128,14 @@
         </mrow></md>
       </p>
         </statement>
-      </fact>
-      <p>
+  </fact>
+      
+  <p>
   Le signe <m>\pm</m> dans la <xref ref="eq_SUdSparam" text="global">formule</xref> est là parce qu'il y a deux vecteurs normaux unitaires en chaque point de la surface, un de chaque côté de celle-ci. Normalement, il sera clair, par le contexte, lequel des deux nous devons choisir. Nous y reviendrons.
   </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Graphes</title>
-      <p>
-  Si la surface <m>\cS</m> est le graphe de la fonction  <m>z = f(x,y)</m>, elle peut être paramétrée assez directement au moyen de
-  <me>
-  \vr(x,y) = x\,\vi + y\,\vj + f(x,y)\,\vk.
-  </me>
-  Puisque <m>\frac{\partial\vr}{\partial x}
-        = \vi + \frac{\partial f}{\partial x}\,\vk</m> et <m>\frac{\partial\vr}{\partial y}
-        = \vj + \frac{\partial f}{\partial y}\,\vk
-  </m>, nous avons
-  <me>
-    \frac{\partial\vr}{\partial x}\times
-                  \frac{\partial\vr}{\partial y}
-    =\det\left[\begin{matrix}
-              \vi &amp; 1 &amp; 0 \\
-              \vj &amp; 0 &amp; 1 \\
-              \vk &amp; \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y}
-              \end{matrix}\right]
-    = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk.
-  </me>
-
-  Ainsi, la  <xref ref="eq_SUdSparam" text="global">formule</xref> donne:
-  </p>
-      <fact xml:id="eq_SUdSgraph">
-        <statement>
-          <p>
-        Pour la surface  <m>z=f(x,y)</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk\big]\
-                  \dee{x}\dee{y},
-        </mrow><mrow>
-        \dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\
-                  \dee{x}\dee{y}.
-        </mrow></md>
-        De la même façon, pour la surface <m>x=g(y,z)</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[\vi -g_y(y,z)\,\vj - g_z(y,z)\,\vk\big]\
-                  \dee{y}\dee{z},
-                  </mrow><mrow>
-        \dee{S}&amp;= \sqrt{1 + g_y(y,z)^2 + g_z(y,z)^2}\
-                  \dee{y}\dee{z},
-        </mrow></md>
-        et pour la surface  <m>y=h(x,z)</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[-h_x(x,z)\,\vi +\vj - h_z(x,z)\,\vk\big]\
-                  \dee{x}\dee{z},
-                  </mrow><mrow>
-        \dee{S}&amp;= \sqrt{1 + h_x(x,z)^2 + h_z(x,z)^2}\
-                  \dee{x}\dee{z}.
-        </mrow></md>
-      </p>
-        </statement>
-      </fact>
-      <p>
-  À nouveau, dans une application donnée, on mettra un soin particulier lors du choix pour le vecteur <m>\vn</m>.
-  </p>
-      <p>La formule
-  <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>
-  dans la <xref ref="eq_SUdSgraph" text="global">formule</xref> admet une interprétation géométrique. Le parallélogramme rouge dans la figure ci-bas représente une petite portion de la surface.
-  </p>
-      <sidebyside width="40%">
-        <image source="images/CLP4-figs/surfaceProj"/>
-      </sidebyside>
-      <p>
-    Son aire est <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>. Le parallélogramme bleu est la projection du rouge dans le plan <m>Oxy</m>. Le vecteur <m>\vn </m> est un vecteur normal unitaire pour le parallélogramme rouge. Il est parallèle à
-      <me>
-      \frac{\partial\vr}{\partial x}\times
-                    \frac{\partial\vr}{\partial y}
-      = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk,
-      </me>
-    de sorte que l'angle <m>\theta</m> formé par  <m>\vn</m> et <m>\vk</m> vérifie
-    <md><mrow>
-    \cos\theta &amp;= \frac{(-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk)\cdot\vk}
-                    {\big|-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk\big|\,|\vk|}
-    </mrow><mrow>
-    &amp;=\frac{1}{\sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}}.
-    </mrow></md>
-    L'interprétation géométrique de
-    <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m> est que l'aire  <m>\dee{S}</m> d'un petit morceau de surface est donnée par l'aire de sa projection sur le plan <m>Oxy</m> multipliée par le facteur <m>\frac{1}{\cos\theta}</m>, où  <m>\theta</m> est l'angle formé par  <m>\vn</m> (qui est orthogonal à la surface) et par <m>\vk</m> (qui est orthogonal au plan  <m>Oxy</m>). Notons que
-    <ul><li>
-    lorsque <m>\theta</m> est près de zéro, ce qui correspond à dire que <m>f</m> est presque constante et donc que notre surface est à peu près parallèle au plan <m>Oxy</m>, <m>\dee{S}</m> se réduit, essentiellement, à <m>\dee{x}\dee{y}</m>;
-    </li><li>
-    lorsque <m>\theta\rightarrow\frac{\pi}{2}</m>, ce qui correspond à dire que  <m>f_x</m> ou <m>f_y</m> deviennent très grandes en valeur absolue et donc que notre surface est perpendiculaire au plan  <m>Oxy</m>, <m>\dee{S}</m> devient  <q>infini fois</q> <m>\dee{x}\dee{y}</m>. Dans ce cas, nous devrions représenter notre surface plutôt sous la forme  <m>x=g(y,z)</m> ou  <m>y=h(x,z)</m>.
-    </li></ul>
-  </p>
-    </paragraphs>
-    <paragraphs>
-      <title>Surfaces données implicitement</title>
-      <p>
-  Pour terminer, supposons que la surface est donnée sous la forme
-  <m>G(x,y,z)=K</m>, où  <m>K</m> est  une  constante. Supposons de plus que, en un point sur la surface, nous avons <m>\frac{\partial G}{\partial z} \ne 0</m>. Alors, le <xref ref="thm-Implicites3" text="global">théorème</xref> nous dit qu'il existe une fonction  <m>f(x,z)</m> telle que  <m>z= f(x,y)</m> vérifie
-  <me>
-  G\big(x,y,f(x,y)\big) = K.
-  </me>
-  La dérivation donne alors, grâce au théorème des fonctions composées,
-  <md alignment="alignat"><mrow>
-  0&amp;=\frac{\partial}{\partial x}\Big[G\big(x,y,f(x,y)\big)\Big]
-  &amp;\ =\ G_x\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_x(x,y),
-  </mrow><mrow>
-  0&amp;=\frac{\partial}{\partial y}\Big[G\big(x,y,f(x,y)\big)\Big]
-  &amp;\ =\ G_y\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_y(x,y),
-  </mrow></md>
-  ce qui, à son tour, entraîne
-  <md><mrow>
-  f_x(x,y) = -\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)},
-  \qquad
-  f_y(x,y) = -\frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
-  </mrow></md>
-  et
-  <md><mrow>
-  -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk
-  &amp;=\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\vi+
-  \frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\vj+\vk
-  </mrow><mrow>
-  &amp;=\frac{\vnabla G\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}.
-  </mrow></md>
-  Ainsi, il vient de la <xref ref="eq_SUdSparam" text="global">formule</xref> les formules suivantes.
-  </p>
-      <fact xml:id="eq_SUdSimplicit">
-        <statement>
-          <p>
-        Pour la surface  <m>G(x,y,z)=K</m>, lorsque  <m>G_z(x,y,z)\ne 0</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; =
-            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\
-                  \dee{x}\dee{y},
-  </mrow><mrow>
-        \dee{S}&amp;=
-        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\bigg|\
-                  \dee{x}\dee{y}.
-        </mrow></md>
-        De même, pour  <m>G(x,y,z)=K</m>, lorsque <m>G_x(x,y,z)\ne 0</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; =
-            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vi}\
-                  \dee{y}\dee{z},
-  </mrow><mrow>
-        \dee{S}&amp;=
-        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vi}\bigg|\
-                  \dee{y}\dee{z},
-        </mrow></md>
-        et pour la surface  <m>G(x,y,z)=K</m>, lorsque  <m>G_y(x,y,z)\ne 0</m>,
-        <md><mrow>
-        d\vS= \vn\, \dee{S}&amp; =
-            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vj}\
-                  \dee{x}\dee{z},
-  </mrow><mrow>
-        \dee{S}&amp;=
-        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vj}\bigg|\
-                  \dee{x}\dee{z}.
-        </mrow></md>
-      </p>
-        </statement>
-      </fact>
-      <p>
-  Si, en un point <m>(x_0,y_0,z_0)</m>, nous avons
-  <m>G_x(x_0,y_0,z_0)=
-  G_y(x_0,y_0,z_0)=
-  G_z(x_0,y_0,z_0)= 0</m>, nous aurons un problème. Très souvent, ceci est signe que notre surface n'est pas lisse en <m>(x_0,y_0,z_0)</m> et donc que nous n'avons pas un vecteur normal défini sans ambiguïté. On pourra voir l'<xref ref="eg_tangentPlaneA" text="global">exemple</xref>.
-  </p>
-    </paragraphs>
-    <p>
-Afin d'illustrer les différentes méthodes, dans les exemples qui suivent, nous considérons la sphère <m>x^2 + y^2 + z^2= a</m> (avec <m>a \gt 0</m>) et nous calculons l'aire de la portion vérifiant <m>z\leqslant  0</m>.
-
-On se souvient probablement de l'enseignement secondaire que l'aire cherchée est <m>\frac{1}{2}\times 4\pi a^2=2\pi a^2</m>. Nous allons voir pourquoi ceci est vrai. Notons pour commencer que, puisque  <m>x^2+y^2 = a^2-z^2</m> sur l'hémisphère, l'ensemble des <m>(x,y)</m> pour lesquels il existe une valeur de <m>z</m> telle que <m>(x,y,z)</m> se trouve sur l'hémisphère est exactement  <m>\Set{(x,y)\in\R^2}{x^2+y^2\leqslant  a^2}</m>.
-</p>
-    <example xml:id="eg_SphereAreaCyl">
-      <title>Aire d'hémisphère, avec les coordonnées cylindriques </title>
-      <p>
-Commençons par paramétrer l'hémisphère  <m>x^2+y^2+z^2=a^2</m>, <m>z\geqslant 0</m>, en utilisant les coordonnées polaires <m>r</m>, <m>\theta</m> comme paramètres.
-</p>
-      <sidebyside widths="45% 25%" valign="middle">
-        <p>
-          <md>
-            <mrow>
-x &amp;= r\cos\theta
-</mrow>
-            <mrow>
-y &amp;= r\sin\theta
-</mrow>
-            <mrow>
-z &amp;= z
-</mrow>
-          </md>
-        </p>
-        <image source="images/CLP4-figs/cylindrical"/>
-      </sidebyside>
-      <p>
-Puis, on applique la <xref ref="eq_SUdSparam" text="global">formule</xref>. En coordonnées cylindriques, l'équation <m>x^2+y^2+z^2=a^2</m> devient <m>r^2+z^2=a^2</m>, et la condition  <m>x^2+y^2\leqslant  a^2</m> est  <m>0\leqslant  r\leqslant  a</m>,
-<m>0\leqslant \theta \lt  2\pi</m>.
-</p>
-      <p>Ainsi, l'hémisphère peut être paramétré par
-<md><mrow>
-&amp;\big(x(r,\theta),\, y(r,\theta),\, z(r,\theta)\big)
-=\big(r\cos\theta,\,r\sin\theta,\,\sqrt{a^2-r^2}\,\big)
-</mrow><mrow>
-&amp;\hskip1in\text{avec }\
-0\leqslant  r\leqslant  a,\ 0\leqslant \theta \lt 2\pi.
-</mrow></md>
-Remarquons que nous avons choisi la solution positive  <m>z=\sqrt{a^2-r^2}</m> de  <m>r^2+z^2=a^2</m> afin de satisfaire <m>z\geqslant 0</m>.
-
-Puisque
-<md><mrow>
-\Big(\frac{\partial x}{\partial r},\,\frac{\partial y}{\partial r},\,
-                     \frac{\partial z}{\partial r}\Big),
-&amp;=\Big(\cos\theta,\,\sin\theta,\,-\frac{r}{\sqrt{a^2-r^2}}\Big)
-</mrow><mrow>
-\Big(\frac{\partial x}{\partial\theta},\,\frac{\partial y}{\partial\theta}
-             ,\, \frac{\partial z}{\partial\theta}\Big)
-&amp;=(-r\sin\theta,\,r\cos\theta,\,0),
-</mrow></md>
-la <xref ref="eq_SUdSparam" text="global">formule</xref> donne
-<md><mrow>
-\vn\,\dee{S}
-&amp;=\pm\Big(\frac{\partial x}{\partial r},\,\frac{\partial y}{\partial r}
-   ,\,\frac{\partial z}{\partial r}\Big)
-\times
-\Big(\frac{\partial x}{\partial\theta},\,\frac{\partial y}{\partial\theta}
-   ,\, \frac{\partial z}{\partial\theta}\Big)
-\ \dee{r}\dee{\theta}
-</mrow><mrow>
-&amp;=\pm \det\left[\begin{matrix}
-                \vi &amp; \cos\theta &amp; -r\sin\theta \\
-                \vj &amp; \sin\theta &amp; r\cos\theta \\
-                \vk &amp; -\frac{r}{\sqrt{a^2-r^2}} &amp; 0
-                \end{matrix}\right]\ \dee{r}\dee{\theta}
-
-</mrow><mrow>
-&amp;=\pm\Big(\frac{r^2\cos\theta}{\sqrt{a^2-r^2}},\,
-           \frac{r^2\sin\theta}{\sqrt{a^2-r^2}},\,
-          r\Big)\ \dee{r}\dee{\theta},
-</mrow><mrow>
-
-\dee{S}&amp;=\sqrt{ \frac{r^4}{a^2-r^2} +r^2}\ \dee{r}\dee{\theta}
-        =\sqrt{ \frac{a^2r^2}{a^2-r^2}}\ \dee{r}\dee{\theta}
-        =\frac{ar}{\sqrt{a^2-r^2}}\ \dee{r}\dee{\theta}.
-</mrow></md>
-Ainsi, l'aire de l'hémisphère est
-<md><mrow>
-\int_0^a \dee{r}\int_0^{2\pi}\dee{\theta}\ \frac{ar}{\sqrt{a^2-r^2}}
-&amp;=2\pi a\int_0^a \dee{r}\ \frac{r}{\sqrt{a^2-r^2}}
-
-</mrow><mrow>
-&amp;=2\pi a\int_{a^2}^0 \frac{-\dee{u}/2}{\sqrt{u}}
-</mrow><mrow>
-&amp;\hskip1in\text{avec } u=a^2-r^2,\ \dee{u} = -2r\,\dee{r}
-</mrow><mrow>
-&amp;=2\pi a\Big[-\sqrt{u}\Big]_{a^2}^0
-</mrow><mrow>
-&amp;=2\pi a^2,
-</mrow></md>
-comme on s'y attendait.
-</p>
-    </example>
-    <example xml:id="eg_SphereImplicit">
-      <title>Aire de l'hémisphère comme surface de niveau</title>
-      <p>
-Cette fois, nous calculons l'aire de l'hémisphère en exploitant le fait que si <m>(x,y,z)</m> s'y trouve, alors <m>G(x,y,z) = a^2</m> lorsque <m>G(x,y,z) = x^2 + y^2 + z^2</m>.
-Puisque
-<me>
-\vnabla G(x,y,z) = \big(2x,\,2y,\,2z\big),
-</me>
-la <xref ref="eq_SUdSimplicit" text="global">formule</xref> donne
-<md><mrow>
-\dee{S}
-&amp;= \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\bigg|
-            \ \dee{x}\dee{y}
-</mrow><mrow>
-&amp;= \bigg|\frac{\big(2x,\,2y,\,2z\big)}{2z}\bigg|
-            \ \dee{x}\dee{y}
-</mrow><mrow>
-&amp;= \frac{\sqrt{x^2+y^2+z^2}}{|z|}
-            \ \dee{x}\dee{y}
-</mrow><mrow>
-&amp;= \frac{a}{\sqrt{a^2-x^2-y^2}}
-            \ \dee{x}\dee{y} \qquad\text{sur }  x^2+y^2+z^2=a^2.
-</mrow></md>
-Ainsi, l'aire est
-<m>\displaystyle \iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
-            \ \dee{x}\dee{y}
-</m>.
-Afin d'évaluer l'intégrale, on passe aux coordonnées polaires, en remplaçant <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m>. Ceci donne
-<md><mrow>
-\text{Aire}
-&amp;=\iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
-            \ \dee{x}\dee{y}
-=\int_0^a \int_0^{2\pi} \frac{a}{\sqrt{a^2-r^2}} r\, dr\, d\theta
-</mrow><mrow>
-&amp;=2\pi a \int_0^a \frac{r}{\sqrt{a^2-r^2}}\dee{r}.
-</mrow></md>
-Nous avons déjà vu, à l'<xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que la valeur de cette intégrale est  <m>2\pi a^2</m>.
-</p>
-    </example>
-    <example xml:id="eg_SphereAreaSC">
+  </paragraphs>
+  
+  <example xml:id="eg_SphereAreaSC">
       <title>Aire de l'hémisphère, avec les coordonnées sphériques</title>
       <p>
 Clairement, <q>intégrer sur une sphère</q> est quelque chose qui suggère fortement de passer aux coordonnées sphériques. Nous utilisons les coordonnées sphériques pour paramétrer l'hémisphère <m>x^2+y^2+z^2=a^2</m>, <m>z\geqslant 0</m>. Les paramètres seront les angles  <m>\theta</m>, <m>\varphi</m>, puisque le rayon est fixé.
@@ -513,6 +226,476 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
 </mrow></md>
 </p>
     </example>
+
+    <example xml:id="eg_SphereAreaCyl">
+      <title>Aire d'hémisphère, avec les coordonnées cylindriques </title>
+      <p>
+        Commençons par paramétrer l'hémisphère  <m>x^2+y^2+z^2=a^2</m>, <m>z\geqslant 0</m>, en utilisant les coordonnées polaires <m>r</m>, <m>\theta</m> comme paramètres.
+    </p>
+      <sidebyside widths="45% 25%" valign="middle">
+        <p>
+          <md>
+            <mrow> x &amp;= r\cos\theta </mrow>
+            <mrow> y &amp;= r\sin\theta </mrow>
+            <mrow> z &amp;= z </mrow>
+          </md>
+        </p>
+        <image source="images/CLP4-figs/cylindrical"/>
+      </sidebyside>
+      <p>
+      Puis, on applique la <xref ref="eq_SUdSparam" text="global">formule</xref>. En coordonnées cylindriques, l'équation <m>x^2+y^2+z^2=a^2</m> devient <m>r^2+z^2=a^2</m>, et la condition  <m>x^2+y^2\leqslant  a^2</m> est  <m>0\leqslant  r\leqslant  a</m>, <m>0\leqslant \theta \lt  2\pi</m>.
+      </p>
+      
+      <p>Ainsi, l'hémisphère peut être paramétré par
+<md><mrow>
+&amp;\big(x(r,\theta),\, y(r,\theta),\, z(r,\theta)\big)
+=\big(r\cos\theta,\,r\sin\theta,\,\sqrt{a^2-r^2}\,\big)
+</mrow><mrow>
+&amp;\hskip1in\text{avec }\
+0\leqslant  r\leqslant  a,\ 0\leqslant \theta \lt 2\pi.
+</mrow></md>
+Remarquons que nous avons choisi la solution positive  <m>z=\sqrt{a^2-r^2}</m> de  <m>r^2+z^2=a^2</m> afin de satisfaire <m>z\geqslant 0</m>.
+
+Puisque
+<md><mrow>
+\Big(\frac{\partial x}{\partial r},\,\frac{\partial y}{\partial r},\,
+                     \frac{\partial z}{\partial r}\Big),
+&amp;=\Big(\cos\theta,\,\sin\theta,\,-\frac{r}{\sqrt{a^2-r^2}}\Big)
+</mrow><mrow>
+\Big(\frac{\partial x}{\partial\theta},\,\frac{\partial y}{\partial\theta}
+             ,\, \frac{\partial z}{\partial\theta}\Big)
+&amp;=(-r\sin\theta,\,r\cos\theta,\,0),
+</mrow></md>
+la <xref ref="eq_SUdSparam" text="global">formule</xref> donne
+<md><mrow>
+\vn\,\dee{S}
+&amp;=\pm\Big(\frac{\partial x}{\partial r},\,\frac{\partial y}{\partial r}
+   ,\,\frac{\partial z}{\partial r}\Big)
+\times
+\Big(\frac{\partial x}{\partial\theta},\,\frac{\partial y}{\partial\theta}
+   ,\, \frac{\partial z}{\partial\theta}\Big)
+\ \dee{r}\dee{\theta}
+</mrow><mrow>
+&amp;=\pm \det\left[\begin{matrix}
+                \vi &amp; \cos\theta &amp; -r\sin\theta \\
+                \vj &amp; \sin\theta &amp; r\cos\theta \\
+                \vk &amp; -\frac{r}{\sqrt{a^2-r^2}} &amp; 0
+                \end{matrix}\right]\ \dee{r}\dee{\theta}
+
+</mrow><mrow>
+&amp;=\pm\Big(\frac{r^2\cos\theta}{\sqrt{a^2-r^2}},\,
+           \frac{r^2\sin\theta}{\sqrt{a^2-r^2}},\,
+          r\Big)\ \dee{r}\dee{\theta},
+</mrow><mrow>
+
+\dee{S}&amp;=\sqrt{ \frac{r^4}{a^2-r^2} +r^2}\ \dee{r}\dee{\theta}
+        =\sqrt{ \frac{a^2r^2}{a^2-r^2}}\ \dee{r}\dee{\theta}
+        =\frac{ar}{\sqrt{a^2-r^2}}\ \dee{r}\dee{\theta}.
+</mrow></md>
+Ainsi, l'aire de l'hémisphère est
+
+    <md><mrow>
+\int_0^a \int_0^{2\pi} \frac{ar}{\sqrt{a^2-r^2}}\,\dee{\theta}\,\dee{r}
+&amp;=2\pi a\int_0^a \frac{r}{\sqrt{a^2-r^2}}\,\dee{r}
+
+</mrow><mrow>
+&amp;=2\pi a\int_{a^2}^0 \frac{-\dee{u}/2}{\sqrt{u}}
+</mrow><mrow>
+&amp;\hskip1in\text{avec } u=a^2-r^2,\ \dee{u} = -2r\,\dee{r}
+</mrow><mrow>
+&amp;=2\pi a\Big[-\sqrt{u}\Big]_{a^2}^0
+</mrow><mrow>
+&amp;=2\pi a^2,
+</mrow></md>
+comme on s'y attendait.
+</p>
+    </example>
+
+<exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Vectoriel/Sec_Int-surface/Int-surface-prob1.pg" parse="text"/>
+      </webwork>
+    </exercise>
+    <p>Faisons quelque chose d'un peu plus <em>céleste</em>.</p>
+    <example xml:id="eg_surfaceIntegralB">
+      <p>
+Considérons une coquille sphérique de rayon  <m>a</m> et de densité de masse <m>\mu</m> par unité d'aire. Pensons à une planète creuse. Nous allons déterminer la force gravitationnelle que la planète exerce sur une particule de masse <m>m</m> qui se trouve à une distance <m>b</m> du centre de la planète. La particule peut se trouver soit à l'extérieur de la coquille  (<m>b \gt a</m>), soit à l'intérieur de celle-ci (<m>b \lt a</m>).
+
+Nous choisissons notre système de coordonnées de sorte à ce que l'origine se trouve au centre de la coquille, et la particule à <m>(0,0,b)</m>. En vertu de la loi de gravitation, la force exercée sur la particule par une petite portion de surface d'aire  <m>\dee{S}</m> située à  <m>\vr</m> est
+<me>
+\frac{G\,(\mu\dee{S})\,m}{|\vr-(0,0,b)|^3}(\vr-(0,0,b)).
+</me>
+Ici, <m>G</m> est la constante gravitationnelle, <m>\mu\dee{S}</m> est la masse de la portion de surface, <m>m</m> est la masse de la particule
+</p>
+      <sidebyside widths="35% 40%" valign="middle">
+        <image source="images/CLP4-figs/shell"/>
+        <image source="images/CLP4-figs/shellB"/>
+      </sidebyside>
+      <p>
+et  <m>\vr-(0,0,b)</m> est le vecteur de la particule à la portion de surface. Nous travaillons en coordonnées sphériques, comme nous l'avons fait à l'<xref ref="eg_SphereAreaSC" text="global">exemple</xref>.
+<md><mrow>
+\dee{S} &amp;= a^2\sin\varphi\,\dee{\varphi}\dee{\theta}
+</mrow></md>
+et
+<md><mrow>
+\vr &amp;= a\sin\varphi\cos\theta\,\vi
+      + a\sin\varphi\sin\theta\,\vj
+      + a\cos\varphi\,\vk
+</mrow><mrow>
+\vr-(0,0,b) &amp;= a\sin\varphi\cos\theta\,\vi
+      + a\sin\varphi\sin\theta\,\vj
+      + (a\cos\varphi-b)\,\vk
+</mrow><mrow>
+|\vr-(0,0,b)|^2 &amp;= a^2+b^2 -2ab\cos\varphi
+</mrow></md>
+La force totale est alors
+
+    <md><mrow>
+\vF =
+    G\mu m a^2\int_0^\pi\int_0^{2\pi} \sin\varphi\
+    \frac{a\sin\varphi\cos\theta\,\vi
+      \!+\! a\sin\varphi\sin\theta\,\vj
+      \!+\! (a\cos\varphi\!-\!b)\,\vk}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}\,\dee{\theta}\,\dee{\varphi}.
+</mrow></md>
+Notons, pour référence future, que la racine carrée dans
+<m>[a^2+b^2 -2ab\cos\varphi]^{3/2}</m> est la racine carrée <em>positive</em>
+puisque <m>[b^2+a^2 -2ab\cos\varphi]^{1/2}</m> est la norme de <m>\vr-(0,0,b)</m>.
+</p>
+      <p>Cette intégrale est un peu différente de celles que nous avons rencontrées jusqu'à présent. En effet, maintenant, l'intégrande est un vecteur. Par définition,
+<m>\iint (\vA+\vB)\,\dee{S} = \iint \vA\,\dee{S} + \iint\vB\,\dee{S}</m>,
+<me>
+\iint_{\cS} \big[G_1\,\vi + G_2\,\vj + G_3\,\vk \big]\ \dee{S}
+=\vi \iint_{\cS} G_1\ \dee{S}
++\vj \iint_{\cS} G_2\ \dee{S}
++\vk \iint_{\cS} G_3\ \dee{S}.
+</me>
+Ainsi, nous devons simplement calculer les trois composantes séparément.
+</p>
+      <p>Dans notre cas, les composantes  <m>\vi</m> et <m>\vj</m>  sont nulles. En effet,
+
+    <md><mrow>
+\vF\cdot\vi &amp; = G\mu m a^2 \int_0^\pi \left[
+\sin\varphi\
+    \frac{a\sin\varphi}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\cos\theta\,\dee{\theta}
+\right]\dee{\varphi},
+</mrow><mrow>
+\vF\cdot\vj &amp; = G\mu m a^2\int_0^\pi\left[
+ \sin\varphi\
+    \frac{a\sin\varphi}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\sin\theta\,\dee{\theta}
+\right]\dee{\varphi}
+</mrow></md>
+sont toutes les deux nulles puisque
+
+<m>\int_0^{2\pi}\cos\theta\ \dee{\theta}
+           =\int_0^{2\pi}\sin\theta\ \dee{\theta}
+           =0</m>.
+Ainsi,
+
+    <md><mrow>
+\vF
+&amp;=  G\mu m a^2 \vk\int_0^\pi\int_0^{2\pi} \sin\varphi\
+    \frac{a\cos\varphi-b}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}\,\dee{\theta}\,\dee{\varphi}
+</mrow><mrow>
+&amp;=  2\pi G\mu m a^2 \vk\int_0^\pi \sin\varphi\
+    \frac{a\cos\varphi-b}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}\,\dee{\varphi}.
+</mrow></md>
+Pour évaluer cette intégrale, nous remplaçons
+<md><mrow>
+u=a^2+b^2 -2ab\cos\varphi,\qquad
+\dee{u} = 2ab\sin\varphi,\,\dee{\varphi}\qquad
+\cos\varphi = \frac{a^2+b^2-u}{2ab}.
+</mrow></md>
+Lorsque <m>\varphi=0</m>, <m>u=(a-b)^2</m>, et lorsque <m>\varphi =\pi</m>, <m>u=(a+b)^2</m>, alors
+<md><mrow>
+\vF
+&amp;=  \frac{\pi G\mu m a}{b} \vk\int_{(a-b)^2}^{(a+b)^2}
+     \dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}}
+</mrow><mrow>
+&amp;=  \frac{\pi G\mu m a}{b} \vk\int_{(a-b)^2}^{(a+b)^2}
+     \dee{u}\  \frac{\frac{a^2-b^2-u}{2b}}  {u^{3/2}}
+</mrow><mrow>
+&amp;=  \frac{\pi G\mu m a}{b} \vk\Big[
+      \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
+            -\Big(\frac{1}{2b}\Big)\frac{u^{1/2}}{1/2}
+   \Big]_{(a-b)^2}^{(a+b)^2}.
+</mrow></md>
+Puisque <m>u^{1/2}</m> est la racine <em>positive</em>,
+<md><mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
+      \Big(\frac{b^2-a^2}{b}\Big)\frac{1}{a+b}
+            -\frac{a+b}{b}
+            -\Big(\frac{b^2-a^2}{b}\Big)\frac{1}{|a-b|}
+            +\frac{|a-b|}{b}
+   \Big].
+</mrow></md>
+Si <m>b \gt a</m>, on aura <m>|a-b|=b-a</m> :
+<md><mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
+       \frac{b-a}{b}
+            -\frac{a+b}{b}
+            -\frac{a+b}{b}
+            +\frac{b-a}{b}
+   \Big]
+=-\frac{G(4\pi a^2\mu)m}{b^2} \vk.
+</mrow></md>
+Si <m>b \lt a</m>, on aura <m>|a-b|=a-b</m> :
+<md><mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
+      \frac{b-a}{b}
+            -\frac{a+b}{b}
+            +\frac{a+b}{b}
+            +\frac{a-b}{b}
+   \Big]
+=0.
+</mrow></md>
+La morale de cette histoire<fn>Ces deux résultats sont parus dans le <em>Principia Mathematica</em> (1687) de Newton.</fn>
+ est que
+<ul><li>
+si la particule se trouve à l'intérieur de la coquille, elle ne ressentira aucune force gravitationnelle et,
+</li><li>
+si la particule se trouve à l'extérieur de la coquille, elle ressentira la force gravitationnelle comme si toute la masse (<m>4\pi a^2\mu</m>) de la coquille était concentrée au centre de celle-ci.
+</li></ul>
+</p>
+    </example>
+
+
+
+
+
+    <paragraphs>
+      <title>Graphes</title>
+      <p>
+  Si la surface <m>\cS</m> est le graphe de la fonction  <m>z = f(x,y)</m>, elle peut être paramétrée assez directement au moyen de
+  <me>
+  \vr(x,y) = x\,\vi + y\,\vj + f(x,y)\,\vk.
+  </me>
+  Puisque <m>\frac{\partial\vr}{\partial x}
+        = \vi + \frac{\partial f}{\partial x}\,\vk</m> et <m>\frac{\partial\vr}{\partial y}
+        = \vj + \frac{\partial f}{\partial y}\,\vk
+  </m>, nous avons
+  <me>
+    \frac{\partial\vr}{\partial x}\times
+                  \frac{\partial\vr}{\partial y}
+    =\det\left[\begin{matrix}
+              \vi &amp; 1 &amp; 0 \\
+              \vj &amp; 0 &amp; 1 \\
+              \vk &amp; \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y}
+              \end{matrix}\right]
+    = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk.
+  </me>
+
+  Ainsi, la  <xref ref="eq_SUdSparam" text="global">formule</xref> donne:
+  </p>
+      <fact xml:id="eq_SUdSgraph">
+        <statement>
+          <p>
+        Pour la surface  <m>z=f(x,y)</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; = \pm\big[-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk\big]\
+                  \dee{x}\dee{y},
+        </mrow><mrow>
+        \dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\
+                  \dee{x}\dee{y}.
+        </mrow></md>
+        De la même façon, pour la surface <m>x=g(y,z)</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; = \pm\big[\vi -g_y(y,z)\,\vj - g_z(y,z)\,\vk\big]\
+                  \dee{y}\dee{z},
+                  </mrow><mrow>
+        \dee{S}&amp;= \sqrt{1 + g_y(y,z)^2 + g_z(y,z)^2}\
+                  \dee{y}\dee{z},
+        </mrow></md>
+        et pour la surface  <m>y=h(x,z)</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; = \pm\big[-h_x(x,z)\,\vi +\vj - h_z(x,z)\,\vk\big]\
+                  \dee{x}\dee{z},
+                  </mrow><mrow>
+        \dee{S}&amp;= \sqrt{1 + h_x(x,z)^2 + h_z(x,z)^2}\
+                  \dee{x}\dee{z}.
+        </mrow></md>
+      </p>
+        </statement>
+      </fact>
+      <p>
+  À nouveau, dans une application donnée, on mettra un soin particulier lors du choix pour le vecteur <m>\vn</m>.
+  </p>
+      <p>La formule
+  <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>
+  dans la <xref ref="eq_SUdSgraph" text="global">formule</xref> admet une interprétation géométrique. Le parallélogramme rouge dans la figure ci-bas représente une petite portion de la surface.
+  </p>
+      <sidebyside width="40%">
+        <image source="images/CLP4-figs/surfaceProj"/>
+      </sidebyside>
+      <p>
+    Son aire est <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>. Le parallélogramme bleu est la projection du rouge dans le plan <m>Oxy</m>. Le vecteur <m>\vn </m> est un vecteur normal unitaire pour le parallélogramme rouge. Il est parallèle à
+      <me>
+      \frac{\partial\vr}{\partial x}\times
+                    \frac{\partial\vr}{\partial y}
+      = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk,
+      </me>
+    de sorte que l'angle <m>\theta</m> formé par  <m>\vn</m> et <m>\vk</m> vérifie
+    <md><mrow>
+    \cos\theta &amp;= \frac{(-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk)\cdot\vk}
+                    {\big|-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk\big|\,|\vk|}
+    </mrow><mrow>
+    &amp;=\frac{1}{\sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}}.
+    </mrow></md>
+    L'interprétation géométrique de
+    <m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m> est que l'aire  <m>\dee{S}</m> d'un petit morceau de surface est donnée par l'aire de sa projection sur le plan <m>Oxy</m> multipliée par le facteur <m>\frac{1}{\cos\theta}</m>, où  <m>\theta</m> est l'angle formé par  <m>\vn</m> (qui est orthogonal à la surface) et par <m>\vk</m> (qui est orthogonal au plan  <m>Oxy</m>). Notons que
+    <ul><li>
+    lorsque <m>\theta</m> est près de zéro, ce qui correspond à dire que <m>f</m> est presque constante et donc que notre surface est à peu près parallèle au plan <m>Oxy</m>, <m>\dee{S}</m> se réduit, essentiellement, à <m>\dee{x}\dee{y}</m>;
+    </li><li>
+    lorsque <m>\theta\rightarrow\frac{\pi}{2}</m>, ce qui correspond à dire que  <m>f_x</m> ou <m>f_y</m> deviennent très grandes en valeur absolue et donc que notre surface est perpendiculaire au plan  <m>Oxy</m>, <m>\dee{S}</m> devient  <q>infini fois</q> <m>\dee{x}\dee{y}</m>. Dans ce cas, nous devrions représenter notre surface plutôt sous la forme  <m>x=g(y,z)</m> ou  <m>y=h(x,z)</m>.
+    </li></ul>
+  </p>
+  </paragraphs>
+  
+  <example xml:id="eg_SphereGraph">
+      <title>Aire de l'hémisphère comme graphe</title>
+      <p>
+Nous calculons l'aire de l'hémisphère une fois de plus, cette fois en utilisant le fait que l'équation de cette surface est
+<me>
+z=f(x,y) = \sqrt{a^2-x^2-y^2}
+\qquad\text{avec $(x,y)$ tel que $x^2+y^2\leqslant  a^2$}.
+</me>
+Ainsi, la <xref ref="eq_SUdSgraph" text="global">formule</xref> donne
+<md><mrow>
+\dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\  \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{1+\Big(\frac{-x}{\sqrt{a^2-x^2-y^2}}\Big)^2
+            +\Big(\frac{-y}{\sqrt{a^2-x^2-y^2}}\Big)^2} \ \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{1+\frac{x^2+y^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{\frac{a^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y},
+</mrow></md>
+de sorte que l'aire est
+<m>\displaystyle\iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}</m>.
+Nous avons déjà calculé, à l'<xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que cette intégrale vaut <m>2\pi a^2</m>.
+</p>
+    </example>
+    <exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Vectoriel/Sec_Int-surface/Int-surface-prob2.pg" parse="text"/>
+      </webwork>
+    </exercise>
+    <paragraphs>
+      <title>Surfaces données implicitement</title>
+      <p>
+  Pour terminer, supposons que la surface est donnée sous la forme
+  <m>G(x,y,z)=K</m>, où  <m>K</m> est  une  constante. Supposons de plus que, en un point sur la surface, nous avons <m>\frac{\partial G}{\partial z} \ne 0</m>. Alors, le <xref ref="thm-Implicites3" text="global">théorème</xref> nous dit qu'il existe une fonction  <m>f(x,z)</m> telle que  <m>z= f(x,y)</m> vérifie
+  <me>
+  G\big(x,y,f(x,y)\big) = K.
+  </me>
+  La dérivation donne alors, grâce au théorème des fonctions composées,
+  <md alignment="alignat"><mrow>
+  0&amp;=\frac{\partial}{\partial x}\Big[G\big(x,y,f(x,y)\big)\Big]
+  &amp;\ =\ G_x\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_x(x,y),
+  </mrow><mrow>
+  0&amp;=\frac{\partial}{\partial y}\Big[G\big(x,y,f(x,y)\big)\Big]
+  &amp;\ =\ G_y\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_y(x,y),
+  </mrow></md>
+  ce qui, à son tour, entraîne
+  <md><mrow>
+  f_x(x,y) = -\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)},
+  \qquad
+  f_y(x,y) = -\frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
+  </mrow></md>
+  et
+  <md><mrow>
+  -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk
+  &amp;=\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\vi+
+  \frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\vj+\vk
+  </mrow><mrow>
+  &amp;=\frac{\vnabla G\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}.
+  </mrow></md>
+  Ainsi, il vient de la <xref ref="eq_SUdSparam" text="global">formule</xref> les formules suivantes.
+  </p>
+      <fact xml:id="eq_SUdSimplicit">
+        <statement>
+          <p>
+        Pour la surface  <m>G(x,y,z)=K</m>, lorsque  <m>G_z(x,y,z)\ne 0</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; =
+            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\
+                  \dee{x}\dee{y},
+  </mrow><mrow>
+        \dee{S}&amp;=
+        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\bigg|\
+                  \dee{x}\dee{y}.
+        </mrow></md>
+        De même, pour  <m>G(x,y,z)=K</m>, lorsque <m>G_x(x,y,z)\ne 0</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; =
+            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vi}\
+                  \dee{y}\dee{z},
+  </mrow><mrow>
+        \dee{S}&amp;=
+        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vi}\bigg|\
+                  \dee{y}\dee{z},
+        </mrow></md>
+        et pour la surface  <m>G(x,y,z)=K</m>, lorsque  <m>G_y(x,y,z)\ne 0</m>,
+        <md><mrow>
+        d\vS= \vn\, \dee{S}&amp; =
+            \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vj}\
+                  \dee{x}\dee{z},
+  </mrow><mrow>
+        \dee{S}&amp;=
+        \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vj}\bigg|\
+                  \dee{x}\dee{z}.
+        </mrow></md>
+      </p>
+        </statement>
+      </fact>
+      <p>
+  Si, en un point <m>(x_0,y_0,z_0)</m>, nous avons
+  <m>G_x(x_0,y_0,z_0)=
+  G_y(x_0,y_0,z_0)=
+  G_z(x_0,y_0,z_0)= 0</m>, nous aurons un problème. Très souvent, ceci est signe que notre surface n'est pas lisse en <m>(x_0,y_0,z_0)</m> et donc que nous n'avons pas un vecteur normal défini sans ambiguïté. On pourra voir l'<xref ref="eg_tangentPlaneA" text="global">exemple</xref>.
+  </p>
+  </paragraphs>
+  
+<exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Vectoriel/Sec_Int-surface/Int-surface-prob3.pg" parse="text"/>
+      </webwork>
+    </exercise>
+    <example xml:id="eg_SphereImplicit">
+      <title>Aire de l'hémisphère comme surface de niveau</title>
+      <p>
+Cette fois, nous calculons l'aire de l'hémisphère en exploitant le fait que si <m>(x,y,z)</m> s'y trouve, alors <m>G(x,y,z) = a^2</m> lorsque <m>G(x,y,z) = x^2 + y^2 + z^2</m>.
+Puisque
+<me>
+\vnabla G(x,y,z) = \big(2x,\,2y,\,2z\big),
+</me>
+la <xref ref="eq_SUdSimplicit" text="global">formule</xref> donne
+<md><mrow>
+\dee{S}
+&amp;= \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\vk}\bigg|
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \bigg|\frac{\big(2x,\,2y,\,2z\big)}{2z}\bigg|
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \frac{\sqrt{x^2+y^2+z^2}}{|z|}
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \frac{a}{\sqrt{a^2-x^2-y^2}}
+            \ \dee{x}\dee{y} \qquad\text{sur }  x^2+y^2+z^2=a^2.
+</mrow></md>
+Ainsi, l'aire est
+<m>\displaystyle \iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}</m>.
+Nous avons déjà vu, à l'<xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que la valeur de cette intégrale est  <m>2\pi a^2</m>.
+</p>
+    </example>
+
     <!--
 
 <p>There is an easier way to do this, using a little geometry.</p>
@@ -593,39 +776,7 @@ area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
 <p>But wait! We can do it again, by yet another method!</p>
 
 -->
-    <example xml:id="eg_SphereGraph">
-      <title>Aire de l'hémisphère comme graphe</title>
-      <p>
-Nous calculons l'aire de l'hémisphère une fois de plus, cette fois en utilisant le fait que l'équation de cette surface est
-<me>
-z=f(x,y) = \sqrt{a^2-x^2-y^2}
-\qquad\text{avec $(x,y)$ tel que $x^2+y^2\leqslant  a^2$}.
-</me>
-Ainsi, la <xref ref="eq_SUdSgraph" text="global">formule</xref> donne
-<md><mrow>
-\dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\  \dee{x}\dee{y}
-</mrow><mrow>
-   &amp;=\sqrt{1+\Big(\frac{-x}{\sqrt{a^2-x^2-y^2}}\Big)^2
-            +\Big(\frac{-y}{\sqrt{a^2-x^2-y^2}}\Big)^2} \ \dee{x}\dee{y}
-</mrow><mrow>
-   &amp;=\sqrt{1+\frac{x^2+y^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y}
-</mrow><mrow>
-   &amp;=\sqrt{\frac{a^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y},
-</mrow></md>
-de sorte que l'aire est
-<m>
-\iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
-            \ \dee{x}\dee{y}
-</m>. Nous avons déjà trouvé, à l'<xref ref="eg_SphereImplicit" text="global">exemple</xref>, que la valeur de cette intégrale est  <m>2\pi a^2</m>.
-</p>
-    </example>
-    <!-- WeBWork à inclure>
-Library/Rochester/setVectorCalculus3/ur_vc_13_2.pg
-
-Je peux traduire
-
--->
-    <p>Faisons maintenant quelques exemples avec un intégrande différent de 1.
+    <p>Pour conclure, voyons un autre exemple d'une intégrale de surface qui peut être calculée de deux façons différentes.
 </p>
     <example xml:id="eg_surfaceIntegralA">
       <statement>
@@ -666,19 +817,20 @@ Notre intégrale est donc
 &amp;=\sqrt{2}\iint_{x^2+y^2\leqslant  1} x^2 y^2 (x^2+y^2)\ \dee{x}\dee{y}.
 </mrow></md>
 Puisque nous intégrons sur une région circulaire, nous passons aux coordonnées polaires.
-<md><mrow>
+
+    <md><mrow>
 \iint_{\cS} x^2y^2z^2\ dS
-&amp;=\sqrt{2}\int_0^{2\pi}\dee{\theta}\int_0^1 \dee{r} \
-          r(r\cos\theta)^2(r\sin\theta)^2 r^2
+&amp;=\sqrt{2}\int_0^{2\pi}\int_0^1
+          r(r\cos\theta)^2(r\sin\theta)^2 r^2\,\dee{r}\,\dee{\theta}
 </mrow><mrow>
-&amp;=\sqrt{2} \left[\int_0^{2\pi}\dee{\theta}\ \cos^2\theta \sin^2\theta\right]
-           \left[\int_0^1 \dee{r} \ r^7\right]
+&amp;=\sqrt{2} \left[\int_0^{2\pi} \cos^2\theta \sin^2\theta\,\dee{\theta}\right]
+           \left[\int_0^1 r^7\,\dee{r}\right]
 </mrow><mrow>
-&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}\dee{\theta}\
-          \cos^2\theta \sin^2\theta
-=\frac{\sqrt{2}}{32} \int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)
+&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}
+          \cos^2\theta \sin^2\theta\,\dee{\theta}
+=\frac{\sqrt{2}}{32} \int_0^{2\pi} \sin^2(2\theta)\,\dee{\theta}
 </mrow><mrow>
-&amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi}\dee{\theta}\ \big[1-\cos(4\theta)\big]
+&amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi} \big[1-\cos(4\theta)\big]\,\dee{\theta}
 </mrow></md>
 Rappelons que les intégrales de <m>\cos(\theta)</m>, ou <m>\cos(4\theta)</m>, sur une période complète valent  <m>0</m>. Nous obtenons
 <me>
@@ -716,16 +868,17 @@ la <xref ref="eq_SUdSparam" text="global">formule</xref> donne
 \dee{S}&amp;= \sqrt{2} z\ \dee{z}\dee{\theta}.
 </mrow></md>
 Ainsi, notre intégrale devient
-<md><mrow>
+
+    <md><mrow>
 \iint_{\cS} x^2y^2z^2\ dS
-&amp;= \sqrt{2}\int_0^{2\pi}\dee{\theta} \int_0^1\dee{z}\
-           z (z\cos\theta)^2 (z\sin\theta)^2 z^2
+&amp;= \sqrt{2}\int_0^{2\pi}\int_0^1
+           z (z\cos\theta)^2 (z\sin\theta)^2 z^2\,\dee{z}\,\dee{\theta}
 </mrow><mrow>
-&amp;= \sqrt{2}\int_0^{2\pi}\dee{\theta} \int_0^1\dee{z}\ z^7
-           \cos^2\theta \sin^2\theta
+&amp;= \sqrt{2}\int_0^{2\pi}\int_0^1 z^7
+           \cos^2\theta \sin^2\theta\,\dee{z}\,\dee{\theta}
 </mrow><mrow>
-&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}\dee{\theta}\
-          \cos^2\theta \sin^2\theta.
+&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}
+          \cos^2\theta \sin^2\theta\,\dee{\theta}.
 </mrow></md>
 Nous avons déjà évalué cette intégrale dans notre première solution, nous obtenons donc, à nouveau,
 <me>
@@ -733,155 +886,6 @@ Nous avons déjà évalué cette intégrale dans notre première solution, nous 
 </me>
 </p>
       </solution>
-    </example>
-    <!-- WeBWork à inclure
-Library/Rochester/setVectorCalculus3/ur_vc_13_1.pg
-je peux traduire
--->
-    <p>Faisons quelque chose d'un peu plus <em>céleste</em>.</p>
-    <example xml:id="eg_surfaceIntegralB">
-      <p>
-Considérons une coquille sphérique de rayon  <m>a</m> et de densité de masse <m>\mu</m> par unité d'aire. Pensons à une planète creuse. Nous allons déterminer la force gravitationnelle que la planète exerce sur une particule de masse <m>m</m> qui se trouve à une distance <m>b</m> du centre de la planète. La particule peut se trouver soit à l'extérieur de la coquille  (<m>b \gt a</m>), soit à l'intérieur de celle-ci (<m>b \lt a</m>).
-
-Nous choisissons notre système de coordonnées de sorte à ce que l'origine se trouve au centre de la coquille, et la particule à <m>(0,0,b)</m>. En vertu de la loi de gravitation, la force exercée sur la particule par une petite portion de surface d'aire  <m>\dee{S}</m> située à  <m>\vr</m> est
-<me>
-\frac{G\,(\mu\dee{S})\,m}{|\vr-(0,0,b)|^3}(\vr-(0,0,b)).
-</me>
-Ici, <m>G</m> est la constante gravitationnelle, <m>\mu\dee{S}</m> est la masse de la portion de surface, <m>m</m> est la masse de la particule
-</p>
-      <sidebyside widths="35% 40%" valign="middle">
-        <image source="images/CLP4-figs/shell"/>
-        <image source="images/CLP4-figs/shellB"/>
-      </sidebyside>
-      <p>
-et  <m>\vr-(0,0,b)</m> est le vecteur de la particule à la portion de surface. Nous travaillons en coordonnées sphériques, comme nous l'avons fait à l'<xref ref="eg_SphereAreaSC" text="global">exemple</xref>.
-<md><mrow>
-\dee{S} &amp;= a^2\sin\varphi\,\dee{\varphi}\dee{\theta}
-</mrow></md>
-et
-<md><mrow>
-\vr &amp;= a\sin\varphi\cos\theta\,\vi
-      + a\sin\varphi\sin\theta\,\vj
-      + a\cos\varphi\,\vk
-</mrow><mrow>
-\vr-(0,0,b) &amp;= a\sin\varphi\cos\theta\,\vi
-      + a\sin\varphi\sin\theta\,\vj
-      + (a\cos\varphi-b)\,\vk
-</mrow><mrow>
-|\vr-(0,0,b)|^2 &amp;= a^2+b^2 -2ab\cos\varphi
-</mrow></md>
-La force totale est alors
-<md><mrow>
-\vF =
-    G\mu m a^2\int_0^\pi\!\!\dee{\varphi} \int_0^{2\pi}\!\!\dee{\theta}\ \sin\varphi\
-    \frac{a\sin\varphi\cos\theta\,\vi
-      \!+\! a\sin\varphi\sin\theta\,\vj
-      \!+\! (a\cos\varphi\!-\!b)\,\vk}
-         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}.
-</mrow></md>
-Notons, pour référence future, que la racine carrée dans
-<m>[a^2+b^2 -2ab\cos\varphi]^{3/2}</m> est la racine carrée <em>positive</em>
-puisque <m>[b^2+a^2 -2ab\cos\varphi]^{1/2}</m> est la norme de <m>\vr-(0,0,b)</m>.
-</p>
-      <p>Cette intégrale est un peu différente de celles que nous avons rencontrées jusqu'à présent. En effet, maintenant, l'intégrande est un vecteur. Par définition,
-<m>\iint (\vA+\vB)\,\dee{S} = \iint \vA\,\dee{S} + \iint\vB\,\dee{S}</m>,
-<me>
-\iint_{\cS} \big[G_1\,\vi + G_2\,\vj + G_3\,\vk \big]\ \dee{S}
-=\vi \iint_{\cS} G_1\ \dee{S}
-+\vj \iint_{\cS} G_2\ \dee{S}
-+\vk \iint_{\cS} G_3\ \dee{S}.
-</me>
-Ainsi, nous devons simplement calculer les trois composantes séparément.
-</p>
-      <p>Dans notre cas, les composantes  <m>\vi</m> et <m>\vj</m>  sont nulles. En effet,
-<md><mrow>
-\vF\cdot\vi &amp; = G\mu m a^2 \int_0^\pi\dee{\varphi} \left[
-\sin\varphi\
-    \frac{a\sin\varphi}
-         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
-\int_0^{2\pi}\dee{\theta}\ \cos\theta
-\right],
-</mrow><mrow>
-\vF\cdot\vj &amp; = G\mu m a^2\int_0^\pi\dee{\varphi}\left[
- \sin\varphi\
-    \frac{a\sin\varphi}
-         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
-\int_0^{2\pi}\dee{\theta}\ \sin\theta
-\right]
-</mrow></md>
-sont toutes les deux nulles puisque
-
-<m>\int_0^{2\pi}\cos\theta\ \dee{\theta}
-           =\int_0^{2\pi}\sin\theta\ \dee{\theta}
-           =0</m>.
-Ainsi,
-<md><mrow>
-\vF
-&amp;=  G\mu m a^2 \vk\int_0^\pi\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
-    \frac{a\cos\varphi-b}
-         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
-</mrow><mrow>
-&amp;=  2\pi G\mu m a^2 \vk\int_0^\pi\dee{\varphi}\ \sin\varphi\
-    \frac{a\cos\varphi-b}
-         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}.
-</mrow></md>
-Pour évaluer cette intégrale, nous remplaçons
-<md><mrow>
-u=a^2+b^2 -2ab\cos\varphi,\qquad
-\dee{u} = 2ab\sin\varphi,\,\dee{\varphi}\qquad
-\cos\varphi = \frac{a^2+b^2-u}{2ab}.
-</mrow></md>
-Lorsque <m>\varphi=0</m>, <m>u=(a-b)^2</m>, et lorsque <m>\varphi =\pi</m>, <m>u=(a+b)^2</m>, alors
-<md><mrow>
-\vF
-&amp;=  \frac{\pi G\mu m a}{b} \vk\int_{(a-b)^2}^{(a+b)^2}
-     \dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}}
-</mrow><mrow>
-&amp;=  \frac{\pi G\mu m a}{b} \vk\int_{(a-b)^2}^{(a+b)^2}
-     \dee{u}\  \frac{\frac{a^2-b^2-u}{2b}}  {u^{3/2}}
-</mrow><mrow>
-&amp;=  \frac{\pi G\mu m a}{b} \vk\Big[
-      \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
-            -\Big(\frac{1}{2b}\Big)\frac{u^{1/2}}{1/2}
-   \Big]_{(a-b)^2}^{(a+b)^2}.
-</mrow></md>
-Puisque <m>u^{1/2}</m> est la racine <em>positive</em>,
-<md><mrow>
-\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
-      \Big(\frac{b^2-a^2}{b}\Big)\frac{1}{a+b}
-            -\frac{a+b}{b}
-            -\Big(\frac{b^2-a^2}{b}\Big)\frac{1}{|a-b|}
-            +\frac{|a-b|}{b}
-   \Big].
-</mrow></md>
-Si <m>b \gt a</m>, on aura <m>|a-b|=b-a</m> :
-<md><mrow>
-\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
-       \frac{b-a}{b}
-            -\frac{a+b}{b}
-            -\frac{a+b}{b}
-            +\frac{b-a}{b}
-   \Big]
-=-\frac{G(4\pi a^2\mu)m}{b^2} \vk.
-</mrow></md>
-Si <m>b \lt a</m>, on aura <m>|a-b|=a-b</m> :
-<md><mrow>
-\vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
-      \frac{b-a}{b}
-            -\frac{a+b}{b}
-            +\frac{a+b}{b}
-            +\frac{a-b}{b}
-   \Big]
-=0.
-</mrow></md>
-La morale de cette histoire<fn>Ces deux résultats sont parus dans le <em>Principia Mathematica</em> (1687) de Newton.</fn>
- est que
-<ul><li>
-si la particule se trouve à l'intérieur de la coquille, elle ne ressentira aucune force gravitationnelle et,
-</li><li>
-si la particule se trouve à l'extérieur de la coquille, elle ressentira la force gravitationnelle comme si toute la masse (<m>4\pi a^2\mu</m>) de la coquille était concentrée au centre de celle-ci.
-</li></ul>
-</p>
     </example>
     <!--
 <example xml:id="eg_gravityTrain">
@@ -1141,7 +1145,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
   </li></ul>
   Nous allons calculer le taux (disons en kilogrammes par seconde) avec lequel le fluide passe à travers une portion <m>\dee{S}</m> de surface à <m>(x,y,z)</m>. Pendant un court laps de temps, de durée  <m>\dee{t}</m> au temps <m>t</m>, le fluide près de  <m>\dee{S}</m> bouge de <m>\vv(x,y,z,t)\dee{t}</m>. La ligne verte dans la figure ci-bas est une vision latérale de <m>\dee{S}</m>, et <m>\vn =\vn (x,y,z)</m> est un vecteur unitaire normal à <m>\dee{S}</m>.
   </p>
-    <sidebyside width="40%">
+    <sidebyside width="30%">
       <image source="images/CLP4-figs/fluxIntDeriv"/>
     </sidebyside>
     <p>
@@ -1273,6 +1277,11 @@ the Riemann sums, this error converges to exactly <m>0</m>.
   c'est-à-dire le taux avec lequel le volume du fluide quitte la sphère. Lorsque nous avons construit ce champ de vecteurs, nous avons pris pour acquis que le fluide est incompressible, de sorte que ce taux est le même que le taux avec lequel la source crée le fluide.
   </p>
     </example>
+    <exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Vectoriel/Sec_Int-surface/Int-surface-prob4.pg" parse="text"/>
+      </webwork>
+    </exercise>
     <!--
   <example xml:id="eg_fluxIntegralB"><title>Vortex</title>
   <p>
@@ -1423,20 +1432,20 @@ the Riemann sums, this error converges to exactly <m>0</m>.
              \dee{\theta}\,\dee{z},
   </mrow></md>
    de sorte que le flux à travers le côté est
+
   <md><mrow>
   \iint_{S_s}\vF\cdot\vn \ \dee{S}
-  &amp;=\int_0^{2\pi}\int_0^5\
-       \big\{9 +\frac{3}{2}\,\sin(2\theta)+3z\sin\theta\big\} \dee{z}\, \dee{\theta}
+  &amp;=\int_0^{2\pi}\int_0^5
+       \big(9 +\tfrac{3}{2}\,\sin(2\theta)+3z\sin\theta\big)\,\dee{z}\,\dee{\theta}
   </mrow><mrow>
-  &amp;=9\int_0^{2\pi}\int_0^5 \dee{z}\, \dee{\theta}
-  \quad\text{puisque  }\int_0^{2\pi}\sin\theta\,\dee{\theta}
+  &amp;=9\int_0^{2\pi}\int_0^5\,\dee{z}\,\dee{\theta}
+  \quad (\text{car  }\int_0^{2\pi}\sin\theta\,\dee{\theta}
                      =\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}
-                     =0
+                     =0)
   </mrow><mrow>
-  &amp;=9\times 2\pi\times 5
-  =90\pi
+  &amp;=9\times 2\pi\times 5  =90\pi.
   </mrow></md>
-  et que le flux total est
+  Ainsi, le flux total est
   <md><mrow>
   \iint_{S}\vF\cdot\vn \ \dee{S}
   &amp;=\iint_{S_t}\vF\cdot\vn \ \dee{S}
@@ -1449,6 +1458,11 @@ the Riemann sums, this error converges to exactly <m>0</m>.
   </p>
       </solution>
     </example>
+    <exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Vectoriel/Sec_Int-surface/Int-surface-prob5.pg" parse="text"/>
+      </webwork>
+    </exercise>
   </subsection>
   <xi:include href="./Problemes/Prob-sec-Integrales-Surface.ptx"/>
 </section>

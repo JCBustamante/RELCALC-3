@@ -1,0 +1,101 @@
+## DESCRIPTION
+## Flux à travers un cylindre — formule du gradient (surface de niveau)
+## ENDDESCRIPTION
+
+## DBsubject(Calculus - multivariable)
+## DBchapter(Vector calculus)
+## DBsection(Surface integrals of vector fields)
+## Institution(Université de Sherbrooke)
+## Author(JC Bustamante)
+## Level(3)
+## MO(1)
+## KEYWORDS('intégrale de flux','surface de niveau','gradient','cylindre')
+
+## Source
+## Problème original, RELCALC3. Inspiré de Thomas, Calculus, Example 4 (ch. 16).
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+Context("Numeric");
+$showPartialCorrectAnswers = 1;
+
+$a  = random(1, 4, 1);
+$b  = random(1, 5, 1);
+$a2 = $a**2;
+$a3 = $a**3;
+$flux = Compute("2*$a3*$b");
+
+TEXT(beginproblem());
+
+Context()->texStrings;
+BEGIN_TEXT
+Calculez le flux du champ vectoriel
+\( \mathbf{F} = xz\,\mathbf{i} + z^2\,\mathbf{k} \)
+vers l'extérieur à travers la surface \( S \) découpée dans le cylindre
+\( x^2 + z^2 = $a2 \), \( z \geq 0 \), par les plans \( y = 0 \) et \( y = $b \).
+$PAR
+$BBOLD Indication : $EBOLD utiliser la formule du gradient avec
+\( g(x,y,z) = x^2 + z^2 \) et la projection sur le plan \( Oxy \).
+$PAR
+Flux \( = \) \{ ans_rule(30) \}
+END_TEXT
+Context()->normalStrings;
+
+ANS($flux->cmp());
+
+$deux_a  = 2*$a;
+$deux_a3 = 2*$a3;
+
+Context()->texStrings;
+SOLUTION(EV3(<<'END_SOLUTION'));
+$PAR SOLUTION $PAR
+
+On pose \( g(x,y,z) = x^2 + z^2 \); la surface \( S \) est la surface de niveau
+\( g = $a2 \). Le gradient est
+\[
+  \nabla g = 2x\,\mathbf{i} + 2z\,\mathbf{k},
+  \qquad |\nabla g| = 2\sqrt{x^2+z^2} = 2 \cdot $a \text{ sur } S,
+\]
+et le vecteur normal unitaire extérieur est
+\[
+  \mathbf{n} = \frac{\nabla g}{|\nabla g|} = \frac{x\,\mathbf{i} + z\,\mathbf{k}}{$a}.
+\]
+$PAR
+Avec \( \mathbf{p} = \mathbf{k} \), on projette sur le plan \( Oxy \) :
+\[
+  d\sigma = \frac{|\nabla g|}{|\nabla g \cdot \mathbf{k}|}\,dA
+          = \frac{2 \cdot $a}{2z}\,dA = \frac{$a}{z}\,dA
+\]
+(on peut supprimer la valeur absolue car \( z \geq 0 \) sur \( S \)).
+La région de projection \( R \) est le rectangle
+\( -$a \leq x \leq $a \), \( 0 \leq y \leq $b \).
+$PAR
+On calcule le produit scalaire :
+\[
+  \mathbf{F}\cdot\mathbf{n}
+  = \bigl(xz\,\mathbf{i} + z^2\,\mathbf{k}\bigr)\cdot
+    \frac{x\,\mathbf{i}+z\,\mathbf{k}}{$a}
+  = \frac{x^2z + z^3}{$a}
+  = \frac{z(x^2+z^2)}{$a}
+  = \frac{$a2\, z}{$a} = $a\, z.
+\]
+$PAR
+Donc
+\[
+  \iint_S \mathbf{F}\cdot\mathbf{n}\,d\sigma
+  = \iint_R $a\, z \cdot \frac{$a}{z}\,dA
+  = $a2 \iint_R dA
+  = $a2 \cdot $deux_a \cdot $b
+  = $flux.
+\]
+
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();

@@ -7,12 +7,7 @@
   <title>Champs de vecteurs </title>
   <subsection xml:id="pars-Champs">
     <title>Champs de vecteurs</title>
-    <!-- <p>
-
-  </p>
-  <p>
-    <term>Début nouveau</term>
-  </p> -->
+  
     <p>
     Nous avons déjà rencontré la notion de champ gradient d'une fonction <m>f</m> de deux ou trois variables, à la <xref ref="sec_gradient" text="global">section</xref>. Il s'agit d'une nouvelle fonction <m>\vnabla f</m> qui à chaque point <m>\vr</m> associe un vecteur <m>\vnabla f(\vr)</m>. Au-delà des champs gradients et de leur utilité pour le calcul des dérivées directionnelles, la notion de champ de vecteurs est très utile pour modéliser plusieurs phénomènes. Pensons par exemple à la force <m>\vF</m> qui s'exerce sur une particule qui se déplace. La force <m>\vF</m> peut varier en fonction de la position de la particule (pensons à la proximité d'une charge électrique). De même, imaginons un fluide qui s'écoule dans une région du plan ou de l'espace. À chaque point de cette région, le fluide possède une vitesse spécifique; celle-ci variera en fonction d'éventuels obstacles rencontrés par le fluide et de la géométrie du milieu d'écoulement. Ceci motive la définition suivante.
   </p>
@@ -413,6 +408,20 @@
 </p> -->
   <subsection xml:id="pars-lignes-courant"><title>Les lignes de courant</title><p>
     Étant donné un champ de vecteurs <m>\vF</m>, une ligne de courant de <m>\vF</m> est une courbe paramétrée <m>\cC</m> telle que, en tout point de <m>\cC</m>, le vecteur vitesse est donné par <m>\vF</m> évalué en ce point. Si le champ est le champ de vitesses d'un fluide et que l'on dépose un objet qui flotte en un point donné, la ligne de courant passant par ce point représente la trajectoire que cet objet suivrait, mené par le courant.
+
+
+
+    <definition xml:id="def-courant">
+      <statement>
+        <p>
+      Si <m>\vF = P\vi + Q \vj</m> est donné une <term>ligne de courant</term>  <m>\cC</m> est un courbe paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, telle que  le vecteur vitesse <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> vérifie 
+      </p><md><mrow>x'(t) = P(x(t), y(t) )\amp \quad \text{ et }  \amp y'(t) = Q(x(t),y(t)) </mrow></md>
+          ou, de façon plus concise,
+      <md><mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow>.</md>
+
+      </statement>
+    </definition>
+
   </p><figure xml:id="fig-courant-def"><caption>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
     </caption><image xml:id="sageplot3d-courant-def" width="80%"><sageplot>
         var('x,y')
@@ -430,15 +439,9 @@
                       color = "red", density = 0.4)
         Fig
       </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
-      </description></image></figure><p>
-      Plus précisément, si <m>\vF = p\vi + Q \vj</m> est donné et <m>\cC</m> est une ligne de courant paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, alors le vecteur vitesse est <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> et il doit vérifier
-    </p><md><mrow>x'(t) = P(x(t), y(t) )\amp  \text{ et } \amp y'(t) = Q(x(t),y(t)) </mrow></md>
-    ou, de façon plus concise,
-
-
-    <md><mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow>.
-    </md>
-
+      </description></image></figure>
+      
+      
     <example xml:id="ex-courant-a"><statement><p>Montrer que la courbe paramétrée par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
         </p><p>
           En effet,  <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> donne

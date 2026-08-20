@@ -41,7 +41,7 @@ Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. U
       <figure xml:id="figure-domaine-fxy">
         <caption>Le domaine de la fonction <m>f(x,y)= \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></caption>
         <image xml:id="sageplot-domainefxy" width="80%">
-          <description>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></description>
+          <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
           <sageplot>
             var('x')
             Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
@@ -158,7 +158,7 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
       <figure xml:id="fig-sage3d-Traces-horizontales">
         <caption>Une surface <m>z=f(x,y)</m> ainsi que quelques courbes de niveau et quelques traces horizontales</caption>
         <image xml:id="sageplot-Traces-horizontales" width="60%">
-          <description>Une surface et des traces horizontales</description>
+          <description><p>Une surface et des traces horizontales</p></description>
           <sageplot variant="3d" aspect="1.0">
     var('x y z')
     g(x,y,z) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
@@ -237,7 +237,7 @@ La figure ci-après montre le diagramme des courbes de niveau de la fonction con
           <figure xml:id="fig-Cone-Niveau">
             <caption>Le graphe et les courbes de niveau de <m>z=x^2 + y^2</m> </caption>
             <image xml:id="sageplot3d-Cone-Niveau" width="40%">
-              <description>Graphe et courbes de niveau</description>
+              <description><p>Graphe et courbes de niveau</p></description>
               <sageplot variant="3d" aspect="1.0">
         r,t = var('r t')
         def col2(r,t):
@@ -251,7 +251,7 @@ La figure ci-après montre le diagramme des courbes de niveau de la fonction con
           <figure xml:id="fig-Parab-Niveau">
             <caption>Le graphe et les courbes de niveau de <m>z=\sqrt{x^2 + y^2}</m></caption>
             <image xml:id="sageplot3d-Parab_Niveau" width="40%">
-              <description>Un graphe et ses courbes de niveau.</description>
+              <description><p>Un graphe et ses courbes de niveau.</p></description>
               <sageplot variant="3d" aspect="1.0">
         r,t = var('r t')
         def col2(r,t):
@@ -321,7 +321,7 @@ Remarquons que si une surface <m>\plan{S}</m> est donnée explicitement par une 
         <figure xml:id="fig-Surf-Niveau">
           <caption>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
           <image xml:id="sageplot3d-Surf-niveau" width="80%">
-            <description>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m></description>
+            <description><p>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m></p></description>
             <sageplot variant="3d" aspect="1.5">
             var('s,t')
             Fig  = parametric_plot3d([s*cos(t), s*sin(t), sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85, frame = True)

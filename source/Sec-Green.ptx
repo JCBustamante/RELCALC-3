@@ -107,7 +107,7 @@
         <sidebyside widths="45% 45%">
           <figure xml:id="fig-Green-pf-a">
             <image xml:id="img-Green-pf-a" width="40%">
-              <description>Une région simple</description>
+              <description><p>Une région simple</p></description>
               <sageplot aspect="1.0">
         p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
         Fig = arrow2d(path = p1, width=2, color='purple', 
@@ -149,7 +149,7 @@
           </figure>
           <figure xml:id="fig-Green-pf-b">
             <image xml:id="img-fig-Green-pf-b" width="40%">
-              <description>Une région simple</description>
+              <description><p>Une région simple</p></description>
               <sageplot aspect="1.0">
         p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
         Fig = arrow2d(path = p1, width=2, color='red', 
@@ -296,7 +296,7 @@
         <me>
           \pdiff{Q}{x} - \pdiff{P}{y} = \pdiff{}{x}\left(\cos^3 y -x\right) - \pdiff{}{y}(2y-x^2) = -1 -2 = -3.
         </me>
-      </p><sidebyside widths="45% 45%"><image xml:id="sageplot-eg_fermer-trajectoire" width="100%"><description>Théorème de Green avec une courbe non fermée</description><sageplot>
+      </p><sidebyside widths="45% 45%"><image xml:id="sageplot-eg_fermer-trajectoire" width="100%"><description><p>Théorème de Green avec une courbe non fermée</p></description><sageplot>
         N = 60
         p1 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [0,1,..,N/4] ]
         p2 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [N/4,N/4+1,..,N]]
@@ -361,7 +361,7 @@
       </p>
       
       <image xml:id="sageplot-eg_non-simp-connexte" width="60%">
-        <description>Théorème de Green avec une région non simplement connexe</description>
+        <description><p>Théorème de Green avec une région non simplement connexe</p></description>
         <sageplot>
         N=60
         p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
@@ -510,7 +510,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Puisque <m>\cC</m> contourne l'origine, il existe un réel <m>h\gt 0 </m> tel que <m>\cC</m> entoure le cercle <m>\cC_h</m> centré à l'origine et de rayon <m>h</m>. Soit alors <m>\cR</m> la région comprise entre <m>\cC_h</m> et <m>\cC</m>. Sur cette région, l'argument de la première partie peut être appliqué. Il faut noter que <m>\partial \cR</m> est cette fois composée de deux courbes : d'une part <m>\cC</m> orientée en s'éloignant de l'origine, d'autre part <m>\cC_h</m> avec le vecteur normal pointant vers l'origine.
   </p>
         <image xml:id="sageplot-eg-nb-enroulement" width="80%">
-          <description>Le nobre d'enroulement</description>
+          <description><p>Le nobre d'enroulement</p></description>
           <sageplot>
     var('x,y,t')
     r=3/4
@@ -593,7 +593,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       <solution>
         <sidebyside widths="45% 50%">
           <image xml:id="sageplot-Aire-astroide">
-            <description>L'aire de l'astoïde</description>
+            <description><p>L'aire de l'astoïde</p></description>
             <sageplot>
           var('t')
           Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
@@ -637,7 +637,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       <solution>
         <sidebyside widths="45% 50%">
           <image xml:id="sageplot-Aire-Green">
-            <description>L'aire avec le Théorème de Green</description>
+            <description><p>L'aire avec le Théorème de Green</p></description>
             <sageplot>
         R = PolynomialRing(QQ, 'x')
         f = R.lagrange_polynomial([(1,2),(2,3),(5,2),(7,5)]);

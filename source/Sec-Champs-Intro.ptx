@@ -49,7 +49,7 @@
         <figure xml:id="fig_flux-canal">
           <caption>Le champ <m>\vv = (1-y^2)\vi </m></caption>
           <image xml:id="sageplot-flux-canal" width="75%">
-            <description>Le flux dans un canal.</description>
+            <description><p>Le flux dans un canal.</p></description>
             <sageplot>
           var('x,y')
           Fig = plot_vector_field((1-y^2,0), (x,-2,2),(y,-0.95,0.95),
@@ -150,7 +150,7 @@
       <figure xml:id="fig_sourceField">
         <caption>Le champ <m>\vv = \frac{m}{|\vr|}\vr</m></caption>
         <image xml:id="sageplot-source" width="65%">
-          <description>Le champ source</description>
+          <description><p>Le champ source</p></description>
           <sageplot>
       var('x,y')
       Fig = plot_vector_field((x/sqrt(x^2 + y^2),y/sqrt(x^2 + y^2)),
@@ -252,7 +252,7 @@
       <figure xml:id="fig-sageplot-vortex">
         <caption>Le champ <m>\vv = \Omega(-y\vi + x\vj)</m></caption>
         <image xml:id="sageplot-vortex" width="75%">
-          <description>Le champ vortex</description>
+          <description><p>Le champ vortex</p></description>
           <sageplot>
       var('x,y')
       Fig = plot_vector_field((-y,x),
@@ -288,8 +288,7 @@
       </p>
         <sidebyside widths="45% 45%">
           <image xml:id="sageplot-int-ligne-eg3a">
-            <description>Le champ gradient de <m>f(x,y) = x\sin y + y</m>
-              </description>
+            <description><p>Le champ gradient de <m>f(x,y) = x\sin y + y</m></p></description>
             <sageplot>
               var('x,y')
               f(x,y) = x*sin(y) + y
@@ -304,7 +303,7 @@
            </sageplot>
           </image>
           <image xml:id="sageplot-int-ligne-eg3b">
-            <description>Le champ gradient de <m>f(x,y) = x\sin y + y</m> ainsi que ses courbes de niveau</description>
+            <description><p>Le champ gradient de <m>f(x,y) = x\sin y + y</m> ainsi que ses courbes de niveau</p></description>
             <sageplot>
               var('x,y')
               f(x,y) = x*sin(y) + y
@@ -385,7 +384,7 @@
         <figure xml:id="fig-Champ-3d-ex">
           <caption>Représentation graphique du champ de vecteurs <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </caption>
           <image xml:id="sageplot3d-Champ-3d-ex" width="80%">
-            <description>Le champ de vecteurs  <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m> </description>
+            <description><p>Le champ de vecteurs  <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m></p></description>
             <sageplot variant="3d" aspect="1.5">
               var('x,y,z')
               Fig = plot_vector_field3d((y,1,z^2-1),
@@ -438,8 +437,7 @@
         Fig += streamline_plot((cos(x+y),x), (x,-2,2),(y,-2,2),
                       color = "red", density = 0.4)
         Fig
-      </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
-      </description></image></figure>
+      </sageplot><description><p>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.</p></description></image></figure>
       
       
     <example xml:id="ex-courant-a"><statement><p>Montrer que la courbe paramétrée par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
@@ -466,8 +464,7 @@
               Fig += streamline_plot((x,-y), (x,-2,2),(y,-2,2),
                             color = "red", density = 0.4)
               Fig
-            </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.
-            </description></image></figure><p>
+            </sageplot><description><p>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge.</p></description></image></figure><p>
           Dans cet exemple, nous avons <m>x(t) \cdot y(t) = C_1 C_2 </m>, de sorte que les lignes de courant se trouvent sur des hyperboles d'équations <m>xy = k</m>. Notons que l'équation <m>xy = 0</m> a pour courbe la réunion des deux axes. Chaque demi-axe est à lui tout seul une ligne de courant.
         </p></statement></example>
     <p>
@@ -516,8 +513,7 @@
                         headwidth = 3,
                         headaxislength = 3, zorder=2)
               Fig
-            </sageplot><description>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>.
-            </description></image></figure><p>
+            </sageplot><description><p>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>.</p></description></image></figure><p>
           On peut paramétrer une telle ellipse en posant <m>\vr(u) = \sqrt{2C}\cos u \, \vi + \sqrt{C}\sin u\, \vj</m>. En effet, on calcule
           <me>
             \frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C.

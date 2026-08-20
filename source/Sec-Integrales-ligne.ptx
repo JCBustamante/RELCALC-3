@@ -163,7 +163,7 @@
           Nous commençons par obtenir un paramétrage de <m>\cC</m>. L'équation <m>y^2 = 4x</m> donne <m>x= \left(y/2\right)^2</m>. Nous posons donc <m>x(t) = t^2</m> et <m>y(t) = 2t</m>, pour <m>t\in[0,3]</m>. Ainsi, notre chemin est <m>\vr(t) = t^2 \, \vi + 2t\vj</m>.
         </p>
           <image xml:id="sageplot-int-ligne-eg2">
-            <description>La parabole <m>y^2 = 4x</m> allant de <m>(0,0)</m> à <m>(9,6)</m></description>
+            <description><p>La parabole <m>y^2 = 4x</m> allant de <m>(0,0)</m> à <m>(9,6)</m></p></description>
             <sageplot>
             var('x,y')
             f(x) = 2*sqrt(x)
@@ -683,7 +683,7 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
       <solution><p>Nous avons un paramétrage du cercle <m>\cC</m> qui le parcourt dans le sens trigonométrique, à savoir <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj</m> avec <m>0\leqslant  t \leqslant 2\pi</m>. On calcule <m>\vr'(t) = -\sin t\, \vi + \cos t\ \vj</m>, et le flux est
         <md><mrow>\int_{\cC}P \dee{y} - Q\dee{x} \amp = \int_0^{2\pi}(x(t) - y(t))y'(t) - x(t) y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^{2\pi} (\cos t - \sin t)(\cos t) - (\cos t)(-\sin t) \, \dee{t} </mrow><mrow>  \amp=\int_0^{2\pi} \cos^2 t \, \dee{t} = \frac{1}{2}\int_0^{2\pi} 1+\cos 2t\ \dee{t} = \pi</mrow></md>.
 
-        </p><image xml:id="sageplot-int-ligne-Pdy-Qdx" width="45%"><description>La trajectoire et le champ</description><sageplot>
+        </p><image xml:id="sageplot-int-ligne-Pdy-Qdx" width="45%"><description><p>La trajectoire et le champ</p></description><sageplot>
              var('x,y,j')
              N = 100
              a = 1.2

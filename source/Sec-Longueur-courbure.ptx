@@ -10,14 +10,15 @@
   </p><p>On commence par diviser l'intervalle <m>[a,b]</m> en <m>N</m> sous-intervalles de même longueur <m>\De t = \frac{1}{N}(b-a)</m> en posant
   <md><mrow>\amp a= t_0  \lt t_1 \lt \cdots \lt t_N = b,</mrow><mrow> \amp t_{i+1} - t_i = \De t \text{ pour } i\in\{1,2\ldots N-1\}.</mrow></md>
   On considère l'approximation de la courbe <m>\plan{C}</m> donnée par la ligne polygonale (brisée) reliant deux points successifs <m>\vr(t_i)</m> et <m>\vr(t_{i+1})</m>, pour <m>i</m> allant de <m>1</m> à <m>N-1</m>. La longueur de cette ligne polygonale est
-  </p><p><me> L_N = \sum_{i = 1}^N |\vr(t_{i+1}) - \vr(t_i)|. </me></p><p>La formule pour le calcul de la norme nous donne
-  </p><me>
+  </p><p><md> L_N = \sum_{i = 1}^N |\vr(t_{i+1}) - \vr(t_i)|. </md></p><p>La formule pour le calcul de la norme nous donne
+  <md>
     |\vr(t_{i+1}) - \vr(t_i)| = \sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2}.
-  </me><p>
+  </md>
   Si l'on suppose que les composantes de la fonction <m>\vr</m>, c'est-à-dire les fonctions <m>x</m> et <m>y</m>, sont dérivables, le théorème de la moyenne donne l'existence de <m>t_i^\ast, t_i^{\ast \ast} \in[t_1, t_{i+1}]</m> tels que
 </p><md><mrow>x(t_{i+1}) - x(t_i) \amp = x'(t_i^\ast)(t_{i+1}-t_i),</mrow><mrow>y(t_{i+1}) - y(t_i) \amp = y'(t_i^{\ast\ast})(t_{i+1}-t_i),</mrow></md>
-  de sorte que la longueur devient
+  <p>de sorte que la longueur devient
   <md><mrow> L_N =\sum_{i = 1}^{N-1}|\vr(t_{i+1}) - \vr(t_i)| \amp = \sum_{i = 1}^{N-1}\sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2} </mrow><mrow> \amp  = \sum_{i = 1}^{N-1}\sqrt{x'(t_i^\ast)^2 + y'(t_i^{\ast \ast})^2 }\Delta t.</mrow></md>
+  </p>
   <p>
     Lorsque <m>N</m> tend vers l'infini, la ligne polygonale approche de mieux en mieux la courbe. Ainsi, on définit la longueur du chemin comme étant la limite, si elle existe de la somme ci-haut.
   </p>
@@ -25,16 +26,16 @@
   <p>
     Nous avons fait l'hypothèse de continuité pour les fonctions <m>x'</m> et <m>y'</m>, ce qui permet de montrer<fn>Mais nous ne le ferons pas dans ce texte.</fn> que la limite existe et qu'elle vaut en fait
   </p>
-  <p><me>
+  <p><md>
     \lim_{N\to \infty} L_N = \int_a^b \sqrt{x'(t)^2 + y'(t)^2}\, dt.
-  </me></p>
+  </md></p>
 
   <p>
     Il faut remarquer que l'expression
   
-  <me>
+  <md>
      \sum_{i = 1}^{N-1}\sqrt{x'(t_i^\ast)^2 + y'(t_i^{\ast \ast})^2 }\Delta t
-  </me>
+  </md>
     n'est pas une somme de Riemann pour une intégrale, puisque les points d'évaluation sont différents.
   </p>
 <p>
@@ -43,17 +44,17 @@
 
 
 <theorem xml:id="thm-Longueur"><idx><h>abscisse curviligne</h></idx><statement><p>Soit <m>\vr : [a,b]\to \R^n</m> un chemin dont les composantes sont des fonctions ayant des dérivées continues sur <m>]a,b[</m> et tel que la courbe <m>\plan{C}</m> est parcourue une seule fois lorsque <m>t</m> parcourt <m>[a,b]</m>. Alors, la longueur de la courbe est
-    </p><me>
+    <md>
       L =\int_a^b |\vr'(t)|\, dt.
-    </me><p>
+    </md>
       Par ailleurs, pour <m>t</m> entre <m>a</m> et <m>b</m>, <terms>l'abscisse curviligne</terms>, mesurée à partir de <m>a</m>, est la quantité
-    </p><me>
+    <md>
       s(t) = \int_a^t |\vr'(u)|\, du.
-    </me><p>
+    </md>
     Elle mesure la longueur de la portion de la courbe lorsque le paramètre varie de  <m>a</m> à <m>t</m>. De plus, on a
-    <me>
+    <md>
       \diff{}{t}s(t) = |\vr'(t)|.
-    </me>
+    </md>
 
     </p></statement></theorem>
 
@@ -61,9 +62,9 @@
 
 <example xml:id="eg_paramCircleTan"><title>Périmètre d'un cercle</title><p>
     En général, il peut être difficile de calculer une longueur. En guise d'exemple facile, calculons le périmètre du cercle <m>x^2+y^2=a^2</m>. Nous allons aussi trouver le vecteur tangent unitaire en tout point. Nous avons un paramétrage
-    <me>
+    <md>
       \vr(\theta) = a\cos\theta\, \vi + a\sin\theta\, \vj\qquad 0\leqslant  \theta\leqslant  2\pi
-    </me>
+    </md>
     de l'<xref ref="eg_paramCircle" text="global">exemple</xref>. En vertu du   <xref ref="thm-Longueur" text="global">théorème</xref>, avec le paramètre <m>\theta</m> au lieu de  <m>t</m>,
   <md><mrow>
     \vr'(\theta) &amp;= -a\sin\theta\,\vi + a\cos\theta\, \vj,
@@ -71,19 +72,19 @@
     |\vr'(\theta)| &amp; = a.
     </mrow></md>
     Ainsi, la longueur totale est
-    <me>
+    <md>
       L =\int_{0}^{2\pi} a\, dt = 2\pi a,
-    </me>
+    </md>
     ce qui est cohérent avec la formule bien connue<fn>Les premières écritures connues d'une approximation de  <m>\pi</m>, en  Égypte et à Babylone, sont datées entre 1900 et 1600 av. J.-C. Le premier algorithme permettant de calculer rigoureusement  <m>\pi</m> a été développé par Archimède vers 250 av, J.-C. Le premier usage du symbole  <m>\pi</m> pour désigner le rapport entre le périmètre et le diamètre d'un cercle remonte à William Jones, en 1706.</fn>.
     </p><sidebyside width="50%"><image source="images/CLP-figs/parCircleTJC"/></sidebyside><p>
 Par ailleurs,
-<me>
+<md>
   \vT = \frac{\vr'}{|\vr'|} = -\sin \theta\, \vi + \cos \theta\, \vj.
-</me>
+</md>
 Ainsi,
-<me>
+<md>
   \vT \cdot \vr = (a\cos \theta\, \vi + a \sin \theta \, \vj)\cdot(-\sin \theta\, \vi + \cos \theta\, \vj) = 0,
-</me>
+</md>
 
 ce qui montre que, en tout point, la tangente à un cercle est perpendiculaire au rayon en ce point. Ceci est une réalisation en deux dimensions de l'<xref ref="Chem-norm-cste" text="global">exemple</xref>, un autre fait connu d'Euclide<fn>C'est la proposition 18 du livre III des <em>Éléments</em> d'Euclide, vers 300 av. J.-C.</fn>. Dans ce cas, <m>s(\theta) = \int_0^\theta a\, du = a\theta</m>
 est la longueur de la portion du cercle parcourue lorsque l'angle varie de <m>0</m> à <m>\theta</m>.</p></example>
@@ -92,9 +93,9 @@ est la longueur de la portion du cercle parcourue lorsque l'angle varie de <m>0<
 
 <example xml:id="eg_paramHelix"><title>Longueur d'une hélice</title><p>
 Considérons le chemin
-<me>
+<md>
 \vr(t) = 6\sin(2t)\vi + 6\cos(2t)\vj +5t\vk.
-</me>
+</md>
 Commençons par esquisser la courbe correspondante.
 <ul><li><m>x(t)=6\sin(2t)</m> et <m>y(t) =6\cos(2t)</m> satisfont
 <m>x(t)^2+y(t)^2 = 36 \sin^2(2t) + 36\cos^2(2t) = 36</m>. Ainsi, tous les points de la courbe se trouvent sur le cylindre  <m>x^2+y^2=36</m>, et
@@ -238,16 +239,16 @@ vector.
       <statement>
         <p>Soit <m>P=(2,-2)</m> et <m>Q=(6,1)</m>. Le segment de droite joignant <m>P</m> et <m>Q</m> peut être paramétré par <m>\vr(t) = \vp + t(\vq - \vp) = (1-t)\vp + t\vq</m> pour <m>t\in [0,1]</m>. Nous avons alors <m>\vr'(t) = \vq- \vp = 3\,\vi + 4\,\vj</m>, de sorte que <m>\diff{s}{t} = |\vr'| = 5</m>,
     et donc 
-    <me>
+    <md>
       s(t) = \int_0^t 5\, \dee{u} = 5t,
-    </me>
+    </md>
     </p>
         <p>
       ce qui permet d'obtenir <m>t(s)=s/5</m>. Nous pouvons obtenir le reparamétrage par rapport à l'abscisse curviligne :
     
-    <me>
+    <md>
       \vr(t(s)) = \vr(s/5) = \vp + \frac{1}{5}(\vq - \vp).
-    </me>
+    </md>
     </p>
         <p>
       Notons que <m>\diff{\vr}{s} =  \frac{1}{5}(\vq - \vp)</m> est de norme <m>1</m>.
@@ -265,9 +266,9 @@ vector.
     </exercise>
     <example xml:id="ex-reparam-2-bis">
       <title>Reparamétrage naturel : la chaînette</title>
-      <statement> Considérons la chaînette<fn>Il s'agit de la courbe décrite par un fil lorsqu'il est suspendu par ses extrémités.</fn>. <m>y=\cosh x</m>, elle peut être paramétrée par <m>\vr(t) = t\, \vi + \cosh t\, \vj</m>. Dans la figure de gauche ci-bas, on montre les positions correspondant à certaines valeurs également espacées du paramètre <m>t</m>. Remarquons que la distance séparant deux tels points a tendance à s'accroître.
-
-  <sidebyside widths="50% 50%" margins="auto" valign="top"><figure xml:id="Chainette-t"><caption><m>\vr(t) = t\, \vi + \cosh t\, \vj</m></caption><image xml:id="sageplot-Chainette-t"><description>La chaînette<m>\vr(t) = t\, \vi + \cosh t\, \vj</m>  </description><sageplot>
+      <statement><p> Considérons la chaînette<fn>Il s'agit de la courbe décrite par un fil lorsqu'il est suspendu par ses extrémités.</fn>. <m>y=\cosh x</m>, elle peut être paramétrée par <m>\vr(t) = t\, \vi + \cosh t\, \vj</m>. Dans la figure de gauche ci-bas, on montre les positions correspondant à certaines valeurs également espacées du paramètre <m>t</m>. Remarquons que la distance séparant deux tels points a tendance à s'accroître.
+</p>
+  <sidebyside widths="50% 50%" margins="auto" valign="top"><figure xml:id="Chainette-t"><caption><m>\vr(t) = t\, \vi + \cosh t\, \vj</m></caption><image xml:id="sageplot-Chainette-t"><description><p>La chaînette <m>\vr(t) = t\, \vi + \cosh t\, \vj</m></p></description><sageplot>
             var('t')
             x(t) = t
             y(t) = cosh(t)
@@ -280,8 +281,7 @@ vector.
             Chainette += text('$t= \\frac{3}{2}$', (1.8, 2.2), fontsize=12, color='black')
             Chainette += text('$t= 2$', (2.3, 3.7), fontsize=12, color='black')
             Chainette
-          </sageplot></image></figure><figure xml:id="Chainette-s"><caption><m>\vr(s) = \arcsinh s\, \vi + \sqrt{1+s^2}\, \vj</m></caption><image xml:id="sageplot-Chainette-s"><shortdescription>La chaînette, avec le paramétrage naturel
-          </shortdescription><sageplot>
+          </sageplot></image></figure><figure xml:id="Chainette-s"><caption><m>\vr(s) = \arcsinh s\, \vi + \sqrt{1+s^2}\, \vj</m></caption><image xml:id="sageplot-Chainette-s"><shortdescription>La chaînette, avec le paramétrage naturel.</shortdescription><sageplot>
       var('t')
       x(t) = arcsinh(t)
       y(t) = sqrt(1+t^2)
@@ -301,18 +301,18 @@ vector.
   
   <p>
   Le vecteur vitesse est <m>\vr'(t) = \vi + \sinh t\, \vj</m>, et la norme de celui-ci est
-  <me>
+  <md>
     \sqrt{1 + \sinh^2 t} = \cosh t.
-  </me>
+  </md>
   Ainsi, l'abscisse curviligne mesurée à partir de <m>t=0</m> (ce qui correspond au point <m>(0,1)</m>) est
-  <me>
+  <md>
     s(t) = \int_0^t \cosh u\, \dee u = \sinh t.
-  </me>
+  </md>
 
   Ainsi, <m>t = \arcsinh s = \ln(s+\sqrt{1+s^2})</m>. Comme <m>\cosh t = \sqrt{1+\sinh^2t} = \sqrt{1+s^2}</m>, en substituant cette relation dans le paramétrage <m>\vr</m>, on obtient le paramétrage par rapport à l'abscisse curviligne :
-  <me>
+  <md>
     \vr(t(s)) = t(s)\,\vi  + \cosh t(s)\, \vj =  \arcsinh s\, \vi + \sqrt{1+s^2}\, \vj.
-  </me>
+  </md>
     Dans la figure de droite, on observe quelques points correspondant à des valeurs également espacées de l'abscisse curviligne.
     </p>
   </statement>
@@ -325,45 +325,45 @@ vector.
 </p>
     <p>
   Si d'une part cette quantité traduit très bien le concept voulu, il est d'autre part généralement difficile de trouver le paramétrage naturel d'une courbe donnée, et les calculs peuvent être fastidieux, voire impossibles. Afin de contourner cette difficulté technique, on suppose qu'on a un paramétrage par rapport au paramètre <m>t</m> et l'on invoque la dérivation des fonctions composées pour obtenir
-</p>
-    <me>
+    <md>
   \frac{d\vT}{ds} = \frac{d\vT}{dt}\frac{dt}{ds} =\frac{d\vT}{dt} \frac{1}{dt/ds} = \frac{d\vT}{dt} \frac{ds}{dt} = \frac{d\vT}{dt}\frac{1}{|\vr'(t)|}.
-</me>
+</md>
+    </p>
     <definition xml:id="def-Courbure">
       <statement>
         <p>Soit <m>\vr : [a,b] \to \R^n</m> un chemin de classe <m>C^2</m> avec <m>\vr'(t) \ne \vZero</m> pour <m>t\in [a,b]</m>. Son vecteur de courbure est, par définition,
-    <me>
+    <md>
       \vK(t) =\frac{1}{|\vr'(t)|} \frac{d\vT(t)}{dt},
-    </me>
+    </md>
     et sa fonction de courbure est
-    <me>\kappa(t)  = | \vK(t)|.</me>
+    <md>\kappa(t)  = | \vK(t)|.</md>
     </p>
       </statement>
     </definition>
     <p>
   Remarquons que le vecteur <m>\vT(t)</m> est de norme constante, donc, en vertu de l'<xref ref="Chem-norm-cste" text="global">exemple</xref>, il est orthogonal à son vecteur dérivé <m>\frac{d\vT}{dt}</m>. Comme le vecteur courbure est proportionnel à ce dernier, on obtient
-<md><mrow xml:id="KperpT" tag="star">    
-    \vK(t) \perp  \vT(t)</mrow>.
+<md><mrow xml:id="KperpT" tag="star">
+    \vK(t) \perp  \vT(t).</mrow>
 </md>
 
 Par ailleurs, le <em><term>vecteur normal principal</term></em>  est un vecteur unitaire dans la direction de <m>\vT'</m>, c'est-à-dire
- <me>
-   \vN = \frac{\vT'}{|\vT|'}. </me>
+ <md>
+   \vN = \frac{\vT'}{|\vT'|}. </md>
 </p>
     <example xml:id="Courbure-cercle">
       <title>Courbure d'un cercle</title>
       <statement>
-        <p> Soit <m>\vr (t) = a \cos t \, \vi + a \sin t\, \vj</m> avec <m>t\in[0,2\pi]</m> un paramétrage du cercle centré à l'origine et de rayon <m>a</m>. Nous avons alors <m>\vr'(t) = -a\sin t\,\vi + a\cos t\, \vj</m>, dont la norme vaut <m>|\vr'(t)| = a</m>. Ainsi, le vecteur tangent unitaire est <me>
+        <p> Soit <m>\vr (t) = a \cos t \, \vi + a \sin t\, \vj</m> avec <m>t\in[0,2\pi]</m> un paramétrage du cercle centré à l'origine et de rayon <m>a</m>. Nous avons alors <m>\vr'(t) = -a\sin t\,\vi + a\cos t\, \vj</m>, dont la norme vaut <m>|\vr'(t)| = a</m>. Ainsi, le vecteur tangent unitaire est <md>
       \vT(t) = \frac{1}{a}\vr'(t) = -\sin t\, \vi + \cos t \, \vj,
-    </me>
+    </md>
     de sorte que
     <m>
       \vT'(t) = -\cos t \, \vi - \sin t \, \vj.
     </m>
     Ainsi,
-    <me>
+    <md>
       \vK(t) = \frac{1}{a}\left(-\cos t\,\vi  - \sin t\, \vj\right)
-    </me>
+    </md>
     et <m>\kappa(t) = 1/a.</m>
     </p>
         <p>
@@ -390,23 +390,21 @@ Nous l'avons vu, la courbure est le changement de direction; or, un changement d
     <proposition xml:id="prop-courbure-accel">
       <statement>
         <p> Soit <m>\vr : [a,b] \to \R^n</m> un chemin régulier. Alors, son vecteur accélération vérifie
-    <me>
+    <md>
       \vr''(t) = \frac{d^2s}{dt^2} \vT(t) + \left(\frac{ds}{dt}\right)^2,\ \vK(t) = v' \vT(t) + v^2 \vK(t)
-    </me>.
+    </md>.
     </p>
       </statement>
       <proof>
         <p>
     Afin d'alléger l'écriture, nous omettons la variable <m>t</m>, et écrivons par exemple <m>\vr</m> au lieu de <m>\vr(t)</m> et ainsi de suite.</p>
         <p>
-    Nous avons <m>\vr' = |\vr'|\vT = \frac{ds}{dt}\vT</m>donc, dérivant par rapport à <m>t</m>, avec la règle du produit, nous obtenons
-    </p>
-        <me>
+    Nous avons <m>\vr' = |\vr'|\vT = \frac{ds}{dt}\vT</m>, donc, dérivant par rapport à <m>t</m>, avec la règle du produit, nous obtenons
+        <md>
       \vr''  = \frac{d}{dt}\left(\frac{ds}{dt}\vT\right) =
       \left(\frac{d}{dt}\frac{ds}{dt}\right)\vT + \frac{ds}{dt}\frac{d\vT}{dt}
         = \frac{d^2s}{dt^2} \vT + \left(\frac{ds}{dt}\right)^2 \vK ,
-    </me>
-        <p>
+    </md>
       où la dernière égalité suit de ce que <m>\frac{d\vT}{dt} = \frac{ds}{dt}\vK</m>, d'après la <xref ref="def-Courbure" text="global">définition</xref>.
     </p>
       </proof>
@@ -414,9 +412,9 @@ Nous l'avons vu, la courbure est le changement de direction; or, un changement d
     <remark>
       <p>
     Nous avons <m>\vK = \kappa \vN</m>, de sorte que la formule précédente devient
-  <men>
+  <md>
   \va = v' \vT + \kappa v^2 \vN.
-  </men>
+  </md>
 Ceci donne une décomposition de l'accélération en deux composantes orthogonales. D'une part, l'accélération tangentielle, <m>\va_{\vT} = v'\vT</m>, est liée au changement de la vitesse scalaire. D'autre part, l’accélération normale, <m>\va_{\vN} = \kappa v^2 \vN = v^2 \vK</m>, est liée au changement de direction, ce qui fait que la courbe (nom féminin) courbe (du verbe <em>courber</em>, c'est-à-dire change de direction).
   </p>
     </remark>
@@ -425,9 +423,9 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
     <definition xml:id="def-Cercle-osculateur">
       <statement>
         <p>Soit <m>\vr : [a,b] \to \R^n</m> un chemin régulier en <m>t_0</m>. Le cercle osculateur à la courbe associée à <m>\vr</m> au point <m>\vr(t_0)</m> est le cercle de rayon <m>1/\kappa(t_0)</m> et de centre
-    <me>
+    <md>
       \vr(t_0) + \frac{1}{\kappa(t_0)}\frac{\vK(t_0)}{|\vK(t_0)|} = \vr(t_0) + \frac{1}{\kappa(t_0)^2} \vK(t_0).
-    </me>
+    </md>
 
 
     </p>
@@ -436,7 +434,7 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
     <figure xml:id="figure-osculateur-motiv">
       <caption>La parabole <m>y=x^2</m> et quelques cercles osculateurs</caption>
       <image xml:id="sageplot-osculateur-parabole" width="80%">
-        <description>La parabole <m>y= x^2</m> et quelques cercles osculateurs</description>
+        <description><p>La parabole <m>y= x^2</m> et quelques cercles osculateurs</p></description>
         <sageplot>
       var('t')
       k(t) = 2*(1+4*t^2)^(-3/2)
@@ -469,22 +467,18 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           <li>
             <p>
           En effet, puisque <m>\vv = v\vT</m> et que, en vertu de la <xref ref="prop-courbure-accel" text="global">proposition</xref>, <m>\va = v'\, \vT + v^2\, \vK </m>, il vient que
-<me>
+<md>
   \vv \times \va = \left(v\vT\right)\times \left(v'\, \vT + v^2\, \vK\right) = v^3 \, (\vT \times \vK),
-          </me>
+          </md>
         où la dernière égalité suit de ce que <m>\vT \times \vT = \vZero</m>.
         </p>
           </li>
           <li>
             <p>
           En effet, il suit de la première partie que
-        </p>
-            <me>
+            <md>
           |\vv \times \va| = v^3 |\vT \times \vK| = v^3 |\vT|\, |\vK| = v^3 \kappa ,
-          </me>
-            <p>
-
-  
+          </md>
           où la troisième égalité suit de <xref ref="KperpT"/> et du fait que <m>\vT</m> est unitaire. Puisque <m>v = |\vv|</m> et que le chemin est supposé régulier, ceci fournit le résultat voulu.
         </p>
           </li>
@@ -517,10 +511,11 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
       <title>Ellipse : courbure et cercle osculateur</title>
       <statement>
         <p>Considérer l'ellipse <m>\left(\frac{x}{a}\right)^2 + \left(\frac{y}{b}\right)^2 = 1</m>.</p>
+        <p>
         <ol marker="(a)">
           <li>
             <p>
-          Trouver la fonction de courbure <m>\kappa</m>. À quels points sur la courbe  trouve-t-on la plus grande et la plus petite courbures?
+          Trouver la fonction de courbure <m>\kappa</m>. À quels points sur la courbe trouve-t-on la plus grande et la plus petite courbures?
           </p>
           </li>
           <li>
@@ -529,6 +524,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           </p>
           </li>
         </ol>
+        </p>
       </statement>
       <solution>
         <p>
@@ -536,13 +532,13 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
             <li>
               <p>
           Nous avons un paramétrage de l'ellipse <m>\vr (t) = a\cos t \, \vi + b\sin t\, \vj</m> avec <m>t\in[0,2\pi]</m>. Ainsi, <m>\vv = -a\sin t\, \vi + b\cos t\, \vj</m> et <m>\va = -a\cos t\, \vi -b\sin t\, \vj</m>. On calcule alors
-          <me>
+          <md>
             \vv \times \va = \left| \begin{array}{ccc}\vi \amp -a\sin t \amp -a\cos t\\ \vj \amp b\cos t \amp -b\sin t\\ \vk \amp 0 \amp 0\end{array}\right| = ab\vk.
-          </me>
+          </md>
           Ceci donne directement la fonction de courbure :
-          <me>
+          <md>
             \kappa(t) = \frac{ab}{|\vv|^3} = \frac{ab}{v^3} = \frac{ab}{\left(a^2 \sin^2 t + b^2 \cos^2 t \right)^{3/2}}.
-          </me>
+          </md>
           Comme <m>a</m> et <m>b</m> sont constantes, cette expression atteint son maximum (respectivement son minimum) lorsque le dénominateur atteint son minimum (respectivement son maximum). De plus, comme <m>v\geqslant 0</m>, les intervalles de monotonie de <m>v^3</m> sont les mêmes que ceux de <m>v^2</m>. Ainsi, il suffit d'étudier les variations de la fonction <m>c(t) = v(t)^2 = a^2 \sin^2t + b^2 \cos^2 t</m>. Nous avons
         </p>
               <p><md><mrow>c'(t)  \amp = -2a^2 \sin t\, \cos t + 2b^2 \sin t \, \cos t</mrow><mrow> \amp = (b^2 - a^2)2\sin t\, \cos t</mrow><mrow>  \amp = (b^2-a^2) \sin 2t. </mrow></md>
@@ -554,11 +550,9 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
             <li>
               <p>
           Nous avons
-        </p>
-              <me>
+              <md>
             (\vv \times \va) \times \vv = \left| \begin{array}{ccc}\vi \amp 0 \amp -a\sin t\\ \vj \amp 0 \amp \phantom{-}b\cos t\\ \vk \amp ab \amp 0\end{array}\right| = \ctvec{-ab\cos t}{-a^2 b\sin t}{0} = -ab \ctvec{b\cos t}{a\sin t}{0}.
-          </me>
-              <p>
+          </md>
           Il vient alors que <m>\vK = \frac{-ab}{v^4}\left(b\cos t \, \vi + a\sin t \vj\right)</m>. Ainsi, le centre du cercle osculateur se trouve à
           </p>
               <md>
@@ -569,7 +563,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           </ol>
         </p>
         <figure>
-          <caption>L'ellipse <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m>, ainsi que son vecteur courbure <m>\vK</m>,sa courbure et son cercle osculateur de centre <m>C</m>.  On peut aussi voir le lieu décrit par le centre du cercle osculateur, ceci ressemble à l'astroïde.</caption>
+          <caption>L'ellipse <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m>, ainsi que son vecteur courbure <m>\vK</m>, sa courbure et son cercle osculateur de centre <m>C</m>. On peut aussi voir le lieu décrit par le centre du cercle osculateur, ceci ressemble à l'astroïde.</caption>
           <interactive xml:id="Ellipse-osculateur" platform="geogebra" width="100%" aspect="4:3" preview="images/GeoGebra-Statique/Ellipse-osculateur-statique.png">
             <slate xml:id="Ellipse" surface="geogebra" source="GeoGebra/Ellipse-osculateur.ggb" aspect="4:3">
       setSize(500, 420)
@@ -589,21 +583,20 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
     Soit <m>\plan{C}</m> la courbe d'équation <m>y=f(x)</m>. Calculer et interpréter le vecteur courbure.
   </p>
       </statement>
-      <solution><p>On utilise la variable indépendante <m>x</m> comme paramètre, de sorte qu'on a un paramétrage de la courbe <m>\vr(t) = t\,\vi + f(t)\, \vj</m>. Ainsi, on a <m>\vv(t) = \vi + f(t)\, \vj</m> et <m>\va(t) = f''(t)\vj</m>. On calcule alors  
-  </p><me>
+      <solution><p>On utilise la variable indépendante <m>x</m> comme paramètre, de sorte qu'on a un paramétrage de la courbe <m>\vr(t) = t\,\vi + f(t)\, \vj</m>. Ainsi, on a <m>\vv(t) = \vi + f(t)\, \vj</m> et <m>\va(t) = f''(t)\vj</m>. On calcule alors
+  <md>
         \vv(t) \times \va(t) = \left|\begin{array}{ccc}\vi \amp 1 \amp 0\\ \vj \amp f'(t) \amp 0  \\ \vk \amp f''(t) \amp 0 \end{array} \right| = f''(t)\, \vk,
-      </me><p>
+      </md>
   puis
-</p><me>
+  <md>
         \left(\vv(t) \times \va(t)\right) \times \vv(t) = \left|\begin{array}{ccc} \vi \amp 0 \amp 1\\ \vj \amp 0 \amp f''(t) \\ \vk \amp f'(t) \amp 0   \end{array}\right| = \ctvec{-f''(t)f'(t)}{f''(t)}{0}.
-      </me><p>
+      </md>
   De plus, <m>v(t) = \sqrt{1+f'(t)^2}</m>, ce qui donne
-</p><me>
+  <md>
   \vK(t) = \frac{1}{\left(1+f'(t)^2\right)^2}\ctvec{-f''(t)f'(t)}{f''(t)}{0} \implies \kappa(t) = |\vK(t)| = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}.
-</me>
+</md>
 On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure a le même signe que la dérivée seconde, <m>f''</m>. Ceci fournit une autre preuve, s'il en faut, du fait que lorsqu'une fonction admet une dérivée seconde positive, sa courbe est courbée vers le haut, et inversement.
-
-
+</p>
 </solution>
     </example>
     <example>
@@ -633,7 +626,7 @@ On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure 
 <exercise xml:id = "Longueur-courbure-01" component = "webwork" >
   <webwork source = "RELCALC3-pretext/Chap_Alg-Lin-Courbes/Longueur-courbure-01.pg" />
 </exercise> -->
-  <!-- Celui-ci donne problème-->
+  <!-- Celui-ci donne un problème -->
   <!-- 
 <exercise xml:id = "Longueur-courbure-02" component ="webwork">
   <webwork source="RELCALC3-pretext/Chap_Alg-Lin-Courbes/Longueur-courbure-02.pg" />

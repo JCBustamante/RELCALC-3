@@ -42,7 +42,7 @@
            z(t) = \frac{\pi^3}{3} + \pi^2 t</m>
       </p></answer>
 
-      <solution><p> (a) The speed is
+      <solution><p> (a) La vitesse scalaire est
       <md>
       <mrow>
       \diff{s}{t}(t)
@@ -59,10 +59,10 @@
                        &amp;= 2+t^2
       </mrow>
       </md>
-      so the length of the curve is
+      donc la longueur de la courbe est
       <md>
       <mrow>
-      \text{length }
+      \text{longueur }
       &amp;=\int_0^2 \diff{s}{t}\,\dee{t}
         =\int_0^2 (2+t^2)\,\dee{t}
         = \left[2t +\frac{t^3}{3}\right]_0^2
@@ -72,15 +72,15 @@
       </p>
 
       <p>(b)
-      A tangent vector to the curve at
-      <m>\vr(\pi)=\big(-2\pi\,,\, 0\,,\, \frac{\pi^3}{3}\big)</m> is
-      <me>
+      Un vecteur tangent à la courbe en
+      <m>\vr(\pi)=\big(-2\pi\,,\, 0\,,\, \frac{\pi^3}{3}\big)</m> est
+      <md>
       \vr'(\pi) = \left(2\cos\pi - 2\pi\sin\pi\,,\,
                                         2\sin\pi + 2\pi \cos\pi\,,\,
                                         \pi^2\right)
        = (-2\,,\,-2\pi\,,\,\pi^2)
-      </me>
-      So parametric equations for the tangent line at <m>\vr(\pi)</m> are
+      </md>
+      Donc les équations paramétriques de la droite tangente en <m>\vr(\pi)</m> sont
       <md>
       <mrow>
       x(t) &amp;= -2\pi -2t
@@ -101,7 +101,7 @@
       Soit  <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m> la position d'une particule à l'instant  <m>t \geqslant 0</m>.
       <ol marker = "(a)">
       <li>
-      Trouver le vecteur vitesse de la particule à l'intant  <m>t</m>.
+      Trouver le vecteur vitesse de la particule à l'instant  <m>t</m>.
       </li>
       <li>
       Trouver la longueur de la portion de la courbe associée comprise entre <m>t = 1</m> et  <m>t = 2</m>.
@@ -119,25 +119,25 @@
       (b) 5
       </p></answer>
 
-      <solution><p> (a) As <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m>,
-      the velocity of the particle is
-      <me>
+      <solution><p> (a) Comme <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m>,
+      le vecteur vitesse de la particule est
+      <md>
       \vr'(t) = \big(-3 \sin t, 3 \cos t, 4\big)
-      </me>
+      </md>
       </p>
 
-      <p> (b) As <m>\diff{s}{t}</m>, the rate of change of arc length per unit time,
-      is
-      <me>
+      <p> (b) Comme <m>\diff{s}{t}</m>, le taux de variation de la longueur d'arc par unité de temps,
+      vaut
+      <md>
       \diff{s}{t}(t) = |\vr'(t)| = \big|\big(-3 \sin t, 3 \cos t, 4\big)\big|
         =5
-      </me>
-      the arclength of its path between <m>t = 1</m> and <m>t = 2</m> is
-      <me>
+      </md>
+      la longueur d'arc de sa trajectoire entre <m>t = 1</m> et <m>t = 2</m> est
+      <md>
       \int_1^2\dee{t}\ \diff{s}{t}(t)
       =\int_1^2\dee{t}\ 5
       =5
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -152,7 +152,7 @@
       	</m>
       	<ol marker = "(a)">
       <li>
-      		Calculer la longuer de la portion de la courbe comprise entre les points correspondant à  <m>t = 0</m> et <m>t = \frac{\pi}{2}</m>.
+      		Calculer la longueur de la portion de la courbe comprise entre les points correspondant à  <m>t = 0</m> et <m>t = \frac{\pi}{2}</m>.
       </li>
       <li>
       		Calculer la longueur de la portion de la courbe entre  <m>t = 0</m> et <m>t = \pi</m>.
@@ -172,7 +172,7 @@
 
       <solution>
       <p> (a)
-      As
+      Comme
       <md>
       <mrow>
          \vr'(t) &amp; = -\sin t\cos^2 t\,\vi + \sin^2 t\cos t\,\vi + 3\sin^2 t\cos t\,\vk
@@ -183,7 +183,7 @@
       	= |\sin t\cos t|\sqrt{1+ 9\sin^2 t}
       	</mrow>
       </md>
-      the arclength from <m>t = 0</m> to <m>t = \frac{\pi}{2}</m> is
+      la longueur d'arc de <m>t = 0</m> à <m>t = \frac{\pi}{2}</m> est
       <md>
       <mrow>
       	\int_0^{\pi/2} \diff{s}{t}(t)\,\dee{t}
@@ -191,7 +191,7 @@
       </mrow><mrow>
       	&amp;=\frac{1}{18}\int_1^{10} \sqrt{u}\ \dee{u}
       </mrow><mrow>
-      	&amp;\hskip0.5in\text{with } u = 1+ 9\sin^2 t,\ \dee{u}  = 18\sin t\cos t\,\dee{t}
+      	&amp;\hskip0.5in\text{avec } u = 1+ 9\sin^2 t,\ \dee{u}  = 18\sin t\cos t\,\dee{t}
       </mrow><mrow>
       	&amp;=\frac{1}{18}\Big[\frac{2}{3}u^{3/2}\Big]_1^{10}
       </mrow><mrow>
@@ -200,20 +200,20 @@
       </md>
       </p>
 
-      <p>	(b) The arclength from <m>t = 0</m> to <m>t = \pi</m> is
+      <p>	(b) La longueur d'arc de <m>t = 0</m> à <m>t = \pi</m> est
       	<md>
       <mrow>
       	\int_0^{\pi} \diff{s}{t}(t)\,\dee{t}
       	&amp;=\int_0^{\pi} |\sin t\cos t| \sqrt{1+ 9\sin^2 t}\,\dee{t}
-      </mrow><mrow>&amp;\hskip0.5in\text{Don't forget the absolute value signs!}
+      </mrow><mrow>&amp;\hskip0.5in\text{N'oubliez pas les valeurs absolues !}
       </mrow><mrow>
       	&amp;=2\int_0^{\pi/2} |\sin t\cos t| \sqrt{1+ 9\sin^2 t}\,\dee{t}
       </mrow><mrow>
               &amp;= 2\int_0^{\pi/2} \sin t\cos t \sqrt{1+ 9\sin^2 t}\,\dee{t}
       	</mrow>
       </md>
-      	since the integrand is invariant under <m>t\rightarrow\pi-t</m>. So the arc length
-      	from <m>t = 0</m> to <m>t = \pi</m> is just twice the arc length from part (a), namely <m>\frac{2}{27}\big(10\sqrt{10}-1\big)</m>.
+      	puisque l'intégrande est invariante sous <m>t\rightarrow\pi-t</m>. Donc la longueur d'arc
+      	de <m>t = 0</m> à <m>t = \pi</m> est simplement le double de la longueur d'arc de la partie (a), à savoir <m>\frac{2}{27}\big(10\sqrt{10}-1\big)</m>.
       </p>
 
       </solution>
@@ -231,7 +231,7 @@
       	</m>
       	<ol marker = "(a)">
       <li>
-      		Calculer la longuer de la portion de la courbe comprise entre les points correspondant à  <m>t = 0</m> et <m>t = \frac{\pi}{2}</m>.
+      		Calculer la longueur de la portion de la courbe comprise entre les points correspondant à  <m>t = 0</m> et <m>t = \frac{\pi}{2}</m>.
       </li>
       <li>
       		Calculer la longueur de la portion de la courbe entre  <m>t = 0</m> et <m>t = \pi</m>.
@@ -251,7 +251,7 @@
 
       <solution>
       <p> (a)
-      As
+      Comme
       <md>
       <mrow>
          \vr'(t) &amp; = -\sin t\cos^2 t\,\vi + \sin^2 t\cos t\,\vi + 3\sin^2 t\cos t\,\vk
@@ -262,7 +262,7 @@
       	= |\sin t\cos t|\sqrt{1+ 9\sin^2 t}
       	</mrow>
       </md>
-      the arclength from <m>t = 0</m> to <m>t = \frac{\pi}{2}</m> is
+      la longueur d'arc de <m>t = 0</m> à <m>t = \frac{\pi}{2}</m> est
       <md>
       <mrow>
       	\int_0^{\pi/2} \diff{s}{t}(t)\,\dee{t}
@@ -270,7 +270,7 @@
       </mrow><mrow>
       	&amp;=\frac{1}{18}\int_1^{10} \sqrt{u}\ \dee{u}
       </mrow><mrow>
-      	&amp;\hskip0.5in\text{with } u = 1+ 9\sin^2 t,\ \dee{u}  = 18\sin t\cos t\,\dee{t}
+      	&amp;\hskip0.5in\text{avec } u = 1+ 9\sin^2 t,\ \dee{u}  = 18\sin t\cos t\,\dee{t}
       </mrow><mrow>
       	&amp;=\frac{1}{18}\Big[\frac{2}{3}u^{3/2}\Big]_1^{10}
       </mrow><mrow>
@@ -279,20 +279,20 @@
       </md>
       </p>
 
-      <p>	(b) The arclength from <m>t = 0</m> to <m>t = \pi</m> is
+      <p>	(b) La longueur d'arc de <m>t = 0</m> à <m>t = \pi</m> est
       	<md>
       <mrow>
       	\int_0^{\pi} \diff{s}{t}(t)\,\dee{t}
       	&amp;=\int_0^{\pi} |\sin t\cos t| \sqrt{1+ 9\sin^2 t}\,\dee{t}
-      </mrow><mrow>&amp;\hskip0.5in\text{Don't forget the absolute value signs!}
+      </mrow><mrow>&amp;\hskip0.5in\text{N'oubliez pas les valeurs absolues !}
       </mrow><mrow>
       	&amp;=2\int_0^{\pi/2} |\sin t\cos t| \sqrt{1+ 9\sin^2 t}\,\dee{t}
       </mrow><mrow>
               &amp;= 2\int_0^{\pi/2} \sin t\cos t \sqrt{1+ 9\sin^2 t}\,\dee{t}
       	</mrow>
       </md>
-      	since the integrand is invariant under <m>t\rightarrow\pi-t</m>. So the arc length
-      	from <m>t = 0</m> to <m>t = \pi</m> is just twice the arc length from part (a), namely <m>\frac{2}{27}\big(10\sqrt{10}-1\big)</m>.
+      	puisque l'intégrande est invariante sous <m>t\rightarrow\pi-t</m>. Donc la longueur d'arc
+      	de <m>t = 0</m> à <m>t = \pi</m> est simplement le double de la longueur d'arc de la partie (a), à savoir <m>\frac{2}{27}\big(10\sqrt{10}-1\big)</m>.
       </p>
 
       </solution>
@@ -304,8 +304,7 @@
           -->
       <statement><p>
       Soit <m>\vr(t)=\big(\frac{1}{3}t^3,\frac{1}{2}t^2,\frac{1}{2}t\big)</m>,
-      <m>t\geqslant 0</m>. Calculer  <m>s(t</m>), la fonction longuer d'arc pour le chemin donné.
-      <m>t</m>.
+      <m>t\geqslant 0</m>. Calculer <m>s(t)</m>, la fonction longueur d'arc pour le chemin donné.
       </p></statement>
 
       <answer><p>
@@ -313,7 +312,7 @@
       </p></answer>
 
       <solution><p>
-      Since
+      Comme
       <md>
       <mrow>
       \vr(t)&amp;= \frac{t^3}{3}\,\vi + \frac{t^2}{2}\,\vj +  \frac{t}{2}\,\vk
@@ -324,7 +323,7 @@
       =\sqrt{\Big(t^2+\frac{1}{2}\Big)^2}=t^2+\frac{1}{2}
       </mrow>
       </md>
-      the length of the curve is
+      la longueur de la courbe est
       <md>
       <mrow>
       s(t)=\int_0^t \diff{s}{t}(u)\,\dee{u}
@@ -377,57 +376,57 @@
 
       <solution><p>
       (a)
-      Since, on the specified part of the  circle,
-      <m>x=\sqrt{a^2-y^2}</m> and  <m>y</m> runs from <m>0</m> to <m>a</m>,
-      the parametrization is
+      Comme, sur la partie spécifiée du cercle,
+      <m>x=\sqrt{a^2-y^2}</m> et <m>y</m> parcourt de <m>0</m> à <m>a</m>,
+      le paramétrage est
       <m>\vr(y)=\sqrt{a^2-y^2}\,\vi+ y\,\vj</m>, <m>0\leqslant   y\leqslant   a</m>.
       </p>
 
-      <p>(b) Let <m>\theta</m> be the angle between
+      <p>(b) Soit <m>\theta</m> l'angle entre
       <ul>
-      <li> the radius vector from the origin to the point
-      <m>(a\cos\theta,a\sin\theta)</m>  on the circle and
+      <li> le vecteur rayon allant de l'origine au point
+      <m>(a\cos\theta,a\sin\theta)</m>  sur le cercle, et
       </li>
       <li>
-      the positive <m>x</m>-axis.
+      l'axe des <m>x</m> positif.
       </li>
       </ul>
-      The tangent line to the circle at <m>(a\cos\theta,a\sin\theta)</m>
-      is perpendicular to the radius vector and so makes angle <m>\phi=\frac{\pi}{2}+\theta</m> with the positive <m>x</m> axis.
-      (See the figure on the left below.)
-      As <m>\theta =\phi-\frac{\pi}{2}</m>, the desired parametrization is
-      <me>
+      La droite tangente au cercle en <m>(a\cos\theta,a\sin\theta)</m>
+      est perpendiculaire au vecteur rayon et forme donc un angle <m>\phi=\frac{\pi}{2}+\theta</m> avec l'axe des <m>x</m> positif.
+      (Voir la figure de gauche ci-dessous.)
+      Comme <m>\theta =\phi-\frac{\pi}{2}</m>, le paramétrage recherché est
+      <md>
       \big(x(\phi),y(\phi)\big)
       =\big(a\cos(\phi-\tfrac{\pi}{2}),a\sin(\phi-\tfrac{\pi}{2})\big)
       =\big(a\sin \phi ,-a\cos \phi \big),\
         \tfrac{\pi}{2}\le\phi\le\pi
-      </me>
+      </md>
       </p>
       <sidebyside widths="55% 40%" valign="middle">
       <image source="images/CLP-figs/pfigs/parCirclePhi"/>
       <image source="images/CLP-figs/pfigs/parCircleS"/>
       </sidebyside>
       <p>
-      (c) Let <m>\theta</m> be the angle between
+      (c) Soit <m>\theta</m> l'angle entre
       <ul>
-      <li> the radius vector from the origin to the point
-      <m>(a\cos\theta,a\sin\theta)</m>  on the circle and
+      <li> le vecteur rayon allant de l'origine au point
+      <m>(a\cos\theta,a\sin\theta)</m>  sur le cercle, et
       </li>
       <li>
-      the positive <m>x</m>-axis.
+      l'axe des <m>x</m> positif.
       </li>
       </ul>
-      The arc from <m>(0,a)</m> to <m>(a\cos\theta,a\sin\theta)</m>
-      subtends an angle <m>\frac{\pi}{2}-\theta</m> and so
-      has length <m>s=a\big(\frac{\pi}{2}-\theta\big)</m>. (See the figure
-      on the right above.) Thus <m>\theta=\frac{\pi}{2}-\frac{s}{a}</m>
-      and the desired parametrization is
-      <me>
+      L'arc de <m>(0,a)</m> à <m>(a\cos\theta,a\sin\theta)</m>
+      sous-tend un angle <m>\frac{\pi}{2}-\theta</m> et a donc
+      pour longueur <m>s=a\big(\frac{\pi}{2}-\theta\big)</m>. (Voir la figure
+      de droite ci-dessus.) Ainsi <m>\theta=\frac{\pi}{2}-\frac{s}{a}</m>
+      et le paramétrage recherché est
+      <md>
       \big(x(s),y(s)\big)
       =\left(a\cos\left(\frac{\pi}{2}-\frac{s}{a}\right)\,,\,
                  a\sin\left(\frac{\pi}{2}-\frac{s}{a}\right)\right)
       ,\ 0\leqslant   s\le\frac{\pi}{2}a
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -466,7 +465,7 @@
       Le vecteur en rouge est <m>\vr(t+h)-\vr(t)</m>. La longueur d'arc du segment indiqué par la ligne bleue est le (scalaire) <m>s(t+h)-s(t)</m>.
       </p>
 
-      <p>Remarque: lorsque <m>h</m> approche 0, la courbe (si elle est différentiable en <m>t</m>) commencence à ressembler à une droite, avec la longueur du vecteur <m>\vr(t+h)-\vr(t)</m> approchant le scalaire <m>s(t+h)-s(t)</m>. Cette étape est cruciale afin de comprendre le Lemma<nbsp/><xref ref = "thm-Longueur"/>.
+      <p>Remarque: lorsque <m>h</m> approche 0, la courbe (si elle est différentiable en <m>t</m>) commence à ressembler à une droite, avec la longueur du vecteur <m>\vr(t+h)-\vr(t)</m> approchant le scalaire <m>s(t+h)-s(t)</m>. Cette étape est cruciale afin de comprendre le Lemma<nbsp/><xref ref = "thm-Longueur"/>.
       </p></answer>
       <solution>
 
@@ -480,10 +479,10 @@
       \draw[very thick, red, - \gt ] (t)--(th);
       \end{tikzpicture}</latex-image></image>
       </sidebyside><p>
-      The red vector is <m>\vr(t+h)-\vr(t)</m>. The arclength of the segment indicated by the blue line is the (scalar) <m>s(t+h)-s(t)</m>.
+      Le vecteur en rouge est <m>\vr(t+h)-\vr(t)</m>. La longueur d'arc du segment indiqué par la ligne bleue est le (scalaire) <m>s(t+h)-s(t)</m>.
       </p>
 
-      <p>Remark: as <m>h</m> approaches 0, the curve (if it's differentiable at <m>t</m>) starts to resemble a straight line, with the length of the vector <m>\vr(t+h)-\vr(t)</m> approaching the scalar <m>s(t+h)-s(t)</m>. This step is crucial to understanding Lemma<nbsp/><xref ref = "thm-Longueur"/>.
+      <p>Remarque : lorsque <m>h</m> approche 0, la courbe (si elle est différentiable en <m>t</m>) commence à ressembler à une droite, la longueur du vecteur <m>\vr(t+h)-\vr(t)</m> approchant le scalaire <m>s(t+h)-s(t)</m>. Cette étape est cruciale afin de comprendre le Lemme<nbsp/><xref ref = "thm-Longueur"/>.
       </p>
 
       </solution>
@@ -508,7 +507,7 @@
       </p></answer>
 
       <solution><p>
-      Since
+      Comme
       <md>
       <mrow>
       \vr(t) &amp; = t^m\,\vi + t^m\,\vj + t^{3m/2}\,\vk
@@ -519,14 +518,14 @@
       = mt^{m-1}\sqrt{2 + \frac{9}{4}t^m }
       </mrow>
       </md>
-      the arc length is
+      la longueur d'arc est
       <md>
       <mrow>
       \int_a^b \diff{s}{t}(t)\,\dee{t}
       &amp;=\int_a^b mt^{m-1}\sqrt{2 + \frac{9}{4}t^m }\ \dee{t}
       </mrow><mrow>
       &amp;=\frac{4}{9}\int_{2 + \frac{9}{4}a^m}^{2 + \frac{9}{4}b^m}\sqrt{u}\,\dee{u}
-      \qquad\text{with } u = 2 + \frac{9}{4}t^m,\ \dee{u} = \frac{9m}{4}t^{m-1}
+      \qquad\text{avec } u = 2 + \frac{9}{4}t^m,\ \dee{u} = \frac{9m}{4}t^{m-1}
       </mrow><mrow>
       &amp;=\frac{4}{9}\Big[\frac{2}{3}u^{3/2}\Big]_{2 + \frac{9}{4}a^m}
                                                ^{2 + \frac{9}{4}b^m}
@@ -542,17 +541,17 @@
         <!-- <title><fromexam>M317 2000A</fromexam></title>
       -->
       <statement><p>
-       Une particule se déplace le long de la courbe <m>\cC</m>, intersection des surfaces  <m>z^2=12y</m> et <m>18x=yz</m>, vers le haut. Lorsque la partricule se trouve à  <m>(1,3,6)</m> son vecteur vitesse  <m>\vv</m> et son vecteur accélération  <m>\va</m> sont
-      <me>
+       Une particule se déplace le long de la courbe <m>\cC</m>, intersection des surfaces  <m>z^2=12y</m> et <m>18x=yz</m>, vers le haut. Lorsque la particule se trouve à  <m>(1,3,6)</m> son vecteur vitesse  <m>\vv</m> et son vecteur accélération  <m>\va</m> sont
+      <md>
       \vv =6\,\vi+12\,\vj+12\,\vk\qquad
       \va = 27\,\vi+30\,\vj+6\,\vk
-      </me>
+      </md>
       <ol marker = "(a)">
       <li>
        Donner un paramétrage de  <m>\cC</m> avec paramètre <m>u=\frac{z}{6}</m>.
       </li>
       <li>
-       Trouver a longueur de la portion de <m>\cC</m> entre  <m>(0,0,0)</m> et <m>(1,3,6)</m>.
+       Trouver la longueur de la portion de <m>\cC</m> entre  <m>(0,0,0)</m> et <m>(1,3,6)</m>.
       </li>
       <li>
        Si <m>u=u(t)</m> est la valeur du paramètre pour la position de la particule au temps  <m>t</m>, trouver  <m>\diff{u}{t}</m> lorsque la particule se trouve à  <m>(1,3,6)</m>.
@@ -578,7 +577,7 @@
 
       <solution><p>
       (a)
-      Since <m>z=6u</m>, <m>y=\frac{z^2}{12}=3u^2</m> and <m>x=\frac{yz}{18}=u^3</m>,
+      Comme <m>z=6u</m>, <m>y=\frac{z^2}{12}=3u^2</m> et <m>x=\frac{yz}{18}=u^3</m>,
       <md>
       <mrow>
       \vr(u)&amp;=u^3\,\vi+3u^2\,\vj+6u\,\vk\cr
@@ -595,37 +594,37 @@
       </md>
       </p>
 
-      <p><me>
+      <p><md>
       \int_\cC \ ds
       =\int_0^1 \diff{s}{u}\ \dee{u}
       =\int_0^1 3\big(u^2+2\big)\ \dee{u}
       =\big[u^3+6u\big]_0^1
       =7
-      </me>
+      </md>
       </p>
 
-      <p>(c) Denote by <m>\vR(t)</m> the position of the particle at time <m>t</m>.
-      Then
-      <me>
+      <p>(c) Dénotons par <m>\vR(t)</m> la position de la particule au temps <m>t</m>.
+      Alors
+      <md>
       \vR(t)=\vr\big(u(t)\big)\implies
       \vR'(t)=\vr'\big(u(t)\big)\diff{u}{t}
-      </me>
-      In particular, if the particle is at <m>(1,3,6)</m> at time <m>t_1</m>, then <m>u(t_1)=1</m>
-      and
-      <me>
+      </md>
+      En particulier, si la particule est en <m>(1,3,6)</m> au temps <m>t_1</m>, alors <m>u(t_1)=1</m>
+      et
+      <md>
       6\,\vi+12\,\vj+12\,\vk=\vR'(t_1)=\vr'(1)\diff{u}{t}(t_1)
       =\big(3\,\vi+6\,\vj+6\,\vk\big)\diff{u}{t}(t_1)
-      </me>
-      which implies that <m>\diff{u}{t}(t_1)=2</m>.
+      </md>
+      ce qui implique que <m>\diff{u}{t}(t_1)=2</m>.
       </p>
 
-      <p>(d) By the product and chain rules,
-      <me>
+      <p>(d) Par les règles du produit et de la composition,
+      <md>
       \vR'(t)=\vr'\big(u(t)\big)\diff{u}{t}\implies
       \vR''(t)=\vr''\big(u(t)\big)\Big(\diff{u}{t}\Big)^2
       +\vr'\big(u(t)\big)\difftwo{u}{t}
-      </me>
-      In particular,
+      </md>
+      En particulier,
       <md>
       <mrow>
       27\,\vi+30\,\vj+6\,\vk
@@ -635,12 +634,12 @@
       &amp;=\big(6\,\vi+6\,\vj\big)2^2+\big(3\,\vi+6\,\vj+6\,\vk\big)\difftwo{u}{t}(t_1)
       </mrow>
       </md>
-      Simplifying
-      <me>
+      En simplifiant
+      <md>
       3\,\vi+6\,\vj+6\,\vk
       =\big(3\,\vi+6\,\vj+6\,\vk\big)\difftwo{u}{t}(t_1)
       \implies \difftwo{u}{t}(t_1)=1
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -654,7 +653,7 @@
       Trouver la longueur de la portion de  <m>\cC</m> entre <m>(0,0,0)</m> et <m>(3,9,18)</m>.
       </li>
       <li>
-      Trouver la vitesse (sclaire) de la particule.
+      Trouver la vitesse (scalaire) de la particule.
       </li>
       <li>
       Trouver le vecteur vitesse de la particule lorsqu'elle se trouve à  <m>\big(1,1,\frac{2}{3}\big)</m>.
@@ -679,7 +678,7 @@
       </p></answer>
 
       <solution><p>
-      (a) Parametrize <m>C</m> by <m>x</m>. Since <m>y=x^2</m> and <m>z=\frac{2}{3}x^3</m>,
+      (a) Paramétrons <m>C</m> par <m>x</m>. Comme <m>y=x^2</m> et <m>z=\frac{2}{3}x^3</m>,
       <md>
       <mrow>
       \vr(x)&amp;=x\,\vi+x^2\,\vj+\frac{2}{3}x^3\,\vk\cr
@@ -690,58 +689,58 @@
       =\sqrt{1+4x^2+4x^4}=1+2x^2\cr
       </mrow>
       </md>
-      and
-      <me>
+      et
+      <md>
       \int_C \ \dee{s}
       =\int_0^3 \diff{s}{x}\ \dee{x}
       =\int_0^3 \big(1+2x^2\big)\ \dee{x}
       ={\Big[x+\frac{2}{3}x^3\Big]}_0^3
       =21
-      </me>
+      </md>
       </p>
 
-      <p>(b) The particle travelled a distance of 21 units in <m>\frac{7}{2}</m>
-      time units. This corresponds to a speed of <m>\frac{21}{7/2}=6</m>.
+      <p>(b) La particule a parcouru une distance de 21 unités en <m>\frac{7}{2}</m>
+      unités de temps. Ceci correspond à une vitesse de <m>\frac{21}{7/2}=6</m>.
       </p>
 
-      <p>(c) Denote by <m>\vR(t)</m> the position of the particle at time <m>t</m>.
-      Then
-      <me>
+      <p>(c) Dénotons par <m>\vR(t)</m> la position de la particule au temps <m>t</m>.
+      Alors
+      <md>
       \vR(t)=\vr\big(x(t)\big)\implies
       \vR'(t)=\vr'\big(x(t)\big)\diff{x}{t}
-      </me>
-      By parts (a) and (b) and the chain rule
-      <me>
+      </md>
+      Par les parties (a) et (b) et la règle de composition
+      <md>
       6=\diff{s}{t}=\diff{s}{x}\diff{x}{t}=(1+2x^2)\diff{x}{t}
       \implies \diff{x}{t}=\frac{6}{1+2x^2}
-      </me>
-      In particular, the particle is at <m>\big(1,1,\frac{2}{3}\big)</m> at <m>x=1</m>.
-      At this time <m>\diff{x}{t}=\frac{6}{1+2\times 1}=2</m> and
-      <me>
+      </md>
+      En particulier, la particule est à <m>\big(1,1,\frac{2}{3}\big)</m> lorsque <m>x=1</m>.
+      À ce moment <m>\diff{x}{t}=\frac{6}{1+2\times 1}=2</m> et
+      <md>
       \vR'=\vr'\big(1\big)\diff{x}{t}
       =\big(\vi+2\,\vj+2\,\vk\big)2
       =2\vi+4\,\vj+4\,\vk
-      </me>
+      </md>
       </p>
 
-      <p>(d) By the product and chain rules,
-      <me>
+      <p>(d) Par les règles du produit et de la composition,
+      <md>
       \vR'(t)=\vr'\big(x(t)\big)\diff{x}{t}\implies
       \vR''(t)=\vr''\big(x(t)\big){\Big(\diff{x}{t}\Big)}^2
       +\vr'\big(x(t)\big)\difftwo{x}{t}
-      </me>
-      Applying <m>\diff{}{t}</m> to <m>6=\big(1+2x(t)^2\big)\diff{x}{t}(t)</m> gives
-      <me>
+      </md>
+      En appliquant <m>\diff{}{t}</m> à <m>6=\big(1+2x(t)^2\big)\diff{x}{t}(t)</m>, on obtient
+      <md>
       0=4x{\Big(\diff{x}{t}\Big)}^2+(1+2x^2)\difftwo{x}{t}
-      </me>
-      In particular, when <m>x=1</m> and <m>\diff{x}{t}=2</m>,
-       <m>0=4\times 1\big(2\big)^2+(3)\difftwo{x}{t}</m> gives
-      <m>\difftwo{x}{t}=-\frac{16}{3}</m> and
-      <me>
+      </md>
+      En particulier, lorsque <m>x=1</m> et <m>\diff{x}{t}=2</m>,
+       <m>0=4\times 1\big(2\big)^2+(3)\difftwo{x}{t}</m> donne
+      <m>\difftwo{x}{t}=-\frac{16}{3}</m> et
+      <md>
       \vR''=\big(2\,\vj+4\,\vk\big)\big(2\big)^2
       -\big(\vi+2\,\vj+2\,\vk\big)\frac{16}{3}
       = -\frac{8}{3}\big(2\vi+\,\vj-2\,\vk\big)
-      </me>
+      </md>
       </p>
 
       </solution>

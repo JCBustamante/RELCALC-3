@@ -18,12 +18,12 @@
     <definition xml:id="def-chemin">
       <statement>
         <p>
-      Soit <m>I\subseteq \R</m> un intervalle. Un <term><em>chemin</em></term> dans  <m>\R^n</m> est une fonction.
-    </p>
+      Soit <m>I\subseteq \R</m> un intervalle. Un <term><em>chemin</em></term> dans  <m>\R^n</m> est une fonction
         <md>
           <mrow>\vr :\ \amp  I \longrightarrow \R^n</mrow>
           <mrow>   \amp t \longmapsto \vr(t)</mrow>
         </md>
+    </p>
       </statement>
     </definition>
     <p>
@@ -45,9 +45,9 @@
     <p>
   Étant donné un chemin <m>\vr</m>, son image, que l'on notera <m>\plan{C}_\vr</m> ou <m>\plan{C}</m>, c'est-à-dire l'ensemble
 
-<me>
+<md>
   \plan{C}_\vr = \{ \vr(t)| t\in I\},
-</me>
+</md>
 décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <term>paramétrage</term> de la courbe.
 </p>
     <sidebyside width="30%">
@@ -71,23 +71,20 @@ décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que l
   </p>
       <p>
   En effet, ici, nous avons <m>x(\theta) = a\cos \theta,\, y(\theta) =a\sin \theta</m>, de sorte que
-
-</p>
-      <me>
+      <md>
   x(\theta)^2 + y(\theta)^2 = (a\cos \theta)^2 + (a\sin\theta)^2 = a^2.
-</me>
-      <p>
+</md>
 Ceci montre que la courbe associée à notre fonction <m>\vr</m> est contenue dans le cercle.
 
 De simples considérations géométriques montrent que lorsque <m>\theta</m> parcourt <m>[0,2\pi]</m>, <m>\vr(\theta)</m> parcourt le cercle au complet.
   </p>
       <p>Il faut faire preuve de prudence : savoir que <m>\vr(t)</m> fait partie  d'une courbe
    ne garantit pas que, à mesure que  <m>t</m> parcourt le domaine de <m>\vr</m>, le vecteur <m>\vr(t)</m> parcourt la courbe en entier. Par exemple, si <m>t</m> parcourt <m>\R</m>,  <m>\frac{2}{\pi}\arctan(t)</m> parcourt l'intervalle <m>]-1,1[</m>. De l'équation <m>x^2 + y^2 = a^2</m>, on tire <m>y = \pm \sqrt{a^2 - x^2}</m>. Ainsi, pour tout  <m>t</m>,
-  <me>
+  <md>
   \vr(t) = x(t)\vi + y(t)\vj
          = a\frac{2}{\pi}\arctan(t)\vi  +
                   a\sqrt{1-\frac{4}{\pi^2}\arctan^2(t)}\vj
-  </me>
+  </md>
   est correctement défini et satisfait  <m>x(t)^2+y(t)^2=a^2</m>. Mais ce chemin n'est pas un paramétrage du cercle, puisque  <m>y(t)\geqslant 0</m>.
   </p>
     </example>
@@ -103,10 +100,10 @@ Une façon de procéder est de refaire l'esquisse de l'<xref ref="eg_paramCircle
       </sidebyside>
       <p>
 Cette translation  s'obtient en additionnant le vecteur <m>h\vi + k\vj</m>. Ainsi,
-<me>
+<md>
 \vr(\theta) = \left(h+a\cos\theta\right)\vi + \left(k+a\sin\theta\right)\vj\qquad
 0\leqslant  \theta\leqslant  2\pi
-</me>
+</md>
 est un paramétrage du cercle <m>(x-h)^2+(y-k)^2=a^2</m>.
 </p>
       <p>
@@ -158,9 +155,9 @@ In particular, the above sketch is carefully developed there.
       <title>Paramétrage de <m>e^y=1+x^2</m></title>
       <p>
 Une méthode simple qui peut être utilisée pour paramétrer une courbe donnée par une équation de la forme <m>f(x,y)=0</m> consiste à utiliser  <m>x</m> ou <m>y</m> comme paramètre et à isoler pour l'autre variable. Dans cet exemple, puisqu'on peut résoudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux côtés, on obtient <m>y=\ln\big(1+x^2\big)</m>, on utilise  <m>x</m> comme paramètre en posant <m>t=x</m>. Ceci donne le paramétrage
-<me>
+<md>
 \vr(t) = t\,\vi + \ln(1+t^2)\,\vj \qquad -\infty\lt t\lt \infty.
-</me>
+</md>
 </p>
     </example>
     <example xml:id="eg_paramCircleC">
@@ -199,9 +196,9 @@ y&amp;=7-t
 Note that we can eliminate the parameter <m>t</m> simply by using the second equation
 to solve for <m>t</m> as a function of <m>y</m>. Namely <m>t=7-y</m>. Substituting this
 into the first equation  gives us the Cartesian equation
-<me>
+<md>
 x=\cos(7-y)
-</me>
+</md>
 </p>
 </example>
 -->
@@ -267,9 +264,9 @@ x=\cos(7-y)
    x^2&amp;+z  &amp;&amp;=e^{y}   &amp;&amp; &amp;&amp;\implies e^{2y}+z=e^y \implies z=e^y-e^{2y}
   </mrow></md>
   Ainsi,
-  <me>
+  <md>
   \vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk
-  </me>
+  </md>
   est un paramétrage de la courbe.
 
 
@@ -309,16 +306,16 @@ x=\cos(7-y)
    x^2+2y^2&amp;=z,
   </mrow></md>
   qui est la courbe bleue dans la figure ci-haut. On remplace <m>x^2=z-2y^2</m> (de la seconde équation) dans la première, ce qui donne
-  <me>
+  <md>
   -\frac{3}{2}y^2+z+\frac{z^2}{3}=1.
-  </me>
-  Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <me>
+  </md>
+  Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <md>
   -\frac{3}{2}y^2 + \frac{1}{3}\Big(z+\frac{3}{2}\Big)^2 = \frac{7}{4}.
-  </me>
+  </md>
   Si, par exemple, on s'intéresse aux points <m>(x,y,z)</m> sur la courbe qui vérifient en plus   <m>y\geqslant 0</m>, on peut résoudre pour avoir  <m>y</m> en fonction de  <m>z</m>.
-  <me>
+  <md>
   y=\sqrt{\frac{2}{9}\Big(z+\frac{3}{2}\Big)^2-\frac{14}{12}}
-  </me>
+  </md>
   Alors, <m>x^2=z-2y^2</m> donne aussi  <m>x</m> en fonction de  <m>z</m>. Si  <m>x\geqslant 0</m>,
   <md><mrow>
   x&amp;=\sqrt{z-\frac{4}{9}\Big(z+\frac{3}{2}\Big)^2+\frac{14}{6}}
@@ -362,7 +359,7 @@ x=\cos(7-y)
         <caption>Le plan <m>z = 1+y</m> et le cône <m>z^2 = x^2+ y^2</m>
         </caption>
         <image xml:id="sageplot3d-plan-cone" width="80%">
-          <description>L'intersection d'un plan avec un cône</description>
+          <description><p>L'intersection d'un plan avec un cône</p></description>
           <sageplot variant="3d" aspect="1.0">
             var('u,v,r,t')
             Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
@@ -379,16 +376,16 @@ x=\cos(7-y)
           <p>
             Pour commencer, on peut élever au carré <m>z</m> de l'équation du plan et remplacer dans celle du cône, ce qui mène à
           </p>
-          <me>
+          <md>
             (1+y)^2 = x^2 + y^2 \implies 1+2y= x^2.
-          </me>
+          </md>
           <p>
           De là, on tire <m>x = \pm \sqrt{1+2y}</m>.
           Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme paramètre pour obtenir
           </p>
-          <me>
+          <md>
             \vr(t) = \sqrt{1+2t}\, \vi + t\, \vj + (1+t)\,\vk \qquad t\in \R.
-          </me>
+          </md>
           <p>
             Il faut noter qu'on a en réalité deux paramétrages, selon le signe choisi pour la racine carrée dans l'expression de <m>x</m>. Chacun des deux paramétrages présente une moitié de la courbe (il s'agit en fait d'une parabole).
           </p>
@@ -397,9 +394,9 @@ x=\cos(7-y)
           <p>
             On peut choisir d'utiliser <m>x = s</m> comme paramètre. De notre équation <m>1+2y = x^2</m>, on tire <m>y= \frac{1}{2}(s^2-1)</m>, et l'équation du plan fournit <m>z = \frac{1}{2}(s^2 + 1)</m>. On a donc un autre paramétrage :
           </p>
-          <me>
+          <md>
             \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad t\in \R.
-          </me>
+          </md>
         </li>
       </ul>
     </example>
@@ -432,10 +429,10 @@ x=\cos(7-y)
         <p>
       lorsque la limite existe. En particulier, si
       <m>\vr(t_0)=x(t_0)\,\vi + y(t_0)\,\vj+z(t_0)\,\vk</m>, alors
-      <me>
+      <md>
       \vr'(t_0)=x'(t_0)\,\vi+y'(t_0)\,\vj+z'(t_0)\,\vk .
 
-      </me>
+      </md>
       En somme, pour dériver une fonction vectorielle, on doit simplement dériver chacune de ses composantes.
       </p>
       </statement>
@@ -455,10 +452,10 @@ x=\cos(7-y)
     \g(t)&amp;= t^2, &amp; &amp;s(t)= \sin t.
     </mrow></md>
     Nous allons calculer plusieurs dérivées, utilisons donc un peu de couleur pour rendre les calculs plus lisibles. Lorsque nous ferons appel à la règle de différentiation du produit, à savoir
-    <me>
+    <md>
     \diff{}{t}\big[f(t)\,g(t)\big]
     ={\color{blue}{f'(t)}}\,g(t) + f(t)\,{\color{blue}{g'(t)}},
-    </me>
+    </md>
     nous utiliserons la couleur bleue pour mettre en évidence les facteurs  <m>f'(t)</m> et <m>g'(t)</m>.
 
     <md><mrow>
@@ -601,7 +598,7 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
       </statement>
       <solution>
         <p>
-      Le point <m>(1,1,1)</m> correspond à <m>t=0</m>. Par ailleurs, <me>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </me>
+      Le point <m>(1,1,1)</m> correspond à <m>t=0</m>. Par ailleurs, <md>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </md>
       de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'équation de la droite tangente est donc
       <md><mrow>
       \vx(t) &amp;= \vr(0) + t\,\vr'(0)\\
@@ -636,9 +633,9 @@ Nous avons vu, à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, un
 x^{2/3}+y^{2/3} = a^{2/3}
 </m>.
 Nous avons un paramétrage
-<me>
+<md>
 \vr(t) = a\cos^3t\,\vi + a\sin^3 t\,\vj.
-</me>
+</md>
 Afin d'utiliser le   <xref ref="thm-Longueur" text="global">théorème</xref>, calculons :
 <md><mrow>
 \vr(t) &amp;= a\cos^3t\,\vi + a\sin^3 t\,\vj,
@@ -730,9 +727,9 @@ et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> 
         <li>
           <p>
         S'il est vrai que l'équation <xref ref="tgt"/> fournit un paramétrage de la droite tangente à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <term>chemin tangent</term> est une fonction vectorielle, et elle donne aussi un paramétrage de la droite tangente. De plus, <m>\vL</m> coïncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
-        <me>
+        <md>
           f(t) \approx L(t) = f(t_0) + f'(t_0)(t-t_0).
-        </me>
+        </md>
 
       </p>
         </li>
@@ -780,7 +777,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
             <figure xml:id="figure-rebrousssement">
               <caption>La courbe <m>\vr(t) = t^3 \vi + t^2\vj</m></caption>
               <image xml:id="sageplot-Rebroussement" width="80%">
-                <description>La courbe admet un point de rebroussement à l'origine</description>
+                <description><p>La courbe admet un point de rebroussement à l'origine</p></description>
                 <sageplot>
             var('t')
             C =parametric_plot([t^3, t^2], (t,-1,1), color = "blue", axes_labels=['$x$', '$y$'], ticks = [[-1,(-0.5).n(digits = 1), 0, (0.5).n(digits=1), 1], [0.5.n(digits = 1),1]],tick_formatter="latex", fontsize = 14)
@@ -791,14 +788,14 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
           </li>
           <li>
             <p>
-          Soit <m>\vr(t) = e^-t\, \cos t\, \vi + e^-t\ \sin t\, \vj + e^-t\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
+          Soit <m>\vr(t) = e^{-t}\, \cos t\, \vi + e^{-t}\, \sin t\, \vj + e^{-t}\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
          </p>
             <p>
-            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <me>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </me>
+            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <md>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </md>
             de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
-            <me>
+            <md>
             \vx(t) =  \vp_0 + t \vr'(0) = \tvect{1}{0}{1} + t \tvect{-1}{1}{-1}.
-            </me>
+            </md>
             Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
 
 
@@ -826,7 +823,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       </webwork>
     </exercise>
     <example xml:id="Angle-courbes">
-      <title>L'angle formépar deux courbes</title>
+      <title>L'angle formé par deux courbes</title>
       <statement>
         <p>En quels points les courbes données par <m>\vr_1(t) = t\, \vi + (1-t)\, \vj  + (3+t^2)\, \vk</m> et par <m>\vr_2 (t) = (3-t)\,\vi + (2-t)\,\vj + t^2 \, \vk</m> se coupent-elles? Quel angle forment-elles au point d'intersection?
 
@@ -834,27 +831,23 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       </statement>
       <solution>
         <p>S'il est vrai que le paramètre <m>t</m> est utilisé dans la définition des deux courbes, afin de trouver le point commun, on doit résoudre l'équation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du paramètre au point commun n'a aucune raison d'être la même pour les deux courbes<fn>De façon imagée, on pense aux deux courbes comme aux trajectoires décrites par deux particules. Le point commun aux deux trajectoires n'est pas nécessairement un point de collision : les deux particules passent par un même point, mais pas nécessairement au même moment. L'équation <m>\vr_1(t) = \vr_2(t)</m> cherche à trouver un point de collision.</fn>. Le système d'équations résultant est
-    </p>
         <md><mrow> t\amp = 3-s, </mrow><mrow> 1-t \amp = 2-s, </mrow><mrow> 3+t^2  \amp = s^2. </mrow>.
     </md>
-        <p>
     On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
-    <me>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
-    </me>
+    <md>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
+    </md>
     </p>
         <p> L'angle formé par les courbes est l'angle formé par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
     <md><mrow> \vr_1'(t) = \tvect{1}{-1}{2t} \amp \amp  \text{ et } \amp \amp  \vr_2'(s) = \tvect{-1}{-1}{2s}. </mrow><mrow> \amp </mrow>.
     </md>
     Au point commun, ces vecteurs sont
-    </p>
         <md><mrow>\vr_1'(1) = \tvect{1}{-1}{2} \amp \amp \text{ et } \amp \amp \vr_2'(2) = \tvect{-1}{-1}{4}. </mrow><mrow> \amp </mrow>.
     </md>
-        <p>
       L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">théorème</xref>. On a donc
-    </p>
-        <me>
+        <md>
     \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{|\vr_1'(1)|\, |\vr_2'(2)|} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.
-    </me>
+    </md>
+    </p>
       </solution>
     </example>
   </subsection>

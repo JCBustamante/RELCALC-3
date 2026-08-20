@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-Tangentes">
   <title>Tangentes aux courbes paramétriques</title>
-<introduction> Nous nous intéressons dans cette section aux dérivées des fonctions vectorielles <m>\vr : I \subseteq \R \to \R^n</m> et à leur signification.
-</introduction>
+<introduction><p> Nous nous intéressons dans cette section aux dérivées des fonctions vectorielles <m>\vr : I \subseteq \R \to \R^n</m> et à leur signification.
+</p></introduction>
 
 <definition xml:id="def__curve_deriv">
 <statement><p>
@@ -25,10 +25,9 @@ Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\sub
 <p>
 lorsque la limite existe. En particulier, si
 <m>\vr(t_0)=x(t_0)\,\vi + y(t_0)\,\vj+z(t_0)\,\vk</m>, alors
-<me>
+<md>
 \vr'(t_0)=x'(t_0)\,\vi+y'(t_0)\,\vj+z'(t_0)\,\vk .
-
-</me>
+</md>
 En somme, pour dériver une fonction vectorielle, on doit simplement dériver chacune de ses composantes.
 </p></statement>
 </definition>
@@ -50,10 +49,10 @@ Soit, pour <m>t\in \R</m>,
 </mrow>
 </md>
 Nous allons calculer plusieurs dérivées, utilisons donc un peu de couleur pour rendre les calculs plus lisibles. Lorsque nous ferons appel à la règle de différentiation du produit, à savoir
-<me>
+<md>
 \diff{}{t}\big[f(t)\,g(t)\big]
 ={\color{blue}{f'(t)}}\,g(t) + f(t)\,{\color{blue}{g'(t)}},
-</me>
+</md>
 nous utiliserons la couleur bleue pour mettre en évidence les facteurs  <m>f'(t)</m> et <m>g'(t)</m>.
 
 <md>
@@ -247,9 +246,9 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
     <li>
       <p>
         S'il est vrai que l'équation <xref ref="tgt"/> fournit un paramétrage de la droite tangente à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <term>chemin tangent</term> est une fonction vectorielle, et elle donne aussi un paramétrage de la droite tangente. De plus, <m>\vL</m> coïncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
-        <me>
+        <md>
           f(t) \approx L(t) = f(t_0) + f'(t_0)(t-t_0).
-        </me>
+        </md>
 
       </p>
     </li>
@@ -283,15 +282,15 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
 
       <li>
         <p>
-          Soit <m>\vr(t) = e^-t\, \cos t\, \vi + e^-t\ \sin t\, \vj + e^-t\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
+          Soit <m>\vr(t) = e^{-t}\, \cos t\, \vi + e^{-t}\, \sin t\, \vj + e^{-t}\, \vk</m>. Trouvons la droite tangente à la courbe de <m>\vr</m> au point <m>P_0(1,0,1)</m>.
          </p>
 
           <p>
-            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <me>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </me>
+            Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <md>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </md>
             de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
-            <me>
+            <md>
             \vx(t) =  \vp_0 + t \vr'(0) = \tvect{1}{0}{1} + t \tvect{-1}{1}{-1}.
-            </me>
+            </md>
             Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
 
 
@@ -335,8 +334,8 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
     </md>
     <p>
     On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
-    <me>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
-    </me>
+    <md>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
+    </md>
     </p>
     <p> L'angle formé par les courbes est l'angle formé par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
     <md>
@@ -351,10 +350,10 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
     </md>
     <p>
       L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">théorème</xref>. On a donc
-    </p>
-    <me>
+    <md>
     \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{|\vr_1'(1)|\, |\vr_2'(2)|} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.
-    </me>
+    </md>
+    </p>
   </solution>
 </example>
 

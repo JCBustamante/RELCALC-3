@@ -28,22 +28,22 @@
       </p></answer>
 
       <solution><p>
-      The partial derivatives, at a general point <m>(x,y,z)</m> and
-      also at the point of interest <m>(0,1,1)</m>, are
+      Les dérivées partielles, en un point général <m>(x,y,z)</m> et
+      aussi au point qui nous intéresse <m>(0,1,1)</m>, sont
       <md alignment="alignat">
       <mrow>
       f_x(x,y,z)&amp;=yz e^{xyz}\qquad &amp;
          f_x(0,1,1)&amp;= 1
       </mrow><mrow>
       f_y(x,y,z)&amp;=xz e^{xyz}\qquad &amp;
-         f_x(0,1,1)&amp;= 0
+         f_y(0,1,1)&amp;= 0
       </mrow><mrow>
       f_z(x,y,z)&amp;=xy e^{xyz}\qquad &amp;
          f_z(0,1,1)&amp;= 0
       </mrow>
       </md>
-      So <m>\vnabla f(0,1,1) =\llt 1,0,0\rgt</m> and the specified directional derivative
-      is
+      Donc <m>\vnabla f(0,1,1) =\llt 1,0,0\rgt</m> et la dérivée directionnelle demandée
+      est
       <md>
       <mrow>
       \vD_{\frac{\llt 0,1,1\rgt}{\sqrt{2}}}
@@ -65,14 +65,14 @@
       </p></answer>
 
       <solution><p>
-      In two dimensions, write <m>g(x,y) = y^2+\sin(xy)</m>. Then
+      En deux dimensions, posons <m>g(x,y) = y^2+\sin(xy)</m>. Alors
       <md>
       <mrow>
       \vnabla g =\llt g_x\,,\,g_y\rgt
                 =\llt y\cos(xy)\,,\, 2y + x\cos(xy) \rgt
       </mrow>
       </md>
-      In three dimensions, write <m>g(x,y,z) = y^2+\sin(xy)</m>. Then
+      En trois dimensions, posons <m>g(x,y,z) = y^2+\sin(xy)</m>. Alors
       <md>
       <mrow>
       \vnabla g =\llt g_x\,,\,g_y\,,\,g_z\rgt
@@ -104,23 +104,23 @@
 
       <solution><p>
       (a)
-      The gradient of <m>f</m> is <m>\vnabla f(x,y)=\llt 3,-4\rgt</m>. So the specified rate of change is
-      <me>
+      Le gradient de <m>f</m> est <m>\vnabla f(x,y)=\llt 3,-4\rgt</m>. Le taux de variation demandé est donc
+      <md>
       \llt 3,-4\rgt\cdot\frac{\llt -2,0\rgt}{|\llt -2,0\rgt|}=-3
-      </me>
+      </md>
       </p>
 
       <p>(b)
-      The gradient of <m>f</m> is
-        <m>\vnabla f(x,y,z)=\llt -x^{-2},-y^{-2},-z^{-2}\rgt</m>. In particular,
-      the gradient of <m>f</m> at the point <m>(2,-3,4)</m> is
+      Le gradient de <m>f</m> est
+        <m>\vnabla f(x,y,z)=\llt -x^{-2},-y^{-2},-z^{-2}\rgt</m>. En particulier,
+      le gradient de <m>f</m> au point <m>(2,-3,4)</m> est
       <m>\vnabla f(2,-3,4)=\llt -\frac{1}{4},-\frac{1}{9},-\frac{1}{16}\rgt</m>.
-      So the specified rate of change is
-      <me>
+      Le taux de variation demandé est donc
+      <md>
       \llt -\frac{1}{4},-\frac{1}{9},-\frac{1}{16}\rgt\cdot
               \frac{\llt 1,1,1\rgt}{\sqrt{3}}=
               -\frac{61}{144\sqrt{3}}\approx-0.2446
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -128,10 +128,10 @@
     <exercise>
       <statement><p>
       Trouvez <m>\vnabla f(a,b)</m> étant données les dérivées directionnelles
-      <me>
+      <md>
       \vD_{(\vi+\vj)/\sqrt{2}}f(a,b)=3\sqrt{2}\qquad
       \vD_{(3\vi-4\vj)/5}f(a,b)=5
-      </me>
+      </md>
       </p></statement>
 
       <hint><p>
@@ -143,20 +143,20 @@
       </p></answer>
 
       <solution><p>
-       Denote <m>\vnabla f(a,b)=\llt \a,\b\rgt</m>. We are told that
+       Dénotons <m>\vnabla f(a,b)=\llt \a,\b\rgt</m>. On nous dit que
       <md alignment="alignat">
       <mrow>
       \llt\a,\b\rgt\cdot\llt\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\rgt&amp;=3\sqrt{2} &amp;
-      &amp;\quad\text{or}\quad &amp;
+      &amp;\quad\text{ou}\quad &amp;
       \a+\b&amp;=6
       </mrow><mrow>
       \llt\a,\b\rgt\cdot\llt\frac{3}{5},-\frac{4}{5}\rgt&amp;=5 &amp;
-      &amp;\quad\text{or}\quad &amp;
+      &amp;\quad\text{ou}\quad &amp;
       3\a-4\b&amp;=25
       </mrow>
       </md>
-      Adding 4 times the first equation to the second equation gives <m>7\a=49</m>.
-      Substituting <m>\a=7</m> into the first equation gives <m>\b=-1</m>. So
+      En additionnant 4 fois la première équation à la deuxième, on obtient <m>7\a=49</m>.
+      En substituant <m>\a=7</m> dans la première équation, on obtient <m>\b=-1</m>. Donc
       <m>\vnabla f(a,b)=\llt 7,-1\rgt</m>.
       </p></solution>
     </exercise>
@@ -193,20 +193,20 @@
       </answer>
 
       <solution><p>
-      (a)  Use <m>\vnabla f(P)</m> to denote the gradient vector of <m>f</m>
-      at <m>P</m>. We are told that
+      (a)  Notons <m>\vnabla f(P)</m> le vecteur gradient de <m>f</m>
+      en <m>P</m>. On nous dit que
       <ul>
       <li>
-      directional derivative  of <m>f</m> at <m>P</m> is a maximum in the direction
-      <m>2\vi - \vj + \vk</m>, which implies that <m>\vnabla f(P)</m> is parallel
-      to <m>2\vi - \vj + \vk</m>, and
+      la dérivée directionnelle de <m>f</m> en <m>P</m> est maximale dans la direction
+      <m>2\vi - \vj + \vk</m>, ce qui implique que <m>\vnabla f(P)</m> est parallèle
+      à <m>2\vi - \vj + \vk</m>, et
       </li>
       <li>
-      the magnitude of the directional derivative in that direction is <m>3\sqrt{6}</m>,
-      which implies that <m>|\vnabla f(P)|=3\sqrt{6}</m>.
+      la norme de la dérivée directionnelle dans cette direction est <m>3\sqrt{6}</m>,
+      ce qui implique que <m>|\vnabla f(P)|=3\sqrt{6}</m>.
       </li>
       </ul>
-      So
+      Donc
       <md>
       <mrow>
       \vnabla f(P) = 3\sqrt{6} \frac{2\vi - \vj + \vk}{|2\vi - \vj + \vk|}
@@ -215,12 +215,12 @@
       </md>
       </p>
 
-      <p>(b) The directional derivative of <m>f</m> at <m>P</m> in the direction <m>\vi+\vj</m> is
-      <me>
+      <p>(b) La dérivée directionnelle de <m>f</m> en <m>P</m> dans la direction <m>\vi+\vj</m> est
+      <md>
       \vnabla f(P) \cdot\frac{\vi+\vj}{|\vi+\vj|}
       =\frac{1}{\sqrt{2}}\big(6\vi - 3\vj + 3\vk\big)\cdot\big(\vi+\vj\big)
       =\frac{3}{\sqrt{2}}
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -241,11 +241,11 @@
       </p></answer>
 
       <solution><p>
-      Write <m>F(x,y,z) = x^2+y^2+(z-1)^2-1</m> and <m>G(x,y,z) = x^2+y^2+(z+1)^2-1</m>.
-      Let <m>S_1</m> denote the surface <m>F(x,y,z)=0</m> and <m>S_2</m> denote the surface
+      Posons <m>F(x,y,z) = x^2+y^2+(z-1)^2-1</m> et <m>G(x,y,z) = x^2+y^2+(z+1)^2-1</m>.
+      Soit <m>S_1</m> la surface <m>F(x,y,z)=0</m> et <m>S_2</m> la surface
       <m>G(x,y,z)=0</m>.
-      First note that <m>F(0,0,0)=G(0,0,0)=0</m> so that the point <m>(0,0,0)</m> lies
-      on both <m>S_1</m> and <m>S_2</m>. The gradients of <m>F</m> and <m>G</m> are
+      Remarquons d'abord que <m>F(0,0,0)=G(0,0,0)=0</m>, de sorte que le point <m>(0,0,0)</m> se trouve
+      sur <m>S_1</m> et sur <m>S_2</m>. Les gradients de <m>F</m> et <m>G</m> sont
       <md>
       <mrow>
       \vnabla F(x,y,z)
@@ -263,21 +263,21 @@
           &amp;=\llt 2x\,,\,2y\,,\,2(z+1)\rgt
       </mrow>
       </md>
-      In particular,
-      <me>
+      En particulier,
+      <md>
       \vnabla F(0,0,0)=\llt 0,0,-2\rgt\qquad
       \vnabla G(0,0,0)=\llt 0,0,2\rgt
-      </me>
-      so that the vector <m>\vk=-\frac{1}{2}\vnabla F(0,0,0)
+      </md>
+      de sorte que le vecteur <m>\vk=-\frac{1}{2}\vnabla F(0,0,0)
                              =\frac{1}{2}\vnabla G(0,0,0)</m>
-      is normal to both surfaces at <m>(0,0,0)</m>. So the tangent plane to
-      both <m>S_1</m> and <m>S_2</m> at <m>(0,0,0)</m> is
-      <me>
-      \vk\cdot\llt x-0,y-0,z-0\rgt=0\qquad\text{or}\qquad z=0
-      </me>
-      Denote by <m>P</m> the plane <m>z=0</m>.
-      Thus <m>S_1</m> is tangent to <m>P</m> at <m>(0,0,0)</m> and <m>P</m> is tangent to <m>S_2</m>
-      at <m>(0,0,0)</m>. So it is reasonable to say that <m>S_1</m> and <m>S_2</m> are tangent at
+      est normal aux deux surfaces en <m>(0,0,0)</m>. Ainsi, le plan tangent à
+      <m>S_1</m> et à <m>S_2</m> en <m>(0,0,0)</m> est
+      <md>
+      \vk\cdot\llt x-0,y-0,z-0\rgt=0\qquad\text{ou}\qquad z=0
+      </md>
+      Notons <m>P</m> le plan <m>z=0</m>.
+      Ainsi, <m>S_1</m> est tangente à <m>P</m> en <m>(0,0,0)</m> et <m>P</m> est tangente à <m>S_2</m>
+      en <m>(0,0,0)</m>. Il est donc raisonnable de dire que <m>S_1</m> et <m>S_2</m> sont tangentes en
       <m>(0,0,0)</m>.
       </p></solution>
     </exercise>
@@ -296,8 +296,8 @@
       <solution><p>
         <!--TODO
       We are going to use Theorem <xref ref="thm_tan_plane_f"/>.
-      To do so-->We need the first order derivatives of <m>f(x,y)</m>
-      at <m>(x,y)=(-1,1)</m>. So we find them first.
+      To do so-->Nous avons besoin des dérivées partielles d'ordre un de <m>f(x,y)</m>
+      en <m>(x,y)=(-1,1)</m>. Trouvons-les d'abord.
       <md alignment="alignat">
       <mrow>
       f_x(x,y)&amp;=\frac{2xy}{x^4+2y^2}-\frac{x^2y(4x^3)}{{(x^4+2y^2)}^2}\qquad &amp;
@@ -309,7 +309,7 @@
       </md>
       </p>
 
-      <p>The tangent plane is
+      <p>Le plan tangent est
       <md>
       <mrow>
       z&amp;=f(-1,1) + f_x(-1,1)\,(x+1) + f_y(-1,1)\,(y-1)
@@ -319,16 +319,16 @@
        &amp;=\frac{2}{9}-\frac{2}{9}x-\frac{1}{9}y
       </mrow>
       </md>
-      or <m>2x+y+9z=2</m>.
+      ou <m>2x+y+9z=2</m>.
       </p></solution>
     </exercise>
 
     <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
       <statement><p>
       Trouvez le plan tangent à
-      <me>
+      <md>
       \frac{27}{\sqrt{x^2+y^2+z^2+3}}=9
-      </me>
+      </md>
       au point <m>(2, 1, 1)</m>.
       </p></statement>
 
@@ -337,10 +337,10 @@
       </p></answer>
 
       <solution><p>
-      The equation of the given surface is of the form <m>G(x,y,z)=9</m>
-      with <m>G(x,y,z) =\frac{27}{\sqrt{x^2+y^2+z^2+3}}</m>. So,
-      by Theorem <xref ref="thm_tan_plane_G"/>, a normal
-      vector to the surface at <m>(2,1,1)</m> is
+      L'équation de la surface donnée est de la forme <m>G(x,y,z)=9</m>
+      avec <m>G(x,y,z) =\frac{27}{\sqrt{x^2+y^2+z^2+3}}</m>. Ainsi,
+      en vertu du théorème <xref ref="thm_tan_plane_G"/>, un vecteur normal
+      à la surface en <m>(2,1,1)</m> est
       <md>
       <mrow>
       \vnabla G(2,1,1)
@@ -350,11 +350,11 @@
         &amp;=-\llt 2\,,\,1\,,\,1\rgt
       </mrow>
       </md>
-      and the equation of the tangent plane is
-      <me>
-      -\llt 2\,,\,1\,,\,1\rgt\cdot \llt x-2\,,\,y-1\,,\,z-1\rgt=0\qquad\text{or}\qquad
+      et l'équation du plan tangent est
+      <md>
+      -\llt 2\,,\,1\,,\,1\rgt\cdot \llt x-2\,,\,y-1\,,\,z-1\rgt=0\qquad\text{ou}\qquad
       2x+y+z = 6
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -384,8 +384,8 @@
 
       <solution><p>
       (a)
-      The specified graph is <m>z=f(x,y)=x^2-y^2</m> or <m>F(x,y,z)=x^2-y^2-z=0</m>.
-      Observe that <m>f(-2,1)=3</m>. The vector
+      Le graphe donné est <m>z=f(x,y)=x^2-y^2</m>, ou <m>F(x,y,z)=x^2-y^2-z=0</m>.
+      Observons que <m>f(-2,1)=3</m>. Le vecteur
       <md>
       <mrow>
       \vnabla F(-2,1,3)
@@ -396,20 +396,20 @@
       &amp;= \llt -4,-2,-1\rgt
       </mrow>
       </md>
-      is a normal vector to the graph at <m>(-2,1,3)</m>.
-      So the tangent plane is
-      <me>
-      -4(x+2)-2(y-1)-(z-3)=0\text{ or } 4x+2y+z=-3
-      </me>
-      and the normal line is
-      <me>
+      est un vecteur normal au graphe en <m>(-2,1,3)</m>.
+      Le plan tangent est donc
+      <md>
+      -4(x+2)-2(y-1)-(z-3)=0\text{ ou } 4x+2y+z=-3
+      </md>
+      et la droite normale est
+      <md>
       \llt x,y,z\rgt=\llt -2,1,3\rgt+t\llt 4,2,1\rgt
-      </me>
+      </md>
       </p>
 
       <p>(b)
-      The specified graph is <m>z=f(x,y)=e^{xy}</m> or <m>F(x,y,z)=e^{xy}-z=0</m>.
-      Observe that <m>f(2,0)=1</m>. The vector
+      Le graphe donné est <m>z=f(x,y)=e^{xy}</m>, ou <m>F(x,y,z)=e^{xy}-z=0</m>.
+      Observons que <m>f(2,0)=1</m>. Le vecteur
       <md>
       <mrow>
       \vnabla F(2,0,1)
@@ -420,15 +420,15 @@
       &amp;= \llt 0,2,-1\rgt
       </mrow>
       </md>
-      is a normal vector to the graph at <m>(2,0,1)</m>.
-      So the tangent plane is
-      <me>
-      0(x-2)+2(y-0)-(z-1)=0\text{ or } 2y-z=-1
-      </me>
-      and the normal line is
-      <me>
+      est un vecteur normal au graphe en <m>(2,0,1)</m>.
+      Le plan tangent est donc
+      <md>
+      0(x-2)+2(y-0)-(z-1)=0\text{ ou } 2y-z=-1
+      </md>
+      et la droite normale est
+      <md>
       \llt x,y,z\rgt=\llt 2,0,1\rgt+t\llt 0,2,-1\rgt
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -446,8 +446,8 @@
       </p></answer>
 
       <solution><p>
-      We may use <m>G(x,y,z) = xyz^2 + y^2 z^3 - 3 - x^2 = 0</m> as an equation for
-      the surface.  Note that <m>(-1,1,2)</m> really is on the surface since
+      Nous pouvons utiliser <m>G(x,y,z) = xyz^2 + y^2 z^3 - 3 - x^2 = 0</m> comme équation pour
+      la surface. Remarquons que <m>(-1,1,2)</m> se trouve bel et bien sur la surface, puisque
       <md>
       <mrow>
       G(-1,1,2) = (-1)(1)(2)^2 + (1)^2 (2)^3 - 3 - (-1)^2
@@ -455,7 +455,7 @@
                 =0
       </mrow>
       </md>
-      By Theorem <xref ref="thm_tan_plane_G"/>, since
+      En vertu du théorème <xref ref="thm_tan_plane_G"/>, puisque
       <md alignment="alignat">
       <mrow>
       G_x(x,y,z)&amp;=yz^2 -2x \qquad &amp;
@@ -468,29 +468,29 @@
           G_z(-1,1,2)&amp;=8
       </mrow>
       </md>
-      one normal vector to the surface at <m>(-1,1,2)</m> is
-       <m>\vnabla G(-1,1,2) = \llt 6\,,\,12\,,\,8\rgt</m> and an equation
-      of the tangent plane to the surface at <m>(-1,1,2)</m> is
+      un vecteur normal à la surface en <m>(-1,1,2)</m> est
+       <m>\vnabla G(-1,1,2) = \llt 6\,,\,12\,,\,8\rgt</m>, et une équation
+      du plan tangent à la surface en <m>(-1,1,2)</m> est
       <md>
       <mrow>
       \llt 6\,,\,12\,,\,8\rgt \cdot
-           \llt x+1\,,\,y-1\,,\,z-2\rgt = 0\qquad\text{or}\qquad
+           \llt x+1\,,\,y-1\,,\,z-2\rgt = 0\qquad\text{ou}\qquad
       6x+12 y+ 8z = 22
       </mrow>
       </md>
-      or
-      <me>
+      ou
+      <md>
       z = -\frac{3}{4} x- \frac{3}{2} y +\frac{11}{4}
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
     <exercise> <!-- <title><fromexam>M200 2008D</fromexam></title> -->
       <statement><p>
       Une surface est donnée par
-      <me>
+      <md>
       z = x^2 - 2xy + y^2 .
-      </me>
+      </md>
       </p>
 
       <ol marker = "(a)">
@@ -511,29 +511,29 @@
 
       <solution><p>
       (a)
-      The surface is <m>G(x,y,z)=z-x^2+2xy-y^2=0</m>. When <m>x=a</m> and <m>y=2a</m>
-       and <m>(x,y,z)</m> is on the surface, we have <m>z= a^2-2(a)(2a) +(2a)^2=a^2</m>.
-      So, by Theorem <xref ref="thm_tan_plane_G"/>,
-      a normal vector to this surface at <m>(a,2a,a^2)</m> is
+      La surface est <m>G(x,y,z)=z-x^2+2xy-y^2=0</m>. Lorsque <m>x=a</m> et <m>y=2a</m>
+       et que <m>(x,y,z)</m> se trouve sur la surface, on a <m>z= a^2-2(a)(2a) +(2a)^2=a^2</m>.
+      Ainsi, en vertu du théorème <xref ref="thm_tan_plane_G"/>,
+      un vecteur normal à cette surface en <m>(a,2a,a^2)</m> est
       <md>
       <mrow>
       \vnabla G(a,2a,a^2) = \llt -2x+2y\,,\,2x-2y\,,\,1\rgt\Big|_{(x,y,z)=(a,2a,a^2)}
                           = \llt 2a\,,\,-2a\,,\,1\rgt
       </mrow>
       </md>
-      and the equation of the tangent plane is
+      et l'équation du plan tangent est
       <md>
       <mrow>
       \llt 2a\,,\,-2a\,,\,1\rgt\cdot\llt x-a\,,\,y-2a\,,\,z-a^2\rgt =0
-      \quad\text{or}\quad
+      \quad\text{ou}\quad
       2ax -2ay +z = -a^2
       </mrow>
       </md>
       </p>
 
-      <p>(b) The two planes are parallel when their two normal vectors,
-      namely <m>\llt 2a\,,\,-2a\,,\,1\rgt</m> and <m>\llt 1\,,\,-1\,,\,1\rgt</m>,
-      are parallel. This is the case if and only if <m>a=\frac{1}{2}</m>.
+      <p>(b) Les deux plans sont parallèles lorsque leurs deux vecteurs normaux,
+      à savoir <m>\llt 2a\,,\,-2a\,,\,1\rgt</m> et <m>\llt 1\,,\,-1\,,\,1\rgt</m>,
+      sont parallèles. C'est le cas si et seulement si <m>a=\frac{1}{2}</m>.
       </p></solution>
     </exercise>
 
@@ -553,7 +553,7 @@
       </p></answer>
 
       <solution><p>
-      The first order partial derivatives of <m>f</m> are
+      Les dérivées partielles d'ordre un de <m>f</m> sont
       <md alignment="alignat">
       <mrow>
       f_x(x,y) &amp; = -\frac{4xy}{{(x^2+y^2)}^2}\quad &amp;
@@ -565,19 +565,19 @@
       </mrow>
       </md>
       <!--TODO So, by Theorem <xref ref="thm_tan_plane_f"/>,
-      --> normal vector to the surface at <m>(x,y)=(-1,2)</m> is
+      -->Un vecteur normal à la surface en <m>(x,y)=(-1,2)</m> est
       <m>\llt \frac{8}{25}\,,\,-\frac{6}{25}\,,\,-1\rgt</m>.
-      As <m>f(-1,2)= \frac{4}{5}</m>, the tangent plane is
+      Comme <m>f(-1,2)= \frac{4}{5}</m>, le plan tangent est
       <md>
       <mrow>
       &amp;\llt \frac{8}{25}\,,\,-\frac{6}{25}\,,\,-1\rgt\cdot\llt x+1\,,\,y-2\,,\,
                z -\frac{4}{5}\rgt=0
       </mrow><mrow>
-       &amp; \quad \text{or}\quad
+       &amp; \quad \text{ou}\quad
       \frac{8}{25}x-\frac{6}{25}y-z=-\frac{8}{5}
       </mrow>
       </md>
-      and the normal line is
+      et la droite normale est
       <md>
       <mrow>
       \llt x,y,z\rgt = \llt -1,2,\frac{4}{5}\rgt
@@ -628,32 +628,32 @@
       </p></answer>
 
       <solution><p>
-      (a) The temperature gradient at <m>(3,2,1)</m> is
+      (a) Le gradient de la température en <m>(3,2,1)</m> est
       <md>
       <mrow>
       \vnabla T(3,2,1) = \llt 4x\,,\,2y\,,\,-2z\rgt\Big|_{(x,y,z)=(3,2,1)}
                        = \llt 12\,,\,4\,,\,-2\rgt
       </mrow>
       </md>
-      She wishes to fly in a direction that is perpendicular to <m>\vnabla T(3,2,1)</m>.
-      That is, she wishes to fly in a direction <m>\llt a\,,\,b\,,\,c\rgt</m>
-      that obeys
-      <me>
+      Il souhaite voler dans une direction perpendiculaire à <m>\vnabla T(3,2,1)</m>.
+      C'est-à-dire qu'il souhaite voler dans une direction <m>\llt a\,,\,b\,,\,c\rgt</m>
+      qui obéit à
+      <md>
       0 = \llt 12\,,\,4\,,\,-2\rgt\cdot \llt a\,,\,b\,,\,c\rgt
         = 12a+4b-2c
-      </me>
-      Any nonzero <m>\llt a\,,\,b\,,\,c\rgt</m> that obeys <m>12a+4b-2c=0</m>
-      is an allowed direction. Four allowed unit vectors are
-      <m>\pm\frac{\llt 0\,,\,1\,,\,2\rgt}{\sqrt{5}}</m> and
+      </md>
+      Tout vecteur non nul <m>\llt a\,,\,b\,,\,c\rgt</m> obéissant à <m>12a+4b-2c=0</m>
+      est une direction valide. Quatre vecteurs unitaires valides sont
+      <m>\pm\frac{\llt 0\,,\,1\,,\,2\rgt}{\sqrt{5}}</m> et
       <m>\pm\frac{\llt 1\,,\,-3\,,\,0\rgt}{\sqrt{10}}</m>.
       </p>
 
-      <p>(b) No they need not be the same. Four different explicit directions
-           were given in part (a).
+      <p>(b) Non, elles ne doivent pas nécessairement être les mêmes. Quatre directions explicites différentes
+           ont été données à la partie (a).
       </p>
 
-      <p>(c) To cool down as quickly as possible, she should move in the direction
-          opposite to the temperature gradient. A unit vector in that direction is
+      <p>(c) Pour refroidir le plus vite possible, il doit se déplacer dans la direction
+          opposée au gradient de la température. Un vecteur unitaire dans cette direction est
           <m>-\frac{\llt 6\,,\,2\,,\,-1\rgt}{\sqrt{41}}</m>.
       </p></solution>
     </exercise>
@@ -697,7 +697,7 @@
       </p></answer> -->
 
       <solution><p>
-      (a) The first order partial derivatives of <m>f</m> and <m>g</m> are
+      (a) Les dérivées partielles d'ordre un de <m>f</m> et <m>g</m> sont
       <md>
       <mrow>
       \pdiff{f}{x}(x,y,z)&amp;=  2e^{-(x^2 +y^2 +z^2)} -2x(2x + y)e^{-(x^2 +y^2 +z^2)}
@@ -719,20 +719,20 @@
       </mrow><mrow>&amp;\hskip2in\implies \pdiff{g}{z}(0,1,-1)=-1
       </mrow>
       </md>
-      so that gradients are
-      <me>
+      de sorte que les gradients sont
+      <md>
       \vnabla f(0,1,-1) =e^{-2}\llt 2,-1,2\rgt\qquad
       \vnabla g(0,1,-1) =\llt -1,1,-1\rgt
-      </me>
+      </md>
       </p>
 
-      <p>(b) The bird's velocity is the vector of length <m>6</m> in the direction of
-      <m>\vnabla f(0,1,-1)</m>, which is
-      <me>
+      <p>(b) La vitesse de l'oiseau est le vecteur de longueur <m>6</m> dans la direction de
+      <m>\vnabla f(0,1,-1)</m>, à savoir
+      <md>
       \vv= 6\frac{\llt 2,-1,2\rgt}{|\llt 2,-1,2\rgt|}
       =\llt 4,-2,4\rgt
-      </me>
-      The rate of change of <m>g</m> (per unit time) seen by the bird is
+      </md>
+      Le taux de variation de <m>g</m> (par unité de temps) perçu par l'oiseau est
       <md>
       <mrow>
       \vnabla g(0,1,-1) \cdot \vv
@@ -742,10 +742,9 @@
       </md>
       </p>
 
-      <p>(c) The direction of flight for the bat has to be perpendicular to both
-      <m>\vnabla f(0,1,-1) =e^{-2}\llt 2,-1,2\rgt</m> and
-      <m>\vnabla g(0,1,-1) =\llt -1,1,-1\rgt</m>. Any vector which is a non zero constant
-      times
+      <p>(c) La direction de vol de la chauve-souris doit être orthogonale à la fois à
+      <m>\vnabla f(0,1,-1) =e^{-2}\llt 2,-1,2\rgt</m> et à
+      <m>\vnabla g(0,1,-1) =\llt -1,1,-1\rgt</m>. Tout vecteur qui est un multiple non nul de
       <md>
       <mrow>
       \llt 2,-1,2\rgt \times \llt -1,1,-1\rgt
@@ -759,10 +758,10 @@
       =\llt -1 \,,\, 0 \,,\, 1 \rgt
       </mrow>
       </md>
-      is perpendicular to both <m>\vnabla f(0,1,-1)</m> and
-      <m>\vnabla g(0,1,-1)</m>. In addition, the direction of flight for the bat
-      must have a positive <m>z</m>-component. So any vector which is a (strictly)
-      positive constant times <m>\llt -1 \,,\, 0 \,,\, 1 \rgt</m> is fine.
+      est orthogonal à la fois à <m>\vnabla f(0,1,-1)</m> et à
+      <m>\vnabla g(0,1,-1)</m>. De plus, la direction de vol de la chauve-souris
+      doit avoir une composante en <m>z</m> positive. Ainsi, tout vecteur qui est un multiple
+      (strictement) positif de <m>\llt -1 \,,\, 0 \,,\, 1 \rgt</m> convient.
       </p></solution>
     
     </exercise>
@@ -794,16 +793,16 @@
       </p></answer>
 
       <solution><p>
-      (a) We are to find the rate of change of <m>T(x,y,z)</m> at <m>(1, 2, -1)</m>
-      in the direction <m>\llt 1, 1, 0\rgt - \llt 1, 2, -1\rgt = \llt 0,-1,1 \rgt</m>.
-      That rate of change (per unit distance) is the directional derivative
+      (a) Nous cherchons le taux de variation de <m>T(x,y,z)</m> en <m>(1, 2, -1)</m>
+      dans la direction <m>\llt 1, 1, 0\rgt - \llt 1, 2, -1\rgt = \llt 0,-1,1 \rgt</m>.
+      Ce taux de variation (par unité de distance) est la dérivée directionnelle
       <md>
       <mrow>
       \vD_{\frac{\llt 0,-1,1 \rgt}{\sqrt{2}}} T(1,2,-1)
       =\vnabla T(1,2,-1)\cdot \frac{\llt 0,-1,1 \rgt}{\sqrt{2}}
       </mrow>
       </md>
-      As
+      Comme
       <md>
       <mrow>
       \pdiff{T}{x}(x,y,z)&amp;= -20 x\,e^{-2x^2-y^2-3z^2} &amp;
@@ -816,7 +815,7 @@
          \pdiff{T}{z}(1,2,-1)&amp;= 30\, e^{-9}
       </mrow>
       </md>
-      the directional derivative
+      la dérivée directionnelle
       <md>
       <mrow>
       \vD_{\frac{\llt 0,-1,1 \rgt}{\sqrt{2}}} T(1,2,-1)
@@ -827,11 +826,11 @@
       </md>
       </p>
 
-      <p>(b) The direction of maximum rate of decrease is <m>-\vnabla T(1,2,-1)</m>.
-      A unit vector in that direction is <m>\frac{\llt 2,2,-3\rgt}{\sqrt{17}}</m>.
+      <p>(b) La direction de décroissance maximale est <m>-\vnabla T(1,2,-1)</m>.
+      Un vecteur unitaire dans cette direction est <m>\frac{\llt 2,2,-3\rgt}{\sqrt{17}}</m>.
       </p>
 
-      <p>(c) The maximum rate of decrease at <m>P</m> is
+      <p>(c) Le taux de décroissance maximal en <m>P</m> est
         <m>-|\vnabla T(1,2,-1)|=-10 e^{-9} |\llt -2,-2,3\rgt|
                             = -10\sqrt{17} e^{-9}</m>.
       </p></solution>
@@ -851,15 +850,15 @@
       </p></answer>
 
       <solution><p>
-      We are told that the direction of fastest increase for the
-      function <m>f(x,y)</m> at the origin is given by the vector <m>\llt 1, 2\rgt</m>.
-      This implies that <m>\vnabla f(0,0)</m> is parallel to <m>\llt 1, 2\rgt</m>.
-      This in turn implies that <m>\llt 1, 2\rgt</m> is normal to the level curve
-      of <m>f(x,y)</m> that passes through the origin. So <m>\llt 2, -1\rgt</m>, being
-      perpendicular to <m>\llt 1, 2\rgt</m>,  is tangent to the level curve of
-      <m>f(x,y)</m> that passes through the origin.
-      The unit vectors that are parallel to <m>\llt 2, -1\rgt</m>
-      are <m>\pm\frac{1}{\sqrt{5}}\llt 2, -1\rgt</m>.
+      On nous dit que la direction de croissance la plus rapide de la
+      fonction <m>f(x,y)</m> à l'origine est donnée par le vecteur <m>\llt 1, 2\rgt</m>.
+      Ceci implique que <m>\vnabla f(0,0)</m> est parallèle à <m>\llt 1, 2\rgt</m>.
+      Ceci implique à son tour que <m>\llt 1, 2\rgt</m> est normal à la courbe de niveau
+      de <m>f(x,y)</m> passant par l'origine. Ainsi, <m>\llt 2, -1\rgt</m>, étant
+      perpendiculaire à <m>\llt 1, 2\rgt</m>, est tangent à la courbe de niveau de
+      <m>f(x,y)</m> passant par l'origine.
+      Les vecteurs unitaires parallèles à <m>\llt 2, -1\rgt</m>
+      sont <m>\pm\frac{1}{\sqrt{5}}\llt 2, -1\rgt</m>.
       </p></solution>
     </exercise>
 
@@ -899,20 +898,20 @@
       </p></answer>
 
       <solution><p>
-      (a) The direction of motion at <m>s=1</m> is given by the tangent vector
-      <me>
+      (a) La direction du mouvement en <m>s=1</m> est donnée par le vecteur tangent
+      <md>
       \vr'(s)=\llt s^2,2,2s\rgt\big|_{s=1}=\llt 1,2,2\rgt
-      </me>
-      Since the length of the velocity vector must be <m>3</m>,
-      <me>
-      \text{velocity}=\vv=3\frac{\llt 1,2,2\rgt}{|\llt 1,2,2\rgt|}=\llt 1,2,2\rgt
-      </me>
+      </md>
+      Puisque la longueur du vecteur vitesse doit être <m>3</m>,
+      <md>
+      \text{vélocité}=\vv=3\frac{\llt 1,2,2\rgt}{|\llt 1,2,2\rgt|}=\llt 1,2,2\rgt
+      </md>
       </p>
 
-      <p>(b) The rate of change of temperature per unit distance felt by the
-      sparrow at <m>s=1</m> is <m>\vnabla T\big(\frac{1}{3},2,1\big)\cdot\frac{\vv}{|\vv|}</m>.
-       The rate of change of temperature per unit time felt by the
-      sparrow at <m>s=1</m> is
+      <p>(b) Le taux de variation de la température par unité de distance ressenti par le
+      moineau en <m>s=1</m> est <m>\vnabla T\big(\frac{1}{3},2,1\big)\cdot\frac{\vv}{|\vv|}</m>.
+       Le taux de variation de la température par unité de temps ressenti par le
+      moineau en <m>s=1</m> est
       <md>
       <mrow>
       \vnabla T\left(\frac{1}{3},2,1\right)\cdot\frac{\vv}{|\vv|}\ |\vv|
@@ -924,16 +923,16 @@
       </md>
       </p>
 
-      <p>(c) The temperature decreases at maximum rate in the direction
-      opposite the temperature gradient, which is (any positive constant times) <m>-\llt 2,2,4\rgt</m>.
+      <p>(c) La température décroît à un taux maximal dans la direction
+      opposée au gradient de la température, à savoir (n'importe quelle constante positive multipliée par) <m>-\llt 2,2,4\rgt</m>.
       </p>
 
-      <p>(d) The eagle is moving at right angles to the direction of motion
-      of the sparrow, which is <m>\llt 1,2,2\rgt</m>. As the eagle is also moving
-      in a direction for which the temperature remains constant, it must
-      be moving perpendicularly to the temperature gradient, <m>\llt 2,2,4\rgt</m>.
-      So the direction of the eagle must be (a posiitve constant times)
-      one of
+      <p>(d) L'aigle se déplace à angle droit par rapport à la direction du mouvement
+      du moineau, à savoir <m>\llt 1,2,2\rgt</m>. Comme l'aigle se déplace également
+      dans une direction pour laquelle la température demeure constante, il doit
+      se déplacer perpendiculairement au gradient de la température, <m>\llt 2,2,4\rgt</m>.
+      Ainsi, la direction de l'aigle doit être (une constante positive multipliée par)
+      l'un des vecteurs
       <md>
       <mrow>
          \pm\llt 1,2,2\rgt \times\llt 2,2,4\rgt
@@ -947,7 +946,7 @@
       =\pm\llt 4,0,-2\rgt
       </mrow>
       </md>
-      or equivalently, any positive constant times <m>\pm\llt 2,0,-1\rgt</m>.
+      ou, de manière équivalente, n'importe quelle constante positive multipliée par <m>\pm\llt 2,0,-1\rgt</m>.
       </p></solution>
     </exercise>
 
@@ -964,9 +963,9 @@
       </li>
       <li>
       Donnez l'équation du plan <m>T</m> tangent à la surface
-      <me>
+      <md>
       S = \Set{(x,y,z)}{f(x,y,z) = 1}
-      </me>
+      </md>
       au point <m>(1, 0, \pi/2)</m>.
       </li>
       <li>
@@ -974,9 +973,9 @@
       </li>
       <li>
       Trouvez l'angle entre le plan <m>T</m> et le plan
-      <me>
+      <md>
       P = \Set{(x,y,z)}{x + z = 0}.
-      </me>
+      </md>
       </li>
       </ol>
       </statement>
@@ -1007,8 +1006,8 @@
         </answer>
 
       <solution><p>
-      The first order partial derivatives of <m>f</m>, both at a general point
-      <m>(x,y,z)</m> and at the point <m>(1, 0, \pi/2)</m>, are
+      Les dérivées partielles d'ordre un de <m>f</m>, tant en un point général
+      <m>(x,y,z)</m> qu'au point <m>(1, 0, \pi/2)</m>, sont
       <md alignment="alignat">
       <mrow>
       f_x(x,y,z)&amp;= 2x\qquad &amp;
@@ -1023,32 +1022,32 @@
       </md>
       </p>
 
-      <p>(a) The rate of increase of <m>f</m> is largest in the direction of
-      <m>\vnabla f(1, 0, \pi/2)=\llt 2,0,0\rgt</m>. A unit vector in that direction
-      is <m>\vi</m>.
+      <p>(a) Le taux de croissance de <m>f</m> est maximal dans la direction de
+      <m>\vnabla f(1, 0, \pi/2)=\llt 2,0,0\rgt</m>. Un vecteur unitaire dans cette direction
+      est <m>\vi</m>.
       </p>
 
-      <p>(b) The gradient vector <m>\vnabla f(1, 0, \pi/2)=\llt 2,0,0\rgt</m> is a normal
-      vector to the surface <m>f=1</m> at <m>(1, 0, \pi/2)</m>. So the specified tangent
-      plane is
+      <p>(b) Le vecteur gradient <m>\vnabla f(1, 0, \pi/2)=\llt 2,0,0\rgt</m> est un vecteur
+      normal à la surface <m>f=1</m> en <m>(1, 0, \pi/2)</m>. Ainsi, le plan tangent demandé
+      est
       <md>
       <mrow>
-      \llt 2,0,0\rgt \cdot \llt x-1\,,\,y-0\,,\,z-\pi/2\rgt=0\qquad\text{or}\qquad
+      \llt 2,0,0\rgt \cdot \llt x-1\,,\,y-0\,,\,z-\pi/2\rgt=0\qquad\text{ou}\qquad
       x=1
       </mrow>
       </md>
       </p>
 
-      <p>(c) The vector from the point <m>(0,1,0)</m> to the point <m>(1,1,0)</m>, on <m>T</m>,
-      is <m>\llt 1,0,0\rgt</m>, which is perpendicular to <m>T</m>. So <m>(1,1,0)</m>
-      is the point on <m>T</m> nearest <m>(0,1,0)</m>  and the distance from <m>(0,1,0)</m> to <m>T</m>
-      is <m>|\llt 1,0,0\rgt|=1</m>.
+      <p>(c) Le vecteur du point <m>(0,1,0)</m> vers le point <m>(1,1,0)</m>, sur <m>T</m>,
+      est <m>\llt 1,0,0\rgt</m>, qui est perpendiculaire à <m>T</m>. Ainsi, <m>(1,1,0)</m>
+      est le point de <m>T</m> le plus proche de <m>(0,1,0)</m>, et la distance de <m>(0,1,0)</m> à <m>T</m>
+      est <m>|\llt 1,0,0\rgt|=1</m>.
       </p>
 
-      <p>(d) The vector <m>\llt 1,0,1\rgt</m> is perpendicular to the plane <m>x+z=0</m>.
-      So the angle between the planes <m>T</m> and <m>x+z=0</m> is the same as the angle
-      <m>\theta</m> between the vectors <m>\llt 1,0,0\rgt</m> and <m>\llt 1,0,1\rgt</m>,
-      which obeys
+      <p>(d) Le vecteur <m>\llt 1,0,1\rgt</m> est perpendiculaire au plan <m>x+z=0</m>.
+      Ainsi, l'angle entre les plans <m>T</m> et <m>x+z=0</m> est le même que l'angle
+      <m>\theta</m> entre les vecteurs <m>\llt 1,0,0\rgt</m> et <m>\llt 1,0,1\rgt</m>,
+      qui obéit à
       <md>
       <mrow>
       &amp; |\llt 1,0,0\rgt| \ |\llt 1,0,1\rgt|\ \cos\theta
@@ -1105,10 +1104,10 @@
       </answer>
 
       <solution><p>
-      (a) We are being asked for the directional derivative of
-      <m>T</m> in the direction of the  unit vector from <m>P=(2,1,1)</m> to <m>Q=(3,2,2)</m>,
-      which is <m>\frac{\llt 1,1,1\rgt}{\sqrt{3}}</m>. That directional
-      derivative is
+      (a) On nous demande la dérivée directionnelle de
+      <m>T</m> dans la direction du vecteur unitaire de <m>P=(2,1,1)</m> vers <m>Q=(3,2,2)</m>,
+      à savoir <m>\frac{\llt 1,1,1\rgt}{\sqrt{3}}</m>. Cette dérivée
+      directionnelle est
       <md>
       <mrow>
       \vnabla T(P)\cdot \frac{\llt 1,1,1\rgt}{\sqrt{3}}
@@ -1118,7 +1117,7 @@
       </md>
       </p>
 
-      <p>(b) The linear approximation to <m>T</m> at <m>P</m> is
+      <p>(b) L'approximation linéaire de <m>T</m> en <m>P</m> est
       <md>
       <mrow>
       T(2+\De x\,,\,1+\De y\,,\,1+\De z)
@@ -1127,7 +1126,7 @@
          &amp;= 5 +\De x +2\,\De y +3\,\De z
       </mrow>
       </md>
-      Applying this with <m>\De x = -0.1</m>, <m>\De y = 0</m>, <m>\De z=0.2</m> gives
+      En appliquant ceci avec <m>\De x = -0.1</m>, <m>\De y = 0</m>, <m>\De z=0.2</m>, on obtient
       <md>
       <mrow>
       T(1.9\,,\,1\,,\,1.2)
@@ -1137,11 +1136,11 @@
       </md>
       </p>
 
-      <p>(c) For the rate of change of <m>T</m> to be zero, the direction of
-      motion must be perpendicular to <m>\vnabla T(P) = \llt 1,2,3\rgt</m>.
-      For the rate of change of <m>S</m> to also be zero, the direction of
-      motion must also be perpendicular to <m>\vnabla S(P) = \llt 1,0,1\rgt</m>.
-      The vector
+      <p>(c) Pour que le taux de variation de <m>T</m> soit nul, la direction du
+      mouvement doit être perpendiculaire à <m>\vnabla T(P) = \llt 1,2,3\rgt</m>.
+      Pour que le taux de variation de <m>S</m> soit aussi nul, la direction du
+      mouvement doit également être perpendiculaire à <m>\vnabla S(P) = \llt 1,0,1\rgt</m>.
+      Le vecteur
       <md>
       <mrow>
       \llt 1,2,3\rgt \times \llt 1,0,1\rgt
@@ -1154,8 +1153,8 @@
       =\llt 2,2,-2\rgt
       </mrow>
       </md>
-      is perpendicular to both <m>\vnabla T(P)</m> and <m>\vnabla S(P)</m>.
-      So the desired unit vectors are <m>\pm\frac{\llt 1,1,-1\rgt}{\sqrt{3}}</m>.
+      est perpendiculaire à la fois à <m>\vnabla T(P)</m> et à <m>\vnabla S(P)</m>.
+      Les vecteurs unitaires demandés sont donc <m>\pm\frac{\llt 1,1,-1\rgt}{\sqrt{3}}</m>.
       </p></solution>
     </exercise>
 
@@ -1163,10 +1162,10 @@
     <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
       <statement><p>
       Soit <m>f(x,y)</m> une fonction différentiable avec <m>f(1,2)=7</m>. Soient
-      <me>
+      <md>
       \vu=\frac{3}{5}\,\vi+\frac{4}{5}\,\vj,\qquad
       \vv=\frac{3}{5}\,\vi-\frac{4}{5}\,\vj
-      </me>
+      </md>
       des vecteurs unitaires. Supposons qu'il est connu que les dérivées directionnelles
       <m>D_\vu f(1,2)</m> et <m>D_\vv f(1,2)</m> sont égales à <m>10</m> et <m>2</m> respectivement.
       <ol marker = "(a)">
@@ -1215,8 +1214,8 @@
       <m>b=5</m>, tel que voulu.
       </p>
 
-      <p>(b) The rate of change of <m>f</m> at <m>(1,2)</m> in the direction
-      of the vector <m>\vi+2\vj</m> is
+      <p>(b) Le taux de variation de <m>f</m> en <m>(1,2)</m> dans la direction
+      du vecteur <m>\vi+2\vj</m> est
       <md>
       <mrow>
       \frac{\vi+2\vj}{|\vi+2\vj|}\cdot \vnabla f(1,2)
@@ -1226,7 +1225,7 @@
       </md>
       </p>
 
-      <p>(c) Applying (???), which is
+      <p>(c) En appliquant l'approximation linéaire, à savoir
       <md>
       <mrow>
       f\big(x_0+\De x\,,\,y_0+\De y\big)
@@ -1235,7 +1234,7 @@
              + \pdiff{f}{y}\big(x_0\,,\,y_0\big)\,\De y
       </mrow>
       </md>
-      with <m>x_0=1</m>, <m>\De x=0.01</m>, <m>y_0=2</m>, and <m>\De y=0.05</m>, gives
+      avec <m>x_0=1</m>, <m>\De x=0.01</m>, <m>y_0=2</m>, et <m>\De y=0.05</m>, on obtient
       <md>
       <mrow>
       f(1.01,2.05)
@@ -1272,21 +1271,21 @@
       </p></answer>
 
       <solution><p>
-      A normal vector to the surface <m>x^2 + 9y^2 + 4z^2 = 17</m>
-      at the point <m>(x,y,z)</m> is <m>\llt 2x\,,\, 18y\,,\,8z\rgt</m>.
-      A normal vector to the plane <m>x - 8z = 0</m> is <m>\llt 1\,,\,0\,,\,-8\rgt</m>.
-      So we want <m>\llt 2x\,,\, 18y\,,\,8z\rgt</m> to be parallel to
-      <m>\llt 1\,,\,0\,,\,-8\rgt</m>, i.e. to be a nonzero constant times
-      <m>\llt 1\,,\,0\,,\,-8\rgt</m>. This is the case whenever <m>y=0</m> and <m>z=-2x</m>
-      with <m>x\ne 0</m>. In addition, we want <m>(x,y,z)</m> to lie on the surface
-      <m>x^2 + 9y^2 + 4z^2 = 17</m>. So we want <m>y=0</m>, <m>z=-2x</m> and
+      Un vecteur normal à la surface <m>x^2 + 9y^2 + 4z^2 = 17</m>
+      au point <m>(x,y,z)</m> est <m>\llt 2x\,,\, 18y\,,\,8z\rgt</m>.
+      Un vecteur normal au plan <m>x - 8z = 0</m> est <m>\llt 1\,,\,0\,,\,-8\rgt</m>.
+      On veut donc que <m>\llt 2x\,,\, 18y\,,\,8z\rgt</m> soit parallèle à
+      <m>\llt 1\,,\,0\,,\,-8\rgt</m>, c'est-à-dire soit une constante non nulle multipliée par
+      <m>\llt 1\,,\,0\,,\,-8\rgt</m>. C'est le cas chaque fois que <m>y=0</m> et <m>z=-2x</m>
+      avec <m>x\ne 0</m>. De plus, on veut que <m>(x,y,z)</m> se trouve sur la surface
+      <m>x^2 + 9y^2 + 4z^2 = 17</m>. On veut donc <m>y=0</m>, <m>z=-2x</m> et
       <md>
       <mrow>
       17= x^2 + 9y^2 + 4z^2 =x^2 +4(-2x)^2=17x^2
       \implies x=\pm 1
       </mrow>
       </md>
-      So the allowed points are <m>\pm(1,0,-2)</m>.
+      Les points valides sont donc <m>\pm(1,0,-2)</m>.
       </p></solution>
     </exercise>
 
@@ -1310,23 +1309,23 @@
         <m>\big(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>
       </p></answer>
       <solution><p>
-      The equation of <m>S</m> is of the form <m>G(x,y,z) = x^2 + 2y^2 + 2y-z = 1</m>.
-      So one normal vector to <m>S</m> at the point <m>(x_0,y_0,z_0)</m> is
-      <me>
+      L'équation de <m>S</m> est de la forme <m>G(x,y,z) = x^2 + 2y^2 + 2y-z = 1</m>.
+      Un vecteur normal à <m>S</m> au point <m>(x_0,y_0,z_0)</m> est donc
+      <md>
       \vnabla G(x_0,y_0,z_0)  = 2x_0\,\vi + (4y_0+2)\,\vj -\vk
-      </me>
-      and the normal line to <m>S</m> at <m>(x_0,y_0,z_0)</m> is
-      <me>
+      </md>
+      et la droite normale à <m>S</m> en <m>(x_0,y_0,z_0)</m> est
+      <md>
       (x,y,z) = (x_0,y_0,z_0) +t\llt 2x_0\,,\,4y_0+2\,,\, -1\rgt
-      </me>
-      For this normal line to pass through the origin, there must be a <m>t</m>
-      with
+      </md>
+      Pour que cette droite normale passe par l'origine, il doit exister un <m>t</m>
+      tel que
       <md>
       <mrow>
       (0,0,0) = (x_0,y_0,z_0) +t\llt 2x_0\,,\,4y_0+2\,,\, -1\rgt
       </mrow>
       </md>
-      or
+      ou
       <md>
       <mrow>
       x_0 + 2x_0\,t &amp; =0 \tag{E1}
@@ -1336,8 +1335,8 @@
       z_0 -t &amp;=0 \tag{E3}
       </mrow>
       </md>
-      Equation (E3) forces <m>t=z_0</m>. Substituting this into equations (E1) and (E2)
-      gives
+      L'équation (E3) force <m>t=z_0</m>. En substituant ceci dans les équations (E1) et (E2),
+      on obtient
       <md>
       <mrow>
       x_0(1+2z_0) &amp; =0 \tag{E1}
@@ -1345,13 +1344,13 @@
       y_0 +(4y_0+2)z_0 &amp;=0 \tag{E2}
       </mrow>
       </md>
-      The question specifies that <m>x_0\ne 0</m>, so (E1) forces <m>z_0=-\frac{1}{2}</m>.
-      Substituting <m>z_0=-\frac{1}{2}</m> into (E2) gives
-      <me>
+      L'énoncé précise que <m>x_0\ne 0</m>, donc (E1) force <m>z_0=-\frac{1}{2}</m>.
+      En substituant <m>z_0=-\frac{1}{2}</m> dans (E2), on obtient
+      <md>
       -y_0-1=0 \implies y_0=-1
-      </me>
-      Finally <m>x_0</m> is determined by the requirement that <m>(x_0,y_0,z_0)</m>
-      must lie on <m>S</m> and so must obey
+      </md>
+      Finalement, <m>x_0</m> est déterminé par la condition que <m>(x_0,y_0,z_0)</m>
+      doit se trouver sur <m>S</m>, et doit donc obéir à
       <md>
       <mrow>
       z_0 = x_0^2 + 2y_0^2 + 2y_0 - 1
@@ -1360,9 +1359,9 @@
        &amp;\implies x_0^2 = \frac{1}{2}
       </mrow>
       </md>
-      So the allowed points <m>P</m> are
+      Les points <m>P</m> valides sont donc
         <m>\big(\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>
-      and
+      et
         <m>\big(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>.
       </p></solution>
     </exercise>
@@ -1384,22 +1383,22 @@
       </p></answer>
 
       <solution><p>
-      Let <m>(x_0,y_0,z_0)</m>  be a point on the hyperboloid <m>z^2=4x^2+y^2-1</m>
-      where the tangent plane is parallel to the plane <m>2x-y+z=0</m>. A normal vector
-      to the plane <m>2x-y+z=0</m> is <m>\llt 2,-1,1\rgt</m>. Because the hyperboloid is
-      <m>G(x,y,z)=4x^2+y^2-z^2-1</m> and <m>\vnabla G(x,y,z) = \llt 8x,2y,-2z\rgt</m>,
-       a normal vector to the hyperboloid at <m>(x_0,y_0,z_0)</m> is
+      Soit <m>(x_0,y_0,z_0)</m> un point sur l'hyperboloïde <m>z^2=4x^2+y^2-1</m>
+      où le plan tangent est parallèle au plan <m>2x-y+z=0</m>. Un vecteur normal
+      au plan <m>2x-y+z=0</m> est <m>\llt 2,-1,1\rgt</m>. Puisque l'hyperboloïde est
+      <m>G(x,y,z)=4x^2+y^2-z^2-1</m> et que <m>\vnabla G(x,y,z) = \llt 8x,2y,-2z\rgt</m>,
+       un vecteur normal à l'hyperboloïde en <m>(x_0,y_0,z_0)</m> est
       <m>\vnabla G(x_0,y_0,z_0)=\llt 8x_0,2y_0,-2z_0\rgt</m>.
-      So <m>(x_0,y_0,z_0)</m> satisfies the required conditions if and only if there is a nonzero <m>t</m> obeying
+      Ainsi, <m>(x_0,y_0,z_0)</m> vérifie les conditions demandées si et seulement s'il existe un <m>t</m> non nul obéissant à
       <md>
       <mrow>
-      &amp;\llt 8x_0,2y_0,-2z_0\rgt =t\llt 2,-1,1\rgt \text{ and }
+      &amp;\llt 8x_0,2y_0,-2z_0\rgt =t\llt 2,-1,1\rgt \text{ et }
        z_0^2=4x_0^2+y_0^2-1
       </mrow><mrow>
-      &amp;\iff x_0=\frac{t}{4},\ y_0=z_0=-\frac{t}{2}\text{ and }
+      &amp;\iff x_0=\frac{t}{4},\ y_0=z_0=-\frac{t}{2}\text{ et }
        z_0^2=4x_0^2+y_0^2-1
       </mrow><mrow>
-      &amp;\iff \frac{t^2}{4}= \frac{t^2}{4}+ \frac{t^2}{4}-1\text{ and }
+      &amp;\iff \frac{t^2}{4}= \frac{t^2}{4}+ \frac{t^2}{4}-1\text{ et }
            x_0=\frac{t}{4},\ y_0=z_0=-\frac{t}{2}
       </mrow><mrow>
       &amp; \iff t=\pm 2\qquad
@@ -1431,32 +1430,32 @@
       </p></answer>
 
       <solution><p>
-      One vector normal to the surface <m>F(x,y,z)=4x^2+9y^2-z^2=0</m> at <m>(2,1,-5)</m> is
+      Un vecteur normal à la surface <m>F(x,y,z)=4x^2+9y^2-z^2=0</m> en <m>(2,1,-5)</m> est
       <md>
       <mrow>
       \vnabla F(2,1,-5) = \llt 8x,18y,-2z\rgt\Big|_{(2,1,-5)}=\llt 16,18,10\rgt
       </mrow>
       </md>
-      One vector normal to the surface <m>G(x,y,z)=6x+3y+2z=5</m> at
-      <m>(2,1,-5)</m> is
+      Un vecteur normal à la surface <m>G(x,y,z)=6x+3y+2z=5</m> en
+      <m>(2,1,-5)</m> est
       <md>
       <mrow>
       \vnabla G(2,1,-5) = \llt 6,3,2\rgt
       </mrow>
       </md>
-      Now
+      Or
       <ul>
       <li>
-      The curve lies in the surface <m>z^2=4x^2+9y^2</m>. So the tangent vector to the
-      curve at <m>(2,1,-5)</m> is perpendicular to the normal vector
+      La courbe se trouve sur la surface <m>z^2=4x^2+9y^2</m>. Donc le vecteur tangent à la
+      courbe en <m>(2,1,-5)</m> est perpendiculaire au vecteur normal
       <m>\frac{1}{2}\llt 16,18,10\rgt=\llt 8,9,5\rgt</m>.
       </li>
       <li>
-      The curve also lies in the surface <m>6x+3y+2z=5</m>. So the tangent vector to the
-      curve at <m>(2,1,-5)</m> is also perpendicular to the normal vector <m>\llt 6,3,2\rgt</m>.
+      La courbe se trouve également sur la surface <m>6x+3y+2z=5</m>. Donc le vecteur tangent à la
+      courbe en <m>(2,1,-5)</m> est également perpendiculaire au vecteur normal <m>\llt 6,3,2\rgt</m>.
       </li>
       <li>
-      So the tangent vector to the curve at <m>(2,1,-5)</m> is parallel to
+      Ainsi, le vecteur tangent à la courbe en <m>(2,1,-5)</m> est parallèle à
       <md>
       <mrow>
       \llt 8,9,5\rgt\times \llt 6,3,2\rgt
@@ -1472,20 +1471,20 @@
       </md>
       </li>
       </ul>
-      The desired vectors are
-      <me>
+      Les vecteurs demandés sont
+      <md>
       \pm\sqrt{3}\frac{\llt 3,14,-30\rgt}{|\llt 3,14,-30\rgt|}
       =\pm\sqrt{\frac{3}{1105}}\llt 3,14,-30\rgt
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
     <exercise>
       <statement><p>
       Trouvez tous les plans horizontaux qui sont tangent à la surface d'équation
-      <me>
+      <md>
       z=xy e^{-(x^2+y^2)/2}
-      </me>
+      </md>
       Quelle est la plus petite et la plus grande valeur de <m>z</m> sur cette surface?
       </p></statement>
 
@@ -1499,8 +1498,8 @@
       </p></answer>
 
       <solution><p>
-      Let <m>(x_0,y_0,z_0)</m> be any point on the surface. A vector
-      normal to the surface at <m>(x_0,y_0,z_0)</m> is
+      Soit <m>(x_0,y_0,z_0)</m> un point quelconque sur la surface. Un vecteur
+      normal à la surface en <m>(x_0,y_0,z_0)</m> est
       <md>
       <mrow>
       &amp;\vnabla\Big(xy e^{-(x^2+y^2)/2}-z\Big)\bigg|_{(x_0,y_0,z_0)}
@@ -1509,26 +1508,26 @@
             x_0 e^{-(x_0^2+y_0^2)/2}-x_0y_0^2 e^{-(x_0^2+y_0^2)/2},-1\rgt
       </mrow>
       </md>
-      The tangent plane to the surface at <m>(x_0,y_0,z_0)</m> is horizontal
-      if and only if this vector is vertical, which is the case
-      if and only if its <m>x</m>- and <m>y</m>-components are
-      zero, which in turn is the case if and only if
+      Le plan tangent à la surface en <m>(x_0,y_0,z_0)</m> est horizontal
+      si et seulement si ce vecteur est vertical, ce qui est le cas
+      si et seulement si ses composantes en <m>x</m> et en <m>y</m> sont
+      nulles, ce qui à son tour est le cas si et seulement si
       <md>
       <mrow>
-      &amp;y_0(1-x_0^2)=0\text{ and }x_0(1-y_0^2)=0
+      &amp;y_0(1-x_0^2)=0\text{ et }x_0(1-y_0^2)=0
       </mrow><mrow>
-      &amp;\iff\big\{y_0=0\text{ or }x_0=1\text{ or }x_0=-1\big\}
-         \text{ and }\big\{x_0=0\text{ or }y_0=1\text{ or }y_0=-1\big\}
+      &amp;\iff\big\{y_0=0\text{ ou }x_0=1\text{ ou }x_0=-1\big\}
+         \text{ et }\big\{x_0=0\text{ ou }y_0=1\text{ ou }y_0=-1\big\}
       </mrow><mrow>
-      &amp;\iff (x_0,y_0)=(0,0)\text{ or }(1,1)\text{ or }(1,-1)
-         \text{ or }(-1,1)\text{ or }(-1,-1)
+      &amp;\iff (x_0,y_0)=(0,0)\text{ ou }(1,1)\text{ ou }(1,-1)
+         \text{ ou }(-1,1)\text{ ou }(-1,-1)
       </mrow>
       </md>
-      The values of <m>z_0</m> at these points are <m>0</m>, <m>e^{-1}</m>, <m>-e^{-1}</m>, <m>-e^{-1}</m>
-      and <m>e^{-1}</m>, respectively. So the horizontal tangent planes are
-      <m>z=0</m>, <m>z=e^{-1}</m> and <m>z=-e^{-1}</m>.
-      At the highest and lowest points of the surface, the tangent plane is horizontal.
-      So the largest and smallest values of <m>z</m> are <m>e^{-1}</m> and <m>-e^{-1}</m>, respectively.
+      Les valeurs de <m>z_0</m> en ces points sont <m>0</m>, <m>e^{-1}</m>, <m>-e^{-1}</m>, <m>-e^{-1}</m>
+      et <m>e^{-1}</m>, respectivement. Les plans horizontaux tangents sont donc
+      <m>z=0</m>, <m>z=e^{-1}</m> et <m>z=-e^{-1}</m>.
+      Aux points le plus haut et le plus bas de la surface, le plan tangent est horizontal.
+      Les valeurs la plus grande et la plus petite de <m>z</m> sont donc <m>e^{-1}</m> et <m>-e^{-1}</m>, respectivement.
       </p>
 
       </solution>
@@ -1537,9 +1536,9 @@
     <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
       <statement><p>
       Soit <m>S</m> la surface
-      <me>
+      <md>
       xy-2x+yz+x^2+y^2+z^3=7
-      </me>
+      </md>
       <ol marker = "(a)">
       <li>
       Trouvez le plan tangent et la droite normale à la surface <m>S</m>
@@ -1575,7 +1574,7 @@
 
       <solution><p>
       (a)
-       A normal vector to the surface at <m>(0,2,1)</m> is
+       Un vecteur normal à la surface en <m>(0,2,1)</m> est
       <md>
       <mrow>
       &amp;\vnabla\big(xy-2x+yz+x^2+y^2+z^3-7\big)\big|_{(0,2,1)}
@@ -1585,23 +1584,23 @@
       &amp;\hskip0.5in=\llt 0, 5, 5\rgt
       </mrow>
       </md>
-      So the tangent plane is
+      Le plan tangent est donc
       <md>
       <mrow>
-      0(x-0)+5(y-2)+5(z-1)=0\text{ or }y+z=3
+      0(x-0)+5(y-2)+5(z-1)=0\text{ ou }y+z=3
       </mrow>
       </md>
-      The vector parametric equations for the normal line are
-      <me>
+      Les équations paramétriques vectorielles de la droite normale sont
+      <md>
       \vr(t)=\llt 0,2,1\rgt+t\llt 0,5,5\rgt
-      </me>
+      </md>
       </p>
 
-      <p>(b) Differentiating
-      <me>
+      <p>(b) En dérivant
+      <md>
       xy-2x+y\,z(x,y)+x^2+y^2+z(x,y)^3=7
-      </me>
-      gives
+      </md>
+      on obtient
       <md>
       <mrow>
       y-2+y\,z_x(x,y)+2x+3z(x,y)^2z_x(x,y)&amp;=0
@@ -1615,11 +1614,11 @@
       z_y(x,y)=-\frac{x+2y+z(x,y)}{y+3z(x,y)^2}
       </mrow>
       </md>
-      In particular, at <m>(0,2,1)</m>, <m>z_y(0,2)=-\frac{4+1}{2+3}=-1</m>.
+      En particulier, en <m>(0,2,1)</m>, <m>z_y(0,2)=-\frac{4+1}{2+3}=-1</m>.
       </p>
 
       <p>(c)
-      Differentiating <m>z_x</m> with respect to <m>y</m> gives
+      En dérivant <m>z_x</m> par rapport à <m>y</m>, on obtient
       <md>
       <mrow>
       &amp;z_{xy}(x,y)
@@ -1631,8 +1630,8 @@
       \left(1-6z(x,y)\frac{x+2y+z(x,y)}{y+3z(x,y)^2}\right)
       </mrow>
       </md>
-      As an alternate solution, we could also  differentiate <m>z_y</m> with respect
-      to <m>x</m>. This gives
+      Comme solution alternative, on pourrait aussi dériver <m>z_y</m> par rapport
+      à <m>x</m>. On obtient ainsi
       <md>
       <mrow>
       z_{yx}(x,y)
@@ -1684,24 +1683,24 @@
 
       <solution><p>
       (a)
-      A vector perpendicular to <m>x^2+z^2=10</m> at <m>(1,1,3)</m> is
-      <me>
+      Un vecteur perpendiculaire à <m>x^2+z^2=10</m> en <m>(1,1,3)</m> est
+      <md>
       \vnabla(x^2+z^2)\big|_{(1,1,3)}
       =(2x\vi+2z\vk)\big|_{(1,1,3)}
-      =2\vi+6\vk\hbox{ or }
+      =2\vi+6\vk\hbox{ ou }
       \frac{1}{2} \llt 2,0,6\rgt=\llt 1,0,3\rgt
-      </me>
+      </md>
       </p>
 
-      <p>(b) A vector perpendicular to <m>y^2+z^2=10</m> at <m>(1,1,3)</m> is
-      <me>
+      <p>(b) Un vecteur perpendiculaire à <m>y^2+z^2=10</m> en <m>(1,1,3)</m> est
+      <md>
       \vnabla(y^2+z^2)\big|_{(1,1,3)}
       =(2y\vj+2z\vk)\big|_{(1,1,3)}
-      =2\vj+6\vk\hbox{ or }\frac{1}{2} \llt 0,2,6\rgt=\llt 0,1,3\rgt
-      </me>
-      A vector is tangent to the specified curve at the specified point if and only
-      if it  perpendicular to both <m>(1,0,3)</m> and <m>(0,1,3)</m>. One such vector is
-      <me>
+      =2\vj+6\vk\hbox{ ou }\frac{1}{2} \llt 0,2,6\rgt=\llt 0,1,3\rgt
+      </md>
+      Un vecteur est tangent à la courbe donnée au point donné si et seulement
+      s'il est perpendiculaire à la fois à <m>(1,0,3)</m> et à <m>(0,1,3)</m>. Un tel vecteur est
+      <md>
       \llt 0,1,3\rgt\times\llt1,0,3\rgt
       =\det\left[\begin{matrix}
                            \vi &amp; \vj &amp; \vk \\
@@ -1709,27 +1708,27 @@
                            1   &amp;  0  &amp; 3
                       \end{matrix}\right]
       =\llt 3,3,-1\rgt
-      </me>
+      </md>
       </p>
 
-      <p>(c) The specified tangent line passes through <m>(1,1,3)</m> and has direction
-      vector <m>\llt 1,1,3\rgt</m> and so has vector parametric equation
-      <me>
+      <p>(c) La droite tangente demandée passe par <m>(1,1,3)</m> et a pour vecteur
+      directeur <m>\llt 3,3,-1\rgt</m>; son équation paramétrique vectorielle est donc
+      <md>
       \vr(t)=\llt 1,1,3\rgt+t\llt 3,3,-1\rgt
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
     <exercise> <!-- <title><fromexam>M200 2000A</fromexam></title> -->
       <statement><p>
       Soit <m>P</m> le point où la courbe
-      <me>
+      <md>
       \vr(t) = t^3\,\vi + t\,\vj + t^2\,\vk,\qquad (0   \lt \infty)
-      </me>
+      </md>
       intersecte la surface
-      <me>
+      <md>
       z^3 + xyz -2 = 0
-      </me>
+      </md>
       Trouvez l'angle (aigu) entre la courbe et la surface en <m>P</m>.
       </p></statement>
 
@@ -1743,7 +1742,7 @@
       </p></answer>
 
       <solution><p>
-      <m>\vr(t)=\llt x(t)\,,\,y(t)\,,\,z(t)\rgt</m> intersects <m>z^3 + xyz -2 = 0</m> when
+      <m>\vr(t)=\llt x(t)\,,\,y(t)\,,\,z(t)\rgt</m> coupe <m>z^3 + xyz -2 = 0</m> lorsque
       <md>
       <mrow>
       z(t)^3+x(t)\,y(t)\,z(t)-2=0&amp;\iff \big(t^2\big)^3 + \big(t^3)(t)\big(t^2\big)-2=0
@@ -1753,18 +1752,18 @@
        &amp;\iff t=1
       </mrow>
       </md>
-      since <m>t</m> is required to be positive.
-      The direction vector for the curve at <m>t=1</m> is
-      <me>
+      puisque <m>t</m> doit être positif.
+      Le vecteur directeur de la courbe en <m>t=1</m> est
+      <md>
       \vr'(1)=3\,\vi+\vj+2\,\vk
-      </me>
-      A normal vector for the surface at <m>\vr(1)=\llt 1,1,1\rgt</m> is
-      <me>
+      </md>
+      Un vecteur normal à la surface en <m>\vr(1)=\llt 1,1,1\rgt</m> est
+      <md>
       \vnabla(z^3+xyz)\big|_{(1,1,1)}=[yz\vi+xz\vj+(3z^2+xy)\vk]_{(1,1,1)}
       =\vi+\vj+4\vk
-      </me>
-      The angle <m>\theta</m> between the curve and the normal vector to the surface
-      is determined by
+      </md>
+      L'angle <m>\theta</m> entre la courbe et le vecteur normal à la surface
+      est déterminé par
       <md>
       <mrow>
       \big|\llt 3,1,2\rgt\big|\,\big|\llt 1,1,4\rgt\big|\cos\theta
@@ -1778,8 +1777,8 @@
       &amp;\iff \theta=40.89^\circ
       </mrow>
       </md>
-      The angle between the curve and the surface is
-      <m>90-40.89=49.11^\circ</m> (to two decimal places).
+      L'angle entre la courbe et la surface est
+      <m>90-40.89=49.11^\circ</m> (à deux décimales près).
       </p></solution>
     </exercise>
 
@@ -1802,8 +1801,8 @@
       </p></answer>
 
       <solution><p>
-      Let <m>(x,y,z)</m> be any point on the paraboloid <m>z=x^2+y^2</m>. The square of the
-      distance from <m>(1,1,0)</m> to this point is
+      Soit <m>(x,y,z)</m> un point quelconque sur le paraboloïde <m>z=x^2+y^2</m>. Le carré de la
+      distance de <m>(1,1,0)</m> à ce point est
       <md>
       <mrow>
       D(x,y)&amp;=(x-1)^2+(y-1)^2+z^2
@@ -1811,10 +1810,10 @@
       &amp;=(x-1)^2+(y-1)^2+{(x^2+y^2)}^2
       </mrow>
       </md>
-      We wish to minimize <m>D(x,y)</m>. That is, to find the lowest point on the
-      graph <m>z=D(x,y)</m>. At this lowest point, the tangent plane to <m>z=D(x,y)</m>
-      is horizontal. So at the minimum, the normal vector to <m>z=D(x,y)</m>
-      has <m>x</m> and <m>y</m> components zero. So
+      Nous souhaitons minimiser <m>D(x,y)</m>, c'est-à-dire trouver le point le plus bas sur le
+      graphe <m>z=D(x,y)</m>. En ce point le plus bas, le plan tangent à <m>z=D(x,y)</m>
+      est horizontal. Ainsi, au minimum, le vecteur normal à <m>z=D(x,y)</m>
+      a des composantes en <m>x</m> et en <m>y</m> nulles. Donc
       <md alignment="alignat">
       <mrow>
       0&amp;=\pdiff{D}{x}(x,y)&amp;&amp;= 2(x-1)+2(x^2+y^2)(2x)
@@ -1822,29 +1821,29 @@
       0&amp;=\pdiff{D}{y}(x,y)&amp;&amp;= 2(y-1)+2(x^2+y^2)(2y)
       </mrow>
       </md>
-      By symmetry (or multiplying the first equation by <m>y</m>, multiplying the
-      second equation by <m>x</m> and subtracting) the solution will have <m>x=y</m>
-      with
-      <me>
+      Par symétrie (ou en multipliant la première équation par <m>y</m>, en multipliant la
+      deuxième par <m>x</m> et en soustrayant), la solution vérifie <m>x=y</m>,
+      avec
+      <md>
       0=2(x-1)+2(x^2+x^2)(2x)=8x^3+2x-2
-      </me>
-      Observe that the value of <m>8x^3+2x-2=2(4x^3+x-1)</m> at <m>x=\frac{1}{2}</m> is <m>0</m>.
-      (See Appendix A.16 of the CLP-2 text for some
-      useful tricks that can help you guess roots of polynomials with
-      integer coefficients.) So <m>\big(x-\frac{1}{2}\big)</m> is a factor of
-      <me>
+      </md>
+      Remarquons que la valeur de <m>8x^3+2x-2=2(4x^3+x-1)</m> en <m>x=\frac{1}{2}</m> est <m>0</m>.
+      (Voir l'annexe A.16 du texte CLP-2 pour quelques
+      trucs utiles pour deviner les racines de polynômes à
+      coefficients entiers.) Ainsi, <m>\big(x-\frac{1}{2}\big)</m> est un facteur de
+      <md>
       4x^3+x-1
       ={\textstyle 4\big(x^3+\frac{x}{4}-\frac{1}{4}\big)
                   =4\big(x-\frac{1}{2}\big)\big(x^2+\half x+\half\big)}
-      </me>
-      and the minimizing <m>(x,y)</m> obeys <m>x=y</m> and
-      <me>
+      </md>
+      et le couple <m>(x,y)</m> qui minimise obéit à <m>x=y</m> et
+      <md>
       0=8x^3+2x-2
       =8\big(x-\half\big)\big(x^2+\half x+\half\big)=0
-      </me>
-      By the quadratic root formula, <m>x^2+\half x+\half</m> has no real roots, so
-      the only solution is <m>x=y=\half</m>, <m>z=\big(\half\big)^2+\big(\half\big)^2=\half</m>
-      and the distance is <m>\sqrt{\big(\half-1\big)^2+\big(\half-1\big)^2
+      </md>
+      En vertu de la formule quadratique, <m>x^2+\half x+\half</m> n'a pas de racine réelle, de sorte que
+      la seule solution est <m>x=y=\half</m>, <m>z=\big(\half\big)^2+\big(\half\big)^2=\half</m>
+      et la distance est <m>\sqrt{\big(\half-1\big)^2+\big(\half-1\big)^2
       +\big(\half\big)^2}=\frac{\sqrt{3}}{2}</m>.
       </p></solution>
     </exercise>
@@ -1880,11 +1879,11 @@
           Le vecteur tangent à <m>C</m> en <m>\vr_0</m> est
           <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m>, donc les équations paramétriques pour
           la droite tangente à <m>C</m> en <m>\vr_0</m> sont
-          <me>
+          <md>
           x-x_0 = t x'(t_0)\qquad
           y-y_0 = t y'(t_0)\qquad
           z-z_0 = t z'(t_0)
-          \tag{$E_1$}</me>
+          \tag{$E_1$}</md>
           </li>
           <li>
           Le gradient
@@ -1893,12 +1892,12 @@
           \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> est un vecteur normal
           à la surface <m>S</m> en <m>(x_0,y_0,z_0)</m>. Donc le plan tangent à la surface
           <m>S</m> en <m>(x_0,y_0,z_0)</m> est
-          <me>
+          <md>
           \llt\pdiff{G}{x},
           \pdiff{G}{y},
           \pdiff{G}{z}\rgt \cdot
           \llt x-x_0,y-y_0,z-z_0\rgt = 0
-          </me>
+          </md>
           avec les dérivées de <m>G</m> évaluées en <m>\big(x_0,y_0,z_0\big)</m>,
           ou
           <md>
@@ -1987,11 +1986,11 @@
         Le vecteur tangent à <m>C</m> en <m>\vr_0</m> est
         <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m>, donc les équations paramétriques pour
         la droite tangente à <m>C</m> en <m>\vr_0</m> sont
-        <me>
+        <md>
         x-x_0 = t x'(t_0)\qquad
         y-y_0 = t y'(t_0)\qquad
         z-z_0 = t z'(t_0)
-        \tag{$E_1$}</me>
+        \tag{$E_1$}</md>
         </li>
         <li>
         Le gradient
@@ -2000,12 +1999,12 @@
         \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> est un vecteur normal
         à la surface <m>S</m> en <m>(x_0,y_0,z_0)</m>. Donc le plan tangent à la surface
         <m>S</m> en <m>(x_0,y_0,z_0)</m> est
-        <me>
+        <md>
         \llt\pdiff{G}{x},
         \pdiff{G}{y},
         \pdiff{G}{z}\rgt \cdot
         \llt x-x_0,y-y_0,z-z_0\rgt = 0
-        </me>
+        </md>
         avec les dérivées de <m>G</m> évaluées en <m>\big(x_0,y_0,z_0\big)</m>,
         ou
         <md>
@@ -2112,43 +2111,43 @@
         </p></answer>
 
         <solution><p>
-        Use <m>S_1</m> to denote the surface <m>F(x,y,z)=0</m>,
-            <m>S_2</m> to denote the surface <m>G(x,y,z)=0</m> and
-            <m>C</m> to denote the curve of intersection of <m>S_1</m> and <m>S_2</m>.
+        Notons <m>S_1</m> la surface <m>F(x,y,z)=0</m>,
+            <m>S_2</m> la surface <m>G(x,y,z)=0</m> et
+            <m>C</m> la courbe d'intersection de <m>S_1</m> et <m>S_2</m>.
         <ul>
         <li>
-        Since <m>C</m> is contained in <m>S_1</m>, the tangent line to <m>C</m> at <m>(x_0,y_0,z_0)</m>
-        is contained in the tangent plane to <m>S_1</m> at <m>(x_0,y_0,z_0)</m>, by
-        Q[<xref ref="tan_line_plane"/>]. In particular, any tangent vector, <m>\vt</m>, to
-        <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendicular to <m>\vnabla F(x_0,y_0,z_0)</m>,
-        the normal vector to <m>S_1</m> at <m>(x_0,y_0,z_0)</m>.
+        Puisque <m>C</m> est contenue dans <m>S_1</m>, la droite tangente à <m>C</m> en <m>(x_0,y_0,z_0)</m>
+        est contenue dans le plan tangent à <m>S_1</m> en <m>(x_0,y_0,z_0)</m>, en vertu de
+        l'<xref ref="tan_line_plane"/>. En particulier, tout vecteur tangent, <m>\vt</m>, à
+        <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire à <m>\vnabla F(x_0,y_0,z_0)</m>,
+        le vecteur normal à <m>S_1</m> en <m>(x_0,y_0,z_0)</m>.
         <!-- TODO (See Theorem <xref ref="thm_tan_plane_f"/>.)-->
         </li>
         <li>
-        Since <m>C</m> is contained in <m>S_2</m>, the tangent line to <m>C</m> at <m>(x_0,y_0,z_0)</m>
-        is contained in the tangent plane to <m>S_2</m> at <m>(x_0,y_0,z_0)</m>, by
-        <xref ref="tan_line_plane"/>. In particular, any tangent vector, <m>\vt</m>, to
-        <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendicular to <m>\vnabla G(x_0,y_0,z_0)</m>,
-        the normal vector to <m>S_2</m> at <m>(x_0,y_0,z_0)</m>.
+        Puisque <m>C</m> est contenue dans <m>S_2</m>, la droite tangente à <m>C</m> en <m>(x_0,y_0,z_0)</m>
+        est contenue dans le plan tangent à <m>S_2</m> en <m>(x_0,y_0,z_0)</m>, en vertu de
+        l'<xref ref="tan_line_plane"/>. En particulier, tout vecteur tangent, <m>\vt</m>, à
+        <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire à <m>\vnabla G(x_0,y_0,z_0)</m>,
+        le vecteur normal à <m>S_2</m> en <m>(x_0,y_0,z_0)</m>.
         </li>
         </ul>
-        So any tangent vector to <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendiular to both
-        <m>\vnabla F(x_0,y_0,z_0)</m> and <m>\vnabla G(x_0,y_0,z_0)</m>.
-        One such tangent vector is
+        Ainsi, tout vecteur tangent à <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire à la fois à
+        <m>\vnabla F(x_0,y_0,z_0)</m> et à <m>\vnabla G(x_0,y_0,z_0)</m>.
+        Un tel vecteur tangent est
         <md>
         <mrow>
         \vt = \vnabla F(x_0,y_0,z_0)\times \vnabla G(x_0,y_0,z_0)
         </mrow>
         </md>
-        (Because the vectors <m>\vnabla F(x_0,y_0,z_0)</m> and <m>\vnabla G(x_0,y_0,z_0)</m>
-        are nonzero and not parallel, <m>\vt</m> is nonzero.) So the normal plane in
-        question passes through <m>(x_0,y_0,z_0)</m> and has normal vector <m>\vn=\vt</m>.
-        Consquently, the normal plane is
+        (Puisque les vecteurs <m>\vnabla F(x_0,y_0,z_0)</m> et <m>\vnabla G(x_0,y_0,z_0)</m>
+        sont non nuls et non parallèles, <m>\vt</m> est non nul.) Le plan normal
+        recherché passe donc par <m>(x_0,y_0,z_0)</m> et a pour vecteur normal <m>\vn=\vt</m>.
+        Par conséquent, le plan normal est
         <md>
         <mrow>
         &amp;\vn\cdot\llt x-x_0\,,\,y-y_0\,,\,z-z_0\rgt =0
         </mrow><mrow>
-            &amp;\qquad\text{where }
+            &amp;\qquad\text{où }
         \vn=\vt=\vnabla F(x_0,y_0,z_0)\times \vnabla G(x_0,y_0,z_0)
         </mrow>
         </md>
@@ -2186,33 +2185,33 @@
         </p></answer>
 
         <solution><p>
-        Use <m>S_1</m> to denote the surface <m>z=f(x,y)</m>,
-            <m>S_2</m> to denote the surface <m>z=g(x,y)</m> and
-            <m>C</m> to denote the curve of intersection of <m>S_1</m> and <m>S_2</m>.
+        Notons <m>S_1</m> la surface <m>z=f(x,y)</m>,
+            <m>S_2</m> la surface <m>z=g(x,y)</m> et
+            <m>C</m> la courbe d'intersection de <m>S_1</m> et <m>S_2</m>.
         <ul>
         <li>
-        Since <m>C</m> is contained in <m>S_1</m>, the tangent line to <m>C</m> at <m>(x_0,y_0,z_0)</m>
-        is contained in the tangent plane to <m>S_1</m> at <m>(x_0,y_0,z_0)</m>, by
-        Q[<xref ref="tan_line_plane"/>]. In particular, any tangent vector, <m>\vt</m>, to
-        <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendicular to <m>-f_x(x_0,y_0)\,\vi
+        Puisque <m>C</m> est contenue dans <m>S_1</m>, la droite tangente à <m>C</m> en <m>(x_0,y_0,z_0)</m>
+        est contenue dans le plan tangent à <m>S_1</m> en <m>(x_0,y_0,z_0)</m>, en vertu de
+        l'<xref ref="tan_line_plane"/>. En particulier, tout vecteur tangent, <m>\vt</m>, à
+        <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire à <m>-f_x(x_0,y_0)\,\vi
         -f_y(x_0,y_0)\,\vj+\vk</m>,
-        the normal vector to <m>S_1</m> at <m>(x_0,y_0,z_0)</m>.
+        le vecteur normal à <m>S_1</m> en <m>(x_0,y_0,z_0)</m>.
         <!--TODO
         (See Theorem <xref ref="thm_tan_plane_f"/>.)-->
         </li>
         <li>
-        Since <m>C</m> is contained in <m>S_2</m>, the tangent line to <m>C</m> at <m>(x_0,y_0,z_0)</m>
-        is contained in the tangent plane to <m>S_2</m> at <m>(x_0,y_0,z_0)</m>, by
-        Q[<xref ref="tan_line_plane"/>]. In particular, any tangent vector, <m>\vt</m>, to
-        <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendicular to <m>-g_x(x_0,y_0)\,\vi
+        Puisque <m>C</m> est contenue dans <m>S_2</m>, la droite tangente à <m>C</m> en <m>(x_0,y_0,z_0)</m>
+        est contenue dans le plan tangent à <m>S_2</m> en <m>(x_0,y_0,z_0)</m>, en vertu de
+        l'<xref ref="tan_line_plane"/>. En particulier, tout vecteur tangent, <m>\vt</m>, à
+        <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire à <m>-g_x(x_0,y_0)\,\vi
         -g_y(x_0,y_0)\,\vj+\vk</m>,
-        the normal vector to <m>S_2</m> at <m>(x_0,y_0,z_0)</m>.
+        le vecteur normal à <m>S_2</m> en <m>(x_0,y_0,z_0)</m>.
         </li>
         </ul>
-        So any tangent vector to <m>C</m> at <m>(x_0,y_0,z_0)</m> must be perpendicular to
-        both of the vectors <m>-f_x(x_0,y_0)\,\vi-f_y(x_0,y_0)\,\vj+\vk</m> and
+        Ainsi, tout vecteur tangent à <m>C</m> en <m>(x_0,y_0,z_0)</m> doit être perpendiculaire
+        aux deux vecteurs <m>-f_x(x_0,y_0)\,\vi-f_y(x_0,y_0)\,\vj+\vk</m> et
         <m>-g_x(x_0,y_0)\,\vi -g_y(x_0,y_0)\,\vj+\vk</m>.
-        One such tangent vector is
+        Un tel vecteur tangent est
         <md>
         <mrow>
         &amp;\vt = \big[-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj+\vk\big]\times
@@ -2232,12 +2231,12 @@
                    f_x(x_0,y_0)g_y(x_0,y_0)-f_y(x_0,y_0)g_x(x_0,y_0)\big\gt
         </mrow>
         </md>
-        So the tangent line in question passes through <m>(x_0,y_0,z_0)</m> and has
-        direction vector <m>\vd=\vt</m>. Consquently, the tangent line is
-        <me>
+        Ainsi, la droite tangente demandée passe par <m>(x_0,y_0,z_0)</m> et a pour
+        vecteur directeur <m>\vd=\vt</m>. Par conséquent, la droite tangente est
+        <md>
         \llt x-x_0\,,\,y-y_0\,,\,z-z_0\rgt = t\,\vd
-        </me>
-        or
+        </md>
+        ou
         <md>
         <mrow>
         x&amp;=x_0+t\big[g_y(x_0,y_0)-f_y(x_0,y_0)\big]

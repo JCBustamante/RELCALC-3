@@ -27,9 +27,9 @@
   </p>
     <p>
     La partie <m>Q(t) = g(t_0) + g'(t_0)(t-t_0) +  \frac{1}{2}g''(t_0)(t-t_0)^2 </m> est <term>l'approximation quadratique</term>, ou encore <term>l'approximation de Taylor d'ordre <m>2</m></term>, de <m>g</m> autour de <m>t_0</m>. Le reste correspondant, à savoir <m>R_2(t) = \frac{1}{3!}g'''(c_t)(t-t_0)^3</m>, vérifie
-    <me>
+    <md><mrow>
       \lim_{t\to t_0}\frac{R_2(t)}{(t-t_0)^2} = 0
-    </me>.
+    </mrow></md>.
   </p>
   </subsection>
   <subsection xml:id="pars-Taylor-n-var">
@@ -46,9 +46,9 @@
     <p>
       Posons finalement <m>g = f \circ \pmb{\g} : t \mapsto f(\pmb{\g}(t)) = f(\vr_0 + t\vh)</m>. Alors, l'approximation de Taylor de <m>g</m> autour de <m>t_0 = 0</m> permet d'obtenir, pour <m>t=1</m>,
 
-      <me>
+      <md><mrow>
         g(1) = g(0) + g'(0) + \frac{1}{2}g''(0) + \frac{1}{3!}g'''(c)
-      </me>
+      </mrow></md>
       pour un <m>c</m> entre <m>0</m> et <m>1</m>.
   </p>
     <p>
@@ -58,21 +58,21 @@
       Par ailleurs,
       <md><mrow>g'(t) \amp = \vD (f\circ \pmb{\g})(t) = \vD f(\pmb{\g}(t) \pmb{\g}'(t) = \sum_{j\,=\,1}^n \pdiff{f}{x_j}(\pmb{\g}(t)) \vh </mrow><mrow> \amp = \sum_{j\,=\,1}^n  \pdiff{f}{x_j}(\vr_0 + t\vh) h_j  </mrow></md>.
       En particulier,
-      <me>
+      <md><mrow>
         g'(0) = \vD f(\vr_0) \vh = \sum_{j\,=\,1}^n \pdiff{f}{x_j}(\vr_0) h_j
-      </me>.
+      </mrow></md>.
   </p>
     <p>
       Pour calculer le terme d'ordre <m>2</m>, nous devons dériver encore une fois <m>g'(t)</m> puis évaluer en <m>0</m>.
   </p>
     <p>
       Afin d'alléger les notations, utilisons les indices pour indiquer les dérivées partielles. Ainsi, on écrit <m>f_{x_j}</m> au lieu de  <m>\pdiff{f}{x_j}</m>, de sorte que
-      <me>g'(t) =  \sum_{j\,=\,1}^n  f_{x_j}(\vr_0 + t\vh) h_j = \sum_{j\,=\,1}^n  (f_{x_j}\circ \pmb{\g})(t) h_j
-      </me>.
+      <md><mrow>g'(t) =  \sum_{j\,=\,1}^n  f_{x_j}(\vr_0 + t\vh) h_j = \sum_{j\,=\,1}^n  (f_{x_j}\circ \pmb{\g})(t) h_j
+      </mrow></md>.
       Nous calculons alors, pour un <m>j</m> fixé,
-      <me>
+      <md><mrow>
         \diff{}{t} \left(f_{x_j} \circ\pmb{\g}\right)(t) = \vD f_{x_j}(\pmb{\g}(t)) \pmb{\g}'(t) = \vD f_{x_j}(\vr_0 + t\vh) \vh
-      </me>.
+      </mrow></md>.
       Or, <m>\vD f_{x_j}(\vr_0 + t\vh)</m> est la matrice à une rangée formée par les dérivées partielles de <m>f_{x_j}</m>, qu'on note <m>f_{x_j\, x_i}</m>, évaluées en <m>\vr_0 + t \vh</m>, de sorte que
       <!--
       <md>
@@ -92,9 +92,9 @@
       </md>
     -->
       et donc le terme qui nous intéresse est
-      <me>
+      <md><mrow>
         g''(0) = \sum_{i,\,j\, =\, 1}^n f_{x_j\, x_i}(\vr_0) h_i\, h_j
-      </me>.
+      </mrow></md>.
   </p>
     <p>
       Remarquons que l'hypothèse de continuité des dérivées partielles d'ordre 2 donne l'égalité des dérivées partielles croisées. Par ailleurs, nous pouvons écrire la double somme apparaissant dans <m>g''(t)</m> de façon plus succincte à l'aide du produit matriciel. En effet, on vérifie que
@@ -126,16 +126,16 @@
         <p>Soit <m>f : \cD \to \R^n</m> de classe <m>C^2</m> et <m>\vr_0\in\cD</m> un point intérieur. Alors,
     <ol marker="(a)"><li><p>
           la <em>matrice hessienne de <m>f</m> en <m>\vr_0</m></em> est la matrice
-          <me>
+          <md><mrow>
           \vD^2 f (\vr_0) = \left.\begin{bmatrix} f_{x_1 x_1}  \amp \cdots \amp f_{x_n x_1} \\
             \vdots \amp  \ddots \amp \vdots \\
              f_{x_1 x_n}  \amp \cdots \amp f_{x_n x_n}\end{bmatrix}\right|_{\vr_0}
-          </me>;
+          </mrow></md>;
         </p></li><li><p>
           la forme quadratique <m>Hf(\vr_0) : \R^n \to \R</m> définie par
-          <me>
+          <md><mrow>
             Hf(\vr_0)(\vh) = \frac{1}{2} \vh^T \vD^2 f (\vr_0) \vh
-          </me>
+          </mrow></md>
           est <em>la forme quadratique hessienne de <m>f</m> en <m>\vr_0</m> </em>.
 
         </p></li></ol>
@@ -176,21 +176,21 @@
     </p>
         <p>
       On calcule
-      <me>
+      <md><mrow>
         \vD f(x,y) =\begin{bmatrix} f_x(x,y) \amp f_y(x,y)\end{bmatrix} =  \begin{bmatrix} -2\sin(2x -y) \amp \sin(2x-y)\end{bmatrix}
-      </me>,
+      </mrow></md>,
       donc <m>\vD f(0,0) = \begin{bmatrix} 0 \amp 0 \end{bmatrix} </m>.
     </p>
         <p>
       Par ailleurs,
-      <me>
+      <md><mrow>
         \vD^2 f(x,y) = \begin{bmatrix} f_{xx}(x,y) \amp f_{xy}(x,y)\\ f_{yx}(x,y) \amp f_{yy}(x,y)
-      \end{bmatrix} = \begin{bmatrix} -4\cos(2x-y) \amp 2\cos(2x-y) \\ 4\cos(2x-y) \amp -\cos(2x-y)\end{bmatrix}
-      </me>,
+      \end{bmatrix} = \begin{bmatrix} -4\cos(2x-y) \amp 2\cos(2x-y) \\ 2\cos(2x-y) \amp -\cos(2x-y)\end{bmatrix}
+      </mrow></md>,
       et donc
-      <me>
+      <md><mrow>
         \vD^2 f(0,0) = \left[\begin{array}{rr}-4\amp 2 \\ 2 \amp -1\end{array} \right]
-      </me>.
+      </mrow></md>.
       Le polynôme de Taylor cherché est alors
       <md><mrow>Q(x,y) \amp = 1 + \begin{bmatrix} 0 \amp 0 \end{bmatrix} \begin{bmatrix}x\\ y \end{bmatrix}  + \frac{1}{2} \begin{bmatrix} x \amp y \end{bmatrix} \left[\begin{array}{rr}-4\amp 2 \\ 2 \amp -1\end{array} \right]\begin{bmatrix}x\\ y \end{bmatrix}  </mrow><mrow> \amp = 1+\frac{1}{2}(-4x^2 + 4y -y^2) = 1-2x^2 +2xy -\frac{1}{2}y^2 </mrow></md>.
     </p>
@@ -325,57 +325,57 @@ exactement comme dans le premier calcul.
   </p>
     <p>
     La formule de Taylor nous donne la réponse. On sait que, pour les fonctions à une variable, l'erreur est donnée par
-    <me>\frac{1}{2}g''(c_t)(t-t_0)^2</me>
+    <md><mrow>\frac{1}{2}g''(c_t)(t-t_0)^2</mrow></md>
     pour un <m>c_t</m> entre <m>t_0</m> et  <m>t</m>.
   </p>
     <p>
     Ceci s'adapte aux fonctions de plusieurs variables en suivant la même logique que précédemment. Cette fois, l'erreur sera donnée par
-    <me>
+    <md><mrow>
       Hf(\vr_0 + c \vh)(\vh)
-    </me>
+    </mrow></md>
     pour une valeur de  <m>c</m> entre <m>0</m> et <m>1</m>. Cette expression équivaut à
-    <me>
+    <md><mrow>
       \frac{1}{2}\sum_{i,\,j\,=\,1}^n f_{x_i\, x_j}(\vr_0 + c \vh)\, h_i\, h_j
-    </me>.
+    </mrow></md>.
     Ainsi, si l'on peut borner les dérivées du second ordre de <m>f</m> au voisinage de <m>\vr_0</m>, on pourra borner l'erreur commise en utilisant l'approximation linéaire plutôt que la fonction elle-même.
     </p>
     <proposition xml:id="prop-Borne-err-LinApp">
       <statement>
         <p>Soit <m>f : \cD \to \R^n</m> de classe <m>C^2</m> et <m>\vr_0\in\cD</m> un point intérieur. Soit
-        <me>
+        <md><mrow>
           L(\vr) = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0)
-        </me> l'approximation linéaire de <m>f</m> autour de <m>\vR_0</m>.
+        </mrow></md> l'approximation linéaire de <m>f</m> autour de <m>\vR_0</m>.
       </p>
         <p>Si <m>M\in \R</m> est tel que <m>\left|f_{x_i\, x_j}(\vr^\ast)\right| \leqslant M </m> pour tout <m>\vr^\ast</m> sur le segment joignant <m>\vr_0</m> et <m>\vr = \vr_0 +\vh</m>, alors
-      <me>
+      <md><mrow>
         \left| f(\vr) - L(\vr) \right| \leqslant\frac{1}{2} M \left(\sum_{i\,=\,1}^n |h_i|\right)^2
-      </me>.
+      </mrow></md>.
       </p>
       </statement>
       <proof>
         <p>
           En effet, il existe un réel <m>c</m> entre <m>0</m> et <m>1</m> tel que l'erreur est
-          <md><mrow>|f(\vr) - L(\vr)| \amp = \left| f(\vr_0 + \vh) - L(\vr_0  + \vh)\right| = \left| \sum_{i,\,j\,=\,1}^n f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right| </mrow><mrow> \amp \leqslant  \sum_{i,\,j\,=\,1}^n \left| f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right|  </mrow><mrow>  \amp \leqslant \sum_{i,\,j\,=\,1}^n M |h_i|\, |h_j| = M \left( \sum_{i,\,j\,=\,1}^n |h_i|\right)^2 </mrow></md>.
+          <md><mrow>|f(\vr) - L(\vr)| \amp = \left| f(\vr_0 + \vh) - L(\vr_0  + \vh)\right| = \frac{1}{2}\left| \sum_{i,\,j\,=\,1}^n f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right| </mrow><mrow> \amp \leqslant  \frac{1}{2}\sum_{i,\,j\,=\,1}^n \left| f_{x_i\, x_j}(\vr_0 + c\vh)h_i\, h_j\right|  </mrow><mrow>  \amp \leqslant \frac{1}{2}\sum_{i,\,j\,=\,1}^n M |h_i|\, |h_j| = \frac{1}{2} M \left( \sum_{i\,=\,1}^n |h_i|\right)^2 </mrow></md>.
         </p>
       </proof>
     </proposition>
     <p>
-      Voyons un exemple avec deux variables, c'est-à-dire <m>\vr = (x,y)</m>. Posons <m>\vh = \De \vr = (\De x, \De x) = (h_x,h_y)</m>.
+      Voyons un exemple avec deux variables, c'est-à-dire <m>\vr = (x,y)</m>. Posons <m>\vh = \De \vr = (\De x, \De y) = (h_x,h_y)</m>.
     </p>
     <example xml:id="eg_error">
       <title><xref ref="eg_approx_A" text="global">exemple</xref>, revu</title>
       <p>
     Supposons que l'on veut approcher <m>\frac{(0.998)^3}{1.003}</m> comme à l'<xref ref="eg_approx_A" text="global">exemple</xref> et que l'on veut une borne pour l'erreur d'approximation. C'est ce qu'on peut obtenir en appliquant ce qui précède. Soit
-    <me>
+    <md><mrow>
     f(x,y)=\frac{x^3}{y}
-    </me>
+    </mrow></md>
     et
-    <me>
+    <md><mrow>
     x_0=1,\qquad
     \De x=-0.002,\qquad
     y_0=1,\qquad
     \De y=0.003
-    </me>.
+    </mrow></md>.
     La valeur exacte est <m>f\big(x_0 + \De x,\,y_0+\De y\big)</m> et la valeur approchée est <m>f\big(x_0,\,y_0\big)
            + \pdiff{f}{x}\big(x_0,\,y_0\big)\,\De x
            + \pdiff{f}{y}\big(x_0,\,y_0\big)\,\De y</m>,
@@ -409,7 +409,7 @@ exactement comme dans le premier calcul.
     Nous pouvons donc choisir <m>M = 6</m>. On a alors, en vertu de la <xref ref="prop-Borne-err-LinApp" text="global">proposition</xref>, que l'erreur vérifie
     <md><mrow>
     \text{erreur}
-    &amp;\leqslant \frac{1}{2} 6 \left(|\De x^2|  + |\De y|\right)^2
+    &amp;\leqslant \frac{1}{2} 6 \left(|\De x|  + |\De y|\right)^2
     </mrow><mrow>
     &amp; = 3\left(0.002 + 0.003\right)^2
     </mrow><mrow>

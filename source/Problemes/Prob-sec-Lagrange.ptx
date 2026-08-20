@@ -83,15 +83,15 @@
     </p></answer>
     <solution><p>
     (a)
-    <m>f(x, y) = x^2 +y^2</m> is the square of the distance from the point <m>(x,y)</m>
-    to the origin. There are points on the curve <m>xy=1</m> that have either <m>x</m> or
-    <m>y</m> arbitrarily large and so whose distance from the origin is arbitrarily
-    large. So <m>f</m> has no maximum on the curve. On the other hand <m>f</m> will have
-    a minimum, achieved at the points of <m>xy=1</m> that are closest to the origin.
+    <m>f(x, y) = x^2 +y^2</m> est le carré de la distance du point <m>(x,y)</m>
+    à l'origine. Il y a des points sur la courbe <m>xy=1</m> pour lesquels <m>x</m> ou
+    <m>y</m> est arbitrairement grand, et dont la distance à l'origine est donc arbitrairement
+    grande. Ainsi, <m>f</m> n'admet pas de maximum sur la courbe. Par ailleurs, <m>f</m> admettra
+    un minimum, atteint aux points de <m>xy=1</m> qui sont les plus près de l'origine.
     </p>
 
-    <p>(b) On the curve <m>xy=1</m> we have <m>y=\frac{1}{x}</m> and hence
-    <m>f=x^2+\frac{1}{x^2}</m>. As
+    <p>(b) Sur la courbe <m>xy=1</m>, on a <m>y=\frac{1}{x}</m>, et donc
+    <m>f=x^2+\frac{1}{x^2}</m>. Puisque
     <md>
     <mrow>
     \diff{}{x}\left(x^2+\frac{1}{x^2}\right)
@@ -99,7 +99,7 @@
     =\frac{2}{x^3}(x^4-1)
     </mrow>
     </md>
-    and as no point of the curve has <m>x=0</m>, the minimum is achieved when <m>x=\pm 1</m>. So the minima are at <m>\pm (1,1)</m>, where <m>f</m> takes the value <m>2</m>.
+    et puisqu'aucun point de la courbe n'a <m>x=0</m>, le minimum est atteint lorsque <m>x=\pm 1</m>. Les minimums sont donc en <m>\pm (1,1)</m>, où <m>f</m> prend la valeur <m>2</m>.
     </p></solution>
     </exercise>
 
@@ -115,10 +115,10 @@
     </p></answer>
 
     <solution><p>
-    We are to find the maximum and minimum of <m>f(x,y,z)=x+y-z</m>
-    subject to the constraint <m>g(x,y,z) = x^2+y^2+z^2 -1=0</m>.
-    According to the method of Lagrange multipliers, we need to find
-    all solutions to
+    Nous devons trouver le maximum et le minimum de <m>f(x,y,z)=x+y-z</m>
+    avec la contrainte <m>g(x,y,z) = x^2+y^2+z^2 -1=0</m>.
+    En vertu de la méthode des multiplicateurs de Lagrange, nous devons trouver
+    toutes les solutions de
     <md alignment="alignat">
     <mrow>
     f_x = 1 = 2\la x  &amp;= \la g_x
@@ -135,12 +135,12 @@
     \ &amp;&amp;\implies\  &amp; \la&amp;=\pm\frac{\sqrt{3}}{2}\tag{E4}
     </mrow>
     </md>
-    Thus the critical points are
+    Les points critiques sont donc
     <m>\big(-\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\big)</m>,
-    where <m>f=-\sqrt{3}</m>
-    and
+    où <m>f=-\sqrt{3}</m>,
+    et
     <m>\big(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}}\big)</m>,
-    where <m>f=\sqrt{3}</m>. So, the max is <m>f=\sqrt{3}</m> and the min is
+    où <m>f=\sqrt{3}</m>. Ainsi, le maximum est <m>f=\sqrt{3}</m> et le minimum est
     <m>f=-\sqrt{3}</m>.
     </p></solution>
     </exercise>
@@ -162,10 +162,10 @@
     </p></answer>
 
     <solution><p>
-    So we are to minimize  <m>f(x,y) = x^2+y^2 </m>
-    subject to the constraint <m>g(x,y) = x^2 y -1=0</m>.
-    According to the method of Lagrange multipliers, we need to find
-    all solutions to
+    Nous devons donc minimiser <m>f(x,y) = x^2+y^2 </m>
+    avec la contrainte <m>g(x,y) = x^2 y -1=0</m>.
+    En vertu de la méthode des multiplicateurs de Lagrange, nous devons trouver
+    toutes les solutions de
     <md>
     <mrow>
     f_x = 2x &amp;=2 \la xy = \la g_x \tag{E1}
@@ -177,41 +177,41 @@
     </md>
     <ul>
     <li>
-    Equation (E1), <m>2x(1-\la y)=0</m>, gives that either <m>x=0</m> or <m>\la y=1</m>.
+    L'équation (E1), <m>2x(1-\la y)=0</m>, donne <m>x=0</m> ou <m>\la y=1</m>.
     </li>
     <li>
-    But substituting <m>x=0</m> in (E3) gives <m>0=1</m>, which is impossible.
+    Or, en substituant <m>x=0</m> dans (E3), on obtient <m>0=1</m>, ce qui est impossible.
     </li>
     <li>
-    Also note that <m>\la=0</m> is impossible, since substituting <m>\la=0</m> in (E1)
-    and (E2) gives <m>x=y=0</m>, which violates (E3).
+    Remarquons aussi que <m>\la=0</m> est impossible, puisqu'en substituant <m>\la=0</m> dans (E1)
+    et (E2), on obtient <m>x=y=0</m>, ce qui viole (E3).
     </li>
     <li>
-    So <m>y=\frac{1}{\la}</m>.
+    Ainsi, <m>y=\frac{1}{\la}</m>.
     </li>
     <li>
-    Substituting <m>y=\frac{1}{\la}</m> into (E2) gives <m>\frac{2}{\la} = \la x^2</m>
-    or <m>x^2=\frac{2}{\la^2}</m>. So <m>x=\pm\frac{\sqrt{2}}{\la}</m>.
+    En substituant <m>y=\frac{1}{\la}</m> dans (E2), on obtient <m>\frac{2}{\la} = \la x^2</m>,
+    ou <m>x^2=\frac{2}{\la^2}</m>. Ainsi, <m>x=\pm\frac{\sqrt{2}}{\la}</m>.
     </li>
     <li>
-    Substituting <m>y=\frac{1}{\la}</m>, <m>x=\pm\frac{\sqrt{2}}{\la}</m> into (E3) gives
-    <m>\frac{2}{\la^3} =1</m> or <m>\la^3 =  2</m> or
+    En substituant <m>y=\frac{1}{\la}</m>, <m>x=\pm\frac{\sqrt{2}}{\la}</m> dans (E3), on obtient
+    <m>\frac{2}{\la^3} =1</m>, ou <m>\la^3 =  2</m>, ou
     <m>\la= \root{3}\of{2}</m>.
     </li>
     <li>
-    <m>\la= 2^{1/3}</m> gives <m>x=\pm 2^{\frac{1}{2}-\frac{1}{3}}=\pm 2^{\frac{1}{6}}</m>
-       and <m>y= 2^{-\frac{1}{3}}</m>.
+    <m>\la= 2^{1/3}</m> donne <m>x=\pm 2^{\frac{1}{2}-\frac{1}{3}}=\pm 2^{\frac{1}{6}}</m>
+       et <m>y= 2^{-\frac{1}{3}}</m>.
     </li>
     </ul>
-    So the two critical points are <m>\big(2^{\frac{1}{6}}\,,\,2^{-\frac{1}{3}}\big)</m>
-    and <m>\big(-2^{\frac{1}{6}}\,,\,2^{-\frac{1}{3}}\big)</m>. For both of these
-    critical points,
-    <me>
+    Les deux points critiques sont donc <m>\big(2^{\frac{1}{6}}\,,\,2^{-\frac{1}{3}}\big)</m>
+    et <m>\big(-2^{\frac{1}{6}}\,,\,2^{-\frac{1}{3}}\big)</m>. Pour ces deux
+    points critiques,
+    <md><mrow>
     x^2+y^2= 2^{\frac{1}{3}} + 2^{-\frac{2}{3}}
            = 2^{\frac{1}{3}} + \frac{1}{2}2^{\frac{1}{3}}
            =\frac{3}{2}\root{3}\of{2}
            =\frac{3}{\sqrt[3]{4}}
-    </me>
+    </mrow></md>
     </p></solution>
     </exercise>
 
@@ -219,13 +219,13 @@
     <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
     <statement><p>
     Utilisez la méthode des Multiplicateurs de Lagrange pour trouver les valeurs maximale et minimale de
-    <me>
+    <md><mrow>
     f(x, y) = xy
-    </me>
+    </mrow></md>
     sujet à la contrainte
-    <me>
+    <md><mrow>
     x^2 + 2y^2 = 1.
-    </me>
+    </mrow></md>
     </p></statement>
 
     <answer><p>
@@ -234,18 +234,18 @@
     </p></answer>
 
     <solution><p>
-    For this problem the objective function is <m>f(x,y) = xy</m>
-    and the constraint function is <m>g(x,y)=x^2 + 2y^2 - 1</m>.
-    To apply the method of Lagrange multipliers we need <m>\vnabla f</m>
-    and <m>\vnabla g</m>. So we start by computing the first order derivatives
-    of these functions.
-    <me>
+    Dans ce problème, la fonction objectif est <m>f(x,y) = xy</m>,
+    et la fonction de contrainte est <m>g(x,y)=x^2 + 2y^2 - 1</m>.
+    Pour appliquer la méthode des multiplicateurs de Lagrange, nous avons besoin de <m>\vnabla f</m>
+    et de <m>\vnabla g</m>. Nous commençons donc par calculer les dérivées d'ordre un
+    de ces fonctions.
+    <md><mrow>
     f_x=y\qquad
     f_y=x\qquad
     g_x=2x\qquad
     g_y=4y
-    </me>
-    So, according to the method of Lagrange multipliers, we need to find all solutions to
+    </mrow></md>
+    Ainsi, en vertu de la méthode des multiplicateurs de Lagrange, nous devons trouver toutes les solutions de
     <md>
     <mrow>
     y&amp;=\la (2x) \tag{E1}
@@ -255,21 +255,21 @@
     x^2+2y^2-1&amp;=0 \tag{E3}
     </mrow>
     </md>
-    First observe that none of <m>x</m>, <m>y</m>, <m>\la</m> can be zero, because if at
-    least one of them is zero, then (E1) and (E2) force <m>x=y=0</m>, which violates
-    (E3). Dividing (E1) by (E2) gives <m>\frac{y}{x} = \frac{x}{2y}</m>
-    so that <m>x^2=2y^2</m> or <m>x=\pm \sqrt{2}\,y</m>. Then (E3) gives
+    Remarquons d'abord qu'aucun de <m>x</m>, <m>y</m>, <m>\la</m> ne peut être nul, car si au
+    moins un d'entre eux l'est, alors (E1) et (E2) forcent <m>x=y=0</m>, ce qui viole
+    (E3). En divisant (E1) par (E2), on obtient <m>\frac{y}{x} = \frac{x}{2y}</m>,
+    de sorte que <m>x^2=2y^2</m>, ou <m>x=\pm \sqrt{2}\,y</m>. Alors, (E3) donne
     <md>
     <mrow>
     2y^2+2y^2=1
     \iff y=\pm\frac{1}{2}
     </mrow>
     </md>
-    The method of Lagrange multipliers, Theorem <xref ref="thm_Lagrange"/>, gives
-    that the only possible locations of the maximum and minimum of the function
-    <m>f</m> are <m>\left(\pm\frac{1}{\sqrt{2}},\pm\frac{1}{2}\right)</m>.
-    So the maximum and minimum values of <m>f</m> are <m>\frac{1}{2\sqrt{2}}</m>
-    and <m>-\frac{1}{2\sqrt{2}}</m>, respectively.
+    La méthode des multiplicateurs de Lagrange, le théorème <xref ref="thm_Lagrange"/>, donne
+    que les seuls emplacements possibles pour le maximum et le minimum de la fonction
+    <m>f</m> sont <m>\left(\pm\frac{1}{\sqrt{2}},\pm\frac{1}{2}\right)</m>.
+    Ainsi, les valeurs maximale et minimale de <m>f</m> sont <m>\frac{1}{2\sqrt{2}}</m>
+    et <m>-\frac{1}{2\sqrt{2}}</m>, respectivement.
     </p></solution>
     </exercise>
   </exercisegroup>
@@ -291,12 +291,12 @@
     </p></answer>
 
     <solution><p>
-    We are to maximize and minimize <m>f(x,y,z)=x^2 + y^2 -\frac{1}{20} z^2</m>
-    subject to the constraints <m>g(x,y,z)=x + 2y + z - 10=0</m> and
+    Nous devons maximiser et minimiser <m>f(x,y,z)=x^2 + y^2 -\frac{1}{20} z^2</m>
+    avec les contraintes <m>g(x,y,z)=x + 2y + z - 10=0</m> et
     <m>h(x,y,z) = x^2 + y^2 - z=0</m>.
-    By Theorem <xref ref="thm_doubleLagrange"/>,
-    any local minimum or maximum <m>(x,y,z)</m> must obey the  double Lagrange
-    multiplier equations
+    En vertu du théorème <xref ref="thm_doubleLagrange"/>,
+    tout minimum ou maximum local <m>(x,y,z)</m> doit obéir aux équations des
+    multiplicateurs de Lagrange à deux contraintes
     <md>
     <mrow>
     f_x = 2x &amp;=\la + 2 \mu x = \la g_x +\mu h_x\tag{E1}
@@ -310,11 +310,11 @@
     x^2 + y^2 - z &amp;= 0 \tag{E5}
     </mrow>
     </md>
-    for some real numbers <m>\la</m> and <m>\mu</m>.
+    pour certains nombres réels <m>\la</m> et <m>\mu</m>.
     </p>
 
-    <p>Equation (E1) gives <m>2(1-\mu)x=\la</m> and equation (E2) gives
-    <m>(1-\mu)y=\la</m>. So
+    <p>L'équation (E1) donne <m>2(1-\mu)x=\la</m>, et l'équation (E2) donne
+    <m>(1-\mu)y=\la</m>. Ainsi,
     <md>
     <mrow>
     2(1-\mu)x=(1-\mu)y
@@ -322,11 +322,11 @@
     (1-\mu)(2x-y)=0
     </mrow>
     </md>
-    So at least one of <m>\mu=1</m> and <m>y=2x</m> must be true.
+    Donc, au moins une des égalités <m>\mu=1</m> et <m>y=2x</m> doit être vraie.
     <ul>
     <li>
-    If <m>\mu=1</m>, equations (E1) and (E2) both reduce to <m>\la=0</m>
-    and then the remaining equations reduce to
+    Si <m>\mu=1</m>, les équations (E1) et (E2) se réduisent toutes les deux à <m>\la=0</m>,
+    et les équations restantes se réduisent alors à
     <md>
     <mrow>
     -\frac{z}{10} &amp;=-1\tag{E3}
@@ -336,8 +336,8 @@
     x^2 + y^2 - z &amp;= 0 \tag{E5}
     </mrow>
     </md>
-    Then (E3) implies <m>z=10</m>, and (E4) in turn implies <m>x+2y+10=10</m> so
-    that <m>x=-2y</m>. Finally, substituting <m>z=10</m> and <m>x=-2y</m> into (E5) gives
+    Alors, (E3) implique <m>z=10</m>, et (E4), à son tour, implique <m>x+2y+10=10</m>, de sorte
+    que <m>x=-2y</m>. Finalement, en substituant <m>z=10</m> et <m>x=-2y</m> dans (E5), on obtient
     <md>
     <mrow>
     4y^2+y^2-10=0
@@ -346,7 +346,7 @@
     </mrow>
     </md>
     </li>
-    <li> If <m>y=2x</m>, equations (E4) and (E5) reduce to
+    <li> Si <m>y=2x</m>, les équations (E4) et (E5) se réduisent à
     <md>
     <mrow>
     5x + z &amp;= 10\tag{E4}
@@ -354,7 +354,7 @@
     5x^2  - z &amp;= 0 \tag{E5}
     </mrow>
     </md>
-    Substituting <m>z=5x^2</m>, from (E5), into (E4) gives
+    En substituant <m>z=5x^2</m>, tirée de (E5), dans (E4), on obtient
     <md>
     <mrow>
     5x^2+5x-10=0
@@ -364,13 +364,13 @@
     (x+2)(x-1)=0
     </mrow>
     </md>
-    So we have either <m>x=-2</m>, <m>y=2x=-4</m>, <m>z=5x^2=20</m>
-                   or <m>x=1</m>, <m>y=2x=2</m>, <m>z=5x^2=5</m>.
-    (In both cases, we could now solve (E1) and (E3) for <m>\la</m> and <m>\mu</m>,
-    but we don't care what the values of <m>\la</m> and <m>\mu</m> are.)
+    On a donc soit <m>x=-2</m>, <m>y=2x=-4</m>, <m>z=5x^2=20</m>,
+                   soit <m>x=1</m>, <m>y=2x=2</m>, <m>z=5x^2=5</m>.
+    (Dans les deux cas, on pourrait maintenant résoudre (E1) et (E3) pour <m>\la</m> et <m>\mu</m>,
+    mais peu nous importe la valeur de <m>\la</m> et de <m>\mu</m>.)
     </li>
     </ul>
-    So we have the following candidates for the locations of the min and max
+    Nous avons donc les candidats suivants pour l'emplacement du minimum et du maximum
     </p>
 
     <sidebyside>
@@ -384,7 +384,7 @@
            </cell><cell><m>(-2,-4,20) </m>
            </cell><cell><m>(1,2,5) </m> </cell>
     </row><row>
-    <cell>        value of <m>f</m>
+    <cell>        valeur de <m>f</m>
            </cell><cell><m>8+2-5</m>
            </cell><cell><m>8+2-5</m>
            </cell><cell><m>4+16-20</m>
@@ -399,7 +399,7 @@
     </sidebyside>
 
     <p>
-    So the maximum is <m>5</m> and the minimum is <m>0</m>.
+    Le maximum est donc <m>5</m> et le minimum est <m>0</m>.
     </p></solution>
     </exercise>
 
@@ -409,9 +409,9 @@
     <ol marker = "(a)">
     <li>
     Utilisez les Multiplicateurs de Lagrange pour trouver les valeurs extrêmes de
-    <me>
+    <md><mrow>
     f (x, y, z) = (x - 2)^2 + (y + 2)^2 + (z - 4)^2
-    </me>
+    </mrow></md>
     sur la sphère <m>x^2 + y^2 + z^2 = 6</m>.
     </li>
     <li>
@@ -428,11 +428,11 @@
 
     <solution><p>
     (a)
-    This is a constrained optimization problem with the objective function being
-    <m>f(x,y,z) = (x - 2)^2 + (y + 2)^2 + (z - 4)^2</m> and the constraint function
-    being <m>g(x,y,z) =x^2 + y^2 + z^2 - 6</m>.
-    By Theorem <xref ref="thm_Lagrange"/>, any local minimum
-    or maximum <m>(x,y,z)</m> must obey the  Lagrange multiplier equations
+    Il s'agit d'un problème d'optimisation avec contrainte où la fonction objectif
+    est <m>f(x,y,z) = (x - 2)^2 + (y + 2)^2 + (z - 4)^2</m>, et la fonction de contrainte
+    est <m>g(x,y,z) =x^2 + y^2 + z^2 - 6</m>.
+    En vertu du théorème <xref ref="thm_Lagrange"/>, tout minimum
+    ou maximum local <m>(x,y,z)</m> doit obéir aux équations des multiplicateurs de Lagrange
     <md>
     <mrow>
     f_x = 2(x-2) &amp;=2 \la x = \la g_x \tag{E1}
@@ -444,8 +444,8 @@
     x^2 + y^2 + z^2 &amp;= 6 \tag{E4}
     </mrow>
     </md>
-    for some real number <m>\la</m>.
-    Simplifying
+    pour un certain nombre réel <m>\la</m>.
+    En simplifiant
     <md>
     <mrow>
     x-2 &amp;= \la x  \tag{E1}
@@ -457,12 +457,12 @@
     x^2 + y^2 + z^2 &amp;= 6 \tag{E4}
     </mrow>
     </md>
-    Note that we cannot have <m>\la=1</m>, because then (E1) would reduce to <m>-2=0</m>.
-    Substituting
-      <m>x=\frac{2}{1-\la}</m>, from (E1), and
-      <m>y=\frac{-2}{1-\la}</m>, from (E2), and
-      <m>z=\frac{4}{1-\la}</m>, from (E3),
-    into (E4) gives
+    Remarquons qu'on ne peut avoir <m>\la=1</m>, car alors (E1) se réduirait à <m>-2=0</m>.
+    En substituant
+      <m>x=\frac{2}{1-\la}</m>, tirée de (E1), et
+      <m>y=\frac{-2}{1-\la}</m>, tirée de (E2), et
+      <m>z=\frac{4}{1-\la}</m>, tirée de (E3),
+    dans (E4), on obtient
     <md>
     <mrow>
     \frac{4}{(1-\la)^2} + \frac{4}{(1-\la)^2} + \frac{16}{(1-\la)^2} =6
@@ -471,11 +471,11 @@
     &amp;\iff 1-\la =\pm 2
     </mrow>
     </md>
-    and hence
-    <me>
+    et donc
+    <md><mrow>
     (x,y,z) = \pm \frac{(2,-2,4)}{2}= \pm (1,-1,2)
-    </me>
-    So we have the following candidates for the locations of the min and max
+    </mrow></md>
+    Nous avons donc les candidats suivants pour l'emplacement du minimum et du maximum
     </p>
 
     <sidebyside>
@@ -486,7 +486,7 @@
            </cell><cell><m>(1,-1,2)</m>
            </cell><cell><m>-(1,-1,2)</m> </cell>
     </row><row>
-    <cell>        value of <m>f</m>
+    <cell>        valeur de <m>f</m>
            </cell><cell><m>6</m>
            </cell><cell><m>54</m> </cell>
     </row><row>
@@ -497,13 +497,13 @@
     </sidebyside>
 
     <p>
-    So the minimum is <m>6</m> and the maximum is <m>54</m>.
+    Le minimum est donc <m>6</m> et le maximum est <m>54</m>.
     </p>
 
-    <p>(b) <m>f(x,y,z)</m> is the square of the distance from <m>(x,y,z)</m> to <m>(2,-2,4)</m>.
-    So the point on the sphere <m>x^2 + y^2 + z^2 = 6</m> that is farthest
-    from the point <m>(2, -2, 4)</m> is the point from part (a) that maximizes <m>f</m>,
-    which is <m>(-1,1,-2)</m>.
+    <p>(b) <m>f(x,y,z)</m> est le carré de la distance de <m>(x,y,z)</m> à <m>(2,-2,4)</m>.
+    Ainsi, le point sur la sphère <m>x^2 + y^2 + z^2 = 6</m> le plus éloigné
+    du point <m>(2, -2, 4)</m> est le point de la partie (a) qui maximise <m>f</m>,
+    à savoir <m>(-1,1,-2)</m>.
     </p></solution>
     </exercise>
 
@@ -511,9 +511,9 @@
     <exercise> <!-- <title><fromexam>M200 2003D</fromexam></title> -->
     <statement><p>
     Une boîte fermée rectangulaire avec un volume de 96 mètres cubes
-    est construit avec deux matériaux. Le matériel pour le dessus coûte deux fois plus
+    est construite avec deux matériaux. Le matériel pour le dessus coûte deux fois plus
     par mètre carré que le matériel utilisé pour les côtés et le dessous. Utilisez la méthode
-    des Multiplicateurs de Lagrange pour trouver les dimensions de la boîte la moins cher.
+    des Multiplicateurs de Lagrange pour trouver les dimensions de la boîte la moins chère.
     </p></statement>
 
     <answer><p>
@@ -521,14 +521,14 @@
     </p></answer>
 
     <solution><p>
-    Let the box have dimensions <m>x\times y\times z</m>. Use units
-    of money so that the sides and bottom cost one unit per square meter and
-    the top costs two units per square meter. Then the top costs <m>2xy</m>, the
-    bottom costs <m>xy</m> and the four sides cost <m>2xz+2yz</m>. We are to find the
-    <m>x</m>, <m>y</m> and <m>z</m> that minimize the cost <m>f(x,y,z)=2xy +xy +2xz+2yz</m> subject
-    to the constraint that <m>g(x,y,z)=xyz-96=0</m>. By the method of
-    Lagrange multipliers (Theorem<nbsp/><xref ref="thm_Lagrange"/>),
-    the minimizing <m>x</m>, <m>y</m>, <m>z</m> must obey
+    Soit <m>x\times y\times z</m> les dimensions de la boîte. Utilisons des unités
+    monétaires telles que les côtés et le dessous coûtent une unité par mètre carré et
+    le dessus coûte deux unités par mètre carré. Alors, le dessus coûte <m>2xy</m>, le
+    dessous coûte <m>xy</m>, et les quatre côtés coûtent <m>2xz+2yz</m>. Nous devons trouver les
+    <m>x</m>, <m>y</m> et <m>z</m> qui minimisent le coût <m>f(x,y,z)=2xy +xy +2xz+2yz</m> avec
+    la contrainte <m>g(x,y,z)=xyz-96=0</m>. En vertu de la méthode des
+    multiplicateurs de Lagrange (théorème<nbsp/><xref ref="thm_Lagrange"/>),
+    les <m>x</m>, <m>y</m>, <m>z</m> minimisants doivent obéir à
     <md alignment="alignat">
     <mrow>
     f_x&amp;=3y+2z&amp;&amp;=\la yz=\la g_x
@@ -540,8 +540,8 @@
     &amp;\ \ \ xyz-96&amp;&amp;=0
     </mrow>
     </md>
-    Multiplying the first equation by <m>x</m>, the second equation by <m>y</m>
-    and the third equation by <m>z</m> and then substituting in <m>xyz=96</m> gives
+    En multipliant la première équation par <m>x</m>, la seconde par <m>y</m>
+    et la troisième par <m>z</m>, puis en substituant <m>xyz=96</m>, on obtient
     <md>
     <mrow>
     3xy+2xz&amp;=96\la
@@ -551,19 +551,19 @@
     2xz+2yz&amp;=96\la
     </mrow>
     </md>
-    Subtracting the second equation from the first gives <m>2z(x-y)=0</m>.
-    Since <m>z=0</m> is impossible, we must have <m>x=y</m>. Substituting this in,
-    <me>
+    En soustrayant la seconde équation de la première, on obtient <m>2z(x-y)=0</m>.
+    Puisque <m>z=0</m> est impossible, on doit avoir <m>x=y</m>. En substituant ceci,
+    <md><mrow>
     3x^2+2xz=96\la\qquad 4xz=96\la
-    </me>
-    Subtracting,
+    </mrow></md>
+    En soustrayant,
     <md>
     <mrow>
     3x^2-2xz=0&amp;\implies z=\frac{3}{2}x
     \implies 96=xyz=\frac{3}{2}x^3
     \implies x^3=64
     </mrow><mrow>
-    &amp;\implies x=y=4,\ z=6\ \text{meters}
+    &amp;\implies x=y=4,\ z=6\ \text{mètres}
     </mrow>
     </md>
     </p></solution>
@@ -588,18 +588,18 @@
     </p></answer>
 
     <solution><p>
-    The optimal box will have vertices <m>(\pm x,\pm y, 0)</m>,
-    <m>(\pm x,\pm y,\ z)</m> with <m>x,y,z \gt 0</m> and <m>z=48-4x^2-3y^2</m>. (If the lower
-    vertices are not in the <m>xy</m>--plane, the volume of the box can be increased
-    by lowering the bottom of the box to the <m>xy</m>--plane. If any of the four
-    upper vertices are not on the hemisphere, the volume of the box can be
-    increased by moving the upper vertices outwards to the hemisphere.)
-    The volume of this box will be <m>(2x)(2y)z</m>.
-    So we are to find the <m>x</m>, <m>y</m> and <m>z</m> that maximize the volume
-    <m>f(x,y,z)=4xyz</m> subject to the constraint that
-    <m>g(x,y,z)=48-4x^2-3y^2-z =0</m>. By the method of
-    Lagrange multipliers (Theorem<nbsp/><xref ref="thm_Lagrange"/>),
-    the minimizing <m>x</m>, <m>y</m>, <m>z</m> must obey
+    La boîte optimale aura pour sommets <m>(\pm x,\pm y, 0)</m>,
+    <m>(\pm x,\pm y,\ z)</m> avec <m>x,y,z \gt 0</m> et <m>z=48-4x^2-3y^2</m>. (Si les sommets
+    inférieurs ne se trouvent pas dans le plan <m>xy</m>, le volume de la boîte peut être augmenté
+    en abaissant le fond de la boîte jusqu'au plan <m>xy</m>. Si l'un des quatre
+    sommets supérieurs ne se trouve pas sur la surface, le volume de la boîte peut être
+    augmenté en déplaçant les sommets supérieurs vers l'extérieur, jusqu'à la surface.)
+    Le volume de cette boîte est <m>(2x)(2y)z</m>.
+    Nous devons donc trouver les <m>x</m>, <m>y</m> et <m>z</m> qui maximisent le volume
+    <m>f(x,y,z)=4xyz</m> avec la contrainte
+    <m>g(x,y,z)=48-4x^2-3y^2-z =0</m>. En vertu de la méthode des
+    multiplicateurs de Lagrange (théorème<nbsp/><xref ref="thm_Lagrange"/>),
+    les <m>x</m>, <m>y</m>, <m>z</m> maximisants doivent obéir à
     <md alignment="alignat">
     <mrow>
     f_x&amp;=4yz=-8\la x&amp;&amp;=\la g_x\cr
@@ -608,8 +608,8 @@
     &amp;\hskip-0.2in 48-4x^2-3y^2-z&amp;&amp;=0
     </mrow>
     </md>
-    Multiplying the first equation by <m>x</m>, the second equation by <m>y</m>
-    and the third equation by <m>z</m>  gives
+    En multipliant la première équation par <m>x</m>, la seconde par <m>y</m>
+    et la troisième par <m>z</m>, on obtient
     <md>
     <mrow>
     4xyz&amp;=-8\la x^2
@@ -619,15 +619,15 @@
     4xyz&amp;=-\la z
     </mrow>
     </md>
-    This forces <m>8\la x^2=6\la y^2=\la z</m>. Since <m>\la</m> cannot be zero (because
-    that would force <m>4xyz=0</m>), this in turn gives <m>8 x^2=6 y^2= z</m>. Substituting
-    in to the fourth equation gives
-    <me>
+    Ceci force <m>8\la x^2=6\la y^2=\la z</m>. Puisque <m>\la</m> ne peut être nul (car
+    cela forcerait <m>4xyz=0</m>), on obtient à son tour <m>8 x^2=6 y^2= z</m>. En substituant
+    dans la quatrième équation, on obtient
+    <md><mrow>
     48 -\frac{z}{2}-\frac{z}{2}-z=0\implies 2z=48\implies z=24,\ 8x^2=24,\
     6y^2=24
-    </me>
-    The dimensions of the box of biggest volume are
-    <m>2x=2\sqrt{3}</m> by <m>2y=4</m> by <m>z=24</m>.
+    </mrow></md>
+    Les dimensions de la boîte de volume maximal sont
+    <m>2x=2\sqrt{3}</m> par <m>2y=4</m> par <m>z=24</m>.
     </p></solution>
     </exercise>
 
@@ -646,13 +646,13 @@
     </p></answer>
 
     <solution><p>
-    We'll find the minimum distance<m>^2</m> and then take the square root.
-    That is, we'll find the minimum of <m>f(x,y,z)=x^2+y^2+z^2</m> subject to
-    the constraints
-    <m>g(x,y,z)=x-z-4=0</m> and <m>h(x,y,z) = x + y + z -3=0</m>.
-    By Theorem <xref ref="thm_doubleLagrange"/>,
-    any local minimum or maximum <m>(x,y,z)</m> must obey the  double Lagrange
-    multiplier equations
+    Nous allons trouver le carré de la distance minimale, puis en prendre la racine carrée.
+    C'est-à-dire que nous allons trouver le minimum de <m>f(x,y,z)=x^2+y^2+z^2</m> avec
+    les contraintes
+    <m>g(x,y,z)=x-z-4=0</m> et <m>h(x,y,z) = x + y + z -3=0</m>.
+    En vertu du théorème <xref ref="thm_doubleLagrange"/>,
+    tout minimum ou maximum local <m>(x,y,z)</m> doit obéir aux équations des
+    multiplicateurs de Lagrange à deux contraintes
     <md>
     <mrow>
     f_x = 2x &amp;=\la + \mu  = \la g_x +\mu h_x\tag{E1}
@@ -666,13 +666,13 @@
     x + y + z &amp;= 3 \tag{E5}
     </mrow>
     </md>
-    for some real numbers <m>\la</m> and <m>\mu</m>.
-    Adding (E1)and (E3) and then subtracting 2 times (E2) gives
-    <me>
-    2x-4y+2z=0\qquad\text{or}\qquad
+    pour certains nombres réels <m>\la</m> et <m>\mu</m>.
+    En additionnant (E1) et (E3), puis en soustrayant 2 fois (E2), on obtient
+    <md><mrow>
+    2x-4y+2z=0\qquad\text{ou}\qquad
     x-2y+z=0
-    \tag{E6}</me>
-    Substituting <m>x=4+z</m> (from (E4)) into (E5) and (E6) gives
+    \tag{E6}</mrow></md>
+    En substituant <m>x=4+z</m> (tirée de (E4)) dans (E5) et (E6), on obtient
     <md>
     <mrow>
     y+2z&amp;=-1   \tag{E5'}
@@ -680,7 +680,7 @@
     -2y+2z&amp;=-4 \tag{E6'}
     </mrow>
     </md>
-    Substituing <m>y=-1-2z</m> (from (E5')) into (E6') gives
+    En substituant <m>y=-1-2z</m> (tirée de (E5')) dans (E6'), on obtient
     <md>
     <mrow>
      6z =-6
@@ -689,8 +689,8 @@
     \implies x=4+(-1)=3
     </mrow>
     </md>
-    So the closest point is <m>(3,1,-1)</m> and the minimum
-    distance is <m>\sqrt{3^2+1^2+(-1)^2}=\sqrt{11}</m>.
+    Ainsi, le point le plus proche est <m>(3,1,-1)</m>, et la distance minimale
+    est <m>\sqrt{3^2+1^2+(-1)^2}=\sqrt{11}</m>.
     </p></solution>
     </exercise>
 
@@ -764,7 +764,7 @@
     </answer>
 
     <solution><p>
-    By way of preparation, we have
+    En guise de préparation, nous avons
     <md>
     <mrow>
     \pdiff{T}{x}(x,y) =  2x\,e^y\qquad
@@ -774,9 +774,9 @@
     </p>
 
     <p>(a-i)
-    For this problem the objective function is <m>T(x,y) = e^y\big(x^2+y^2\big)</m>
-    and the constraint function is <m>g(x,y)=x^2 + y^2 - 100</m>.
-    According to the method of Lagrange multipliers, Theorem <xref ref="thm_Lagrange"/>, we need to find all solutions to
+    Dans ce problème, la fonction objectif est <m>T(x,y) = e^y\big(x^2+y^2\big)</m>,
+    et la fonction de contrainte est <m>g(x,y)=x^2 + y^2 - 100</m>.
+    En vertu de la méthode des multiplicateurs de Lagrange, le théorème <xref ref="thm_Lagrange"/>, nous devons trouver toutes les solutions de
     <md>
     <mrow>
     T_x = 2x\,e^y &amp;=\la (2x) = \la g_x \tag{E1}
@@ -789,26 +789,26 @@
     </p>
 
     <p>(a-ii)
-    According to equation (E1), <m>2x(e^y-\la)=0</m>. This condition is satisfied
-    if and only if at least one of <m>x=0</m>, <m>\la=e^y</m> is obeyed.
+    En vertu de l'équation (E1), <m>2x(e^y-\la)=0</m>. Cette condition est vérifiée
+    si et seulement si au moins une des égalités <m>x=0</m>, <m>\la=e^y</m> l'est.
     <ul>
     <li>
-    If <m>x=0</m>, then equation (E3) reduces to <m>y^2=100</m>, which is obeyed if <m>y=\pm 10</m>.
-    Equation (E2) then gives the corresponding values for <m>\la</m>, which we don't need.
+    Si <m>x=0</m>, alors l'équation (E3) se réduit à <m>y^2=100</m>, qui est vérifiée si <m>y=\pm 10</m>.
+    L'équation (E2) donne alors les valeurs correspondantes de <m>\la</m>, dont nous n'avons pas besoin.
     </li>
     <li>
-    If <m>\la=e^y</m>, then equation (E2) reduces to
-    <me>
+    Si <m>\la=e^y</m>, alors l'équation (E2) se réduit à
+    <md><mrow>
     e^y\big(x^2+y^2+2y\big) = (2y)e^y
     \iff
     e^y\big(x^2+y^2\big)=0
-    </me>
-    which conflicts with (E3). So we can't have <m>\la=e^y</m>.
+    </mrow></md>
+    ce qui entre en conflit avec (E3). On ne peut donc pas avoir <m>\la=e^y</m>.
     </li>
     </ul>
-    So the only possible locations of the maximum and minimum of the function
-    <m>T</m> are <m>(0,10)</m> and <m>(0,-10)</m>. To complete the problem, we only have to
-    compute <m>T</m> at those points.
+    Ainsi, les seuls emplacements possibles pour le maximum et le minimum de la fonction
+    <m>T</m> sont <m>(0,10)</m> et <m>(0,-10)</m>. Pour compléter le problème, il ne reste qu'à
+    calculer <m>T</m> en ces points.
     </p>
 
     <sidebyside>
@@ -819,7 +819,7 @@
            </cell><cell><m>(0,10)</m>
            </cell><cell><m>(0,-10)</m> </cell>
     </row><row>
-    <cell>        value of <m>T</m>
+    <cell>        valeur de <m>T</m>
            </cell><cell><m>100 e^{10}</m>
            </cell><cell><m>100 e^{-10}</m> </cell>
     </row><row>
@@ -830,18 +830,18 @@
     </sidebyside>
 
     <p>
-    Hence the maximum value of <m>T(x,y) = e^y\big(x^2+y^2\big)</m> on <m>x^2 + y^2 = 100</m>
-    is <m>100 e^{10}</m> at <m>(0,10)</m> and the minimum value is <m>100 e^{-10}</m> at <m>(0,-10)</m>.
+    Ainsi, la valeur maximale de <m>T(x,y) = e^y\big(x^2+y^2\big)</m> sur <m>x^2 + y^2 = 100</m>
+    est <m>100 e^{10}</m>, en <m>(0,10)</m>, et la valeur minimale est <m>100 e^{-10}</m>, en <m>(0,-10)</m>.
     </p>
 
-    <p>We remark that, on <m>x^2+y^2=100</m>, the objective function
-    <m>T(x,y) = e^y\big(x^2+y^2\big) = 100 e^y</m>. So of course the maximum value of
-    <m>T</m> is achieved when <m>y</m> is a maximum, i.e. when <m>y=10</m>,
-    and the minimum value of
-    <m>T</m> is achieved when <m>y</m> is a minimum, i.e. when <m>y=-10</m>.
+    <p>Remarquons que, sur <m>x^2+y^2=100</m>, la fonction objectif
+    <m>T(x,y) = e^y\big(x^2+y^2\big) = 100 e^y</m>. Ainsi, bien sûr, la valeur maximale de
+    <m>T</m> est atteinte lorsque <m>y</m> est maximal, c'est-à-dire lorsque <m>y=10</m>,
+    et la valeur minimale de
+    <m>T</m> est atteinte lorsque <m>y</m> est minimal, c'est-à-dire lorsque <m>y=-10</m>.
     </p>
 
-    <p>(b-i) By definition, the point <m>(x,y)</m> is a critical point of <m>T(x,y)</m> if ane only if
+    <p>(b-i) Par définition, le point <m>(x,y)</m> est un point critique de <m>T(x,y)</m> si et seulement si
     <md>
     <mrow>
     T_x = 2x\,e^y &amp;=0 \tag{E1}
@@ -852,39 +852,39 @@
     </p>
 
     <p>(b-ii)
-    Equation (E1) forces <m>x=0</m>. When <m>x=0</m>, equation (E2) reduces to
+    L'équation (E1) force <m>x=0</m>. Lorsque <m>x=0</m>, l'équation (E2) se réduit à
     <md>
     <mrow>
     e^y\big(y^2+2y\big) =0
     \iff  y(y+2)=0
-    \iff y=0\text{ or }y=-2
+    \iff y=0\text{ ou }y=-2
     </mrow>
     </md>
-    So there are two critical points, namely <m>(0,0)</m> and <m>(0,-2)</m>.
+    Il y a donc deux points critiques, à savoir <m>(0,0)</m> et <m>(0,-2)</m>.
     </p>
 
     <p>(c)
-    Note that <m>T(x,y) = e^y\big(x^2+y^2\big)\geqslant 0</m> on all of <m>\R^2</m>.
-    As <m>T(x,y)=0</m> only at <m>(0,0)</m>, it is obvious that <m>(0,0)</m> is the coolest point.
+    Remarquons que <m>T(x,y) = e^y\big(x^2+y^2\big)\geqslant 0</m> sur tout <m>\R^2</m>.
+    Puisque <m>T(x,y)=0</m> seulement en <m>(0,0)</m>, il est évident que <m>(0,0)</m> est le point le plus froid.
     </p>
 
-    <p>In case you didn't notice that, here is a more conventional solution.
+    <p>Au cas où vous ne l'auriez pas remarqué, voici une solution plus conventionnelle.
     </p>
 
-    <p>The coolest point on the solid disc <m>x^2+y^2\leqslant 100</m>
-    must either be on the boundary, <m>x^2+y^2= 100</m>, of the disc
-    or be in the interior, <m>x^2+y^2  \lt  100</m>, of the disc.
+    <p>Le point le plus froid sur le disque plein <m>x^2+y^2\leqslant 100</m>
+    doit se trouver soit sur la frontière, <m>x^2+y^2= 100</m>, du disque,
+    soit à l'intérieur, <m>x^2+y^2  \lt  100</m>, du disque.
     </p>
 
-    <p>In part (a-ii) we found that the coolest point on the boundary
-    is <m>(0,-10)</m>, where <m>T=100 e^{-10}</m>.
+    <p>Dans la partie (a-ii), nous avons trouvé que le point le plus froid sur la frontière
+    est <m>(0,-10)</m>, où <m>T=100 e^{-10}</m>.
     </p>
 
-    <p>If the coolest point is in the interior, it must be a critical point and so must be
-    either <m>(0,0)</m>, where <m>T=0</m>, or <m>(0,-2)</m>, where <m>T= 4e^{-2}</m>.
+    <p>Si le point le plus froid se trouve à l'intérieur, il doit s'agir d'un point critique, donc
+    soit <m>(0,0)</m>, où <m>T=0</m>, soit <m>(0,-2)</m>, où <m>T= 4e^{-2}</m>.
     </p>
 
-    <p>So the coolest point is <m>(0,0)</m>.
+    <p>Le point le plus froid est donc <m>(0,0)</m>.
     </p></solution>
     </exercise>
   </exercisegroup>
@@ -901,24 +901,24 @@
     Définissez <m>g(x,y) = xy -1</m>.
     D'après la méthode des Multiplicateurs de Lagrange, si <m>(x,y)</m> est
     un minimum ou maximum local de <m>f(x,y)</m> sur la courbe <m>xy=1</m>, alors il existe un nombre réel <m>\la</m> tel que
-    <me>
+    <md><mrow>
     \vnabla f(x,y) =\la \vnabla g(x,y),\quad g(x,y)=0
-    \tag{E1}</me>
+    \tag{E1}</mrow></md>
     </li>
     <li>
     Sur la courbe <m>xy=1</m>, on a
     <m>y=\frac{1}{x}</m> et <m>f(x,y) =f\big(x,\frac{1}{x}\big)</m>. Définissez
     <m>F(x)=f\big(x,\frac{1}{x}\big)</m>. Si <m>x\ne 0</m> est un minimum ou maximum local de
     <m>F(x)</m>, on a que
-    <me>
+    <md><mrow>
     F'(x)=0
-    \tag{E2}</me>
+    \tag{E2}</mrow></md>
     </li>
     </ul>
     Montrez que (E1) est équivalent à (E2), dans le sens que
     <md>
     <mrow>
-    &amp;\text{il existe $\la$ tel que <m>(x,y,\la)</m> vérifie (E1)}
+    &amp;\text{il existe $\la$ tel que $(x,y,\la)$ vérifie (E1)}
     </mrow><mrow>
     &amp;\hskip-0.5in\text{ si et seulement si }
     </mrow><mrow>

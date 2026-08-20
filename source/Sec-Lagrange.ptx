@@ -62,14 +62,14 @@ Le scalaire <m>\la</m> est appelé un <em>multiplicateur de Lagrange</em>.
         <p> Imaginons que nous nous promenons sur la surface <m>\plan{S}</m> avec le temps (disons <m>t</m>) allant de  <m>t=-1</m> à <m>t=+1</m>, de sorte que la position à <m>t=0</m> est exactement <m>\vr_0</m>. Notre position est donnée par un chemin <m>\vr(t) =\big(x(t),y(t),z(t)\big)</m>.
 </p>
         <p> Posons
-<me>
-F(t) = f\circ\vr\,(t)  = (r) f\big(x(t),y(t),z(t)\big)
-</me>,
+<md><mrow>
+F(t) = f\circ\vr\,(t)  = f\big(x(t),y(t),z(t)\big)
+</mrow></md>,
 de sorte que <m>F(t)</m> est la valeur de  <m>f</m> observée au temps <m>t</m> de notre balade. Alors, pour <m>t</m> près de <m>0</m>, <m>\vr(t)</m> est près de  <m>\vr_0 = \big(x(0),y(0),z(0)\big)</m>, et
-<me>
+<md><mrow>
 F(0) = f\circ \vr(0) = f(\vr_0)
      \leqslant f\circ \vr(t) = F(t)
-</me>
+</mrow></md>
 pour tout <m>t</m> suffisamment près de zéro, c'est-à-dire que <m>F</m> admet un minimum local à <m>t=0</m> et que, par conséquent, <m>F'(0)=0</m>.
 </p>
         <p> En vertu de la règle de dérivation des fonctions composées, vue au <xref ref="thm_chainRule" text="global">théorème</xref>, nous avons
@@ -82,9 +82,9 @@ Ainsi, le vecteur <m>\vnabla f(\vr_0)</m> est orthogonal au vecteur vitesse lors
 </p>
         <p>Par ailleurs, nous savons, en vertu du <xref ref="thm_tan_plane_G" text="global">théorème</xref>, que <m>\vnabla g(\vr_0)</m> est aussi orthogonal à <m>\plan{S}</m> en <m>\vr_0</m>.
 Ainsi, <m>\vnabla f(\vr_0)</m> et <m>\vnabla g(\vr_0)</m> doivent être des vecteurs colinéaires, c'est-à-dire que
-<me>
+<md><mrow>
 \vnabla f(\vr_0) = \la \vnabla g(\vr_0)
-</me>
+</mrow></md>
 pour un certain scalaire  <m>\la</m>.
 </p>
       </proof>
@@ -99,13 +99,13 @@ Il faut noter qu'il y a quatre équations en tout et quatre inconnues, à savoir
 </li><li> Évaluer <m>f</m> à chacun des points de la liste de candidats. La valeur la plus grande est le maximum; la plus petite, le minimum.
 </li></ol>
 Une autre façon d'écrire le système d'équations ci-haut est d'écrire
-<me>
+<md><mrow>
 L_x(a,b,c,\la) = L_y(a,b,c,\la) = L_z(a,b,c,\la) = L_\la(a,b,c,\la) = 0
-</me>,
+</mrow></md>,
 où <m>L(x,y,z,\la)</m> est la fonction auxiliaire
-<me>
+<md><mrow>
 L(x,y,z,\la)=f(x,y,z)-\la\, g(x,y,z)
-</me>.
+</mrow></md>.
 </p>
     <observation xml:id="obs-Lagrange2">
       <p>
@@ -124,12 +124,12 @@ Nous avons formulé et prouvé le <xref ref="thm_Lagrange" text="global">théor�
         <p> Dans ce problème, la fonction objectif est  <m>f(x,y) = x^2-10x-y^2</m>, et la fonction de contrainte est <m>g(x,y)=x^2+4y^2-16</m>.
 
 Afin d'appliquer la méthode des multiplicateurs de Lagrange, nous calculons les gradients  <m>\vnabla f</m> et  <m>\vnabla g</m>.
-<me>
+<md><mrow>
 f_x=2x-10\qquad
 f_y=-2y\qquad
 g_x=2x\qquad
 g_y=8y
-</me>
+</mrow></md>
 Ainsi, on doit trouver les solutions de
 <md><mrow>
 2x-10&amp;=\la (2x),
@@ -234,12 +234,12 @@ Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et
           <image source="images/CLP-figs/lagrangeB"/>
         </sidebyside>
         <p>Soit <m>(x,y)</m> les coordonnées du point du rectangle du premier quadrant. Les quatre coins sont alors <m>(\pm x, \pm y)</m>, de sorte que  ses côtés mesurent <m>2x</m> et  <m>2y</m>. Par ailleurs, la fonction objectif est  <m>f(x,y) = 4xy</m>. La fonction de contrainte du problème est <m>g(x,y)=x^2+2y^2-1</m>. De nouveau, pour utiliser les multiplicateurs de Lagrange, nous calculons quelques dérivées partielles :
-    <me>
+    <md><mrow>
     f_x=4y,\qquad
     f_y=4x,\qquad
     g_x=2x,\qquad
     g_y=4y
-    </me>.
+    </mrow></md>.
   Ainsi, nous devons trouver les solutions de
     <md><mrow>
     4y&amp;=\la (2x), \tag{E1}
@@ -293,21 +293,21 @@ Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <
       <solution>
         <p>
  Soit  <m>(x,y)</m> un point sur <m>3x^2-2xy+3y^2=4</m>. Ce point est à l'extrémité du demi-axe le plus grand lorsqu'il maximise la distance au centre de l'ellipse, qui coïncide avec l'origine. Le point se trouve à l'extrémité du petit demi-axe lorsque cette distance est minimisée. Nous devons donc maximiser et minimiser la distance  <m>\sqrt{x^2+y^2}</m> avec la contrainte
-<me>
+<md><mrow>
 g(x,y)=3x^2-2xy+3y^2-4=0
-</me>.
+</mrow></md>.
 Notons cependant que de maximiser ou de minimiser <m>\sqrt{x^2+y^2}</m> est équivalent<fn>
   Car la fonction <m>S(z)=z^2</m> est strictement croissante pour  <m>z\geqslant 0</m>. Ainsi, pour  <m>a,b\geqslant 0</m>, le fait d'avoir <q><m>a \lt b</m></q> équivaut à avoir  <q><m>S(a) \lt S(b)</m></q>.
 </fn>
  à maximiser ou à minimiser son carré, <m>\big(\sqrt{x^2+y^2}\big)^2=x^2+y^2</m>. Ainsi, nous pouvons choisir la fonction objectif
-<me>
+<md><mrow>
 f(x,y)=x^2+y^2
-</me>,
+</mrow></md>,
 ce que nous ferons afin de rendre les calculs plus simples. De nouveau, utilisons les multiplicateurs de Lagrange. Pour cela, calculons les dérivées partielles
-<me>
+<md><mrow>
 f_x(x,y)=2x,\quad f_y(x,y)=2y, \quad
 g_x(x,y)=6x-2y,\quad g_y(x,y)=-2x+6y
-</me>.
+</mrow></md>.
 Nous devons trouver les solutions de
 <md><mrow>
 2x&amp;=\la (6x-2y),
@@ -328,22 +328,22 @@ Pour commencer, concentrons-nous sur les deux premières équations. Supposons q
 </p>
         <p>
   Le système d'équations  <m>(1+3\la)x-\la y=0</m>, <m>-\la x+(1+3\la)y=0</m> admet une solution évidente, à savoir <m>x=y=0</m>. Cependant, cette solution n'est pas acceptable, car il ne s'agit pas d'un point sur l'ellipse. On sait, grâce aux cours d'algèbre linéaire, qu'un système homogène d'équations linéaires admet une solution non nulle si et seulement si le déterminant de la matrice des coefficients est nul.
-<me>
+<md><mrow>
 \det\left[\begin{matrix}
                  1-3\la&amp;\la\\
                 \la&amp;1-3\la
           \end{matrix}\right]=(1-3\la)^2-\la^2
 =(1-2\la)(1-4\la)=0\implies\la=\half,\frac{1}{4}
-</me>
+</mrow></md>
 
 On peut diviser par  <m>\la</m>, et (E1) donne
-<me>
+<md><mrow>
 y=-\frac{1-3\la}{\la}x
-</me>.
+</mrow></md>.
 En remplaçant ceci dans (E2), on obtient
-<me>
+<md><mrow>
 \la x-\frac{(1-3\la)^2}{\la}x=0
-</me>.
+</mrow></md>.
 À nouveau, <m>x</m> ne peut pas être nul, car, dans ce cas, <m>y=-\frac{1-3\la}{\la}x</m> donnerait <m>y=0</m>, et <m>(0,0)</m> n'est toujours pas sur l'ellipse.
 </p>
         <p>Ainsi, on peut diviser <m>\la x-\frac{(1-3\la)^2}{\la}x=0</m> par  <m>x</m>, ce qui donne
@@ -386,11 +386,11 @@ Ainsi, les extrémités du petit demi-axe sont  <m>\pm\big(\frac{1}{\sqrt{2}},-\
       <statement>
         <p>
 Trouver les valeurs de  <m>w\geqslant0</m>, <m>\ka\geqslant0</m> qui maximisent la fonction d'utilité
-<me>
+<md><mrow>
 U(w,\ka) =6 w^{\frac{2}{3}}\ka^{\frac{1}{3}}
  \qquad\text{avec la contrainte}\qquad
 4w+2\ka=12
-</me>.
+</mrow></md>.
 </p>
       </statement>
       <solution>
@@ -399,12 +399,12 @@ La contrainte  <m>4w+2\ka=12</m> est suffisamment simple pour exprimer <m>\ka</m
 </p>
         <p>Cependant, afin de pratiquer la méthode des multiplicateurs de Lagrange, on va présenter une solution avec celle-ci.
 On a <m>U(w,\ka) =6 w^{\frac{2}{3}}\ka^{\frac{1}{3}}</m>, et la fonction de contrainte est  <m>g(w,\ka)=4w+2\ka-12</m>. Les dérivées partielles sont
-<me>
+<md><mrow>
 U_w=4w^{-\frac{1}{3}}\ka^{\frac{1}{3}},\qquad
 U_\ka=2w^{\frac{2}{3}}\ka^{-\frac{2}{3}},\qquad
 g_w=4,\qquad
 g_\ka=2
-</me>.
+</mrow></md>.
 Les valeurs  <m>w=0</m> et <m>\ka=0</m> donnent une utilité de <m>0</m>, qui ne sera certainement pas un maximum. Il suffit alors de considérer les maximums locaux. Nous devons résoudre
 <md alignment="alignat"><mrow>
 4w^{-\frac{1}{3}}\ka^{\frac{1}{3}}&amp;=4\la,  \tag{E1}
@@ -433,12 +433,12 @@ Trouver le point sur la sphère  <m>x^2+y^2+z^2=1</m> qui est le plus éloigné 
       <solution>
         <p>
 Comme précédemment, on simplifie les calculs en considérant le carré de la distance comme fonction objectif
-<me>
+<md><mrow>
 f(x,y,z) = (x-1)^2 +(y-2)^2 + (z-3)^2
-</me>
-avec la contrainte <me>
+</mrow></md>
+avec la contrainte <md><mrow>
 g(x,y,z)= x^2 + y^2 + z^2 -1=0
-</me>.
+</mrow></md>.
 Puisque
 <md><mrow>
 f_x(x,y,z)&amp;=2(x-1),  &amp; f_y(x,y,z)&amp;=2(y-2), &amp; f_z(x,y,z)&amp;=2(z-3),
@@ -483,16 +483,16 @@ On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pou
         <p>
 Soit  <m>f(x,y,z)</m>, <m>g(x,y,z)</m> et <m>h(x,y,z)</m> des fonctions de classe <m>C^1</m> dans une région de  <m>\R^3</m> qui contient une courbe
 <m>\plan{C}</m> donnée par l'équation
-<me>
+<md><mrow>
 g(x,y,z)=h(x,y,z)=0
-</me>,
+</mrow></md>,
 c'est-à-dire que <m>\plan{C}</m> est l'intersection des deux surfaces <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m>. Supposons que<fn>
   Ceci revient à dire que les deux vecteurs normaux aux surfaces <m>g=0</m> et <m>h=0</m> au point <m>(x,y,z)</m> ne sont pas parallèles. Ceci assure que les deux surfaces ne sont pas tangentes en <m>(x,y,z)</m>, de sorte qu'elles se coupent en formant une courbe.
 </fn>
 <m>\vnabla g \times \vnabla h \ne 0</m> sur  <m>\plan{C}</m>. Si <m>f</m> restreinte à <m>\plan{C}</m> admet une valeur extrémale au point <m>\vr_0 = (x_0,y_0,z_0)</m> sur <m>\plan{C}</m>, alors il existe deux nombres réels <m>\la</m> et <m>\mu</m> tels que
 <md><mrow>
 \vnabla f(\vr_0) &amp;= \la\vnabla g(\vr_0) + \mu\vnabla h(\vr_0),
-</mrow>,
+</mrow>
 <intertext>c'est-à-dire</intertext><mrow>
 f_x(\vr_0) &amp;= \la\, g_x(\vr_0) + \mu\, h_x(\vr_0),
 </mrow><mrow>
@@ -505,9 +505,9 @@ f_z(\vr_0) &amp;= \la\, g_z(\vr_0) + \mu\, h_z(\vr_0)
     </theorem>
     <p>
 On peut, bien entendu, formuler ce théorème avec une fonction auxiliaire, comme avant :
-<me>
+<md><mrow>
 L(x,y,z,\la,\mu)=f(x,y,z)-\la\, g(x,y,z) - \mu\, h(x,y,z)
-</me>.
+</mrow></md>.
 Il s'agit d'une fonction de cinq variables : les trois variables originales,  <m>x</m>, <m>y</m> et <m>z</m>, et les deux variables auxiliaires, <m>\la</m> et <m>\mu</m>.
 S'il y a un extremum local à <m>\vr_0</m>, alors <m>\vr_0</m> doit aussi satisfaire la formule suivante:
 </p>
@@ -552,27 +552,27 @@ Avant de voir un exemple, justifions la validité de cette approche.  Supposons 
       </sidebyside>
       <p>
 Soit  <m>\vv</m> le vecteur vitesse lors du passage à <m>\vr_0</m>, il est donc tangent à la courbe  <m>g=h=0</m>. Comme <m>f</m> admet un minimum local en  <m>\vr_0</m>, <m>f</m> doit être croissante en quittant <m>\vr_0</m>, de sorte que la dérivée directionnelle dans la direction de notre mouvement est positive :
-<me>
+<md><mrow>
 D_{\vv}f(\vr_0)=\vnabla f(\vr_0) \cdot \vv\geqslant 0
-</me>.
+</mrow></md>.
 Recommençons, mais, cette fois, en allant dans la direction opposée avec le vecteur vitesse <m>-\vv</m>. De nouveau, <m>f</m> doit être croissante lorsque l'on quitte <m>\vr_0</m>, de sorte que la dérivée directionnelle est positive :
-<me>
+<md><mrow>
 D_{-\vv}f(\vr_0)=\vnabla f(\vr_0) \cdot (-\vv)\geqslant 0
-</me>.
+</mrow></md>.
 Comme <m>\vnabla f(\vr_0) \cdot \vv</m> et
 <m>-\vnabla f(\vr_0) \cdot \vv</m> sont positifs ou nuls, nous devons avoir
-<me>
+<md><mrow>
 \vnabla f(\vr_0) \cdot \vv=0
-\tag{$*$}</me>,
+\tag{$*$}</mrow></md>,
 et ceci tient pour tout vecteur  <m>\vv</m> qui est tangent à la courbe  <m>g=h=0</m> en  <m>\vr_0</m>. Soit <m>\cT</m> l'ensemble des vecteurs <m>\vv</m> qui sont tangents à la courbe  <m>g=h=0</m> en <m>\vr_0</m> et soit  <m>\cT^\perp</m> l'ensemble des vecteurs orthogonaux à ces vecteurs tangents. Ainsi, <m>(*)</m> dit que <m>\vnabla f(\vr_0)</m> doit faire partie de <m>\cT^\perp</m>.
 </p>
       <p>Nous allons maintenant trouver les vecteurs de <m>\cT^\perp</m>. Nous pouvons facilement deviner deux de ces vecteurs, à savoir <m>\vnabla g(\vr_0)</m> et <m>\vnabla h(\vr_0)</m>. Tout vecteur qui est une combinaison linéaire de ces deux vecteurs sera également orthogonal à tout vecteur de <m>\cT</m>.
 </p>
       <p>Par ailleurs, les vecteurs de  <m>\cT</m> forment en fait une droite (la tangente à <m>\cal{C}</m> en <m>\vr_0</m>). Ainsi, <m>\cT^\perp</m>, l'ensemble orthogonal à <m>\cT</m>, est un plan. Lorsque  <m>\la</m> et <m>\mu</m> parcourent les réels, les vecteurs <m>\la\vnabla g(\vr_0) + \mu\vnabla h(\vr_0)</m> décrivent un plan. Ainsi, nous pouvons conclure que tout vecteur de <m>\cT^\perp</m>, et en particulier  <m>\vnabla f(\vr_0)</m>, doit s'écrire sous la forme <m>\la\vnabla g(\vr_0)+\mu\vnabla h(\vr_0)</m>.
-<me>
+<md><mrow>
 \vnabla f(\vr_0)
 =\la\vnabla g(\vr_0)+\mu\vnabla h(\vr_0)
-</me>
+</mrow></md>
 
 </p>
     </proof>
@@ -580,21 +580,21 @@ et ceci tient pour tout vecteur  <m>\vv</m> qui est tangent à la courbe  <m>g=h
       <statement>
         <p>
 Trouver la distance de l'origine à la courbe intersection des surfaces
-<me>
+<md><mrow>
 z^2=x^2+y^2,\qquad x-2z=3
-</me>.
+</mrow></md>.
 </p>
       </statement>
       <solution>
         <p>
 De nouveau, nous simplifions les calculs en considérant le carré de la distance comme fonction objectif
-<me>
+<md><mrow>
 f(x,y,z)=x^2+y^2+z^2
-</me>
-avec les contraintes <me>
+</mrow></md>
+avec les contraintes <md><mrow>
 0=g(x,y,z)=x^2+y^2-z^2,\qquad
 0=h(x,y,z)=x-2z-3
-</me>.
+</mrow></md>.
 Puisque
 <md><mrow>
 f_x&amp;=2x, &amp;  f_y&amp;=2y,  &amp; f_z&amp;=2z,
@@ -667,9 +667,9 @@ Ainsi, l'équation (E5) nous dit que  <m>x=-3</m>, et donc
 (x,y,z)=(-3,0,-3)
 </m>.
 Nous ne nous soucions pas des valeurs de  <m>\la</m> et <m>\mu</m>, mais puisque  <m>-6(1-\la)=\mu</m> et <m>-3(1+\la)=-\mu</m>, nous obtenons
-<me>
+<md><mrow>
 -9+3\la=0 \implies \la=3
-</me>,
+</mrow></md>,
 puis, après substitution, <m>\mu=12</m>.
 </p>
         <p><em>Sous-cas <m>y=0</m>, <m>z=-x</m> :</em>
@@ -685,10 +685,10 @@ Ainsi, l'équation (E5) donne <m>x=1</m>, de sorte que
 (x,y,z)=(1,0,-1)
 </m>.
 De nouveau, même si elles ne sont pas nécessaires, on calcule les valeurs de <m>\la</m> et <m>\mu</m>. Comme <m>2(1-\la)=\mu</m> et <m>(1+\la)=\mu</m>, on soustrait la seconde équation de la première pour obtenir
-<me>
+<md><mrow>
 1-3\la=0
 \implies \la=\frac{1}{3}
-</me>,
+</mrow></md>,
 ce qui à son tour donne  <m>\mu=\frac{4}{3}</m>.
 </p>
         <p><em>Conclusion :</em> Nous avons deux candidats pour les points de maximum et de minimum local, à savoir  <m>(-3,0,-3)</m> et <m>(1,0,-1)</m>. Le premier se trouve à distance <m>3\sqrt{2}</m> de l'origine, ce qui donne le maximum; le second se trouve à distance <m>\sqrt{2}</m>, ce qui donne le minimum. En particulier, la distance est <m>\sqrt{2}</m>.

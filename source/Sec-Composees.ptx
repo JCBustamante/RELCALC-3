@@ -9,14 +9,14 @@
     <title>Le cas des fonctions à une variable</title>
     <p>
       La règle de dérivation des fonctions composées, souvent appelée la <q>règle de la chaîne</q>, à savoir
-      <me>
+      <md>
         \diff{}{t}f\big(x(t)\big)
         = \diff{f}{x}\big(x(t)\big)\ \diff{x}{t}(t)
-      </me>,
+      </md>,
       nous est déjà familière. On s'en sert, par exemple, lorsqu'on calcule
-      <me>
+      <md>
         \diff{}{t}\sin(t^2) = \cos(t^2)\ 2t
-      </me>.
+      </md>.
       Dans cet exemple, <m>f(x)=\sin(x)</m> et <m>x(t)=t^2</m>.
     </p>
   </introduction>
@@ -35,17 +35,17 @@
       <title>Règle de la chaîne</title>
       <statement>
         <p>Soit <m>\cD \subseteq \R^m</m> et <m>\cE \subset \R^n</m> des ouverts et <m>g : \cD \to \R^n</m> et <m>f:\cE \to \R^p</m> des fonctions telles que <m>g(\cD) \subset \cE </m>, de sorte que <m>F = f\circ g : \cD \to \R^p</m> est définie. Supposons de plus que <m>g</m> est différentiable en <m>\vr_0</m> et que <m>f</m> est différentiable en <m>g(\vr_0)</m>. Alors, <m>F</m> est différentiable en <m>\vr_0</m>, et
-          <me>
+          <md>
             \vD F(\vr_0) = \vD(f\circ g)(\vr_0) = \vD f(g(\vr_0))\ \vD g(\vr_0).
-          </me>
+          </md>
         </p>
       </statement>
     </theorem>
     <p>
       Il est important de comprendre que le terme de droite de l'égalité ci-haut est un produit matriciel
-      <me>
+      <md>
         \underbrace{\vD f(g(\vr_0))}_{p\times n} \ \underbrace{\vD g(\vr_0)}_{n\times m}
-      </me>.
+      </md>.
     </p>
     <p>
       Voyons maintenant quelques exemples.
@@ -62,13 +62,13 @@
       </p>
       <p>
         On peut écrire aussi, en omettant le point d'évaluation des dérivées partielles (ce qui comporte un petit risque si l'on ne s'assure pas de bien avoir compris),
-        <me>
+        <md>
           \diff{F}{t} = \pdiff{f}{x} \diff{x}{t} + \pdiff{f}{y} \diff{y}{t}+\pdiff{f}{z} \diff{z}{t}.
-        </me>
+        </md>
         Par ailleurs, avec les variables de dérivation comme indices, ceci s'écrit
-        <me>
+        <md>
           F'(t) = f_x(\vr(t))x'(t) + f_y(\vr(t))y'(t) + f_z(\vr(t))z'(t)
-        </me>.
+        </md>.
       </p>
       <example xml:id="eg_chainRuleA">
         <title>
@@ -80,24 +80,24 @@
           </m>.
         </p>
         <p>Posons <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t \, \vi + \sin t\ \vj</m> et   <m>F(t)=f\circ \vr(t) = f\big(x(t),y(t)\big)</m>. Nous avons, d'une part,
-          <me>
+          <md>
             \vD f = \begin{bmatrix} \pdiff{f}{x} \amp \pdiff{f}{y} \end{bmatrix} = \begin{bmatrix} 2x \amp -2y\end{bmatrix}
-          </me>
+          </md>
           et, d'autre part,
-          <me>
+          <md>
             \vr'(t) = \begin{bmatrix} x'(t) \\ y'(t)\end{bmatrix} = \begin{bmatrix}-\sin t\\ \cos t\end{bmatrix}
-          </me>,
+          </md>,
           de sorte que
-          <md><mrow>\diff{F}{t} \amp=  \left.\pdiff{f}{x}\right|_{\vr(t)} x'(t) + \left.\pdiff{f}{y}\right|_{\vr(t)} y'(t)</mrow><mrow> \amp = 2x(t)\cdot x'(t) -2y(t)\cdot y(t) </mrow><mrow>  \amp = (2\cos t)(-\sin t) +(-2\sin t)(\cos t) </mrow><mrow>  \amp = -4\sin t\cos t </mrow></md>.
+          <md><mrow>\diff{F}{t} \amp=  \left.\pdiff{f}{x}\right|_{\vr(t)} x'(t) + \left.\pdiff{f}{y}\right|_{\vr(t)} y'(t)</mrow><mrow> \amp = 2x(t)\cdot x'(t) -2y(t)\cdot y'(t) </mrow><mrow>  \amp = (2\cos t)(-\sin t) +(-2\sin t)(\cos t) </mrow><mrow>  \amp = -4\sin t\cos t </mrow></md>.
 
           Bien entendu, dans cet exemple, on peut calculer  <m>F(t)</m> explicitement,
-          <me>
+          <md>
             F(t)=f\big(x(t),y(t)\big)=x(t)^2-y(t)^2=\cos^2t-\sin^2t
-          </me>,
+          </md>,
           puis calculer la dérivée
-          <me>
+          <md>
             F'(t)=2(\cos t)(-\sin t)-2(\sin t)(\cos t) = -4 \sin t\cos t
-          </me>.
+          </md>.
         </p>
       </example>
       <example xml:id="eg_chainRuleB">
@@ -106,12 +106,12 @@
         </title>
         <p>
           Dans cet exemple, la variable intermédiaire n'est pas donnée. Posons donc  <m>u(t)=a+ct</m> et <m>w(t) = f(a+ct) = f\big(u(t)\big)</m>. Ainsi,
-          <me>
+          <md>
             \diff{}{t}f(x+ct)
             =\diff{w}{t}(t)
             =\diff{f}{u}\big(u(t)\big)  \diff{u}{t}(t)
             =c\, f'(a+ct)
-          </me>.
+          </md>.
         </p>
       </example>
       <exercise>
@@ -128,18 +128,18 @@
     <paragraphs xml:id="pars-Chaine-2-vars">
       <title>Composition avec une fonction de deux variables.<m>f(x(s,t), y(s,t))</m></title>
       <p>
-        Soit, comme avant, <m>f</m> une fonction de deux variables <m>x,y</m>, mais, cette fois, nous considérons qu'elles sont à leur tour des fonctions des variables <m>s,t</m>. Plus formellement, posons <m>g(x,t) = x(s,t)\vi + y(s,t)\vj</m> et supposons que <m>g</m> est différentiable. Alors, on peut définir <m>F(s,t) = f(x(s,t),y(s,t))</m>, qui est une fonction de deux variables réelles, à valeurs dans <m>\R</m>. Elle admet donc deux dérivées partielles, et sa dérivée est
-        <me>
+        Soit, comme avant, <m>f</m> une fonction de deux variables <m>x,y</m>, mais, cette fois, nous considérons qu'elles sont à leur tour des fonctions des variables <m>s,t</m>. Plus formellement, posons <m>g(s,t) = x(s,t)\vi + y(s,t)\vj</m> et supposons que <m>g</m> est différentiable. Alors, on peut définir <m>F(s,t) = f(x(s,t),y(s,t))</m>, qui est une fonction de deux variables réelles, à valeurs dans <m>\R</m>. Elle admet donc deux dérivées partielles, et sa dérivée est
+        <md>
           \vD F =  \begin{bmatrix} \pdiff{F}{s} \amp \pdiff{F}{t} \end{bmatrix}
-        </me>.
+        </md>.
         Par ailleurs, le <xref ref="thm_chainRule" text="global">théorème</xref> nous dit aussi que
-        <me>
+        <md>
           \vD F(s,t) = \vD (f\circ g)(s,t) = \vD f(g(s,t))\ \vD g(s,t).
-        </me>
+        </md>
         Or,
-        <me>
+        <md>
           \vD f(g(s,t)) = \left. \begin{bmatrix} \pdiff{f}{x} \amp \pdiff{f}{y} \end{bmatrix}\right|_{g(s,t)} \qquad \text{ et } \qquad \vD g(s,t) = \left.\begin{bmatrix} \pdiff{x}{s}\amp \pdiff{x}{t} \\ \pdiff{y}{s} \amp \pdiff{y}{t}\end{bmatrix}\right|_{(s,t)}.
-        </me>
+        </md>
         Ceci donne directement
         <md><mrow> \vD F(s,t) \amp = \begin{bmatrix} \pdiff{f}{x} \amp \pdiff{f}{y} \end{bmatrix} \begin{bmatrix} \pdiff{x}{s}\amp \pdiff{x}{t} \\ \pdiff{y}{s} \amp \pdiff{y}{t}\end{bmatrix} </mrow><mrow> \amp  = \begin{bmatrix}\pdiff{f}{x}\pdiff{x}{s} + \pdiff{f}{y} \pdiff{y}{s} \amp \pdiff{f}{x}\pdiff{x}{t} + \pdiff{f}{y} \pdiff{y}{t}    \end{bmatrix}.</mrow></md>
         Composante à composante, on déduit les formules usuelles
@@ -160,15 +160,15 @@
         </title>
         <p>
           Dans cet exemple, on trouve <m>\pdiff{}{s}f\big(x(s,t),y(s,t)\big)</m> lorsque
-          <me>
+          <md>
             f(x,y)=e^{xy},\qquad x(s,t)=s, \qquad y(s,t)=\cos t
-          </me>.
+          </md>.
           Posons  <m>F(s,t)=f\big(x(s,t),\,y(s,t)\big)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
-          <me>
+          <md>
             \pdiff{F}{s}(s,t)
             =  \pdiff{f}{x}\big(x(s,t),\,y(s,t)\big)\, \pdiff{x}{s}(s,t)
               +\pdiff{f}{y}\big(x(s,t),\,y(s,t)\big)\, \pdiff{y}{s}(s,t)
-          </me>.
+          </md>.
           Pour les fonctions données,
           <md><mrow>
               f(x,y)&amp;=e^{xy},
@@ -185,19 +185,19 @@
               \pdiff{y}{s}&amp;=0
             </mrow></md>,
           de sorte que
-          <me>
+          <md>
             \pdiff{F}{s}(s,t)=\overbrace{\left\{\cos t\ e^{s\cos t}\right\}}^{\pdiff{f}{x}}
                               \overbrace{(1) }^{\pdiff{x}{s}}
                               +\overbrace{\left\{s\ e^{s\cos t}\right\}}^{\pdiff{f}{y}}
                                 \overbrace{(0) }^{\pdiff{y}{s}}
                             = \cos t\ e^{s\cos t}
-          </me>.
+          </md>.
         </p>
         <p>
           De la même façon, on calcule
-          <me>
-            \pdiff{F}{s}(s,t)=-s \sin t\, e^{s\cos t}
-          </me>.
+          <md>
+            \pdiff{F}{t}(s,t)=-s \sin t\, e^{s\cos t}
+          </md>.
         </p>
       </example>
       <example xml:id="ex-chaine-polaires">
@@ -207,9 +207,9 @@
           </p>
           <p>
             De nouveau, posons <m>z(r,\j) = f(x(r,\j),y(r,\j))</m>. Alors, la formule <xref ref="Chaine-svar-1"/>  donne directement
-            <me>
-              \pdiff{z}{r} = \pdiff{f}{x}\pdiff{x}{r} + \pdiff{f}{y}\pdiff{y}{r} =  \cos \j \pdiff{f}{x} + \sin \j \pdiff{f}{y}(\sin \j)
-            </me>
+            <md>
+              \pdiff{z}{r} = \pdiff{f}{x}\pdiff{x}{r} + \pdiff{f}{y}\pdiff{y}{r} =  \cos \j \pdiff{f}{x} + \sin \j \pdiff{f}{y}
+            </md>
             et
             <md><mrow>\pdiff{z}{\j} \amp =\pdiff{f}{x}\pdiff{x}{\j} + \pdiff{f}{y}\pdiff{y}{\j} =  \pdiff{f}{x}(-r \sin \j) + \pdiff{f}{y}(r \cos \j)  </mrow><mrow> \amp= -r\sin \j \pdiff{f}{x} + r\cos \j \pdiff{f}{y} </mrow></md>.
           </p>
@@ -224,21 +224,21 @@
           </p>
           <p>
             Nous avons, toujours d'après <xref ref="Chaine-svar-1"/> :
-            <me>
+            <md>
               \pdiff{F}{s} = \pdiff{f}{x}\pdiff{x}{s} + \pdiff{f}{y}\pdiff{y}{s} = 2s \pdiff{f}{x} -2s\pdiff{f}{y}
-            </me>,
+            </md>,
             et donc <m>\displaystyle t\pdiff{F}{s} = 2ts\left( \pdiff{f}{x} - \pdiff{f}{y}\right)</m>.
           </p>
           <p>
             De la même façon,
-            <me>
+            <md>
               \pdiff{F}{t} = \pdiff{f}{x}\pdiff{x}{t} + \pdiff{f}{y}\pdiff{y}{t} = -2t \pdiff{f}{x} +2t\pdiff{f}{y}
-            </me>,
+            </md>,
             et donc  <m>\displaystyle t\pdiff{F}{t} = 2ts\left( -\pdiff{f}{x} + \pdiff{f}{y}\right)</m>.
             Il s'ensuit que
-            <me>
+            <md>
               t\pdiff{F}{s} + s \pdiff{F}{t} = 2st\left( \pdiff{f}{x} - \pdiff{f}{y}\right) + 2st\left(-\pdiff{f}{x} + \pdiff{f}{y}\right) = 0
-            </me>.
+            </md>.
           </p>
         </statement>
       </example>
@@ -248,14 +248,14 @@
           </p>
           <p>
             Le calcul de la dérivée du premier ordre est immédiat, on a
-            <md><mrow> \pdiff{F}{u} \amp =   \pdiff{f}{x} \pdiff{x}{u}+  \pdiff{f}{y} \pdiff{y}{u} = \pdiff{f}{x} \cdot 2u + \pdiff{f}{y}\cdot 2v</mrow><mrow> \amp = 2 \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right) </mrow></md>.
+            <md><mrow> \pdiff{F}{u} \amp =   \pdiff{f}{x} \pdiff{x}{u}+  \pdiff{f}{y} \pdiff{y}{u} = \pdiff{f}{x} \cdot 2u + \pdiff{f}{y}\cdot 2v</mrow><mrow> \amp = 2 \left(u \pdiff{f}{x} + v \pdiff{f}{y} \right) </mrow></md>.
           </p>
           <p>
             Afin de calculer la dérivée du deuxième ordre, nous devons dériver de nouveau et tenir compte de la règle du produit dans un premier temps :
-            <md><mrow>\frac{\partial^2 F}{\partial u^2}  \amp = \pdiff{}{u}\pdiff{F}{u} = 2 \pdiff{}{u} \left(u \pdiff{f}{x} + v \pdiff{f}{v} \right)</mrow><mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 0 \pdiff{f}{y} + 2v \pdiff{}{u} \pdiff{f}{y} </mrow><mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}</mrow></md>.
+            <md><mrow>\frac{\partial^2 F}{\partial u^2}  \amp = \pdiff{}{u}\pdiff{F}{u} = 2 \pdiff{}{u} \left(u \pdiff{f}{x} + v \pdiff{f}{y} \right)</mrow><mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 0 \pdiff{f}{y} + 2v \pdiff{}{u} \pdiff{f}{y} </mrow><mrow>  \amp= 2 \pdiff{f}{x} + 2u\pdiff{}{u}\pdiff{f}{x} + 2v \pdiff{}{u} \pdiff{f}{y}</mrow></md>.
           </p>
           <p>
-            Or, il faut bien comprendre que les dérivées partielles <m>\diff{f}{x}</m> et <m>\pdiff{f}{y}</m> sont évaluées en <m>(x(u,v), y(u,v))</m>, ce qui donne le sens aux expressions <m>\pdiff{}{u} \pdiff{f}{y} </m> et <m>\pdiff{}{u} \pdiff{f}{y}</m>. On calcule alors
+            Or, il faut bien comprendre que les dérivées partielles <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> sont évaluées en <m>(x(u,v), y(u,v))</m>, ce qui donne le sens aux expressions <m>\pdiff{}{u} \pdiff{f}{x} </m> et <m>\pdiff{}{u} \pdiff{f}{y}</m>. On calcule alors
             <md><mrow> \pdiff{}{u} \pdiff{f}{x} \amp = \pdiff{}{x}\left(\pdiff{f}{x}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{x}\right)\, \pdiff{y}{u}  = \frac{\partial^2 f}{\partial x^2}\ 2u + \frac{\partial^2f}{\partial y\, \partial x}\ 2v </mrow>,
               <mrow> \pdiff{}{u} \pdiff{f}{y} \amp = \pdiff{}{x}\left(\pdiff{f}{y}\right)\, \pdiff{x}{u} + \pdiff{}{y}\left(\pdiff{f}{y}\right)\, \pdiff{y}{u} = \frac{\partial^2 f}{\partial x \, \partial y}\ 2u + \frac{\partial^2f}{\partial y^2}\ 2v  </mrow></md>.
           </p>
@@ -276,17 +276,17 @@
     <title>Plus d'exemples, et une preuve</title>
     <p>
       Revenons au cas général et écrivons <m>\vx</m> au lieu de <m>\vr</m>, avec
-      <me>
+      <md>
         \vx = \begin{bmatrix}x_1 \\ \vdots \\ x_m\end{bmatrix},\ \vu = \begin{bmatrix}u_1 \\ \vdots \\ u_n\end{bmatrix} = g(\vx) = \begin{bmatrix}g_1(\vx)\\ \vdots \\ g_n(\vx)\end{bmatrix}, \text{ puis }  \vz =  \begin{bmatrix}z_1 \\ \vdots \\ z_p\end{bmatrix} = f(\vu)
-      </me>.
+      </md>.
       Ainsi, <m>\vz = f\circ g(\vx)</m>, et nous avons <m>p</m> variables <m>z_1,\ldots,z_p</m> qui dépendent des <m>m</m> variables <m>x_1,\ldots, x_m</m>. La fonction <m>F = f\circ g</m> va d'une partie de <m>\R^m</m> dans <m>\R^p</m>. Sa dérivée évaluée en un point est donc une matrice ayant <m>p</m> rangées et <m>m</m> colonnes.
-      <me>
+      <md>
         \vD F(\vx) = \vD (f\circ g)(\vx) = \vD f(g(\vx))\, \vD g(\vx) = \vD f(\vu)\, \vD g(\vx).
-      </me>
+      </md>
       L'entrée en position <m>(i,j)</m> de cette matrice est <m>\pdiff{z_i}{x_j}</m>. Elle s'obtient en multipliant la <m>i^{\text{ième}}</m> rangée de <m>\vD f(\vu)</m> avec la <m>j^{\text{ième}}</m> colonne de <m>\vD g(\vx)</m>. Cette rangée et cette colonne sont, respectivement,
-      <me>
-        \begin{bmatrix} \pdiff{z_i}{u_1} \amp \pdiff{z_i}{u_2} \amp \ldots \amp \pdiff{f_i}{u_n}\end{bmatrix}\qquad  \text{ et } \qquad \begin{bmatrix}\pdiff{u_1}{x_j}\\ \pdiff{u_2}{x_j} \\ \vdots \\ \pdiff{u_n}{x_j} \end{bmatrix}.
-      </me>
+      <md>
+        \begin{bmatrix} \pdiff{z_i}{u_1} \amp \pdiff{z_i}{u_2} \amp \ldots \amp \pdiff{z_i}{u_n}\end{bmatrix}\qquad  \text{ et } \qquad \begin{bmatrix}\pdiff{u_1}{x_j}\\ \pdiff{u_2}{x_j} \\ \vdots \\ \pdiff{u_n}{x_j} \end{bmatrix}.
+      </md>
       On en déduit donc la formule
       <md><mrow xml:id="Chaine-svar-n" tag="dstar">
           \pdiff{z_i}{x_j} &amp; = \sum_{k=1}^n \pdiff{z_i}{u_k}\, \pdiff{u_k}{x_j}
@@ -302,21 +302,21 @@
     <example xml:id="Eg-chaine-nm">
       <statement>
         <p>Soit <m>g(s,t) =  \left( st, \frac{1}{2}(t^2 - s^2)\right)</m> et <m>f(x,y) = (x+y,y,x^2)</m>. Posons <m>F(s,t) = f \circ g\, (s,t)</m>. Notons que <m>F</m> est une fonction de deux variables qui prend des valeurs dans <m>\R^3</m>. On a
-          <me>
+          <md>
             \vD F(s,t) = \vD f(g(s,t))\, \vD g(s,t).
-          </me>
+          </md>
           Or, on calcule sans peine
-          <me>\vD f(x,y) = \begin{bmatrix}1\amp 1 \\ 0 \amp 1\\ 2x \amp 0 \end{bmatrix} \qquad \text{ et } \qquad \vD g(s,t) = \begin{bmatrix} t\amp s \\ -s \amp t \end{bmatrix}. </me>
+          <md>\vD f(x,y) = \begin{bmatrix}1\amp 1 \\ 0 \amp 1\\ 2x \amp 0 \end{bmatrix} \qquad \text{ et } \qquad \vD g(s,t) = \begin{bmatrix} t\amp s \\ -s \amp t \end{bmatrix}. </md>
         </p>
         <p>
           La dérivée de <m>f</m> doit être évaluée en <m>g(s,t)</m>. Il vient donc que
-          <me>
+          <md>
             \vD F(s,t)=  \begin{bmatrix}1\amp 1 \\ 0 \amp 1\\ 2st \amp 0 \end{bmatrix} \begin{bmatrix} t\amp s \\ -s \amp t \end{bmatrix} = \begin{bmatrix}t-s \amp s+t\\ -s \amp t\\ 2st^2 \amp 2s^2t \end{bmatrix}
-          </me>.
+          </md>.
           On vérifie aisément que
-          <me>
+          <md>
             F(s,t) = \left(st + \frac{1}{2}(t^2 - s^2), \frac{1}{2}(t^2- s^2), s^2 t^2\right).
-          </me>
+          </md>
           Les entrées de la troisième rangée de <m>\vD f(s,t)</m>, à savoir <m>2st^2</m> et <m>2s^2 t</m>, sont les dérivées partielles de la troisième composante de <m>F(s,t)</m>, à savoir <m>s^2 t^2</m>, par rapport aux variables <m>s</m> et <m>t</m> respectivement.
         </p>
       </statement>
@@ -329,39 +329,39 @@
             </p></li><li><p>
               Une fois le premier cas traité, tout en gardant <m>f</m> comme une fonction à valeurs dans <m>\R</m>, on permettra à <m>g</m> d'être une fonction de plusieurs variables. Comme la dérivation partielle par rapport à une variable laisse fixes toutes les autres, ce deuxième cas suivra directement du premier.
             </p></li><li><p>
-              Finalement, on permet à <m>f</m>de prendre des valeurs dans <m>\R^p</m>. Ceci revient à dire que <m>f</m> est donnée par <m>p</m> fonctions <m>f_1, \ldots, f_p</m>. Ainsi,  <m>f\circ g</m> est la donnée de <m>p</m> fonctions comme celles qui ont été considérées dans le point précédent, à savoir <m>f_1 \circ g,\, f_1 \circ g  \ldots,\, f_p \circ g</m>. Le résultat suivra.
+              Finalement, on permet à <m>f</m> de prendre des valeurs dans <m>\R^p</m>. Ceci revient à dire que <m>f</m> est donnée par <m>p</m> fonctions <m>f_1, \ldots, f_p</m>. Ainsi,  <m>f\circ g</m> est la donnée de <m>p</m> fonctions comme celles qui ont été considérées dans le point précédent, à savoir <m>f_1 \circ g,\, f_2 \circ g,\, \ldots,\, f_p \circ g</m>. Le résultat suivra.
             </p></li></ul>
       </p>
       <p>
         Afin de traiter le premier cas, faisons, pour des fins d'écriture, l'hypothèse supplémentaire que <m>g</m> est un chemin dans <m>\R^2</m>, c'est-à-dire <m>g : t \mapsto (x(t), y(t))</m>. On se donne aussi <m>f:(x,y)\mapsto f(x,y)</m> et l'on s'intéresse à <m>F(t) = (f\circ g) (t)</m>. Nous avons, par définition,
         <md><mrow> \diff{F}{t}(t_0) \amp= \lim_{t\to t_0} \frac{F(t) - F(t_0)}{t-t_0} = \lim_{t\to t_0} \frac{f(g(t)) - f(g(t_0))}{t-t_0} </mrow><mrow> \amp = \lim_{t\to t_0} \frac{f(x(t),y(t)) - f(x(t_0), y(t_0))}{t-t_0}</mrow></md>.
         Or, on peut écrire le numérateur du quotient comme
-        <me>
+        <md>
           \underbrace{f(x(t), y(t)) - f(x(t_0), y(t))}_{y(t) \text{ est fixe}} + \underbrace{f(x(t_0), y(t)) - f(x(t_0), y(t_0)).}_{x(t_0) \text{ est fixe}}
-        </me>
+        </md>
         Les deux premiers termes sont la différence des valeurs de <m>f</m> évaluée en deux points dont le deuxième argument est fixe, à savoir <m>y(t)</m>. De même, les deux derniers termes sont la différence de deux valeurs de <m>f</m> évaluée en deux points dont le premier argument, <m>x(t_0)</m>, est fixe.
       </p>
       <p>
         Étant donné qu'on suppose que <m>f</m> admet des dérivées partielles continues, le théorème des accroissements finis appliqué à <m>f</m> comme fonction de chacune des variables séparément donne qu'il existe
         <ul><li><p>
               un réel <m>x^\ast </m> entre <m>x(t)</m> et <m>x(t_0)</m> tel que
-              <me>
+              <md>
                 f(x(t),y(t)) - f(x(t_0),y(t)) =  \pdiff{f}{x}(x^\ast, y(t))\cdot (x(t) - x(t_0))
-              </me>;
+              </md>;
             </p></li><li><p>
               un réel <m>y^\ast </m> entre <m>y(t)</m> et <m>y(t_0)</m> tel que
-              <me>
+              <md>
                 f(x(t_0),y(t)) - f(x(t_0),y(t_0)) =  \pdiff{f}{y}(x(t_0), y^\ast) \cdot (y(t) - y(t_0))
-              </me>.
+              </md>.
             </p></li></ul>
         Ainsi, le quotient des différences qui nous intéresse est
         <md><mrow>\frac{F(t) - F(t_0)}{t-t_0} \amp = \frac{f(x(t),y(t)) - f(x(t_0), y(t_0))}{t-t_0}</mrow><mrow> \amp  = \frac{ \pdiff{f}{x}(x^\ast, y(t))\cdot (x(t) - x(t_0))  +  \pdiff{f}{y}(x(t_0), y^\ast) \cdot (y(t) - y(t_0)) }{t-t_0}</mrow><mrow>  \amp = \pdiff{f}{x}(x^\ast, y(t)) \frac{x(t) - x(t_0)}{t-t_0} +  \pdiff{f}{y}(x(t_0), y^\ast) \frac{y(t) - y(t_0) }{t-t_0} </mrow></md>.
       </p>
       <p>
         Il suit de la continuité des dérivées partielles de la fonction <m>f</m> et de la définition de la dérivée de <m>x</m> et <m>y</m> comme fonctions de <m>t</m> que la limite qui nous intéresse est
-        <me>
+        <md>
           \pdiff{f}{x}(x(t_0), y(t_0))\cdot x'(t_0) +  \pdiff{f}{y}(x(t_0), y(t_0))\cdot y'(t_0)
-        </me>.
+        </md>.
         Or, nous avons
         <md><mrow>\vD f(x(t_0),y(t_0)) \amp = \begin{bmatrix} \pdiff{f}{x}(x(t_0),y(t_0)) \amp \pdiff{f}{y}(x(t_0),y(t_0))\end{bmatrix}  \text{et} </mrow><mrow> \vD g(t_0) \amp = \begin{bmatrix}x'(t_0)\\ y'(t_0)\end{bmatrix}.
           </mrow></md>
@@ -373,17 +373,17 @@
     </p>
     <p>
       Près du point d'évaluation <m>\vr_0</m>, la variation <m>\De f</m> (qui résulte d'une variation <m>\De \vr</m>) est approchée par
-      <me>
+      <md>
         df = \vD f(\vr_0)\, \De \vr.
-      </me>
+      </md>
       Supposons que <m>f(\vr_0) \ne 0</m> et posons alors <m>g(\vr) = \ln(f(\vr))</m>, de sorte que, en vertu de la règle des fonctions composées,
-      <me>
+      <md>
         \vD g(\vr_0) = \frac{1}{f(\vr_0)}\vD f(\vr_0)
-      </me>,
+      </md>,
       et donc la différentielle de <m>g</m> (en <m>\vr_0</m>) vaut
-      <me>
+      <md>
         dg = \vD g(\vr_0)\, \De \vr = \frac{1}{f(\vr_0)}\vD f(\vr_0)\, \De \vr = \frac{1}{f(\vr_0)} df
-      </me>.
+      </md>.
     </p>
     <example>
       <statement>
@@ -393,9 +393,9 @@
       </statement>
       <solution>
         <p>Posons <m>\vr = (l,g)</m> et <m>w = \ln T(l,g) = \ln(2\pi) + \frac{1}{2}\ln l - \frac{1}{2} \ln g</m>. Alors,
-          <me>
+          <md>
             dw = \vD w(\vr) d\vr = \begin{bmatrix}\frac{1}{2l} \amp \frac{-1}{2g}\end{bmatrix} \begin{bmatrix}dl\\ dg\end{bmatrix} = \frac{dl}{2l} - \frac{dg}{2g}.
-          </me>
+          </md>
           Ainsi, nous avons
           <md><mrow> \left| \frac{dT}{T} \right| \amp = |dw| = \frac{1}{2}\left| \frac{dl}{l} - \frac{dg}{g} \right| \leqslant \frac{1}{2}\left(\left| \frac{dl}{l}\right| +  \left|\frac{dg}{g}\right|  \right)   </mrow><mrow> \amp \leqslant \frac{1}{2}\left( \frac{1}{100} + \frac{1}{100}\right) = \frac{1}{100}</mrow></md>.
         </p>
@@ -409,13 +409,13 @@
     </p>
     <p>
       Supposons que nous avons une courbe du plan donnée par l'équation <m>f(x,y) = 0</m> et que nous avons aussi un paramétrage de cette courbe <m>\vr(t) = x(t)\vi + y(t)\vj</m>. Ainsi, nous devons avoir
-      <me>
+      <md>
         0 = f(x(t), y(t)) = f\circ \vr (t).
-      </me>
+      </md>
       D'après la formule de dérivation des fonctions composées, après dérivation par rapport à <m>t</m>, nous avons
-      <me>
+      <md>
         0 = \vD(f\circ \vr) = (\vD f)\, \vr' = \pdiff{f}{x}\diff{x}{t} + \pdiff{f}{y}\diff{y}{t}.
-      </me>
+      </md>
     </p>
     <!--
     <p>
@@ -426,9 +426,9 @@
     -->
     <p>
       Ainsi, nous avons que le vecteur <m>\pdiff{f}{x}\vi + \pdiff{f}{y}\vj</m> (que nous appellons le <q>gradient de <m>f</m></q>, il jouera un rôle crucial dans les sections à venir) est orthogonal au vecteur vitesse <m>\vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\, \vj</m>  et donc orthogonal à la courbe. Si <m>(x_0,y_0) =\vr(t_0)</m> est un point sur la courbe, la connaissance du vecteur normal nous permet d'obtenir directement une équation de la tangente, à savoir
-      <me>
+      <md>
         \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
-      </me>
+      </md>
     </p>
     <figure xml:id="figure-implicites">
       <caption>Une courbe <m>f(x,y)= 0</m> ainsi que quelques tangentes. Autour de <m>P_1</m>, on ne peut isoler pour <m>y</m> en fonction de <m>x</m> : deux valeurs distinctes correspondent à <m>\hat{x}_1</m>, la tangente est verticale. Les rôles sont échangés autour de <m>P_2</m>. Par contre, autour de <m>P_3</m>, on peut isoler n'importe laquelle des deux variables en termes de l'autre. La tangente n'est ni verticale ni horizontale.</caption>
@@ -458,9 +458,9 @@
     </figure>
     <p>
       Si <m>\pdiff{f}{y}(x_0,y_0) \ne 0</m>, la tangente n'est pas verticale, et sa pente est précisément
-      <me>
+      <md>
         \frac{-\pdiff{f}{x}(x_0,y_0)}{\pdiff{f}{y}(x_0,y_0)}
-      </me>.
+      </md>.
 
       Par ailleurs, si, dans cette situation, on a en plus que les dérivées partielles sont continues,  alors il existe un voisinage de <m>x_0</m> où chaque valeur de <m>x</m> détermine une unique valeur de <m>y</m>, qu'on note <m>y(x)</m>, telle que <m>(x,y(x))</m> se trouve sur la courbe. On dit alors que <q>la relation <m>f(x,y)=0</m> définit implicitement <m>y</m> comme fonction de <m>x</m> près de <m>x_0</m></q>. De plus, cette fonction est dérivable et, puisque la dérivée <m>y'(x_0)</m> est la pente de la tangente, on s'attend à avoir
       <m>y'(x_0) = \frac{-\pdiff{f}{x}(x_0,y_0)}{\pdiff{f}{y}(x_0,y_0)}.</m>
@@ -475,9 +475,9 @@
     </p>
     <p>
       Notons que, si nous avons plutôt <m>\pdiff{f}{x}(x_0,y_0)\ne 0</m>, nous pouvons reprendre les arguments ci-haut et obtenir <m>x = x(y)</m> et, sans surprise,
-      <me>
+      <md>
         x'(y_0)= \frac{-\pdiff{f}{y}(x_0,y_0)}{\pdiff{f}{x}(x_0,y_0)}
-      </me>.
+      </md>.
     </p>
     <p>
       Pour les fonctions à plus de deux variables, nous avons quelque chose de semblable : le fait d'avoir une dérivée partielle qui ne s'annule pas permet de définir implicitement l'une des variables comme fonction des deux autres. Cette fonction admet des dérivées partielles, et la règle de dérivation des fonctions composées permet de les calculer.
@@ -501,12 +501,12 @@
     </theorem>
     <p>
       Comme cela a été mentionné plus haut, la preuve dépasse le cadre de ce texte. C'est le point 1 qui est délicat, mais, si l'on accepte l'existence de la fonction <m>z= z(x,y)</m>, on obtient les formules du point 2 avec la règle de la chaîne, de la même façon que ce qui a été fait en  <xref ref="Dimpl2"/>, à savoir
-      <me>
-        0  = \pdiff{}{x}f(x,y,z(z,y)) = \pdiff{f}{x}\pdiff{x}{x} + \pdiff{f}{y}\pdiff{y}{x} + \pdiff{f}{z}\pdiff{z}{x}    = \pdiff{f}{x} + \pdiff{f}{z}\pdiff{z}{x}
-      </me>,
+      <md>
+        0  = \pdiff{}{x}f(x,y,z(x,y)) = \pdiff{f}{x}\pdiff{x}{x} + \pdiff{f}{y}\pdiff{y}{x} + \pdiff{f}{z}\pdiff{z}{x}    = \pdiff{f}{x} + \pdiff{f}{z}\pdiff{z}{x}
+      </md>,
       où la dernière égalité suit du fait que <m>x</m> et <m>y</m> sont indépendantes. Il vient alors que
-      <me>\pdiff{z}{x} = -\frac{\pdiff{f}{x}}{\pdiff{f}{z}}.
-      </me>
+      <md>\pdiff{z}{x} = -\frac{\pdiff{f}{x}}{\pdiff{f}{z}}.
+      </md>
       Encore une fois, il serait tentant de penser que ceci découle de <q>simplifier les fractions</q>, mais il n'en est rien.
     </p>
     <p>
@@ -521,8 +521,8 @@
         </p>
         <p>
           Posons <m>f(x,y,z) = x-z-\arctan(yz)</m>, de sorte que l'égalité donnée équivaut à <m>f(x,y,z) = 0</m>. On calcule alors <m>\pdiff{f}{z} = -1-\frac{y}{1+y^2z^2}</m>. Ainsi, la relation donnée définit implicitement <m>z</m> en fonction de <m>x</m> et <m>y</m> sauf  lorsque <m>1+y^2 z^2 =-y</m>. Par ailleurs :
-          <ul><li><p><m>\pdiff{f}{x} = 1</m>, d'où <m>\displaystyle \pdiff{z}{x} = \frac{-\pdiff{f}{x}}{\pdiff{f}{z}} = \frac{-1}{-1-\frac{y}{y^2 z^2}} = \frac{1+y^2 z^2}{1+y}</m>;
-              </p></li><li><p><m>\pdiff{f}{y} = \frac{-z}{1+y^2 z^2}</m>, d'où <m>\displaystyle \pdiff{z}{y} = \frac{-\pdiff{f}{x}}{\pdiff{f}{z}}  = \frac{\frac{z}{+1y^2 z^2}}{-1-\frac{y}{y^2 z^2}} = \frac{-z}{1+y^2 z^2 - y}</m>.
+          <ul><li><p><m>\pdiff{f}{x} = 1</m>, d'où <m>\displaystyle \pdiff{z}{x} = \frac{-\pdiff{f}{x}}{\pdiff{f}{z}} = \frac{-1}{-1-\frac{y}{1+y^2 z^2}} = \frac{1+y^2 z^2}{1+y^2 z^2+y}</m>;
+              </p></li><li><p><m>\pdiff{f}{y} = \frac{-z}{1+y^2 z^2}</m>, d'où <m>\displaystyle \pdiff{z}{y} = \frac{-\pdiff{f}{y}}{\pdiff{f}{z}}  = \frac{\frac{z}{1+y^2 z^2}}{-1-\frac{y}{1+y^2 z^2}} = \frac{-z}{1+y^2 z^2 + y}</m>.
               </p></li></ul>
         </p>
       </statement>
@@ -539,18 +539,18 @@
       L'approche présentée ci-haut est plutôt abstraite, dans le sens qu'elle met l'accent sur la dérivée en la considérant comme une application linéaire. D'un point de vue très pratique, il importe de pouvoir effectuer les calculs des dérivées partielles. Ci-après, on présente une démarche qui peut être utile les premières fois qu'on effectue ce genre de calculs.
       <ul><li>Étape 1 :
           Écrire  <alert>explicitement</alert> toutes les fonctions concernées et spécifier les arguments (les variables) de chacune d'elles. Il faut s'assurer que des fonctions différentes ont des noms différents. Au besoin, on pourra introduire de nouveaux noms pour certaines fonctions. Dans le cas du <xref ref="thm_chainRule" text="global">théorème</xref>, cette liste est :
-          <me>
+          <md>
             f(x,y),\qquad
             x(s,t),\qquad
             y(s,t),\qquad
             F(s,t)=f\big(x(s,t),y(s,t)\big)
-          </me>.
+          </md>.
           Bien que les fonctions <m>f</m> et <m>F</m> soient intimement liées, elles ne sont pas la même chose. L'une est une fonction de <m>x</m> et <m>y</m> tandis que l'autre est une fonction de  <m>s</m> et  <m>t</m>.
         </li><li><p> Étape 2 :
             Écrire le modèle
-            <me>
+            <md>
               \pdiff{F}{s}=\frac{\partial f}{ }\frac{ }{\partial s}
-            </me>.
+            </md>.
             Noter que
             <ul><li>
                 la fonction <m>F</m> apparaît une fois dans le numérateur à gauche, et la fonction <m>f</m>, à partir de laquelle  <m>F</m> est définie au moyen d'un changement de variables, apparaît une fois dans le numérateur à droite;
@@ -558,22 +558,22 @@
                 la variable du dénominateur de gauche apparaît une fois dans le dénominateur de droite.
               </li></ul>
           </p></li><li>Étape 3 : Remplir les espaces restants avec chacune des variables pour lesquelles cela a du sens, c'est-à-dire chacune des variables de la fonction <m>f</m>. En particulier, si  <m>f</m> est une fonction de  <m>x</m> et <m>y</m>, elle peut être dérivée par rapport à <m>x</m> et <m>y</m> seulement. Ainsi, on ajoute deux copies du modèle ci-haut, une pour  <m>x</m> et une pour  <m>y</m> :
-          <me>
+          <md>
             \pdiff{F}{s}
             =\pdiff{f}{x }\pdiff{x }{s}
             +\pdiff{f}{y }\pdiff{y }{s}
-          </me>.
+          </md>.
           Remarquer que <m>x</m> et <m>y</m> sont des fonctions de  <m>s</m>, de sorte que les dérivées partielles <m>\pdiff{x }{s}</m> et <m>\pdiff{y }{s}</m> sont définies.
 
           Le premier terme,  <m>\pdiff{f}{x }\pdiff{x }{s}</m>, tient compte de la variation de  <m>x</m> par rapport à <m>s</m>, et le second terme,  <m>\pdiff{f}{y }\pdiff{y }{s}</m>, tient compte de la variation de <m>y</m> par rapport à <m>s</m>.
         </li><li>Étape 4 : Écrire <alert>explicitement</alert> la relation fonctionnelle et ses variables. Il y a une seule relation fonctionnelle qui a du sens. Le terme de gauche est une fonction des variables  <m>s</m> et  <m>t</m>. Ainsi, le terme de droite doit aussi être une fonction de ces variables. Comme <m>f</m> est une fonction de <m>x</m> et <m>y</m>, ceci est obtenu en évaluant  <m>f</m> en  <m>x=x(s,t)</m> et <m>y=y(s,t)</m>.
-          <me>
+          <md>
             \pdiff{F}{s}(s,t)=
               \pdiff{f}{x}\big(x(s,t),y(s,t)\big)
               \pdiff{x}{s}(s,t)
               +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
               \pdiff{y}{s}(s,t)
-          </me>
+          </md>
           Si l'on omet les arguments, ou si l'on oublie quels sont ces arguments, il est possible d'oublier que  <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> dépendent de <m>s</m> et <m>t</m>. Ainsi, si l'on doit calculer une autre dérivée, on aura des problèmes pour différentier les facteurs <m>\pdiff{f}{x}\big(x(s,t),y(s,t)\big)</m> et
           <m>\pdiff{f}{y}\big(x(s,t),y(s,t)\big)</m>.
         </li></ul>

@@ -235,7 +235,7 @@ Finalement, considérons <m>\frac{2\pi}{3}\leqslant\theta\leqslant \pi</m>, de s
           commence à  <m>r\big(\frac{2\pi}{3}\big)=0</m>, puis
 </li><li><m>r</m> augmente lorsque  <m>\theta</m> augmente aussi, jusqu'à ce que
 </li><li><m>3\theta=\frac{5\pi}{2}</m>, soit <m>\theta=\frac{10\pi}{12}</m>,
-          où <m>r\big(\frac{5\pi}{2}\big)=1</m>, et alors
+          où <m>r\big(\frac{10\pi}{12}\big)=1</m>, et alors
 </li><li><m>r</m> diminue lorsque  <m>\theta</m> continue d'augmenter, jusqu'à ce que
 </li><li><m>3\theta=3\pi</m>, soit <m>\theta=\frac{12\pi}{12}=\pi</m>,
          donc  <m>r\big(\pi\big)=0</m> de nouveau.
@@ -314,10 +314,10 @@ is provided in the (optional) section §<xref ref="sec_integral_error"/>.
       <statement>
         <p>
 Soit  <m>0\leqslant  a \lt b\leqslant  2\pi</m> des constantes et  <m>\cR</m> la région
-<me>
+<md><mrow>
 \cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
                B(\theta)\leqslant r\leqslant  T(\theta)},
-</me>
+</mrow></md>
 où <m>T(\theta)</m> et <m>B(\theta)</m> sont des fonctions continues et vérifient  <m>B(\theta)\leqslant T(\theta)</m> pour tout  <m>a\leqslant \theta\leqslant  b</m>. Trouver la masse de  <m>\cR</m> si la densité est  <m>f(x,y)</m>.
 </p>
       </statement>
@@ -349,19 +349,19 @@ la masse de ce sous-rectangle est essentiellement
          <m>f\big(r\cos\theta,\,r\sin\theta\big)\,r\,\dee{r}\,\dee{\theta}</m>.
 </li><li>
 Afin de trouver la masse d'un quartier, par exemple celui dont l'angle (polaire) varie de <m>\theta</m> à  <m>\theta+\dee{\theta}</m>, nous additionnons simplement les masses des sous-rectangles composant ce quartier. Cela se fait en intégrant par rapport à <m>r</m>, de sa valeur inférieure, soit <m>B(\theta)</m>, jusqu'à sa valeur supérieure, soit <m>T(\theta)</m>. La masse du quartier est alors
-<me>
+<md><mrow>
 \left[ \int_{B(\theta)}^{T(\theta)}
        f\big(r\cos\theta\,\,r\sin\theta\big) r\,\dee{r}\right]\ \dee{\theta}.
-</me>
+</mrow></md>
 </li><li>
 Finalement, afin de calculer la masse de  <m>\cR</m>, nous n'avons qu'à additionner les masses des différents quartiers, ce qui correspond à intégrer par rapport à <m>\theta</m>, de sa valeur la plus petite jusqu'à sa valeur la plus grande sur <m>\cR</m>, soit de <m>a</m> à  <m>b</m>.
 </li></ul>
 En conclusion,
-<me>
+<md><mrow>
 \text{Masse}(\cR) = \int_a^b
              \int_{B(\theta)}^{T(\theta)}
                    f\big(r\cos\theta,\,r\sin\theta\big) r\, \dee{r}\, \dee{\theta}.
-</me>
+</mrow></md>
 Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains détails techniques nécessaires pour établir une démarche rigoureuse. La preuve rigoureuse de la <xref ref="eq_polar_mass" text="global">formule</xref> peut être obtenue avec ces mêmes idées de base, mais nécessite de résoudre certaines erreurs d'approximation. Cela est fait au paragraphe <xref ref="pars-integral_error" text="custom">Justification de la formule du calcul de l'aire en coordonnées polaires</xref>, plus bas.
 
 </p>
@@ -370,37 +370,37 @@ Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains déta
 
 <p>
   De l'exemple précédent découle la formule du calcul de la masse de la région
-    <me>
+    <md><mrow>
     \cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
                   B(\theta)\leqslant r\leqslant  T(\theta)}
-    </me>
+    </mrow></md>
   avec densité <m>f(x,y)</m>, c'est-à-dire
 </p>
 
 <fact xml:id="eq_polar_mass">
       <statement>
         <p>
-          <me>
+          <md><mrow>
             \text{Masse }(\cR) = \int_a^b
              \int_{B(\theta)}^{T(\theta)}
                    f\big(r\cos\theta,\,r\sin\theta\big)\ r\, \dee{r}\,\dee{\theta}.
-        </me>
+        </mrow></md>
         </p>
       </statement>
 </fact>
     
     <p>Nous pouvons d'emblée adapter l'exemple afin de calculer des aires. Ainsi, si nous posons la densité à <m>1</m>, la formule de l'aire de la région
-<me>
+<md><mrow>
 \cR = \Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b, 0\leqslant  r \leqslant R(\theta)}
-</me>
+</mrow></md>
 est
 </p>
     <fact xml:id="eq_polar_area">
       <statement>
         <p>
-          <me>
+          <md><mrow>
 \text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta},
-</me>
+</mrow></md>
         </p>
       </statement>
     </fact>
@@ -413,10 +413,10 @@ est
       <statement>
         <p>
 Soit  <m>0\leqslant  a \lt b\leqslant  2\pi</m> deux constantes. Trouver l'aire de la région
-<me>
+<md><mrow>
 \cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
-              0\leqslant  r\leqslant  B(\theta)},
-</me>
+              0\leqslant  r\leqslant  R(\theta)},
+</mrow></md>
 où <m>R(\theta)\geqslant 0</m> est une fonction continue.
 </p>
       </statement>
@@ -426,9 +426,9 @@ où <m>R(\theta)\geqslant 0</m> est une fonction continue.
             \text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
             </mrow></md>
             On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
-            <me>
+            <md><mrow>
             \text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
-            </me>
+            </mrow></md>
             L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
             <xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
             (avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>.
@@ -454,10 +454,10 @@ où <m>R(\theta)\geqslant 0</m> est une fonction continue.
   <solution>
     <p>
       En observant la dernière figure de l'<xref ref="eg_rose" text="global">exemple</xref>, nous devons calculer le triple de l'aire de la région
-      <me>
+      <md><mrow>
           \cR=\Set{(r\cos\theta,r\sin\theta)}{0\leqslant \theta\leqslant  \frac{\pi}{3},\
               0\leqslant  r\leqslant  \sin(3\theta)}.
-        </me>
+        </mrow></md>
       Ainsi, par la <xref ref="eq_polar_area" text="global">formule</xref>, avec <m>a=0</m>, <m>b=\frac{\pi}{3}</m>
         et <m>R(\theta) =\sin(3\theta)</m>,
         <md><mrow>
@@ -502,13 +502,13 @@ Utilisons un système de coordonnées avec le centre de la sphère à l'origine 
         </sidebyside>
         <p>
 Nous devons donc multiplier par huit le volume du solide
-<me>
+<md><mrow>
 \cV_1 = \Set{(x,y,z)}{(x,y)\in\cR_1,\ 0\leqslant  z\leqslant \sqrt{a^2-x^2-y^2}}
-</me>
+</mrow></md>
 avec comme région de base
-<me>
+<md><mrow>
 \cR_1 = \Set{(x,y)}{x^2+y^2\leqslant  b^2,\ x\geqslant 0,\ y\geqslant 0}.
-</me>
+</mrow></md>
 
 En coordonnées polaires :
 <md><mrow>
@@ -539,9 +539,9 @@ et dont la base a une aire de  <m>\dee{A} =  r\,\dee{r}\,\dee{\theta}</m>. Ce so
 </p><sidebyside width="75%"><image source="images/CLP-figs/appleCore3"/></sidebyside></li></ul></p></li><li><p>
 Afin d'obtenir le volume de  <m>\cV_1</m>, nous devons donc calculer
 
-<me>
-  \int_0^{pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta}.
-</me>
+<md><mrow>
+  \int_0^{\pi/2}\int_0^b \sqrt{a^2 - r^2}\ r\, \dee{r}\, \dee{\theta}.
+</mrow></md>
 
 Notons que l'intégrale à l'intérieur est indépendante de <m>\theta</m>, ce qui s'explique par le fait que le volume du solide obtenu (tracé en bleu dans la figure ci-dessous) ne change pas lorsque <m>\theta</m> varie, c'est-à-dire lorsque nous effectuons une rotation par rapport à l'axe des <m>z</m>. On peut donc la sortir de l'intégrale extérieure afin d'obtenir le produit de deux intégrales (on peut comparer ce résultat au <xref ref="thm_factorize" text="global">théorème</xref>).
 <md><mrow>
@@ -594,9 +594,9 @@ Transformer l'intégrale  <m>\displaystyle \int_0^1\int_0^x y\sqrt{x^2+y^2}\ \de
   Commençons par établir une expression du domaine d'intégration en coordonnées polaires.
 </p>
         <p>De l'intégrale donnée, <m>\displaystyle \int_0^1 \int_0^x y \sqrt{x^2 + y^2}\ \dee{y}\,\dee{x}</m>, on déduit que la région d'intégration est
-<me>
+<md><mrow>
 \cD=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 0\leqslant  y\leqslant  x},
-</me>
+</mrow></md>
 qui est esquissée dans la figure de gauche ci-dessous. Il s'agit d'un triangle rectangle.
 </p>
         <sidebyside widths="40% 40%">
@@ -622,10 +622,10 @@ r\sin\theta = r\cos\theta
 </mrow></md>
 </li></ul>
 Ainsi, en coordonnées polaires, on peut écrire le domaine d'intégration sous la forme
-<me>
+<md><mrow>
 \cR=\Big\{(r,\theta)\ \Big|\ 0\leqslant \theta\leqslant \frac{\pi}{4},\
              0\leqslant  r\leqslant  \frac{1}{\cos\theta}\Big\}.
-</me>
+</mrow></md>
 </p>
         <p>
   Transformons maintenant l'intégrande <m>y\sqrt{x^2+y^2}</m>. Nous avons <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m> et <m>\dee{x}\,\dee{y}=\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, de sorte que l'intégrande (incluant <m>\dee{A}</m>) devient
@@ -693,9 +693,9 @@ L'intégrale par rapport à  <m>r</m> traite  <m>\theta</m> comme une constante,
 &amp;=\frac{1}{4}\int_0^{\pi/4} \sin\theta\frac{1}{\cos^4\theta}\, \dee{\theta}
 </mrow></md>
 Effectuons le changement de variables.
-<me>
+<md><mrow>
 u=\cos\theta,\ \dee{u}=-\sin\theta\ \dee{\theta}
-</me>
+</mrow></md>
 Lorsque  <m>\theta=0</m>, <m>u=\cos\theta=1</m> et, lorsque  <m>\theta=\frac{\pi}{4}</m>,
 <m>u=\cos\theta=\frac{1}{\sqrt{2}}</m>. Ainsi,
 <md><mrow>
@@ -938,14 +938,14 @@ All together
     <p>Nous avons précédemment établi la formule du calcul de l'aire en coordonnées polaires, la <xref ref="eq_polar_area" text="global">formule</xref>, de façon peu rigoureuse. Nous avons notamment utilisé le terme <q>essentiellement</q> à plus d'une reprise. Voyons maintenant la justification rigoureuse pour arriver à cette formule.
 </p>
     <p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass" text="global">exemple</xref> et dans l'<xref ref="eg_polar_area" text="global">exemple</xref>, nous avons établi la formule
-<me>
+<md><mrow>
 A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
-</me>
+</mrow></md>
 pour l'aire de la région
-<me>
+<md><mrow>
 \cR=\Set{\big(r\cos\theta,r\sin\theta\big)}
      {a\leqslant \theta\leqslant  b,\ 0\leqslant  r\leqslant  R(\theta)}.
-</me>
+</mrow></md>
 
 </p>
     <p>Tout au long de l'argumentation, nous avons approximé l'aire de la région ombragée par  <m>\dee{A} = r\,\dee{r}\,\dee{\theta}</m>.
@@ -954,9 +954,9 @@ pour l'aire de la région
       <image source="images/CLP-figs/polarA"/>
     </sidebyside>
     <p>Nous allons justifier cette approximation sous l'hypothèse qu'il existe <m>M</m> et  <m>L\in \R</m> tels que
-<me>
+<md><mrow>
 0\leqslant  R(\theta)\leqslant M \qquad\text{et}\qquad |R'(\theta)|\leqslant L
-</me>
+</mrow></md>
 pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>R(\theta)</m> est borné et que sa dérivée existe et est bornée également.
 </p>
     <p> On divise l'intervalle  <m>a\leqslant  \theta\leqslant  b</m> en <m>n</m> sous-intervalles de même longueur  <m>\De\theta=\frac{b-a}{n}</m>. Soit <m>\theta_i^*</m> le milieu du
@@ -968,10 +968,10 @@ pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>R(\theta)<
 R(\theta)-R(\theta_i^*)  = R'(c) (\theta-\theta_i^*)
 </mrow></md>
 pour un certain <m>c \in \, ]\theta ,\ \theta_i^*[ </m>. Comme  <m>|R'(\theta)|\leqslant L</m>, nous avons
-<me>
+<md><mrow>
 \big|R(\theta)-R(\theta_i^*)\big|  \leqslant L \big|\theta-\theta_i^*\big|.
 \tag{$*$}
-</me>
+</mrow></md>
 Ceci nous dit que la différence entre  <m>R(\theta)</m> et <m>R(\theta_i^*)</m>
 ne peut pas être beaucoup plus grande que <m>\big|\theta-\theta_i^*\big|</m>.
 </p>
@@ -979,23 +979,23 @@ ne peut pas être beaucoup plus grande que <m>\big|\theta-\theta_i^*\big|</m>.
 En vertu de  <m>(*)</m>, toutes ces valeurs de <m>R(\theta)</m> se situent entre
 <m>r_i=R(\theta_i^*)-\frac{1}{2} L\De\theta</m> et
 <m>R_i=R(\theta_i^*) +\frac{1}{2} L\De\theta</m>. En conséquence, la portion de  <m>\cR</m> définie par  <m>\theta</m> dans le <m>i^{\text{ième}}</m> sous-intervalle, à savoir
-<me>
+<md><mrow>
 \cR_i=\Set{\big(r\cos\theta,r\sin\theta\big)}
      {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
            \ 0\leqslant  r\leqslant  R(\theta)},
-</me>
+</mrow></md>
 doit contenir complètement le secteur circulaire
-<me>
+<md><mrow>
 \Set{\big(r\cos\theta,r\sin\theta\big)}
      {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
            \ 0\leqslant  r\leqslant  r_i}
-</me>
+</mrow></md>
 et doit être complètement contenue dans le secteur circulaire
-<me>
+<md><mrow>
 \Set{\big(r\cos\theta,r\sin\theta\big)}
      {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
            \ 0\leqslant  r\leqslant  R_i}.
-</me>
+</mrow></md>
 </p>
     <sidebyside widths="33% 33%">
       <image source="images/CLP-figs/polarArea"/>
@@ -1009,18 +1009,18 @@ Nous avons donc un secteur circulaire plus petit et un autre secteur circulaire 
     </sidebyside>
     <p>
 Ainsi, l'aire de  <m>\cR_i</m> est bornée par
-<me>
+<md><mrow>
 \frac{1}{2}\De\theta\, r_i^2
     =\frac{1}{2}\De\theta\left[R(\theta_i^*)-\frac{1}{2} L\De\theta\right]^2
 \quad\text{et}\quad
 \frac{1}{2}\De\theta\, R_i^2
     =\frac{1}{2}\De\theta\left[R(\theta_i^*)+\frac{1}{2} L\De\theta\right]^2.
-</me>
+</mrow></md>
 En développant
-<me>
+<md><mrow>
 \left[R(\theta_i^*)\pm \frac{1}{2} L\De\theta\right]^2
 =R(\theta_i^*)^2 \pm L R(\theta_i^*)\De\theta +\frac{1}{4} L^2\De\theta^2
-</me>
+</mrow></md>
 et puisque <m>0\leqslant  R(\theta)\leqslant M</m>, nous remarquons que
 <md><mrow>
 R(\theta_i^*)^2 - L M\De\theta +\frac{1}{4} L^2\De\theta^2\hskip2in
@@ -1085,9 +1085,9 @@ Maintenant, évaluons la limite lorsque  <m>n\rightarrow\infty</m>. Étant donn�
 \text{(car $L, M, a$ et $b$ sont des constantes)},
 </mrow></md>
 nous avons
-<me>
+<md><mrow>
 A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta,
-</me>
+</mrow></md>
 soit exactement ce que nous voulions obtenir.
 </p>
   </subsection>

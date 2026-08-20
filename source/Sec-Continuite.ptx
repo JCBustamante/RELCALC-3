@@ -7,9 +7,9 @@
 </p>
     <p>
   Si <m>f</m> est une fonction d'une variable dont le domaine contient des points arbitrairement près de la valeur <m>a</m> (peut-être que <m>a</m> fait partie de ce domaine aussi, mais peut-être pas), ce qui veut dire que <m>a</m> est un <q><em>point limite du domaine</em></q>, on écrit
-  <me>
+  <md>
     \lim_{x\to a}f(x) = L
-  </me>
+  </md>
 lorsque les valeurs de <m>f(x)</m> peuvent être aussi près que l'on veut de <m>L</m>, pourvu que l'on puisse choisir <m>x</m> suffisamment près de <m>a</m>, mais sans être égal à <m>a</m>. En d'autres termes, peu importe la marge <m>\epsilon</m> que l'on se donne, on doit avoir <m>|L-f(x)|\lt \e</m> aussitôt que l'écart <m>|x-a|</m>, sans être nul, est inférieur à un certain seuil <m>\d \gt 0 </m> qui est à déterminer.
 </p>
   </introduction>
@@ -21,9 +21,9 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
     <definition xml:id="def-Limites">
       <statement>
         <p>Soit <m>\plan{D}\subseteq \R^n</m>, <m>f\colon \plan{D} \to \R</m> et <m>\va\in \R^n</m> tels que <m>\plan{D}</m> contient des points arbitrairement près de <m>\va</m>. On dit que <em>la limite de <m>f</m> lorsque <m>\vx</m> tend vers <m>\va</m> est <m>L</m></em>, ce qu'on écrit
-    <me>
+    <md>
       \lim_{\vx\to \va}f(\vx) = L
-    </me>
+    </md>
     si la valeur de <m>f(\vx)</m> peut être aussi près de <m>L</m> que l'on veut, pourvu que l'écart entre <m>\vx</m> et <m>\va</m> soit suffisamment près de <m>0</m>, mais sans être nul. Ceci revient à dire que, pour tout <m>\e \gt 0</m>, il existe <m>\d \gt 0</m> tel que <m>0 \lt |\vx - \va| \lt \d</m>, et  <m>\vx \in \plan{D}</m>  entraîne <m>|f(\vx) - L| \lt \epsilon</m>.
     </p>
       </statement>
@@ -31,9 +31,9 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
     <ul>
       <li>
         <p>Dans le cas où <m>n = 2</m>, si l'on veut écrire explicitement les variables, on écrira naturellement
-    <me>
+    <md>
       \lim_{(x,y)\to (x_a, y_a)} f(x,y)
-    </me>.
+    </md>.
   </p>
       </li>
       <li>
@@ -45,9 +45,9 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
     </ul>
     <p>
   S'il est vrai que la définition pour les fonctions de plusieurs variables est en tout point semblable à celle pour les fonctions à une variable, il y a une différence substantielle entre les deux contextes. Avec une seule variable, <m>x</m> peut se rapprocher de <m>a</m> par la gauche ou par la droite, il n'y a que deux directions de rapprochement. Pour que la limite <m>\lim_{x\to a} f(x)</m> existe, on demande que les deux limites latérales coïncident, c'est-à-dire
-  <me>
+  <md>
     \lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x).
-  </me>
+  </md>
    Dans ce cas, la limite <m>\lim_{x\to a} f(x)</m> est la valeur commune des deux limites latérales.
 </p>
     <p>
@@ -102,16 +102,16 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
       Si, au contraire, nous avions une limite, disons <m>L</m>, les valeurs de <m>f(x,y)</m> devraient s'approcher de <m>L</m> à mesure que <m>(x,y)</m> s'approche de <m>(0,0)</m>. En particulier, si <m>(x,y)</m> s'approche de <m>(0,0)</m> le long de n'importe quelle trajectoire, alors <m>f(x,y)</m> doit s'approcher de <m>L</m>.
       <ul><li><p>
             Si <m>(x,y)</m> tend vers <m>(0,0)</m> le long de l'axe des <m>x</m>, c'est-à-dire le long de la droite <m>y=0</m>, on aura
-            <me>
+            <md>
               f(x,y) = \frac{x^2 -y^2}{x^2+ y^2} = \frac{x^2}{x^2} = 1
-            </me>,
+            </md>,
             et donc <m>f(x,y) \longrightarrow 1</m> lorsque <m>(x,y) \to (0,0)</m> avec <m>y=0</m>. Ceci forcerait <m>L=1</m>.
 
           </p></li><li><p>
             Si, en revanche, on fait tendre <m>(x,y)</m> vers <m>(0,0)</m> le long de l'axe des <m>y</m>, c'est-à-dire le long de la droite <m>x=0</m>, on aura
-            <me>
+            <md>
               f(x,y) = \frac{x^2 -y^2}{x^2+ y^2} = \frac{-y^2}{y^2} = -1
-            </me>,
+            </md>,
             et donc <m>f(x,y) \longrightarrow -1</m> lorsque <m>(x,y) \to (0,0)</m> avec <m>x=0</m>. Ceci forcerait <m>L=-1</m>, ce qui est une contradiction.
           </p></li></ul>
       Ainsi, la limite de <m>f</m> lorsque <m>(x,y) \to (0,0)</m> n'existe pas.
@@ -126,9 +126,9 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
       <title>Critère des deux trajectoires</title>
       <p>
     Si <m>f(x,y) \longrightarrow L_1</m> lorsque <m>(x,y)</m> tend vers <m>(x_0,y_0)</m> le long d'un chemin <m>\plan{C}_1</m> et que <m>f(x,y) \longrightarrow L_2</m> lorsque <m>(x,y)</m> tend vers <m>(x_0,y_0)</m> le long d'un autre chemin <m>\plan{C}_2</m> avec <m>L_1 \ne L_2</m>, alors
-    <me>
+    <md>
       \lim_{(x,y)\to (x_0,y_0)} f(x,y)
-    </me>
+    </md>
      n'existe pas.
   </p>
     </remark>
@@ -140,9 +140,9 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
       Considérer <m>f(x,y) = \frac{xy^2}{x^2 + y^4}</m> et étudier la limite de <m>f</m> lorsque <m>(x,y) </m> tend vers <m>(0,0)</m>.
     </p><p>
       À l'instar de l'<xref ref="ex-Lim-NE1"/>, essayons plusieurs droites non verticales, d'équation <m>y=kx</m>. Nous avons, sur une telle droite,
-      <me>
+      <md>
         f(x,y) =f(x,kx) = \frac{x(kx)^2}{x^2 + (kx)^2} =\frac{m^2 x^3}{x^2 + k^4x^4} = \frac{k^2 x}{1+k^4 x^2}
-      </me>,
+      </md>,
       ce qui donne que <m>f(x,y) \longrightarrow 0</m> lorsque <m>(x,y)\to (0,0) </m> le long de la droite <m>y=kx</m>. Nous avons donc une infinité de trajectoires le long desquelles la limite est nulle. Ceci ne suffit pourtant pas pour établir que la limite existe et est zéro.
     </p><p>
       Analysons le graphique des courbes de niveau  ainsi que le graphe de <m>f</m>.
@@ -163,10 +163,9 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
           fig
         </sageplot></image><!-- <image source = "images/Jupyter-sage/Limite-NE2.png"/> --></sidebyside></figure><p>
   À nouveau, on voit un problème à l'origine. Les courbes de niveau indiquent que, près de l'origine, on a des points sur des courbes de niveau de niveaux très différents. Ces courbes ont l'aspect de paraboles. Le long de la parabole <m>x = y^2</m>, on a
-</p><me>
-  f(x,y) = f(y^2,x) = \frac{y^2 y^2}{y^4 + y^4} = \frac{1}{2}
-</me>,
-<p>
+<md>
+  f(x,y) = f(y^2,y) = \frac{y^2 y^2}{y^4 + y^4} = \frac{1}{2}
+</md>,
 de sorte que <m>f(x,y) \longrightarrow \frac{1}{2}</m> lorsque <m>(x,y) \to (0,0)</m> le long de <m>y^2 = x</m>. Ceci suffit donc pour conclure que la limite de <m>f(x,y)</m> lorsque <m>(x,y) \to (0,0)</m> n'existe pas.
 </p><p>
   Notons que le diagramme des courbes de niveau suggère à lui seul de considérer des paraboles de la forme <m>x = ky^2</m> avec différentes valeurs de <m>k</m> comme trajectoires donnant des limites différentes.
@@ -216,9 +215,9 @@ Voyons maintenant un exemple d'une limite qui existe.
           </sidebyside>
         </figure>
         <p>Soit donc <m>\e \gt 0</m>. On soupçonne que la limite est <m>L=0</m>, on s'intéresse donc à la quantité
-    <me>
+    <md>
       |f(x,y) - L | = | f(x,y) | = \frac{2x^2 |y|}{x^2 + y^2}.
-    </me>
+    </md>
     Nous devons montrer qu'il est possible de choisir <m>\d \gt 0</m> tel que la condition <m>0\lt \sqrt{x^2 + y^2} \lt \d</m> entraîne  <m>\frac{2x^2 |y|}{x^2 + y^2} \lt \e</m>.
     </p>
         <p>
@@ -226,9 +225,9 @@ Voyons maintenant un exemple d'une limite qui existe.
     </p>
         <p>
       Il suffit alors de poser <m>\d = \e /2</m>. En effet, dans ce cas, si <m>\sqrt{x^2+ y^2} \lt \d</m>, nous aurons <m>|y| \leqslant \sqrt{x^2 + y^2} \lt \d = \e /2</m>, et donc
-      <me>
+      <md>
         |f(x,y) - L| \leqslant 2 |y| \lt2 \frac{\e}{2} = \e
-      </me>.
+      </md>.
 
     </p>
       </statement>
@@ -288,9 +287,9 @@ Dans la pratique, il est fastidieux d'étudier les limites en utilisant la défi
     <example xml:id="ex-Lim-NE3-bis">
       <statement>
         <p>Considérer la limite de l'<xref ref="ex-Lim-E1"/> à nouveau. Nous avons
-    <me>
+    <md>
       \left|f(x,y) - 0 \right| = \frac{2 x^2 |y|}{x^2 + y^2} \leqslant 2 |y|.
-    </me>
+    </md>
     Comme <m>|y|\to 0</m> lorsque <m>(x,y) \to (0,0)</m>, le théorème du sandwich donne <m>f(x,y) \to 0</m> lorsque <m>(x,y)\to (0,0)</m>.
 
     </p>
@@ -322,9 +321,9 @@ y&amp;=r\sin\theta
     <example xml:id="ex-Lim-E1-pol">
       <statement>
         <p>Considérer à nouveau la fonction <m>f(x,y) = \frac{x^2y}{x^2+y^2}</m> pour <m>(x,y)\ne (0,0)</m> et étudier la limite lorsque <m>(x,y)\to (0,0)</m>. En coordonnées polaires, nous avons
-    <me>
+    <md>
       f(x,y) = f(r\cos \theta, r\sin \theta) = \frac{r^2 \cos^2\theta \cdot r \sin \theta}{r^2 \cos^2 \theta + r^2 \sin^2 \theta} = r \cos^2\theta \cdot  \sin\theta
-    </me>.
+    </md>.
     Comme <m>|r \cos^2 \theta \sin \theta | \leqslant r</m> et que <m>r \to 0</m> lorsque <m>(x,y) \to (0,0)</m>, nous retrouvons le fait que <m>f(x,y) \longrightarrow 0</m> lorsque <m>(x,y) \to (0,0)</m>.
 
 
@@ -334,9 +333,9 @@ y&amp;=r\sin\theta
     <example xml:id="ex-Lim-NE1-pol">
       <statement>
         <p> Considérer à nouveau la limite de l'<xref ref="ex-Lim-NE1"/>. En coordonnées polaires, nous avons
-    <me>
+    <md>
       f(x,y) = \frac{r^2 \cos^2 \theta - r^2 \sin^2 \theta}{r^2 \cos^2 \theta + r^2 \sin^2 \theta} = \cos^2 \theta - \sin^2 \theta = \cos 2\theta.
-    </me>
+    </md>
     Cette fois, la valeur de <m>f</m> est indépendante de <m>r</m>, mais est constante sur toute droite dont l'équation polaire est de la forme <m>\theta = \theta_0</m>. Ceci explique l'allure des courbes de niveau.
     </p>
         <p>
@@ -359,7 +358,7 @@ y&amp;=r\sin\theta
   </p>
     <definition xml:id="def-Continuite">
       <statement>
-        <p>Soit <m>\va \in \plan{D} \subseteq\R^n</m> et <m>f:\plan{D} \to R</m>. On dit que <em><m>f</m> est continue en <m>\va</m></em> <m>\displaystyle \lim_{\vx \to \va} f(\vx) = f(\va)</m>.
+        <p>Soit <m>\va \in \plan{D} \subseteq\R^n</m> et <m>f:\plan{D} \to R</m>. On dit que <em><m>f</m> est continue en <m>\va</m></em> si <m>\displaystyle \lim_{\vx \to \va} f(\vx) = f(\va)</m>.
 
       Si <m>f</m> est continue en tout point de <m>\plan{D}</m>, on dit qu'elle est <em>continue sur <m>\plan{D}</m></em>.
 
@@ -369,9 +368,9 @@ y&amp;=r\sin\theta
     <principle xml:id="principle-continuite">
       <statement>
         <p> De façon intuitive, une fonction <m>f</m> est continue en un point  <m>\va</m> si une petite variation de <m>\vx</m> près de <m>\va</m> entraîne une petite variation de <m>f(\vx)</m>. En d'autres termes, si <m>\vu</m> est un vecteur unitaire quelconque et que <m>h</m> est un <q>petit</q> nombre réel, on aura
-      <me>
+      <md>
       f(\va+ h \vu) \approx f(\va)
-      </me>.
+      </md>.
     </p>
       </statement>
     </principle>
@@ -396,9 +395,9 @@ y&amp;=r\sin\theta
       <statement>
         <p>
         En vertu du <xref ref="thm-Prop-Continues" text="global">théorème</xref>, toute fonction rationnelle, c'est-à-dire toute fonction de la forme
-        <me>
+        <md>
           f(x,y) = \frac{p(x,y)}{q(x,y)}
-        </me>
+        </md>
         où <m>p</m> et <m>q</m> sont des polynômes, est une fonction continue sur l'ensemble de points tels que <m>q(x,y)\ne 0</m>.
       </p>
       </statement>
@@ -467,9 +466,9 @@ y&amp;=r\sin\theta
         <p>
           Soit <m>\vr (t) = \cos t \, \vi + \sin t \, \vj = x(t)\,\vi + y(t)\,\vj</m> avec <m>t \in [0,2\pi]</m> un paramétrage du cercle. Il s'agit d'une fonction continue puisque chacune de ses composantes l'est. Soit de nouveau <m>g(x,y) =  \arctan\left(\frac{x+y}{x-y}\right)</m>. Afin de calculer la composition <m>f\circ \vr</m>, on doit exclure les valeurs de <m>t</m> dans <m>[0,2\pi]</m> qui font que <m>x(t) - y(t) = 0</m>. Ceci arrive seulement si <m>t\in\{ \pi/4, 5\pi/4 \}</m>.
           Ainsi, la composition <m>f\circ \vr</m> est définie et continue sur <m>[0,2\pi] \backslash \{ \pi/4, 5\pi/4 \} </m>. Pour un tel <m>t</m>, nous avons
-          <me>
+          <md>
             f\circ \vr (t) = \arctan\left(\frac{\cos t + \sin t}{\cos t - \sin t} \right).
-          </me>
+          </md>
         </p>
       </statement>
     </example>

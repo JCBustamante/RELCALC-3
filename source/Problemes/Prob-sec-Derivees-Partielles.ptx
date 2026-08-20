@@ -49,33 +49,33 @@
       <answer><p>
       <ol marker = "(a)">
       <li>
-      <me>
+      <md>
       \pdiff{f}{x}(0,0)
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.1}
       =\frac{1.10517-1}{0.1}
       =1.0517
-      </me>
+      </md>
       et
-      <me>
+      <md>
       \pdiff{f}{x}(0,0)
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
       =\frac{1.01005-1}{0.01}
       =1.005
-      </me>
+      </md>
       </li><li>
-      <me>
+      <md>
       \pdiff{f}{y}(0,0)
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.1}
       =\frac{0.99500-1}{-0.1}
       =0.0500
-      </me>
+      </md>
       et
-      <me>
+      <md>
       \pdiff{f}{y}(0,0)
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
       =\frac{0.99995-1}{0.01}
       =.0050
-      </me>
+      </md>
       </li><li>
       <m>
       \pdiff{f}{x}(0,0) =1
@@ -92,58 +92,58 @@
       <ol marker = "(a)">
       <li>
       Par définition
-      <me>
+      <md>
       \pdiff{f}{x}(0,0)
       =\lim_{h\rightarrow 0}\frac{f(h,0)-f(0,0)}{h}
-      </me>
-      One approximation to this is
-      <me>
+      </md>
+      Une première approximation de celle-ci est
+      <md>
       \pdiff{f}{x}(0,0)
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.1}
       =\frac{1.10517-1}{0.1}
       =1.0517
-      </me>
-      Another approximation to this is
-      <me>
+      </md>
+      Une autre approximation de celle-ci est
+      <md>
       \pdiff{f}{x}(0,0)
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
       =\frac{1.01005-1}{0.01}
       =1.005
-      </me>
+      </md>
       </li><li>
-      By definition
-      <me>
+      Par définition
+      <md>
       \pdiff{f}{y}(0,0)
       =\lim_{h\rightarrow 0}\frac{f(0,h)-f(0,0)}{h}
-      </me>
-      One approximation to this is
-      <me>
+      </md>
+      Une première approximation de celle-ci est
+      <md>
       \pdiff{f}{y}(0,0)
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.1}
       =\frac{0.99500-1}{-0.1}
       =0.0500
-      </me>
-      Another approximation to this is
-      <me>
+      </md>
+      Une autre approximation de celle-ci est
+      <md>
       \pdiff{f}{y}(0,0)
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
       =\frac{0.99995-1}{0.01}
       =.0050
-      </me>
+      </md>
       </li><li>
-      To take the partial derivative with respect to <m>x</m> at <m>(0,0)</m>,
-      we set <m>y=0</m>, differentiate with respect to <m>x</m> and then set <m>x=0</m>. So
-      <me>
+      Pour calculer la dérivée partielle par rapport à <m>x</m> en <m>(0,0)</m>,
+      on pose <m>y=0</m>, on dérive par rapport à <m>x</m>, puis on pose <m>x=0</m>. Ainsi
+      <md>
       \pdiff{f}{x}(0,0) = \left.\diff{}{x} e^x\cos 0\right|_{x=0}
       =\left.e^x\right|_{x=0}=1
-      </me>
-      To take the partial derivative with respect to <m>y</m> at <m>(0,0)</m>,
-      we set <m>x=0</m>, differentiate with respect to <m>y</m> and then set <m>y=0</m>. So
-      <me>
+      </md>
+      Pour calculer la dérivée partielle par rapport à <m>y</m> en <m>(0,0)</m>,
+      on pose <m>x=0</m>, on dérive par rapport à <m>y</m>, puis on pose <m>y=0</m>. Ainsi
+      <md>
       \pdiff{f}{y}(0,0) = \left.\diff{}{y} e^0\cos y\right|_{y=0}
       =\left.\sin y\right|_{y=0}
       =0
-      </me>
+      </md>
       </li>
       </ol>
       </p></solution>
@@ -152,11 +152,11 @@
     <exercise> <!-- <title><fromexam>M226 2009D</fromexam></title> -->
       <statement><p>
       Soit
-      <me>
+      <md>
       f(x,y)=\begin{cases}\frac{x^2y}{x^2+y^2}&amp; \text{si}\ (x,y)\ne (0,0)\\
                       0 &amp; \text{si}\ (x,y)=(0,0)
              \end{cases}
-      </me>
+      </md>
       Calculez, directement d'après les définitions,
       <ol marker = "(a)"  cols = "3">
       <li>
@@ -173,12 +173,12 @@
 
       <hint><p>
       Pour (a) et (b), se rappeler que <m>\pdiff{f}{x}(x,y)=\lim\limits_{h\to0}\frac{f(x+h,y)-f(x,y)}{h}</m> et
-      <m>\pdiff{f}{y}(x,y)=\lim\limits_{h\to0}\frac{f(x,y+h)-f(x,y)}{h}</m>. Pour (c), vous trouvez la dérivée d'une fonction à une variable, disons <m>g(t)</m>, où <me>
+      <m>\pdiff{f}{y}(x,y)=\lim\limits_{h\to0}\frac{f(x,y+h)-f(x,y)}{h}</m>. Pour (c), vous trouvez la dérivée d'une fonction à une variable, disons <m>g(t)</m>, où <md>
       g(t)=f(t,t)=\begin{cases}
                         \frac{t^2t}{t^2+t^2} &amp; \text{si } t\ne 0 \\
                         0                    &amp; \text{si } t= 0
                        \end{cases}
-      </me>
+      </md>
       </p></hint>
 
       <answer>
@@ -360,28 +360,28 @@
       </p></answer>
 
       <solution><p>
-      (a) We are told that <m>z(x,y)</m> obeys
+      (a) On sait que <m>z(x,y)</m> vérifie
       <md>
       <mrow>
       z(x,y)\, y - y + x = \ln\big(xy\,z(x,y)\big)
       \tag{$*$}</mrow>
       </md>
-      for all <m>(x,y)</m> (near <m>(-1,-2)</m>).  Differentiating <m>(*)</m> with respect to <m>x</m>
-      gives
+      pour tout <m>(x,y)</m> (près de <m>(-1,-2)</m>). En dérivant <m>(*)</m> par rapport à <m>x</m>,
+      on obtient
       <md>
       <mrow>
       y\,\pdiff{z}{x}(x,y) + 1 = \frac{1}{x} + \frac{\pdiff{z}{x}(x,y)}{z(x,y)}
       \implies \pdiff{z}{x}(x,y) = \frac{\frac{1}{x}-1}{y-\frac{1}{z(x,y)}}
       </mrow>
       </md>
-      or, dropping the arguments <m>(x,y)</m> and multiplying both the numerator and denominator by <m>xz</m>,
+      ou, en omettant les arguments <m>(x,y)</m> et en multipliant le numérateur et le dénominateur par <m>xz</m>,
       <md>
       <mrow>
       \pdiff{z}{x} = \frac{z-xz}{xyz-x} = \frac{z(1-x)}{x(yz-1)}
       </mrow>
       </md>
-      Differentiating <m>(*)</m> with respect to <m>y</m>
-      gives
+      En dérivant <m>(*)</m> par rapport à <m>y</m>,
+      on obtient
       <md>
       <mrow>
       &amp;z(x,y)+y\,\pdiff{z}{y}(x,y) - 1 = \frac{1}{y} + \frac{\pdiff{z}{y}(x,y)}{z(x,y)}
@@ -389,7 +389,7 @@
       &amp;\hskip1in\implies \pdiff{z}{y}(x,y) = \frac{\frac{1}{y}+1-z(x,y)}{y-\frac{1}{z(x,y)}}
       </mrow>
       </md>
-      or, dropping the arguments <m>(x,y)</m> and multiplying both the numerator and denominator by <m>yz</m>,
+      ou, en omettant les arguments <m>(x,y)</m> et en multipliant le numérateur et le dénominateur par <m>yz</m>,
       <md>
       <mrow>
       \pdiff{z}{y} = \frac{z+yz-yz^2}{y^2z-y} = \frac{z(1+y-yz)}{y(yz-1)}
@@ -397,7 +397,7 @@
       </md>
       </p>
 
-      <p>(b)  When <m>(x,y,z) = (-1, -2, 1/2)</m>,
+      <p>(b)  Quand <m>(x,y,z) = (-1, -2, 1/2)</m>,
       <md>
       <mrow>
       \pdiff{z}{x}(-1,-2)
@@ -418,9 +418,9 @@
     <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
       <statement><p>
       Trouvez  <m>\pdiff{U}{T}</m> et <m>\pdiff{T}{V}</m> à <m>(1, 1, 2, 4)</m> si <m>(T, U, V, W)</m> vérifient la relation
-      <me>
+      <md>
       (TU-V)^2 \ln(W-UV) = \ln 2
-      </me>
+      </md>
       </p></statement>
 
       <answer><p>
@@ -429,17 +429,17 @@
       </p></answer>
 
       <solution><p>
-      We are told that the four variables <m>T</m>, <m>U</m>, <m>V</m>, <m>W</m> obey the       the single equation <m>(TU-V)^2 \ln(W-UV) = \ln 2</m>. So they are not all independent variables. Roughly speaking, we can treat any three of them as independent variables and solve the given equation for the fourth  as a function of the three chosen independent variables.
+      On sait que les quatre variables <m>T</m>, <m>U</m>, <m>V</m>, <m>W</m> vérifient l'unique équation <m>(TU-V)^2 \ln(W-UV) = \ln 2</m>. Elles ne sont donc pas toutes indépendantes. En gros, on peut traiter trois d'entre elles comme des variables indépendantes et résoudre l'équation donnée pour la quatrième, exprimée comme fonction des trois variables indépendantes choisies.
       </p>
 
-      <p>We are first asked to find <m>\pdiff{U}{T}</m>. This implicitly tells to
-      treat <m>T</m>, <m>V</m> and <m>W</m> as independent variables and to view <m>U</m>
-      as a function <m>U(T,V,W)</m> that obeys
-      <me>
+      <p>On nous demande d'abord de trouver <m>\pdiff{U}{T}</m>. Cela sous-entend de
+      traiter <m>T</m>, <m>V</m> et <m>W</m> comme des variables indépendantes et de considérer <m>U</m>
+      comme une fonction <m>U(T,V,W)</m> qui vérifie
+      <md>
       \big(T\, U(T,V,W)-V\big)^2 \ln\big(W-U(T,V,W)\,V\big) = \ln 2
-      \tag{E1}</me>
-      for all <m>(T, U, V, W)</m> sufficiently near <m>(1, 1, 2, 4)</m>.
-      Differentiating (E1) with respect to <m>T</m> gives
+      \tag{E1}</md>
+      pour tout <m>(T, U, V, W)</m> suffisamment près de <m>(1, 1, 2, 4)</m>.
+      En dérivant (E1) par rapport à <m>T</m>, on obtient
       <md>
       <mrow>
       &amp;2\big(T\, U(T,V,W)\!-\!V\big)\!
@@ -450,7 +450,7 @@
         -\big(T\, U(T,V,W)-V\big)^2 \frac{1}{W-U(T,V,W)\,V}\pdiff{U}{T}(T,V,W)\,V = 0
       </mrow>
       </md>
-      In particular, for <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
+      En particulier, pour <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
       <md>
       <mrow>
       &amp;2\big((1)(1)-2\big)
@@ -461,7 +461,7 @@
         -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)}\pdiff{U}{T}(1,2,4)\,(2) = 0
       </mrow>
       </md>
-      This simplifies to
+      Ce qui se simplifie en
       <md>
       <mrow>
       &amp;-2\left[ 1 +\pdiff{U}{T}(1,2,4)\right] \ln(2)
@@ -474,14 +474,14 @@
       </p>
 
 
-      <p>We are then asked to find <m>\pdiff{T}{V}</m>. This implicitly tells to
-      treat <m>U</m>, <m>V</m> and <m>W</m> as independent variables and to view <m>T</m>
-      as a function <m>T(U,V,W)</m> that obeys
-      <me>
+      <p>On nous demande ensuite de trouver <m>\pdiff{T}{V}</m>. Cela sous-entend de
+      traiter <m>U</m>, <m>V</m> et <m>W</m> comme des variables indépendantes et de considérer <m>T</m>
+      comme une fonction <m>T(U,V,W)</m> qui vérifie
+      <md>
       \big(T(U,V,W)\, U-V\big)^2 \ln\big(W-U\,V\big) = \ln 2
-      \tag{E2}</me>
-      for all <m>(T, U, V, W)</m> sufficiently near <m>(1, 1, 2, 4)</m>.
-      Differentiating (E2) with respect to <m>V</m> gives
+      \tag{E2}</md>
+      pour tout <m>(T, U, V, W)</m> suffisamment près de <m>(1, 1, 2, 4)</m>.
+      En dérivant (E2) par rapport à <m>V</m>, on obtient
       <md>
       <mrow>
       &amp;2\big(T(U,V,W)\, U-V\big)\ \left[\pdiff{T}{V}(U,V,W)\ U-1\right]
@@ -491,7 +491,7 @@
         -\big(T(U,V,W)\, U-V\big)^2 \frac{U}{W-U\,V} = 0
       </mrow>
       </md>
-      In particular, for <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
+      En particulier, pour <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
       <md>
       <mrow>
       &amp;2\big((1)(1)-2\big)
@@ -502,7 +502,7 @@
         -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)} = 0
       </mrow>
       </md>
-      This simplifies to
+      Ce qui se simplifie en
       <md>
       <mrow>
       -2\left[\pdiff{T}{V}(1,2,4)-1\right] \ln(2) -\frac{1}{2}=0
@@ -555,12 +555,12 @@
     <exercise>
       <statement><p>
       Utilisez la définition de la dérivée pour évaluer <m>f_x(0,0)</m> et <m>f_y(0,0)</m> pour
-      <me>
+      <md>
       f(x,y)=\begin{cases}
                       \frac{x^2-2y^2}{x-y}&amp;\text{si } x\ne y\\
                       0&amp;\text{si } x=y
                     \end{cases}
-      </me>
+      </md>
       </p></statement>
 
       <answer><p>
@@ -604,11 +604,11 @@
     <exercise>
       <statement><p>
       Définissez la fonction
-      <me>
+      <md>
       f(x,y)=\begin{cases}\frac{(x+2y)^2}{x+y}&amp; \text{si } x+y\ne 0 \\
                               0 &amp;\text{si } x+y=0
              \end{cases}
-      </me>
+      </md>
       <ol marker = "(a)">
       <li>
       Évaluez, si possible, <m>\pdiff{f}{x}(0,0)</m> et
@@ -626,7 +626,7 @@
       </p></answer>
 
       <solution><p>
-      By definition
+      Par définition
       <md>
       <mrow>
       \pdiff{f}{x}(0,0)
@@ -639,7 +639,7 @@
       &amp;=1
       </mrow>
       </md>
-      and
+      et
       <md>
       <mrow>
       \pdiff{f}{y}(0,0)
@@ -654,26 +654,26 @@
       </md>
       </p>
 
-      <p>(b) <m>f(x,y)</m> is <em>not continuous</em> at <m>(0,0)</m>, even though both partial
-      derivatives exist there. To see this, make a change of coordinates from
-      <m>(x,y)</m> to <m>(X,y)</m> with <m>X=x+y</m> (the denominator). Of course,
-      <m>(x,y)\rightarrow (0,0)</m> if and only if <m>(X,y)\rightarrow (0,0)</m>.
-      Now watch what happens when <m>(X,y)\rightarrow(0,0)</m> with <m>X</m> a lot smaller
-      than <m>y</m>. For example, <m>X=ay^2</m>. Then
+      <p>(b) <m>f(x,y)</m> <em>n'est pas continue</em> en <m>(0,0)</m>, même si les deux dérivées
+      partielles y existent. Pour le voir, effectuons un changement de coordonnées de
+      <m>(x,y)</m> à <m>(X,y)</m> avec <m>X=x+y</m> (le dénominateur). Bien sûr,
+      <m>(x,y)\rightarrow (0,0)</m> si et seulement si <m>(X,y)\rightarrow (0,0)</m>.
+      Voyons maintenant ce qui se passe quand <m>(X,y)\rightarrow(0,0)</m> avec <m>X</m> beaucoup plus petit
+      que <m>y</m>. Par exemple, <m>X=ay^2</m>. Alors
       <md>
       <mrow>
       \frac{(x+2y)^2}{x+y}=\frac{(X+y)^2}{X}=\frac{(ay^2+y)^2}{ay^2}
       =\frac{(1+ay)^2}{a}\rightarrow\frac{1}{a}
       </mrow>
       </md>
-      This depends on <m>a</m>. So approaching <m>(0,0)</m> along different paths gives
-      different limits. (You can see the same effect without changing coordinates
-      by sending <m>(x,y)\rightarrow (0,0)</m> with <m>x=-y+ay^2</m>.) Even more dramatically,
-      watch what happens when <m>(X,y)\rightarrow(0,0)</m> with  <m>X=y^3</m>. Then
-      <me>
+      Cela dépend de <m>a</m>. Donc, en s'approchant de <m>(0,0)</m> le long de chemins différents, on obtient
+      des limites différentes. (On peut observer le même effet sans changer de coordonnées
+      en envoyant <m>(x,y)\rightarrow (0,0)</m> avec <m>x=-y+ay^2</m>.) De façon encore plus frappante,
+      voyons ce qui se passe quand <m>(X,y)\rightarrow(0,0)</m> avec  <m>X=y^3</m>. Alors
+      <md>
       \frac{(x+2y)^2}{x+y}=\frac{(X+y)^2}{X}=\frac{(y^3+y)^2}{y^3}
       =\frac{{(1+y^2)}^2}{y}\rightarrow\pm\infty
-      </me>
+      </md>
       </p>
 
       </solution>
@@ -720,7 +720,7 @@
       \end{tikzpicture}</latex-image></image>
       </sidebyside><p> -->
         <p>
-          Quand vous vous tenez au point <m>(0,-1,0)</m>, Quelle est la pente de la surface si vous regardez dans la dircetion des <m>y</m> positifs? Dans la direction des <m>x</m> positifs?
+          Quand vous vous tenez au point <m>(0,-1,0)</m>, quelle est la pente de la surface si vous regardez dans la direction des <m>y</m> positifs? Dans la direction des <m>x</m> positifs?
       </p></statement>
       <hint><p>
       Vous pouvez trouver une équation pour la surface, ou simplement regarder le diagramme.
@@ -730,32 +730,32 @@
       </p></answer>
       <solution>
       <p>
-      Let's start by finding an equation for this surface. Every level curve
-      is a horizontal circle of radius one, so the equation should be of the form
-      <me>
+      Commençons par trouver une équation pour cette surface. Chaque courbe de niveau
+      est un cercle horizontal de rayon un, donc l'équation devrait être de la forme
+      <md>
       (x-f_1)^2+(y-f_2)^2=1
-      </me>
-      where <m>f_1</m> and <m>f_2</m> are functions depending only on <m>z</m>. Since the centre of the circle at height <m>z</m> is at position <m>x=0</m>, <m>y=z</m>, we see that the equation of our surface is
-      <me>
+      </md>
+      où <m>f_1</m> et <m>f_2</m> sont des fonctions ne dépendant que de <m>z</m>. Puisque le centre du cercle à hauteur <m>z</m> est à la position <m>x=0</m>, <m>y=z</m>, on voit que l'équation de notre surface est
+      <md>
       x^2+(y-z)^2=1
-      </me>
-      The height of the surface at the point <m>(x,y)</m> is the <m>z(x,y)</m> found by solving
-      that equation. That is,
-      <me>
+      </md>
+      La hauteur de la surface au point <m>(x,y)</m> est la valeur <m>z(x,y)</m> obtenue en résolvant
+      cette équation. C'est-à-dire,
+      <md>
       x^2+\big(y-z(x,y)\big)^2=1
       \tag{$*$}
-      </me>
-      We differentiate this equation implicitly to find <m>z_x(x,y)</m> and <m>z_y(x,y)</m> at the desired point <m>(x,y)= (0,-1)</m>. First, differentiating <m>(*)</m> with respect
-      to <m>y</m> gives
+      </md>
+      Nous dérivons cette équation implicitement pour trouver <m>z_x(x,y)</m> et <m>z_y(x,y)</m> au point voulu <m>(x,y)= (0,-1)</m>. D'abord, en dérivant <m>(*)</m> par rapport
+      à <m>y</m>, on obtient
       <md>
       <mrow>
       0+2\big(y-z(x,y)\big)\big(1- z_y(x,y)\big)&amp;=0
       </mrow><mrow>
-      2(-1-0)\big(1-z_y(0,-1)\big)&amp;=0&amp; &amp; \mbox{ at } (0,-1,0)
+      2(-1-0)\big(1-z_y(0,-1)\big)&amp;=0&amp; &amp; \mbox{ en } (0,-1,0)
       </mrow>
       </md>
-      so that the slope looking in the positive <m>y</m> direction is <m>z_y(0,-1)=1</m>.
-      Similarly, differentiating <m>(*)</m> with respect to <m>x</m> gives
+      de sorte que la pente en regardant dans la direction des <m>y</m> positifs est <m>z_y(0,-1)=1</m>.
+      De même, en dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
       <md>
       <mrow>
       2x+2\big(y-z(x,y)\big)\cdot\big(0-z_x(x,y)\big)&amp;=0
@@ -764,32 +764,32 @@
       </mrow><mrow>
       z_x(x,y)&amp;=\frac{x}{y-z(x,y)}
       </mrow><mrow>
-      z_x(0,-1)&amp;=0 \hskip1in\mbox{ at } (0,-1,0)
+      z_x(0,-1)&amp;=0 \hskip1in\mbox{ en } (0,-1,0)
       </mrow>
       </md>
-      The slope looking in the positive <m>x</m> direction is <m>z_x(0,-1)=0</m>.
+      La pente en regardant dans la direction des <m>x</m> positifs est <m>z_x(0,-1)=0</m>.
       </p>
       </solution>
 
       <solution>
       <p>
-      Standing at <m>(0,-1,0)</m> and looking in the positive <m>y</m> direction,
-      the surface follows the straight line that
+      En vous tenant à <m>(0,-1,0)</m> et en regardant dans la direction des <m>y</m> positifs,
+      la surface suit la droite qui
       <ul>
       <li>
-      passes through the point <m>(0,-1,0)</m>, and
+      passe par le point <m>(0,-1,0)</m>, et
       </li>
       <li>
-      is parallel to the central line <m>z=y, x=0</m> of the cylinder.
+      est parallèle à la droite centrale <m>z=y, x=0</m> du cylindre.
       </li>
       </ul>
-      Shifting the central line one unit in the <m>y</m>-direction, we get the line <m>z=y+1</m>, <m>x=0</m>. (As a check, notice that <m>(0,-1,0)</m> is indeed on <m>z=y+1</m>,
-      <m>x=0</m>.) The slope of this line is 1.
+      En décalant la droite centrale d'une unité dans la direction des <m>y</m>, on obtient la droite <m>z=y+1</m>, <m>x=0</m>. (En guise de vérification, notons que <m>(0,-1,0)</m> est bien sur <m>z=y+1</m>,
+      <m>x=0</m>.) La pente de cette droite est 1.
       </p>
 
-      <p>Standing at <m>(0,-1,0)</m> and looking in the positive <m>x</m> direction,
-      the surface follows the circle <m>x^2+y^2=1</m>, <m>z=0</m>, which is the intersection
-      of the cylinder with the <m>xy</m>-plane. As we move along that circle our <m>z</m> coordinate stays fixed at <m>0</m>. So the slope in that direction is 0.
+      <p>En vous tenant à <m>(0,-1,0)</m> et en regardant dans la direction des <m>x</m> positifs,
+      la surface suit le cercle <m>x^2+y^2=1</m>, <m>z=0</m>, qui est l'intersection
+      du cylindre avec le plan <m>xy</m>. En se déplaçant le long de ce cercle, notre coordonnée <m>z</m> reste fixée à <m>0</m>. La pente dans cette direction est donc 0.
       </p>
 
       </solution>
@@ -820,12 +820,12 @@
       </p></answer>
       <solution>
 
-      <p>If <m>f_y(0,0) \lt 0</m>, then <m>f(0,y)</m> decreases as <m>y</m> increases from <m>0</m>.
-      Thus moving in the positive <m>y</m> direction takes you downhill. This means
-      you aren't at the lowest point in a valley, since you can still move downhill.
-      On the other hand, as <m>f_y(0,0) \lt 0</m>, <m>f(0,y)</m> also decreases as <m>y</m>
-      increases towards <m>0</m> from slightly negative values. Thus if you move in the <em>negative</em> <m>y</m>-direction from <m>y=0</m>, your height <m>z</m> will <em>increase</em>.
-      So you are not at a locally highest point<mdash/>you're not at a summit.
+      <p>Si <m>f_y(0,0) \lt 0</m>, alors <m>f(0,y)</m> décroît quand <m>y</m> croît à partir de <m>0</m>.
+      Donc, se déplacer dans la direction des <m>y</m> positifs vous fait descendre. Cela signifie
+      que vous n'êtes pas au point le plus bas d'une vallée, puisque vous pouvez encore descendre.
+      D'un autre côté, puisque <m>f_y(0,0) \lt 0</m>, <m>f(0,y)</m> décroît aussi quand <m>y</m>
+      croît vers <m>0</m> à partir de valeurs légèrement négatives. Ainsi, si vous vous déplacez dans la direction des <m>y</m> <em>négatifs</em> à partir de <m>y=0</m>, votre hauteur <m>z</m> va <em>augmenter</em>.
+      Vous n'êtes donc pas à un point localement le plus haut<mdash/>vous n'êtes pas à un sommet.
       </p>
 
       </solution>
@@ -835,9 +835,9 @@
     <exercise>
       <statement><p>
       Montrez que la fonction <m>z(x,y)=\frac{x+y}{x-y}</m> vérifie
-      <me>
+      <md>
       x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y) = 0
-      </me>
+      </md>
       </p></statement>
 
       <hint><p>
@@ -859,11 +859,11 @@
         </mrow>
         </md>
         Ainsi,
-        <me>
+        <md>
         x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y)
         =\frac{-2xy+2yx}{(x-y)^2}
         =0
-        </me>
+        </md>
         </p>
       </p></answer>
 
@@ -881,11 +881,11 @@
       </mrow>
       </md>
       Ainsi,
-      <me>
+      <md>
       x\pdiff{z}{x}(x,y)+y\pdiff{z}{y}(x,y)
       =\frac{-2xy+2yx}{(x-y)^2}
       =0
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -894,9 +894,9 @@
       <statement><p>
       Soit <m>f</m> une fonction différentiable quelconque d'une variable. Définissez
       <m>z(x,y)=f(x^2+y^2)</m>. Est-ce que l'équation
-      <me>
+      <md>
       y\pdiff{z}{x}(x,y)-x\pdiff{z}{y}(x,y) = 0
-      </me>
+      </md>
       est nécessairement satisfaite?
       </p></statement>
 
@@ -909,7 +909,7 @@
       </p></answer>
 
       <solution><p>
-      As <m>z(x,y)=f(x^2+y^2)</m>
+      Puisque <m>z(x,y)=f(x^2+y^2)</m>,
       <md>
       <mrow>
       \pdiff{z}{x}(x,y)&amp;=2xf'(x^2+y^2)
@@ -917,14 +917,14 @@
       \pdiff{z}{y}(x,y)&amp;=2yf'(x^2+y^2)
       </mrow>
       </md>
-      by the (ordinary single variable) chain rule.
-      So
-      <me>
+      par la règle de dérivation en chaîne (à une variable, ordinaire).
+      Donc
+      <md>
       y\pdiff{z}{x}-x\pdiff{z}{y}
       =y(2x)f'(x^2+y^2)-x(2y)f'(x^2+y^2)=0
-      </me>
-      and the differential equation is always satisfied, assuming that
-      <m>f</m> is differentiable, so that the chain rule applies.
+      </md>
+      et l'équation différentielle est toujours satisfaite, pourvu que
+      <m>f</m> soit différentiable, de sorte que la règle de dérivation en chaîne s'applique.
       </p></solution>
     </exercise>
 
@@ -945,8 +945,8 @@
       </p></answer>
 
       <solution><p>
-      No such <m>f(x,y)</m> exists, because if it were to exist, then we would have
-      that <m>f_{xy}(x,y)=f_{yx}(x,y)</m>. But
+      Une telle fonction <m>f(x,y)</m> n'existe pas, car si elle existait, on aurait
+      <m>f_{xy}(x,y)=f_{yx}(x,y)</m>. Or
       <md>
       <mrow>
       f_{xy}(x,y)&amp;=\pdiff{}{y}f_x(x,y)=\pdiff{}{y}e^y=e^y
@@ -954,7 +954,7 @@
       f_{yx}(x,y)&amp;=\pdiff{}{x}f_y(x,y)=\pdiff{}{x}e^x=e^x
       </mrow>
       </md>
-      are not equal.
+      ne sont pas égales.
       </p></solution>
     </exercise>
 
@@ -1000,7 +1000,7 @@
       </answer>
 
       <solution><p>
-      (a) We have
+      (a) On a
       <md>
       <mrow>
       f_x(x,y) &amp;= 2xy^3 &amp;
@@ -1013,7 +1013,7 @@
       </md>
       </p>
 
-      <p>(b) We have
+      <p>(b) On a
       <md alignment="alignat">
       <mrow>
       f_x(x,y) &amp;= y^2e^{xy^2}
@@ -1030,7 +1030,7 @@
       </md>
       </p>
 
-      <p>(c) We have
+      <p>(c) On a
       <md>
       <mrow>
       \pdiff{f}{u}(u,v,w) &amp;= -\frac{1}{(u+2v+3w)^2}
@@ -1068,7 +1068,7 @@
       </p></answer>
 
       <solution><p>
-      Let <m>f(x,y)=\sqrt{x^2+5y^2}</m>. Then
+      Posons <m>f(x,y)=\sqrt{x^2+5y^2}</m>. Alors
       <md>
       <mrow>
       f_x&amp;=\frac{x}{\sqrt{x^2+5y^2}}
@@ -1082,7 +1082,7 @@
       f_{yx}&amp;=-\frac{1}{2}\frac{(5y)(2x)}{(x^2+5y^2)^{3/2}}
       </mrow>
       </md>
-      Simplifying, and in particular using that <m>\frac{1}{\sqrt{x^2+5y^2}}
+      En simplifiant, et en utilisant en particulier <m>\frac{1}{\sqrt{x^2+5y^2}}
       =\frac{x^2+5y^2}{(x^2+5y^2)^{3/2}}</m>,
       <md>
       <mrow>
@@ -1135,23 +1135,23 @@
 
       <solution><p>
       (a)
-      As <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> is independent of <m>z</m>,
-      we have <m>f_z(x,y,z) = 0</m> and hence
-      <me>
+      Comme <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> ne dépend pas de <m>z</m>,
+      on a <m>f_z(x,y,z) = 0</m> et donc
+      <md>
       f_{xyz}(x,y,z)
       =f_{zxy}(x,y,z)
       =0
-      </me>
+      </md>
       </p>
 
-      <p>(b) Write <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>,
-                <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> and
+      <p>(b) Posons <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>,
+                <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> et
                 <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m>.
-      Then
+      Alors
       <ul>
       <li>
-      As <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> is independent of <m>z</m>,
-      we have <m>u_z(x,y,z) = 0</m> and hence
+      comme <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> ne dépend pas de <m>z</m>,
+      on a <m>u_z(x,y,z) = 0</m> et donc
       <m>
       u_{xyz}(x,y,z)
       =u_{zxy}(x,y,z)
@@ -1159,8 +1159,8 @@
       </m>
       </li>
       <li>
-      As <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> is independent of <m>y</m>,
-      we have <m>v_y(x,y,z) = 0</m> and hence
+      comme <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> ne dépend pas de <m>y</m>,
+      on a <m>v_y(x,y,z) = 0</m> et donc
       <m>
       v_{xyz}(x,y,z)
       =v_{yxz}(x,y,z)
@@ -1168,31 +1168,31 @@
       </m>
       </li>
       <li>
-      As <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m> is independent of <m>x</m>,
-      we have <m>w_x(x,y,z) = 0</m> and hence
+      comme <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m> ne dépend pas de <m>x</m>,
+      on a <m>w_x(x,y,z) = 0</m> et donc
       <m>
       w_{xyz}(x,y,z)
       =0
       </m>
       </li>
       </ul>
-      As <m>f(x,y,z)=u(x,y,z)+v(x,y,z)+w(x,y,z)</m>, we have
-      <me>
+      Comme <m>f(x,y,z)=u(x,y,z)+v(x,y,z)+w(x,y,z)</m>, on a
+      <md>
       f_{xyz}(x,y,z)=u_{xyz}(x,y,z)+v_{xyz}(x,y,z)+w_{xyz}(x,y,z)=0
-      </me>
+      </md>
       </p>
 
-      <p>(c) In the course of evaluating <m>f_{xx}(x,0,0)</m>, both <m>y</m> and <m>z</m> are held fixed at <m>0</m>. Thus, if we set <m>g(x) = f(x,0,0)</m>, then  <m>f_{xx}(x,0,0)=g''(x)</m>.
-      Now
-      <me>
+      <p>(c) Lors du calcul de <m>f_{xx}(x,0,0)</m>, <m>y</m> et <m>z</m> sont tous deux fixés à <m>0</m>. Ainsi, si on pose <m>g(x) = f(x,0,0)</m>, alors <m>f_{xx}(x,0,0)=g''(x)</m>.
+      Or
+      <md>
       g(x) = f(x,0,0) = \arctan\big(e^{\sqrt{xyz}}\big)\Big|_{y=z=0}
                       =\arctan(1)
                       =\frac{\pi}{4}
-      </me>
-      for all <m>x</m>. So <m>g'(x)=0</m> and <m>g''(x)=0</m> for all <m>x</m>. In particular,
-      <me>
+      </md>
+      pour tout <m>x</m>. Donc <m>g'(x)=0</m> et <m>g''(x)=0</m> pour tout <m>x</m>. En particulier,
+      <md>
       f_{xx}(1,0,0) = g''(1) = 0
-      </me>
+      </md>
       </p>
 
       </solution>
@@ -1231,43 +1231,43 @@
         <li>
         Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
-        <me>
+        <md>
         f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
-        </me>
+        </md>
         </li>
         <li>
         Pour tout nombre réel fixé <m>z</m>,
         le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
-        <me>
+        <md>
         f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
         =f_{yxz}(x,y,z)
-        </me>
+        </md>
         Jusqu'à présent, nous avons
-        <me>
+        <md>
         f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
-        </me>
+        </md>
         </li>
         <li>
         Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
         de Clairaut <xref ref="thm_mixed_partials"/>
         <m>g_{xz}(x,z)=g_{zx}(x,z)</m>. Ainsi,
-        <me>
+        <md>
         f_{yxz}(x,y,z) = g_{xz}(x,z) =g_{zx}(x,z) = f_{yzx}(x,y,z)
-        </me>
+        </md>
         Jusqu'à présent, nous avons
-        <me>
+        <md>
         f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
-        </me>
+        </md>
         </li>
         <li>
         Pour tout nombre réel fixé <m>y</m>,
         le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
-        <me>
+        <md>
         f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
         =f_{zxy}(x,y,z)
-        </me>
+        </md>
         Jusqu'à présent, nous avons
         <md>
         <mrow>
@@ -1281,9 +1281,9 @@
         Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
         le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
-        <me>
+        <md>
         f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zxy}(x,y,z)
-        </me>
+        </md>
         Nous avons maintenant toues les égalités
         <md>
         <mrow>
@@ -1304,43 +1304,43 @@
       <li>
       Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
-      <me>
+      <md>
       f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
-      </me>
+      </md>
       </li>
       <li>
       Pour tout nombre réel fixé <m>z</m>,
       le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
-      <me>
+      <md>
       f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
       =f_{yxz}(x,y,z)
-      </me>
+      </md>
       Jusqu'à présent, nous avons
-      <me>
+      <md>
       f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
-      </me>
+      </md>
       </li>
       <li>
       Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
       de Clairaut <xref ref="thm_mixed_partials"/>
       <m>g_{xz}(x,z)=g_{zx}(x,z)</m>. Ainsi,
-      <me>
+      <md>
       f_{yxz}(x,y,z) = g_{xz}(x,z) =g_{zx}(x,z) = f_{yzx}(x,y,z)
-      </me>
+      </md>
       Jusqu'à présent, nous avons
-      <me>
+      <md>
       f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
-      </me>
+      </md>
       </li>
       <li>
       Pour tout nombre réel fixé <m>y</m>,
       le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
-      <me>
+      <md>
       f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
       =f_{zxy}(x,y,z)
-      </me>
+      </md>
       Jusqu'à présent, nous avons
       <md>
       <mrow>
@@ -1354,16 +1354,16 @@
       Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
       le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
-      <me>
-      f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zxy}(x,y,z)
-      </me>
-      Nous avons maintenant toues les égalités
+      <md>
+      f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zyx}(x,y,z)
+      </md>
+      Nous avons maintenant toutes les égalités
       <md>
       <mrow>
       f_{xyz}(x,y,z) &amp;= f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
       </mrow><mrow>
       &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
-      = f_{zxy}(x,y,z)
+      = f_{zyx}(x,y,z)
       </mrow>
       </md>
       </li>
@@ -1383,9 +1383,9 @@
       <li>
        Déterminez la valeur du nombre réel <m>\la</m> tel que <m>f(r,\theta)</m>
       satisfait l'équation différentielle
-      <me>
+      <md>
       f_{rr}+\frac{\la}{r}f_r+\frac{1}{r^2}f_{\theta\theta}=0
-      </me>
+      </md>
       </li>
       </ol>
       </p></statement>
@@ -1399,12 +1399,12 @@
 
       <solution><p>
       (a)
-      The first order derivatives are
-      <me>
+      Les dérivées d'ordre un sont
+      <md>
       f_r(r,\theta)=mr^{m-1}\cos m\theta\qquad
       f_\theta(r,\theta)=-mr^m\sin m\theta
-      </me>
-      The second order derivatives are
+      </md>
+      Les dérivées d'ordre deux sont
       <md>
       <mrow>
       f_{rr}(r,\theta)&amp;=m(m-1)r^{m-2}\cos m\theta \qquad
@@ -1413,15 +1413,15 @@
       f_{\theta\theta}(r,\theta)&amp;=-m^2r^m\cos m\theta
       </mrow>
       </md>
-      so that
-      <me>
+      de sorte que
+      <md>
       f_{rr}(1,0)=m(m-1),\
       f_{r\theta}(1,0)=0,\
       f_{\theta\theta}(1,0)=-m^2
-      </me>
+      </md>
       </p>
 
-      <p>(b) By part (a), the expression
+      <p>(b) D'après la partie (a), l'expression
       <md>
       <mrow>
       f_{rr}+\frac{\la}{r}f_r+\frac{1}{r^2}f_{\theta\theta}
@@ -1430,10 +1430,10 @@
       &amp;\hskip1in-m^2r^{m-2}\cos m\theta
       </mrow>
       </md>
-      vanishes for all <m>r</m> and <m>\theta</m> if and only if
-      <me>
+      s'annule pour tout <m>r</m> et <m>\theta</m> si et seulement si
+      <md>
       m(m-1)+\la m-m^2=0\iff m(\la-1)=0\iff \la=1
-      </me>
+      </md>
       </p></solution>
     </exercise>
 
@@ -1443,9 +1443,9 @@
       Soit <m>\a \gt 0</m> une constante.
       Montrez que <m>\displaystyle u(x,y,z,t) =\frac{1}{t^{3/2}}
                    e^{-(x^2+y^2+z^2)/(4\a t)}</m> satisfait l'équation de la chaleur
-      <me>
+      <md>
       u_t =  \a\big(u_{xx} + u_{yy} + u_{zz} \big)
-      </me>
+      </md>
       pour tout <m>t \gt 0</m>
       </p></statement>
 

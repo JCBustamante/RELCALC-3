@@ -538,32 +538,32 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
 
     <answer><p>
     La bille roule dans le sens <m>\llt ac,bc,-a^2-b^2\rgt</m>.
-    Si <m>c=0</m>, le plan est vertical. Dans ce cas, le marbre
-    ne roule pas, il tombe tout droit. Si <m>a=b=0</m>, le plan est horizontal.
+    Si <m>c=0</m>, le plan est vertical. Dans ce cas, la bille
+    ne roule pas, elle tombe tout droit. Si <m>a=b=0</m>, le plan est horizontal.
     Dans ce cas, la bille ne roule pas, elle reste immobile.
     </p></answer>
 
     <solution><p>
-    The marble is subject to two forces. The first, gravity, is
-    <m>-mg\,\vk</m> with <m>m</m> being the mass of the marble. The second is the normal
-    force imposed by the plane. This forces acts in a direction perpendicular
-    to the plane. One vector normal to the plane is <m>a\,\vi+b\,\vj+c\,\vk</m>.
-    So the force due to the plane is <m>T\llt a,b,c\rgt</m> with <m>T</m> determined  by the
-    property that the net force perpendicular to the plane must be exactly
-    zero, so that the marble remains on the plane, neither digging into nor
-    flying off of it. The projection of the gravitational force onto the normal
-    vector <m>\llt a,b,c\rgt</m> is
-    <me>
+    La bille est soumise à deux forces. La première, la gravité, est
+    <m>-mg\,\vk</m>, où <m>m</m> est la masse de la bille. La seconde est la force normale
+    exercée par le plan. Cette force agit dans une direction perpendiculaire
+    au plan. Un vecteur normal au plan est <m>a\,\vi+b\,\vj+c\,\vk</m>.
+    La force due au plan est donc <m>T\llt a,b,c\rgt</m>, où <m>T</m> est déterminé par la
+    condition que la force nette perpendiculaire au plan doit être exactement
+    nulle, de sorte que la bille reste sur le plan, sans s'y enfoncer
+    ni s'en détacher. La projection de la force gravitationnelle sur le vecteur
+    normal <m>\llt a,b,c\rgt</m> est
+    <md>
     \frac{-mg\llt 0,0,1\rgt\cdot\llt a,b,c\rgt}{|\llt a,b,c\rgt|^2}\llt a,b,c\rgt
     =\frac{-mgc}{a^2+b^2+c^2}\llt a,b,c\rgt
-    </me>
-    The condition that determines <m>T</m> is thus
-    <me>
+    </md>
+    La condition qui détermine <m>T</m> est donc
+    <md>
     T\llt a,b,c\rgt+\frac{-mgc}{a^2+b^2+c^2}\llt a,b,c\rgt =0
     \implies T=\frac{mgc}{a^2+b^2+c^2}
-    </me>
-    The total force on the marble is then (ignoring friction - which will
-    have no effect on the direction of motion)
+    </md>
+    La force totale sur la bille est alors (en ignorant le frottement, qui n'a
+    pas d'effet sur la direction du mouvement)
     <md>
     <mrow>
     T\llt a,b,c\rgt-mg\llt 0,0,1\rgt&amp;=\frac{mgc}{a^2+b^2+c^2}\llt a,b,c\rgt-mg\llt 0,0,1\rgt\cr
@@ -571,12 +571,12 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     &amp;=mg\frac{\llt ac,bc,-a^2-b^2\rgt}{a^2+b^2+c^2}\cr
     </mrow>
     </md>
-    The direction of motion <m>\llt ac,bc,-a^2-b^2\rgt</m>. If you want to turn
-    this into a unit vector, just divide by <m>\sqrt{(a^2+b^2)(a^2+b^2+c^2)}</m>.
-    Note that the direction vector in perpendicular <m>\llt a,b,c\rgt</m> and hence is parallel
-    to the plane. If <m>c=0</m>, the plane is vertical. In this case, the marble
-    doesn't roll - it falls straight down. If <m>a=b=0</m>, the plane is horizontal.
-     In this case, the marble doesn't roll <mdash/> it remains stationary.
+    La direction du mouvement est <m>\llt ac,bc,-a^2-b^2\rgt</m>. Pour en faire
+    un vecteur unitaire, il suffit de diviser par <m>\sqrt{(a^2+b^2)(a^2+b^2+c^2)}</m>.
+    Notons que ce vecteur directeur est perpendiculaire à <m>\llt a,b,c\rgt</m> et donc
+    parallèle au plan. Si <m>c=0</m>, le plan est vertical. Dans ce cas, la bille
+    ne roule pas, elle tombe tout droit. Si <m>a=b=0</m>, le plan est horizontal.
+    Dans ce cas, la bille ne roule pas <mdash/> elle reste immobile.
     </p></solution>
   </exercise>
 
@@ -597,11 +597,11 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <m>(s,s,0)</m>, <m>(0,s,s)</m>, <m>(s,0,s)</m> et <m>(s,s,s)</m>.
     </p>
 
-    <p>We'll start with a couple of examples. The diagonal from <m>(0,0,0)</m>
-    to <m>(s,s,s)</m> is <m>\llt s,s,s\rgt</m>. One face of the cube has vertices <m>(0,0,0)</m>,
-    <m>(s,0,0)</m>, <m>(0,s,0)</m> and <m>(s,s,0)</m>. One diagonal of this face runs from
-    <m>(0,0,0)</m> to <m>(s,s,0)</m> and hence is <m>\llt s,s,0\rgt</m>. The angle between
-    <m>\llt s,s,s\rgt</m> and <m>\llt s,s,0\rgt</m> is
+    <p>Commençons par quelques exemples. La diagonale de <m>(0,0,0)</m>
+    à <m>(s,s,s)</m> est <m>\llt s,s,s\rgt</m>. Une face du cube a pour sommets <m>(0,0,0)</m>,
+    <m>(s,0,0)</m>, <m>(0,s,0)</m> et <m>(s,s,0)</m>. Une diagonale de cette face va de
+    <m>(0,0,0)</m> à <m>(s,s,0)</m>, et est donc <m>\llt s,s,0\rgt</m>. L'angle entre
+    <m>\llt s,s,s\rgt</m> et <m>\llt s,s,0\rgt</m> est
     <md>
     <mrow>
     \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt s,s,0\rgt}
@@ -612,10 +612,10 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     &amp;\approx 35.26^\circ
     </mrow>
     </md>
-    A second diagonal for the face with vertices  <m>(0,0,0)</m>,
-    <m>(s,0,0)</m>, <m>(0,s,0)</m> and <m>(s,s,0)</m> is that running from
-    <m>(s,0,0)</m> to <m>(0,s,0)</m>. This diagonal is <m>\llt -s,s,0\rgt</m>. The angle between
-    <m>\llt s,s,s\rgt</m> and <m>\llt -s,s,0\rgt</m> is
+    Une seconde diagonale de la face de sommets <m>(0,0,0)</m>,
+    <m>(s,0,0)</m>, <m>(0,s,0)</m> et <m>(s,s,0)</m> est celle allant de
+    <m>(s,0,0)</m> à <m>(0,s,0)</m>. Cette diagonale est <m>\llt -s,s,0\rgt</m>. L'angle entre
+    <m>\llt s,s,s\rgt</m> et <m>\llt -s,s,0\rgt</m> est
     <md>
     <mrow>
     \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt -s,s,0\rgt}
@@ -627,34 +627,34 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     </md>
     </p>
 
-    <p>Now we'll consider the general case.
-    Note that every component of every vertex of the cube is either <m>0</m> or
-    <m>s</m>. In general, two vertices of the cube are at
-    opposite ends of a diagonal of the cube if all three components of the
-    two vertices are different. For example, if one end of the diagonal is
-    <m>(s,0,s)</m>, the other end is <m>(0,s,0)</m>. The diagonals of the cube are all
-    of the form <m>\llt \pm s,\pm s,\pm s\rgt</m>. All of these diagonals are of length <m>\sqrt{3}s</m>.
-    Two vertices are on the same face of the cube if one of their components
-    agree. They are on opposite ends of a diagonal for the face if their other
-    two components differ. For example <m>(0,s,s)</m> and <m>(s,0,s)</m> are both on
-    the face with <m>z=s</m>.  Because the <m>x</m> components <m>0,\ s</m> are different
-    and the <m>y</m> components <m>s,\ 0</m> are different, <m>(0,s,s)</m> and <m>(s,0,s)</m>
-    are the ends of a diagonal of the face with <m>z=s</m>. The diagonals of the
-    faces with <m>z=0</m> or <m>z=s</m> are <m>\llt \pm s,\pm s,0\rgt</m>. The diagonals of the
-    faces with <m>y=0</m> or <m>y=s</m> are <m>\llt \pm s,0, \pm s\rgt</m>. The diagonals of the
-    faces with <m>x=0</m> or <m>x=s</m> are <m>\llt 0,\pm s,\pm s\rgt</m>. All of these diagonals
-    have length <m>\sqrt{2}s</m>. The dot product of one the cube diagonals
-    <m>\llt \pm s,\pm s,\pm s\rgt</m> with one of the face diagonals  <m>\llt \pm s,\pm s,0\rgt</m>,
-     <m>\llt \pm s,0, \pm s\rgt</m>, <m>\llt 0,\pm s,\pm s\rgt</m> is of the form <m>\pm s^2\pm s^2+0</m>
-    and hence must be either <m>2s^2</m> or <m>0</m> or <m>-2s^2</m>. In general, the angle
-    between a cube diagonal and a face diagonal is
+    <p>Considérons maintenant le cas général.
+    Notons que chaque composante de chaque sommet du cube vaut soit <m>0</m>, soit
+    <m>s</m>. En général, deux sommets du cube sont aux extrémités opposées
+    d'une diagonale du cube si les trois composantes des deux sommets sont
+    toutes différentes. Par exemple, si une extrémité de la diagonale est
+    <m>(s,0,s)</m>, l'autre extrémité est <m>(0,s,0)</m>. Les diagonales du cube sont
+    toutes de la forme <m>\llt \pm s,\pm s,\pm s\rgt</m>. Toutes ces diagonales ont pour longueur <m>\sqrt{3}s</m>.
+    Deux sommets sont sur la même face du cube si l'une de leurs composantes
+    coïncide. Ils sont aux extrémités opposées d'une diagonale de cette face
+    si leurs deux autres composantes diffèrent. Par exemple, <m>(0,s,s)</m> et <m>(s,0,s)</m> sont tous deux sur
+    la face <m>z=s</m>. Comme les composantes en <m>x</m>, <m>0,\ s</m>, sont différentes
+    et que les composantes en <m>y</m>, <m>s,\ 0</m>, sont différentes, <m>(0,s,s)</m> et <m>(s,0,s)</m>
+    sont les extrémités d'une diagonale de la face <m>z=s</m>. Les diagonales des
+    faces <m>z=0</m> ou <m>z=s</m> sont <m>\llt \pm s,\pm s,0\rgt</m>. Les diagonales des
+    faces <m>y=0</m> ou <m>y=s</m> sont <m>\llt \pm s,0, \pm s\rgt</m>. Les diagonales des
+    faces <m>x=0</m> ou <m>x=s</m> sont <m>\llt 0,\pm s,\pm s\rgt</m>. Toutes ces diagonales
+    ont pour longueur <m>\sqrt{2}s</m>. Le produit scalaire d'une diagonale du cube
+    <m>\llt \pm s,\pm s,\pm s\rgt</m> avec l'une des diagonales de face <m>\llt \pm s,\pm s,0\rgt</m>,
+     <m>\llt \pm s,0, \pm s\rgt</m>, <m>\llt 0,\pm s,\pm s\rgt</m> est de la forme <m>\pm s^2\pm s^2+0</m>,
+    et vaut donc soit <m>2s^2</m>, soit <m>0</m>, soit <m>-2s^2</m>. En général, l'angle
+    entre une diagonale du cube et une diagonale de face est
     <md>
     <mrow>
-    \arccos\left(\frac{2s^2 \text{ or } 0 \text{ or } -2s^2}{\sqrt{3}s\,\sqrt{2}s}\right)
-    &amp;=\arccos\left(\frac{2 \text{ or } 0 \text{ or } or -2}{\sqrt{6}}\right)
+    \arccos\left(\frac{2s^2 \text{ ou } 0 \text{ ou } -2s^2}{\sqrt{3}s\,\sqrt{2}s}\right)
+    &amp;=\arccos\left(\frac{2 \text{ ou } 0 \text{ ou } -2}{\sqrt{6}}\right)
     </mrow><mrow>
     &amp;\approx
-    5.26^\circ \text{ or } 90^\circ \text{ or } 144.74^\circ.
+    35.26^\circ \text{ ou } 90^\circ \text{ ou } 144.74^\circ.
     </mrow>
     </md>
     </p></solution>
@@ -924,7 +924,7 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
 
     <hint><p>
     (a)
-    Les trois segments de droite allant de <m>C</m> à <m>O</m>, de <m>C</m> à <m>A</m> et de <m>C</m> à <m>B</m>.
+    Les trois segments de droite allant de <m>C</m> à <m>O</m>, de <m>C</m> à <m>A</m> et de <m>C</m> à <m>B</m>
     ont toutes exactement la même longueur, à savoir le rayon du cercle circonscrit.
     </p>
 
@@ -991,18 +991,18 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <li>
       le triangle <m>OCA</m> est un triangle isocèle, de sorte que <m>P_A</m> soit exactement le
       milieu du segment de ligne de <m>O</m> à <m>A</m>. Autrement dit, <m>P_A</m> est <m>(a/2,0)</m> et
-    <me>
+    <md>
     \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
         =\overrightarrow{OP_A}=\llt a/2,0\rgt
-    </me>
+    </md>
     </li>
     <li>
       De même, le triangle <m>OCB</m> est un triangle isocèle, de sorte que <m>P_B</m> est
       exactement le point médian du segment de droite allant de <m>O</m> à <m>B</m>. Autrement dit, <m>P_A</m> est <m>(b/2,c/2)</m> et
-    <me>
+    <md>
     \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
         =\overrightarrow{OP_B}=\llt b/2,c/2\rgt
-    </me>
+    </md>
     </li>
     </ul>
     </p>
@@ -1023,10 +1023,10 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     </mrow>
     </md>
     ce qui implique
-    <me>
+    <md>
     \bar x=\frac{a}{2}\qquad\qquad \bar y
     =\frac{b^2+c^2-2b\bar x}{2c}=\frac{b^2+c^2-ab}{2c}
-    </me>
+    </md>
     </p>
 
     <p>(c) De la partie (b), on a
@@ -1187,11 +1187,11 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
 
     <solution><p>
     (a) La composante de <m>\vb</m> dans la direction <m>\va</m> est de
-    <me>
+    <md>
     \vb\cdot\frac{\va}{|\va|}
     =\frac{1\times 4+2\times 10+3\times 6}{\sqrt{1+4+9}}
     = \frac{42}{\sqrt{14}}
-    </me>
+    </md>
     </p>
 
     <p>(b) La projection de <m>\vb</m> sur <m>\va</m> est un vecteur de longueur

@@ -62,9 +62,9 @@
   </subsection>
   <subsection xml:id="pars-Op-vects"><title>Opérations avec vecteurs</title><p>
 Reprenons notre exemple et supposons qu'un mobile se déplace de <m>P</m> vers <m>Q</m>. Par la suite, le déplacement continue et va de <m>Q</m> vers <m>R</m> (voir la <xref ref="Chasles">figure</xref>). L'effet combiné de ces déplacements est que notre mobile est allé de <m>P</m> à <m>R</m>. Le déplacement résultant est donc <m>\overrightarrow{PR}</m>, et l'on convient qu'il s'agit de la <term>somme</term> de <m>\overrightarrow{PQ}</m> et de <m>\overrightarrow{QR}</m>, ce qu'on écrit naturellement
-</p><me>
+<md>
   \overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR}.
-</me><p>
+</md>
   Cette relation est appelée la <term>relation de Chasles</term>, ou encore la <term>loi du triangle</term>.
 </p><figure xml:id="Chasles"><caption>La relation de Chasles, ou loi du triangle : <m>\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} </m> </caption><image xml:id="sageplot-Chasles" width="60%"><description>La relation de Chasles</description><sageplot>
           Fig = arrow((1,1), (4,2), color = "red", thickness = 2, axes = false)
@@ -169,12 +169,10 @@ comme cela est indiqué dans les deux autres figures ci-bas.
 Bien que l'approche du paragraphe précédent soit très utile en soi, notamment pour faire de la géométrie, il est très utile d'introduire un système de coordonnées afin d'utiliser la puissance de l'algèbre linéaire. On choisit donc un espace à deux ou trois dimensions dans lequel un point est choisi et désigné comme l'origine <m>O</m>, et un système de coordonnées rectangulaires associé. Chaque point <m>A</m> de notre espace aura alors ses coordonnées, <m>(a_1, a_2)</m> ou <m>(a_1,a_2,a_3)</m> selon que notre espace a deux ou trois dimensions. On écrira alors <m>A(a_1, a_2)</m> ou <m>A(a_1,a_2,a_3)</m>, confondant un point avec ses coordonnées, ou encore  <m>A(x_A,y_A)</m> ou <m>A(x_A,y_A,z_A)</m>.
   </p>
     <p>
-  À chaque point <m>A</m>, on associe son <term>vecteur position</term>, <m>\overrightarrow{OA}</m>, et l'on fera la convention d'écriture suivante : on désignera par une lettre minuscule en caractère gras le vecteur position corrrespondant au point dont le nom est la même lettre majuscule en caractère normal :
-</p>
-    <me>
+  À chaque point <m>A</m>, on associe son <term>vecteur position</term>, <m>\overrightarrow{OA}</m>, et l'on fera la convention d'écriture suivante : on désignera par une lettre minuscule en caractère gras le vecteur position correspondant au point dont le nom est la même lettre majuscule en caractère normal :
+    <md>
   \va = \overrightarrow{OA}.
-</me>
-    <p>
+</md>
   Réciproquement, si un vecteur <m>\va</m> est dessiné avec sa source avec l'origine, alors son but se trouve au point <m>A(a_1,a_2)</m> ou <m>A(a_1,a_2, a_3)</m>. On dira alors que les coordonnées de <m>A</m> sont les composantes de <m>\va</m>, et l'on écrira ces composantes comme un vecteur colonne :
 </p>
     <md>
@@ -189,10 +187,10 @@ Bien que l'approche du paragraphe précédent soit très utile en soi, notamment
 </p>
     <p>
   Prenons maintenant le vecteur <m>\vv = \overrightarrow{PQ}</m>, dessiné avec sa source au point <m>P(p_1,p_2,p_3)</m> et avec son but à <m>Q(q_1,q_2,q_3)</m>. Comme <m>\vv</m> est précisément le déplacement nécessaire pour aller de <m>P</m> à <m>Q</m>, on doit avoir <m>p_i + v_i = q_i</m> pour <m>i\in \{1,2,3\}</m><fn>L'expression <q><m>i\in \{1,2,3\}</m></q> doit se lire comme <q><m>i</m> dans l'ensemble formé des éléments <m>1,2,3</m></q>.</fn>. Ainsi, écrit avec ces composantes, nous avons :
-</p>
-    <me>
+    <md>
   \vv = \tvect{v_1}{v_2}{v_3} = \tvect{q_1 - p_1}{q_2 - p_2}{q_3 - p_3}.
-</me>
+</md>
+    </p>
     <ul>
       <li>
     On suppose que l'on fait un premier pas, se déplaçant de <m>a_1</m> unités parallèlement à l'axe des abscisses et de <m>a_2</m> unités parallèlement à l'axe des ordonnées.
@@ -200,7 +198,7 @@ Bien que l'approche du paragraphe précédent soit très utile en soi, notamment
     Dans ce cas, on dira que <m>\va = \dvect{a_1}{a_2}</m> est le vecteur de déplacement pour ce premier pas. Supposons maintenant que lors d'un deuxième pas, on bouge de <m>b_1</m> unités  dans la direction des abscisses et de <m>b_2</m> unités dans la direction des ordonnées, comme cela est indiqué dans la figure de gauche ci-bas. Ainsi, le vecteur de déplacement pour le deuxième pas est  <m>\vb = \dvect{b_1}{b_2}</m>. Globalement, on s'est déplacé de <m>a_1+b_1</m> unités  parallèlement à l'axe des abscisses et de <m>a_2+b_2</m> unités parallèlement à l'axe des ordonnées. Le vecteur de déplacement pour les deux pas combinés est  <m>\dvect{a_1+b_1}{a_2+b_2}</m>.  Nous allons définir l'addition  <m>\va + \vb </m> par <m>\dvect{a_1+b_1}{a_2+b_2}</m>.
 </li>
       <li>
-    On suppose maintenant que l'on décide de se déplacer dans la même direction que, lors du premier pas, mais d'un pas deux fois plus long, comme cela est indiqué dans la figure de droite ci-bas. Ce pas sera alors de <m>2a_1</m> unités dans la direction des abscisses et de  <m>2a_2</m> unités dans la direction des ordonnées, et le vecteur de déplacement résultant sera <m>\dvect{2a_1}{2a_2}</m>. On définit alors le produit du nombre réel <m>2</m> et du vecteur <m>\va </m>, qu'on dénote <m>2\va</m>, par <me>2\va = \dvect{2a_1}{2a_2}</me>.
+    On suppose maintenant que l'on décide de se déplacer dans la même direction que, lors du premier pas, mais d'un pas deux fois plus long, comme cela est indiqué dans la figure de droite ci-bas. Ce pas sera alors de <m>2a_1</m> unités dans la direction des abscisses et de  <m>2a_2</m> unités dans la direction des ordonnées, et le vecteur de déplacement résultant sera <m>\dvect{2a_1}{2a_2}</m>. On définit alors le produit du nombre réel <m>2</m> et du vecteur <m>\va </m>, qu'on dénote <m>2\va</m>, par <m>2\va = \dvect{2a_1}{2a_2}</m>.
 </li>
     </ul>
     <sidebyside widths="39.4% 37.8%" valign="middle">
@@ -284,10 +282,10 @@ Les vecteurs de la <term><em>base canonique</em></term> sont<fn>Certain(e)s aute
     </definition>
     <p>
    Grâce aux propriétés des vecteurs, on peut notamment écrire :
-<me>
+<md>
 \dvect{a_1}{a_2}  =a_1\,\vi+a_2\,\vj,\qquad\qquad
 \tvect{a_1}{a_2}{a_3} =a_1\,\vi+a_2\,\vj+a_3\,\vk.
-</me>
+</md>
 Une expression qui est une somme de multiples de vecteurs, comme  <m>a_1\vi+a_2\vj</m>, est appelée une <em>combinaison linéaire</em> de ces vecteurs. Ainsi, tout vecteur peut être exprimé comme une combinaison linéaire des vecteurs de la base canonique. Ceci rend ces vecteurs de base très utiles.
 
 </p>

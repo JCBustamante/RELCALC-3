@@ -2,8 +2,8 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="S2-1-Plusieurs-variables">
   <title>Fonctions de plusieurs variables</title>
   <introduction>
-Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. Une telle fonction est une règle qui associe exactement une quantité (un nombre ou un vecteur par exemple) à une valeur donnée. On étudie les fonctions réelles d'une variable réelle et leurs applications à l'aide de graphiques, des limites, de leurs dérivées ou de leurs intégrales notamment. Nous verrons que la plupart des idées du calcul à une variable trouvent leur place avec plusieurs variables. Bien entendu, certains ajustements seront nécessaires.
-</introduction>
+    <p>Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. Une telle fonction est une règle qui associe exactement une quantité (un nombre ou un vecteur par exemple) à une valeur donnée. On étudie les fonctions réelles d'une variable réelle et leurs applications à l'aide de graphiques, des limites, de leurs dérivées ou de leurs intégrales notamment. Nous verrons que la plupart des idées du calcul à une variable trouvent leur place avec plusieurs variables. Bien entendu, certains ajustements seront nécessaires.</p>
+  </introduction>
   <definition xml:id="def-Fonctions-2-3-vars">
     <statement>
       <p>
@@ -18,13 +18,13 @@ Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. U
     </statement>
   </definition>
   <example>
-    <statement> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
+    <statement><p> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
   <ol marker="(a)"><li><p>Trouver le domaine de <m>f</m> et le représenter graphiquement.
       </p></li><li><p>
         Calculer <m>f(1/4,1/4)</m>.
       </p></li></ol>
 
-  </statement>
+  </p></statement>
     <solution>
       <ol marker="(a)">
         <li>
@@ -63,18 +63,18 @@ Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. U
     <definition xml:id="def-Graphe">
       <statement>
         <p>Soit <m>\plan{D}\subseteq \R^2</m> et <m>f:\plan{D} \to \R</m> une fonction donnée. Le <term><em>graphe de <m>f</m></em></term> est l'ensemble
-            <me>
+            <md>
                 \{(x,y,z)\in \R^3| z = f(x,y), (x,y)\in  \plan{D}\}.
-            </me>
+            </md>
             Notons qu'il s'agit d'une surface dans <m>\R^3</m>.
             </p>
       </statement>
     </definition>
     <p>
       Remarquons qu'il est habituel d'identifier le domaine <m>\cD</m>, qui est une partie de <m>\R^2</m>, à un sous-ensemble de <m>\R^3</m>, à savoir
-      <me>
+      <md>
         \{(x,y,0)\in \R^3| (x,y)\in  \plan{D}\}.
-      </me>
+      </md>
     </p>
     <p>
       De façon plus générale, on peut définir le graphe d'une fonction <m>f</m> définie sur une partie <m>\plan{D}</m> de <m>\R^n</m> comme l'ensemble des points <m>(\vx, f(\vx))</m> de <m>\R^n \times \R</m> qu'on identifie naturellement à <m>\R^{n+1}</m>.
@@ -183,17 +183,15 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
         </image>
       </figure>
     </p>
-    <p>
       <definition xml:id="def-C-niveau">
         <statement>
           <p>Soit <m>f</m> une fonction de deux variables définie sur une région <m>\plan{D}</m>. Pour un réel <m>k</m> donné, la <term><em>courbe de niveau <m>k</m> de <m>f</m></em></term> est l'ensemble
-    <me>
+    <md>
       f^{-1}(k) = \{(x,y)\in \plan{D}|\,f(x,y) = k\}
-    </me>.
+    </md>.
     </p>
         </statement>
       </definition>
-    </p>
     <p>
 On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>.
 </p>
@@ -275,7 +273,7 @@ La figure ci-après montre le diagramme des courbes de niveau de la fonction con
   <subsection xml:id="pars-trois-variables">
     <title>Fonctions de trois variables</title>
     <p>
-  Les notions vues pour les fonctions de 2 variables s'appliquent <em>mutatis mutandis</em> aux fonctions de 3 variables.
+  Les notions vues pour les fonctions à deux variables s'appliquent <em>mutatis mutandis</em> aux fonctions de trois variables.
   </p>
     <p>
     La représentation d'une fonction de 3 variables par son graphe n'est pas pratique. En effet, si <m>f(x,y,z)</m> est donnée, son graphe défini par <m>w = f(x,y,z)</m> est un sous-ensemble de <m>\R^4</m>.
@@ -286,9 +284,9 @@ La figure ci-après montre le diagramme des courbes de niveau de la fonction con
     <definition xml:id="def-S-niveau">
       <statement>
         <p>Soit <m>f</m> une fonction de trois variables définie sur une région <m>\plan{D}\subseteq \R^3</m>. Pour un réel <m>k</m> donné, l'<term><em>ensemble de niveau <m>k</m> de <m>f</m></em></term> est l'ensemble
-    <me>
+    <md>
       f^{-1}(k) = \{(x,y,z)\in \plan{D}|\,f(x,y,z) = k\}
-    </me>.
+    </md>.
     </p>
       </statement>
     </definition>

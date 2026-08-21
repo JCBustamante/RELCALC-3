@@ -14,19 +14,19 @@
     <p>Il y a trois façons usuelles de spécifier une surface dans l'espace tridimensionnel.
 <ol marker="(a)"><li><em>Graphe d'une fonction.</em> Probablement la façon la plus commune, c'est ce que nous avons fait à la <xref ref="S2-1-Plusieurs-variables" text="global">section</xref>. Il s'agit de donner une équation de la forme
 
-<me>
+<md><mrow>
  z = f(x,y)\qquad (x,y)\in\cD\subset\R^2.
-</me>
+</mrow></md>
 Par exemple, si la surface est la moitié supérieure de la sphère de rayon 1 centrée à l'origine, on a
-<me>
+<md><mrow>
  z = \sqrt{1-x^2-y^2}\qquad \text{avec } x^2+y^2 \leqslant 1.
-</me>
+</mrow></md>
 </li><li><em>Implicitement. </em>
 Nous l'avons aussi fait. Il s'agit de spécifier la surface comme l'ensemble de niveau d'une fonction de trois variables. Ceci revient à dire que la surface est l'ensemble des points  <m>(x,y,z)</m>  qui vérifient l'équation
 <m>G(x,y,z)=K</m>. Par exemple, la sphère de rayon 1 centrée à l'origine est l'ensemble des points vérifiant
-<me>
+<md><mrow>
 x^2+y^2+z^2=1.
-</me>
+</mrow></md>
 Nous reviendrons sur cette surface à l'<xref ref="eg_SURsphere" text="global">exemple</xref> plus bas.
 </li><li><em>Un paramétrage, l'image d'une fonction.</em>
 Il s'agit probablement de la façon la plus utile de spécifier une surface. Tout comme un chemin (une fonction d'une variable qui renvoie des points dans <m>\R^2</m> ou <m>\R^3</m>) sert à paramétrer une courbe, on peut obtenir une surface comme l'image d'une fonction de deux variables :
@@ -41,9 +41,9 @@ On dit que la surface est <em>paramétrée par <m>\vr</m></em>. Chaque point de 
     <example xml:id="SUR_paramGraph">
       <p>
 Une façon simple, voire triviale, de paramétrer une surface qui est le graphe
-<me>
+<md><mrow>
  z = f(x,y)\qquad (x,y)\in\cD\subset\R^2
-</me>
+</mrow></md>
 est de choisir  <m>x</m> et <m>y</m> comme paramètres, c'est-à-dire de choisir
 <md><mrow>
 \vr(u,v) &amp;= u\, \vi  + v\,\vj  + f(u,v)\, \vk \quad (u,v)\in\cD
@@ -59,13 +59,13 @@ Voyons quelque chose d'un peu plus substantiel.
       <title>Sphère</title>
       <p>
 La sphère de rayon <m>1</m> centrée à l'origine est l'ensemble des points <m>(x,y,z)</m> vérifiant
-<me>
+<md><mrow>
 G(x,y,z)= x^2+y^2+z^2=1.
-</me>
+</mrow></md>
 Nous ne pouvons pas exprimer cette surface comme le graphe d'une fonction puisque, pour chaque  <m>(x,y)</m> vérifiant  <m>x^2+y^2 \leqslant 1</m>, il existe deux valeurs de <m>z</m> telles que <m>x^2+y^2+z^2=1</m>, à savoir
-<me>
+<md><mrow>
 z=\pm\sqrt{1-x^2-y^2}.
-</me>
+</mrow></md>
 De plus, localement, cette surface est le graphe d'une fonction. Ceci veut dire que, pour tout point  <m>(x_0, y_0, z_0)</m> sur la sphère, les points sur cette surface qui sont suffisamment près de  <m>(x_0, y_0, z_0)</m> peuvent être exprimés sous une des formes <m>z=f(x,y)</m>, <m>x=g(y,z)</m> ou  <m>y=h(x,z)</m>. Par exemple, la portion de la sphère qui se trouve à une distance inférieure à <m>\sqrt{2}</m> du point <m>(0,0,1)</m> est
 <md><mrow>
 &amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ |(x,y,z) - (0,0,1)| \leqslant \sqrt{2}}
@@ -143,10 +143,10 @@ y&amp;=\rho\sin\varphi\sin\theta,
 z&amp;=\rho\cos\varphi.
 </mrow></md>
 Les points sur la sphère  <m>x^2+y^2+z^2=1</m> sont exactement les points  vérifiant  <m>\rho=1</m>, de sorte que nous avons un paramétrage
-<me>
+<md><mrow>
 \vr(\theta,\varphi)
 =\sin\varphi\cos\theta\,\vi  + \sin\varphi\sin\theta\,\vj+ \,\cos\varphi\vk.
-</me>
+</mrow></md>
 </p>
       <!--
 <p>Here is how to see that as <m>\varphi</m> runs over <m>(0,\pi)</m> and <m>\theta</m>
@@ -234,20 +234,20 @@ La surface  <m>x^2+y^2=1</m> est un cylindre infini. Une portion est esquissée 
       </sidebyside>
       <p>
 Remarquons que la section de ce cylindre au plan <m>Oxy</m>, et en fait à n'importe quel plan <m>z=c</m>, est le cercle  <m>x^2+z^2=1</m>. Nous pouvons en donner un paramétrage en posant <m>x=\cos\theta</m>, <m>y=\sin\theta</m>, de sorte que la figure en entier peut être paramétrée avec les paramètres  <m>\theta</m> et <m>z</m> comme
-<me>
+<md><mrow>
 \vr(\theta,z) = \cos\theta\, \vi + \sin\theta\,\vj + z\, \vk
 \qquad
 0\leqslant\theta \leqslant 2\pi,\ \ -\infty \leqslant z \leqslant \infty.
-</me>
+</mrow></md>
 </p>
     </example>
     <example xml:id="SURrevolution">
       <title>Surface de révolution</title>
       <p>
 Dans cet exemple, nous allons donner un paramétrage d'une surface de révolution. Notre axe de révolution sera l'axe des <m>z</m>. Plus précisément, nous nous intéressons à la surface obtenue en faisant tourner la courbe du plan <m>Oyz</m>,
-<me>
+<md><mrow>
 z=g(y)=e^y \qquad 0\leqslant  y\leqslant  1,
-</me>
+</mrow></md>
 autour de l'axe  <m>Oz</m>. La même procédure peut être utilisée pour obtenir des paramétrages de surfaces de révolution autour d'autres axes.
 </p>
       <p>Commençons par esquisser la courbe, il s'agit de la courbe rouge dans la figure ci-bas. Concentrons-nous sur un point spécifique de la courbe pendant la révolution, disons le point bleu, de coordonnées <m>(0,Y,e^Y)</m>.
@@ -274,35 +274,35 @@ z(Y,\theta) &amp; = e^Y
 </mrow></md>
 Remarquons, pour des fins de vérification, que
 <ul><li>  lorsque <m>\theta=0</m>,
-<me>
+<md><mrow>
     \left( x(Y,0),\,y(Y,0),\,z(Y,0)\right)
                  =(0,Y,e^Y)
-</me>
+</mrow></md>
 parcourt la courbe  <m>z=g(y)</m>, <m>0\leqslant  y\leqslant  1</m>, lorsque  <m>Y</m> vérifie  <m>0\leqslant  Y\leqslant  1</m>, et que,
 </li><li>  pour toute valeur fixe de <m>Y</m> vérifiant  <m>0\leqslant  Y\leqslant  1</m>,
    <m>\left( x(Y,\theta),\,y(Y,\theta),\,z(Y,\theta)\right) </m> parcourt le cercle <m>x^2+y^2=Y^2</m> du plan <m>z=e^Y</m>, lorsque  <m>\theta</m> vérifie <m>0\le\theta \leqslant 2\pi</m>.
 </li></ul>
 Notons aussi que
-<me>
+<md><mrow>
 x(Y,\theta)^2 + y(Y,\theta)^2 = Y^2,
-</me>
+</mrow></md>
 de sorte que
-<me>
+<md><mrow>
 Y=\sqrt{x(Y,\theta)^2 + y(Y,\theta)^2}
-</me>
+</mrow></md>
 et que
 <md><mrow>
 z(Y,\theta) =e^{Y} = e^{ \sqrt{x(Y,\theta)^2 + y(Y,\theta)^2} }.
 </mrow></md>
 Ceci veut dire que la surface de révolution est contenue dans la surface infinie
-<me>
+<md><mrow>
 z=e^{\sqrt{x^2+y^2}}.
-</me>
+</mrow></md>
 Ayant à l'esprit que <m>0\leqslant  Y\leqslant  1</m>, nous avons que <m>1\leqslant  z=e^Y \leqslant e</m>.
 La surface de révolution est
-<me>
+<md><mrow>
 z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
-</me>
+</mrow></md>
 Finalement, voici une esquisse de la portion de notre surface qui se trouve dans le premier octant,
 <m>x,y,z\geqslant 0</m>.
 </p>
@@ -311,7 +311,7 @@ Finalement, voici une esquisse de la portion de notre surface qui se trouve dans
       </sidebyside>
     </example>
     <p>
-      La même technique peut être utilisée pour obtenir un paramétrage de la surface de révolution obtenue en faisant tourner une courbe plane (peut-être elle-même paramétrée!) autour d'un axe quelonque.
+      La même technique peut être utilisée pour obtenir un paramétrage de la surface de révolution obtenue en faisant tourner une courbe plane (peut-être elle-même paramétrée!) autour d'un axe quelconque.
     </p>
     <example xml:id="SURdonut">
       <title>Tore</title>
@@ -392,16 +392,16 @@ un vecteur non nul <m>\vn</m>, le vecteur normal pour ce plan, et
 un point  <m>(x_0,y_0,z_0)</m> appartenant au plan.
 </li></ul>
 Si <m>(x,y,z)</m> est un autre point sur le plan, alors le vecteur
-<me>
+<md><mrow>
 (x\, \vi + y\, \vj + z\, \vk) - (x_0\, \vi + y_0\, \vj + z_0\, \vk) = (x-x_0)\vi + (y-y_0)\vj + (z-z_0)\vk
-</me>
+</mrow></md>
 est parallèle au plan et, donc, est orthogonal à  <m>\vn</m>. Ceci donne une équation pour le plan
 </p>
     <sidebyside widths="45% 30%" valign="middle">
       <p>
-        <me>
+        <md><mrow>
 \vn\cdot(x-x_0,\,y-y_0,\,z-z_0) = 0.
-</me>
+</mrow></md>
       </p>
       <image source="images/CLP4-figs/plane"/>
     </sidebyside>
@@ -451,7 +451,7 @@ Soit <m>(x_0,y_0,z_0)=f(x_0,y_0)</m> un point sur la surface d'équation <m>z=f(
 est normal à la surface au point <m>(x_0,y_0,z_0)</m>.
 </li>
             <li>
-Soit une surface donnée implicitement par <m>G(x,y,z) = K</m>, et  <m>(x_0,y_0,z_0)</m> un point sur la surface. Si le gradient t <m>\vnabla G\left( x_0,y_0,z_0\right) \ne \vZero</m>, alors
+Soit une surface donnée implicitement par <m>G(x,y,z) = K</m>, et  <m>(x_0,y_0,z_0)</m> un point sur la surface. Si le gradient <m>\vnabla G\left( x_0,y_0,z_0\right) \ne \vZero</m>, alors
 <md><mrow>
 \vn= \vnabla G\left( x_0,y_0,z_0\right)
 </mrow></md>
@@ -470,9 +470,9 @@ Remarquons aussi que, si nous appliquons la partie (c) à  <m>G(x,y,z) = z - f(x
     <proof>
       <p> (a)
 Fixons d'abord  <m>v=v_0</m> et faisons varier <m>u</m>. Alors,
-<me>
+<md><mrow>
 u\mapsto \vr(u,v_0) = \left( x(u,v_0),\,y(u,v_0),\,z(u,v_0)\right)
-</me>
+</mrow></md>
 est un chemin, sa courbe fait partie de la surface (la courbe rouge dans la figure de droite ci-bas) et elle passe par <m>(x_0,y_0,z_0)</m> (le point noir sur la figure) lorsque <m>u=u_0</m>.
 </p>
       <sidebyside widths="48% 48%">
@@ -481,24 +481,24 @@ est un chemin, sa courbe fait partie de la surface (la courbe rouge dans la figu
       </sidebyside>
       <p>
 Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>, qui est aussi tangent à la surface en  <m>(x_0,y_0,z_0)</m>, est
-<me>
+<md><mrow>
 \vT_u = \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
 =\left( \frac{\partial x}{\partial u}(u_0,v_0),\,
       \frac{\partial y}{\partial u}(u_0,v_0),\,
       \frac{\partial z}{\partial u}(u_0,v_0)\right).
-</me>
+</mrow></md>
 Il s'agit de la flèche rouge dans la figure de droite ci-haut.
 </p>
-      <p>Fixons maintenant <m>u=u_0</m> et faisons varier <m>v</m>. Alors, <me>
+      <p>Fixons maintenant <m>u=u_0</m> et faisons varier <m>v</m>. Alors, <md><mrow>
 v\mapsto \vr(u_0,v) = \left( x(u_0,v),\,y(u_0,v),\,z(u_0,v)\right)
-</me>
+</mrow></md>
 est un chemin dont la courbe se trouve sur la surface (c'est la courbe bleue dans la surface ci-haut) qui passe par  <m>(x_0,y_0,z_0)</m> lorsque  <m>v=v_0</m>. Le vecteur tangent à cette courbe au point  <m>(x_0,y_0,z_0)</m>, qui est aussi tangent à la surface au point <m>(x_0,y_0,z_0)</m>, est
-<me>
+<md><mrow>
 \vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
 =\left( \frac{\partial x}{\partial v}(u_0,v_0),\,
       \frac{\partial y}{\partial v}(u_0,v_0),\,
       \frac{\partial z}{\partial v}(u_0,v_0)\right).
-</me>
+</mrow></md>
 C'est la flèche bleue dans la figure de droite ci-haut.
 </p>
       <p>Nous avons deux vecteurs tangents à la surface au point <m>(x_0,y_0,z_0)</m>, à savoir <m>\vT_u</m> et <m>\vT_v</m>. Leur produit vectoriel
@@ -514,9 +514,9 @@ est donc normal à la surface au point  <m>(x_0,y_0,z_0)</m>.
 </p>
       <p>(b)
 Supposons maintenant que la surface est donnée comme le graphe de la fonction <m>z=f(x,y)</m>. Après avoir changé les noms des variables/paramètres, <m>u</m> devient  <m>x</m>, et <m>v</m> devient <m>y</m>, nous pouvons utiliser le résultat de (a) :
-<me>
+<md><mrow>
 \vr(x,y) = \left( x,y, f(x,y)\right),
-</me>
+</mrow></md>
 est un paramétrage de la surface, et, au point <m>\left( x_0,y_0,z_0\right) =f(x_0,y_0) </m>,
 <md><mrow>
 \vT_x &amp;= \frac{\partial\vr }{\partial x}(x_0,y_0)
@@ -596,13 +596,13 @@ y &amp;=y(u,v) = u\sin v,
 z &amp;=z(u,v) = u.
 </mrow></md>
 Remarquons que
-<me>
+<md><mrow>
 x(u,v)^2 + y(u,v)^2 = u^2 = z(u,v)^2,
-</me>
+</mrow></md>
 de sorte que notre surface est aussi
-<me>
+<md><mrow>
 G(x,y,z) = x^2+y^2-z^2 = 0.
-</me>
+</mrow></md>
 Nous en ferons une esquisse sous peu, mais, avant, trouvons son plan tangent au point <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m>.
 
 Nous allons le faire deux fois, une fois avec l'équation implicite, puis une fois avec le paramétrage
@@ -623,14 +623,14 @@ de sorte que
       = (-x_0,-y_0,z_0).
 </mrow></md>
 Par ailleurs, avec l'équation  <m>G(x,y,z) = x^2+y^2-z^2=0</m>, nous avons le vecteur normal
-<me>
+<md><mrow>
 \vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =-2(-x_0,-y_0,z_0).
-</me>
+</mrow></md>
 Bien entendu, les deux vecteurs  <m>(-x_0,-y_0,z_0)</m> et <m>-2(-x_0,-y_0,z_0)</m> sont colinéaires, les deux peuvent être utilisés comme vecteur normal pour le plan tangent. L'équation de ce plan est
-<me>
+<md><mrow>
 0=\vn\cdot(x-x_0,y-y_0,z-z_0)
  = -x_0(x-x_0)-y_0(y-y_0) + z_0(z-z_0),
-</me>
+</mrow></md>
 <em>pourvu que </em> <m>(x_0,y_0,z_0)\ne \vZero</m>. Si jamais
 <m>(x_0,y_0,z_0) = \vZero</m>, l'<q>équation du plan tangent</q> devient <m>0=0</m>, ce qui n'est clairement pas tellement utile.
 </p>
@@ -656,9 +656,9 @@ La surface qui nous intéresse est  <m>x^2+y^2=z^2</m>. L'intersection de cette 
     <example xml:id="eg_tangentPlaneB">
       <p>
 Nous allons maintenant trouver les plans tangents à la surface
-<me>
+<md><mrow>
 x^2 + y^2 -z^2 = 1.
-</me>
+</mrow></md>
 Comme pour le cône, l'intersection de la surface avec un plan  horizontal <m>z=z_0</m> est un cercle, le cercle de rayon <m>\sqrt{1+z_0^2}</m>  centré à <m>x=y=0</m>. Notre surface est, de nouveau, un empilement de cercles. Le rayon du cercle au plan <m>Oxy</m> est  <m>1</m>, et ce rayon croît à mesure qu'on s'éloigne du plan <m>Oxy</m>. Voici une esquisse.
 </p>
       <sidebyside width="25%">
@@ -670,14 +670,14 @@ Cette surface est un hyperboloïde à une nappe<fn>Il y a aussi des hyperboloïd
 </p>
       <p>
 Avec l'équation  <m>G(x,y,z) = x^2+y^2-z^2=1</m>, nous avons
-<me>
+<md><mrow>
 \vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =2(x_0,y_0,-z_0)
-</me>
+</mrow></md>
 et nous pouvons prendre  <m>(x_0,y_0,-z_0)</m> comme vecteur normal au point  <m>(x_0,y_0,z_0)</m>. Ainsi, le plan tangent à <m>x^2+y^2-z^2=1</m> au point <m>(x_0,y_0,z_0)</m> est
-<me>
+<md><mrow>
 0=\vn\cdot(x-x_0,y-y_0,z-z_0)
  = x_0(x-x_0)+y_0(y-y_0) - z_0(z-z_0).
-</me>
+</mrow></md>
 Cette fois, <m>\vn=(x_0,y_0,-z_0)\ne \vZero</m>, de sorte que nous avons un plan tangent en chaque point. Comme <m>(0,0,0)</m> n'appartient pas à la surface, nous n'avons pas le problème d'annulation du vecteur normal <m>\vn=(x_0,y_0,-z_0)</m>.
 </p>
     </example>
@@ -716,10 +716,10 @@ et l'on peut la paramétrer en prenant
 </p>
       <p>
   Une autre façon de procéder est de tirer profit des propriétés des fonctions trigonométriques hyperboliques.
-<me>
+<md><mrow>
 \sinh u = \frac{1}{2}\left( e^u-e^{-u}\right),  \qquad
 \cosh u = \frac{1}{2}\left( e^u+e^{-u}\right),
-</me>
+</mrow></md>
     Celles-ci ont des propriétés analogues à celles des fonctions trigonométriques usuelles. Ce n'est pas un hasard, puisque  <m>\cosh u = \cos(iu)</m> et <m>\sinh u = -i\sin(iu)</m>. En effet, on montre que
 <md><mrow>
 \diff{}{u} \cosh u= \sinh u \qquad

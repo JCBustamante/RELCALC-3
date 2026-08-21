@@ -96,12 +96,12 @@
       <p>(c)
       As in part (a) with <m>a=\sqrt{2}</m>, but with <m>\theta</m> running from <m>0</m> to <m>\pi</m>,
       the outer semicircle gives
-      <me>
+      <md><mrow>
       \frac{1}{2\pi}\int_0^{\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
                    {a^2\cos^2\theta+a^2\sin^2\theta}
       =\frac{1}{2\pi}\int_0^{\pi}\dee{\theta}
       =\frac{1}{2}
-      </me>
+      </mrow></md>
       </p>
 
       <sidebyside width="55%">
@@ -112,18 +112,18 @@
       As in part (a) with <m>a=1</m>, but with <m>\theta</m> running from <m>\pi</m> to <m>0</m>,
       the inner semicircle
       gives
-      <me>
+      <md><mrow>
       \frac{1}{2\pi}\int^0_{\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
                    {a^2\cos^2\theta+a^2\sin^2\theta}
       =\frac{1}{2\pi}\int^0_{\pi}\dee{\theta}
       =-\frac{1}{2}
-      </me>
+      </mrow></md>
       The two flat pieces each give zero, since
       on them <m>y=0</m> and <m>\dee{y}=0</m>. So
-      <me>
+      <md><mrow>
       \frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       =\frac{1}{2}+0-\frac{1}{2}+0=0
-      </me>
+      </mrow></md>
       </p>
 
       </solution>
@@ -160,22 +160,22 @@
       The bottom line segment may be parametrized
       <m>\vr(x)=(x,0),\ 0\leqslant x\leqslant 3</m>. So the line integral along
       this segment is
-      <me>
+      <md><mrow>
       \int_0^3 \vF(\vr(x))\cdot\diff{\vr}{x}\ \dee{x}
       =\int_0^3 (0, 0)\cdot(1, 0)\ \dee{x}
       =0
-      </me>
+      </mrow></md>
       </li>
       <li>
       The second line segment may be parametrized
       <m>\vr(y)=(3,y),\ 0\leqslant y\leqslant 3</m>. So the line integral along
       this segment is
-      <me>
+      <md><mrow>
       \int_0^3 \vF(\vr(y))\cdot\diff{\vr}{y}\ \dee{y}
       =\int_0^3 (9y^2, 6y)\cdot(0, 1)\ \dee{y}
       =\int_0^3 6y\ \dee{y}
       =27
-      </me>
+      </mrow></md>
       </li>
       <li>
       The third line segment may be parametrized
@@ -195,17 +195,17 @@
       The final line segment may be parametrized
       <m>\vr(t)=(0,3-t),\ 0\leqslant t\leqslant 3</m>. So the line integral along
       this segment is
-      <me>
+      <md><mrow>
       \int_0^3 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
       =\int_0^3 (0, 0)\cdot(0, -1)\ \dee{t}
       =0
-      </me>
+      </mrow></md>
       </li>
       </ul>
       The full line integral is
-      <me>
+      <md><mrow>
       \oint_C\vF\cdot d\vr=0+27-81+0=-54
-      </me>
+      </mrow></md>
       </p>
       </solution>
 
@@ -273,10 +273,10 @@
       <m>\iint_T 3\,\dee{x}\,\dee{y}</m> is <m>3</m> times the area of the
       trapezoid, which is its width (1) times the average of its heights
       <m>(\half[2+4])=3</m>. So
-      <me>
+      <md><mrow>
       \oint_C (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
                      =3\times 1\times 3 = 9
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -383,9 +383,9 @@
       <statement><p>
       Soit <m>\cC</m> le rectangle orienté en sens antihoraire
       formé par les sommets <m>(1,0)</m>, <m>(3,0)</m>, <m>(3,1)</m> et <m>(1,1)</m>. Évaluer
-      <me>
+      <md><mrow>
       \oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}.
-      </me>
+      </mrow></md>
       </p></statement>
 
       <hint><p>
@@ -512,9 +512,9 @@
       <p><em>Longue discussion:</em> First consider part (c) of
       Q[<xref ref="prb_Green_singular"/>]. The curve <m>\cC</m> is the boundary of
       the région
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{1\leqslant x^2+y^2\leqslant 2,\ y\geqslant 0}
-      </me>
+      </mrow></md>
       The partial derivatives
       <m>\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)</m>
       and
@@ -541,9 +541,9 @@
       Denote by <m>C_a</m>, <m>C_b</m> the curves of parts (a) and (b),
       respectively. Define <m>R</m> to be the set of points that are inside <m>C_b</m>
       and outside <m>C_a</m>. That is,
-      <me>
+      <md><mrow>
       R=\Set{(x,y)}{-1\leqslant x\leqslant1,\ -1\leqslant y\leqslant 1,\ x^2+y^2\geqslant a^2 }
-      </me>
+      </mrow></md>
       Then the boundary, <m>\partial R</m>, of <m>R</m> consists of two parts.
       One part is <m>C_b</m>.
       The other part is <m>C_a</m>, but oriented clockwise rather than
@@ -598,9 +598,9 @@
       </li>
       <li>
           Déterminer la valeur de
-          <me>
+          <md><mrow>
                \oint_C xy\, \dee{x} + (e^y + x^2 ) \dee{y}.
-           </me>
+           </mrow></md>
       </li>
       </ol>
       </p>
@@ -623,10 +623,10 @@
 
       <solution><p>  (a)
       The curves <m>y = x^2 + 4x + 4</m> and <m>y = 4 - x^2</m> meet when
-      <me>
+      <md><mrow>
       x^2 + 4x + 4 = 4 - x^2
       \iff 2x^2  +4x = 2x(x+2) = 0
-      </me>
+      </mrow></md>
       So the curves intersect at <m>(0,4)</m> and  <m>(-2,0)</m>. Here is a sketch.
       </p>
 
@@ -636,9 +636,9 @@
 
       <p>
        (b) Let
-      <me>
+      <md><mrow>
       R=\Set{(x,y)\in\R^2}{ x^2+4x+4\leqslant y\leqslant  4-x^2,\ -2\leqslant x\leqslant 0}
-      </me>
+      </mrow></md>
       By Green's theorem (Theorem <xref ref="thm_Green_tgt"/>)
       <md>
       <mrow>
@@ -663,14 +663,14 @@
     <exercise> <!-- <title><fromexam>M317 2010D</fromexam></title> -->
       <statement><p>
       Soit
-      <me>
+      <md><mrow>
       \vF(x, y) = \big(y^2 - e^{-y^2} + \sin x\,,\, 2xye^{-y^2} + x\big),
-      </me>
+      </mrow></md>
       et soit <m>\cC</m> la frontière du triangle délimité par les sommets <m>(0, 0)</m>, <m>(1, 0)</m> et
       <m>(1, 2)</m>, orientée en sens antihoraire. Calculer
-      <me>
+      <md><mrow>
       \int_C \vF\cdot\dee{\vr}.
-      </me>
+      </mrow></md>
       </p></statement>
 
       <hint><p>
@@ -729,10 +729,10 @@
       Soit la courbe <m>\cC</m>, la frontière de la région entre
       les courbes <m>y = x^2 - 4x+3</m> et <m>y = 3 - x^2 + 2x</m>. Déterminer la valeur
       de l'intégrale de ligne
-      <me>
+      <md><mrow>
       \int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
                   + x^2 (2 + e^y)\, \dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est parcourue en sens antihoraire.
       </p></statement>
 
@@ -763,9 +763,9 @@
       let's use Green's theorem with
       <m>F_1(x,y) = 2xe^y + \sqrt{2 + x^2}</m>, <m>F_2(x,y)= x^2 (2 + e^y)</m>
       and
-      <me>
+      <md><mrow>
       R=\Set{(x,y)}{x^2 - 4x+3\leqslant y\leqslant 3 - x^2 + 2x,\ 0\leqslant x\leqslant 3}
-      </me>
+      </mrow></md>
       By Green's theorem, which is Theorem <xref ref="thm_Green_tgt"/>,
       <md>
       <mrow>
@@ -864,9 +864,9 @@
       </mrow>
       </md>
       So
-      <me>
+      <md><mrow>
       \int_C \vF\cdot\dee{\vr} = \frac{4}{3}-3\times 0 +2 =\frac{10}{3}
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -875,25 +875,25 @@
       <ol marker = "(a)">
       <li>
       Utiliser le théorème de Green pour évaluer l'intégrale de ligne
-      <me>
+      <md><mrow>
       \int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est l'arc de la parabole <m>y = \frac{1}{4}x^2 + 1</m> allant de
       <m>(-2, 2)</m> à <m>(2, 2)</m>.
       </li>
       <li>
       Utiliser le théorème de Green pour évaluer l'intégrale de ligne
-      <me>
+      <md><mrow>
       \int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est l'arc de la parabole <m>y = x^2 -2</m> allant de
       <m>(-2, 2)</m> à <m>(2, 2)</m>.
       </li>
       <li>
       Est-ce que le champ de vecteurs
-      <me>
+      <md><mrow>
       \vF=\frac{-y}{x^2+y^2}\vi + \frac{x}{x^2+y^2}\vj
-      </me>
+      </mrow></md>
       est conservatif? Justifier en s'appuyant sur les réponses
       aux parties précédentes de cette question.
       </li>
@@ -922,17 +922,17 @@
 
       <solution><p>
       Set
-      <me>
+      <md><mrow>
       \vF=\frac{-y}{x^2+y^2}\vi + \frac{x}{x^2+y^2}\vj
-      </me>
+      </mrow></md>
       </p>
 
       <p>(a) Green's theorem must be applied to a curve that is closed,
       so that it is the boundary of a région in <m>\R^2</m>. The given curve <m>\cC</m>
       is not closed. But it is  part of the boundary of
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{-2\leqslant x\leqslant 2,\ \tfrac{x^2}{4}+1\leqslant y\leqslant 2}
-      </me>
+      </mrow></md>
       Here is a sketch of <m>R</m>.
       </p>
 
@@ -970,7 +970,7 @@
       &amp;
         =-\int_{-2}^2\frac{2}{x^2+4} \,\dee{x}\quad\text{since <m>y=2</m> on <m>L</m>}
       </mrow><mrow>
-      &amp;=-\int_{-1}^1\frac{4}{4u^2+4} \,\dee{x}
+      &amp;=-\int_{-1}^1\frac{4}{4u^2+4} \,\dee{u}
       \quad\text{with } x=2u, \dee{x}=2\dee{u}
       </mrow><mrow>
       &amp;=-\arctan u\Big|_{-1}^1 =-\frac{\pi}{2}
@@ -983,9 +983,9 @@
       <p>(b) This question looks a lot like that of part (a). But there is
       a critical difference. Again <m>\cC</m> is not closed and again it is
       part of the boundary of a simple région in the <m>xy</m>-plane, namely
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{-2\leqslant x\leqslant 2,\ x^2-2\leqslant y\leqslant 2}
-      </me>
+      </mrow></md>
       This <m>R</m> is sketched below.
       </p>
       <sidebyside width="52%">
@@ -1002,10 +1002,10 @@
       <li>
       choosing a number <m>\rho \gt 0</m> that is small enough that the circle
       <m>C_\rho</m> parametrized by
-      <me>
+      <md><mrow>
       \vr(\theta) = \rho\cos\theta\,\vi +\rho\sin\theta\,\vj\qquad
       0\leqslant \theta\leqslant2\pi
-      </me>
+      </mrow></md>
       is completely contained inside <m>R</m> (ror example, <m>\rho=1</m> is fine)
       </li>
       <li>
@@ -1013,9 +1013,9 @@
       </li>
       </ul>
       This produces the <q>deformed washer</q>
-      <me>
+      <md><mrow>
       W = \Set{(x,y)}{-2\leqslant x\leqslant 2,\ x^2-2\leqslant y\leqslant 2,\ x^2+y^2\ge\rho^2}
-      </me>
+      </mrow></md>
       that is sketched below.
       </p>
 
@@ -1071,13 +1071,13 @@
       </mrow>
       </md>
       All together
-      <me>
+      <md><mrow>
       \int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
       =\int_{-L}\vF\cdot\dee{\vr}
         + \int_{C_\rho}\vF\cdot\dee{\vr}
       =-\frac{\pi}{2} +2\pi
       =\frac{3\pi}{2}
-      </me>
+      </mrow></md>
       </p>
 
       <p>(c) No, <m>\vF</m> is not conservative. We found, in parts (a) and (b),
@@ -1093,10 +1093,10 @@
       Supposons que la courbe <m>\cC</m> est la frontière de la région se trouvant entre les
       courbes <m>y = x^2 - 4x + 3</m> et <m>y = 3 - x^2 + 2x</m>. Déterminer la valeur de
       l'intégrale de ligne
-      <me>
+      <md><mrow>
       \int_C \big(2xe^y + \sqrt{2} + x^2\big)\dee{x}
             + x^2 \big(2 + e^y)\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est traversée en sens antihoraire.
       </p></statement>
 
@@ -1113,10 +1113,10 @@
       <solution><p>
       The given integral is of the form <m>\int_C \vF\cdot\dee{\vr}</m>
       with
-      <me>
+      <md><mrow>
       \vF = \big(2xe^y + \sqrt{2} + x^2\big)\,\vi
             + x^2 \big(2 + e^y)\,\vj
-      </me>
+      </mrow></md>
       If we were to try to evaluate this integral directly, then on the
       <m>y=x^2-4x+3</m> part of <m>\cC</m>, the
       integrand would contain <m>x^2 e^y = x^2 e^{x^2-4x+3}</m>. That looks hard to integrate, so let's try Green's theorem.
@@ -1136,9 +1136,9 @@
       </md>
       The curve <m>\cC</m> is the boundary
       of
-      <me>
+      <md><mrow>
       R= \Set{(x,y)}{0\leqslant x\leqslant 3,\ x^2 - 4x + 3\leqslant y\leqslant  3 - x^2 + 2x}
-      </me>
+      </mrow></md>
       It is sketched below.
       </p>
 
@@ -1203,17 +1203,17 @@
       </p></answer>
 
       <solution><p> (a) Denote by
-      <me>
+      <md><mrow>
       R_2=\Set{(x,y)}{ (x-2)^2+y^2\leqslant 1}
-      </me>
+      </mrow></md>
       the interior of the circle <m>C_2</m>. Note that <m>(0,0)</m> is <em>not</em>
       in <m>R_2</m>. Consequently, <m>Q_x-P_y=0</m> <em>everywhere</em> in <m>R_2</m> and,
       by Green's theorem (Theorem <xref ref="thm_Green_tgt"/>),
-      <me>
+      <md><mrow>
       I_2 = \int_{C_2} \vF\cdot\dee{\vr}
           =\iint_{R_2} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
           =0
-      </me>
+      </mrow></md>
       </p>
 
       <sidebyside widths="43% 43%" valign="middle">
@@ -1227,9 +1227,9 @@
       <m>Q_x-P_y</m> is not identically zero in the interior of <m>C_3</m> <mdash/> it is not
       even defined throughout the interior of <m>C_3</m>. We can work around this obstruction by considering the interior of <m>C_3</m> with the interior of <m>C_1</m>
       removed. That is, by considering
-      <me>
+      <md><mrow>
       R_3 = \Set{(x,y)}{x^2 + (y - 2)^2\leqslant9,\ x^2+y^2\geqslant 1}
-      </me>
+      </mrow></md>
       It is sketched on the right above.
       The boundary of <m>R_3</m> consists of two parts
       <ul>
@@ -1266,13 +1266,13 @@
       because <m>C_1</m> is not contained in the interior of <m>C_4</m>. Instead
       we pick a number <m>\rho \gt 0</m> which is small enough that the
       positively oriented circle
-      <me>
+      <md><mrow>
       C_\rho = \Set{(x,y)}{x^2+y^2=\rho^2}
-      </me>
+      </mrow></md>
       is completely inside <m>C_4</m>. Then we can define
-      <me>
+      <md><mrow>
       R_4 = \Set{(x,y)}{(x-2)^2 + (y - 2)^2\leqslant9,\ x^2+y^2\geqslant \rho^2}
-      </me>
+      </mrow></md>
       It is sketched on the left below. We can now argue as in part (b).
       The boundary of <m>R_4</m> consists of two parts
       <ul>
@@ -1304,9 +1304,9 @@
       <m>\int_{C_\rho} \vF\cdot\dee{\vr}</m>. We can do so by repeating the
       same <q>removing a small disk containing <m>(0,0)</m></q> argument for the third time.
       Set
-      <me>
+      <md><mrow>
       R_5 = \Set{(x,y)}{x^2 + y^2\leqslant1,\ x^2+y^2\geqslant \rho^2}
-      </me>
+      </mrow></md>
       Then the boundary of <m>R_5</m> consists of <m>C_1</m> and <m>-C_\rho</m>,
       and, as <m>Q_x-P_y</m> is well-defined and zero throughout <m>R_5</m>,
       <md>
@@ -1334,10 +1334,10 @@
     <exercise> <!-- <title><fromexam>M317 2017A</fromexam></title> -->
       <statement><p>
       Considérer le champ de vecteurs <m>\vF = P\,\vi + Q\,\vj</m>, où
-      <me>
+      <md><mrow>
       P=\frac{x+y}{x^2+y^2},\qquad
       Q=\frac{y-x}{x^2+y^2}.
-      </me>
+      </mrow></md>
       <ol marker = "(a)">
       <li>
       Calculer et simplifier <m>Q_x - P_y</m>.
@@ -1388,10 +1388,10 @@
       </p>
 
       <p>(b) Parametrize <m>C_R</m> by
-      <me>
+      <md><mrow>
       \vr(\theta) = R\cos\theta\,\vi +R\sin\theta\,\vj\qquad
       0\le\theta\leqslant 2\pi
-      </me>
+      </mrow></md>
       So
       <md>
       <mrow>
@@ -1496,16 +1496,16 @@
       <ol marker = "(a)">
       <li>
       Évaluer
-      <me>
+      <md><mrow>
       \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est le cercle unitaire <m>x^2+y^2 = 1</m>, orienté en sens antihoraire.
       </li>
       <li>
       Évaluer
-      <me>
+      <md><mrow>
       \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est maintenant la partie du cercle unitaire <m>x^2+y^2 = 1</m>, avec <m>x\geqslant 0</m>,
       encore orienté en sens antihoraire.
       </li>
@@ -1519,15 +1519,15 @@
 
       <solution><p> (a) The given integral is of the form
         <m>\int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}</m> with
-      <me>
+      <md><mrow>
       F_1(x,y) = \sqrt{1+x^3}\qquad
       F_2(x,y) = 2xy^2 + y^2\qquad
       \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} = 2y^2
-      </me>
+      </mrow></md>
       As <m>\cC</m> is <m>\partial R</m> with
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{ x^2+y^2\leqslant 1}
-      </me>
+      </mrow></md>
       Green's theorem (Theorem <xref ref="thm_Green_tgt"/>)
       gives
       <md>
@@ -1573,9 +1573,9 @@
       But Green's theorem must be applied to a curve that is closed,
       so that it is the boundary of a région in <m>\R^2</m>. The given curve <m>\cC</m>
       is not closed. But it is  part of the boundary of
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{x^2+y^2\leqslant 1,\ x\geqslant 0}
-      </me>
+      </mrow></md>
       Here is a sketch of <m>R</m>.
       </p>
 
@@ -1600,7 +1600,7 @@
       <mrow>
       \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
       &amp;=\iint_R \Big(\frac{\partial F_2}{\partial x} -
-                \frac{\partial F_2}{\partial y} \Big)\dee{x}\dee{y}
+                \frac{\partial F_1}{\partial y} \Big)\dee{x}\dee{y}
        - \int_L\vF\cdot\dee{\vr}
       </mrow><mrow>
       &amp;=\iint_{\Atop{x^2+y^2\leqslant 1}{x\geqslant 0}} 2y^2\  \dee{x}\dee{y}
@@ -1626,9 +1626,9 @@
     <exercise> <!-- <title><fromexam>M317 2007A</fromexam></title> -->
       <statement><p>
       Évaluer l'intégrale de ligne
-      <me>
+      <md><mrow>
       \int_C (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y},
-      </me>
+      </mrow></md>
       où <m>\cC</m> est l'arc de la courbe <m>x = \cos y</m> pour <m>-\pi/2\leqslant y\leqslant \pi/2</m>,
       parcourue en sens des <m>y</m> croissants.
       </p></statement>
@@ -1711,10 +1711,10 @@
       <li><p> <em>Green's (or Stokes') theorem:</em>
       The curve <m>\cC</m> is not closed so we cannot apply Green's theorem directly.
       However the boundary of the région
-      <me>
+      <md><mrow>
       R = \Set{(x,y)}{ 0\leqslant x\le\cos y,\
                  -\frac{\pi}{2}\leqslant y\leqslant \frac{\pi}{2} }
-      </me>
+      </mrow></md>
       (sketched below) consists of two parts, one of which is <m>\cC</m>. The other
       is the line <m>L</m> from <m>\big(0,\frac{\pi}{2}\big)</m>
       to <m>\big(0,-\frac{\pi}{2}\big)</m>.
@@ -1778,11 +1778,11 @@
       So <m>\vF</m> violates our screening test and consequently is not conservative.
       But it violates the screening test only because of the term <m>x\cos y\,\vj</m>.
       This suggests that we split up
-      <me>
+      <md><mrow>
       \vF = \vG +\vH\qquad\text{with}\quad
       \vG= (x^2 + y e^x ) \,\vi + e^x \,\vj,\quad
       \vH = x\cos y\,\vj
-      </me>
+      </mrow></md>
       Then <m>\vG</m> is conservative with potential <m>g=\frac{x^3}{3}+ye^x</m>
       and <m>\vH</m> is pretty simple, so that it is not hard to evaluate
       <m>\int_C\vH\cdot\dee{\vr}</m> directly. Using the parametrization
@@ -1819,9 +1819,9 @@
     <exercise> <!-- <title><fromexam>M317 2004A</fromexam></title> -->
       <statement><p>
       Utiliser le théorème de Green afin d'établir que si <m>\cC</m> est une courbe fermée simple dans le plan, alors l'aire <m>A</m> de la région délimitée par <m>\cC</m> est donnée par
-      <me>
+      <md><mrow>
       A=\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}.
-      </me>
+      </mrow></md>
       Utiliser ceci pour calculer l'aire à l'intérieur de la courbe
       <m>x^{2/3}+y^{2/3}=1</m>.
       </p></statement>
@@ -1870,9 +1870,9 @@
       Soit <m>\vF(x,y)=(x+3y)\,\vi+(x+y)\,\vj</m> et
       <m>\vG(x,y)=(x+y)\,\vi+(2x-3y)\,\vj</m> des champs de vecteurs. Trouver un nombre <m>A</m> de telle sorte que
       pour chaque cercle <m>\cC</m> dans le plan,
-      <me>
+      <md><mrow>
       \oint_C\vF\cdot \dee{\vr}=A\oint_C\vG\cdot \dee{\vr}.
-      </me>
+      </mrow></md>
       </p></statement>
 
       <hint><p>
@@ -1996,11 +1996,11 @@
       </mrow>
       </md>
       Consequently
-      <me>
+      <md><mrow>
       \oint_{C_0}\vF\cdot \dee{\vr}-\oint_C\vF\cdot \dee{\vr}=0
       \implies
       \oint_{C_0}\vF\cdot \dee{\vr}=\oint_C\vF\cdot \dee{\vr}=-\pi
-      </me>
+      </mrow></md>
       </p>
 
       <sidebyside width="30%">
@@ -2083,12 +2083,12 @@
       </mrow>
       </md>
       so that
-      <me>
+      <md><mrow>
       \oint_{\cC_2}\vF\cdot \dee{\vr}
       =\oint_{\cC_3}\vF\cdot \dee{\vr}
       =\int_0^{2\pi} \dee{\theta}\ 1
       =2\pi
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -2133,11 +2133,11 @@
       </mrow>
       </md>
       On <m>\cC_3</m>, <m>y=1-x^2</m> so that <m>\diff{y}{x}=-2x</m> and
-      <me>
+      <md><mrow>
       \dee{s} =\sqrt{\dee{x}^2+\dee{y}^2}
               =\sqrt{1+\Big(\diff{y}{x}\Big)^2}\,\dee{x}
               =\sqrt{1+4x^2}\,\dee{x}
-      </me>
+      </mrow></md>
       and
       <md>
       <mrow>
@@ -2150,10 +2150,10 @@
       </mrow>
       </md>
       All together
-      <me>
+      <md><mrow>
       \int_{\cC} x\,\dee{s}=\frac{1}{2}+\frac{1}{12}\big[5^{3/2}-1\big]
       \approx 1.3484
-      </me>
+      </mrow></md>
       </p>
 
       <p>(b) By either Stokes' theorem or Green's theorem
@@ -2291,11 +2291,11 @@
       </mrow>
       </md>
       since  (see Example <xref ref="eg_workIntegralB"/> in the  text)
-      <me>
+      <md><mrow>
       \int_0^{2\pi}\cos^2\theta\ \dee{\theta}
       =\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
       =\pi
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -2388,9 +2388,9 @@
 
       <p>
       Maintenant <m>x</m> est constante sur <m>C_2</m> et <m>C_4</m>, de telle sorte que
-      <me>
+      <md><mrow>
       \int_{C_2}f(x,y)\,\dee{x} = \int_{C_4}f(x,y)\,\dee{x} =0.
-      </me>
+      </mrow></md>
       Ainsi, en utilisant <m>-C_3</m> pour dénoter le segment de droite allant de <m>(0,1)</m> à <m>(1,1)</m>,
       <md>
       <mrow>
@@ -2405,7 +2405,7 @@
       </p></answer>
 
       <solution><p> (a)
-      En exprimant le côté gauche comme une intégrale itérée, avec <m>y</m> comme variable à l'intérieure, on a
+      En exprimant le côté gauche comme une intégrale itérée, avec <m>y</m> comme variable à l'intérieur, on a
       <md>
       <mrow>
       \iint_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
@@ -2452,9 +2452,9 @@
 
       <p>
       Maintenant <m>x</m> est constante sur <m>C_2</m> et <m>C_4</m> de telle sorte que
-      <me>
+      <md><mrow>
       \int_{C_2}f(x,y)\,\dee{x} = \int_{C_4}f(x,y)\,\dee{x} =0
-      </me>
+      </mrow></md>
       Ainsi, en utilisant <m>-C_3</m> pour dénoter le segment de droite allant de <m>(0,1)</m> à <m>(1,1)</m>
       <md>
       <mrow>
@@ -2477,9 +2477,9 @@
       Soit <m>\cR</m> une région finie dans le plan <m>xy</m>, dont la frontière, <m>\cC</m>, consiste en un seul chemin fermé, simple et lisse qui est orienté en sens antihoraire.
       <q>Simple</q> signifie que la courbe ne s'intersecte pas elle-même.
       Utiliser le théorème de Green pour montrer que
-      <me>
+      <md><mrow>
       \iint_{\cR}\vnabla\cdot\vF\ \dee{x}\,\dee{y}=\oint_{\cC}\vF\cdot\vn\,\dee{s},
-      </me>
+      </mrow></md>
       où <m>\vF=F_1\,\vi+F_2\,\vj</m>, <m>\vn</m> est la normale unitaire extérieure à <m>\cC</m> et <m>s</m>
       est la longueur d'arc le long de <m>\cC</m>.
       </p>
@@ -2643,9 +2643,9 @@
       all points <m>(x,y)</m> with the integrand <m>1-6x^2-3y^2\geqslant 0</m> and to exclude
       all points <m>(x,y)</m> with the integrand <m>1-6x^2-3y^2 \lt  0</m>. So we
       choose
-      <me>
+      <md><mrow>
       R=\Set{(x,y)}{6x^2+3y^2\leqslant 1}
-      </me>
+      </mrow></md>
       The corresponding <m>\cC</m> is <m>6x^2+3y^2= 1</m>.
       </p>
 

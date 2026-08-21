@@ -59,13 +59,13 @@
       <image source="images/CLP4-figs/astroid5JC"/>
     </sidebyside>
     <p>
-  Si <m>\cC</m> est une courbe fermée et simple, la région bornée qu'elle délimite, disons <m>\cR</m>, admet pour frontière justement la courbe <m>\cC</m>, et nous écrirons <m>\cC =\partial \cR</m>. Le symbole de dérivée partielle est utilisé pour frontière. Nous avons besoin d'orienter la frontière de la région <m>\cR</m>, c'est-à-dire de donner un sens de parcours. Par convention, une courbe fermée simple sera <em>orientée positivement</em> si elle est parcourue dans le sens contraire des aiguilles d'une montre. Ceci revient à dire que lorsqu'on parcourt la courbe <m>\cC</m>, la région <m>\cR</m> se trouve à gauche.
+  Si <m>\cC</m> est une courbe fermée et simple, la région bornée qu'elle délimite, disons <m>\cR</m>, admet pour frontière justement la courbe <m>\cC</m>, et nous écrirons <m>\cC =\partial \cR</m>. Le symbole de dérivée partielle est utilisé pour désigner la frontière. Nous avons besoin d'orienter la frontière de la région <m>\cR</m>, c'est-à-dire de donner un sens de parcours. Par convention, une courbe fermée simple sera <em>orientée positivement</em> si elle est parcourue dans le sens contraire des aiguilles d'une montre. Ceci revient à dire que lorsqu'on parcourt la courbe <m>\cC</m>, la région <m>\cR</m> se trouve à gauche.
     </p>
     <p>
     Finalement, notons que si <m>\cC = \partial \cR</m> , il est habituel d'écrire
-    <me>
+    <md><mrow>
       \int_{\cC} \vF \cdot d\vr
-    </me>
+    </mrow></md>
     pour l'intégrale de <m>\vF</m> sur le bord de <m>\cR</m> (une réunion de courbes!) orienté positivement.
   </p>
   </subsection>
@@ -90,9 +90,9 @@
     Si <m>\vF(x,y)</m> est défini et de classe <m>C^1</m> sur <m>\cR</m>, alors
   </p>
         <p>
-          <me>
+          <md><mrow>
       \int_{\partial \cR} \vF \cdot \dee{\vr} = \iint_{\cR} \rot \vF\, \dee{A}.
-    </me>
+    </mrow></md>
         </p>
       </statement>
       <proof>
@@ -190,7 +190,7 @@
   </p>
         <p>
     En effet, il suit de la description de <m>\cR</m> que 
-    <md><mrow> \iint_{\cR} \pdiff{P}{y}\, dA \amp = \int_a^b\int_{\phi_1(x)}^{\phi_2(x)} P(x,y)\, dy\, dx =\int_a^b P(x,\phi_2(x)) - P(x,\phi_x)\, dx</mrow><mrow>\amp = \int_a^b P(x,\phi_2(x))\, dx - \int_a^b P(x,\phi_1(x))\, dx</mrow>.
+    <md><mrow> \iint_{\cR} \pdiff{P}{y}\, dA \amp = \int_a^b\int_{\phi_1(x)}^{\phi_2(x)} P(x,y)\, dy\, dx =\int_a^b P(x,\phi_2(x)) - P(x,\phi_1(x))\, dx</mrow><mrow>\amp = \int_a^b P(x,\phi_2(x))\, dx - \int_a^b P(x,\phi_1(x))\, dx</mrow>.
     </md>
   </p>
         <p>
@@ -206,9 +206,9 @@
   </p>
         <p>
     Il vient donc, après addition des équations <xref ref="eq-pf-green-1"/> et <xref ref="eq-pf-green-2"/>, que 
-    <me>
+    <md><mrow>
       \iint_{\cR} \pdiff{P}{y}\, dA = -\left[\int_{\cC_1} P\, dx  + \int_{\cC_3}P\, dx\right].
-    </me>
+    </mrow></md>
   </p>
         <p>
     Le bord <m>\cC = \partial \cR</m> de <m>\cR</m> est formé de deux, trois ou quatre courbes. En effet, les portions <m>\cC_2</m> et <m>\cC_4</m> pourraient être réduites à un seul point. Ceci arrive si <m>\phi_1(a) = \phi_2(a)</m> ou si <m>\phi_1(b) = \phi_2(b)</m>. Mais ça n'a pas d'importance, car sur ces portions, même si elles étaient là, nous aurons que <m>x</m> est constante et donc, dans tout paramétrage, nous aurons <m>x'(t)=0</m>, de sorte que 
@@ -226,9 +226,9 @@
     \iint_{\cR}\pdiff{Q}{x} \amp = \int_{\partial \cR} Q\, dy </mrow>.
   </md>
   on procède de la même façon, mais en exprimant l'intégrale double de départ comme une intégrale itérée dans l'autre ordre d'intégration :
-  <me>
+  <md><mrow>
     \iint_{\cR} \pdiff{Q}{x} \, dA = \int_{c}^d \int_{\psi_1(y)}^{\psi_2(y)} Q(x,y)\, dx\, dy.
-  </me>
+  </mrow></md>
   </p>
         <p>Le résultat suit alors d'additionner les équations <xref ref="eq-pf-green-P"/> et <xref ref="eq-pf-green-Q"/>.
   </p>
@@ -293,9 +293,9 @@
       </p></statement><solution><p>Notons, pour commencer, que le calcul direct de l'intégrale de ligne sera ardu. En effet, le paramétrage usuel <m>\vr(t) = \cos t \, \vi + \sin t\, \vj</m> avec <m>-\pi/2 \leqslant t \leqslant \pi/2</m> mènera à intégrer un terme de la forme <m>\left(\cos (\sin t)\right)^3</m>, venant de la deuxième composante de <m>\vF</m>.
       </p><p>
         Par contre, la composante <m>\vk</m> du rotationnel de <m>\vF</m> est facile à traiter. Si nous dénotons par <m>P</m> et <m>Q</m> les composantes de <m>\vF</m>, nous avons
-        <me>
+        <md><mrow>
           \pdiff{Q}{x} - \pdiff{P}{y} = \pdiff{}{x}\left(\cos^3 y -x\right) - \pdiff{}{y}(2y-x^2) = -1 -2 = -3.
-        </me>
+        </mrow></md>
       </p><sidebyside widths="45% 45%"><image xml:id="sageplot-eg_fermer-trajectoire" width="100%"><description><p>Théorème de Green avec une courbe non fermée</p></description><sageplot>
         N = 60
         p1 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [0,1,..,N/4] ]
@@ -321,21 +321,21 @@
        </sageplot></image><p>
         Cependant, il y a une difficulté additionnelle : la courbe <m>\cC</m> n'est pas une courbe fermée, le théorème de Green ne peut donc pas être appliqué directement. Pour surmonter cet inconvénient, nous allons ajouter une portion de courbe, disons <m>\cC'</m>, à <m>\cC</m> de sorte que la trajectoire résultante <m>\Gamma</m>  obtenue en parcourant d'abord <m>\cC</m> puis <m>\cC'</m> soit fermée et que le théorème de Green puisse être appliqué. De plus, soit <m>\cR</m> la région enfermée par la courbe <m>\Gamma</m>.
       </p></sidebyside><p>Nous avons alors
-        <me>
+        <md><mrow>
           \iint_{\cR} \rot \vF \ \dee{A} = \int_{\partial \cR} \vF\cdot \dee{\vr} = \int_{\cC}\vF \cdot \dee{\vr} + \int_{\cC'}\vF \cdot \dee{\vr}.
-        </me>
+        </mrow></md>
         Or, <m>\rot \vF = -3</m>, de sorte que
-        <me>
+        <md><mrow>
           \iint_{\cR} \rot \vF \, \dee{A} = - \iint_{\cR} 3\,\dee{A} = -3\text{Aire}(\cR) = -3\pi.
-        </me>
+        </mrow></md>
       </p><p>
         Par ailleurs, <m>\cC'</m> est paramétrée par <m>\vr(t) =x(t)\, \vi + y(t)\ \vj  = 0\, \vi -t\, \vj</m> avec <m>-1\leqslant  t \leqslant 1</m>. Il vient alors que
         <md><mrow>\int_{\cC'} \vF \cdot \dee{\vr} \amp= \int_{\cC'} \left(2y-x^2\right) \dee{x} + \left(\cos ^3 y - x \right)\,\dee{y} =  - \int_{-1}^1 \cos^3 t\, \dee{t}</mrow><mrow> \amp=-\left[-\frac{1}{3}\sin^3 t +\sin t\right]_{t=-1}^{t=1} = \frac{2}{3}\sin^3 1 - 2\sin 1.  </mrow></md>
       </p><p>
         Ainsi, l'intégrale qui nous intéresse vaut
-        <me>
+        <md><mrow>
           \int_{\cC} \vF \cdot \dee{\vr} = -3\pi +2\sin 1 -\frac{2}{3}\sin^3 1.
-        </me>
+        </mrow></md>
 
       </p></solution></example>
 
@@ -415,15 +415,15 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     </p>
         <p>
       Les calculs que nous avons faits montrent que si <m>\cC</m> est la trajectoire fermée partant de <m>(1,0)</m> suivant le cercle <m>x^2 + y^2 = 1</m> dans le sens trigonométrique, nous aurons
-    </p>
         <md>
           <mrow xml:id="Green-contre-1" tag="star"> \amp       \int_{\cC} \vF \cdot d\vr = 2\pi. </mrow>
         </md>
+    </p>
         <p>
       Par ailleurs, nous avons aussi montré que le rotationnel de <m>\vF</m> est nul. Soit <m>\cR</m> la région du plan définie par <m>x^2 + y^2 \leqslant  1</m>, de sorte que <m>\partial \cR = \cC</m>. Ainsi, nous avons
+        <md><mrow xml:id="Green-contre-2" tag="dstar"> \amp \iint_{\cR} \rot\, \vF = 0</mrow>
+    </md>.
     </p>
-        <md><mrow xml:id="Green-contre-2" tag="dstar"> \amp \iint_{\cR} \rot\, \vF = 0</mrow>.
-    </md>
         <p>
       Les valeurs des intégrales <xref ref="Green-contre-1"/> et <xref ref="Green-contre-2"/> diffèrent, en apparente contradiction avec le théorème de Green. Cependant, il n'en est rien. En effet, les composantes de <m>\vF</m> ne sont pas continues sur <em>toute</em> la région <m>\cR</m>. En fait, le champ <m>\vF</m> n'est même pas défini à l'origine, et il est impossible de le faire de sorte à avoir la continuité sur <m>\cR</m>.
     </p>
@@ -446,9 +446,9 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Si <m>\vF(x,y)</m> est défini et de classe <m>C^1</m> sur <m>\cR</m>, alors
   </p>
         <p>
-          <me>
+          <md><mrow>
       \int_{\partial \cR} \vF \cdot \vn \dee{s} = \iint_{\cR} \div \vF \dee{A}.
-    </me>
+    </mrow></md>
         </p>
       </statement>
     </theorem>
@@ -499,9 +499,9 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
   </p>
         <p>
     Lorsque <m>\cC</m> n'entoure pas l'origine, le champ <m>\vF</m> est de classe <m>C^1</m> sur la région <m>\cR</m>. Dans ce cas, le théorème de Green donne directement
-    <me>
+    <md><mrow>
       \int_{\cC}\vF \cdot \vn\, \dee{s} = \iint_{\cR}\, \dee{A} = 0.
-    </me>
+    </mrow></md>
   </p>
         <p>
     Le cas où <m>\cC</m> entoure l'origine pose problème, l'hypothèse du théorème de Green n'est pas satisfaite. Nous pouvons cependant adapter notre argument comme suit.
@@ -510,7 +510,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Puisque <m>\cC</m> contourne l'origine, il existe un réel <m>h\gt 0 </m> tel que <m>\cC</m> entoure le cercle <m>\cC_h</m> centré à l'origine et de rayon <m>h</m>. Soit alors <m>\cR</m> la région comprise entre <m>\cC_h</m> et <m>\cC</m>. Sur cette région, l'argument de la première partie peut être appliqué. Il faut noter que <m>\partial \cR</m> est cette fois composée de deux courbes : d'une part <m>\cC</m> orientée en s'éloignant de l'origine, d'autre part <m>\cC_h</m> avec le vecteur normal pointant vers l'origine.
   </p>
         <image xml:id="sageplot-eg-nb-enroulement" width="80%">
-          <description><p>Le nobre d'enroulement</p></description>
+          <description><p>Le nombre d'enroulement</p></description>
           <sageplot>
     var('x,y,t')
     r=3/4
@@ -541,18 +541,18 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Ceci montre que l'intégrale qui nous occupe peut être ramenée à l'intégrale sur un cercle et que, mieux encore, le rayon de celui-ci n'a pas d'importance, pourvu qu'il soit assez petit pour être contourné par <m>\cC</m>.
   </p>
         <p>
-    Afin de calculer l'intégrale sur <m>\cC_h</m>, on utilise le paramétrage <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj</m>, avec <m>0\leqslant  t \leqslant 2\pi</m>. Sur <m>\cC_h</m>, le vecteur normal unitaire <m>\cos t\, \vi + \sin t\, \vj</m> pointe dans la direction qui s'éloigne de l'origine, nous devons donc choisir <m>\vn = -\cos t\, \vi - \sin t\, \vj = \frac{-1}{h}x(t)\vi - \frac{1}{h}y(t)\vj</m>. On a alors
-    <me>
+    Afin de calculer l'intégrale sur <m>\cC_h</m>, on utilise le paramétrage <m>\vr(t) = x(t)\vi + y(t)\vj = h\cos t\, \vi + h\sin t\, \vj</m>, avec <m>0\leqslant  t \leqslant 2\pi</m>. Sur <m>\cC_h</m>, le vecteur normal unitaire <m>\cos t\, \vi + \sin t\, \vj</m> pointe dans la direction qui s'éloigne de l'origine, nous devons donc choisir <m>\vn = -\cos t\, \vi - \sin t\, \vj = \frac{-1}{h}x(t)\vi - \frac{1}{h}y(t)\vj</m>. On a alors
+    <md><mrow>
       \vF \cdot \vn  = \left(\frac{x}{x^2 + y^2}\vi + \frac{y}{x^2 + y^2}\vj\right)\cdot \left(\frac{-1}{h} x\, \vi - \frac{1}{h} y\, \vj \right) = \frac{-1}{h}.
-    </me>
+    </mrow></md>
     Ainsi, puisque <m>|\vr'| = h</m>, nous avons
-    <me>
+    <md><mrow>
       \int_{\cC_h}\vF \cdot \vn\, \dee{s} = \int_0^{2\pi} \vF \cdot \vn\ |\vr'(t)|\, \dee{t} = -\int_0^{2\pi}\, \dee{t} =-2\pi.
-    </me>
+    </mrow></md>
     Comme <m>\int_{\cC} \vF \cdot \vn \, \dee{s} + \int_{\cC_h} \vF \cdot \vn \, \dee{s} = 0 </m>, nous avons
-    <me>
+    <md><mrow>
       \int_{\cC} \vF \cdot \vn \, \dee{s} =2\pi.
-    </me>
+    </mrow></md>
   </p>
       </solution>
     </example>
@@ -564,9 +564,9 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
   </p>
     <p>
     L'aire d'une région <m>\cR</m> est donnée par <m>\displaystyle \iint_{\cR}\, \dee{A}</m>. Ainsi, si nous disposons d'un champ <m>\vF</m> tel que <m>\rot \vF = 1</m>, nous aurons, en vertu du théorème de Green,
-    <me>
+    <md><mrow>
       \text{Aire}(\cR) = \iint_{\cR} \dee{A} = \int_{\partial \cR} \vF \cdot \dee{\vr}.
-    </me>
+    </mrow></md>
     Quelques choix possibles de tels champs sont :
     <ul><li><p><m>\vF(x,y) = -\frac{1}{2}y\vi + \frac{1}{2}x\vj</m>;
         </p></li><li><p><m>\vF(x,y) = -y\vi</m>;
@@ -593,7 +593,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       <solution>
         <sidebyside widths="45% 50%">
           <image xml:id="sageplot-Aire-astroide">
-            <description><p>L'aire de l'astoïde</p></description>
+            <description><p>L'aire de l'astroïde</p></description>
             <sageplot>
           var('t')
           Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
@@ -609,15 +609,15 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
           </image>
           <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
         L'aire est alors donnée par
-          <me>
+          <md><mrow>
             \frac{1}{2}\int_{\cC} x\dee{y} - y\dee{x} = \frac{1}{2}\int_0^{2\pi} xy' - yx'\, \dee{t}.
-          </me>
+          </mrow></md>
         </p>
         </sidebyside>
         <p>
         Or, <m>\vr'(t) = -(3\sin t\, \cos^2 t)\, \vi + 3 (\cos t\, \sin^2 t)\vj</m>, de sorte que
         <md><mrow>x(t)y'(t) - y(t)x'(t) \amp= \cos^3t\ 3\cos t\ \sin^2 t+ \sin^3 t\, \ 3 \sin t\, \cos^2 t </mrow><mrow> \amp=3\left(\cos^4 t\, \sin^2 t + \sin^4 t\, \cos^2t\right)
-          </mrow><mrow>  \amp= 3\cos^2 t\, \sin^2 \left(\cos^2 t + \sin^2 t\right)  = 2\cos^2 t\, \sin^2 t.</mrow></md>
+          </mrow><mrow>  \amp= 3\cos^2 t\, \sin^2 t\left(\cos^2 t + \sin^2 t\right)  = 3\cos^2 t\, \sin^2 t.</mrow></md>
         Il vient alors que l'aire <m>A</m> vaut
         <md><mrow>A \amp= \frac{1}{2}\int_0^{2\pi} 3\cos^2t\ \sin^2 t\, \dee{t} = \frac{3}{2}\int_0^{2\pi} \left(\frac{\sin 2t}{2}\right)^2\, \dee{t} </mrow><mrow> \amp= \frac{3}{8}\int_0^{2\pi} \sin^2\, 2t\, \dee{t} = \frac{3}{8} \int_0^{2\pi}\frac{1-\cos 4t}{2}\, \dee{t} =\frac{3\pi}{8}. </mrow></md>
 
@@ -682,16 +682,16 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
         </sidebyside>
         <p>
         Ainsi, l'aire est
-        <me>
+        <md><mrow>
           \text{Aire}(\cR) =  -\int_{\partial \cR} y\, \dee{x} =-\left[ \int_{\cC_1} y\, \dee{x} + \int_{\cC_2} y\, \dee{x} + \int_{\cC_3} y\, \dee{x} + \int_{\cC_4} y\, \dee{x}\right].
-        </me>
+        </mrow></md>
         Or, sur <m>\cC_1</m>, nous avons <m>y=0</m> tandis que, sur <m>\cC_2</m> et <m>\cC_4</m>, la valeur de <m>x</m> est constante, de sorte que <m>x'(t)=0</m>. Ainsi, les trois termes correspondant à ces portions de <m>\partial \cR</m> sont nuls.
       </p>
         <p>
         Le chemin <m>\vr(t) = x(t)\,\vi + y(t)\,\vj = t\,\vi + f(t)\,\vj</m>, avec <m>a\leqslant  t \leqslant b</m>, est un paramétrage de la trajectoire <m>\cC_3</m>, mais allant de gauche à droite. Ainsi,
-        <me>
+        <md><mrow>
           \text{Aire}(\cR) = -\int_{\cC_3}y\, \dee{x} = -\left[- \int_{a}^{b} y(t)\,x'(t)\, \dee{t} \right] = \int_a^b f(t)\, \dee{t},
-        </me>
+        </mrow></md>
         comme on s'y attendait.
 
       </p>

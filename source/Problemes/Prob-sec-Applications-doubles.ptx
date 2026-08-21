@@ -35,24 +35,24 @@
       <solution>
 
       <p>
-      (a) <m>\iint_D x\ \dee{x}\,\dee{y}=0</m> because <m>x</m> is odd under <m>x\rightarrow-x</m>,
-      i.e. under reflection about the <m>y</m>--axis, while the domain of integration
-      is symmetric about the <m>y</m>--axis.
-      <m>\iint_D 3\  \dee{x}\,\dee{y}</m> is the three times the area of a half disc
-      of radius <m>2</m>. So,
+      (a) <m>\iint_D x\ \dee{x}\,\dee{y}=0</m> car <m>x</m> est impaire sous <m>x\rightarrow-x</m>,
+      c'est-à-dire sous la réflexion par rapport à l'axe des <m>y</m>, alors que le domaine d'intégration
+      est symétrique par rapport à l'axe des <m>y</m>.
+      <m>\iint_D 3\  \dee{x}\,\dee{y}</m> vaut trois fois l'aire d'un demi-disque
+      de rayon <m>2</m>. Donc,
       <m>\iint_D(x+3)\dee{x}\,\dee{y}=3\times \half\times\pi 2^2=6\pi</m>.
       </p>
 
-      <p>(s) <m>\iint_R x\ \dee{x}\,\dee{y}/\iint_R \dee{x}\,\dee{y}</m> is the average
-      value of <m>x</m> in the rectangle <m>R</m>, namely <m>\frac{a}{2}</m>. Similarly,
-      <m>\iint_R y\ \dee{x}\,\dee{y}/\iint_R \dee{x}\,\dee{y}</m> is the average
-      value of <m>y</m> in the rectangle <m>R</m>, namely <m>\frac{b}{2}</m>.
-      <m>\iint_R \dee{x}\,\dee{y}</m> is area of the rectangle <m>R</m>, namely <m>ab</m>. So,
+      <p>(b) <m>\iint_R x\ \dee{x}\,\dee{y}/\iint_R \dee{x}\,\dee{y}</m> est la valeur
+      moyenne de <m>x</m> sur le rectangle <m>R</m>, soit <m>\frac{a}{2}</m>. De même,
+      <m>\iint_R y\ \dee{x}\,\dee{y}/\iint_R \dee{x}\,\dee{y}</m> est la valeur
+      moyenne de <m>y</m> sur le rectangle <m>R</m>, soit <m>\frac{b}{2}</m>.
+      <m>\iint_R \dee{x}\,\dee{y}</m> est l'aire du rectangle <m>R</m>, soit <m>ab</m>. Donc,
       <ul>
       <li>
       <m>\iint_R x\ \dee{x}\,\dee{y}
       =\frac{a}{2} \iint_R \dee{x}\,\dee{y}
-      =\frac{a}{2} ab</m> and
+      =\frac{a}{2} ab</m> et
       </li>
       <li>
       <m>\iint_R y\ \dee{x}\,\dee{y}
@@ -60,7 +60,7 @@
       =\frac{b}{2} ab</m>
       </li>
       </ul>
-      and <m>\iint_R (x+y)\dee{x}\,\dee{y}=\half ab (a+b)</m>.
+      et <m>\iint_R (x+y)\dee{x}\,\dee{y}=\half ab (a+b)</m>.
       </p></solution>
     </exercise>
 
@@ -77,7 +77,7 @@
 
       <solution>
         <p>
-      Here is a sketch of <m>D</m>.
+      Voici une esquisse de <m>D</m>.
       </p>
 
       <sidebyside width="75%">
@@ -85,9 +85,9 @@
       </sidebyside>
 
       <p>
-      By definition, the centre of mass is <m>(\bar x, \bar y)</m>,
-      with <m>\bar x</m> and <m>\bar y</m> being the weighted averages  of the <m>x</m> and
-      <m>y</m>--coordinates, respectively, over <m>D</m>. That is,
+      Par définition, le centre de masse est <m>(\bar x, \bar y)</m>,
+      où <m>\bar x</m> et <m>\bar y</m> sont respectivement les moyennes pondérées des coordonnées
+      <m>x</m> et <m>y</m> sur <m>D</m>. C'est-à-dire,
       <md>
       <mrow>
       \bar x = \frac{\iint_D x\ \rho(x,y)\ \dee{A}}{\iint_D \rho(x,y)\ \dee{A}}
@@ -95,19 +95,19 @@
       \bar y = \frac{\iint_D y\ \rho(x,y)\ \dee{A}}{\iint_D \rho(x,y)\ \dee{A}}
       </mrow>
       </md>
-      By symmetry under reflection in the <m>y</m>--axis, we have <m>\bar x=0</m>.
-      So we just have to determine <m>\bar y</m>.
-      We'll evaluate the integrals using vertical strips as in the figure above.
-      Looking at that figure, we see that
+      Par symétrie sous la réflexion par rapport à l'axe des <m>y</m>, nous avons <m>\bar x=0</m>.
+      Il ne reste donc qu'à déterminer <m>\bar y</m>.
+      Nous évaluerons les intégrales à l'aide de tranches verticales comme dans la figure ci-dessus.
+      En regardant cette figure, on voit que
       <ul>
       <li>
-      <m>x</m> runs from <m>-1</m> to <m>1</m>, and
+      <m>x</m> varie de <m>-1</m> à <m>1</m>, et
       </li>
       <li>
-      for each fixed <m>x</m> in that range, <m>y</m> runs from <m>x^2</m> to <m>1</m>.
+      pour chaque <m>x</m> fixé dans cet intervalle, <m>y</m> varie de <m>x^2</m> à <m>1</m>.
       </li>
       </ul>
-      So the denominator is
+      Donc le dénominateur est
       <md>
       <mrow>
       \iint_D \rho(x,y)\ \dee{A}
@@ -119,7 +119,7 @@
       &amp;=\frac{4}{5}
       </mrow>
       </md>
-      and the numerator of <m>\bar y</m> is
+      et le numérateur de <m>\bar y</m> est
       <md>
       <mrow>
       \iint_D y\,\rho(x,y)\ \dee{A}
@@ -131,7 +131,7 @@
       &amp;=\frac{2}{3}\ \frac{6}{7} = \frac{4}{7}
       </mrow>
       </md>
-      All together, <m>\bar x=0</m> and
+      En tout, <m>\bar x=0</m> et
       <md>
       <mrow>
       \bar y = \frac{\frac{4}{7}} {\frac{4}{5}}
@@ -150,9 +150,9 @@
       <statement><p>
       Soit <m>R</m> la région bornée à gauche par <m>x = 1</m> et à droite par
       <m>x^2 + y^2 = 4</m>. La densité dans <m>R</m> est
-      <me>
+      <md><mrow>
       \rho(x,y) =\frac{1}{\sqrt{x^2+y^2}}
-      </me>
+      </mrow></md>
       <ol marker = "(a)">
       <li>
       Esquissez la région <m>R</m>.
@@ -188,37 +188,37 @@
       </p></answer>
 
       <solution><p>
-      (a) Here is a sketch of <m>R</m>.
+      (a) Voici une esquisse de <m>R</m>.
       </p>
       <sidebyside width="35%">
         <image source="images/CLP-figs/pfigs/OE08D_7"/>
       </sidebyside>
 
       <p>
-      (b) Considering that
+      (b) Puisque
       <ul>
       <li>
-      <m>\rho(x,y)</m> is invariant under rotations about the origin and
+      <m>\rho(x,y)</m> est invariante sous les rotations autour de l'origine et
       </li>
       <li>
-      the outer curve <m>x^2+y^2=4</m>  is invariant under rotations about the origin and
+      la courbe extérieure <m>x^2+y^2=4</m> est invariante sous les rotations autour de l'origine et
       </li>
       <li>
-      the given hint involves a <m>\theta</m> integral
+      l'indice donné fait intervenir une intégrale en <m>\theta</m>,
       </li>
       </ul>
-      we'll use polar coordinates.
+      nous utiliserons les coordonnées polaires.
       </p>
 
-      <p>Observe that the line <m>x=1</m> and the circle <m>x^2+y^2=4</m>
-      intersect when
-      <me>
+      <p>Observons que la droite <m>x=1</m> et le cercle <m>x^2+y^2=4</m>
+      se croisent lorsque
+      <md><mrow>
       1+y^2=4
       \iff y=\pm\sqrt{3}
-      </me>
-      and that the polar coordinates of the point <m>(x,y)=\big(1,\sqrt{3}\big)</m>
-      are <m>r=\sqrt{x^2+y^2}=2</m> and <m>\theta=\arctan\frac{y}{x}=\arctan \sqrt{3}
-      =\frac{\pi}{3}</m>. Looking at the sketch
+      </mrow></md>
+      et que les coordonnées polaires du point <m>(x,y)=\big(1,\sqrt{3}\big)</m>
+      sont <m>r=\sqrt{x^2+y^2}=2</m> et <m>\theta=\arctan\frac{y}{x}=\arctan \sqrt{3}
+      =\frac{\pi}{3}</m>. En regardant l'esquisse
       </p>
 
       <sidebyside width="40%">
@@ -226,23 +226,23 @@
       </sidebyside>
 
       <p>
-      we see that, on <m>R</m>,
+      on voit que, sur <m>R</m>,
       <ul>
       <li>
-      <m>\theta</m> runs from <m>-\frac{\pi}{3}</m> to <m>\frac{\pi}{3}</m> and
+      <m>\theta</m> varie de <m>-\frac{\pi}{3}</m> à <m>\frac{\pi}{3}</m> et
       </li>
       <li>
-      for each fixed <m>\theta</m> in that range, <m>r</m> runs from <m>\frac{1}{\cos\theta}
-      =\sec\theta</m> to <m>2</m>.
+      pour chaque <m>\theta</m> fixé dans cet intervalle, <m>r</m> varie de <m>\frac{1}{\cos\theta}
+      =\sec\theta</m> à <m>2</m>.
       </li>
       <li>
-      In polar coordinates, <m>\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, and
+      En coordonnées polaires, <m>\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, et
       </li>
       <li>
-      the density <m>\rho =\frac{1}{\sqrt{x^2+y^2}} =\frac{1}{r}</m>
+      la densité <m>\rho =\frac{1}{\sqrt{x^2+y^2}} =\frac{1}{r}</m>
       </li>
       </ul>
-      So the mass is
+      Donc la masse est
       <md>
       <mrow>
       M&amp;=\iint_R \rho(x,y)\ \dee{A}
@@ -262,9 +262,9 @@
       </p>
 
       <p>(c)
-      By definition, the centre of mass is <m>(\bar x, \bar y)</m>,
-      with <m>\bar x</m> and <m>\bar y</m> being the weighted averages  of the <m>x</m> and
-      <m>y</m>--coordinates, respectively, over <m>R</m>. That is,
+      Par définition, le centre de masse est <m>(\bar x, \bar y)</m>,
+      où <m>\bar x</m> et <m>\bar y</m> sont respectivement les moyennes pondérées des coordonnées
+      <m>x</m> et <m>y</m> sur <m>R</m>. C'est-à-dire,
       <md>
       <mrow>
       \bar x = \frac{\iint_R x\ \rho(x,y)\ \dee{A}}{\iint_R \rho(x,y)\ \dee{A}}
@@ -272,9 +272,9 @@
       \bar y = \frac{\iint_R y\ \rho(x,y)\ \dee{A}}{\iint_R \rho(x,y)\ \dee{A}}
       </mrow>
       </md>
-      By symmetry under reflection in the <m>x</m>--axis, we have <m>\bar y=0</m>.
-      So we just have to determine <m>\bar x</m>.
-      The numerator is
+      Par symétrie sous la réflexion par rapport à l'axe des <m>x</m>, nous avons <m>\bar y=0</m>.
+      Il ne reste donc qu'à déterminer <m>\bar x</m>.
+      Le numérateur est
       <md>
       <mrow>
       \iint_R x\ \rho(x,y)\ \dee{A}
@@ -293,7 +293,7 @@
       &amp;=  2\sqrt{3}- \ln\big(2+\sqrt{3}\big)
       </mrow>
       </md>
-      All together, <m>\bar y=0</m> and
+      En tout, <m>\bar y=0</m> et
       <md>
       <mrow>
       \bar x = \frac{2\sqrt{3}- \ln\big(2+\sqrt{3}\big)}
@@ -316,14 +316,14 @@
       </p></answer>
 
       <solution><p>
-      Let's call the plate <m>\cP</m>. By definition, the <m>x</m>--coordinate of its
-      centre of mass is
+      Appelons <m>\cP</m> la plaque. Par définition, la coordonnée <m>x</m> de son
+      centre de masse est
       <md>
       <mrow>
       \bar x = \frac{\iint_\cP x\ \dee{A}}{\iint_\cP\dee{A}}
       </mrow>
       </md>
-      Here is a sketch of the plate.
+      Voici une esquisse de la plaque.
       </p>
 
       <sidebyside width="50%">
@@ -331,22 +331,22 @@
       </sidebyside>
 
       <p>
-      The cardiod is given to us in polar coordinates, so let's evaluate the
-      integrals in polar coordinates. Looking at the sketch above, we see that,
-      on <m>\cP</m>,
+      La cardioïde nous est donnée en coordonnées polaires, évaluons donc les
+      intégrales en coordonnées polaires. En regardant l'esquisse ci-dessus, on voit que,
+      sur <m>\cP</m>,
       <ul>
       <li>
-      <m>\theta</m> runs from <m>0</m> to <m>\pi/2</m> and
+      <m>\theta</m> varie de <m>0</m> à <m>\pi/2</m> et
       </li>
       <li>
-      for each fixed <m>\theta</m> in that range, <m>r</m> runs from <m>0</m>
-      to <m>1+\sin\theta</m>.
+      pour chaque <m>\theta</m> fixé dans cet intervalle, <m>r</m> varie de <m>0</m>
+      à <m>1+\sin\theta</m>.
       </li>
       <li>
-      In polar coordinates <m>\dee{A} = r\,\dee{r}\,\dee{\theta}</m>
+      En coordonnées polaires, <m>\dee{A} = r\,\dee{r}\,\dee{\theta}</m>
       </li>
       </ul>
-      So the two integrals of interest are
+      Donc les deux intégrales qui nous intéressent sont
       <md>
       <mrow>
       \iint_\cP\dee{A}
@@ -363,7 +363,7 @@
       &amp;=\frac{3\pi}{8} + 1
       </mrow>
       </md>
-      and
+      et
       <md>
       <mrow>
       \iint_\cP x\ \dee{A}
@@ -372,7 +372,7 @@
       </mrow><mrow>
       &amp;=\frac{1}{3} \int_0^{\pi/2}\dee{\theta}\ \big(1+\sin\theta\big)^3\cos\theta
       </mrow><mrow>
-      &amp;=\frac{1}{3}\int_1^2\dee{u}\ u^3\qquad\text{with }u=1+\sin\theta,\
+      &amp;=\frac{1}{3}\int_1^2\dee{u}\ u^3\qquad\text{avec }u=1+\sin\theta,\
                                              \dee{u} = \cos\theta\,\dee{\theta}
       </mrow><mrow>
       &amp;=\frac{1}{12}\big[2^4-1^4\big]
@@ -380,7 +380,7 @@
       &amp;=\frac{5}{4}
       </mrow>
       </md>
-      All together
+      En tout,
       <md>
       <mrow>
       \bar x = \frac{\frac{5}{4}}{\frac{3\pi}{8} + 1}
@@ -407,10 +407,10 @@
       </p></answer>
 
       <solution><p>
-       Call the plate <m>P</m>.
-      By definition, the centre of mass is <m>(\bar x, \bar y)</m>,
-      with <m>\bar x</m> and <m>\bar y</m> being the weighted averages  of the <m>x</m> and
-      <m>y</m>--coordinates, respectively, over <m>P</m>. That is,
+       Appelons <m>P</m> la plaque.
+      Par définition, le centre de masse est <m>(\bar x, \bar y)</m>,
+      où <m>\bar x</m> et <m>\bar y</m> sont respectivement les moyennes pondérées des coordonnées
+      <m>x</m> et <m>y</m> sur <m>P</m>. C'est-à-dire,
       <md>
       <mrow>
       \bar x = \frac{\iint_P x\ \rho(x,y)\ \dee{A}}{\iint_P \rho(x,y)\ \dee{A}}
@@ -418,8 +418,8 @@
       \bar y = \frac{\iint_P y\ \rho(x,y)\ \dee{A}}{\iint_P \rho(x,y)\ \dee{A}}
       </mrow>
       </md>
-      with <m>\rho(x,y)=k</m>.
-      Here is a sketch of <m>P</m>.
+      avec <m>\rho(x,y)=k</m>.
+      Voici une esquisse de <m>P</m>.
       </p>
 
       <sidebyside width="45%">
@@ -427,24 +427,24 @@
       </sidebyside>
 
       <p>
-      By symmetry under reflection in the line <m>y=x</m>, we have <m>\bar y=\bar x</m>.
-      So we just have to determine
-      <me>
+      Par symétrie sous la réflexion par rapport à la droite <m>y=x</m>, nous avons <m>\bar y=\bar x</m>.
+      Il ne reste donc qu'à déterminer
+      <md><mrow>
       \bar x = \frac{\iint_P x\ \dee{A}}{\iint_P  \dee{A}}
-      </me>
-      The denominator is just one quarter of the area of circular disk of radius <m>1</m>.
-      That is, <m>\iint_P  \dee{A}=\frac{\pi}{4}</m>.
-      We'll evaluate the numerator using polar coordinates as in the figure above.
-      Looking at that figure, we see that
+      </mrow></md>
+      Le dénominateur est simplement le quart de l'aire du disque de rayon <m>1</m>.
+      C'est-à-dire, <m>\iint_P  \dee{A}=\frac{\pi}{4}</m>.
+      Nous évaluerons le numérateur en coordonnées polaires comme dans la figure ci-dessus.
+      En regardant cette figure, on voit que
       <ul>
       <li>
-      <m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>, and
+      <m>\theta</m> varie de <m>0</m> à <m>\frac{\pi}{2}</m>, et
       </li>
       <li>
-      for each fixed <m>\theta</m> in that range, <m>r</m> runs from <m>0</m> to <m>1</m>.
+      pour chaque <m>\theta</m> fixé dans cet intervalle, <m>r</m> varie de <m>0</m> à <m>1</m>.
       </li>
       </ul>
-      As <m>\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, and <m>x=r\cos\theta</m>, the numerator
+      Puisque <m>\dee{A}=r\,\dee{r}\,\dee{\theta}</m>, et <m>x=r\cos\theta</m>, le numérateur
       <md>
       <mrow>
       \iint_P x\ \dee{A}
@@ -459,7 +459,7 @@
       </md>
       </p>
 
-      <p>All together
+      <p>En tout
       <md>
       <mrow>
       \bar x = \bar y = \frac{1/3}{\pi/4} =\frac{4}{3\pi}
@@ -481,50 +481,50 @@
       </p></answer>
 
       <solution><p>
-      Here is a sketch of <m>R</m>.
+      Voici une esquisse de <m>R</m>.
       </p>
       <sidebyside width="50%">
         <image source="images/CLP-figs/pfigs/OE11D_6"/>
       </sidebyside>
 
       <p>
-      Note that
+      Remarquons que
       <ul>
       <li>
-       the equation of the straight line through <m>(2,0)</m> and <m>(0,2)</m>
-       is <m>y=2-x</m>, or <m>x=2-y</m>. (As a check note that both points <m>(2,0)</m> and <m>(0,2)</m>
-        are on <m>x=2-y</m>.
+       l'équation de la droite passant par <m>(2,0)</m> et <m>(0,2)</m>
+       est <m>y=2-x</m>, ou <m>x=2-y</m>. (Comme vérification, notons que les deux points <m>(2,0)</m> et <m>(0,2)</m>
+        sont sur <m>x=2-y</m>.)
       </li>
       <li>
-       The equation of the straight line through <m>(1,0)</m> and <m>(0,2)</m>
-       is <m>y=2-2x</m>, or <m>x=\frac{2-y}{2}</m>. (As a check note that both points
-       <m>(0,2)</m> and <m>(1,0)</m> are on <m>x=\frac{2-y}{2}</m>.
+       L'équation de la droite passant par <m>(1,0)</m> et <m>(0,2)</m>
+       est <m>y=2-2x</m>, ou <m>x=\frac{2-y}{2}</m>. (Comme vérification, notons que les deux points
+       <m>(0,2)</m> et <m>(1,0)</m> sont sur <m>x=\frac{2-y}{2}</m>.)
       </li>
       </ul>
-      By definition, the <m>y</m>--coordinate of the center of mass of <m>R</m>
-      is the weighted average of <m>y</m> over <m>R</m>, which is
-      <me>
+      Par définition, la coordonnée <m>y</m> du centre de masse de <m>R</m>
+      est la moyenne pondérée de <m>y</m> sur <m>R</m>, soit
+      <md><mrow>
       \bar y =\frac{\iint_R y\,\rho(x,y)\,\dee{A}}{\iint_R \rho(x,y)\,\dee{A}}
              =\frac{\iint_R y^3\,\dee{A}}{\iint_R y^2\,\dee{A}}
-      </me>
-      On <m>R</m>,
+      </mrow></md>
+      Sur <m>R</m>,
       <ul>
       <li>
-      <m>y</m> runs from <m>0</m> to <m>2</m>. That is, <m>0\leqslant y\leqslant 2</m>.
+      <m>y</m> varie de <m>0</m> à <m>2</m>. C'est-à-dire, <m>0\leqslant y\leqslant 2</m>.
       </li>
       <li>
-      For each fixed <m>y</m> in that range, <m>x</m> runs from <m>\frac{2-y}{2}</m> to
-      <m>2-y</m>. In inequalities, that is <m>\frac{2-y}{2}\leqslant x\leqslant 2-y</m>.
+      Pour chaque <m>y</m> fixé dans cet intervalle, <m>x</m> varie de <m>\frac{2-y}{2}</m> à
+      <m>2-y</m>. En inégalités, c'est <m>\frac{2-y}{2}\leqslant x\leqslant 2-y</m>.
       </li>
       </ul>
-      Thus
-      <me>
+      Ainsi
+      <md><mrow>
       R = \left\{\ (x,y)\ \left|\ 0\leqslant y\leqslant 2,\ \frac{2-y}{2}\leqslant x\leqslant 2-y
                                            \right.\right\}
-      </me>
+      </mrow></md>
       </p>
 
-      <p>For both <m>n=2</m> and <m>n=3</m>, we have
+      <p>Pour <m>n=2</m> comme pour <m>n=3</m>, nous avons
       <md>
       <mrow>
       \iint_R y^n\,\dee{A}
@@ -539,7 +539,7 @@
       &amp;=\frac{2^{n+1}}{(n+1)(n+2)}
       </mrow>
       </md>
-      So
+      Donc
       <md>
       <mrow>
       \bar y =\frac{\iint_R y^3\,\dee{A}}{\iint_R y^2\,\dee{A}}
@@ -553,9 +553,9 @@
     <exercise component = "sol-privees"> <!-- <title><fromexam>M200 2012A</fromexam></title> -->
       <statement><p>
       La distance moyenne d'un point dans une région plane <m>D</m> par rapport au point <m>(a, b)</m> est définie par
-      <me>
+      <md><mrow>
       \frac{1}{A(D)}\iint_D \sqrt{(x-a)^2+(y-b)^2}\ \dee{A}
-      </me>
+      </mrow></md>
       où <m>A(D)</m> est l'aire de la région plane <m>D</m>. Soit <m>D</m> le disque unitaire
       <m>1 \geqslant x^2 + y^2</m>.
       Trouvez la distance moyenne du point dans <m>D</m> par rapport au centre de <m>D</m>.
@@ -566,15 +566,15 @@
       </p></answer>
 
       <solution><p>
-      By the definition given in the statement with <m>(a,b)=(0,0)</m>,
-      the average is
+      D'après la définition donnée dans l'énoncé, avec <m>(a,b)=(0,0)</m>,
+      la moyenne est
       <md>
       <mrow>
       \frac{1}{A(D)}\iint_D \sqrt{x^2+y^2}\ \dee{x}\,\dee{y}
       </mrow>
       </md>
-      The denominator <m>A(D) = \pi</m>. We'll use polar coordinates to evaluate the
-      numerator.
+      Le dénominateur <m>A(D) = \pi</m>. Nous utiliserons les coordonnées polaires pour évaluer le
+      numérateur.
       <md>
       <mrow>
       \iint_D \sqrt{x^2+y^2}\ \dee{x}\,\dee{y}
@@ -587,10 +587,10 @@
       &amp;=\frac{2\pi}{3}
       </mrow>
       </md>
-      So the average is
-      <me>
+      Donc la moyenne est
+      <md><mrow>
       \frac{\frac{2\pi}{3}}{\pi}=\frac{2}{3}
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -618,10 +618,10 @@
       </p></answer>
 
       <solution><p>
-      Note that <m>x^2+y^2=x</m> is equivalent to
-      <m>\left(x-\frac{1}{2}\right)^2+y^2=\frac{1}{4}</m>, which is the
-      circle of radius <m>\frac{1}{2}</m> centred on <m>\left(\frac{1}{2},0\right)</m>.
-      Let's call the crescent <m>\cC</m> and write
+      Remarquons que <m>x^2+y^2=x</m> est équivalent à
+      <m>\left(x-\frac{1}{2}\right)^2+y^2=\frac{1}{4}</m>, qui est le
+      cercle de rayon <m>\frac{1}{2}</m> centré en <m>\left(\frac{1}{2},0\right)</m>.
+      Appelons <m>\cC</m> le croissant et écrivons
       <md>
       <mrow>
       D &amp;= \Set{(x,y)}{x^2+y^2\leqslant 1}
@@ -629,12 +629,12 @@
       H &amp;= \Set{(x,y)}{\left(x-\tfrac{1}{2}\right)^2+y^2\le\tfrac{1}{4}}
       </mrow>
       </md>
-      so that
-      <me>
+      de sorte que
+      <md><mrow>
       \cC= D\setminus H
-      </me>
-      meaning that <m>\cC</m> is the disk <m>D</m> with the <q>hole</q> <m>H</m> removed.
-      Here is a sketch.
+      </mrow></md>
+      c'est-à-dire que <m>\cC</m> est le disque <m>D</m> auquel on a enlevé le <q>trou</q> <m>H</m>.
+      Voici une esquisse.
       </p>
 
       <sidebyside width="40%">
@@ -642,10 +642,10 @@
       </sidebyside>
 
       <p>
-      (a) As <m>D</m> is a disk of radius <m>1</m>, it has area <m>\pi</m>.
-          As <m>H</m> is a disk of radius <m>\frac{1}{2}</m>, it has
-                 area <m>\frac{\pi}{4}</m>.
-      As <m>\cC</m> has density <m>1</m>,
+      (a) Puisque <m>D</m> est un disque de rayon <m>1</m>, son aire est <m>\pi</m>.
+          Puisque <m>H</m> est un disque de rayon <m>\frac{1}{2}</m>, son
+                 aire est <m>\frac{\pi}{4}</m>.
+      Puisque <m>\cC</m> a une densité de <m>1</m>,
       <md>
       <mrow>
       \text{Mass}(\cC) &amp;= \iint_\cC \dee{A}
@@ -659,36 +659,36 @@
       </p>
 
       <p>(b)
-      Recall that, by definition, the <m>x</m>--coordinate of the centre of mass
-      of <m>\cC</m> is the average value of <m>x</m> over <m>\cC</m>, which is
+      Rappelons que, par définition, la coordonnée <m>x</m> du centre de masse
+      de <m>\cC</m> est la valeur moyenne de <m>x</m> sur <m>\cC</m>, soit
       <md>
       <mrow>
       \bar x = \frac{\iint_\cC x\,\dee{A}}{\iint_\cC \dee{A}}
       </mrow>
       </md>
-      We have already found that <m>\iint_\cC \dee{A}=\frac{3\pi}{4}</m>.
-      So we have to determine the numerator
-      <me>
+      Nous avons déjà trouvé que <m>\iint_\cC \dee{A}=\frac{3\pi}{4}</m>.
+      Il nous reste donc à déterminer le numérateur
+      <md><mrow>
       \iint_\cC x\,\dee{A} = \iint_D x\,\dee{A} - \iint_H x\,\dee{A}
-      </me>
-      As <m>x</m> is an odd function and <m>D</m> is invariant under <m>x\rightarrow -x</m>,
-      <m>\iint_D x\,\dee{A}=0</m>. So we just have to determine
+      </mrow></md>
+      Puisque <m>x</m> est une fonction impaire et que <m>D</m> est invariant sous <m>x\rightarrow -x</m>,
+      <m>\iint_D x\,\dee{A}=0</m>. Il nous reste donc à déterminer
       <m>\iint_H x\,\dee{A}</m>.
-      To do so we'll work in polar coordinates, so that
+      Pour ce faire, nous travaillerons en coordonnées polaires, de sorte que
       <m>\dee{A} = r\,\dee{r}\,\dee{\theta}</m>.
-      In polar coordinates <m>x^2 + y^2 = x</m> is <m>r^2 =r\cos\theta</m>
-      or <m>r=\cos\theta</m>. So, looking at the figure above (just before the
-      solution to part (a)), on the domain of integration,
+      En coordonnées polaires, <m>x^2 + y^2 = x</m> devient <m>r^2 =r\cos\theta</m>
+      ou <m>r=\cos\theta</m>. Ainsi, en regardant la figure ci-dessus (juste avant la
+      solution de la partie (a)), sur le domaine d'intégration,
       <ul>
       <li>
-      <m>\theta</m> runs from <m>-\frac{\pi}{2}</m> to <m>\frac{\pi}{2}</m>.
+      <m>\theta</m> varie de <m>-\frac{\pi}{2}</m> à <m>\frac{\pi}{2}</m>.
       </li>
       <li>
-      For each fixed <m>\theta</m> in that range, <m>r</m> runs from <m>0</m> to
+      Pour chaque <m>\theta</m> fixé dans cet intervalle, <m>r</m> varie de <m>0</m> à
       <m>\cos\theta</m>.
       </li>
       </ul>
-      So the integral is
+      Donc l'intégrale est
       <md>
       <mrow>
       \iint_H x\,\dee{A}
@@ -700,7 +700,7 @@
          &amp;= \frac{\pi}{8}
       </mrow>
       </md>
-      So all together
+      Donc, en tout
       <md>
       <mrow>
       \bar x = \frac{\iint_\cC x\,\dee{A}}{\iint_\cC \dee{A}}
@@ -717,9 +717,9 @@
       Soit <m>D</m> la région du plan <m>xy</m> qui se trouve à l'intérieur du cercle
       <m>x^2+(y-1)^2=1</m>, mais à l'extérieur du cercle <m>x^2+y^2=2</m>. Déterminez
       la masse de cette région si la densité est donnée par
-      <me>
+      <md><mrow>
       \rho(x,y)=\frac{2}{\sqrt{x^2+y^2}}
-      </me>
+      </mrow></md>
       </p></statement>
 
       <hint><p>
@@ -731,13 +731,13 @@
       </p></answer>
 
       <solution><p>
-      The domain is pictured below.
+      Le domaine est illustré ci-dessous.
       </p>
       <sidebyside width="55%">
         <image source="images/CLP-figs/pfigs/OE02DQ7"/>
       </sidebyside>
       <p>
-      The two circles intersect when <m>x^2+y^2=2</m> and
+      Les deux cercles se croisent lorsque <m>x^2+y^2=2</m> et
       <md>
       <mrow>
       x^2+(y-1)^2=2-y^2+(y-1)^2=1
@@ -746,22 +746,22 @@
       &amp;\iff y=1
       </mrow>
       </md>
-      and <m>x=\pm 1</m>.
-      In polar coordinates <m>x^2+y^2=2</m> is <m>r=\sqrt{2}</m> and
+      et <m>x=\pm 1</m>.
+      En coordonnées polaires, <m>x^2+y^2=2</m> devient <m>r=\sqrt{2}</m> et
       <m>
       x^2+(y-1)^2=x^2+y^2-2y+1=1
       </m>
-      is <m>r^2-2r\sin\theta=0</m> or <m>r=2\sin\theta</m>.
-      The two curves intersect when <m>r=\sqrt{2}</m> and<m>\sqrt{2}=2\sin\theta</m> so that
-      <m>\theta=\frac{\pi}{4}</m> or <m>\frac{3}{4}\pi</m>. So
-      <me>
+      devient <m>r^2-2r\sin\theta=0</m> ou <m>r=2\sin\theta</m>.
+      Les deux courbes se croisent lorsque <m>r=\sqrt{2}</m> et <m>\sqrt{2}=2\sin\theta</m>, de sorte que
+      <m>\theta=\frac{\pi}{4}</m> ou <m>\frac{3}{4}\pi</m>. Donc
+      <md><mrow>
       D=\Set{(r\cos\theta,r\sin\theta)}{\tfrac{1}{4}\pi\le\theta\le\tfrac{3}{4}\pi,\
                 \sqrt{2}\leqslant r\leqslant 2\sin\theta}
-      </me>
-      and, as the density is <m>\frac{2}{r}</m>,
+      </mrow></md>
+      et, puisque la densité est <m>\frac{2}{r}</m>,
       <md>
       <mrow>
-      \text{mass}
+      \text{Masse}
       &amp;=\int_{\pi/4}^{3\pi/4}\dee{\theta}\int^{2\sin\theta}_{\sqrt{2}}\dee{r}\
                 r\frac{2}{r}
       =2\int_{\pi/4}^{3\pi/4}\dee{\theta}\ \big[2\sin\theta -\sqrt{2}\,\big]
@@ -804,58 +804,58 @@
         Le vecteur de <m>(-a,0)</m> à <m>\frac{1}{2}(b,c)</m> est <m> \frac{1}{2}\llt b,c\rgt-\llt-a,0\rgt
         =\llt a+\frac{b}{2},\frac{c}{2}\rgt</m>. Ainsi,
         la droite joignant ces deux points a pour équation paramétrique
-        <me>
+        <md><mrow>
         \vr(t)=\llt -a,0\rgt+t\llt a+\frac{1}{2} b\,,\,\frac{1}{2} c\rgt
-        </me>
+        </mrow></md>
         </p>
         <sidebyside width="50%">
           <image source="images/CLP-figs/pfigs/OE03AQ6"/>
         </sidebyside>
         <p>
         Le point <m>(\bar x,\bar y)</m> se trouve sur cette droite comme
-        <me>
+        <md><mrow>
         \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a)\,,\,\frac{c}{3}\right)
         =(\bar x,\bar y)
-        </me>
+        </mrow></md>
         De façon similaire, le point milieu du côté opposé <m>(b,0)</m> est <m>\frac{1}{2}(-a,c)</m>.
         La droite joignant ces deux points a pour équation paramétrique
-        <me>
+        <md><mrow>
         \vr(t)=\llt b,0\rgt +t\llt-b-\frac{1}{2} a\,,\,\frac{1}{2} c\rgt
-        </me>
+        </mrow></md>
         Le point <m>(\bar x,\bar y)</m> se trouve sur cette droite également, comme
-        <me>
+        <md><mrow>
         \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a),\frac{c}{3}\right)
         =(\bar x,\bar y)
-        </me>
+        </mrow></md>
         Ce n'est pas nécessaire de vérifier que <m>(\bar x,\bar y)</m> se trouve sur la troisième médiane, mais faisons le quand même. Le point milieu du côté opposé <m>(0,c)</m> est <m>\frac{1}{2}(b-a,0)</m>.
         La droite joignant ces deux points a pour équation paramétrique
-        <me>
+        <md><mrow>
         \vr(t)=\llt 0,c\rgt+t\llt\frac{b}{2}-\frac{a}{2},-c\rgt
-        </me>
+        </mrow></md>
         Le point <m>(\bar x,\bar y)</m> se trouve sur cette médiane également, comme
-        <me>
+        <md><mrow>
         \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a),\frac{c}{3}\right)
         =(\bar x,\bar y)
-        </me>
+        </mrow></md>
         </p></answer>
 
       <solution><p>
-      (a) The side of the triangle from <m>(-a,0)</m> to <m>(0,c)</m> is straight line that passes through those two points. As <m>y=0</m> when <m>x=-a</m>, the line must have
-      an equation of the form <m>y=K(x+a)</m> for some constant <m>K</m>. Since <m>y=c</m> when
-      <m>x=0</m>, the constant <m>K=\frac{c}{a}</m>. So that the equation is
-      <m>y=\frac{c}{a}(x+a)</m>.
-      has equation <m>cx-ay=-ac</m>. Similarly the side of the triangle from
-      <m>(b,0)</m> to <m>(0,c)</m> has equation <m>y=\frac{c}{b}(b-x)</m>.
-      The triangle has area <m>A=\frac{1}{2}(a+b)c</m>. It has centre
-      of mass <m>(\bar x,\bar y)</m> with
+      (a) Le côté du triangle allant de <m>(-a,0)</m> à <m>(0,c)</m> est la droite passant par ces deux points. Puisque <m>y=0</m> quand <m>x=-a</m>, la droite doit avoir
+      une équation de la forme <m>y=K(x+a)</m> pour une certaine constante <m>K</m>. Puisque <m>y=c</m> quand
+      <m>x=0</m>, la constante est <m>K=\frac{c}{a}</m>. Ainsi l'équation est
+      <m>y=\frac{c}{a}(x+a)</m>,
+      c'est-à-dire <m>cx-ay=-ac</m>. De même, le côté du triangle allant de
+      <m>(b,0)</m> à <m>(0,c)</m> a pour équation <m>y=\frac{c}{b}(b-x)</m>.
+      Le triangle a pour aire <m>A=\frac{1}{2}(a+b)c</m>. Son centre
+      de masse est <m>(\bar x,\bar y)</m>, avec
       <md>
       <mrow>
       \bar x=\frac{1}{A}\iint_T x\ \dee{x}\dee{y}\qquad
       \bar y=\frac{1}{A}\iint_T y\ \dee{x}\dee{y}
       </mrow>
       </md>
-      To evaluate the integrals we'll decompose the triangle into vertical strips
-      as in the figure
+      Afin d'évaluer les intégrales, nous allons décomposer le triangle en tranches verticales
+      comme dans la figure
       </p>
 
       <sidebyside width="60%">
@@ -897,44 +897,44 @@
       </md>
       </p>
 
-      <p>(b) The midpoint of the side opposite <m>(-a,0)</m> is <m>\frac{1}{2}\big[(b,0)+(0,c)\big]=\frac{1}{2}(b,c)</m>.
-      The vector from <m>(-a,0)</m> to <m>\frac{1}{2}(b,c)</m> is <m> \frac{1}{2}\llt b,c\rgt-\llt-a,0\rgt
-      =\llt a+\frac{b}{2},\frac{c}{2}\rgt</m>. So
-      the line joining these two points has vector parametric equation
-      <me>
+      <p>(b) Le point milieu du côté opposé <m>(-a,0)</m> est <m>\frac{1}{2}\big[(b,0)+(0,c)\big]=\frac{1}{2}(b,c)</m>.
+      Le vecteur de <m>(-a,0)</m> à <m>\frac{1}{2}(b,c)</m> est <m> \frac{1}{2}\llt b,c\rgt-\llt-a,0\rgt
+      =\llt a+\frac{b}{2},\frac{c}{2}\rgt</m>. Ainsi,
+      la droite joignant ces deux points a pour équation paramétrique
+      <md><mrow>
       \vr(t)=\llt -a,0\rgt+t\llt a+\frac{1}{2} b\,,\,\frac{1}{2} c\rgt
-      </me>
+      </mrow></md>
       </p>
       <sidebyside width="50%">
         <image source="images/CLP-figs/pfigs/OE03AQ6"/>
       </sidebyside>
       <p>
-      The point <m>(\bar x,\bar y)</m> lies on this line since
-      <me>
+      Le point <m>(\bar x,\bar y)</m> se trouve sur cette droite comme
+      <md><mrow>
       \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a)\,,\,\frac{c}{3}\right)
       =(\bar x,\bar y)
-      </me>
-      Similarly, the midpoint of the side opposite <m>(b,0)</m> is <m>\frac{1}{2}(-a,c)</m>.
-      The line joining these two points has vector parametric equation
-      <me>
+      </mrow></md>
+      De façon similaire, le point milieu du côté opposé <m>(b,0)</m> est <m>\frac{1}{2}(-a,c)</m>.
+      La droite joignant ces deux points a pour équation paramétrique
+      <md><mrow>
       \vr(t)=\llt b,0\rgt +t\llt-b-\frac{1}{2} a\,,\,\frac{1}{2} c\rgt
-      </me>
-      The point <m>(\bar x,\bar y)</m> lies on this line too, since
-      <me>
+      </mrow></md>
+      Le point <m>(\bar x,\bar y)</m> se trouve sur cette droite également, comme
+      <md><mrow>
       \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a),\frac{c}{3}\right)
       =(\bar x,\bar y)
-      </me>
-      It is not really necessary to check that <m>(\bar x,\bar y)</m> lies on the
-      third median, but let's do it anyway. The midpoint of the side opposite <m>(0,c)</m> is <m>\frac{1}{2}(b-a,0)</m>.
-      The line joining these two points has vector parametric equation
-      <me>
+      </mrow></md>
+      Ce n'est pas nécessaire de vérifier que <m>(\bar x,\bar y)</m> se trouve sur la
+      troisième médiane, mais faisons-le quand même. Le point milieu du côté opposé <m>(0,c)</m> est <m>\frac{1}{2}(b-a,0)</m>.
+      La droite joignant ces deux points a pour équation paramétrique
+      <md><mrow>
       \vr(t)=\llt 0,c\rgt+t\llt\frac{b}{2}-\frac{a}{2},-c\rgt
-      </me>
-      The point <m>(\bar x,\bar y)</m> lies on this median too, since
-      <me>
+      </mrow></md>
+      Le point <m>(\bar x,\bar y)</m> se trouve sur cette médiane également, comme
+      <md><mrow>
       \vr\left(\frac{2}{3}\right)=\left(\frac{1}{3}(b-a),\frac{c}{3}\right)
       =(\bar x,\bar y)
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
     

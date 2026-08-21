@@ -73,13 +73,13 @@ En ayant des sommes de Riemann, l'étape suivante est claire : il faut évaluer 
       <solution>
         <p>
 D'après la <xref ref="def_AVaverage" text="global">définition</xref>, la hauteur moyenne est donnée par
-<me>
+<md><mrow>
 \bar z
 =\frac{\iint_\cR z(x,y)\,\dee{A}}
                        {\iint_\cR \dee{A}}
 =\frac{\iint_\cR \sqrt{a^2-x^2-y^2}\,\dee{A}}
                        {\iint_\cR \dee{A}}
-</me>.
+</mrow></md>.
 Les intégrales du numérateur et du dénominateur peuvent être calculées en les interprétant géométriquement.
 <ul><li>
 Le numérateur  <m>\displaystyle \iint_\cR z(x,y)\,\dee{A}
@@ -96,10 +96,10 @@ qui est le quart du volume d'une sphère de rayon <m>a</m>, c'est-à-dire <m>\fr
 Le dénominateur  <m>\displaystyle \iint_\cR \dee{A}</m> est l'aire de la moitié d'un disque de rayon  <m>a</m>, c'est-à-dire <m>\frac{1}{2} \pi a^2</m>.
 </li></ul>
 Ainsi, la hauteur moyenne est
-<me>
+<md><mrow>
 \bar z = \frac{\frac{1}{3}\pi a^3}{\frac{1}{2} \pi a^2}
 =\frac{2}{3}\, a
-</me>.
+</mrow></md>.
 Il faut noter que ce nombre est positif et plus petit que la hauteur maximale <m>a</m>, ce qui est cohérent.
 </p>
       </solution>
@@ -254,9 +254,9 @@ Notons que si  <m>f(x,y)=F</m> est une constante, alors la moyenne pondérée de
     <title>Centre de gravité</title>
     <p>
     Une application importante de la moyenne pondérée est le calcul du centre de gravité, ou centre de masse. Si un objet est supporté en son centre de gravité (dans un champ gravitationnel uniforme), il sera en parfait équilibre. Dans un cours de calcul intégral à une variable, on établit que le centre de gravité d'une tige horizontale dont la masse est distribuée uniformément et dont la densité est <m>\rho(x)</m>, avec <m>x</m> allant de <m>x=a</m> à <m>x=b</m>, se trouve à
-<me>
+<md><mrow>
 \bar x = \frac{\displaystyle\int_a^b x\ \rho(x)\,\dee{x}}{\displaystyle \int_a^b \rho(x)\,\dee{x}}
-</me>.
+</mrow></md>.
 Ceci revient à dire que le centre de gravité est la moyenne des abscisses affectées du poids donné par la densité.
 </p>
     <p>En deux dimensions, le centre de gravité d'une plaque mince (d'épaisseur négligeable mais constante) qui occupe la région <m>\cR</m> du plan <m>Oxy</m> et dont la fonction de densité est  <m>\rho(x,y)</m> est le point  <m>(\bar x, \bar y)</m> où :
@@ -309,9 +309,9 @@ Ceci revient à dire que le centre de gravité est la moyenne des abscisses affe
     <example xml:id="eg_dblInt_I">
       <title>Centre de gravité</title>
       <p> Déterminer le centre de gravité d'une plaque mince de densité constante occupant la région
-<me>
+<md><mrow>
 \cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\}
-</me>
+</mrow></md>
 dans le plan  <m>Oxy</m>.
 </p>
       <p> Afin d'utiliser la <xref ref="eq_centroid" text="global">formule</xref>,   découpons la région <m>\cR</m> verticalement, comme illustré dans la figure ci-dessous.
@@ -354,9 +354,9 @@ Library/272/setStewart15_5/problem_5.pg
       <title>Quart de disque</title>
       <p>
 Calculer le centroïde du quart de disque
-<me>
+<md><mrow>
 \cD=\Set{(x,y)}{x\geqslant 0,\ y\geqslant 0,\ x^2+y^2\leqslant  a^2}.
-</me>
+</mrow></md>
 </p>
       <solution>
         <p>
@@ -387,30 +387,30 @@ Nous pourrions appliquer les formules obtenues dans l'exemple précédent, mais 
 &amp;= \frac{a^3}{3}
 </mrow></md>,
 donc
-<me>
+<md><mrow>
 \bar x
 = \frac{4}{\pi a^2}\left[\frac{a^3}{3}\right]
 =\frac{4a}{3\pi}
-</me>.
+</mrow></md>.
 Par symétrie, nous aurons que <m>\bar y = \bar x</m>.
 </p>
       </solution>
       <solution>
         <p>
     Utilisons encore les intégrales de la <xref ref="eq_centroid" text="global">formule</xref>, mais calculons avec des coordonnées polaires. Nous avons notamment que, en coordonnées polaires, notre domaine d'intégration est
-    <me>
+    <md><mrow>
       \cD = \Set{(r,\theta )}{0\leqslant  r\leqslant  a,\ 0\leqslant  \theta \leqslant \pi/2}
-    </me>.
+    </mrow></md>.
   </p>
         <p>
     L'aire de <m>\cD</m> est <m>\frac{1}{4}\pi a^2</m>. Nous avons par ailleurs
     <md><mrow>\iint_{\cD} x \dee{A} \amp = \int_0^{\pi/2} \int_0^a r\, \cos \theta\ r\, \dee{\theta}\, \dee{r} </mrow><mrow> \amp= \left(\int_0^{\pi/2} \cos \theta\ \dee{\theta}\right)\left(\int_0^a r^2 \right)  = \frac{a^3}{3}</mrow></md>.
     Ainsi,
-    <me>
+    <md><mrow>
     \bar x
     = \frac{4}{\pi a^2}\left[\frac{a^3}{3}\right]
     =\frac{4a}{3\pi}
-    </me>.
+    </mrow></md>.
     Par symétrie, <m>\bar y = \bar x</m>.
   </p>
       </solution>
@@ -483,8 +483,8 @@ Ainsi,
 &amp;=\frac{4\pi}{3}-2\sqrt{3}
 </mrow></md>.
 Finalement, par symétrie, nous avons que
- <me>\iint_\cR x\,\dee{A}
-  =2\iint_{\cR_1} x\,\dee{A}</me>,
+ <md><mrow>\iint_\cR x\,\dee{A}
+  =2\iint_{\cR_1} x\,\dee{A}</mrow></md>,
 de sorte que
 <md><mrow>
 \bar x
@@ -532,10 +532,10 @@ et <m>\iint_\cR y\, \dee{A}</m>, en supposant que la région  <m>\cR</m> est ass
 &amp;\hskip0.5in+3\int_0^2\left[\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}y\ \dee{y}\,\dee{x}\right]
 </mrow></md>.
 Remarquons que <m>y=\pm \sqrt{2x-x^2}</m> équivaut à
-<me>
+<md><mrow>
 y^2 = 2x-x^2 = 1-(x-1)^2 \iff
 (x-1)^2 + y^2 =1
-</me>.
+</mrow></md>.
 Notre domaine d'intégration est donc le disque
 <m>
 \cR = \Set{(x,y)}{(x-1)^2 + y^2 \leqslant 1}
@@ -588,34 +588,34 @@ a une aire  <m>\dee{x}\,\dee{y}</m>, et donc
 a une masse  <m>\rho(x,y)\,\dee{x}\dee{y}</m>, et
 </li><li>
 son énergie cinétique est
-<me>
+<md><mrow>
 \frac{1}{2}\overbrace{\big(\rho(x,y)\,\dee{x}\,\dee{y}\big)}^{m}
                 \overbrace{(\om\,D(x,y))^2}^{v^2}
  =\frac{1}{2}\om^2\ D(x,y)\,^2\rho(x,y)\ \dee{x}\,\dee{y}
-</me>.
+</mrow></md>.
 </li></ul>
 Ainsi, au moyen de notre procédure habituelle de limite de sommes de Riemann, l'énergie cinétique totale de la plaque est
-<me>
+<md><mrow>
 \iint_\cR \frac{1}{2}\om^2\ D(x,y)^2\,\rho(x,y)\,\dee{A}\,
 =\frac{1}{2}\om^2 \iint_\cR \ D(x,y)^2\,\rho(x,y)\,\dee{A}\,
 =\frac{1}{2} I_\cA\,\om^2
-</me>,
+</mrow></md>,
 où <m>I_\cA</m> définit le <em>moment d'inertie.</em>
 </p>
     <definition xml:id="def_moment_of_inertia">
       <title>Moment d'inertie</title>
       <statement>
-        <p><me>
+        <p><md><mrow>
 I_\cA=\iint_\cR D(x,y)^2\rho(x,y)\ \dee{A}
-</me>
+</mrow></md>
 est le  <em>moment d'inertie</em> de <m>\cR</m> par rapport à l'axe <m>\cA</m>. En particulier, le moment d'inertie par rapport à l'axe des <m>y</m> est
-<me>
+<md><mrow>
 I_y=\iint_\cR x^2\,\rho(x,y)\ \dee{A}
-</me>,
+</mrow></md>,
 et le moment d'inertie par rapport à l'axe des <m>x</m> est
-<me>
+<md><mrow>
 I_x=\iint_\cR y^2\,\rho(x,y)\ \dee{A}
-</me>.
+</mrow></md>.
 </p>
       </statement>
     </definition>
@@ -636,9 +636,9 @@ Trouver le moment d'inertie par rapport à l'axe des abscisses du disque  <m>\cR
         <sidebyside widths="55% 35%">
           <p>
 La distance entre n'importe quel point  <m>(x,y)</m> sur le disque et l'axe de rotation est <m>|y|</m>. Ainsi, le moment d'inertie  recherché est
-<me>
+<md><mrow>
 I_x = \iint_\cR y^2\, \dee{A}
-</me>.
+</mrow></md>.
 </p>
           <image source="images/CLP-figs/diskI"/>
         </sidebyside>
@@ -682,9 +682,9 @@ Trouver le moment d'inertie par rapport à l'axe des <m>z</m> de la région <m>\
         <p>
 Comme nous l'avons mentionné plus haut, la formule pour <m>I_\cA</m> de la
 <xref ref="def_moment_of_inertia" text="global">définition</xref> reste valable quand l'axe de rotation n'est pas contenu dans le plan  <m>Oxy</m>. On doit simplement s'assurer que la fonction  <m>D(x,y)</m> est vraiment la distance du point <m>(x,y)</m> à l'axe de rotation. Dans cet exemple, l'axe de rotation est l'axe  <m>Oz</m>, de sorte que <m>D(x,y)=\sqrt{x^2+y^2}</m>, et le moment d'inertie est
-<me>
+<md><mrow>
 I_\cA = \iint_\cR (x^2+y^2)\,\dee{A}
-</me>.
+</mrow></md>.
 Un changement aux coordonnées polaires donne
 <md><mrow>
 I_\cA &amp;= \int_0^{2\pi} \int_0^{a(1+\cos\theta)}r^2\times r  \dee{r}\, \dee{\theta}

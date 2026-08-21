@@ -53,14 +53,14 @@
           </mrow><mrow>
           &amp;\implies &amp;  &amp;\hskip-1.0in\frac{1}{2} m |\vv(t)|^2
               -f\big(x(t),y(t),z(t)\big) = \text{const.}
-          </mrow>.
-          </md>
+          </mrow>
+          </md>.
   Ainsi, <m>\frac{1}{2} m |\vv(t)|^2 -f\big(x(t),y(t),z(t)\big)</m>, qui est appelée l'énergie
   <fn><m>\frac{1}{2} m |\vv(t)|^2</m> est l'énergie cinétique, et <m>-f</m> est l'énergie potentielle. Voir la <xref ref="warn_potential" text="global">mise en garde</xref>.
   </fn>
   
   de la particule au temps <m>t</m>, ne dépend pas du temps <m>t</m> : elle est conservée. Si nous appelons l'énergie initiale <m>E</m>, c'est-à-dire <m>E=\frac{1}{2} m |\vv(0)|^2 -f\big(x(0),y(0),z(0)\big)</m>, alors <m>\frac{1}{2} m |\vv(t)|^2 -f\big(x(t),y(t),z(t)\big)=E</m> pour tout <m>t</m>, et, en particulier,
-<me> f\big(x(t),y(t),z(t)\big) = \frac{1}{2} m |\vv(t)|^2 -E \geqslant -E </me>,
+<md><mrow> f\big(x(t),y(t),z(t)\big) = \frac{1}{2} m |\vv(t)|^2 -E \geqslant -E </mrow></md>,
 de sorte que, même sans trouver <m>\big(x(t),\,y(t),\,z(t)\big)</m>, nous savons que notre particule ne pourra pas quitter la région de l'espace <m>\Set{(x,y,z)}{f(x,y,z)\geqslant -E}</m>.
 </p>
   </example>
@@ -69,9 +69,9 @@ de sorte que, même sans trouver <m>\big(x(t),\,y(t),\,z(t)\big)</m>, nous savon
     <title>Gravité</title>
     <p>
       La force gravitationnelle qu'un corps de masse <m>M</m>, situé à l'origine, exerce sur un corps de masse <m>m</m> situé à <m>\vr=(x,y,z)</m> est
-      <me>
+      <md><mrow>
       \vF(\vr) = -\frac{GMm}{r^3}\vr
-      </me>,
+      </mrow></md>,
       où <m>r=|\vr|=\sqrt{x^2+y^2+z^2}</m> et où <m>G</m> est la constante gravitationnelle. La force est conservative, avec un potentiel <m>f(\vr) = \frac{GMm}{r}</m>. En effet, on calcule
       <md alignment="alignat"><mrow>
       \frac{\partial\ }{\partial x}f(\vr)
@@ -100,9 +100,9 @@ de sorte que, même sans trouver <m>\big(x(t),\,y(t),\,z(t)\big)</m>, nous savon
     <statement>
       <p>
         Soit <m>\vF=\vnabla f</m> un champ vectoriel conservatif de classe <m>C^1</m> défini sur une région <m>\cD\subseteq \R^n</m>. Si  <m>\cC</m> est une courbe lisse par morceaux allant de  <m>P_0</m> à <m>P_1</m>, nous avons
-        <me>
+        <md><mrow>
           \int_\cC\vF\cdot\dee{\vr} =f(P_1)-f(P_0)
-        </me>.
+        </mrow></md>.
       Ainsi, <m>f</m> joue le rôle des primitives pour l'évaluation des intégrales simples.
     </p>
     </statement>
@@ -120,13 +120,13 @@ où nous avons utilisé le théorème de dérivation des fonctions composées et
 </p>
 
 <p>Ceci nous mène à la question suivante. Soit  <m>\vF</m> un champ de vecteurs. Quand est-ce que, pour deux points fixes <m>P_0</m> et <m>P_1</m>, les intégrales
-  <me>
+  <md><mrow>
     \int_{\cC}\vF\cdot\dee{\vr} = \int_{\cC'}\vF\cdot\dee{\vr}
-  </me>
+  </mrow></md>
   pour toutes les courbes (lisses par morceaux) <m>\cC</m>, <m>\cC'</m> qui vont de  <m>P_0</m> vers <m>P_1</m>? Quand pouvons-nous faire fi de la trajectoire empruntée? Dans ce cas, nous dirons que <q><m>\int_{\cC}\vF\cdot\dee{\vr}</m> est indépendante de la trajectoire</q> et nous écrirons
-    <me>
+    <md><mrow>
     \int_{P_0}^{P_1}\vF\cdot\dee{\vr} = \int_{\cC}\vF\cdot\dee{\vr}
-    </me>
+    </mrow></md>
     pour tout chemin <m>\cC</m> de <m>P_0</m> à <m>P_1</m>. La suite de cette section est dévouée à la relation très étroite qui existe entre l'indépendance de la trajectoire et le fait qu'un champ soit conservatif ou pas. C'est ce que nous verrons au <xref ref="thm_pathIndepConserv" text="global">théorème</xref>.
   </p>
   
@@ -139,13 +139,13 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
 </p>
 
 <p>Pour commencer, nous montrons que, s'il existe une paire de points (pas nécessairement distincts!) <m>P_0</m>, <m>P_1</m> tels que
-    <me>
+    <md><mrow>
     \int_{\cC_1}\vF\cdot\dee{\vr} = \int_{\cC_2}\vF\cdot\dee{\vr}
-    </me>
+    </mrow></md>
     pour toutes les courbes <m>\cC_1</m>, <m>\cC_2</m> allant de <m>P_0</m> vers <m>P_1</m>, alors ceci est aussi vrai pour <em>n'importe quelle paire de points</em> <m>P_0'</m>, <m>P_1'</m> :
-    <me>
+    <md><mrow>
       \int_{\cC'_1}\vF\cdot\dee{\vr} = \int_{\cC'_2}\vF\cdot\dee{\vr}
-    </me>
+    </mrow></md>
 
     pour toutes les courbes  <m>\cC'_1</m>, <m>\cC'_2</m> qui commencent à  <m>P'_0</m> et qui terminent à <m>P'_1</m>. Ceci pourrait paraître invraisemblable à première vue, mais l'idée de la preuve est plutôt claire.
 </p>
@@ -154,13 +154,13 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
   <statement>
       <p>
         Soit <m>\vF</m> un champ de vecteurs défini et continu sur <m>\R^2</m> (ou <m>\R^3</m>). Soit <m>P_0</m>, <m>P_1</m>, <m>P'_0</m>, <m>P'_1</m> quatre points quelconques dans  <m>\R^2</m> (ou <m>\R^3</m>). Supposons que
-      <me>
+      <md><mrow>
       \int_{\cC_1}\vF\cdot\dee{\vr} = \int_{\cC_2}\vF\cdot\dee{\vr}
-      </me>
+      </mrow></md>
       pour toute paire de courbes <m>\cC_1</m>, <m>\cC_2</m> qui vont de  <m>P_0</m> à <m>P_1</m>. Alors,
-      <me>
+      <md><mrow>
       \int_{\cC'_1}\vF\cdot\dee{\vr} = \int_{\cC'_2}\vF\cdot\dee{\vr}
-      </me>
+      </mrow></md>
       pour toute paire de courbes  <m>\cC'_1</m>, <m>\cC'_2</m> qui vont de  <m>P'_0</m> à <m>P'_1</m>.
       </p>
   </statement>
@@ -182,9 +182,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         </li><li><m>\cC_2</m> comme étant <m>\cC_\ell</m> suivie de <m>C'_2</m> puis suivie de <m>\cC_r</m>.
         </li></ul>
       Alors, <m>\cC_1</m> et <m>\cC_2</m> commencent à  <m>P_0</m> et finissent à <m>P_1</m>, de sorte que, par hypothèse,
-      <me>
+      <md><mrow>
       \int_{\cC_1}\vF\cdot\dee{\vr} = \int_{\cC_2}\vF\cdot\dee{\vr}
-      </me>
+      </mrow></md>
 
       et, en vertu de la construction de <m>\cC_1</m> et <m>\cC_2</m>,
         <md><mrow>
@@ -235,9 +235,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
           </p>
               <p>(a)<m>\implies</m>(b) :
           Soit <m>\cC</m> une courbe fermée qui commence et se termine à <m>P_0</m>. Alors, en vertu du <xref ref="thm_workIntegral" text="global">théorème</xref> avec <m>P_1 = P_0</m>,
-          <me>
+          <md><mrow>
           \oint_\cC\vF\cdot\dee{\vr} = f(P_0) - f(P_0) = 0
-          </me>.
+          </mrow></md>.
           </p>
               <p> (b)<m>\implies</m>(c) :
           Choisissons  <m>P_0</m> un point quelconque, et soit <m>P_1=P_0</m>. Nous supposons donc que <m>\oint_\cC\vF\cdot\dee{\vr}=0</m> pour toutes les courbes qui commencent à <m>P_0</m> et qui finissent à <m>P_1</m>. En particulier,   <m>\int_\cC\vF\cdot\dee{\vr}</m> prend la même valeur sur toutes les courbes qui commencent à <m>P_0</m> et qui se terminent à <m>P_1</m>. Ainsi, le <xref ref="thm_pathIndepArbEndPoints" text="global">théorème</xref> donne immédiatement la propriété (c).
@@ -246,14 +246,14 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
           Nous voulons montrer que  <m>\vF</m> est conservatif. Nous commençons par exhiber un candidat pour la fonction potentielle, <m>f</m>, et nous montrerons que nous avons effectivement <m>\vF=\vnabla f </m>. Notre choix de candidat <m>f</m> est motivé par le <xref ref="thm_workIntegral" text="global">théorème</xref>. Si <m>\vF</m> est vraiment conservatif, son potentiel devra vérifier <m>\int_\cC\vF\cdot\dee{\vr} = f(P_1) - f(P_0)</m> pour toute courbe <m>\cC</m> qui démarre à <m>P_0</m> et qui finit à <m>P_1</m>. Choisissons <m>P_0 = \vZero</m>. Il est immédiat, de la <xref ref="def-Conservatif" text="global">définition</xref>, que l'ajout d'une constante à un potentiel donne toujours un potentiel. On peut donc choisir <m>f(\vZero) = 0</m>. Alors, <m>f(P_1) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>P_1</m>. Ainsi, on définit, pour tout <m>\vx</m>, <m>f(\vx) = \int_\cC\vF\cdot\dee{\vr}</m> pour toute courbe <m>\cC</m> de <m>\vZero</m> à <m>\vx</m>. Cette définition est correcte, puisque l'hypothèse (c) nous dit exactement que la valeur de l'intégrale est indépendante de la trajectoire.
           </p>
               <p>Vérifions à présent que <m>f</m> vérifie effectivement <m>\vF=\vnabla f</m>. Choisissons un point arbitraire et une courbe <m>\cC_{\vx}</m> allant de l'origine à <m>\vx</m>. Pour n'importe quel vecteur unitaire <m>\vu</m>, soit <m>\cD_{\vu}</m> la courbe paramétrée par
-          <me>
+          <md><mrow>
           \vr_{\vu}(t)=\vx+t\vu\qquad 0\leqslant t\leqslant 1
-          </me>.
+          </mrow></md>.
           Il s'agit d'un segment de droite qui quitte <m>\vx</m> à <m>t=0</m> et qui finit à <m>\vx+\vu</m> lorsque <m>t=1</m>. Remarquons que <m>{\vr\,}'_{\vu}(t)=\vu</m>.
           Par ailleurs, par hypothèse, nous avons <m>f(\vx+s\vu)=\int_\cC\vF\cdot\dee{\vr}</m> pour <em>toute courbe </em> <m>\cC</m> qui va de <m>\vZero</m> à <m>\vx+s\vu</m>. Ainsi, pour tout réel <m>s</m>, nous avons
-          <me>
+          <md><mrow>
           f(\vx+s\vu) = \int_{\cC_{\vx}+\cD_{s\vu}}\vF\cdot d\vr
-          </me>,
+          </mrow></md>,
           où la notation <m>C_{\vx}+D_{s\vu}</m> désigne la courbe qui suit <m>C_{\vx}</m> de l'origine à <m>\vx</m>, puis qui suit <m>D_{s\vu}</m> de <m>\vx</m> à <m>\vx+s\vu</m>. Nous avons
           <md><mrow>
           \int_{C_{\vx}+D_{s\vu}}\vF\cdot d\vr
@@ -264,26 +264,26 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
           +\int_0^1 \vF(\vx+ts\vu)\cdot (s\vu)\,dt
           </mrow></md>.
           Dans la seconde intégrale, nous faisons le changement de variables <m>\tau=ts</m>, <m>\dee{\tau}=s\dee{t}</m>. Ceci donne
-          <me>
+          <md><mrow>
           f(\vx+s\vu)=\int_{C_{\vx}}\vF\cdot d\vr
           +\int_0^s \vF(\vx+\tau\vu)\cdot \vu\,d\tau
-          </me>.
+          </mrow></md>.
           Le théorème fondamental du calcul, appliqué à la seconde intégrale, donne
-          <me>
+          <md><mrow>
           \diff{\ }{s}f(\vx+s\vu)\Big|_{s=0}
           =\vF(\vx+s\vu)\cdot \vu\Big|_{s=0}=\vF(\vx)\cdot \vu
-          </me>.
+          </mrow></md>.
           On applique ceci avec les vecteurs <m>\vu=\vi  ,\ \vj,\ \vk</m>, ce qui donne
-          <me>
+          <md><mrow>
           \Big(\frac{\partial f}{\partial x}(\vx),\,
               \frac{\partial f}{\partial y}(\vx),\,
               \frac{\partial f}{\partial z}(\vx)\Big)
           =\big(\vF(\vx)\cdot\vi,\,\vF(\vx)\cdot\vj,\,\vF(\vx)\cdot\vk\big)
-          </me>,
+          </mrow></md>,
           c'est-à-dire
-          <me>
+          <md><mrow>
           \vnabla f (\vx)=\vF(\vx),
-          </me>
+          </mrow></md>
           comme on le voulait.
           </p>
     </proof>
@@ -305,15 +305,15 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     <solution>
       <p>
       En effet, un calcul direct donne
-      <me>
+      <md><mrow>
         \vnabla f(x,y) = f_x(x,y)\, \vi + f_y(x,y)\,\vj = x\,\vi -y\, \vj = \vF(x,y).
-      </me>
+      </mrow></md>
     </p>
       <p>
       En vertu du <xref ref="thm_workIntegral" text="global">théorème</xref>, nous n'avons même pas besoin de connaître la trajectoire <m>\cC</m> pour calculer
-      <me>
+      <md><mrow>
         \int_{\cC} \vF \cdot d \vr = \int_{\cC} \vnabla f \cdot d\vr = f(0,1) - f(1,0) = -\frac{1}{2} - \frac{1}{2} = -1.
-      </me>
+      </mrow></md>
     </p>
     </solution>
   </example>
@@ -322,7 +322,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
   <term>Fin nouveau</term>
 </p> -->
   <p>
-  Nous avons vu au <xref ref="thm-rot-grad-zero">théorème</xref> que les hamps gradients (donc conservatifs) sont irrotationnels. Il est venu d'étudier une réciproque partielle de ce résultat.
+  Nous avons vu au <xref ref="thm-rot-grad-zero">théorème</xref> que les champs gradients (donc conservatifs) sont irrotationnels. Il est temps d'étudier une réciproque partielle de ce résultat.
 </p>
   <theorem xml:id="thm_screenConserv">
     <statement>
@@ -343,17 +343,17 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     
       <p>
         Supposons donc que <m>\vF</m> vérifie <m>\frac{\partial P}{\partial y}(x,y) =  \frac{\partial Q}{\partial x}(x,y)</m> sur <em>tout le plan</em> <m>\R^2</m> et montrons que le champ est conservatif. Nous le ferons en utilisant la stratégie de notre <xref ref="ex-non-conserv" text="global">exemple</xref> pour construire une fonction potentielle <m>f</m>, c'est-à-dire <m>f</m> vérifiant
-            <me>
+            <md><mrow>
               \begin{split}
               \frac{\partial f}{\partial x}(x,y) &amp;= P(x,y), \\
               \frac{\partial f}{\partial y}(x,y) &amp;= Q(x,y).
               \end{split}
-            </me>
+            </mrow></md>
 
         La dérivée partielle <m>\frac{\partial \ }{\partial x}</m> traite <m>y</m> comme une constante, de sorte que <m>f(x,y)</m> vérifie la première équation si et seulement s'il existe une fonction <m>\psi(y)</m> telle que
-            <me>
+            <md><mrow>
               f(x,y) =\int_0^x P(X,y)\,\dee{X} \ +\ \psi(y)
-            </me>.
+            </mrow></md>.
 
         Cette fonction <m>f(x,y)</m> satisfait aussi la seconde équation si et seulement si
         
@@ -371,11 +371,11 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
 
         Ainsi, nous devons trouver une fonction  <m>\psi(y)</m> vérifiant
 
-          <me>
+          <md><mrow>
             \psi'(y) = Q(x,y) - \int_0^x \frac{\partial P}{\partial y}(X,y)\,\dee{X}.
-          </me>
+          </mrow></md>
 
-        Ça ne regarde pas bien : peu importe ce que <m>\psi(y)</m> est, le terme de gauche est indépendant de <m>x</m>, tandis qu'il semblerait que le terme de droite dépende de <m>x</m>. Heureusement, nous pouvons utiliser l'hypothèse fournie par le test de dépistage:
+        Ça ne s'annonce pas bien : peu importe ce que <m>\psi(y)</m> est, le terme de gauche est indépendant de <m>x</m>, tandis qu'il semblerait que le terme de droite dépende de <m>x</m>. Heureusement, nous pouvons utiliser l'hypothèse fournie par le test de dépistage:
             <md>
               <mrow>
                 Q(x,y) -  \int_0^x \frac{\partial P}{\partial y}(X,y)\,\dee{X} &amp;=Q(x,y) -  \int_0^x \frac{\partial Q}{\partial x}(X,y)\,\dee{X}
@@ -388,9 +388,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
 
           En passant de la première ligne à la deuxième, nous avons utilisé le théorème fondamental du calcul. Ainsi, on peut choisir
 
-          <me>
+          <md><mrow>
             \psi(y) = \int_0^y Q(0,Y)\,\dee{Y} +C
-          </me>
+          </mrow></md>
 
           pour n'importe quelle constante <m>C</m>, et le tour sera joué.
         </p>
@@ -412,9 +412,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     </p>
       <p>
       On calcule directement
-      <me>
+      <md><mrow>
         (\vnabla \times \vF) \cdot \vk = \pdiff{Q}{x} - \pdiff{P}{y} = \cos y - \cos y =0.
-      </me>
+      </mrow></md>
     </p>
       <p>
       À ce stade-ci, nous savons que notre champ <m>\vF</m> passe le test de dépistage pour les champs conservatifs. Afin de calculer l'intégrale de ligne qui nous intéresse, il nous faut plus que ça : nous devons connaître une fonction potentiel. On cherche donc une fonction <m>f</m> vérifiant
@@ -424,36 +424,36 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
       <term>Fin nouveau</term>
     </p> -->
       <p>
-        <me>
+        <md><mrow>
         f_x(x,y) = P(x,y) = \sin y \qquad \text{ et } \qquad f_y(x,y) = Q(x,y) = x\cos y - \sin y.
-    </me>
+    </mrow></md>
       </p>
       <p>
       En intégrant la première de ces égalités par rapport à <m>x</m>, on obtient
-      <me>
+      <md><mrow>
           f(x,y) = \int f_x(x,y)\, \dee{x} = \int \sin y\, \dee{y} = x\sin y + \phi(y).
-      </me>
+      </mrow></md>
       En effet, il faut noter que, lorsqu'on intègre par rapport à <m>x</m>, il faut ajouter la <q>constante d'intégration</q>. Ici, <q>constante</q> veut dire <q>constante par rapport à <m>x</m></q>, il peut donc s'agir d'une fonction de la variable <m>y</m>.
     </p>
       <p>
       Par ailleurs, on a aussi
-      <me>
+      <md><mrow>
           Q(x,y) = f_y(x,y) = \pdiff{}{y} \left(x\sin y + \phi(y)\right)
-      </me>,
+      </mrow></md>,
       ce qui donne directement <m> x\cos y -\sin y = x\cos y + \pdiff{\phi}{y} </m>, d'où
-      <me>
+      <md><mrow>
           \pdiff{\phi}{y} = -\sin y
-      </me>.
+      </mrow></md>.
       Il suffit alors de choisir <m>\phi(y) = \cos y + K</m>, ce qui mène à
-      <me>
+      <md><mrow>
           f(x,y) = x\sin y + \cos y + K
-      </me>.
+      </mrow></md>.
     </p>
       <p>
       La valeur de l'intégrale de ligne est donc
-      <me>
-          \int_{\cC} P\dee{x} + Q\dee{y} = \int_{\cC} \vnabla f \cdot \dee{\vr} = f(0,1)-(f1,0) = \cos 1 - 1
-      </me>.
+      <md><mrow>
+          \int_{\cC} P\dee{x} + Q\dee{y} = \int_{\cC} \vnabla f \cdot \dee{\vr} = f(0,1)-f(1,0) = \cos 1 - 1
+      </mrow></md>.
     </p>
       <p>
       Remarquons que le calcul de l'intégrale de ligne selon la définition aurait mené, avec le paramétrage usuel du cercle, <m>\vr(t) = \cos t\, \vi + \sin t\, \vj</m> avec <m>t\in [0,\pi/2]</m>, à l'intégrale
@@ -462,13 +462,13 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     </p>
       <p>
       Dans cet exemple, on aurait pu commencer en intégrant par rapport à <m>y</m>, c'est-à-dire en partant de
-      <me>
+      <md><mrow>
           f_y(x,y) = x\cos y - \sin y,
-      </me>
+      </mrow></md>
       pour obtenir
-      <me>
+      <md><mrow>
           f(x,y) = \int x\cos y - \sin y\ \dee{y} = x\sin y + \cos y + \psi(x).
-      </me>
+      </mrow></md>
       Le résultat aurait été le même.
     </p>
     </solution>
@@ -480,76 +480,75 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
   <example xml:id="ex-int-cons-3d">
     <statement>
       <p> Calculer la valeur de l'intégrale
-      <me>
-        I = \int_{\cC} (2yz-z^2)\, dx + (x^2 + 2z)\, dy + (2y-2xz)\, dz,
-      </me>
+      <md><mrow>
+        I = \int_{\cC} (2xy-z^2)\, dx + (x^2 + 2z)\, dy + (2y-2xz)\, dz,
+      </mrow></md>
       où <m>\cC</m> est une courbe lisse allant de <m>(0,1,1)</m> à <m>(2,2,4)</m>.
     </p>
     </statement>
     <solution>
-      <p>Posons pour commencer <m>\vF = P \, \vi + Q \, \vj + R \, \vk = (2yz-z^2) \, \vi + (x^2 + 2z) \, \vj + (2y-2xz) \, \vk</m> et remarquons que toutes les composantes de notre champ sont continues sur tout <m>\R^3</m>.
+      <p>Posons pour commencer <m>\vF = P \, \vi + Q \, \vj + R \, \vk = (2xy-z^2) \, \vi + (x^2 + 2z) \, \vj + (2y-2xz) \, \vk</m> et remarquons que toutes les composantes de notre champ sont continues sur tout <m>\R^3</m>.
     </p>
       <p>
       On calcule alors
-    </p>
       <md><mrow>\vnabla \times \vF = \left|\begin{matrix}
                       \vi &amp; \pdiff{}{x} &amp; P \\
                       \vj &amp; \pdiff{}{y} &amp; Q \\
                       \vk &amp; \pdiff{}{z}&amp; R
                   \end{matrix}\right|
         \amp=(R_y-Q_z)\vi + (P_z - R_x)\vj + (Q_x - P_y)\vk
-      </mrow><mrow>  \amp=(2-2)\vi + (-2z--2z)\vj + (2x - 2x)\vk = \vZero </mrow>.
-
-    </md>
+      </mrow><mrow>  \amp=(2-2)\vi + (-2z--2z)\vj + (2x - 2x)\vk = \vZero </mrow>
+    </md>.
+    </p>
       <p>
-      Ceci montre que le champ est conservatif. Trouvons maintenant une fonction potentielle <m>f</m>. Une telle fonction doit vérifier <m>f_x = P - 2yz - z^2</m>.
+      Ceci montre que le champ est conservatif. Trouvons maintenant une fonction potentielle <m>f</m>. Une telle fonction doit vérifier <m>f_x = P = 2xy - z^2</m>.
     </p>
       <p>
       Nous intégrons par rapport à la variable <m>x</m> pour obtenir
-    </p>
-      <me>
+      <md><mrow>
       f= \int f_x \, dx = \int 2xy-z^2 \, dx = yx^2 -xz^2 + \phi(y,z).
-    </me>
+    </mrow></md>
+    </p>
       <p>
     où <m>\phi</m> est la <em>constante d'intégration</em>. Mais c'est une constante par rapport à <m>x</m>, il s'agit donc d'une quantité qui peut varier en fonction de <m>y</m> et <m>z</m>. Afin de la trouver, on dérive par rapport à <m>y</m> :
+    <md><mrow>
+  x^2 + 2z = Q = f_y = x^2 + \phi_y(y,z),
+  </mrow></md>
   </p>
-      <me>
-  x^2 + 2x = Q = f_y = x^2 + \phi_y(y,z),
-  </me>
       <p>
     ce qui donne directement <m>2z = \phi_y</m>. Après intégration par rapport à <m>y</m>, nous trouvons
+    <md><mrow>
+    \phi(y,z) = \int \phi_y(y,z)\, dy = \int 2z\, dy = 2yz + \psi(z),
+  </mrow></md>
   </p>
-      <me>
-    \phi(y,z) = \int \phi_y(y,z)\, dy = \int 2x\, dy = 2yz + \psi(z),
-  </me>
       <p>
     où <m>\psi</m> est une fonction de la variable <m>z</m> seulement.
   </p>
       <p>
     À ce stade-ci, nous pouvons donc écrire
-  </p>
-      <me>
+    <md><mrow>
     f(x,y,z) = yx^2 - xz^2 +2yz+\psi(z).
-  </me>
+  </mrow></md>
+  </p>
       <p>
     Afin de trouver <m>\psi</m>, dérivons par rapport à <m>z</m>, ce qui donne
-  </p>
-      <me>
+    <md><mrow>
     2y-2xz = R = f_z = -2xz + 2y + \psi'(z),
-  </me>
+  </mrow></md>
+  </p>
       <p>
     et nous concluons que <m>\psi'(z) =0</m>, d'où <m>\psi(z) = K</m>. Ainsi, toute fonction de la forme
+    <md><mrow>f(x,y,z) = yx^2 -xz^2 +2yz + K \text{ avec } K \in \R</mrow></md>
   </p>
-      <me>f(x,y,z) = yx^2 -xy^2 +2yz + K \text{ avec } K \in \R</me>
       <p>
     est une fonction potentiel pour <m>\vF</m>.
   </p>
       <p>
     L'intégrale de ligne qui nous intéresse est alors
+    <md><mrow>
+    I = \int_{\cC} \vnabla f\cdot d\vr = f(2,2,4) - f(0,1,1) = -8 - 2 = -10.
+  </mrow></md>
   </p>
-      <me>
-    I = \int_{\cC} \vnabla f\cdot d\vr = f(2,2,4) - f(0,1,1) = 16 - 2 = 14.
-  </me>
     </solution>
   </example>
   
@@ -616,6 +615,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
       </image>
     </statement>
     <solution>
+      <p>
       <ol marker="(a)">
         <li>
           <p> Posons <m>\vF = P\, \vi + Q\, \vj</m>, où <m>P(x,y) = \frac{-y}{x^2 + y^2}</m> et où <m>Q(x,y) = \frac{x}{x^2 + y^2}</m>. Calculons le rotationnel de <m>\vF</m> :
@@ -636,7 +636,6 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     </p>
           <p>
       Nous présentons les calculs détaillés pour l'intégrale le long de <m>\cC_1</m>.
-  </p>
           <ul>
             <li>
               <p>La courbe <m>\cC_1</m> est paramétrée par <m>\vr(t) = x(t)\, \vi + y(t)\, \vj = (\cos t)\, \vi + (\sin t) \, \vj</m>, avec <m>t\in [0, \pi].</m> Nous calculons alors
@@ -647,10 +646,11 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
             </li>
             <li>
               <p>
-          La courbe <m>\cC_2</m>, pour sa part, est paramétrée par <m>\vr(t) = x(t)\, \vi + y(t)\, \vj = (\cos t)\, \vi - (\sin t) \, \vj</m>, avec <m>t\in [0, \pi]</m>. Cette fois, nous avons <m>y(t) = -\sin t</m>. Un calcul en tout point semblable à celui fait pour <m>\cC_1</m> mène à <m>\vF(\vr(t)) \cdot \vr'(t) = -1</m>, de sorte que <m>\displaystyle \int_{\cC_1} \vF \cdot \dee{\vr} = -\int_0^\pi \dee{t} = -\pi</m>.
+          La courbe <m>\cC_2</m>, pour sa part, est paramétrée par <m>\vr(t) = x(t)\, \vi + y(t)\, \vj = (\cos t)\, \vi - (\sin t) \, \vj</m>, avec <m>t\in [0, \pi]</m>. Cette fois, nous avons <m>y(t) = -\sin t</m>. Un calcul en tout point semblable à celui fait pour <m>\cC_1</m> mène à <m>\vF(\vr(t)) \cdot \vr'(t) = -1</m>, de sorte que <m>\displaystyle \int_{\cC_2} \vF \cdot \dee{\vr} = -\int_0^\pi \dee{t} = -\pi</m>.
         </p>
             </li>
           </ul>
+  </p>
         </li>
         <li>
           <p>Pour que  <m>\vF</m> soit conservatif sur <m>\R^2\setminus\{(0,0)\}</m>, il doit y exister une fonction <m>f(x,y)</m> telle que <m>f</m> ainsi que ses dérivées partielles <m>\frac{\partial f}{\partial x}(x,y)</m> et <m>\frac{\partial f}{\partial y}(x,y)</m> sont définies pour tout <m>(x,y)</m> dans <m>\R^2</m>, sauf à <m>(x,y)=(0,0)</m>, et vérifiant de plus
@@ -664,11 +664,11 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     &amp;&amp;=\frac{\partial\ }{\partial y}\Big(\arctan\frac{y}{x}\Big),
     </mrow></md>
     en vertu de la règle de dérivation des fonctions composées, puisque
-    <me>
+    <md><mrow>
     \frac{\partial\ }{\partial x}\Big(\frac{y}{x}\Big) =-\frac{y}{x^2},
     \qquad
     \frac{\partial\ }{\partial y}\Big(\frac{y}{x}\Big)=\frac{1}{x}
-    </me>.
+    </mrow></md>.
     Il semblerait que nous ayons trouvé une fonction potentielle pour <m>\vF</m>, à savoir <m>\arctan\frac{y}{x}</m>. Mais il y a un problème. Rappelons que, par définition, <m>\arctan\frac{y}{x}</m> est un angle <m>\theta(x,y)</m> qui vérifie <m>\tan\theta(x,y)= \arctan\frac{y}{x}</m>. Mais, pour tout <m>(x,y)\in\R^2\setminus\{(0,0)\}</m>, il y a une infinité de tels angles. Pour définir <m>f(x,y)</m>, nous devons choisir un tel angle, et ce, de façon continue. C'est précisément la continuité dans <m>\R^2\setminus\{(0,0)\}</m> qui pose problème.
     </p>
           <p>Pour le voir, fixons un <m>r \gt 0</m> et imaginons que nous nous promenons sur le cercle <m>x^2+y^2=r^2</m>. Au temps <m>\theta</m>, nous sommes au point <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m> puis <m>\frac{y}{x} = \tan\theta</m>, et nous pouvons définir <m>f(x,y)=\theta+k\pi</m> pour  n'importe quelle valeur entière de <m>k</m>.
@@ -687,6 +687,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
           </sidebyside>
         </li>
       </ol>
+      </p>
     </solution>
   </example>
 

@@ -183,7 +183,7 @@
         &amp;\hskip0.3in= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \vk
         </mrow>
         <mrow>
-          &amp;\hskip0.3in= \frac{\vk}{\sqrt{x^2+y^2}
+          &amp;\hskip0.3in= \frac{\vk}{\sqrt{x^2+y^2}}
         </mrow>
       </md>
       </p></solution>
@@ -236,7 +236,7 @@
       the specified divergence is
       <md>
       <mrow>
-      \vnabla\left(\frac{\vr}{r}\right) &amp;= \frac{2x^2+2y^2+2z^2}{{[x^2+y^2+z^2]}^{3/2}}
+      \vnabla\cdot\left(\frac{\vr}{r}\right) &amp;= \frac{2x^2+2y^2+2z^2}{{[x^2+y^2+z^2]}^{3/2}}
                                      =\frac{2r^2}{r^3}
                                      =\frac{2}{r}
       </mrow>
@@ -755,29 +755,29 @@
       </p></answer>
 
       <solution><p> (a)
-      <me>
+      <md><mrow>
       \vnabla\cdot\vr
       =\pdiff{x}{x}
         +\pdiff{y}{y}
         +\pdiff{z}{z}
       =3
-      </me>
+      </mrow></md>
       </p>
 
       <p>(b)
-      <me>
+      <md><mrow>
         \vnabla(r^2)
         =\left(\vi\pdiff{}{x}
           +\vj\pdiff{}{y}
           +\vk\pdiff{}{z} \right)
         \big(x^2+y^2+z^2\big)
-        =2x\,\vi +2y\,\vj +2\,\vk
+        =2x\,\vi +2y\,\vj +2z\,\vk
         =2\vr
-      </me>
+      </mrow></md>
       </p>
 
       <p>(c) Since
-      <me>
+      <md><mrow>
       \vr\times\va = \det\left[\begin{matrix}
                                \vi &amp; \vj &amp; \vk \\
                                 x  &amp;  y  &amp; z   \\
@@ -786,7 +786,7 @@
                     =\vi\big(a_3y\!-\!a_2z\big)
                     +\vj\big(a_1z\!-\!a_3x\big)
                     +\vk\big(a_2x\!-\!a_1y\big)
-      </me>
+      </mrow></md>
       we have
       <md>
       <mrow>
@@ -813,7 +813,7 @@
       </mrow><mrow>
       &amp;=\vi\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
         +\vj\frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
-        +\vk\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+        +\vk\frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
       </mrow>
       </md>
       we have
@@ -873,7 +873,7 @@
       </mrow><mrow>
       &amp;\hskip0.25in=-\vi\frac{x}{r^3}
         -\vj\frac{y}{r^3}
-        -\vk\frac{x}{r^3}
+        -\vk\frac{z}{r^3}
       </mrow>
       </md>
       we have <m>a=-3</m>.
@@ -1042,7 +1042,7 @@
       </mrow><mrow>
       \pdiff{}{x}\left(\frac{x}{x^2+z^2}\right)
       &amp;=\frac{1}{x^2+z^2}-\frac{2x(x)}{{(x^2+z^2)}^2}
-      =\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+      =\frac{-x^2+z^2}{{(x^2+z^2)}^2}
       </mrow>
       </md>
       So the curl of <m>\vF</m> is
@@ -1056,8 +1056,8 @@
       \frac{-z}{x^2+z^2} &amp; y &amp; \frac{x}{x^2+z^2}
       \end{matrix}
       \right]
-      =-\left(\frac{-x^2+z^2}{{(x^2+y^2)}^2}
-        -\frac{-x^2+z^2}{{(x^2+y^2)}^2}\right)\vj
+      =-\left(\frac{-x^2+z^2}{{(x^2+z^2)}^2}
+        -\frac{-x^2+z^2}{{(x^2+z^2)}^2}\right)\vj
       </mrow><mrow>
       &amp;=\vZero
       </mrow>
@@ -1075,7 +1075,7 @@
        </mrow><mrow>
       \pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
       &amp;=-\frac{2z(x)}{{(x^2+z^2)}^2}
-      =\frac{-2xz}{{(x^2+y^2)}^2}
+      =\frac{-2xz}{{(x^2+z^2)}^2}
       </mrow>
       </md>
       So the divergence of <m>\vF</m> is
@@ -1099,17 +1099,17 @@
 
       <p>So let's compute the line integral of <m>\vF</m> around the (closed) circle
       <m>y=0</m>, <m>x^2+z^2=1</m>, parametrized by
-      <me>
+      <md><mrow>
       \vr(t) = \cos t\,\vi +\sin t\,\vk\qquad
       \vr'(t) = -\sin t\,\vi +\cos t\,\vk
-      </me>
+      </mrow></md>
       The line integral is
       <md>
       <mrow>
       \int_C \vF \cdot \dee{\vr}
       &amp;=\int_0^{2\pi}\!\!\big\{
              \overbrace{-\sin t}^{\frac{-z}{x^2+z^2}}\,\vi
-            +\overbrace{\cos t}^{\frac{x}{x^2+y^2}}\,\vk\big\}
+            +\overbrace{\cos t}^{\frac{x}{x^2+z^2}}\,\vk\big\}
                  \cdot
         \big\{\overbrace{-\sin t\,\vi +\cos t\,\vk}^{\vr'(t)}\big\}\dee{t}
       </mrow><mrow>
@@ -1132,9 +1132,9 @@
       Un physicien étudie un champ de vecteurs <m>\vF</m> dans son laboratoire. Il sait, d'après des considérations théoriques, que <m>\vF</m> doit être de la forme
       <m>\vF=\nabla\times\vG</m>, pour un certain champ de vecteurs lisse <m>\vG</m>. Des expériences
       montrent également que <m>\vF</m> doit être de la forme
-      <me>
+      <md><mrow>
       \vF(x,y,z)=(xz+xy)\vi+\alpha(yz-xy)\vj+\beta(yz+xz)\vk
-      </me>,
+      </mrow></md>,
       où <m>\alpha</m> et <m>\beta</m> sont des constantes.
       <ol marker = "(a)">
       <li>
@@ -1159,9 +1159,9 @@
       <solution><p>
       (a)
       By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a,
-      <me>
+      <md><mrow>
       \nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
-      </me>
+      </mrow></md>
       So we must have
       <md>
       <mrow>
@@ -1178,7 +1178,7 @@
       <mrow>
       \nabla\times\vG&amp;=\nabla\times\big(xyz\vi-xyz\vj+g(x,y,z)\vk\big)
       </mrow><mrow>
-      &amp;=(g_y+xy)\,\vi-(g_x-xy)\,hj+(-yz-xz)\,\vk
+      &amp;=(g_y+xy)\,\vi-(g_x-xy)\,\vj+(-yz-xz)\,\vk
       </mrow>
       </md>
       we will have that <m>\nabla\times\vG=\vF</m> if and only if
@@ -1190,9 +1190,9 @@
       </mrow>
       </md>
       which is the case if and only if
-      <me>
+      <md><mrow>
       g_y=xz,\quad g_x=yz
-      </me>
+      </mrow></md>
       The first equation, <m>g_y=xz</m>, is satisfied if and only if <m>g=xyz+h(x,z)</m>.
       The second equation is also satisfied if and only if
       <m>g_x=yz+h_x(x,z)=yz</m>. This is the case if and only if <m>h_x(x,z)=0</m>. That
@@ -1358,9 +1358,9 @@
       </mrow>
       </md>
       gives
-      <me>
+      <md><mrow>
       \vnabla\times(\vOm\times\vr)=2\,\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0
-      </me>
+      </mrow></md>
       </p>
 
       <p>(c)
@@ -1377,13 +1377,13 @@
       <statement><p>
       Supposer que le champ de vecteurs <m>\vF</m> vérifie <m>\vnabla\cdot \vF=0</m> dans
       <m>\R^3</m> au complet. Soit
-      <me>
+      <md><mrow>
       \vr(t)=tx\,\vi+ty\,\vj+tz\,\vk,\qquad 0\leqslant t\leqslant 1
-      </me>
+      </mrow></md>
       une paramétrisation de la droite allant de l'origine à <m>(x,y,z)</m>. Définir
-      <me>
+      <md><mrow>
       \vG(x,y,z)=\int_0^1 t\,\vF\big(\vr(t)\big)\times\frac{d\vr}{dt}(t)\,dt
-      </me>.
+      </mrow></md>.
       Montrer que <m>\vnabla\times \vG=\vF</m> sur <m>\R^3</m>.
       </p></statement>
 

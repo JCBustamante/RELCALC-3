@@ -29,9 +29,9 @@
   </p>
     <p>
     Ainsi, nous avons le flux de <m>\vF</m> autour de <m>\cC</m>:
-    <me>
+    <md><mrow>
       \oint_{\cC} \vF \cdot \dee{\vr} = \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr}.
-    </me>
+    </mrow></md>
   </p>
     <image xml:id="sageplot-idee-rot" width="85%">
       <description>
@@ -145,16 +145,16 @@
   </p>
     <p>
     De la même façon, le flux correspondant aux composantes verticales de la trajectoire est
-    <md><mrow> \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr} \amp\approx \left[Q(x_0 + \De x,y_0) - P(x_0, y_0)\right] \De y </mrow><mrow> \amp\approx \pdiff{Q}{y}(x_0, y_0) \De x\, \De y, </mrow></md>
+    <md><mrow> \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr} \amp\approx \left[Q(x_0 + \De x,y_0) - Q(x_0, y_0)\right] \De y </mrow><mrow> \amp\approx \pdiff{Q}{x}(x_0, y_0) \De x\, \De y, </mrow></md>
     puisque nous avons l'hypothèse de la continuité de la dérivée partielle <m>\pdiff{Q}{x}</m>.
   </p>
     <p>
     Le flux total est donc
     <md><mrow> \oint_{\cC} \vF \cdot \dee{\vr} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot \dee{\vr}  \approx \left[ \pdiff{Q}{x} (x_0,y_0)-\pdiff{P}{y}(x_0, y_0) \right]\De y \De x.</mrow></md>
     La <em>densité de circulation</em>, c'est-à-dire le flux par unité d'aire, est donc
-    <me>
+    <md><mrow>
       \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{Q}{x} - \pdiff{P}{y}.
-    </me>
+    </mrow></md>
   </p>
     <!-- <p>
 
@@ -166,9 +166,9 @@
       <statement>
         <p>
         Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est
-        <me>
+        <md><mrow>
           \pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x.
-        </me>
+        </mrow></md>
       </p>
         <p>
         Le champ est représenté dans la figure ci-bas. Notons que toutes les flèches sont verticales vers le bas. On pourrait donc penser que ce champ représente une translation et que le rotationnel devrait être nul. En bout de ligne, ce n'est pas à une figure comme celle-ci qu'on pense lorsque l'idée d'un tourbillon est considérée.
@@ -289,7 +289,7 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
                         \vi &amp; \pdiff{}{x} &amp; x^2-y  \\
                         \vj &amp; \pdiff{}{y} &amp; 4z \\
                         \vk &amp; \pdiff{}{z}&amp; x^2
-                    \end{vmatrix}   </mrow><mrow>  \amp =\left(\pdiff{x^2}{y} - \pdiff{}{z}(4z) \right)\vi - \left(\pdiff{x^2}{x} - \pdiff{}{y}(x^2 - y)\right)\vj </mrow><mrow>  \amp+ \left(\pdiff{}{x}(4z) -\pdiff{}{y}(x^2 - y) \right)\vk </mrow><mrow>  \amp=-4\,\vi -2x\, \vj + \vk.</mrow></md>
+                    \end{vmatrix}   </mrow><mrow>  \amp =\left(\pdiff{x^2}{y} - \pdiff{}{z}(4z) \right)\vi - \left(\pdiff{x^2}{x} - \pdiff{}{z}(x^2 - y)\right)\vj </mrow><mrow>  \amp+ \left(\pdiff{}{x}(4z) -\pdiff{}{y}(x^2 - y) \right)\vk </mrow><mrow>  \amp=-4\,\vi -2x\, \vj + \vk.</mrow></md>
 
     </p>
       </statement>
@@ -306,13 +306,13 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
       
       <statement>
         <p>Soit <m>f</m> une fonction de classe <m>C^2</m>, alors
-    <me>
+    <md><mrow>
       \vnabla \times \vnabla f = \vZero,
-    </me>
+    </mrow></md>
     ou encore
-    <me>
+    <md><mrow>
       \rot (\grad f ) = \vZero.
-    </me>
+    </mrow></md>
 
 
 
@@ -325,7 +325,7 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
                         \vi &amp; \pdiff{}{x} &amp; f_x  \\
                         \vj &amp; \pdiff{}{y} &amp; f_y \\
                         \vk &amp; \pdiff{}{z}&amp; f_z
-                    \end{vmatrix}   </mrow><mrow> \amp = \left(\pdiff{f_z}{y} - \pdiff{f_y}{z}\right)\vi + \left(\pdiff{f_x}{z} - \pdiff{f_z}{x}\right)\vj  = \left(\pdiff{f_y}{x} - \pdiff{f_x}{y}\right)\vk</mrow><mrow>  \amp = \left(f_{zy} - f_{yz}\right)\vi + \left(f_{xz} - f_{zx}\right)\vj  + \left(f_{yx} - f_{xy}\right)\vk.</mrow></md>
+                    \end{vmatrix}   </mrow><mrow> \amp = \left(\pdiff{f_z}{y} - \pdiff{f_y}{z}\right)\vi + \left(\pdiff{f_x}{z} - \pdiff{f_z}{x}\right)\vj  + \left(\pdiff{f_y}{x} - \pdiff{f_x}{y}\right)\vk</mrow><mrow>  \amp = \left(f_{zy} - f_{yz}\right)\vi + \left(f_{xz} - f_{zx}\right)\vj  + \left(f_{yx} - f_{xy}\right)\vk.</mrow></md>
       Or, <m>f</m> étant supposée de classe <m>C^2</m>, le <xref ref="thm_mixed_partials" text="global">théorème</xref> donne l'égalité des dérivées partielles croisées, et la conclusion suit.
 
     </p>
@@ -379,9 +379,9 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
     </p>
     <p>
   Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
-  <me>
+  <md><mrow>
       \int_{\cC} \vF \cdot \vn \, \dee{s} = \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn \, \dee{s}.
-  </me>
+  </mrow></md>
 </p>
     <p>
   Comme précédemment, nous faisons une approximation de <m>\vF \cdot \vn</m> sur chaque portion de la trajectoire en choisissant un point d'évaluation pour <m>\vF</m>. Par ailleurs, la longueur de chaque portion de déplacement est <m>\De s =  \De x</m> ou <m>\De s= \De y</m>, selon qu'on se trouve sur une portion horizontale ou verticale.
@@ -502,9 +502,9 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
   Le flux total est donc
   <md><mrow> \oint_{\cC} \vF \cdot \vn \dee{s} \amp=\sum_{i=1}^4 \int_{\cC_i} \vF \cdot  \vn\, \dee{s}  \approx \left[\pdiff{P}{x}(x_0, y_0) + \pdiff{Q}{y} (x_0,y_0)\right]\De y \De x.</mrow></md>
   La <em>densité de flux à travers</em>, c'est-à-dire le flux par unité d'aire, est donc
-  <me>
+  <md><mrow>
     \frac{\text{Flux}}{\text{Aire}} \approx \pdiff{P}{x} + \pdiff{Q}{y}.
-  </me>
+  </mrow></md>
 </p>
     <definition xml:id="def_div">
       <statement>
@@ -533,9 +533,9 @@ Devoir 12, problème 4
     <example>
       <statement>
         <p>Soit <m>\vF(x,y) = -y\, \vi + x\, \vj</m>. Alors sa divergence est
-    <me>
+    <md><mrow>
     \div \vF = \vnabla \cdot \vF = \pdiff{}{x}(-y) + \pdiff{}{y}(x) = 0
-    </me>
+    </mrow></md>
     </p>
       </statement>
     </example>
@@ -548,9 +548,9 @@ Devoir 12, problème 4
       </statement>
       <solution>
         <p> On calcule directement :
-      <me>
-        \vnabla \cdot \vF = \pdiff{}{x}(x^2y) + \pdiff{}{y} (z)\,\vj + \pdiff{}{z}(xyz) = 2xy + 0 + xy = 3xy.
-      </me>
+      <md><mrow>
+        \vnabla \cdot \vF = \pdiff{}{x}(x^2y) + \pdiff{}{y} (z) + \pdiff{}{z}(xyz) = 2xy + 0 + xy = 3xy.
+      </mrow></md>
 
 
     </p>
@@ -560,28 +560,28 @@ Devoir 12, problème 4
   Tout comme le rotationnel permet de dépister les champs gradients, la divergence permet de dépister les champs rotationnels. En effet, la divergence d'un tel champ est nulle, ce qu'on exprime en disant que les champs rotationnels sont <em><q>incompressibles</q></em>.
 </p>
     <theorem xml:id="thm-div-rot-zero">
-      <title>LEs rotationnels sont incompressibles</title>
+      <title>Les rotationnels sont incompressibles</title>
       
       
       <statement>
         <p>Soit <m>\vF = P\, \vi + Q\, \vj + R\, \vk</m> un champ de classe <m>C^2</m>. Alors
-    <me>
+    <md><mrow>
       \vnabla \cdot (\vnabla \times \vF) = 0
-    </me>
+    </mrow></md>
     ou encore
-    <me>
+    <md><mrow>
       \div (\rot(\vF)) =0
-    </me>
+    </mrow></md>
 
     </p>
       </statement>
       <proof>
         <p>En effet, avec les notations de l'énoncé, nous avons
-      <me>
-        \rot(\vF) = \vnabla \times \vF =(R_y-Q_z)\,\vi + (R_x-P_z)\,\vj + (Q_x - P_y)\,\vk
-      </me>
+      <md><mrow>
+        \rot(\vF) = \vnabla \times \vF =(R_y-Q_z)\,\vi + (P_z-R_x)\,\vj + (Q_x - P_y)\,\vk
+      </mrow></md>
       et donc
-      <md><mrow>\vnabla \cdot (\vnabla \times \vF) \amp = \pdiff{}{x}(R_y - Q_z)  + \pdiff{}{y}(R_x - P_z) + \pdiff{}{z}(Q_x - P_y)</mrow><mrow> \amp = R_{yx} - Q_{zx} + R_{xy} - P_{zy} + Q_{xz} - P_{yz}</mrow><mrow>  \amp = 0 </mrow></md>
+      <md><mrow>\vnabla \cdot (\vnabla \times \vF) \amp = \pdiff{}{x}(R_y - Q_z)  + \pdiff{}{y}(P_z - R_x) + \pdiff{}{z}(Q_x - P_y)</mrow><mrow> \amp = R_{yx} - Q_{zx} + P_{zy} - R_{xy} + Q_{xz} - P_{yz}</mrow><mrow>  \amp = 0 </mrow></md>
       où la dernière égalité vient encore une fois du <xref ref="thm_mixed_partials">Théorème de Clairault - Schwarz</xref>
 
 
@@ -631,23 +631,23 @@ Devoir 12, problème 4
           <li>
             <p>
             Si <m>f : (x,y,z)\mapsto f(x,y,z)</m> est une fonction à valeurs scalaires, alors son laplacien est
-            <me>
+            <md><mrow>
               \Delta f= \vnabla^2 f =\vnabla\cdot\vnabla f
               = \frac{\partial^2 f}{\partial x^2}
               +\frac{\partial^2 f}{\partial y^2}
               +\frac{\partial^2 f}{\partial z^2}
-              </me>.         
+              </mrow></md>.         
           </p>
           </li>
           <li>
             <p>
             Si <m>\vF : (x,y,z) \mapsto \vF(x,y,z)</m> est un champ de vecteurs, alors son laplacien est le champ de vecteurs 
-            <me>
+            <md><mrow>
               \Delta\vF= \vnabla^2\vF =\vnabla\cdot\vnabla \vF
               = \frac{\partial^2 \vF}{\partial x^2}
               +\frac{\partial^2 \vF}{\partial y^2}
               +\frac{\partial^2 \vF}{\partial z^2}
-              </me>.
+              </mrow></md>.
           </p>
           </li>
         </ol>
@@ -682,12 +682,12 @@ Devoir 12, problème 4
               <p>Ici<fn>Il s'agit de la seule définition qui a du sens; par exemple, 
     <m>\vG\cdot(\vnabla\vF)</m> n'a pas de sens parce que nous ne pouvons pas calculer le gradient d'un champ.
     </fn>,
-    <me>
+    <md><mrow>
     (\vG\cdot\vnabla)\vF
     =\vG_1\frac{\partial\vF}{\partial x}
      +\vG_2\frac{\partial\vF}{\partial y}
      +\vG_3\frac{\partial\vF}{\partial z}
-    </me></p>
+    </mrow></md></p>
             </li>
           </ol>
         </p>
@@ -732,12 +732,12 @@ Devoir 12, problème 4
     +(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG</m>
               </p>
               <p>Ici, 
-    <me>
+    <md><mrow>
     (\vG\cdot\vnabla)\vF
     =\vG_1\frac{\partial\vF}{\partial x}
      +\vG_2\frac{\partial\vF}{\partial y}
      +\vG_3\frac{\partial\vF}{\partial z}
-    </me></p>
+    </mrow></md></p>
             </li>
           </ol>
         </p>

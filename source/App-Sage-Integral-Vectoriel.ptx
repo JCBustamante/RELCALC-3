@@ -4,7 +4,7 @@
   <section>
     <title>Intégration</title>
     <p>
-      On aura intérêt à regarder <url href="https://doc.sagemath.org/html/en/reference/calculus/sage/symbolic/integration/integral.html">la documentation</url>, car il y a bien de subtitlités. Disons pour commencer que dans SageMath, afin de calculer une intégrale, qu'elle soit définie ou pas on utilise la commande <c>integrate(...)</c>. Pour une intégrale indéfinie, c'est à dire <m>\int f(x)\, dx</m>, on fait <c>integrate(f,x)</c>, pour une intégrale définie <m>\int_a^b f(x)\, dx</m> on fait plutôt <c>integrate(f,x,a,b)</c>. Il faut cependant noter que les constantes d'intégration seront ommises. 
+      On aura intérêt à regarder <url href="https://doc.sagemath.org/html/en/reference/calculus/sage/symbolic/integration/integral.html">la documentation</url>, car il y a bien des subtilités. Disons pour commencer que dans SageMath, afin de calculer une intégrale, qu'elle soit définie ou pas on utilise la commande <c>integrate(...)</c>. Pour une intégrale indéfinie, c'est à dire <m>\int f(x)\, dx</m>, on fait <c>integrate(f,x)</c>, pour une intégrale définie <m>\int_a^b f(x)\, dx</m> on fait plutôt <c>integrate(f,x,a,b)</c>. Il faut cependant noter que les constantes d'intégration seront omises.
     </p>
     <sage>
       <input>
@@ -17,9 +17,11 @@
     </sage>
     <p>
       Sans aller trop loin, disons que des fois dans ce bas monde on doit se contenter d'une approximation numérique pour une intégrale. Dans ce cas c'est la commande <c>numerical_integral(...)</c> qu'il faut utiliser. Par exemple, l'intégrale 
-      <me>
-        \int_0^{2\pi} \sqrt{2\sin^2 t + 8 \cos^2 t -4\sin t\, \cos t}\, dt
-      </me>
+      <md>
+        <mrow>
+          \int_0^{2\pi} \sqrt{2\sin^2 t + 8 \cos^2 t -4\sin t\, \cos t}\, dt
+        </mrow>
+      </md>
       ne peut pas être évaluée analytiquement, mais 
     </p>
     <sage>

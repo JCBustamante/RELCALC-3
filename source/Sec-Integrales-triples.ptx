@@ -11,52 +11,52 @@
   <subsection xml:id="pars-triples-boites">
     <title>Parallélépipèdes rectangulaires</title>
     <p>
-    Supposons pour commencer que <m>\cE</m> est un parallélépipède rectangulaire, c'est-à-dire <m>\cE = [a,b]\times [c,d] \times [r,s]</m>. On divise l'intervalle <m>[a,b]</m> en <m>n</m> sous-intervalles de longueur <m>\De x = \frac{b-a}{n}</m>. Ceci revient à poser <m>x_i = a + i \De x</m>, où <m>i\in\{0,1,\ldots, n\}</m>. On effectue la même démarche pour les intervalles <m>[c,d]</m> et <m>[r,s]</m>, que l'on divise en <m>m</m> et <m>l</m> sous-intervalles de longueurs <m>\De y = \frac{d-c}{m}</m> et <m>\De z = \frac{s-r}{l}</m> respectivement, et en posant <m>y_j = c+j\De y</m>, où <m>0\leqslant  j \leqslant m </m>, et <m>z_l = r+k\De y</m>, où <m>0\leqslant  k \leqslant l </m>.
+    Supposons pour commencer que <m>\cE</m> est un parallélépipède rectangulaire, c'est-à-dire <m>\cE = [a,b]\times [c,d] \times [r,s]</m>. On divise l'intervalle <m>[a,b]</m> en <m>n</m> sous-intervalles de longueur <m>\De x = \frac{b-a}{n}</m>. Ceci revient à poser <m>x_i = a + i \De x</m>, où <m>i\in\{0,1,\ldots, n\}</m>. On effectue la même démarche pour les intervalles <m>[c,d]</m> et <m>[r,s]</m>, que l'on divise en <m>m</m> et <m>l</m> sous-intervalles de longueurs <m>\De y = \frac{d-c}{m}</m> et <m>\De z = \frac{s-r}{l}</m> respectivement, et en posant <m>y_j = c+j\De y</m>, où <m>0\leqslant  j \leqslant m </m>, et <m>z_k = r+k\De z</m>, où <m>0\leqslant  k \leqslant l </m>.
     </p>
     <p>
       Pour <m>i,j,k</m> fixes, on considère la  boîte <m>[x_{i-1},x_i]\times [y_{j-1},y_j] \times [z_{k-1},z_k]</m>, à l'intérieur de laquelle on choisit un point d'échantillonnage <m>\vp_{ijk}^* = (x_{ijk}^*,\, y_{ijk}^*,\, z_{ijk}^*)</m>. Le volume de la boîte est <m>\De V = \De z\,\De y\, \De x</m>. Ce volume est multiplié par la valeur de <m>f(x_{ijk}^*,\, y_{ijk}^*,\, z_{ijk}^*)</m> pour former la triple somme de Riemann
-      <me>
+      <md><mrow>
                 \sum_{i,j,k} f(\vp_{ijk}^*) \De V= \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{ijk}^*,y_{ijk}^*,z_{ijk}^*)  \De z\,\De y\, \De x
-      </me>.
+      </mrow></md>.
 
         Lorsque <m>n,m</m> et <m>l</m> tendent vers l'infini, avec un peu de chance, la somme ci-dessus tend vers un nombre réel, peu importe le point d'échantillonnage choisi. On dira alors que <m>f</m> est intégrable. La continuité de <m>f</m> est une condition suffisante pour assurer l'intégrabilité.
     </p>
     <definition xml:id="def-int-3">
       <statement>
         <p>Soit <m>\cE = \{(x,y,z)\in \R^3 |\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f</m> une fonction continue dans une région contenant <m>\cE</m>. Alors, <m>f</m> est intégrable sur <m>\cE</m>, et l'intégrale de <m>f</m> sur <m>\cE</m> est
-            <me>
+            <md><mrow>
                  \iiint_{\cE} f(x,y,z)\ dV = \lim_{n,m,l\to \infty} \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{ijk}^*,y_{ijk}^*,z_{ijk}^*)  \De z\,\De y\, \De x
-            </me>.
+            </mrow></md>.
             On écrit aussi, de façon plus concise, <m>\displaystyle \iiint_\cE f\ dV</m>.
             </p>
       </statement>
     </definition>
     <p>
         Le choix du point d'échantillonnage et l'indépendance de ce choix laissent beaucoup de liberté. Un choix particulièrement pratique consiste à choisir les <m>x_{ijk}^*</m> qui dépendent de <m>i</m> seulement, soit <m>x_{ijk}^* = x_i^*</m>, et à faire la même chose pour les autres coordonnées de <m>\vp_{ijk}^*</m>. La triple somme de Riemann modifiée en conséquence devient
-        <me>
+        <md><mrow>
             \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{i}^*,y_{j}^*,z_{k}^*)  \De z\,\De y\, \De x.
-        </me>
+        </mrow></md>
         On voit immédiatement que la somme intérieure est à son tour une somme de Riemann pour une intégrale simple :
-        <me>
+        <md><mrow>
             \lim_{l\to \infty}\sum_{k=1}^l f(x_i^*,y_j^*,z_k^*) = \int_r^s f(x_i^*,y_j^*,z)\ \dee{z}
-        </me>.
+        </mrow></md>.
         Cette intégrale est une fonction de <m>x_i^*</m> et <m>y_j^*</m> seulement, disons <m>g(x_i^*,y_j^*)</m>.
     </p>
     <p>
       Remplaçons dans la triple somme originale, ce qui nous donne
-      <me>
-          \sum_{i=1}^n\sum_{j=1}^m g(x_i^* y_j^*)\De y\, \De x
-      </me>,
+      <md><mrow>
+          \sum_{i=1}^n\sum_{j=1}^m g(x_i^*, y_j^*)\De y\, \De x
+      </mrow></md>,
       qui est à son tour une somme de Riemann pour l'intégrale double
-      <me>
+      <md><mrow>
           \int_a^b \int_c^d g(x,y) \, \dee{y}\ \dee{x}.
-      </me>
+      </mrow></md>
       Une fois la substitution de <m>g</m> par son expression comme une intégrale par rapport à <m>z</m> faite, nous obtenons (si toutes ces intégrales existent) le résultat suivant.
 
       <theorem xml:id="thm-Fubini3d"><statement><p>Soit <m>\cE = \{(x,y,z)\in \R^3|\, a \leqslant x \leqslant b,\ c\leqslant  y \leqslant d, r\leqslant  z \leqslant s\}</m> et <m>f</m> continue sur <m>\cE</m>. Alors,
-              <me>
+              <md><mrow>
                   \iiint_\cE f\ \dee{V} = \int_a^b \int_c^d \int_r^s f(x,y,z)\dee{z}\,\dee{y}\,\dee{x} = \int_c^d\int_a^b\int_r^s f(x,y,z)\ \dee{z}\, \dee{x}\, \dee{y}
-              </me>.
+              </mrow></md>.
               </p></statement></theorem>
 
       Notons que la deuxième égalité suit du théorème de Fubini pour les intégrales doubles. Par ailleurs, rien ne nous oblige à considérer la somme par rapport à <m>k</m> comme étant la somme intérieure dans notre argument précédent. Il y a en fait 6 ordres possibles d'intégration. Le théorème de Fubini dit, plus généralement, que le résultat est indépendant de l'ordre d'intégration.
@@ -86,9 +86,9 @@
     <title>Régions plus générales</title>
     <p>
     Pour considérer des régions plus générales, c'est-à-dire qui ne sont pas nécessairement des boîtes rectangulaires, mais qui sont tout de même bornées, on procède comme suit. Nous incluons cette région, disons <m>\cR</m>, dans un parallélépipède rectangle <m>\cB</m> et nous définissons une nouvelle fonction <m>\tilde{f}</m> qui coïncide avec <m>f</m> (que nous supposons continue) sur <m>\cE</m>, mais qui vaut <m>0</m> ailleurs. On définit alors
-    <me>
+    <md><mrow>
         \iiint_\cE f\ \dee{V} = \iiint_\cB \tilde{f}\, \dee{V}.
-    </me>
+    </mrow></md>
     La fonction <m>\tilde{f}</m> n'est pas continue, mais si <m>\cE</m> est <em>raisonnable</em>, cette intégrale existe. Dans la pratique, on s'intéresse aux intégrales de fonctions sur des régions qui sont relativement simples. La difficulté pour l'évaluation de ces intégrales est surtout dans l'écriture des bornes. Il importe donc d'avoir des descriptions convenables des régions d'intégration et de leurs frontières.
     </p>
     <p>Une région <em>élémentaire</em> dans <m>\R^2</m> est une région obtenue en permettant à l'une des coordonnées de parcourir un intervalle, la valeur de la seconde coordonnée étant bornée par deux fonctions continues par morceaux définies qui dépendent de la première variable. Plus formellement, une région élémentaire du plan est une région définie selon une des formes suivantes.
@@ -114,7 +114,7 @@
       Bien entendu, il y a plusieurs autres configurations possibles, 6 au total. Tout dépend de la façon dont le domaine d'intégration <m>\cE</m> est donné.
     </p>
     <p>
-      Les intégrales triples ont des propriétés analogues à celles des intégrales doubles, énoncées dans le <xref ref="thm_Int2darith" text="global">théorème</xref>. En pratique, les régions qui nous intéressent sont des régions qui peuvent être découpées en un nombre fini de régions élémentaires. Comme que mentionné ci-dessus, la complexité dans l'évaluation d'une intégrale triple est souvent d'établir les bornes d'intégration. Voyons quelques exemples.
+      Les intégrales triples ont des propriétés analogues à celles des intégrales doubles, énoncées dans le <xref ref="thm_Int2darith" text="global">théorème</xref>. En pratique, les régions qui nous intéressent sont des régions qui peuvent être découpées en un nombre fini de régions élémentaires. Comme mentionné ci-dessus, la complexité dans l'évaluation d'une intégrale triple est souvent d'établir les bornes d'intégration. Voyons quelques exemples.
     </p>
     <example>
       <statement>
@@ -133,11 +133,11 @@
           pour chaque <m>(y,z)</m> vérifiant ces conditions, la valeur de <m>x </m> varie entre <m>0</m> et <m>\tfrac{2-y}{2}</m>.
         </p></li></ul>
       La région d'intégration est donc
-      <me>
+      <md><mrow>
       \cE=\Set{(x,y,z)}{ 0\leqslant  y\leqslant  2,\
                        0\leqslant  z\leqslant  2-y,\
                        0\leqslant  x\leqslant  \tfrac{2-y}{2}}
-      \tag{$*$}</me>.
+      \tag{$*$}</mrow></md>.
     </p>
         <p>
       Afin de faire une esquisse de <m>\cE</m>, considérons les portions de cette région qui coupent les plans d'équation <m>y=Y</m>, avec <m>Y\in[0,2]</m>. Nous faisons ceci, car <m>y</m> est la dernière variable d'intégration. Nous devons avoir, d'après la description de <m>\cE</m>  ci-dessus, <m>0\leqslant  x \leqslant 1-Y/2</m> et <m>0\leqslant  z \leqslant 2-Y</m>. Cela revient à dire que les sections sont des rectangles dont les côtés ont pour longueur <m>1-Y/2</m> et <m>2-Y</m>. Par exemple, à <m>Y=0</m>, c'est-à-dire dans le plan <m>Oxz</m>, la portion de <m>\cE</m> est un rectangle dont les sommets sont <m>(0,0,0),\, (0,0,2),\, (1,0,2)</m> et <m>(1,0,0)</m>.
@@ -170,12 +170,12 @@
         </sidebyside>
         <p>
       Nous avons alors que <m>y</m> varie de <m>0</m> à <m>2-Z</m> et que, pour chaque <m>y</m> dans cet intervalle, <m>x</m> varie entre <m>0</m> et <m>\frac{2-y}{2}</m>. Ainsi, nous avons
-      <me>
+      <md><mrow>
         I = \int_0^2 \int_0^{2-z}\int_0^{(2-y)/2} f(x,y,z)\, \dee{x} \dee{y}\, \dee{z}
-      </me>.
+      </mrow></md>.
     </p>
         <p>
-      Voyons maintenant comment exprimer <m>I</m> dans l'ordre <m>\dee{y}\, \dee{x}\, \dee{z}</m>. Nous subdivisons la section de <m>\cE</m> se trouvant à <m>z=Z</m> en des rectangles horizontaux parallèles à l'axe des <m>y</m>, comme qu'illustré dans la figure ci-dessous.
+      Voyons maintenant comment exprimer <m>I</m> dans l'ordre <m>\dee{y}\, \dee{x}\, \dee{z}</m>. Nous subdivisons la section de <m>\cE</m> se trouvant à <m>z=Z</m> en des rectangles horizontaux parallèles à l'axe des <m>y</m>, comme illustré dans la figure ci-dessous.
     </p>
         <sidebyside width="66%">
           <image source="images/CLP-figs/xchange3h"/>
@@ -188,9 +188,9 @@
             lorsque <m>x</m> varie entre <m>z/2</m> et <m>1</m>, <m>y</m> varie entre <m>0</m> et <m>2-2x</m>.
           </p></li></ul>
       Ainsi,
-      <me>
+      <md><mrow>
         I = \int_0^2 \int_0^{z/2} \int_0^{2-z} f(x,y,z)\, \dee{y}\, \dee{x}\, \dee{z} + \int_0^2 \int_{z/2}^1 \int_0^{2-2x} f(x,y,z)\, \dee{y}\, \dee{x}\, \dee{z}
-      </me>.
+      </mrow></md>.
     </p>
       </solution>
     </example>
@@ -239,13 +239,13 @@
           </image>
         </sidebyside>
         <p>Cette projection est la région bornée par <m>y=x^2</m> et <m>y=1</m>,
-          <me>
+          <md><mrow>
               \cD =\{(x,y) \in \R^2 | -1 \leqslant x \leqslant 1, x^2 \leqslant y \leqslant 1 \}
-          </me>.
+          </mrow></md>.
           Pour chaque <m>(x,y)\in \cD</m>, les points de <m>\cE</m> ont une coordonnée <m>z</m> vérifiant <m>0\leqslant  z \leqslant 1-y</m>. Ainsi, l'intégrale qui nous intéresse est
-          <me>
+          <md><mrow>
               \int_{-1}^1 \int_{x^2}^1\int_0^{1-y} f(x,y,z)\ \dee{z}\, \dee{y}\, \dee{x}.
-          </me>
+          </mrow></md>
       </p>
         <p>
         Pour le second ordre d'intégration, projetons maintenant <m>\cE</m> sur le plan <m>Oxz</m>.
@@ -263,13 +263,13 @@
               </sageplot>
           </image>
         </sidebyside>
-        <p><me>
+        <p><md><mrow>
             \cR = \{(x,z)\in \R^2| -1\leqslant  x \leqslant 1,\ 0\leqslant  z \leqslant 1-x^2\}
-        </me>
+        </mrow></md>
         Pour chaque <m>(x,z)\in \cR</m>, les points de <m>\cE</m> ont une coordonnée <m>y</m> vérifiant <m>x^2\leqslant  y\leqslant  1-z</m>. En effet, situons-nous au point <m>(x,0,z)</m> et déplaçons-nous selon la direction des <m>y</m>. Nous entrons dans <m>\cE</m> lorsque nous atteignons le cylindre <m>y=x^2</m> et nous quittons <m>\cE</m> lorsque nous atteignons le plan <m>y=1-z</m>. L'intégrale qui nous intéresse est donc
-        <me>
+        <md><mrow>
             \int_{-1}^1 \int_{0}^{1-x^2}\int_{x^2}^{1-z} f(x,y,z)\ \dee{y}\, \dee{z}\, \dee{x}.
-        </me>
+        </mrow></md>
       </p>
       </solution>
     </example>
@@ -289,13 +289,13 @@
     <p>
     Cependant, d'autres interprétations que nous avons déjà rencontrées admettent leurs analogues avec des intégrales triples. Par exemple, on peut tout de même calculer des volumes, des masses, des centres de masse et des moments d'inertie. Pour la suite, supposons que <m>\cE</m> est soit une région élémentaire, soit une réunion finie de régions élémentaires.
     <ul><li><p><alert>Volume.</alert> Si <m>\cE</m> est donnée, son volume est obtenu en considérant la fonction <m>f(x,y,z)=1</m> dans la <xref ref="def-int-3" text="global">définition</xref>, c'est-à-dire
-          <me>
+          <md><mrow>
             \text{V}(\cE) = \iiint_{\cE} \ \dee{V}
-          </me>.
+          </mrow></md>.
         </p></li><li><p><alert>Masse.</alert> Si la région <m>\cE</m> est occupée par un solide dont la densité au point <m>\vp = (x,y,z)</m> est donnée par une fonction <m>\rho(x,y,z)</m> (qu'on se doit de supposer intégrable), alors la masse totale du solide est donnée par
-          <me>
+          <md><mrow>
           \text{Masse}(\cE) = \iiint_{\cE} \rho\ \dee{V} = \iiint_{\cE} \rho(x,y,z)\, \dee{V}
-          </me>.
+          </mrow></md>.
         </p></li><li><p><alert>Centre de masse.</alert> Le centre de masse de la région <m>\cE</m> considérée au paragraphe précédent s'obtient de la même façon que pour les intégrales doubles, à savoir
           <md><mrow>
           \bar x &amp; =  \frac{\displaystyle\iiint_\cE x\, \rho\, \dee{V}}
@@ -305,7 +305,7 @@
           </mrow><mrow>
           \bar y &amp; = \frac{\displaystyle \iiint_\cE y\, \rho\, \dee{V}}
                                {\displaystyle \iiint_\cE \ \rho\, \dee{V}}
-                  =\frac{\displaystyle \iiint_\cE y\ \rho(x,y)\, \dee{V}}
+                  =\frac{\displaystyle \iiint_\cE y\ \rho(x,y,z)\, \dee{V}}
                                   {\text{Masse}(\cE)},
           </mrow><mrow>
           \bar z &amp; =\frac{\displaystyle \iiint_\cE z\, \rho\, \dee{V}}
@@ -314,7 +314,7 @@
                                       {\text{Masse}(\cE)}
           </mrow></md>.
         </p></li><li><p><alert>Valeur moyenne.</alert> Tout comme nous l'avons vu à la <xref ref="def_AVaverage" text="global">définition</xref> pour les fonctions de deux variables, nous pouvons calculer la valeur moyenne d'une fonction intégrable <m>f(x,y,z)</m> sur une région <m>\cE</m> de <m>\R^3</m>. Celle-ci est donnée par
-          <md><mrow>  \bar{f} \amp = \frac{\displaystyle \iiint_\cE f \, \dee{V}}{\displaystyle \iiint_\cE\, \dee{V}} = \frac{\displaystyle \iiint_\cE f(x,y,z) \, \dee{v}}{\displaystyle \iiint_\cE\, \dee{V}}
+          <md><mrow>  \bar{f} \amp = \frac{\displaystyle \iiint_\cE f \, \dee{V}}{\displaystyle \iiint_\cE\, \dee{V}} = \frac{\displaystyle \iiint_\cE f(x,y,z) \, \dee{V}}{\displaystyle \iiint_\cE\, \dee{V}}
              </mrow></md>.
         </p></li></ul>
   </p>
@@ -337,7 +337,7 @@
             <li>
               <p>
             Le volume est donné par
-            <md><mrow>V(\cE)  \amp = \iiint_{\cE} \, \dee{V}  = \int_{-1}^1\int_{x^2}^{1}\int_0^{1-y}\ \dee{z}\, \dee{y}\, \dee{x}</mrow><mrow> \amp = \int_{-1}^1 \int_{x^2}^1 z\Big\vert_{z=0}^{z=1-y} \dee{y}\, \dee{x} = \int_{-1}^1\int_{x^2}^1 1-y \ \dee{y}\, \dee{x}</mrow><mrow>  \amp = \int_{-1}^{1} \left.\left[ y-\frac{y^2}{2} \right]\right|_{y=x^2}^{y=1}\ \dee{x}  = \int_{-1}^2 \frac{1}{2}-x^2 + \frac{x^4}{2} \ \dee{x}</mrow><mrow>  \amp = \left.\left[\frac{x}{2} - \frac{x^2}{3}+\frac{x^5}{10} \right]\right|_{-1}^1 = \frac{8}{15}</mrow></md>.
+            <md><mrow>V(\cE)  \amp = \iiint_{\cE} \, \dee{V}  = \int_{-1}^1\int_{x^2}^{1}\int_0^{1-y}\ \dee{z}\, \dee{y}\, \dee{x}</mrow><mrow> \amp = \int_{-1}^1 \int_{x^2}^1 z\Big\vert_{z=0}^{z=1-y} \dee{y}\, \dee{x} = \int_{-1}^1\int_{x^2}^1 1-y \ \dee{y}\, \dee{x}</mrow><mrow>  \amp = \int_{-1}^{1} \left.\left[ y-\frac{y^2}{2} \right]\right|_{y=x^2}^{y=1}\ \dee{x}  = \int_{-1}^1 \frac{1}{2}-x^2 + \frac{x^4}{2} \ \dee{x}</mrow><mrow>  \amp = \left.\left[\frac{x}{2} - \frac{x^2}{3}+\frac{x^5}{10} \right]\right|_{-1}^1 = \frac{8}{15}</mrow></md>.
           </p>
             </li>
             <li>
@@ -349,13 +349,13 @@
             <li>
               <p>
             Afin de calculer les coordonnées du centre de masse, nous aurons besoin des intégrales suivantes :
-            <sidebyside widths="30% 30% 30%"><p><me>
+            <sidebyside widths="30% 30% 30%"><p><md><mrow>
                   \iiint_{\cE}x\rho\ \dee{V},
-                </me></p><p><me>
+                </mrow></md></p><p><md><mrow>
                   \iiint_{\cE}y\rho\ \dee{V},
-                </me></p><p><me>
+                </mrow></md></p><p><md><mrow>
                   \iiint_{\cE}z\rho\ \dee{V}
-                </me>.
+                </mrow></md>.
               </p></sidebyside>
             Allons-y.
             <ul><li><p>
@@ -366,7 +366,7 @@
                     </mrow><mrow>  \amp= \frac{8k}{63} </mrow></md>.
                 </p></li><li><p>De même, on calcule la troisième intégrale :
                   <md><mrow>\iiint_{\cE} z\rho \ \dee{V} \amp= \int_{-1}^1\int_{x^2}^1 \int_{0}^{1-y} k zy \ \dee{z}\, \dee{y}\, \dee{x}
-                    </mrow><mrow>  \amp= k \int_{-1}^1\int_{x^2}^1 \left[\frac{1}{2}yz^2\right]_{z=0}^{z=1-y}\ \dee{y}\, \dee{x} </mrow><mrow> \amp = k\int_{-1}^1 \int_{x^2}^1 \frac{y^3}{2}-y^2 + \frac{y}{2} \ \dee{y}\, \dee{x} </mrow><mrow>  \amp= k \int_{-1}^1 \left[\frac{y^4}{8} - \frac{y^3}{3}+ \frac{y^2}{4}\right]_{y=x^2}^y=1</mrow><mrow>  \amp= k \int_{-1}^1 \frac{-x^8}{8}+\frac{x^6}{3} - \frac{x^4}{4}+\frac{1}{24}\ \dee{x} </mrow><mrow>  \amp=k \left[\frac{-x^9}{72}+\frac{x^7}{21}-\frac{x^5}{20}+\frac{x}{24} \right]_{x=-1}^{x=1} = \frac{16k}{315}</mrow></md>.
+                    </mrow><mrow>  \amp= k \int_{-1}^1\int_{x^2}^1 \left[\frac{1}{2}yz^2\right]_{z=0}^{z=1-y}\ \dee{y}\, \dee{x} </mrow><mrow> \amp = k\int_{-1}^1 \int_{x^2}^1 \frac{y^3}{2}-y^2 + \frac{y}{2} \ \dee{y}\, \dee{x} </mrow><mrow>  \amp= k \int_{-1}^1 \left[\frac{y^4}{8} - \frac{y^3}{3}+ \frac{y^2}{4}\right]_{y=x^2}^{y=1}</mrow><mrow>  \amp= k \int_{-1}^1 \frac{-x^8}{8}+\frac{x^6}{3} - \frac{x^4}{4}+\frac{1}{24}\ \dee{x} </mrow><mrow>  \amp=k \left[\frac{-x^9}{72}+\frac{x^7}{21}-\frac{x^5}{20}+\frac{x}{24} \right]_{x=-1}^{x=1} = \frac{16k}{315}</mrow></md>.
                 </p></li></ul>
             Ainsi, les coordonnées du centre de masse sont
             <md><mrow>\bar x \amp= \frac{0}{M} = 0, </mrow><mrow> \bar y \amp= \frac{8k}{63}\times \frac{35}{8k} = \frac{35}{63} = \frac{5}{9},</mrow><mrow> \bar z \amp= \frac{16k}{315}\times \frac{35}{8k} = \frac{2}{9} </mrow></md>.

@@ -93,19 +93,19 @@
 
       <ul><li>
           doit pointer en s'éloignant de l'origine, c'est-à-dire que le vecteur de direction du champ <m>\vv(x,y,z)</m> doit être le vecteur unitaire radial :
-          <me>
+          <md><mrow>
             \hat\vr(x,y,z) = \frac{x\vi + y\vj + z\vk}{\sqrt{x^2+y^2+z^2}}
-  </me>.
+  </mrow></md>.
   </li><li>
   La norme de la vitesse, <m>|\vv(x,y,z)|</m>, doit dépendre seulement de la distance à l'origine, c'est-à-dire qu'elle doit être fonction de
-  <me>
+  <md><mrow>
   r(x,y,z) = \sqrt{x^2+y^2+z^2}
-  </me>.
+  </mrow></md>.
   </li></ul>
   Ainsi, le champ de vitesses est de la forme
-  <me>
+  <md><mrow>
   \vv(x,y,z) = v\big(r(x,y,z)\big)\,\hat\vr(x,y,z)
-  </me>.
+  </mrow></md>.
   Nous devons simplement déterminer la fonction  <m>v(r)</m>. Fixons  <m>r \geqslant0</m> et concentrons-nous sur la sphère  <m>x^2+y^2+z^2=r^2</m>. Elle est esquissée dans la figure ci-bas.
   </p>
       <sidebyside width="35%">
@@ -115,24 +115,24 @@
   Pendant un très bref laps de temps de <m>dt</m> secondes, <m>4\pi m\,dt</m> litres d'eau sont créés à l'origine (le point rouge au centre). Puisque l'eau est incompressible, <m>4\pi m\,dt</m> litres d'eau doivent sortir à travers la sphère pendant cet intervalle de temps, afin de faire de la place pour la nouvelle eau.
   </p>
       <p>En tout point de la sphère, l'eau s'écoule vers l'extérieur avec vitesse  <m>v(r)</m>. Ainsi, pendant ce laps de temps, l'eau près de la surface de la sphère bouge d'une distance <m>v(r)\,dt</m>. En particulier, l'eau qui se trouvait dans la croûte mince <m>r-v(r)\,dt \leqslant \sqrt{x^2+y^2+z^2} \leqslant r\ \ </m> au début sort  à travers la sphère <m>\sqrt{x^2+y^2+z^2} = r</m> pendant cet intervalle de temps. La croûte est esquissée en gris dans la figure. Le volume d'eau dans la partie grise est essentiellement l'aire de  <m>4\pi r^2</m> multipliée par l'épaisseur, c'est-à-dire  <m>v(r)\,dt</m>. Ainsi, l'égalité de volumes donne
-  <me>
+  <md><mrow>
   4\pi m\,dt =  (4\pi r^2) \big(v(r)\,dt\big)
   \implies v(r) = \frac{4\pi m}{4\pi r^2} =\frac{m}{r^2}
-  </me>.
+  </mrow></md>.
   Notre champ de vitesses est donc
-  <me>
+  <md><mrow>
   \vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
-  </me>.
+  </mrow></md>.
   Si notre monde avait été de dimension deux plutôt que trois et que la source fournissait  <m>2\pi m</m> litres par seconde, le même argument mène à
-  <me>
+  <md><mrow>
   2\pi m\,dt =  (2\pi r) \big(v(r)\,dt\big)
   \implies v(r) = \frac{2\pi m}{2\pi r} =\frac{m}{r}
-  </me>,
-  et le champ de vitesses est <me>
+  </mrow></md>,
+  et le champ de vitesses est <md><mrow>
   \vv(x,y) = \frac{m}{r(x,y)}\,\hat\vr(x,y)\qquad
   r(x,y) = \sqrt{x^2+y^2}\qquad
   \hat\vr(x,y) = \frac{x\vi + y\vj}{\sqrt{x^2+y^2}}
-  </me>.
+  </mrow></md>.
   La représentation de ce champ est obtenue comme suit. Pour chaque  <m>(x,y)</m>, le vecteur <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m> est dessiné avec son origine en <m>(x,y)</m>. Notons que  <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
   <ul><li>
   pointe en direction opposée à l'origine,
@@ -179,14 +179,14 @@
       <title>Le tourbillon</title>
       <p>
   Dans cet exemple, nous allons esquisser le champ de vecteurs
-  <me>
+  <md><mrow>
   \vv(x,y) = \Om\big(-y\vi +x\vj\big)
-  </me>,
+  </mrow></md>,
   où <m>\Om</m> est une constante positive. Nous allons donner une procédure efficace pour produire une esquisse grossière, elle sera suffisante pour avoir une idée réaliste du contexte. Cette procédure se généralise à d'autres champs de vecteurs.
   </p>
       <p>
   Pour commencer, concentrons-nous sur la composante horizontale <m>\vi\cdot\vv(x,y)</m> de notre champ. Voyons dans quelle région  du plan <m>Oxy</m> celle-ci est positive, négative ou nulle.
-  <me>
+  <md><mrow>
   \vi\cdot\vv(x,y)
   =-\Om y\ \
   \begin{cases}
@@ -194,9 +194,9 @@
       \lt 0 &amp;\text{si } y \geqslant0\\
       \geqslant0 &amp;\text{si } y \lt 0
   \end{cases}
-  </me>
+  </mrow></md>
   Nous en faisons autant avec la composante verticale.
-  <me>
+  <md><mrow>
   \vj\cdot\vv(x,y)
   = \Om x\ \
   \begin{cases}
@@ -204,20 +204,20 @@
       \lt 0 &amp;\text{si } x \lt 0 \\
       \geqslant0 &amp;\text{si } x \geqslant0
   \end{cases}
-  </me>
+  </mrow></md>
   Ceci partitionne naturellement le plan  <m>Oxy</m> en 9 morceaux, selon que chacune de ces composantes est positive, négative ou nulle :
   <ul><li><m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv \geqslant0</m>
   sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>
-  </li>,
+  </li>
   <li><m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv=0</m>
   sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>
-  </li>,
+  </li>
   <li><m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv \lt 0</m>
   sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \lt 0\ \big\}</m>
-  </li>,
+  </li>
   <li><m>\vi\cdot\vv=0</m> et <m>\vj\cdot\vv \geqslant0</m>
   sur  <m>\big\{\ (x,y)\in\R^2\ \big|\  y=0,\ x \geqslant0\ \big\}</m>
-  </li>,
+  </li>
   <li>
   et ainsi de suite. </li></ul>
   Pensons maintenant à  <m>\vv(x,y)</m> comme la vitesse au point <m>(x,y)</m> d'un fluide.
@@ -345,21 +345,21 @@
 
 
     <p>
-     Dans les sections qui suivent, nous devront faire face au problème de décider si un champ <m>\vF</m> est est un champ gradient ou pas. Nous reviendrons sur ce point. Contentons-nous de donner un exemple.
+     Dans les sections qui suivent, nous devrons faire face au problème de décider si un champ <m>\vF</m> est un champ gradient ou pas. Nous reviendrons sur ce point. Contentons-nous de donner un exemple.
    </p>
     <!-- <p>
      <term>Fin nouveau</term>
    </p> -->
     <example xml:id="ex-non-conserv">
       <statement>
-        <p>Montrer  qu'il n'existe pas de fonction <m>f</m> continue telle que <m>\vnabla f(x,y) = xy\, \vi + (y^2+1)\, \vj  = P(x,y)\,\vi + Q(x,y)\,\vj</m>.
+        <p>Montrer  qu'il n'existe pas de fonction <m>f</m> continue telle que <m>\vnabla f(x,y) = (y^2+1)\, \vi + xy\, \vj  = P(x,y)\,\vi + Q(x,y)\,\vj</m>.
        </p>
       </statement>
       <solution>
         <p>Si <m>f</m> était une telle fonction, ses dérivées partielles seraient <m>P</m> et <m>Q</m>, qui sont de classe <m>C^1</m>. On devrait donc avoir <m>f</m> de classe <m>C^2</m>. Ainsi, en vertu du théorème de Clairaut,
-       <me>
+       <md><mrow>
            \pdiff{P}{y} = \frac{\partial^2 f}{\partial y\, \partial x} = \frac{\partial^2 f}{\partial x\, \partial y} = \frac{\partial Q}{\partial x}
-       </me>.
+       </mrow></md>.
        Or, <m>\pdiff{P}{y} = 2y</m> et <m>\pdiff{Q}{x} = y</m>. Ainsi, une telle fonction <m>f</m> ne peut pas exister.
        </p>
       </solution>
@@ -405,23 +405,22 @@
 <p>
   <term>Début nouveau</term>
 </p> -->
-  <subsection xml:id="pars-lignes-courant"><title>Les lignes de courant</title><p>
+  <subsection xml:id="pars-lignes-courant"><title>Les lignes de courant</title>
+  <p>
     Étant donné un champ de vecteurs <m>\vF</m>, une ligne de courant de <m>\vF</m> est une courbe paramétrée <m>\cC</m> telle que, en tout point de <m>\cC</m>, le vecteur vitesse est donné par <m>\vF</m> évalué en ce point. Si le champ est le champ de vitesses d'un fluide et que l'on dépose un objet qui flotte en un point donné, la ligne de courant passant par ce point représente la trajectoire que cet objet suivrait, mené par le courant.
-
-
-
+  </p>
     <definition xml:id="def-courant">
       <statement>
         <p>
-      Si <m>\vF = P\vi + Q \vj</m> est donné une <term>ligne de courant</term>  <m>\cC</m> est un courbe paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, telle que  le vecteur vitesse <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> vérifie 
-      </p><md><mrow>x'(t) = P(x(t), y(t) )\amp \quad \text{ et }  \amp y'(t) = Q(x(t),y(t)) </mrow></md>
+      Si <m>\vF = P\vi + Q \vj</m> est donné une <term>ligne de courant</term>  <m>\cC</m> est un courbe paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, telle que  le vecteur vitesse <m>\vv(t) = x'(t) \vi + y'(t) \vj</m> vérifie
+      <md><mrow>x'(t) = P(x(t), y(t) )\amp \quad \text{ et }  \amp y'(t) = Q(x(t),y(t)) </mrow></md>
           ou, de façon plus concise,
-      <md><mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow>.</md>
-
+      <md><mrow>\vr'(t) = \vF(\vr(t)) \amp </mrow></md>.
+      </p>
       </statement>
     </definition>
 
-  </p><figure xml:id="fig-courant-def"><caption>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
+  <figure xml:id="fig-courant-def"><caption>Le champ de vecteurs <m> \vF(x,y) = \cos(x+y)\vi + x \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
     </caption><image xml:id="sageplot3d-courant-def" width="80%"><sageplot>
         var('x,y')
         Fig = plot_vector_field((cos(x+y),x), (x,-2,2),(y,-2,2),
@@ -443,9 +442,9 @@
     <example xml:id="ex-courant-a"><statement><p>Montrer que la courbe paramétrée par <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> est une ligne de courant pour <m>\vF(x,y) = x\vi - y\vj</m>.
         </p><p>
           En effet,  <m>\vr(t) = C_1 e^t \, \vi + C_2 e^{-t} \, \vj</m> donne
-          <me>
-            \vr'(t) = C_1 e^t\, \vi - C_2 e^{-t}\, \vj = x(t)\vi + y(t) \vj .
-          </me>
+          <md><mrow>
+            \vr'(t) = C_1 e^t\, \vi - C_2 e^{-t}\, \vj = x(t)\vi - y(t) \vj .
+          </mrow></md>
         </p><p>
           Remarquons que différentes valeurs de <m>C_1</m> et <m>C_2</m> donnent différentes lignes de courant. L'interprétation est claire : non seulement il faut connaître la vitesse <m>\vF</m>, mais il faut aussi connaître un point sur la trajectoire, ce qui permet de déterminer <m>C_1</m> et <m>C_2</m>.
         </p><figure xml:id="fig-courant-exa"><caption>Le champ de vecteurs <m> \vF(x,y) = x\,\vi -y\, \vj</m>, en gris, ainsi que quelques portions de lignes de courant, en rouge
@@ -474,29 +473,29 @@
     <example xml:id="ex-courant-b"><statement><p>
           Trouver les lignes de courant du champ de vecteurs <m>\vF(x,y) = -2y\,\vi + x\, \vj</m>.
         </p></statement><solution><p>Supposons que nous avons une ligne de courant <m>\vr(t) = x(t) \,\vi + y(t) \, \vj</m>.  Puisqu'il s'agit d'une ligne de courant, nous devons avoir
-        </p><me>
-          x'(t) \vi + y'(t) = -2y(t)\vi + x(t)\vj.
-        </me><p>
+        <md><mrow>
+          x'(t) \vi + y'(t) \vj = -2y(t)\vi + x(t)\vj.
+        </mrow></md>
           Ainsi, lorsque <m>y(t)\ne 0</m>, on aura
-          <me>
-            \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{x'(t)}{y'(t)}.
-          </me>
+          <md><mrow>
+            \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{y'(t)}{x'(t)}.
+          </mrow></md>
         Ainsi, la courbe vérifie l'équation différentielle
-        <me>
-          \frac{dy}{dy} = \frac{x}{-2y}
-        </me>
+        <md><mrow>
+          \frac{dy}{dx} = \frac{x}{-2y}
+        </mrow></md>
         ou encore
-        <me>
+        <md><mrow>
           2y\frac{dy}{dx} = -x.
-        </me>
+        </mrow></md>
         En intégrant les deux côtés par rapport à <m>x</m>, on obtient
-        <me>
+        <md><mrow>
           \int 2y \frac{dy}{dx}\, dx = \int -x\, dx, \text{ d'où } y^2 = \frac{-x^2}{2} + C,
-        </me>
+        </mrow></md>
         où <m>C</m> regroupe les constantes d'intégration. On reconnaît l'équation d'une ellipse
-        <me>
+        <md><mrow>
           \frac{x^2}{2} + y^2 = C.
-        </me>
+        </mrow></md>
         </p><figure xml:id="fig-courant-exc"><caption>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>, en gris, et une ligne de courant, en rouge
           </caption><image xml:id="sageplot-courant-exc" width="80%"><sageplot>
               var('x,y')
@@ -515,13 +514,13 @@
               Fig
             </sageplot><description><p>Le champ de vecteurs <m> \vF(x,y) = -2y\,\vi +x\, \vj</m>.</p></description></image></figure><p>
           On peut paramétrer une telle ellipse en posant <m>\vr(u) = \sqrt{2C}\cos u \, \vi + \sqrt{C}\sin u\, \vj</m>. En effet, on calcule
-          <me>
+          <md><mrow>
             \frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C.
-          </me>
+          </mrow></md>
 
         </p><p>
           Cependant, on a
-          <md><mrow>   x'(u)\vi + y'(u) \vj \amp = -\sqrt{2C}\sin u\, \vi + \sqrt{C}\cos u\, \vj</mrow><mrow> \amp = -\sqrt{2}y(u) \vi + \frac{1}{\sqrt{2}}x(u)</mrow>.
+          <md><mrow>   x'(u)\vi + y'(u) \vj \amp = -\sqrt{2C}\sin u\, \vi + \sqrt{C}\cos u\, \vj</mrow><mrow> \amp = -\sqrt{2}y(u) \vi + \frac{1}{\sqrt{2}}x(u)\vj.</mrow>
           </md>
           On remarque que ce vecteur n'est pas égal à <m>-2y(u)\vi + x(u) \vj</m>, il lui est seulement proportionnel. Ce paramétrage ne vérifie donc pas la définition des lignes de courant. Cependant, posons plutôt <m>\vr(t) = \sqrt{2C}\cos (t\sqrt{2})\, \vi + \sqrt{C}\sin (t\sqrt{2})\, \vj</m>. On vérifie aisément qu'il s'agit d'un paramétrage de l'ellipse et, par ailleurs, la condition de la définition des lignes de courant est satisfaite.
         </p></solution></example>

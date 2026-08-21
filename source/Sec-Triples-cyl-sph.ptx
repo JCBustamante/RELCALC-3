@@ -2,7 +2,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_cylindrical">
   <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
-  <!-- raduit et adapté par Juan Carlos Bustamante, Octobre 2021-->
+  <!-- Traduit et adapté par Juan Carlos Bustamante, Octobre 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
   <title>Intégrales triples en coordonnées cylindriques et sphériques</title>
   <introduction>
@@ -108,9 +108,9 @@ Ainsi, le volume de ces cubes approximatifs est (essentiellement<fn>
     <fact xml:id="eq_dV_cylindrical">
       <statement>
         <p>L'élément de volume en coordonnées cylindriques est donné par
-          <me>
+          <md><mrow>
 \dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}.
-</me>
+</mrow></md>
         </p>
       </statement>
     </fact>
@@ -159,31 +159,31 @@ Ainsi, le volume de ces cubes approximatifs est (essentiellement<fn>
         </sidebyside>
         <p>
   La masse de la portion du solide dans le premier octant est donc
-    <md><mrow>M \amp = \iiint_{\cE} \rho\ \dee{V}  = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^2 \ r\, \dee{r}\, \dee{\theta}\, \dee{z}</mrow><mrow> \amp = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^3\, \dee{r}\, \dee{\theta}\, \dee{z}  = \int_0^1\int_0^{\pi/2}\left[\frac{1}{4}r^4\right]_{r=0}^{r=\sqrt{-z^2}}\ \dee{\theta}\, \dee{z} </mrow><mrow>  \amp= \frac{1}{4}\int_0^1\int_0^{\pi/2}\left(1-z^2\right)^2 \ \dee{\theta}\, \dee{z} = \frac{\pi}{8} \int_0^1 1-2z^2 + z^4\  \dee{z} </mrow><mrow>  \amp= \frac{\pi}{8} \left[z-\frac{2}{3}z^3 + \frac{1}{5}{z^5}\right]_{z=0}^{z=1} =\frac{\pi}{8}\left(1-\frac{2}{3} + \frac{1}{5}\right) = \frac{\pi}{15} </mrow></md>.
+    <md><mrow>M \amp = \iiint_{\cE} \rho\ \dee{V}  = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^2 \ r\, \dee{r}\, \dee{\theta}\, \dee{z}</mrow><mrow> \amp = \int_0^1 \int_{0}^{\pi/2}\int_0^{\sqrt{1-z^2}} r^3\, \dee{r}\, \dee{\theta}\, \dee{z}  = \int_0^1\int_0^{\pi/2}\left[\frac{1}{4}r^4\right]_{r=0}^{r=\sqrt{1-z^2}}\ \dee{\theta}\, \dee{z} </mrow><mrow>  \amp= \frac{1}{4}\int_0^1\int_0^{\pi/2}\left(1-z^2\right)^2 \ \dee{\theta}\, \dee{z} = \frac{\pi}{8} \int_0^1 1-2z^2 + z^4\  \dee{z} </mrow><mrow>  \amp= \frac{\pi}{8} \left[z-\frac{2}{3}z^3 + \frac{1}{5}{z^5}\right]_{z=0}^{z=1} =\frac{\pi}{8}\left(1-\frac{2}{3} + \frac{1}{5}\right) = \frac{\pi}{15} </mrow></md>.
     La masse totale de notre solide est donc  <m>\frac{8\pi}{15}</m>.
 
 </p>
         <p> Sans la calculer, posons l'intégrale en utilisant les coordonnées cylindriques dans l'ordre d'intégration <m>\dee{z}\,\dee{r}\, \dee{\theta}</m>.
 <ul><li><p>
       La projection du solide (la partie dans le premier octant) sur le plan <m>Oxy</m> est le quart du disque unitaire. Il est décrit en coordonnées polaires par
-      <me>
-        \{ r()\theta)| 0\leqslant  r \leqslant 1,\ 0\leqslant  \theta \leqslant \pi/2\}.
-      </me>
+      <md><mrow>
+        \{ (r,\theta)| 0\leqslant  r \leqslant 1,\ 0\leqslant  \theta \leqslant \pi/2\}.
+      </mrow></md>
     </p></li><li><p>
       Pour chaque <m>(r,\theta)</m> sur cette région du plan, les points <m>(r,\theta,z)</m> du solide vérifient <m>0\leqslant   z \leqslant \sqrt{1-r^2}</m>.
     </p></li></ul>
 La masse est donc également calculée par l'intégrale
-<me>
+<md><mrow>
   \int_0^{\pi/2}\int_0^1 \int_0^{\sqrt{1-r^2}}\ r^3 \dee{z}\, \dee{r}\, \dee{\theta}.
-</me>
+</mrow></md>
 Celle-ci est plus dure à calculer.
 </p>
         <p>
 Finalement, voici l'intégrale correspondante en coordonnées cartésiennes.
-<me>
+<md><mrow>
 \int_0^1 \int_0^{\sqrt{1-z^2}}\int_0^{\sqrt{1-y^2 - z^2}} \
            \big(x^2+y^2\big) \ \dee{x}\, \dee{y}\, \dee{z}
-</me>
+</mrow></md>
 </p>
       </solution>
     </example>
@@ -203,16 +203,16 @@ Finalement, voici l'intégrale correspondante en coordonnées cartésiennes.
     <fact xml:id="eqn_mom_of_inertia_3d">
       <statement>
         <p> Le moment d'inertie d'un solide <m>\cV</m> dont la densité est <m>\rho(x,y,z)</m> et dont la distance de chaque point à l'axe de rotation est <m>D(x,y,z)</m> est donné par
-      <me>
+      <md><mrow>
 I_\cA=\iiint_\cV D(x,y,z)^2\,\rho(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
-</me>.
+</mrow></md>.
 </p>
       </statement>
     </fact>
     <example xml:id="eg_moment_cone">
       <statement>
         <p>
-  Trouver le moment d'inertie d'un cône circulaire droit dont l'axe coïncide avec l'axe <m>Oz</m> et dont le sommet est, à l'origne, de rayon <m>a</m>, de hauteur <m>h</m> et de densité constante <m>M</m> autour de l'axe <m>Oy</m>.
+  Trouver le moment d'inertie d'un cône circulaire droit dont l'axe coïncide avec l'axe <m>Oz</m> et dont le sommet est, à l'origine, de rayon <m>a</m>, de hauteur <m>h</m> et de densité constante <m>M</m> autour de l'axe <m>Oy</m>.
 </p>
       </statement>
       <solution>
@@ -338,7 +338,7 @@ I_\cA
    \varphi&amp;=\arctan\frac{\sqrt{x^2+y^2}}{z},
   </mrow>,
   </md>
-  où, de nouveau, il faut faire peuve de vigilance : la formule pour <m>\theta</m> ne permet que de le calculer à <m>\pi</m> près.
+  où, de nouveau, il faut faire preuve de vigilance : la formule pour <m>\theta</m> ne permet que de le calculer à <m>\pi</m> près.
   </p>
       </statement>
     </fact>
@@ -382,9 +382,9 @@ I_\cA
   </p>
     <fact xml:id="eq_dV_spherical">
       <statement>
-        <p><me>
+        <p><md><mrow>
   \dee{V} = \rho^2\sin\varphi\,\dee{\rho}\,\dee{\theta}\,\dee{\varphi}
-  </me>.
+  </mrow></md>.
   </p>
       </statement>
     </fact>
@@ -411,11 +411,11 @@ I_\cA
       <solution>
         <p>
   Remarquons que, en coordonnées sphériques,
-  <me>
+  <md><mrow>
   x^2+y^2=\rho^2\sin^2\varphi,\qquad
   z^2=\rho^2\cos^2\varphi,\qquad
   x^2+y^2+z^2=\rho^2
-  </me>.
+  </mrow></md>.
   Ainsi, en coordonnées sphériques, l'équation d'une sphère est <m>\rho=a</m>, et l'équation du cône est <m>\tan^2\varphi = b^2</m>. Posons  <m>\be=\arctan b</m>, avec <m>0 \lt \be \lt \frac{\pi}{2}</m>. Voici une esquisse de la portion du cône de crème glacée qui se trouve dans le premier octant.
   </p>
         <sidebyside width="33%">
@@ -446,10 +446,10 @@ Ainsi, le volume est donné par
         <p>
   Le côté droit ainsi que celui du bas ont été choisis de sorte que  <m>\tan\be=b</m>, c'est la définition de <m>\beta</m>. Ainsi,
   <m>\cos\beta=\frac{1}{\sqrt{1+b^2}}</m>, et le volume de notre cône de crème glacée est
-  <me>
+  <md><mrow>
   \text{Vol}(\cV)
   =\frac{2\pi a^3}{3}\left[1-\frac{1}{\sqrt{1+b^2}}\right]
-  </me>.
+  </mrow></md>.
   </p>
         <p>
     À l'instar de l'<xref ref="eg_polar_volume" text="global">exemple</xref>, nous pouvons faire quelques vérifications salutaires.
@@ -490,7 +490,7 @@ Ainsi, le volume est donné par
               
               <li>
                 <p>
-                  L'angle <m>\varphi</m> varie entre <m>\arcsin (b/a)</m> et <m>\pi/2</m>, comme la figure de droite ci-haut le montre.
+                  L'angle <m>\varphi</m> varie entre <m>\arcsin (b/a)</m> et <m>\pi-\arcsin (b/a)</m> (la figure de droite ci-haut ne montre que la moitié supérieure, avec <m>z\geqslant 0</m> ; la moitié inférieure s'obtient par symétrie).
                 </p>
               </li>
               
@@ -503,21 +503,21 @@ Ainsi, le volume est donné par
         Afin d'alléger l'écriture, posons <m>\al = \arcsin (b/a)</m>. Le volume qui nous intéresse est donc
       
         <md>
-          <mrow>\text{Vol}(\cV) \amp = \iiint_{\cV} \ \dee{V} = \int_0^{2\pi}\int_{\al}^{\pi/2}\int_{\frac{b}{\sin \varphi}}^a \rho^2 \,\sin\varphi\, \dee{\rho}\, \dee{\varphi}\, \dee{\theta}
+          <mrow>\text{Vol}(\cV) \amp = \iiint_{\cV} \ \dee{V} = \int_0^{2\pi}\int_{\al}^{\pi-\al}\int_{\frac{b}{\sin \varphi}}^a \rho^2 \,\sin\varphi\, \dee{\rho}\, \dee{\varphi}\, \dee{\theta}
           </mrow>
-          <mrow> \amp=\int_0^{2\pi} \int_{\al}^{\pi/2}\left[\frac{1}{3}\sin \varphi \rho^3\right]_{\rho ={b/\sin\varphi}}^{\rho = a} \ \dee{\varphi}\, \dee{\theta}
+          <mrow> \amp=\int_0^{2\pi} \int_{\al}^{\pi-\al}\left[\frac{1}{3}\sin \varphi \rho^3\right]_{\rho ={b/\sin\varphi}}^{\rho = a} \ \dee{\varphi}\, \dee{\theta}
           </mrow>
-          <mrow>  \amp=\frac{1}{3} \int_0^{2\pi}\int_{\al}^{\pi/2} \sin\varphi \left(a^3 - \frac{b^3}{\sin^3 \varphi}\right) \ \dee{\varphi}\ \dee{\theta}
+          <mrow>  \amp=\frac{1}{3} \int_0^{2\pi}\int_{\al}^{\pi-\al} \sin\varphi \left(a^3 - \frac{b^3}{\sin^3 \varphi}\right) \ \dee{\varphi}\ \dee{\theta}
           </mrow>
-          <mrow>  \amp=\frac{2\pi}{3} \int_{\al}^{\pi/2} a^3 \sin \varphi - b^3 \csc^2 \varphi\  \dee{\varphi}
+          <mrow>  \amp=\frac{2\pi}{3} \int_{\al}^{\pi-\al} a^3 \sin \varphi - b^3 \csc^2 \varphi\  \dee{\varphi}
           </mrow>
-          <mrow> \amp= \frac{2\pi}{3}\left[-a\cos \varphi + b^3\cot \varphi \right]_{\phi = \al}^{\varphi = \pi/2}
+          <mrow> \amp= \frac{2\pi}{3}\left[-a^3\cos \varphi + b^3\cot \varphi \right]_{\varphi = \al}^{\varphi = \pi-\al}
           </mrow>
-          <mrow>  \amp= \frac{2\pi}{3} \left( a^3 \cos \al - b^3 \cot \al\right) 
+          <mrow>  \amp= \frac{4\pi}{3} \left( a^3 \cos \al - b^3 \cot \al\right)
           </mrow></md>,
         </p>
-        
-        <p> où nous avons utilisé le fait que <m>\displaystyle \int \csc^2 \varphi \ \dee{\varphi}=  -\cot \varphi + C</m> et que  <m>\cos\frac{\pi}{2} = \cot\frac{\pi}{2}=0</m>.
+
+        <p> où nous avons utilisé le fait que <m>\displaystyle \int \csc^2 \varphi \ \dee{\varphi}=  -\cot \varphi + C</m> ainsi que <m>\cos(\pi-\al)=-\cos\al</m> et <m>\cot(\pi-\al)=-\cot\al</m>, ce qui explique le facteur <m>2</m> supplémentaire (essentiellement, la moitié inférieure du solide, avec <m>\varphi</m> entre <m>\pi/2</m> et <m>\pi-\al</m>, contribue exactement autant que la moitié supérieure, par symétrie).
           Du triangle ci-bas, nous pouvons conclure que <m>\cos\al =\frac{\sqrt{a^2-b^2}}{a} </m> et que <m>\cot\al=\frac{\sqrt{a^2-b^2}}{b}</m>.
         </p>
         <sidebyside width="20%">
@@ -525,9 +525,9 @@ Ainsi, le volume est donné par
         </sidebyside>
         <p>
           Ainsi, le volume de la portion de pomme restante est
-          <me>
+          <md><mrow>
             \text{Vol}(\cV) =\frac{4}{3}\pi\big[a^2-b^2\big]^{3/2}.
-          </me>
+          </mrow></md>
       Nous pouvons faire quelques vérifications comme à l'<xref ref="eg_polar_volume" text="global">exemple</xref>.
       <ul><li>
         Si le rayon de la perceuse est  <m>b=0</m>, il n'y a rien qui est enlevé. Le volume restant doit être égal au volume de la sphère,  <m>\frac{4}{3}\pi a^3</m>. Notre réponse est cohérente avec ceci.

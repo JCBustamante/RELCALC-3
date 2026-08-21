@@ -64,9 +64,9 @@
     <exercise>
       <statement><p>
       Considérer le champ de vecteurs
-      <me>
+      <md><mrow>
       \vF(x, y) = (e^x \cos y + x^2, \, x^2y + 3).
-      </me>
+      </mrow></md>
       Évaluer l'intégrale de ligne <m>\int_C\vF\cdot \dee{\vr}</m> le long de la courbe orientée <m>C</m> obtenue en se déplaçant de <m>(0, 0)</m> à <m>(1,0)</m> à
       <m>(1, \pi)</m> et finalement à <m>(0, \pi)</m> le long de segments droits.
       </p></statement>
@@ -98,9 +98,9 @@
       Hence
       <md>
       <mrow>
-      \int_C \vV\cdot \dee{\vr}
-      &amp;=\int_0^1 \vV(x,0)\cdot\vi\ \dee{x}+\int_0^\pi \vV(1,y)\cdot\vj\ \dee{y}
-      +\int_1^0 \vV(x,\pi)\cdot\vi\ \dee{x}
+      \int_C \vF\cdot \dee{\vr}
+      &amp;=\int_0^1 \vF(x,0)\cdot\vi\ \dee{x}+\int_0^\pi \vF(1,y)\cdot\vj\ \dee{y}
+      +\int_1^0 \vF(x,\pi)\cdot\vi\ \dee{x}
       </mrow><mrow>
       &amp;=\int_0^1 (e^x+x^2)\ \dee{x}
                +\int_0^\pi (y+3)\ \dee{y}+\int_1^0 (-e^x+x^2)\ \dee{x}\cr
@@ -175,12 +175,12 @@
       </li>
       </ul>
       So
-      <me>
+      <md><mrow>
       \int_\cC\vF\cdot \dee{\vr}=\int_0^1 x\,\dee{x}
                  +\int_0^1 y\,\dee{y}+\int_0^1(-2)\,\dee{z}
       =\frac{1}{2}+\frac{1}{2}-2
       =-1
-      </me>
+      </mrow></md>
       </p></solution>
     </exercise>
 
@@ -198,16 +198,16 @@
 
       <solution><p>
       Parametrize the line segment by
-      <me>
+      <md><mrow>
       \vr(t) = (0,0,1) + t\big\{(2,1,0)-(0,0,1)\big\}
              = \big(2t,t,1-t\big)\qquad
       0\leqslant t\leqslant 1
-      </me>
+      </mrow></md>
       so that <m>\vr(0) = (0,0,1)</m> is the initial point of the line segment and
       <m>\vr(1) = (2,1,0)</m> is the final point of the segment. Then
-      <me>
+      <md><mrow>
       \vr'(t) = (2,1,-1)\qquad
-      </me>
+      </mrow></md>
       and the work is
       <md>
       <mrow>
@@ -258,11 +258,11 @@
 
       <p>
       we parametrize <m>C</m> by
-      <me>
+      <md><mrow>
       \vr(\theta) =
       \big(x(\theta)\,,\,y(\theta)\big)
       =(1-\cos\theta)\,\vi +\sin\theta\,\vj\qquad 0\le\theta\le\pi
-      </me>
+      </mrow></md>
       So the integral is
       <md>
       <mrow>
@@ -298,7 +298,7 @@
       Then:
       <md>
       <mrow>
-      \int_C xy\dee{y} &amp;=\int_{C_1} xy\dee{y}+\int_{c_2}xy\dee{y}
+      \int_C xy\dee{y} &amp;=\int_{C_1} xy\dee{y}+\int_{C_2}xy\dee{y}
       </mrow><mrow>
       &amp;=\int_0^1\left(1-\sqrt{1-y^2}\right)y\,\dee{y}+\int_1^0\left(1+\sqrt{1-y^2}\right)y\,\dee{y}
       </mrow><mrow>

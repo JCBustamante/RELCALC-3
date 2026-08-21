@@ -44,13 +44,13 @@
     </sidebyside>
     <p>
     Ceci donne une approximation de la masse de notre fil <m>\cC</m>, à savoir
-    <me>
+    <md><mrow>
     \sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
         \big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|
     =\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
        \bigg|\frac{\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)}
                               {t_\ell-t_{\ell-1}}\bigg|\De t
-    </me>.
+    </mrow></md>.
     </p>
     <p>
     Puis, on prend la limite lorsque  <m>n\rightarrow\infty</m>. Si nous supposons que
@@ -58,18 +58,18 @@
       On peut affaiblir ces conditions et exiger que <m>\vr'(t)</m> et <m>\rho(t)</m> soient continues et bornées sauf peut-être en un nombre fini de points (le vecteur <m>\vr'(t)</m> n'a pas besoin d'exister en ces points).
     </fn>
     que  <m>\vr(t)</m> est de classe <m>C^1</m> et que  <m>\rho(\vr)</m> est continue, on obtient
-    <me>
+    <md><mrow>
     \text{Masse de } \cC = \int_a^b \rho\big(\vr(t)\big) \left|\diff{\vr}{t}(t)\right|\,\dee{t}
-    </me>,
+    </mrow></md>,
     qui fournit la définition qui suit.
     </p>
     <definition xml:id="def_lineIntegral">
       <statement>
         <p>
             Soit <m>\cC</m> une courbe dans <m>\R^n</m> paramétrée par <m>\vr(t)</m> avec <m>a\leqslant  t\leqslant  b</m>, et <m>f</m> une fonction continue définie dans une région de <m>\R^n</m> contenant <m>\cC</m>, alors on définit
-            <me>
+            <md><mrow>
                 \int_\cC f\,\dee{s} =\int_a^b f\circ \vr(t) |\vr'(t)|\,  \dee{t}
-            </me>.
+            </mrow></md>.
             Dans cette notation, l'indice <m>\cC</m> spécifie la courbe, et <m>\dee{s}</m> est la longueur d'arc.
         </p>
       </statement>
@@ -79,21 +79,21 @@
         <li>
           <p>
               Si <m>\cC</m> est une courbe de <m>\R^3</m> et qu'elle est paramétrée par <m>\vr(t) = x(t)\vi + y(t)\vj + z(t) \vk</m>, alors la formule ci-haut se lit
-              <me>
+              <md><mrow>
               \int_\cC f(x,y,z)\,\dee{s}
                =\int_a^b f\big(x(t), y(t) , z(t) \big)\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\
                      \dee{t}
-              </me>.
+              </mrow></md>.
             </p>
         </li>
         <li>
           <p>
               Si <m>\cC</m> est une courbe dans <m>\R^2</m> (et donc que <m>f</m> est une fonction de deux variables) paramétrée par <m>\vr(t) = x(t)\vi + y(t)\vj</m>, alors la formule devient
-              <me>
+              <md><mrow>
               \int_\cC f(x,y)\,\dee{s}
                =\int_a^b f\big(x(t), y(t) \big)\sqrt{x'(t)^2+y'(t)^2}\
                      \dee{t}
-              </me>.
+              </mrow></md>.
             </p>
         </li>
       </ul>
@@ -105,9 +105,9 @@
     </remark>
     <p>
   À la lumière de la définition ci-haut, on peut interpréter la longueur d'arc d'une courbe. En effet, le <xref ref="thm-Longueur" text="global">théorème</xref> se lit, avec les notations introduites dans la <xref ref="def_lineIntegral" text="global">définition</xref>, comme
-  <me>
+  <md><mrow>
     L= \int_{\cC} \,\dee{s}
-  </me>,
+  </mrow></md>,
   qu'on peut interpréter en disant que la longueur totale <m>L</m> est la somme des petits éléments de longueur de courbe <m>\dee{s}</m>.
 </p>
     <example>
@@ -141,13 +141,13 @@
         </sidebyside>
         <p>
           Dans notre cas, puisque <m>\vb = \vi</m> et <m> \va = \vj</m>, ceci revient à écrire
-          <me>
+          <md><mrow>
               \vr(t) = t\vi + (1-t)\vj = x(t) \vi + y(t)\vj
-          </me>.
+          </mrow></md>.
     </p>
         <p>
       Nous avons aussi <m>\vr'(t) = \vi - \vj</m>, de sorte que <m>|\vr'(t)| = \sqrt{2}</m>. Ainsi, nous pouvons calculer directement
-      <md><mrow>\int_\cC f\, \dee{s} \amp = \int_0^1 \left[x(t) + y(t)\right] \sqrt{2}\, \dee{t} = \int_0^1 \left[t+ (1-t)\right]\, \dee{t} </mrow><mrow> \amp= \int_0^1\sqrt{2} \ \dee{t} = \sqrt{2} </mrow></md>.
+      <md><mrow>\int_\cC f\, \dee{s} \amp = \int_0^1 \left[x(t) + y(t)\right] \sqrt{2}\, \dee{t} = \sqrt{2}\int_0^1 \left[t+ (1-t)\right]\, \dee{t} </mrow><mrow> \amp= \int_0^1\sqrt{2} \ \dee{t} = \sqrt{2} </mrow></md>.
     </p>
       </solution>
     </example>
@@ -178,7 +178,7 @@
          </sageplot>
           </image>
         </sidebyside>
-        <p>On calcule aisément <m>\vr'(t) = 2y\vi + 2\vj</m>, et donc <m>|\vr'(t)| = \sqrt{4t^2 + 4 } = 2\sqrt{1+t^2}</m>, puis on calcule l'intégrale de ligne :
+        <p>On calcule aisément <m>\vr'(t) = 2t\vi + 2\vj</m>, et donc <m>|\vr'(t)| = \sqrt{4t^2 + 4 } = 2\sqrt{1+t^2}</m>, puis on calcule l'intégrale de ligne :
     <md><mrow>\int_{\cC} f\, \dee{s} \amp= \int_0^3 f(\vr(t)) |\vr'(t)|\, \dee{t} = \int_0^3 2t \cdot 2\sqrt{1+t^2}\, \dee{t} </mrow><mrow> \amp= 2\int_0^3 2t\sqrt{1+t^2}\, \dee{t} = 2 \frac{2}{3}\left. \left(1+t^2\right)^{3/2}\right|_{t=0}^{t=3} = \frac{4}{3}\left(10^{3/2} -1\right)</mrow></md>.
     </p>
       </solution>
@@ -197,23 +197,23 @@
       <fn>
         Il est très tentant d'écrire que <q><m>\cC = \cC_1 + \cC_2</m></q>.
       </fn>
-    <me>
+    <md><mrow>
       \int_{\cC} f\, \dee{s} = \int_{\cC_1} f\, \dee{s} +  \int_{\cC_2} f\, \dee{s}
-    </me>.
+    </mrow></md>.
   </p>
         <p>
     Afin de calculer l'intégrale voulue, calculons les deux termes indépendamment.
     <ul><li><p>
-          La courbe <m>\cC_1</m> est paramétrée par <m>\vr_1(t) = t\vi + t^2\vj + 0 \vk</m>, avec <m>t\in [0,1]</m>. On calcule <m>\vr'_1(t) = \vi + 2t \vj</m>, et donc <m>|\vr'_1(t)| = \sqrt{1+t^2}</m>, et donc :
-          <md><mrow>\int_{\cC_1} f\, \dee{s} \amp= \int_0^1 \left(t+(\sqrt{t})^2 - 0^2 \right) \sqrt{1+4t^2}\, \dee{t} = \int_0^1 2t\sqrt{1+4t^3}\,  \dee{t}</mrow><mrow> \amp= \left.\frac{1}{6} \, {\left(4 \, t^{2} + 1\right)}^{\frac{3}{2}}\right|_{t=0}^{t=1} = \frac{1}{6}\left(5^{3/2}-1\right) </mrow></md>.
+          La courbe <m>\cC_1</m> est paramétrée par <m>\vr_1(t) = t\vi + t^2\vj + 0 \vk</m>, avec <m>t\in [0,1]</m>. On calcule <m>\vr'_1(t) = \vi + 2t \vj</m>, et donc <m>|\vr'_1(t)| = \sqrt{1+4t^2}</m>, et donc :
+          <md><mrow>\int_{\cC_1} f\, \dee{s} \amp= \int_0^1 \left(t+(\sqrt{t})^2 - 0^2 \right) \sqrt{1+4t^2}\, \dee{t} = \int_0^1 2t\sqrt{1+4t^2}\,  \dee{t}</mrow><mrow> \amp= \left.\frac{1}{6} \, {\left(4 \, t^{2} + 1\right)}^{\frac{3}{2}}\right|_{t=0}^{t=1} = \frac{1}{6}\left(5^{3/2}-1\right) </mrow></md>.
         </p></li><li><p>
           Comme précédemment, on a un paramétrage de <m>\cC_2</m> donné par <m>\vr_2(t) = \vi + \vj +t\vk</m> pour <m>t\in [0,1]</m>. Ceci donne <m>\vr_2'(t) = \vk</m>, et donc <m>|\vr_2'(t)| = 1</m>, et donc
           <md><mrow>\int_{\cC_2} f\, \dee{s} \amp= \int_0^1 \left(1+1^2-t^2\right) \cdot 1 \, \dee{t} = \int_0^1 2-t^2 \, \dee{t} = 5/3.</mrow></md>
         </p></li></ul>
     Ainsi,
-    <me>
-      \int_{\cC} f\, \dee{s} = \int_{\cC_1} f\, \dee{s} +  \int_{\cC_2} f\, \dee{s} = \frac{1}{6}\left(5^{3/2} -1\right) + \frac{5}{3} = \frac{1}{6}\left(5^{3/2} -9\right)
-    </me>.
+    <md><mrow>
+      \int_{\cC} f\, \dee{s} = \int_{\cC_1} f\, \dee{s} +  \int_{\cC_2} f\, \dee{s} = \frac{1}{6}\left(5^{3/2} -1\right) + \frac{5}{3} = \frac{1}{6}\left(5^{3/2} +9\right)
+    </mrow></md>.
   </p>
       </solution>
     </example>
@@ -226,9 +226,9 @@
 
 
     <p> Nous avons motivé les intégrales de ligne par le problème du calcul de la masse d'un fil mince de densité variable donnée par une fonction <m>\rho(\vr)</m>. Ce contexte mène naturellement au problème du calcul du centre de gravité, ou des moments d'inertie d'un tel fil par rapport à différents axes de rotation. Supposons donc que la courbe <m>\cC</m>, c'est-à-dire la forme de notre fil, est une courbe dans <m>\R^3</m> (s'il s'agit d'une courbe dans <m>\R^2</m>, il faut simplement ignorer la coordonnée <m>z</m>). La masse totale est
-<me>
+<md><mrow>
   \text{Masse} = \int_{\cC} \rho(x,y,z)\,  \dee{s}.
-</me>
+</mrow></md>
 De même, les coordonnées de son centre de gravité sont
 <md><mrow>\bar{x} \amp= \frac{\displaystyle \int_{\cC}x\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s},}  \amp
   \bar{y} \amp= \frac{\displaystyle \int_{\cC}y\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s},}  \amp \bar{z} \amp= \frac{\displaystyle \int_{\cC}z\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s}}   </mrow><mrow> \amp= \frac{1}{M}\int_{\cC} x \rho \, \dee{s} \amp  \amp=\frac{1}{M}\int_{\cC} y \rho \, \dee{s} \amp \amp= \frac{1}{M}\int_{\cC} z \rho \, \dee{s}</mrow></md>.
@@ -244,9 +244,9 @@ On comparera ces formules à celle pour le centre de masse d'une plaque occupant
   Notons que le terme <m>y^2 + z^2</m> dans l'expression de <m>I_x</m> provient du carré de la distance du point <m>(x,y,z)</m> à l'axe de rotation, c'est-à-dire l'axe <m>Ox</m>.
 </p>
     <p> De même, la valeur moyenne de la fonction <m>f</m> sur la courbe <m>\cC</m> est donnée par
-<me>
+<md><mrow>
   \bar f = \frac{\displaystyle \int_{\cC} f\, \dee{s}}{\displaystyle \int_{\cC} \, \dee{s}} = \frac{1}{L}\int_{\cC} f\, \dee{s}.
-</me>
+</mrow></md>
 On comparera cette formule à celles de la <xref ref="def_AVaverage" text="global">définition</xref>.
 </p>
     <p>
@@ -259,18 +259,18 @@ On comparera cette formule à celles de la <xref ref="def_AVaverage" text="globa
     Par exemple, votre <em>slinky</em> préféré.
   </fn>
   dont la forme est donnée par
-<me>
+<md><mrow>
 \vr(t) = x(t)\vi + y(t) \vj + z(t)\vk = a\cos t\,\vi + a\sin t\,\vj + bt\, \vk \qquad 0\leqslant  t\leqslant  2\pi
-</me>
+</mrow></md>
 et que ce fil a une densité de masse constante <m>\rho</m>. Trouver le centre de masse du fil.
 Nous avons en particulier
-<me>
+<md><mrow>
   \vr'(t) = -a\sin t\, \vi + a\cos t\,\vj + b\,\vk
-</me>,
+</mrow></md>,
 de sorte que
-<me>
+<md><mrow>
   |\vr'(t)| = \sqrt{a^2 \sin^2 t + a^2 \cos^2 t + b^2} = \sqrt{a^2 + b^2}
-</me>.
+</mrow></md>.
 Ainsi,
 <md><mrow>
 \bar x
@@ -324,24 +324,24 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
           Oui, oui, il faudrait, en toute rigueur, considérer de petits intervalles de temps  <m>\De t \gt 0</m>, puis prendre la limite lorsque <m>\De t\rightarrow 0</m>. Mais, à ce stade-ci, nous avons l'habitude de cette mécanique.
         </fn>
         entre <m>t</m> et <m>t+\dee{t}</m>, la particule se déplace de <m>\vr(t)</m> à <m>\vr(t)+\dee{\vr}</m>, où <m>\dee{\vr}=\diff{\vr}{t}(t)\,\dee{t}</m>. Par définition, le travail effectué pendant ce laps de temps est
-    <me>
+    <md><mrow>
     \vF\big(\vr(t)\big)\cdot\dee{\vr} = \vF\big(\vr(t)\big)\cdot
     \diff{\vr}{t}(t)\,\dee{t}
-    </me>.
+    </mrow></md>.
     Le travail total pendant la durée du déplacement entre <m>t_0</m> et <m>t_1</m> est donc
-    <me>
+    <md><mrow>
     W = \int_{t_0}^{t_1}\vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
-    </me>.
+    </mrow></md>.
     Ceci nous mène à définir ce qui suit.
     </p>
     <definition xml:id="not_workIntegral">
       <statement>
         <p>
     Soit <m>\cC</m> une courbe paramétrée par  <m>\vr(t)</m> avec <m>t_0\leqslant  t\leqslant  t_1</m>. Alors,
-    <me>
+    <md><mrow>
     \int_\cC\vF\cdot\dee{\vr}
         =\int_{t_0}^{t_1}\vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
-    </me>.
+    </mrow></md>.
     </p>
       </statement>
     </definition>
@@ -405,10 +405,10 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
     Nous allons calculer l'intégrale de <m>\vF</m> le long de ces trois trajectoires.
     <ol marker="(a)"><li>
     Nous paramétrons <m>\cC_1</m> par <m>\vr(t) = t\,\vi+t\,\vj</m> avec <m>t\in[0,1]</m>. Ainsi, <m>x(t)=t</m> et <m>y(t)=t</m>, de sorte que
-    <me>
+    <md><mrow>
     \vF\big(\vr(t)\big) = t^2\,\vi + (t^2+1)\,\vj\qquad\text{et}\qquad
     \diff{\vr}{t}(t) = \vi + \vj
-    </me>,
+    </mrow></md>,
     ce qui permet de calculer
     <md><mrow>
     \int_{\cC_1}\vF\cdot\dee{\vr}
@@ -439,10 +439,10 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
     Notons que l'intégrale le long de <m>\cC_{2,x}</m> est nulle parce que, le long de cette portion de la trajectoire, le champ <m>\vF</m> est orthogonal à la trajectoire. Nous pouvons observer ceci dans la figure ci-haut.
     </li><li>
     Nous paramétrons <m>\cC_3</m> par <m>\vr(t) = t^2\,\vi+t\,\vj</m> avec <m>t\in[0,1]</m>. Alors, <m>x(t)=t^2</m> et <m>y(t)=t</m>, de sorte que
-    <me>
+    <md><mrow>
     \vF\big(\vr(t)\big) = t^3\,\vi + (t^2+1)\,\vj\qquad\text{et}\qquad
     \diff{\vr}{t}(t) = 2t\,\vi + \vj
-    </me>,
+    </mrow></md>,
     ce qui permet de calculer
     <md><mrow>
     \int_{\cC_3}\vF\cdot\dee{\vr}
@@ -535,25 +535,25 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
     </p>
     <p>
       Par ailleurs, si l'on a un champ de vecteurs <m>\vF(x,y) = P(x,y)\vi + Q(x,y)\vj</m> et un chemin <m>\vr(t) = x(t)\vi + y(t)\vj</m>, on aura
-      <me>
+      <md><mrow>
           \vF(\vr(t))\cdot \vr'(t) = P(x(t),y(t))\,x'(t) + Q(x(t),y(t))\, y'(t)
-      </me>,
+      </mrow></md>,
       qu'on écrit de façon plus compacte sous la forme
-      <me>
+      <md><mrow>
           \vF \cdot \vr' = P\,x' + Q\,y'
-      </me>.
+      </mrow></md>.
       L'intégrale de ligne devient donc
-      <me>
+      <md><mrow>
           \int_{\cC}\vF \cdot \dee{\vr} = \int_a^b \vF \cdot \vr' \ \dee{t} = \int_a^b P\, x' + Q\, y'\ \dee{t}
-      </me>,
+      </mrow></md>,
       qu'on note naturellement
-      <me>
+      <md><mrow>
           \int_{\cC} P \dee{x} + Q \dee{y}.
-      </me>
+      </mrow></md>
       Cette écriture équivalente pour <m>\int_{\cC} \vF \dee{\vr}</m> donne lieu aux intégrales de ligne de la forme
-      <me>
+      <md><mrow>
           \int_{\cC} P\dee{x}  \qquad \text{ et } \qquad \int_{\cC} Q \dee{y}.
-      </me>
+      </mrow></md>
       Une remarque analogue tient pour les champs (et les chemins) dans <m>\R^3</m> : si <m>\vF = P \vi + Q \vj + R \vk</m>, on aura
       <md><mrow> \int_{\cC} \vF \cdot \dee{\vr} \amp = \int_{\cC} P\,\dee{x} + Q\,\dee{y} + R\,\dee{z} </mrow></md>.
     </p>
@@ -604,19 +604,19 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
           <ul>
             <li>
               <p>
-                La portion <m>\cC_1</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = t\vi + 0 vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = \vi</m>. Ainsi,
+                La portion <m>\cC_1</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = t\vi + 0 \vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = \vi</m>. Ainsi,
                 <md><mrow>\int_{\cC_1} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^1 (t-0)\cdot 1 + (t+0)\cdot 0 \ \dee{t} </mrow><mrow>  \amp=\int_0^1 t\ \dee{t} = \frac{1}{2} </mrow></md>.
               </p>
             </li>
             <li>
               <p>
-                La portion <m>\cC_2</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = (1-t)\vi + t vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vi + \vj</m>. Ainsi,
+                La portion <m>\cC_2</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = (1-t)\vi + t \vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vi + \vj</m>. Ainsi,
                 <md><mrow>\int_{\cC_2} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^1 ((1-t) - t)(-1) + ((1-t)+t)(1) \ \dee{t} </mrow><mrow>  \amp=\int_0^1 2t\ \dee{t} = 1 </mrow></md>.
               </p>
             </li>
             <li>
-              <p>La portion <m>\cC_3</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = 0\vi + (1-t) vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vj</m>. Ainsi,
-              <md><mrow>\int_{\cC_x} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^1 (0-(1-t))\cdot 0 + (0+(1-t))(-1) \ \dee{t} </mrow><mrow>  \amp=\int_0^1 t-1 \dee{t} = -\frac{1}{2} </mrow></md>.
+              <p>La portion <m>\cC_3</m> est paramétrée par <m>\vr(t) = x(t)\vi + y(t) \vj = 0\vi + (1-t) \vj</m> pour <m>t\in[0,1]</m>. Nous avons alors <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vj</m>. Ainsi,
+              <md><mrow>\int_{\cC_3} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^1 (0-(1-t))\cdot 0 + (0+(1-t))(-1) \ \dee{t} </mrow><mrow>  \amp=\int_0^1 t-1 \dee{t} = -\frac{1}{2} </mrow></md>.
               </p>
             </li>
           </ul>
@@ -631,7 +631,7 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
     <example>
       <statement>
         <p>
-          Calculer le travail effectué par le champ <m>\vF(x,y,z) = (y-x^2)\vi + (z-y^2)\vj + (x-z^2)\vk</m> entre l'origine et le point <m>(1,1,1)</m> le long de la courbe paramétrée par <m>\vr_(t) = t\vi + t^2\vj +t^3\vk</m> avec <m>t\in[0,1]</m>.
+          Calculer le travail effectué par le champ <m>\vF(x,y,z) = (y-x^2)\vi + (z-y^2)\vj + (x-z^2)\vk</m> entre l'origine et le point <m>(1,1,1)</m> le long de la courbe paramétrée par <m>\vr(t) = t\vi + t^2\vj +t^3\vk</m> avec <m>t\in[0,1]</m>.
         </p>
       </statement>
       <solution>
@@ -640,9 +640,9 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
         </p>
         <p>
           Par ailleurs, on a directement <m>\vr'(t) = \frac{d}{dt}\left( t\vi + t^2\vj +t^3\vk\right) = \vi + 2t \vj + 3t^2 \vk</m>, de sorte que
-          <me>
+          <md><mrow>
               \vF(\vr(t))\cdot \vr'(t) = 2t^4-2t^5+3t^3-3t^8.
-          </me>
+          </mrow></md>
         </p>
         <p>
           L'intégrale voulue est donc
@@ -657,9 +657,9 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
     </exercise>  
     <p>
       Supposons maintenant nous voulons calculer le taux d'entrée ou de sortie d'un fluide dans une région du plan limitée par une courbe fermée <m>\cC</m>. Si <m>\vF</m> est le champ de vitesses du fluide, on ne doit plus projeter <m>\vF</m> tangentiellement à <m>\cC</m> (ce qu'on fait lorsqu'on calcule <m>\vF \cdot \vT</m>), mais plutôt projeter <m>\vF</m> sur un vecteur <m>\vn </m> unitaire et orthogonal à la courbe en chaque point. Dans ce cas, le <term><em>flux de <m>\vF</m>à travers <m>\cC</m></em></term> sera donné par
-      <me>
+      <md><mrow>
           \int_{\cC} \vF \cdot \vn\, \dee{s}
-      </me>.
+      </mrow></md>.
     </p>
     <p>
       Notre courbe étant fermée, nous devons choisir un vecteur unitaire qui pointe vers l'extérieur. Puisque la courbe est plane, le vecteur tangent unitaire <m>\vT</m> a une composante <m>\vk</m> nulle. Ainsi, en chaque point de la courbe, les vecteurs <m>\vk \times \vT</m> et <m>\vT \times \vk</m> sont tous les deux unitaires et orthogonaux à la courbe. Prenons pour acquis que le paramétrage <m>\vr</m> de <m>\cC</m> fait parcourir la courbe dans le sens contraire à celui des aiguilles d'une montre. Dans ce cas, c'est le vecteur <m>\vn = \vT \times \vk</m> qui pointe vers l'extérieur.
@@ -670,7 +670,7 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
       Ainsi, on calcule le produit vectoriel
       <md><mrow>\vn \amp= \vT \times \vk =\left| \begin{array}{ccc}\vi \amp dx/ds \amp 0\\ \vj \amp dy/ds \amp 0 \\ \vk \amp 0 \amp 1\end{array}\right| = \diff{y}{s}\vi - \diff{x}{s}\vj. </mrow></md>
       Si notre champ de vitesses est <m>\vF = P\vi + Q\vj</m>, nous aurons
-      <md><mrow>\vF \cdot \vn  \amp= P \diff{y}{s} - Q\diff{y}{s} </mrow></md>,
+      <md><mrow>\vF \cdot \vn  \amp= P \diff{y}{s} - Q\diff{x}{s} </mrow></md>,
       et le flux à travers la courbe est donné par
       <md><mrow xml:id="Formule-Flux-travers" tag="star">\int_{\cC} \vF \cdot \vn\ \dee{s} \amp = \int_{\cC}P \diff{y}{s} - Q \diff{x}{s} \ \dee{s} = \int_{\cC} P \dee{y} - Q \dee{x} </mrow></md>.
     </p>
@@ -681,7 +681,7 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
         </p>
       </statement>
       <solution><p>Nous avons un paramétrage du cercle <m>\cC</m> qui le parcourt dans le sens trigonométrique, à savoir <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj</m> avec <m>0\leqslant  t \leqslant 2\pi</m>. On calcule <m>\vr'(t) = -\sin t\, \vi + \cos t\ \vj</m>, et le flux est
-        <md><mrow>\int_{\cC}P \dee{y} - Q\dee{x} \amp = \int_0^{2\pi}(x(t) - y(t))y'(t) - x(t) y'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^{2\pi} (\cos t - \sin t)(\cos t) - (\cos t)(-\sin t) \, \dee{t} </mrow><mrow>  \amp=\int_0^{2\pi} \cos^2 t \, \dee{t} = \frac{1}{2}\int_0^{2\pi} 1+\cos 2t\ \dee{t} = \pi</mrow></md>.
+        <md><mrow>\int_{\cC}P \dee{y} - Q\dee{x} \amp = \int_0^{2\pi}(x(t) - y(t))y'(t) - x(t) x'(t)\ \dee{t} </mrow><mrow> \amp=\int_0^{2\pi} (\cos t - \sin t)(\cos t) - (\cos t)(-\sin t) \, \dee{t} </mrow><mrow>  \amp=\int_0^{2\pi} \cos^2 t \, \dee{t} = \frac{1}{2}\int_0^{2\pi} 1+\cos 2t\ \dee{t} = \pi</mrow></md>.
 
         </p><image xml:id="sageplot-int-ligne-Pdy-Qdx" width="45%"><description><p>La trajectoire et le champ</p></description><sageplot>
              var('x,y,j')
@@ -702,7 +702,7 @@ de sorte que le centre de masse se trouve sur l'axe de la spirale, à mi-chemin 
                  (a*cos(j*2*pi/20), a*sin(2*j*pi/20)), arrowsize =1, width=1, color = "blue",zorder=5) for j in [0,1,..19]])
              C
          </sageplot></image>
-       Remarquons que le flux vers l'extérieur est positif, en accord avec ce que nous observons dans la figure : lorsque le champ de vecteurs traverse la courbe <m>\cC</m>, il le fait en allant de l'intérieur vers l'extérieur.
+       <p>Remarquons que le flux vers l'extérieur est positif, en accord avec ce que nous observons dans la figure : lorsque le champ de vecteurs traverse la courbe <m>\cC</m>, il le fait en allant de l'intérieur vers l'extérieur.</p>
       </solution>
     </example>
 

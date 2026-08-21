@@ -27,9 +27,9 @@
             nous faisons la substitution <m>g(u) \to x</m>;
           </p></li><li><p>
             nous tenons compte de l'élément différentiel en substituant <m>g'(u)\,\dee{u} \to \dee{x}</m>. Ceci ressemble à une <q>simplification</q>
-            <me>
+            <md><mrow>
               g'(u)\, \dee{u} = \frac{\dee{x}}{\dee{u}}\, \dee{u} = \dee{x}.
-            </me>
+            </mrow></md>
             Il faut bien comprendre cependant que cette <q>simplification</q> est seulement un procédé mnémotechnique, il ne s'agit pas de divisions.
           </p></li></ol>
     </p>
@@ -50,7 +50,7 @@
   <subsection xml:id="pars-chgt-var-2">
     <title>Changement de variables pour les intégrales doubles</title>
     <p>
-      Supposons donc que nous avons une région <m>\cR</m> dans le plan <m>Oxy</m> et que nous voulons effectuer un changement de variables. Ceci revient à nous donner une transformation <m>\vr</m> définie sur une partie du plan <m>Ouv</m>, donnée par <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m> et qui couvre la région <m>\vr</m>.
+      Supposons donc que nous avons une région <m>\cR</m> dans le plan <m>Oxy</m> et que nous voulons effectuer un changement de variables. Ceci revient à nous donner une transformation <m>\vr</m> définie sur une partie du plan <m>Ouv</m>, donnée par <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m> et qui couvre la région <m>\cR</m>.
     </p>
     <p>
       Comme précédemment, l'idée de base est d'analyser l'effet de la transformation <m>\vr</m> sur un petit élément d'aire <m>\De u\, \De v</m> en utilisant l'approximation linéaire. On suppose par surcroît que <m>\vr</m> est différentiable, ce qui garantit que cette approximation est bonne.
@@ -76,7 +76,7 @@
             color = "black")
           Fig += text("$S_2(u_0,v_0 + \\Delta v)$", (u0, v0+0.2+Dv),
             color= "black")
-          Fig += text("$S_3(u_0+\\Delta u, v_o+\\Delta v)$", (u0+1.5*Du, v0+0.2+Dv), color= "black")
+          Fig += text("$S_3(u_0+\\Delta u, v_0+\\Delta v)$", (u0+1.5*Du, v0+0.2+Dv), color= "black")
           Fig += text("$u$", (4, -0.2), color= "black")
           Fig += text("$v$", (0, 3.2), color= "black")
           Fig += arrow((0,0), (0,3), color = "black", width=1, arrowsize = 2)
@@ -100,13 +100,13 @@
     </figure>
     <p>
       Nous avons alors l'approximation linéaire de <m>\vr</m> autour de <m>S_0 = (u_0,v_0)</m>. Pour une variation <m>\pmb{\De}S= (\De u, \De v)</m> près de <m>S_0</m>,
-      <me>
+      <md><mrow>
         \vr(S_0 + \pmb{\De}S) \approx \vr(S_0)+ \vD\vr(S_0)\pmb{\De}S
-      </me>,
+      </mrow></md>,
       ou encore
-      <me>
+      <md><mrow>
         \vr(u_0+\De u, v_0+\De v) \simeq \vr(u_0,v_0) + \pdiff{\vr}{u}(u_0,v_0)\De u + \pdiff{\vr}{v}(u_0,v_0)\De v
-      </me>,
+      </mrow></md>,
       ce qui, à son tour, peut s'écrire composante à composante :
       <md><mrow> x(u_0+\De u, v_0+ \De v) \simeq x(u_0,v_0) + \pdiff{x}{u}(u_0,v_0)\De u + \pdiff{x}{v}(u_0,v_0)\De v, \amp </mrow><mrow> y(u_0+\De u, v_0+\De v) \simeq y(u_0,v_0) + \pdiff{y}{u}(u_0,v_0)\De u + \pdiff{y}{v}(u_0,v_0)\De v \amp </mrow></md>.
       Ainsi, on invoque trois fois ces formules pour obtenir
@@ -138,13 +138,13 @@
       L'aire du parallélogramme en question est la norme du produit vectoriel des vecteurs correspondant aux côtés du parallélogramme<fn>Qu'on considère comme des vecteurs de <m>\R^3</m>, en ajoutant une troisième composante nulle.</fn>. Or, nous avons
       <md><mrow>\pdiff{\vr}{u}(S_0) \amp = \pdiff{x}{u}(S_0)\vi + \pdiff{y}{u}(S_0)\vj + 0\vk, </mrow><mrow> \pdiff{\vr}{v}(S_0) \amp = \pdiff{x}{v}(S_0)\vi + \pdiff{y}{v}(S_0)\vj + 0\vk </mrow></md>.
       Afin d'alléger l'écriture, omettons le point d'évaluation des dérivées partielles. Nous devons calculer le produit vectoriel
-      <me>
+      <md><mrow>
         \left(\pdiff{\vr}{u}\De u\right)\times \left(\pdiff{\vr}{v}\De v\right) = \begin{vmatrix}\vi \amp \pdiff{x}{u} \amp \pdiff{x}{v}\\ \vj \amp \pdiff{y}{u}\amp \pdiff{y}{v}\\ \vk \amp 0\amp 0\end{vmatrix}\De u\, \De v = \left(\pdiff{x}{u} \pdiff{y}{v} - \pdiff{y}{u}\pdiff{x}{v} \right) \De u\, \De v \, \vk.
-      </me>
+      </mrow></md>
       Le vecteur <m>\vk</m> étant unitaire, l'aire qui nous intéresse est donc
-      <me>
+      <md><mrow>
         \left|\pdiff{x}{u} \pdiff{y}{v} - \pdiff{y}{u}\pdiff{x}{v} \right|\ \De u \, \De v = \left| \det \begin{bmatrix} \pdiff{x}{u}\amp \pdiff{x}{v}\\ \pdiff{y}{u}\amp\pdiff{y}{v}\end{bmatrix}\right| \De u\, \De v.
-      </me>
+      </mrow></md>
     </p>
     <p>
       Ceci nous mène à la définition suivante.
@@ -152,21 +152,21 @@
     <definition xml:id="def-Jacobian">
       <statement>
         <p>Étant donné une transformation <m>\vr</m> donnée par <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m>, son <term>jacobien</term> est le déterminant
-          <me>
+          <md><mrow>
             \pdiff{(x,y)}{(u,v)} = \begin{vmatrix} \pdiff{x}{u}(u,v)\amp \pdiff{x}{v}(u,v)\\ \pdiff{y}{u}(u,v)\amp\pdiff{y}{v}(u,v)\end{vmatrix}
-          </me>.
+          </mrow></md>.
         </p>
       </statement>
     </definition>
     <p>
       Avec ces notations, la petite région <m>\cS</m> du plan <m>Ouv</m> est transformée en une région <m>\cR</m> du plan <m>Oxy</m> dont l'aire vaut
-      <me>
+      <md><mrow>
         \De A = \left|\pdiff{(x,y)}{(u,v)}\right|\De u \, \De v
-      </me>.
+      </mrow></md>.
     </p>
     <p>
       Prenons maintenant une région générale <m>\cS</m> dans <m>Ouv</m> telle que lorsque <m>(u,v)</m> parcourt <m>\cS</m>, alors <m>\vr(u,v) = x(u,v)\vi + y(u,v)\vj</m> parcourt <m>\cR</m> une seule fois<fn>
-        En réalité, on peut affaiblir un peu cette condition : les points du bord de <m>\cR</m> pourraient être atteints plus d'une fois. En termes précis, on dira que la transformation <m>\vr</m> est <em>injective</em> sur <m>cS</m>, sauf peut-être sur son bord.
+        En réalité, on peut affaiblir un peu cette condition : les points du bord de <m>\cR</m> pourraient être atteints plus d'une fois. En termes précis, on dira que la transformation <m>\vr</m> est <em>injective</em> sur <m>\cS</m>, sauf peut-être sur son bord.
       </fn>.
       On divise <m>\cS</m> en plusieurs rectangles <m>\cS_{ij}</m>, puis on dénote par <m>\cR_{ij}</m> leurs images par <m>\vr</m>.
     </p>
@@ -174,18 +174,18 @@
       Quand nous avons construit les intégrales doubles, nous avons considéré des divisions du domaine d'intégration <m>\cR</m> en rectangles pour construire les sommes de Riemann. Il se trouve que cette division peut être faite de façon plus générale, les rectangles ne sont pas nécessaires. Ici, nous allons utiliser les <m>\cR_{ij}</m> comme sous-régions. L'aire de chacune de ces régions sera notée <m>\De A_{ij}</m>. Ainsi,
       <md><mrow>\iint_{\cR} f(x,y)\ \dee{A} \amp \approx \sum_{i=1}^m\sum_{j=1}^n f(x_i,y_j) \De A_{ij} </mrow><mrow> \amp\approx \sum_{i=1}^m \sum_{j=1}^m f(x(u_i,v_j), y(u_i, v_j))\left|\pdiff{(x,y)}{(u,v)}(u_i, v_i)\right| \De u\, \De v </mrow></md>.
       Cette double somme est une somme de Riemann pour l'intégrale
-      <me>
+      <md><mrow>
         \iint_\cS f(\vr(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v}
-      </me>.
+      </mrow></md>.
     </p>
     <theorem xml:id="thm-Chgt-var2">
       <statement>
         <p>Soit <m>\cS</m> et <m>\cR</m> deux régions élémentaires des plans <m>Ouv</m> et <m>Oxy</m> respectivement, <m>\vr : \cS \to \cR</m> une transformation de classe <m>C^1</m> telle que <m>\vr(u,v)</m> parcourt <m>\cR</m> une seule fois lorsque <m>(u,v)</m> parcourt <m>\cS</m>, et <m>f</m> une fonction continue sur <m>\cR</m>, alors
           <md><mrow xml:id="eq-chgt-2" tag="dstar"> \iint_\cS f(\vr(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v} \amp = \iint_{\cR} f(x,y)\ \dee{x}\, \dee{y}.  </mrow><mrow> \amp </mrow></md>
           Avec les composantes et les variables écrites explicitement, ceci devient
-          <me>
+          <md><mrow>
             \iint_\cS f(x(u,v), y(u,v))\left|\pdiff{(x,y)}{(u,v)}\right| \dee{u}\, \dee{v} = \iint_{\cR} f(x,y)\ \dee{x}\, \dee{y}.
-          </me>
+          </mrow></md>
         </p>
         <p>
           En particulier,
@@ -199,9 +199,9 @@
     <remark>
       <p>
         Nous avons que la dérivée de la transformation <m>\vr</m> est la matrice des dérivées partielles de ses composantes par rapport aux différentes variables, à savoir
-        <me>
+        <md><mrow>
           \vD(\vr) = \begin{bmatrix} \pdiff{x}{u}\amp \pdiff{x}{v}\\ \pdiff{y}{u}\amp \pdiff{y}{v}\end{bmatrix}.
-        </me>
+        </mrow></md>
         Ainsi, le jacobien de la transformation <m>\vr</m> est simplement le déterminant de la matrice <m>\vD(\vr)</m>.
       </p>
       <p>
@@ -328,34 +328,34 @@
         </sidebyside>
         <p>
           Ceci suggère de poser <m>u=y-2x</m> et <m>v= y-x</m>. Notons qu'il s'agit d'un changement de variables qui est linéaire, puisque nous pouvons également écrire
-          <me>
+          <md><mrow>
              \begin{bmatrix} u\\ v\end{bmatrix} = \left[\begin{array}{rr}-2\amp 1 \\-1 \amp 1\end{array}\right] \begin{bmatrix}x\\ y\end{bmatrix}
-          </me>.
+          </mrow></md>.
         </p>
         <p>
           La région <m>\cS</m> du plan <m>Ouv</m> qui correspond à <m>\cR</m> est le rectangle limité par les droites d'équations <m>u=0,\, u=-2,\, v=0</m> et <m>v=1</m>.
         </p>
         <p>
           Nous devons exprimer <m>x,y</m> en fonction de <m>u,v</m>. Dans notre cas, le changement de variables est une transformation linéaire, nous pouvons donc simplement inverser la matrice :
-          <me>
-            \begin{bmatrix}x\\ y\end{bmatrix} = \left[\begin{array}{rr}-2\amp 1\\ -1\amp 1 \end{array}\right]^{-1}, \begin{bmatrix}u\\ v\end{bmatrix} = \left[\begin{array}{rr}-1\amp 1\\-1\amp 2 \end{array} \right] \begin{bmatrix}u\\ v\end{bmatrix}
-          </me>,
+          <md><mrow>
+            \begin{bmatrix}x\\ y\end{bmatrix} = \left[\begin{array}{rr}-2\amp 1\\ -1\amp 1 \end{array}\right]^{-1} \begin{bmatrix}u\\ v\end{bmatrix} = \left[\begin{array}{rr}-1\amp 1\\-1\amp 2 \end{array} \right] \begin{bmatrix}u\\ v\end{bmatrix}
+          </mrow></md>,
           c'est-à-dire <m>x=-u+v</m> et <m>y= -u+2v</m>.
 
           Le jacobien de la transformation est alors
-          <me>
+          <md><mrow>
             \pdiff{(x,y)}{(u,v)} = \left|\begin{array}{rr}-1\amp 1\\-1\amp 2 \end{array} \right| = -1.
-          </me>
+          </mrow></md>
         </p>
         <p>
           L'intégrande est
-          <me>
+          <md><mrow>
             f(x,y) = xy = (-u+v)(-u+2v) = u^2 -3uv+2v^2
-          </me>.
+          </mrow></md>.
         </p>
         <p>
           Nous pouvons maintenant invoquer le <xref ref="thm-Chgt-var2" text="global">théorème</xref> et effectuer les calculs:
-          <md><mrow>\iint_{\cR} xy \dee{x}\, \dee{y} \amp = \iint_{\cS} \left(u^2-3uv+2v^2\right) |-1| \dee{u}\, \dee{v}  = \iint_{\cS} u^2-3uv+2v^2 \dee{u}\, \dee{v}  </mrow><mrow> \amp= \int_0^1 \int_{-2}^0 u^2 -3uv+2v^2 \ \dee{u}\, \dee{v} = \int_0^1 \left[\frac{u^3}{3} -\frac{3u^2v}{2} + 2uv^2\right]_{u=-2}^{u=0}\ \dee{v}</mrow><mrow>  \amp= \int_0^1 \frac{8}{3}  6v + 4v^2 \ \dee{v} = \left[\frac{4}{3}v^3+3v^2 +\frac{8}{3}v\right]_{v=0}^{v=1} </mrow><mrow>  \amp =7</mrow></md>.
+          <md><mrow>\iint_{\cR} xy \dee{x}\, \dee{y} \amp = \iint_{\cS} \left(u^2-3uv+2v^2\right) |-1| \dee{u}\, \dee{v}  = \iint_{\cS} u^2-3uv+2v^2 \dee{u}\, \dee{v}  </mrow><mrow> \amp= \int_0^1 \int_{-2}^0 u^2 -3uv+2v^2 \ \dee{u}\, \dee{v} = \int_0^1 \left[\frac{u^3}{3} -\frac{3u^2v}{2} + 2uv^2\right]_{u=-2}^{u=0}\ \dee{v}</mrow><mrow>  \amp= \int_0^1 \frac{8}{3} + 6v + 4v^2 \ \dee{v} = \left[\frac{4}{3}v^3+3v^2 +\frac{8}{3}v\right]_{v=0}^{v=1}</mrow><mrow>  \amp =7</mrow></md>.
         </p>
       </solution>
     </example>
@@ -364,10 +364,10 @@
     <example xml:id="eg_2d_sub">
       <statement>
         <p>
-          Évaluer <me>
+          Évaluer <md><mrow>
             \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}, \qquad\text{où }
             \cR=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 1+x\leqslant  y\leqslant  2+2x}
-          </me>.
+          </mrow></md>.
         </p>
       </statement>
       <solution>
@@ -386,7 +386,7 @@
         </p>
         <p>
           Le jacobien de la transformation est
-          <md><mrow> \pdiff{(x,y)}{(s,t)} = \begin{vmatrix} \pdiff{x}{s}\amp \pdiff{x}{t}\\ \pdiff{y}{s}\amp \pdiff{y}{t}\end{vmatrix} =  \begin{vmatrix} 1 \amp t\\ 0 \amp 1+2\end{vmatrix} = (1+s)</mrow></md>.
+          <md><mrow> \pdiff{(x,y)}{(s,t)} = \begin{vmatrix} \pdiff{x}{s}\amp \pdiff{x}{t}\\ \pdiff{y}{s}\amp \pdiff{y}{t}\end{vmatrix} =  \begin{vmatrix} 1 \amp 0\\ t \amp 1+s\end{vmatrix} = (1+s)</mrow></md>.
         </p>
         <p>Afin d'étudier l'effet du changement de variables <m>(x,y)\mapsto (s,t)</m> sur le domaine <m>\cR</m>, considérons son bord, puis voyons comment ce bord est exprimé en termes de  <m>s</m> et <m>t</m>. Voici <m>\cR</m> dans le plan  <m>Oxy</m>.
         </p>
@@ -416,9 +416,9 @@
         </p>
         <p>
           Ainsi, la région <m>\cS</m> dans le plan <m>Ost</m> qui correspond à <m>\cR</m> est
-          <me>
+          <md><mrow>
             \cS = \Set{(s,t)}{0\leqslant  s\leqslant  1,\ 1\leqslant  t\leqslant  2}
-          </me>.
+          </mrow></md>.
         </p>
         <p>
           Nous avons maintenant tous les ingrédients pour appliquer le <xref ref="thm-Chgt-var2" text="global">théorème</xref>. Notons que le jacobien de la transformation est <m>1+s</m>, qui est positif sur <m>\cS</m>. Ainsi,
@@ -450,21 +450,21 @@
       </statement>
       <solution>
         <p>Considérons le changement de variables
-          <me>
+          <md><mrow>
             \begin{bmatrix}x\\y\end{bmatrix} = \vr(u,v) = \begin{bmatrix} u/v\\ uv\end{bmatrix} \qquad \text{ ou encore } \qquad \begin{bmatrix}u\\v \end{bmatrix}  = \begin{bmatrix}\sqrt{xy}\\ \sqrt{y/x}\end{bmatrix}.
-          </me>
+          </mrow></md>
         </p>
         <p>
           Ce changement de variables rend l'intégrande très simple, puisque
-          <me>
+          <md><mrow>
             \sqrt{\frac{y}{x}} + \sqrt{xy} = \sqrt{v^2} + \sqrt{u^2} = v+u
-          </me>.
+          </mrow></md>.
         </p>
         <p>
           Le jacobien se calcule aisément :
-          <me>
+          <md><mrow>
             \pdiff{(x,y)}{(u,v)} = \begin{vmatrix} \pdiff{x}{u} \amp \pdiff{x}{v}\\ \pdiff{y}{u} \amp \pdiff{y}{v}\end{vmatrix} = \begin{vmatrix}1/v \amp -u/v^2 \\ v\amp u \end{vmatrix} = 2u/v
-          </me>.
+          </mrow></md>.
         </p>
         <p>
           La région <m>\cR</m> qui nous intéresse est limitée par <m>4</m> courbes qui se coupent aux points <m>P_1(1,1),\ P_2(3,3),\ P_3(\frac{3}{2},6)</m> et <m>P_4(\frac{1}{2},2)</m>. Chacun de ces points, à son tour, correspond à deux points différents du plan <m>Ouv</m> sous la transformation <m>\vr</m> choisie :
@@ -472,11 +472,11 @@
           <md><mrow>
               P_1=\vr(S_1) = \vr(S_1'), \amp \text{ où } S_1(1,1), S'_1(-1,-1),
             </mrow><mrow>
-              P_2=\vr(S_2) = \vr(S_2'), \amp \text{ où } S_2(3,1), S'_1(-3,-1),
+              P_2=\vr(S_2) = \vr(S_2'), \amp \text{ où } S_2(3,1), S'_2(-3,-1),
             </mrow><mrow>
-              P_3=\vr(S_3) = \vr(S_3'), \amp \text{ où } S_3(3,2), S'_1(-3,-2),
+              P_3=\vr(S_3) = \vr(S_3'), \amp \text{ où } S_3(3,2), S'_3(-3,-2),
             </mrow><mrow>
-              P_4=\vr(S_4) = \vr(S_4'), \amp \text{ où } S_4(1,2), S'_1(-1,-2)
+              P_4=\vr(S_4) = \vr(S_4'), \amp \text{ où } S_4(1,2), S'_4(-1,-2)
             </mrow></md>.
         </p>
         <sidebyside widths="45% 45%">
@@ -557,7 +557,7 @@
           </image>
         </sidebyside>
         <p>
-          Par ailleurs, la droite <m>y=x</m> correspond à <m>v^2 = 1</m>, c'est-à-dire à la paire de droites <m>v=\pm 1</m>. La droite <m>y=4x</m> correspond à la paire de droites <m>v= \pm 2</m>. De même, l'hyperbole <m>xy = 1</m> correspond à <m>u^2 = 1</m>, c'est-à-dire à la paire de droites <m>u=\pm 1</m>, et l'hyperbole <m>xy=9</m> correspond à la paire de droites <m>u=\pm 3</m>.  Nous avons donc deux régions <m>\cS</m> et <m>\cS'</m> du plan <m>Ouv</m> qui correspondent à <m>cR</m> sous la transformation choisie. Afin de calculer l'intégrale qui nous intéresse, nous devons choisir l'une d'entre elles. Choisissons <m>\cS = \{(u,v)| 1\leqslant  u \leqslant 3,\ 1\leqslant  v \leqslant 2 \}</m>. Notons que, sur cette région, le jacobien de la transformation est positif et que nous pouvons calculer notre intégrale :
+          Par ailleurs, la droite <m>y=x</m> correspond à <m>v^2 = 1</m>, c'est-à-dire à la paire de droites <m>v=\pm 1</m>. La droite <m>y=4x</m> correspond à la paire de droites <m>v= \pm 2</m>. De même, l'hyperbole <m>xy = 1</m> correspond à <m>u^2 = 1</m>, c'est-à-dire à la paire de droites <m>u=\pm 1</m>, et l'hyperbole <m>xy=9</m> correspond à la paire de droites <m>u=\pm 3</m>.  Nous avons donc deux régions <m>\cS</m> et <m>\cS'</m> du plan <m>Ouv</m> qui correspondent à <m>\cR</m> sous la transformation choisie. Afin de calculer l'intégrale qui nous intéresse, nous devons choisir l'une d'entre elles. Choisissons <m>\cS = \{(u,v)| 1\leqslant  u \leqslant 3,\ 1\leqslant  v \leqslant 2 \}</m>. Notons que, sur cette région, le jacobien de la transformation est positif et que nous pouvons calculer notre intégrale :
           <md><mrow>\iint_{\cR}\sqrt{\frac{y}{x}} +\sqrt{xy}\ \dee{x}\, \dee{y}  \amp= \iint_{\cS} (u+v) \frac{2u}{v}\dee{u}\, \dee{v} = 2 \int_1^2\int_1^3 \frac{u^2}{v} + u\  \dee{u}\, \dee{v}</mrow><mrow> \amp = 2 \int_1^2 \left[\frac{u^3}{3v}+ \frac{u^2}{2}\right]_{u=1}^{u=3}\ \dee{v} = 2\int_1^2 \frac{26}{3v} + 4\ \dee{v}  </mrow><mrow>  \amp= 2 \left[ \frac{26}{3}\ln v + 4v \right]_{v=1}^{v=2} = \frac{52}{3}\ln 2 +8  </mrow></md>.
         </p>
       </solution>
@@ -586,9 +586,9 @@
     <definition xml:id="def-Jacobian-3">
       <statement>
         <p>Étant donné une transformation <m>\vr</m> donnée par <m>\vr(u,v,w) = x(u,v,w)\vi + y(u,v,w)\vj + z(u,v,w)\vk</m>, son <term>jacobien</term> est le déterminant
-          <me>
-            \pdiff{(x,y,z)}{(u,v,v)} = \begin{vmatrix} \pdiff{x}{u} \amp \pdiff{x}{v}\amp \pdiff{x}{w} \\ \pdiff{y}{u}\amp\pdiff{y}{v} \amp \pdiff{y}{w} \\\pdiff{z}{u}\amp\pdiff{z}{v} \amp \pdiff{z}{w} \end{vmatrix}
-          </me>.
+          <md><mrow>
+            \pdiff{(x,y,z)}{(u,v,w)} = \begin{vmatrix} \pdiff{x}{u} \amp \pdiff{x}{v}\amp \pdiff{x}{w} \\ \pdiff{y}{u}\amp\pdiff{y}{v} \amp \pdiff{y}{w} \\\pdiff{z}{u}\amp\pdiff{z}{v} \amp \pdiff{z}{w} \end{vmatrix}
+          </mrow></md>.
         </p>
       </statement>
     </definition>
@@ -608,7 +608,7 @@
         <p>
           En particulier,
           <md><mrow xml:id="eq_dV" tag="ddagger">
-              \dee{V}\amp =  \left|\pdiff{(x,y,z)}{(u,v,z)}\right|\, \dee{u}\, \dee{v}\, \dee{w}
+              \dee{V}\amp =  \left|\pdiff{(x,y,z)}{(u,v,w)}\right|\, \dee{u}\, \dee{v}\, \dee{w}
             </mrow></md>.
         </p>
       </statement>
@@ -640,9 +640,9 @@
         le <xref ref="thm-Chgt-var3" text="global">théorème</xref>, mais avec <m>r</m> dans le rôle de <m>u</m> et avec <m>\theta</m> dans celui de <m>v</m>, donne
         <md><mrow>\pdiff{(x,y,z)}{(r, \theta,z)} \amp=\left| \begin{array}{rrr} \cos \theta \amp \sin \theta \amp 0 \\ -r\sin \theta \amp r\cos \theta \amp 0\\0 \amp 0 \amp 1\end{array}\right| = \left| \begin{array}{rr} \cos \theta \amp \sin \theta \\ -r\sin \theta \amp r\cos \theta \end{array}\right| </mrow><mrow> \amp = r\cos^2\theta + r\sin^2\theta = r </mrow></md>,
         et donc
-        <me>
+        <md><mrow>
           \dee{V} = r \dee{r}\, \dee{\theta}\, \dee{z},
-        </me>
+        </mrow></md>
         exactement ce que nous avions trouvé dans la <xref ref="eq_dV_cylindrical" text="global">formule</xref>.
       </p>
     </example>

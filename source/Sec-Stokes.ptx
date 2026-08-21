@@ -31,10 +31,10 @@ la frontière <m>\partial \cS</m> de <m>\cS</m>, formée d'un nombre fini de cou
 </p><sidebyside width="41%"><image source="images/CLP4-figs/stokes0"/></sidebyside></li><li><m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur <m>\cS</m>.
 </li></ul>
 Alors,
-<me>
+<md><mrow>
 \oint_{\partial S}\vF\cdot \dee{\vr}
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}
-</me>.
+</mrow></md>.
 </p>
       </statement>
     </theorem>
@@ -332,14 +332,14 @@ Le théorème de Stokes dit que
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}</m>
 pour toute surface (convenablement orientée) dont le bord est <m>\cC</m>. Ainsi, si
 <m>\cS_1</m> et <m>\cS_2</m> sont deux surfaces différentes (convenablement orientées) qui ont un bord commun <m>\cC</m>, alors
-<me>
+<md><mrow>
 \iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
 =\iint_{\cS_2}\vnabla\times\vF\cdot\vn\ \dee{S}
-</me>.
+</mrow></md>.
 Par exemple, si <m>\cC</m> est le cercle
-<me>
+<md><mrow>
 \cC=\Set{(x,y,z)}{x^2+y^2=1,\ z=0}
-</me>
+</mrow></md>
 orienté dans le sens antihoraire, alors
 <md><mrow>
 \cS_1&amp;= \Set{(x,y,z)}{x^2+y^2\leqslant  1,\ z=0},
@@ -401,9 +401,9 @@ Calculer <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr} </m>, où <m>\vF= \big[2z
       </statement>
       <solution>
         <p>Le terme <m>x^{146}</m> dans  <m>\vF</m> va vraisemblablement faire que l'évaluation directe de l'intégrale de ligne sera très difficile. Afin d'utiliser le théorème de Stokes, nous avons besoin d'une surface <m>\cS</m> telle que  <m>\partial S=C</m>. Le choix le plus simple est le disque
-<me>
+<md><mrow>
 S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
-</me>.
+</mrow></md>.
 </p>
         <sidebyside width="40%">
           <image source="images/CLP4-figs/horizontalDiskB"/>
@@ -463,9 +463,9 @@ La surface <m>x^2+y^2+z^2=4</m> est la sphère de rayon <m>2</m> centrée à l'o
         </sidebyside>
         <p>
 De nouveau, afin d'utiliser le théorème de Stokes, nous avons besoin d'une surface admettant <m>\cC</m> comme bord. Le choix le plus simple semble être le disque
-<me>
+<md><mrow>
 S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
-</me>.
+</mrow></md>.
 La portion de <m>\cS</m> du premier octant est montrée ci-dessus. Nous avons vu dans l'<xref ref="eg_stokesAA" text="global">exemple</xref> que
 <md><mrow>
 \vnabla\times\vF &amp;=2\vj
@@ -543,9 +543,9 @@ Calculer <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>, où <m>\vF= (x+y)\,\v
       <solution>
         <p>
 Dans cette première solution, nous évaluons l'intégrale directement. La première portion (<m>C_1</m> dans la figure) peut être paramétrée par
-<me>
+<md><mrow>
 \vr(t)= 2\vi + t(3\vj - 2 \vi) = (2-2t)\vi +3t\vj \qquad 0\leqslant  t\leqslant  1
-</me>.
+</mrow></md>.
 Ainsi, l'intégrale le long de cette première portion est
 <md><mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
@@ -557,9 +557,9 @@ Ainsi, l'intégrale le long de cette première portion est
 </mrow></md>.
 </p>
         <p>La deuxième courbe (<m>C_2</m> dans la figure) peut être paramétrée par
-<me>
+<md><mrow>
 \vr(t)=3\vj + t(6\vk - 3 \vj) = (3-3t)\vj + 6t\vk \qquad 0\leqslant  t\leqslant  1
-</me>.
+</mrow></md>.
 Ainsi, l'intégrale le long de cette portion est
 <md><mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
@@ -572,10 +572,10 @@ Ainsi, l'intégrale le long de cette portion est
 &amp;=54
 </mrow></md>.
 Le dernier segment (<m>C_3</m> dans la figure) peut être paramétré par
-<me>
+<md><mrow>
 \vr(t)= 6\vk + t(2\vj - 6\vk)  = 2t\vi + (6-6t)\vk
 \qquad 0\leqslant  t\leqslant  1
-</me>.
+</mrow></md>.
 Ainsi, l'intégrale de ligne le long de ce segment est
 <md><mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
@@ -586,9 +586,9 @@ Ainsi, l'intégrale de ligne le long de ce segment est
 =-16
 </mrow></md>.
 Globalement, l'intégrale qui nous intéresse est donc
-<me>
+<md><mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}=1+54-16=39
-</me>.
+</mrow></md>.
 </p>
       </solution>
       <solution>
@@ -608,9 +608,9 @@ Cette fois, nous utilisons le théorème de Stokes. Le rotationnel de  <m>\vF</m
 &amp;=2(y+1)\vi+\vk
 </mrow></md>.
 La courbe <m>\cC</m> est un triangle contenu dans le plan  <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m>. De plus, <m>\cC</m> est la frontière de la surface <m>\cS</m> qui consiste en la portion du plan <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m> vérifiant <m>x\geqslant0</m>, <m>y\geqslant0</m> et <m>z\geqslant0</m>. Nous pouvons écrire l'équation du plan sous la forme <m>z=6-3x-2y</m>. Pour cette surface,
-<me>
+<md><mrow>
 \vn\ \dee{S}=(3\vi+2\vj+\vk)\,\dee{x}\,\dee{y}
-</me>,
+</mrow></md>,
 en vertu de la <xref ref="eq_SUdSgraph" text="global">formule</xref>, et nous pouvons écrire
 <md><mrow>
 S&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ z\ge0,\ z=6-3x-2y}
@@ -684,9 +684,9 @@ Nous calculons alors
       <statement>
         <p>
 Évaluer <m> \oint_{\cC}\vF\cdot\dee{\vr}</m>, où <m>\vF= (\cos x +y+z)\,\vi+(x+z)\,\vj +(x+y)\,\vk</m> et où <m>\cC</m> est l'intersection des surfaces
-<me>
+<md><mrow>
 x^2+\frac{y^2}{2}+\frac{z^2}{3}=1\qquad\text{et}\qquad z=x^2+2y^2
-</me>
+</mrow></md>
 orientée dans le sens antihoraire lorsque vue d'en haut.
 </p>
       </statement>
@@ -871,9 +871,9 @@ Either way
     <example xml:id="eg_stokesLong">
       <statement>
         <p>Dans cet exemple, on calcule de deux façons différentes l'intégrale de ligne <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>, où
-<me>
+<md><mrow>
   \vF=(z-y)\,\vi-(x+z)\,\vj-(x+y)\,\vk
-</me>
+</mrow></md>
 et où <m>\cC</m> est la courbe  <m>x^2+y^2+z^2=4</m>, <m>z=y</m> orientée dans le sens antihoraire lorsque vue d'en haut.
 </p>
         <sidebyside width="29%">
@@ -886,10 +886,10 @@ et où <m>\cC</m> est la courbe  <m>x^2+y^2+z^2=4</m>, <m>z=y</m> orientée dans
         </p>
         <p>
 Dans ce premier calcul, on utilise un paramétrage de <m>\cC</m>. Le plan <m>z=y</m> passe par l'origine, qui est le centre de la sphère  <m>x^2+y^2+z^2=4</m>. Ainsi, <m>\cC</m> est un cercle qui, comme la sphère, a un rayon égal à <m>2</m> et est centré à l'origine. Nous paramétrons <m>\cC</m> par
-<me>
+<md><mrow>
 \vr(t)=\vc+\rho\cos t\,\vi'+ \rho\sin t\,\vj'
 \qquad 0\leqslant  t\leqslant  2\pi
-</me>,
+</mrow></md>,
 où
  <ul><li><m>\vc=(0,0,0)</m> est le centre de  <m>\cC</m>,
 </li><li><m>\rho=2</m> est le rayon <m>\cC</m>, et
@@ -954,9 +954,9 @@ Voyons une autre façon de procéder.
           <em>Théorème de Stokes</em>
         </p>
         <p>Afin d'utiliser le théorème de Stokes, nous devons exprimer  <m>\cC</m> comme le bord <m>\partial \cS</m> d'une surface <m>\cS</m>. Puisque
-<me>
+<md><mrow>
 \cC=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ z=y}
-</me>
+</mrow></md>
 est une courbe fermée, ceci est possible. En fait, nous avons plusieurs choix pour <m>\cS</m>. Trois possibilités, esquissées ci-bas, sont
 <md><mrow>
 
@@ -990,22 +990,22 @@ La première de ces surfaces, qui fait partie d'un plan, est la plus susceptible
 =-2\,\dee{x}\dee{y}
 </mrow></md>
 Les variables d'intégration sont <m>x</m> et <m>y</m>. Par définition, le domaine d'intégration est
-<me>
+<md><mrow>
 R=\Set{(x,y)}{(x,y,z)\text{ est dans  }S\text{ pour un certain }z}
-</me>.
+</mrow></md>.
 Afin de déterminer ce domaine plus précisément, observons que, puisque <m>z=y</m> sur <m>\cS</m>, <m>x^2+y^2+z^2\leqslant  4</m> équivaut à  <m>x^2+2y^2\leqslant  4</m> sur <m>\cS</m> :
-<me>
+<md><mrow>
 \cS=\Set{(x,y,z)}{x^2+2y^2\leqslant  4,\ z=y}
 \implies R=\Set{(x,y)}{x^2+2y^2\leqslant  4}
-</me>.
+</mrow></md>.
 Ainsi, le domaine d'intégration est une ellipse avec semi-axe majeur <m>a=2</m> et semi-axe mineur <m>b=\sqrt{2}</m>, de sorte que son aire est  <m>\pi a b=2\sqrt{2}\pi</m>. L'intégrale est alors
-<me>
+<md><mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}
 =\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =\iint_{\cR}(-2)\,\dee{x}\dee{y}
 =-2\ \text{Aire}\,(R)
 =-4\sqrt{2}\pi
-</me>.
+</mrow></md>.
 </p>
         <!--
 <p><em>Noter les bornes d'intégration:</em>
@@ -1165,9 +1165,9 @@ the origin is <m>4\pi</m>.
     <example>
       <statement>
         <p> Soit
-      <me>
+      <md><mrow>
         \vF = \left(z^2 - \cos(x^2) \right)\vi + \left(x^2 - \sin(y^2)\right)\vj + \left(xy - \tan(z^2)\right)\vk
-      </me>
+      </mrow></md>
       et <m>\cC</m> la courbe paramétrée par <m>\vr(t) = 2\cos(t)\, \vi + 2 \sin t\, \vj + 4 \sin^2 t \, \vk</m>, pour <m>t\in [0,2\pi]</m>. Calculer la valeur de <m>\int_{\cC} \vF \cdot d\vr</m>.
 
     </p>
@@ -1204,26 +1204,26 @@ the origin is <m>4\pi</m>.
         </figure>
         <p>
       Le théorème de Stokes nous donne alors
-    </p>
-        <me>
+        <md><mrow>
       \int_{\cC} \vF\cdot d\vr = \int_{\partial \cS} \vF\cdot d\vr = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS.
-    </me>
+    </mrow></md>
+    </p>
         <p>
       Calculons le rotationnel de notre champ
-    </p>
         <md><mrow>\vnabla \times \vF  \amp =
         \left| \begin{array}{ccc} \vi &amp; \pdiff{}{x} &amp; z^2 - \cos(x^2)\\
          \vj &amp; \pdiff{}{y} &amp; x^2 - \sin(y^2)\\
          \vk &amp; \pdiff{}{z} &amp; xy - \tan(z^2)\end{array} \right|
-      </mrow><mrow> \amp = x\, \vi + (-y+2z)\vj + 2x\, \vk</mrow>.
-    </md>
+      </mrow><mrow> \amp = x\, \vi + (-y+2z)\vj + 2x\, \vk</mrow>
+    </md>.
+    </p>
         <p>
       La surface <m>\cS</m> est le graphe de la fonction  <m>f(x,y) = y^2</m> avec <m>(x,y)\in \cR</m>, où <m>\cR</m> est définie par <m>x^2+ y^2 \leqslant 2^2</m>.
     </p>
         <p>
       Le paramétrage donné de <m>\cC</m> lui impose une orientation. Lorsque vue d'en haut (avec le vecteur <m>\vk</m> pointant vers nous), <m>\cC</m> est parcourue dans le sens antihoraire. Le vecteur normal pour <m>\cS</m> qui est compatible avec cette orientation de <m>\cC</m> doit donc avoir une composante <m>\vk</m> positive. Nous choisissons  donc le signe <m>+</m> dans la <xref ref="eq-Flux-dS-graphe">formule</xref> de notre  <xref ref="fact-Int-surf-champs">inventaire de formules</xref>. Nous calculons alors
     </p>
-        <p><md><mrow>\left(\vnabla \times \vF\right)\cdot \left(-f_x\, \vi - f_y\, \vj + \vk\right) \amp = \left(x\,\vi + (-y+2z)\vj + 2x\, \vk\right)\cdot\left(0\vi -2y\,\vj + \vk\right)  </mrow><mrow> \amp = y^2 -4yz+2x = y^2 -4y^3 +2x </mrow>.
+        <p><md><mrow>\left(\vnabla \times \vF\right)\cdot \left(-f_x\, \vi - f_y\, \vj + \vk\right) \amp = \left(x\,\vi + (-y+2z)\vj + 2x\, \vk\right)\cdot\left(0\vi -2y\,\vj + \vk\right)  </mrow><mrow> \amp = 2y^2 -4yz+2x = 2y^2 -4y^3 +2x </mrow>.
     </md>
     où, dans la dernière égalité, nous avons utilisé le fait que <m>z = f(x,y) = y^2</m>.
     </p>
@@ -1477,28 +1477,28 @@ is twice that maximum rate of rotation. For this reason,
     </sidebyside>
     <p>
     Le voltage le long de <m>\cC</m> est l'opposé du taux de changement du flux magnétique à travers <m>\cS</m> : 
-    <me>
+    <md><mrow>
       \oint_{\cC}\vE\cdot \dee{\vr}=-\frac{\partial }{\partial t}\iint_{\cS}\vB\cdot\vn \,\dee{S}.
-      </me>
+      </mrow></md>
   </p>
     <p>
     Nous pouvons reformuler ceci comme une équation aux dérivées partielles. En vertu du théorème de Stokes,
-    <me>
+    <md><mrow>
     \oint_{\cC}\vE\cdot \dee{\vr}=\iint_{\cS}(\vnabla\times\vE)\cdot \vn\,\dee{S},
-    </me>
+    </mrow></md>
     de sorte que la loi de Faraday devient 
-    <me>
+    <md><mrow>
     \iint_{\cS}\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)\cdot\vn\,\dee{S}=0.
-    </me>
+    </mrow></md>
     Ceci étant vrai pour toutes les surfaces <m>\cS</m>, l'intégrande, si on le suppose continu, doit être nul.
   </p>
     <p>En effet, soit <m>\vG=\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)</m> et supposons qu'il existe un point <m>\vx_0</m> tel que  <m>\vG(\vx_0)\ne 0</m>. Soit un vecteur unitaire <m>\vn</m> dans la direction  <m>\vG(\vx_0)</m>. Soit en plus <m>\cS</m> un petit disque centré à  <m>\vx_0</m> avec normal <m>\vn</m>. Alors, <m>\vG(\vx_0)\cdot\vn \gt 0</m> et, si nous choisissons notre disque suffisamment  petit, la continuité de <m>\vG</m> donnera que  <m>\vG(\vx)\cdot\vn \gt 0</m> pour tout <m>\vx</m> sur <m>\cS</m>. Alors, <m>\iint_{\cS}\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)\cdot \vn\,\dee{S} \gt 0</m>, une contradiction.
   </p>
     <p>    
     Ainsi, <m>\vG=\vZero</m> partout, et l'on conclut que 
-      <me>
+      <md><mrow>
         \vnabla\times\vE+\frac{\partial\vB}{\partial t}=0.
-      </me>
+      </mrow></md>
     Il s'agit de l'une des équations de Maxwell.
     <!--
     This is one of Maxwell's electromagnetic field equations<fn>For the others, see Example <xref ref="eg_ITmaxwell"/></fn>.

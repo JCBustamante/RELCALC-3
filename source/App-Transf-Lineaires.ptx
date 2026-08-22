@@ -66,16 +66,16 @@
       Soit <m>\theta \in [0,2\pi]</m> fixe et <m>T_\theta : \R^2 \to \R^2</m> la rotation d'angle <m>\theta</m> autour de l'origine. Voyons que <m>T_\theta</m> est linéaire et trouvons la matrice correspondante.
     </p>
     <p>
-      Soit <m>\vu</m> et <m>\vv</m> deux vecteurs de <m>\R^2</m> qu'on suppose non colinéaires pour commencer. Alors, <m>\vu + \vv</m> est la diagonale (passant par l'origine) du parallélogramme déterminé par <m>\vu</m> et <m>\vv</m>. Si l'on applique <m>T_\theta</m> au parallélogramme,  on obtient un deuxième parallélogramme dont l'origine est un des sommets. Ses côtés sont <m>T_\theta(\vu)</m> et <m>T_\theta(\vv)</m>, et la diagonale passant par l'origine est <m>T_\theta(\vu) + T_\theta(\vv)</m>. Cette diagonale est l'image par <m>T_\theta</m> de la diagonale <m>\vu + \vv </m> du parallélogramme original, c'est-à-dire <m>T_{\theta}(\vu + \vv ) = T_{\theta}(\vu) + T_{\theta}(\vv)</m>.
+      Soit <m>\vu</m> et <m>\vv</m> deux vecteurs de <m>\R^2</m> qu'on suppose non colinéaires pour commencer. Alors, <m>\vu + \vv</m> est la diagonale (passant par l'origine) du parallélogramme déterminé par <m>\vu</m> et <m>\vv</m>. Si l'on applique <m>T_\j</m> au parallélogramme,  on obtient un deuxième parallélogramme dont l'origine est un des sommets. Ses côtés sont <m>T_\j(\vu)</m> et <m>T_\j(\vv)</m>, et la diagonale passant par l'origine est <m>T_\j(\vu) + T_\j(\vv)</m>. Cette diagonale est l'image par <m>T_\j</m> de la diagonale <m>\vu + \vv </m> du parallélogramme original, c'est-à-dire <m>T_{\j}(\vu + \vv ) = T_{\j}(\vu) + T_{\j}(\vv)</m>.
 
-      Si les vecteurs <m>\vu</m> et <m>\vv</m> sont colinéaires, ils sont multiples l'un de l'autre. Voyons comment <m>T_\theta</m> se comporte dans ce cas.
+      Si les vecteurs <m>\vu</m> et <m>\vv</m> sont colinéaires, ils sont multiples l'un de l'autre. Voyons comment <m>T_\j</m> se comporte dans ce cas.
     </p>
     <p>
-      Pour <m>a\in \R</m> et <m>\vu \in \R^2</m>, le vecteur <m>T_\theta(a\vu)</m> s'obtient en faisant d'abord la multiplication de <m>\vu</m> par <m>a</m>, puis la rotation. Ceci revient à faire la rotation d'abord, puis à effectuer la multiplication par le scalaire <m>a</m>. En d'autres termes, <m>T_\theta(a\vu) = a T_\theta(\vu)</m>.
+      Pour <m>a\in \R</m> et <m>\vu \in \R^2</m>, le vecteur <m>T_\j(a\vu)</m> s'obtient en faisant d'abord la multiplication de <m>\vu</m> par <m>a</m>, puis la rotation. Ceci revient à faire la rotation d'abord, puis à effectuer la multiplication par le scalaire <m>a</m>. En d'autres termes, <m>T_\j(a\vu) = a T_\j(\vu)</m>.
     </p>
-    <p>Voyons maintenant la matrice associée à <m>T_\theta</m>. L'image par <m>T_\theta</m> du vecteur <m>\ve_1 =\dvect{1}{0}</m> est le vecteur <m>\dvect{\cos \theta}{\sin \theta}</m>. De même, l'image de <m>\ve_2 = \dvect{0}{1}</m> est <m>\dvect{-\sin \theta}{\cos \theta}</m>. Ainsi, la matrice associée à <m>T_\theta</m> est
+    <p>Voyons maintenant la matrice associée à <m>T_\j</m>. L'image par <m>T_\j</m> du vecteur <m>\ve_1 =\dvect{1}{0}</m> est le vecteur <m>\dvect{\cos \j}{\sin \j}</m>. De même, l'image de <m>\ve_2 = \dvect{0}{1}</m> est <m>\dvect{-\sin \j}{\cos \j}</m>. Ainsi, la matrice associée à <m>T_\j</m> est
     <md>
-      M_\theta = \left[\begin{matrix}\cos \theta \amp -\sin \theta\\ \sin\theta \amp \cos \theta \end{matrix}\right].
+      M_\j = \left[\begin{matrix}\cos \j \amp -\sin \j\\ \sin\j \amp \cos \j \end{matrix}\right].
     </md>
     </p>
   </example>

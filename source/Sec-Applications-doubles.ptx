@@ -63,12 +63,13 @@ En ayant des sommes de Riemann, l'étape suivante est claire : il faut évaluer 
 <example xml:id="eg_dblInt_G">
   <title>Valeur moyenne</title>
   <statement>
-    <p>
-      Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par <m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne. 
-    </p>
-        <sidebyside width="50%">
-          <image source="images/CLP-figs/halfDomeA"/>
-        </sidebyside>
+    <sidebyside widths="55% 5% 40%" valign="middle">
+      <p>
+      Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par <m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne.
+      </p>
+      <p></p>
+      <image source="images/CLP-figs/halfDomeA"/>
+    </sidebyside>
       </statement>
       <solution>
         <p>
@@ -238,7 +239,9 @@ Thus
 </p>
     <definition xml:id="def_WTaverage">
       <statement>
-        <p><md><mrow>
+        <p>
+Soit <m>f(x,y)</m> une fonction continue définie sur une région <m>\cR</m> du plan, et soit <m>w(x,y) \gt 0</m> une fonction poids sur <m>\cR</m>. Alors
+<md><mrow>
 \frac{\displaystyle \iint_\cR f(x,y)\,w(x,y)\,\dee{A}}
                        {\displaystyle \iint_\cR w(x,y)\,\dee{A}}
 </mrow></md>

@@ -315,7 +315,7 @@
           </md>.
           On vérifie aisément que
           <md>
-            F(s,t) = \left(st + \frac{1}{2}(t^2 - s^2), \frac{1}{2}(t^2- s^2), s^2 t^2\right).
+            F(s,t) = \begin{bmatrix} st + \frac{1}{2}(t^2 - s^2) \\ \frac{1}{2}(t^2- s^2) \\ s^2 t^2 \end{bmatrix}.
           </md>
           Les entrées de la troisième rangée de <m>\vD f(s,t)</m>, à savoir <m>2st^2</m> et <m>2s^2 t</m>, sont les dérivées partielles de la troisième composante de <m>F(s,t)</m>, à savoir <m>s^2 t^2</m>, par rapport aux variables <m>s</m> et <m>t</m> respectivement.
         </p>
@@ -424,38 +424,45 @@
       </aside>
     </p>
     -->
-    <p>
-      Ainsi, nous avons que le vecteur <m>\pdiff{f}{x}\vi + \pdiff{f}{y}\vj</m> (que nous appellons le <q>gradient de <m>f</m></q>, il jouera un rôle crucial dans les sections à venir) est orthogonal au vecteur vitesse <m>\vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\, \vj</m>  et donc orthogonal à la courbe. Si <m>(x_0,y_0) =\vr(t_0)</m> est un point sur la courbe, la connaissance du vecteur normal nous permet d'obtenir directement une équation de la tangente, à savoir
-      <md>
-        \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
-      </md>
-    </p>
-    <figure xml:id="figure-implicites">
-      <caption>Une courbe <m>f(x,y)= 0</m> ainsi que quelques tangentes. Autour de <m>P_1</m>, on ne peut isoler pour <m>y</m> en fonction de <m>x</m> : deux valeurs distinctes correspondent à <m>\hat{x}_1</m>, la tangente est verticale. Les rôles sont échangés autour de <m>P_2</m>. Par contre, autour de <m>P_3</m>, on peut isoler n'importe laquelle des deux variables en termes de l'autre. La tangente n'est ni verticale ni horizontale.</caption>
-      <image xml:id="sageplot-implicite" width="80%">
-        <description><p>Une courbe et quelques tangentes</p></description>
-        <sageplot>
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>
+      Ainsi, nous avons que le vecteur <m>\pdiff{f}{x}\vi + \pdiff{f}{y}\vj</m> (que nous appellons le <q>gradient de <m>f</m></q>, il jouera un rôle crucial dans les sections à venir) est orthogonal au vecteur vitesse <m>\vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\, \vj</m>  et donc orthogonal à la courbe.  Si <m>(x_0,y_0) =\vr(t_0)</m> est un point sur la courbe, la connaissance du vecteur normal nous permet d'obtenir directement une équation de la tangente. 
+      </p>
+      <p></p>
+      <figure xml:id="figure-implicites">
+        <caption>Une courbe <m>f(x,y)= 0</m> et quelques tangentes.</caption>
+        <image xml:id="sageplot-implicite">
+          <description><p>Une courbe et quelques tangentes</p></description>
+          <sageplot>
           var('x,y')
           fig = implicit_plot((y-2)^2 == (x/2-2)^3 -(x/2-2)+1, (x,-0.5,6.5),(y,-0.5,3.5),
                         linewidth =2, ticks=[[],[]],
-                              axes = True, gridlines = True, tick_formatter="latex", axes_labels=['$x$','$y$'], frame=False)
+                              axes = True, gridlines = True, tick_formatter="latex", axes_labels=['$x$','$y$'], axes_labels_size=1.6, frame=False)
           fig += line([(1.33,1.25), (1.33,2.75)], color = "red", thickness   = 1.5)
           fig += line([(2.84-1, 0.823), (2.84+1.25,0.823)], color = "red", thickness = 1.5)
           fig += plot(4-x/4, (x,2.5, 5.5), color = "green", thickness= 1.5)
-          fig += text('$P_1(x_1,y_1)$', (0.7, 2), fontsize=14, color='red')
-          fig += text('$P_2(x_2,y_2)$', (2.844, 0.5), fontsize=14, color='red')
-          fig += text('$P_3(x_3,y_3)$', (4.25, 3.25), fontsize=14, color='green')
-          fig += text('$\\hat{x}_1$', (1.5,-0.25), fontsize=14, color='red')
-          fig += text('$\\hat{y}_2$', (-0.25,1), fontsize=14, color='red')
+          fig += text('$P_1(x_1,y_1)$', (0.7, 2), fontsize=18, color='red')
+          fig += text('$P_2(x_2,y_2)$', (2.844, 0.5), fontsize=18, color='red')
+          fig += text('$P_3(x_3,y_3)$', (4.25, 3.25), fontsize=18, color='green')
+          fig += text('$\\hat{x}_1$', (1.5,-0.25), fontsize=18, color='red')
+          fig += text('$\\hat{y}_2$', (-0.25,1), fontsize=18, color='red')
           fig += point([1.33,2], color= "red", size = 40)
           fig += point([2.844,0.823], color= "red", size = 40)
           fig += point([4,3], color= "green", size = 40)
           fig += line([(1.5, 0), (1.5,2.54)], color = "red", thickness = 1, linestyle = "dotted")
           fig += line([(0, 1), (4,1)], color = "red", thickness = 1, linestyle = "dotted")
           fig
-        </sageplot>
-      </image>
-    </figure>
+          </sageplot>
+        </image>
+      </figure>
+      
+    </sidebyside>
+    <p> En effet, il suit de l'équation <xref ref="general2d"/> d'une droite dans le plan, appliquée à la tangente en <m>(x_0,y_0)</m> avec vecteur normal <m>\pdiff{f}{x}(x_0,y_0)\vi + \pdiff{f}{y}(x_0,y_0)\vj</m>, que celle-ci a pour équation
+
+      <md>
+        \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
+      </md>
+      </p>
     <p>
       Si <m>\pdiff{f}{y}(x_0,y_0) \ne 0</m>, la tangente n'est pas verticale, et sa pente est précisément
       <md>
@@ -620,7 +627,7 @@
                 &amp;\hskip0.5in  +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
                   \pdiff{y}{s}(s,t)
               </mrow></md>.
-          </p><sidebyside width="40%"><image source="images/CLP-figs/decTreeS"/></sidebyside></li></ul>
+          </p><sidebyside width="30%"><image source="images/CLP-figs/decTreeS"/></sidebyside></li></ul>
     </p>
     <example xml:id="eg_decTree">
       <p>
@@ -637,7 +644,7 @@
         +\pdiff{f}{z}\, \diff{z}{t}</m>.
         Le diagramme d'arbre qui correspond est le suivant :
       </p>
-      <sidebyside width="35%">
+      <sidebyside width="30%">
         <image source="images/CLP-figs/decTreeTT"/>
       </sidebyside>
       <p>

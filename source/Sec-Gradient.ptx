@@ -39,26 +39,26 @@
     </p>
     <example>
       <statement>
-        <p>
-      Soit <m>f(x,y) = x^2 - 2y^2</m>. Le champ gradient de <m>f</m> est <m>\vnabla f(x,y) = 2x\vi -4y\vj</m>.
-    </p>
-        <p>
-      La figure ci-dessous représente le champ gradient <m>\vnabla f</m> ainsi que certaines courbes de niveau de <m>f</m>. Par exemple, au point <m>(2,1)</m>, plutôt que de dessiner le vecteur <m>\vnabla f(2,1) = 4\vi - 4 \vj</m>, on représente un multiple de celui-ci.
-    </p>
-        <figure xml:id="fig_gradient-2d">
-          <caption>Les courbes de niveau de la fonction <m>f(x,y) = x^2 - 2y^2</m> ainsi que le champ gradient de <m>f</m>, à savoir <m>\vnabla f(x,y) = 2x \vi - 4y\vj</m>. Plus bas, nous allons expliquer le lien apparent entre le gradient et les courbes de niveau. </caption>
-          <image xml:id="sageplot-gradient-2d" width="60%">
-            <sageplot>
-              var('x,y')
-              f(x,y) = x^2 -2*y^2
-              C = contour_plot(f(x,y), (x,-3,3),(y,-3,3), cmap = "Spectral",
-                axes = False, fill = True, labels = False, label_colors="black", label_inline=True, label_fontsize=8, gridlines=True,  contours = 6, axes_labels=["$x$","$y$"], axes_labels_size=1, tick_formatter = "latex", fontsize= 12)
-              C+= plot_vector_field(f.gradient(), (x,-3,3), (y,-3,3),
-                color = 'black', zorder = 2, plot_points = 7)
-              C
-            </sageplot>
-          </image>
-        </figure>
+        <sidebyside widths="45% 5% 50%" valign="middle">
+          <p>
+        Soit <m>f(x,y) = x^2 - 2y^2</m>. Le champ gradient de <m>f</m> est <m>\vnabla f(x,y) = 2x\vi -4y\vj</m>. La figure ci-contre représente le champ gradient <m>\vnabla f</m> ainsi que certaines courbes de niveau de <m>f</m>. Par exemple, au point <m>(2,1)</m>, plutôt que de dessiner le vecteur <m>\vnabla f(2,1) = 4\vi - 4 \vj</m>, on représente un multiple de celui-ci. Plus bas, nous allons expliquer le lien apparent entre le gradient et les courbes de niveau.
+      </p>
+          <p></p>
+          <figure xml:id="fig_gradient-2d">
+            <caption>Courbes de niveau et champ gradient de <m>f(x,y) = x^2 - 2y^2</m>.</caption>
+            <image xml:id="sageplot-gradient-2d">
+              <sageplot>
+                var('x,y')
+                f(x,y) = x^2 -2*y^2
+                C = contour_plot(f(x,y), (x,-3,3),(y,-3,3), cmap = "Spectral",
+                  axes = False, fill = True, labels = False, label_colors="black", label_inline=True, label_fontsize=10, gridlines=True,  contours = 6, axes_labels=["$x$","$y$"], axes_labels_size=1.3, tick_formatter = "latex", fontsize= 14)
+                C+= plot_vector_field(f.gradient(), (x,-3,3), (y,-3,3),
+                  color = 'black', zorder = 2, plot_points = 7)
+                C
+              </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
       </statement>
     </example>
     <exercise>
@@ -78,24 +78,27 @@
     <title>Dérivées directionnelles et le vecteur gradient</title>
     <p>La principale interprétation de  <m>\diff{f}{x}(a)</m> est le taux de variation instantané de <m>f(x)</m>, par unité de <m>x</m>, au point <m>x=a</m>. L'analogie naturelle pour les fonctions de plusieurs variables est celle de <em>dérivée directionnelle</em>.
   </p>
-    <p>
-  Supposons que nous nous trouvons à proximité d'un feu de camp. La température perçue au point <m>\vr = (x,y)</m> est <m>f(x,y)</m>. Supposons que nous nous déplaçons avec une vitesse de norme constante (que nous supposons égale à <m>1</m>) en passant par le point <m>\vr_0 = (x_0,y_0)</m>. Lors du passage, la vitesse est <m>\vu=\llt u_1,u_2\rgt </m>, et l'on se demande quel est le taux de variation de la température ressentie.
+    <sidebyside widths="45% 5% 50%" valign="top">
+      <p>
+  Supposons que nous nous trouvons à proximité d'un feu de camp. La température perçue au point <m>\vr = (x,y)</m> est <m>f(x,y)</m>. Supposons que nous nous déplaçons avec une vitesse de norme constante (que nous supposons égale à <m>1</m>) en passant par le point <m>\vr_0 = (x_0,y_0)</m>. Lors du passage, la vitesse est <m>\vu=\llt u_1,u_2\rgt </m>, et l'on se demande quel est le taux de variation de la température ressentie. Par exemple, dans la figure ci-contre, en partant de <m>(-1,-1)</m> avec la direction <m>\vu</m> indiquée, on se demande comment on perçoit le changement de température.
   </p>
-    <figure xml:id="Directionnelles-motivation">
-      <caption>Les courbes isothermes sur une région du plan. En partant de <m>(-1,-1)</m> avec la direction <m>\vu </m>, on se demande comment on perçoit le changement de température.</caption>
-      <image xml:id="sageplot-directionnelles-motiv" width="60%">
-        <sageplot>
-            var('x,y')
-            g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
-            C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
-                             axes = True, fill = True, labels = True, label_colors="black", label_inline=True, label_fontsize=8,
-                             gridlines=True, axes_labels=["$x$","$y$"], axes_labels_size=1, tick_formatter = "latex", fontsize= 12)
-            C+=arrow((-1,-1), (-0.10557,-0.5527), color = "black", thickness = 0.5, arrowsize=2)
-            C+=text("$\\mathbf{u}$",(-0.5,-0.9), fontsize=14, zorder=2, color= "black")
-            C
-          </sageplot>
-      </image>
-    </figure>
+      <p></p>
+      <figure xml:id="Directionnelles-motivation">
+        <caption>Les courbes isothermes sur une région du plan.</caption>
+        <image xml:id="sageplot-directionnelles-motiv">
+          <sageplot>
+              var('x,y')
+              g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+              C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+              axes = True, fill = True, ticks=[[-2,-1,0,1,2],[-2,-1,0,1,2]], tick_formatter = "latex",
+              labels = True, label_colors="black", label_inline=True, label_fontsize=14, axes_labels_size=1.4, fontsize=16, gridlines=True, axes_labels=["$x$","$y$"])
+              C+=arrow((-1,-1), (-0.10557,-0.5527), color = "black", thickness = 0.5, arrowsize=2)
+              C+=text("$\\mathbf{u}$",(-0.5,-0.9), fontsize=16, zorder=2, color= "black")
+              C
+            </sageplot>
+        </image>
+      </figure>
+    </sidebyside>
     <p>
     Plus précisément, nous avons un chemin <m>\pmb{\g}(t)</m> qui, au temps <m>t=0</m>, passe par le point <m>\vr_0</m>, c'est-à-dire tel que <m>\pmb{\g}(0)= \vr_0</m>. De plus, la condition sur la vitesse constante lors du déplacement revient à dire que <m>\pmb{\g}'(0) = \vu</m> est un vecteur unitaire.
   </p>
@@ -454,7 +457,7 @@
     <example>
       <statement>
         <p>
-        Soit <m>\cC</m> donnée par <m>\sqrt{x} + \sqrt{y} = \sqrt{c} </m>. Soit <m>\cT</m> la tangente à <m>\cC</m> en un point quelconque et <m>(x^\ast, 0),\ (0, y^\ast)</m> les points d'intersection de <m>\cT</m> avec les axes de coordonnées.
+        Soit <m>\cC</m> donnée par <m>\sqrt{x} + \sqrt{y} = \sqrt{c} </m>. Soit <m>\cT</m> la tangente à <m>\cC</m> en un point quelconque, et <m>(x^\ast, 0),\ (0, y^\ast)</m> les points d'intersection de <m>\cT</m> avec les axes de coordonnées.
       </p>
         <p>
         Montrer que la quantité <m>x^\ast + y^\ast </m> ne dépend pas du point de tangence choisi.
@@ -471,7 +474,8 @@
       <md><mrow> \amp 0 =  \frac{1}{2\sqrt{x_0}}(x-x_0) + \frac{1}{2\sqrt{y_0}}(y-y_0) </mrow><mrow>\iff \amp  0 =  \frac{x}{\sqrt{x_0}} - \frac{x_0}{\sqrt{x_0}} + \frac{y}{\sqrt{y_0}} - \frac{y_0}{\sqrt{y_0}}     \amp </mrow><mrow> \iff \amp \sqrt{c} = \frac{x}{\sqrt{x_0}} + \frac{y}{\sqrt{y_0}} </mrow></md>,
         où la dernière égalité vient de ce que <m>(x_0,y_0)</m> se trouve sur <m>\cC</m>.
       </p>
-        <p>
+        <sidebyside widths="48% 4% 48%" valign="middle">
+          <p>
         Les intersections de la tangente <m>\cT</m> avec les axes des coordonnées se calculent aisément
         <ul><li><p>
               avec l'axe des abscisses : <m>y=0</m> donne <m>x^\ast = \sqrt{c x_0}</m> ;
@@ -480,29 +484,31 @@
             </p></li></ul>
         Ainsi, <md>x^\ast + y^\ast = \sqrt{cx_0} + \sqrt{cy_0}  = \sqrt{c}\left(\sqrt{x_0} + \sqrt{y_0}\right) = c.</md>
       </p>
-        <figure xml:id="fig_expl-grad-tg">
-          <caption>La courbe <m>f(x,y) = \sqrt{x} + \sqrt{y} = \sqrt{c}</m> ainsi que sa tangente en un point quelconque </caption>
-          <image xml:id="sageplot-expt-grad-tg" width="60%">
-            <sageplot>
-                var('x,y')
-                f(x,y) = sqrt(x) + sqrt(y)
-                x0, y0 = 4,1
-                c=9
-                C = implicit_plot(f - sqrt(c), (x,-1,7), (y,-1,7),
-                  axes_labels=["$x$","$y$"], ticks = [[],[]])
-                C += implicit_plot(
-                  f.gradient()(x0,y0)*vector([x-x0, y-y0]) ==  0, (x,0,7), (y,0,7), frame = False, axes = True, color ="red")
-                C += point([x0,y0], size = 30, color = "red")
-                C += text("$P_0(x_0, y_0)$",(x0,y0+0.75), fontsize=14,
-                  zorder=2, color= "black")
-                C += text("$y^\\ast$",(0.2,3.2), fontsize=14, zorder=2,
-                  color= "black")
-                C += text("$x^\\ast$",(6,-0.5), fontsize=14, zorder=2,
-                  color= "black")
-                C
-              </sageplot>
-          </image>
-        </figure>
+          <p></p>
+          <figure xml:id="fig_expl-grad-tg">
+            <caption>La courbe <m>f(x,y) = \sqrt{x} + \sqrt{y} = \sqrt{c}</m> ainsi que sa tangente en un point quelconque </caption>
+            <image xml:id="sageplot-expt-grad-tg">
+              <sageplot>
+                  var('x,y')
+                  f(x,y) = sqrt(x) + sqrt(y)
+                  x0, y0 = 4,1
+                  c=9
+                  C = implicit_plot(f - sqrt(c), (x,-1,7), (y,-1,7),
+                    axes_labels=["$x$","$y$"], ticks = [[],[]], axes_labels_size=1.4)
+                  C += implicit_plot(
+                    f.gradient()(x0,y0)*vector([x-x0, y-y0]) ==  0, (x,0,7), (y,0,7), frame = False, axes = True, color ="red")
+                  C += point([x0,y0], size = 30, color = "red")
+                  C += text("$P_0(x_0, y_0)$",(x0,y0+0.75), fontsize=16,
+                    zorder=2, color= "black")
+                  C += text("$y^\\ast$",(0.2,3.2), fontsize=16, zorder=2,
+                    color= "black")
+                  C += text("$x^\\ast$",(6,-0.5), fontsize=16, zorder=2,
+                    color= "black")
+                  C
+                </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
       </solution>
     </example>
     <exercise>
@@ -522,11 +528,12 @@
     <p>
     Nous allons utiliser un procédé semblable à celui qui nous a servi lors de notre discussion au sujet des fonctions implicites, mais avec une surface au lieu d'une courbe. Soit <m>\plan{S}</m> la surface  <m>G(x,y,z)=0</m> et  <m>R_0\big(x_0,\,y_0,\,z_0\big)</m> un point sur <m>\plan{S}</m>.
   </p>
-    <p>
+    <sidebyside widths="45% 5% 50%" valign="middle">
+      <p>
     Imaginons que nous nous promenons sur la surface et que, à l'instant <m> t= 0</m>, nous passons au point <m>R_0\big(x_0,\,y_0,\,z_0\big)</m>. Soit <m>\vr(t)
   =\big(x(t),\,y(t),\,z(t)\big)</m> la position au temps  <m>t</m>.
   </p>
-    <sidebyside width="75%">
+      <p></p>
       <image source="images/CLP-figs/tanPlaneG"/>
     </sidebyside>
     <p>
@@ -568,7 +575,7 @@
     </li><li>
     L'équation du plan tangent à <m>\plan{S}</m> en <m>\vr_0</m> est
     <md>
-    \vnabla G(x_0,y_0,z_0)\cdot\llt x-x_0,\,y-y_0,\,z-z_0\rgt =0
+    \vnabla G(x_0,y_0,z_0)\cdot\ctvec{x-x_0}{y-y_0}{z-z_0} =0
     </md>
     ou encore
     <md>
@@ -709,7 +716,7 @@ G(x,y,z) &amp;= x^2-2x +y^2-4y + z^2-6z
       <p>
   Nous allons trouver les points qui nous intéressent en utilisant le fait que le plan  tangent à la surface  <m>G=2</m> est horizontal en ces points. De façon équivalente, le vecteur normal à  <m>G=2</m> doit être vertical. En effet, regardons la figure ci-bas. Si le plan tangent en <m>(x_0,y_0,z_0)</m> n'est pas horizontal, alors ce plan tangent contient des points dans un voisinage de  <m>(x_0,y_0,z_0)</m> avec <m>z \gt z_0</m>  et d'autres points dans ce voisinage avec <m>z \lt z_0</m>. Près de <m>(x_0,y_0,z_0)</m>, le plan tangent est une bonne approximation de la surface<fn>Nous reviendrons avec plus de précision sur ce point, lorsque la notion de <em>différentiabilité</em> sera introduite.</fn>, de sorte qu'elle contient aussi de tels points.
 </p>
-      <sidebyside width="75%">
+      <sidebyside width="65%">
         <image source="images/CLP-figs/highLowBJC"/>
       </sidebyside>
       <p>
@@ -832,10 +839,8 @@ où, bien entendu, toutes les dérivées partielles doivent être évaluées en 
       <statement>
         <p>
 Considérer la courbe intersection des surfaces
-<md>
-x^2+y^2+z^2=5,\qquad\text{et}\qquad
-x^2+y^2=4z
-</md>.
+<m>
+x^2+y^2+z^2=5</m> et <m>x^2+y^2=4z</m>.
 Trouver un vecteur tangent à cette courbe au point <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m>.
 </p>
       </statement>

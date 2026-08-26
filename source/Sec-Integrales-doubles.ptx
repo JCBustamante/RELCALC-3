@@ -7,24 +7,33 @@
   <title>Intégrales doubles</title>
   <subsection xml:id="pars-Tranches-verticales">
     <title>Tranches verticales</title>
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>
+  Supposons que nous voulons calculer la masse d'une plaque d'épaisseur constante et très mince qui remplit la région <m>\cR</m> dans le plan <m>Oxy</m>. Supposons de plus que la densité de la plaque, disons en kilogrammes par mètre carré, dépend de la position. Appelons cette densité <m>f(x,y)</m>. 
+</p>
+      <p></p>
+      <image source="images/CLP-figs/vSliceA"/>
+    </sidebyside>
     <p>
-  Supposons que nous voulons calculer la masse d'une plaque d'épaisseur constante et très mince qui remplit la région <m>\cR</m> dans le plan <m>Oxy</m>. Supposons de plus que la densité de la plaque, disons en kilogrammes par mètre carré, dépend de la position. Appelons cette densité <m>f(x,y)</m>. Pour simplifier, nous supposerons que  <m>\cR</m> est la région entre la courbe inférieure <m>y=B(x)</m> et la courbe supérieure <m>y=T(x)</m>, avec <m>x</m> allant de <m>a</m> à <m>b</m>, c'est-à-dire<nbsp/>:
+      Pour simplifier, nous supposerons que  <m>\cR</m> est la région entre la courbe inférieure <m>y=B(x)</m> et la courbe supérieure <m>y=T(x)</m>, avec <m>x</m> allant de <m>a</m> à <m>b</m>, c'est-à-dire<nbsp/>:
   <md><mrow>
     \cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\}.
   </mrow></md>
-</p>
-    <sidebyside width="70%">
-      <image source="images/CLP-figs/vSliceA"/>
-    </sidebyside>
+    </p>
     <p>
   Nous allons exprimer la masse comme une intégrale double. À titre d'échauffement, rappelons la procédure afin de calculer l'aire de la région <m>\cR</m>.
   <ul><li>
     Choisissons un nombre naturel <m>n</m> (que nous ferons tendre vers l'infini).
-    </li><li><p>
+    </li><li><sidebyside widths="35% 5% 60%" valign="top"><p>
         Divisons ensuite <m>\cR</m> en <m>n</m> tranches verticales minces, chacune de largeur <m>\De x=\frac{b-a}{n}</m>. Posons <m>x_i = a + i\,\De x</m>, l'abscisse de l'extrémité droite de la tranche <m>i</m>.
-      </p><sidebyside width="75%"><image source="images/CLP-figs/vSliceB"/></sidebyside></li><li><p>
-        Pour chaque  <m>i=1,2,\dots,n</m>, la <m>i^{\text{ième}}</m> tranche s'étend de <m>x= x_{i-1}</m> à <m>x = x_i</m>. Nous approximons son aire par l'aire d'un rectangle. Nous choisissons pour cela un nombre <m>x_i^*</m> entre <m>x_{i-1}</m> et <m>x_i</m>, et nous nous approchons de la tranche par un rectangle dont l'extrémité supérieure se trouve à <m>y=T(x_i^*)</m> et dont l'extrémité inférieure se trouve à <m>y=B(x_i^*)</m>. Le <m>\text{rectangle}_i^*</m> est illustré en bleu dans la figure ci-dessous.
-      </p><sidebyside width="75%"><image source="images/CLP-figs/vSliceC"/></sidebyside></li><li>
+      </p><p></p><image source="images/CLP-figs/vSliceB"/></sidebyside></li><li><sidebyside widths="35% 5% 60%" valign="top"><p>
+        Pour chaque  <m>i=1,2,\dots,n</m>, la <m>i^{\text{ième}}</m> tranche s'étend de <m>x= x_{i-1}</m> à <m>x = x_i</m>. Nous approximons son aire par celle d'un rectangle. Nous choisissons un nombre <m>x_i^*</m> entre <m>x_{i-1}</m> et <m>x_i</m>, et nous approchons la tranche par un rectangle dont l'extrémité supérieure se trouve à <m>y=T(x_i^*)</m> et dont l'extrémité inférieure se trouve à <m>y=B(x_i^*)</m>.
+      </p><p></p><image source="images/CLP-figs/vSliceC"/></sidebyside>
+     <p>
+         Le <m>\text{rectangle}_i^*</m> est illustré en bleu dans la figure ci-contre.
+      </p>
+    </li>
+     <li>
       Ainsi, l'aire de la <m>i^{\text{ième}}</m> tranche  est approximativement <m>\big[T(x_i^*)-B(x_i^*)\big]\De x</m>.
     </li><li>
       Nous obtenons de cette façon une approximation de l'aire totale de la région <m>\cR</m> par une somme de Riemann<nbsp/>:
@@ -42,10 +51,10 @@ Nous pouvons étendre cette procédure pour trouver la masse de notre plaque plu
 <m>\big[T(x_i^*)-B(x_i^*)\big]\De x</m> de l'aire de la <m>i^{\text{ième}}</m> tranche par une approximation de sa masse. Pour cela,
 <ul><li>
 nous choisissons un nombre naturel  <m>m</m> (que nous ferons tendre vers l'infini), puis
-</li><li><p>
+</li><li><sidebyside widths="35% 5% 60%" valign="top"><p>
 nous divisons la <m>i^\text{ième}</m> tranche en  <m>m</m> petits rectangles, chacun de largeur   <m>\De x</m> et de hauteur  <m>\De y = \frac{1}{m}\big[T(x_i^*)-B(x_i^*)\big]</m>. Posons
 <m>y_j = B(x_i^*) + j\,\De y</m>, l'ordonnée de l'extrémité supérieure du <m>j^\text{ième}</m> rectangle.
-</p><sidebyside width="75%"><image source="images/CLP-figs/vSliceD"/></sidebyside></li><li>
+</p><p></p><image source="images/CLP-figs/vSliceD"/></sidebyside></li><li>
   À ce moment, nous pouvons approcher la densité à l'intérieur de chaque rectangle par une constante (en supposant que la fonction de densité est continue, la densité ne varie pas trop brusquement sur un des petits rectangles).
 
   Pour chaque  <m>j=1,2,\dots,m</m>, le <m>j^\text{ième}</m> rectangle s'étend de <m>y=y_{j-1}</m> à  <m>y= y_j</m>. Nous choisissons au hasard un nombre <m>y_j^*</m> entre <m>y_{j-1}</m> et <m>y_j</m>, puis nous approximons la densité pour ce <m>j^\text{ième}</m> rectangle de la <m>i^\text{ième}</m> tranche par la constante <m>f\big(x_i^*,y_j^*\big)</m>.
@@ -137,15 +146,19 @@ Cette façon d'écrire est aussi courante, elle met l'accent sur le point de vue
   </subsection>
   <subsection xml:id="pars-Tranches-horizontales">
     <title>Tranches horizontales</title>
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>
+  Nous avons constaté, lors du calcul d'aire de régions dans le plan <m>Oxy</m>, qu'il est souvent plus avantageux d'utiliser des tranches horizontales que des tranches verticales. Il en va de même lors de la mise en place d'intégrales doubles. Nous répétons donc la procédure de la section précédente, mais en commençant par des tranches horizontales plutôt que verticales. 
+</p>
+      <p></p>
+      <image source="images/CLP-figs/hSliceA"/>
+    </sidebyside>
     <p>
-  Nous avons constaté, lors du calcul d'aire de régions dans le plan <m>Oxy</m>, qu'il est souvent plus avantageux d'utiliser des tranches horizontales que des tranches verticales. Il en va de même lors de la mise en place d'intégrales doubles. Nous répétons donc la procédure de la section précédente, mais en commençant par des tranches horizontales plutôt que verticales. Cette procédure sera utile avec des régions de la forme
+      Cette procédure sera utile avec des régions de la forme
 <md><mrow>
 \cR = \big\{\ (x,y)\ \big|\ c\leqslant  y\leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\}.
 </mrow></md>
-</p>
-    <sidebyside width="66%">
-      <image source="images/CLP-figs/hSliceA"/>
-    </sidebyside>
+    </p>
     <p>
 Ici, dans la région <m>\cR</m>, <m>L(y)</m> (<m>L</m> pour  « left ») est la plus petite valeur de <m>x</m> lorsque l'ordonnée est <m>y</m>. <m>R(y)</m> (<m>R</m> pour « right ») est la plus grande valeur de <m>x</m> lorsque l'ordonnée est <m>y</m>.
 
@@ -164,11 +177,11 @@ divisons l'intervalle  <m>c\leqslant  y\leqslant  d</m> en  <m>n</m> petits sous
    choisissons un autre nombre naturel <m>m</m> (que nous ferons tendre vers l'infini), puis
 </li><li>
    divisons la  <m>i^\text{ième}</m> tranche en <m>m</m> petits rectangles dont chacun a une hauteur de <m>\De y</m> et une largeur de  <m>\De x=\frac{1}{m}\big[R(y_i^*)-L(y_i^*)\big]</m>.
-</li><li><p>
-  Pour chaque  <m>j=1,2,\dots,m</m>,  l'abscisse du <m>j^\text{ième}</m> rectangle varie dans un petit intervalle.  Choisissons un nombre <m>x_j^*</m> dans cet intervalle (voir le petit rectangle noir de la figure ci-dessous).
-</p><sidebyside width="75%"><image source="images/CLP-figs/hSliceB"/></sidebyside><p>
+</li><li><sidebyside widths="35% 5% 60%" valign="top"><p>
+  Pour chaque  <m>j=1,2,\dots,m</m>,  l'abscisse du <m>j^\text{ième}</m> rectangle varie dans un petit intervalle.  Choisissons un nombre <m>x_j^*</m> dans cet intervalle (voir le petit rectangle noir de la figure ci-contre).
+</p><p></p><image source="images/CLP-figs/hSliceB"/></sidebyside><sidebyside widths="35% 5% 60%" valign="top"><p>
 Voici une vue agrandie de la <m>i^\text{ième}</m> tranche.
-</p><sidebyside width="85%"><image source="images/CLP-figs/hSliceBB"/></sidebyside></li><li>
+</p><p></p><image source="images/CLP-figs/hSliceBB"/></sidebyside></li><li>
 Sur le <m>j^\text{ième}</m> rectangle de la  <m>i^\text{ième}</m> tranche, nous approximons la densité par <m>f\big(x_j^*,y_i^*\big)</m>. Par conséquent, sa masse est approximativement donnée par  <m>f\big(x_j^*,y_i^*\big)\,\De x\,\De y</m>.
 </li><li>
 Ainsi, l'approximation de la masse de la <m>i^\text{ième}</m> tranche horizontale au moyen de la somme de Riemann est
@@ -310,21 +323,23 @@ Le symbole  <m>\dee{A}</m> représente l'aire d'une partie infinitésimale de  <
 </p>
     <example xml:id="eg_dblInt_0">
       <statement>
-        <p>
+        <sidebyside widths="60% 10% 30%" valign="top">
+          <p>
 Soit <m>\cR</m> la région triangulaire située au-dessus de l'axe des <m>x</m>, à droite de l'axe des <m>y</m> et à gauche de la droite <m>x+y=1</m>.
 Trouver la masse de  <m>\cR</m> si la densité est donnée par <m>f(x,y)=y</m>.
 </p>
-      </statement>
-      <solution>
-        <p>Nous ferons ce calcul de deux façons : avec les tranches verticales, ensuite avec les tranches horizontales. Voici d'abord une esquisse de  <m>\cR</m>.
-</p>
-        <sidebyside width="40%">
+          <p></p>
           <image source="images/CLP-figs/dblInt0a"/>
         </sidebyside>
-        <p><em>Solution avec des tranches verticales.</em><m>\ \ \ </m>
-Nous allons écrire une intégrale double pour calculer la masse en utilisant des rectangles verticaux. Remarquons, dans la figure suivante,
+      </statement>
+      <solution>
+        <p>Nous ferons ce calcul de deux façons : avec les tranches verticales, ensuite avec les tranches horizontales.
 </p>
-        <sidebyside width="40%">
+        <sidebyside widths="60% 10% 30%" valign="top">
+          <p><em>Solution avec des tranches verticales.</em><m>\ \ \ </m>
+Nous allons écrire une intégrale double pour calculer la masse en utilisant des rectangles verticaux. Remarquons, dans la figure ci-contre,
+</p>
+          <p></p>
           <image source="images/CLP-figs/dblInt0b"/>
         </sidebyside>
         <p><ul><li>
@@ -355,14 +370,15 @@ de sorte que la masse vaut
         = \frac{1}{6}.
 </mrow></md>
 </p>
-        <p><em>Solution avec des tranches horizontales.</em><m>\ \ \ </m>
+        <sidebyside widths="50% 5% 45%" valign="top">
+          <p><em>Solution avec des tranches horizontales.</em><m>\ \ \ </m>
 Faisons maintenant le calcul dans l'autre ordre d'intégration, soit en utilisant des rectangles horizontaux. De nouveau, commençons par une esquisse.
 </p>
-        <sidebyside width="50%">
+          <p></p>
           <image source="images/CLP-figs/dblInt0c"/>
         </sidebyside>
         <p>
-On remarque, dans la figure, que
+On remarque, dans la figure ci-dessus, que
 <ul><li>
 les points les plus bas dans  <m>\cR</m> ont comme ordonnée <m>y=0</m> et que le point le plus haut a <m>y=1</m>.
 </li><li>
@@ -453,11 +469,11 @@ et où l'intégrande est un produit  <m>f(x,y)=g(x)h(y)</m>,
 </mrow><mrow>
 &amp;=\int_a^b g(x)\, \left[ \int_c^d h(y)\ \dee{y}\right]\dee{x},
 </mrow><mrow>
-&amp;\hskip0.25in\text{puisque } g(x) \text{ est constante lorsqu'on intègre par rapport à } y,
+&amp;\hskip0.25in\text{car } g(x) \text{ est constante quand on intègre par rapport à } y,
 </mrow><mrow>
 &amp;=\left[ \int_a^b g(x) \ \dee{x}\right]\ \left[\int_c^d h(y) \ \dee{y}\right],
 </mrow><mrow>
-&amp;\hskip0.25in\text{puisque } \int_c^d h(y)\, \dee{y} \text{ est une constante lorsqu'on intègre par rapport à } x.</mrow></md>
+&amp;\hskip0.25in\text{car } \int_c^d h(y)\, \dee{y} \text{ est une constante lorsqu'on intègre par rapport à } x.</mrow></md>
 </p>
     <p>
 Cela mérite d'être énoncé dans un théorème.
@@ -550,7 +566,7 @@ et tel que
 </mrow></md>
 La région <m>\cR</m> (qui est aussi la région vue au-dessus du solide <m>\cV</m>) est illustrée dans la figure de gauche, et la portion de  <m>\cV</m> dans le premier octant est illustrée dans la figure de droite.
 </p>
-    <sidebyside widths="50% 40%" valign="middle">
+    <sidebyside widths="35% 30%" valign="middle">
       <image source="images/CLP-figs/volSliceB"/>
       <image source="images/CLP-figs/volSliceA"/>
     </sidebyside>
@@ -581,45 +597,37 @@ choisir un nombre naturel  <m>n</m> et découper <m>\cR</m> en rectangles de lar
    Nous arrivons donc à la conclusion suivante :
 </li></ul>
 </p>
-    <fact xml:id="eqn_Volume_y_slice">
+    <fact xml:id="eqn_Volume_slices">
       <statement>
         <p>
-Si
-<md><mrow>
-\cV = \big\{\ (x,y,z)\ \big|\ (x,y)\in\cR,\  0\leqslant  z\leqslant  f(x,y)\ \big\},
-</mrow></md>
-où
-<md><mrow>
+Soit <m>f</m> une fonction continue définie sur une région <m>\cR</m> du plan et
+<m>
+\cV = \big\{\ (x,y,z)\ \big|\ (x,y)\in\cR,\  0\leqslant  z\leqslant  f(x,y)\ \big\}.
+</m>
+<ol marker="(a)">
+<li xml:id="eqn_Volume_y_slice">
+Si <m>\cR</m> est donnée par
+<m>
 \cR = \big\{\ (x,y)\ \big|\ c\leqslant  y\leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\},
-</mrow></md>
+</m>
 alors
 <md><mrow>
     \text{Volume}(\cV)
         = \iint_{\cR} f(x,y)\, \dee{A} =  \int_c^d \int_{L(y)}^{R(y)} f(x,y)\, \dee{x}\ \dee{y}.
 </mrow></md>
-</p>
-      </statement>
-    </fact>
-    <p>
-Similairement :
-</p>
-    <fact xml:id="eqn_Volume_x_slice">
-      <statement>
-        <p>
-      Si
-
-<md><mrow>
-\cV = \big\{\ (x,y,z)\ \big|\ (x,y)\in\cR,\  0\leqslant  z\leqslant  f(x,y)\ \big\},
-</mrow></md>
-où
-<md><mrow>
+</li>
+<li xml:id="eqn_Volume_x_slice">
+Si <m>\cR</m> est donnée par
+<m>
 \cR = \big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\},
-</mrow></md>
+</m>
 alors
 <md><mrow>
     \text{Volume}(\cV)
         =\iint_{\cR} f(x,y)\, \dee{A} = \int_a^b \int_{B(x)}^{T(x)}f(x,y)\, \dee{y} \ \dee{x}.
 </mrow></md>
+</li>
+</ol>
 </p>
       </statement>
     </fact>
@@ -646,9 +654,13 @@ x = \frac{2y^2}{\nu}\text{ et }y=\frac{x^2}{4\nu}
 </mrow><mrow>
 &amp;\iff\quad \left(\frac{x^3}{8\nu^3}-1\right)x=0.
 </mrow></md>
-Cette équation admet deux solutions réelles, soit <m>x=0</m> et <m>x=2\nu</m>. Ainsi, la parabole  <m>y = \frac{x^2}{4\nu}</m>, dont l'ouverture est vers le haut, et la parabole  <m>x=\frac{2y^2}{\nu}</m>, dont l'ouverture est vers la droite,  se coupent en <m>(0,0)</m> et  <m>(2\nu,\nu)</m>.
+Cette équation admet deux solutions réelles, soit <m>x=0</m> et <m>x=2\nu</m>.
 </p>
-        <sidebyside width="75%">
+        <sidebyside widths="40% 5% 55%" valign="top">
+          <p>
+Ainsi, la parabole  <m>y = \frac{x^2}{4\nu}</m>, dont l'ouverture est vers le haut, et la parabole  <m>x=\frac{2y^2}{\nu}</m>, dont l'ouverture est vers la droite,  se coupent en <m>(0,0)</m> et  <m>(2\nu,\nu)</m>.
+</p>
+          <p></p>
           <image source="images/CLP-figs/dblIntAa"/>
         </sidebyside>
         <p><em>Solution avec des tranches verticales.</em> Écrivons maintenant une intégrale double qui calcule la masse en utilisant des tranches verticales. Nous allons utiliser le raisonnement abrégé vu à la section précédente sur les volumes. Déduisons de la figure ci-dessus que
@@ -678,8 +690,7 @@ Ici, l'intégrale par rapport à  <m>x</m> additionne les masses de chacun des r
 &amp;= x\int_{x^2/(4\nu)}^{\sqrt{\nu x/2}}  y \ \dee{y}
 </mrow><mrow>
 &amp;= x\left[\frac{y^2}{2}\right]_{x^2/(4\nu)}^{\sqrt{\nu x/2}}
-</mrow><mrow>
-&amp;=\frac{\nu x^2}{4}-\frac{x^5}{32\nu^2},
+=\frac{\nu x^2}{4}-\frac{x^5}{32\nu^2},
 </mrow></md>
 et alors
 <md><mrow>
@@ -701,7 +712,7 @@ et alors
    Découpons  <m>\cR</m> en rectangles horizontaux de hauteur infinitésimale  <m>\dee{y}</m>.
 </li><li><p>
    Divisons chaque rectangle en sous-rectangles de hauteur <m>\dee{y}</m> et de largeur infinitésimale <m>\dee{x}</m>. Voir la figure ci-dessous.
-</p><sidebyside width="90%"><image source="images/CLP-figs/dblIntAc"/></sidebyside></li><li>
+</p><sidebyside width="70%"><image source="images/CLP-figs/dblIntAc"/></sidebyside></li><li>
   La masse du sous-rectangle centré en  <m>(x,y)</m> est approximativement égale à <m>f(x,y)\,\dee{x}\,\dee{y}=xy\,\dee{x}\,\dee{y}</m>.
 </li><li>
    Ainsi, la masse du rectangle horizontal centré en  <m>y</m> est approximativement  <m>\left[ \int_{L(y)}^{R(y)} f(x,y)\ \dee{x}\ \right] \dee{y} </m>  (l'intégrale par rapport à <m>x</m> additionne les masses de chacun des sous-rectangles sur un même rectangle horizontal).
@@ -734,23 +745,24 @@ Ici, l'intégrale par rapport à  <m>y</m> additionne les masses de chacun des r
     <example xml:id="eg_dblInt_V0">
       <title>Volume</title>
       <statement>
-        <p> Soit  <m>\cR</m> la région du plan  <m>Oxy</m> qui se trouve au-dessus de l'axe des <m>x</m> et sous la parabole <m>y=1-x^2</m>. Calculer le volume du solide au-dessus de  la région <m>\cR</m> et sous la surface  <m>z=x^2\sqrt{1-y}</m>.
+        <sidebyside widths="55% 5% 40%" valign="middle">
+          <p> Soit  <m>\cR</m> la région du plan  <m>Oxy</m> qui se trouve au-dessus de l'axe des <m>x</m> et sous la parabole <m>y=1-x^2</m>. Calculer le volume du solide au-dessus de  la région <m>\cR</m> et sous la surface d'équation <m>z=x^2\sqrt{1-y}</m>.
 </p>
-      </statement>
-      <solution>
-        <p>Nous allons présenter en détail la solution avec des tranches verticales. Pour les tranches horizontales, nous nous contenterons de poser l'intégrale. De nouveau, commençons par une représentation de <m>\cR</m>.
-</p>
-        <sidebyside width="60%">
+          <p></p>
           <image source="images/CLP-figs/dblIntV0a"/>
         </sidebyside>
-        <p><em>Avec les tranches verticales.</em><m>\ \ \ </m>
-Nous pouvons déduire de la figure ci-dessous
+      </statement>
+      <solution>
+        <p>Nous allons présenter en détail la solution avec des tranches verticales. Pour les tranches horizontales, nous nous contenterons de poser l'intégrale.
 </p>
-        <sidebyside width="60%">
+        <sidebyside widths="50% 5% 45%" valign="top">
+          <p><em>Avec les tranches verticales.</em><m>\ \ \ </m>
+Nous pouvons déduire de la figure ci-contre que :
+</p>
+          <p></p>
           <image source="images/CLP-figs/dblIntV0b"/>
         </sidebyside>
         <p>
-que
 <ul><li>
 le point le plus à gauche de  <m>\cR</m> a pour abscisse <m>x=-1</m> et que celui le plus à droite a <m>x=1</m>;
 </li><li>
@@ -793,8 +805,9 @@ Avec cette méthode, nous obtenons la figure ci-dessous.
         </sidebyside>
         <p>
   La région d'intégration est <md><mrow>
-  \cR=\Set{(x,y)}{0=c\leqslant  y\leqslant  d=1,\
-          -\sqrt{1-y}= L(y)\leqslant x\leqslant  R(y) = \sqrt{1-y}}.
+  \cR=\big\{\ (x,y)\ \big|\ 0=c\leqslant  y\leqslant  d=1,
+  </mrow><mrow>
+  \phantom{\cR=\big\{\ (x,y)\ \big|\ }-\sqrt{1-y}= L(y)\leqslant x\leqslant R(y) = \sqrt{1-y}\ \big\}.
   </mrow></md>
   Donc, d'après la <xref ref="eqn_Volume_y_slice" text="global">formule</xref>,
   <md><mrow>
@@ -876,7 +889,7 @@ La variable <m>z</m> n'apparaît pas dans l'équation  <m>x^2+y^2=a^2</m>, de so
 Ainsi, le cylindre  <m>x^2+y^2=a^2</m> est formé d'une infinité de cercles de rayon <m>a</m> superposés les uns par-dessus les autres. La partie du cylindre <m>x^2+y^2=a^2</m> qui se trouve au-dessus du plan  <m>Oxy</m> est illustrée dans la figure de gauche ci-dessous.
 </li><li><p>
 La variable <m>y</m> n'apparaît pas dans  <m>x^2+z^2=a^2</m>. Ainsi, pour toute valeur constante <m>y_0</m>, la partie du cylindre <m>x^2+z^2=a^2</m> dans le plan  <m>y=y_0</m> est le cercle  <m>x^2+z^2=a^2</m>, <m>y=y_0</m>. Ainsi, le cylindre  <m>x^2+z^2=a^2</m> est formé d'une infinité de cercles superposés horizontalement, les uns à côté des autres. La partie du cylindre <m>x^2+z^2=a^2</m> qui se trouve à la droite du plan  <m>Oxz</m> est illustrée dans la figure de droite ci-dessous.
-</p><sidebyside widths="40% 45%" valign="middle"><image source="images/CLP-figs/cylinderA"/><image source="images/CLP-figs/cylinderB"/></sidebyside></li></ul>
+</p><sidebyside widths="35% 45%" valign="middle"><image source="images/CLP-figs/cylinderA"/><image source="images/CLP-figs/cylinderB"/></sidebyside></li></ul>
 Nous devons calculer le volume de partie commune à ces deux cylindres.
 </p>
         <p><ul><li>
@@ -886,7 +899,7 @@ De la même façon, les équations ne changent pas si <m>y</m> est remplacée pa
 </li></ul>
 La partie du solide qui se trouve dans le premier octant est illustrée dans la figure de gauche ci-dessous.  Un point <m>(x,y,z)</m> se trouve dans le premier cylindre si et seulement si <m>x^2+y^2\leqslant  a^2</m>.
 </p>
-        <sidebyside widths="40% 60%" valign="middle">
+        <sidebyside widths="40% 42%" valign="middle">
           <image source="images/CLP-figs/cylinderC"/>
           <image source="images/CLP-figs/cylinderDJC"/>
         </sidebyside>
@@ -914,9 +927,9 @@ Remarquons aussi que  <m>f(x,y)</m> ne dépend pas de  <m>y</m>. Cela facilitera
         <p>Nous pouvons calculer le volume de  <m>\cV_1</m> avec notre démarche habituelle.
 <ul><li>
    On découpe  <m>\cR</m> en rectangles horizontaux, de largeur infinitésimale  <m>\dee{x}</m>.
-</li><li><p>
-   On divise chaque rectangle en sous-rectangles de hauteur infinitésimale <m>\dee{y}</m> et de largeur <m>\dee{x}</m>. Voir la figure ci-après.
-</p><sidebyside width="50%"><image source="images/CLP-figs/cylinderEJC"/></sidebyside></li><li>
+</li><li><sidebyside widths="50% 5% 45%" valign="top"><p>
+   On divise chaque rectangle en sous-rectangles de hauteur infinitésimale <m>\dee{y}</m> et de largeur <m>\dee{x}</m>. Voir la figure ci-contre.
+</p><p></p><image source="images/CLP-figs/cylinderEJC"/></sidebyside></li><li>
   Le volume de la partie de  <m>\cV_1</m> au-dessus du sous-rectangle centré en  <m>(x,y)</m> est approximativement égal à
    <md><mrow>
        f(x,y)\,\dee{x}\,\dee{y}=\sqrt{a^2-x^2}\ \dee{x}\,\dee{y}.
@@ -965,15 +978,20 @@ Ainsi, le volume total du solide recherché est
 </p>
       </statement>
       <solution>
-        <p> Cette intégrale représente le volume d'un solide commun, de sorte qu'elle peut être évaluée sans le calcul d'une intégrale. Le domaine d'intégration est
-<md><mrow>
-\cR=\Set{(x,y)}{0\leqslant  y\leqslant  2,\  0\leqslant  x\leqslant  a},
-</mrow></md>
-et l'intégrande est <m>f(x,y) = \sqrt{a^2-x^2}</m>. Par conséquent, l'intégrale représente le volume du solide compris entre le plan <m>Oxy</m> et la surface <m>z=\sqrt{a^2-x^2}</m>, avec <m>(x,y) \in \cR</m>. On peut réécrire l'équation de la surface comme  <m>x^2+z^2=a^2</m>, qui représente, comme cela a été vu dans l'<xref ref="eg_dblInt_B" text="global">exemple</xref>, un cylindre de rayon <m>a</m> dont l'axe est l'axe des <m>y</m>. Nous cherchons le volume de la partie de ce cylindre qui se trouve au-dessus de <m>\cR</m>, comme illustré dans la figure ci-dessous.
+        <sidebyside widths="40% 5% 55%" valign="top">
+          <p> Cette intégrale représente le volume d'un solide commun, de sorte qu'elle peut être évaluée sans le calcul d'une intégrale. L
+et l'intégrande est <md>f(x,y) = \sqrt{a^2-x^2}</md>. 
 </p>
-        <sidebyside width="60%">
+          <p></p>
           <image source="images/CLP-figs/qCylinder"/>
         </sidebyside>
+        <p>
+          
+        </p>
+
+        <p>
+          Par conséquent, l'intégrale représente le volume du solide compris entre le plan <m>Oxy</m> et la surface <m>z=\sqrt{a^2-x^2}</m>, avec <m>(x,y) \in \cR</m>. On peut réécrire l'équation de la surface comme  <m>x^2+z^2=a^2</m>, qui représente, comme cela a été vu dans l'<xref ref="eg_dblInt_B" text="global">exemple</xref>, un cylindre de rayon <m>a</m> dont l'axe est l'axe des <m>y</m>. Nous cherchons le volume de la partie de ce cylindre qui se trouve au-dessus de <m>\cR</m>, comme illustré dans la figure ci-contre.
+        </p>
         <p>Les sections du solide que coupe tout plan vertical <m>y = y_0</m> sont toutes des quarts de cercle de rayon  <m>a</m>, de sorte que leur aire est égale à <m>\frac{1}{4}\pi a^2</m>. L'intégrale intérieure  <m>\int_0^a \sqrt{a^2-x^2}\ \dee{x}</m> donne précisément cette aire. Ainsi, lorsque  <m>y</m> varie de <m>0</m> à <m>2</m>,
 <md><mrow>
 \int_0^2\int_0^a \sqrt{a^2-x^2}\ \dee{x}\,\dee{y}
@@ -1122,7 +1140,7 @@ Ainsi,
         <p>
 Voici une esquisse du domaine.
 </p>
-        <sidebyside widths="35% 45%">
+        <sidebyside widths="26% 45%">
           <image source="images/CLP-figs/reverse2A"/>
           <p>
   Nous allons essayer d'évaluer l'intégrale donnée de deux façons: une fois avec les tranches horizontales (ce qui sera impossible) et une autre fois avec les tranches verticales (la façon la plus simple).
@@ -1147,7 +1165,7 @@ It is the integrand of the error function
 that is used in computing <q>bell curve</q> probabilities. See Example
 3.6.10 in the CLP-2 text.</fn>.-->
 Il est impossible d'évaluer  <m>\int_y^1 \frac{\sin x}{x}\ \dee{x}</m> sans faire appel à des méthodes numériques ou à des développements en séries.</p>
-        <sidebyside widths="40% 40%">
+        <sidebyside widths="30% 30%">
           <image source="images/CLP-figs/reverse2B"/>
           <image source="images/CLP-figs/reverse2C"/>
         </sidebyside>
@@ -1189,19 +1207,15 @@ Cette fois-ci, parce que la variable <m>x</m> est considérée comme une constan
 <md><mrow>
 \cV =\Set{(x,y,z)}{3x^2+2y^2\leqslant  1,\ 0\leqslant  z\leqslant  1-3x^2-2y^2}.
 </mrow></md>
-Ceci est illustré dans la figure ci-dessous.
-
-
-<sidebyside width="60%"><image source="images/CLP-figs/egDblIntEa"/></sidebyside>
-
-
-La vue d'en haut de la région
+Ceci est illustré dans la figure de gauche ci-dessous. La vue d'en haut de la région
 <md><mrow>
 \cR=\Set{(x,y)}{3x^2+2y^2\leqslant  1}
 </mrow></md>
-est illustrée dans la figure ci-dessous.
+est illustrée dans la figure de droite.
 </p>
-        <sidebyside width="60%">
+        <sidebyside widths="40% 5% 40%" valign="top">
+          <image source="images/CLP-figs/egDblIntEa"/>
+          <p></p>
           <image source="images/CLP-figs/egDblIntEbJC"/>
         </sidebyside>
         <p>En considérant que la relation <m>z=1-3x^2-2y^2</m> exprimée en fonction de <m>x</m> est presque identique à celle exprimée en fonction de <m>y</m> (seulement les coefficients <m>2</m> et <m>3</m> sont interchangés), l'utilisation de la méthode des tranches verticales nous amènera à une intégration de même difficulté qu'avec la méthode des tranches horizontales. Nous pouvons donc choisir n'importe laquelle des méthodes; choisissons celle avec les tranches verticales.
@@ -1209,7 +1223,7 @@ est illustrée dans la figure ci-dessous.
         <p>L'ellipse dans <m>\cR</m> coupe l'axe des <m>y</m> aux points où <m>x=0</m> et où <m>y</m> vérifie l'équation  <m>3(0)^2+2y^2 =1 </m>, donc <m>y=\pm\frac{1}{\sqrt{2}}</m>. Ainsi, dans <m>\cR</m>, <m>-\frac{1}{\sqrt{2}}\leqslant y\leqslant  \frac{1}{\sqrt{2}}</m>
 et, pour chaque <m>y</m> de la région, <m>3x^2\leqslant  1-2y^2</m>, ou bien
 <m>-\sqrt{\frac{1-2y^2}{3}}\leqslant x\leqslant  \sqrt{\frac{1-2y^2}{3}}</m>.
-Par conséquent, en utilisant des rectangles verticaux comme dans la figure ci-dessus,
+Par conséquent, en utilisant des rectangles verticaux comme dans la figure de droite ci-dessus,
 <md><mrow>
 \text{Volume}(\cV) &amp;=\iint_\cR \big(1-3x^2-2y^2\big)\,\dee{x}\,\dee{y}
 </mrow><mrow>
@@ -1278,11 +1292,16 @@ Finalement, en considérant que <m>\int_0^{\frac{\pi}{2}} \cos(4\theta)\,\dee{\t
     <p>En principe, l'intégrale  <m>\iint_\cR f(x,y)\ \dee{A}</m>, où
 <m>\cR</m> est une région bornée du plan <m>\R^2</m>, est définie comme suit.
 </p>
-    <p><ul><li><p>
+    <sidebyside widths="55% 5% 35%" valign="top">
+      <p><ul><li>
   Subdivisons  <m>\cR</m> en traçant des droites parallèles aux axes de coordonnées.
-</p><sidebyside width="50%"><image source="images/CLP-figs/intDecomp2"/></sidebyside></li><li>
-Numérotons les sous-rectangles obtenus de  <m>1</m> à <m>n</m> (ce sont presque tous des rectangles, sauf ceux qui se trouvent à la frontière de <m>\cR</m>). Notons que <m>n</m>, dans ce contexte, est le nombre total de sous-rectangles, pas le nombre de rectangles verticaux ou horizontaux comme précédemment.
 </li><li>
+Numérotons les sous-rectangles obtenus de  <m>1</m> à <m>n</m> (ce sont presque tous des rectangles, sauf ceux qui se trouvent à la frontière de <m>\cR</m>). Notons que <m>n</m>, dans ce contexte, est le nombre total de sous-rectangles, pas le nombre de rectangles verticaux ou horizontaux comme précédemment.
+</li></ul></p>
+      <p></p>
+      <image source="images/CLP-figs/intDecomp2"/>
+    </sidebyside>
+    <p><ul><li>
 Posons  <m>\De A_i</m>, l'aire du sous-rectangle numéro  <m>i</m>.
 </li><li>
 Soit <m>(x_i^*,y_i^*)</m> un point d'échantillon sélectionné au hasard dans le sous-rectangle <m>i</m>.
@@ -1299,11 +1318,7 @@ Répétons cette procédure en redécoupant <m>\cR</m> afin d'obtenir des sous-r
       <statement>
         <p>
 Si <m>f(x,y)</m> est continue sur une région  <m>\cR</m> donnée par
-<md alignment="alignat"><mrow>
-a&amp;\leqslant x&amp;&amp;\leqslant b,
-</mrow><mrow>
-B(x)&amp;\leqslant y&amp;&amp;\leqslant T(x)
-</mrow></md>
+<m>a\leqslant x\leqslant b</m> et <m>B(x)\leqslant y\leqslant T(x)</m>
 avec des fonctions continues <m>B(x)</m> et  <m>T(x)</m>, alors
 <md><mrow>
 \iint_\cR f(x,y)\ \dee{A}\ =
@@ -1311,11 +1326,7 @@ avec des fonctions continues <m>B(x)</m> et  <m>T(x)</m>, alors
 </mrow></md>
 </p>
         <p> De la même façon, si  <m>\cR</m> est donnée par
-<md alignment="alignat"><mrow>
-c&amp;\leqslant y&amp;&amp;\leqslant d,
-</mrow><mrow>
-L(y)&amp;\leqslant x&amp;&amp;\leqslant R(y)
-</mrow></md>
+<m>c\leqslant y\leqslant d</m> et <m>L(y)\leqslant x\leqslant R(y)</m>
 avec des fonctions continues  <m>L(y)</m> et  <m>R(y)</m>, alors
 <md><mrow>
 \iint_R f(x,y)\ \dee{A}\ =

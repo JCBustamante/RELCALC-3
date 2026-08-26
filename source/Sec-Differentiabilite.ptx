@@ -151,11 +151,11 @@
   </p>
     <theorem xml:id="thm-Diff-Df">
       <statement>
-        <p>Soit <m>f</m> différentiable en <m>\vr_0</m> et <m>T = \left[\begin{matrix}t_1 \amp t_2\amp \cdots \amp t_n \end{matrix}\right]</m> comme dans la <xref ref="def-Differentiabilite" text="global">définition</xref>. Alors,
+        <p>Soit <m>f</m> différentiable en <m>\vr_0</m> et <m>T = \left[\begin{matrix}t_1 \amp t_2\amp \cdots \amp t_n \end{matrix}\right]</m> comme dans la <xref ref="def-Differentiabilite" text="global">définition</xref>. Alors, <m>t_i = \pdiff{f}{x_i}(\vr_0)</m> pour <m>i\in \{1,\ldots, n\}</m>, et la matrice <m>T</m> est donnée par 
       <md>
-        T = \vD f(\vr_0)
+        T = \vD f(\vr_0) = \left[\begin{matrix}\pdiff{f}{x_1}(\vr_0) \amp \pdiff{f}{x_2}(\vr_0) \amp \cdots \amp \pdiff{f}{x_n}(\vr_0) \end{matrix}\right]
       </md>,
-      ou encore <m>t_i = \pdiff{f}{x_i}(\vr_0)</m> pour <m>i\in \{1,\ldots, n\}</m>.
+    
       </p>
         <p>
         La matrice <m> \vD f(\vr_0)</m> est la <em>dérivée de <m>f</m> en <m>\vr_0</m></em>, et la fonction <m>L : \R^n \to \R</m> définie par <m>L(\vr) = f(\vr_0) + \vD f(\vr_0)(\vr - \vr_0)</m> est appelée l'approximation linéaire de <m>f</m> autour de <m>\vr_0</m>.
@@ -237,7 +237,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
   </md>
 </p>
     <p>
-  Dans ce cas, <m>\vD \vr(t_0)</m> est la matrice de <m>\R^{n\times 1}</m>, c'est-à-dire le vecteur colonne à  <m>m</m> composantes
+  Dans ce cas, <m>\vD \vr(t_0)</m> est la matrice de <m>\R^{n\times 1}</m>, c'est-à-dire le vecteur colonne à  <m>m</m> composantes (puisque <m>\vr</m> est une fonction d'une partie de <m>\R</m> dans <m>\R^m</m>)
   <md>
     \vD \vr(t_0) = \left[ \begin{matrix} x'_1(t_0)\\ \vdots \\ x'_m(t_0) \end{matrix}\right] = \vr'(t_0).
   </md>
@@ -355,8 +355,10 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
     </p>
       </statement>
       <solution>
-        <p>Notons tout d'abord qu'il est aisé de montrer (par exemple en utilisant les coordonnées polaires) que la fonction <m>f</m> est continue à l'origine. On trouve son graphe ci-après, on remarque notamment qu'elle est sévèrement froissée à l'origine.
-    <figure xml:id="fig-Non-diff-mais-partielles"><caption>La fonction <m> f(x,y)= \frac{xy}{\sqrt{x^2+ y^2}}</m> possède des dérivées partielles, mais n'est pas différentiable à l'origine.</caption><image width="80%" xml:id="img-Non-diff-mais-partielles"><sageplot variant="3d" aspect="1.0">
+        <p>Notons tout d'abord qu'il est aisé de montrer (par exemple en utilisant les coordonnées polaires) que la fonction <m>f</m> est continue à l'origine. On trouve ci-contre son graphe — on remarque notamment qu'elle est sévèrement froissée à l'origine — ainsi que ses courbes de niveau près de l'origine, qui ne ressemblent pas à celles d'une fonction linéaire.
+    </p>
+        <sidebyside widths="42% 10% 42%" valign="top">
+          <figure xml:id="fig-Non-diff-mais-partielles"><caption>Le graphe de <m> f(x,y)= \frac{xy}{\sqrt{x^2+ y^2}}</m>.</caption><image xml:id="img-Non-diff-mais-partielles"><sageplot variant="3d" aspect="1.0">
             var("x,y,z")
             h(x,y)= x*y/sqrt(x^2 + y^2)
             cm = colormaps.Spectral
@@ -364,18 +366,32 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
             def c(x,y,z):
                     return float((h(x,y)-zmin)/(zmax-zmin))
             S = implicit_plot3d(z==h, (x,-1,1), (y,-1,1), (z,zmin,zmax),
-              color = (c,cm), 
+              color = (c,cm),
               region=lambda x,y,z: x^2+y^2+z^2 &gt; 0.001,
               frame = False)
             S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
-            S += text3d("x", (1.3,0,0), color = "black")
+            S += text3d("x", (1.3,0,0), color = "black", fontsize = 20)
             S += arrow3d((0,0,0),(0,1.2,0), color = "black",  width= 0.5)
-            S += text3d("y", (0,1.3,0), color = "black")
+            S += text3d("y", (0,1.3,0), color = "black", fontsize = 20)
             S += arrow3d((0,0,0),(0,0,0.8), color = "black", width = 0.5)
-            S += text3d("z", (0,0,0.9), color = "black")
+            S += text3d("z", (0,0,0.9), color = "black", fontsize = 20)
             S
           </sageplot></image></figure>
-    </p>
+          <p></p>
+          <figure xml:id="figure-Non-differentiable"><caption>Les courbes de niveau de <m>f</m> près de l'origine.</caption><image xml:id="sageplot-Non-differentiable"><description><p>Courbes de niveau d'une fonction non différentiable.</p></description><sageplot>
+            var('x,y')
+            f(x,y) = x*y/sqrt(x^2+ y^2)
+            C = contour_plot(f ,(-0.2,0.2), (-0.2,0.2), axes = True,
+              cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2), label_colors="black", label_inline=True,
+              label_fontsize=18, gridlines=True, axes_labels=["$x$","$y$"],
+              tick_formatter = "latex",
+              ticks = [[round(-0.2,1),round(-0.1,1), 0, round(0.1,1),
+              round(0.2,1)], [round(-0.2,1),round(-0.1,1) ,0, round(0.1,1),
+              round(0.2,1)]],
+              fontsize= 18)
+            C
+          </sageplot></image></figure>
+        </sidebyside>
         <p>
       Par ailleurs, on calcule les dérivées partielles aisément :
       <md>
@@ -383,23 +399,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
       </md>
       On calcule de même <m>f_y(0,0) = 0</m>.
 
-      Ainsi, <m>L(\vr)</m>, l'approximation linéaire de <m>f</m> autour de <m>(0,0)</m>, est la fonction constante égale à zéro.
-    </p>
-        <p>
-      Ci-bas, on trouve les courbes de niveau de la fonction <m>f</m> près de l'origine. On voit tout de suite qu'elles ne ressemblent pas à celles d'une fonction linéaire. Ceci suggère que la fonction <m>f</m> n'est pas différentiable en <m>(0,0)</m>. Voyons ceci de façon plus formelle.
-      <figure xml:id="figure-Non-differentiable"><caption>Les courbes de niveau de <m>f</m> près de l'origine, vues de près. Elles ne ressemblent pas à celles d'une fonction linéaire.</caption><image xml:id="sageplot-Non-differentiable" width="80%"><description><p>Courbes de niveau d'une fonction non différentiable.</p></description><sageplot>
-            var('x,y')
-            f(x,y) = x*y/sqrt(x^2+ y^2)
-            C = contour_plot(f ,(-0.2,0.2), (-0.2,0.2), axes = True,
-              cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%round(x,2), label_colors="black", label_inline=True,
-              label_fontsize=12, gridlines=True, axes_labels=["$x$","$y$"],
-              tick_formatter = "latex",
-              ticks = [[round(-0.2,1),round(-0.1,1), 0, round(0.1,1), 
-              round(0.2,1)], [round(-0.2,1),round(-0.1,1) ,0, round(0.1,1),
-              round(0.2,1)]],
-              fontsize= 12)
-            C
-          </sageplot></image></figure>
+      Ainsi, <m>L(\vr)</m>, l'approximation linéaire de <m>f</m> autour de <m>(0,0)</m>, est la fonction constante égale à zéro. Ceci suggère que la fonction <m>f</m> n'est pas différentiable en <m>(0,0)</m>. Voyons ceci de façon plus formelle.
     </p>
         <p>
       En effet, nous avons
@@ -716,7 +716,7 @@ le pourcentage d'erreur est
     </definition>
     <example xml:id="eg_error_C">
       <statement>
-        <sidebyside widths="65% 28%">
+        <sidebyside widths="65% 22%">
           <p>
   Un triangle a des côtés de longueur <m>a=10.1</m> cm et <m>b=19.8</m> cm formant un angle de <m>35^\circ</m>. On veut calculer une valeur approchée de l'aire du triangle.
   </p>

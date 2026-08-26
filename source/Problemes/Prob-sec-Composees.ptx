@@ -801,15 +801,13 @@
     Les trois points <m>P_0</m>, <m>P_1</m>, et <m>P_2</m> se trouvent sur la surface.
     </p>
 
-
-
-    <sidebyside width="75%">
-    <image source="images/CLP-figs/pfigs/partialTotalX"/>
-    </sidebyside>
-
+    <sidebyside widths="40% 5% 55%" valign="middle">
     <p>	Sur la courbe de niveau <m>z=z_1</m>, on peut penser à <m>y</m> comme une fonction de <m>x</m>. Soit <m>w(x)=f(x,y(x))=z_1</m>. On approxime, à <m>P_0</m>, <m>f_x(x,y) \approx \frac{\Delta f}{\Delta x}</m> et <m>\frac{dw}{dx}(x)\approx\frac{\Delta w}{\Delta x}</m>.
     Identifiez les quantités <m>\Delta f</m>, <m>\Delta w</m>, et <m>\Delta x</m> sur le diagramme.
     </p>
+    <p></p>
+    <image source="images/CLP-figs/pfigs/partialTotalX"/>
+    </sidebyside>
 
     </statement>
     <hint>
@@ -1053,7 +1051,7 @@
     Évaluez
     <m>\frac{\partial^3}{\partial x\partial y^2}f(2x+3y,xy)</m>
     en termes des dérivées partielles de <m>f</m>.
-    Vous pouvez supposer que <m>f</m> est une fonction lisse de façon à ce que le théorème de Clairaut et la règle de dérivation en chaîne
+    Vous pouvez supposer que <m>f</m> est une fonction lisse de façon à ce que le Théorème de Clairaut et la règle de dérivation en chaîne
     s'appliquent à l'égalité des dérivées partielles mixtes.
     </p></statement>
 
@@ -1196,7 +1194,7 @@
     <exercise>
     <statement><p>
     Trouvez toutes les dérivées d'ordre deux de <m>g(s,t)=f(2s+3t,3s-2t)</m>.
-    Vous pouvez supposer que <m>f(x,y)</m> est une fonction lisse de façon à ce que le théorème de Clairaut et la règle de dérivation en chaîne
+    Vous pouvez supposer que <m>f(x,y)</m> est une fonction lisse de façon à ce que le Théorème de Clairaut et la règle de dérivation en chaîne
     s'appliquent à l'égalité des dérivées partielles mixtes.
     </p></statement>
 
@@ -1285,7 +1283,7 @@
     Montrez que c'est également le cas pour la fonction composée
     <m>g(s,t) = f (s - t, s + t)</m>, i.e. montrez que
     <m>\frac{\partial^2 g}{\partial s^2}+\frac{\partial^2 g}{\partial t^2}=0</m>.
-    Vous pouvez également supposer que <m>f(x,y)</m> est une fonction lisse de telle sorte que la règle de la chaîne et le théorème de Clairaut
+    Vous pouvez également supposer que <m>f(x,y)</m> est une fonction lisse de telle sorte que la règle de la chaîne et le Théorème de Clairaut
     sur l'égalité des dérivées partielles mixtes s'appliquent.
     </p></statement>
 
@@ -1463,7 +1461,7 @@
     =\frac{\partial^2 z}{\partial s^2}
     +\frac{\partial^2 z}{\partial t^2}
     </md>
-    Vous pouvez supposer que <m>z = f(x,y)</m>  est une fonction lisse de telle sorte que la règle de la chaîne et le théorème de Clairaut
+    Vous pouvez supposer que <m>z = f(x,y)</m>  est une fonction lisse de telle sorte que la règle de la chaîne et le Théorème de Clairaut
     sur l'égalité des dérivées partielles mixtes s'appliquent.
     </p></statement>
 
@@ -2388,6 +2386,92 @@
     </exercise>
 
 
+
+
+    <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
+    <statement><p>
+    Soit <m>f(u,v)</m> une fonction différentiable, et soit <m>u=x+y</m>
+    et <m>v=x-y</m>. Trouvez une constante, <m>\a</m>, telle que
+    <md>
+    <mrow>
+    (f_x)^2+(f_y)^2=\a\big((f_u)^2+(f_v)^2\big)
+    </mrow>
+    </md>
+    </p></statement>
+
+    <hint><p>
+    Cette question utilise une notation mauvaise (mais standard), étant donnée que le symbole <m>f</m>
+    est utilisé pour deux fonctions différentes, soient <m>f(u,v)</m> et
+    <m>f(x,y)=f(u,v)\big|_{u=x+y,v=x-y}</m>. Une meilleure formulation est:
+    <ul>
+    <li>
+    Soit <m>f(u,v)</m> et <m>F(x,y)</m>  des fonctions différentiables telles que
+    <m>F(x,y)=f(x+y,x-y)</m>.  Trouvez une constante, <m>\a</m>, telle que
+    <md>
+    F_x(x,y)^2+F_y(x,y)^2=\a\big\{f_u(x+y,x-y)^2+f_v(x+y,x-y)^2\big\}
+    </md>
+    </li>
+    </ul>
+    </p></hint>
+
+    <answer><p>
+    <m>\a=2</m>
+    </p></answer>
+
+    <solution><p>
+    Cette question utilise une notation mauvaise (mais standard), en cela que le seul symbole <m>f</m>
+    est utilisé pour deux fonctions différentes, à savoir <m>f(u,v)</m> et
+    <m>f(x,y)=f(u,v)\big|_{u=x+y,v=x-y}</m>. Une meilleure formulation est
+    <ul>
+    <li>
+    Soit <m>f(u,v)</m> et <m>F(x,y)</m> des fonctions différentiables telles que
+    <m>F(x,y)=f(x+y,x-y)</m>. Trouvez une constante, <m>\a</m>, telle que
+    <md>
+    F_x(x,y)^2+F_y(x,y)^2=\a\big\{f_u(x+y,x-y)^2+f_v(x+y,x-y)^2\big\}
+    </md>
+    </li>
+    </ul>
+    Par la règle de dérivation en chaîne,
+    <md>
+    <mrow>
+    \pdiff{F}{x}(x,y)
+    &amp;=f_u(x+y,x-y)\pdiff{}{x}(x+y)
+    +f_v(x+y,x-y)\pdiff{}{x}(x-y)
+    </mrow><mrow>
+    &amp;=f_u(x+y,x-y)+f_v(x+y,x-y)
+    </mrow><mrow>
+    \pdiff{F}{y}(x,y)
+    &amp;=f_u(x+y,x-y)\pdiff{}{y}(x+y)
+    +f_v(x+y,x-y)\pdiff{}{y}(x-y)
+    </mrow><mrow>
+    &amp;=f_u(x+y,x-y)-f_v(x+y,x-y)
+    </mrow>
+    </md>
+    Donc
+    <md>
+    <mrow>
+    F_x(x,y)^2+F_y(x,y)^2
+    &amp;=\Big[f_u(x+y,x-y)+f_v(x+y,x-y)\Big]^2
+    </mrow><mrow>
+    &amp;\hskip1in +\Big[f_u(x+y,x-y)-f_v(x+y,x-y)\Big]^2
+    </mrow><mrow>
+    &amp;=2f_u(x+y,x-y)^2+2f_v(x+y,x-y)^2
+    </mrow>
+    </md>
+    Donc <m>\a=2</m> convient.
+    </p></solution>
+    </exercise>
+
+
+  </exercisegroup>
+
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+
+
+    <!-- La solution et la réponse sont les mêmes -->
+    <!-- Déplacé depuis « Pour mieux comprendre » : théorème des fonctions implicites pour un système de deux équations à deux variables (non développé dans le texte) -->
     <exercise> <!-- <title><fromexam>M200 2001D</fromexam></title> -->
     <statement><p>
     Les équations
@@ -2499,89 +2583,6 @@
     </exercise>
 
 
-    <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
-    <statement><p>
-    Soit <m>f(u,v)</m> une fonction différentiable, et soit <m>u=x+y</m>
-    et <m>v=x-y</m>. Trouvez une constante, <m>\a</m>, telle que
-    <md>
-    <mrow>
-    (f_x)^2+(f_y)^2=\a\big((f_u)^2+(f_v)^2\big)
-    </mrow>
-    </md>
-    </p></statement>
-
-    <hint><p>
-    Cette question utilise une notation mauvaise (mais standard), étant donnée que le symbole <m>f</m>
-    est utilisé pour deux fonctions différentes, soient <m>f(u,v)</m> et
-    <m>f(x,y)=f(u,v)\big|_{u=x+y,v=x-y}</m>. Une meilleure formulation est:
-    <ul>
-    <li>
-    Soit <m>f(u,v)</m> et <m>F(x,y)</m>  des fonctions différentiables telles que
-    <m>F(x,y)=f(x+y,x-y)</m>.  Trouvez une constante, <m>\a</m>, telle que
-    <md>
-    F_x(x,y)^2+F_y(x,y)^2=\a\big\{f_u(x+y,x-y)^2+f_v(x+y,x-y)^2\big\}
-    </md>
-    </li>
-    </ul>
-    </p></hint>
-
-    <answer><p>
-    <m>\a=2</m>
-    </p></answer>
-
-    <solution><p>
-    Cette question utilise une notation mauvaise (mais standard), en cela que le seul symbole <m>f</m>
-    est utilisé pour deux fonctions différentes, à savoir <m>f(u,v)</m> et
-    <m>f(x,y)=f(u,v)\big|_{u=x+y,v=x-y}</m>. Une meilleure formulation est
-    <ul>
-    <li>
-    Soit <m>f(u,v)</m> et <m>F(x,y)</m> des fonctions différentiables telles que
-    <m>F(x,y)=f(x+y,x-y)</m>. Trouvez une constante, <m>\a</m>, telle que
-    <md>
-    F_x(x,y)^2+F_y(x,y)^2=\a\big\{f_u(x+y,x-y)^2+f_v(x+y,x-y)^2\big\}
-    </md>
-    </li>
-    </ul>
-    Par la règle de dérivation en chaîne,
-    <md>
-    <mrow>
-    \pdiff{F}{x}(x,y)
-    &amp;=f_u(x+y,x-y)\pdiff{}{x}(x+y)
-    +f_v(x+y,x-y)\pdiff{}{x}(x-y)
-    </mrow><mrow>
-    &amp;=f_u(x+y,x-y)+f_v(x+y,x-y)
-    </mrow><mrow>
-    \pdiff{F}{y}(x,y)
-    &amp;=f_u(x+y,x-y)\pdiff{}{y}(x+y)
-    +f_v(x+y,x-y)\pdiff{}{y}(x-y)
-    </mrow><mrow>
-    &amp;=f_u(x+y,x-y)-f_v(x+y,x-y)
-    </mrow>
-    </md>
-    Donc
-    <md>
-    <mrow>
-    F_x(x,y)^2+F_y(x,y)^2
-    &amp;=\Big[f_u(x+y,x-y)+f_v(x+y,x-y)\Big]^2
-    </mrow><mrow>
-    &amp;\hskip1in +\Big[f_u(x+y,x-y)-f_v(x+y,x-y)\Big]^2
-    </mrow><mrow>
-    &amp;=2f_u(x+y,x-y)^2+2f_v(x+y,x-y)^2
-    </mrow>
-    </md>
-    Donc <m>\a=2</m> convient.
-    </p></solution>
-    </exercise>
-
-
-  </exercisegroup>
-
-
-  <exercisegroup>
-    <title>Pour aller plus loin</title>
-
-
-    <!-- La solution et la réponse sont les mêmes -->
     <exercise>
         <statement><p>
         Les textes sur la thermodynamique
@@ -3139,6 +3140,619 @@
        <m>f(xz,yz)=0</m> peut être résolue pour <m>z</m> comme une fonction de <m>x</m> et de <m>y</m>.
        </p></solution>
      </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2000A</fromexam></title> -->
+      <statement><p>
+      Soit <m>z</m> une fonction de <m>x</m> et de <m>y</m> telle que
+      <md>
+      z^3 - z + 2xy - y^2 = 0,\qquad z(2, 4) = 1.
+      </md>
+      <ol marker = "(a)">
+      <li>
+      Trouvez l'approximation linéaire de <m>z</m> au point <m>(2, 4)</m>.
+      </li>
+      <li>
+      Utilisez votre réponse de la partie (a) pour estimer la valeur de <m>z</m> en
+      <m>(2.02, 3.96)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>z(x,y)\approx 1-4x+2y</m>
+      </p><p>
+      (b) <m>0.84</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La fonction <m>z(x,y)</m> vérifie
+      <md>
+      z(x,y)^3-z(x,y)+2xy-y^2=0
+      </md>
+      pour tout <m>(x,y)</m> près de <m>(2,4)</m>. En dérivant par rapport à <m>x</m> et à <m>y</m>,
+      <md>
+      <mrow>
+      3z(x,y)^2\pdiff{z}{x}(x,y)
+             -\pdiff{z}{x}(x,y)+2y&amp;=0
+      </mrow><mrow>
+      3z(x,y)^2\pdiff{z}{y}(x,y)
+             -\pdiff{z}{y}(x,y)+2x-2y&amp;=0
+      </mrow>
+      </md>
+      En substituant <m>x=2</m>, <m>y=4</m> et <m>z(2,4)=1</m>, on obtient
+      <md alignment="alignat">
+      <mrow>
+      3\pdiff{z}{x}(2,4)
+             -\pdiff{z}{x}(2,4)+8&amp;=0 &amp;  &amp;\iff &amp;
+          \pdiff{z}{x}(2,4) &amp; = -4
+      </mrow><mrow>
+      3\pdiff{z}{y}(2,4)
+             -\pdiff{z}{y}(2,4)+4-8&amp;=0 &amp;  &amp;\iff &amp;
+          \pdiff{z}{y}(2,4) &amp; = 2
+      </mrow>
+      </md>
+      L'approximation linéaire est
+      <md>
+      <mrow>
+      z(x,y)&amp;\approx z(2,4)+z_x(2,4)(x-2)+z_y(2,4)(y-4)
+      </mrow><mrow>
+      &amp;= 1-4(x-2)+2(y-4)
+      </mrow><mrow>
+      &amp;=1-4x+2y
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) En substituant <m>x=2.02</m> et <m>y=3.96</m>, on obtient
+      <md>
+      <mrow>
+      z(2.02,3.96)\approx 1-4\times0.02+2\times(-0.04)
+      =0.84
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
+      <statement><p>
+      Si deux résistances ayant une résistance de <m>R_1</m> et de <m>R_2</m> sont en parallèles,
+      alors la résistance résultante R satisfait l'équation
+      <m>\frac{1}{R} =\frac{1}{R_1}+\frac{1}{R_2}</m>. Utilisez l'approximation linéaire pour estimer le changement dans <m>R</m> si <m>R_1</m> décroît de
+      <m>2</m> à <m>1.9</m> ohms et <m>R_2</m> croît de 8 à 8.1 ohms.
+      </p></statement>
+
+      <answer><p>
+      <m>-0.06</m>
+      </p></answer>
+
+      <solution><p>
+      La fonction <m>R(R_1,R_2)</m> est définie implicitement par
+      <md>
+      \frac{1}{R(R_1,R_2)} =\frac{1}{R_1}+\frac{1}{R_2}
+      \tag{$*$}</md>
+      En particulier
+      <md>
+      \frac{1}{R(2,8)} = \frac{1}{2}+\frac{1}{8} = \frac{5}{8}
+      \implies R(2,8) = \frac{8}{5}
+      </md>
+      </p>
+
+      <p>Nous voulons utiliser l'approximation linéaire
+      <md>
+      R(R_1,R_2) \approx R(2,8) + \pdiff{R}{R_1}(2,8)\,(R_1-2)
+                                + \pdiff{R}{R_2}(2,8)\,(R_2-8)
+      </md>
+      Pour ce faire, il nous faut les dérivées partielles <m>\pdiff{R}{R_1}(2,8)</m>
+      et <m>\pdiff{R}{R_2}(2,8)</m>. Pour les trouver, dérivons <m>(*)</m> par rapport à
+      <m>R_1</m> et <m>R_2</m> :
+      <md>
+      <mrow>
+      -\frac{1}{R(R_1,R_2)^2}\pdiff{R}{R_1}(R_1,R_2)
+                       &amp;= -\frac{1}{R_1^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2)^2}\pdiff{R}{R_2}(R_1,R_2)
+                       &amp;= -\frac{1}{R_2^2}
+      </mrow>
+      </md>
+      En posant <m>R_1=2</m> et <m>R_2=8</m>, on obtient
+      <md alignment="alignat">
+      <mrow>
+      -\frac{1}{(8/5)^2}\pdiff{R}{R_1}(2,8)
+                       &amp;= -\frac{1}{4} &amp;\quad\implies\quad &amp;
+               &amp;\pdiff{R}{R_1}(2,8) &amp;=\frac{16}{25}
+      </mrow><mrow>
+      -\frac{1}{(8/5)^2}\pdiff{R}{R_2}(2,8)
+                       &amp;= -\frac{1}{64}  &amp;\quad\implies\quad &amp;
+               &amp;\pdiff{R}{R_2}(2,8) &amp;=\frac{1}{25}
+      </mrow>
+      </md>
+      Le changement demandé dans <m>R</m> est donc
+      <md>
+      <mrow>
+      R(1.9,8.1)-R(2,8) \approx  \frac{16}{25} (-0.1) + \frac{1}{25}(0.1)
+      =-\frac{15}{250} = -0.06
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise>
+      <statement><p>
+      La résistance totale <m>R</m> de trois résistances, <m>R_1</m>, <m>R_2</m>, <m>R_3</m>, connectées en
+      parallèles est déterminée par
+      <md>
+      \frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
+      </md>
+      Si les résistances, mesurées en Ohms, sont <m>R_1=25</m> ohms, <m>R_2=40</m> ohms et
+      <m>R_3=50</m> ohms, avec une erreur possible de 0.5% dans chaque cas, estimez l'erreur maximale dans la valeur calculée de <m>R</m>.
+      </p></statement>
+
+      <hint><p>
+      Revoir la relation entre l'erreur absolue et l'erreur relative
+      donnée dans la <xref ref="def_error" text="global">définition</xref>.
+      </p></hint>
+
+      <answer><p>
+      <m>\frac{1}{17}\approx 0.059</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      Calculons d'abord les valeurs des dérivées partielles de
+      <m>R(R_1,R_2,R_3)</m> aux valeurs mesurées de <m>R_1</m>, <m>R_2</m>, <m>R_3</m>. En appliquant
+      <m>\pdiff{}{R_i}</m>, avec <m>i=1,2,3</m>, aux deux membres de
+      l'équation définissant
+      <md>
+      \frac{1}{R(R_1,R_2,R_3)}=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
+      </md>
+      pour <m>R(R_1,R_2,R_3)</m>, on obtient
+      <md>
+      <mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_1}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_1^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_2}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_2^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_3}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_3^2}
+      </mrow>
+      </md>
+      Quand <m>R_1=25\Om</m>, <m>R_2=40\Om</m> et <m>R_3=50\Om</m>
+      <md>
+      <mrow>
+      \frac{1}{R(25,40,50)}&amp;=\frac{1}{25}+\frac{1}{40}+\frac{1}{50}
+      =\frac{8+5+4}{200}
+      </mrow><mrow>&amp;\implies
+      R(25,40,50)=\frac{200}{17}=11.765
+      </mrow>
+      </md>
+      En substituant ces valeurs de <m>R_1</m>, <m>R_2</m>, <m>R_3</m> et <m>R</m>,
+      <md alignment="alignat">
+      <mrow>
+      \pdiff{R}{R_1}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{25^2}&amp;=\frac{64}{17^2}&amp;=0.221
+      </mrow><mrow>
+      \pdiff{R}{R_2}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{40^2}&amp;=\frac{25}{17^2}&amp;=0.0865
+      </mrow><mrow>
+      \pdiff{R}{R_3}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{50^2}&amp;=\frac{16}{17^2}&amp;=0.0554
+      </mrow>
+      </md>
+      Si les erreurs absolues dans la mesure de <m>R_1</m>, <m>R_2</m> et <m>R_3</m> sont dénotées
+      respectivement <m>\veps_1</m>, <m>\veps_2</m> et <m>\veps_3</m>, alors,
+      en utilisant l'approximation linéaire (???), l'erreur correspondante <m>E</m> dans <m>R</m> est
+      <md>
+      <mrow>
+      E &amp;= R(25+\veps_1,40+\veps_2,50+\veps_3)-R(25,40,50)
+      </mrow><mrow>
+      &amp;\approx \pdiff{R}{R_1}(25,40,50)\veps_1
+             +\pdiff{R}{R_2}(25,40,50)\veps_2
+             +\pdiff{R}{R_3}(25,40,50)\veps_3
+      </mrow>
+      </md>
+      et vérifie
+      <md>
+      <mrow>
+      |E|&amp;\leqslant \frac{64}{17^2}|\veps_1|+\frac{25}{17^2}|\veps_2|
+                      +\frac{16}{17^2}|\veps_3|
+      </mrow><mrow>
+      \text{or}\quad|E|&amp;\leqslant 0.221|\veps_1|+0.0865|\veps_2|+0.0554|\veps_3|
+      </mrow>
+      </md>
+      On nous dit que le pourcentage d'erreur dans chaque mesure n'est pas plus grand que
+      <m>0.5\%</m>. Donc
+      <md>
+      <mrow>
+      |\veps_1|&amp;\leqslant \frac{0.5}{100}25=\frac{1}{8}=0.125
+      </mrow><mrow>
+      |\veps_2|&amp;\leqslant \frac{0.5}{100}40=\frac{1}{5}=0.2
+      </mrow><mrow>
+      |\veps_3|&amp;\leqslant \frac{0.5}{100}50=\frac{1}{4}=0.25
+      </mrow>
+      </md>
+      de sorte que
+      <md>
+      <mrow>
+      |E|&amp;\leqslant \frac{8}{17^2}+\frac{5}{17^2}+\frac{4}{17^2}
+      =\frac{1}{17}
+      </mrow><mrow>
+      \text{or}\quad|E|&amp;\leqslant 0.221\times0.125+0.0865\times0.2+0.0554\times0.25
+      =0.059
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Trouvez l'équation du plan tangent à la surface
+      <m>x^2 z^3 + y \sin(\pi x) = -y^2</m> au point <m>P = (1,1,-1)</m>.
+      </li>
+      <li>
+      Soit <m>z</m> défini implicitement par <m>x^2 z^3 + y \sin(\pi x) = -y^2</m>.
+      Trouvez <m>\pdiff{z}{x}</m> au point  <m>P = (1,1,-1)</m>.
+      </li>
+      <li>
+      Soit <m>z</m> la même fonction implicite que dans la partie (ii), définie par
+      l'équation <m>x^2 z^3 + y \sin(\pi x) = -y^2</m>. Soit <m>x = 0.97</m>, et <m>y = 1</m>.
+      Trouvez la valeur approximative de <m>z</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a)  <m>-(2+\pi)x +2y +3z = -\pi-3</m>
+      </p>
+
+      <p>(b)  <m>\pdiff{z}{x}(1,1) = \frac{\pi+2}{3}</m>
+      </p>
+
+      <p>(c)  <m>z(0.97,1) \approx -\frac{\pi+102}{100}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La surface a pour équation <m>G(x,y,z) = x^2 z^3 + y \sin(\pi x) + y^2 =0</m>.
+      Un vecteur normal à la surface en <m>(1,1,-1)</m> est donc
+      <md>
+      <mrow>
+      &amp;\vnabla G(1,1,-1)
+      </mrow><mrow>
+      &amp;\hskip0.25in= \big[ \big(2x z^3 +\pi y\cos(\pi x)\big)\hi +\big(\sin(\pi x) +2y\big)\hj
+                 +3z^2 x^2\,\hk\big]_{(x,y,z)=(1,1,-1)}
+      </mrow><mrow>
+      &amp;\hskip0.25in= \big(-2-\pi\big)\hi +2\,\hj +3\,\hk
+      </mrow>
+      </md>
+      L'équation du plan tangent est donc
+      <md>
+      <mrow>
+      &amp;\big(-2-\pi\big)(x-1) + 2(y-1) +3 (z+1) =0
+      </mrow><mrow>
+      &amp;\text{or}\quad
+      -(2+\pi)x +2y +3z = -\pi-3
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) La fonction <m>z(x,y)</m> vérifie
+      <md>
+      <mrow>
+      x^2 z(x,y)^3 +y\sin(\pi x) +y^2 = 0
+      </mrow>
+      </md>
+      pour tous <m>x</m> et <m>y</m>. En dérivant cette équation par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      2x z(x,y)^3 + 3 x^2 z(x,y)^2 \pdiff{z}{x}(x,y) + \pi y \cos(\pi x) =0
+      </mrow>
+      </md>
+      En évaluant en <m>(1,1,-1)</m>, on obtient
+      <md>
+      <mrow>
+      -2 + 3 \pdiff{z}{x}(1,1) -\pi =0
+      \implies \pdiff{z}{x}(1,1) = \frac{\pi+2}{3}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) En utilisant l'approximation linéaire autour de <m>(x,y)=(1,1)</m>,
+      <md>
+      <mrow>
+      z(x,1) \approx z(1,1) +\pdiff{z}{x}(1,1)\ (x-1)
+      </mrow>
+      </md>
+      on obtient
+      <md>
+      <mrow>
+      z(0.97,1) \approx -1 +\frac{\pi+2}{3}\ (-0.03)
+                = -1 -\frac{\pi+2}{100}
+                =  -\frac{\pi+102}{100}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
+      <statement><p>
+      Supposez qu'une fonction <m>z = f (x, y)</m> est implicitement définie par une équation:
+      <md>
+               xyz + x + y^2 + z^3 = 0
+      </md>
+      <ol marker = "(a)">
+      <li>
+      Trouvez <m>\pdiff{z}{x}</m>.
+      </li>
+      <li>
+      Si <m>f(-1, 1)  \lt  0</m>, trouvez l'approximation linéaire de la fonction
+      <m>z = f (x, y)</m> à <m>(-1, 1)</m>.
+      </li>
+      <li>
+      Si <m>f(-1, 1)  \lt  0</m>, utilisez l'approximation linéaire en (b) pour approximer <m>f(-1.02, 0.97)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>f_x(x,y) = -\frac{y\,f(x,y) +1}{3f(x,y)^2 +xy}</m></p><p>
+      (b) <m>f(x,y) \approx  -1 -\frac{3}{2} (y-1)</m></p><p>
+      (c) <m>-0.955</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La fonction <m>f(x,y)</m> vérifie
+      <md>
+      xy\,f(x,y) + x + y^2 + f(x,y)^3 =0
+      \tag{$*$}</md>
+      pour tous <m>x</m> et <m>y</m> (suffisamment près de <m>(-1,1)</m>).
+      En dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      &amp;y\,f(x,y) +xy\,f_x(x,y) +  1  + 3f(x,y)^2 f_x(x,y) = 0
+      </mrow><mrow>&amp;\hskip1in\implies
+      f_x(x,y) = -\frac{y\,f(x,y) +1}{3f(x,y)^2 +xy}
+      </mrow>
+      </md>
+      Sans connaître <m>f(x,y)</m> explicitement, on ne peut pas faire beaucoup plus avec ceci.
+      </p>
+
+      <p>(b) <m>f(-1,1)</m> vérifie
+      <md>
+      (-1)(1)\,f(-1,1)\! +\! (-1) \!+\! (1)^2 \!+\! f(-1,1)^3 =0
+      \iff f(-1,1)^3 \!-\!f(-1,1) =0
+      </md>
+      Puisque <m>f(-1, 1)  \lt  0</m>, on peut diviser cette équation par <m>f(-1, 1)  \lt  0</m>,
+      ce qui donne <m>f(-1,1)^2 - 1=0</m>. Puisque <m>f(-1, 1)  \lt  0</m>, on doit avoir
+      <m>f(-1, 1)=-1</m>.
+      D'après la partie (a),
+      <md>
+      <mrow>
+      f_x(-1, 1) = -\frac{(1)\,f(-1, 1) +1}{3f(-1, 1)^2 +(-1)(1)}
+                 = 0
+      </mrow>
+      </md>
+      Pour obtenir l'approximation linéaire, il nous faut encore <m>f_y(-1,1)</m>.
+      En dérivant <m>(*)</m> par rapport à <m>y</m>, on obtient
+      <md>
+      x\,f(x,y) + xy\,f_y(x,y)  + 2y + 3f(x,y)^2 f_y(x,y) =0
+      </md>
+      En posant ensuite <m>x=-1</m>, <m>y=1</m> et <m>f(-1,1)=-1</m>, on obtient
+      <md>
+      <mrow>
+      &amp;(-1)\,(-1) + (-1)(1)\,f_y(-1,1)  + 2(1) + 3(-1)^2 f_y(-1,1) =0
+      </mrow><mrow>
+      &amp;\hskip1in\implies f_y(-1,1) =-\frac{3}{2}
+      </mrow>
+      </md>
+      L'approximation linéaire est donc
+      <md>
+      f(x,y) \approx f(-1,1) + f_x(-1,1)\,(x\!+\!1) + f_y(-1,1)\,(y\!-\!1)
+                 = -1 -\frac{3}{2} (y\!-\!1)
+      </md>
+      </p>
+
+      <p>(c) D'après la partie (b),
+      <md>
+      <mrow>
+      f(-1.02,0.97) \approx  -1 -\frac{3}{2} (0.97-1) =-0.955
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
+      <statement><p>
+      Une surface est définie implicitement par <m>z^4 - xy^2 z^2 + y = 0</m>.
+      <ol marker = "(a)">
+      <li>
+      Calculez <m>\pdiff{z}{x}</m>, <m>\pdiff{z}{y}</m> en termes de <m>x</m>, <m>y</m> et <m>z</m>.
+      </li>
+      <li>
+      Évaluez <m>\pdiff{z}{x}</m> et <m>\pdiff{z}{y}</m> en <m>(x, y, z) = (2, -1/2, 1)</m>.
+      </li>
+      <li>
+      Si <m>x</m> décroît de <m>2</m> à <m>1.94</m>, et
+         <m>y</m> croît de <m>-0.5</m> à <m>-0.4</m>,
+      trouvez le changement approximatif de <m>z</m> en <m>1</m>.
+      </li>
+      <li>
+      Trouvez l'équation du plan tangent à la surface au point
+      <m>(2, -1/2, 1)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\pdiff{z}{x} = \frac{y^2 z^2}{4z^3-2xy^2z}</m>,
+          <m>\pdiff{z}{y} = \frac{2xy\, z^2-1}{4z^3-2xy^2 z}</m>
+      </p>
+
+      <p>(b)
+      <m>
+      \pdiff{z}{x}(2,-1/2) =\frac{1}{12}
+      </m>,
+      <m>
+      \pdiff{z}{y}(2,-1/2) =-1
+      </m>
+      </p>
+
+      <p>(c) <m>f(1.94,-0.4) - 1  \approx -0.105</m>
+      </p>
+
+      <p>(d)  <m>\frac{x}{12} -y -z = -\frac{1}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      On sait que pour tous <m>x,y</m> (avec <m>(x,y,z)</m> près de <m>(2,-1/2,1)</m>),
+      la fonction <m>z(x,y)</m> vérifie
+      <md>
+      <mrow>
+      z(x,y)^4 -xy^2 z(x,y)^2 +y=0
+      \tag{$*$}</mrow>
+      </md>
+      En dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      &amp;4z(x,y)^3\pdiff{z}{x}(x,y) - y^2z(x,y)^2 -2xy^2z(x,y)\pdiff{z}{x}(x,y) =0
+      </mrow><mrow>
+      &amp;\implies
+      \pdiff{z}{x}(x,y) = \frac{y^2 z(x,y)^2}{4z(x,y)^3-2xy^2z(x,y)}
+      </mrow>
+      </md>
+      De même, en dérivant cette équation par rapport à <m>y</m>, on obtient
+      <md>
+      <mrow>
+      &amp;4z(x,y)^3\pdiff{z}{y}(x,y) - 2xy\,z(x,y)^2 -2xy^2z(x,y)\pdiff{z}{y}(x,y) +1=0
+      </mrow><mrow>
+      &amp;\implies
+      \pdiff{z}{y}(x,y) = \frac{2xy\, z(x,y)^2-1}{4z(x,y)^3-2xy^2z(x,y)}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) En substituant <m>(x, y, z) = (2, -1/2, 1)</m> dans les résultats de la partie (a),
+      on obtient
+      <md>
+      <mrow>
+      \pdiff{z}{x}(2,-1/2) &amp;= \frac{1/4}{4-1} =\frac{1}{12}
+      </mrow><mrow>
+      \pdiff{z}{y}(2,-1/2) &amp;= \frac{-2-1}{4-1}=-1
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) D'après l'approximation linéaire autour de <m>(2,-1/2)</m>,
+      <md>
+      <mrow>
+      f(x,y) &amp;\approx f(2,-1/2) + f_x(2,-1/2)\,(x-2) + f_y(2,-1/2)\,(y+1/2)
+      </mrow><mrow>
+             &amp;= 1 +\frac{1}{12}(x-2) - (y+0.5)
+      </mrow>
+      </md>
+      En particulier,
+      <md>
+      <mrow>
+      f(1.94,-0.4) \approx 1 -\frac{0.06}{12}-0.1
+      </mrow>
+      </md>
+      de sorte que
+      <md>
+      <mrow>
+      f(1.94,-0.4) - 1  \approx -0.105
+      </mrow>
+      </md>
+      </p>
+
+      <p>(d) Le plan tangent est
+      <md>
+      <mrow>
+      z&amp;=f(2,-1/2) + f_x(2,-1/2)\,(x-2) + f_y(2,-1/2)\,(y+1/2)
+      </mrow><mrow>
+       &amp;= 1 +\frac{1}{12}(x-2) - (y+0.5)
+      </mrow>
+      </md>
+      ou
+      <md>
+      <mrow>
+      \frac{x}{12} -y -z = -\frac{1}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2011A</fromexam></title> -->
+      <statement><p>
+      D'après l'équation de van der Waal, un gaz satisfait l'équation
+      <md>
+      (pV^2 + 16)(V - 1) = T V^2 ,
+      </md>
+      où <m>p</m>, <m>V</m> et <m>T</m> dénotent la pression, le volume et la température respectivement.
+      Supposons que le gaz est maintenant à une pression de <m>1</m>, un volume de <m>2</m> et une température de <m>5</m>. Trouvez l'approximation du changement de volume
+      si <m>p</m> augmente de <m>0.2</m> et <m>T</m> augmente de <m>0.3</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>0.1</m>
+      </p></answer>
+
+      <solution><p>
+      Considérons le volume comme la fonction <m>V(p,T)</m> de la pression et de la température,
+      déterminée implicitement (du moins pour <m>p\approx 1</m>, <m>T\approx 5</m> et <m>V\approx 2</m>) par l'équation
+      <md>
+      \big(pV(p,T)^2 + 16\big)\big(V(p,T) - 1\big) = T V(p,T)^2
+      \tag{$*$}</md>
+      Pour déterminer le changement approximatif de <m>V</m>, nous utiliserons l'approximation
+      linéaire de <m>V(p,T)</m> en <m>p=1</m>, <m>T=5</m>. Il nous faudra donc les
+      dérivées partielles <m>V_p(1,5)</m> et <m>V_T(1,5)</m>. Comme l'équation <m>(*)</m>
+      est valide pour tout <m>p</m> près de <m>1</m> et <m>T</m> près de <m>5</m>, nous pouvons dériver <m>(*)</m>
+      par rapport à <m>p</m>, ce qui donne
+      <md>
+      <mrow>
+      &amp;\big(V^2 +2 pV V_p\big)\big(V - 1\big)
+      + \big(pV ^2 + 16\big)V_p = 2T V V_p
+      </mrow>
+      </md>
+      et nous pouvons aussi dériver <m>(*)</m> par rapport à <m>T</m>, ce qui donne
+      <md>
+      <mrow>
+      &amp;\big(2 pV V_T\big)\big(V - 1\big) + \big(pV ^2 + 16\big)V_T = V^2 + 2T V V_T
+      </mrow>
+      </md>
+      En particulier, quand <m>p=1</m>, <m>V=2</m>, <m>T=5</m>,
+      <md>
+      <mrow>
+      \big(4 +4 V_p(1,5)\big)\big(2 - 1\big)
+      + \big(4 + 16\big)V_p(1,5) &amp;= 20 V_p(1,5)
+      </mrow><mrow>
+      &amp;\hskip-0.5in\implies V_p(1,5)=-1
+      </mrow><mrow>
+      4 V_T(1,5)\big(2 - 1\big) + \big(4 + 16\big)V_T(1,5) &amp;= 4 + 20 V_T(1,5)
+      </mrow><mrow>
+      &amp;\hskip-0.5in\implies V_T(1,5)=1
+      </mrow>
+      </md>
+      de sorte que le changement en <m>V</m> est
+      <md>
+      <mrow>
+      V(1.2\,,\,5.3)-V(1,5) \approx  V_p(1,5)\,(0.2) + V_T(1,5)\,(0.3)
+                              = -0.2+0.3
+                              = 0.1
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
 
 
     <!-- Les solutions et les réponses coïncident -->

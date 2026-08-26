@@ -143,16 +143,22 @@ On doit noter que certain(e)s auteur(e)s utilisent une double barre pour la norm
 </md>
 En effet, en vertu de la <xref ref="prop-prop-norme" text="global">proposition</xref>, le vecteur <m>\va'</m> est unitaire et il pointe dans la même direction que <m>\va</m>, puisqu'il s'agit d'un multiple scalaire de celui-ci.  On dit alors que <m>\va</m> a été <term>normalisé</term>.
 </p>
+    <exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-scalaire/Produit-scalaire-prob1.pg" parse="text"/>
+      </webwork>
+    </exercise>
     <p>Une des principales utilités du produit scalaire est son lien avec les angles, traduite dans le résultat suivant.
 </p>
     <theorem xml:id="thm-cosinus">
       <statement>
-        <p>Soit <m>\va,\vb\in \R^n</m> et <m>\theta \in [0,\pi]</m> l'angle formé par ces vecteurs (voir la figure ci-après). Alors,
+        <sidebyside widths="60% 20% 20%" valign="middle">
+          <p>Soit <m>\va,\vb\in \R^n</m> et <m>\theta \in [0,\pi]</m> l'angle formé par ces vecteurs (voir la figure ci-après). Alors,
     <md>
       \va \cdot \vb = |\va|\, |\vb|\, \cos \theta.
     </md>
     </p>
-        <sidebyside width="15.3%">
+          <p></p>
           <image source="images/CLP-figs/dotAngle"/>
         </sidebyside>
       </statement>
@@ -180,6 +186,11 @@ et le résultat suit après simplifications.
 </p>
       </proof>
     </theorem>
+    <exercise>
+      <webwork>
+        <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-scalaire/Produit-scalaire-prob2.pg" parse="text"/>
+      </webwork>
+    </exercise>
   </subsection>
   <subsection xml:id="subsec-Projections"><title>Projections</title><p>
 Le résultat du <xref ref="thm-cosinus" text="global">théorème</xref> permet d'utiliser le produit scalaire pour déterminer si deux vecteurs sont orthogonaux ou pas, c'est-à-dire si l'angle qu'ils forment est  <m>\frac{\pi}{2}</m><fn>La notion d'orthogonalité a été généralisée aux ensembles de fonctions, par exemple. Ceci joue un rôle très important dans les mathématiques appliquées plus avancées. La généralisation du produit scalaire est celle d'un <q>produit intérieur</q>.</fn>. De la même façon, on peut utiliser le produit scalaire pour calculer l'angle formé par deux vecteurs (le cosinus de cet angle en réalité). Notamment, si le produit scalaire est positif, il en va de même pour le cosinus, de sorte que l'angle est un angle aigu. Naturellement, un produit scalaire négatif signifie que l'angle est obtus.
@@ -194,9 +205,9 @@ Alors, les produits scalaires sont :
 <md alignment="alignat"><mrow>
 \va\cdot\vb &amp; = \left( 1,1,0 \right) \cdot \left( 1,0,1 \right)
            &amp;&amp; = 1\times 1 +1\times 0+0\times 1
-           &amp;&amp; = 1;
+           &amp;&amp; = 1; 
 </mrow><mrow>
-\va\cdot\vc &amp; = \left( 1,1,0 \right) \cdot \left( -1,1,1 \right)
+  \va\cdot\vc &amp; = \left( 1,1,0 \right) \cdot \left( -1,1,1 \right)
            &amp;&amp; = 1\times(-1) +1\times 1+0\times 1
            &amp;&amp; = 0;
 </mrow><mrow>
@@ -211,14 +222,20 @@ Ceci nous permet de conclure que  <m>\vc</m> est orthogonal à la fois à  <m>\v
 \text{, de sorte que }
 \theta =\frac{\pi}{3}.
 </mrow></md>
-</p><sidebyside width="40%"><image source="images/CLP-figs/dotProdJC"/></sidebyside></example><p>
+</p><sidebyside width="40%"><image source="images/CLP-figs/dotProdJC"/></sidebyside></example>
+<exercise>
+  <webwork>
+    <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-scalaire/Produit-scalaire-prob3.pg" parse="text"/>
+  </webwork>
+</exercise>
+<p>
   Notons que si <m>\va = (a_1,a_2,a_3)</m> est donné, alors
   <md><mrow>   \va\cdot \vi = a_1, \amp  \amp\va \cdot \vj = a_2, \amp  \amp \va \cdot \vk =a_3,</mrow></md>
 de sorte que le produit scalaire peut servir à isoler les composantes d'un vecteur donné dans la direction des vecteurs de la base canonique.
 </p><p>
   Le même problème peut se poser pour d'autres directions. Voyons comment le traiter.
 </p><p>Étant donné deux vecteurs <m>\va,\vb</m>, on veut décomposer <m>\va</m> comme la somme d'un vecteur parallèle à <m>\vb</m>, qu'on appellera la <term>projection</term> de <m>\va</m> sur <m>\vb</m>, et d'un autre vecteur orthogonal à <m>\vb</m>.
-</p><figure><caption>Faire une projection revient à faire une décomposition. Les figures illustrent la projection d'un vecteur <m>\va</m> sur un vecteur <m>\vb</m>.</caption><sidebyside widths="23% 33%" valign="middle"><image source="images/CLP-figs/projA"/><image source="images/CLP-figs/projB"/></sidebyside></figure><p>
+</p><figure><caption>Faire une projection revient à faire une décomposition. Les figures illustrent la projection d'un vecteur <m>\va</m> sur un vecteur <m>\vb</m>.</caption><sidebyside widths="20% 50% 30%" valign="middle"><image source="images/CLP-figs/projA"/><p></p><image source="images/CLP-figs/projB"/></sidebyside></figure><p>
   Autrement dit, on veut trouver un scalaire <m>\lambda</m> et un vecteur <m>\vw</m> orthogonal à <m>\vb</m>, tels que
 <md>
   \va = \lambda \vb + \vw .
@@ -243,9 +260,15 @@ On remarquera que la norme de la projection est
 </md>
 
 Par ailleurs, si <m>\vb</m> est un vecteur unitaire, la composante de <m>\va</m> dans la direction de <m>\vb</m> est simplement <m>\va \cdot \vb</m>.
-</p><example xml:id="eg_proj"><p>
+</p><example xml:id="eg_proj">
+  <sidebyside widths="50% 20% 30%" valign="top">
+    <p>
 Trouver la projection de  <m>\left( 0,3\right)</m> sur  <m>\left( 1,1\right)</m>, telle qu'indiquée dans la figure.
-</p><figure><caption>Projection de <m>\left( 0,3\right)</m> sur <m>\left( 1,1\right)</m>.</caption><sidebyside width="40%"><image source="images/CLP-figs/projEgJC"/></sidebyside></figure><p>
+    </p>
+    <p></p>
+    <figure><caption>Projection de <m>\left( 0,3\right)</m> sur <m>\left( 1,1\right)</m>.</caption><image source="images/CLP-figs/projEgJC"/></figure>
+  </sidebyside>
+  <p>
 En vertu de la <xref ref="def-Projection" text="global">définition</xref> avec <m>\va=\left( 0,3\right)</m> et <m>\vb=\left( 1,1\right)</m>, la projection est
 <md><mrow>
 \proj_{\vb}\, \va

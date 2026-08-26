@@ -182,7 +182,7 @@
       </p></hint>
 
       <answer>
-        <ol marker = "a" cols = "3">
+        <ol marker = "(a)" cols = "3">
           <li>
             <p>
               <m>0</m>    
@@ -263,38 +263,41 @@
       </p></statement>
 
       <answer><p>
-      (a)
+      <ol marker="(a)" cols="3">
+        <li><p>
       <md>
       <mrow>
-      f_x(x,y,z)&amp;=3x^2y^4z^5 &amp; f_x(0,-1,-1)&amp;=0
+      f_x(x,y,z)&amp;=3x^2y^4z^5 \\ f_x(0,-1,-1)&amp;=0
       </mrow><mrow>
-      f_y(x,y,z)&amp;=4x^3y^3z^5 &amp; f_y(0,-1,-1)&amp;=0
+      f_y(x,y,z)&amp;=4x^3y^3z^5 \\ f_y(0,-1,-1)&amp;=0
       </mrow><mrow>
-      f_z(x,y,z)&amp;=5x^3y^4z^4 &amp; f_z(0,-1,-1)&amp;=0
+      f_z(x,y,z)&amp;=5x^3y^4z^4 \\ f_z(0,-1,-1)&amp;=0
       </mrow>
       </md>
-      </p>
+        </p></li>
 
-      <p>(b)
+        <li><p>
       <md>
       <mrow>
-      w_x(x,y,z)&amp;=\frac{yz e^{xyz}}{1+e^{xyz}} &amp; w_x(2,0,-1)&amp;=0
+      w_x(x,y,z)&amp;=\frac{yz e^{xyz}}{1+e^{xyz}} \\ w_x(2,0,-1)&amp;=0
       </mrow><mrow>
-      w_y(x,y,z)&amp;=\frac{xz e^{xyz}}{1+e^{xyz}} &amp; w_y(2,0,-1)&amp;=-1
+      w_y(x,y,z)&amp;=\frac{xz e^{xyz}}{1+e^{xyz}} \\ w_y(2,0,-1)&amp;=-1
       </mrow><mrow>
-      w_z(x,y,z)&amp;=\frac{xy e^{xyz}}{1+e^{xyz}} &amp; w_z(2,0,-1)&amp;=0
+      w_z(x,y,z)&amp;=\frac{xy e^{xyz}}{1+e^{xyz}} \\ w_z(2,0,-1)&amp;=0
       </mrow>
       </md>
-      </p>
+        </p></li>
 
-      <p>(c)
+        <li><p>
       <md>
       <mrow>
-      f_x(x,y)&amp;=-\frac{x}{(x^2+y^2)^{3/2}} &amp; f_x(-3,4)&amp;=\frac{3}{125}
+      f_x(x,y)&amp;=-\frac{x}{(x^2+y^2)^{3/2}} \\ f_x(-3,4)&amp;=\frac{3}{125}
       </mrow><mrow>
-      f_y(x,y)&amp;=-\frac{y}{(x^2+y^2)^{3/2}} &amp; f_y(-3,4)&amp;=-\frac{4}{125}
+      f_y(x,y)&amp;=-\frac{y}{(x^2+y^2)^{3/2}} \\ f_y(-3,4)&amp;=-\frac{4}{125}
       </mrow>
       </md>
+        </p></li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -1221,7 +1224,7 @@
       </p></statement>
 
       <hint><p>
-      Utilisez de façon répété le théorème de Clairaut, i.e. <xref ref="thm_mixed_partials"/>.
+      Utilisez de façon répété le Théorème de Clairaut, i.e. <xref ref="thm_mixed_partials"/>.
       </p></hint>
 
       <answer><p>
@@ -1229,7 +1232,7 @@
         Nous devons dériver plusieurs égalités.
         <ul>
         <li>
-        Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
         <md>
         f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
@@ -1237,7 +1240,7 @@
         </li>
         <li>
         Pour tout nombre réel fixé <m>z</m>,
-        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
         <md>
         f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
@@ -1262,7 +1265,7 @@
         </li>
         <li>
         Pour tout nombre réel fixé <m>y</m>,
-        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
         <md>
         f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
@@ -1279,7 +1282,7 @@
         </li>
         <li>
         Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
-        le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+        le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
         <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
         <md>
         f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zxy}(x,y,z)
@@ -1302,7 +1305,7 @@
       Nous devons dériver plusieurs égalités.
       <ul>
       <li>
-      Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      Fixons n'importe quel nombre réel <m>x</m> et posons <m>g(y,z)=f_x(x,y,z)</m>. Par le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
       <md>
       f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
@@ -1310,7 +1313,7 @@
       </li>
       <li>
       Pour tout nombre réel fixé <m>z</m>,
-      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       donne <m>f_{xy}(x,y,z)=f_{yx}(x,y,z)</m>. Ainsi
       <md>
       f_{xyz}(x,y,z) = \pdiff{}{z} f_{xy}(x,y,z)= \pdiff{}{z} f_{yx}(x,y,z)
@@ -1335,7 +1338,7 @@
       </li>
       <li>
       Pour tout nombre réel fixé <m>y</m>,
-      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       donne <m>f_{xz}(x,y,z)=f_{zx}(x,y,z)</m>. Ainsi,
       <md>
       f_{xzy}(x,y,z) = \pdiff{}{y} f_{xz}(x,y,z)= \pdiff{}{y} f_{zx}(x,y,z)
@@ -1352,7 +1355,7 @@
       </li>
       <li>
       Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
-      le théorème de Clairaut, <xref ref="thm_mixed_partials"/>
+      le Théorème de Clairaut, <xref ref="thm_mixed_partials"/>
       <m>g_{xy}(x,y)=g_{yx}(x,y)</m>. Ainsi,
       <md>
       f_{zxy}(x,y,z) = g_{xy}(x,y) =g_{yx}(x,y) = f_{zyx}(x,y,z)

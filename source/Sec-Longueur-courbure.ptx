@@ -63,7 +63,7 @@
 <example xml:id="eg_paramCircleTan"><title>Périmètre d'un cercle</title><p>
     En général, il peut être difficile de calculer une longueur. En guise d'exemple facile, calculons le périmètre du cercle <m>x^2+y^2=a^2</m>. Nous allons aussi trouver le vecteur tangent unitaire en tout point. Nous avons un paramétrage
     <md>
-      \vr(\theta) = a\cos\theta\, \vi + a\sin\theta\, \vj\qquad 0\leqslant  \theta\leqslant  2\pi
+      \vr(\theta) = a\cos\theta\, \vi + a\sin\theta\, \vj, \qquad 0\leqslant  \theta\leqslant  2\pi
     </md>
     de l'<xref ref="eg_paramCircle" text="global">exemple</xref>. En vertu du   <xref ref="thm-Longueur" text="global">théorème</xref>, avec le paramètre <m>\theta</m> au lieu de  <m>t</m>,
   <md><mrow>
@@ -76,18 +76,25 @@
       L =\int_{0}^{2\pi} a\, dt = 2\pi a,
     </md>
     ce qui est cohérent avec la formule bien connue<fn>Les premières écritures connues d'une approximation de  <m>\pi</m>, en  Égypte et à Babylone, sont datées entre 1900 et 1600 av. J.-C. Le premier algorithme permettant de calculer rigoureusement  <m>\pi</m> a été développé par Archimède vers 250 av, J.-C. Le premier usage du symbole  <m>\pi</m> pour désigner le rapport entre le périmètre et le diamètre d'un cercle remonte à William Jones, en 1706.</fn>.
-    </p><sidebyside width="50%"><image source="images/CLP-figs/parCircleTJC"/></sidebyside><p>
+    </p>
+    <sidebyside widths="45% 10% 45%" valign="top">
+      <p>
 Par ailleurs,
 <md>
-  \vT = \frac{\vr'}{|\vr'|} = -\sin \theta\, \vi + \cos \theta\, \vj.
+  \vT = \frac{\vr'}{|\vr'|} = \dvect{-\sin \theta}{\cos \theta}.
 </md>
 Ainsi,
 <md>
-  \vT \cdot \vr = (a\cos \theta\, \vi + a \sin \theta \, \vj)\cdot(-\sin \theta\, \vi + \cos \theta\, \vj) = 0,
+  \vT \cdot \vr = \dvect{a\cos \theta}{a \sin \theta}\cdot\dvect{-\sin \theta}{\cos \theta} = 0,
 </md>
 
 ce qui montre que, en tout point, la tangente à un cercle est perpendiculaire au rayon en ce point. Ceci est une réalisation en deux dimensions de l'<xref ref="Chem-norm-cste" text="global">exemple</xref>, un autre fait connu d'Euclide<fn>C'est la proposition 18 du livre III des <em>Éléments</em> d'Euclide, vers 300 av. J.-C.</fn>. Dans ce cas, <m>s(\theta) = \int_0^\theta a\, du = a\theta</m>
-est la longueur de la portion du cercle parcourue lorsque l'angle varie de <m>0</m> à <m>\theta</m>.</p></example>
+est la longueur de la portion du cercle parcourue lorsque l'angle varie de <m>0</m> à <m>\theta</m>.
+      </p>
+      <p></p>
+      <image source="images/CLP-figs/parCircleTJC"/>
+    </sidebyside>
+  </example>
 
 
 
@@ -102,7 +109,8 @@ Commençons par esquisser la courbe correspondante.
 </li><li> lorsque  <m>t</m> croît, <m>x(t)\,\vi + y(t)\,\vj</m> décrit un cercle  <m>x^2+y^2=36</m>, et simultanément <m>z(t) = 5t</m> croît linéairement.
 </li></ul>
 Voici la courbe :
-</p><!--
+</p>
+<!--
 <figure>
   <caption>L'hélice se trouve sur le cylindre</caption>
   <interactive xml:id="Helice-longueur" platform="geogebra" width="75%" aspect="1:1">
@@ -110,9 +118,16 @@ Voici la courbe :
   </slate>
   </interactive>
   </figure>
---><sidebyside width="45%"><image source="images/CLP-figs/helix4"/></sidebyside><p>
+-->
+<sidebyside widths="55% 7% 38%" valign="top">
+  <p>
 Nous avons marqué trois points sur la figure. Le premier correspond à
 <m>t=0</m>, il s'agit de <m>0\vi+6\vj+0\vk</m>. Le deuxième correspond à  <m>t=\frac{\pi}{2}</m>, c'est  <m>0\vi-6\vj+\frac{5\pi}{2}\vk</m>. Le troisième correspond à  <m>t=\pi</m>, il s'agit de <m>0\vi+6\vj+5\pi\vk</m>.
+  </p>
+  <p></p>
+  <image source="images/CLP-figs/helix4"/>
+</sidebyside>
+<p>
 Utilisons maintenant le <xref ref="thm-Longueur" text="global">théorème</xref> pour calculer la longueur de la courbe entre  <m>t=0</m> et <m>t=\pi</m>.
 <md><mrow>
 \vr(t) &amp;= 6\sin(2t)\vi + 6\cos(2t)\vj +5t\vk
@@ -268,7 +283,7 @@ vector.
       <title>Reparamétrage naturel : la chaînette</title>
       <statement><p> Considérons la chaînette<fn>Il s'agit de la courbe décrite par un fil lorsqu'il est suspendu par ses extrémités.</fn>. <m>y=\cosh x</m>, elle peut être paramétrée par <m>\vr(t) = t\, \vi + \cosh t\, \vj</m>. Dans la figure de gauche ci-bas, on montre les positions correspondant à certaines valeurs également espacées du paramètre <m>t</m>. Remarquons que la distance séparant deux tels points a tendance à s'accroître.
 </p>
-  <sidebyside widths="50% 50%" margins="auto" valign="top"><figure xml:id="Chainette-t"><caption><m>\vr(t) = t\, \vi + \cosh t\, \vj</m></caption><image xml:id="sageplot-Chainette-t"><description><p>La chaînette <m>\vr(t) = t\, \vi + \cosh t\, \vj</m></p></description><sageplot>
+  <sidebyside widths="40% 40%" margins="auto" valign="top"><figure xml:id="Chainette-t"><caption><m>\vr(t) = \rvd{t}{\cosh t}</m></caption><image xml:id="sageplot-Chainette-t"><description><p>La chaînette <m>\vr(t) = t\, \vi + \cosh t\, \vj</m></p></description><sageplot>
             var('t')
             x(t) = t
             y(t) = cosh(t)
@@ -281,7 +296,7 @@ vector.
             Chainette += text('$t= \\frac{3}{2}$', (1.8, 2.2), fontsize=12, color='black')
             Chainette += text('$t= 2$', (2.3, 3.7), fontsize=12, color='black')
             Chainette
-          </sageplot></image></figure><figure xml:id="Chainette-s"><caption><m>\vr(s) = \arcsinh s\, \vi + \sqrt{1+s^2}\, \vj</m></caption><image xml:id="sageplot-Chainette-s"><shortdescription>La chaînette, avec le paramétrage naturel.</shortdescription><sageplot>
+          </sageplot></image></figure><figure xml:id="Chainette-s"><caption><m>\vr(s) = \rvd{\arcsinh s}{\sqrt{1+s^2}}</m></caption><image xml:id="sageplot-Chainette-s"><shortdescription>La chaînette, avec le paramétrage naturel.</shortdescription><sageplot>
       var('t')
       x(t) = arcsinh(t)
       y(t) = sqrt(1+t^2)
@@ -418,8 +433,27 @@ Nous l'avons vu, la courbure est le changement de direction; or, un changement d
 Ceci donne une décomposition de l'accélération en deux composantes orthogonales. D'une part, l'accélération tangentielle, <m>\va_{\vT} = v'\vT</m>, est liée au changement de la vitesse scalaire. D'autre part, l’accélération normale, <m>\va_{\vN} = \kappa v^2 \vN = v^2 \vK</m>, est liée au changement de direction, ce qui fait que la courbe (nom féminin) courbe (du verbe <em>courber</em>, c'est-à-dire change de direction).
   </p>
     </remark>
-    <p>Soit <m>\vr</m> un chemin et <m>\vr(t_0)</m> un point sur la courbe associée. Un cercle de rayon <m>1 / \kappa(t_0)</m> passant par ce même point aura, en plus du point commun, la même courbure. Pour cette raison, et par analogie avec l'<xref ref="Courbure-cercle" text="global">exemple</xref>, on dit que <m>1/\kappa(t_0)</m> est le rayon de courbure de la courbe au point <m>\vr(t_0)</m>. On sait que le vecteur de courbure d'un cercle pointe toujours vers son centre. Ainsi, afin de déterminer le centre du meilleur tel cercle, on utilise la direction du vecteur de courbure <m>\vK(t_0)</m>, on obtient alors le <term>cercle osculateur</term><fn>Le terme <em>osculateur</em> vient du latin et signifie <em>embrasser</em>; ainsi, le cercle osculateur est celui qui embrasse le mieux la courbe en un point donné.</fn>.
-  </p>
+    <sidebyside widths="50% 10% 40%" valign="top">
+      <p>Soit <m>\vr</m> un chemin et <m>\vr(t_0)</m> un point sur la courbe associée. Un cercle de rayon <m>1 / \kappa(t_0)</m> passant par ce même point aura, en plus du point commun, la même courbure. Pour cette raison, et par analogie avec l'<xref ref="Courbure-cercle" text="global">exemple</xref>, on dit que <m>1/\kappa(t_0)</m> est le rayon de courbure de la courbe au point <m>\vr(t_0)</m>. On sait que le vecteur de courbure d'un cercle pointe toujours vers son centre. Ainsi, afin de déterminer le centre du meilleur tel cercle, on utilise la direction du vecteur de courbure <m>\vK(t_0)</m>, on obtient alors le <term>cercle osculateur</term><fn>Le terme <em>osculateur</em> vient du latin et signifie <em>embrasser</em>; ainsi, le cercle osculateur est celui qui embrasse le mieux la courbe en un point donné.</fn>.
+      </p>
+      <p></p>
+      <figure xml:id="figure-osculateur-motiv">
+        <caption>La parabole <m>y=x^2</m> et quelques cercles osculateurs</caption>
+        <image xml:id="sageplot-osculateur-parabole">
+          <description><p>La parabole <m>y= x^2</m> et quelques cercles osculateurs</p></description>
+          <sageplot>
+      var('t')
+      k(t) = 2*(1+4*t^2)^(-3/2)
+      C= parametric_plot([t,t^2], (t,-1.7,1.7), color="red", thickness=2,
+        axes_labels=['$x$', '$y$'], ticks=[[],[]], fontsize=8, figsize=3)
+      Cercles = [circle((-4*t^3, 3*t^2 +1/2), 1/k(t), fill=False, linestyle =
+        "dashed", xmin=-2, xmax=3, ymin=-0.7, ymax=4) for t in[-3/4, -1/2, 0]]
+      C += sum(Cercles)
+      C
+    </sageplot>
+        </image>
+      </figure>
+    </sidebyside>
     <definition xml:id="def-Cercle-osculateur">
       <statement>
         <p>Soit <m>\vr : [a,b] \to \R^n</m> un chemin régulier en <m>t_0</m>. Le cercle osculateur à la courbe associée à <m>\vr</m> au point <m>\vr(t_0)</m> est le cercle de rayon <m>1/\kappa(t_0)</m> et de centre
@@ -431,22 +465,6 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
     </p>
       </statement>
     </definition>
-    <figure xml:id="figure-osculateur-motiv">
-      <caption>La parabole <m>y=x^2</m> et quelques cercles osculateurs</caption>
-      <image xml:id="sageplot-osculateur-parabole" width="80%">
-        <description><p>La parabole <m>y= x^2</m> et quelques cercles osculateurs</p></description>
-        <sageplot>
-      var('t')
-      k(t) = 2*(1+4*t^2)^(-3/2)
-      C= parametric_plot([t,t^2], (t,-1.7,1.7), color="red", thickness=2,
-        axes_labels=['$x$', '$y$'], tick_formatter="latex")
-      Cercles = [circle((-4*t^3, 3*t^2 +1/2), 1/k(t), fill=False, linestyle =
-        "dashed", xmin=-2, xmax=3, ymin=-0.7, ymax=4) for t in[-3/4, -1/2, 0]]
-      C += sum(Cercles)
-      C
-    </sageplot>
-      </image>
-    </figure>
     <p>
 Avant de voir des exemples, nous avons besoin d'un outil qui permet de faire efficacement les calculs nécessaires. Nous l'avons déjà mentionné, calculer le paramétrage naturel peut être ardu. Si, en plus, on doit dériver, les choses risquent de devenir compliquées.
 </p>
@@ -551,13 +569,12 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
               <p>
           Nous avons
               <md>
-            (\vv \times \va) \times \vv = \left| \begin{array}{ccc}\vi \amp 0 \amp -a\sin t\\ \vj \amp 0 \amp \phantom{-}b\cos t\\ \vk \amp ab \amp 0\end{array}\right| = \ctvec{-ab\cos t}{-a^2 b\sin t}{0} = -ab \ctvec{b\cos t}{a\sin t}{0}.
+            (\vv \times \va) \times \vv = \left| \begin{smallmatrix}\hfill\vi \amp\hfill 0 \amp\hfill -a\sin t\\ \hfill\vj \amp\hfill 0 \amp\hfill \phantom{-}b\cos t\\ \hfill\vk \amp\hfill ab \amp\hfill 0\end{smallmatrix}\right| = \rvt{-ab\cos t}{-a^2 b\sin t}{0} = -ab \rvt{b\cos t}{a\sin t}{0}.
           </md>
           Il vient alors que <m>\vK = \frac{-ab}{v^4}\left(b\cos t \, \vi + a\sin t \vj\right)</m>. Ainsi, le centre du cercle osculateur se trouve à
           </p>
               <md>
-                <mrow>\vr+ \frac{1}{\kappa^2}\vK \amp  = \vr + \frac{v^6}{a^2 b^2}\vK</mrow>
-                <mrow> \amp  = \left[\begin{array}{c}a \cos t\\ b\sin t \\0\end{array}\right] - \frac{v^2}{ab}\left[\begin{array}{cc}b \cos t \\ a\sin t\\ 0 \end{array}\right].</mrow>
+                <mrow>\vr+ \frac{1}{\kappa^2}\vK \amp  = \vr + \frac{v^6}{a^2 b^2}\vK  = \rvt{a \cos t}{b\sin t}{0} - \frac{v^2}{ab}\rvt{b \cos t}{a\sin t}{0}.</mrow>
               </md>
             </li>
           </ol>
@@ -593,7 +610,9 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
       </md>
   De plus, <m>v(t) = \sqrt{1+f'(t)^2}</m>, ce qui donne
   <md>
-  \vK(t) = \frac{1}{\left(1+f'(t)^2\right)^2}\ctvec{-f''(t)f'(t)}{f''(t)}{0} \implies \kappa(t) = |\vK(t)| = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}.
+    <mrow>\vK(t) \amp = \frac{1}{\left(1+f'(t)^2\right)^2}\ctvec{-f''(t)f'(t)}{f''(t)}{0}  </mrow>
+    <mrow> \amp \implies \kappa(t) = |\vK(t)| = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}. </mrow>
+   
 </md>
 On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure a le même signe que la dérivée seconde, <m>f''</m>. Ceci fournit une autre preuve, s'il en faut, du fait que lorsqu'une fonction admet une dérivée seconde positive, sa courbe est courbée vers le haut, et inversement.
 </p>

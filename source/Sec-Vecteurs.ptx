@@ -10,25 +10,32 @@
     <title>Quelques exemples</title>
     <ul>
       <li>
-        <p>Il est naturel de dessiner le vecteur vitesse d'une particule en mouvement avec sa source à la position de la particule (qui peut changer). Le diagramme ci-après montre la position d'une particule et son vecteur vitesse à deux moments différents.
-      </p>
-        <figure>
-          <caption>Une particule en mouvement et son vecteur vitesse</caption>
-          <sidebyside width="29%">
+        <sidebyside widths="50% 22% 28%" valign="top">
+          <p>Il est naturel de dessiner le vecteur vitesse d'une particule en mouvement avec sa source à la position de la particule (qui peut changer). Le diagramme ci-contre montre la position d'une particule et son vecteur vitesse à deux moments différents.
+
+            
+          </p>
+          <p></p>
+          <figure>
+            <caption>Une particule en mouvement et son vecteur vitesse</caption>
             <image source="images/CLP-figs/movingParticle"/>
-          </sidebyside>
-        </figure>
-      </li>
+          </figure>
+        </sidebyside>
+      </li> 
       <li>
-        <p>
-      On suppose qu'un point se déplace le long d'une droite en partant d'un point <m>P</m> pour terminer au point <m>Q</m>. Le  <term> vecteur déplacement</term> correspondant, <m>\vv</m> dessiné dans la figure ci-après, a sa source en <m>P</m> et son but en <m>Q</m>. On écrit alors <m>\vv =\overrightarrow{PQ}</m>. On remarque qu'il est parfaitement possible d'avoir une autre paire de points, <m>R</m> et <m>S</m>, tels que le déplacement nécessaire pour aller de <m>R</m> à <m>S</m> soit le même, c'est-à-dire <m>\vv  =\overrightarrow{PQ} = \overrightarrow{RS}</m>, sans que le segment <m>RS</m> soit le même que le segment <m>PQ</m>. Le vecteur nul, <m>\vZero</m>, est le déplacement trivial, il n'a pas de sens, et toute flèche le représentant a une longueur nulle.
-    </p>
-        <figure xml:id="rep-vecteurs">
+        <sidebyside widths="50% 15% 35%" valign="top">
+          <p>
+            On suppose qu'un point se déplace le long d'une droite en partant d'un point <m>P</m> pour terminer au point <m>Q</m>. Le  <term> vecteur déplacement</term> correspondant, <m>\vv</m> dessiné dans la figure ci-après, a sa source en <m>P</m> et son but en <m>Q</m>. On écrit alors <m>\vv =\overrightarrow{PQ}</m>.
+
+            On remarque qu'il est parfaitement possible d'avoir une autre paire de points, <m>R</m> et <m>S</m>, tels que le déplacement nécessaire pour aller de <m>R</m> à <m>S</m> soit le même, c'est-à-dire <m>\vv  =\overrightarrow{PQ} = \overrightarrow{RS}</m>, sans que le segment <m>RS</m> soit le même que le segment <m>PQ</m>.
+          </p>
+          <p></p>
+          <figure xml:id="rep-vecteurs">
           <caption>Plusieurs flèches représentent le même vecteur</caption>
-          <image xml:id="sageplot-rep-vecteurs" width="80%">
+          <image xml:id="sageplot-rep-vecteurs">
             <description><p>Plusieurs flèches représentent le même vecteur.</p></description>
             <sageplot>
-                Figure1 = arrow((1,1), (2,2.5), color = "blue", thickness = 2, axes = False)
+                Figure1 = arrow((1,1), (2,2.5), color = "blue", thickness = 2, axes = False, figsize = 3)
                 Figure1 += arrow((3,2), (4,3.5), color = "red", thickness = 2)
                 Figure1 += point((1,1), size = 40, color = 'blue')
                 Figure1 += point((2,2.5), size = 40, color = 'blue')
@@ -45,29 +52,38 @@
                 Figure1
             </sageplot>
           </image>
-        </figure>
+          </figure>
+        </sidebyside>
+        <p> Le vecteur nul, <m>\vZero</m>, est le déplacement trivial, il n'a pas de sens, et toute flèche le représentant a une longueur nulle.
+      
+        </p>
       </li>
       <li>
-        <p>
+        <sidebyside widths="55% 25% 20%" valign="middle">
+          <p>
     Supposons que nous considérions le mouvement d'un pendule, c'est-à-dire un mobile attaché à une corde. Il y a trois forces qui s'appliquent sur le pendule : la gravité <m>\vg</m>, dirigée vers le bas, la tension <m>\vt</m> de la corde, qui ramène le pendule dans la direction de la corde, et la résistance de l'air, qui repousse le pendule dans la direction opposée à celle de son mouvement. Les trois forces s'appliquent sur le pendule. Il est alors naturel de dessiner les flèches représentant chacune des trois forces avec leur source située au mobile.
-    </p>
-        <figure>
-          <caption>Un pendule soumis à plusieurs forces</caption>
-          <sidebyside width="20%">
+          </p>
+          <p></p>
+          <figure>
+            <caption>Un pendule soumis à plusieurs forces</caption>
             <image source="images/CLP-figs/pendulum"/>
-          </sidebyside>
-        </figure>
+          </figure>
+        </sidebyside>
       </li>
     </ul>
   </subsection>
-  <subsection xml:id="pars-Op-vects"><title>Opérations avec vecteurs</title><p>
+  <subsection xml:id="pars-Op-vects"><title>Opérations avec vecteurs</title>
+    <sidebyside widths="55% 15% 30%" valign="middle">
+      <p>
 Reprenons notre exemple et supposons qu'un mobile se déplace de <m>P</m> vers <m>Q</m>. Par la suite, le déplacement continue et va de <m>Q</m> vers <m>R</m> (voir la <xref ref="Chasles">figure</xref>). L'effet combiné de ces déplacements est que notre mobile est allé de <m>P</m> à <m>R</m>. Le déplacement résultant est donc <m>\overrightarrow{PR}</m>, et l'on convient qu'il s'agit de la <term>somme</term> de <m>\overrightarrow{PQ}</m> et de <m>\overrightarrow{QR}</m>, ce qu'on écrit naturellement
 <md>
   \overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR}.
 </md>
   Cette relation est appelée la <term>relation de Chasles</term>, ou encore la <term>loi du triangle</term>.
-</p><figure xml:id="Chasles"><caption>La relation de Chasles, ou loi du triangle : <m>\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} </m> </caption><image xml:id="sageplot-Chasles" width="60%"><description><p>La relation de Chasles</p></description><sageplot>
-          Fig = arrow((1,1), (4,2), color = "red", thickness = 2, axes = false)
+      </p>
+      <p></p>
+      <figure xml:id="Chasles"><caption>La relation de Chasles : <m>\overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} </m> </caption><image xml:id="sageplot-Chasles"><description><p>La relation de Chasles</p></description><sageplot>
+          Fig = arrow((1,1), (4,2), color = "red", thickness = 2, axes = false, figsize = 3)
           Fig += arrow((4,2), (3,4), color = "red", thickness = 2)
           Fig += arrow((1,1), (3,4), color = "red", thickness = 2)
           Fig += point((1,1), size = 40, color = 'red')
@@ -75,41 +91,38 @@ Reprenons notre exemple et supposons qu'un mobile se déplace de <m>P</m> vers <
           Fig += point((3,4), size = 40, color = 'red')
           Fig += text('$P$', (0.8, 1), fontsize=18, color='black')
           Fig += text('$Q$', (4.2, 2), fontsize=18, color='black')
-          Fig += text('$R$', (3.2, 4), fontsize=18, color='black')
+          Fig += text('$R$', (3.3, 4), fontsize=18, color='black')
           #Fig += text('$\\overrightarrow{PQ}$', (2.6, 1.3), #fontsize=16, color='black')
           Fig += text('$\\overrightarrow{QR}$', (3.7, 3.2), fontsize=16, color='black')
-          Fig += text('$\\overrightarrow{PQ} + \\overrightarrow{QR} = \\overrightarrow{PR}$', (1.5, 2.7), fontsize=18, color='black')
+          Fig += text('$\\overrightarrow{PQ} + \\overrightarrow{QR} = \\overrightarrow{PR}$', (1., 2.8), fontsize=16, color='black')
           Fig
-          </sageplot></image></figure><p>
+          </sageplot></image></figure>
+    </sidebyside>
+    <sidebyside widths="55% 15% 30%" valign="top">
+      <p>
   Il est aussi possible de multiplier un vecteur par un scalaire <m>s</m>. Par souci de cohérence, on voudrait que <m>2\vv = \vv + \vv</m>, qui a la même direction, le même sens et une longueur double à celle de <m>\vv</m>. Par ailleurs, on voudrait que <m>-1\vv</m> additionné à <m>\vv</m> donne <m>\vZero</m> comme résultat, donc que son sens soit l'opposé de celui de <m>\vv</m>. En général, on définit la  <term> multiplication d'un vecteur <m>\vv </m> par un scalaire <m>s</m></term> comme suit :
-</p><ul><li>
+      </p>
+      <p></p>
+      <figure xml:id="Mult-vecteur"><caption>La multiplication d'un vecteur par un scalaire </caption><image xml:id="sageplot-Mult-vecteur"><sageplot>
+          FigureMult = arrow((1,1), (2,2), color = "red", thickness = 2, axes = false, figsize = 3)
+          FigureMult += arrow((1,1), (3,3), color = "blue", thickness = 1)
+          FigureMult += arrow((1,1), (-1,-1), color = "green", thickness = 2)
+          FigureMult += point((1,1), size = 40, color = 'black')
+          FigureMult += point((2,2), size = 40, color = 'red')
+          FigureMult += point((3,3), size = 40, color = 'blue')
+          FigureMult += point((-1,-1), size = 40, color = 'green')
+          FigureMult += text('$\\mathbf{v}$', (1.5, 1.7), fontsize=14, color='red')
+          FigureMult += text('$2\\mathbf{v}$', (2.4, 2.7), fontsize=14, color='blue')
+          FigureMult += text('$-2\\mathbf{v}$', (-0.2, 0.2), fontsize=14, color='green')
+          FigureMult
+        </sageplot></image></figure>
+    </sidebyside>
+    <ul><li>
 On change la longueur de  <m>\vv</m> d'un facteur <m>|s|</m>, et
 </li><li>
 si <m>s \lt 0</m>, on renverse l'orientation,
 </li></ul>
-comme cela est indiqué dans les deux autres figures ci-bas.
-
-
-<figure xml:id="Mult-vecteur"><caption>La multiplication d'un vecteur par un scalaire </caption><sidebyside widths="50% 50%" margins="auto" valign="middle"><image xml:id="sageplot-Scalairep-vecteur"><sageplot>
-          Figure2 = arrow((1,1), (2,2), color = "red", thickness = 2, axes = false)
-          Figure2 += arrow((2,2), (3,3), color = "red", thickness = 1)
-          Figure2 += point((1,1), size = 40, color = 'red')
-          Figure2 += point((2,2), size = 40, color = 'red')
-          Figure2 += point((3,3), size = 40, color = 'red')
-          Figure2 += text('$\\mathbf{v}$', (1.5, 1.7), fontsize=22, color='black')
-          Figure2 += text('$\\mathbf{2v}$', (2.5, 2.7), fontsize=22, color='black')
-          Figure2
-        </sageplot></image><image xml:id="sageplot-Scalairen-vecteur"><sageplot>
-          Figure3 = arrow((1,1), (2,2), color = "red", thickness = 2, axes = false)
-          Figure3 += arrow((1,1), (-1,-1), color = "red", thickness = 2)
-          Figure3 += point((1,1), size = 40, color = 'red')
-          Figure3 += point((2,2), size = 40, color = 'red')
-          Figure3 += point((-1,-1), size = 40, color = 'red')
-          Figure3 += text('$\\mathbf{v}$', (1.5, 1.7), fontsize=22, color='black')
-          Figure3 += text('$-2\\mathbf{v}$', (0, 0.2), fontsize=22, color='black')
-          Figure3
-
-        </sageplot></image></sidebyside></figure>
+comme cela est indiqué dans la figure ci-dessus.
 
 
 
@@ -128,11 +141,15 @@ comme cela est indiqué dans les deux autres figures ci-bas.
 
 
 -->
-<p>
+<sidebyside widths="55% 15% 30%" valign="top">
+  <p>
   Afin de soustraire <m>\vb</m> de <m>\va</m> graphiquement, on peut additionner <m>-\vb</m> (qui est obtenu de <m>\vb</m> en renversant son orientation) à <m>\va</m>.
 
   Une autre possibilité est de dessiner <m>\va</m> et <m>\vb</m> avec leur source à un même point, alors  <m>\va-\vb</m> est le vecteur reliant le but de  <m>\vb</m> au but de <m>\va</m>, c'est-à-dire que <m>\va-\vb</m> est le vecteur qu'il faut ajouter à  <m>\vb</m> de sorte à obtenir <m>\va</m>.
-</p>
+  </p>
+  <p></p>
+  <figure xml:id="fig_soust-vect"><caption>Soustraction de vecteurs </caption><image source="images/CLP-figs/subtractJC"/></figure>
+</sidebyside>
 
 
 
@@ -157,8 +174,6 @@ comme cela est indiqué dans les deux autres figures ci-bas.
     </image>
 </figure>
 -->
-
-<figure xml:id="fig_soust-vect"><caption>Soustraction de vecteurs </caption><sidebyside width="40%"><image source="images/CLP-figs/subtractJC"/></sidebyside></figure>
 
 
 
@@ -201,8 +216,9 @@ Bien que l'approche du paragraphe précédent soit très utile en soi, notamment
     On suppose maintenant que l'on décide de se déplacer dans la même direction que, lors du premier pas, mais d'un pas deux fois plus long, comme cela est indiqué dans la figure de droite ci-bas. Ce pas sera alors de <m>2a_1</m> unités dans la direction des abscisses et de  <m>2a_2</m> unités dans la direction des ordonnées, et le vecteur de déplacement résultant sera <m>\dvect{2a_1}{2a_2}</m>. On définit alors le produit du nombre réel <m>2</m> et du vecteur <m>\va </m>, qu'on dénote <m>2\va</m>, par <m>2\va = \dvect{2a_1}{2a_2}</m>.
 </li>
     </ul>
-    <sidebyside widths="39.4% 37.8%" valign="middle">
+    <sidebyside widths="35% 30% 35%" valign="middle">
       <image source="images/CLP-figs/maddvecJC"/>
+      <p></p>
       <image source="images/CLP-figs/mscalmulJC"/>
     </sidebyside>
     <p>

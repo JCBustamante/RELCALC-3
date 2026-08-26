@@ -13,30 +13,36 @@
         =\lim_{x\rightarrow a}\frac{f(x) - f(a)}{x-a}
   </md>.
   </p>
-    <p>
+  </subsection>
+  <subsection xml:id="pars-partielles-Defs">
+    <title>Définition des dérivées partielles</title>
+    <sidebyside widths="45% 5% 50%" valign="top">
+      <p>
     On suppose maintenant que l'on se déplace sur le plan <m>Oxy</m> et que la température au point <m>(x,y)</m> est <m>f(x,y)</m>. On peut passer à travers le point <m>(x,y) = (a,b)</m> en se déplaçant de plusieurs façons. Il semble irréaliste de penser que le taux de variation de la température perçue si l'on se déplace parallèlement à l'axe des <m>x</m> doit être égal au taux mesuré pour un déplacement parallèle à l'axe des <m>y</m>. Nous considérerons d'autres directions de déplacement plus tard.
-  </p>
-    <p>
+
+    
+      </p>
+      <p></p>
       <figure xml:id="Partielles-motivation">
-        <caption>Les courbes isothermes sur une région du plan. Si l'on se situe au point <m>(x,y)=(-1,-1)</m>, la température ressentie est d'autour de <m>5.75</m>. Si l'on se déplace dans la direction des <m>x</m> croissants, la température a tendance à augmenter. Si, à partir de ce même point, on se déplace plutôt dans la direction des <m>y</m> croissants, la variation est beaucoup plus faible, la température reste autour de <m>5.75</m>.</caption>
-        <image xml:id="sageplot-Partielles-motiv" width="60%">
+        <caption>Les courbes isothermes sur une région du plan.</caption>
+        <image xml:id="sageplot-Partielles-motiv">
           <sageplot>
             g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
             C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
-            axes = True, fill = True,
-            labels = True, label_colors="black", label_inline=True, label_fontsize=8, gridlines=True, axes_labels=["$x$","$y$"])
+            axes = True, fill = True, ticks=[[-2,-1,0,1,2],[-2,-1,0,1,2]], tick_formatter = "latex",
+            labels = True, label_colors="black", label_inline=True, label_fontsize=14, axes_labels_size=1.4, fontsize=16, gridlines=True, axes_labels=["$x$","$y$"])
             C+=arrow((-1,-1), (-0.5,-1), color = "black", thickness = 0.5, arrowsize=2)
             C+=arrow((-1,-1), (-1,-0.5), color = "black", thickness = 0.5, arrowsize=2)
             C
           </sageplot>
         </image>
       </figure>
-    </p>
-  </subsection>
-  <subsection xml:id="pars-partielles-Defs">
-    <title>Définition des dérivées partielles</title>
+    </sidebyside>
     <p>
-    Supposons que nous passons par le point <m>(x,y)=(a,b)</m> et que nous nous déplaçons parallèlement à l'axe des <m>x</m> (dans la direction positive). Notre ordonnée, <m>y</m>, reste constante : elle prend toujours la valeur <m>y=b</m>. Ainsi, on peut penser à la température comme à une fonction d'une seule variable <m>B(x) = f(x,b)</m> et l'on mesure le taux de variation de cette température :
+      Par exemple, si l'on se situe au point <m>(x,y)=(-1,-1)</m> dans la figure ci-dessus, la température ressentie est d'autour de <m>5.75</m>. Si l'on se déplace dans la direction des <m>x</m> croissants, la température a tendance à augmenter. Si, à partir de ce même point, on se déplace plutôt dans la direction des <m>y</m> croissants, la variation est beaucoup plus faible, la température reste autour de <m>5.75</m>.
+    </p>
+    <p>
+    Plus généralement, supposons que nous passons par le point <m>(x,y)=(a,b)</m> et que nous nous déplaçons parallèlement à l'axe des <m>x</m> (dans la direction positive). Notre ordonnée, <m>y</m>, reste constante : elle prend toujours la valeur <m>y=b</m>. Ainsi, on peut penser à la température comme à une fonction d'une seule variable <m>B(x) = f(x,b)</m> et l'on mesure le taux de variation de cette température :
   <md>
   \diff{B}{x}(a) = \lim_{h\rightarrow 0}\frac{B(a+h) - B(a)}{h}
         = \lim_{h\rightarrow 0}\frac{f(a+h,b) - f(a,b)}{h}
@@ -110,20 +116,26 @@
   en termes du graphe <m>z=f(x,y)</m> de la fonction <m>f(x,y)</m>.
   Ce graphe est illustré dans la figure ci-bas. Il ressemble à une partie d'une sphère un peu déformée dans le premier octant.
   </p>
-    <p>La définition de  <m>\pdiff{f}{x}(a,b)</m> fait intervenir seulement des points sur le graphe qui satisfont <m>y=b</m>, c'est-à-dire des points sur la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan <m>y=b</m>. Il s'agit de la courbe rouge dans la figure. Les deux segments verticaux bleus ont des hauteurs  <m>f(a,b)</m> et
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>La définition de  <m>\pdiff{f}{x}(a,b)</m> fait intervenir seulement des points sur le graphe qui satisfont <m>y=b</m>, c'est-à-dire des points sur la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan <m>y=b</m>. Il s'agit de la courbe rouge dans la figure. Les deux segments verticaux bleus ont des hauteurs  <m>f(a,b)</m> et
   <m>f(a+h,b)</m>, qui sont les deux termes dans le numérateur de  <m>\frac{f(a+h,b) - f(a,b)}{h}</m>.
-  </p>
-    <sidebyside width="80%">
+      </p>
+      <p></p>
       <image source="images/CLP-figs/xderiv"/>
     </sidebyside>
-    <p>
-  Une vue de côté (en regardant du côté gauche de l'axe des <m>y</m>) est esquissée dans la figure ci-après.
-  </p>
-    <sidebyside width="70%">
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>
+  Une vue de côté (en regardant du côté gauche de l'axe des <m>y</m>) est esquissée dans la figure ci-contre.
+
+    De nouveau, les deux segments verticaux bleus ont des longueurs  <m>f(a,b)</m> et <m>f(a+h,b)</m>, qui sont les deux termes du numérateur de  <m>\frac{f(a+h,b) - f(a,b)}{h}</m>. 
+      </p>
+      <p></p>
       <image source="images/CLP-figs/xderivSide"/>
     </sidebyside>
     <p>
-    De nouveau, les deux segments verticaux bleus ont des longueurs  <m>f(a,b)</m> et <m>f(a+h,b)</m>, qui sont les deux termes du numérateur de  <m>\frac{f(a+h,b) - f(a,b)}{h}</m>. Ainsi, le numérateur <m>f(a+h,b) - f(a,b)</m> et le dénominateur  <m>h</m> sont respectivement la variation verticale et la variation horizontale de la courbe  <m>z=f(x,b)</m> de  <m>x=a</m> à <m>x=a+h</m>. Ainsi, <m>\pdiff{f}{x}(a,b)</m> est précisément la <em>pente de (la tangente à) la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan  <m>y=b</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+      Ainsi, le numérateur <m>f(a+h,b) - f(a,b)</m> et le dénominateur  <m>h</m> sont respectivement la variation verticale et la variation horizontale de la courbe  <m>z=f(x,b)</m> de  <m>x=a</m> à <m>x=a+h</m>. Ainsi, <m>\pdiff{f}{x}(a,b)</m> est précisément la <em>pente de (la tangente à) la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan  <m>y=b</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+    </p>
+    <p>
   De la même façon, <m>\pdiff{f}{y}(a,b)</m> est la
   <em>pente de (la tangente à) la courbe intersection de la surface
   <m>z=f(x,y)</m> avec le plan  <m>x=a</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
@@ -161,10 +173,7 @@ Voyons quelques exemples.
   </p>
     <example xml:id="eg_partials_A">
       <p>
-  Soit
-  <md>
-  f(x,y) = x^3+y^2+ 4xy^2
-  </md>.
+  Soit <m>f(x,y) = x^3+y^2+ 4xy^2 </m>.
   Alors, puisque  <m>\pdiff{}{x}</m> traite  <m>y</m> comme une constante,
   <md><mrow>
   \pdiff{f}{x}
@@ -194,11 +203,7 @@ Voyons quelques exemples.
       </webwork>
     </exercise>
     <example xml:id="eg_partials_B">
-      <p>
-  Soit
-  <m>
-  f(x,y) = y\cos x + xe^{xy}
-  </m>.
+      <p>  Soit  <m>  f(x,y) = y\cos x + xe^{xy}  </m>.
   Alors, puisque <m>\pdiff{}{x}</m> traite <m>y</m> comme une constante,
   <m>\pdiff{}{x} e^{yx}=y e^{yx}</m> et
   <md><mrow>
@@ -219,10 +224,7 @@ Voyons quelques exemples.
   </p>
     <example xml:id="eg_partials_C">
       <p>
-  Soit
-  <md>
-  f(x,y,z,t) = x\sin(y+2z) +t^2e^{3y}\ln z
-  </md>.
+  Soit <m> f(x,y,z,t) = x\sin(y+2z) +t^2e^{3y}\ln z </m>.
   Alors,
   <md><mrow>
   \pdiff{f}{x}(x,y,z,t) &amp;= \sin(y+2z),
@@ -523,7 +525,7 @@ Cet exemple pourrai venir après la règle de la chaîne car il utilise la déri
       <p>
     Rappelons que les coordonnées rectangulaires et les coordonnées polaires (pour <m>(x,y)\ne (0,0)</m> et <m>r \gt 0</m>) sont liées par les formules:
   </p>
-      <sidebyside width="20%" valign="middle">
+      <sidebyside widths="40% 20% 20%" valign="middle">
         <p><md><mrow>
     x&amp;=r\cos\theta,
     </mrow><mrow>
@@ -534,6 +536,7 @@ Cet exemple pourrai venir après la règle de la chaîne car il utilise la déri
     \frac{y}{x} \amp =\tan\theta
     </mrow></md>.
     </p>
+        <p></p>
         <image source="images/CLP-figs/polar"/>
       </sidebyside>
       <p>
@@ -575,7 +578,7 @@ Cet exemple pourrai venir après la règle de la chaîne car il utilise la déri
       <p>D'une part, lorsqu'on calcule <m>\pdiff{x}{r}(r_0,\theta_0)</m>, <m>\theta_0</m> est maintenu constant, <m>r</m> varie d'une petite quantité <m>\dee{r}</m>, et la variation résultante en <m>x</m> est calculée par   <m>\dee{x}=x(r_0+\dee{r},\theta_0) - x(r_0,\theta_0)</m>.
   Dans la figure de gauche, <m>\dee{r}</m> est la longueur du segment orange, et <m>\dee{x}</m> est la longueur du segment bleu.
   </p>
-      <sidebyside width="40%">
+      <sidebyside widths="35% 35%">
         <image source="images/CLP-figs/dxdrdrdx1"/>
         <image source="images/CLP-figs/dxdrdrdx2"/>
       </sidebyside>

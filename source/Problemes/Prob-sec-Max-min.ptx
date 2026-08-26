@@ -15,15 +15,10 @@
     <exercise> <!-- <title><fromexam>M200 2016D</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
-      <li><p>
-      Quelques courbes de niveau de la fonction <m>f(x,y)</m> sont esquissées dans le plan <m>xy</m> ci-dessous.
-      </p>
-
-      <sidebyside width="75%">
-        <image source="images/CLP-figs/pfigs/OE16D_2a"/>
-      </sidebyside>
-
-      <p>
+      <li>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+      Quelques courbes de niveau de la fonction <m>f(x,y)</m> sont esquissées dans le plan <m>xy</m> ci-contre.
       Pour chacun des énoncés ci-dessous, encercler la lettre de
       <alert>tous</alert> les points dans le diagramme où la situation s'applique.
       Par exemple, si l'énoncé était <q>Ces points sont sur l'axe <m>y</m></q>, vous encercleriez <m>P</m> et <m>U</m>, mais aucune des autres lettres.
@@ -42,9 +37,15 @@
                   &amp; \text{ négative} &amp; &amp;
         </mrow>
       </md>
-      </p></li>
-      <li><p>
-      Le diagramme ci-dessous montre trois <q>traces <m>y</m></q> d'un graphe <m>z=F(x,y)</m> esquissé
+      </p>
+        <p></p>
+        <image source="images/CLP-figs/pfigs/OE16D_2a"/>
+      </sidebyside>
+      </li>
+      <li>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+      Le diagramme ci-contre montre trois <q>traces <m>y</m></q> d'un graphe <m>z=F(x,y)</m> esquissé
       sur les axes <m>xz</m>. (Autrement dit, les intersections de la surface  <m>z=F(x,y)</m> avec les trois plans (<m>y=1.9</m>, <m>y=2</m>, <m>y=2.1</m>). Pour chaque énoncé ci-dessous, encercler le bon mot.
       <md>
         <mrow>
@@ -58,7 +59,7 @@
         </mrow>
       </md>
       </p>
-      <sidebyside width="66%">
+        <p></p>
         <image source="images/CLP-figs/pfigs/OE16D_2b"/>
       </sidebyside>
       </li>
@@ -731,6 +732,103 @@
       </solution>
     </exercise>
 
+    <!-- Déplacé depuis "Pour mieux comprendre" -->
+    <!-- No 17 -->
+    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
+        <statement><p>
+        Trouvez la valeur du maximum et minimum absolu
+        de la fonction
+        <m>f(x, y) = 5 + 2x - x^2 - 4y^2</m> sur la région rectangulaire
+        <md><mrow>
+        R = \Set{(x, y)}{ -1\leqslant x\leqslant3,\  -1\leqslant y\leqslant1}
+        </mrow></md>
+        </p></statement>
+
+        <answer><p>
+        Le minimum est <m>-2</m> et le maximum est <m>6</m>.
+        </p></answer>
+
+        <solution><p>
+        Le maximum et le minimum doivent être atteints soit à un point critique, soit sur
+        la frontière de <m>R</m>.
+        <ul>
+        <li>
+        Les points critiques sont les solutions de
+        <md>
+        <mrow>
+        0&amp;=f_x(x,y) = 2-2x
+        </mrow><mrow>
+        0&amp;=f_y(x,y) = -8y
+        </mrow>
+        </md>
+        Le seul point critique est donc <m>(1,0)</m>.
+        </li>
+        <li>
+        Sur le côté <m>x=-1</m>, <m>-1\leqslant y\leqslant 1</m> de la frontière de <m>R</m>,
+        <md><mrow>
+        f(-1,y) = 2-4y^2
+        </mrow></md>
+        Cette fonction décroît lorsque <m>|y|</m> croît. Sa valeur maximale
+        sur <m>-1\leqslant y\leqslant 1</m> est donc atteinte en <m>y=0</m> et sa valeur minimale est atteinte
+        en <m>y=\pm 1</m>.
+        </li>
+        <li>
+        Sur le côté <m>x=3</m>, <m>-1\leqslant y\leqslant 1</m> de la frontière de <m>R</m>,
+        <md><mrow>
+        f(3,y) = 2-4y^2
+        </mrow></md>
+        Cette fonction décroît lorsque <m>|y|</m> croît. Sa valeur maximale
+        sur <m>-1\leqslant y\leqslant 1</m> est donc atteinte en <m>y=0</m> et sa valeur minimale est atteinte
+        en <m>y=\pm 1</m>.
+        </li>
+        <li>
+        Sur les deux côtés <m>y=\pm 1</m>, <m>-1\leqslant x\leqslant 3</m> de la frontière de <m>R</m>,
+        <md><mrow>
+        f(x,\pm 1) = 1+2x-x^2 = 2 -(x-1)^2
+        </mrow></md>
+        Cette fonction décroît lorsque <m>|x-1|</m> croît. Sa valeur maximale
+        sur <m>-1\leqslant x\leqslant 3</m> est donc atteinte en <m>x=1</m> et sa valeur minimale est atteinte
+        en <m>x= 3</m> et <m>x=-1</m> (tous deux à une distance <m>2</m> de <m>x=1</m>).
+        </li>
+        </ul>
+        Nous avons donc les candidats suivants pour les emplacements du minimum et du maximum
+        </p>
+
+        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
+        <col /> <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+                <col halign="center"/>  <col halign="center"/> <col halign="center"/>
+        <row>
+        <cell> point
+               </cell><cell><m>(1,0)</m>
+               </cell><cell><m>(-1,0)</m>
+               </cell><cell><m>(1,\pm 1)</m>
+               </cell><cell><m>(-1,\pm 1)</m>
+               </cell><cell><m>(3,0)</m>
+               </cell><cell><m>(3,\pm 1)</m> </cell>
+        </row><row>
+        <cell>        valeur de <m>f</m>
+               </cell><cell><m>6</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>-2</m>
+               </cell><cell><m>2</m>
+               </cell><cell><m>-2</m> </cell>
+        </row><row>
+        <cell>        </cell><cell>max
+               </cell><cell>
+               </cell><cell>
+               </cell><cell>min
+               </cell><cell>
+               </cell><cell>min </cell>
+        </row>
+        </tabular></sidebyside>
+
+
+        <p>
+        Le minimum est donc <m>-2</m> et le maximum est <m>6</m>.
+        </p></solution>
+      </exercise>
+
   </exercisegroup>
 
   <exercisegroup>
@@ -1097,102 +1195,6 @@
         </sidebyside>
         </sbsgroup>
         </solution>
-      </exercise>
-
-    <!-- No 17 -->
-    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
-        <statement><p>
-        Trouvez la valeur du maximum et minimum absolu
-        de la fonction
-        <m>f(x, y) = 5 + 2x - x^2 - 4y^2</m> sur la région rectangulaire
-        <md><mrow>
-        R = \Set{(x, y)}{ -1\leqslant x\leqslant3,\  -1\leqslant y\leqslant1}
-        </mrow></md>
-        </p></statement>
-
-        <answer><p>
-        Le minimum est <m>-2</m> et le maximum est <m>6</m>.
-        </p></answer>
-
-        <solution><p>
-        Le maximum et le minimum doivent être atteints soit à un point critique, soit sur
-        la frontière de <m>R</m>.
-        <ul>
-        <li>
-        Les points critiques sont les solutions de
-        <md>
-        <mrow>
-        0&amp;=f_x(x,y) = 2-2x
-        </mrow><mrow>
-        0&amp;=f_y(x,y) = -8y
-        </mrow>
-        </md>
-        Le seul point critique est donc <m>(1,0)</m>.
-        </li>
-        <li>
-        Sur le côté <m>x=-1</m>, <m>-1\leqslant y\leqslant 1</m> de la frontière de <m>R</m>,
-        <md><mrow>
-        f(-1,y) = 2-4y^2
-        </mrow></md>
-        Cette fonction décroît lorsque <m>|y|</m> croît. Sa valeur maximale
-        sur <m>-1\leqslant y\leqslant 1</m> est donc atteinte en <m>y=0</m> et sa valeur minimale est atteinte
-        en <m>y=\pm 1</m>.
-        </li>
-        <li>
-        Sur le côté <m>x=3</m>, <m>-1\leqslant y\leqslant 1</m> de la frontière de <m>R</m>,
-        <md><mrow>
-        f(3,y) = 2-4y^2
-        </mrow></md>
-        Cette fonction décroît lorsque <m>|y|</m> croît. Sa valeur maximale
-        sur <m>-1\leqslant y\leqslant 1</m> est donc atteinte en <m>y=0</m> et sa valeur minimale est atteinte
-        en <m>y=\pm 1</m>.
-        </li>
-        <li>
-        Sur les deux côtés <m>y=\pm 1</m>, <m>-1\leqslant x\leqslant 3</m> de la frontière de <m>R</m>,
-        <md><mrow>
-        f(x,\pm 1) = 1+2x-x^2 = 2 -(x-1)^2
-        </mrow></md>
-        Cette fonction décroît lorsque <m>|x-1|</m> croît. Sa valeur maximale
-        sur <m>-1\leqslant x\leqslant 3</m> est donc atteinte en <m>x=1</m> et sa valeur minimale est atteinte
-        en <m>x= 3</m> et <m>x=-1</m> (tous deux à une distance <m>2</m> de <m>x=1</m>).
-        </li>
-        </ul>
-        Nous avons donc les candidats suivants pour les emplacements du minimum et du maximum
-        </p>
-
-        <sidebyside><tabular left="minor" right="minor" bottom="minor" top="minor">
-        <col /> <col halign="center"/>  <col halign="center"/> <col halign="center"/>
-                <col halign="center"/>  <col halign="center"/> <col halign="center"/>
-        <row>
-        <cell> point
-               </cell><cell><m>(1,0)</m>
-               </cell><cell><m>(-1,0)</m>
-               </cell><cell><m>(1,\pm 1)</m>
-               </cell><cell><m>(-1,\pm 1)</m>
-               </cell><cell><m>(3,0)</m>
-               </cell><cell><m>(3,\pm 1)</m> </cell>
-        </row><row>
-        <cell>        valeur de <m>f</m>
-               </cell><cell><m>6</m>
-               </cell><cell><m>2</m>
-               </cell><cell><m>2</m>
-               </cell><cell><m>-2</m>
-               </cell><cell><m>2</m>
-               </cell><cell><m>-2</m> </cell>
-        </row><row>
-        <cell>        </cell><cell>max
-               </cell><cell>
-               </cell><cell>
-               </cell><cell>min
-               </cell><cell>
-               </cell><cell>min </cell>
-        </row>
-        </tabular></sidebyside>
-
-
-        <p>
-        Le minimum est donc <m>-2</m> et le maximum est <m>6</m>.
-        </p></solution>
       </exercise>
 
     <!-- No 21 -->

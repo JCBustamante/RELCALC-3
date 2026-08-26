@@ -12,13 +12,10 @@
     <definition xml:id="def_local_max_min">
       <statement>
         <p>
-Soit <m>\plan{D} \subseteq \R^n</m> et <m>f:\plan{D} \to \R</m>. Soit <m>\vr_0 \in \plan{D}</m>.
-<ul><li><m>\vr_0</m> est un  <em>point de maximum local de </em> <m>f</m> si
-<m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
-Plus précisément, <m>\vr_0</m> est un maximum local de  <m>f</m> s'il existe
- <m>\e \gt 0</m> tel que <m>f(\vr)\leqslant f(\vr_0)</m> lorsque <m>|\vr - \vr_0| \lt \e </m>.
-</li><li><m>\vr_0</m> est un <em>point de minimum local de </em> <m>f</m> si
-<m>f(\vr)\geqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
+          Soit <m>\plan{D} \subseteq \R^n</m> et <m>f:\plan{D} \to \R</m>. Soit <m>\vr_0 \in \plan{D}</m>.
+          <ul>
+            <li><m>\vr_0</m> est un  <em>point de maximum local de </em> <m>f</m> si <m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>. Plus précisément, <m>\vr_0</m> est un maximum local de  <m>f</m> s'il existe  <m>\e \gt 0</m> tel que <m>f(\vr)\leqslant f(\vr_0)</m> lorsque <m>|\vr - \vr_0| \lt \e </m>.</li>
+            <li><m>\vr_0</m> est un <em>point de minimum local de </em> <m>f</m> si <m>f(\vr)\geqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
 </li><li>
 Les valeurs prises par <m>f</m> aux points de minimum ou de maximum locaux sont appelées les <em>valeurs extrémales</em> de <m>f</m>.
 </li><li><m>\vr_0</m> est un  <em> point de maximum global</em>, ou un
@@ -34,7 +31,8 @@ Les valeurs prises par <m>f</m> aux points de minimum ou de maximum locaux sont 
   </introduction>
   <subsection xml:id="pars-Max-min-loc">
     <title> Maximums et minimums locaux</title>
-    <p>
+    <sidebyside widths="50% 5% 45%" valign="middle">
+      <p>
 Une des premières choses qu'on fait lorsqu'on étudie les techniques d'optimisation des fonctions d'une variable est de se demander :
 <ul><li>
 Si l'on suppose que la valeur maximale de  <m>f(x)</m> est <m>f(a)</m>, que peut-on déduire de <m>a</m>?
@@ -44,7 +42,7 @@ Peu de temps après, on a la réponse :
 Si <m>f</m> admet un maximum local en <m>x=a</m>, c'est-à-dire que <m>f(x) \leqslant f(a)</m> lorsque <m>x</m> est près de <m>a</m>, et que <m>f</m> est dérivable en <m>a</m>, alors  <m>f'(a)=0</m>.
 </li></ul>
 </p>
-    <sidebyside width="50%">
+      <p></p>
       <image source="images/CLP-figs/localMaxA"/>
     </sidebyside>
     <p>
@@ -80,15 +78,16 @@ Le même argument s'applique pour les points de minimum :
 Si <m>f(a)</m> est un minimum local <m>f(x)</m> et que <m>f</m> est différentiable en <m>a</m>, alors <m>f'(a)=0</m>.
 </li></ul>
 </p>
-    <p>
-    Voyons maintenant comment utiliser ces idées dans le contexte des fonctions à plusieurs variables. Supposons donc que <m>f</m> admet un maximum local en un point <m>\vr_0</m>, autour duquel <m>f</m> est définie (c'est-à-dire que <m>\vr_0</m> est un point intérieur du domaine de <m>f</m>). La figure ci-bas illustre le cas des fonctions à deux variables.
+    <sidebyside widths="35% 5% 60%" valign="middle">
+      <p>
+    Voyons maintenant comment utiliser ces idées dans le contexte des fonctions à plusieurs variables. Supposons donc que <m>f</m> admet un maximum local en un point <m>\vr_0</m>, autour duquel <m>f</m> est définie (c'est-à-dire que <m>\vr_0</m> est un point intérieur du domaine de <m>f</m>). La figure ci-contre illustre le cas des fonctions à deux variables.
 </p>
-    <figure>
-      <caption>La fonction <m>f</m> est définie dans la région <m>R</m> qui contient <m>\vr_0=(a,b)</m> comme point intérieur</caption>
-      <sidebyside width="60%">
+      <p></p>
+      <figure>
+        <caption>La fonction <m>f</m> est définie dans la région <m>R</m> qui contient <m>\vr_0=(a,b)</m> comme point intérieur</caption>
         <image source="images/CLP-figs/max"/>
-      </sidebyside>
-    </figure>
+      </figure>
+    </sidebyside>
     <p>
 La valeur de <m>f(\vr)</m> doit donc décroître lorsque  <m>\vr</m> se déplace en partant de  <m>\vr_0</m> dans <em>n'importe quelle</em> direction. Peu importe quel vecteur de direction (que l'on peut supposer unitaire)  <m>\vd</m> qu'on choisit, la dérivée directionnelle de  <m>f</m> en <m>\vr_0</m> dans la direction de  <m>\vd</m> doit donc être inférieure ou égale à zéro. Plus formellement,
 <md><mrow>
@@ -430,10 +429,11 @@ A= \Big(100\frac{100}{3}-2\frac{100^2}{3^2}\Big)\frac{\sqrt{3}}{2}
     <example xml:id="eg_MXMNlinReg">
       <title>Régression linéaire</title>
       <statement>
-        <p>
+        <sidebyside widths="40% 5% 55%" valign="middle">
+          <p>
   Une expérience donne lieu à  <m>n</m> observations <m>\ (x_i,y_i),\ i=1,2,\cdots,n</m>. Nous voulons trouver la droite  <m>\ y=mx+b\ </m> qui s'ajuste le <q>mieux</q> à ces points.
 </p>
-        <sidebyside width="75%">
+          <p></p>
           <image source="images/CLP-figs/regression"/>
         </sidebyside>
         <p>
@@ -565,28 +565,31 @@ y=-4
 </mrow></md>,
 de sorte que <m>f(x,y)</m> admet exactement un point critique à <m>(9\,,\,-4)</m>.
 </p>
-      <p>
-  Voyons le diagramme des courbes de niveau de <m>f</m> autour du point critique.
+      <sidebyside widths="45% 5% 50%" valign="top">
+        <p>
+  Voyons le diagramme des courbes de niveau de <m>f</m> autour du point critique. Nous avons que <m>f(9,-4) = -27</m>, et le diagramme des courbes de niveau nous montre que, autour de <m>(9,-4)</m>, les valeurs de <m>f</m> sont supérieures à <m>-27</m>. Il s'agirait donc d'un minimum local.
 </p>
-      <figure xml:id="figure-eg_maxminB">
-        <caption>Les courbes de niveau de <m>f(x,y) = f(x,y)= x^2+3xy+3y^2-6x-3y-6</m> autour de <m>(9,-4)</m></caption>
-        <image xml:id="sageplot-eg_maxminB" width="60%">
-          <description><p>Les courbes de niveau de <m>f</m> autour de <m>(9,-4)</m></p></description>
-          <sageplot>
-          var('x,y')
-          f(x,y) = x^2 + 3*x*y + 3*y^2 -6*x - 3*y- 6
-          C =  contour_plot(f ,(8,10), (-5,-3), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
-                 label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
-                 contours=[-26.8, -26.5, -26, -25, -24, -21],
-                 axes_labels=["$x$","$y$"], axes_labels_size=2, tick_formatter = "latex", fontsize= 12)
-          C += text('$\\bullet$', (9,-4), fontsize=14, color='black')
-          C += text('$-27$', (9.1,-4.1), fontsize=12, color='black')
-          C
-        </sageplot>
-        </image>
-      </figure>
+        <p></p>
+        <figure xml:id="figure-eg_maxminB">
+          <caption>Les courbes de niveau de <m>f</m> autour de <m>(9,-4)</m>.</caption>
+          <image xml:id="sageplot-eg_maxminB">
+            <description><p>Les courbes de niveau de <m>f</m> autour de <m>(9,-4)</m></p></description>
+            <sageplot>
+            var('x,y')
+            f(x,y) = x^2 + 3*x*y + 3*y^2 -6*x - 3*y- 6
+            C =  contour_plot(f ,(8,10), (-5,-3), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
+                   label_colors="black", label_inline=True, label_fontsize=12, gridlines=True, fill = True,
+                   contours=[-26.8, -26.5, -26, -25, -24, -21],
+                   axes_labels=["$x$","$y$"], axes_labels_size=1.2, tick_formatter = "latex", fontsize= 14)
+            C += text('$\\bullet$', (9,-4), fontsize=16, color='black')
+            C += text('$-27$', (9.1,-4.1), fontsize=14, color='black')
+            C
+          </sageplot>
+          </image>
+        </figure>
+      </sidebyside>
       <p>
-  Nous avons que <m>f(9,-4) = -27</m>, et le diagramme des courbes de niveau nous montre que, autour de <m>(9,-4)</m>, les valeurs de <m>f</m> sont supérieures à <m>-27</m>. Il s'agirait donc d'un minimum local. Voyons ceci de façon un peu plus formelle. Une bonne façon de le faire consiste à faire le changement de variables<fn>
+  Voyons ceci de façon un peu plus formelle. Une bonne façon de le faire consiste à faire le changement de variables<fn>
     Ceci équivaut à translater le graphe de sorte à avoir le point critique à <m>(0,0)</m>.
   </fn>,
 <md><mrow>
@@ -638,24 +641,49 @@ pour tout  <m>(x,y)</m>, de sorte que  <m>(9,-4)</m> est un minimum local, et gl
       <p>
 Les dérivées partielles de  <m>f(x,y)=x^2-y^2</m> sont
 <m>f_x(x,y)=2x</m> et <m>f_y(x,y)=-2y</m>. Ainsi, le seul point critique est  <m>(0,0)</m>. Voyons maintenant s'il s'agit d'un minimum local, d'un maximum local ou d'aucun des deux. Commençons avec <m>(x,y)</m>
-à <m>(0,0)</m> et déplaçons <m>(x,y)</m> en nous éloignant de  <m>(0,0)</m>, puis voyons ce qui arrive avec  <m>f(x,y)</m>. À l'origine,  <m>f(0,0)=0</m>. On peut se déplacer dans plusieurs directions.
-
+à <m>(0,0)</m> et déplaçons <m>(x,y)</m> en nous éloignant de  <m>(0,0)</m>, puis voyons ce qui arrive avec  <m>f(x,y)</m>. À l'origine,  <m>f(0,0)=0</m>. Les figures ci-dessous montrent le graphe de <m>f</m> ainsi que ses courbes de niveau autour de <m>(0,0)</m> : si l'on se déplace le long de l'axe des <m>x</m>, la valeur de <m>f</m> augmente, tandis que la situation est différente le long de l'axe des <m>y</m>.
 </p>
-      <figure xml:id="figure-eg_maxminA">
-        <caption>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>. Si, en partant de <m>(0,0)</m>, on se déplace le long de l'axe des <m>x</m>, la valeur de <m>f</m> augmente. La situation est différente le long de l'axe des <m>y</m>.</caption>
-        <image xml:id="sageplot-eg_maxminA" width="60%">
-          <description><p>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>.</p></description>
-          <sageplot>
-          var('x,y')
-          f(x,y) = x^2 - y^2
-          C =  contour_plot(f ,(-3.5,3.5), (-3.5,3.5), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
-                 label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
-                  contours = [-9,-4,-1,0,1,4,9], axes = True,
-                 axes_labels=["$x$","$y$"], axes_labels_size=1.5, tick_formatter = "latex", fontsize= 10)
-          C
-        </sageplot>
-        </image>
-      </figure>
+      <sidebyside widths="48% 4% 48%" valign="top">
+        <figure xml:id="figure-eg_maxminA-3d">
+          <caption>Le graphe de <m>f(x,y)=x^2-y^2</m>, avec ses traces en <m>x=0</m> (bleu) et <m>y=0</m> (rouge).</caption>
+          <image xml:id="sageplot3d-eg_maxminA">
+            <description><p>Le graphe de <m>f(x,y)=x^2-y^2</m>, une selle, avec ses traces en <m>x=0</m> et <m>y=0</m></p></description>
+            <sageplot variant="3d" aspect="1.0">
+              var('x,y')
+              f(x,y) = x^2 - y^2
+              def macouleur(x,y):
+                  return float((f(x,y)+4)/8)
+              S = plot3d(f(x,y), (x,-2,2), (y,-2,2), color=(macouleur,colormaps.Spectral), mesh = True, opacity = 0.85, frame = False)
+              S += parametric_plot3d([x,0,x^2], (x,-2,2), color = "red", thickness = 4)
+              S += parametric_plot3d([0,y,-y^2], (y,-2,2), color = "blue", thickness = 4)
+              S += point3d((0,0,0), color = "black", size = 40)
+              S += arrow3d((0,0,0),(2.3,0,0), color = "black")
+              S += text3d("x", (2.5,0,0), color = "black", fontsize = 20)
+              S += arrow3d((0,0,0),(0,2.3,0), color = "black")
+              S += text3d("y", (0,2.5,0), color = "black", fontsize = 20)
+              S += arrow3d((0,0,0),(0,0,4.5), color = "black")
+              S += text3d("z", (0,0,4.7), color = "black", fontsize = 20)
+              S
+            </sageplot>
+          </image>
+        </figure>
+        <p></p>
+        <figure xml:id="figure-eg_maxminA">
+          <caption>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>.</caption>
+          <image xml:id="sageplot-eg_maxminA">
+            <description><p>Les courbes de niveau de <m>f</m> autour de <m>(0,0)</m>.</p></description>
+            <sageplot>
+            var('x,y')
+            f(x,y) = x^2 - y^2
+            C =  contour_plot(f ,(-3.5,3.5), (-3.5,3.5), cmap = "Spectral", labels = True,  label_fmt=lambda x: "$%s$"%x,
+                   label_colors="black", label_inline=True, label_fontsize=12, gridlines=True, fill = True,
+                    contours = [-9,-4,-1,0,1,4,9], axes = True,
+                   axes_labels=["$x$","$y$"], axes_labels_size=1.8, tick_formatter = "latex", fontsize= 12)
+            C
+          </sageplot>
+          </image>
+        </figure>
+      </sidebyside>
       <p><ul><li>
 Commençons par déplacer <m>(x,y)</m> le long de l'axe des <m>x</m>. Alors,  <m>(x,y)=(x,0)</m> et   <m>f(x,y)=f(x,0)=x^2</m>, de sorte que la valeur de <m>f</m> grandit, ce qui signifie que  <m>(0,0)</m> ne peut pas être un maximum local pour <m>f</m>.
 </li><li>
@@ -663,12 +691,8 @@ Commençons par déplacer <m>(x,y)</m> le long de l'axe des <m>x</m>. Alors,  <m
 </li></ul>
 Ainsi, se déplacer à partir de  <m>(0,0)</m> dans une direction entraîne une augmentation de la valeur de <m>f</m>, tandis que se déplacer à partir de <m>(0,0)</m> dans une autre direction entraîne une diminution de la valeur de <m>f</m>.
 
-En conséquence, <m>(0,0)</m> n'est pas un point de minimum local ni un point de maximum local pour <m>f</m>. On appelle ces points des <em>points de selle</em> puisque le graphe de  <m>f</m> ressemble à une selle pour cheval (la définition précise suit). Voici quelques graphes montrant l'allure du graphe de <m>f</m>.
+En conséquence, <m>(0,0)</m> n'est pas un point de minimum local ni un point de maximum local pour <m>f</m>. On appelle ces points des <em>points de selle</em> puisque le graphe de  <m>f</m> ressemble à une selle pour cheval (la définition précise suit).
 </p>
-      <sidebyside widths="40% 40%" valign="middle">
-        <image source="images/CLP-figs/hyperbolic_paraboloid"/>
-        <image source="images/CLP-figs/hypPara"/>
-      </sidebyside>
       <!--
 <p>
 The figure below show some level curves of <m>f</m>. Observe from the level
@@ -757,16 +781,17 @@ En somme, lorsque  <m>\De x=\De y\ne 0</m>, alors
 <m>f\big(1+\De x,\,1+\De y\big) =- 2(\De y)^2  \lt  0 = f(1,1)</m>.
 </li></ul>
 </p>
-      <sidebyside width="40%">
-        <image source="images/CLP-figs/saddle"/>
-      </sidebyside>
-      <p>
+      <sidebyside widths="60% 5% 35%" valign="middle">
+        <p>
 Ainsi,
 <ul><li><m>f(x,y) \gt f(1,1)</m> pour tous les points sur la ligne bleue, et
 </li><li><m>f(x,y) \lt f(1,1)</m> pour tous les points sur la ligne rouge.
 </li></ul>
 On conclut que  <m>(1,1)</m> est le seul point critique pour <m>f</m> et qu'il s'agit d'un point de selle.
 </p>
+        <p></p>
+        <image source="images/CLP-figs/saddle"/>
+      </sidebyside>
     </example>
     <p>
   Les trois exemples qui précèdent montrent comment procéder pour classifier les points critiques des fonctions quadratiques (de deux variables, mais la même gymnastique de complétion de carrés fonctionne avec un nombre arbitraire de variables).
@@ -990,7 +1015,7 @@ nous savions, du <xref ref="thm_second_deriv_test" text="global">théorème</xre
 </li></ul>
 Voici les courbes de niveau <m>f(x,y)</m>.
 </p>
-        <sidebyside width="75%">
+        <sidebyside width="65%">
           <image source="images/CLP-figs/fALevel"/>
         </sidebyside>
         <p>
@@ -1091,7 +1116,7 @@ Nous avons déjà trouvé, dans l'<xref ref="eg_MXMNlocalC" text="global">exempl
         <p>
 Voici une esquisse des courbes de niveau de  <m>f</m>. La fonction  <m>f</m> prend des valeurs négatives dans les régions ombragées, et positives dans les autres régions.
 </p>
-        <sidebyside>
+        <sidebyside width = "80%">
           <image source="images/CLP-figs/fBLevel"/>
         </sidebyside>
         <p>
@@ -1203,17 +1228,20 @@ Ainsi, il y a deux points critiques : <m>(0,0),\ (2,0)</m>. Voici le tableau qui
 </p>
       </statement>
       <solution>
-        <p>
+        <sidebyside widths="60% 10% 30%" valign="middle">
+          <p>
 Soit  <m>x</m>, <m>y</m> et <m>z</m> la longueur, la largeur et la hauteur de la boîte, respectivement.
-</p>
-        <sidebyside width="33%">
-          <image source="images/CLP-figs/box"/>
-        </sidebyside>
-        <p>
+
 La boîte a deux côtés d'aire  <m>xz</m>, deux côtés d'aire <m>yz</m> et un fond d'aire <m>xy</m>. Ainsi, l'aire totale est
 <md><mrow>
 S = 2xz + 2yz + xy
 </mrow></md>.
+
+</p>
+          <p></p>
+          <image source="images/CLP-figs/box"/>
+        </sidebyside>
+        <p>
 Cependant, les dimensions ne sont pas indépendantes. La contrainte d'avoir un volume <m>V</m>  se traduit par <md><mrow>
 xyz = V
 </mrow></md>.
@@ -1225,9 +1253,8 @@ S(x,y) = \frac{2V}{y} + \frac{2V}{x} + xy
 </mrow></md>.
 Commençons par trouver les points critiques de  <m>S</m>. Puisque
 <md><mrow>
-S_x(x,y) &amp;= -\frac{2V}{x^2} + y,
-</mrow><mrow>
-S_y(x,y) &amp;= -\frac{2V}{y^2} + x
+S_x(x,y) &amp;= -\frac{2V}{x^2} + y \qquad \text{ et } &amp;
+S_y(x,y) = -\frac{2V}{y^2} + x
 </mrow></md>,
 <m>(x,y)</m> est un point critique si et seulement si
 <md><mrow>
@@ -1283,14 +1310,19 @@ Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose :
     <p>
   Commençons par faire un bref rappel de ce qui arrive pour les fonctions d'une variable définies sur un intervalle de <m>\R</m>.
 </p>
-    <p>
-  Pour fixer les idées, supposons que nous voulons trouver les extremums d'une fonction <m>f(x)</m> sur l'intervalle <m>0\leqslant  x\leqslant  1</m>. Si une valeur extrémale est atteinte à une valeur   <m>x=a</m> à l'intérieur de l'intervalle  (c'est-à-dire telle que <m>0 \lt a \lt 1</m>), alors  <m>a</m> est aussi un point de maximum ou de minimum local. Si <m>f'(a)</m> existe, alors on doit avoir <m>f'(a)=0</m>, c'est-à-dire que <m>a</m> est un point critique pour <m>f</m>. Cependant, si l'extremum global est atteint à un point de la frontière de l'intervalle, c'est-à-dire  <m>a=0</m> ou <m>a=1</m>, alors  <m>a</m> n'a pas besoin d'être un point critique de  <m>f</m>.
-
-  Ceci arrive, par exemple, avec  <m>f(x)=x</m>. La valeur maximale de  <m>f(x)</m> sur  <m>0\leqslant  x\leqslant  1</m> est <m>1</m> et est atteinte à  <m>x=1</m>, mais <m>f'(x)=1</m> ne s'annule jamais, de sorte que <m>f</m> n'a pas de point critique.
+    <sidebyside widths="60% 5% 35%" valign="top">
+      <p>
+  Pour fixer les idées, supposons que nous voulons trouver les extremums d'une fonction <m>f(x)</m> sur l'intervalle <m>0\leqslant  x\leqslant  1</m>. Si une valeur extrémale est atteinte à une valeur   <m>x=a</m> à l'intérieur de l'intervalle  (c'est-à-dire telle que <m>0 \lt a \lt 1</m>), alors  <m>a</m> est aussi un point de maximum ou de minimum local. Si <m>f'(a)</m> existe, alors on doit avoir <m>f'(a)=0</m>, c'est-à-dire que <m>a</m> est un point critique pour <m>f</m>. 
 </p>
-    <sidebyside width="40%">
+      <p></p>
       <image source="images/CLP-figs/absMaxMin"/>
     </sidebyside>
+    <p>
+      Cependant, si l'extremum global est atteint à un point de la frontière de l'intervalle, c'est-à-dire  <m>a=0</m> ou <m>a=1</m>, alors  <m>a</m> n'a pas besoin d'être un point critique de  <m>f</m>.
+
+  Ceci arrive, par exemple, avec  <m>f(x)=x</m>. La valeur maximale de  <m>f(x)</m> sur  <m>0\leqslant  x\leqslant  1</m> est <m>1</m> et est atteinte à  <m>x=1</m>, mais <m>f'(x)=1</m> ne s'annule jamais, de sorte que <m>f</m> n'a pas de point critique.
+    </p>
+
     <p>
   Ainsi, afin de trouver le maximum et le minimum d'une fonction  <m>f(x)</m> sur <m>[0,1]</m>, on procède comme suit :
   <ol marker="(a)"><li><p> Dresser une liste des points candidats <m>0\leqslant  a\leqslant  1</m> où les maximums/minimums peuvent être atteints, en trouvant les valeurs de <m>a</m> où :
@@ -1347,16 +1379,13 @@ et <m>(-\frac{1}{2},-\frac{1}{2})</m>. Ils sont tous les deux à l'intérieur du
         <p><em>Points singuliers :</em> Dans ce problème, il n'y a pas de point singulier. Les dérivées partielles de <m>T</m> existent partout.
 </p>
         <p><em>Bord du domaine :</em>
-Les points du bord du domaine sont ceux vérifiant <m>x^2+y^2=1</m>, c'est-à-dire les points du cercle unité. On peut utiliser le paramétrage familier du cercle, <m>x=\cos t</m> et <m>y=\sin t</m>. Ceci rendra la formule pour <m>T</m> sur le bord du domaine plus simple :
+Les points du bord du domaine sont ceux vérifiant <m>x^2+y^2=1</m>, c'est-à-dire les points du cercle unité. On peut utiliser le paramétrage familier du cercle (voir l'<xref ref="eg_paramCircle" text="global">exemple</xref>), <m>x=\cos t</m> et <m>y=\sin t</m>. Ceci rendra la formule pour <m>T</m> sur le bord du domaine plus simple :
 <md><mrow>
 T = (\cos t+\sin t)e^{-\cos^2 t -\sin^2 t}
 =(\cos t+\sin t)e^{-1}
 </mrow></md>.
 Il suffit donc d'étudier les variations de <m>T(t) = (\cos t + \sin t)e^{-1}</m>.
 </p>
-        <sidebyside width="40%">
-          <image source="images/CLP-figs/optExampleAa"/>
-        </sidebyside>
         <p><md><mrow>
 \frac{dT}{dt}=\big(-\sin t+\cos t\big)e^{-1}
 </mrow></md>
@@ -1422,38 +1451,41 @@ En somme, nous avons les candidats suivants pour les maximums et minimums.
             </row>
           </tabular>
         </sidebyside>
-        <p>
-La figure ci-après montre le domaine, les courbes de niveau, les points critiques et les points candidats sur le bord. Il est conseillé de faire une figure comme celle-ci (les courbes de niveau en moins), afin de s'assurer de ne pas inclure d'éventuels points critiques qui se trouveraient à l'extérieur du domaine.
+        <sidebyside widths="40% 5% 55%" valign="top">
+          <p>
+La figure ci-contre montre le domaine, les courbes de niveau, les points critiques et les points candidats sur le bord. Il est conseillé de faire une figure comme celle-ci (les courbes de niveau en moins), afin de s'assurer de ne pas inclure d'éventuels points critiques qui se trouveraient à l'extérieur du domaine.
 </p>
-        <figure xml:id="figure-eg_MXMNabsA">
-          <caption>Les courbes de niveau ainsi que les points critiques et les valeurs de <m>(x+y)e^{-x^2-y^2} </m> </caption>
-          <image xml:id="sageplot-eg_MXMNabsA" width="80%">
-            <description><p>Les courbes de niveau ainsi que les points critiques et les valeurs extrémales de <m>(x+y)e^{-x^2-y^2}</m>.</p></description>
-            <sageplot>
+          <p></p>
+          <figure xml:id="figure-eg_MXMNabsA">
+            <caption>Les courbes de niveau ainsi que les points critiques et les valeurs de <m>(x+y)e^{-x^2-y^2} </m> </caption>
+            <image xml:id="sageplot-eg_MXMNabsA">
+              <description><p>Les courbes de niveau ainsi que les points critiques et les valeurs extrémales de <m>(x+y)e^{-x^2-y^2}</m>.</p></description>
+              <sageplot>
           var('x,y')
           f(x,y)= (x+y)*exp(-x^2 -y^2)
           C = contour_plot(f ,(-1.3,1.3), (-1.3,1.3), cmap = "Spectral",
             labels = True,  label_fmt=lambda x: "$%s$"%round(x,2),
-            contours = 11, label_colors="black", label_inline=True, label_fontsize=10, fill = True, axes = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, gridlines = True,            ticks = [[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1],[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1]],tick_formatter="latex", fontsize= 10, région=lambda x,y: 1.001 &gt; x^2 + y^2 )
+            contours = 11, label_colors="black", label_inline=True, label_fontsize=13, fill = True, axes = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.8, gridlines = True,            ticks = [[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1],[-1,-sqrt(2)/2,-1/2,0,1/2,sqrt(2)/2, 1]],tick_formatter="latex", fontsize= 13, région=lambda x,y: 1.001 &gt; x^2 + y^2 )
           C += parametric_plot([cos(x), sin(x)], (x,0,2*pi), color = "black", thickness = 1.5, zorder = 2)
           C +=  point([(-0.5,-0.5), (-1/sqrt(2), -1/sqrt(2)), (0.5,0.5),
             (1/sqrt(2), 1/sqrt(2)) ], marker = "X",  size = 40, color = "black", zorder = 3)
-          C+= text("$f=-\\frac{\\sqrt{2}}{e}$", (-1,-1.2), color = "black")
+          C+= text("$f=-\\frac{\\sqrt{2}}{e}$", (-1,-1.2), color = "black", fontsize = 13)
           C+= arrow((-1,-1.1), (-0.707,-0.707), color= "grey",
             arrowsize = 2, width = 1)
-          C+= text("$f=\\frac{\\sqrt{2}}{e}$", (1,1.2), color = "black")
+          C+= text("$f=\\frac{\\sqrt{2}}{e}$", (1,1.2), color = "black", fontsize = 13)
           C+= arrow((1,1.1), (0.707,0.707), color= "grey",
             arrowsize = 2, width = 1)
-          C+= text("$f=e^{-1/2}$", (0.4,1.2), color = "black")
+          C+= text("$f=e^{-1/2}$", (0.4,1.2), color = "black", fontsize = 13)
           C+= arrow((0.4,1.1), (1/2,1/2), color= "grey",
             arrowsize = 2, width = 1)
-          C+= text("$f=-e^{-1/2}$", (-0.4,-1.2), color = "black")
+          C+= text("$f=-e^{-1/2}$", (-0.4,-1.2), color = "black", fontsize = 13)
           C+= arrow((-0.4,-1.1), (-1/2,-1/2), color= "grey",
             arrowsize = 2, width = 1)
           C
          </sageplot>
-          </image>
-        </figure>
+            </image>
+          </figure>
+        </sidebyside>
         <!--
 <sidebyside width="60%">
 <image source="images/CLP-figs/optExampleA"/>
@@ -1531,11 +1563,15 @@ Le maximum et le minimum de  <m>x+x^2</m> pour <m>-1\leqslant  x\leqslant  1</m>
 </li></ul>
 Voici une esquisse montrant les points que nous avons identifiés jusqu'à présent.
 </p>
-        <sidebyside width="60%">
+        <sidebyside widths="40% 10% 50%" valign="middle">
+          <p>
+Nous avons déjà mentionné que le point  <m>(2,0)</m> n'appartient pas au domaine qui nous intéresse.
+</p>
+          <p></p>
           <image source="images/CLP-figs/optExampleB"/>
         </sidebyside>
         <p>
-Nous avons déjà mentionné que le point  <m>(2,0)</m> n'appartient pas au domaine qui nous intéresse. Ainsi, en bout de ligne, nous avons les candidats suivants pour les maximum et minimum.
+Ainsi, en bout de ligne, nous avons les candidats suivants pour les maximum et minimum.
 </p>
         <sidebyside>
           <tabular left="minor" right="minor" bottom="minor" top="minor">
@@ -1746,10 +1782,11 @@ En bout de ligne, nous avons les candidats suivants pour le maximum et le minimu
     </example>
     <example xml:id="eg_MXMNabsCC">
       <statement>
-        <p>
+        <sidebyside widths="75% 5% 20%" valign="middle">
+          <p>
 Trouver le maximum et le minimum de <m>f(x,y)=xy+2x+y</m> lorsque  <m>(x,y)</m> parcourt le triangle de sommets  <m>(0,0)</m>, <m>(1,0)</m> et
-<m>(0,2)</m>, tel qu'indiqué dans la figure ci-après.</p>
-        <sidebyside width="33%">
+<m>(0,2)</m>, tel qu'indiqué dans la figure ci-contre.</p>
+          <p></p>
           <image source="images/CLP-figs/optExampleCCa"/>
         </sidebyside>
       </statement>
@@ -1774,10 +1811,10 @@ Pour commencer, regardons le segment joignant  <m>(0,0)</m> à <m>(0,2)</m>. Sur
 Ensuite, considérons le côté joignant <m>(0,0)</m> à <m>(1,0)</m>. Sur ce côté,  <m>y=0</m>, de sorte que  <m>f(x,0)=2x</m>. La plus petite valeur de  <m>f</m> sur ce côté est <m>f=0</m> au point  <m>(0,0)</m>, et la plus grande valeur de <m>f</m> sur ce côté est  <m>f=2</m> au point <m>(1,0)</m>.
 </li><li><p>
  Finalement, regardons le segment joignant <m>(0,2)</m> à <m>(1,0)</m>. Notre première tâche est de trouver l'équation de la droite qui passe par  <m>(0,2)</m> et <m>(1,0)</m>. Prenons ceci comme prétexte pour faire une petite révision et trouvons cette équation de trois façons différentes.
-<ul><li><p><em>Méthode 1 :</em>
+<ul><li><sidebyside widths="55% 5% 40%" valign="middle"><p><em>Méthode 1 :</em>
 On sait qu'une droite non verticale du plan <m>xy</m> admet une équation de la forme <m>y=mx + b</m>, où <m>b</m> est l'ordonnée à l'origine <m>y</m> et où <m>m</m> est la pente. Dans notre cas, la droite croise l'axe des  <m>y</m> à <m>y=2</m>, et donc <m>b=2</m>. La droite passe par  <m>(0,2)</m> et <m>(1,0)</m>, donc sa pente est
 <m>m=\frac{\De y}{\De x}=\frac{0-2}{1-0}=-2</m>. Ainsi, le troisième côté du triangle se trouve sur la droite d'équation  <m>y=2-2x</m> et vérifie en plus  <m>0\leqslant  x\leqslant  1</m>.
-</p><sidebyside width="40%"><image source="images/CLP-figs/optExampleCCc"/></sidebyside></li><li><em>Méthode 2 :</em>  Toute droite du plan  <m>xy</m> admet une équation  <m>ax+by=c</m>. Dans ce cas, <m>(0,0)</m> <em>n'est pas</em> sur la droite, de sorte que <m>c\ne 0</m>, et l'on peut diviser l'équation par  <m>c</m>, ce qui donne <m>\frac{a}{c}x+\frac{b}{c}y=1</m>. Posons  <m>\frac{a}{c}=A</m> et  <m>\frac{b}{c}=B</m>. Ainsi, puisque la droite ne passe pas par l'origine, elle admet une équation de la forme  <m>Ax+By=1</m>.
+</p><p></p><image source="images/CLP-figs/optExampleCCc"/></sidebyside></li><li><em>Méthode 2 :</em>  Toute droite du plan  <m>xy</m> admet une équation  <m>ax+by=c</m>. Dans ce cas, <m>(0,0)</m> <em>n'est pas</em> sur la droite, de sorte que <m>c\ne 0</m>, et l'on peut diviser l'équation par  <m>c</m>, ce qui donne <m>\frac{a}{c}x+\frac{b}{c}y=1</m>. Posons  <m>\frac{a}{c}=A</m> et  <m>\frac{b}{c}=B</m>. Ainsi, puisque la droite ne passe pas par l'origine, elle admet une équation de la forme  <m>Ax+By=1</m>.
 
  Afin d'avoir que <m>(0,2)</m> se trouve sur la droite, <m>x=0</m>, <m>y=2</m> doit être une solution de <m>Ax+By=1</m>, c'est-à-dire <m>Ax\big|_{x\,=\,0}+By\big|_{y\,=\,2}=1</m>, de sorte que  <m>B=\frac{1}{2}</m>. Afin d'avoir que <m>(1,0)</m> se trouve sur la droite,  <m>x=1</m>, <m>y=0</m> doit être une solution de
 <m>Ax+By=1</m>, c'est-à-dire  <m>Ax\big|_{x\,=\,1}+By\big|_{y\,=\,0}=1</m>, ce qui donne  <m>A=1</m>. Ainsi, l'équation de la droite est  <m>x+\frac{1}{2}y=1</m>, ou encore <m>y=2-2x</m>.
@@ -1809,7 +1846,7 @@ f\left(\frac{1}{2},1\right)=g\left(\frac{1}{2}\right)=-\frac{2}{4}+\frac{2}{2}+2
 </li></ul></p></li></ul>
 En combinant ce qui précède, nous avons les candidats suivants pour les maximum et minimum de <m>f</m>.
 </p>
-        <sidebyside>
+        <sidebyside widths="65% 15% 20%" valign="middle">
           <tabular left="minor" right="minor" bottom="minor" top="minor">
             <col/>
             <col halign="center"/>
@@ -1856,8 +1893,7 @@ En combinant ce qui précède, nous avons les candidats suivants pour les maximu
               <cell>max. </cell>
             </row>
           </tabular>
-        </sidebyside>
-        <sidebyside width="35%">
+          <p></p>
           <image source="images/CLP-figs/optExampleCCb"/>
         </sidebyside>
       </solution>

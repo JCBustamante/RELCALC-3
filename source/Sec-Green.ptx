@@ -591,7 +591,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       </p>
       </statement>
       <solution>
-        <sidebyside widths="45% 50%">
+        <sidebyside widths="45% 15% 40%">
           <image xml:id="sageplot-Aire-astroide">
             <description><p>L'aire de l'astroïde</p></description>
             <sageplot>
@@ -599,7 +599,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
           Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
             color= "steelblue", axes= True, ticks = [[],[]],
             axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
-            fillalpha = 0.25, figsize = 4)
+            fillalpha = 0.25, figsize = 3)
           Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 14,
             color="black")
           Fig +=text("$\\mathcal{C} = \\partial \\mathcal{R}$",
@@ -607,6 +607,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
           Fig
          </sageplot>
           </image>
+          <p></p>
           <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
         L'aire est alors donnée par
           <md><mrow>

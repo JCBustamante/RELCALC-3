@@ -6,7 +6,9 @@
     Dans cette section, nous étudierons une seconde <q>multiplication</q>, définie pour des vecteurs dans <m>\R^3</m> (contrairement au produit scalaire qui est défini sans égard à la dimension des vecteurs). Le produit vectoriel est souvent défini au moyen de ses applications en physique, mais il a aussi une très claire interprétation géométrique. L'approche qu'on retient relève plutôt de l'algèbre linéaire : on tire profit des propriétés des déterminants.  
     </p>
   </introduction>
-  <p>
+  <subsection xml:id="subsec-PV-definition">
+    <title>Définition et propriétés</title>
+    <p>
     Étant donné deux vecteurs fixes <m>\va,\vb\in \R^3</m>, on peut définir une application <m>\phi :\R^3 \to \R</m> par la formule
     <md>
       \phi(\vx) = \text{det} (\vx,\va,\vb).
@@ -98,6 +100,11 @@
       </p>
     </proof>
   </proposition>
+  <exercise>
+    <webwork>
+      <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-vectoriel/Produit-vectoriel-prob1.pg" parse="text"/>
+    </webwork>
+  </exercise>
   <ul>
     <li>
       <p>  Remarquons qu'il est usuel de définir le produit vectoriel au moyen de la formule de la propriété 3. La vérification des autres propriétés est alors un exercice de calcul, plutôt fastidieux et pas très édifiant.
@@ -129,12 +136,15 @@
 
 
 -->
-  <p>
+  </subsection>
+  <subsection xml:id="subsec-PV-applications">
+    <title>Applications géométriques</title>
+    <p>
 Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">proposition</xref> nous disent que si <m>\va</m>  et <m>\vb </m> ne sont pas colinéaires, alors <m>\va \times \vb</m> est orthogonal au plan engendré par <m>\va</m> et <m>\vb</m>, et sa norme est <m>|\va|\, |\vb|\, \sin \theta</m>. Ceci laisse encore deux choix pour le produit vectoriel. Dans la figure de gauche ci-bas, les vecteurs <m>\vc</m>  et <m>\vd</m> sont des candidats potentiels. Lequel des deux choisir? La <term>règle de la main droite</term> fournit la réponse : lorsque vos doigts de la main droite tournent d'un angle <m>\theta</m> de <m>\va</m> jusqu'à <m>\vb</m>, alors votre pouce indique la direction de <m>\va \times \vb</m>.
 </p>
   <figure>
     <caption>Pour le produit vectoriel, l'ordre des facteurs est important. À droite, la règle de la main droite. </caption>
-    <sidebyside widths="25% 22% 20%" valign="middle">
+    <sidebyside widths="20% 20% 20%" valign="middle">
       <image source="images/CLP-figs/crossLL"/>
       <image source="images/CLP-figs/crossRR"/>
       <image source="images/CLP-figs/RHR"/>
@@ -149,22 +159,31 @@ Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">propositio
     </p>
     </statement>
     <proof>
-      <p>En effet, l'aire du parallélogramme en question est donnée par le produit de la longueur d'un de ses côtés, disons <m>\va</m> par la distance <m>h</m> d'un sommet à ce côté. Cette distance vaut <m>h = |\vb| \sin \theta</m>.
-    <sidebyside width="22%"><image source="images/CLP-figs/areaB"/></sidebyside>
-    </p>
+      <sidebyside widths="60% 22% 18%" valign="top">
+        <p>En effet, l'aire du parallélogramme en question est donnée par le produit de la longueur d'un de ses côtés, disons <m>\va</m> par la distance <m>h</m> d'un sommet à ce côté. Cette distance vaut <m>h = |\vb| \sin \theta</m>.
+        </p>
+        <p></p>
+        <image source="images/CLP-figs/areaB"/>
+      </sidebyside>
     </proof>
   </corollary>
+  <exercise>
+    <webwork>
+      <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-vectoriel/Produit-vectoriel-prob2.pg" parse="text"/>
+    </webwork>
+  </exercise>
   <p>Le volume d'un parallélépipède est le produit de l'aire de sa base par sa hauteur. On vient de voir que cette base peut être calculée au moyen d'un produit vectoriel. De plus, la hauteur n'est rien d'autre qu'une projection, donc le produit scalaire n'est pas loin. Plus précisément, nous avons le résultat suivant.
 </p>
   <corollary xml:id="cor-produit-mixte">
     <title>Volume d'un parallélépipède : le produit mixte</title>
     <statement>
-      <p> Soit <m>\va, \vb</m> et <m>\vc</m> trois vecteurs dans <m>\R^3</m>. Le volume du parallélépipède qu'ils déterminent est <m>V = |\va \cdot (\vb \times \vc)|</m>.
-    </p>
+      <sidebyside widths="40% 10% 50%" valign="top">
+        <p> Soit <m>\va, \vb</m> et <m>\vc</m> trois vecteurs dans <m>\R^3</m>. Le volume du parallélépipède qu'ils déterminent est <md>V = |\va \cdot (\vb \times \vc)|</md>.
+        </p>
+        <p></p>
+        <image source="images/CLP-figs/pipedVolume"/>
+      </sidebyside>
     </statement>
-    <sidebyside width="50%">
-      <image source="images/CLP-figs/pipedVolume"/>
-    </sidebyside>
     <proof>
       <p>
       En effet, on peut choisir comme base le parallélogramme déterminé par <m>\vb</m> et <m>\vc</m>. Soit <m>\vn =\vb \times \vc</m>. L'aire de la base est donc  <m>A= |\vn|</m>. Par ailleurs,  <m>\vn </m>  est orthogonal au plan qui contient cette base. La hauteur du parallélépipède est donnée par <m>h = \left| \proj_{\vn}\, \va \right| </m>. Il vient alors que le volume cherché est
@@ -172,7 +191,10 @@ Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">propositio
     </p>
     </proof>
   </corollary>
-  <p>
+  </subsection>
+  <subsection xml:id="subsec-PV-complements">
+    <title>Propriétés supplémentaires</title>
+    <p>
   Le produit vectoriel a d'autres propriétés, nous finissons avec deux qui sont souvent utilisées.
 </p>
   <proposition xml:id="prop-vect-bis">
@@ -253,5 +275,11 @@ Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">propositio
       </ol>
     </proof>
   </proposition>
+  <exercise>
+    <webwork>
+      <xi:include href="WebWork/Chap_Alg_Lin_Courbes/Sec-Produit-vectoriel/Produit-vectoriel-prob3.pg" parse="text"/>
+    </webwork>
+  </exercise>
+  </subsection>
   <xi:include href="./Problemes/Prob-sec-Prod-vectoriel.ptx"/>
 </section>

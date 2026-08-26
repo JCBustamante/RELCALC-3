@@ -24,6 +24,9 @@
           <mrow>   \amp t \longmapsto \vr(t)</mrow>
         </md>
     </p>
+    <p>
+      On appelle ceci une <term>fonction vectorielle</term> également.
+    </p>
       </statement>
     </definition>
     <p>
@@ -42,15 +45,16 @@
     <p>
   Il est très utile de penser qu'un chemin donne en effet la position d'un mobile, <m>\vr(t)</m> à l'instant <m>t</m>. Cette interprétation n'est pas strictement nécessaire, mais elle aide beaucoup à la compréhension des concepts.
 </p>
-    <p>
+    <sidebyside widths="55% 15% 28%" valign="top">
+      <p>
   Étant donné un chemin <m>\vr</m>, son image, que l'on notera <m>\plan{C}_\vr</m> ou <m>\plan{C}</m>, c'est-à-dire l'ensemble
 
 <md>
   \plan{C}_\vr = \{ \vr(t)| t\in I\},
 </md>
 décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que le chemin <m>\vr</m> est un <term>paramétrage</term> de la courbe.
-</p>
-    <sidebyside width="30%">
+      </p>
+      <p></p>
       <image source="images/CLP-figs/parCurve"/>
     </sidebyside>
     <p>
@@ -58,16 +62,16 @@ décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que l
 </p>
     <example xml:id="eg_paramCircle">
       <title>Paramétrage du cercle  <m>x^2+y^2=a^2</m></title>
-      <p>
-  S'il est vrai qu'on utilise souvent  <m>t</m> comme paramètre, il n'y a aucune raison d'utiliser la lettre <m>t</m> et de penser que le paramètre est le temps. Par exemple, considérons le cercle  <m>x^2+y^2=a^2</m>. Il est naturel d'utiliser l'angle <m>\theta</m> de la figure ci-bas comme paramètre.
-  </p>
-      <sidebyside width="50%">
+      <sidebyside widths="35% 15% 50%" valign="top">
+        <p>
+  S'il est vrai qu'on utilise souvent  <m>t</m> comme paramètre, il n'y a aucune raison d'utiliser la lettre <m>t</m> et de penser que le paramètre est le temps. Par exemple, considérons le cercle  <m>x^2+y^2=a^2</m>. Il est naturel d'utiliser l'angle <m>\theta</m> de la figure ci-contre comme paramètre.
+        </p>
+        <p></p>
         <image source="images/CLP-figs/parCircle"/>
       </sidebyside>
       <p>
   Ceci donne  <m> \vr(\theta) = a\cos\theta\vi +a\sin\theta\vj,\qquad
-  0\leqslant  \theta\leqslant  2\pi. </m>
-  Il s'agit d'un paramétrage du cercle <m>x^2+y^2=a^2</m>.
+  0\leqslant  \theta\leqslant  2\pi. </m> Il s'agit d'un paramétrage du cercle <m>x^2+y^2=a^2</m>.
   </p>
       <p>
   En effet, ici, nous avons <m>x(\theta) = a\cos \theta,\, y(\theta) =a\sin \theta</m>, de sorte que
@@ -90,12 +94,13 @@ De simples considérations géométriques montrent que lorsque <m>\theta</m> par
     </example>
     <example xml:id="eg_paramCircleB">
       <title>Paramétrage de  <m>(x-h)^2+(y-k)^2=a^2</m></title>
-      <p>
+      <sidebyside widths="35% 15% 50%" valign="top">
+        <p>
 On peut modifier le paramétrage de l'<xref ref="eg_paramCircle" text="global">exemple</xref> pour obtenir celui du cercle de rayon <m>a</m> centré à <m>(h,k)</m>.
 
 Une façon de procéder est de refaire l'esquisse de l'<xref ref="eg_paramCircle" text="global">exemple</xref> avec le cercle translaté de sorte à avoir son centre à la bonne position.
-</p>
-      <sidebyside width="50%">
+        </p>
+        <p></p>
         <image source="images/CLP-figs/parCirclehk"/>
       </sidebyside>
       <p>
@@ -136,8 +141,9 @@ Ainsi,
 sont des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>
 et <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. Afin de voir que, si <m>t</m> parcourt <m>[0,2\pi]</m>, alors  <m>\vr(t)</m> parcourt la courbe au complet, considérons les figures ci-bas.
 </p>
-      <sidebyside widths="45% 46%" valign="middle">
+      <sidebyside widths="40% 20% 40%" valign="middle">
         <image source="images/CLP-figs/parEllipse"/>
+        <p></p>
         <image source="images/CLP-figs/astroid4"/>
       </sidebyside>
       <p>
@@ -202,11 +208,13 @@ x=\cos(7-y)
 </p>
 </example>
 -->
-    <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  <m>z=x^2+2y^2</m> est la courbe montrée dans la figure ci-bas.
-  </p>
-    <figure>
-      <caption>L'intersection d'un ellipsoïde avec un paraboloïde</caption>
-      <image xml:id="sageplot3d-ellipsoide-paraboloide" width="60%">
+    <sidebyside widths="35% 10% 55%" valign="top">
+      <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  d'équation <m>z=x^2+2y^2</m> est la courbe montrée dans la figure ci-contre.
+      </p>
+      <p></p>
+      <figure>
+      <caption>L'intersection de deux surfaces</caption>
+      <image xml:id="sageplot3d-ellipsoide-paraboloide">
         <sageplot variant="3d" aspect="1.0">
         var('x,y,z')
 
@@ -226,15 +234,16 @@ x=\cos(7-y)
         S = ellipsoide + paraboloide + intersection
 
         S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black")
+        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
         S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black")
+        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
         S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
-        S += text3d("z", (0,0,3.1), color = "black")
+        S += text3d("z", (0,0,3.1), color = "black", fontsize = 22)
         S
       </sageplot>
       </image>
-    </figure>
+      </figure>
+    </sidebyside>
     <!-- <sidebyside width="60%">
   <image source="images/CLP-figs/stokes6"/>
   </sidebyside> -->
@@ -242,7 +251,8 @@ x=\cos(7-y)
   Une façon de paramétrer de telles courbes est de choisir une des trois coordonnées <m>x</m>, <m>y</m>, <m>z</m> comme paramètre et de résoudre les équations donnant les surfaces pour les deux autres coordonnées en termes du paramètre. Voyons deux exemples.
   </p>
     <example xml:id="eg_paramIntersect">
-      <p>
+      <sidebyside widths="35% 10% 55%" valign="middle">
+        <p>
   L'ensemble des points  <m>(x,y,z)</m> vérifiant
   <md alignment="alignat"><mrow>
    x^3&amp;-e^{3y}           &amp;&amp;=0,
@@ -257,25 +267,11 @@ x=\cos(7-y)
   </mrow></md>
   comme un système de deux équations dont les inconnues sont <m>x</m> et <m>z</m>, en traitant  <m>y</m> comme une constante.
 
-  On résout la première équation pour  <m>x</m>, puis l'on remplace dans la seconde équation et l'on résout pour <m>z</m>.
-  <md alignment="alignat"><mrow>
-   x^3&amp;    &amp;&amp;=e^{3y}  &amp;&amp;\implies x=e^y
-  </mrow><mrow>
-   x^2&amp;+z  &amp;&amp;=e^{y}   &amp;&amp; &amp;&amp;\implies e^{2y}+z=e^y \implies z=e^y-e^{2y}
-  </mrow></md>
-  Ainsi,
-  <md>
-  \vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk
-  </md>
-  est un paramétrage de la courbe.
-
-
-
-
-  </p>
-      <figure>
+        </p>
+        <p></p>
+        <figure>
         <caption> Courbe paramétrée par   <m>\vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk</m> </caption>
-        <image width="80%">
+        <image>
           <sageplot variant="3d" aspect="1.0">
         var('x,y,z')
         f(x,y,z) = x^3-exp(3*y)
@@ -287,19 +283,38 @@ x=\cos(7-y)
         S += ellipsoide
         S += paraboloide
         S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black")
+        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
         S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black")
+        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
         S += arrow3d((0,0,0),(0,0,1.2), color = "black", width = 0.5)
-        S += text3d("z", (0,0,1.3), color = "black")
+        S += text3d("z", (0,0,1.3), color = "black", fontsize = 22)
         S
       </sageplot>
         </image>
-      </figure>
-    </example>
-    <example xml:id="eg_paramIntersectB">
+        </figure>
+      </sidebyside>
       <p>
-  L'exemple précédent était truqué de sorte que les équations étaient faciles à résoudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut même être impossible de le faire. Voyons un exemple un peu plus réaliste. Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
+        On résout la première équation pour  <m>x</m>, puis l'on remplace dans la seconde équation et l'on résout pour <m>z</m>.
+        <md alignment="alignat">
+          <mrow> x^3&amp;    &amp;&amp;=e^{3y}  &amp;&amp;\implies x=e^y
+          </mrow>
+          <mrow>
+            x^2&amp;+z  &amp;&amp;=e^{y}   &amp;&amp; &amp;&amp;\implies e^{2y}+z=e^y \implies z=e^y-e^{2y}
+          </mrow></md>
+        Ainsi,
+        <md>
+        \vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk
+        </md>
+        est un paramétrage de la courbe.
+      </p>
+    </example>
+    <p>
+        L'exemple précédent était truqué de sorte que les équations étaient faciles à résoudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut même être impossible de le faire. Voyons un exemple un peu plus réaliste. 
+    </p>
+    <example xml:id="eg_paramIntersectB">
+      <sidebyside widths="35% 10% 55%" valign="top">
+        <p>
+Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
   <md alignment="alignat"><mrow>
    x^2+\frac{y^2}{2}+\frac{z^2}{3}&amp;=1,
   </mrow><mrow>
@@ -309,7 +324,39 @@ x=\cos(7-y)
   <md>
   -\frac{3}{2}y^2+z+\frac{z^2}{3}=1.
   </md>
-  Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <md>
+
+  </p>
+        <p></p>
+        <figure>
+        <caption>Quatre portions de la courbe donnés par les différents signes de <m>x</m> et <m>y</m></caption>
+        <image>
+          <sageplot variant="3d" aspect="1.0">
+        var('x,y,z')
+        f(x,y,z) = x^2+y^2/2+z^2/3
+        g(x,y,z) = x^2+2*y^2 - z
+        h = solve ([f == 1,g == 0],x,y)
+        ep = 0.0000001
+        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,2),texture ='orange',frame = False)
+        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,0,2), opacity = 0.65, texture ='lightblue', frame = False)
+        S = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 5,color='red')
+        S += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 5,color = 'blue')
+        S += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 5, color = 'green')
+        S += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 5,color='black')
+        S += ellipsoide
+        S += paraboloide
+        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
+        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
+        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
+        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
+        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
+        S += text3d("z", (0,0,3.1), color = "black", fontsize = 22)
+        S
+      </sageplot>
+        </image>
+      </figure>
+      </sidebyside>
+      <p>
+          Après complétion des carrés (pour <m>z</m>), ceci équivaut à   <md>
   -\frac{3}{2}y^2 + \frac{1}{3}\Big(z+\frac{3}{2}\Big)^2 = \frac{7}{4}.
   </md>
   Si, par exemple, on s'intéresse aux points <m>(x,y,z)</m> sur la courbe qui vérifient en plus   <m>y\geqslant 0</m>, on peut résoudre pour avoir  <m>y</m> en fonction de  <m>z</m>.
@@ -323,46 +370,21 @@ x=\cos(7-y)
   &amp;=\sqrt{\frac{4}{3}-\frac{4}{9}z^2-\frac{1}{3}z}.
   </mrow></md>
   Les autres signes de  <m>x</m> et <m>y</m> peuvent être obtenus avec les signes adéquats devant les racines carrées. Dans notre exemple, <m>(x,y,z)</m> se trouve sur la courbe, c'est-à-dire qu'il vérifie les équations originelles, si et seulement si  <m>(\pm x,\pm y, z)</m> appartiennent à la courbe.
-  </p>
-      <figure>
-        <caption>Quatre segments de la courbe donnés par les différents signes de <m>x</m> et <m>y</m></caption>
-        <image width="60%">
-          <sageplot variant="3d" aspect="1.0">
-        var('x,y,z')
-        f(x,y,z) = x^2+y^2/2+z^2/3
-        g(x,y,z) = x^2+2*y^2 - z
-        h = solve ([f == 1,g == 0],x,y)
-        ep = 0.0000001
-        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,2),texture ='orange',frame = False)
-        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,0,2), opacity = 0.65, texture ='lightblue', frame = False)
-        S = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 3,color='red')
-        S += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 3,color = 'blue')
-        S += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3, color = 'green')
-        S += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3,color='black')
-        S += ellipsoide
-        S += paraboloide
-        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black")
-        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black")
-        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
-        S += text3d("z", (0,0,3.1), color = "black")
-        S
-      </sageplot>
-        </image>
-      </figure>
+      </p>
     </example>
     <example xml:id="Param-intersec">
-      <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
-      </p>
-      <figure xml:id="plan-cone">
+      <sidebyside widths="35% 15% 50%" valign="top">
+        <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
+        </p>
+        <p></p>
+        <figure xml:id="plan-cone">
         <caption>Le plan <m>z = 1+y</m> et le cône <m>z^2 = x^2+ y^2</m>
         </caption>
-        <image xml:id="sageplot3d-plan-cone" width="80%">
+        <image xml:id="sageplot3d-plan-cone">
           <description><p>L'intersection d'un plan avec un cône</p></description>
           <sageplot variant="3d" aspect="1.0">
             var('u,v,r,t')
-            Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,2), mesh = True,
+            Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,1.6), mesh = True,
               texture = "lightblue", frame = False)
             Fig += parametric_plot3d([r*cos(t), r*sin(t),r], (r,0, 2),(t,0,2*pi), mesh = True, texture = "orange", opacity = 0.75)
             Fig += parametric_plot3d([r,(r^2 - 1)/2,(r^2 + 1)/2], (r,-2,2),
@@ -371,6 +393,7 @@ x=\cos(7-y)
       </sageplot>
         </image>
       </figure>
+      </sidebyside>
       <ul>
         <li>
           <p>
@@ -413,7 +436,7 @@ x=\cos(7-y)
       <statement>
         <p>Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point intérieur de <m>I</m><fn>Ceci veut dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>.</fn>. La <term> dérivée de <m>\vr</m> en <m>t_0</m></term> est
     </p>
-        <sidebyside widths="50% 35%" valign="middle">
+        <sidebyside widths="50% 15% 35%" valign="middle">
           <p>
             <md>
               <mrow>
@@ -424,6 +447,7 @@ x=\cos(7-y)
       </mrow>
             </md>
           </p>
+          <p></p>
           <image source="images/CLP-figs/parCurveDerivAJC"/>
         </sidebyside>
         <p>
@@ -577,8 +601,11 @@ Alors,
 </p>
       </statement>
     </theorem>
-    <sidebyside widths="50% 35%">
+    <sidebyside widths="50% 15% 35%">
       <p>L'interprétation géométrique est claire. La dérivée  <m>\vr'(t_0)</m> est la limite de  <m>\frac{\vr(t_0+h)-\vr(t_0)}{h}</m> lorsque <m>h\rightarrow 0</m>.  Le numérateur, <m>\vr(t_0+h)-\vr(t_0)</m>, est représenté par le vecteur ayant <m>\vr(t_0+h)</m> pour but et <m>\vr(t_0)</m> comme origine.
+  </p>
+  <p>
+    
   </p>
       <image source="images/CLP-figs/parCurveDerivAJC"/>
     </sidebyside>
@@ -601,8 +628,7 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
       Le point <m>(1,1,1)</m> correspond à <m>t=0</m>. Par ailleurs, <md>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </md>
       de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'équation de la droite tangente est donc
       <md><mrow>
-      \vx(t) &amp;= \vr(0) + t\,\vr'(0)\\
-            &amp;= (1,1,1) + t(-1,1,0).
+      \vx(t) &amp;= \vr(0) + t\,\vr'(0)= \rvt{1}{1}{1} + t\rvt{-1}{1}{0} + t(-1,1,0).
       </mrow></md>
     </p>
       </solution>
@@ -762,7 +788,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
 \vr_3'(t) &amp;= 3t^2\,\vi
 </mrow></md>
 </p>
-      <sidebyside widths="30% 18% 23%" valign="middle">
+      <sidebyside widths="25% 16% 20%" valign="middle">
         <image source="images/CLP4-figs/cuspA"/>
         <image source="images/CLP4-figs/cuspB"/>
         <image source="images/CLP4-figs/nocusp"/>
@@ -772,19 +798,24 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       <statement>
         <ol marker="(a)">
           <li>
-            <p>Soit <m>\vr(t) = t^3\, \vi + t^2\, \vj</m>. La courbe associée a pour équation cartésienne <m>x^2 = y^3</m>. On a <m>\vr'(t) = 3t^2 \, \vi + 2t\, \vj</m>. En particulier, le point <m>(0,0)</m> correspond à <m>t=0</m>, et <m>\vr'(0) = \vZero</m>. La courbe admet un <term>point de rebroussement</term> en ce point, c'est-à-dire que le vecteur tangent unitaire change subitement de direction.
+            <p>Soit <m>\vr(t) = t^3\, \vi + t^2\, \vj</m>. La courbe associée a pour équation cartésienne <m>x^2 = y^3</m>.
       </p>
-            <figure xml:id="figure-rebrousssement">
+            <sidebyside widths="55% 10% 35%" valign="top">
+              <p>On a <m>\vr'(t) = 3t^2 \, \vi + 2t\, \vj</m>. En particulier, le point <m>(0,0)</m> correspond à <m>t=0</m>, et <m>\vr'(0) = \vZero</m>. La courbe admet un <term>point de rebroussement</term> en ce point, c'est-à-dire que le vecteur tangent unitaire change subitement de direction.
+              </p>
+              <p></p>
+              <figure xml:id="figure-rebrousssement">
               <caption>La courbe <m>\vr(t) = t^3 \vi + t^2\vj</m></caption>
-              <image xml:id="sageplot-Rebroussement" width="80%">
+              <image xml:id="sageplot-Rebroussement">
                 <description><p>La courbe admet un point de rebroussement à l'origine</p></description>
                 <sageplot>
             var('t')
-            C =parametric_plot([t^3, t^2], (t,-1,1), color = "blue", axes_labels=['$x$', '$y$'], ticks = [[-1,(-0.5).n(digits = 1), 0, (0.5).n(digits=1), 1], [0.5.n(digits = 1),1]],tick_formatter="latex", fontsize = 14)
+            C =parametric_plot([t^3, t^2], (t,-1,1), color = "blue", axes_labels=['$x$', '$y$'], ticks = [[],[]], fontsize = 14, figsize = 3)
             C
           </sageplot>
               </image>
-            </figure>
+              </figure>
+            </sidebyside>
           </li>
           <li>
             <p>
@@ -794,7 +825,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
             Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <md>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </md>
             de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
             <md>
-            \vx(t) =  \vp_0 + t \vr'(0) = \tvect{1}{0}{1} + t \tvect{-1}{1}{-1}.
+            \vx(t) =  \vp_0 + t \vr'(0) = \rvt{1}{0}{1} + t \rvt{-1}{1}{-1}.
             </md>
             Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
 

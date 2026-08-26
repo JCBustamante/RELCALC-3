@@ -50,9 +50,7 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
 
   <exercise xml:id="prob_s1_0first">
     <statement><p>
-    Considérez la courbe paramétrée par le temps:
-    <md>
-    \vr(t)=\left( \cos\left(\frac{\pi}{4}t\right), (t-5)^2\right)</md>
+    Considérez la courbe paramétrée par le temps <m>\vr(t)=\cos\left(\frac{\pi}{4}t\right)\vi + (t-5)^2\vj</m>.
     </p>
 
     <p>Faire une liste des trois points <m>(-1/\sqrt{2},0)</m>, <m>(1,25)</m>, et <m>(0,25)</m> en ordre chronologique.
@@ -80,12 +78,9 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
       <title><fromexam>M317 2005D</fromexam></title>
         -->
     <statement><p>
-    Trouvez la vitesse (scalaire) d'une particule dont la fonction de la position est
-    <md>
-    \vr(t) = 5 \sqrt{2}\,t\,\vi + e^{5t}\,\vj - e^{-5t}\,\vk
-    </md>
+    Trouvez la vitesse (scalaire) d'une particule dont la position est donnée par <m>\vr(t) = 5 \sqrt{2}\,t\,\vi + e^{5t}\,\vj - e^{-5t}\,\vk</m>.
     Sélectionnez la bonne réponse:
-    <ol marker = "(a)">
+    <ol marker = "(a)" cols="2">
     <li>
     <m>|\vv(t)| = \big(e^{5t} + e^{-5t}\big)</m>
     </li>
@@ -134,7 +129,7 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
             <title><fromexam>M317 2013D</fromexam></title>
         -->
         <statement><p><ol marker = "(a)">
-        <li> Soit <m> \vr(t) = \left(t^2 , 3, \tfrac{1}{3} t^3 \right) </m>. Trouver le vecteur tangent unitaire (pointant dans la direction des <m>t</m> croissants) à  <m>t = 1</m>.
+        <li> Soit <m> \vr(t) = t^2\,\vi + 3\,\vj + \tfrac{1}{3} t^3\,\vk </m>. Trouver le vecteur tangent unitaire (pointant dans la direction des <m>t</m> croissants) à  <m>t = 1</m>.
         </li>
         <li>
         Trouver la longueur d'arc de la courbe en (a) entre les points  <m>(0, 3, 0)</m> et  <m>(1, 3, -\frac{1}{3})</m>.
@@ -147,15 +142,15 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
         </p></hint>
 
         <answer><p>
-        (a) <m>\hat\vT(1) = \frac{(2,0,1)}{\sqrt{5}}</m>
+        (a) <m>\hat\vT(1) = \frac{2\,\vi+\vk}{\sqrt{5}}</m>
         </p><p>
         (b) <m>\frac{1}{3}\big[5^{3/2}-8\big]</m>
         </p></answer>
 
         <solution><p> (a)
-        Comme <m>\vr'(t) = (2t,0,t^2)</m>, le vecteur tangent unitaire demandé à <m>t=1</m> est
+        Comme <m>\vr'(t) = 2t\,\vi+t^2\,\vk</m>, le vecteur tangent unitaire demandé à <m>t=1</m> est
         <md>
-        \hat\vT(1) = \frac{(2,0,1)}{\sqrt{5}}
+        \hat\vT(1) = \frac{2\,\vi+\vk}{\sqrt{5}}
         </md>
         </p>
 
@@ -183,7 +178,7 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
       </exercise>
 
     <exercise xml:id="prob_s1_1_lemma113">
-      <statement><p> En utilisant le <nbsp/><xref ref = "thm-Longueur"/>, trouver la longueur de la portion de la courbe donnée par  <m>\vr(t)=\left(t,\sqrt{\frac{3}{2}}t^2,t^3\right)</m> entre <m>t=0</m> et <m>t=1</m>.
+      <statement><p> En utilisant le <nbsp/><xref ref = "thm-Longueur"/>, trouver la longueur de la portion de la courbe donnée par  <m>\vr(t)=t\,\vi+\sqrt{\tfrac{3}{2}}t^2\,\vj+t^3\,\vk</m> entre <m>t=0</m> et <m>t=1</m>.
       </p></statement>
       <hint><p>
       On a, en vertu du <nbsp/><xref ref = "thm-Longueur"/>, que la longueur entre <m>t=0</m> et <m>t=1</m> est donnée par
@@ -202,9 +197,9 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
       <m>\int_{0}^1\left| \diff{\vr}{t}(t)\right|\dee t</m>. Nous calculons ceci en plusieurs étapes afin de clarifier les calculs.
       <md>
       <mrow>
-      \vr(t)&amp;=\left(t,\sqrt{\frac{3}{2}}t^2,t^3\right)
+      \vr(t)&amp;=t\,\vi+\sqrt{\frac{3}{2}}t^2\,\vj+t^3\,\vk
       </mrow><mrow>
-      \diff{\vr}{t}(t)&amp;=\left(1,\sqrt{6}t,3t^2\right)
+      \diff{\vr}{t}(t)&amp;=\vi+\sqrt{6}t\,\vj+3t^2\,\vk
       </mrow><mrow>
       \left|\diff{\vr}{t}(t)\right|&amp;=\sqrt{1^2+(\sqrt{6}t)^2+(3t^2)^2}=\sqrt{1+6t^2+9t^4}
       </mrow><mrow>
@@ -218,7 +213,7 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
 
     <exercise>
       <statement><p>
-      La position d'une particule au temps  <m>t</m> est donnée par <m>\vr(t) = (t+\sin t, \cos t)</m><fn>La courbe tracée par cette particule est une cycloïde</fn>. Quelle est la norme de l'accélération au temps <m>t</m>?
+      La position d'une particule au temps  <m>t</m> est donnée par <m>\vr(t) = (t+\sin t)\,\vi + \cos t\,\vj</m> (la courbe tracée par cette particule est une cycloïde). Quelle est la norme de l'accélération au temps <m>t</m>?
       </p></statement>
       <hint><p>
       <m>\vr(t)</m> est la position, de sorte que l'accélération est <m>\vr''(t)</m>.
@@ -230,11 +225,11 @@ When <m>t=0</m>, the curve hits <m>(1, 25)</m>; when <m>t=10</m>, the curve hits
       Comme <m>\vr(t)</m> est la position de la particule, son accélération est <m>\vr''(t)</m>.
       <md>
       <mrow>
-      \vr(t)&amp;=(t+\sin t, \cos t)
+      \vr(t)&amp;=(t+\sin t)\,\vi + \cos t\,\vj
       </mrow><mrow>
-      \vr'(t)&amp;=(1+\cos t,-\sin t)
+      \vr'(t)&amp;=(1+\cos t)\,\vi -\sin t\,\vj
       </mrow><mrow>
-      \vr''(t)&amp;=(-\sin t,-\cos t)
+      \vr''(t)&amp;=-\sin t\,\vi -\cos t\,\vj
       </mrow><mrow>
       |\vr''(t)|&amp;=\sqrt{\sin^2t+\cos^2t}=1
       </mrow>
@@ -271,29 +266,15 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
   <!-- Troyanov-->
   <exercise>
     <statement>
-      <p>
-        Soit <m>a\in \R </m>. Le <em>folium</em> de Descartes est la courbe d'équation <m>x^3 + y^3 = 3axy</m>, voir la figure ci-bas.
-      </p>
-      <figure xml:id="figure-folium">
-        <caption>Le folium de Descartes : <m>x^3 + y^3 = 3axy</m>.</caption>
-         <image xml:id="sageplot-foliun" width="50%">
-           <description><p>Le folium de Descartes.</p></description>
-          <sageplot>
-            var('x,y')
-            a = 1
-            M= 2.5
-            Folium = implicit_plot(x^3 + y^3 == 3*a*x*y, (x,-M,M), (y,-M,M),  aspect_ratio = 1, axes=True, axes_labels=['$x$','$y$'], ticks=[[],[]], frame = False, font_size = 14)
-            Folium
-          </sageplot>
-        </image>
-      </figure>
+      <sidebyside widths="60% 5% 35%" valign="top">
+        <p>
+        Soit <m>a\in \R </m>. Le <em>folium</em> de Descartes est la courbe d'équation <m>x^3 + y^3 = 3axy</m>, voir la figure ci-contre.
 
-      <p>
         Soit <m>\cD</m> la droite <m>x=1</m>. Les questions qui suivent serviront à obtenir un paramétrage du folium par pojection de cette courbe sur <m>\cD</m>.
         <ol marker = "(a)">
           <li>
             <p>
-              Donnez une équation paramétrique de <m>\cD</m>.            
+              Donnez une équation paramétrique de <m>\cD</m>.
             </p>
           </li>
           <li>
@@ -307,7 +288,22 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
             </p>
           </li>
         </ol>
-      </p>
+        </p>
+        <p></p>
+        <figure xml:id="figure-folium">
+          <caption>Le folium de Descartes : <m>x^3 + y^3 = 3axy</m>.</caption>
+          <image xml:id="sageplot-foliun">
+            <description><p>Le folium de Descartes.</p></description>
+            <sageplot>
+            var('x,y')
+            a = 1
+            M= 2.5
+            Folium = implicit_plot(x^3 + y^3 == 3*a*x*y, (x,-M,M), (y,-M,M),  aspect_ratio = 1, axes=True, axes_labels=['$x$','$y$'], ticks=[[],[]], frame = False, font_size = 26, figsize = 4)
+            Folium
+            </sageplot>
+          </image>
+        </figure>
+      </sidebyside>
     </statement>
 
     <answer>
@@ -335,7 +331,7 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
 
   <exercise>
     <statement><p>
-    À quels points dans le plan <m>xy</m> est-ce que la courbe <m>(\sin t, t^2)</m> se croise elle-même? Quelle est la différence en <m>t</m> entre la première fois que la courbe passe par un point, et la dernière ?
+    À quels points dans le plan <m>xy</m> est-ce que la courbe <m>\vr(t) = \sin t\,\vi + t^2\,\vj</m> se croise elle-même? Quelle est la différence en <m>t</m> entre la première fois que la courbe passe par un point, et la dernière ?
     </p></statement>
     <hint><p>
     La courbe <q>se croise elle-même</q> lorsque <m>(\sin t,t^2)</m> donne la même coordonnée pour différentes valeurs de <m>t</m>. Le moment où ces croisement se produisent va dépendre du croisement auquel vous allez référer, donc vos réponses devraient dépendre de <m>t</m>.
@@ -576,13 +572,13 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
   <exercise xml:id="prob_s1_0last">
     <statement><p>
     La courbe <m>C</m> est définie par l'intersection de l'ellipsoïde
-    <md>
-    x^2-\frac{1}{4}y^2+3z^2=1</md>
+    <m>
+    x^2-\frac{1}{4}y^2+3z^2=1</m>
     </p>
 
     <p>et du plan
-    <md>
-    x+y+z=0.</md>
+    <m>
+    x+y+z=0.</m>
     </p>
 
     <p>Lorsque <m>y</m> est très près de 0, et <m>z</m> est négatif, trouvez une expression donnant <m>z</m> en terme de <m>y</m>.
@@ -659,8 +655,7 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
   -->
   <exercise>
     <statement><p>
-    Une particule trace une courbe dans l'espace, de telle sorte que sa position dans le temps <m>t</m> est <md>
-    \vr(t)=e^{-t}\,\vi+\frac{1}{t}\,\vj+(t-1)^2(t-3)^2\,\vk</md>
+    Une particule trace une courbe dans l'espace, de telle sorte que sa position dans le temps <m>t</m> est <m> \vr(t)=e^{-t}\,\vi+\frac{1}{t}\,\vj+(t-1)^2(t-3)^2\,\vk</m>
      pour <m>t  \gt  0</m>.
     </p>
 
@@ -910,13 +905,13 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
     en termes de <m>\vr</m>, <m>\vr'</m> , <m>\vr''</m> , et <m>\vr'''</m>.
     Selectionnez la bonne réponse.
     <ol marker = "(a)" cols = "2">
-    <li> <m>(\vr'\times\vr'' )\cdot\vr'''</m>
+    <li> <m>(\vr'\times\vr'' )\cdot\vr'''</m>,
     </li>
-    <li>  <m>(\vr'\times\vr'' )\cdot\vr + (\vr\times\vr' )\cdot\vr'''</m>
+    <li>  <m>(\vr'\times\vr'' )\cdot\vr + (\vr\times\vr' )\cdot\vr'''</m>,
     </li>
-    <li>  <m>(\vr\times\vr' )\cdot\vr'''</m>
+    <li>  <m>(\vr\times\vr' )\cdot\vr'''</m>,
     </li>
-    <li>  <m>0</m>
+    <li>  <m>0</m>.
     </li>
     <li>  Aucune de ces réponses.
     </li>
@@ -957,10 +952,10 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
     Trouvez la vitesse, la vitesse scalaire et l'accélération au temps <m>t</m> pour une la particule dont la position est <m>\vr(t)</m>. Décrire le chemin de la particule.
     <ol marker = "(a)">
     <li>
-    <m>\vr(t)= a \cos t\,\vi + a\sin t\,\vj + ct\,\vk</m>
+    <m>\vr(t)= a \cos t\,\vi + a\sin t\,\vj + ct\,\vk</m>,
     </li>
     <li>
-    <m>\vr(t)= a \cos t\sin t\,\vi + a\sin^2 t\,\vj + a\cos t\,\vk</m>
+    <m>\vr(t)= a \cos t\sin t\,\vi + a\sin^2 t\,\vj + a\cos t\,\vk</m>.
     </li>
     </ol>
     </p></statement>
@@ -1046,10 +1041,8 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
           <title><fromexam>M200 2003A</fromexam></title>
       -->
       <statement><p>
-       Au temps  <m>t=0</m>, une particule a  <m>\vr(0)=\llt -1,0,0\rgt</m> et <m>\vv(0)=\llt 0,-1,1\rgt</m> pour position et vitesse, respetivement. Au temps <m>t</m>, l'accélération est
-      <m>
-      \va(t)=\llt \cos t,\sin t,0\rgt
-      </m>
+       Au temps  <m>t=0</m>, une particule a  <m>\vr(0)=\rvt{-1}{0}{0}</m> et <m>\vv(0)=\rvt{0}{-1}{1}</m> pour position et vitesse, respetivement. Au temps <m>t</m>, l'accélération est
+      <m> \va(t)=\rvt{\cos t,}{\sin t}{0}</m>.
       <ol marker = "(a)">
       <li>
       Trouver la position de la particule au temps  <m>t</m>.
@@ -1145,7 +1138,7 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
       </md>
       <ol marker = "(a)">
       <li>
-      Montrez que la courbe décrite par la particule se trouve sur le <m>z^2=x^2+y^2</m>.
+      Montrez que la courbe décrite par la particule se trouve sur le cône <m>z^2=x^2+y^2</m>.
       </li>
       <li>
       Trouvez le vecteur vitesse, ainsi que sa norme, au temps <m>t</m>.
@@ -1293,10 +1286,7 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
       -->
       <statement><p>
        Au temps  <m>t=0</m> une particule se trouve à la position
-      <m>\vr(0)=\llt -1,0,0\rgt</m> et se déplace avec vitesse  <m>\vv(0)=\llt 0,-1,1\rgt</m>. À l'instant <m>t</m>, le particule a pour vecteur accélération
-      <md>
-      \va(t)=\llt \cos t,\sin t,0\rgt
-      </md>
+      <m>\vr(0)=\llt -1,0,0\rgt</m> et se déplace avec vitesse  <m>\vv(0)=\llt 0,-1,1\rgt</m>. À l'instant <m>t</m>, le particule a pour vecteur accélération <m>\va(t)=\rvt{\cos t}{\sin t}{0}</m>.
       <ol marker = "(a)">
       <li>
       Trouver la position de la particvule au temps  <m>t</m> (en secondes).

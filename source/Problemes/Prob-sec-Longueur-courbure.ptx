@@ -15,7 +15,7 @@
           -->
       <statement><p>
       Une courbe en  <m>\R^3</m> est donnée paramétrée par
-      <m>\vr(t) = \left(2t \cos t, 2t \sin t,\frac{t^3}{3}\right)</m>
+      <m>\vr(t) = 2t \cos t\,\vi + 2t \sin t\,\vj+\frac{t^3}{3}\,\vk</m>
       </p>
 
       <p><ol marker = "(a)">
@@ -46,9 +46,9 @@
       <md>
       <mrow>
       \diff{s}{t}(t)
-      =\big|\vr'(t)\big| &amp; = \left|\left(2\cos t - 2t\sin t\,,\,
-                                        2\sin t + 2t \cos t\,,\,
-                                        t^2\right)\right|
+      =\big|\vr'(t)\big| &amp; = \big|(2\cos t - 2t\sin t)\,\vi
+                                        +(2\sin t + 2t \cos t)\,\vj
+                                        +t^2\,\vk\big|
       </mrow><mrow>
                         &amp;=\sqrt{\big(2\cos t - 2t\sin t\big)^2
                                +\big(2\sin t + 2t \cos t\big)^2
@@ -73,12 +73,12 @@
 
       <p>(b)
       Un vecteur tangent à la courbe en
-      <m>\vr(\pi)=\big(-2\pi\,,\, 0\,,\, \frac{\pi^3}{3}\big)</m> est
+      <m>\vr(\pi)=-2\pi\,\vi+ \frac{\pi^3}{3}\,\vk</m> est
       <md>
-      \vr'(\pi) = \left(2\cos\pi - 2\pi\sin\pi\,,\,
-                                        2\sin\pi + 2\pi \cos\pi\,,\,
-                                        \pi^2\right)
-       = (-2\,,\,-2\pi\,,\,\pi^2)
+      \vr'(\pi) = (2\cos\pi - 2\pi\sin\pi)\,\vi
+                                        +(2\sin\pi + 2\pi \cos\pi)\,\vj
+                                        +\pi^2\,\vk
+       = -2\,\vi-2\pi\,\vj+\pi^2\,\vk
       </md>
       Donc les équations paramétriques de la droite tangente en <m>\vr(\pi)</m> sont
       <md>
@@ -98,7 +98,7 @@
           <title><fromexam>M317 2010D</fromexam></title>
           -->
       <statement><p>
-      Soit  <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m> la position d'une particule à l'instant  <m>t \geqslant 0</m>.
+      Soit  <m>\vr(t) = 3 \cos t\,\vi + 3 \sin t\,\vj + 4t\,\vk</m> la position d'une particule à l'instant  <m>t \geqslant 0</m>.
       <ol marker = "(a)">
       <li>
       Trouver le vecteur vitesse de la particule à l'instant  <m>t</m>.
@@ -114,22 +114,22 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>\vr'(t) = \big(-3 \sin t, 3 \cos t, 4\big)</m>
+      (a) <m>\vr'(t) = -3 \sin t\,\vi + 3 \cos t\,\vj + 4\,\vk</m>
       </p><p>
       (b) 5
       </p></answer>
 
-      <solution><p> (a) Comme <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m>,
+      <solution><p> (a) Comme <m>\vr(t) = 3 \cos t\,\vi + 3 \sin t\,\vj + 4t\,\vk</m>,
       le vecteur vitesse de la particule est
       <md>
-      \vr'(t) = \big(-3 \sin t, 3 \cos t, 4\big)
+      \vr'(t) = -3 \sin t\,\vi + 3 \cos t\,\vj + 4\,\vk
       </md>
       </p>
 
       <p> (b) Comme <m>\diff{s}{t}</m>, le taux de variation de la longueur d'arc par unité de temps,
       vaut
       <md>
-      \diff{s}{t}(t) = |\vr'(t)| = \big|\big(-3 \sin t, 3 \cos t, 4\big)\big|
+      \diff{s}{t}(t) = |\vr'(t)| = \big|-3 \sin t\,\vi + 3 \cos t\,\vj + 4\,\vk\big|
         =5
       </md>
       la longueur d'arc de sa trajectoire entre <m>t = 1</m> et <m>t = 2</m> est
@@ -302,7 +302,7 @@
           <title><fromexam>M317 2017D</fromexam></title>
           -->
       <statement><p>
-      Soit <m>\vr(t)=\big(\frac{1}{3}t^3,\frac{1}{2}t^2,\frac{1}{2}t\big)</m>,
+      Soit <m>\vr(t)=\frac{1}{3}t^3\,\vi+\frac{1}{2}t^2\,\vj+\frac{1}{2}t\,\vk</m>,
       <m>t\geqslant 0</m>. Calculer <m>s(t)</m>, la fonction longueur d'arc pour le chemin donné.
       </p></statement>
 
@@ -430,20 +430,21 @@
     </exercise>
 
     <exercise>
-      <statement><p>
-      Ci-dessous, se trouve le graphe de la fonction paramétrée <m>\vr(t)</m>. Soit <m>s(t)</m> la longueur d'arc le long de la courbe de <m>\vr(0)</m> à <m>\vr(t)</m>.
-      </p>
-      <sidebyside width="50%">
-      <image><latex-image>\begin{tikzpicture}
-      \draw[thick] plot[domain=-4.5:1]({4-\x*\x/4},\x);
-      \draw (4-1/16,-.5) node[vertex, label=right: $\vr(t+h)$](th){};
-      \draw (3,-2) node[vertex, label=right: $\vr(t)$](t){};
-      \draw (0,-4) node[vertex, label=below right: $\vr(0)$](zero){};
-      \end{tikzpicture}</latex-image></image>
-      </sidebyside><p>
-      Indiquez sur le graphe <m>s(t+h)-s(t)</m> et <m>\vr(t+h)-\vr(t)</m>. Est-ce que ces quantités sont des scalaires ou des vecteurs?
-      </p>
+      <statement>
+      <sidebyside widths="55% 10% 35%" valign="top">
+        <p>
+      Ci-contre, se trouve le graphe de la fonction paramétrée <m>\vr(t)</m>. Soit <m>s(t)</m> la longueur d'arc le long de la courbe de <m>\vr(0)</m> à <m>\vr(t)</m>.
 
+      Indiquez sur le graphe <m>s(t+h)-s(t)</m> et <m>\vr(t+h)-\vr(t)</m>. Est-ce que ces quantités sont des scalaires ou des vecteurs?
+        </p>
+        <p></p>
+        <image><latex-image>\begin{tikzpicture}
+        \draw[thick] plot[domain=-4.5:1]({4-\x*\x/4},\x);
+        \draw (4-1/16,-.5) node[vertex, label=right: $\vr(t+h)$](th){};
+        \draw (3,-2) node[vertex, label=right: $\vr(t)$](t){};
+        \draw (0,-4) node[vertex, label=below right: $\vr(0)$](zero){};
+        \end{tikzpicture}</latex-image></image>
+      </sidebyside>
       </statement>
       <hint><p>
       Ceci est le contexte du <nbsp/><xref ref = "thm-Longueur"/>.
@@ -492,7 +493,7 @@
       -->
       <statement><p>
       Trouver la longueur d'arc du chemin
-      <m>\vr(t) = \big(t^m\,,\, t^m\,,\, t^{3m/2}\big)</m> pour <m>0\leqslant a\leqslant t\leqslant b</m>, avec  <m>m  \gt  0</m>.
+      <m>\vr(t) = t^m\,\vi+t^m\,\vj+t^{3m/2}\,\vk</m> pour <m>0\leqslant a\leqslant t\leqslant b</m>, avec  <m>m  \gt  0</m>.
       Exprimez le résultat en termes de  <m>m</m>, <m>a</m>, et <m>b</m>.
       </p></statement>
 
@@ -566,7 +567,7 @@
       </p></hint>
 
       <answer><p>
-      <ol marker = "(a)">
+      <ol marker = "(a)" cols="4">
       <li> <m>\vr(u)=u^3\,\vi+3u^2\,\vj+6u\,\vk</m> </li>
       <li> <m>7</m> </li>
       <li>  <m>2</m> </li>
@@ -668,7 +669,7 @@
       </p></hint>
 
       <answer><p>
-      <ol marker = "(a)">
+      <ol marker = "(a)" cols="2">
       <li><m>21</m></li>
       <li><m>6</m></li>
       <li><m>2\vi+4\,\vj+4\,\vk</m></li>

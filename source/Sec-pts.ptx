@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="S-1-1-Points-vecteurs">
   <title>Points et coordonnées en deux et trois dimensions</title>
-  <p>Chaque point du plan peut être étiqueté par deux coordonnées<fn>C'est pourquoi le plan <m>xy</m> est dit être de  <q>dimension deux</q>, le nom de chaque point étant une paire de nombres réels.</fn> <m>(x,y)</m> qui spécifient la position du point en termes d'unités choisies par rapport à des axes et à une origine donnés.
-  </p>
-  <sidebyside width="28%">
+  <sidebyside widths="50% 22% 28%" valign="top">
+    <p>L'ensemble des points du plan est noté  <m>\R^2</m> (sans surprise, le <m>2</m> dans <m>\R^2</m> signifie que chaque point est étiqueté par deux nombres; le <m>\R</m> dans <m>\R^2</m> veut dire que ce sont deux nombres réels).
+    On dit que <m>x</m> est l'<term>abscisse</term> du point et que <m>y</m> en est l'<term>ordonnée</term>.
+    </p>
+    <p></p>
     <image source="images/CLP-figs/point2d"/>
   </sidebyside>
   <p>
-    L'ensemble des points du plan est noté  <m>\R^2</m> (sans surprise, le <m>2</m> dans <m>\R^2</m> signifie que chaque point est étiqueté par deux nombres; le <m>\R</m> dans <m>\R^2</m> veut dire que ce sont deux nombres réels).
     <!--
       Il existe des applications plus avancées (par exemple en traitement du signal, ou en mécanique quantique) où les nombres complexes sont utilisés. L'espace de toutes les paires <m>(z_1,z_2)</m>, où <m>z_1</m> et <m>z_2</m> sont des nombres complexes, est noté <m>\R^2</m>.
   -->
-
     Remarquons que :
     <ul><li> la distance du point <m>(x,y)</m> à l'axe des abscisses est <m>|y|</m>;
     </li><li> si <m>y\gt 0</m>, alors <m>(x,y)</m> se trouve au-dessus de l'axe des abscisses, et si <m>y\lt 0</m>, alors <m>(x,y)</m> se trouve au-dessous de cet axe;
@@ -22,8 +22,9 @@
     </li></ul>
     De la même façon, un point dans l'espace tridimensionnel peut être étiqueté par trois coordonnées <m>(x,y,z)</m>, tel qu'illustré dans les figures ci-après.
   </p>
-  <sidebyside width="33%">
+  <sidebyside widths="30% 40% 30%">
     <image source="images/CLP-figs/point3d"/>
+    <p></p>
     <image source="images/CLP-figs/point3db"/>
   </sidebyside>
   <p>
@@ -43,7 +44,7 @@
   </li><li> L'ensemble des points <m>(x,y,z)</m> vérifiant <m>x=a</m> est un plan parallèle au plan <m>Oyz</m> et se trouve à une <em>distance signée</em> <m>a</m>  de celui-là.
   </li></ul>
 </p>
-  <sidebyside>
+  <sidebyside widths = "28% 28% 28%">
     <image source="images/CLP-figs/xyplaneN"/>
     <image source="images/CLP-figs/xzplaneN"/>
     <image source="images/CLP-figs/yzplaneN"/>
@@ -56,7 +57,9 @@ Remarquons que les distances en dimension 3 se calculent comme en dimension 2.
 </li><li> La distance du point <m>(x,y,z)</m> à l'origine <m>(0,0,0)</m> est
      <m>\sqrt{x^2+y^2+z^2}</m>.
 </li></ul>
-Afin de voir que la distance du point <m>(x,y,z)</m> à l'origine <m>(0,0,0)</m> est en fait   <m>\sqrt{x^2+y^2+z^2}</m>,
+</p>
+  <sidebyside widths="60% 5% 35%" valign="middle">
+    <p>Afin de voir que la distance du point <m>(x,y,z)</m> à l'origine <m>(0,0,0)</m> est en fait   <m>\sqrt{x^2+y^2+z^2}</m>,
 <ul><li>
 on applique le théorème de Pythagore au triangle rectangle de sommets <m>(0,0,0)</m>, <m>(x,0,0)</m> et <m>(x,y,0)</m>, de sorte que la distance de  <m>(0,0,0)</m>
 à <m>(x,y,0)</m> est <m>\sqrt{x^2+y^2}</m>, puis
@@ -66,8 +69,8 @@ on applique le théorème de Pythagore au triangle rectangle de sommets <m>(0,0,
 à <m>(x,y,z)</m> est <m>\sqrt{{\big(\sqrt{x^2+y^2}\big)}^2+z^2}
 =\sqrt{x^2+y^2+z^2}</m>.
 </li></ul>
-</p>
-  <sidebyside width="40%">
+    </p>
+    <p></p>
     <image source="images/CLP-figs/pythag3d"/>
   </sidebyside>
   <p>

@@ -201,12 +201,14 @@
     </exercise>
 
     <exercise>
-      <statement><p>
+      <statement>
+      <sidebyside widths="55% 10% 32%" valign="top">
+        <p>
       Esquissez quelques courbes de niveau de la fonction <m>f(x,y)</m> dont le graphe <m>z=f(x,y)</m>
-      est esquissé ci-dessous.
-      </p>
-      <sidebyside width="40%">
-      <image source="images/CLP-figs/pfigs/hyperCylinderGraph"/>
+      est esquissé ci-contre.
+        </p>
+        <p></p>
+        <image source="images/CLP-figs/pfigs/hyperCylinderGraph"/>
       </sidebyside>
       </statement>
 
@@ -272,20 +274,57 @@
       </statement>
 
       <answer>
-      <sbsgroup widths="10% 50%">
-      <sidebyside>
-      <p>(a)</p>
-      <image source="images/CLP-figs/pfigs/levelEllipse"/>
+      <sidebyside widths="30% 5% 30% 5% 30%" valign="top">
+        <image xml:id="sageplot-levelEllipse">
+          <description><p>Courbes de niveau de <m>x^2+2y^2</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x^2+2*y^2
+            C = contour_plot(f(x,y), (x,-3,3),(y,-2.2,2.2),
+              contours = [-20,0,1,2,4,6,8], fill = False, cmap = "Spectral",
+              # -20 : niveau fantôme (courbe vide, x^2+2y^2>=0) pour pousser les couleurs
+              # visibles vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, ticks =[[],[]], fontsize = 16)
+            C += point((0,0), size = 30, color = "black")
+            C += text("$f=0$", (0.35,0.25), fontsize = 18, color = "black")
+            C
+          </sageplot>
+        </image>
+        <p></p>
+        <image xml:id="sageplot-levelHyperbola">
+          <description><p>Courbes de niveau de <m>xy</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x*y
+            C = contour_plot(f(x,y), (x,-3,3),(y,-3,3),
+              contours = [-20,-4,-2,-1,0,1,2,4], fill = False, cmap = "Spectral",
+              # -20 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, ticks =[[],[]],  fontsize = 16)
+            C
+          </sageplot>
+        </image>
+        <p></p>
+        <image xml:id="sageplot-levelLog">
+          <description><p>Courbes de niveau de <m>xe^{-y}</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x*e^(-y)
+            C = contour_plot(f(x,y), (x,-3,3),(y,-2,3),
+              contours = [-25,-2,-1,0,1,2], fill = False, cmap = "Spectral",
+              # -25 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, ticks =[[],[]], fontsize = 16)
+            C
+          </sageplot>
+        </image>
       </sidebyside>
-      <sidebyside>
-      <p>(b)</p>
-      <image source="images/CLP-figs/pfigs/levelHyperbola"/>
-      </sidebyside>
-      <sidebyside>
-      <p>(c)</p>
-      <image source="images/CLP-figs/pfigs/levelLog"/>
-      </sidebyside>
-      </sbsgroup>
       </answer>
 
       <solution><p> (a)
@@ -294,8 +333,24 @@
       demi-axe en <m>y</m> égal à <m>\sqrt{c/2}</m>. Si <m>c=0</m>, la courbe de niveau <m>x^2+2y^2=c=0</m>
       est réduite au point <m>(0,0)</m>.
       </p>
-      <sidebyside width="50%">
-        <image source="images/CLP-figs/pfigs/levelEllipse"/>
+      <sidebyside width="45%">
+        <image xml:id="sageplot-levelEllipse-sol">
+          <description><p>Courbes de niveau de <m>x^2+2y^2</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x^2+2*y^2
+            C = contour_plot(f(x,y), (x,-3,3),(y,-2.2,2.2),
+              contours = [-20,0,1,2,4,6,8], fill = False, cmap = "Spectral",
+              # -20 : niveau fantôme (courbe vide, x^2+2y^2>=0) pour pousser les couleurs
+              # visibles vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, tick_formatter = "latex", fontsize = 16)
+            C += point((0,0), size = 30, color = "black")
+            C += text("$f=0$", (0.35,0.25), fontsize = 18, color = "black")
+            C
+          </sageplot>
+        </image>
       </sidebyside>
 
       <p>
@@ -310,7 +365,21 @@
       est réduite au point <m>(0,0)</m>.
       </p>
       <sidebyside width="45%">
-        <image source="images/CLP-figs/pfigs/levelHyperbola"/>
+        <image xml:id="sageplot-levelHyperbola-sol">
+          <description><p>Courbes de niveau de <m>xy</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x*y
+            C = contour_plot(f(x,y), (x,-3,3),(y,-3,3),
+              contours = [-20,-4,-2,-1,0,1,2,4], fill = False, cmap = "Spectral",
+              # -20 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, tick_formatter = "latex", fontsize = 16)
+            C
+          </sageplot>
+        </image>
       </sidebyside>
       <p>
       (c)
@@ -342,8 +411,22 @@
       Si <m>c=0</m>, la courbe de niveau <m>xe^{-y}=c=0</m>
       est l'axe des <m>y</m>, <m>x=0</m>.
       </p>
-      <sidebyside width="50%">
-        <image source="images/CLP-figs/pfigs/levelLog"/>
+      <sidebyside width="45%">
+        <image xml:id="sageplot-levelLog-sol">
+          <description><p>Courbes de niveau de <m>xe^{-y}</m>.</p></description>
+          <sageplot>
+            var('x,y')
+            f(x,y) = x*e^(-y)
+            C = contour_plot(f(x,y), (x,-3,3),(y,-2,3),
+              contours = [-25,-2,-1,0,1,2], fill = False, cmap = "Spectral",
+              # -25 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
+              axes = True, frame = False,
+              labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
+              axes_labels = ["$x$","$y$"], axes_labels_size=1.8, tick_formatter = "latex", fontsize = 16)
+            C
+          </sageplot>
+        </image>
       </sidebyside>
       </solution>
     </exercise>
@@ -354,7 +437,7 @@
       </p></statement>
 
       <answer>
-        <sidebyside width="35%">
+        <sidebyside width="30%">
           <image source="images/CLP-figs/pfigs/OE10D_1"/>
       </sidebyside>
       </answer>
@@ -429,9 +512,9 @@
     <exercise><!-- <title><fromexam>M253 2011D</fromexam></title> -->
       <statement><p>
       Une surface est donnée implicitement par
-      <md>
+      <m>
       x^2 + y^2 - z^2 + 2z = 0
-      </md>
+      </m>
       <ol marker = "(a)">
       <li>
       Esquissez plusieurs courbes de niveau <m>z = </m>constante.
@@ -443,15 +526,21 @@
       </p></statement>
 
       <answer>
-      <sidebyside widths="10% 50%">
-      <p>(a)</p>
-      <image source="images/CLP-figs/pfigs/OE253_11D_1a"/>
-      </sidebyside>
-      <sidebyside widths="10% 40% 25%">
-      <p>(b)</p>
-      <image source="images/CLP-figs/pfigs/OE253_11D_1bl"/>
-      <image source="images/CLP-figs/pfigs/OE253_11D_1br"/>
-      </sidebyside>
+      <p>
+      <ol marker="(a)">
+        <li>
+          <sidebyside width="50%">
+            <image source="images/CLP-figs/pfigs/OE253_11D_1a"/>
+          </sidebyside>
+        </li>
+        <li>
+          <sidebyside widths="40% 25%" valign="middle">
+            <image source="images/CLP-figs/pfigs/OE253_11D_1bl"/>
+            <image source="images/CLP-figs/pfigs/OE253_11D_1br"/>
+          </sidebyside>
+        </li>
+      </ol>
+      </p>
       </answer>
 
       <solution><p> (a)
@@ -521,7 +610,7 @@
     <exercise>
       <statement><p>
       Décrivez les surfaces de niveau de
-      <ol marker = "(a)" cols = "3">
+      <ol marker = "(a)" cols = "2">
       <li> <m>f(x,y,z)=x^2+y^2+z^2</m>
       </li>
       <li> <m>f(x,y,z)=x+2y+3z</m>
@@ -591,19 +680,19 @@
 
       <answer>
       <sbsgroup>
-      <sidebyside widths="10% 40%"  valign="middle">
-      <p>(a)</p>
-      <image source="images/CLP-figs/pfigs/sinGraph"/>
-      </sidebyside>
-      <sidebyside widths="10% 50%"  valign="middle">
-      <p>(b)</p>
-      <image source="images/CLP-figs/pfigs/coneGraph"/>
-      </sidebyside>
-      <sidebyside widths="10% 28% 28%" valign="middle">
-      <p>(c)</p>
-      <image source="images/CLP-figs/pfigs/pmidGraph"/>
-      <image source="images/CLP-figs/pfigs/pmidGraphB"/>
-      </sidebyside>
+        <sidebyside widths="15% 30%" valign="middle">
+          <p>(a)</p>
+          <image source="images/CLP-figs/pfigs/sinGraph"/>
+        </sidebyside>
+        <sidebyside widths="15% 30%" valign="middle">
+          <p>(b)</p>
+          <image source="images/CLP-figs/pfigs/coneGraph"/>
+        </sidebyside>
+        <sidebyside widths="15% 22% 22%" valign="middle">
+          <p>(c)</p>
+          <image source="images/CLP-figs/pfigs/pmidGraph"/>
+          <image source="images/CLP-figs/pfigs/pmidGraphB"/>
+        </sidebyside>
       </sbsgroup>
       </answer>
 
@@ -650,7 +739,7 @@
     <exercise>
       <statement><p>
       Esquissez et décrivez les surfaces suivantes.
-      <ol marker = "(a)" cols = "3">
+      <ol marker = "(a)" cols = "2">
       <li>
       <m>4x^2+y^2=16</m>
       </li>

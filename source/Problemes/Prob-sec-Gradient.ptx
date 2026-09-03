@@ -57,7 +57,7 @@
     <!-- No 2 -->
     <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
       <statement><p>
-      Trouvez <m>\vnabla\big(y^2 + \sin(xy)\big)</m>.
+      Trouvez <m>\vnabla\left(y^2 + \sin(xy)\right)</m>.
       </p></statement>
 
       <answer><p>
@@ -86,7 +86,7 @@
     <exercise>
       <statement><p>
       Trouvez le taux de variation de la fonction donnée au point donné dans la direction donnée.
-      <ol marker = "(a)" cols = "2">
+      <ol marker = "(a)">
       <li>
       <m>f(x,y)=3x-4y</m> au point <m>(0,2)</m> dans la direction <m>-2\vi</m>.
       </li>
@@ -97,16 +97,16 @@
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a) <m>-3</m></p><p>
-      (b) <m>-\frac{61}{144\sqrt{3}}\approx-0.2446</m>
-      </p></answer>
+      <answer><p><ol marker = "(a)" cols = "2">
+      <li><m>-3</m></li>
+      <li><m>-\frac{61}{144\sqrt{3}}\approx-0.2446</m></li>
+      </ol></p></answer>
 
       <solution><p>
       (a)
       Le gradient de <m>f</m> est <m>\vnabla f(x,y)=\llt 3,-4\rgt</m>. Le taux de variation demandé est donc
       <md>
-      \llt 3,-4\rgt\cdot\frac{\llt -2,0\rgt}{|\llt -2,0\rgt|}=-3
+      \llt 3,-4\rgt\cdot\frac{\llt -2,0\rgt}{\norm{\llt -2,0\rgt}}=-3
       </md>
       </p>
 
@@ -203,13 +203,13 @@
       </li>
       <li>
       la norme de la dérivée directionnelle dans cette direction est <m>3\sqrt{6}</m>,
-      ce qui implique que <m>|\vnabla f(P)|=3\sqrt{6}</m>.
+      ce qui implique que <m>\norm{\vnabla f(P)}=3\sqrt{6}</m>.
       </li>
       </ul>
       Donc
       <md>
       <mrow>
-      \vnabla f(P) = 3\sqrt{6} \frac{2\vi - \vj + \vk}{|2\vi - \vj + \vk|}
+      \vnabla f(P) = 3\sqrt{6} \frac{2\vi - \vj + \vk}{\norm{2\vi - \vj + \vk}}
                    = 6\vi - 3\vj + 3\vk
       </mrow>
       </md>
@@ -217,8 +217,8 @@
 
       <p>(b) La dérivée directionnelle de <m>f</m> en <m>P</m> dans la direction <m>\vi+\vj</m> est
       <md>
-      \vnabla f(P) \cdot\frac{\vi+\vj}{|\vi+\vj|}
-      =\frac{1}{\sqrt{2}}\big(6\vi - 3\vj + 3\vk\big)\cdot\big(\vi+\vj\big)
+      \vnabla f(P) \cdot\frac{\vi+\vj}{\norm{\vi+\vj}}
+      =\frac{1}{\sqrt{2}}\left(6\vi - 3\vj + 3\vk\right)\cdot\left(\vi+\vj\right)
       =\frac{3}{\sqrt{2}}
       </md>
       </p></solution>
@@ -284,7 +284,7 @@
 
     <exercise> <!-- <title><fromexam>M200 2009A</fromexam></title> -->
       <statement><p>
-      Soit <m>\displaystyle f(x,y)=\frac{x^2y}{x^4+2y^2}</m>.
+      Soit <m> f(x,y)=\frac{x^2y}{x^4+2y^2}</m>.
       Trouvez le plan tangent à la surface <m>z = f(x,y)</m> au point
       <m>\left( -1\,,\,1\,,\,\frac{1}{3}\right)</m>.
       </p></statement>
@@ -326,9 +326,9 @@
     <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
       <statement><p>
       Trouvez le plan tangent à
-      <md>
+      <m>
       \frac{27}{\sqrt{x^2+y^2+z^2+3}}=9
-      </md>
+      </m>
       au point <m>(2, 1, 1)</m>.
       </p></statement>
 
@@ -344,7 +344,7 @@
       <md>
       <mrow>
       \vnabla G(2,1,1)
-        &amp;=-\frac{1}{2}\ \frac{27}{(x^2+y^2+z^2+3)^{3/2}}\big(2x\,,\,2y\,,\,2z\big)
+        &amp;=-\frac{1}{2}\ \frac{27}{(x^2+y^2+z^2+3)^{3/2}}\left(2x\,,\,2y\,,\,2z\right)
                                                 \bigg|_{(x,y,z)=(2,1,1)}
       </mrow><mrow>
         &amp;=-\llt 2\,,\,1\,,\,1\rgt
@@ -371,16 +371,14 @@
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a)  Le plan tangent est  <m>4x+2y+z=-3</m>
-            et la droite normale est  <m>\llt x,y,z\rgt=\llt -2,1,3\rgt+t\llt 4,2,1\rgt</m>.
-      </p>
-
-      <p>(b) Le plan tangent est  <m>2y-z=-1</m>
-            et la droite normale est <m>\llt x,y,z\rgt=\llt 2,0,1\rgt+t\llt 0,2,-1\rgt</m>.
-      </p>
-
-      </answer>
+      <answer><p><ol marker = "(a)">
+      <li>Le plan tangent est  <m>4x+2y+z=-3</m>
+            et la droite normale est  <m>\rvt{x}{y}{z}=\rvt{-2}{1}{3}+t\,\rvt{4}{2}{1}</m>.
+      </li>
+      <li>Le plan tangent est  <m>2y-z=-1</m>
+            et la droite normale est <m>\rvt{x}{y}{z}=\rvt{2}{0}{1}+t\,\rvt{0}{2}{-1}</m>.
+      </li>
+      </ol></p></answer>
 
       <solution><p>
       (a)
@@ -504,10 +502,10 @@
       </ol>
       </statement>
 
-      <answer><p>
-      (a) <m>2ax -2ay +z = -a^2</m></p><p>
-      (b) <m>a=\frac{1}{2}</m>.
-      </p></answer>
+      <answer><p><ol marker = "(a)" cols = "2">
+      <li><m>2ax -2ay +z = -a^2</m></li>
+      <li><m>a=\frac{1}{2}</m>.</li>
+      </ol></p></answer>
 
       <solution><p>
       (a)
@@ -729,7 +727,7 @@
       <p>(b) La vitesse de l'oiseau est le vecteur de longueur <m>6</m> dans la direction de
       <m>\vnabla f(0,1,-1)</m>, à savoir
       <md>
-      \vv= 6\frac{\llt 2,-1,2\rgt}{|\llt 2,-1,2\rgt|}
+      \vv= 6\frac{\llt 2,-1,2\rgt}{\norm{\llt 2,-1,2\rgt}}
       =\llt 4,-2,4\rgt
       </md>
       Le taux de variation de <m>g</m> (par unité de temps) perçu par l'oiseau est
@@ -831,7 +829,7 @@
       </p>
 
       <p>(c) Le taux de décroissance maximal en <m>P</m> est
-        <m>-|\vnabla T(1,2,-1)|=-10 e^{-9} |\llt -2,-2,3\rgt|
+        <m>-\norm{\vnabla T(1,2,-1)}=-10 e^{-9} \norm{\llt -2,-2,3\rgt}
                             = -10\sqrt{17} e^{-9}</m>.
       </p></solution>
     </exercise>
@@ -869,20 +867,20 @@
       <m>T(x,y,z)=3x^2+\half y^2+2z^2</m> degrées.
       <ol marker = "(a)">
       <li>
-      Un moineau vole le long de la courbe <m>\vr(s)=\big(\frac{1}{3}s^3,2s,s^2\big)</m>
+      Un moineau vole le long de la courbe <m>\vr(s)=\left(\frac{1}{3}s^3,2s,s^2\right)</m>
       à une vitesse constante de <m>3{\rm ms}^{-1}</m>. Quelle est la vélocité (i.e. le vecteur vitesse) du moineau lorsque <m>s=1</m>?
       </li>
       <li>
       À quel taux est-ce que le moineau ressend le changement de température
-      au point <m>A\big(\frac{1}{3},2,1\big)</m> pour lequel <m>s=1</m>.
+      au point <m>A\left(\frac{1}{3},2,1\right)</m> pour lequel <m>s=1</m>.
       </li>
       <li>
-      Au point <m>A\big(\frac{1}{3},2,1\big)</m> dans quelle direction
+      Au point <m>A\left(\frac{1}{3},2,1\right)</m> dans quelle direction
       est-ce que la température décroît à un taux maximal?
       </li>
       <li>
        Un aigle croise le chemin du moineau
-      en <m>A\big(\frac{1}{3},2,1\big)</m>. L'aigle se déplace dans une direction à angle droit par rapport au moineau, et se déplace également dans une direction pour laquelle la température
+      en <m>A\left(\frac{1}{3},2,1\right)</m>. L'aigle se déplace dans une direction à angle droit par rapport au moineau, et se déplace également dans une direction pour laquelle la température
       demeure constante. Dans quelle direction est-ce que l'aigle peut se déplacer lorsqu'il passe par le point <m>A</m>?
       </li>
       </ol>
@@ -904,19 +902,19 @@
       </md>
       Puisque la longueur du vecteur vitesse doit être <m>3</m>,
       <md>
-      \text{vélocité}=\vv=3\frac{\llt 1,2,2\rgt}{|\llt 1,2,2\rgt|}=\llt 1,2,2\rgt
+      \text{vélocité}=\vv=3\frac{\llt 1,2,2\rgt}{\norm{\llt 1,2,2\rgt}}=\llt 1,2,2\rgt
       </md>
       </p>
 
       <p>(b) Le taux de variation de la température par unité de distance ressenti par le
-      moineau en <m>s=1</m> est <m>\vnabla T\big(\frac{1}{3},2,1\big)\cdot\frac{\vv}{|\vv|}</m>.
+      moineau en <m>s=1</m> est <m>\vnabla T\left(\frac{1}{3},2,1\right)\cdot\frac{\vv}{\norm{\vv}}</m>.
        Le taux de variation de la température par unité de temps ressenti par le
       moineau en <m>s=1</m> est
       <md>
       <mrow>
-      \vnabla T\left(\frac{1}{3},2,1\right)\cdot\frac{\vv}{|\vv|}\ |\vv|
+      \vnabla T\left(\frac{1}{3},2,1\right)\cdot\frac{\vv}{\norm{\vv}}\ \norm{\vv}
       &amp;=\vnabla T\left(\frac{1}{3},2,1\right)\cdot\vv
-      =\vv\cdot\llt 6x,y,4z\rgt\Big|_{({1\over3},2,1\big)}
+      =\vv\cdot\llt 6x,y,4z\rgt\Big|_{\left({1\over3},2,1\right)}
       </mrow><mrow>
       &amp;=\llt 1,2,2\rgt\cdot\llt 2,2,4\rgt=14^\circ/{\rm s}
       </mrow>
@@ -984,22 +982,22 @@
         <ol marker = "(a)" cols = "4">
           <li>
             <p>
-              <m>\vi</m>    
+              <m>\vi</m>
             </p>
           </li>
           <li>
             <p>
-              <m>x=1</m>    
+              <m>x=1</m>
             </p>
           </li>
           <li>
             <p>
-              <m>1</m>    
+              <m>1</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{\pi}{4}</m>    
+              <m>\frac{\pi}{4}</m>
             </p>
           </li>
         </ol>
@@ -1041,7 +1039,7 @@
       <p>(c) Le vecteur du point <m>(0,1,0)</m> vers le point <m>(1,1,0)</m>, sur <m>T</m>,
       est <m>\llt 1,0,0\rgt</m>, qui est perpendiculaire à <m>T</m>. Ainsi, <m>(1,1,0)</m>
       est le point de <m>T</m> le plus proche de <m>(0,1,0)</m>, et la distance de <m>(0,1,0)</m> à <m>T</m>
-      est <m>|\llt 1,0,0\rgt|=1</m>.
+      est <m>\norm{\llt 1,0,0\rgt}=1</m>.
       </p>
 
       <p>(d) Le vecteur <m>\llt 1,0,1\rgt</m> est perpendiculaire au plan <m>x+z=0</m>.
@@ -1050,7 +1048,7 @@
       qui obéit à
       <md>
       <mrow>
-      &amp; |\llt 1,0,0\rgt| \ |\llt 1,0,1\rgt|\ \cos\theta
+      &amp; \norm{\llt 1,0,0\rgt} \ \norm{\llt 1,0,1\rgt}\ \cos\theta
          =|\llt 1,0,0\rgt\cdot\llt 1,0,1\rgt|
          =1
       </mrow><mrow>
@@ -1084,7 +1082,7 @@
       </p></statement>
 
       <answer>
-        <ol marker = "(a)">
+        <ol marker = "(a)" cols = "3">
           <li>
             <p>
               <m>2\sqrt{3}</m>    
@@ -1162,10 +1160,9 @@
     <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
       <statement><p>
       Soit <m>f(x,y)</m> une fonction différentiable avec <m>f(1,2)=7</m>. Soient
-      <md>
-      \vu=\frac{3}{5}\,\vi+\frac{4}{5}\,\vj,\qquad
-      \vv=\frac{3}{5}\,\vi-\frac{4}{5}\,\vj
-      </md>
+      <m>
+      \vu=\frac{3}{5}\,\vi+\frac{4}{5}\,\vj</m> et <m> \vv=\frac{3}{5}\,\vi-\frac{4}{5}\,\vj
+      </m>
       des vecteurs unitaires. Supposons qu'il est connu que les dérivées directionnelles
       <m>D_\vu f(1,2)</m> et <m>D_\vv f(1,2)</m> sont égales à <m>10</m> et <m>2</m> respectivement.
       <ol marker = "(a)">
@@ -1218,7 +1215,7 @@
       du vecteur <m>\vi+2\vj</m> est
       <md>
       <mrow>
-      \frac{\vi+2\vj}{|\vi+2\vj|}\cdot \vnabla f(1,2)
+      \frac{\vi+2\vj}{\norm{\vi+2\vj}}\cdot \vnabla f(1,2)
       =\frac{1}{\sqrt{5}}\llt 1,2\rgt\cdot\llt 10,5\rgt
       =4\sqrt{5}\approx 8.944
       </mrow>
@@ -1228,10 +1225,10 @@
       <p>(c) En appliquant l'approximation linéaire, à savoir
       <md>
       <mrow>
-      f\big(x_0+\De x\,,\,y_0+\De y\big)
-      &amp;\approx f\big(x_0\,,\,y_0\big)
-             + \pdiff{f}{x}\big(x_0\,,\,y_0\big)\,\De x
-             + \pdiff{f}{y}\big(x_0\,,\,y_0\big)\,\De y
+      f\left(x_0+\De x\,,\,y_0+\De y\right)
+      &amp;\approx f\left(x_0\,,\,y_0\right)
+             + \pdiff{f}{x}\left(x_0\,,\,y_0\right)\,\De x
+             + \pdiff{f}{y}\left(x_0\,,\,y_0\right)\,\De y
       </mrow>
       </md>
       avec <m>x_0=1</m>, <m>\De x=0.01</m>, <m>y_0=2</m>, et <m>\De y=0.05</m>, on obtient
@@ -1304,9 +1301,9 @@
       </p></hint>
 
       <answer><p>
-      <m>\big(\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>
+      <m>\left(\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\right)</m>
       et
-        <m>\big(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>
+        <m>\left(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\right)</m>
       </p></answer>
       <solution><p>
       L'équation de <m>S</m> est de la forme <m>G(x,y,z) = x^2 + 2y^2 + 2y-z = 1</m>.
@@ -1360,9 +1357,9 @@
       </mrow>
       </md>
       Les points <m>P</m> valides sont donc
-        <m>\big(\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>
+        <m>\left(\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\right)</m>
       et
-        <m>\big(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\big)</m>.
+        <m>\left(-\frac{1}{\sqrt{2}}\,,\,-1\,,\,-\frac{1}{2}\right)</m>.
       </p></solution>
     </exercise>
 
@@ -1379,7 +1376,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\pm \big(\half,-1,-1\big)</m>
+      <m>\pm \left(\half,-1,-1\right)</m>
       </p></answer>
 
       <solution><p>
@@ -1402,7 +1399,7 @@
            x_0=\frac{t}{4},\ y_0=z_0=-\frac{t}{2}
       </mrow><mrow>
       &amp; \iff t=\pm 2\qquad
-      (x_0,y_0,z_0)=\pm \big(\half,-1,-1\big)
+      (x_0,y_0,z_0)=\pm \left(\half,-1,-1\right)
       </mrow>
       </md>
       </p>
@@ -1425,7 +1422,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\pm\sqrt{3}\frac{\llt 3,14,-30\rgt}{|\llt 3,14,-30\rgt|}
+      <m>\pm\sqrt{3}\frac{\llt 3,14,-30\rgt}{\norm{\llt 3,14,-30\rgt}}
       =\pm\sqrt{\frac{3}{1105}}\llt 3,14,-30\rgt</m>
       </p></answer>
 
@@ -1473,7 +1470,7 @@
       </ul>
       Les vecteurs demandés sont
       <md>
-      \pm\sqrt{3}\frac{\llt 3,14,-30\rgt}{|\llt 3,14,-30\rgt|}
+      \pm\sqrt{3}\frac{\llt 3,14,-30\rgt}{\norm{\llt 3,14,-30\rgt}}
       =\pm\sqrt{\frac{3}{1105}}\llt 3,14,-30\rgt
       </md>
       </p></solution>
@@ -1536,9 +1533,9 @@
     <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
       <statement><p>
       Soit <m>S</m> la surface
-      <md>
+      <m>
       xy-2x+yz+x^2+y^2+z^3=7
-      </md>
+      </m>
       <ol marker = "(a)">
       <li>
       Trouvez le plan tangent et la droite normale à la surface <m>S</m>
@@ -1558,26 +1555,29 @@
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a) <m>y+z=3</m></p><p> <m>\vr(t)=\llt 0,2,1\rgt+t\llt 0,5,5\rgt</m>
-      </p>
-
-      <p>(b) <m>z_x(x,y)=\frac{2-2x-y}{y+3z(x,y)^2}</m></p><p>
-          <m>z_y(x,y)=-\frac{x+2y+z(x,y)}{y+3z(x,y)^2}</m></p><p>
-          <m>z_y(0,2)=-1</m>
-      </p>
-
-      <p>(c) <m>z_{xy}(x,y)=\frac{1}{y+3z(x,y)^2}
+      <answer><p><ol marker = "(a)">
+      <li>
+      <p><m>y+z=3</m></p>
+      <p><m>\vr(t)=\llt 0,2,1\rgt+t\llt 0,5,5\rgt</m></p>
+      </li>
+      <li>
+      <p><m>z_x(x,y)=\frac{2-2x-y}{y+3z(x,y)^2}</m></p>
+      <p><m>z_y(x,y)=-\frac{x+2y+z(x,y)}{y+3z(x,y)^2}</m></p>
+      <p><m>z_y(0,2)=-1</m></p>
+      </li>
+      <li>
+      <p><m>z_{xy}(x,y)=\frac{1}{y+3z(x,y)^2}
       -\frac{2-2x-y}{{[y+3z(x,y)^2]}^2}
-      \left(1-6z(x,y)\frac{x+2y+z(x,y)}{y+3z(x,y)^2}\right)</m>
-      </p></answer>
+      \left(1-6z(x,y)\frac{x+2y+z(x,y)}{y+3z(x,y)^2}\right)</m></p>
+      </li>
+      </ol></p></answer>
 
       <solution><p>
       (a)
        Un vecteur normal à la surface en <m>(0,2,1)</m> est
       <md>
       <mrow>
-      &amp;\vnabla\big(xy-2x+yz+x^2+y^2+z^3-7\big)\big|_{(0,2,1)}
+      &amp;\vnabla\left(xy-2x+yz+x^2+y^2+z^3-7\right)\big|_{(0,2,1)}
       </mrow><mrow>
       &amp;\hskip0.5in=\llt y-2+2x\,,\,x+z+2y\,,\,y+3z^2\rgt\big|_{(0,2,1)}
       </mrow><mrow>
@@ -1623,7 +1623,7 @@
       <mrow>
       &amp;z_{xy}(x,y)
       =-\frac{1}{y+3z(x,y)^2}
-      -\frac{2-2x-y}{{[y+3z(x,y)^2]}^2}\big(1+6z(x,y)z_y(x,y)\big)
+      -\frac{2-2x-y}{{[y+3z(x,y)^2]}^2}\left(1+6z(x,y)z_y(x,y)\right)
       </mrow><mrow>
       &amp;=-\frac{1}{y+3z(x,y)^2}
       -\frac{2-2x-y}{{[y+3z(x,y)^2]}^2}
@@ -1675,11 +1675,11 @@
       </ul>
       </p></hint>
 
-      <answer><p>
-      (a) <m>\llt 1,0,3\rgt</m></p><p>
-      (b) <m>\llt 3,3,-1\rgt</m></p><p>
-      (c) <m>\vr(t)=\llt 1,1,3\rgt+t\llt 3,3,-1\rgt</m>
-      </p></answer>
+      <answer><p><ol marker = "(a)" cols = "3">
+      <li><m>\llt 1,0,3\rgt</m></li>
+      <li><m>\llt 3,3,-1\rgt</m></li>
+      <li><m>\vr(t)=\llt 1,1,3\rgt+t\llt 3,3,-1\rgt</m></li>
+      </ol></p></answer>
 
       <solution><p>
       (a)
@@ -1745,7 +1745,7 @@
       <m>\vr(t)=\llt x(t)\,,\,y(t)\,,\,z(t)\rgt</m> coupe <m>z^3 + xyz -2 = 0</m> lorsque
       <md>
       <mrow>
-      z(t)^3+x(t)\,y(t)\,z(t)-2=0&amp;\iff \big(t^2\big)^3 + \big(t^3)(t)\big(t^2\big)-2=0
+      z(t)^3+x(t)\,y(t)\,z(t)-2=0&amp;\iff \left(t^2\right)^3 + \left(t^3\right)(t)\left(t^2\right)-2=0
       </mrow><mrow>
        &amp;\iff 2t^6=2
       </mrow><mrow>
@@ -1766,7 +1766,7 @@
       est déterminé par
       <md>
       <mrow>
-      \big|\llt 3,1,2\rgt\big|\,\big|\llt 1,1,4\rgt\big|\cos\theta
+      \norm{\llt 3,1,2\rgt}\,\norm{\llt 1,1,4\rgt}\cos\theta
                    =\llt 3,1,2\rgt \cdot\llt 1,1,4\rgt
       &amp;\iff \sqrt{14}\sqrt{18}\cos\theta=12
       </mrow><mrow>
@@ -1790,7 +1790,7 @@
 
       <hint><p>
       Soit <m>D(x,y)</m> la distance (ou le carrée de la distance) de <m>(1,1,0)</m>
-      au point <m>\big(x,y, x^2+y^2)</m> sur le paraboloïde. On souhaite minimiser
+      au point <m>\left(x,y, x^2+y^2\right)</m> sur le paraboloïde. On souhaite minimiser
       <m>D(x,y)</m>, i.e. on cherche le plus petit point sur le graphe
       <m>z=D(x,y)</m>. À ce point le plus bas, le plan tangent à <m>z=D(x,y)</m> est
       horizontal.
@@ -1830,21 +1830,21 @@
       Remarquons que la valeur de <m>8x^3+2x-2=2(4x^3+x-1)</m> en <m>x=\frac{1}{2}</m> est <m>0</m>.
       (Voir l'annexe A.16 du texte CLP-2 pour quelques
       trucs utiles pour deviner les racines de polynômes à
-      coefficients entiers.) Ainsi, <m>\big(x-\frac{1}{2}\big)</m> est un facteur de
+      coefficients entiers.) Ainsi, <m>\left(x-\frac{1}{2}\right)</m> est un facteur de
       <md>
       4x^3+x-1
-      ={\textstyle 4\big(x^3+\frac{x}{4}-\frac{1}{4}\big)
-                  =4\big(x-\frac{1}{2}\big)\big(x^2+\half x+\half\big)}
+      ={\textstyle 4\left(x^3+\frac{x}{4}-\frac{1}{4}\right)
+                  =4\left(x-\frac{1}{2}\right)\left(x^2+\half x+\half\right)}
       </md>
       et le couple <m>(x,y)</m> qui minimise obéit à <m>x=y</m> et
       <md>
       0=8x^3+2x-2
-      =8\big(x-\half\big)\big(x^2+\half x+\half\big)=0
+      =8\left(x-\half\right)\left(x^2+\half x+\half\right)=0
       </md>
       En vertu de la formule quadratique, <m>x^2+\half x+\half</m> n'a pas de racine réelle, de sorte que
-      la seule solution est <m>x=y=\half</m>, <m>z=\big(\half\big)^2+\big(\half\big)^2=\half</m>
-      et la distance est <m>\sqrt{\big(\half-1\big)^2+\big(\half-1\big)^2
-      +\big(\half\big)^2}=\frac{\sqrt{3}}{2}</m>.
+      la seule solution est <m>x=y=\half</m>, <m>z=\left(\half\right)^2+\left(\half\right)^2=\half</m>
+      et la distance est <m>\sqrt{\left(\half-1\right)^2+\left(\half-1\right)^2
+      +\left(\half\right)^2}=\frac{\sqrt{3}}{2}</m>.
       </p></solution>
     </exercise>
 
@@ -1859,7 +1859,7 @@
         <statement><p>
         Soit le point <m>\vr_0= (x_0,y_0,z_0)</m> sur la surface <m>G(x,y,z)=0</m>.
         Supposez que <m>\vnabla G(x_0,y_0,z_0)\ne\vZero</m>. Supposez que la courbe paramétrée
-        <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m> est contenue dans la surface
+        <m>\vr(t)=\left(x(t),y(t),z(t)\right)</m> est contenue dans la surface
         et que <m>\vr(t_0)=\vr_0</m>. Montrez que la droite tangente à la courbe en <m>\vr_0</m>
         est contenue dans le plan tangent à <m>G=0</m> en <m>\vr_0</m>.
         </p>
@@ -1867,13 +1867,13 @@
         </statement>
 
         <hint><p>
-        Appliquer la règle de la chaîne à <m>G\big(\vr(t)\big)=0</m>.
+        Appliquer la règle de la chaîne à <m>G\left(\vr(t)\right)=0</m>.
         </p></hint>
 
         <answer><p>
           <p>
           Dénotons par <m>S</m> la surface <m>G(x,y,z)=0</m> et par <m>C</m> la courbe paramétrée
-          <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m>. Pour commencer, nous trouvons le plan tangent à <m>S</m> en <m>\vr_0</m> et la droite tangente à <m>C</m> en <m>\vr_0</m>.
+          <m>\vr(t)=\left(x(t),y(t),z(t)\right)</m>. Pour commencer, nous trouvons le plan tangent à <m>S</m> en <m>\vr_0</m> et la droite tangente à <m>C</m> en <m>\vr_0</m>.
           <ul>
           <li>
           Le vecteur tangent à <m>C</m> en <m>\vr_0</m> est
@@ -1887,9 +1887,9 @@
           </li>
           <li>
           Le gradient
-          <m>\llt\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-          \pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-          \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> est un vecteur normal
+          <m>\llt\pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+          \pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+          \pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\rgt</m> est un vecteur normal
           à la surface <m>S</m> en <m>(x_0,y_0,z_0)</m>. Donc le plan tangent à la surface
           <m>S</m> en <m>(x_0,y_0,z_0)</m> est
           <md>
@@ -1898,50 +1898,50 @@
           \pdiff{G}{z}\rgt \cdot
           \llt x-x_0,y-y_0,z-z_0\rgt = 0
           </md>
-          avec les dérivées de <m>G</m> évaluées en <m>\big(x_0,y_0,z_0\big)</m>,
+          avec les dérivées de <m>G</m> évaluées en <m>\left(x_0,y_0,z_0\right)</m>,
           ou
           <md>
           <mrow>
-          \pdiff{G}{x}\big( x_0,y_0,z_0\big)(x-x_0)
-          &amp;+\pdiff{G}{y}\big( x_0,y_0,z_0\big)(y-y_0)
+          \pdiff{G}{x}\left( x_0,y_0,z_0\right)(x-x_0)
+          &amp;+\pdiff{G}{y}\left( x_0,y_0,z_0\right)(y-y_0)
           </mrow><mrow>
-          &amp;+\pdiff{G}{z}\big( x_0,y_0,z_0\big)(z-z_0) = 0
+          &amp;+\pdiff{G}{z}\left( x_0,y_0,z_0\right)(z-z_0) = 0
           \tag{$E_2$}
           </mrow>
           </md>
           </li>
           </ul>
           Ensuite, nous montrons que le vecteur tangent
-          <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m> à <m>C</m> en <m>\vr_0</m> et le vecteur normal <m>\llt\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-          \pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-          \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> à <m>S</m> en <m>\vr_0</m> sont
+          <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m> à <m>C</m> en <m>\vr_0</m> et le vecteur normal <m>\llt\pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+          \pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+          \pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\rgt</m> à <m>S</m> en <m>\vr_0</m> sont
           perpendiculaire l'un par rapport à l'autre. Pour ce faire, on observe que,
-          pour tout <m>t</m>, le point <m>\big(x(t),y(t),z(t)\big)</m>
+          pour tout <m>t</m>, le point <m>\left(x(t),y(t),z(t)\right)</m>
           se trouve sur la surface <m>G(x,y,z)=0</m> et donc obéit
           <md>
           <mrow>
-          G\big(x(t),y(t),z(t)\big) =0
+          G\left(x(t),y(t),z(t)\right) =0
           </mrow>
           </md>
           En dérivant cette équation par rapport à <m>t</m> on obtient,
           par la règle de la chaîne,
           <md>
           <mrow>
-          0&amp;= \diff{}{t}G\big(x(t),y(t),z(t)\big)
+          0&amp;= \diff{}{t}G\left(x(t),y(t),z(t)\right)
           </mrow><mrow>
-          &amp;=\pdiff{G}{x}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ x'(t)
-          +\pdiff{G}{y}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ y'(t)
+          &amp;=\pdiff{G}{x}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ x'(t)
+          +\pdiff{G}{y}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ y'(t)
           </mrow><mrow>
           &amp;\hskip0.5in
-          +\pdiff{G}{z}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ z'(t)
+          +\pdiff{G}{z}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ z'(t)
           </mrow>
           </md>
           En posant <m>t=t_0</m> on obtient
           <md>
           <mrow>
-          \pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\ x'(t_0)
-          &amp;+\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\ y'(t_0)
-          </mrow><mrow>&amp;+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\ z'(t_0) = 0
+          \pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\ x'(t_0)
+          &amp;+\pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\ y'(t_0)
+          </mrow><mrow>&amp;+\pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\ z'(t_0) = 0
           \tag{$E_3$}
           </mrow>
           </md>
@@ -1951,23 +1951,23 @@
           en <m>\vr_0</m> alors il existe un <m>t</m> tel que, par <m>(E_1)</m>,
           <md>
           <mrow>
-          &amp;\pdiff{G}{x}\big(x_0,y_0,z_0\big)\color{blue}{\{x\!-\!x_0\}}
-          +\pdiff{G}{y}\big(x_0,y_0,z_0\big)\color{blue}{\{y\!-\!y_0\}}
-          +\pdiff{G}{z}\big(x_0,y_0,z_0\big)\color{blue}{\{z\!-\!z_0\}}
+          &amp;\pdiff{G}{x}\left(x_0,y_0,z_0\right)\color{blue}{\{x\!-\!x_0\}}
+          +\pdiff{G}{y}\left(x_0,y_0,z_0\right)\color{blue}{\{y\!-\!y_0\}}
+          +\pdiff{G}{z}\left(x_0,y_0,z_0\right)\color{blue}{\{z\!-\!z_0\}}
           </mrow><mrow>
-          &amp;=\pdiff{G}{x}\big(x_0,y_0,z_0\big)
+          &amp;=\pdiff{G}{x}\left(x_0,y_0,z_0\right)
                          \color{blue}{\big\{t x'(t_0)\big\}}
-          +\pdiff{G}{y}\big(x_0,y_0,z_0\big)
+          +\pdiff{G}{y}\left(x_0,y_0,z_0\right)
                          \color{blue}{\big\{ty'(t_0)\big\}}
           </mrow><mrow>&amp;\hskip1in
-          +\pdiff{G}{z}\big(x_0,y_0,z_0\big)
+          +\pdiff{G}{z}\left(x_0,y_0,z_0\right)
                          \color{blue}{\big\{tz'(t_0)\big\}}
           </mrow><mrow>
-          &amp;=\color{blue}{t}\left[\pdiff{G}{x}\big(x_0,y_0,z_0\big)
+          &amp;=\color{blue}{t}\left[\pdiff{G}{x}\left(x_0,y_0,z_0\right)
                           \color{blue}{x'(t_0)}
-          +\pdiff{G}{y}\big(x_0,y_0,z_0\big)
+          +\pdiff{G}{y}\left(x_0,y_0,z_0\right)
                           \color{blue}{y'(t_0)}
-          +\pdiff{G}{z}\big(x_0,y_0,z_0\big)\
+          +\pdiff{G}{z}\left(x_0,y_0,z_0\right)\
                            \color{blue}{z'(t_0)} \right]
           </mrow><mrow>
            &amp;=0
@@ -1980,7 +1980,7 @@
 
         <solution><p>
         Dénotons par <m>S</m> la surface <m>G(x,y,z)=0</m> et par <m>C</m> la courbe paramétrée
-        <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m>. Pour commencer, nous trouvons le plan tangent à <m>S</m> en <m>\vr_0</m> et la droite tangente à <m>C</m> en <m>\vr_0</m>.
+        <m>\vr(t)=\left(x(t),y(t),z(t)\right)</m>. Pour commencer, nous trouvons le plan tangent à <m>S</m> en <m>\vr_0</m> et la droite tangente à <m>C</m> en <m>\vr_0</m>.
         <ul>
         <li>
         Le vecteur tangent à <m>C</m> en <m>\vr_0</m> est
@@ -1994,9 +1994,9 @@
         </li>
         <li>
         Le gradient
-        <m>\llt\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-        \pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-        \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> est un vecteur normal
+        <m>\llt\pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+        \pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+        \pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\rgt</m> est un vecteur normal
         à la surface <m>S</m> en <m>(x_0,y_0,z_0)</m>. Donc le plan tangent à la surface
         <m>S</m> en <m>(x_0,y_0,z_0)</m> est
         <md>
@@ -2005,50 +2005,50 @@
         \pdiff{G}{z}\rgt \cdot
         \llt x-x_0,y-y_0,z-z_0\rgt = 0
         </md>
-        avec les dérivées de <m>G</m> évaluées en <m>\big(x_0,y_0,z_0\big)</m>,
+        avec les dérivées de <m>G</m> évaluées en <m>\left(x_0,y_0,z_0\right)</m>,
         ou
         <md>
         <mrow>
-        \pdiff{G}{x}\big( x_0,y_0,z_0\big)(x-x_0)
-        &amp;+\pdiff{G}{y}\big( x_0,y_0,z_0\big)(y-y_0)
+        \pdiff{G}{x}\left( x_0,y_0,z_0\right)(x-x_0)
+        &amp;+\pdiff{G}{y}\left( x_0,y_0,z_0\right)(y-y_0)
         </mrow><mrow>
-        &amp;+\pdiff{G}{z}\big( x_0,y_0,z_0\big)(z-z_0) = 0
+        &amp;+\pdiff{G}{z}\left( x_0,y_0,z_0\right)(z-z_0) = 0
         \tag{$E_2$}
         </mrow>
         </md>
         </li>
         </ul>
         Ensuite, nous montrons que le vecteur tangent
-        <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m> à <m>C</m> en <m>\vr_0</m> et le vecteur normal <m>\llt\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-        \pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
-        \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\rgt</m> à <m>S</m> en <m>\vr_0</m> sont
+        <m>\llt x'(t_0)\,,\,y'(t_0)\,,\,z'(t_0) \rgt</m> à <m>C</m> en <m>\vr_0</m> et le vecteur normal <m>\llt\pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+        \pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\,,\,
+        \pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\rgt</m> à <m>S</m> en <m>\vr_0</m> sont
         perpendiculaire l'un par rapport à l'autre. Pour ce faire, on observe que,
-        pour tout <m>t</m>, le point <m>\big(x(t),y(t),z(t)\big)</m>
+        pour tout <m>t</m>, le point <m>\left(x(t),y(t),z(t)\right)</m>
         se trouve sur la surface <m>G(x,y,z)=0</m> et donc obéit
         <md>
         <mrow>
-        G\big(x(t),y(t),z(t)\big) =0
+        G\left(x(t),y(t),z(t)\right) =0
         </mrow>
         </md>
         En dérivant cette équation par rapport à <m>t</m> on obtient,
         par la règle de la chaîne,
         <md>
         <mrow>
-        0&amp;= \diff{}{t}G\big(x(t),y(t),z(t)\big)
+        0&amp;= \diff{}{t}G\left(x(t),y(t),z(t)\right)
         </mrow><mrow>
-        &amp;=\pdiff{G}{x}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ x'(t)
-        +\pdiff{G}{y}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ y'(t)
+        &amp;=\pdiff{G}{x}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ x'(t)
+        +\pdiff{G}{y}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ y'(t)
         </mrow><mrow>
         &amp;\hskip0.5in
-        +\pdiff{G}{z}\big( x(t)\,,\,y(t)\,,\,z(t)\big)\ z'(t)
+        +\pdiff{G}{z}\left( x(t)\,,\,y(t)\,,\,z(t)\right)\ z'(t)
         </mrow>
         </md>
         En posant <m>t=t_0</m> on obtient
         <md>
         <mrow>
-        \pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\ x'(t_0)
-        &amp;+\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\ y'(t_0)
-        </mrow><mrow>&amp;+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\ z'(t_0) = 0
+        \pdiff{G}{x}\left( x_0\,,\,y_0\,,\,z_0\right)\ x'(t_0)
+        &amp;+\pdiff{G}{y}\left( x_0\,,\,y_0\,,\,z_0\right)\ y'(t_0)
+        </mrow><mrow>&amp;+\pdiff{G}{z}\left( x_0\,,\,y_0\,,\,z_0\right)\ z'(t_0) = 0
         \tag{$E_3$}
         </mrow>
         </md>
@@ -2058,23 +2058,23 @@
         en <m>\vr_0</m> alors il existe un <m>t</m> tel que, par <m>(E_1)</m>,
         <md>
         <mrow>
-        &amp;\pdiff{G}{x}\big(x_0,y_0,z_0\big)\color{blue}{\{x\!-\!x_0\}}
-        +\pdiff{G}{y}\big(x_0,y_0,z_0\big)\color{blue}{\{y\!-\!y_0\}}
-        +\pdiff{G}{z}\big(x_0,y_0,z_0\big)\color{blue}{\{z\!-\!z_0\}}
+        &amp;\pdiff{G}{x}\left(x_0,y_0,z_0\right)\color{blue}{\{x\!-\!x_0\}}
+        +\pdiff{G}{y}\left(x_0,y_0,z_0\right)\color{blue}{\{y\!-\!y_0\}}
+        +\pdiff{G}{z}\left(x_0,y_0,z_0\right)\color{blue}{\{z\!-\!z_0\}}
         </mrow><mrow>
-        &amp;=\pdiff{G}{x}\big(x_0,y_0,z_0\big)
+        &amp;=\pdiff{G}{x}\left(x_0,y_0,z_0\right)
                        \color{blue}{\big\{t x'(t_0)\big\}}
-        +\pdiff{G}{y}\big(x_0,y_0,z_0\big)
+        +\pdiff{G}{y}\left(x_0,y_0,z_0\right)
                        \color{blue}{\big\{ty'(t_0)\big\}}
         </mrow><mrow>&amp;\hskip1in
-        +\pdiff{G}{z}\big(x_0,y_0,z_0\big)
+        +\pdiff{G}{z}\left(x_0,y_0,z_0\right)
                        \color{blue}{\big\{tz'(t_0)\big\}}
         </mrow><mrow>
-        &amp;=\color{blue}{t}\left[\pdiff{G}{x}\big(x_0,y_0,z_0\big)
+        &amp;=\color{blue}{t}\left[\pdiff{G}{x}\left(x_0,y_0,z_0\right)
                         \color{blue}{x'(t_0)}
-        +\pdiff{G}{y}\big(x_0,y_0,z_0\big)
+        +\pdiff{G}{y}\left(x_0,y_0,z_0\right)
                         \color{blue}{y'(t_0)}
-        +\pdiff{G}{z}\big(x_0,y_0,z_0\big)\
+        +\pdiff{G}{z}\left(x_0,y_0,z_0\right)\
                          \color{blue}{z'(t_0)} \right]
         </mrow><mrow>
          &amp;=0
@@ -2105,7 +2105,7 @@
         </p></hint>
 
         <answer><p>
-        Le plan normal est <m>\vn\cdot\llt x-x_0\,,\,y-y_0\,,\,z-z_0\rgt =0</m>,
+        Le plan normal est <m>\vn\cdot\rvt{x-x_0}{y-y_0}{z-z_0} =0</m>,
         où le vecteur normal est
         <m>\vn = \vnabla F(x_0,y_0,z_0)\times \vnabla G(x_0,y_0,z_0)</m>.
         </p></answer>

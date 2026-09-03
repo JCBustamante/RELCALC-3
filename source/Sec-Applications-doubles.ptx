@@ -63,12 +63,13 @@ En ayant des sommes de Riemann, l'étape suivante est claire : il faut évaluer 
 <example xml:id="eg_dblInt_G">
   <title>Valeur moyenne</title>
   <statement>
-    <p>
-      Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par <m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne. 
-    </p>
-        <sidebyside width="50%">
-          <image source="images/CLP-figs/halfDomeA"/>
-        </sidebyside>
+    <sidebyside widths="55% 5% 40%" valign="middle">
+      <p>
+      Soit  <m>a \gt 0</m>. Une montagne a une hauteur donnée par <m>z(x,y)=\sqrt{a^2-x^2-y^2}</m> au-dessus de chaque point  <m>(x,y)</m> de la région <m>\cR=\Set{(x,y)}{x^2+y^2\leqslant  a^2, x\leqslant  0}</m>. Trouver la hauteur moyenne.
+      </p>
+      <p></p>
+      <image source="images/CLP-figs/halfDomeA"/>
+    </sidebyside>
       </statement>
       <solution>
         <p>
@@ -172,15 +173,15 @@ the inner integral
 &amp;\hskip1in=C^2\int_{-\pi/2}^0\frac{1+\cos(2\theta)}{2}\ \dee{\theta}
 =C^2\left[\frac{\theta+\frac{\sin(2\theta)}{2}}{2}\right]_{-\pi/2}^0
 </mrow><mrow>
-&amp;\hskip1in=\frac{\pi C^2}{4} =\frac{\pi}{4}\big(a^2-y^2\big)
+&amp;\hskip1in=\frac{\pi C^2}{4} =\frac{\pi}{4}\left(a^2-y^2\right)
 </mrow>
 </md>
 and the full integral
 <md>
 <mrow>
 \iint_\cR \sqrt{a^2-x^2-y^2}\,\dee{x}\,\dee{y}
-&amp;=\frac{\pi}{4} \int_{-a}^a \big(a^2-y^2\big)\  \dee{y}
-=\frac{\pi}{2} \int_0^a \big(a^2-y^2\big)\  \dee{y}
+&amp;=\frac{\pi}{4} \int_{-a}^a \left(a^2-y^2\right)\  \dee{y}
+=\frac{\pi}{2} \int_0^a \left(a^2-y^2\right)\  \dee{y}
 </mrow><mrow>
 &amp;=\frac{\pi}{2}\left[a^3-\frac{a^3}{3}\right]
 </mrow><mrow>
@@ -238,7 +239,9 @@ Thus
 </p>
     <definition xml:id="def_WTaverage">
       <statement>
-        <p><md><mrow>
+        <p>
+Soit <m>f(x,y)</m> une fonction continue définie sur une région <m>\cR</m> du plan, et soit <m>w(x,y) \gt 0</m> une fonction poids sur <m>\cR</m>. Alors
+<md><mrow>
 \frac{\displaystyle \iint_\cR f(x,y)\,w(x,y)\,\dee{A}}
                        {\displaystyle \iint_\cR w(x,y)\,\dee{A}}
 </mrow></md>
@@ -259,11 +262,13 @@ Notons que si  <m>f(x,y)=F</m> est une constante, alors la moyenne pondérée de
 </mrow></md>.
 Ceci revient à dire que le centre de gravité est la moyenne des abscisses affectées du poids donné par la densité.
 </p>
-    <p>En deux dimensions, le centre de gravité d'une plaque mince (d'épaisseur négligeable mais constante) qui occupe la région <m>\cR</m> du plan <m>Oxy</m> et dont la fonction de densité est  <m>\rho(x,y)</m> est le point  <m>(\bar x, \bar y)</m> où :
+    <p>Passons maintenant au cas d'une plaque mince (d'épaisseur négligeable mais constante) occupant une région du plan.
 </p>
     <fact xml:id="eq_cofm">
       <title>Centre de gravité</title>
       <statement>
+        <p>Soit <m>\cR</m> une région du plan <m>Oxy</m> et soit <m>\rho(x,y)</m> une fonction de densité intégrable sur <m>\cR</m>, représentant la densité surfacique d'une plaque mince occupant <m>\cR</m>. Le centre de gravité de la plaque est le point <m>(\bar x, \bar y)</m> où
+</p>
         <p><md><mrow>
 \bar x &amp; = \text{moyenne pondérée de $x$ sur $\cR$}
 </mrow><mrow>
@@ -288,22 +293,25 @@ Ceci revient à dire que le centre de gravité est la moyenne des abscisses affe
     <fact xml:id="eq_centroid">
       <title>Centre de gravité (centroïde)</title>
       <statement>
-        <p>
-          <md>
-            <mrow>
+        <p>Soit <m>\cR</m> une région du plan. Le centroïde de <m>\cR</m> est le point <m>(\bar x, \bar y)</m> où
+</p>
+        <sidebyside widths="45% 10% 45%" valign="middle">
+          <p><md><mrow>
 \bar x &amp;=\frac{\displaystyle\iint_\cR x\,\dee{A}}
                       {\displaystyle\iint_\cR \dee{A}}
         =\frac{\displaystyle\iint_\cR x\,\dee{A}}
                             {\text{Aire}(\cR)}
-</mrow>
-            <mrow>
+</mrow></md></p>
+          <p>
+
+</p>
+          <p><md><mrow>
 \bar y &amp;=\frac{\displaystyle\iint_\cR y\,\dee{A}}
                      {\displaystyle\iint_\cR \ \dee{A}}
         =\frac{\displaystyle\iint_\cR y\,\dee{A}}
                         {\text{Aire}(\cR)}
-</mrow>
-          </md>
-        </p>
+</mrow></md></p>
+        </sidebyside>
       </statement>
     </fact>
     <example xml:id="eg_dblInt_I">
@@ -314,19 +322,22 @@ Ceci revient à dire que le centre de gravité est la moyenne des abscisses affe
 </mrow></md>
 dans le plan  <m>Oxy</m>.
 </p>
-      <p> Afin d'utiliser la <xref ref="eq_centroid" text="global">formule</xref>,   découpons la région <m>\cR</m> verticalement, comme illustré dans la figure ci-dessous.
+      <sidebyside widths="45% 10% 45%">
+        <p> Afin d'utiliser la <xref ref="eq_centroid" text="global">formule</xref>,   découpons la région <m>\cR</m> verticalement, comme illustré dans la figure ci-contre.
+          Nous avons que l'aire de  <m>\cR</m> est
+<md><mrow>
+A\amp = \iint_\cR\dee{A}
+  =\int_a^b\int_{B(x)}^{T(x)}\dee{y}\, \dee{x} </mrow>
+ <mrow> \amp = \int_a^b \big[T(x)-B(x)\big]\, \dee{x}
+</mrow></md>
 </p>
-      <sidebyside width="50%">
+<p>
+  
+</p>
         <image source="images/CLP-figs/centroidXY"/>
       </sidebyside>
       <p>
-Nous avons que l'aire de  <m>\cR</m> est
-<md><mrow>
-A= \iint_\cR\dee{A}
- =\int_a^b\int_{B(x)}^{T(x)}\dee{y}\, \dee{x}
- =\int_a^b \big[T(x)-B(x)\big]\, \dee{x}
-</mrow></md>,
-et alors, avec la <xref ref="eq_centroid" text="global">formule</xref>, nous obtenons
+Avec la <xref ref="eq_centroid" text="global">formule</xref>, nous obtenons
 <md><mrow>
 \bar x&amp;= \frac{1}{A} \iint_\cR x\,\dee{A}
       = \frac{1}{A} \int_a^b\int_{B(x)}^{T(x)}x\ \dee{y}\, \dee{x}
@@ -360,18 +371,23 @@ Calculer le centroïde du quart de disque
 </p>
       <solution>
         <p>
-Nous pourrions appliquer les formules obtenues dans l'exemple précédent, mais utilisons plutôt la <xref ref="eq_centroid" text="global">formule</xref>.
-</p>
+          Nous pourrions appliquer les formules obtenues dans l'exemple précédent, mais utilisons plutôt la <xref ref="eq_centroid" text="global">formule</xref>.
+        </p>
+        
         <p>L'aire du disque <m>\cD</m> est <m>\frac{1}{4}\pi a^2</m>, de sorte que nous avons
-<md><mrow>
-\bar x =\frac{\iint_{\cD} x\,\dee{A}}
-                      {\frac{1}{4}\pi a^2},
-\qquad
-\bar y &amp;=\frac{\iint_{\cD} y\,\dee{A}}
-                     {\frac{1}{4}\pi a^2}
-</mrow></md>.
-Évaluons <m>\iint_{\cD} x\,\dee{A}</m> avec des tranches horizontales, comme illustré dans la figure ci-dessous.</p>
-        <sidebyside widths="40%" valign="middle">
+            <md><mrow>
+            \bar x =\frac{\iint_{\cD} x\,\dee{A}}
+                                  {\frac{1}{4}\pi a^2},
+            \qquad
+            \bar y &amp;=\frac{\iint_{\cD} y\,\dee{A}}
+                                {\frac{1}{4}\pi a^2}
+            </mrow></md>.
+        </p>
+          <sidebyside widths="60% 10% 30%" valign="top">
+          <p>Évaluons <m>\iint_{\cD} x\,\dee{A}</m> avec des tranches horizontales, comme illustré dans la figure ci-contre.</p>
+          <p>
+
+          </p>
           <image source="images/CLP-figs/centroidQuarterCirclehJC"/>
         </sidebyside>
         <p>Nous avons alors que
@@ -419,17 +435,20 @@ Par symétrie, nous aurons que <m>\bar y = \bar x</m>.
     <example xml:id="eg_cofm_polar">
       <title><xref ref="eg_area_polar" text="global">exemple</xref> revisité</title>
       <statement>
-        <p>
-          Trouver le centre de gravité de la région située à l'intérieur du cercle <m>r=4\cos\theta</m> et à gauche de la droite <m>x=1</m>.
-        </p>
+        <sidebyside widths="50% 15% 35%" valign="top">
+          <p>
+          Trouver le centre de gravité de la région <m>\cR</m> située à l'intérieur du cercle <m>r=4\cos\theta</m> et à gauche de la droite <m>x=1</m>, illustrée ci-contre.
+          </p>
+          <p>
+
+</p>
+          <image source="images/CLP-figs/comPolarA"/>
+        </sidebyside>
       </statement>
       <solution>
         <p>
-          Nous avons vu, à l'<xref ref="eg_area_polar" text="global">exemple</xref>, que <m>r=4\cos\theta</m> est le cercle de rayon <m>2</m> centré en <m>(2,0)</m>, dont l'équation cartésienne est  <m>(x-2)^2+y^2=4</m>. Voici une esquisse de la région  <m>\cR</m> qui nous intéresse.
+          Nous avons vu, à l'<xref ref="eg_area_polar" text="global">exemple</xref>, que <m>r=4\cos\theta</m> est le cercle de rayon <m>2</m> centré en <m>(2,0)</m>, dont l'équation cartésienne est  <m>(x-2)^2+y^2=4</m>.
         </p>
-        <sidebyside width="40%">
-          <image source="images/CLP-figs/comPolarA"/>
-        </sidebyside>
         <p>
 On remarque que  <m>\cR</m> est symétrique par rapport à l'axe des <m>x</m>, de sorte qu'on s'attend à ce que son centre de gravité se trouve sur cet axe, c'est-à-dire que <m>\bar y=0</m>. Afin de confirmer ce résultat avec notre définition, remarquons que  <m>\iint_\cR y\ \dee{A}</m> a un domaine d'intégration <m>\cR</m> invariant par la transformation <m>y\mapsto -y</m> (c.-à-d. la réflexion par rapport à l'axe des <m>x</m>) et que son intégrande <m>y</m> est une fonction impaire.
 Ainsi, <m>\iint_\cR y\ \dee{A}=0</m> et, par conséquent, <m>\bar y=0</m>.
@@ -460,7 +479,7 @@ Nous devons donc seulement calculer  <m>\iint_\cR x\,\dee{A}</m>. Soit <m>\cR_1<
 
 La première intégrale se calcule aisément si l'on se souvient que  <m>\tan\theta</m> est une primitive de <m>\sec^2\theta</m>. Pour la seconde intégrale, nous utilisons la formule des angles doubles <m>\cos^2\theta=\frac{1+\cos(2\theta)}{2}</m>:
 <md><mrow>
-\cos^4\theta =\big(\cos^2\theta\big)^2
+\cos^4\theta =\left(\cos^2\theta\right)^2
   &amp;=\left[\frac{1+\cos(2\theta)}{2}\right]^2
    =\frac{1}{4}\left[1+2\cos(2\theta)+\cos^2(2\theta)\right]
 </mrow><mrow>
@@ -509,7 +528,7 @@ Remarquons que <m>\bar x \approx 0.59</m>, en accord avec le fait que <m>0\leqsl
       <title>Calcul d'une intégrale à l'aide du centre de gravité</title>
       <statement>
         <p>
-Évaluer <m>\displaystyle\int_0^2\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}} \big(2x+3y\big)\dee{y}\,\dee{x}</m>.
+Évaluer <m>\displaystyle\int_0^2\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}} \left(2x+3y\right)\dee{y}\,\dee{x}</m>.
 </p>
       </statement>
       <solution>
@@ -526,7 +545,7 @@ et <m>\iint_\cR y\, \dee{A}</m>, en supposant que la région  <m>\cR</m> est ass
         <p>C'est le cas dans cet exemple. On peut écrire
 <md><mrow>
 \int_0^2\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}
-                                 \big(2x+3y\big)\dee{y}\,\dee{x}
+                                 \left(2x+3y\right)\dee{y}\,\dee{x}
 &amp;=2\int_0^2\left[\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}x \dee{y} \dee{x}\right]
  </mrow><mrow>
 &amp;\hskip0.5in+3\int_0^2\left[\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}y\ \dee{y}\,\dee{x}\right]
@@ -536,19 +555,23 @@ Remarquons que <m>y=\pm \sqrt{2x-x^2}</m> équivaut à
 y^2 = 2x-x^2 = 1-(x-1)^2 \iff
 (x-1)^2 + y^2 =1
 </mrow></md>.
-Notre domaine d'intégration est donc le disque
+</p>
+        <sidebyside widths="50% 5% 45%" valign="top">
+          <p>Notre domaine d'intégration est donc le disque
 <m>
 \cR = \Set{(x,y)}{(x-1)^2 + y^2 \leqslant 1}
-</m> de rayon <m>1</m> et centré en <m>(1,0)</m>.
+</m> de rayon <m>1</m> et centré en <m>(1,0)</m>, illustré ci-contre.
 </p>
-        <sidebyside width="66%">
+          <p>
+
+</p>
           <image source="images/CLP-figs/cofm"/>
         </sidebyside>
         <p>
 Ainsi, l'aire de  <m>\cR</m> vaut <m>\pi</m>, et son centre de gravité est <m>(\bar x,\bar y)=(1,0)</m>. Nous pouvons donc évaluer l'intégrale de départ.
 <md><mrow>
 \int_0^2\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}
-                                 \big(2x+3y\big)\dee{A}\,\dee{x}
+                                 \left(2x+3y\right)\dee{y}\,\dee{x}
 &amp;=2\iint_\cR x\,\dee{A}
  +3\iint_\cR y\ \dee{A}
 </mrow><mrow>
@@ -574,12 +597,12 @@ Ainsi, l'aire de  <m>\cR</m> vaut <m>\pi</m>, et son centre de gravité est <m>(
     <p>
   Pour obtenir l'énergie cinétique de la plaque au complet, nous la découpons en petits morceaux rectangulaires (ceux près du bord de la plaque ne sont pas nécessairement rectangulaires). Cependant, comme nous l'avons vu au paragraphe  <xref ref="pars-integral_error" text="custom"> justifiant la formule pour </xref><m>\dee{A}</m>, à la fin de la <xref ref="sec_polars" text="global">section</xref>, il est possible de faire les choses en toute rigueur. Pensons donc que chaque petit rectangle est essentiellement une particule ponctuelle. Si le point  <m>(x,y)</m> sur la plaque se trouve à une distance  <m>D(x,y)</m> de l'axe de rotation <m>\cA</m>, alors, à mesure que la plaque tourne, le point  <m>(x,y)</m> parcourt un cercle de rayon  <m>D(x,y)</m>. La figure de droite ci-bas montre ce cercle, vu perpendiculairement à l'axe de rotation.
 </p>
-    <sidebyside widths="40% 28%" valign="middle">
+    <sidebyside widths="30% 22%" valign="middle">
       <image source="images/CLP-figs/momInertia"/>
       <image source="images/CLP-figs/momInertiaB"/>
     </sidebyside>
     <p>
-Soit <m>D(x,y)</m> la distance entre la position <m>(x,y)</m> d'une particule sur la plaque et l'axe de rotation <m>\cA</m>, ainsi la trajectoire du point <m>(x,y)</m> est un cercle de rayon <m>D(x,y)</m> (voir la figure de droite ci-dessus). L'arc circulaire que le point  <m>(x,y)</m> décrit pendant une seconde autour de l'axe de rotation sous-tend l'angle <m>\om</m> radians, qui est la fraction  <m>\frac{\om}{2\pi}</m> d'un cercle complet, et donc a une longueur <m>\frac{\om}{2\pi}\big(2\pi D(x,y)\big)=\om\,D(x,y)</m>. En conséquence, le rectangle qui contient le point <m>(x,y)</m> :
+Soit <m>D(x,y)</m> la distance entre la position <m>(x,y)</m> d'une particule sur la plaque et l'axe de rotation <m>\cA</m>, ainsi la trajectoire du point <m>(x,y)</m> est un cercle de rayon <m>D(x,y)</m> (voir la figure de droite ci-dessus). L'arc circulaire que le point  <m>(x,y)</m> décrit pendant une seconde autour de l'axe de rotation sous-tend l'angle <m>\om</m> radians, qui est la fraction  <m>\frac{\om}{2\pi}</m> d'un cercle complet, et donc a une longueur <m>\frac{\om}{2\pi}\left(2\pi D(x,y)\right)=\om\,D(x,y)</m>. En conséquence, le rectangle qui contient le point <m>(x,y)</m> :
 <ul><li>
 se déplace à une vitesse  <m>\om\,D(x,y)</m>,
 </li><li>
@@ -589,7 +612,7 @@ a une masse  <m>\rho(x,y)\,\dee{x}\dee{y}</m>, et
 </li><li>
 son énergie cinétique est
 <md><mrow>
-\frac{1}{2}\overbrace{\big(\rho(x,y)\,\dee{x}\,\dee{y}\big)}^{m}
+\frac{1}{2}\overbrace{\left(\rho(x,y)\,\dee{x}\,\dee{y}\right)}^{m}
                 \overbrace{(\om\,D(x,y))^2}^{v^2}
  =\frac{1}{2}\om^2\ D(x,y)\,^2\rho(x,y)\ \dee{x}\,\dee{y}
 </mrow></md>.
@@ -605,10 +628,11 @@ où <m>I_\cA</m> définit le <em>moment d'inertie.</em>
     <definition xml:id="def_moment_of_inertia">
       <title>Moment d'inertie</title>
       <statement>
-        <p><md><mrow>
+        <p>Soit <m>\cR</m> une région du plan <m>Oxy</m>, <m>\rho(x,y)</m> une fonction de densité intégrable sur <m>\cR</m>, et <m>\cA</m> un axe de rotation. Si <m>D(x,y)</m> désigne la distance du point <m>(x,y)</m> à l'axe <m>\cA</m>, alors le <em>moment d'inertie</em> de <m>\cR</m> par rapport à l'axe <m>\cA</m> est
+<md><mrow>
 I_\cA=\iint_\cR D(x,y)^2\rho(x,y)\ \dee{A}
-</mrow></md>
-est le  <em>moment d'inertie</em> de <m>\cR</m> par rapport à l'axe <m>\cA</m>. En particulier, le moment d'inertie par rapport à l'axe des <m>y</m> est
+</mrow></md>.
+En particulier, le moment d'inertie par rapport à l'axe des <m>y</m> est
 <md><mrow>
 I_y=\iint_\cR x^2\,\rho(x,y)\ \dee{A}
 </mrow></md>,
@@ -629,33 +653,36 @@ Remarquons que l'expression  <m>\frac{1}{2} I_\cA\,\om^2</m> de l'énergie ciné
       <title>Disque</title>
       <statement>
         <p>
-Trouver le moment d'inertie par rapport à l'axe des abscisses du disque  <m>\cR</m> borné par le cercle  <m>x^2+y^2=a^2</m>. Supposer que la densité est constante et égale à <m>1</m>.
-</p>
+          Trouver le moment d'inertie par rapport à l'axe des abscisses du disque  <m>\cR</m> borné par le cercle  <m>x^2+y^2=a^2</m>. Supposer que la densité est constante et égale à <m>1</m>.
+        </p>
       </statement>
       <solution>
-        <sidebyside widths="55% 35%">
+        <sidebyside widths="50% 25% 25%">
           <p>
-La distance entre n'importe quel point  <m>(x,y)</m> sur le disque et l'axe de rotation est <m>|y|</m>. Ainsi, le moment d'inertie  recherché est
-<md><mrow>
-I_x = \iint_\cR y^2\, \dee{A}
-</mrow></md>.
-</p>
-          <image source="images/CLP-figs/diskI"/>
-        </sidebyside>
-        <p>
-  En passant aux coordonnées polaires,
-<md><mrow>
-I_x &amp;= \int_0^{2\pi}\int_0^{a}
-       \overbrace{(r\sin\theta)^2}^{y^2}\ r \,\dee{r}\,\dee{\theta}
-= \left[\int_0^{2\pi} \sin^2\theta \dee{\theta}\right] \left[\int_0^a\, r^3\ \dee{r}\right]
-</mrow><mrow>
-&amp;=\frac{a^4}{4}\int_0^{2\pi} \sin^2\theta\ \dee{\theta}\
-=\frac{a^4}{4} \int_0^{2\pi} \frac{1-\cos(2\theta)}{2} \ \dee{\theta}\
-</mrow><mrow>
-&amp;=\frac{a^4}{8} \left[\theta-\frac{\sin(2\theta)}{2}\right]_0^{2\pi}
-</mrow><mrow>
-&amp;=\frac{1}{4}\pi a^4
-</mrow></md>.
+            La distance entre n'importe quel point  <m>(x,y)</m> sur le disque et l'axe de rotation est <m>|y|</m>. Ainsi, le moment d'inertie  recherché est
+            <md><mrow>
+            I_x = \iint_\cR y^2\, \dee{A}
+            </mrow></md>.
+            </p>
+            <p>
+              
+            </p>
+            <image source="images/CLP-figs/diskI"/>
+          </sidebyside>
+                    <p>
+              En passant aux coordonnées polaires,
+            <md><mrow>
+            I_x &amp;= \int_0^{2\pi}\int_0^{a}
+                  \overbrace{(r\sin\theta)^2}^{y^2}\ r \,\dee{r}\,\dee{\theta}
+            = \left[\int_0^{2\pi} \sin^2\theta \dee{\theta}\right] \left[\int_0^a\, r^3\ \dee{r}\right]
+            </mrow><mrow>
+            &amp;=\frac{a^4}{4}\int_0^{2\pi} \sin^2\theta\ \dee{\theta}\
+            =\frac{a^4}{4} \int_0^{2\pi} \frac{1-\cos(2\theta)}{2} \ \dee{\theta}\
+            </mrow><mrow>
+            &amp;=\frac{a^4}{8} \left[\theta-\frac{\sin(2\theta)}{2}\right]_0^{2\pi}
+            </mrow><mrow>
+            &amp;=\frac{1}{4}\pi a^4
+            </mrow></md>.
 
 <!-- For an efficient, sneaky, way to evaluate
 <m> \int_0^{2\pi} \sin^2\theta\ \dee{\theta}</m>, see
@@ -668,17 +695,17 @@ Remark <xref ref="rem_sneaky" text="global">remarque</xref>.
     <example xml:id="eg_moment_cardiod">
       <title>Cardioïde</title>
       <statement>
-        <p>
-Trouver le moment d'inertie par rapport à l'axe des <m>z</m> de la région <m>\cR</m> limitée par la cardioïde <m>r=a(1+\cos\theta)</m> du plan <m>Oxy</m>. Prendre pour acquis que sa densité est constante et égale à <m>1</m>.
+        <sidebyside widths="60% 15% 25%" valign="top">
+          <p>
+Trouver le moment d'inertie par rapport à l'axe des <m>z</m> de la région <m>\cR</m> limitée par la cardioïde <m>r=a(1+\cos\theta)</m> du plan <m>Oxy</m>, illustrée ci-contre (avec <m>a=1</m>), comme à l'<xref ref="eg_cardioid" text="global">exemple</xref>. Prendre pour acquis que sa densité est constante et égale à <m>1</m>.
 </p>
-      </statement>
-      <solution>
-        <p>
-  Voici une esquisse de la cardioïde (avec <m>a=1</m>), obtenue à l'<xref ref="eg_cardioid" text="global">exemple</xref>.
+          <p>
+
 </p>
-        <sidebyside width="35%">
           <image source="images/CLP-figs/cardioidIZ"/>
         </sidebyside>
+      </statement>
+      <solution>
         <p>
 Comme nous l'avons mentionné plus haut, la formule pour <m>I_\cA</m> de la
 <xref ref="def_moment_of_inertia" text="global">définition</xref> reste valable quand l'axe de rotation n'est pas contenu dans le plan  <m>Oxy</m>. On doit simplement s'assurer que la fonction  <m>D(x,y)</m> est vraiment la distance du point <m>(x,y)</m> à l'axe de rotation. Dans cet exemple, l'axe de rotation est l'axe  <m>Oz</m>, de sorte que <m>D(x,y)=\sqrt{x^2+y^2}</m>, et le moment d'inertie est
@@ -691,10 +718,10 @@ I_\cA &amp;= \int_0^{2\pi} \int_0^{a(1+\cos\theta)}r^2\times r  \dee{r}\, \dee{\
       = \int_0^{2\pi} \int_0^{a(1+\cos\theta)} r^3\ \dee{r}\, \dee{\theta}
 </mrow><mrow>
 &amp;=\frac{a^4}{4}\int_0^{2\pi}
-          \big(1+\cos\theta\big)^4\, \dee{\theta}
+          \left(1+\cos\theta\right)^4\, \dee{\theta}
 </mrow><mrow>
 &amp;=\frac{a^4}{4}\int_0^{2\pi}
-          \big(1+4\cos\theta+6\cos^2\theta+4\cos^3\theta+\cos^4\theta\big)\, \dee{\theta}
+          \left(1+4\cos\theta+6\cos^2\theta+4\cos^3\theta+\cos^4\theta\right)\, \dee{\theta}
 </mrow></md>.
 Or,
 <md><mrow>
@@ -716,7 +743,7 @@ Afin d'intégrer <m>\cos^4\theta</m>, nous faisons appel aux formules des angles
 <md><mrow>
 \cos^2\theta &amp;=\frac{\cos(2\theta)+1}{2}
 </mrow><mrow>
-\implies \cos^4\theta &amp;= \frac{\big(\cos(2\theta)+1\big)^2}{4}
+\implies \cos^4\theta &amp;= \frac{\left(\cos(2\theta)+1\right)^2}{4}
     =\frac{\cos^2(2\theta)+2\cos(2\theta)+1}{4}
 </mrow><mrow>
 &amp;=\frac{\frac{\cos(4\theta)+1}{2}+2\cos(2\theta)+1}{4}
@@ -777,10 +804,10 @@ I_x &amp;= \int_0^{2\pi}\dee{\theta}\int_0^{a(1+\cos\theta)}\dee{r}\ r
 = \int_0^{2\pi}\dee{\theta}\ \sin^2\theta\int_0^{a(1+\cos\theta)}\dee{r}\ r^3
 </mrow><mrow>
 &amp;=\frac{a^4}{4}\int_0^{2\pi}\dee{\theta}\ \sin^2\theta
-          \big(1+\cos\theta\big)^4
+          \left(1+\cos\theta\right)^4
 </mrow><mrow>
 &amp;=\frac{a^4}{4}\int_0^{2\pi}\dee{\theta}\ \sin^2\theta
-          \big(1+4\cos\theta+6\cos^2\theta+4\cos^3\theta+\cos^4\theta\big)
+          \left(1+4\cos\theta+6\cos^2\theta+4\cos^3\theta+\cos^4\theta\right)
 </mrow>
 </md>
 Now

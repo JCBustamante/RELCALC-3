@@ -1,0 +1,105 @@
+## DBsubject(Algèbre linéaire)
+## DBchapter(Vecteurs et espace euclidien)
+## KEYWORDS('R^3', 'arithmétique vectorielle', 'produit scalaire', 'produit vectoriel', 'projection orthogonale', 'vecteur')
+## Auteure(Mélisande Fortin Boisvert - Collège de Maisonneuve)
+##Level(3)
+##Language(fr)
+
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "PGcourse.pl",
+);
+
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+
+Context("Vector");
+Context()->flags->set(ijk => 1);
+
+$C = non_zero_vector3D();
+$B = non_zero_vector3D();
+$A = non_zero_vector3D();
+
+
+
+
+$a = $A.$B;
+$b = $B.$B;
+
+$ab = ($a/$b)*$B;
+
+$rep1=$ab.$C;
+
+$D=$A x $B;
+
+$Da=$D.$C;
+$Db=$C.$C;
+$Dc=$D.$D;
+
+
+$rep2=($Da/$Db)*$C;
+
+$rep3=($Da/$Dc)*$D;
+
+$rep4=$A.($Da/$Dc)*$D;
+
+Context()->texStrings;
+BEGIN_TEXT
+
+Soient \(\mathbf{a} = $A\), \(\mathbf{b} = $B\) et \(\mathbf{c} = $C\). Dans ce problème on note les projections au moyen d'indices : la projection d'un vecteur \(\mathbf{x}\) sur un vecteur \(\mathbf{y}\) est notée \(\mathbf{x}_\mathbf{y}\).
+
+
+
+
+$PAR
+Effectuer les opérations suivantes :  
+
+$PAR
+A) \( \mathbf{a}_{\mathbf{b}} \cdot \mathbf{c} =\) \{ans_rule(15)\}
+$PAR
+B) \(   (\mathbf{a} \times  \mathbf{b})_\mathbf{c} =\) \{ans_rule(15)\}
+$PAR
+C) \(   \mathbf{c}_{\mathbf{a} \times  \mathbf{b}} =\) \{ans_rule(15)\}
+$PAR
+D) \(   \mathbf{a}\cdot (\mathbf{c}_{\mathbf{a} \times  \mathbf{b}}) =\) \{ans_rule(15)\}
+
+
+END_TEXT
+Context()->normalStrings;
+
+
+ANS($rep1->cmp);
+ANS($rep2->cmp);
+ANS($rep3->cmp);
+ANS($rep4->cmp);
+
+
+Context()->texStrings;
+BEGIN_SOLUTION
+La projection orthogonale de \( \mathbf{a} \) sur \( \mathbf{b}\) est donnée par \( \mathbf{a}_{\mathbf{b}}=\frac{\mathbf{a} \cdot \mathbf{b}}{\mathbf{b} \cdot \mathbf{b}}\mathbf{b}\). 
+Dans cet exercice, nous obtenons \( \mathbf{a}_{\mathbf{b}}=$ab \). Il suffit alors d'effectuer le produit scalaire \( \mathbf{a}_{\mathbf{b}} \cdot \mathbf{c} =$ab \cdot $C=$rep1  \).
+$BR 
+$BR
+Nous devons, par la suite, calculer \(   (\mathbf{a} \times  \mathbf{b})_\mathbf{c} \). Nous débutons par le produit vectoriel \(\mathbf{a} \times  \mathbf{b}=$D\), pour ensuite 
+projeter ce nouveau vecteur sur le vecteur \( \mathbf{c}\). Ainsi, \(   (\mathbf{a} \times  \mathbf{b})_\mathbf{c} =\frac{$D \cdot $C}{$C \cdot $C}\cdot $C=$rep2 \).
+$BR
+$BR
+À l'aide des calculs faits en B, nous pouvons projeter \( \mathbf{c}\) sur le vecteur \( \mathbf{a} \times  \mathbf{b}=$D\), 
+et ainsi obtenir : \(   \mathbf{c}_{(\mathbf{a} \times  \mathbf{b})} =\frac{$C \cdot $D}{$D \cdot $D}\cdot $C=$rep3 \).
+$BR
+$BR
+Pour terminer, il ne reste qu'à effectuer le produit scalaire du vecteur \( \mathbf{a}\) avec le résultat trouvé en C pour obtenir \( \mathbf{a} \cdot   \mathbf{c}_{(\mathbf{a} \times  \mathbf{b})} =$A\cdot $rep3=$rep4 \). Nous aurions aussi 
+pu observer que le vecteur \(   \mathbf{c}_{(\mathbf{a} \times  \mathbf{b})} \) est dans la même direction que le vecteur \(   \mathbf{a} \times  \mathbf{b} \). Il est donc orthogonal à \( \mathbf{a}\).
+
+END_SOLUTION
+Context()->normalStrings;
+
+
+ENDDOCUMENT();

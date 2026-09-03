@@ -239,39 +239,43 @@
     </p></answer>
 
     <solution><p>
-    <md alignment="alignat">
-    <mrow>
-    \va\cdot\vb&amp;=\llt 1,2\rgt\cdot\llt -2,3\rgt=4\qquad &amp;
-    \cos\theta&amp;=\frac{4}{\sqrt{5}\sqrt{13}}=.4961
-    \notag</mrow><mrow>
-    &amp; &amp; \implies\theta &amp;= 60.25^\circ
-    \tag{a}
-    </mrow><mrow>
-    \va\cdot\vb&amp;=\llt -1,1\rgt\cdot\llt 1,1\rgt=0\qquad &amp;
-    \cos\theta&amp;=\frac{0}{\sqrt{2}\sqrt{2}}=0
-    \notag</mrow><mrow>
-    &amp; &amp; \implies\theta &amp;= 90^\circ
-    \tag{b}
-    </mrow><mrow>
-    \va\cdot\vb&amp;=\llt 1,1\rgt\cdot\llt 2,2\rgt=4\qquad &amp;
-    \cos\theta&amp;=\frac{4}{\sqrt{2}\sqrt{8}}=1
-    \notag</mrow><mrow>
-    &amp; &amp; \implies\theta &amp;= 0^\circ
-    \tag{c}
-    </mrow><mrow>
-    \va\cdot\vb&amp;=\llt 1,2,1\rgt\cdot\llt -1,1,1\rgt=2\qquad &amp;
-    \cos\theta&amp;=\frac{2}{\sqrt{6}\sqrt{3}}=.4714
-    \notag</mrow><mrow>
-    &amp; &amp; \implies\theta &amp;= 61.87^\circ
-    \tag{d}
-    </mrow><mrow>
-    \va\cdot\vb&amp;=\llt -1,2,3\rgt\cdot\llt 3,0,1\rgt=0\qquad &amp;
-    \cos\theta&amp;=\frac{0}{\sqrt{14}\sqrt{10}}=0
-    \notag</mrow><mrow>
-    &amp; &amp; \implies\theta &amp;= 90^\circ
-    \tag{e}
-    </mrow>
+    <ol marker = "(a)" cols = "2">
+    <li><p>
+    <md>
+    <mrow>\va\cdot\vb&amp;=\llt 1,2\rgt\cdot\llt -2,3\rgt=4</mrow>
+    <mrow>\cos\theta&amp;=\frac{4}{\sqrt{5}\sqrt{13}}=.4961</mrow>
+    <mrow>\implies\theta&amp;= 60.25^\circ</mrow>
     </md>
+    </p></li>
+    <li><p>
+    <md>
+    <mrow>\va\cdot\vb&amp;=\llt -1,1\rgt\cdot\llt 1,1\rgt=0</mrow>
+    <mrow>\cos\theta&amp;=\frac{0}{\sqrt{2}\sqrt{2}}=0</mrow>
+    <mrow>\implies\theta&amp;= 90^\circ</mrow>
+    </md>
+    </p></li>
+    <li><p>
+    <md>
+    <mrow>\va\cdot\vb&amp;=\llt 1,1\rgt\cdot\llt 2,2\rgt=4</mrow>
+    <mrow>\cos\theta&amp;=\frac{4}{\sqrt{2}\sqrt{8}}=1</mrow>
+    <mrow>\implies\theta&amp;= 0^\circ</mrow>
+    </md>
+    </p></li>
+    <li><p>
+    <md>
+    <mrow>\va\cdot\vb&amp;=\llt 1,2,1\rgt\cdot\llt -1,1,1\rgt=2</mrow>
+    <mrow>\cos\theta&amp;=\frac{2}{\sqrt{6}\sqrt{3}}=.4714</mrow>
+    <mrow>\implies\theta&amp;= 61.87^\circ</mrow>
+    </md>
+    </p></li>
+    <li><p>
+    <md>
+    <mrow>\va\cdot\vb&amp;=\llt -1,2,3\rgt\cdot\llt 3,0,1\rgt=0</mrow>
+    <mrow>\cos\theta&amp;=\frac{0}{\sqrt{14}\sqrt{10}}=0</mrow>
+    <mrow>\implies\theta&amp;= 90^\circ</mrow>
+    </md>
+    </p></li>
+    </ol>
     </p></solution>
   </exercise>
 
@@ -304,21 +308,21 @@
   By property 6 of Theorem <xref ref="prop-Prop-scalaire"/>,
   <md alignment="alignat">
   <mrow>
-  &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+  &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
           =\frac{1\times 3+2\times 4}{\sqrt{1+4}\sqrt{9+16}}
           =\frac{11}{5\sqrt{5}}= .9839
   \notag</mrow><mrow>
   &amp;\hskip1in\implies\  \theta=10.3^\circ
   \tag{a}
   </mrow><mrow>
-  &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+  &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
           =\frac{2\times 4-1\times 2+4\times 1}{\sqrt{4+1+16}\sqrt{16+4+1}}
           =\frac{10}{21}= .4762
   \notag</mrow><mrow>
   &amp;\hskip1in\implies\  \theta=61.6^\circ
   \tag{b}
   </mrow><mrow>
-   &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+   &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
           =\frac{1\times 3-2\times 1+1\times 0}{\sqrt{1+4+1}\sqrt{9+1}}
           =\frac{1}{\sqrt{60}}= .1291
   \notag</mrow><mrow>
@@ -333,7 +337,7 @@
   <exercise>
     <statement><p>
     Déterminez l'angle entre les vecteurs <m>\va</m> et <m>\vb</m> si
-    <ol marker = "(a)">
+    <ol marker = "(a)" cols = "2">
     <li>
        <m>\va=\llt 1,2\rgt,\ \vb=\llt 3,4\rgt</m>
     </li>
@@ -358,21 +362,21 @@
     Par la propriété 6 du Théorème <xref ref="prop-Prop-scalaire"/>,
     <md alignment="alignat">
     <mrow>
-    &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+    &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
             =\frac{1\times 3+2\times 4}{\sqrt{1+4}\sqrt{9+16}}
             =\frac{11}{5\sqrt{5}}= .9839
     \notag</mrow><mrow>
     &amp;\hskip1in\implies\  \theta=10.3^\circ
     \tag{a}
     </mrow><mrow>
-    &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+    &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
             =\frac{2\times 4-1\times 2+4\times 1}{\sqrt{4+1+16}\sqrt{16+4+1}}
             =\frac{10}{21}= .4762
     \notag</mrow><mrow>
     &amp;\hskip1in\implies\  \theta=61.6^\circ
     \tag{b}
     </mrow><mrow>
-     &amp;\cos\theta=\frac{\va\cdot\vb}{|\va|\,|\vb|}
+     &amp;\cos\theta=\frac{\va\cdot\vb}{\norm{\va}\,\norm{\vb}}
             =\frac{1\times 3-2\times 1+1\times 0}{\sqrt{1+4+1}\sqrt{9+1}}
             =\frac{1}{\sqrt{60}}= .1291
     \notag</mrow><mrow>
@@ -432,7 +436,7 @@
   <exercise>
     <statement><p>
     Déterminer toutes les valeurs de <m>y</m> pour lesquelles les vecteurs donnés sont orthogonaux.
-    <ol marker = "(a)">
+    <ol marker = "(a)" cols = "3">
     <li>
     <m>\llt 2,4\rgt ,\ \llt 2,y\rgt </m>
     </li>
@@ -554,7 +558,7 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     ni s'en détacher. La projection de la force gravitationnelle sur le vecteur
     normal <m>\llt a,b,c\rgt</m> est
     <md>
-    \frac{-mg\llt 0,0,1\rgt\cdot\llt a,b,c\rgt}{|\llt a,b,c\rgt|^2}\llt a,b,c\rgt
+    \frac{-mg\llt 0,0,1\rgt\cdot\llt a,b,c\rgt}{\norm{\llt a,b,c\rgt}^2}\llt a,b,c\rgt
     =\frac{-mgc}{a^2+b^2+c^2}\llt a,b,c\rgt
     </md>
     La condition qui détermine <m>T</m> est donc
@@ -605,7 +609,7 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <md>
     <mrow>
     \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt s,s,0\rgt}
-                        {|\llt s,s,s\rgt|\,|\llt s,s,0\rgt|}\right)
+                        {\norm{\llt s,s,s\rgt}\,\norm{\llt s,s,0\rgt}}\right)
     &amp;=\arccos\left(\frac{2s^2}{\sqrt{3}s\,\sqrt{2}s}\right)
     =\arccos\left(\frac{2}{\sqrt{6}}\right)
     </mrow><mrow>
@@ -619,7 +623,7 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <md>
     <mrow>
     \arccos\left(\frac{\llt s,s,s\rgt\cdot\llt -s,s,0\rgt}
-                   {|\llt s,s,s\rgt|\,|\llt -s,s,0\rgt|}\right)
+                   {\norm{\llt s,s,s\rgt}\,\norm{\llt -s,s,0\rgt}}\right)
     &amp;=\arccos\left(\frac{0}{\sqrt{3}s\,\sqrt{2}s}\right)
     =\arccos(0)</mrow><mrow>
     &amp;=90^\circ
@@ -833,26 +837,26 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
   <mrow>
   \overrightarrow{OA}\cdot\overrightarrow{OC}
   &amp;=\llt a,0\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
-  =\frac{a^2}{2}=\frac{1}{2}|\overrightarrow{OA}|^2
+  =\frac{a^2}{2}=\frac{1}{2}\|\overrightarrow{OA}\|^2
   </mrow><mrow>
   \overrightarrow{OB}\cdot\overrightarrow{OC}
   &amp;=\llt b,c\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
   =\frac{ab}{2}+\frac{b^2+c^2-ab}{2}=\frac{b^2+c^2}{2}
   </mrow><mrow>
-  &amp;=\frac{1}{2}|\overrightarrow{OB}|^2
+  &amp;=\frac{1}{2}\|\overrightarrow{OB}\|^2
   </mrow>
   </md>
   So, by  <xref ref="def-Projection"/>,
   <md>
   <mrow>
   \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
-  &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{|\overrightarrow{OA}|^2}
+  &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{\|\overrightarrow{OA}\|^2}
              \overrightarrow{OA}
   =\frac{1}{2}\overrightarrow{OA}
   =\llt a/2,0\rgt
   </mrow><mrow>
   \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
-  &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{|\overrightarrow{OB}|^2}
+  &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{\|\overrightarrow{OB}\|^2}
              \overrightarrow{OB}
   =\frac{1}{2}\overrightarrow{OB}
   =\llt b/2,c/2\rgt
@@ -1034,26 +1038,26 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <mrow>
     \overrightarrow{OA}\cdot\overrightarrow{OC}
     &amp;=\llt a,0\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
-    =\frac{a^2}{2}=\frac{1}{2}|\overrightarrow{OA}|^2
+    =\frac{a^2}{2}=\frac{1}{2}\|\overrightarrow{OA}\|^2
     </mrow><mrow>
     \overrightarrow{OB}\cdot\overrightarrow{OC}
     &amp;=\llt b,c\rgt\cdot\llt\frac{a}{2}\,,\,\frac{b^2+c^2-ab}{2c}\rgt
     =\frac{ab}{2}+\frac{b^2+c^2-ab}{2}=\frac{b^2+c^2}{2}
     </mrow><mrow>
-    &amp;=\frac{1}{2}|\overrightarrow{OB}|^2
+    &amp;=\frac{1}{2}\|\overrightarrow{OB}\|^2
     </mrow>
     </md>
     Ainsi, par  <xref ref="def-Projection"/>,
     <md>
     <mrow>
     \text{proj}_{\overrightarrow{\scriptstyle OA}}\,\overrightarrow{OC}
-    &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{|\overrightarrow{OA}|^2}
+    &amp;=\frac{\overrightarrow{OA}\cdot\overrightarrow{OC}}{\|\overrightarrow{OA}\|^2}
                \overrightarrow{OA}
     =\frac{1}{2}\overrightarrow{OA}
     =\llt a/2,0\rgt
     </mrow><mrow>
     \text{proj}_{\overrightarrow{\scriptstyle OB}}\,\overrightarrow{OC}
-    &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{|\overrightarrow{OB}|^2}
+    &amp;=\frac{\overrightarrow{OB}\cdot\overrightarrow{OC}}{\|\overrightarrow{OB}\|^2}
                \overrightarrow{OB}
     =\frac{1}{2}\overrightarrow{OB}
     =\llt b/2,c/2\rgt
@@ -1098,7 +1102,7 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
 
     <p>(c)
        On veut <m>\vu\cdot\vv=-2\a-10
-                 =|\vu|\,|\vv|\,\cos 60^\circ
+                 =\norm{\vu}\,\norm{\vv}\,\cos 60^\circ
                  =\sqrt{29}\,\sqrt{\a^2+4}\,\half</m>. En élevant au carré les deux cotés
     <md alignment="alignat">
     <mrow>
@@ -1143,14 +1147,14 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
   <solution><p>
   (a) The component of <m>\vb</m> in the direction <m>\va</m> is
   <me>
-  \vb\cdot\frac{\va}{|\va|}
+  \vb\cdot\frac{\va}{\norm{\va}}
   =\frac{1\times 4+2\times 10+3\times 6}{\sqrt{1+4+9}}
   = \frac{42}{\sqrt{14}}
   </me>
   </p>
 
   <p>(b) The projection of <m>\vb</m> on <m>\va</m> is a vector of length
-  <m>42/\sqrt{14}</m> in direction <m>\va/|\va|</m>, namely
+  <m>42/\sqrt{14}</m> in direction <m>\va/\norm{\va}</m>, namely
   <m>\frac{42}{14}\llt 1,2,3\rgt=\llt 3,6,9\rgt</m>.
   </p>
 
@@ -1188,14 +1192,14 @@ if <m>\va=\llt 1,0,0\rgt </m>, <m>\vb=\llt 0,1,0\rgt ,\ \vc=\llt 0,0,1\rgt </m>,
     <solution><p>
     (a) La composante de <m>\vb</m> dans la direction <m>\va</m> est de
     <md>
-    \vb\cdot\frac{\va}{|\va|}
+    \vb\cdot\frac{\va}{\norm{\va}}
     =\frac{1\times 4+2\times 10+3\times 6}{\sqrt{1+4+9}}
     = \frac{42}{\sqrt{14}}
     </md>
     </p>
 
     <p>(b) La projection de <m>\vb</m> sur <m>\va</m> est un vecteur de longueur
-    <m>42/\sqrt{14}</m> dans la direction <m>\va/|\va|</m>, soit
+    <m>42/\sqrt{14}</m> dans la direction <m>\va/\norm{\va}</m>, soit
     <m>\frac{42}{14}\llt 1,2,3\rgt=\llt 3,6,9\rgt</m>.
     </p>
 
@@ -1331,7 +1335,7 @@ Let <m>\vu=-2\vi+5\vj</m> and <m>\vv=\a\vi-2\vj</m>. Find <m>\a</m> so that
 
 <p>(c)
    We want <m>\vu\cdot\vv=-2\a-10
-             =|\vu|\,|\vv|\,\cos 60^\circ
+             =\norm{\vu}\,\norm{\vv}\,\cos 60^\circ
              =\sqrt{29}\,\sqrt{\a^2+4}\,\half</m>. Squaring both sides gives
 <md alignment="alignat">
 <mrow>

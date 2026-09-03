@@ -24,37 +24,62 @@
   </p>
     <example xml:id="ex-region-3d-bord">
       <statement>
+        <sidebyside widths="45% 5% 50%" valign="top">
+          <stack>
+          <p>
+          Soit <m>\cE</m> la région de <m>\R^3</m> bornée par 
+          <ul>
+            <li>
+              <p>
+                Le plan d'équation <m>z=0</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                Le cylindre parabolique d'équation <m>y=x^2</m>,
+              </p>
+            </li>
+            <li>
+              <p>
+                Le plan d'équation <m>y+z=1</m>.
+              </p>
+            </li>
+          </ul>
+          La région est illustrée ci-contre.  
+          </p>
+          <p>
+            Le bord de <m>\cE</m> est formé par trois portions de surfaces lisses, que nous nommerons <m>\cS_1</m>, <m>\cS_2</m> et <m>\cS_3</m>.
+          </p>
+          </stack>
+          <p></p>
+          <figure xml:id="fig-region3d-bord">
+            <caption>La région <m>\cE</m> de <m>\R^3</m> et sa frontière.</caption>
+            <image xml:id="im-region3d-bornes" width="100%">
+              <sageplot variant="3d" aspect="1.0">
+                var('x,y,z')
+                Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
+                Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
+                Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
+                Fig = Base + Cyl + Plan
+                Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
+                Fig += text3d("x", (1.4,0,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
+                Fig += text3d("y", (0,1.4,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
+                Fig += text3d("z", (0,0,1.4), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0.5,0.7,0),(0.5,0.7,-0.5), width=0.75, color = "orange",frame = False)
+                Fig += arrow3d((-0.5, 0.7, 0.3), (-0.5,1.05,0.65), width=0.75, color = "blue",frame = False)
+                Fig += arrow3d((0.5, 0.25, 0.5), (0.85,-0.1,0.5), width=0.75, color = "green",frame = False)
+                Fig
+              </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
         <p>
-        Soit <m>\cE</m> la région de <m>\R^3</m> bornée par le cylindre parabolique <m>y=x^2</m> et les plans <m>z=0</m> et <m>y+z=1</m>.
-
-      </p>
-        <figure xml:id="fig-region3d-bord">
-          <caption>La région <m>\cE</m> de <m>\R^3</m> et sa frontière.</caption>
-          <image xml:id="im-region3d-bornes" platform="sage" width="100%">
-            <sageplot variant="3d" aspect="1.0">
-              var('x,y,z')
-              Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
-              Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
-              Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
-              Fig = Base + Cyl + Plan
-              Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("x", (1.4,0,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("y", (0,1.4,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
-              Fig += text3d("z", (0,0,1.4), color = "black",frame = False)
-              Fig += arrow3d((0.5,0.7,0),(0.5,0.7,-0.5), width=0.75, color = "orange",frame = False)
-              Fig += arrow3d((-0.5, 0.7, 0.3), (-0.5,1.05,0.65), width=0.75, color = "blue",frame = False)
-              Fig += arrow3d((0.5, 0.25, 0.5), (0.85,-0.1,0.5), width=0.75, color = "green",frame = False)
-              Fig
-            </sageplot>
-          </image>
-        </figure>
-        <p>
-        Le bord de <m>\cE</m> est formé de <m>3</m> surfaces :
-        <ol><li><p><m>\cS_1 :</m> la portion du plan <m>z=0</m> limitée par les inégalités <m>-1\leqslant  x \leqslant  1</m> et <m>x^2 \leqslant  y  \leqslant  1</m>. Dans cette région, le vecteur normal à la surface est <m>\vn_1 = - \vk</m> (en orange dans la figure). C'est le bord inférieur de <m>\cE</m>, en orange dans la figure.
+        
+        <ol marker = "1)"><li><p><m>\cS_1 :</m> la portion du plan <m>z=0</m> vérifiant   <m>-1\leqslant  x \leqslant  1</m> et <m>x^2 \leqslant  y  \leqslant  1</m>. Dans cette région, le vecteur normal à la surface est <m>\vn_1 = - \vk</m> (en orange dans la figure). C'est le bord inférieur de <m>\cE</m>, en orange dans la figure.
             </p></li><li><p><m>\cS_2 :</m> la portion du cylindre <m>y=x^2</m> comprise entre le plan <m>z=0</m> et le plan <m>y+z=1</m>.  C'est la partie latérale du bord de <m>\cE</m>, elle est en vert dans la figure. Le vecteur normal sur cette portion du bord de <m>\cE</m> est <m>\vn_2 = 2x\vi - \vj</m> (en vert).
-            </p></li><li><p><m>\cS_3 :</m> la portion du plan <m>z=1-y</m> qui se trouve au dessus de la région du plan <m>z=0</m> que nous avons nommé <m>\cS_1</m> ci haut, il s'agit du bord supérieur de <m>\cE</m>, en bleu dans la figure ci-haut. Le vecteur normal correspondant est <m>\vn_3 = \vj + \vk</m>, en bleu.
+            </p></li><li><p><m>\cS_3 :</m> la portion du plan <m>z=1-y</m> qui se trouve au dessus de <m>\cS_1</m> ci haut, il s'agit du bord supérieur de <m>\cE</m>, en bleu dans la figure ci-haut. Le vecteur normal correspondant est <m>\vn_3 = \vj + \vk</m>, en bleu.
             </p></li></ol>
       </p>
       </statement>
@@ -149,18 +174,23 @@
   </p>
     <example xml:id="ex-div-fermer-surface">
       <statement>
-        <p>
-        Soit <m>\vF = xy\, \vi + yz\, \vj + xz\, \vk </m> et <m>\cS</m> la surface limitée par les plans de coordonnées et les plans <m>x=1</m> et <m>y=1</m>. Calculer le flux de <m>\vF</m> à travers <m>\cS</m>, orientée vers l'extérieur du cube.
-      </p>
-      </statement>
-      <solution>
-        <p>
-        Notons pour commencer que la surface <m>\cS</m> n'est pas le bord d'une région solide, il ne s'agit pas d'une surface fermée.
-      </p>
-        <figure xml:id="fig-ex-div-fermer-surface">
-          <caption>La surface qui nous intéresse est coloriée en gris. Ce sont 5 des 6 faces du cube. La face manquante est celle en brun. Le champ de vecteurs se trouve également représenté.</caption>
-          <sidebyside width="85%">
-            <image xml:id="im-ex-div-fermer-surface" platform="sage">
+        <sidebyside widths="45% 5% 50%" valign="top">
+          <stack>
+          <p>
+          Soit <m>\vF</m> le champ de vecteurs donné par 
+          <md>
+            \vF  = xy\, \vi + yz\, \vj + xz\, \vk
+          </md>
+           et <m>\cS</m> la surface limitée par les plans de coordonnées et les plans verticaux <m>x=1</m> et <m>y=1</m>. 
+          </p>
+          <p>
+            Calculer le flux de <m>\vF</m> à travers <m>\cS</m>, orientée vers l'extérieur du cube.
+          </p>
+          </stack>
+          <p></p>
+          <figure xml:id="fig-ex-div-fermer-surface">
+            <caption>La surface <m>\cS</m> (en gris) et le champ <m>\vF</m>. La face manquante, en brun, n'en fait pas partie.</caption>
+            <image xml:id="im-ex-div-fermer-surface">
               <sageplot variant="3d" aspect="1.0">
               var('x,y,z')
               Fig = plot_vector_field3d([x*y,y*z,x*z], (x,0,1), (y,0,1), (z,0,1), plot_points=[4,4,4])
@@ -169,7 +199,7 @@
               Fig += polygon3d([[0,0,0],[1,0,0],[1,0,1],[0,0,1]], color="grey", alpha=1)
               Fig += polygon3d([[0,0,0],[0,1,0],[0,1,1],[0,0,1]], color="grey", alpha=1)
               Fig += polygon3d([[1,0,0],[1,1,0],[1,1,1],[1,0,1]], color="grey", alpha=1)
-              Fig += polygon3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1]], color="brown", alpha=1)
+              Fig += polygon3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1]], color="brown", alpha=0.5)
               Fig += line3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0],[0,0,0]], color="black", thickness= 5)
               Fig += line3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1],[0,0,1]], color="black", thickness= 5)
               Fig += line3d([[0, 0, 0], [0,0,1]], color="black", thickness= 5)
@@ -177,16 +207,21 @@
               Fig += line3d([[1, 0, 0], [1,0,1]], color="black", thickness= 5)
               Fig += line3d([[1, 1, 0], [1,1,1]], color="black", thickness= 5)
               Fig += arrow3d((0,0,0),(1.5,0,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("x", (1.7,0,0), color = "black",frame = False)
+              Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
               Fig += arrow3d((0,0,0),(0,1.5,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("y", (0,1.7,0), color = "black",frame = False)
+              Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
               Fig += arrow3d((0,0,0),(0,0,1.5), width=0.5, color = "black",frame = False)
-              Fig += text3d("z", (0,0,1.7), color = "black")
+              Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
               Fig
             </sageplot>
             </image>
-          </sidebyside>
-        </figure>
+          </figure>
+        </sidebyside>
+      </statement>
+      <solution>
+        <p>
+        Notons pour commencer que la surface <m>\cS</m> n'est pas le bord d'une région solide, il ne s'agit pas d'une surface fermée.
+      </p>
         <p>
         En effet, si <m>\cE</m> est le cube unité, alors <m>\partial \cE</m> est formée de <m>\cS</m> avec en plus le carré de sommets <m>(0,0,1), (0,1,1), (1,0,1), (1,1,1)</m>. Soit donc <m>\cS'</m> ce carré, de sorte que <m>\partial \cE = \cS \cup \cS'</m>. On peut appliquer le théorème de la divergence au cube <m>\cE</m>, ce qui nous donnera
         <md><mrow xml:id="eg-div-eq1" tag="star"> \iiint_{\cE} \vnabla \cdot \vF \, dV  \amp = \iint_{\cS} \vF \cdot d\vS + \iint_{\cS'} \vF \cdot d\vS </mrow></md>
@@ -233,40 +268,44 @@
   </p>
     <example xml:id="eg_divThmB">
       <statement>
-        <p>
-        Calculer le flux  <m>\displaystyle \iint_{\cS} \vF \cdot d\vS</m> où <m>\vn </m> est le vecteur normal unitaire pointant vers l'extérieur de <m>\cS</m>, la portion de la surface <m>z^2=x^2+y^2</m> vérifiant <m>1\leqslant z\leqslant 2</m>, et où
+        <sidebyside widths="45% 5% 50%" valign="top">
+          <p>
+          Calculer le flux  <m>\displaystyle \iint_{\cS} \vF \cdot d\vS</m> où <m>\vn </m> est le vecteur normal unitaire pointant vers l'extérieur de <m>\cS</m>, la portion de la surface <m>z^2=x^2+y^2</m> vérifiant <m>1\leqslant z\leqslant 2</m>, et où
 
-        <md><mrow>
-          \vF = 3x\,\vi + (5y+e^{\cos x})\,\vj + z\,\vk
-        </mrow></md>
-      </p>
+          <md><mrow>
+            \vF = 3x\,\vi + (5y+e^{\cos x})\,\vj + z\,\vk
+          </mrow></md>
+          La figure ci-contre montre <m>\cS</m>, en orange, ainsi que deux disques horizontaux, en gris, qui serviront à la refermer.
+          </p>
+          <p></p>
+          <figure xml:id="fig-eg_divThmB">
+            <caption>La surface <m>\cS</m> et le vecteur normal <m>\vn</m>.</caption>
+            <image xml:id="im-eg_divThmB" width="100%">
+              <sageplot variant="3d" aspect="1.0">
+                var('r,t')
+                Fig = parametric_plot3d([r*cos(t), r*sin(t), r], (r,1,2), (t,0,2*pi), color = "orange", opacity = 0.85)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,0,1), (t,0,2*pi), color = "orange", opacity = 0.25)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,2,2.5), (t,0,2*pi), color = "orange", opacity = 0.25)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), 1], (r,0,1), (t,0,2*pi), color = "gray", opacity = 0.85)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), 2], (r,0,2), (t,0,2*pi), color = "gray", opacity = 0.85)
+                Fig += arrow3d((1,1,sqrt(2)),(3/2,3/2,sqrt(2)/2), width=1, color = "blue",frame = False, fontsize = 20)
+                Fig += text3d("n", (1.7,1.7,0.7), color = "blue")
+                Fig += arrow3d((0,0,0),(2.5,0,0), width=0.7, color = "black",frame = False)
+                Fig += text3d("x", (2.7,0,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,2.5,0), width=0.7, color = "black", frame = False)
+                Fig += text3d("y", (0,2.7,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,0,3), width=0.7, color = "black",frame = False)
+                Fig += text3d("z", (0,0,3.2), color = "black", fontsize = 20)
+                Fig
+              </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
       </statement>
       <solution>
         <p>
-        Le terme <m>e^{\cos x}</m> dans  <m>\vF</m> suggère qu'une évaluation directe de l'intégrale peut être ardue<fn>En fait, il est possible d'évaluer l'intégrale directement. Il suffit de remarquer que la partie problématique est une fonction impaire par rapport à <m>y</m>, et donc son intégrale est nulle.</fn> et nous utilisons à nouveau le théorème de la divergence. À nouveau, <m>\cS</m> n'est pas la frontière d'une région solide  <m>\cE</m>. Il s'agit de la portion du cône illustré dans la figure ci-après. Il manquerait un couvercle en haut et un autre en bas.
+        Le terme <m>e^{\cos x}</m> dans  <m>\vF</m> suggère qu'une évaluation directe de l'intégrale peut être ardue<fn>En fait, il est possible d'évaluer l'intégrale directement. Il suffit de remarquer que la partie problématique est une fonction impaire par rapport à <m>y</m>, et donc son intégrale est nulle.</fn> et nous utilisons à nouveau le théorème de la divergence. À nouveau, <m>\cS</m> n'est pas la frontière d'une région solide  <m>\cE</m>. Il s'agit de la portion du cône illustré dans la figure accompagnant l'énoncé. Il manquerait un couvercle en haut et un autre en bas.
       </p>
-        <figure xml:id="fig-eg_divThmB">
-          <caption>La surface <m>\cS</m> (en orange foncé) est une portion du cône <m>x^2 + y^2 = z^2</m>. Avec en plus les deux disques horizontaux (en gris) elle constitue la frontière d'une région solide  <m>\cE</m> de <m>\R^3</m>.</caption>
-          <image xml:id="im-eg_divThmB" platform="sage" width="100%">
-            <sageplot variant="3d" aspect="1.0">
-              var('r,t')
-              Fig = parametric_plot3d([r*cos(t), r*sin(t), r], (r,1,2), (t,0,2*pi), color = "orange", opacity = 0.85)
-              Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,0,1), (t,0,2*pi), color = "orange", opacity = 0.25)
-              Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,2,2.5), (t,0,2*pi), color = "orange", opacity = 0.25)
-              Fig += parametric_plot3d([r*cos(t), r*sin(t), 1], (r,0,1), (t,0,2*pi), color = "gray", opacity = 0.85)
-              Fig += parametric_plot3d([r*cos(t), r*sin(t), 2], (r,0,2), (t,0,2*pi), color = "gray", opacity = 0.85)
-              Fig += arrow3d((1,1,sqrt(2)),(3/2,3/2,sqrt(2)/2), width=1, color = "blue",frame = False)
-              Fig += text3d("n", (1.7,1.7,0.7), color = "blue")
-              Fig += arrow3d((0,0,0),(2.5,0,0), width=0.7, color = "black",frame = False)
-              Fig += text3d("x", (2.7,0,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,2.5,0), width=0.7, color = "black", frame = False)
-              Fig += text3d("y", (0,2.7,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,0,3), width=0.7, color = "black",frame = False)
-              Fig += text3d("z", (0,0,3.2), color = "black")
-              Fig
-            </sageplot>
-          </image>
-        </figure>
         <p>
         Heureusement nous avons une région solide <m>\cE</m> dont la frontière, sans être égale à <m>\cS</m>, contient  <m>\cS</m>. Il s'agit de
         <md><mrow>
@@ -316,10 +355,11 @@
             \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} = 9\,\text{Vol}(V)
           </mrow></md>
       </p>
-        <p>
-        Le volume de <m>\cE</m> peut être calculé facilement de plusieurs façons. Nous le faisons avec une intégrale simple. Pour ceci nous découpons <m>\cE</m> en tranches horizontales, voir la figure ci-bas
-      </p>
-        <sidebyside width="25%">
+        <sidebyside widths="55% 8% 35%" valign="middle">
+          <p>
+          Le volume de <m>\cE</m> peut être calculé facilement de plusieurs façons. Nous le faisons avec une intégrale simple. Pour ceci nous découpons <m>\cE</m> en tranches horizontales, voir la figure ci-contre.
+          </p>
+          <p></p>
           <image source="images/CLP4-figs/coneC"/>
         </sidebyside>
         <p>
@@ -350,12 +390,37 @@
       L'hypothèse à l'effet que le champ <m>\vF</m> admet des dérivées partielles continues sur toute la région <m>\cE</m> est cruciale. L'exemple ci-après le montre. Gardons à l'esprit que pour le Théorème de Green nous avons quelque chose de semblable, voir notamment la <xref ref="warn_Green">mise en garde </xref> ainsi que l'<xref ref="ex-contre-green">exemple </xref>.
     </p>
     </warning>
-    <example xml:id="eg_divThmD">
-      <p>Écrivons, comme à l'habitude, <m>\vr = x \vi + y\vj + z \vk</m> et considérons le champ
-      <md><mrow>
-        \vF = \frac{\vr}{|\vr|^3}
-      </mrow></md>
-    et la région de l'espace <m>\cE = \Set{(x,y,z)}{x^2+y^2+z^2\leqslant  1}</m>. Ainsi, si <m>\vr = (x,y,z) \ne\vZero</m>,
+    <p>
+  Tout comme le bord d'une région du plan peut être formé de plusieurs courbes (voir par exemple la <xref ref="OpenStax-Plusieurs-trous">figure </xref>), le bord d'une région solide <m>\cR</m> de <m>\R^3</m> peut être formé de plusieurs surfaces. Dans ce cas la formule du théorème de la divergence reste valable, mais il faut orienter chaque surface convenablement, c'est à dire toujours en pointant vers l'extérieur de <m>\cR</m>. Dans le fond, c'est la même idée que celle qui a été mise à l'oeuvre à <xref ref="ex-green-bord-x2">l'exemple </xref>.
+</p>
+    <example xml:id="ex-div-bord-x2">
+      <statement>
+        <p>Écrivons, comme à l'habitude, <m>\vr = x \vi + y\vj + z \vk</m> et considérons le champ
+        <md><mrow>
+          \vF = \frac{\vr}{\norm{\vr}^3}.
+        </mrow></md>
+    <ol marker="(a)">
+      <li><p>
+        Calculer <m>\vnabla\cdot\vF</m>.
+      </p></li>
+      <li><p>
+        Calculer directement (c'est-à-dire sans utiliser le théorème de la divergence) le flux de <m>\vF</m> à travers la sphère unité <m>\cS = \Set{(x,y,z)}{x^2+y^2+z^2=1}</m>, orientée vers l'extérieur.
+      </p></li>
+      <li><p>
+        Soient <m>a,b</m> deux réels tels que <m>0 \lt a \lt b</m> et <m>\cE</m> la région de <m>\R^3</m> définie par <m>a^2 \leqslant x^2+ y^2 + z^2 \leqslant b^2</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de <m>\cE</m>.
+      </p></li>
+      <li><p>
+          Montrer que le flux de <m>\vF</m> à travers n'importe quelle sphère (vers l'extérieur de celle-ci) peut prendre seulement deux valeurs, selon que la sphère englobe l'origine ou pas. Calculer ces valeurs.
+      </p></li>
+    </ol>
+    </p>
+      </statement>
+      <solution>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+        Si <m>\vr = (x,y,z) \ne\vZero</m>,
 <md><mrow>
 \vnabla\cdot\vF(x,y,z)
 &amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
@@ -368,44 +433,29 @@
 </mrow><mrow>
 &amp;+\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
 </mrow><mrow>
-&amp;=0
+&amp;=0.
 </mrow></md>
-D'autre part, le bord de <m>\cE</m> est la sphère unité <m>\cS = \partial \cE = \Set{(x,y,z)}{x^2+y^2+z^2 = 1}</m>. Le vecteur normal unitaire à <m>\cS</m> est <m>\vn = \frac{\vr}{|\vr|}</m> de sorte que
-<md><mrow>
-\iint_{\partial V}\vF\cdot\vn\ \dee{S}
-&amp;=\iint_{|\vr|=1}  \frac{\vr}{|\vr|^3}\cdot \frac{\vr}{|\vr|}\ \dee{S}
-=\iint_{|\vr|=1}  \frac{1}{|\vr|^2}\ \dee{S}
-=\iint_{|\vr|=1}\dee{S}
-</mrow><mrow>
-&amp;=4\pi\ne 0
-</mrow></md>
-</p>
-    </example>
-    <p>
-  Tout comme le bord d'une région du plan peut être formé de plusieurs courbes (voir par exemple la <xref ref="OpenStax-Plusieurs-trous">figure </xref>), le bord d'une région solide <m>\cR</m> de <m>\R^3</m> peut être formé de plusieurs surfaces. Dans ce cas la formule du théorème de la divergence reste valable, mais il faut orienter chaque surface convenablement, c'est à dire toujours en pointant vers l'extérieur de <m>\cR</m>. Dans le fond, c'est la même idée que celle qui a été mise à l'oeuvre à <xref ref="ex-green-bord-x2">l'exemple </xref>.
-</p>
-    <p>
-  Voyons un exemple, mais nous pourrions simplement dire que c'est la version tri-dimensionnalle de <xref ref="ex-green-bord-x2">l'exemple </xref>.
-</p>
-    <example xml:id="ex-div-bord-x2">
-      <statement>
-        <p> Soit comme avant le champ <m>\vF =\frac{\vr}{|\vr|^3}</m> (où <m>\vr = x\,\vi + y\, \vj + z\,\vk</m>).
-    <ol marker="(a)"><li><p>Soient <m>a,b</m> deux réels tels que <m>0 \lt a \lt b</m> et <m>\cE</m> la région de <m>\R^3</m> définie par <m>a^2 \leqslant x^2+ y^2 + z^2 \leqslant b^2</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de <m>\cE</m>.
-
-        </p></li><li><p>
-          Montrer que le flux de <m>\vF</m> à travers n'importe quelle sphère (vers l'extérieur de celle-ci) peut prendre seulement deux valeurs, selon que la sphère englobe l'origine ou pas. Calculer ces valeurs.
-        </p></li></ol>
-
-    </p>
-      </statement>
-      <solution>
-        <p>
-          <ol marker="(a)">
+          </p>
+            </li>
             <li>
               <p>
-            Notons que notre champ est le même que celui de <xref ref="eg_divThmD">l'exemple </xref>. Cette fois, cependant, nous n'avons aucun problème de continuité sur la région <m>\cE</m>. La formule du théorème de la divergence reste valable. Nous avons déjà calculé <m>\div{\vF} = \vnabla \cdot \vF = 0</m>. Ainsi, le flux qui nous intéresse est
+        Le vecteur normal unitaire à <m>\cS</m> est <m>\vn = \frac{\vr}{\norm{\vr}}</m>, de sorte que
+<md><mrow>
+\iint_{\cS}\vF\cdot\vn\ \dee{S}
+&amp;=\iint_{\norm{\vr}=1}  \frac{\vr}{\norm{\vr}^3}\cdot \frac{\vr}{\norm{\vr}}\ \dee{S}
+=\iint_{\norm{\vr}=1}  \frac{1}{\norm{\vr}^2}\ \dee{S}
+=\iint_{\norm{\vr}=1}\dee{S}
+</mrow><mrow>
+&amp;=4\pi.
+</mrow></md>
+        Ceci illustre la <xref ref="warn_divThm">mise en garde</xref> précédente : bien que <m>\vnabla\cdot\vF=0</m> partout où <m>\vF</m> est défini, on ne peut pas appliquer le théorème de la divergence à la boule <m>\cE = \Set{(x,y,z)}{x^2+y^2+z^2\leqslant 1}</m>, puisque <m>\vF</m> n'est même pas défini à l'origine, un point de <m>\cE</m>. Le flux <m>4\pi\ne 0</m> que nous venons de calculer directement le confirme.
+          </p>
+            </li>
+            <li>
+              <p>
+            Cette fois, la région <m>\cE</m> n'englobe pas l'origine, de sorte qu'il n'y a aucun problème de continuité et que la formule du théorème de la divergence s'applique. En vertu de la partie (a), <m>\vnabla\cdot\vF = 0</m>, de sorte que le flux qui nous intéresse est
             <md><mrow>
-              \iiint_{\cE} \div{\vF}\, dV = \iiint_{\cE} \vnabla \cdot \vF \, dV = 0.
+              \iint_{\partial \cE} \vF \cdot d\vS = \iiint_{\cE} \vnabla \cdot \vF \, dV = 0.
             </mrow></md>
           </p>
             </li>
@@ -420,13 +470,13 @@ D'autre part, le bord de <m>\cE</m> est la sphère unité <m>\cS = \partial \cE 
             Supposons maintenant que <m>\cS</m> englobe l'origine. La distance du centre de <m>\cS</m> à l'origine est donc strictement inférieure à son rayon. Il existe donc <m>h\gt 0</m> tel que la sphère de rayon <m>h</m> centrée à l'origine, nommons-la <m>\cS_h</m> est totalement englobée par la sphère donnée <m>\cS</m>.
           </p>
               <p>
-            Soit cette fois <m>\cV</m> la région comprise entre <m>\cS_h</m> et <m>\cS</m>, c'est à dire <m>\cV = \cS \cup \cS_h</m>. Nous avons alors, grâce au même calcul que celui de la première partie, que
+            Soit cette fois <m>\cV</m> la région comprise entre <m>\cS_h</m> et <m>\cS</m>, c'est à dire <m>\cV = \cS \cup \cS_h</m>. Nous avons alors, grâce au même calcul que celui de la partie (c), que
           </p>
               <md>
                 <mrow>0 \amp = \iiint_{\cV} \vnabla \cdot \vF\, dV = \iint_{\partial \cV} \vF \cdot d\vS =  \iint_{\cS} \vF \cdot d\vS  + \iint_{\cS_h} \vF \cdot d\vS</mrow>
               </md>
               <p>
-            Comme partie de la frontière de <m>\cV</m>, la sphère <m>\cS_h</m> doit être orientée par le vecteur normal unitaire qui pointe vers l'origine, à savoir <m>-\vr / |\vr|</m>. Compte tenu de cette orientation, le calcul de la partie b de l'<xref ref="eg_divThmD">exemple </xref> nous donne
+            Comme partie de la frontière de <m>\cV</m>, la sphère <m>\cS_h</m> doit être orientée par le vecteur normal unitaire qui pointe vers l'origine, à savoir <m>-\vr / \norm{\vr}</m>. Compte tenu de cette orientation, le calcul de la partie (b) nous donne
           </p>
               <md><mrow>
             \iint_{\cS_h} \vF \cdot d\vS = -4\pi.
@@ -438,49 +488,52 @@ D'autre part, le bord de <m>\cE</m> est la sphère unité <m>\cS = \partial \cE 
     </example>
     <example xml:id="eg_stokesD">
       <statement>
-        <p> Calculer le flux <m> \iint_{\cS}\vG\cdot d\vS </m> où  <m>\vG= (2x)\,\vi +(2z-2x)\,\vj  +(2x-2z)\,\vk </m> et
+        <p> Calculer le flux <m>\displaystyle \iint_{\cS}\vG\cdot d\vS </m> où  <m>\vG= (2x)\,\vi +(2z-2x)\,\vj  +(2x-2z)\,\vk </m> et
   <md><mrow>
-  \cS=\Set{(x,y,z)}{z=\big(1-x^2-y^2\big)(1-y^3)\cos x\ e^{y},\ x^2+y^2\le 1}
+  \cS=\Set{(x,y,z)}{z=\left(1-x^2-y^2\right)(1-y^3)\cos x\ e^{y},\ x^2+y^2\leqslant 1}
   </mrow></md>
 orientée par le vecteur normal qui pointe vers le haut.
 </p>
       </statement>
       <solution>
-        <p>
-La surface <m>\cS</m> est représentée dans la figure ci-bas. Elle est plutôt compliquée, mais son bord <m>\partial \cS</m> est plutôt simple, il s'agit du cercle <m>x^2+y^2=1</m>, <m>z=0</m>.
+        <sidebyside widths="45% 5% 50%" valign="top">
+          <p>
+La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plutôt compliquée, mais son bord <m>\partial \cS</m> est plutôt simple, il s'agit du cercle <m>x^2+y^2=1</m>, <m>z=0</m>. La figure montre aussi une surface auxiliaire <m>\cS'</m>, en bleu, qui nous servira bientôt, ainsi que les vecteurs normaux aux deux surfaces.
 </p>
-        <figure xml:id="fig-ex-div-stokes">
-          <caption>La surface <m>\cS</m>, en orange. En bleu la surface <m>\cS'</m>. La région <m>\cV</m> de <m>\R^3</m> est limitée par la réunion des deux surfaces. On trouve également les vecteurs normaux.</caption>
-          <image xml:id="im-ex-div-stokes" platform="sage" width="100%">
-            <sageplot variant="3d" aspect="1.0">
-              var('r,t')
-              X(r,t) = r*cos(t)
-              Y(r,t) = r*sin(t)
-              f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
-              fx = diff(f,x)
-              fy = diff(f,y)
-              x0, y0 = 0.5,0.3
-              h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
-              Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                      (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
-              Fig += parametric_plot3d([X(r,t), Y(r,t), 0 ],
-                                      (r,0,1), (t,0,2*pi), color = "lightblue", mesh = False)
-              Fig+= arrow3d((0.5,0.3,0),(0.5,0.3,-0.5), width=1, color = "lightblue",frame = False)
-              Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
-              Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("x", (1.7,0,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("y", (0,1.7,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("z", (0,0,1.7), color = "black")
-              Fig
-            </sageplot>
-          </image>
-        </figure>
+          <p></p>
+          <figure xml:id="fig-ex-div-stokes">
+            <caption>Les surfaces <m>\cS</m> et <m>\cS'</m>, avec leurs vecteurs normaux.</caption>
+            <image xml:id="im-ex-div-stokes" width="100%">
+              <sageplot variant="3d" aspect="1.0">
+                var('r,t')
+                X(r,t) = r*cos(t)
+                Y(r,t) = r*sin(t)
+                f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
+                fx = diff(f,x)
+                fy = diff(f,y)
+                x0, y0 = 0.5,0.3
+                h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
+                Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
+                                        (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
+                Fig += parametric_plot3d([X(r,t), Y(r,t), 0 ],
+                                        (r,0,1), (t,0,2*pi), color = "lightblue", mesh = False)
+                Fig+= arrow3d((0.5,0.3,0),(0.5,0.3,-0.5), width=1, color = "lightblue",frame = False)
+                Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
+                  f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
+                Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
+                Fig
+              </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
         <p>
   L'évaluation de l'intégrale de surface n'est pas quelque chose de simple, les formules sont suffisamment compliquées pour qu'on veuille procéder autrement. Dans cette solution nous allons nous servir du théorème de la divergence, notamment parce que
 <md><mrow>
@@ -527,44 +580,56 @@ puisque le domaine d'intégration est symétrique par rapport à l'axe <m>x=0</m
 </p>
       </solution>
       <solution>
-        <p>
-Pour cette deuxième solution, nous utiliserons plutôt le théorème de Stokes. Puisque <m>\vnabla \cdot \vG = 0</m>, à la lumière du <xref ref="thm-rot-grad-zero">théorème </xref>, il est permis de penser qu'il existe un champ <m>\vF </m> tel que <m>\vG = \vnabla \times \vF</m>. Un tel champ est appelé un <term>potentiel vectoriel</term> pour <m>\vG</m>. Si c'était effectivement le cas, nous aurions, en vertu du théorème de Stokes,
-<md><mrow>
-  \iint_{\cS} \vG\cdot d\vS = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS = \int_{\partial \cS}\vF \cdot d\vr
-</mrow></md>
-où <m>\cC = \partial \cS</m> est le cercle <m>x^2 + y^2 = 1</m> du plan <m>z=0</m>.
-</p>
-        <figure xml:id="fig-ex-div-stokes-b">
-          <caption>La surface <m>\cS</m>, en orange, et son bord, en rouge.</caption>
-          <image xml:id="im-ex-div-stokes-b" platform="sage" width="100%">
-            <sageplot variant="3d" aspect="1.0">
-              var('r,t')
-              X(r,t) = r*cos(t)
-              Y(r,t) = r*sin(t)
-              f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
-              fx = diff(f,x)
-              fy = diff(f,y)
-              x0, y0 = 0.5,0.3
-              h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
-              Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                      (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
-              Fig += parametric_plot3d([X(1,t), Y(1,t), 0 ],
-                                      (t,0,2*pi), color = "red", thickness= 2)
-              Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
-              Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("x", (1.7,0,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("y", (0,1.7,0), color = "black",frame = False)
-              Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
-                frame = False)
-              Fig += text3d("z", (0,0,1.7), color = "black")
-              Fig
-            </sageplot>
-          </image>
-        </figure>
+        <p>Pour cette deuxième solution, nous utiliserons plutôt le théorème de Stokes. Puisque <m>\vnabla \cdot \vG = 0</m>, à la lumière du <xref ref="thm-rot-grad-zero">théorème </xref>, il est permis de penser qu'il existe un champ <m>\vF </m> tel que <m>\vG = \vnabla \times \vF</m>. Un tel champ est appelé un <term>potentiel vectoriel</term> pour <m>\vG</m>. 
+        </p>
+        <sidebyside widths="45% 5% 50%" valign="top">
+          <stack>
+            <p>
+              Si c'était effectivement le cas, nous aurions, en vertu du théorème de Stokes,
+                <md>
+                  <mrow> \iint_{\cS} \vG\cdot d\vS \amp = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS 
+                  </mrow>
+                  <mrow> \amp = \int_{\partial \cS}\vF \cdot d\vr.
+                  </mrow>
+                </md>
+            </p>
+            <p>
+              où <m>\cC = \partial \cS</m> est le cercle <m>x^2 + y^2 = 1</m> du plan <m>z=0</m>, illustré en rouge ci-contre.
+            </p>
+          </stack>
+          <p></p>
+          <figure xml:id="fig-ex-div-stokes-b">
+            <caption>La surface <m>\cS</m> et son bord <m>\cC</m>.</caption>
+            <image xml:id="im-ex-div-stokes-b" width="100%">
+              <sageplot variant="3d" aspect="1.0">
+                var('r,t')
+                X(r,t) = r*cos(t)
+                Y(r,t) = r*sin(t)
+                f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
+                fx = diff(f,x)
+                fy = diff(f,y)
+                x0, y0 = 0.5,0.3
+                h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
+                Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
+                                        (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
+                Fig += parametric_plot3d([X(1,t), Y(1,t), 0 ],
+                                        (t,0,2*pi), color = "red", thickness= 2)
+                Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
+                  f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
+                Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
+                Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
+                  frame = False)
+                Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
+                Fig
+              </sageplot>
+            </image>
+          </figure>
+        </sidebyside>
         <p>
   Cherchons donc un potentiel vectoriel <m>\vF = P \, \vi + Q\,\vj + R\, \vk</m>. Supposons pour commencer que <m>R = 0</m>, de sorte que <m>\vF = P\, \vi + Q\,\vj</m> et l'égalité <m>\vnabla \times \vF = \vG</m> se traduit par les égalités
   <md><mrow> - Q_z \amp = 2x  </mrow><mrow> P_z \amp = 2z -2x</mrow><mrow> Q_x - P_y \amp= 2x-2z</mrow></md>
@@ -698,13 +763,18 @@ qui est precisément ce que nous voulions.
       Joseph Black (1728<ndash/>1799).</fn>, de l'objet.
     </li><li><p>
       Pensons à l'énergie thermique comme un fluide en mouvement. Nous allons considérer son champ de vitesses de sorte que la chaleur dans la direction opposée à celle du gradient de température, c'est à dire <m>-\ka\vnabla T(x,y,z,t)</m>.
-      Ici <m>\ka</m> est une autre constante positive, appellée la <q>conductivité thermique</q> de l'objet. Ainsi, le taux avec lequel la chaleur est conduite à travers une portion de surface d'aire <m>\dee{S}</m> au point  <m>(x,y,z)</m> dans la direction du vecteur normal <m>\vn</m> est donnée par <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> au temps <m>t</m>. (voir le  <xref ref="lem_fluxInterp" text="global">lemme</xref> au besoin.) Par exemple, dans la figure
-      </p><sidebyside width="25%"><image source="images/CLP4-figs/heat1-JC"/></sidebyside><p>
-      le gradient de température, qui pointe dans la direction d'augmentation de température est l'opposé de <m>\vn</m>. En conséquence, le taux de flux <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> est  positif, ce qui indique le flux dans la direction de  <m>\vn</m>. Ceci correspond à ce qu'on attend <mdash/> la chaleur <q>s'écoule</q> des régions chaudes vers les régions froides. De plus, le taux de flux grandit à mesure que la norme du gradient de température grandit. Ceci fait du sens, et rappelle la loi du refroidissement de Newton.
-      </p></li></ul>
+      Ici <m>\ka</m> est une autre constante positive, appellée la <q>conductivité thermique</q> de l'objet. Ainsi, le taux avec lequel la chaleur est conduite à travers une portion de surface d'aire <m>\dee{S}</m> au point  <m>(x,y,z)</m> dans la direction du vecteur normal <m>\vn</m> est donnée par <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> au temps <m>t</m>. (voir le  <xref ref="lem_fluxInterp" text="global">lemme</xref> au besoin.)
+      </p>
+      <sidebyside widths="65% 5% 25%" valign="middle">
+        <p>
+        Par exemple, dans la figure ci-contre, le gradient de température, qui pointe dans la direction d'augmentation de température est l'opposé de <m>\vn</m>. En conséquence, le taux de flux <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> est  positif, ce qui indique le flux dans la direction de  <m>\vn</m>. Ceci correspond à ce qu'on attend <mdash/> la chaleur <q>s'écoule</q> des régions chaudes vers les régions froides. De plus, le taux de flux grandit à mesure que la norme du gradient de température grandit. Ceci fait du sens, et rappelle la loi du refroidissement de Newton.
+        </p>
+        <p></p>
+        <image source="images/CLP4-figs/heat1-JC"/>
+      </sidebyside></li></ul>
 
 
-    Soit  <m>\cV\subset\cB</m>  <em>n'importe quelle</em><fn>Il faut tout de même que sa frontière soit suffisamment raisonnable pour pouvoir appliquer nos théorèmes</fn> partie dans notre objet, soit <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entre</em> dans  <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\big(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\big)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>V</m> à travers toute sa frontière <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
+    Soit  <m>\cV\subset\cB</m>  <em>n'importe quelle</em><fn>Il faut tout de même que sa frontière soit suffisamment raisonnable pour pouvoir appliquer nos théorèmes</fn> partie dans notre objet, soit <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entre</em> dans  <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\left(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\right)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>V</m> à travers toute sa frontière <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
   </p>
     <sidebyside widths="45% 27%" valign="middle">
       <p>
@@ -834,9 +904,9 @@ Pour l'eau, la valeur de <m>\alpha</m> est approximativement
 </mrow></md>
 pour  <m>z</m> mesurée en centimètres. Ainsi, à une profondeur de quelques mètres la température est relativement constante dans le temps. Ce qui varie est décalé par rapport à la surface de quelques mois.
 </p>
-<exercise>
+<!-- <exercise>
     <webwork source="Contrib/DMOI/1-Counting/1_3-Combinations_and_Permutations/1_3_11.pg"/>
-  </exercise>  
+  </exercise>   -->
 </subsection>
   
   <xi:include href="./Problemes/Prob-sec-Divergence.ptx"/>

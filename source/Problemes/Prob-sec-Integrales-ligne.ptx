@@ -128,19 +128,25 @@
       </p></statement>
 
       <answer><p>
-      (a) <m>-\frac{1}{4}</m> </p><p>
-      (b) <m>-1</m>
+      <ol marker="(a)" cols="2">
+      <li>
+      <m>-\frac{1}{4}</m>
+      </li>
+      <li>
+      <m>-1</m>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p>
       (a)
       We may parametrize the curve by <m>\vr(t)=t\,\vi+t^2\,\vj</m> with <m>0\leqslant t\leqslant 1</m>.
       Then <m>\vv(t)=\diff{\vr}{t}(t)=\vi+2t\,\vj</m> and
-      <m>\vF\big(x(t),y(t)\big)=t^3\,\vi-t^2\,\vj</m> so
+      <m>\vF\left(x(t),y(t)\right)=t^3\,\vi-t^2\,\vj</m> so
       <md>
       <mrow>
       \int_\cC\vF\cdot \dee{\vr}
-      &amp;=\int_0^1 \vF\big(x(t),y(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+      &amp;=\int_0^1 \vF\left(x(t),y(t)\right)\cdot \diff{\vr}{t}(t)\ \dee{t}
       =\int_0^1\big[t^3\,\vi-t^2\,\vj\big]
       \cdot\big[\vi+2t\,\vj\big]\,\dee{t}
       </mrow><mrow>
@@ -200,7 +206,7 @@
       Parametrize the line segment by
       <md><mrow>
       \vr(t) = (0,0,1) + t\big\{(2,1,0)-(0,0,1)\big\}
-             = \big(2t,t,1-t\big)\qquad
+             = \left(2t,t,1-t\right)\qquad
       0\leqslant t\leqslant 1
       </mrow></md>
       so that <m>\vr(0) = (0,0,1)</m> is the initial point of the line segment and
@@ -212,13 +218,13 @@
       <md>
       <mrow>
       \int\vF\cdot\dee{\vr}
-      &amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
+      &amp;=\int_0^1 \vF\left(\vr(t)\right)\cdot \vr'(t)\,\dee{t}
       </mrow><mrow>
-      &amp;=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
+      &amp;=\int_0^1\left(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\right)\cdot(2,1,-1)\,\dee{t}
       </mrow><mrow>
-      &amp;=\int_0^1\big(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\big)\,\dee{t}
+      &amp;=\int_0^1\left(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\right)\,\dee{t}
       </mrow><mrow>
-      &amp;=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
+      &amp;=\int_0^1\left(t^2+8t-2\right)\,\dee{t}
       </mrow><mrow>
       &amp;=\frac{1}{3}+4-2
       =\frac{7}{3}
@@ -260,7 +266,7 @@
       we parametrize <m>C</m> by
       <md><mrow>
       \vr(\theta) =
-      \big(x(\theta)\,,\,y(\theta)\big)
+      \left(x(\theta)\,,\,y(\theta)\right)
       =(1-\cos\theta)\,\vi +\sin\theta\,\vj\qquad 0\le\theta\le\pi
       </mrow></md>
       So the integral is

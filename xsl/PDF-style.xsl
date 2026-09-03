@@ -43,14 +43,14 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template name="titlesec-chapter-style">
     <xsl:text>\titleformat{\chapter}[display]
     	{\Large\filcenter\scshape\bfseries}
-    	{\rule[4pt]{.3\textwidth}{2pt} \hspace{2ex} \large\textsc{\chaptertitlename} \thechapter \hspace{3ex} \rule[4pt]{0.3\textwidth}{2pt} }
+    	{\rule[4pt]{.3\textwidth}{2pt} \hspace{2ex} \large\textsc{\chaptername} \thechapter \hspace{3ex} \rule[4pt]{0.3\textwidth}{2pt} }
     	{0.0em}
     	{\titlerule\vspace{1ex}\huge\textsc #1}
     	[\vspace{.75ex}\titlerule]
     \titlespacing*{\chapter}{0pt}{-2em}{2em}&#xa;</xsl:text>
     <!-- <xsl:text>\titleformat{name=\chapter,numberless}
       {\Large\filcenter\scshape\bfseries}
-    	{\rule[4pt]{.3\textwidth}{2pt} \hspace{2ex} \large\textsc{\chaptertitlename} \thechapter \hspace{3ex} \rule[4pt]{0.3\textwidth}{2pt} }
+    	{\rule[4pt]{.3\textwidth}{2pt} \hspace{2ex} \large\textsc{\chaptername} \thechapter \hspace{3ex} \rule[4pt]{0.3\textwidth}{2pt} }
     	{0.0em}
     	{\titlerule\vspace{1ex}\huge\textsc #1}
     	[\vspace{.75ex}\titlerule]

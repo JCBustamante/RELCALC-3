@@ -81,9 +81,9 @@
       <md>
       <mrow>
       \vnabla\cdot(x\,\vi+y\,\vj+z\,\vk)
-      &amp;=\pdiff{}{x}\big(x\big)
-        +\pdiff{}{y}\big(y\big)
-        +\pdiff{}{z}\big(z\big)
+      &amp;=\pdiff{}{x}\left(x\right)
+        +\pdiff{}{y}\left(y\right)
+        +\pdiff{}{z}\left(z\right)
       =  3
       </mrow><mrow>
       \vnabla\times(x\,\vi+y\,\vj+z\,\vk)
@@ -102,9 +102,9 @@
       <md>
       <mrow>
       \vnabla\cdot(xy^2\vi-yz^2\vj+zx^2\vk)
-      &amp;=\pdiff{}{x}\big(xy^2\big)
-        +\pdiff{}{y}\big(-yz^2\big)
-        +\pdiff{}{z}\big(zx^2\big)
+      &amp;=\pdiff{}{x}\left(xy^2\right)
+        +\pdiff{}{y}\left(-yz^2\right)
+        +\pdiff{}{z}\left(zx^2\right)
       </mrow><mrow>
       &amp;=y^2-z^2+x^2
       </mrow><mrow>
@@ -193,11 +193,11 @@
       <statement><p>
       <ol marker = "(a)">
       <li>
-      Calculer et simplifier <m>\vnabla\cdot\big(\frac{\vr}{r}\big)</m>
-      pour <m>\vr=(x,y,z)</m> et <m>r=|(x,y,z)|</m>. Exprimer la réponse en termes de <m>r</m>.
+      Calculer et simplifier <m>\vnabla\cdot\left(\frac{\vr}{r}\right)</m>
+      pour <m>\vr=(x,y,z)</m> et <m>r=\norm{(x,y,z)}</m>. Exprimer la réponse en termes de <m>r</m>.
       </li>
       <li>
-      Calculer <m>\vnabla\times\big(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\big)</m>.
+      Calculer <m>\vnabla\times\left(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\right)</m>.
       </li>
       </ol>
       </p>
@@ -206,7 +206,7 @@
 
       <answer><p>
       (a) <m>\frac{2}{r}</m></p><p>
-      (b) <m>\big(xe^{xy}-2x\big)\,\vi+y\big(1-e^{xy}\big)\,\vj+z\,\vk</m>
+      (b) <m>\left(xe^{xy}-2x\right)\,\vi+y\left(1-e^{xy}\right)\,\vj+z\,\vk</m>
       </p></answer>
 
       <solution><p> (a)
@@ -246,14 +246,14 @@
       <p>(b)
       <md>
       <mrow>
-      \vnabla\times\big(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\big)
+      \vnabla\times\left(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\right)
       &amp;=\det\left[\begin{matrix}\vi&amp;\vj&amp;\vk\\
            \pdiff{}{x}&amp;
               \pdiff{}{y}&amp;
               \pdiff{}{z}\\
       yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
       </mrow><mrow>
-      &amp;=\big(xe^{xy}-2x\big)\,\vi-\big(ye^{xy}-y\big)\,\vj+z\,\vk
+      &amp;=\left(xe^{xy}-2x\right)\,\vi-\left(ye^{xy}-y\right)\,\vj+z\,\vk
       </mrow>
       </md>
       </p>
@@ -269,10 +269,12 @@
     <!-- Section 4.1 CLP4 -->
 
     <exercise> <!-- <title><fromexam>M317 2012J</fromexam></title> -->
-      <statement><p>
-      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions montré ci-dessous.
-      </p>
-      <sidebyside width="85%">
+      <statement>
+      <sidebyside widths="25% 5% 70%" valign="top">
+        <p>
+        Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions montré ci-contre.
+        </p>
+        <p/>
         <image source="images/CLP4-figs/pfigs/OE12J_2"/>
       </sidebyside>
 
@@ -517,13 +519,13 @@
         <md>
         <mrow>
         \vnabla^2(fg)
-        &amp; = \vnabla\cdot\big(g\vnabla f\big)
-           +\vnabla\cdot\big(f\vnabla g\big)
+        &amp; = \vnabla\cdot\left(g\vnabla f\right)
+           +\vnabla\cdot\left(f\vnabla g\right)
         </mrow><mrow>
-        &amp;= g\big(\vnabla\cdot \vnabla f\big)
-                  + \big(\vnabla g\big)\cdot\big(\vnabla f\big)
-           +f\big(\vnabla\cdot\vnabla g\big)
-               + \big(\vnabla f\big)\cdot\big(\vnabla g\big)
+        &amp;= g\left(\vnabla\cdot \vnabla f\right)
+                  + \left(\vnabla g\right)\cdot\left(\vnabla f\right)
+           +f\left(\vnabla\cdot\vnabla g\right)
+               + \left(\vnabla f\right)\cdot\left(\vnabla g\right)
         </mrow><mrow>
         &amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
         </mrow>.
@@ -615,13 +617,13 @@
       <md>
       <mrow>
       \vnabla^2(fg)
-      &amp; = \vnabla\cdot\big(g\vnabla f\big)
-         +\vnabla\cdot\big(f\vnabla g\big)
+      &amp; = \vnabla\cdot\left(g\vnabla f\right)
+         +\vnabla\cdot\left(f\vnabla g\right)
       </mrow><mrow>
-      &amp;= g\big(\vnabla\cdot \vnabla f\big)
-                + \big(\vnabla g\big)\cdot\big(\vnabla f\big)
-         +f\big(\vnabla\cdot\vnabla g\big)
-             + \big(\vnabla f\big)\cdot\big(\vnabla g\big)
+      &amp;= g\left(\vnabla\cdot \vnabla f\right)
+                + \left(\vnabla g\right)\cdot\left(\vnabla f\right)
+         +f\left(\vnabla\cdot\vnabla g\right)
+             + \left(\vnabla f\right)\cdot\left(\vnabla g\right)
       </mrow><mrow>
       &amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
       </mrow>.
@@ -632,7 +634,7 @@
     <exercise xml:id="poisson"> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
       <statement><p>
       Dans ce qui suit, on utilise la notation
-      <m>\vr = x\,\vi + y\,\vj + z\,\vk</m>, <m>r = |\vr|</m>, et <m>k</m> est un nombre
+      <m>\vr = x\,\vi + y\,\vj + z\,\vk</m>, <m>r = \norm{\vr}</m>, et <m>k</m> est un nombre
       <m>k = 0, 1, -1, 2, -2, \dots</m>
       <ol marker = "(a)">
       <li>
@@ -658,25 +660,33 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>k=-3</m></p><p>
-      (b) <m>k=2</m></p><p>
-      (c) <m>k=-2</m>
+      <ol marker="(a)" cols="3">
+      <li>
+      <m>k=-3</m>
+      </li>
+      <li>
+      <m>k=2</m>
+      </li>
+      <li>
+      <m>k=-2</m>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)
-      Since <m>r^k=\big(x^2+y^2+z^2\big)^{k/2}</m>,
+      Since <m>r^k=\left(x^2+y^2+z^2\right)^{k/2}</m>,
       <md>
       <mrow>
       \pdiff{}{x} r^k
-         &amp; = 2x\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+         &amp; = 2x\ \frac{k}{2}\left(x^2+y^2+z^2\right)^{\frac{k}{2}-1}
            = k\ (\vr\cdot\vi)\ r^{k-2}
       </mrow><mrow>
       \pdiff{}{y} r^k
-         &amp; = 2y\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+         &amp; = 2y\ \frac{k}{2}\left(x^2+y^2+z^2\right)^{\frac{k}{2}-1}
            = k\ (\vr\cdot\vj)\ r^{k-2}
       </mrow><mrow>
       \pdiff{}{z} r^k
-         &amp; = 2z\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+         &amp; = 2z\ \frac{k}{2}\left(x^2+y^2+z^2\right)^{\frac{k}{2}-1}
            = k\ (\vr\cdot\vk)\ r^{k-2}
       </mrow>
       </md>
@@ -695,11 +705,11 @@
         + y \pdiff{}{y} r^k
         + z \pdiff{}{z} r^k
       </mrow><mrow>
-      &amp;= 3r^k + x \big(kx\ r^{k-2}\big)
-        + y \big(ky\ r^{k-2}\big)
-        + z \big(kz\ r^{k-2}\big)
+      &amp;= 3r^k + x \left(kx\ r^{k-2}\right)
+        + y \left(ky\ r^{k-2}\right)
+        + z \left(kz\ r^{k-2}\right)
       </mrow><mrow>
-      &amp;= \big(3+k\big)r^k
+      &amp;= \left(3+k\right)r^k
       </mrow>
       </md>
       We want <m>k=2</m>.
@@ -710,7 +720,7 @@
       <md>
       <mrow>
       \vnabla^2 (r^k )
-      &amp;=\vnabla\cdot\big(\vnabla(r^k)\big)
+      &amp;=\vnabla\cdot\left(\vnabla(r^k)\right)
       </mrow><mrow>
       &amp;=\vnabla\cdot(k r^{k-2}\,\vr) &amp;\text{by part (a)}
       </mrow><mrow>
@@ -726,7 +736,7 @@
     <exercise> <!-- <title><fromexam>M317 2017A</fromexam></title> -->
       <statement><p>
       Soit <m>\vr</m> le champ de vecteurs <m>\vr = x\,\vi + y\,\vj + z\,\vk</m> et soit
-      <m>r</m> la fonction <m>r = |\vr|</m>. Soit <m>\va</m> le vecteur <em>constant</em>
+      <m>r</m> la fonction <m>r = \norm{\vr}</m>. Soit <m>\va</m> le vecteur <em>constant</em>
       <m>\va = a_1\,\vi + a_2\,\vj + a_3\,\vk</m>. Calculer et simplifier
       les quantités suivantes.
       Les réponses doivent être exprimées en termes de <m>\va</m>, <m>\vr</m> et <m>r</m>. Il ne devrait pas y avoir de
@@ -742,16 +752,26 @@
       <m>\vnabla\times(\vr\times\va)</m>
       </li>
       <li>
-      <m>\vnabla\cdot\big(\vnabla(r)\big)</m>
+      <m>\vnabla\cdot\left(\vnabla(r)\right)</m>
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>3</m></p><p>
-      (b) <m>2\vr</m></p><p>
-      (c) <m>-2\va</m></p><p>
-      (d) <m>\frac{2}{r}</m>
+      <ol marker="(a)" cols="4">
+      <li>
+      <m>3</m>
+      </li>
+      <li>
+      <m>2\vr</m>
+      </li>
+      <li>
+      <m>-2\va</m>
+      </li>
+      <li>
+      <m>\frac{2}{r}</m>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)
@@ -770,7 +790,7 @@
         =\left(\vi\pdiff{}{x}
           +\vj\pdiff{}{y}
           +\vk\pdiff{}{z} \right)
-        \big(x^2+y^2+z^2\big)
+        \left(x^2+y^2+z^2\right)
         =2x\,\vi +2y\,\vj +2z\,\vk
         =2\vr
       </mrow></md>
@@ -783,9 +803,9 @@
                                 x  &amp;  y  &amp; z   \\
                                a_1 &amp; a_2 &amp; a_3
                                \end{matrix}\right]
-                    =\vi\big(a_3y\!-\!a_2z\big)
-                    +\vj\big(a_1z\!-\!a_3x\big)
-                    +\vk\big(a_2x\!-\!a_1y\big)
+                    =\vi\left(a_3y\!-\!a_2z\right)
+                    +\vj\left(a_1z\!-\!a_3x\right)
+                    +\vk\left(a_2x\!-\!a_1y\right)
       </mrow></md>
       we have
       <md>
@@ -809,26 +829,26 @@
       <mrow>
       \vnabla(r) &amp;= \left(\vi\pdiff{}{x}
         +\vj\pdiff{}{y}
-        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{1/2}
+        +\vk\pdiff{}{z} \right) \left(x^2+y^2+z^2\right)^{1/2}
       </mrow><mrow>
-      &amp;=\vi\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
-        +\vj\frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
-        +\vk\frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
+      &amp;=\vi\frac{x}{\left(x^2+y^2+z^2\right)^{1/2}}
+        +\vj\frac{y}{\left(x^2+y^2+z^2\right)^{1/2}}
+        +\vk\frac{z}{\left(x^2+y^2+z^2\right)^{1/2}}
       </mrow>
       </md>
       we have
       <md>
       <mrow>
-      \vnabla\cdot\big(\vnabla(r)\big)
-      &amp;= \pdiff{}{x} \frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
-         +\pdiff{}{y} \frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
+      \vnabla\cdot\left(\vnabla(r)\right)
+      &amp;= \pdiff{}{x} \frac{x}{\left(x^2+y^2+z^2\right)^{1/2}}
+         +\pdiff{}{y} \frac{y}{\left(x^2+y^2+z^2\right)^{1/2}}
       </mrow><mrow>
-      &amp;\hskip1in +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
+      &amp;\hskip1in +\pdiff{}{z} \frac{z}{\left(x^2+y^2+z^2\right)^{1/2}}
       </mrow><mrow>
-      &amp;=  \frac{3}{\big(x^2+y^2+z^2\big)^{1/2}}
-         -\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{3/2}}
+      &amp;=  \frac{3}{\left(x^2+y^2+z^2\right)^{1/2}}
+         -\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\left(x^2+y^2+z^2\right)^{3/2}}
       </mrow><mrow>
-      &amp; =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}
+      &amp; =\frac{2}{\left(x^2+y^2+z^2\right)^{1/2}}
       </mrow><mrow>
       &amp; =\frac{2}{r}
       </mrow>
@@ -838,24 +858,32 @@
 
     <exercise> <!-- <title><fromexam>M317 2017D</fromexam></title> -->
       <statement><p>
-      Soit <m> \vr = x\,\vi + y\,\vj + z\,\vk </m> et <m> r = |\vr|</m>.
+      Soit <m> \vr = x\,\vi + y\,\vj + z\,\vk </m> et <m> r = \norm{\vr}</m>.
       <ol marker = "(a)">
       <li>
-      Calculer <m>a</m>, où <m>\vnabla\big(\frac{1}{r}\big) =- r^a\,\vr</m>.
+      Calculer <m>a</m>, où <m>\vnabla\left(\frac{1}{r}\right) =- r^a\,\vr</m>.
       </li>
       <li>
-      Calculer <m>a</m>, où <m>\vnabla\cdot\big(r\,\vr\big) = ar</m>.
+      Calculer <m>a</m>, où <m>\vnabla\cdot\left(r\,\vr\right) = ar</m>.
       </li>
       <li>
-      Calculer <m>a</m>, où <m>\vnabla\cdot\big(\vnabla(r^3)\big) = ar</m>.
+      Calculer <m>a</m>, où <m>\vnabla\cdot\left(\vnabla(r^3)\right) = ar</m>.
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>a=-3</m></p><p>
-      (b) <m>a=4</m></p><p>
-      (c) <m>a=12</m>
+      <ol marker="(a)" cols="3">
+      <li>
+      <m>a=-3</m>
+      </li>
+      <li>
+      <m>a=4</m>
+      </li>
+      <li>
+      <m>a=12</m>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)
@@ -865,11 +893,11 @@
       &amp;\vnabla\left(\frac{1}{r}\right)
       = \left(\vi\pdiff{}{x}
         +\vj\pdiff{}{y}
-        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{-1/2}
+        +\vk\pdiff{}{z} \right) \left(x^2+y^2+z^2\right)^{-1/2}
       </mrow><mrow>
-      &amp;\hskip0.25in=-\vi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
-        -\vj\frac{y}{\big(x^2+y^2+z^2\big)^{3/2}}
-        -\vk\frac{z}{\big(x^2+y^2+z^2\big)^{3/2}}
+      &amp;\hskip0.25in=-\vi\frac{x}{\left(x^2+y^2+z^2\right)^{3/2}}
+        -\vj\frac{y}{\left(x^2+y^2+z^2\right)^{3/2}}
+        -\vk\frac{z}{\left(x^2+y^2+z^2\right)^{3/2}}
       </mrow><mrow>
       &amp;\hskip0.25in=-\vi\frac{x}{r^3}
         -\vj\frac{y}{r^3}
@@ -882,16 +910,16 @@
       <p>(b) Since
       <md>
       <mrow>
-      \vnabla\cdot\big(r\,\vr\big)
-      &amp;= \pdiff{}{x} \Big[\big(x^2+y^2+z^2\big)^{1/2}x\Big]
-         +\pdiff{}{y}\Big[\big(x^2+y^2+z^2\big)^{1/2}y\Big]
+      \vnabla\cdot\left(r\,\vr\right)
+      &amp;= \pdiff{}{x} \Big[\left(x^2+y^2+z^2\right)^{1/2}x\Big]
+         +\pdiff{}{y}\Big[\left(x^2+y^2+z^2\right)^{1/2}y\Big]
       </mrow><mrow>
-      &amp;\hskip1in +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]
+      &amp;\hskip1in +\pdiff{}{z} \Big[\left(x^2+y^2+z^2\right)^{1/2}z\Big]
       </mrow><mrow>
-      &amp;=  3\big(x^2+y^2+z^2\big)^{1/2}
-         +\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{1/2}}
+      &amp;=  3\left(x^2+y^2+z^2\right)^{1/2}
+         +\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\left(x^2+y^2+z^2\right)^{1/2}}
       </mrow><mrow>
-      &amp; =4\big(x^2+y^2+z^2\big)^{1/2}
+      &amp; =4\left(x^2+y^2+z^2\right)^{1/2}
       </mrow><mrow>
       &amp; =4r
       </mrow>
@@ -904,11 +932,11 @@
       <mrow>
       &amp;\vnabla(r^3) = \left(\vi\pdiff{}{x}
         +\vj\pdiff{}{y}
-        +\vk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{3/2}
+        +\vk\pdiff{}{z} \right) \left(x^2+y^2+z^2\right)^{3/2}
       </mrow><mrow>
-      &amp;\hskip0.1in=\vi\,3x\big(x^2+y^2+z^2\big)^{1/2}
-        +\vj\,3y\big(x^2+y^2+z^2\big)^{1/2}
-        +\vk\,3z\big(x^2+y^2+z^2\big)^{1/2}
+      &amp;\hskip0.1in=\vi\,3x\left(x^2+y^2+z^2\right)^{1/2}
+        +\vj\,3y\left(x^2+y^2+z^2\right)^{1/2}
+        +\vk\,3z\left(x^2+y^2+z^2\right)^{1/2}
       </mrow><mrow>
       &amp;\hskip0.1in=3r\vr
       </mrow>
@@ -916,10 +944,10 @@
       we have
       <md>
       <mrow>
-      \vnabla\cdot\big(\vnabla(r^3)\big)
-      &amp;= \vnabla\cdot\big(3r\vr\big)
-      = 3\,\vnabla\cdot\big(r\vr\big)
-      = 3\,\big(4r\big) \qquad\text{by part (b)}
+      \vnabla\cdot\left(\vnabla(r^3)\right)
+      &amp;= \vnabla\cdot\left(3r\vr\right)
+      = 3\,\vnabla\cdot\left(r\vr\right)
+      = 3\,\left(4r\right) \qquad\text{by part (b)}
       </mrow><mrow>
       &amp;=  12 r
       </mrow>
@@ -988,11 +1016,7 @@
     <exercise> <!-- <title><fromexam>M317 2006D</fromexam></title> -->
       <statement><p>
       Soit
-      <md>
-      <mrow>
-      \vF = \frac{-z}{x^2+z^2}\,\vi +y\,\vj +\frac{x}{x^2+z^2}\,\vk
-      </mrow>.
-      </md>
+      <m>\displaystyle \vF = \frac{-z}{x^2+z^2}\,\vi +y\,\vj +\frac{x}{x^2+z^2}\,\vk</m>.
       </p>
 
       <p><ol marker = "(a)">
@@ -1165,7 +1189,7 @@
       So we must have
       <md>
       <mrow>
-      0&amp;=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\vi+\alpha(yz-xy)\vj+\beta(yz+xz)\vk\big)
+      0&amp;=\nabla\cdot\vF=\nabla\cdot \left((xz+xy)\vi+\alpha(yz-xy)\vj+\beta(yz+xz)\vk\right)
       </mrow><mrow>
       &amp;=(z+y)+\alpha(z-x)+\beta(y+x)
       </mrow>
@@ -1176,7 +1200,7 @@
       <p>(b) Since
       <md>
       <mrow>
-      \nabla\times\vG&amp;=\nabla\times\big(xyz\vi-xyz\vj+g(x,y,z)\vk\big)
+      \nabla\times\vG&amp;=\nabla\times\left(xyz\vi-xyz\vj+g(x,y,z)\vk\right)
       </mrow><mrow>
       &amp;=(g_y+xy)\,\vi-(g_x-xy)\,\vj+(-yz-xz)\,\vk
       </mrow>
@@ -1244,7 +1268,7 @@
       <answer><p>
       (a)
       Dénoter par <m>\theta</m> l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>.
-      Le point <m>\vr</m> est à une distance de <m>\ell=|\vr|\,\sin\theta</m> de l'axe de
+      Le point <m>\vr</m> est à une distance de <m>\ell=\norm{\vr}\,\sin\theta</m> de l'axe de
       rotation. Donc, lorsque le corps effectue une rotation, le point balaie un cercle de rayon
       <m>\ell</m> centré sur l'axe de rotation.
       </p>
@@ -1257,15 +1281,15 @@
         En une seconde, le point balaie
       un arc de ce cercle qui sous-tend un angle de <m>\Om</m> radians. Cet arc
       est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
-      <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta</m>. Ainsi, le point
-      se déplace à une vitesse <m>\Om|\vr|\,\sin\theta</m>. Le vecteur vitesse du point
-      doit avoir une longueur de <m>\Om|\vr|\,\sin\theta</m> et une direction perpendiculaire
+      <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om\norm{\vr}\,\sin\theta</m>. Ainsi, le point
+      se déplace à une vitesse <m>\Om\norm{\vr}\,\sin\theta</m>. Le vecteur vitesse du point
+      doit avoir une longueur de <m>\Om\norm{\vr}\,\sin\theta</m> et une direction perpendiculaire
       à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
       <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
       et a une longueur de
       <m>\
-      |\vOm|\,|\vr|\,\sin\theta
-      =\Om|\vr|\,\sin\theta
+      \norm{\vOm}\,\norm{\vr}\,\sin\theta
+      =\Om\norm{\vr}\,\sin\theta
       \ </m>
       comme voulu. Donc, le vecteur de vélocité est soit
       <m>\vOm\times\vr</m> soit son négatif. Par la règle de la main droite, c'est <m>\vOm\times\vr</m>.
@@ -1281,7 +1305,7 @@
       <solution><p>
         (a)
         Dénoter par <m>\theta</m> l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>.
-        Le point <m>\vr</m> est à une distance de <m>\ell=|\vr|\,\sin\theta</m> de l'axe de
+        Le point <m>\vr</m> est à une distance de <m>\ell=\norm{\vr}\,\sin\theta</m> de l'axe de
         rotation. Donc, lorsque le corps effectue une rotation, le point balaie un cercle de rayon
         <m>\ell</m> centré sur l'axe de rotation.
         </p>
@@ -1294,15 +1318,15 @@
           En une seconde, le point balaie
         un arc de ce cercle qui sous-tend un angle de <m>\Om</m> radians. Cet arc
         est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
-        <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta</m>. Ainsi, le point
-        se déplace à une vitesse <m>\Om|\vr|\,\sin\theta</m>. Le vecteur vitesse du point
-        doit avoir une longueur de <m>\Om|\vr|\,\sin\theta</m> et une direction perpendiculaire
+        <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om\norm{\vr}\,\sin\theta</m>. Ainsi, le point
+        se déplace à une vitesse <m>\Om\norm{\vr}\,\sin\theta</m>. Le vecteur vitesse du point
+        doit avoir une longueur de <m>\Om\norm{\vr}\,\sin\theta</m> et une direction perpendiculaire
         à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
         <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
         et a une longueur de
         <m>\
-        |\vOm|\,|\vr|\,\sin\theta
-        =\Om|\vr|\,\sin\theta
+        \norm{\vOm}\,\norm{\vr}\,\sin\theta
+        =\Om\norm{\vr}\,\sin\theta
         \ </m>
         comme voulu. Donc, le vecteur vitesse est soit
         <m>\vOm\times\vr</m> soit son négatif. Par la règle de la main droite, c'est <m>\vOm\times\vr</m>.
@@ -1343,16 +1367,16 @@
       \pdiff{y}{y}+\pdiff{z}{z}=3
       </mrow><mrow>
       \vnabla\times\vr
-      &amp;=\big(\pdiff{z}{y}-\pdiff{y}{z}\big)\vi+
-      \big(\pdiff{x}{z}-\pdiff{z}{x}\big)\vj
-      +\big(\pdiff{y}{x}-\pdiff{x}{y}\big)\vk
+      &amp;=\left(\pdiff{z}{y}-\pdiff{y}{z}\right)\vi+
+      \left(\pdiff{x}{z}-\pdiff{z}{x}\right)\vj
+      +\left(\pdiff{y}{x}-\pdiff{x}{y}\right)\vk
       =\vZero
       </mrow><mrow>
       (\vOm\cdot\vnabla)\vr&amp;=
-      \big(\Om_1\pdiff{}{x}
+      \left(\Om_1\pdiff{}{x}
       +\Om_2\pdiff{}{y}
-      +\Om_3\pdiff{}{z}\big)
-      \big(x\vi+y\vj+z\vk\big)
+      +\Om_3\pdiff{}{z}\right)
+      \left(x\vi+y\vj+z\vk\right)
       </mrow><mrow>
       &amp;=\Om_1\vi+\Om_2\vj+\Om_3\vk=\vOm
       </mrow>
@@ -1382,7 +1406,7 @@
       </mrow></md>
       une paramétrisation de la droite allant de l'origine à <m>(x,y,z)</m>. Définir
       <md><mrow>
-      \vG(x,y,z)=\int_0^1 t\,\vF\big(\vr(t)\big)\times\frac{d\vr}{dt}(t)\,dt
+      \vG(x,y,z)=\int_0^1 t\,\vF\left(\vr(t)\right)\times\frac{d\vr}{dt}(t)\,dt
       </mrow></md>.
       Montrer que <m>\vnabla\times \vG=\vF</m> sur <m>\R^3</m>.
       </p></statement>
@@ -1392,8 +1416,8 @@
       similaires. Premièrement,
       <md>
       <mrow>
-      t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
-      &amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\vi+y\,\vj+z\,\vk\big)
+      t\,\vF\left(\vr(t)\right)\times\diff{\vr}{t}(t)
+      &amp;=t\,\vF\left(tx,ty,tz\right)\times\left(x\,\vi+y\,\vj+z\,\vk\right)
       </mrow><mrow>
       &amp;=t\det\left[\begin{matrix}\vi  &amp; \vj &amp; \vk
       </mrow><mrow>
@@ -1405,39 +1429,39 @@
       En lisant les composantes <m>\vk</m> et <m>\vj</m> du déterminant, ça donne
       <md>
       <mrow>
-      G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt
+      G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\left(tx,ty,tz\right)\,y-F_2\left(tx,ty,tz\right)\,x\big]\,dt
       </mrow>.
       <mrow>
-      G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+      G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\left(tx,ty,tz\right)\,x-F_1\left(tx,ty,tz\right)\,z\big]\,dt
       </mrow>.
       </md>
       Donc,
       <md>
       <mrow>
       \pdiff{G_3}{y}
-      &amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
-      \frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
-      -\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt
+      &amp;=\int_0^1 t\Big[F_1\left(tx,ty,tz\right)+
+      \frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)\,ty
+      -\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)\,tx\Big]\,dt
       </mrow>.
       <mrow>
       \pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
-      \frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
-      -\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
-      -F_1\big(tx,ty,tz\big)\Big]\,dt
+      \frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\,tx
+      -\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\,tz
+      -F_1\left(tx,ty,tz\right)\Big]\,dt
       </mrow>.
       </md>
       de sorte que
       <md>
       <mrow>
       \pdiff{G_3}{y}-\pdiff{G_2}{z}
-      &amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)
+      &amp;=\int_0^1 \Big[2t\,F_1\left(tx,ty,tz\right)
       </mrow><mrow>
-      &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
-      +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
+      &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
+      +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)
       </mrow><mrow>
       &amp;\hskip1in
-      -t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
-      -t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+      -t^2x\,\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
+      -t^2x\,\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
       </mrow>.
       </md>
       Comme, par hypothèse,
@@ -1446,9 +1470,9 @@
          +\frac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
       <md>
       <mrow>
-      -t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
-      +\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
-      =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+      -t^2x\Big\{\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
+      +\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big\}
+      =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)\Big\}
       </mrow>,
       </md>
       de telle sorte que
@@ -1456,12 +1480,12 @@
       <mrow>
       &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
       </mrow><mrow>
-      &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
-       +t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
-      +t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+      &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\left(tx,ty,tz\right)
+       +t^2x\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)
+      +t^2y\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
       </mrow><mrow>
       &amp;\hskip3.5in
-      +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+      +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
       </mrow><mrow>
       &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
       =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
@@ -1476,8 +1500,8 @@
         similaires. Premièrement,
         <md>
         <mrow>
-        t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
-        &amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\vi+y\,\vj+z\,\vk\big)
+        t\,\vF\left(\vr(t)\right)\times\diff{\vr}{t}(t)
+        &amp;=t\,\vF\left(tx,ty,tz\right)\times\left(x\,\vi+y\,\vj+z\,\vk\right)
         </mrow><mrow>
         &amp;=t\det\left[\begin{matrix}\vi  &amp; \vj &amp; \vk
         </mrow><mrow>
@@ -1489,39 +1513,39 @@
         En lisant les composantes <m>\vk</m> et <m>\vj</m> du déterminant, ça donne
         <md>
         <mrow>
-        G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt
+        G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\left(tx,ty,tz\right)\,y-F_2\left(tx,ty,tz\right)\,x\big]\,dt
         </mrow>.
         <mrow>
-        G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+        G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\left(tx,ty,tz\right)\,x-F_1\left(tx,ty,tz\right)\,z\big]\,dt
         </mrow>.
         </md>
         Donc,
         <md>
         <mrow>
         \pdiff{G_3}{y}
-        &amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
-        \frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
-        -\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt
+        &amp;=\int_0^1 t\Big[F_1\left(tx,ty,tz\right)+
+        \frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)\,ty
+        -\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)\,tx\Big]\,dt
         </mrow>.
         <mrow>
         \pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
-        \frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
-        -\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
-        -F_1\big(tx,ty,tz\big)\Big]\,dt
+        \frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\,tx
+        -\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\,tz
+        -F_1\left(tx,ty,tz\right)\Big]\,dt
         </mrow>.
         </md>
         de sorte que
         <md>
         <mrow>
         \pdiff{G_3}{y}-\pdiff{G_2}{z}
-        &amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)
+        &amp;=\int_0^1 \Big[2t\,F_1\left(tx,ty,tz\right)
         </mrow><mrow>
-        &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
-        +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
+        &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
+        +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)
         </mrow><mrow>
         &amp;\hskip1in
-        -t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
-        -t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+        -t^2x\,\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
+        -t^2x\,\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
         </mrow>.
         </md>
         Comme, par hypothèse,
@@ -1530,9 +1554,9 @@
            +\frac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
         <md>
         <mrow>
-        -t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
-        +\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
-        =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+        -t^2x\Big\{\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
+        +\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big\}
+        =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)\Big\}
         </mrow>,
         </md>
         de telle sorte que
@@ -1540,12 +1564,12 @@
         <mrow>
         &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
         </mrow><mrow>
-        &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
-         +t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
-        +t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+        &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\left(tx,ty,tz\right)
+         +t^2x\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)
+        +t^2y\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
         </mrow><mrow>
         &amp;\hskip3.5in
-        +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+        +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
         </mrow><mrow>
         &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
         =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}

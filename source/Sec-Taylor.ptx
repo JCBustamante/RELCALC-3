@@ -38,7 +38,7 @@
     Voyons maintenant comment obtenir les formules analogues pour les fonctions à plusieurs variables. L'idée centrale sera de considérer une telle fonction <m>f</m> et de la composer avec un chemin <m>\pmb{\g}</m>, de sorte à obtenir une fonction <m>g = f\circ \pmb{\g}</m> d'une variable à laquelle appliquer les résultats mentionnés auparavant.
   </p>
     <p>
-    Soit donc <m>\cD \subset \R^n</m> et <m>\vr_0</m> un point intérieur à <m>\cD</m> proche de <m>\vr_0</m>. Soit par ailleurs <m>f : \cD \to \R </m> ayant des dérivées partielles continues jusqu'à l'ordre <m>3</m>. Écrivons aussi <m>\vr = \ctvec{x_1}{\vdots}{x_m}</m> puis <m> \vh = \vr - \vr_0 = \ctvec{h_1}{\vdots}{h_n}</m>.
+    Soit donc <m>\cD \subset \R^n</m> et <m>\vr_0</m> un point intérieur à <m>\cD</m> proche de <m>\vr_0</m>. Soit par ailleurs <m>f : \cD \to \R </m> ayant des dérivées partielles continues jusqu'à l'ordre <m>3</m>. Écrivons aussi <m>\vr = \rvt{x_1}{\vdots}{x_m}</m> puis <m> \vh = \vr - \vr_0 = \rvt{h_1}{\vdots}{h_n}</m>.
   </p>
     <p>
     Nous voulons une approximation de <m> f(\vr) = f(\vr_0 + \vh) </m>. Pour cela, considérons le chemin <m>\pmb{\g} : t \mapsto \vr_0 + t (\vr - \vr_0) = r_0 + t\vh</m>. Il s'agit de la droite qui relie <m>\vr_0</m> (à <m>t=0</m>) à <m>\vr_0</m> (à <m>t=1</m>). Remarquons qu'il s'agit d'un chemin de vitesse constante, à savoir <m>\pmb{\g}' = \vh</m>.
@@ -223,7 +223,7 @@ f_{yy}(x,y)&amp;=\frac{1}{\sqrt{1+4x^2+y^2}} -\frac{y^2}{(1+4x^2+y^2)^{3/2}}, &a
 </mrow></md>.
 Remplaçons maintenant dans  <xref ref="eq-Taylor-2b"/> afin d'obtenir l'approximation quadratique de  <m>f</m> autour de <m>(x_0,y_0)</m> :
 <md><mrow>
-&amp;f\big(x_0+\De x,\,y_0+\De y\big)
+&amp;f\left(x_0+\De x,\,y_0+\De y\right)
 </mrow><mrow>
 &amp;\hskip0.5in \approx f(x_0, y_0)
         +f_x(x_0, y_0)\De x+f_y(x_0, y_0)\De y \cr &amp;\hskip1.0in
@@ -275,7 +275,7 @@ f_{yy}(x,y)&amp;=-9e^{2x}\sin(3y), &amp;\qquad
 </mrow></md>,
 de sorte que l'approximation quadratique de <m>f</m> autour de <m>(0,0)</m> est
 <md><mrow>
-f\big(x\,,\,y\big)
+f\left(x\,,\,y\right)
 &amp; \approx f(x, y)
         +f_x(x, y) x+f_y(0, 0)y
 </mrow><mrow>
@@ -376,20 +376,20 @@ exactement comme dans le premier calcul.
     y_0=1,\qquad
     \De y=0.003
     </mrow></md>.
-    La valeur exacte est <m>f\big(x_0 + \De x,\,y_0+\De y\big)</m> et la valeur approchée est <m>f\big(x_0,\,y_0\big)
-           + \pdiff{f}{x}\big(x_0,\,y_0\big)\,\De x
-           + \pdiff{f}{y}\big(x_0,\,y_0\big)\,\De y</m>,
+    La valeur exacte est <m>f\left(x_0 + \De x,\,y_0+\De y\right)</m> et la valeur approchée est <m>f\left(x_0,\,y_0\right)
+           + \pdiff{f}{x}\left(x_0,\,y_0\right)\,\De x
+           + \pdiff{f}{y}\left(x_0,\,y_0\right)\,\De y</m>,
     de sorte que l'erreur d'approximation est
     <md><mrow>
     \frac{1}{2}\left|
-            \frac{\partial^2 f}{\partial x^2}\big(\pmb{\g}(c)\big)\,\De x^2
+            \frac{\partial^2 f}{\partial x^2}\left(\pmb{\g}(c)\right)\,\De x^2
            +2\frac{\partial^2\ f}{\partial x\partial y}
-                                         \big(\pmb{\g}(c)\big) \,\De x\De y
-           + \frac{\partial^2 f}{\partial y^2}\big(\pmb{\g}(c)\big)\,\De y^2
+                                         \left(\pmb{\g}(c)\right) \,\De x\De y
+           + \frac{\partial^2 f}{\partial y^2}\left(\pmb{\g}(c)\right)\,\De y^2
            \right|
     </mrow></md>,
     où
-       <m>\pmb{\g}(c) = (x_0, y_0) +c (\De x, \De y) =  \big(1-0.002 c\,,\,1+0.0003 c\big)</m>
+       <m>\pmb{\g}(c) = (x_0, y_0) +c (\De x, \De y) =  \left(1-0.002 c\,,\,1+0.0003 c\right)</m>
     pour un certain <m>0\leqslant  c\leqslant  1</m>. Pour notre fonction <m>f</m>,
     <md><mrow>
     f(x,y)&amp;=\frac{x^3}{y}, &amp;
@@ -400,11 +400,11 @@ exactement comme dans le premier calcul.
     \frac{\partial^2 f}{\partial x\partial y}(x,y)&amp;=-\frac{3 x^2}{y^2}, &amp;
     \frac{\partial^2 f}{\partial y^2}(x,y)&amp;=\frac{2 x^3}{y^3}
     </mrow></md>.
-    Nous ne savons pas ce que  <m>\pmb{\g}(c)=\big(1-0.002 c\,,\,1+0.0003 c\big)</m> vaut, mais nous savons que  <m>0\leqslant  c\leqslant  1</m>, de sorte que la composante  <m>x</m> de <m>\pmb{\g}(c)</m> est inférieure à <m>1</m> et que la composante <m>y</m> de <m>\pmb{\g}(c)</m> est plus grande que <m>1</m>. Ainsi,
+    Nous ne savons pas ce que  <m>\pmb{\g}(c)=\left(1-0.002 c\,,\,1+0.0003 c\right)</m> vaut, mais nous savons que  <m>0\leqslant  c\leqslant  1</m>, de sorte que la composante  <m>x</m> de <m>\pmb{\g}(c)</m> est inférieure à <m>1</m> et que la composante <m>y</m> de <m>\pmb{\g}(c)</m> est plus grande que <m>1</m>. Ainsi,
     <md><mrow>
-    \left|\frac{\partial^2 f}{\partial x^2}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 6, &amp;
-    \left|\frac{\partial^2 f}{\partial x\partial y}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 3, &amp;
-    \left|\frac{\partial^2 f}{\partial y^2}\big(\pmb{\g}(c)\big)\right|&amp;\leqslant 2.
+    \left|\frac{\partial^2 f}{\partial x^2}\left(\pmb{\g}(c)\right)\right|&amp;\leqslant 6, &amp;
+    \left|\frac{\partial^2 f}{\partial x\partial y}\left(\pmb{\g}(c)\right)\right|&amp;\leqslant 3, &amp;
+    \left|\frac{\partial^2 f}{\partial y^2}\left(\pmb{\g}(c)\right)\right|&amp;\leqslant 2.
     </mrow></md>
     Nous pouvons donc choisir <m>M = 6</m>. On a alors, en vertu de la <xref ref="prop-Borne-err-LinApp" text="global">proposition</xref>, que l'erreur vérifie
     <md><mrow>

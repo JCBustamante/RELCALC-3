@@ -231,7 +231,7 @@
             \dee{A} &amp;= \left|\det\left[\begin{matrix}\cos\theta &amp;\sin\theta \\
                                                -r\sin\theta &amp; r\cos\theta
                    \end{matrix}\right]\right| \dee{r}\dee{\theta}
-               =\big(r\cos^2\theta + r\sin^2\theta\big)\,\dee{r}\dee{\theta}
+               =\left(r\cos^2\theta + r\sin^2\theta\right)\,\dee{r}\dee{\theta}
           </mrow><mrow>
             &amp;= r\,\dee{r}\,\dee{\theta}
           </mrow></md>,
@@ -241,27 +241,30 @@
 
     <example xml:id="eg_parabolic_dA">
       <title><m>\dee{A}</m> en coordonnées paraboliques</title>
-      <p>
+      <sidebyside widths="50% 8% 42%" valign="middle">
+        <p>
         Les <q>coordonnées paraboliques</q> sont données par
         <md><mrow>
             x(u,v) = \frac{u^2-v^2}{2}, &amp; &amp;
             y(u,v) = uv
           </mrow></md>.
         Le nom vient de ce que les courbes obtenues lorsque <m>u</m> ou <m>v</m> sont constantes sont des paraboles.
-      </p>
-      <figure xml:id="fig-chgt-var-paraboliques">
-        <caption>Les courbes obtenues en faisant <m>u=</m> constante, ou <m>v=</m> constante, sont des paraboles.</caption>
-        <image xml:id="sageplot-chgt-vars-par" width="100%">
-          <sageplot>
-              var('u,v')
-              Fig = sum([parametric_plot([(u^2 - v^2)/2, u*v], (v,-2.1,2.1),
-                color = "blue", xmin=-2,xmax=2, ymin=-1, ymax=1,
-                ticks = [[],[]], axes_labels=['$x$', '$y$']) for u in srange(-2,2,0.25)])
-              Fig += sum([parametric_plot([(u^2 - v^2)/2, u*v], (u,-2.1,2.1), color = "red") for v in srange(-2,2,0.25)])
-              Fig
-            </sageplot>
-        </image>
-      </figure>
+        </p>
+        <p></p>
+        <figure xml:id="fig-chgt-var-paraboliques">
+          <caption>Courbes à <m>u</m> constant (bleu) ou <m>v</m> constant (rouge).</caption>
+          <image xml:id="sageplot-chgt-vars-par" width="85%">
+            <sageplot>
+                var('u,v')
+                Fig = sum([parametric_plot([(u^2 - v^2)/2, u*v], (v,-2.1,2.1),
+                  color = "blue", xmin=-2,xmax=2, ymin=-1, ymax=1,
+                  ticks = [[],[]], axes_labels=['$x$', '$y$'], figsize = 4) for u in srange(-2,2,0.25)])
+                Fig += sum([parametric_plot([(u^2 - v^2)/2, u*v], (u,-2.1,2.1), color = "red") for v in srange(-2,2,0.25)])
+                Fig
+              </sageplot>
+          </image>
+        </figure>
+      </sidebyside>
       <p>
         On calcule aisément
         <md><mrow>
@@ -388,9 +391,10 @@
           Le jacobien de la transformation est
           <md><mrow> \pdiff{(x,y)}{(s,t)} = \begin{vmatrix} \pdiff{x}{s}\amp \pdiff{x}{t}\\ \pdiff{y}{s}\amp \pdiff{y}{t}\end{vmatrix} =  \begin{vmatrix} 1 \amp 0\\ t \amp 1+s\end{vmatrix} = (1+s)</mrow></md>.
         </p>
-        <p>Afin d'étudier l'effet du changement de variables <m>(x,y)\mapsto (s,t)</m> sur le domaine <m>\cR</m>, considérons son bord, puis voyons comment ce bord est exprimé en termes de  <m>s</m> et <m>t</m>. Voici <m>\cR</m> dans le plan  <m>Oxy</m>.
-        </p>
-        <sidebyside width="50%">
+        <sidebyside widths="60% 8% 32%" valign="middle">
+          <p>Afin d'étudier l'effet du changement de variables <m>(x,y)\mapsto (s,t)</m> sur le domaine <m>\cR</m>, considérons son bord, puis voyons comment ce bord est exprimé en termes de  <m>s</m> et <m>t</m>. Voici <m>\cR</m> dans le plan  <m>Oxy</m>.
+          </p>
+          <p></p>
           <image source="images/CLP-figs/genSub"/>
         </sidebyside>
         <p>
@@ -572,10 +576,11 @@
   </subsection>
   <subsection xml:id="pars-chgt-var-3">
     <title>Changements de variables pour les intégrales triples</title>
-    <p>
+    <sidebyside widths="70% 8% 20%" valign="middle">
+      <p>
       Il existe une généralisation naturelle du <xref ref="thm-Chgt-var2" text="global">théorème</xref> pour les intégrales triples (et même en plus haute dimension). Elles sont établies exactement de la même façon que ce qu'on a fait plus haut. Pour les intégrales triples, la pierre angulaire de la construction est le fait établi au <xref ref="cor-produit-mixte" text="global">corollaire</xref>, qui exprime le volume d'un parallélépipède comme un déterminant.
-    </p>
-    <sidebyside width="20%">
+      </p>
+      <p></p>
       <image source="images/CLP-figs/piped"/>
     </sidebyside>
     <p>

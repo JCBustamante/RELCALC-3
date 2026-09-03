@@ -28,8 +28,26 @@
     <solution>
       <ol marker="(a)">
         <li>
-          <p> La présence des termes <m>\sqrt{x}</m> et <m>\sqrt{y}</m> impose d'avoir <m>x\geqslant 0</m> et <m>y\geqslant 0</m>, de sorte que le domaine se trouve dans le premier quadrant. Par ailleurs, il faut aussi avoir <m>4-x^2 - 4y^2 \gt 0</m>. L'équation <m>x^2 + 4y^2 = 4</m> définit une ellipse, la région qui nous intéresse est donc la partie du premier quadrant contenant l'origine, limitée par l'ellipse <m>(x/2)^2 + y^2 = 1</m>. Les segments de droite correspondant aux axes font partie du domaine, mais pas la portion de l'ellipse.
-        </p>
+          <sidebyside widths="50% 10% 40%" valign="middle">
+            <p> La présence des termes <m>\sqrt{x}</m> et <m>\sqrt{y}</m> impose d'avoir <m>x\geqslant 0</m> et <m>y\geqslant 0</m>, de sorte que le domaine se trouve dans le premier quadrant. Par ailleurs, il faut aussi avoir <m>4-x^2 - 4y^2 \gt 0</m>. L'équation <m>x^2 + 4y^2 = 4</m> définit une ellipse, la région qui nous intéresse est donc la partie du premier quadrant contenant l'origine, limitée par l'ellipse <m>(x/2)^2 + y^2 = 1</m>. Les segments de droite correspondant aux axes font partie du domaine, mais pas la portion de l'ellipse.
+            </p>
+            <p></p>
+            <figure xml:id="figure-domaine-fxy">
+              <caption>Le domaine de la fonction <m>f.</m></caption>
+              <image xml:id="sageplot-domainefxy">
+                <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
+                <sageplot>
+            var('x')
+            Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
+              axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
+            Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
+            Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
+            Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
+            Fig
+                </sageplot>
+              </image>
+            </figure>
+          </sidebyside>
         </li>
         <li>
           <p>
@@ -38,21 +56,6 @@
           </p>
         </li>
       </ol>
-      <figure xml:id="figure-domaine-fxy">
-        <caption>Le domaine de la fonction <m>f(x,y)= \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></caption>
-        <image xml:id="sageplot-domainefxy" width="80%">
-          <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
-          <sageplot>
-            var('x')
-            Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
-              axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]])
-            Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
-            Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
-            Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 16, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
-            Fig
-          </sageplot>
-        </image>
-      </figure>
     </solution>
   </example>
   <subsection xml:id="pars-Graphes-niveau">
@@ -151,13 +154,14 @@
     <p>
 La méthode des traces permet de visualiser et d'esquisser une surface d'équation <m>z=f(x,y)</m>. En effet, on conçoit la surface comme un amoncellement de courbes (les traces). Ceci a été fait en considérant les coupes de la surface par des plans d'équation <m>x=x_0</m> ou <m>y=y_0</m>.
 </p>
-    <p>
-  On voit maintenant une autre méthode, apparentée à ce qui est souvent fait en cartographie, où l'on considère les lignes de niveau constant du terrain, ou en météorologie, où l'on considère les courbes isothermes. Ceci correspond à faire les coupes selon des plans horizontaux d'équation <m>z=z_0</m> et à faire la projection sur le plan <m>z=0</m>.
-</p>
-    <p>
+    <sidebyside widths="50% 5% 45%" valign="top">
+      <p>
+  On voit maintenant une autre méthode, apparentée à ce qui est souvent fait en cartographie, où l'on considère les lignes de niveau constant du terrain, ou en météorologie, où l'on considère les courbes isothermes. Ceci correspond à faire les coupes selon des plans horizontaux d'équation <m>z=z_0</m> et à faire la projection sur le plan <m>z=0</m> (voir la figure ci-contre).
+      </p>
+      <p></p>
       <figure xml:id="fig-sage3d-Traces-horizontales">
         <caption>Une surface <m>z=f(x,y)</m> ainsi que quelques courbes de niveau et quelques traces horizontales</caption>
-        <image xml:id="sageplot-Traces-horizontales" width="60%">
+        <image xml:id="sageplot-Traces-horizontales">
           <description><p>Une surface et des traces horizontales</p></description>
           <sageplot variant="3d" aspect="1.0">
     var('x y z')
@@ -172,17 +176,17 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
             Contours+=implicit_plot3d(f(x,y,zlevel), (x,-2,2),(y,-2,2),(z,-     0.03,+0.03),thickness=3, color = "blue")
     S +=Contours
     S += arrow3d((0,0,0),(2,0,0), color = "black")
-    S += text3d("x", (2.2,0,0), color = "black")
+    S += text3d("x", (2.2,0,0), color = "black", fontsize = 24)
     S += arrow3d((0,0,0),(0,3,0), color = "black")
-    S += text3d("y", (0,3.2,0), color = "black")
+    S += text3d("y", (0,3.2,0), color = "black", fontsize = 24)
     S += arrow3d((0,0,0),(0,0,7), color = "black")
-    S += text3d("z", (0,0,7.2), color = "black")
+    S += text3d("z", (0,0,7.2), color = "black", fontsize = 24)
     S += plot3d(0, (x,-2,2),(y,-2,2), color = "blue", opacity=0.25)
     S
   </sageplot>
         </image>
       </figure>
-    </p>
+    </sidebyside>
       <definition xml:id="def-C-niveau">
         <statement>
           <p>Soit <m>f</m> une fonction de deux variables définie sur une région <m>\plan{D}</m>. Pour un réel <m>k</m> donné, la <term><em>courbe de niveau <m>k</m> de <m>f</m></em></term> est l'ensemble
@@ -192,28 +196,27 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
     </p>
         </statement>
       </definition>
-    <p>
+    <sidebyside widths="50% 5% 45%" valign="top">
+      <p>
 On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>.
-</p>
-    <p>
-La figure ci-après montre le diagramme des courbes de niveau de la fonction considérée à la <xref ref="fig-sage3d-Traces-horizontales" text="global">figure</xref>.
-</p>
-    <figure xml:id="Courbes-niveau">
-      <caption>Un diagramme de courbes de niveau</caption>
-      <image xml:id="C-niveau" width="60%">
-        <sageplot>
+
+La figure ci-contre montre le diagramme des courbes de niveau de la fonction considérée à la <xref ref="fig-sage3d-Traces-horizontales" text="global">figure</xref>.
+      </p>
+      <p></p>
+      <figure xml:id="Courbes-niveau">
+        <caption>Un diagramme de courbes de niveau</caption>
+        <image xml:id="C-niveau">
+          <sageplot>
           var('x,y')
           g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
-          C = contour_plot(g(x,y), (x,-2,2),(y,-2,2),
-            cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
-            axes = True, fill = True,
-            labels = True, label_colors = "black",
-            label_inline = True, label_fontsize = 8,
-            gridlines = True, axes_labels = ["$x$","$y$"], axes_labels_size=1.5, tick_formatter = "latex")
-          C
-        </sageplot>
-      </image>
-    </figure>
+          C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), figsize = [3,3], ticks = [[],[]], cmap = "Spectral", contours = [1.5,2,2.5,2.7,3,3.5,4,4.5,5,5.5,6,6.5,7], axes = True, frame = False, fill = True,
+            labels = True, label_fmt=lambda x: "$%s$"%round(x,1), label_colors = "black", label_inline = True, label_fontsize = 10,
+            gridlines = True, axes_labels = ["$x$","$y$"], axes_labels_size=2.2, fontsize = 8)
+            C
+          </sageplot>
+        </image>
+      </figure>
+    </sidebyside>
     <example>
       <p>
         Étudier les courbes de niveau des fonctions <m>f_1(x,y) = x^2 + y^2</m> et <m>f_2(x,y) = \sqrt{x^2 + y^2}</m>.
@@ -317,7 +320,7 @@ Remarquons que si une surface <m>\plan{S}</m> est donnée explicitement par une 
 
     </p>
         <figure xml:id="fig-Surf-Niveau">
-          <caption>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
+          <caption>Quelques surfaces de niveau de <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
           <image xml:id="sageplot3d-Surf-niveau" width="80%">
             <description><p>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m></p></description>
             <sageplot variant="3d" aspect="1.5">

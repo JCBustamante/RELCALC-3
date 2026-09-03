@@ -10,8 +10,8 @@
     <p>
       La règle de dérivation des fonctions composées, souvent appelée la <q>règle de la chaîne</q>, à savoir
       <md>
-        \diff{}{t}f\big(x(t)\big)
-        = \diff{f}{x}\big(x(t)\big)\ \diff{x}{t}(t)
+        \diff{}{t}f\left(x(t)\right)
+        = \diff{f}{x}\left(x(t)\right)\ \diff{x}{t}(t)
       </md>,
       nous est déjà familière. On s'en sert, par exemple, lorsqu'on calcule
       <md>
@@ -72,14 +72,14 @@
       </p>
       <example xml:id="eg_chainRuleA">
         <title>
-          <m>\diff{}{t}f\big(x(t),y(t)\big)</m>
+          <m>\diff{}{t}f\left(x(t),y(t)\right)</m>
         </title>
         <p>
-          Calculer <m>\diff{}{t}f\big(x(t),y(t)\big)</m> lorsque <m>
+          Calculer <m>\diff{}{t}f\left(x(t),y(t)\right)</m> lorsque <m>
           f(x,y)=x^2-y^2</m> avec <m>x(t)=\cos t </m> et <m> y(t)=\sin t
           </m>.
         </p>
-        <p>Posons <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t \, \vi + \sin t\ \vj</m> et   <m>F(t)=f\circ \vr(t) = f\big(x(t),y(t)\big)</m>. Nous avons, d'une part,
+        <p>Posons <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t \, \vi + \sin t\ \vj</m> et   <m>F(t)=f\circ \vr(t) = f\left(x(t),y(t)\right)</m>. Nous avons, d'une part,
           <md>
             \vD f = \begin{bmatrix} \pdiff{f}{x} \amp \pdiff{f}{y} \end{bmatrix} = \begin{bmatrix} 2x \amp -2y\end{bmatrix}
           </md>
@@ -92,7 +92,7 @@
 
           Bien entendu, dans cet exemple, on peut calculer  <m>F(t)</m> explicitement,
           <md>
-            F(t)=f\big(x(t),y(t)\big)=x(t)^2-y(t)^2=\cos^2t-\sin^2t
+            F(t)=f\left(x(t),y(t)\right)=x(t)^2-y(t)^2=\cos^2t-\sin^2t
           </md>,
           puis calculer la dérivée
           <md>
@@ -105,11 +105,11 @@
           <m>\diff{}{t}f(a+ct)</m>
         </title>
         <p>
-          Dans cet exemple, la variable intermédiaire n'est pas donnée. Posons donc  <m>u(t)=a+ct</m> et <m>w(t) = f(a+ct) = f\big(u(t)\big)</m>. Ainsi,
+          Dans cet exemple, la variable intermédiaire n'est pas donnée. Posons donc  <m>u(t)=a+ct</m> et <m>w(t) = f(a+ct) = f\left(u(t)\right)</m>. Ainsi,
           <md>
             \diff{}{t}f(x+ct)
             =\diff{w}{t}(t)
-            =\diff{f}{u}\big(u(t)\big)  \diff{u}{t}(t)
+            =\diff{f}{u}\left(u(t)\right)  \diff{u}{t}(t)
             =c\, f'(a+ct)
           </md>.
         </p>
@@ -156,29 +156,29 @@
       </p>
       <example xml:id="eg_chainRuleAA">
         <title>
-          <m>\pdiff{}{s}f\big(x(s,t),y(s,t)\big)</m>
+          <m>\pdiff{}{s}f\left(x(s,t),y(s,t)\right)</m>
         </title>
         <p>
-          Dans cet exemple, on trouve <m>\pdiff{}{s}f\big(x(s,t),y(s,t)\big)</m> lorsque
+          Dans cet exemple, on trouve <m>\pdiff{}{s}f\left(x(s,t),y(s,t)\right)</m> lorsque
           <md>
             f(x,y)=e^{xy},\qquad x(s,t)=s, \qquad y(s,t)=\cos t
           </md>.
-          Posons  <m>F(s,t)=f\big(x(s,t),\,y(s,t)\big)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
+          Posons  <m>F(s,t)=f\left(x(s,t),\,y(s,t)\right)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
           <md>
             \pdiff{F}{s}(s,t)
-            =  \pdiff{f}{x}\big(x(s,t),\,y(s,t)\big)\, \pdiff{x}{s}(s,t)
-              +\pdiff{f}{y}\big(x(s,t),\,y(s,t)\big)\, \pdiff{y}{s}(s,t)
+            =  \pdiff{f}{x}\left(x(s,t),\,y(s,t)\right)\, \pdiff{x}{s}(s,t)
+              +\pdiff{f}{y}\left(x(s,t),\,y(s,t)\right)\, \pdiff{y}{s}(s,t)
           </md>.
           Pour les fonctions données,
           <md><mrow>
               f(x,y)&amp;=e^{xy},
             </mrow><mrow>
               \pdiff{f}{x}(x,y)&amp;= ye^{xy},  &amp;
-              \pdiff{f}{x}\big(x(s,t),y(s,t)\big)&amp;= y(s,t) e^{x(s,t)\,y(s,t)}
+              \pdiff{f}{x}\left(x(s,t),y(s,t)\right)&amp;= y(s,t) e^{x(s,t)\,y(s,t)}
                                                   = \cos t\ e^{s\cos t},
             </mrow><mrow>
               \pdiff{f}{y}(x,y)&amp;= xe^{xy},  &amp;
-              \pdiff{f}{y}\big(x(s,t),y(s,t)\big)&amp;= x(s,t) e^{x(s,t)\,y(s,t)}
+              \pdiff{f}{y}\left(x(s,t),y(s,t)\right)&amp;= x(s,t) e^{x(s,t)\,y(s,t)}
                                                   = s\ e^{s\cos t},
             </mrow><mrow>
               \pdiff{x}{s}&amp;=1, &amp;
@@ -315,7 +315,7 @@
           </md>.
           On vérifie aisément que
           <md>
-            F(s,t) = \left(st + \frac{1}{2}(t^2 - s^2), \frac{1}{2}(t^2- s^2), s^2 t^2\right).
+            F(s,t) = \begin{bmatrix} st + \frac{1}{2}(t^2 - s^2) \\ \frac{1}{2}(t^2- s^2) \\ s^2 t^2 \end{bmatrix}.
           </md>
           Les entrées de la troisième rangée de <m>\vD f(s,t)</m>, à savoir <m>2st^2</m> et <m>2s^2 t</m>, sont les dérivées partielles de la troisième composante de <m>F(s,t)</m>, à savoir <m>s^2 t^2</m>, par rapport aux variables <m>s</m> et <m>t</m> respectivement.
         </p>
@@ -424,38 +424,45 @@
       </aside>
     </p>
     -->
-    <p>
-      Ainsi, nous avons que le vecteur <m>\pdiff{f}{x}\vi + \pdiff{f}{y}\vj</m> (que nous appellons le <q>gradient de <m>f</m></q>, il jouera un rôle crucial dans les sections à venir) est orthogonal au vecteur vitesse <m>\vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\, \vj</m>  et donc orthogonal à la courbe. Si <m>(x_0,y_0) =\vr(t_0)</m> est un point sur la courbe, la connaissance du vecteur normal nous permet d'obtenir directement une équation de la tangente, à savoir
-      <md>
-        \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
-      </md>
-    </p>
-    <figure xml:id="figure-implicites">
-      <caption>Une courbe <m>f(x,y)= 0</m> ainsi que quelques tangentes. Autour de <m>P_1</m>, on ne peut isoler pour <m>y</m> en fonction de <m>x</m> : deux valeurs distinctes correspondent à <m>\hat{x}_1</m>, la tangente est verticale. Les rôles sont échangés autour de <m>P_2</m>. Par contre, autour de <m>P_3</m>, on peut isoler n'importe laquelle des deux variables en termes de l'autre. La tangente n'est ni verticale ni horizontale.</caption>
-      <image xml:id="sageplot-implicite" width="80%">
-        <description><p>Une courbe et quelques tangentes</p></description>
-        <sageplot>
+    <sidebyside widths="40% 5% 55%" valign="top">
+      <p>
+      Ainsi, nous avons que le vecteur <m>\pdiff{f}{x}\vi + \pdiff{f}{y}\vj</m> (que nous appellons le <q>gradient de <m>f</m></q>, il jouera un rôle crucial dans les sections à venir) est orthogonal au vecteur vitesse <m>\vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\, \vj</m>  et donc orthogonal à la courbe.  Si <m>(x_0,y_0) =\vr(t_0)</m> est un point sur la courbe, la connaissance du vecteur normal nous permet d'obtenir directement une équation de la tangente. 
+      </p>
+      <p></p>
+      <figure xml:id="figure-implicites">
+        <caption>Une courbe <m>f(x,y)= 0</m> et quelques tangentes.</caption>
+        <image xml:id="sageplot-implicite">
+          <description><p>Une courbe et quelques tangentes</p></description>
+          <sageplot>
           var('x,y')
           fig = implicit_plot((y-2)^2 == (x/2-2)^3 -(x/2-2)+1, (x,-0.5,6.5),(y,-0.5,3.5),
                         linewidth =2, ticks=[[],[]],
-                              axes = True, gridlines = True, tick_formatter="latex", axes_labels=['$x$','$y$'], frame=False)
+                              axes = True, gridlines = True, tick_formatter="latex", axes_labels=['$x$','$y$'], axes_labels_size=1.6, frame=False)
           fig += line([(1.33,1.25), (1.33,2.75)], color = "red", thickness   = 1.5)
           fig += line([(2.84-1, 0.823), (2.84+1.25,0.823)], color = "red", thickness = 1.5)
           fig += plot(4-x/4, (x,2.5, 5.5), color = "green", thickness= 1.5)
-          fig += text('$P_1(x_1,y_1)$', (0.7, 2), fontsize=14, color='red')
-          fig += text('$P_2(x_2,y_2)$', (2.844, 0.5), fontsize=14, color='red')
-          fig += text('$P_3(x_3,y_3)$', (4.25, 3.25), fontsize=14, color='green')
-          fig += text('$\\hat{x}_1$', (1.5,-0.25), fontsize=14, color='red')
-          fig += text('$\\hat{y}_2$', (-0.25,1), fontsize=14, color='red')
+          fig += text('$P_1(x_1,y_1)$', (0.7, 2), fontsize=18, color='red')
+          fig += text('$P_2(x_2,y_2)$', (2.844, 0.5), fontsize=18, color='red')
+          fig += text('$P_3(x_3,y_3)$', (4.25, 3.25), fontsize=18, color='green')
+          fig += text('$\\hat{x}_1$', (1.5,-0.25), fontsize=18, color='red')
+          fig += text('$\\hat{y}_2$', (-0.25,1), fontsize=18, color='red')
           fig += point([1.33,2], color= "red", size = 40)
           fig += point([2.844,0.823], color= "red", size = 40)
           fig += point([4,3], color= "green", size = 40)
           fig += line([(1.5, 0), (1.5,2.54)], color = "red", thickness = 1, linestyle = "dotted")
           fig += line([(0, 1), (4,1)], color = "red", thickness = 1, linestyle = "dotted")
           fig
-        </sageplot>
-      </image>
-    </figure>
+          </sageplot>
+        </image>
+      </figure>
+      
+    </sidebyside>
+    <p> En effet, il suit de l'équation <xref ref="general2d"/> d'une droite dans le plan, appliquée à la tangente en <m>(x_0,y_0)</m> avec vecteur normal <m>\pdiff{f}{x}(x_0,y_0)\vi + \pdiff{f}{y}(x_0,y_0)\vj</m>, que celle-ci a pour équation
+
+      <md>
+        \pdiff{f}{x}(x_0,y_0)(x-x_0) +\pdiff{f}{y}(x_0,y_0)(y-y_0) = 0.
+      </md>
+      </p>
     <p>
       Si <m>\pdiff{f}{y}(x_0,y_0) \ne 0</m>, la tangente n'est pas verticale, et sa pente est précisément
       <md>
@@ -543,7 +550,7 @@
             f(x,y),\qquad
             x(s,t),\qquad
             y(s,t),\qquad
-            F(s,t)=f\big(x(s,t),y(s,t)\big)
+            F(s,t)=f\left(x(s,t),y(s,t)\right)
           </md>.
           Bien que les fonctions <m>f</m> et <m>F</m> soient intimement liées, elles ne sont pas la même chose. L'une est une fonction de <m>x</m> et <m>y</m> tandis que l'autre est une fonction de  <m>s</m> et  <m>t</m>.
         </li><li><p> Étape 2 :
@@ -569,13 +576,13 @@
         </li><li>Étape 4 : Écrire <alert>explicitement</alert> la relation fonctionnelle et ses variables. Il y a une seule relation fonctionnelle qui a du sens. Le terme de gauche est une fonction des variables  <m>s</m> et  <m>t</m>. Ainsi, le terme de droite doit aussi être une fonction de ces variables. Comme <m>f</m> est une fonction de <m>x</m> et <m>y</m>, ceci est obtenu en évaluant  <m>f</m> en  <m>x=x(s,t)</m> et <m>y=y(s,t)</m>.
           <md>
             \pdiff{F}{s}(s,t)=
-              \pdiff{f}{x}\big(x(s,t),y(s,t)\big)
+              \pdiff{f}{x}\left(x(s,t),y(s,t)\right)
               \pdiff{x}{s}(s,t)
-              +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
+              +\pdiff{f}{y}\left(x(s,t),y(s,t)\right)
               \pdiff{y}{s}(s,t)
           </md>
-          Si l'on omet les arguments, ou si l'on oublie quels sont ces arguments, il est possible d'oublier que  <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> dépendent de <m>s</m> et <m>t</m>. Ainsi, si l'on doit calculer une autre dérivée, on aura des problèmes pour différentier les facteurs <m>\pdiff{f}{x}\big(x(s,t),y(s,t)\big)</m> et
-          <m>\pdiff{f}{y}\big(x(s,t),y(s,t)\big)</m>.
+          Si l'on omet les arguments, ou si l'on oublie quels sont ces arguments, il est possible d'oublier que  <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> dépendent de <m>s</m> et <m>t</m>. Ainsi, si l'on doit calculer une autre dérivée, on aura des problèmes pour différentier les facteurs <m>\pdiff{f}{x}\left(x(s,t),y(s,t)\right)</m> et
+          <m>\pdiff{f}{y}\left(x(s,t),y(s,t)\right)</m>.
         </li></ul>
     </p>
     <p>Afin de s'aider à retenir les formules du <xref ref="thm_chainRule" text="global">théorème</xref>, il peut être utile de penser que les variables sont des quantités physiques : <m>f</m> et <m>F</m> mesurées en grammes, <m>x</m> et <m>y</m> mesurées en mètres, et <m>s</m> et <m>t</m> mesurées en secondes. Notons alors que
@@ -588,7 +595,7 @@
     <p>
       Voici une représentation graphique qui utilise un <em>arbre de dépendances</em> afin de se rappeler de la règle de dérivation des fonctions composées.
       <m>
-        \pdiff{}{s}f\big(x(s,t),y(s,t)\big)=
+        \pdiff{}{s}f\left(x(s,t),y(s,t)\right)=
         \pdiff{f}{x} \pdiff{x}{s} + \pdiff{f}{y}\pdiff{y}{s}
       </m>.
       Comme dans la figure de gauche ci-bas :
@@ -613,23 +620,23 @@
             </li><li> On écrit les arguments, comme à l'étape 4 ci-haut.
             </li></ul></p></li><li><p> On obtient alors
             <md><mrow>
-                \pdiff{}{s}f\big(x(s,t),y(s,t)\big)
-                &amp;=  \pdiff{f}{x}\big(x(s,t),y(s,t)\big)
+                \pdiff{}{s}f\left(x(s,t),y(s,t)\right)
+                &amp;=  \pdiff{f}{x}\left(x(s,t),y(s,t)\right)
                   \pdiff{x}{s}(s,t)
               </mrow><mrow>
-                &amp;\hskip0.5in  +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
+                &amp;\hskip0.5in  +\pdiff{f}{y}\left(x(s,t),y(s,t)\right)
                   \pdiff{y}{s}(s,t)
               </mrow></md>.
-          </p><sidebyside width="40%"><image source="images/CLP-figs/decTreeS"/></sidebyside></li></ul>
+          </p><sidebyside width="30%"><image source="images/CLP-figs/decTreeS"/></sidebyside></li></ul>
     </p>
     <example xml:id="eg_decTree">
       <p>
         Le terme de droite de l'égalité
         <md><mrow>
-            \diff{}{t}f\big(x(t),y(t),z(t)\big) &amp;= \pdiff{f}{x}\big(x(t),y(t),z(t)\big)\, \diff{x}{t}(t)
-                       +\pdiff{f}{y}\big(x(t),y(t),z(t)\big)\, \diff{y}{t}(t)
+            \diff{}{t}f\left(x(t),y(t),z(t)\right) &amp;= \pdiff{f}{x}\left(x(t),y(t),z(t)\right)\, \diff{x}{t}(t)
+                       +\pdiff{f}{y}\left(x(t),y(t),z(t)\right)\, \diff{y}{t}(t)
           </mrow><mrow>
-               &amp;\hskip1in   +\pdiff{f}{z}\big(x(t),y(t),z(t)\big)\, \diff{z}{t}(t)
+               &amp;\hskip1in   +\pdiff{f}{z}\left(x(t),y(t),z(t)\right)\, \diff{z}{t}(t)
           </mrow></md>,
         sans les variables, est
         <m>\pdiff{f}{x}\, \diff{x}{t}
@@ -637,7 +644,7 @@
         +\pdiff{f}{z}\, \diff{z}{t}</m>.
         Le diagramme d'arbre qui correspond est le suivant :
       </p>
-      <sidebyside width="35%">
+      <sidebyside width="30%">
         <image source="images/CLP-figs/decTreeTT"/>
       </sidebyside>
       <p>

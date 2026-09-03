@@ -69,7 +69,7 @@ Context()->texStrings;
 TEXT(beginproblem());
 BEGIN_TEXT
 
-Calculez la divergence du champ de vecteurs \(\mathbf{F} = \mathbf{a}\times \vec\mathbf{r}\),
+Calculez la divergence du champ de vecteurs \(\mathbf{F} = \mathbf{a}\times \mathbf{r}\),
 si \(\mathbf{r} = $r\) et \(\mathbf{a} = $a\), en calculant d'abord le produit vectoriel.
 
 $PAR
@@ -88,7 +88,7 @@ Context()->texStrings;
 SOLUTION(EV3(<<'END_SOLUTION'));
 $PAR SOLUTION $PAR
 
-En utilisant la formule du produit vectoriel \(\vec a \times \vec r\) en coordonnées cartésiennes, on obtient
+En utilisant la formule du produit vectoriel \(\mathbf{a} \times \mathbf{r}\) en coordonnées cartésiennes, on obtient
 \[ \mathbf{F} = $rxa, \]
 de sorte que
 \[ \mbox{div }\mathbf{F} = $div. \]

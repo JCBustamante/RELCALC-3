@@ -18,13 +18,13 @@
       Écrivez la règle de dérivation des fonctions composées pour toutes les fonctions suivantes.
       <ol marker = "(a)">
       <li>
-         <m>\pdiff{h}{x}</m> pour <m>h(x,y)=f\big(x,u(x,y)\big)</m>
+         <m>\pdiff{h}{x}</m> pour <m>h(x,y)=f\left(x,u(x,y)\right)</m>
       </li>
       <li>
-         <m>\diff{h}{x}</m> pour <m>h(x)=f\big(x,u(x),v(x)\big)</m>
+         <m>\diff{h}{x}</m> pour <m>h(x)=f\left(x,u(x),v(x)\right)</m>
       </li>
       <li>
-         <m>\pdiff{h}{x}</m> pour <m>h(x,y,z)=f\big(u(x,y,z),v(x,y),w(x)\big)</m>
+         <m>\pdiff{h}{x}</m> pour <m>h(x,y,z)=f\left(u(x,y,z),v(x,y),w(x)\right)</m>
       </li>
       </ol>
       </p></statement>
@@ -35,8 +35,8 @@
 
       <answer><p>
       (a) <m>\pdiff{h}{x}(x,y)
-      =\pdiff{f}{x}\big(x,u(x,y)\big)
-      +\pdiff{f}{u}\big(x,u(x,y)\big)
+      =\pdiff{f}{x}\left(x,u(x,y)\right)
+      +\pdiff{f}{u}\left(x,u(x,y)\right)
       \pdiff{u}{x}(x,y)</m>
       </p>
 
@@ -45,11 +45,11 @@
       <md>
       <mrow>
       \diff{h}{x}(x)
-      &amp;=\pdiff{f}{x}\big(x,u(x),v(x)\big)
-      +\pdiff{f}{u}\big(x,u(x),v(x)\big)
+      &amp;=\pdiff{f}{x}\left(x,u(x),v(x)\right)
+      +\pdiff{f}{u}\left(x,u(x),v(x)\right)
       \diff{u}{x}(x)
       </mrow><mrow>
-      &amp;\hskip1in+\pdiff{f}{v}\big(x,u(x),v(x)\big)
+      &amp;\hskip1in+\pdiff{f}{v}\left(x,u(x),v(x)\right)
       \diff{v}{x}(x)
       </mrow>
       </md>
@@ -59,14 +59,14 @@
       <md>
       <mrow>
       \pdiff{h}{x}(x,y,z)
-      \amp =\pdiff{f}{u}\big(u(x,y,z),v(x,y),w(x)\big)
+      \amp =\pdiff{f}{u}\left(u(x,y,z),v(x,y),w(x)\right)
       \pdiff{u}{x}(x,y,z)
       </mrow><mrow>
-      \amp\ \ +\pdiff{f}{v}\big(u(x,y,z),v(x,y),w(x)\big)
+      \amp\ \ +\pdiff{f}{v}\left(u(x,y,z),v(x,y),w(x)\right)
       \pdiff{v}{x}(x,y)
       </mrow>
       <mrow>
-      \amp\ \   +\pdiff{f}{w}\big(u(x,y,z),v(x,y),w(x)\big)
+      \amp\ \   +\pdiff{f}{w}\left(u(x,y,z),v(x,y),w(x)\right)
       \diff{w}{x}(x)
       </mrow>
       </md>
@@ -80,7 +80,7 @@
         <!--TODO
       <xref ref="pars-Proc-chaine" text = "custom">procédure </xref>
       --> pour la règle de la chaîne. Nous devons calculer la
-      dérivée de <m>h(x,y,z)=f\big(u(x,y,z),v(x,y),w(x)\big)</m> par rapport à
+      dérivée de <m>h(x,y,z)=f\left(u(x,y,z),v(x,y),w(x)\right)</m> par rapport à
       <m>x</m>. Pour cette fonction, le modèle de l'étape 2 de <!--TODO
       <xref ref="pars-Proc-chaine" text = "custom">ce paragraphe </xref> --> la procédure  est
       <md>
@@ -121,14 +121,14 @@
       <md>
       <mrow>
       \pdiff{h}{x}(x,y,z)
-      &amp;=\pdiff{f}{u}\big(u(x,y,z),v(x,y),w(x)\big)
+      &amp;=\pdiff{f}{u}\left(u(x,y,z),v(x,y),w(x)\right)
       \pdiff{u}{x}(x,y,z)
       </mrow><mrow>
       &amp;\hskip0.5in
-      +\pdiff{f}{v}\big(u(x,y,z),v(x,y),w(x)\big)
+      +\pdiff{f}{v}\left(u(x,y,z),v(x,y),w(x)\right)
       \pdiff{v}{x}(x,y)
       </mrow><mrow>&amp;\hskip1in
-      +\pdiff{f}{w}\big(u(x,y,z),v(x,y),w(x)\big)
+      +\pdiff{f}{w}\left(u(x,y,z),v(x,y),w(x)\right)
       \diff{w}{x}(x)
       </mrow>
       </md>
@@ -139,7 +139,7 @@
       <!--TODO
       <xref ref="pars-Proc-chaine" text="custom"> ce paragraphe</xref>
       -->. Nous devons calculer la
-      dérivée de <m>h(x,y)=f\big(x,u(x,y)\big)</m> par rapport à
+      dérivée de <m>h(x,y)=f\left(x,u(x,y)\right)</m> par rapport à
       <m>x</m>. Pour cette fonction, le modèle de l'étape 2 de la procédure
       <!--TODO
       <xref ref="pars-Proc-chaine" text ="custom">ce paragraphe</xref> --> est
@@ -174,8 +174,8 @@
       <md>
       <mrow>
       \pdiff{h}{x}(x,y)
-      =\pdiff{f}{x}\big(x,u(x,y)\big)
-      +\pdiff{f}{u}\big(x,u(x,y)\big)
+      =\pdiff{f}{x}\left(x,u(x,y)\right)
+      +\pdiff{f}{u}\left(x,u(x,y)\right)
       \pdiff{u}{x}(x,y)
       </mrow>
       </md>
@@ -185,7 +185,7 @@
         <!--TODO
       <xref ref="pars-Proc-chaine" text ="custom">ce paragraphe</xref>.
       --> Nous devons calculer la
-      dérivée de <m>h(x)=f\big(x,u(x),v(x)\big)</m> par rapport à
+      dérivée de <m>h(x)=f\left(x,u(x),v(x)\right)</m> par rapport à
       <m>x</m>. Pour cette fonction, le modèle de l'étape 2 de
       <!--TODO
       <xref ref="pars-Proc-chaine" text ="custom">ce paragraphe</xref>
@@ -214,11 +214,11 @@
       <md>
       <mrow>
       \diff{h}{x}(x)
-      &amp;=\pdiff{f}{x}\big(x,u(x),v(x)\big)
-      +\pdiff{f}{u}\big(x,u(x),v(x)\big)
+      &amp;=\pdiff{f}{x}\left(x,u(x),v(x)\right)
+      +\pdiff{f}{u}\left(x,u(x),v(x)\right)
       \diff{u}{x}(x)
       </mrow><mrow>
-      &amp;\hskip1in+\pdiff{f}{v}\big(x,u(x),v(x)\big)
+      &amp;\hskip1in+\pdiff{f}{v}\left(x,u(x),v(x)\right)
       \diff{v}{x}(x)
       </mrow>
       </md>
@@ -357,7 +357,7 @@
       </md>
       Trouvez
       <m>
-      \difftwo{}{t} z\big(x(t),y(t)\big)
+      \difftwo{}{t} z\left(x(t),y(t)\right)
       </m>
       lorsque <m>x(t)=2t^2</m>, <m>y(t)=t^3</m> et <m>t=1</m>.
       </p></statement>
@@ -367,13 +367,13 @@
       </p></answer>
 
       <solution><p>
-      Posons <m>w(t) = z\big(x(t),y(t)\big) = f\big(x(t),y(t)\big)</m> avec
+      Posons <m>w(t) = z\left(x(t),y(t)\right) = f\left(x(t),y(t)\right)</m> avec
       <m>x(t)=2t^2</m>, <m>y(t)=t^3</m>.
       Nous devons calculer <m>\difftwo{w}{t}(1)</m>.
       Par la règle de dérivation en chaîne,
       <md>
       <mrow>
-      \diff{w}{t}(t)&amp;= \diff{}{t} f\big(x(t),y(t)\big)
+      \diff{w}{t}(t)&amp;= \diff{}{t} f\left(x(t),y(t)\right)
       </mrow><mrow>
         &amp;= f_x(x(t)\,,\,y(t))\,\diff{x}{t}(t)
                            +f_y(x(t)\,,\,y(t))\,\diff{y}{t}(t)
@@ -385,23 +385,23 @@
       Par linéarité, la règle du produit et la règle de dérivation en chaîne,
       <md>
       <mrow>
-      &amp;\difftwo{}{t} f\big(x(t),y(t)\big)
-      = \diff{}{t}\left[4t\,f_x\big(x(t),y(t)\big) \right]
-         +\diff{}{t}\left[3t^2\,f_y\big(x(t),y(t)\big) \right]
+      &amp;\difftwo{}{t} f\left(x(t),y(t)\right)
+      = \diff{}{t}\left[4t\,f_x\left(x(t),y(t)\right) \right]
+         +\diff{}{t}\left[3t^2\,f_y\left(x(t),y(t)\right) \right]
       </mrow><mrow>
-      &amp;\hskip0.3in= 4\,f_x\big(x(t),y(t)\big)
-         + \color{blue}{4t \diff{}{t}\left[f_x\big(x(t),y(t)\big) \right] }
+      &amp;\hskip0.3in= 4\,f_x\left(x(t),y(t)\right)
+         + \color{blue}{4t \diff{}{t}\left[f_x\left(x(t),y(t)\right) \right] }
        </mrow><mrow>&amp;\hskip0.3in\phantom{=}
-         +6t\,f_y\big(x(t),y(t)\big)
-         +\color{red}{3t^2\diff{}{t}\left[f_y\big(x(t),y(t)\big) \right]}
+         +6t\,f_y\left(x(t),y(t)\right)
+         +\color{red}{3t^2\diff{}{t}\left[f_y\left(x(t),y(t)\right) \right]}
       </mrow><mrow>
       &amp;\hskip0.3in= 4\,f_x(2t^2\,,\,t^3)
-                + \color{blue}{4t\Big[f_{xx}\big(x(t),y(t)\big)\,\diff{x}{t}(t)
-                + f_{xy}\big(x(t),y(t)\big)\,\diff{y}{t}(t)\Big]}
+                + \color{blue}{4t\Big[f_{xx}\left(x(t),y(t)\right)\,\diff{x}{t}(t)
+                + f_{xy}\left(x(t),y(t)\right)\,\diff{y}{t}(t)\Big]}
       </mrow><mrow>
       &amp;\hskip0.3in\phantom{=} + 6t\,f_y(2t^2\,,\,t^3)
-                + \color{red}{3t^2\Big[f_{yx}\big(x(t),y(t)\big)\,\diff{x}{t}(t)
-                + f_{yy}\big(x(t),y(t)\big)\,\diff{y}{t}(t)\Big]}
+                + \color{red}{3t^2\Big[f_{yx}\left(x(t),y(t)\right)\,\diff{x}{t}(t)
+                + f_{yy}\left(x(t),y(t)\right)\,\diff{y}{t}(t)\Big]}
       </mrow><mrow>
       &amp;\hskip0.3in= 4\,f_x(2t^2\,,\,t^3)
                 + \color{blue}{16t^2\,f_{xx}(2t^2\,,\,t^3)
@@ -415,7 +415,7 @@
       En particulier, quand <m>t=1</m>, et puisque <m>f_{xy}(2, 1)=f_{yx}(2, 1)</m>,
       <md>
       <mrow>
-      \left.\difftwo{}{t} f\big(x(t),y(t)\big) \right|_{t=1}
+      \left.\difftwo{}{t} f\left(x(t),y(t)\right) \right|_{t=1}
       &amp;= 4\,(5)
                 +\color{blue}{ 16\,(2)
                 + 12\,(1)}
@@ -453,12 +453,12 @@
       <m>f(r,\theta)=f(x,y)\big|_{x=r\cos\theta,\,y=r\sin\theta}</m>.
       Jusqu'à ce que vous vous y habituiez, annulez ce conflit de notation en renommant la fonction <m>r</m> et <m>\theta</m> par <m>F(r,\theta)</m>, i.e.
       <m>
-      F(r,\theta) = f\big(r\cos\theta\,,\,r\sin\theta\big)
+      F(r,\theta) = f\left(r\cos\theta\,,\,r\sin\theta\right)
       </m>.
       De façon similaire, renommer <m>g</m>, vu comme une fonction de
       <m>r</m> et de <m>\theta</m> par <m>G(r,\theta)</m>, i.e.
       <m>
-      G(r,\theta) = g\big(r\cos\theta\,,\,r\sin\theta\big)
+      G(r,\theta) = g\left(r\cos\theta\,,\,r\sin\theta\right)
       </m>.
       </p>
 
@@ -468,16 +468,16 @@
       (a)
       <md>
       <mrow>
-      \pdiff{}{\theta}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{\theta}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       &amp;=-r\sin\theta\, f_x
         +r\cos\theta\, f_y
       </mrow><mrow>
-      \pdiff{}{r}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{r}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       &amp;= \cos\theta\, f_x
         +\sin\theta\, f_y
       </mrow><mrow>
       \frac{\partial^2}{\partial \theta\,\partial r}
-               \big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+               \big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       &amp;=-\sin\theta\, f_x
         +\cos\theta\, f_y
       </mrow><mrow>&amp;\hskip0.5in
@@ -488,18 +488,18 @@
       </mrow>
       </md>
       avec les arguments de <m>f_x</m>, <m>f_y</m>, <m>f_{xx}</m>, <m>f_{xy}</m> et <m>f_{yy}</m>
-      étant tous <m>\big(r\cos\theta\,,\,r\sin\theta\big)</m>.
+      étant tous <m>\left(r\cos\theta\,,\,r\sin\theta\right)</m>.
       </p>
 
       <p>(b)
       <md>
       <mrow>
-      \pdiff{}{r}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
-      &amp;=-\frac{1}{r} \pdiff{}{\theta}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{r}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
+      &amp;=-\frac{1}{r} \pdiff{}{\theta}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
 
       </mrow><mrow>
-      \pdiff{}{\theta}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
-      &amp;=r\pdiff{}{r}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{\theta}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
+      &amp;=r\pdiff{}{r}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow>
       </md>
       </p></answer>
@@ -511,12 +511,12 @@
       Annulons ce conflit de notation en renommant la
       fonction de <m>r</m> et <m>\theta</m> par <m>F(r,\theta)</m>. C'est-à-dire,
       <md>
-      F(r,\theta) = f\big(r\cos\theta\,,\,r\sin\theta\big)
+      F(r,\theta) = f\left(r\cos\theta\,,\,r\sin\theta\right)
       </md>
       De même, renommons <m>g</m>, vue comme une
       fonction de <m>r</m> et <m>\theta</m>, par <m>G(r,\theta)</m>. C'est-à-dire,
       <md>
-      G(r,\theta) = g\big(r\cos\theta\,,\,r\sin\theta\big)
+      G(r,\theta) = g\left(r\cos\theta\,,\,r\sin\theta\right)
       </md>
       Avec cette nouvelle notation, on nous demande
       <ul>
@@ -534,30 +534,30 @@
       <md>
       <mrow>
       F_\theta(r,\theta)
-      &amp;=\pdiff{}{\theta}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=\pdiff{}{\theta}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow><mrow>
-      &amp;= f_x\big(r\cos\theta\,,\,r\sin\theta\big)
-                 \ \pdiff{}{\theta}\big(r\cos\theta\big)
+      &amp;= f_x\left(r\cos\theta\,,\,r\sin\theta\right)
+                 \ \pdiff{}{\theta}\left(r\cos\theta\right)
       </mrow><mrow>&amp;\hskip1in
-        +f_y\big(r\cos\theta\,,\,r\sin\theta\big)
-                 \ \pdiff{}{\theta}\big(r\sin\theta\big)
+        +f_y\left(r\cos\theta\,,\,r\sin\theta\right)
+                 \ \pdiff{}{\theta}\left(r\sin\theta\right)
 
       </mrow><mrow>
-      &amp;=-r\sin\theta\, f_x\big(r\cos\theta\,,\,r\sin\theta\big)
-        +r\cos\theta\, f_y\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;=-r\sin\theta\, f_x\left(r\cos\theta\,,\,r\sin\theta\right)
+        +r\cos\theta\, f_y\left(r\cos\theta\,,\,r\sin\theta\right)
       \tag{E1}
       </mrow><mrow>
       F_r(r,\theta)
-      &amp;=\pdiff{}{r}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=\pdiff{}{r}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow><mrow>
-      &amp;= f_x\big(r\cos\theta\,,\,r\sin\theta\big)
-                 \ \pdiff{}{r}\big(r\cos\theta\big)
+      &amp;= f_x\left(r\cos\theta\,,\,r\sin\theta\right)
+                 \ \pdiff{}{r}\left(r\cos\theta\right)
       </mrow><mrow>&amp;\hskip1in
-        +f_y\big(r\cos\theta\,,\,r\sin\theta\big)
-                 \ \pdiff{}{r}\big(r\sin\theta\big)
+        +f_y\left(r\cos\theta\,,\,r\sin\theta\right)
+                 \ \pdiff{}{r}\left(r\sin\theta\right)
       </mrow><mrow>
-      &amp;= \cos\theta\, f_x\big(r\cos\theta\,,\,r\sin\theta\big)
-        +\sin\theta\, f_y\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;= \cos\theta\, f_x\left(r\cos\theta\,,\,r\sin\theta\right)
+        +\sin\theta\, f_y\left(r\cos\theta\,,\,r\sin\theta\right)
       \tag{E2}
       </mrow>
       </md>
@@ -566,28 +566,28 @@
       <mrow>
       &amp;F_{r\theta}(r,\theta) = \pdiff{}{\theta}\big[F_r(r,\theta)\big]
       </mrow><mrow>
-      &amp;=\pdiff{}{\theta}\Big[\cos\theta\, f_x\big(r\cos\theta\,,\,r\sin\theta\big)
-        +\sin\theta\, f_y\big(r\cos\theta\,,\,r\sin\theta\big)\Big]
+      &amp;=\pdiff{}{\theta}\Big[\cos\theta\, f_x\left(r\cos\theta\,,\,r\sin\theta\right)
+        +\sin\theta\, f_y\left(r\cos\theta\,,\,r\sin\theta\right)\Big]
       </mrow><mrow>
-      &amp;=-\sin\theta\  f_x\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;=-\sin\theta\  f_x\left(r\cos\theta\,,\,r\sin\theta\right)
         +\cos\theta\, \color{blue}{
-                \pdiff{}{\theta} \Big[f_x\big(r\cos\theta\,,\,r\sin\theta\big)\Big]}
+                \pdiff{}{\theta} \Big[f_x\left(r\cos\theta\,,\,r\sin\theta\right)\Big]}
       </mrow><mrow>&amp;\hskip0.2in
-        +\cos\theta\  f_y\big(r\cos\theta\,,\,r\sin\theta\big)
+        +\cos\theta\  f_y\left(r\cos\theta\,,\,r\sin\theta\right)
         +\sin\theta\,  \color{red}{
-             \pdiff{}{\theta}\Big[f_y\big(r\cos\theta\,,\,r\sin\theta\big)\Big]}
+             \pdiff{}{\theta}\Big[f_y\left(r\cos\theta\,,\,r\sin\theta\right)\Big]}
       </mrow><mrow>
-      &amp;=-\sin\theta\  f_x\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;=-\sin\theta\  f_x\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>&amp;\hskip0.4in
           +\cos\theta \color{blue}{
-                \Big[f_{xx}\big(r\cos\theta\,,\,r\sin\theta\big)\,(-r\sin\theta)
-                    +f_{xy}\big(r\cos\theta\,,\,r\sin\theta\big)\,(r\cos\theta)\Big]}
+                \Big[f_{xx}\left(r\cos\theta\,,\,r\sin\theta\right)\,(-r\sin\theta)
+                    +f_{xy}\left(r\cos\theta\,,\,r\sin\theta\right)\,(r\cos\theta)\Big]}
       </mrow><mrow>&amp;\hskip0.2in
-        +\cos\theta\  f_y\big(r\cos\theta\,,\,r\sin\theta\big)
+        +\cos\theta\  f_y\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>&amp;\hskip0.4in
           +\sin\theta \color{red}{
-                \Big[f_{yx}\big(r\cos\theta\,,\,r\sin\theta\big)\,(-r\sin\theta)
-                    +f_{yy}\big(r\cos\theta\,,\,r\sin\theta\big)\,(r\cos\theta)\Big]}
+                \Big[f_{yx}\left(r\cos\theta\,,\,r\sin\theta\right)\,(-r\sin\theta)
+                    +f_{yy}\left(r\cos\theta\,,\,r\sin\theta\right)\,(r\cos\theta)\Big]}
       </mrow><mrow>
       &amp;=-\sin\theta\, f_x
         +\cos\theta\, f_y
@@ -598,22 +598,22 @@
       </mrow>
       </md>
       avec les arguments de <m>f_x</m>, <m>f_y</m>, <m>f_{xx}</m>, <m>f_{xy}</m> et <m>f_{yy}</m>
-      étant tous <m>\big(r\cos\theta\,,\,r\sin\theta\big)</m>.
+      étant tous <m>\left(r\cos\theta\,,\,r\sin\theta\right)</m>.
       </p>
 
       <p>(b) En remplaçant <m>f</m> par <m>g</m> dans (E1), on obtient
       <md>
       <mrow>
       G_\theta(r,\theta)
-      &amp;=\pdiff{}{\theta}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=\pdiff{}{\theta}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow><mrow>
-      &amp;=-r\sin\theta\, g_x\big(r\cos\theta\,,\,r\sin\theta\big)
-        +r\cos\theta\, g_y\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;=-r\sin\theta\, g_x\left(r\cos\theta\,,\,r\sin\theta\right)
+        +r\cos\theta\, g_y\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>
-      &amp;=-r\sin\theta\, f_y\big(r\cos\theta\,,\,r\sin\theta\big)
-        -r\cos\theta\, f_x\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;=-r\sin\theta\, f_y\left(r\cos\theta\,,\,r\sin\theta\right)
+        -r\cos\theta\, f_x\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>
-      &amp;=-r \pdiff{}{r}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=-r \pdiff{}{r}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       \qquad\text{par (E2)}
       </mrow>
       </md>
@@ -621,26 +621,26 @@
       <md>
       <mrow>
       G_r(r,\theta)
-      &amp;=\pdiff{}{r}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=\pdiff{}{r}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow><mrow>
-      &amp;= \cos\theta\, g_x\big(r\cos\theta\,,\,r\sin\theta\big)
-        +\sin\theta\, g_y\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;= \cos\theta\, g_x\left(r\cos\theta\,,\,r\sin\theta\right)
+        +\sin\theta\, g_y\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>
-      &amp;= \cos\theta\, f_y\big(r\cos\theta\,,\,r\sin\theta\big)
-        -\sin\theta\, f_x\big(r\cos\theta\,,\,r\sin\theta\big)
+      &amp;= \cos\theta\, f_y\left(r\cos\theta\,,\,r\sin\theta\right)
+        -\sin\theta\, f_x\left(r\cos\theta\,,\,r\sin\theta\right)
       </mrow><mrow>
-      &amp;=\frac{1}{r} \pdiff{}{\theta}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      &amp;=\frac{1}{r} \pdiff{}{\theta}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       \qquad\text{par (E1)}
       </mrow>
       </md>
       ou
       <md>
       <mrow>
-      \pdiff{}{r}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
-      &amp;=-\frac{1}{r} \pdiff{}{\theta}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{r}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
+      &amp;=-\frac{1}{r} \pdiff{}{\theta}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow><mrow>
-      \pdiff{}{\theta}\big[f\big(r\cos\theta\,,\,r\sin\theta\big)\big]
-      &amp;=r\pdiff{}{r}\big[g\big(r\cos\theta\,,\,r\sin\theta\big)\big]
+      \pdiff{}{\theta}\big[f\left(r\cos\theta\,,\,r\sin\theta\right)\big]
+      &amp;=r\pdiff{}{r}\big[g\left(r\cos\theta\,,\,r\sin\theta\right)\big]
       </mrow>
       </md>
       </p></solution>
@@ -675,8 +675,8 @@
           </p>
 
           <p>(b) <m>\displaystyle\diff{y}{x}(x)
-          =-\frac{F_1\big(x,y(x),x^2-y(x)^2\big)+2x\,F_3\big(x,y(x),x^2-y(x)^2\big)}
-          {F_2\big(x,y(x),x^2-y(x)^2\big)-2y(x)\,F_3\big(x,y(x),x^2-y(x)^2\big)}</m>
+          =-\frac{F_1\left(x,y(x),x^2-y(x)^2\right)+2x\,F_3\left(x,y(x),x^2-y(x)^2\right)}
+          {F_2\left(x,y(x),x^2-y(x)^2\right)-2y(x)\,F_3\left(x,y(x),x^2-y(x)^2\right)}</m>
           </p>
 
           <p>(c) <m>\displaystyle\left(\pdiff{y}{x}\right)_u\!\!(x,u)
@@ -713,25 +713,25 @@
           <p>(b)
           On nous demande d'évaluer <m>\diff{y}{x}</m>. Donc <m>y</m> doit être une fonction de la seule variable <m>x</m>. On nous dit aussi que <m>x</m> et <m>y</m> sont liées par <m>F(x,y,x^2-y^2)=0</m>. Donc la fonction <m>y(x)</m> doit vérifier
           <md>
-          F\big(x,y(x),x^2-y(x)^2\big)=0
+          F\left(x,y(x),x^2-y(x)^2\right)=0
           </md>
           pour tout <m>x</m>. En appliquant
           <m>\diff{}{x}</m> aux deux membres de cette équation et en utilisant la règle de dérivation en chaîne, on obtient
           <md>
           <mrow>
-          &amp;F_1\big(x,y(x),x^2-y(x)^2\big)\,\ \diff{x}{x}
-          +F_2\big(x,y(x),x^2-y(x)^2\big)\ \diff{y}{x}(x)
+          &amp;F_1\left(x,y(x),x^2-y(x)^2\right)\,\ \diff{x}{x}
+          +F_2\left(x,y(x),x^2-y(x)^2\right)\ \diff{y}{x}(x)
           </mrow><mrow>&amp;\hskip1in
-          +F_3\big(x,y(x),x^2-y(x)^2\big)\,\diff{}{x}\left[x^2-y(x)^2\right]= 0
+          +F_3\left(x,y(x),x^2-y(x)^2\right)\,\diff{}{x}\left[x^2-y(x)^2\right]= 0
           </mrow><mrow>
-          \implies &amp;F_1\big(x,y(x),x^2-y(x)^2\big) +F_2\big(x,y(x),x^2-y(x)^2\big)\ \diff{y}{x}(x)
+          \implies &amp;F_1\left(x,y(x),x^2-y(x)^2\right) +F_2\left(x,y(x),x^2-y(x)^2\right)\ \diff{y}{x}(x)
           </mrow><mrow>&amp;\hskip1in
-          +F_3\big(x,y(x),x^2-y(x)^2\big)\,\left[2x-2y(x)\diff{y}{x}(x)\right]= 0
+          +F_3\left(x,y(x),x^2-y(x)^2\right)\,\left[2x-2y(x)\diff{y}{x}(x)\right]= 0
 
           </mrow><mrow>
           \implies &amp; \diff{y}{x}(x)
-          =-\frac{F_1\big(x,y(x),x^2-y(x)^2\big)+2x\,F_3\big(x,y(x),x^2-y(x)^2\big)}
-          {F_2\big(x,y(x),x^2-y(x)^2\big)-2y(x)\,F_3\big(x,y(x),x^2-y(x)^2\big)}
+          =-\frac{F_1\left(x,y(x),x^2-y(x)^2\right)+2x\,F_3\left(x,y(x),x^2-y(x)^2\right)}
+          {F_2\left(x,y(x),x^2-y(x)^2\right)-2y(x)\,F_3\left(x,y(x),x^2-y(x)^2\right)}
           </mrow>
           </md>
           </p>
@@ -801,15 +801,13 @@
     Les trois points <m>P_0</m>, <m>P_1</m>, et <m>P_2</m> se trouvent sur la surface.
     </p>
 
-
-
-    <sidebyside width="75%">
-    <image source="images/CLP-figs/pfigs/partialTotalX"/>
-    </sidebyside>
-
+    <sidebyside widths="40% 5% 55%" valign="middle">
     <p>	Sur la courbe de niveau <m>z=z_1</m>, on peut penser à <m>y</m> comme une fonction de <m>x</m>. Soit <m>w(x)=f(x,y(x))=z_1</m>. On approxime, à <m>P_0</m>, <m>f_x(x,y) \approx \frac{\Delta f}{\Delta x}</m> et <m>\frac{dw}{dx}(x)\approx\frac{\Delta w}{\Delta x}</m>.
     Identifiez les quantités <m>\Delta f</m>, <m>\Delta w</m>, et <m>\Delta x</m> sur le diagramme.
     </p>
+    <p></p>
+    <image source="images/CLP-figs/pfigs/partialTotalX"/>
+    </sidebyside>
 
     </statement>
     <hint>
@@ -863,30 +861,30 @@
     <m>\diff{w}{t}=1</m> et <m>f_t=5</m>.
     <m>f_t</m> donne le taux de variation de <m>f(x,y,t)</m> lorsque <m>t</m> varie
     tandis que <m>x</m> et <m>y</m> sont fixés.
-    <m>\diff{w}{t}</m> donne le taux de variation de <m>f\big(x(t),y(t),t\big)</m>.
+    <m>\diff{w}{t}</m> donne le taux de variation de <m>f\left(x(t),y(t),t\right)</m>.
     Pour ce dernier, tous les <m>x=x(t)</m>, <m>y=y(t)</m> et <m>t</m> changent en même temps.
     </p></answer>
 
     <solution><p>
     L'énoncé de la question nous dit que
-    <m>w(t)= f\big(x(t),y(t),t\big)</m>.
+    <m>w(t)= f\left(x(t),y(t),t\right)</m>.
     En appliquant la règle de dérivation en chaîne à
     <m>
-    w(t)= f\big(x(t),y(t),t\big),
+    w(t)= f\left(x(t),y(t),t\right),
     </m>
     en suivant la procédure décrite plus haut, on obtient
     <md>
     <mrow>
     \diff{w}{t}(t)
-    &amp;=\pdiff{f}{x}\big(x(t),y(t),t\big)\diff{x}{t}(t)
-    +\pdiff{f}{y}\big(x(t),y(t),t\big)\diff{y}{t}(t)
+    &amp;=\pdiff{f}{x}\left(x(t),y(t),t\right)\diff{x}{t}(t)
+    +\pdiff{f}{y}\left(x(t),y(t),t\right)\diff{y}{t}(t)
     </mrow><mrow>
-    &amp;\hskip1in+\pdiff{f}{t}\big(x(t),y(t),t\big)\diff{t}{t}
+    &amp;\hskip1in+\pdiff{f}{t}\left(x(t),y(t),t\right)\diff{t}{t}
     </mrow><mrow>
-    &amp;=\pdiff{f}{x}\big(x(t),y(t),t\big)\diff{x}{t}(t)
-    +\pdiff{f}{y}\big(x(t),y(t),t\big)\diff{y}{t}(t)
+    &amp;=\pdiff{f}{x}\left(x(t),y(t),t\right)\diff{x}{t}(t)
+    +\pdiff{f}{y}\left(x(t),y(t),t\right)\diff{y}{t}(t)
     </mrow><mrow>
-    &amp;\hskip1in+\pdiff{f}{t}\big(x(t),y(t),t\big)
+    &amp;\hskip1in+\pdiff{f}{t}\left(x(t),y(t),t\right)
     </mrow>
     </md>
     En substituant les valeurs données dans la question,
@@ -905,7 +903,7 @@
     tandis que <m>x</m> et <m>y</m> sont maintenues fixes, mais
     </li>
     <li>
-    <m>\diff{w}{t}</m> donne le taux de variation de <m>f\big(x(t),y(t),t\big)</m>.
+    <m>\diff{w}{t}</m> donne le taux de variation de <m>f\left(x(t),y(t),t\right)</m>.
     Pour cette dernière, <m>x=x(t)</m>, <m>y=y(t)</m> et <m>t</m> changent tous
     en même temps.
     </li>
@@ -948,28 +946,28 @@
     deux fonctions complètement différentes dans la même équation. La façon rigoureuse
     d'écrire l'équation est la suivante. Soit <m>f(x,y,z)</m>
     et <m>g(x,y)</m> des fonctions continûment différentiables, et posons
-    <m>w(x,y)=f\big(x,y,g(x,y)\big)</m>. Par la règle de dérivation en chaîne,
+    <m>w(x,y)=f\left(x,y,g(x,y)\right)</m>. Par la règle de dérivation en chaîne,
     <md>
     <mrow>
     \pdiff{w}{x}(x,y)
-    &amp;=\pdiff{f}{x}\big(x,y,g(x,y)\big)
+    &amp;=\pdiff{f}{x}\left(x,y,g(x,y)\right)
     \pdiff{x}{x}
-    +\pdiff{f}{y}\big(x,y,g(x,y)\big)
+    +\pdiff{f}{y}\left(x,y,g(x,y)\right)
     \pdiff{y}{x}
     </mrow><mrow>
-    &amp;\hskip1in +\pdiff{f}{z}\big(x,y,g(x,y)\big)
+    &amp;\hskip1in +\pdiff{f}{z}\left(x,y,g(x,y)\right)
     \pdiff{g}{x}(x,y)
     </mrow><mrow>
-    &amp;=\pdiff{f}{x}\big(x,y,g(x,y)\big)
-    +\pdiff{f}{z}\big(x,y,g(x,y)\big)
+    &amp;=\pdiff{f}{x}\left(x,y,g(x,y)\right)
+    +\pdiff{f}{z}\left(x,y,g(x,y)\right)
     \pdiff{g}{x}(x,y)
     </mrow>
     </md>
-    Bien que <m>w(x,y)=f\big(x,y,g(x,y)\big)</m>, il n'est pas vrai que
+    Bien que <m>w(x,y)=f\left(x,y,g(x,y)\right)</m>, il n'est pas vrai que
     <m>\pdiff{w}{x}(x,y)
-    =\pdiff{f}{x}\big(x,y,g(x,y)\big)</m>.
+    =\pdiff{f}{x}\left(x,y,g(x,y)\right)</m>.
     Par exemple, prenons <m>f(x,y,z)=x-z</m> et <m>g(x,y)=x</m>. Alors
-    <m>w(x,y)=f\big(x,y,g(x,y)\big)=x-g(x,y)=0</m> pour tout <m>(x,y)</m>, de sorte que
+    <m>w(x,y)=f\left(x,y,g(x,y)\right)=x-g(x,y)=0</m> pour tout <m>(x,y)</m>, de sorte que
     <m>\pdiff{w}{x}(x,y)=0</m>
     alors que <m>\pdiff{f}{x}(x,y,z)=1</m> pour tout <m>(x,y,z)</m>.
     </p></solution>
@@ -1012,17 +1010,17 @@
     <p><em>Méthode 2 :</em>
     La question précise que <m>w(s,t)=x(s,t)^2+y(s,t)^2+z(s,t)^2</m> avec
     <m>x(s,t)=st</m>, <m>y(s,t)=s\cos t</m> et <m>z(s,t)=s\sin t</m>. C'est-à-dire
-    <m>w(s,t) = W\big(x(s,t), y(s,t), z(s,t)\big)</m>
-    avec <m>W(x,y,z)= x^2+y^2+z^2</m>. En appliquant la règle de dérivation en chaîne à <m>w(s,t) = W\big(x(s,t), y(s,t), z(s,t)\big)</m> et en notant que <m>\pdiff{W}{x}=2x</m>,
+    <m>w(s,t) = W\left(x(s,t), y(s,t), z(s,t)\right)</m>
+    avec <m>W(x,y,z)= x^2+y^2+z^2</m>. En appliquant la règle de dérivation en chaîne à <m>w(s,t) = W\left(x(s,t), y(s,t), z(s,t)\right)</m> et en notant que <m>\pdiff{W}{x}=2x</m>,
     <m>\pdiff{W}{y}=2y</m>, <m>\pdiff{W}{z}=2z</m>, on obtient
     <md>
     <mrow>
     \pdiff{w}{s}(s,t)
-    &amp;= \pdiff{W}{x}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{x}{s}(s,t)
+    &amp;= \pdiff{W}{x}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{x}{s}(s,t)
     </mrow><mrow>&amp;\hskip1in
-    + \pdiff{W}{y}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{y}{s}(s,t)
+    + \pdiff{W}{y}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{y}{s}(s,t)
     </mrow><mrow>&amp;\hskip1in
-    + \pdiff{W}{z}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{z}{s}(s,t)
+    + \pdiff{W}{z}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{z}{s}(s,t)
     </mrow><mrow>
     &amp;=2 x(s,t)\ x_s(s,t)+2 y(s,t)\ y_s(s,t)+2 z(s,t)\ z_s(s,t)
     </mrow><mrow>
@@ -1031,11 +1029,11 @@
        &amp;=2 st^2+2 s
     </mrow><mrow>
     \pdiff{w}{t}(s,t)
-    &amp;= \pdiff{W}{x}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{x}{t}(s,t)
+    &amp;= \pdiff{W}{x}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{x}{t}(s,t)
     </mrow><mrow>&amp;\hskip1in
-    + \pdiff{W}{y}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{y}{t}(s,t)
+    + \pdiff{W}{y}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{y}{t}(s,t)
     </mrow><mrow>&amp;\hskip1in
-    + \pdiff{W}{z}\big(x(s,t), y(s,t), z(s,t)\big)\pdiff{z}{t}(s,t)
+    + \pdiff{W}{z}\left(x(s,t), y(s,t), z(s,t)\right)\pdiff{z}{t}(s,t)
     </mrow><mrow>
     &amp;=2 x(s,t)\ x_t(s,t)+2 y(s,t)\ y_t(s,t)+2 z(s,t)\ z_t(s,t)
     </mrow><mrow>
@@ -1053,7 +1051,7 @@
     Évaluez
     <m>\frac{\partial^3}{\partial x\partial y^2}f(2x+3y,xy)</m>
     en termes des dérivées partielles de <m>f</m>.
-    Vous pouvez supposer que <m>f</m> est une fonction lisse de façon à ce que le théorème de Clairaut et la règle de dérivation en chaîne
+    Vous pouvez supposer que <m>f</m> est une fonction lisse de façon à ce que le Théorème de Clairaut et la règle de dérivation en chaîne
     s'appliquent à l'égalité des dérivées partielles mixtes.
     </p></statement>
 
@@ -1147,7 +1145,7 @@
     <mrow>
     f_{21}(x,y)
     =\pdiff{}{x}
-    \Big[\pdiff{}{y}\big(e^{2y}\sin x\big)\Big]
+    \Big[\pdiff{}{y}\left(e^{2y}\sin x\right)\Big]
     =\pdiff{}{x}
     \Big[2e^{2y}\sin x\Big]
     =2e^{2y}\cos x
@@ -1196,7 +1194,7 @@
     <exercise>
     <statement><p>
     Trouvez toutes les dérivées d'ordre deux de <m>g(s,t)=f(2s+3t,3s-2t)</m>.
-    Vous pouvez supposer que <m>f(x,y)</m> est une fonction lisse de façon à ce que le théorème de Clairaut et la règle de dérivation en chaîne
+    Vous pouvez supposer que <m>f(x,y)</m> est une fonction lisse de façon à ce que le Théorème de Clairaut et la règle de dérivation en chaîne
     s'appliquent à l'égalité des dérivées partielles mixtes.
     </p></statement>
 
@@ -1285,7 +1283,7 @@
     Montrez que c'est également le cas pour la fonction composée
     <m>g(s,t) = f (s - t, s + t)</m>, i.e. montrez que
     <m>\frac{\partial^2 g}{\partial s^2}+\frac{\partial^2 g}{\partial t^2}=0</m>.
-    Vous pouvez également supposer que <m>f(x,y)</m> est une fonction lisse de telle sorte que la règle de la chaîne et le théorème de Clairaut
+    Vous pouvez également supposer que <m>f(x,y)</m> est une fonction lisse de telle sorte que la règle de la chaîne et le Théorème de Clairaut
     sur l'égalité des dérivées partielles mixtes s'appliquent.
     </p></statement>
 
@@ -1303,26 +1301,26 @@
     \pdiff{g}{s}(s,t)
     &amp;=\pdiff{}{s} f (s - t, s + t)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)\pdiff{}{s}\big(s-t\big)
-         +\pdiff{f}{y}\big(s-t\,,\,s+t\big)\pdiff{}{s}\big(s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)\pdiff{}{s}\left(s-t\right)
+         +\pdiff{f}{y}\left(s-t\,,\,s+t\right)\pdiff{}{s}\left(s+t\right)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)
-            +\pdiff{f}{y}\big(s-t\,,\,s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)
+            +\pdiff{f}{y}\left(s-t\,,\,s+t\right)
     </mrow><mrow>
     \frac{\partial^2 g}{\partial s^2}(s,t)
-    &amp;=\color{blue}{\pdiff{}{s}\left[\pdiff{f}{x}\big(s-t\,,\,s+t\big)\right]}
-    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\big(s-t\,,\,s+t\big)\right]}
+    &amp;=\color{blue}{\pdiff{}{s}\left[\pdiff{f}{x}\left(s-t\,,\,s+t\right)\right]}
+    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\left(s-t\,,\,s+t\right)\right]}
     </mrow><mrow>
-    &amp;=\color{blue}{ \frac{\partial^2 f}{\partial x^2}\big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y\partial x}\big(s-t\,,\,s+t\big)}
+    &amp;=\color{blue}{ \frac{\partial^2 f}{\partial x^2}\left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y\partial x}\left(s-t\,,\,s+t\right)}
     </mrow><mrow>
     &amp;\hskip0.2in
-    +\color{red}{\frac{\partial^2 f}{\partial x\partial y}\big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s-t\,,\,s+t\big)}
+    +\color{red}{\frac{\partial^2 f}{\partial x\partial y}\left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s-t\,,\,s+t\right)}
     </mrow><mrow>
-    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\big(s\!-\!t,s\!+\!t\big)
-    + 2\frac{\partial^2 f}{\partial x\partial y}\big(s\!-\!t,s\!+\!t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s\!-\!t,s\!+\!t\big)\right\}
+    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\left(s\!-\!t,s\!+\!t\right)
+    + 2\frac{\partial^2 f}{\partial x\partial y}\left(s\!-\!t,s\!+\!t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s\!-\!t,s\!+\!t\right)\right\}
     </mrow>
     </md>
     et
@@ -1330,27 +1328,27 @@
     <mrow>
     \pdiff{g}{t}(s,t)&amp;=\pdiff{}{t} f (s - t, s + t)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)\pdiff{}{t}\big(s-t\big)
-         +\pdiff{f}{y}\big(s-t\,,\,s+t\big)\pdiff{}{t}\big(s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)\pdiff{}{t}\left(s-t\right)
+         +\pdiff{f}{y}\left(s-t\,,\,s+t\right)\pdiff{}{t}\left(s+t\right)
     </mrow><mrow>
-    &amp;= -\pdiff{f}{x}\big(s-t\,,\,s+t\big)
-            +\pdiff{f}{y}\big(s-t\,,\,s+t\big)
+    &amp;= -\pdiff{f}{x}\left(s-t\,,\,s+t\right)
+            +\pdiff{f}{y}\left(s-t\,,\,s+t\right)
     </mrow><mrow>
     \frac{\partial^2 g}{\partial t^2}(s,t)
-    &amp;=-\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\big(s-t\,,\,s+t\big)\right]}
-    +\color{red}{\pdiff{}{t}\left[\pdiff{f}{y}\big(s-t\,,\,s+t\big)\right]}
+    &amp;=-\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\left(s-t\,,\,s+t\right)\right]}
+    +\color{red}{\pdiff{}{t}\left[\pdiff{f}{y}\left(s-t\,,\,s+t\right)\right]}
     </mrow><mrow>
     &amp;= -\color{blue}{\Big[-\frac{\partial^2 f}{\partial x^2}
-                                      \big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y\partial x}\big(s-t\,,\,s+t\big)\Big]}
+                                      \left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y\partial x}\left(s-t\,,\,s+t\right)\Big]}
     </mrow><mrow>
     &amp;\hskip0.2in
-    +\color{red}{\Big[-\frac{\partial^2 f}{\partial x\partial y}                                                       \big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s-t\,,\,s+t\big) \Big]}
+    +\color{red}{\Big[-\frac{\partial^2 f}{\partial x\partial y}                                                       \left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s-t\,,\,s+t\right) \Big]}
     </mrow><mrow>
-    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\big(s\!-\!t,s\!+\!t\big)
-    - 2\frac{\partial^2 f}{\partial x\partial y}\big(s\!-\!t,s\!+\!t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s\!-\!t,s\!+\!t\big)\right\}
+    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\left(s\!-\!t,s\!+\!t\right)
+    - 2\frac{\partial^2 f}{\partial x\partial y}\left(s\!-\!t,s\!+\!t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s\!-\!t,s\!+\!t\right)\right\}
     </mrow>
     </md>
     En omettant les arguments
@@ -1380,26 +1378,26 @@
     \pdiff{g}{s}(s,t)
     &amp;=\pdiff{}{s} f (s - t, s + t)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)\pdiff{}{s}\big(s-t\big)
-       +\pdiff{f}{y}\big(s-t\,,\,s+t\big)\pdiff{}{s}\big(s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)\pdiff{}{s}\left(s-t\right)
+       +\pdiff{f}{y}\left(s-t\,,\,s+t\right)\pdiff{}{s}\left(s+t\right)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)
-          +\pdiff{f}{y}\big(s-t\,,\,s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)
+          +\pdiff{f}{y}\left(s-t\,,\,s+t\right)
     </mrow><mrow>
     \frac{\partial^2 g}{\partial s^2}(s,t)
-    &amp;=\color{blue}{\pdiff{}{s}\left[\pdiff{f}{x}\big(s-t\,,\,s+t\big)\right]}
-    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\big(s-t\,,\,s+t\big)\right]}
+    &amp;=\color{blue}{\pdiff{}{s}\left[\pdiff{f}{x}\left(s-t\,,\,s+t\right)\right]}
+    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\left(s-t\,,\,s+t\right)\right]}
     </mrow><mrow>
-    &amp;=\color{blue}{ \frac{\partial^2 f}{\partial x^2}\big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y\partial x}\big(s-t\,,\,s+t\big)}
+    &amp;=\color{blue}{ \frac{\partial^2 f}{\partial x^2}\left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y\partial x}\left(s-t\,,\,s+t\right)}
     </mrow><mrow>
     &amp;\hskip0.2in
-    +\color{red}{\frac{\partial^2 f}{\partial x\partial y}\big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s-t\,,\,s+t\big)}
+    +\color{red}{\frac{\partial^2 f}{\partial x\partial y}\left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s-t\,,\,s+t\right)}
     </mrow><mrow>
-    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\big(s\!-\!t,s\!+\!t\big)
-    + 2\frac{\partial^2 f}{\partial x\partial y}\big(s\!-\!t,s\!+\!t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s\!-\!t,s\!+\!t\big)\right\}
+    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\left(s\!-\!t,s\!+\!t\right)
+    + 2\frac{\partial^2 f}{\partial x\partial y}\left(s\!-\!t,s\!+\!t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s\!-\!t,s\!+\!t\right)\right\}
     </mrow>
     </md>
     et
@@ -1407,27 +1405,27 @@
     <mrow>
     \pdiff{g}{t}(s,t)&amp;=\pdiff{}{t} f (s - t, s + t)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(s-t\,,\,s+t\big)\pdiff{}{t}\big(s-t\big)
-       +\pdiff{f}{y}\big(s-t\,,\,s+t\big)\pdiff{}{t}\big(s+t\big)
+    &amp;= \pdiff{f}{x}\left(s-t\,,\,s+t\right)\pdiff{}{t}\left(s-t\right)
+       +\pdiff{f}{y}\left(s-t\,,\,s+t\right)\pdiff{}{t}\left(s+t\right)
     </mrow><mrow>
-    &amp;= -\pdiff{f}{x}\big(s-t\,,\,s+t\big)
-          +\pdiff{f}{y}\big(s-t\,,\,s+t\big)
+    &amp;= -\pdiff{f}{x}\left(s-t\,,\,s+t\right)
+          +\pdiff{f}{y}\left(s-t\,,\,s+t\right)
     </mrow><mrow>
     \frac{\partial^2 g}{\partial t^2}(s,t)
-    &amp;=-\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\big(s-t\,,\,s+t\big)\right]}
-    +\color{red}{\pdiff{}{t}\left[\pdiff{f}{y}\big(s-t\,,\,s+t\big)\right]}
+    &amp;=-\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\left(s-t\,,\,s+t\right)\right]}
+    +\color{red}{\pdiff{}{t}\left[\pdiff{f}{y}\left(s-t\,,\,s+t\right)\right]}
     </mrow><mrow>
     &amp;= -\color{blue}{\Big[-\frac{\partial^2 f}{\partial x^2}
-                                    \big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y\partial x}\big(s-t\,,\,s+t\big)\Big]}
+                                    \left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y\partial x}\left(s-t\,,\,s+t\right)\Big]}
     </mrow><mrow>
     &amp;\hskip0.2in
-    +\color{red}{\Big[-\frac{\partial^2 f}{\partial x\partial y}                                                       \big(s-t\,,\,s+t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s-t\,,\,s+t\big) \Big]}
+    +\color{red}{\Big[-\frac{\partial^2 f}{\partial x\partial y}                                                       \left(s-t\,,\,s+t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s-t\,,\,s+t\right) \Big]}
     </mrow><mrow>
-    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\big(s\!-\!t,s\!+\!t\big)
-    - 2\frac{\partial^2 f}{\partial x\partial y}\big(s\!-\!t,s\!+\!t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(s\!-\!t,s\!+\!t\big)\right\}
+    &amp;=\left\{\frac{\partial^2 f}{\partial x^2}\left(s\!-\!t,s\!+\!t\right)
+    - 2\frac{\partial^2 f}{\partial x\partial y}\left(s\!-\!t,s\!+\!t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(s\!-\!t,s\!+\!t\right)\right\}
     </mrow>
     </md>
     En omettant les arguments
@@ -1463,7 +1461,7 @@
     =\frac{\partial^2 z}{\partial s^2}
     +\frac{\partial^2 z}{\partial t^2}
     </md>
-    Vous pouvez supposer que <m>z = f(x,y)</m>  est une fonction lisse de telle sorte que la règle de la chaîne et le théorème de Clairaut
+    Vous pouvez supposer que <m>z = f(x,y)</m>  est une fonction lisse de telle sorte que la règle de la chaîne et le Théorème de Clairaut
     sur l'égalité des dérivées partielles mixtes s'appliquent.
     </p></statement>
 
@@ -1475,7 +1473,7 @@
     Malheureusement, cet abus de notation est également très courant.
     Jusqu'à ce que vous vous y habituiez, annulez ce conflit de notation en renommant la fonction de <m>s</m> et <m>t</m> par <m>F(s,t)</m>, i.e.
     <m>
-    F(s,t) = f\big(2s+t\,,\,s-t\big)
+    F(s,t) = f\left(2s+t\,,\,s-t\right)
     </m>.
     </p>
 
@@ -1495,7 +1493,7 @@
     Annulons ce conflit de notation en renommant la fonction de <m>s</m> et <m>t</m>
     par <m>F(s,t)</m>. C'est-à-dire,
     <md>
-    F(s,t) = f\big(2s+t\,,\,s-t\big)
+    F(s,t) = f\left(2s+t\,,\,s-t\right)
     </md>
     Avec cette nouvelle notation, on nous demande de trouver <m>a</m>, <m>b</m> et <m>c</m> tels que
     <md>
@@ -1507,51 +1505,51 @@
     </mrow>
     </md>
     avec les arguments du côté droit étant <m>(s,t)</m> et les
-    arguments du côté gauche étant <m>\big(2s+t\,,\,s-t\big)</m>.
+    arguments du côté gauche étant <m>\left(2s+t\,,\,s-t\right)</m>.
     </p>
 
     <p>Par la règle de dérivation en chaîne,
     <md>
     <mrow>
-    \pdiff{F}{s}(s,t)&amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)\pdiff{}{s}(2s+t)
-          +\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\pdiff{}{s}(s-t)
+    \pdiff{F}{s}(s,t)&amp;= \pdiff{f}{x}\left(2s+t\,,\,s-t\right)\pdiff{}{s}(2s+t)
+          +\pdiff{f}{y}\left(2s+t\,,\,s-t\right)\pdiff{}{s}(s-t)
     </mrow><mrow>
-    &amp;= 2\pdiff{f}{x}\big(2s+t\,,\,s-t\big)
-          +\pdiff{f}{y}\big(2s+t\,,\,s-t\big)
+    &amp;= 2\pdiff{f}{x}\left(2s+t\,,\,s-t\right)
+          +\pdiff{f}{y}\left(2s+t\,,\,s-t\right)
     </mrow><mrow>
     \frac{\partial^2 F}{\partial s^2}(s,t)
-    &amp;=\color{blue}{2\pdiff{}{s}\left[\pdiff{f}{x}\big(2s+t\,,\,s-t\big)\right]}
-    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\right]}
+    &amp;=\color{blue}{2\pdiff{}{s}\left[\pdiff{f}{x}\left(2s+t\,,\,s-t\right)\right]}
+    +\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\left(2s+t\,,\,s-t\right)\right]}
     </mrow><mrow>
-    &amp;= \color{blue}{4\frac{\partial^2 f}{\partial x^2}\big(2s+t\,,\,s-t\big)
-    +         2\frac{\partial^2 f}{\partial y\partial x} \big(2s+t\,,\,s-t\big)}
+    &amp;= \color{blue}{4\frac{\partial^2 f}{\partial x^2}\left(2s+t\,,\,s-t\right)
+    +         2\frac{\partial^2 f}{\partial y\partial x} \left(2s+t\,,\,s-t\right)}
     </mrow><mrow>
     &amp;\hskip0.2in
     +\color{red}{2\frac{\partial^2 f}{\partial x\partial y}
-                         \big(2s+t\,,\,s-t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(2s+t\,,\,s-t\big)}
+                         \left(2s+t\,,\,s-t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(2s+t\,,\,s-t\right)}
     </mrow>
     </md>
     et
     <md>
     <mrow>
-    \pdiff{F}{t}(s,t)&amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)\pdiff{}{t}(2s+t)
-    +\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\pdiff{}{t}(s-t)
+    \pdiff{F}{t}(s,t)&amp;= \pdiff{f}{x}\left(2s+t\,,\,s-t\right)\pdiff{}{t}(2s+t)
+    +\pdiff{f}{y}\left(2s+t\,,\,s-t\right)\pdiff{}{t}(s-t)
     </mrow><mrow>
-    &amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)
-          -\pdiff{f}{y}\big(2s+t\,,\,s-t\big)
+    &amp;= \pdiff{f}{x}\left(2s+t\,,\,s-t\right)
+          -\pdiff{f}{y}\left(2s+t\,,\,s-t\right)
     </mrow><mrow>
     \frac{\partial^2 F}{\partial t^2}(s,t)
-    &amp;=\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\big(2s+t\,,\,s-t\big)\right]}
-    \color{red}{-\pdiff{}{t}\left[\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\right]}
+    &amp;=\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\left(2s+t\,,\,s-t\right)\right]}
+    \color{red}{-\pdiff{}{t}\left[\pdiff{f}{y}\left(2s+t\,,\,s-t\right)\right]}
     </mrow><mrow>
-    &amp;= \color{blue}{\frac{\partial^2 f}{\partial x^2}\big(2s+t\,,\,s-t\big)
-    -\frac{\partial^2 f}{\partial y\partial x}\big(2s+t\,,\,s-t\big)}
+    &amp;= \color{blue}{\frac{\partial^2 f}{\partial x^2}\left(2s+t\,,\,s-t\right)
+    -\frac{\partial^2 f}{\partial y\partial x}\left(2s+t\,,\,s-t\right)}
     </mrow><mrow>
     &amp;\hskip0.2in
     \color{red}{-\frac{\partial^2 f}{\partial x\partial y}
-                                \big(2s+t\,,\,s-t\big)
-    +\frac{\partial^2 f}{\partial y^2}\big(2s+t\,,\,s-t\big) }
+                                \left(2s+t\,,\,s-t\right)
+    +\frac{\partial^2 f}{\partial y^2}\left(2s+t\,,\,s-t\right) }
     </mrow>
     </md>
     En supprimant les arguments,
@@ -1593,7 +1591,7 @@
 
     <hint><p>
     Soit <m>u(x,y) = x^2 - y^2</m>, et <m>v(x,y) = 2xy</m>. Alors <m>F(x^2 - y^2 , 2xy)
-    =F\big(u(x,y),v(x,y)\big)</m>.
+    =F\left(u(x,y),v(x,y)\right)</m>.
     </p></hint>
 
     <answer><p>
@@ -1611,7 +1609,7 @@
 
     <solution><p>
     Posons <m>u(x,y) = x^2 - y^2</m> et <m>v(x,y) = 2xy</m>. Alors
-    <m>F(x^2 - y^2 , 2xy) =F\big(u(x,y),v(x,y)\big)</m>.
+    <m>F(x^2 - y^2 , 2xy) =F\left(u(x,y),v(x,y)\right)</m>.
     Par la règle de dérivation en chaîne,
     <md>
     <mrow>
@@ -1655,7 +1653,7 @@
     <statement><p>
     <m>u(x,y)</m> est définie par
     <md>
-    u(x,y) = e^y\, F\big(xe^{-y^2}\big)
+    u(x,y) = e^y\, F\left(xe^{-y^2}\right)
     </md>
     pour une fonction arbitraire <m>F(z)</m>.
     </p>
@@ -1674,7 +1672,7 @@
     </p></statement>
 
     <hint><p>
-    (b)  Comme <m>F</m> est une fonction d'une seule variable, la règle de la chaîne pour (disons) <m>\frac{\partial}{\partial x} F\big(xe^{-y^2}\big)</m>  n'a qu'un terme.
+    (b)  Comme <m>F</m> est une fonction d'une seule variable, la règle de la chaîne pour (disons) <m>\frac{\partial}{\partial x} F\left(xe^{-y^2}\right)</m>  n'a qu'un terme.
     </p></hint>
 
     <answer><p>
@@ -1686,12 +1684,12 @@
     <md>
     <mrow>
     2xy\pdiff{u}{x} + \pdiff{u}{y}
-    &amp;=2xy\ e^y\, F'\big(xe^{-y^2}\big)\ e^{-y^2}
-    +e^y\, F\big(xe^{-y^2}\big)
+    &amp;=2xy\ e^y\, F'\left(xe^{-y^2}\right)\ e^{-y^2}
+    +e^y\, F\left(xe^{-y^2}\right)
     </mrow><mrow>
-    &amp;\hskip1in + e^y\, F'\big(xe^{-y^2}\big)\ (-2xy)e^{-y^2}
+    &amp;\hskip1in + e^y\, F'\left(xe^{-y^2}\right)\ (-2xy)e^{-y^2}
     </mrow><mrow>
-    &amp;=e^y\, F\big(xe^{-y^2}\big)
+    &amp;=e^y\, F\left(xe^{-y^2}\right)
     </mrow><mrow>
     &amp;=u
     </mrow>
@@ -1702,24 +1700,24 @@
     Pour n'importe quelle fonction (différentiable) <m>F</m>, on a, par la règle de dérivation en chaîne et la règle du produit,
     <md>
     <mrow>
-    \pdiff{u}{x}(x,y)&amp;= \pdiff{}{x}\Big[e^y\,F\big(xe^{-y^2}\big)\Big]
-      =e^y\,\pdiff{}{x}\Big[F\big(xe^{-y^2}\big)\Big]
+    \pdiff{u}{x}(x,y)&amp;= \pdiff{}{x}\Big[e^y\,F\left(xe^{-y^2}\right)\Big]
+      =e^y\,\pdiff{}{x}\Big[F\left(xe^{-y^2}\right)\Big]
     </mrow><mrow>
-     &amp;=e^y\,F'\big(xe^{-y^2}\big)\pdiff{}{x}\Big(xe^{-y^2}\Big)
+     &amp;=e^y\,F'\left(xe^{-y^2}\right)\pdiff{}{x}\Big(xe^{-y^2}\Big)
     </mrow><mrow>
-        &amp;= e^y\, F'\big(xe^{-y^2}\big)\ e^{-y^2}
+        &amp;= e^y\, F'\left(xe^{-y^2}\right)\ e^{-y^2}
 
     </mrow><mrow>
-    \pdiff{u}{y}(x,y)&amp;= \pdiff{}{y}\Big[e^y\,F\big(xe^{-y^2}\big)\Big]
+    \pdiff{u}{y}(x,y)&amp;= \pdiff{}{y}\Big[e^y\,F\left(xe^{-y^2}\right)\Big]
     </mrow><mrow>
-      &amp;=e^y\,F\big(xe^{-y^2}\big)
-          +e^y\,\pdiff{}{y}\Big[F\big(xe^{-y^2}\big)\Big]
+      &amp;=e^y\,F\left(xe^{-y^2}\right)
+          +e^y\,\pdiff{}{y}\Big[F\left(xe^{-y^2}\right)\Big]
     </mrow><mrow>
-    &amp;= e^y\, F\big(xe^{-y^2}\big)
-    + e^y\,F'\big(xe^{-y^2}\big)\ \pdiff{}{y}\Big(xe^{-y^2}\Big)
+    &amp;= e^y\, F\left(xe^{-y^2}\right)
+    + e^y\,F'\left(xe^{-y^2}\right)\ \pdiff{}{y}\Big(xe^{-y^2}\Big)
     </mrow><mrow>
-    &amp;= e^y\, F\big(xe^{-y^2}\big)
-        + e^y\, F'\big(xe^{-y^2}\big)\ (-2xy)e^{-y^2}
+    &amp;= e^y\, F\left(xe^{-y^2}\right)
+        + e^y\, F'\left(xe^{-y^2}\right)\ (-2xy)e^{-y^2}
     </mrow>
     </md>
     </p>
@@ -1730,9 +1728,9 @@
     \pdiff{u}{x}(x,y)&amp;= e^y\, \frac{1}{xe^{-y^2}}\ e^{-y^2}
         = \frac{e^y}{x}
     </mrow><mrow>
-    \pdiff{u}{y}(x,y)&amp;= e^y\, \ln\big(xe^{-y^2}\big)
+    \pdiff{u}{y}(x,y)&amp;= e^y\, \ln\left(xe^{-y^2}\right)
         + e^y\, \frac{1}{xe^{-y^2}}\ (-2xy)e^{-y^2}
-        = e^y\, \ln\big(xe^{-y^2}\big)
+        = e^y\, \ln\left(xe^{-y^2}\right)
         -2y e^y
     </mrow><mrow>
       &amp;= e^y\,\ln (x) -y^2\,e^y -2y e^y
@@ -1744,12 +1742,12 @@
     <md>
     <mrow>
     2xy\pdiff{u}{x} + \pdiff{u}{y}
-    &amp;=2xy\ e^y\, F'\big(xe^{-y^2}\big)\ e^{-y^2}
-    +e^y\, F\big(xe^{-y^2}\big)
+    &amp;=2xy\ e^y\, F'\left(xe^{-y^2}\right)\ e^{-y^2}
+    +e^y\, F\left(xe^{-y^2}\right)
     </mrow><mrow>
-    &amp;\hskip1in + e^y\, F'\big(xe^{-y^2}\big)\ (-2xy)e^{-y^2}
+    &amp;\hskip1in + e^y\, F'\left(xe^{-y^2}\right)\ (-2xy)e^{-y^2}
     </mrow><mrow>
-    &amp;=e^y\, F\big(xe^{-y^2}\big)
+    &amp;=e^y\, F\left(xe^{-y^2}\right)
     </mrow><mrow>
     &amp;=u
     </mrow>
@@ -2055,10 +2053,10 @@
     <mrow>
     w_s(s,t) &amp;=\pdiff{}{s}\big[u(2s + 3t, 3s - 2t)\big]
     </mrow><mrow>
-    &amp;= u_x(2s + 3t, 3s - 2t)\pdiff{}{s}\big(2s + 3t\big)
+    &amp;= u_x(2s + 3t, 3s - 2t)\pdiff{}{s}\left(2s + 3t\right)
     </mrow><mrow>
     &amp;\hskip0.25in
-      +u_y(2s + 3t, 3s - 2t)\pdiff{}{s}\big(3s - 2t\big)
+      +u_y(2s + 3t, 3s - 2t)\pdiff{}{s}\left(3s - 2t\right)
     </mrow><mrow>
     &amp;= 2\,u_x(2s + 3t, 3s - 2t) +3\,u_y(2s + 3t, 3s - 2t)
     </mrow>
@@ -2090,10 +2088,10 @@
     <mrow>
     w_t(s,t) &amp;=\pdiff{}{t}\big[u(2s + 3t, 3s - 2t)\big]
     </mrow><mrow>
-    &amp;= u_x(2s + 3t, 3s - 2t)\pdiff{}{t}\big(2s + 3t\big)
+    &amp;= u_x(2s + 3t, 3s - 2t)\pdiff{}{t}\left(2s + 3t\right)
     </mrow><mrow>
     &amp;\hskip1in
-      +u_y(2s + 3t, 3s - 2t)\pdiff{}{t}\big(3s - 2t\big)
+      +u_y(2s + 3t, 3s - 2t)\pdiff{}{t}\left(3s - 2t\right)
     </mrow><mrow>
     &amp;= 3\,u_x(2s + 3t, 3s - 2t) -2\, u_y(2s + 3t, 3s - 2t)
     </mrow>
@@ -2133,11 +2131,11 @@
     <exercise> <!-- <title><fromexam>M200 2003A</fromexam></title> -->
     <statement><p>
     Par définition, le gradient d'une fonction différentiable <m>f(x,y)</m> à un point
-    <m>\big( x_0\,,\,y_0\big)</m> est
+    <m>\left( x_0\,,\,y_0\right)</m> est
     <md>
     \vnabla f(x_0,y_0)
-    =\llt \pdiff{f}{x}\big( x_0\,,\,y_0\big)\,,\,
-    \pdiff{f}{y}\big( x_0\,,\,y_0\big)\rgt
+    =\llt \pdiff{f}{x}\left( x_0\,,\,y_0\right)\,,\,
+    \pdiff{f}{y}\left( x_0\,,\,y_0\right)\rgt
     </md>
     Supposons que
     <md>
@@ -2151,7 +2149,7 @@
     <md>
     \vnabla h(1,2)=\llt -5,10\rgt.
     </md>
-    Supposons que <m>g(1,2)=3</m>, <m>h(1,2)=6</m>, et <m>z(s,t)=f\big(g(s,t),h(s,t)\big)</m>,
+    Supposons que <m>g(1,2)=3</m>, <m>h(1,2)=6</m>, et <m>z(s,t)=f\left(g(s,t),h(s,t)\right)</m>,
     trouvez
     <md>
     \vnabla z(1,2)
@@ -2167,19 +2165,19 @@
     <md>
     <mrow>
     \pdiff{z}{s}(s,t)
-    &amp;=\pdiff{}{s}f\big(g(s,t),h(s,t)\big)
+    &amp;=\pdiff{}{s}f\left(g(s,t),h(s,t)\right)
     </mrow><mrow>
-    &amp;=\pdiff{f}{x}\big(g(s,t),h(s,t)\big)
+    &amp;=\pdiff{f}{x}\left(g(s,t),h(s,t)\right)
        \pdiff{g}{s}(s,t)
-    +\pdiff{f}{y}\big(g(s,t),h(s,t)\big)
+    +\pdiff{f}{y}\left(g(s,t),h(s,t)\right)
        \pdiff{h}{s}(s,t)
     </mrow><mrow>
     \pdiff{z}{t}(s,t)
-    &amp;=\pdiff{}{t}f\big(g(s,t),h(s,t)\big)
+    &amp;=\pdiff{}{t}f\left(g(s,t),h(s,t)\right)
     </mrow><mrow>
-    &amp;=\pdiff{f}{x}\big(g(s,t),h(s,t)\big)
+    &amp;=\pdiff{f}{x}\left(g(s,t),h(s,t)\right)
        \pdiff{g}{t}(s,t)
-    +\pdiff{f}{y}\big(g(s,t),h(s,t)\big)
+    +\pdiff{f}{y}\left(g(s,t),h(s,t)\right)
        \pdiff{h}{t}(s,t)
     </mrow>
     </md>
@@ -2187,9 +2185,9 @@
     <md>
     <mrow>
     \pdiff{z}{s}(1,2)
-    &amp;=\pdiff{f}{x}\big(g(1,2),h(1,2)\big)
+    &amp;=\pdiff{f}{x}\left(g(1,2),h(1,2)\right)
        \pdiff{g}{s}(1,2)
-    +\pdiff{f}{y}\big(g(1,2),h(1,2)\big)
+    +\pdiff{f}{y}\left(g(1,2),h(1,2)\right)
        \pdiff{h}{s}(1,2)
     </mrow><mrow>
     &amp;=\pdiff{f}{x}(3,6)
@@ -2201,9 +2199,9 @@
     =-47
     </mrow><mrow>
     \pdiff{z}{t}(1,2)
-    &amp;=\pdiff{f}{x}\big(g(1,2),h(1,2)\big)
+    &amp;=\pdiff{f}{x}\left(g(1,2),h(1,2)\right)
        \pdiff{g}{t}(1,2)
-    +\pdiff{f}{y}\big(g(1,2),h(1,2)\big)
+    +\pdiff{f}{y}\left(g(1,2),h(1,2)\right)
        \pdiff{h}{t}(1,2)
     </mrow><mrow>
     &amp;=7\times4+8\times 10
@@ -2388,115 +2386,6 @@
     </exercise>
 
 
-    <exercise> <!-- <title><fromexam>M200 2001D</fromexam></title> -->
-    <statement><p>
-    Les équations
-    <md>
-    <mrow>
-    x^2-y\cos(uv)&amp;=v
-    </mrow><mrow>
-    x^2+y^2-\sin(uv)&amp;=\frac{4}{\pi}u
-    </mrow>
-    </md>
-    définissent <m>x</m> et <m>y</m> implicitement comme fonctions de <m>u</m> et de <m>v</m> (i.e. <m>x=x(u,v)</m>,
-    et <m>y=y(u,v)</m>) près du point <m>(x,y)=(1,1)</m> auquel
-    <m>(u,v)=\big(\frac{\pi}{2},0\big)</m>.
-    <ol marker = "(a)">
-    <li>
-    Trouvez
-    <md>
-    \pdiff{x}{u}\text{ et }
-    \pdiff{y}{u}
-    </md>
-    à <m>(u,v)=\big(\frac{\pi}{2},0\big)</m>.
-    </li>
-    <li>
-    Si <m>z=x^4+y^4</m>, déterminez <m>\pdiff{z}{u}</m>
-    au point <m>(u,v)=\big(\frac{\pi}{2},0\big)</m>.
-    </li>
-    </ol>
-    </p></statement>
-
-    <hint><p>
-    La question nous dit que <m>x(u,v)</m> et <m>y=y(u,v)</m> sont implicitement déterminées par
-    <md>
-    x(u,v)^2-y(u,v)\cos(uv)=v\qquad
-    x(u,v)^2+y(u,v)^2-\sin(uv)=\frac{4}{\pi}u
-    </md>
-    au moins près de <m>(x,y)=(1,1)</m>, <m>(u,v)=\big(\frac{\pi}{2},0\big)</m>.
-    Alors, dans la partie (b), <m>z=x^4+y^4</m> signifie réellement que <m>z(u,v)=x(u,v)^4+y(u,v)^4</m>.
-    </p></hint>
-
-    <answer><p>
-    (a) <m>\pdiff{x}{u}\big(\frac{\pi}{2},0\big)=\frac{2}{3\pi}</m>,
-    <m>\pdiff{y}{u}\big(\frac{\pi}{2},0\big)=\frac{4}{3\pi}</m></p><p>
-    (b) <m>\frac{8}{\pi}</m>
-    </p></answer>
-
-    <solution><p>
-    (a) On sait que
-    <md>
-    x(u,v)^2-y(u,v)\cos(uv)=v\qquad
-    x(u,v)^2+y(u,v)^2-\sin(uv)=\frac{4}{\pi}u
-    </md>
-    En appliquant <m>\pdiff{}{u}</m> aux deux équations, on obtient
-    <md>
-    <mrow>
-    2x(u,v)\pdiff{x}{u}(u,v)
-    -\pdiff{y}{u}(u,v)\cos(uv)+v\,y(u,v)\sin(uv)&amp;=0
-    </mrow><mrow>
-    2x(u,v)\pdiff{x}{u}(u,v)
-    +2y(u,v)\pdiff{y}{u}(u,v)
-    -v\cos(uv)&amp;=\frac{4}{\pi}
-    </mrow>
-    </md>
-    En posant <m>u=\frac{\pi}{2}</m>, <m>v=0</m>, <m>x\big(\frac{\pi}{2},0\big)=1</m>,
-    <m>y\big(\frac{\pi}{2},0\big)=1</m>, on obtient
-    <md>
-    <mrow>
-    2\pdiff{x}{u}\left(\frac{\pi}{2},0\right)
-    -\pdiff{y}{u}\left(\frac{\pi}{2},0\right)&amp;=0
-    </mrow><mrow>
-    2\pdiff{x}{u}\left(\frac{\pi}{2},0\right)
-    +2\pdiff{y}{u}\left(\frac{\pi}{2},0\right)
-    &amp;=\frac{4}{\pi}
-    </mrow>
-    </md>
-    En substituant <m>\pdiff{y}{u}\big(\frac{\pi}{2},0\big)=2\pdiff{x}{u}\big(\frac{\pi}{2},0\big)</m>,
-    tiré de la première équation, dans la deuxième équation, on obtient
-    <m>6\pdiff{x}{u}\big(\frac{\pi}{2},0\big)=\frac{4}{\pi}</m>
-    de sorte que
-    <m>\pdiff{x}{u}\big(\frac{\pi}{2},0\big)=\frac{2}{3\pi}</m> et
-    <m>\pdiff{y}{u}\big(\frac{\pi}{2},0\big)=\frac{4}{3\pi}</m>.
-    </p>
-
-    <p>(b)
-    On sait que <m>z(u,v)=x(u,v)^4+y(u,v)^4</m>. Donc
-    <md>
-    <mrow>
-    \pdiff{z}{u}(u,v)
-    &amp;=4x(u,v)^3\ \pdiff{x}{u}(u,v)
-    +4y(u,v)^3\ \pdiff{y}{u}(u,v)
-    </mrow>
-    </md>
-    En substituant <m>u=\frac{\pi}{2}</m>, <m>v=0</m>, <m>x\big(\frac{\pi}{2},0\big)=1</m>,
-    <m>y\big(\frac{\pi}{2},0\big)=1</m> et en utilisant les résultats de la partie (a),
-    <md>
-    <mrow>
-    \pdiff{z}{u}\left(\frac{\pi}{2},0\right)
-    &amp;=4\,x\!\left(\frac{\pi}{2},0\right)^3\
-    \pdiff{x}{u}\!\left(\frac{\pi}{2},0\right)
-    +4\,y\!\left(\frac{\pi}{2},0\right)^3\
-    \pdiff{y}{u}\!\left(\frac{\pi}{2},0\right)
-    </mrow><mrow>
-    &amp;=4\left(\frac{2}{3\pi}\right)
-    +4\left(\frac{4}{3\pi}\right)
-    </mrow><mrow>
-    &amp;=\frac{8}{\pi}
-    </mrow>
-    </md>
-    </p></solution>
-    </exercise>
 
 
     <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
@@ -2505,7 +2394,7 @@
     et <m>v=x-y</m>. Trouvez une constante, <m>\a</m>, telle que
     <md>
     <mrow>
-    (f_x)^2+(f_y)^2=\a\big((f_u)^2+(f_v)^2\big)
+    (f_x)^2+(f_y)^2=\a\left((f_u)^2+(f_v)^2\right)
     </mrow>
     </md>
     </p></statement>
@@ -2582,6 +2471,118 @@
 
 
     <!-- La solution et la réponse sont les mêmes -->
+    <!-- Déplacé depuis « Pour mieux comprendre » : théorème des fonctions implicites pour un système de deux équations à deux variables (non développé dans le texte) -->
+    <exercise> <!-- <title><fromexam>M200 2001D</fromexam></title> -->
+    <statement><p>
+    Les équations
+    <md>
+    <mrow>
+    x^2-y\cos(uv)&amp;=v
+    </mrow><mrow>
+    x^2+y^2-\sin(uv)&amp;=\frac{4}{\pi}u
+    </mrow>
+    </md>
+    définissent <m>x</m> et <m>y</m> implicitement comme fonctions de <m>u</m> et de <m>v</m> (i.e. <m>x=x(u,v)</m>,
+    et <m>y=y(u,v)</m>) près du point <m>(x,y)=(1,1)</m> auquel
+    <m>(u,v)=\left(\frac{\pi}{2},0\right)</m>.
+    <ol marker = "(a)">
+    <li>
+    Trouvez
+    <md>
+    \pdiff{x}{u}\text{ et }
+    \pdiff{y}{u}
+    </md>
+    à <m>(u,v)=\left(\frac{\pi}{2},0\right)</m>.
+    </li>
+    <li>
+    Si <m>z=x^4+y^4</m>, déterminez <m>\pdiff{z}{u}</m>
+    au point <m>(u,v)=\left(\frac{\pi}{2},0\right)</m>.
+    </li>
+    </ol>
+    </p></statement>
+
+    <hint><p>
+    La question nous dit que <m>x(u,v)</m> et <m>y=y(u,v)</m> sont implicitement déterminées par
+    <md>
+    x(u,v)^2-y(u,v)\cos(uv)=v\qquad
+    x(u,v)^2+y(u,v)^2-\sin(uv)=\frac{4}{\pi}u
+    </md>
+    au moins près de <m>(x,y)=(1,1)</m>, <m>(u,v)=\left(\frac{\pi}{2},0\right)</m>.
+    Alors, dans la partie (b), <m>z=x^4+y^4</m> signifie réellement que <m>z(u,v)=x(u,v)^4+y(u,v)^4</m>.
+    </p></hint>
+
+    <answer><p>
+    (a) <m>\pdiff{x}{u}\left(\frac{\pi}{2},0\right)=\frac{2}{3\pi}</m>,
+    <m>\pdiff{y}{u}\left(\frac{\pi}{2},0\right)=\frac{4}{3\pi}</m></p><p>
+    (b) <m>\frac{8}{\pi}</m>
+    </p></answer>
+
+    <solution><p>
+    (a) On sait que
+    <md>
+    x(u,v)^2-y(u,v)\cos(uv)=v\qquad
+    x(u,v)^2+y(u,v)^2-\sin(uv)=\frac{4}{\pi}u
+    </md>
+    En appliquant <m>\pdiff{}{u}</m> aux deux équations, on obtient
+    <md>
+    <mrow>
+    2x(u,v)\pdiff{x}{u}(u,v)
+    -\pdiff{y}{u}(u,v)\cos(uv)+v\,y(u,v)\sin(uv)&amp;=0
+    </mrow><mrow>
+    2x(u,v)\pdiff{x}{u}(u,v)
+    +2y(u,v)\pdiff{y}{u}(u,v)
+    -v\cos(uv)&amp;=\frac{4}{\pi}
+    </mrow>
+    </md>
+    En posant <m>u=\frac{\pi}{2}</m>, <m>v=0</m>, <m>x\left(\frac{\pi}{2},0\right)=1</m>,
+    <m>y\left(\frac{\pi}{2},0\right)=1</m>, on obtient
+    <md>
+    <mrow>
+    2\pdiff{x}{u}\left(\frac{\pi}{2},0\right)
+    -\pdiff{y}{u}\left(\frac{\pi}{2},0\right)&amp;=0
+    </mrow><mrow>
+    2\pdiff{x}{u}\left(\frac{\pi}{2},0\right)
+    +2\pdiff{y}{u}\left(\frac{\pi}{2},0\right)
+    &amp;=\frac{4}{\pi}
+    </mrow>
+    </md>
+    En substituant <m>\pdiff{y}{u}\left(\frac{\pi}{2},0\right)=2\pdiff{x}{u}\left(\frac{\pi}{2},0\right)</m>,
+    tiré de la première équation, dans la deuxième équation, on obtient
+    <m>6\pdiff{x}{u}\left(\frac{\pi}{2},0\right)=\frac{4}{\pi}</m>
+    de sorte que
+    <m>\pdiff{x}{u}\left(\frac{\pi}{2},0\right)=\frac{2}{3\pi}</m> et
+    <m>\pdiff{y}{u}\left(\frac{\pi}{2},0\right)=\frac{4}{3\pi}</m>.
+    </p>
+
+    <p>(b)
+    On sait que <m>z(u,v)=x(u,v)^4+y(u,v)^4</m>. Donc
+    <md>
+    <mrow>
+    \pdiff{z}{u}(u,v)
+    &amp;=4x(u,v)^3\ \pdiff{x}{u}(u,v)
+    +4y(u,v)^3\ \pdiff{y}{u}(u,v)
+    </mrow>
+    </md>
+    En substituant <m>u=\frac{\pi}{2}</m>, <m>v=0</m>, <m>x\left(\frac{\pi}{2},0\right)=1</m>,
+    <m>y\left(\frac{\pi}{2},0\right)=1</m> et en utilisant les résultats de la partie (a),
+    <md>
+    <mrow>
+    \pdiff{z}{u}\left(\frac{\pi}{2},0\right)
+    &amp;=4\,x\!\left(\frac{\pi}{2},0\right)^3\
+    \pdiff{x}{u}\!\left(\frac{\pi}{2},0\right)
+    +4\,y\!\left(\frac{\pi}{2},0\right)^3\
+    \pdiff{y}{u}\!\left(\frac{\pi}{2},0\right)
+    </mrow><mrow>
+    &amp;=4\left(\frac{2}{3\pi}\right)
+    +4\left(\frac{4}{3\pi}\right)
+    </mrow><mrow>
+    &amp;=\frac{8}{\pi}
+    </mrow>
+    </md>
+    </p></solution>
+    </exercise>
+
+
     <exercise>
         <statement><p>
         Les textes sur la thermodynamique
@@ -2614,7 +2615,7 @@
         </ul>
         Par exemple, disons que  <m>F(x,y,z)=0</m> détermine <m>x=f(y,z)</m> signifie que
         <md>
-        F\big(f(y,z),y,z\big)=0
+        F\left(f(y,z),y,z\right)=0
         \tag{$*$}
         </md>
         pour tout <m>y</m> et <m>z</m>. L'équation
@@ -2665,49 +2666,49 @@
           </ul>
           En général, disons que  <m>F(x,y,z)=0</m> détermine <m>x=f(y,z)</m> signifie que
           <md>
-          F\big(f(y,z),y,z\big)=0
+          F\left(f(y,z),y,z\right)=0
           \tag{$*$}
           </md>
           pour tout <m>y</m> et <m>z</m>.
-          Soit <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)</m>. En appliquant la règle de dérivation en chaîne à
-          <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)</m> (avec <m>y</m> et <m>z</m> des variables indépendantes),
+          Soit <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)</m>. En appliquant la règle de dérivation en chaîne à
+          <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)</m> (avec <m>y</m> et <m>z</m> des variables indépendantes),
           on obtient
           <md>
           <mrow>
           \pdiff{\mathcal{F}}{z}(y,z)
           &amp;=
-          \pdiff{F}{x}\big(f(y,z),y,z\big)
+          \pdiff{F}{x}\left(f(y,z),y,z\right)
           \pdiff{f}{z}(y,z)
-          +\pdiff{F}{z}\big(f(y,z),y,z\big)
+          +\pdiff{F}{z}\left(f(y,z),y,z\right)
           </mrow>
           </md>
-          L'équation <m>(*)</m> dit que <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)=0</m>
+          L'équation <m>(*)</m> dit que <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)=0</m>
           pour tout <m>y</m> et <m>z</m>.
           Donc, en dérivant l'équation <m>(*)</m> par rapport à
           <m>z</m>, on obtient
           <md>
           <mrow>
-          \pdiff{\mathcal{F}}{z}(y,z)&amp;=\pdiff{F}{x}\big(f(y,z),y,z\big)
+          \pdiff{\mathcal{F}}{z}(y,z)&amp;=\pdiff{F}{x}\left(f(y,z),y,z\right)
           \pdiff{f}{z}(y,z)
-          +\pdiff{F}{z}\big(f(y,z),y,z\big)=0
+          +\pdiff{F}{z}\left(f(y,z),y,z\right)=0
           </mrow><mrow>
           &amp;\implies
           \pdiff{f}{z}(y,z)
-          =-\frac{\pdiff{F}{z}\big(f(y,z),y,z\big)}
-          {\pdiff{F}{x}\big(f(y,z),y,z\big)}
+          =-\frac{\pdiff{F}{z}\left(f(y,z),y,z\right)}
+          {\pdiff{F}{x}\left(f(y,z),y,z\right)}
           </mrow>
           </md>
           pour tout <m>y</m> et <m>z</m>. De façon similaire, en dérivant
-          <m>F\big(x,g(x,z),z\big)=0</m> par rapport à <m>x</m> et
-          <m>F\big(x,y,h(x,y)\big)=0</m> par rapport à <m>y</m> donne
+          <m>F\left(x,g(x,z),z\right)=0</m> par rapport à <m>x</m> et
+          <m>F\left(x,y,h(x,y)\right)=0</m> par rapport à <m>y</m> donne
           <md>
           <mrow>
           \pdiff{g}{x}(x,z)
-          =-\frac{\pdiff{F}{x}\big(x,g(x,z),z\big)}
-          {\pdiff{F}{y}\big(x,g(x,z),z\big)}\qquad
+          =-\frac{\pdiff{F}{x}\left(x,g(x,z),z\right)}
+          {\pdiff{F}{y}\left(x,g(x,z),z\right)}\qquad
           \pdiff{h}{y}(x,y)
-          =-\frac{\pdiff{F}{y}\big(x,y,h(x,y)\big)}
-          {\pdiff{F}{z}\big(x,y,h(x,y)\big)}
+          =-\frac{\pdiff{F}{y}\left(x,y,h(x,y)\right)}
+          {\pdiff{F}{z}\left(x,y,h(x,y)\right)}
           </mrow>
           </md>
           Si <m>(x,y,z)</m> est n'importe quel point satisfaisant <m>F(x,y,z)=0</m>
@@ -2715,15 +2716,15 @@
           <md>
           <mrow>
           \pdiff{f}{z}(y,z)
-          =-\frac{\pdiff{F}{z}\big(x,y,z\big)}
-          {\pdiff{F}{x}\big(x,y,z\big)}\qquad
+          =-\frac{\pdiff{F}{z}\left(x,y,z\right)}
+          {\pdiff{F}{x}\left(x,y,z\right)}\qquad
           \pdiff{g}{x}(x,z)
-          =-\frac{\pdiff{F}{x}\big(x,y,z\big)}
-          {\pdiff{F}{y}\big(x,y,z\big)}
+          =-\frac{\pdiff{F}{x}\left(x,y,z\right)}
+          {\pdiff{F}{y}\left(x,y,z\right)}
           </mrow><mrow>
           \pdiff{h}{y}(x,y)
-          =-\frac{\pdiff{F}{y}\big(x,y,z\big)}
-          {\pdiff{F}{z}\big(x,y,z\big)}
+          =-\frac{\pdiff{F}{y}\left(x,y,z\right)}
+          {\pdiff{F}{z}\left(x,y,z\right)}
           </mrow>
           </md>
           et
@@ -2732,12 +2733,12 @@
           \pdiff{f}{z}(y,z)\
           \pdiff{g}{x}(x,z)\
           \pdiff{h}{y}(x,y)
-          &amp;=-\frac{\pdiff{F}{z}\big(x,y,z\big)}
-          {\pdiff{F}{x}\big(x,y,z\big)}\
-          \frac{\pdiff{F}{x}\big(x,y,z\big)}
-          {\pdiff{F}{y}\big(x,y,z\big)}\
-          \frac{\pdiff{F}{y}\big(x,y,z\big)}
-          {\pdiff{F}{z}\big(x,y,z\big)}
+          &amp;=-\frac{\pdiff{F}{z}\left(x,y,z\right)}
+          {\pdiff{F}{x}\left(x,y,z\right)}\
+          \frac{\pdiff{F}{x}\left(x,y,z\right)}
+          {\pdiff{F}{y}\left(x,y,z\right)}\
+          \frac{\pdiff{F}{y}\left(x,y,z\right)}
+          {\pdiff{F}{z}\left(x,y,z\right)}
           </mrow><mrow>
           &amp;=-1
           </mrow>
@@ -2776,49 +2777,49 @@
         </ul>
         En général, disons que  <m>F(x,y,z)=0</m> détermine <m>x=f(y,z)</m> signifie que
         <md>
-        F\big(f(y,z),y,z\big)=0
+        F\left(f(y,z),y,z\right)=0
         \tag{$*$}
         </md>
         pour tout <m>y</m> et <m>z</m>.
-        Soit <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)</m>. En appliquant la règle de dérivation en chaîne à
-        <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)</m> (avec <m>y</m> et <m>z</m> des variables indépendantes),
+        Soit <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)</m>. En appliquant la règle de dérivation en chaîne à
+        <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)</m> (avec <m>y</m> et <m>z</m> des variables indépendantes),
         on obtient
         <md>
         <mrow>
         \pdiff{\mathcal{F}}{z}(y,z)
         &amp;=
-        \pdiff{F}{x}\big(f(y,z),y,z\big)
+        \pdiff{F}{x}\left(f(y,z),y,z\right)
         \pdiff{f}{z}(y,z)
-        +\pdiff{F}{z}\big(f(y,z),y,z\big)
+        +\pdiff{F}{z}\left(f(y,z),y,z\right)
         </mrow>
         </md>
-        L'équation <m>(*)</m> dit que <m>\mathcal{F}(y,z)=F\big(f(y,z),y,z\big)=0</m>
+        L'équation <m>(*)</m> dit que <m>\mathcal{F}(y,z)=F\left(f(y,z),y,z\right)=0</m>
         pour tout <m>y</m> et <m>z</m>.
         Donc, en dérivant l'équation <m>(*)</m> par rapport à
         <m>z</m>, on obtient
         <md>
         <mrow>
-        \pdiff{\mathcal{F}}{z}(y,z)&amp;=\pdiff{F}{x}\big(f(y,z),y,z\big)
+        \pdiff{\mathcal{F}}{z}(y,z)&amp;=\pdiff{F}{x}\left(f(y,z),y,z\right)
         \pdiff{f}{z}(y,z)
-        +\pdiff{F}{z}\big(f(y,z),y,z\big)=0
+        +\pdiff{F}{z}\left(f(y,z),y,z\right)=0
         </mrow><mrow>
         &amp;\implies
         \pdiff{f}{z}(y,z)
-        =-\frac{\pdiff{F}{z}\big(f(y,z),y,z\big)}
-        {\pdiff{F}{x}\big(f(y,z),y,z\big)}
+        =-\frac{\pdiff{F}{z}\left(f(y,z),y,z\right)}
+        {\pdiff{F}{x}\left(f(y,z),y,z\right)}
         </mrow>
         </md>
         pour tout <m>y</m> et <m>z</m>. De façon similaire, en dérivant
-        <m>F\big(x,g(x,z),z\big)=0</m> par rapport à <m>x</m> et
-        <m>F\big(x,y,h(x,y)\big)=0</m> par rapport à <m>y</m> donne
+        <m>F\left(x,g(x,z),z\right)=0</m> par rapport à <m>x</m> et
+        <m>F\left(x,y,h(x,y)\right)=0</m> par rapport à <m>y</m> donne
         <md>
         <mrow>
         \pdiff{g}{x}(x,z)
-        =-\frac{\pdiff{F}{x}\big(x,g(x,z),z\big)}
-        {\pdiff{F}{y}\big(x,g(x,z),z\big)}\qquad
+        =-\frac{\pdiff{F}{x}\left(x,g(x,z),z\right)}
+        {\pdiff{F}{y}\left(x,g(x,z),z\right)}\qquad
         \pdiff{h}{y}(x,y)
-        =-\frac{\pdiff{F}{y}\big(x,y,h(x,y)\big)}
-        {\pdiff{F}{z}\big(x,y,h(x,y)\big)}
+        =-\frac{\pdiff{F}{y}\left(x,y,h(x,y)\right)}
+        {\pdiff{F}{z}\left(x,y,h(x,y)\right)}
         </mrow>
         </md>
         Si <m>(x,y,z)</m> est n'importe quel point satisfaisant <m>F(x,y,z)=0</m>
@@ -2826,15 +2827,15 @@
         <md>
         <mrow>
         \pdiff{f}{z}(y,z)
-        =-\frac{\pdiff{F}{z}\big(x,y,z\big)}
-        {\pdiff{F}{x}\big(x,y,z\big)}\qquad
+        =-\frac{\pdiff{F}{z}\left(x,y,z\right)}
+        {\pdiff{F}{x}\left(x,y,z\right)}\qquad
         \pdiff{g}{x}(x,z)
-        =-\frac{\pdiff{F}{x}\big(x,y,z\big)}
-        {\pdiff{F}{y}\big(x,y,z\big)}
+        =-\frac{\pdiff{F}{x}\left(x,y,z\right)}
+        {\pdiff{F}{y}\left(x,y,z\right)}
         </mrow><mrow>
         \pdiff{h}{y}(x,y)
-        =-\frac{\pdiff{F}{y}\big(x,y,z\big)}
-        {\pdiff{F}{z}\big(x,y,z\big)}
+        =-\frac{\pdiff{F}{y}\left(x,y,z\right)}
+        {\pdiff{F}{z}\left(x,y,z\right)}
         </mrow>
         </md>
         et
@@ -2843,12 +2844,12 @@
         \pdiff{f}{z}(y,z)\
         \pdiff{g}{x}(x,z)\
         \pdiff{h}{y}(x,y)
-        &amp;=-\frac{\pdiff{F}{z}\big(x,y,z\big)}
-        {\pdiff{F}{x}\big(x,y,z\big)}\
-        \frac{\pdiff{F}{x}\big(x,y,z\big)}
-        {\pdiff{F}{y}\big(x,y,z\big)}\
-        \frac{\pdiff{F}{y}\big(x,y,z\big)}
-        {\pdiff{F}{z}\big(x,y,z\big)}
+        &amp;=-\frac{\pdiff{F}{z}\left(x,y,z\right)}
+        {\pdiff{F}{x}\left(x,y,z\right)}\
+        \frac{\pdiff{F}{x}\left(x,y,z\right)}
+        {\pdiff{F}{y}\left(x,y,z\right)}\
+        \frac{\pdiff{F}{y}\left(x,y,z\right)}
+        {\pdiff{F}{z}\left(x,y,z\right)}
         </mrow><mrow>
         &amp;=-1
         </mrow>
@@ -2874,28 +2875,28 @@
       <answer><p>
       Nous calculons d'abord les dérivées partielles de premier ordre de <m>w(x,y,z)</m>.
       Posons <m>u(x,y,z)=xz</m> et <m>v(x,y,z)=yz</m> de telle sorte que
-      <m>w(x,y,z) = f\big(u(x,y,z), v(x,y,z)\big)</m>.
+      <m>w(x,y,z) = f\left(u(x,y,z), v(x,y,z)\right)</m>.
       Par la règle de la chaîne,
       <md>
       <mrow>
-      &amp;\pdiff{w}{x}(x,y,z) =  \pdiff{}{x}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{x}(x,y,z) =  \pdiff{}{x}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-          &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{x}(x,y,z)
-      </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{x}(x,y,z)
+          &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{x}(x,y,z)
+      </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{x}(x,y,z)
       </mrow><mrow>
           &amp;=z\pdiff{f}{u}(xz, yz)
       </mrow><mrow>
-      &amp;\pdiff{w}{y}(x,y,z) =  \pdiff{}{y}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{y}(x,y,z) =  \pdiff{}{y}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-            &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{y}(x,y,z)
-      </mrow><mrow>&amp;\hskip1in   +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{y}(x,y,z)
+            &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{y}(x,y,z)
+      </mrow><mrow>&amp;\hskip1in   +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{y}(x,y,z)
       </mrow><mrow>
             &amp;=z\pdiff{f}{v}(xz, yz)
       </mrow><mrow>
-      &amp;\pdiff{w}{z}(x,y,z) =  \pdiff{}{z}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{z}(x,y,z) =  \pdiff{}{z}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-            &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{z}(x,y,z)
-       </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{z}(x,y,z)
+            &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{z}(x,y,z)
+       </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{z}(x,y,z)
       </mrow><mrow>
             &amp;=x\pdiff{f}{u}(xz, yz) + y\pdiff{f}{v}(xz, yz)
       </mrow>
@@ -2917,28 +2918,28 @@
       <solution><p>
       Nous calculons d'abord les dérivées partielles de premier ordre de <m>w(x,y,z)</m>.
       Posons <m>u(x,y,z)=xz</m> et <m>v(x,y,z)=yz</m> de telle sorte que
-      <m>w(x,y,z) = f\big(u(x,y,z), v(x,y,z)\big)</m>.
+      <m>w(x,y,z) = f\left(u(x,y,z), v(x,y,z)\right)</m>.
       Par la règle de la chaîne,
       <md>
       <mrow>
-      &amp;\pdiff{w}{x}(x,y,z) =  \pdiff{}{x}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{x}(x,y,z) =  \pdiff{}{x}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-          &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{x}(x,y,z)
-      </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{x}(x,y,z)
+          &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{x}(x,y,z)
+      </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{x}(x,y,z)
       </mrow><mrow>
           &amp;=z\pdiff{f}{u}(xz, yz)
       </mrow><mrow>
-      &amp;\pdiff{w}{y}(x,y,z) =  \pdiff{}{y}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{y}(x,y,z) =  \pdiff{}{y}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-            &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{y}(x,y,z)
-      </mrow><mrow>&amp;\hskip1in   +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{y}(x,y,z)
+            &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{y}(x,y,z)
+      </mrow><mrow>&amp;\hskip1in   +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{y}(x,y,z)
       </mrow><mrow>
             &amp;=z\pdiff{f}{v}(xz, yz)
       </mrow><mrow>
-      &amp;\pdiff{w}{z}(x,y,z) =  \pdiff{}{z}\big[f \big(u(x,y,z), v(x,y,z)\big)\big]
+      &amp;\pdiff{w}{z}(x,y,z) =  \pdiff{}{z}\big[f \left(u(x,y,z), v(x,y,z)\right)\big]
       </mrow><mrow>
-            &amp;=\pdiff{f}{u}\big(u(x,y,z), v(x,y,z)\big)\pdiff{u}{z}(x,y,z)
-       </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\big(u(x,y,z), v(x,y,z)\big)\pdiff{v}{z}(x,y,z)
+            &amp;=\pdiff{f}{u}\left(u(x,y,z), v(x,y,z)\right)\pdiff{u}{z}(x,y,z)
+       </mrow><mrow>&amp;\hskip1in  +\pdiff{f}{v}\left(u(x,y,z), v(x,y,z)\right)\pdiff{v}{z}(x,y,z)
       </mrow><mrow>
             &amp;=x\pdiff{f}{u}(xz, yz) + y\pdiff{f}{v}(xz, yz)
       </mrow>
@@ -2978,32 +2979,32 @@
        <answer><p>
        Nous avons que la fonction <m>z(x,y)</m> obéit
        <md>
-       f\big(x\,z(x,y)\,,\, y\,z(x,y)\big) =0
+       f\left(x\,z(x,y)\,,\, y\,z(x,y)\right) =0
        \tag{$*$}
        </md>
        pour tout <m>x</m> et <m>y</m>. Par la règle de la chaîne,
        <md>
        <mrow>
-       &amp;\pdiff{}{x}\big[f\big(x\,z(x,y), y\,z(x,y)\big)\big]
+       &amp;\pdiff{}{x}\big[f\left(x\,z(x,y), y\,z(x,y)\right)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{x}\big[x\,z(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{x}\big[x\,z(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-        + f_v\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{x}\big[y\,z(x,y)\big]
+        + f_v\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{x}\big[y\,z(x,y)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\,\big[z(x,y)+x\,z_x(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\,\big[z(x,y)+x\,z_x(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-                   + f_v\big(x\,z(x,y), y\,z(x,y)\big)\,y\,z_x(x,y)
+                   + f_v\left(x\,z(x,y), y\,z(x,y)\right)\,y\,z_x(x,y)
 
        </mrow><mrow>
-       &amp;\pdiff{}{y}\big[f\big(x\,z(x,y), y\,z(x,y)\big)\big]
+       &amp;\pdiff{}{y}\big[f\left(x\,z(x,y), y\,z(x,y)\right)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{y}\big[x\,z(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{y}\big[x\,z(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-        + f_v\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{y}\big[y\,z(x,y)\big]
+        + f_v\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{y}\big[y\,z(x,y)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\, x\,z_y(x,y)
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\, x\,z_y(x,y)
        </mrow><mrow>&amp;\hskip1in
-                   + f_v\big(x\,z(x,y), y\,z(x,y)\big)\,
+                   + f_v\left(x\,z(x,y), y\,z(x,y)\right)\,
                            \big[z(x,y)+y\,z_y(x,y)\big]
        </mrow>
        </md>
@@ -3011,12 +3012,12 @@
        et par rapport à <m>y</m> donne
        <md>
        <mrow>
-       &amp;f_u\big(x z(x,y),yz(x,y)\big)\big[z(x,y)+xz_x(x,y)\big]
-                   + f_v\big(xz(x,y), yz(x,y)\big)y z_x(x,y)
+       &amp;f_u\left(x z(x,y),yz(x,y)\right)\big[z(x,y)+xz_x(x,y)\big]
+                   + f_v\left(xz(x,y), yz(x,y)\right)y z_x(x,y)
        </mrow><mrow>&amp;\hskip4in=0
        </mrow><mrow>
-       &amp;f_u\big(x\,z(x,y), yz(x,y)\big) xz_y(x,y)
-                   + f_v\big(xz(x,y), yz(x,y)\big)
+       &amp;f_u\left(x\,z(x,y), yz(x,y)\right) xz_y(x,y)
+                   + f_v\left(xz(x,y), yz(x,y)\right)
                            \big[z(x,y)+yz_y(x,y)\big]
        </mrow><mrow> &amp;\hskip4in=0
        </mrow>
@@ -3060,32 +3061,32 @@
        <solution><p>
        Nous avons que la fonction <m>z(x,y)</m> obéit
        <md>
-       f\big(x\,z(x,y)\,,\, y\,z(x,y)\big) =0
+       f\left(x\,z(x,y)\,,\, y\,z(x,y)\right) =0
        \tag{$*$}
        </md>
        pour tout <m>x</m> et <m>y</m>. Par la règle de la chaîne,
        <md>
        <mrow>
-       &amp;\pdiff{}{x}\big[f\big(x\,z(x,y), y\,z(x,y)\big)\big]
+       &amp;\pdiff{}{x}\big[f\left(x\,z(x,y), y\,z(x,y)\right)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{x}\big[x\,z(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{x}\big[x\,z(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-        + f_v\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{x}\big[y\,z(x,y)\big]
+        + f_v\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{x}\big[y\,z(x,y)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\,\big[z(x,y)+x\,z_x(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\,\big[z(x,y)+x\,z_x(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-                   + f_v\big(x\,z(x,y), y\,z(x,y)\big)\,y\,z_x(x,y)
+                   + f_v\left(x\,z(x,y), y\,z(x,y)\right)\,y\,z_x(x,y)
 
        </mrow><mrow>
-       &amp;\pdiff{}{y}\big[f\big(x\,z(x,y), y\,z(x,y)\big)\big]
+       &amp;\pdiff{}{y}\big[f\left(x\,z(x,y), y\,z(x,y)\right)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{y}\big[x\,z(x,y)\big]
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{y}\big[x\,z(x,y)\big]
        </mrow><mrow>&amp;\hskip1in
-        + f_v\big(x\,z(x,y), y\,z(x,y)\big)\pdiff{}{y}\big[y\,z(x,y)\big]
+        + f_v\left(x\,z(x,y), y\,z(x,y)\right)\pdiff{}{y}\big[y\,z(x,y)\big]
        </mrow><mrow>
-       &amp;=f_u\big(x\,z(x,y), y\,z(x,y)\big)\, x\,z_y(x,y)
+       &amp;=f_u\left(x\,z(x,y), y\,z(x,y)\right)\, x\,z_y(x,y)
        </mrow><mrow>&amp;\hskip1in
-                   + f_v\big(x\,z(x,y), y\,z(x,y)\big)\,
+                   + f_v\left(x\,z(x,y), y\,z(x,y)\right)\,
                            \big[z(x,y)+y\,z_y(x,y)\big]
        </mrow>
        </md>
@@ -3093,12 +3094,12 @@
        et par rapport à <m>y</m> donne
        <md>
        <mrow>
-       &amp;f_u\big(x z(x,y),yz(x,y)\big)\big[z(x,y)+xz_x(x,y)\big]
-                   + f_v\big(xz(x,y), yz(x,y)\big)y z_x(x,y)
+       &amp;f_u\left(x z(x,y),yz(x,y)\right)\big[z(x,y)+xz_x(x,y)\big]
+                   + f_v\left(xz(x,y), yz(x,y)\right)y z_x(x,y)
        </mrow><mrow>&amp;\hskip4in=0
        </mrow><mrow>
-       &amp;f_u\big(x\,z(x,y), yz(x,y)\big) xz_y(x,y)
-                   + f_v\big(xz(x,y), yz(x,y)\big)
+       &amp;f_u\left(x\,z(x,y), yz(x,y)\right) xz_y(x,y)
+                   + f_v\left(xz(x,y), yz(x,y)\right)
                            \big[z(x,y)+yz_y(x,y)\big]
        </mrow><mrow> &amp;\hskip4in=0
        </mrow>
@@ -3140,6 +3141,619 @@
        </p></solution>
      </exercise>
 
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2000A</fromexam></title> -->
+      <statement><p>
+      Soit <m>z</m> une fonction de <m>x</m> et de <m>y</m> telle que
+      <md>
+      z^3 - z + 2xy - y^2 = 0,\qquad z(2, 4) = 1.
+      </md>
+      <ol marker = "(a)">
+      <li>
+      Trouvez l'approximation linéaire de <m>z</m> au point <m>(2, 4)</m>.
+      </li>
+      <li>
+      Utilisez votre réponse de la partie (a) pour estimer la valeur de <m>z</m> en
+      <m>(2.02, 3.96)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>z(x,y)\approx 1-4x+2y</m>
+      </p><p>
+      (b) <m>0.84</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La fonction <m>z(x,y)</m> vérifie
+      <md>
+      z(x,y)^3-z(x,y)+2xy-y^2=0
+      </md>
+      pour tout <m>(x,y)</m> près de <m>(2,4)</m>. En dérivant par rapport à <m>x</m> et à <m>y</m>,
+      <md>
+      <mrow>
+      3z(x,y)^2\pdiff{z}{x}(x,y)
+             -\pdiff{z}{x}(x,y)+2y&amp;=0
+      </mrow><mrow>
+      3z(x,y)^2\pdiff{z}{y}(x,y)
+             -\pdiff{z}{y}(x,y)+2x-2y&amp;=0
+      </mrow>
+      </md>
+      En substituant <m>x=2</m>, <m>y=4</m> et <m>z(2,4)=1</m>, on obtient
+      <md alignment="alignat">
+      <mrow>
+      3\pdiff{z}{x}(2,4)
+             -\pdiff{z}{x}(2,4)+8&amp;=0 &amp;  &amp;\iff &amp;
+          \pdiff{z}{x}(2,4) &amp; = -4
+      </mrow><mrow>
+      3\pdiff{z}{y}(2,4)
+             -\pdiff{z}{y}(2,4)+4-8&amp;=0 &amp;  &amp;\iff &amp;
+          \pdiff{z}{y}(2,4) &amp; = 2
+      </mrow>
+      </md>
+      L'approximation linéaire est
+      <md>
+      <mrow>
+      z(x,y)&amp;\approx z(2,4)+z_x(2,4)(x-2)+z_y(2,4)(y-4)
+      </mrow><mrow>
+      &amp;= 1-4(x-2)+2(y-4)
+      </mrow><mrow>
+      &amp;=1-4x+2y
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) En substituant <m>x=2.02</m> et <m>y=3.96</m>, on obtient
+      <md>
+      <mrow>
+      z(2.02,3.96)\approx 1-4\times0.02+2\times(-0.04)
+      =0.84
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
+      <statement><p>
+      Si deux résistances ayant une résistance de <m>R_1</m> et de <m>R_2</m> sont en parallèles,
+      alors la résistance résultante R satisfait l'équation
+      <m>\frac{1}{R} =\frac{1}{R_1}+\frac{1}{R_2}</m>. Utilisez l'approximation linéaire pour estimer le changement dans <m>R</m> si <m>R_1</m> décroît de
+      <m>2</m> à <m>1.9</m> ohms et <m>R_2</m> croît de 8 à 8.1 ohms.
+      </p></statement>
+
+      <answer><p>
+      <m>-0.06</m>
+      </p></answer>
+
+      <solution><p>
+      La fonction <m>R(R_1,R_2)</m> est définie implicitement par
+      <md>
+      \frac{1}{R(R_1,R_2)} =\frac{1}{R_1}+\frac{1}{R_2}
+      \tag{$*$}</md>
+      En particulier
+      <md>
+      \frac{1}{R(2,8)} = \frac{1}{2}+\frac{1}{8} = \frac{5}{8}
+      \implies R(2,8) = \frac{8}{5}
+      </md>
+      </p>
+
+      <p>Nous voulons utiliser l'approximation linéaire
+      <md>
+      R(R_1,R_2) \approx R(2,8) + \pdiff{R}{R_1}(2,8)\,(R_1-2)
+                                + \pdiff{R}{R_2}(2,8)\,(R_2-8)
+      </md>
+      Pour ce faire, il nous faut les dérivées partielles <m>\pdiff{R}{R_1}(2,8)</m>
+      et <m>\pdiff{R}{R_2}(2,8)</m>. Pour les trouver, dérivons <m>(*)</m> par rapport à
+      <m>R_1</m> et <m>R_2</m> :
+      <md>
+      <mrow>
+      -\frac{1}{R(R_1,R_2)^2}\pdiff{R}{R_1}(R_1,R_2)
+                       &amp;= -\frac{1}{R_1^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2)^2}\pdiff{R}{R_2}(R_1,R_2)
+                       &amp;= -\frac{1}{R_2^2}
+      </mrow>
+      </md>
+      En posant <m>R_1=2</m> et <m>R_2=8</m>, on obtient
+      <md alignment="alignat">
+      <mrow>
+      -\frac{1}{(8/5)^2}\pdiff{R}{R_1}(2,8)
+                       &amp;= -\frac{1}{4} &amp;\quad\implies\quad &amp;
+               &amp;\pdiff{R}{R_1}(2,8) &amp;=\frac{16}{25}
+      </mrow><mrow>
+      -\frac{1}{(8/5)^2}\pdiff{R}{R_2}(2,8)
+                       &amp;= -\frac{1}{64}  &amp;\quad\implies\quad &amp;
+               &amp;\pdiff{R}{R_2}(2,8) &amp;=\frac{1}{25}
+      </mrow>
+      </md>
+      Le changement demandé dans <m>R</m> est donc
+      <md>
+      <mrow>
+      R(1.9,8.1)-R(2,8) \approx  \frac{16}{25} (-0.1) + \frac{1}{25}(0.1)
+      =-\frac{15}{250} = -0.06
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise>
+      <statement><p>
+      La résistance totale <m>R</m> de trois résistances, <m>R_1</m>, <m>R_2</m>, <m>R_3</m>, connectées en
+      parallèles est déterminée par
+      <md>
+      \frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
+      </md>
+      Si les résistances, mesurées en Ohms, sont <m>R_1=25</m> ohms, <m>R_2=40</m> ohms et
+      <m>R_3=50</m> ohms, avec une erreur possible de 0.5% dans chaque cas, estimez l'erreur maximale dans la valeur calculée de <m>R</m>.
+      </p></statement>
+
+      <hint><p>
+      Revoir la relation entre l'erreur absolue et l'erreur relative
+      donnée dans la <xref ref="def_error" text="global">définition</xref>.
+      </p></hint>
+
+      <answer><p>
+      <m>\frac{1}{17}\approx 0.059</m>
+      </p>
+
+      </answer>
+
+      <solution><p>
+      Calculons d'abord les valeurs des dérivées partielles de
+      <m>R(R_1,R_2,R_3)</m> aux valeurs mesurées de <m>R_1</m>, <m>R_2</m>, <m>R_3</m>. En appliquant
+      <m>\pdiff{}{R_i}</m>, avec <m>i=1,2,3</m>, aux deux membres de
+      l'équation définissant
+      <md>
+      \frac{1}{R(R_1,R_2,R_3)}=\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
+      </md>
+      pour <m>R(R_1,R_2,R_3)</m>, on obtient
+      <md>
+      <mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_1}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_1^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_2}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_2^2}
+      </mrow><mrow>
+      -\frac{1}{R(R_1,R_2,R_3)^2}\ \pdiff{R}{R_3}(R_1,R_2,R_3)
+      &amp;=-\frac{1}{R_3^2}
+      </mrow>
+      </md>
+      Quand <m>R_1=25\Om</m>, <m>R_2=40\Om</m> et <m>R_3=50\Om</m>
+      <md>
+      <mrow>
+      \frac{1}{R(25,40,50)}&amp;=\frac{1}{25}+\frac{1}{40}+\frac{1}{50}
+      =\frac{8+5+4}{200}
+      </mrow><mrow>&amp;\implies
+      R(25,40,50)=\frac{200}{17}=11.765
+      </mrow>
+      </md>
+      En substituant ces valeurs de <m>R_1</m>, <m>R_2</m>, <m>R_3</m> et <m>R</m>,
+      <md alignment="alignat">
+      <mrow>
+      \pdiff{R}{R_1}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{25^2}&amp;=\frac{64}{17^2}&amp;=0.221
+      </mrow><mrow>
+      \pdiff{R}{R_2}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{40^2}&amp;=\frac{25}{17^2}&amp;=0.0865
+      </mrow><mrow>
+      \pdiff{R}{R_3}(25,40,50)
+      &amp;=\frac{R(25,40,50)^2}{50^2}&amp;=\frac{16}{17^2}&amp;=0.0554
+      </mrow>
+      </md>
+      Si les erreurs absolues dans la mesure de <m>R_1</m>, <m>R_2</m> et <m>R_3</m> sont dénotées
+      respectivement <m>\veps_1</m>, <m>\veps_2</m> et <m>\veps_3</m>, alors,
+      en utilisant l'approximation linéaire (???), l'erreur correspondante <m>E</m> dans <m>R</m> est
+      <md>
+      <mrow>
+      E &amp;= R(25+\veps_1,40+\veps_2,50+\veps_3)-R(25,40,50)
+      </mrow><mrow>
+      &amp;\approx \pdiff{R}{R_1}(25,40,50)\veps_1
+             +\pdiff{R}{R_2}(25,40,50)\veps_2
+             +\pdiff{R}{R_3}(25,40,50)\veps_3
+      </mrow>
+      </md>
+      et vérifie
+      <md>
+      <mrow>
+      |E|&amp;\leqslant \frac{64}{17^2}|\veps_1|+\frac{25}{17^2}|\veps_2|
+                      +\frac{16}{17^2}|\veps_3|
+      </mrow><mrow>
+      \text{or}\quad|E|&amp;\leqslant 0.221|\veps_1|+0.0865|\veps_2|+0.0554|\veps_3|
+      </mrow>
+      </md>
+      On nous dit que le pourcentage d'erreur dans chaque mesure n'est pas plus grand que
+      <m>0.5\%</m>. Donc
+      <md>
+      <mrow>
+      |\veps_1|&amp;\leqslant \frac{0.5}{100}25=\frac{1}{8}=0.125
+      </mrow><mrow>
+      |\veps_2|&amp;\leqslant \frac{0.5}{100}40=\frac{1}{5}=0.2
+      </mrow><mrow>
+      |\veps_3|&amp;\leqslant \frac{0.5}{100}50=\frac{1}{4}=0.25
+      </mrow>
+      </md>
+      de sorte que
+      <md>
+      <mrow>
+      |E|&amp;\leqslant \frac{8}{17^2}+\frac{5}{17^2}+\frac{4}{17^2}
+      =\frac{1}{17}
+      </mrow><mrow>
+      \text{or}\quad|E|&amp;\leqslant 0.221\times0.125+0.0865\times0.2+0.0554\times0.25
+      =0.059
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
+      <statement><p>
+      <ol marker = "(a)">
+      <li>
+      Trouvez l'équation du plan tangent à la surface
+      <m>x^2 z^3 + y \sin(\pi x) = -y^2</m> au point <m>P = (1,1,-1)</m>.
+      </li>
+      <li>
+      Soit <m>z</m> défini implicitement par <m>x^2 z^3 + y \sin(\pi x) = -y^2</m>.
+      Trouvez <m>\pdiff{z}{x}</m> au point  <m>P = (1,1,-1)</m>.
+      </li>
+      <li>
+      Soit <m>z</m> la même fonction implicite que dans la partie (ii), définie par
+      l'équation <m>x^2 z^3 + y \sin(\pi x) = -y^2</m>. Soit <m>x = 0.97</m>, et <m>y = 1</m>.
+      Trouvez la valeur approximative de <m>z</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a)  <m>-(2+\pi)x +2y +3z = -\pi-3</m>
+      </p>
+
+      <p>(b)  <m>\pdiff{z}{x}(1,1) = \frac{\pi+2}{3}</m>
+      </p>
+
+      <p>(c)  <m>z(0.97,1) \approx -\frac{\pi+102}{100}</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La surface a pour équation <m>G(x,y,z) = x^2 z^3 + y \sin(\pi x) + y^2 =0</m>.
+      Un vecteur normal à la surface en <m>(1,1,-1)</m> est donc
+      <md>
+      <mrow>
+      &amp;\vnabla G(1,1,-1)
+      </mrow><mrow>
+      &amp;\hskip0.25in= \big[ \left(2x z^3 +\pi y\cos(\pi x)\right)\hi +\left(\sin(\pi x) +2y\right)\hj
+                 +3z^2 x^2\,\hk\big]_{(x,y,z)=(1,1,-1)}
+      </mrow><mrow>
+      &amp;\hskip0.25in= \left(-2-\pi\right)\hi +2\,\hj +3\,\hk
+      </mrow>
+      </md>
+      L'équation du plan tangent est donc
+      <md>
+      <mrow>
+      &amp;\left(-2-\pi\right)(x-1) + 2(y-1) +3 (z+1) =0
+      </mrow><mrow>
+      &amp;\text{or}\quad
+      -(2+\pi)x +2y +3z = -\pi-3
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) La fonction <m>z(x,y)</m> vérifie
+      <md>
+      <mrow>
+      x^2 z(x,y)^3 +y\sin(\pi x) +y^2 = 0
+      </mrow>
+      </md>
+      pour tous <m>x</m> et <m>y</m>. En dérivant cette équation par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      2x z(x,y)^3 + 3 x^2 z(x,y)^2 \pdiff{z}{x}(x,y) + \pi y \cos(\pi x) =0
+      </mrow>
+      </md>
+      En évaluant en <m>(1,1,-1)</m>, on obtient
+      <md>
+      <mrow>
+      -2 + 3 \pdiff{z}{x}(1,1) -\pi =0
+      \implies \pdiff{z}{x}(1,1) = \frac{\pi+2}{3}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) En utilisant l'approximation linéaire autour de <m>(x,y)=(1,1)</m>,
+      <md>
+      <mrow>
+      z(x,1) \approx z(1,1) +\pdiff{z}{x}(1,1)\ (x-1)
+      </mrow>
+      </md>
+      on obtient
+      <md>
+      <mrow>
+      z(0.97,1) \approx -1 +\frac{\pi+2}{3}\ (-0.03)
+                = -1 -\frac{\pi+2}{100}
+                =  -\frac{\pi+102}{100}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
+      <statement><p>
+      Supposez qu'une fonction <m>z = f (x, y)</m> est implicitement définie par une équation:
+      <md>
+               xyz + x + y^2 + z^3 = 0
+      </md>
+      <ol marker = "(a)">
+      <li>
+      Trouvez <m>\pdiff{z}{x}</m>.
+      </li>
+      <li>
+      Si <m>f(-1, 1)  \lt  0</m>, trouvez l'approximation linéaire de la fonction
+      <m>z = f (x, y)</m> à <m>(-1, 1)</m>.
+      </li>
+      <li>
+      Si <m>f(-1, 1)  \lt  0</m>, utilisez l'approximation linéaire en (b) pour approximer <m>f(-1.02, 0.97)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>f_x(x,y) = -\frac{y\,f(x,y) +1}{3f(x,y)^2 +xy}</m></p><p>
+      (b) <m>f(x,y) \approx  -1 -\frac{3}{2} (y-1)</m></p><p>
+      (c) <m>-0.955</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La fonction <m>f(x,y)</m> vérifie
+      <md>
+      xy\,f(x,y) + x + y^2 + f(x,y)^3 =0
+      \tag{$*$}</md>
+      pour tous <m>x</m> et <m>y</m> (suffisamment près de <m>(-1,1)</m>).
+      En dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      &amp;y\,f(x,y) +xy\,f_x(x,y) +  1  + 3f(x,y)^2 f_x(x,y) = 0
+      </mrow><mrow>&amp;\hskip1in\implies
+      f_x(x,y) = -\frac{y\,f(x,y) +1}{3f(x,y)^2 +xy}
+      </mrow>
+      </md>
+      Sans connaître <m>f(x,y)</m> explicitement, on ne peut pas faire beaucoup plus avec ceci.
+      </p>
+
+      <p>(b) <m>f(-1,1)</m> vérifie
+      <md>
+      (-1)(1)\,f(-1,1)\! +\! (-1) \!+\! (1)^2 \!+\! f(-1,1)^3 =0
+      \iff f(-1,1)^3 \!-\!f(-1,1) =0
+      </md>
+      Puisque <m>f(-1, 1)  \lt  0</m>, on peut diviser cette équation par <m>f(-1, 1)  \lt  0</m>,
+      ce qui donne <m>f(-1,1)^2 - 1=0</m>. Puisque <m>f(-1, 1)  \lt  0</m>, on doit avoir
+      <m>f(-1, 1)=-1</m>.
+      D'après la partie (a),
+      <md>
+      <mrow>
+      f_x(-1, 1) = -\frac{(1)\,f(-1, 1) +1}{3f(-1, 1)^2 +(-1)(1)}
+                 = 0
+      </mrow>
+      </md>
+      Pour obtenir l'approximation linéaire, il nous faut encore <m>f_y(-1,1)</m>.
+      En dérivant <m>(*)</m> par rapport à <m>y</m>, on obtient
+      <md>
+      x\,f(x,y) + xy\,f_y(x,y)  + 2y + 3f(x,y)^2 f_y(x,y) =0
+      </md>
+      En posant ensuite <m>x=-1</m>, <m>y=1</m> et <m>f(-1,1)=-1</m>, on obtient
+      <md>
+      <mrow>
+      &amp;(-1)\,(-1) + (-1)(1)\,f_y(-1,1)  + 2(1) + 3(-1)^2 f_y(-1,1) =0
+      </mrow><mrow>
+      &amp;\hskip1in\implies f_y(-1,1) =-\frac{3}{2}
+      </mrow>
+      </md>
+      L'approximation linéaire est donc
+      <md>
+      f(x,y) \approx f(-1,1) + f_x(-1,1)\,(x\!+\!1) + f_y(-1,1)\,(y\!-\!1)
+                 = -1 -\frac{3}{2} (y\!-\!1)
+      </md>
+      </p>
+
+      <p>(c) D'après la partie (b),
+      <md>
+      <mrow>
+      f(-1.02,0.97) \approx  -1 -\frac{3}{2} (0.97-1) =-0.955
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
+      <statement><p>
+      Une surface est définie implicitement par <m>z^4 - xy^2 z^2 + y = 0</m>.
+      <ol marker = "(a)">
+      <li>
+      Calculez <m>\pdiff{z}{x}</m>, <m>\pdiff{z}{y}</m> en termes de <m>x</m>, <m>y</m> et <m>z</m>.
+      </li>
+      <li>
+      Évaluez <m>\pdiff{z}{x}</m> et <m>\pdiff{z}{y}</m> en <m>(x, y, z) = (2, -1/2, 1)</m>.
+      </li>
+      <li>
+      Si <m>x</m> décroît de <m>2</m> à <m>1.94</m>, et
+         <m>y</m> croît de <m>-0.5</m> à <m>-0.4</m>,
+      trouvez le changement approximatif de <m>z</m> en <m>1</m>.
+      </li>
+      <li>
+      Trouvez l'équation du plan tangent à la surface au point
+      <m>(2, -1/2, 1)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\pdiff{z}{x} = \frac{y^2 z^2}{4z^3-2xy^2z}</m>,
+          <m>\pdiff{z}{y} = \frac{2xy\, z^2-1}{4z^3-2xy^2 z}</m>
+      </p>
+
+      <p>(b)
+      <m>
+      \pdiff{z}{x}(2,-1/2) =\frac{1}{12}
+      </m>,
+      <m>
+      \pdiff{z}{y}(2,-1/2) =-1
+      </m>
+      </p>
+
+      <p>(c) <m>f(1.94,-0.4) - 1  \approx -0.105</m>
+      </p>
+
+      <p>(d)  <m>\frac{x}{12} -y -z = -\frac{1}{3}</m>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      On sait que pour tous <m>x,y</m> (avec <m>(x,y,z)</m> près de <m>(2,-1/2,1)</m>),
+      la fonction <m>z(x,y)</m> vérifie
+      <md>
+      <mrow>
+      z(x,y)^4 -xy^2 z(x,y)^2 +y=0
+      \tag{$*$}</mrow>
+      </md>
+      En dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      &amp;4z(x,y)^3\pdiff{z}{x}(x,y) - y^2z(x,y)^2 -2xy^2z(x,y)\pdiff{z}{x}(x,y) =0
+      </mrow><mrow>
+      &amp;\implies
+      \pdiff{z}{x}(x,y) = \frac{y^2 z(x,y)^2}{4z(x,y)^3-2xy^2z(x,y)}
+      </mrow>
+      </md>
+      De même, en dérivant cette équation par rapport à <m>y</m>, on obtient
+      <md>
+      <mrow>
+      &amp;4z(x,y)^3\pdiff{z}{y}(x,y) - 2xy\,z(x,y)^2 -2xy^2z(x,y)\pdiff{z}{y}(x,y) +1=0
+      </mrow><mrow>
+      &amp;\implies
+      \pdiff{z}{y}(x,y) = \frac{2xy\, z(x,y)^2-1}{4z(x,y)^3-2xy^2z(x,y)}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) En substituant <m>(x, y, z) = (2, -1/2, 1)</m> dans les résultats de la partie (a),
+      on obtient
+      <md>
+      <mrow>
+      \pdiff{z}{x}(2,-1/2) &amp;= \frac{1/4}{4-1} =\frac{1}{12}
+      </mrow><mrow>
+      \pdiff{z}{y}(2,-1/2) &amp;= \frac{-2-1}{4-1}=-1
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) D'après l'approximation linéaire autour de <m>(2,-1/2)</m>,
+      <md>
+      <mrow>
+      f(x,y) &amp;\approx f(2,-1/2) + f_x(2,-1/2)\,(x-2) + f_y(2,-1/2)\,(y+1/2)
+      </mrow><mrow>
+             &amp;= 1 +\frac{1}{12}(x-2) - (y+0.5)
+      </mrow>
+      </md>
+      En particulier,
+      <md>
+      <mrow>
+      f(1.94,-0.4) \approx 1 -\frac{0.06}{12}-0.1
+      </mrow>
+      </md>
+      de sorte que
+      <md>
+      <mrow>
+      f(1.94,-0.4) - 1  \approx -0.105
+      </mrow>
+      </md>
+      </p>
+
+      <p>(d) Le plan tangent est
+      <md>
+      <mrow>
+      z&amp;=f(2,-1/2) + f_x(2,-1/2)\,(x-2) + f_y(2,-1/2)\,(y+1/2)
+      </mrow><mrow>
+       &amp;= 1 +\frac{1}{12}(x-2) - (y+0.5)
+      </mrow>
+      </md>
+      ou
+      <md>
+      <mrow>
+      \frac{x}{12} -y -z = -\frac{1}{3}
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- Déplacé depuis Prob-sec-Differentiabilite.ptx : dérivation implicite -->
+    <exercise> <!-- <title><fromexam>M200 2011A</fromexam></title> -->
+      <statement><p>
+      D'après l'équation de van der Waal, un gaz satisfait l'équation
+      <md>
+      (pV^2 + 16)(V - 1) = T V^2 ,
+      </md>
+      où <m>p</m>, <m>V</m> et <m>T</m> dénotent la pression, le volume et la température respectivement.
+      Supposons que le gaz est maintenant à une pression de <m>1</m>, un volume de <m>2</m> et une température de <m>5</m>. Trouvez l'approximation du changement de volume
+      si <m>p</m> augmente de <m>0.2</m> et <m>T</m> augmente de <m>0.3</m>.
+      </p></statement>
+
+      <answer><p>
+      <m>0.1</m>
+      </p></answer>
+
+      <solution><p>
+      Considérons le volume comme la fonction <m>V(p,T)</m> de la pression et de la température,
+      déterminée implicitement (du moins pour <m>p\approx 1</m>, <m>T\approx 5</m> et <m>V\approx 2</m>) par l'équation
+      <md>
+      \left(pV(p,T)^2 + 16\right)\left(V(p,T) - 1\right) = T V(p,T)^2
+      \tag{$*$}</md>
+      Pour déterminer le changement approximatif de <m>V</m>, nous utiliserons l'approximation
+      linéaire de <m>V(p,T)</m> en <m>p=1</m>, <m>T=5</m>. Il nous faudra donc les
+      dérivées partielles <m>V_p(1,5)</m> et <m>V_T(1,5)</m>. Comme l'équation <m>(*)</m>
+      est valide pour tout <m>p</m> près de <m>1</m> et <m>T</m> près de <m>5</m>, nous pouvons dériver <m>(*)</m>
+      par rapport à <m>p</m>, ce qui donne
+      <md>
+      <mrow>
+      &amp;\left(V^2 +2 pV V_p\right)\left(V - 1\right)
+      + \left(pV ^2 + 16\right)V_p = 2T V V_p
+      </mrow>
+      </md>
+      et nous pouvons aussi dériver <m>(*)</m> par rapport à <m>T</m>, ce qui donne
+      <md>
+      <mrow>
+      &amp;\left(2 pV V_T\right)\left(V - 1\right) + \left(pV ^2 + 16\right)V_T = V^2 + 2T V V_T
+      </mrow>
+      </md>
+      En particulier, quand <m>p=1</m>, <m>V=2</m>, <m>T=5</m>,
+      <md>
+      <mrow>
+      \left(4 +4 V_p(1,5)\right)\left(2 - 1\right)
+      + \left(4 + 16\right)V_p(1,5) &amp;= 20 V_p(1,5)
+      </mrow><mrow>
+      &amp;\hskip-0.5in\implies V_p(1,5)=-1
+      </mrow><mrow>
+      4 V_T(1,5)\left(2 - 1\right) + \left(4 + 16\right)V_T(1,5) &amp;= 4 + 20 V_T(1,5)
+      </mrow><mrow>
+      &amp;\hskip-0.5in\implies V_T(1,5)=1
+      </mrow>
+      </md>
+      de sorte que le changement en <m>V</m> est
+      <md>
+      <mrow>
+      V(1.2\,,\,5.3)-V(1,5) \approx  V_p(1,5)\,(0.2) + V_T(1,5)\,(0.3)
+                              = -0.2+0.3
+                              = 0.1
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+
 
     <!-- Les solutions et les réponses coïncident -->
     <exercise>
@@ -3154,7 +3768,7 @@
      <m>v(\xi,\eta)</m> relié par le changement de variables
      <md>
      <mrow>
-     u(x,t)&amp;=v\big(\xi(x,t),\eta(x,t)\big)\cr
+     u(x,t)&amp;=v\left(\xi(x,t),\eta(x,t)\right)\cr
      \xi(x,t)&amp;=x-ct\cr
      \eta(x,t)&amp;=x+ct
      </mrow>
@@ -3196,7 +3810,7 @@
      <m>\frac{\partial^2 u}{\partial x^2}(x,t)
      -\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}(x,t)
      =4\frac{\partial^2 v\,}{\partial\xi\partial\eta}
-           \big(\xi(x,t),\eta(x,t)\big)</m>.
+           \left(\xi(x,t),\eta(x,t)\right)</m>.
      </p></hint>
 <!-- 
      <answer><p>
@@ -3204,28 +3818,28 @@
      </p></answer> -->
 
      <solution><p>
-     Se rappeler que <m>u(x,t)=v\big(\xi(x,t),\eta(x,t)\big)</m>.
+     Se rappeler que <m>u(x,t)=v\left(\xi(x,t),\eta(x,t)\right)</m>.
      Par la règle de la chaîne
      <md>
      <mrow>
      \pdiff{u}{x}(x,t)
-     &amp;= \pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;= \pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)
         \pdiff{\xi}{x}
-     +\pdiff{v}{\eta}\big(\xi(x,t),\eta(x,t)\big)
+     +\pdiff{v}{\eta}\left(\xi(x,t),\eta(x,t)\right)
         \pdiff{\eta}{x}
      </mrow><mrow>
-     &amp;= \pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)
-     +\pdiff{v}{\eta}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;= \pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)
+     +\pdiff{v}{\eta}\left(\xi(x,t),\eta(x,t)\right)
      </mrow><mrow>
 
      \pdiff{u}{t}(x,t)
-     &amp;= \pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;= \pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)
         \pdiff{\xi}{t}
-     +\pdiff{v}{\eta}\big(\xi(x,t),\eta(x,t)\big)
+     +\pdiff{v}{\eta}\left(\xi(x,t),\eta(x,t)\right)
         \pdiff{\eta}{t}
      </mrow><mrow>
-     &amp;= -c\pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)
-     +c\pdiff{v}{\eta}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;= -c\pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)
+     +c\pdiff{v}{\eta}\left(\xi(x,t),\eta(x,t)\right)
      </mrow>
      </md>
      Encore, par la règle de la chaîne
@@ -3233,27 +3847,27 @@
      <mrow>
      \frac{\partial^2 u}{\partial x^2}(x,t)
      &amp;=\color{blue}{
-          \pdiff{}{x} \Big[\pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)\Big]}
+          \pdiff{}{x} \Big[\pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)\Big]}
      +\color{red}{\pdiff{}{x}
-            \Big[\pdiff{v}{\eta}\big(\xi(x,t),\eta(x,t)\big)\Big]}\cr
+            \Big[\pdiff{v}{\eta}\left(\xi(x,t),\eta(x,t)\right)\Big]}\cr
      &amp;=\color{blue}{
-          \frac{\partial^2 v}{\partial \xi^2}\big(\xi(x,t),\eta(x,t)\big)
+          \frac{\partial^2 v}{\partial \xi^2}\left(\xi(x,t),\eta(x,t)\right)
                                                               \pdiff{\xi}{x}
        +\frac{\partial^2 v\,}{\partial\eta\partial \xi}
-                                             \big(\xi(x,t),\eta(x,t)\big)
+                                             \left(\xi(x,t),\eta(x,t)\right)
                                              \pdiff{\eta}{x}}
      </mrow><mrow>&amp;\hskip0.2in
      +\color{red}{\frac{\partial^2 v\,}{\partial\xi\partial \eta}
-                                           \big(\xi(x,t),\eta(x,t)\big)
+                                           \left(\xi(x,t),\eta(x,t)\right)
                                                           \pdiff{\xi}{x}
-     +\frac{\partial^2 v}{\partial \eta^2}\big(\xi(x,t),\eta(x,t)\big)
+     +\frac{\partial^2 v}{\partial \eta^2}\left(\xi(x,t),\eta(x,t)\right)
                                                          \pdiff{\eta}{x}}
      </mrow><mrow>
-     &amp;=\frac{\partial^2 v}{\partial \xi^2}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;=\frac{\partial^2 v}{\partial \xi^2}\left(\xi(x,t),\eta(x,t)\right)
      +2\frac{\partial^2 v\,}{\partial\xi\partial \eta}
-                                            \big(\xi(x,t),\eta(x,t)\big)
+                                            \left(\xi(x,t),\eta(x,t)\right)
      </mrow><mrow>&amp;\hskip0.2in
-     +\frac{\partial^2 v}{\partial \eta^2}\big(\xi(x,t),\eta(x,t)\big)
+     +\frac{\partial^2 v}{\partial \eta^2}\left(\xi(x,t),\eta(x,t)\right)
      </mrow>
      </md>
      et
@@ -3261,29 +3875,29 @@
      <mrow>
      \frac{\partial^2 u}{\partial t^2}(x,t)
      &amp;=-c \color{blue}{\pdiff{}{t}
-                   \Big[\pdiff{v}{\xi}\big(\xi(x,t),\eta(x,t)\big)\Big]}
+                   \Big[\pdiff{v}{\xi}\left(\xi(x,t),\eta(x,t)\right)\Big]}
      +c\color{red}{\pdiff{}{t}
                    \Big[ \frac{\partial  v}{\partial\eta}
-                               \big(\xi(x,t),\eta(x,t)\big)\Big]}
+                               \left(\xi(x,t),\eta(x,t)\right)\Big]}
      </mrow><mrow>
      &amp;=-c\color{blue}{\Big[\frac{\partial^2 v}{\partial \xi^2}
-                                          \big(\xi(x,t),\eta(x,t)\big)
+                                          \left(\xi(x,t),\eta(x,t)\right)
                                                            \pdiff{\xi}{t}
      +\frac{\partial^2 v\,}{\partial\eta\partial \xi}
-                                           \big(\xi(x,t),\eta(x,t)\big)
+                                           \left(\xi(x,t),\eta(x,t)\right)
                                     \pdiff{\eta}{t}\Big]}
      </mrow><mrow>&amp;\hskip0.2in
      +c\color{red}{\Big[\frac{\partial^2 v\,}{\partial\xi\partial\eta}
-                         \big(\xi(x,t),\eta(x,t)\big)
+                         \left(\xi(x,t),\eta(x,t)\right)
                         \pdiff{\xi}{t}
-     +\frac{\partial^2 v}{\partial\eta^2}\big(\xi(x,t),\eta(x,t)\big)
+     +\frac{\partial^2 v}{\partial\eta^2}\left(\xi(x,t),\eta(x,t)\right)
         \pdiff{\eta}{t}\Big]}
      </mrow><mrow>
-     &amp;=c^2\frac{\partial^2 v}{\partial \xi^2}\big(\xi(x,t),\eta(x,t)\big)
+     &amp;=c^2\frac{\partial^2 v}{\partial \xi^2}\left(\xi(x,t),\eta(x,t)\right)
      -2c^2\frac{\partial^2 v\,}{\partial\xi\partial\eta}
-                                             \big(\xi(x,t),\eta(x,t)\big)
+                                             \left(\xi(x,t),\eta(x,t)\right)
      </mrow><mrow>&amp;\hskip0.2in
-     +c^2\frac{\partial^2 v}{\partial\eta^2}\big(\xi(x,t),\eta(x,t)\big)
+     +c^2\frac{\partial^2 v}{\partial\eta^2}\left(\xi(x,t),\eta(x,t)\right)
      </mrow>
      </md>
      de telle sorte que
@@ -3291,7 +3905,7 @@
      \frac{\partial^2 u}{\partial x^2}(x,t)
      -\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}(x,t)
      =4\frac{\partial^2 v\,}{\partial\xi\partial\eta}
-           \big(\xi(x,t),\eta(x,t)\big)
+           \left(\xi(x,t),\eta(x,t)\right)
      </md>
      Ainsi
      <md>
@@ -3302,17 +3916,17 @@
      </mrow><mrow>
      &amp;\iff
      4\frac{\partial^2 v\,}{\partial\xi\partial\eta}
-           \big(\xi(x,t),\eta(x,t)\big)=0\hbox{ pour tout }(x,t)
+           \left(\xi(x,t),\eta(x,t)\right)=0\hbox{ pour tout }(x,t)
      </mrow><mrow>
      &amp;\iff
      \frac{\partial^2 v\,}{\partial\xi\partial\eta}
-           \big(\xi,\eta\big)=0\text{ pour tout }(\xi,\eta)
+           \left(\xi,\eta\right)=0\text{ pour tout }(\xi,\eta)
      </mrow>
      </md>
      </p>
 
      <p>(b)
-     Maintenant <m>\frac{\partial^2 v\,}{\partial\xi\partial\eta}\big(\xi,\eta\big)
+     Maintenant <m>\frac{\partial^2 v\,}{\partial\xi\partial\eta}\left(\xi,\eta\right)
      =\frac{\partial}{\partial\xi}
      \Big[\frac{\partial v}{\partial\eta}\Big]=0</m>.
      Renommons temporairement <m>\pdiff{v}{\eta}=w</m>. L'équation
@@ -3341,12 +3955,12 @@
      &amp;-\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}(x,t)=0
      \iff
      \frac{\partial^2 v\,}{\partial\xi\partial\eta}
-           \big(\xi,\eta\big)=0\text{ pour tout }(\xi,\eta)
+           \left(\xi,\eta\right)=0\text{ pour tout }(\xi,\eta)
      </mrow><mrow>
      &amp;\iff v(\xi,\eta)=F(\xi)+G(\eta)\text{ pour des fonctions $F$ et $G$}
      </mrow><mrow>
-     &amp;\iff u(x,t)=v\big(\xi(x,t),\eta(x,t)\big)
-     =F\big(\xi(x,t)\big)+G\big(\eta(x,t)\big)
+     &amp;\iff u(x,t)=v\left(\xi(x,t),\eta(x,t)\right)
+     =F\left(\xi(x,t)\right)+G\left(\eta(x,t)\right)
      </mrow><mrow>
      &amp;\phantom{\iff u(x,t)\,}=F(x-ct)+G(x+ct)
      </mrow>

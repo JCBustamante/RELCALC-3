@@ -30,7 +30,7 @@
       L'une des trois options ne sera JAMAIS vraie, pour n'importe quel <m>\vF</m>.
     </p></hint>
     <answer><p>
-      <ol marker = "(a)">
+      <ol marker = "(a)" cols="4">
         <li> C. </li>
         <li> B. </li>
         <li> C. </li>
@@ -242,36 +242,36 @@
           <ol marker = "(a)">
             <li>
               <p>
-                <m>\int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
+                <m>\displaystyle \int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
               </p>
             </li>
 
             <li>
               <p>
-                <m>\int_{\cC} yz\, dx + xz\, dy + xy\, dz</m> où <m>\cC</m> est une courbe allant de <m>(1,2,3)</m> à <m>(3,5,0)</m>.
+                <m>\displaystyle \int_{\cC} yz\, dx + xz\, dy + xy\, dz</m> où <m>\cC</m> est une courbe allant de <m>(1,2,3)</m> à <m>(3,5,0)</m>.
               </p>
             </li>
 
             <li>
               <p>
-                <m>\int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
+                <m>\displaystyle\int_{\cC} 2x\, dx + 2y\, dy + 2z\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(2,-3,6)</m>.
               </p>
             </li>
 
             <li>
               <p>
-                <m>\int_{\cC} 2xy\, dx + (x^2 - z^2)\, dy + -2yz\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(1,2,3)</m>.
+                <m>\displaystyle\int_{\cC} 2xy\, dx + (x^2 - z^2)\, dy + -2yz\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(1,2,3)</m>.
               </p>
             </li>
             <li>
               <p>
-                <m>\int_{\cC} 2x\, dx -y^2\, dy  - \frac{4}{1+z^2}\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(0,0,1)</m>.
+                <m>\displaystyle\int_{\cC} 2x\, dx -y^2\, dy  - \frac{4}{1+z^2}\, dz</m> où <m>\cC</m> est une courbe allant de <m>(0,0,0)</m> à <m>(0,0,1)</m>.
               </p>
             </li>
 
             <li>
               <p>
-                <m>\int_{\cC} \sin x \cos y \, dx + \cos x \sin y\, dy + dz</m> où <m>\cC</m> est une courbe allant de <m>(1,0,0)</m> à <m>(0,1,1)</m>.
+                <m>\displaystyle\int_{\cC} \sin x \cos y \, dx + \cos x \sin y\, dy + dz</m> où <m>\cC</m> est une courbe allant de <m>(1,0,0)</m> à <m>(0,1,1)</m>.
               </p>
             </li>
 
@@ -395,25 +395,30 @@
     <exercise>
       <title>L'allure des champs conservatifs</title>
       <statement>
-        <p> Le champ vectoriel représenté dans la figure suivante est-il conservatif ou pas? Justifiez.
-        </p>
-        <figure xml:id="fig_allure-conserv">
-          <caption>Un champ de vecteurs. Est-il conservatif?</caption>
-          <image xml:id="sageplot-allure-conserv" width="75%">
+        <sidebyside widths="55% 5% 40%" valign="top">
+          <p> Le champ vectoriel représenté dans la figure ci-contre est-il conservatif ou pas? Justifiez.
+          </p>
+          <p/>
+          <image xml:id="sageplot-allure-conserv" width="100%">
             <description><p>Un champ de vecteurs.</p></description>
             <sageplot>
               var('x,y')
               P(x,y) = (-y+x)/sqrt(x^2 + y^2)
               Q(x,y) = (y+x)/sqrt(x^2 + y^2)
-              Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.5,0.5), 
-                (y,-0.5,0.5),   plot_points=12, frame = False, zorder = -1, 
+              #Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.5,0.5),
+              #  (y,-0.5,0.5),   plot_points=12, frame = False, zorder = -1,
+              #  color = "steelblue", axes = True, ticks = [[],[]],
+              #  aspect_ratio = 1, tick_formatter = "latex",
+              #  axes_labels = ["$x$", "$y$"], fontsize = 12)
+              Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.5,0.5),
+                (y,-0.5,0.5),   plot_points=12, width=0.004, frame = False, zorder = -1,
                 color = "steelblue", axes = True, ticks = [[],[]],
-                aspect_ratio = 1, tick_formatter = "latex", 
+                aspect_ratio = 1, tick_formatter = "latex",
                 axes_labels = ["$x$", "$y$"], fontsize = 12)
               Fig              
             </sageplot>
           </image>
-          </figure>
+          </sidebyside>
 
 
 
@@ -442,11 +447,8 @@
       <statement><p>
       Soit <m>D</m> le domaine consistant en tous les <m>(x,y)</m> vérifiant <m>x \gt 1</m>,
       et soit <m>\vF</m> le champ de vecteurs
-      <md>
-      <mrow>
-      \vF =  -\frac{y}{x^2+y^2}\,\vi + \frac{x}{x^2+y^2} \, \vj.
-      </mrow>
-      </md>
+      <m>  \vF =  -\frac{y}{x^2+y^2}\,\vi + \frac{x}{x^2+y^2} \, \vj.
+      </m>
       Est-ce que <m>\vF</m> est conservatif sur <m>D</m>? Expliquer.
       </p>
 
@@ -458,26 +460,47 @@
 
       <answer><p>
       Oui, <m>\vF</m> est conservatif sur <m>D</m>. Un potentiel est
-      <m>\varphi(x,y) = \arctan\frac{y}{x}</m>.
+      <m>\varphi(x,y) = \arcsin\left(\dfrac{y}{\sqrt{x^2+y^2}}\right)</m>.
       </p></answer>
 
       <solution><p>
-      Set <m>\varphi(x,y)= \arctan\frac{y}{x}</m> (using the standard <m>\arctan</m>
-      that takes values between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>).
-      Note that <m>\varphi(x,y)</m> is well-defined, with all partial derivatives
-      continuous, on <m>D</m> since <m>x \gt 1</m> there. Then
+      Posons <m>r=\sqrt{x^2+y^2}</m> et
+      <m>\varphi(x,y)= \arcsin\left(\dfrac{y}{r}\right)</m> (en utilisant la
+      branche principale de <m>\arcsin</m>, à valeurs entre
+      <m>-\frac{\pi}{2}</m> et <m>\frac{\pi}{2}</m>).
+      Puisque <m>x \gt 1</m> sur <m>D</m>, on a <m>r \gt x \gt 0</m>, de sorte
+      que <m>\frac{y}{r}\in(-1,1)</m> et que <m>\varphi(x,y)</m> est bien
+      définie, avec des dérivées partielles continues, en tout point de
+      <m>D</m>. Calculons ces dérivées partielles. D'une part,
+      <md>
+      <mrow>
+      \pdiff{}{y}\left(\frac{y}{r}\right)
+      = \frac{r - y\cdot\frac{y}{r}}{r^2}
+      = \frac{r^2-y^2}{r^3} = \frac{x^2}{r^3},
+      \qquad
+      \pdiff{}{x}\left(\frac{y}{r}\right)
+      = \frac{-y\cdot\frac{x}{r}}{r^2}
+      = -\frac{xy}{r^3},
+      </mrow>
+      </md>
+      et, puisque <m>x \gt 1 \gt 0</m>,
+      <m>\sqrt{1-\left(\frac{y}{r}\right)^2} = \dfrac{\sqrt{r^2-y^2}}{r}
+      = \dfrac{\sqrt{x^2}}{r} = \dfrac{x}{r}</m>.
+      D'autre part, par la règle de dérivation des fonctions composées,
       <md alignment="alignat">
       <mrow>
       \pdiff{\varphi}{x}(x,y)
-      &amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
-      &amp;&amp;= -\frac{y}{x^2+y^2}
+      &amp;= \frac{1}{\sqrt{1-\left(\frac{y}{r}\right)^2}}\pdiff{}{x}\left(\frac{y}{r}\right)
+      &amp;&amp;= \frac{r}{x}\left(-\frac{xy}{r^3}\right)
+      &amp;&amp;= -\frac{y}{r^2} = -\frac{y}{x^2+y^2}
       </mrow><mrow>
       \pdiff{\varphi}{y}(x,y)
-      &amp;= \frac{\frac{1}{x}}{1+\big(\frac{y}{x}\big)^2}
-      &amp;&amp;= \phantom{-} \frac{x}{x^2+y^2}
+      &amp;= \frac{1}{\sqrt{1-\left(\frac{y}{r}\right)^2}}\pdiff{}{y}\left(\frac{y}{r}\right)
+      &amp;&amp;= \frac{r}{x}\cdot\frac{x^2}{r^3}
+      &amp;&amp;= \phantom{-}\frac{x}{r^2} = \phantom{-}\frac{x}{x^2+y^2}
       </mrow>
       </md>
-      so that <m>\vF=\vnabla\varphi</m>.
+      Ainsi, <m>\vF=\vnabla\varphi</m> sur <m>D</m>.
       </p></solution>
     </exercise>
 
@@ -662,8 +685,8 @@
       <statement><p>
       Soit
       <m>\vF= e^{(z^2)}\,\vi+2Byz^3\,\vj
-                +\big(Axze^{(z^2)}+3By^2z^2\big)\,\vk</m>.
-      <ol marker = "(a)">
+                +\left(Axze^{(z^2)}+3By^2z^2\right)\,\vk</m>.
+      <ol marker = "(a)" cols="2">
       <li>
       Pour quelles valeurs des constantes <m>A</m> et <m>B</m> est-ce que le champ de vecteurs
       <m>\vF</m> est conservatif sur <m>\R^3</m>?
@@ -706,22 +729,22 @@
       or,
       <md>
       <mrow>
-      \pdiff{}{y}\big(e^{(z^2)}\big)
-      &amp;=\pdiff{}{x}\big(2Byz^3\big) &amp;
+      \pdiff{}{y}\left(e^{(z^2)}\right)
+      &amp;=\pdiff{}{x}\left(2Byz^3\right) &amp;
       &amp;\iff &amp;
       0 &amp; =0
 
       </mrow><mrow>
 
-      \pdiff{}{z}\big(e^{(z^2)}\big)
-      &amp;=\pdiff{}{x}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+      \pdiff{}{z}\left(e^{(z^2)}\right)
+      &amp;=\pdiff{}{x}\left(Axze^{(z^2)}+3By^2z^2\right) &amp;
       &amp;\iff &amp;
       2ze^{(z^2)} &amp; =Aze^{(z^2)}
 
       </mrow><mrow>
 
-      \pdiff{}{z}\big(2Byz^3\big)
-      &amp;=\pdiff{}{y}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+      \pdiff{}{z}\left(2Byz^3\right)
+      &amp;=\pdiff{}{y}\left(Axze^{(z^2)}+3By^2z^2\right) &amp;
       &amp;\iff &amp;
       6Byz^2&amp; =6Byz^2
       </mrow>
@@ -732,7 +755,7 @@
       <p>(b) When <m>A=2</m>, and <m>B</m> is any real number.
       <md><mrow>
       \vF=e^{(z^2)}\,\vi+2Byz^3\,\vj
-                +\big(2xze^{(z^2)}+3By^2z^2\big)\,\vk
+                +\left(2xze^{(z^2)}+3By^2z^2\right)\,\vk
       </mrow></md>
       <m>\varphi(x,y,z)</m> is a potential for this <m>\vF</m> if and only if
       <md>

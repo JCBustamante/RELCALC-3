@@ -13,10 +13,8 @@
     <exercise>
       <statement><p>
       Évaluez l'intégrale
-      <md><mrow>
-      \iint_R \sqrt{b^2-y^2}\ \dee{A}
-      \text{ où $R$ est le rectangle  } 0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b
-      </mrow></md>
+      <m>\displaystyle    \iint_R \sqrt{b^2-y^2}\ \dee{A}</m> où <m>R</m> est le rectangle  <m> 0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b</m>.
+      
       <em>sans</em> calculer les intégrales itérées. Interprétez plutôt l'intégrale
       géométriquement.
       </p></statement>
@@ -71,7 +69,7 @@
       Pour chacun des cas suivants, exprimez les intégrales itérées données en intégrales itérées
       dans lesquelles les intégrations sont effectuées dans l'ordre:
       d'abord <m>z</m>, ensuite <m>y</m>, puis <m>x</m>.
-      <ol marker = "(a)">
+      <ol marker = "(a)" cols = "2">
       <li>
       <m>\ds\int_0^1\int_0^{1-z}\int_0^{1-z}\ f(x,y,z)\dee{x}\dee{y}\dee{z}</m>
       </li>
@@ -172,10 +170,10 @@
 
       <p>
       In the new order, the integral is
-      <md><mrow>
+      <m>\displaystyle
       \int_0^1\dee{x}\iint_{D_x} \dee{y}\,\dee{z}\ f(x,y,z)
       =\int_0^1\dee{x}\int_x^{1}\dee{y}\int_0^{y^2}\!\! \dee{z}\  f(x,y,z)
-      </mrow></md>
+      </m>
       </p></solution>
     </exercise>
 
@@ -408,13 +406,11 @@
 
     <exercise>
       <statement>
-        <p>
-          La figure ci-dessous montre la région dans le premier octant limitée par les plans <m>x=0, y=0, z=0, y+z=2</m> et le cylindre parabolique <m>x=4-y^2</m>. Écrivez les intégrales triples dans les 6 ordres d'intégration possibles pour trouver le volume de cette région.
+        <sidebyside widths="45%  55%" valign="top">
+          <p>
+          La figure ci-contre montre la région dans le premier octant limitée par les plans <m>x=0, y=0, z=0, y+z=2</m> et le cylindre parabolique <m>x=4-y^2</m>. Écrivez les intégrales triples dans les 6 ordres d'intégration possibles pour trouver le volume de cette région.
         </p>
-        <sidebyside width="85%">
-          <figure xml:id="fig-ex-triples">
-          <caption>La région dans le premier octant limitée par les plans <m>x=0</m>, <m>y=0</m>, <m>z=0</m>, <m>y+z=2</m> et le cylindre parabolique <m>x=4-y^2</m>.</caption>
-          <image xml:id="im-ex-triples" platform="sage" width="85%">
+          <image xml:id="im-ex-triples" width="100%">
           <sageplot variant="3d" aspect="1.5">
             var('s,t')
             Fig =  parametric_plot3d((1-s)*vector([0,t,0]) + s*vector([4-t^2,t,0]), (s,0,1), (t,0,2), color = "orange", opacity = 0.55)
@@ -430,16 +426,15 @@
             Fig += parametric_plot3d([4,0,t], (t,0,2), color = "darkblue", thickness= 2)
 
 
-            Fig += arrow3d((0,0,0),(4.5,0,0), width=0.75, color = "black",frame = False)
-            Fig += text3d("x", (4.7,0,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,2.5,0), width=0.75, color = "black",frame = False)
-            Fig += text3d("y", (0,2.7,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,0,2.5), width=0.75, color = "black",frame = False)
-            Fig += text3d("z", (0,0,2.7), color = "black", projection ="orthographic")
+            Fig += arrow3d((0,0,0),(4.2,0,0), width=0.75, color = "black",frame = False)
+            Fig += text3d("x", (4.4,0,0), color = "black",frame = False, fontsize = 26)
+            Fig += arrow3d((0,0,0),(0,2.2,0), width=0.75, color = "black",frame = False)
+            Fig += text3d("y", (0,2.4,0), color = "black",frame = False, fontsize = 26)
+            Fig += arrow3d((0,0,0),(0,0,2.2), width=0.75, color = "black",frame = False)
+            Fig += text3d("z", (0,0,2.4), color = "black", projection ="orthographic", fontsize = 26)
             Fig
           </sageplot>
         </image>
-        </figure>
         </sidebyside>
       </statement>
     </exercise>
@@ -481,7 +476,7 @@
       &amp;=\frac{1}{2}\int_0^2\dee{x} \int_0^{2-x}\dee{y} \ \big[4-(x+y)^2\big]
       </mrow><mrow>
       &amp;=\frac{1}{2}\int_0^2\dee{x}\
-                    \left[4(2-x)-\frac{\big(x+(2-x)\big)^3-x^3}{3}\right]
+                    \left[4(2-x)-\frac{\left(x+(2-x)\right)^3-x^3}{3}\right]
       </mrow><mrow>
       &amp;=\frac{1}{2}  \left[4(2)(2)-2(2)^2 -\frac{8}{3}(2)+\frac{2^4}{12}
                     \right]
@@ -497,7 +492,7 @@
 
     <exercise> <!-- <title><fromexam>M200 2011D</fromexam></title> -->
       <statement><p>
-      Évaluez l'intégrale triple <m>\iiint_E x\ \dee{V}</m>, où <m>E</m> est
+      Évaluez l'intégrale triple <m>\ds\iiint_E x\ \dee{V}</m>, où <m>E</m> est
       la région du premier octant bornée par le cylindre paraboloïque <m>y = x^2</m>
       et les plans <m>y + z = 1</m>, <m>x = 0</m>, et <m>z = 0</m>.
       </p></statement>
@@ -562,7 +557,7 @@
       </p></statement>
 
       <answer><p>
-      <m>J = \int_0^1 \int_z^1\int_y^1 f(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}</m>
+      <m>\ds J = \int_0^1 \int_z^1\int_y^1 f(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}</m>
       </p></answer>
 
       <solution><p>
@@ -759,7 +754,7 @@
       </mrow><mrow>
       &amp;=\int_0^1 \dee{z}\int_0^z du\ (1-u^2-z+uz)
       </mrow><mrow>
-      &amp;=\int_0^1 \dee{z}\ \big(z-\frac{z^3}{3}-z^2+\frac{z^3}{2})
+      &amp;=\int_0^1 \dee{z}\ \left(z-\frac{z^3}{3}-z^2+\frac{z^3}{2}\right)
       </mrow><mrow>
       &amp;=\frac{1}{2}-\frac{1}{12}-\frac{1}{3}+\frac{1}{8}
       =\frac{5}{24}
@@ -780,7 +775,7 @@
       Dessinez une image assez précise de <m>E</m> en 3 dimensions. S'assurer de montrer les unités des axes de coordonnées.
       </li>
       <li>
-      Réécrire l'intégrale triple <m>\iiint_E f\ \dee{V}</m> comme une ou plusieurs
+      Réécrire l'intégrale triple <m>\ds\iiint_E f\ \dee{V}</m> comme une ou plusieurs
       intégrales itérées triples dans l'ordre
       <md><mrow>
       \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
@@ -844,11 +839,11 @@
       </ul>
       </p>
 
-      <sidebyside width="75%">
+      <sidebyside width="45%">
       <image source="images/CLP-figs/pfigs/OE05D_9a"/>
       </sidebyside>
 
-      <sidebyside width="75%">
+      <sidebyside width="45%">
       <image source="images/CLP-figs/pfigs/OE05D_9b"/>
       </sidebyside>
 
@@ -858,7 +853,7 @@
       It is outlined in red in the figure below.
       </p>
 
-      <sidebyside width="75%">
+      <sidebyside width="45%">
         <image source="images/CLP-figs/pfigs/OE05D_9c"/>
       </sidebyside>
 
@@ -919,7 +914,7 @@
 
     <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
       <statement><p>
-      Une intégrale triple <m>\iiint_E f(x,y,z)\ \dee{V}</m> est donnée sous la forme d'intégrale itérée par
+      Une intégrale triple <m>\ds\iiint_E f(x,y,z)\ \dee{V}</m> est donnée sous la forme d'intégrale itérée par
       <md><mrow>
       J = \int_0^1 \int_0^{1-\frac{x}{2}} \int_0^{4-2x-4z} f(x,y,z)
                                           \ \dee{y}\,\dee{z}\,\dee{x}
@@ -930,10 +925,8 @@
       </li>
       <li>
       Réécrire l'intégrale comme une ou plusieurs intégrales itérées de la forme
-      <md><mrow>
-      J = \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
-                                          \ \dee{z}\,\dee{x}\,\dee{y}
-      </mrow></md>
+      <m>\displaystyle J = \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
+                                          \ \dee{z}\,\dee{x}\,\dee{y}</m>
       </li>
       </ol>
       </p></statement>
@@ -1246,9 +1239,9 @@
       <statement><p>
       Soit <m>T</m> le tétraèdre borné par les plans de coordonnées <m>x = 0</m>, <m>y = 0</m>, <m>z = 0</m> et
       le plan <m>x + y + z = 1</m>. Calculez
-      <md><mrow>
+      <m>\displaystyle
       K = \iiint_T \frac{1}{ (1 + x + y + z)^4}\ \dee{V}
-      </mrow></md>
+      </m>
       </p></statement>
 
       <answer><p>
@@ -1406,9 +1399,9 @@
       <li>
       Soit <m>E</m> le solide borné par le plan <m>y = 0</m>, le cylindre
       <m>z = 1 - x^2</m>, et le plan <m>y = z</m>. Exprimez l'intégrale
-      <md><mrow>
+      <m>\displaystyle
       \iiint_E f(x,y,z)\,\dee{V}
-      </mrow></md>
+      </m>
       comme une intégrale itérée.
       </li>
       </ol>
@@ -1462,10 +1455,10 @@
       E = \Set{(x,y,z)}{-1\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1-x^2,\ y\leqslant z\leqslant 1-x^2}
       </mrow></md>
       and the integral
-      <md><mrow>
+      <m>\displaystyle
       \iiint_E f(x,y,z)\,\dee{V}
       =\int_{-1}^1\dee{x}\int_0^{1-x^2}\dee{y}\int_y^{1-x^2}\dee{z}\ f(x,y,z)
-      </mrow></md>
+      </m>
       </p></solution>
     </exercise>
 
@@ -1607,9 +1600,9 @@
           <statement><p>
           Soit <m>E</m> la région à l'intérieur du cylindre <m>x^2 + y^2 = 1</m>, sous le plan <m>z = y</m> et au-dessus du plan <m>z = -1</m>. Exprimez
           l'intégrale
-          <md><mrow>
+          <m>\displaystyle
           \iiint_E f(x,y,z)\ \dee{V}
-          </mrow></md>
+          </m>
           comme trois intégrales itérées différentes correspondantes à l'ordre d'intégration:
           <ol marker = "(a)" cols="3">
             <li>
@@ -1797,11 +1790,9 @@
           <statement><p>
           Soit <m>E</m> la région bornée par les plans <m>y=0</m>, <m>y=2</m>,
           <m>y+z=3</m> et la surface <m>z=x^2</m>. Considérez l'intégrale
-          <md>
-          <mrow>
+          <m>\displaystyle
           I=\iiint_E f(x,y,z)\ \dee{V}
-          </mrow>
-          </md>
+          </m>
           Remplir les espaces ci-dessous. Dans chaque partie,
           vous pouvez n'utiliser qu'une seule intégrale pour exprimer votre réponse. Dans chaque cas, laisser les autres espaces vides.
           </p>
@@ -1924,12 +1915,10 @@
           </li>
           </ul>
           so that
-          <md>
-          <mrow>
+          <m>\displaystyle
           I=\iiint_E f(x,y,z)\ \dee{V}
           = \int_0^2 \int_{-\sqrt{3-y}}^{\sqrt{3-y}} \int_{x^2}^{3-y} f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}
-          </mrow>
-          </md>
+          </m>
           </p>
 
           <p>(b) On <m>E</m>
@@ -2071,7 +2060,7 @@
           &amp;=\int_0^1 \dee{y}\int_0^{2-y}\dee{x}\ \frac{1}{2} (1-y^2)
           </mrow><mrow>
           &amp;=\int_0^1 \dee{y}\ \frac{1}{2} (1-y^2)(2-y)
-          =\frac{1}{2}\int_0^1 \dee{y}\ \big(2-y-2y^2+y^3\big)
+          =\frac{1}{2}\int_0^1 \dee{y}\ \left(2-y-2y^2+y^3\right)
           </mrow><mrow>
           &amp;=\frac{1}{2}\left[2-\frac{1}{2}-\frac{2}{3}+\frac{1}{4}\right]
           =\frac{13}{24}\approx 0.5417

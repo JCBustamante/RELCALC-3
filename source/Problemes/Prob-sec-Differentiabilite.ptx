@@ -210,7 +210,7 @@
       \frac{\dee{x}}{e^{f(a,b)}+b} + \frac{1-f(a,b)}{e^{f(a,b)}+b} \,\dee{y}
       </m>
       </p><p>
-      (b) <m>f\big(0.99\,,\,0.01\big) \approx 0</m>
+      (b) <m>f\left(0.99\,,\,0.01\right) \approx 0</m>
       </p></answer>
 
       <solution><p>
@@ -259,14 +259,14 @@
       </md>
       et l'approximation linéaire se simplifie en
       <md>
-      f\big(1+\dee{x}\,,\,\dee{y}\big)
+      f\left(1+\dee{x}\,,\,\dee{y}\right)
         \approx f(1,0) + \frac{\dee{x}}{e^{f(1,0)}+0}
               + \frac{1-f(1,0)}{e^{f(1,0)}+0}   \,\dee{y}
         = \dee{x} +\dee{y}
       </md>
       En choisissant <m>\dee{x} = -0.01</m> et <m>\dee{y} = 0.01</m>, on a
       <md>
-      f\big(0.99\,,\,0.01\big)
+      f\left(0.99\,,\,0.01\right)
         \approx  -0.01 + 0.01
         =0
       </md>
@@ -320,7 +320,7 @@
 
       <solution><p>
       Le volume d'un cylindre de diamètre <m>d</m> et de hauteur <m>h</m>
-      est <m>V(d,h)=\pi\big(\frac{d}{2}\big)^2h</m>. L'énoncé de la question est
+      est <m>V(d,h)=\pi\left(\frac{d}{2}\right)^2h</m>. L'énoncé de la question est
       un peu ambigu en ce sens qu'il ne précise pas si les dimensions données sont
       des dimensions intérieures ou extérieures. Supposons qu'il s'agit de dimensions
       extérieures. Le volume de la canette, métal inclus, est alors <m>V(8,12)</m>
@@ -719,8 +719,8 @@
       Le calcul correct est
       <md>
       <mrow>
-      Y\big(0.9,\tfrac{\pi}{90}\big) &amp;= Y\big(1-0.1\,,\, 0+\tfrac{\pi}{90}\big)
-         \approx 0\ +\ (0)\,(-0.1)\ +\ (1)\big(\tfrac{\pi}{90}\big)
+      Y\left(0.9,\tfrac{\pi}{90}\right) &amp;= Y\left(1-0.1\,,\, 0+\tfrac{\pi}{90}\right)
+         \approx 0\ +\ (0)\,(-0.1)\ +\ (1)\left(\tfrac{\pi}{90}\right)
          </mrow><mrow>
          &amp;=\tfrac{\pi}{90}
          \approx 0.035
@@ -838,7 +838,7 @@
       =\left|100\frac{2}{5}\Big(-\frac{3}{16}\De A+\frac{5}{16}\De W\Big)\right|
       </md>
       On nous dit que <m>|\De A|\leqslant 0.01</m> et <m>|\De W|\leqslant 0.02</m>. Pour maximiser
-      <m>\big|100\frac{2}{5}\big(-\frac{3}{16}\De A+\frac{5}{16}\De W\big)\big|</m>,
+      <m>\big|100\frac{2}{5}\left(-\frac{3}{16}\De A+\frac{5}{16}\De W\right)\big|</m>,
       prenons <m>\De A=- 0.01</m> et <m>\De W=+ 0.02</m>. Le pourcentage d'erreur maximal
       est donc
       <md>
@@ -985,25 +985,25 @@
 
       <solution><p>
       Posons <m>C(A,B,\theta)=\sqrt{A^2+B^2-2AB\cos\theta}</m>. Alors
-      <m>C\big(3,4,\frac{\pi}{2}\big)=5</m>. En dérivant
+      <m>C\left(3,4,\frac{\pi}{2}\right)=5</m>. En dérivant
       <m>C^2=A^2+B^2-2AB\cos\theta</m>, on obtient
       <md alignment="alignat">
       <mrow>
       2C\frac{\partial C}{\partial A}(A,B,\theta)&amp;=2A-2B\cos\theta &amp;\quad&amp;\implies\quad &amp;
-      10\frac{\partial C}{\partial A}\big(3,4,\tfrac{\pi}{2}\big)&amp;=6\cr
+      10\frac{\partial C}{\partial A}\left(3,4,\tfrac{\pi}{2}\right)&amp;=6\cr
       2C\frac{\partial C}{\partial B}(A,B,\theta)&amp;=2B-2A\cos\theta &amp;  &amp;\implies &amp;
-      10\frac{\partial C}{\partial B}\big(3,4,\tfrac{\pi}{2}\big)&amp;=8\cr
+      10\frac{\partial C}{\partial B}\left(3,4,\tfrac{\pi}{2}\right)&amp;=8\cr
       2C\frac{\partial C}{\partial \theta}(A,B,\theta)&amp;=2AB\sin\theta &amp;  &amp;\implies &amp;
-      10\frac{\partial C}{\partial \theta}\big(3,4,\tfrac{\pi}{2}\big)&amp;=24\cr
+      10\frac{\partial C}{\partial \theta}\left(3,4,\tfrac{\pi}{2}\right)&amp;=24\cr
       </mrow>
       </md>
       L'erreur maximale approximative dans la valeur calculée de <m>C</m> est donc
       <md>
       <mrow>
       |\De C|&amp;\approx \left|
-      \frac{\partial C}{\partial A}\big(3,4,\tfrac{\pi}{2}\big)\De A
-      +\frac{\partial C}{\partial B}\big(3,4,\tfrac{\pi}{2}\big)\De B
-      +\frac{\partial C}{\partial \theta}\big(3,4,\tfrac{\pi}{2}\big)\De\theta\right|
+      \frac{\partial C}{\partial A}\left(3,4,\tfrac{\pi}{2}\right)\De A
+      +\frac{\partial C}{\partial B}\left(3,4,\tfrac{\pi}{2}\right)\De B
+      +\frac{\partial C}{\partial \theta}\left(3,4,\tfrac{\pi}{2}\right)\De\theta\right|
       </mrow><mrow>
       &amp;\le(0.6)(0.1)+(0.8)(0.1)+(2.4)\frac{\pi}{180}\cr
       &amp;=\frac{\pi}{75}+0.14\leqslant 0.182
@@ -1109,12 +1109,12 @@
       <p>(d) Par la règle de dérivation en chaîne,
       <md>
       <mrow>
-      \diff{}{\theta} z\big(x(\theta),y(\theta)\big)
-      &amp;= z_x\big(x(\theta),y(\theta)\big)\,x'(\theta)
-        +z_y\big(x(\theta),y(\theta)\big)\,y'(\theta)
+      \diff{}{\theta} z\left(x(\theta),y(\theta)\right)
+      &amp;= z_x\left(x(\theta),y(\theta)\right)\,x'(\theta)
+        +z_y\left(x(\theta),y(\theta)\right)\,y'(\theta)
       </mrow><mrow>
-      &amp;=-z_x\big(1 + \cos\theta,\sin\theta\big)\,\sin\theta
-        +z_y\big(1 + \cos\theta,\sin\theta\big)\,\cos\theta
+      &amp;=-z_x\left(1 + \cos\theta,\sin\theta\right)\,\sin\theta
+        +z_y\left(1 + \cos\theta,\sin\theta\right)\,\cos\theta
       </mrow>
       </md>
       En <m>A</m>, <m>x=2</m>, <m>y=0</m>, <m>z=2</m> (puisque <m>z^3-(2)(0)z^2-4(2)=0</m>) et <m>\theta=0</m>,

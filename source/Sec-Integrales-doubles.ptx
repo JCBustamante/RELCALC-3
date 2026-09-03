@@ -57,26 +57,26 @@ nous divisons la <m>i^\text{ième}</m> tranche en  <m>m</m> petits rectangles, c
 </p><p></p><image source="images/CLP-figs/vSliceD"/></sidebyside></li><li>
   À ce moment, nous pouvons approcher la densité à l'intérieur de chaque rectangle par une constante (en supposant que la fonction de densité est continue, la densité ne varie pas trop brusquement sur un des petits rectangles).
 
-  Pour chaque  <m>j=1,2,\dots,m</m>, le <m>j^\text{ième}</m> rectangle s'étend de <m>y=y_{j-1}</m> à  <m>y= y_j</m>. Nous choisissons au hasard un nombre <m>y_j^*</m> entre <m>y_{j-1}</m> et <m>y_j</m>, puis nous approximons la densité pour ce <m>j^\text{ième}</m> rectangle de la <m>i^\text{ième}</m> tranche par la constante <m>f\big(x_i^*,y_j^*\big)</m>.
+  Pour chaque  <m>j=1,2,\dots,m</m>, le <m>j^\text{ième}</m> rectangle s'étend de <m>y=y_{j-1}</m> à  <m>y= y_j</m>. Nous choisissons au hasard un nombre <m>y_j^*</m> entre <m>y_{j-1}</m> et <m>y_j</m>, puis nous approximons la densité pour ce <m>j^\text{ième}</m> rectangle de la <m>i^\text{ième}</m> tranche par la constante <m>f\left(x_i^*,y_j^*\right)</m>.
 </li><li>
-Ainsi, la masse du <m>j^\text{ième}</m> rectangle dans la <m>i^\text{ième}</m> tranche est approximativement donnée par <m>f\big(x_i^*,y_j^*\big)\,\De x\,\De y</m>.
+Ainsi, la masse du <m>j^\text{ième}</m> rectangle dans la <m>i^\text{ième}</m> tranche est approximativement donnée par <m>f\left(x_i^*,y_j^*\right)\,\De x\,\De y</m>.
 </li><li>
 De cette façon, la somme de  Riemann ci-après fournit une approximation de la masse de la <m>i^\text{ième}</m> tranche.
 <md><mrow>
   \text{Masse } i^\text{ième} \text{tranche}
-          &amp;\approx \sum_{j=1}^m  f\big(x_i^*,y_j^*\big)\,\De x\,\De y
+          &amp;\approx \sum_{j=1}^m  f\left(x_i^*,y_j^*\right)\,\De x\,\De y
 </mrow></md>
 Il faut noter que les nombres <m>y_j^*</m> dépendent de <m>i</m> et de  <m>m</m>.
 </li><li>
 En évaluant la limite lorsque <m>m \to \infty</m> (de sorte que la hauteur des rectangles tendent vers zéro), nous transformons la somme de Riemann en une intégrale définie<nbsp/>:
 <md><mrow>
   \text{Masse } i^\text{ième} \text{ tranche}
-          &amp;\approx \De x \int_{B(x_i^*)}^{T(x_i^*)} f\big(x_i^*,y\big)\,\dee{y}
+          &amp;\approx \De x \int_{B(x_i^*)}^{T(x_i^*)} f\left(x_i^*,y\right)\,\dee{y}
           = F(x_i^*)\,\De x,
 </mrow></md>
 où
 <md><mrow>
-F(x) = \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}.
+F(x) = \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}.
 </mrow></md>
 Remarquons que, bien que nous ayons débuté avec une fonction de densité <m>f(x,y)</m> de deux variables, <m>x</m> et <m>y</m>, en évaluant cette intégrale définie par rapport à la variable <m>y</m>, nous obtenons comme résultat  <m>F(x)</m>, une fonction de <m>x</m> seulement.
 </li><li>
@@ -84,7 +84,7 @@ Finalement, en évaluant la limite lorsque  <m>n \to \infty</m> (de sorte que la
 <md><mrow>
 \text{Masse}
 &amp;=\lim_{n\rightarrow\infty}\sum_{i=1}^n
-\De x \int_{B(x_i^*)}^{T(x_i^*)} f\big(x_i^*,y\big)\,\dee{y}
+\De x \int_{B(x_i^*)}^{T(x_i^*)} f\left(x_i^*,y\right)\,\dee{y}
 = \lim_{n\rightarrow\infty}\sum_{i=1}^n  F(x_i^*)\,\De x.
 </mrow></md>
 Nous sommes de retour au contexte familier des fonctions d'une variable. La somme de Riemann
@@ -92,7 +92,7 @@ Nous sommes de retour au contexte familier des fonctions d'une variable. La somm
 <md><mrow>
 \text{Masse}
 &amp;= \int_a^b F(x)\,\dee{x}
-=\int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x}.
+=\int_a^b \left[\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\right]\dee{x}.
 </mrow></md>
 </li></ul>
 Cette expression est notre première intégrale double. Il existe d'autres notations courantes pour cette intégrale.
@@ -100,11 +100,11 @@ Cette expression est notre première intégrale double. Il existe d'autres notat
     <definition xml:id="notn_dbl_int">
       <statement>
         <p><md><mrow>
-\iint_\cR f\big(x,y\big)\,\dee{x}\,\dee{y}
-&amp;= \int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x}
+\iint_\cR f\left(x,y\right)\,\dee{x}\,\dee{y}
+&amp;= \int_a^b \left[\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\right]\dee{x}
 </mrow><mrow>
-&amp;=\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x}
-=\int_a^b \dee{x} \int_{B(x)}^{T(x)} \dee{y}\, f\big(x,y\big)
+&amp;=\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x}
+=\int_a^b \dee{x} \int_{B(x)}^{T(x)} \dee{y}\, f\left(x,y\right)
 </mrow></md>
 Les trois dernières intégrales sont dites des intégrales itérées, pour des raisons évidentes.
 </p>
@@ -116,10 +116,10 @@ Les trois dernières intégrales sont dites des intégrales itérées, pour des 
         <li>
           <p>
 Pour évaluer l'intégrale
-<m>\displaystyle\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x}</m>,
+<m>\displaystyle\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x}</m>,
 <ul><li>
   nous évaluons d'abord l'intégrale à l'intérieur
-  <m>\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>y=B(x)</m> à <m>y=T(x)</m> et en traitant <m>x</m> comme une constante. Nous intégrons en utilisant les techniques d'intégration à une variable vues en calcul intégral. Le résultat de cette intégrale est une fonction de  <m>x</m> seulement, nommons-la <m>F(x)</m>.
+  <m>\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>y=B(x)</m> à <m>y=T(x)</m> et en traitant <m>x</m> comme une constante. Nous intégrons en utilisant les techniques d'intégration à une variable vues en calcul intégral. Le résultat de cette intégrale est une fonction de  <m>x</m> seulement, nommons-la <m>F(x)</m>.
 </li><li>
   Nous évaluons ensuite l'intégrale extérieure <m>\int_a^b F(x)\,\dee{x}</m>,
   dont l'intégrande est la réponse à l'intégrale intérieure. Encore une fois, cette intégrale est évaluée en utilisant les techniques d'intégration à une variable, donc en intégrant <m>F(x)</m> par rapport à <m>x</m> de <m>x=a</m> à <m>x=b</m>.
@@ -129,10 +129,10 @@ Nous utiliserons cette notation.</p>
         <li>
           <p>
 Pour évaluer l'intégrale
-<m>\displaystyle\int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\,\dee{y}\dee{x} </m>,
+<m>\displaystyle\int_a^b  \int_{B(x)}^{T(x)}  f\left(x,y\right)\,\dee{y}\dee{x} </m>,
 <ul><li>
   nous évaluons d'abord l'intégrale à l'intérieur
-  <m>\int_{B(x)}^{T(x)} \dee{y}\, f\big(x,y\big)</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>B(x)</m> à <m>T(x)</m>.
+  <m>\int_{B(x)}^{T(x)} \dee{y}\, f\left(x,y\right)</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>B(x)</m> à <m>T(x)</m>.
 </li><li>
    Puis, nous évaluons l'intégrale extérieure <m>\int_a^b F(x)\,\dee{x}</m>, pour laquelle l'intégrande est le résultat de l'intégrale intérieure et dont les bornes d'intégration vont de <m>x=a</m> à <m>x=b</m>.
 </li></ul>
@@ -182,22 +182,22 @@ divisons l'intervalle  <m>c\leqslant  y\leqslant  d</m> en  <m>n</m> petits sous
 </p><p></p><image source="images/CLP-figs/hSliceB"/></sidebyside><sidebyside widths="35% 5% 60%" valign="top"><p>
 Voici une vue agrandie de la <m>i^\text{ième}</m> tranche.
 </p><p></p><image source="images/CLP-figs/hSliceBB"/></sidebyside></li><li>
-Sur le <m>j^\text{ième}</m> rectangle de la  <m>i^\text{ième}</m> tranche, nous approximons la densité par <m>f\big(x_j^*,y_i^*\big)</m>. Par conséquent, sa masse est approximativement donnée par  <m>f\big(x_j^*,y_i^*\big)\,\De x\,\De y</m>.
+Sur le <m>j^\text{ième}</m> rectangle de la  <m>i^\text{ième}</m> tranche, nous approximons la densité par <m>f\left(x_j^*,y_i^*\right)</m>. Par conséquent, sa masse est approximativement donnée par  <m>f\left(x_j^*,y_i^*\right)\,\De x\,\De y</m>.
 </li><li>
 Ainsi, l'approximation de la masse de la <m>i^\text{ième}</m> tranche horizontale au moyen de la somme de Riemann est
 <md><mrow>
   \text{Masse } i^{\text{ième}} \text{ tranche}
-          &amp;\approx \sum_{j=1}^m  f\big(x_j^*,y_i^*\big)\,\De x\,\De y.
+          &amp;\approx \sum_{j=1}^m  f\left(x_j^*,y_i^*\right)\,\De x\,\De y.
 </mrow></md>
 </li><li>
 En évaluant la limite lorsque  <m>m \to \infty</m> (de sorte que les largeurs des rectangles tendent vers zéro), nous transformons la somme de Riemann en une intégrale définie<nbsp/>: <md><mrow>
   \text{Masse }i^{\text{ième}} \text{ tranche}
-          &amp;\approx \De y \int_{L(y_i^*)}^{R(y_i^*)} f\big(x,y_i^*\big)\,\dee{x}
+          &amp;\approx \De y \int_{L(y_i^*)}^{R(y_i^*)} f\left(x,y_i^*\right)\,\dee{x}
           = F(y_i^*)\,\De y,
 </mrow></md>
 où
 <md><mrow>
-F(y) = \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}.
+F(y) = \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}.
 </mrow></md>
 Remarquons que l'intégration par rapport à la variable  <m>x</m> élimine celle-ci<nbsp/>:  <m>F(y)</m> est une fonction de <m>y</m> seulement.
 </li></ul></p></li><li>
@@ -205,14 +205,14 @@ Finalement, en évaluant la limite lorsque  <m>n \to \infty</m> (de sorte que la
 <md><mrow>
 \text{Masse}
 &amp;=\lim_{n\rightarrow\infty}\sum_{i=1}^n
-\De y \int_{L(y_i^*)}^{R(y_i^*)} f\big(x,y_i^*\big)\,\dee{x}
+\De y \int_{L(y_i^*)}^{R(y_i^*)} f\left(x,y_i^*\right)\,\dee{x}
 = \lim_{n\rightarrow\infty}\sum_{i=1}^n  F(y_i^*)\,\De y.
 </mrow></md>
 Or, la somme de Riemann <m>\sum\limits_{i=1}^n  F(y_i^*)\,\De y</m> est une approximation de l'intégrale <m> \int_c^d F(y)\,\dee{y}</m>. Ainsi,
 <md><mrow>
 \text{Masse}
 &amp;= \int_c^d F(y)\,\dee{y}
-=\int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}.
+=\int_c^d \left[\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\right]\dee{y}.
 </mrow></md>
 </li></ul>
 Les notations standards de la <xref ref="notn_dbl_int" text="global">définition</xref> s'appliquent aussi à cette intégrale.
@@ -221,9 +221,9 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
       <statement>
         <p>
           <md>
-            <mrow> \iint_\cR f\big(x,y\big)\,\dee{x}\,\dee{y} &amp;=\int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}
+            <mrow> \iint_\cR f\left(x,y\right)\,\dee{x}\,\dee{y} &amp;=\int_c^d \left[\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\right]\dee{y}
             </mrow>
-            <mrow> &amp;=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}.
+            <mrow> &amp;=\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}.
             </mrow>
           </md>
         </p>
@@ -233,9 +233,9 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
 <p>
       Notons que<nbsp/>:
     <ul>
-      <li><p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}</m>,
+      <li><p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
         <ul>
-          <li> nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
+          <li> nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
           </li>
           
           <li> Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
@@ -245,13 +245,13 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
     </li>
     <li>
       <p> Il peut arriver que l'écriture suivante soit utilisée dans certains textes  
-        <md>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</md>,
+        <md>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</md>,
         
         mais nous ne le ferons pas, autant que possible.
       <ul>
         <li>
           <p>
-            Pour cette calcul, nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\int_{L(y)}^{R(y)} f\big(x,y\big)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
+            Pour cette calcul, nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
             </p>
 </li><li>
    Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d \dee{y}\,F(y)</m>, dont l'intégrande est le résultat de l'intégrale intérieure et dont les bornes d'intégration sont à la gauche de <m>\dee{y}</m>.
@@ -267,18 +267,18 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
           <ol marker="(a)">
             <li> Si <m> \cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\},</m> où <m>B(x)</m> et <m>T(x)</m> sont des fonctions continues, et si la densité de masse dans <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
             <md>
-              <mrow> \int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x} &amp;=\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x} 
+              <mrow> \int_a^b \left[\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\right]\dee{x} &amp;=\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x} 
               </mrow>
-              <mrow> &amp;=\int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\,\dee{y}\, \dee{x}.
+              <mrow> &amp;=\int_a^b  \int_{B(x)}^{T(x)}  f\left(x,y\right)\,\dee{y}\, \dee{x}.
               </mrow>
             </md>
             </li>
             <li> Si <m> \cR = \big\{\ (x,y)\ \big|\ c\leqslant y\leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\}, </m> où <m>L(y)</m> et <m>R(y)</m> sont des fonctions continues, et si la densité de masse dans  <m>\cR</m> est donnée par <m>f(x,y)</m>, alors la masse de <m>\cR</m> est
 <md><mrow>
-\int_c^d \left[\int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\right]\dee{y}
-&amp;=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}
+\int_c^d \left[\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\right]\dee{y}
+&amp;=\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}
 </mrow><mrow>
-&amp;=\int_c^d  \int_{L(y)}^{R(y)} f\big(x,y\big) \dee{x}\,\dee{y}.
+&amp;=\int_c^d  \int_{L(y)}^{R(y)} f\left(x,y\right) \dee{x}\,\dee{y}.
 </mrow></md>
 </li></ol>
 </p>
@@ -293,8 +293,8 @@ Nous avons, implicitement, dans le  <xref ref="thm_xy_mass" text="global">théor
 </mrow></md>
 et que si <m>f(x,y)</m> est continue, alors
 <md><mrow>
-\int_a^b \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\,\dee{x}
-=\int_c^d \int_{L(y)}^{R(y)} f\big(x,y\big)\,\dee{x}\,\dee{y}.
+\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x}
+=\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}.
 </mrow></md>
 Ce résultat est connu sous le nom de théorème de Fubini<fn>En l'honneur du mathématicien italien Guido Fubini (1879-1943).</fn>. Il sera abordé en détail plus loin.
 
@@ -354,7 +354,7 @@ Ainsi,
 </mrow></md>
 et, en vertu de la partie  (a) du  <xref ref="thm_xy_mass" text="global">théorème</xref>,
 <md><mrow>
-\text{Masse} &amp;= \int_a^b \left[ \int_{B(x)}^{T(x)}  f\big(x,y\big)\, \dee{y}\right]\, \dee{x}
+\text{Masse} &amp;= \int_a^b \left[ \int_{B(x)}^{T(x)}  f\left(x,y\right)\, \dee{y}\right]\, \dee{x}
         = \int_0^1  \left[ \int_0^{1-x}   y \, \dee{y}\right] \dee{x}.
 </mrow></md>
 On a que l'intégrale intérieure est
@@ -391,7 +391,7 @@ Ainsi,
 </mrow></md>
 et, en vertu de la partie  (b) du  <xref ref="thm_xy_mass" text="global">théorème</xref>,
 <md><mrow>
-\text{Masse} &amp;= \int_c^d \left[ \int_{L(y)}^{R(y)}f\big(x,y\big) \  \dee{x}\right] \dee{y} \,
+\text{Masse} &amp;= \int_c^d \left[ \int_{L(y)}^{R(y)}f\left(x,y\right) \  \dee{x}\right] \dee{y} \,
         = \int_0^1 \left[ \int_0^{1-y} y  \, \dee{x} \right] \dee{y}.
 </mrow></md>
 On a que l'intégrale intérieure est
@@ -775,7 +775,7 @@ Ainsi,
 </mrow></md>
 et,  d'après la <xref ref="eqn_Volume_x_slice" text="global">formule</xref>,
 <md><mrow>
-\text{Volume} &amp;= \int_a^b  \int_{B(x)}^{T(x)}  f\big(x,y\big)\ \dee{y}\,  \dee{x} = \int_{-1}^1  \int_0^{1-x^2}   x^2\sqrt{1-y}\ \dee{y}\ \,\dee{x}
+\text{Volume} &amp;= \int_a^b  \int_{B(x)}^{T(x)}  f\left(x,y\right)\ \dee{y}\,  \dee{x} = \int_{-1}^1  \int_0^{1-x^2}   x^2\sqrt{1-y}\ \dee{y}\ \,\dee{x}
 </mrow><mrow>
 &amp;=2\int_0^1  \int_0^{1-x^2} \  x^2\sqrt{1-y}\ \dee{y}\,\dee{x},
 </mrow></md>
@@ -787,12 +787,12 @@ Or, pour  <m>x\geqslant 0</m>, l'intégrale intérieure est
 &amp;= x^2 \int_0^{1-x^2}  \sqrt{1-y} \ \dee{y}
 =x^2 \left[ -\frac{2}{3}(1-y)^{3/2} \right]_0^{1-x^2}
 </mrow><mrow>
-&amp;=\frac{2}{3}x^2\big(1-x^3\big),
+&amp;=\frac{2}{3}x^2\left(1-x^3\right),
 </mrow></md>
 de sorte que
 
     <md><mrow>
-\text{Volume} &amp;= 2\int_0^1 \frac{2}{3}x^2\big(1-x^3\big)\,\dee{x}
+\text{Volume} &amp;= 2\int_0^1 \frac{2}{3}x^2\left(1-x^3\right)\,\dee{x}
 =\frac{4}{3}\left[\frac{x^3}{3}-\frac{x^6}{6}\right]_0^1
 =\frac{2}{9}.
 </mrow></md>
@@ -811,7 +811,7 @@ Avec cette méthode, nous obtenons la figure ci-dessous.
   </mrow></md>
   Donc, d'après la <xref ref="eqn_Volume_y_slice" text="global">formule</xref>,
   <md><mrow>
-  \text{Volume} &amp;= \int_c^d  \int_{L(y)}^{R(y)}\ f\big(x,y\big)\ \dee{x}\, \dee{y}
+  \text{Volume} &amp;= \int_c^d  \int_{L(y)}^{R(y)}\ f\left(x,y\right)\ \dee{x}\, \dee{y}
       = \int_0^1  \int_{-\sqrt{1-y}}^{\sqrt{1-y}} x^2\sqrt{1-y} \  \dee{x}\,\dee{y}.
   </mrow></md>
   Nous vous laissons le soin de vérifier que le résultat est le même que celui obtenu précédemment.
@@ -841,7 +841,7 @@ Thus
 and, by <xref ref="eqn_Volume_y_slice" text="global">résultat</xref>
 <md>
 <mrow>
-\text{Volume} &amp;= \int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\big(x,y\big)
+\text{Volume} &amp;= \int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)
     = \int_0^1 \dee{y} \int_{-\sqrt{1-y}}^{\sqrt{1-y}} \dee{x}\, x^2\sqrt{1-y}
 </mrow>
 </md>
@@ -954,7 +954,7 @@ En gardant à l'esprit que l'intégration par rapport à <m>y</m> considère <m>
 \text{Volume}(\cV_1)
         &amp;=\int_0^a \int_0^{\sqrt{a^2-x^2}} \sqrt{a^2-x^2}\,\dee{y}\,\dee{x}
 </mrow><mrow>
-        &amp;=\int_0^a   \big(a^2-x^2\big)\ \dee{x}
+        &amp;=\int_0^a   \left(a^2-x^2\right)\ \dee{x}
 </mrow><mrow>
         &amp;=\left[a^2x-\frac{x^3}{3}\right]_0^a
 </mrow><mrow>
@@ -1225,15 +1225,15 @@ et, pour chaque <m>y</m> de la région, <m>3x^2\leqslant  1-2y^2</m>, ou bien
 <m>-\sqrt{\frac{1-2y^2}{3}}\leqslant x\leqslant  \sqrt{\frac{1-2y^2}{3}}</m>.
 Par conséquent, en utilisant des rectangles verticaux comme dans la figure de droite ci-dessus,
 <md><mrow>
-\text{Volume}(\cV) &amp;=\iint_\cR \big(1-3x^2-2y^2\big)\,\dee{x}\,\dee{y}
+\text{Volume}(\cV) &amp;=\iint_\cR \left(1-3x^2-2y^2\right)\,\dee{x}\,\dee{y}
 </mrow><mrow>
    &amp;=\int_{-\frac{1}{\sqrt{2}}}^{\frac{1}{\sqrt{2}}}
      \left[\int_{-\sqrt{\frac{1-2y^2}{3}}}^{\sqrt{\frac{1-2y^2}{3}}}
-             \big(1-3x^2-2y^2\big)\ \dee{x}\right] \dee{y}
+             \left(1-3x^2-2y^2\right)\ \dee{x}\right] \dee{y}
 </mrow><mrow>
    &amp;=4\int_0^{\frac{1}{\sqrt{2}}}
       \left[\int_0^{\sqrt{\frac{1-2y^2}{3}}}
-             \big(1-3x^2-2y^2\big)\ \dee{x}\right] \dee{y}
+             \left(1-3x^2-2y^2\right)\ \dee{x}\right] \dee{y}
 </mrow><mrow>
    &amp;=4\int_0^{\frac{1}{\sqrt{2}}}
              \Big[(1-2y^2)x-x^3\Big]_0^{\sqrt{\frac{1-2y^2}{3}}}\ \dee{y}
@@ -1264,7 +1264,7 @@ Ensuite, pour intégrer <m>\cos^4\theta</m>, nous utilisons l'identité trigonom
 <md><mrow>
 \cos^2\theta &amp;=\frac{\cos(2\theta)+1}{2}
 </mrow><mrow>
-\implies \cos^4\theta &amp;= \frac{\big(\cos(2\theta)+1\big)^2}{4}
+\implies \cos^4\theta &amp;= \frac{\left(\cos(2\theta)+1\right)^2}{4}
     =\frac{\cos^2(2\theta)+2\cos(2\theta)+1}{4}
 </mrow><mrow>
    &amp;=\frac{\frac{\cos(4\theta)+1}{2}+2\cos(2\theta)+1}{4}

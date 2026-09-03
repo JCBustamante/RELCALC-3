@@ -52,8 +52,10 @@
                 f(x,y) = x^2 -2*y^2
                 C = contour_plot(f(x,y), (x,-3,3),(y,-3,3), cmap = "Spectral",
                   axes = False, fill = True, labels = False, label_colors="black", label_inline=True, label_fontsize=10, gridlines=True,  contours = 6, axes_labels=["$x$","$y$"], axes_labels_size=1.3, tick_formatter = "latex", fontsize= 14)
+                #C+= plot_vector_field(f.gradient(), (x,-3,3), (y,-3,3),
+                #  color = 'black', zorder = 2, plot_points = 7)
                 C+= plot_vector_field(f.gradient(), (x,-3,3), (y,-3,3),
-                  color = 'black', zorder = 2, plot_points = 7)
+                  color = 'black', zorder = 2, plot_points = 7, width=0.004)
                 C
               </sageplot>
             </image>
@@ -122,7 +124,7 @@
       </statement>
     </definition>
     <p>
-    Remarquons que l'hypothèse <m>|\vu| = 1</m> donne que <m>\vD_\vu f(\vr_0)</m> est le taux de variation de la valeur de <m>f</m> lorsque, en partant de <m>\vr_0</m>, on part dans la direction de <m>\vu</m> <alert>par unité de distance</alert>.
+    Remarquons que l'hypothèse <m>\norm{\vu} = 1</m> donne que <m>\vD_\vu f(\vr_0)</m> est le taux de variation de la valeur de <m>f</m> lorsque, en partant de <m>\vr_0</m>, on part dans la direction de <m>\vu</m> <alert>par unité de distance</alert>.
   </p>
     <p>
     Dans certains textes, on n'impose pas cette condition. Ceci revient à dire qu'on passe par <m>\vr_0</m> avec une vitesse arbitraire <m>\vv</m>. Dans ce cas, on parlera plutôt de la <term>dérivée directionnelle de <m>f</m> le long de <m>\vv</m> en <m>\vr_0</m></term>. La formule est la même, mais l'interprétation est différente : cette fois, <m>\vD_\vv f(\vr_0)</m> est le taux de variation de la valeur de <m>f</m> lorsque, en partant de <m>\vr_0</m>, on part dans la direction de <m>\vv</m> <alert>par unité de temps</alert>.
@@ -174,9 +176,9 @@
   </md>
   Par ailleurs, le vecteur donnant la direction doit être normalisé, puisque la norme de <m>-\vi + \vj</m> est <m>\sqrt{2}</m>.  La dérivée directionnelle dans la direction de  <m>-\vi + \vj</m> est
   <md>
-  D_{\frac{-\vi +\vj}{|-\vi +\vj|}} f(0,1)
-     = \vnabla f(0,1)\cdot\frac{-\vi +\vj}{|-\vi +\vj|}
-     = \big(e\,\vi + 2e\,\vj\big)\cdot \frac{-\vi +\vj}{\sqrt{2}}
+  D_{\frac{-\vi +\vj}{\norm{-\vi +\vj}}} f(0,1)
+     = \vnabla f(0,1)\cdot\frac{-\vi +\vj}{\norm{-\vi +\vj}}
+     = \left(e\,\vi + 2e\,\vj\right)\cdot \frac{-\vi +\vj}{\sqrt{2}}
      = \frac{e}{\sqrt{2}}
   </md>.
   </p>
@@ -206,9 +208,9 @@
   </md>,
   et la dérivée directionnelle dans la direction de <m>\llt 1\,,\,0\,,\,1\rgt</m> est
   <md><mrow>
-  D_{\frac{\llt 1\,,\,0\,,\,1\rgt}{|\llt 1\,,\,0\,,\,1\rgt|}} w(1,3,1)
+  D_{\frac{\llt 1\,,\,0\,,\,1\rgt}{\norm{\llt 1\,,\,0\,,\,1\rgt}}} w(1,3,1)
      &amp;= \vnabla w(1,3,1)\cdot
-                \frac{\llt 1\,,\,0\,,\,1\rgt}{|\llt 1\,,\,0\,,\,1\rgt|}
+                \frac{\llt 1\,,\,0\,,\,1\rgt}{\norm{\llt 1\,,\,0\,,\,1\rgt}}
      = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\llt 1\,,\,0\,,\,1\rgt}{\sqrt{2}}
   </mrow><mrow>
     &amp;= \frac{8}{\sqrt{2}}=4\sqrt{2}
@@ -216,9 +218,9 @@
   La dérivée directionnelle de  <m>w</m> en <m>(1,3,1)</m> dans la direction de <m>\vd\ne\vZero</m>
   est nulle si et seulement si
   <md>
-  0 = \vD_{\frac{\vd}{|\vd|}} w(1,3,1)
-     = \vnabla w(1,3,1)\cdot\frac{\vd}{|\vd|}
-     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\vd}{|\vd|}
+  0 = \vD_{\frac{\vd}{\norm{\vd}}} w(1,3,1)
+     = \vnabla w(1,3,1)\cdot\frac{\vd}{\norm{\vd}}
+     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\vd}{\norm{\vd}}
   </md>,
   ce qui arrive si et seulement si  <m>\vd</m> est orthogonal à <m>\llt 4\,,\,1\,,\,4\rgt</m>. Ainsi, si l'on se déplace dans la direction de n'importe quel vecteur dans le plan <m>4x+y+4z=0</m> (dont le vecteur normal est  <m>\llt 4\,,\,1\,,\,4\rgt</m>), alors la dérivée directionnelle est nulle.
   </p>
@@ -231,13 +233,13 @@
     </exercise>
     <p>
   On vient de voir que le taux de variation instantané de  <m>f</m> par unité de distance lorsqu'on quitte  <m>\vr_0</m> dans la direction du vecteur unitaire <m>\vu</m> est un produit scalaire que l'on peut écrire sous la forme <md>
-  \vnabla f(\vr_0)\cdot\vu = |\vnabla f(\vr)| \cos \theta
+  \vnabla f(\vr_0)\cdot\vu = \norm{\vnabla f(\vr)} \cos \theta
   </md>,
   où  <m>\theta</m> est l'angle formé par le vecteur gradient  <m>\vnabla f(\vr_0)</m> et le vecteur de direction  <m>\vu</m>. Le fait de l'écrire de cette façon et que le cosinus d'un angle se trouve toujours entre <m>-1</m> et <m>1</m> nous permet de faire quelques remarques importantes :
   <ul><li>
-    La direction de plus grande augmentation de <m>f</m> lorsqu'on est à <m>\vr_0</m> est celle qui correspond à l'angle <m>\theta=0</m>. Ainsi, afin d'avoir ce taux d'augmentation maximal, on doit quitter  <m>\vr_0</m> dans la direction donnée par le gradient <m>\vnabla f(\vr_0)</m>. Le taux d'augmentation par unité de distance sera alors <m>|\vnabla f(\vr_0)|</m>.
+    La direction de plus grande augmentation de <m>f</m> lorsqu'on est à <m>\vr_0</m> est celle qui correspond à l'angle <m>\theta=0</m>. Ainsi, afin d'avoir ce taux d'augmentation maximal, on doit quitter  <m>\vr_0</m> dans la direction donnée par le gradient <m>\vnabla f(\vr_0)</m>. Le taux d'augmentation par unité de distance sera alors <m>\norm{\vnabla f(\vr_0)}</m>.
   </li><li>
-    La direction de taux d'augmentation minimale (c'est-à-dire le plus négative) est celle qui correspond à <m>\theta=\pi</m>. Afin d'obtenir le taux minimal de variation par unité de distance, on doit quitter <m>\vr_0</m> dans la direction opposée de celle donnée par le vecteur gradient. Dans ce cas, le taux de variation est  <m>-|\vnabla f(\vr_0)|</m>.
+    La direction de taux d'augmentation minimale (c'est-à-dire le plus négative) est celle qui correspond à <m>\theta=\pi</m>. Afin d'obtenir le taux minimal de variation par unité de distance, on doit quitter <m>\vr_0</m> dans la direction opposée de celle donnée par le vecteur gradient. Dans ce cas, le taux de variation est  <m>-\norm{\vnabla f(\vr_0)}</m>.
   </li><li>
     Les directions donnant un taux de variation nul sont celles perpendiculaires au vecteur gradient  <m>\vnabla f(\vr_0)</m>. Si l'on se déplace dans une direction orthogonale à <m>\vnabla f(\vr_0)</m>, alors  <m>f</m> reste constante. À cet instant, on se déplace de sorte que <m>f(\vr)</m> reste constante, c'est-à-dire qu'on se déplace le long de l'ensemble de niveau de <m>f</m> (une courbe de niveau si <m>f</m> est une fonction de deux variables, ou une surface s'il s'agit d'une fonction de trois variables). Dans tous les cas, nous avons que <m>\vnabla f(\vr_0)</m> est orthogonal à l'ensemble de niveau <m>f(\vr)  = f(\vr_0)</m>. Nous reviendrons sur ces considérations un peu plus tard.
   </li></ul>
@@ -251,7 +253,7 @@
       <p>
   Soit
   <m>
-  f(x,y)=5-x^2-2y^2</m> et <m> (x_0,y_0)=\big(-1,-1\big)
+  f(x,y)=5-x^2-2y^2</m> et <m> (x_0,y_0)=\left(-1,-1\right)
   </m>.
   Dans cet exemple, on étudie le comportement de <m>f(x,y)</m> autour du point <m>(x_0,y_0)</m>.
   </p>
@@ -278,10 +280,10 @@
   <ul><li>
   Le vecteur unitaire donnant la direction de taux d'accroissement maximal est le vecteur gradient normalisé, c'est-à-dire  <m>2\llt 1,2\rgt</m> normalisé :
   <m>\frac{1}{\sqrt{5}}\llt 1,2\rgt</m>.
-  Le taux maximal d'accroissement est <m>|\llt 2,4\rgt |=2\sqrt{5}</m>.
+  Le taux maximal d'accroissement est <m>\norm{\llt 2,4\rgt}=2\sqrt{5}</m>.
   </li><li>
   Le vecteur unitaire donnant la direction de décroissance plus rapide est
-  <m>-\frac{1}{\sqrt{5}}\llt 1,2\rgt </m>, et le taux de décroissance est  <m>-|\llt 2,4\rgt |=-2\sqrt{5}</m>.
+  <m>-\frac{1}{\sqrt{5}}\llt 1,2\rgt </m>, et le taux de décroissance est  <m>-\norm{\llt 2,4\rgt}=-2\sqrt{5}</m>.
   </li><li><p>
   Les directions donnant lieu à un taux de variation nul sont les directions orthogonales au gradient <m>\vnabla f(x_0,y_0)</m>. Un tel vecteur est<fn>Vérifiez-le avec le produit scalaire!</fn> <m>\llt 2,-1\rgt</m>.  Ainsi, les vecteurs unitaires donnant un taux de variation nul sont  <m>\pm\frac{1}{\sqrt{5}}(2,-1)</m>. Il s'agit, bien entendu, de deux vecteurs directeurs pour la tangente à la courbe de niveau <m>f(x_0,y_0)</m> au point <m>(x_0,y_0)</m>, c'est-à-dire la courbe  <m>f(x,y)=f(x_0,y_0)</m>.
   </p></li></ul>
@@ -312,14 +314,14 @@
   </mrow></md>.
   Ainsi, on sait que :
   <md alignment="alignat"><mrow>
-  2\sqrt{2}&amp;=D_{\frac{\llt 1,1\rgt}{|\llt 1,1\rgt|}} f(1,2)
-     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 1,1\rgt}{|\llt 1,1\rgt|}
+  2\sqrt{2}&amp;=D_{\frac{\llt 1,1\rgt}{\norm{\llt 1,1\rgt}}} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 1,1\rgt}{\norm{\llt 1,1\rgt}}
      &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 1,1\rgt}{\sqrt{2}},
   </mrow><mrow>
      &amp;=\frac{a}{\sqrt{2}} +\frac{b}{\sqrt{2}}
   </mrow><mrow>
-  -3&amp;=D_{\frac{\llt 0,-2\rgt}{|\llt 0,-2\rgt|}} f(1,2)
-     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 0,-2\rgt}{|\llt 0,-2\rgt|}
+  -3&amp;=D_{\frac{\llt 0,-2\rgt}{\norm{\llt 0,-2\rgt}}} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 0,-2\rgt}{\norm{\llt 0,-2\rgt}}
      &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 0,-2\rgt}{2}
   </mrow><mrow>
      &amp;=-b
@@ -331,8 +333,8 @@
   </md>,
   et le taux de variation  (par unité de distance) dans cette direction est
   <md><mrow>
-  D_{\frac{\llt -1,-2\rgt}{|\llt -1,-2\rgt|}} f(1,2)
-     &amp;= \vnabla f(1,2)\cdot\frac{\llt -1,-2\rgt}{|\llt -1,-2\rgt|}
+  D_{\frac{\llt -1,-2\rgt}{\norm{\llt -1,-2\rgt}}} f(1,2)
+     &amp;= \vnabla f(1,2)\cdot\frac{\llt -1,-2\rgt}{\norm{\llt -1,-2\rgt}}
       = \llt a,b\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
   </mrow><mrow>
       &amp;= \llt 1,3\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
@@ -357,7 +359,7 @@
         <p>
     Comme c'est souvent le cas, bien comprendre la question est plus que la moitié du travail. Par la <xref ref="def-Gradient" text="global">définition</xref>, le gradient d'une fonction <m>g(x,y)</m> est le vecteur  <m>\llt g_x(x,y),g_y(x,y)\rgt</m>. Dans cette question, on nous donne une fonction <m>f(r,\theta)</m> exprimée avec les coordonnées polaires  <m>r</m> et <m>\theta</m>. Nous convertissons celle-ci en coordonnées rectangulaires et nous considérons la fonction
   <md>
-  g(x,y)=f\big(r(x,y),\theta(x,y)\big)
+  g(x,y)=f\left(r(x,y),\theta(x,y)\right)
   </md>,
   où
   <md><mrow>
@@ -406,9 +408,9 @@
   <md><mrow>
   \llt g_x(x,y),g_y(x,y)\rgt
   &amp;=
-  f_r\big(r(x,y),\theta(x,y)\big)\ \llt\cos\theta(x,y),\,\sin\theta(x,y)\rgt
+  f_r\left(r(x,y),\theta(x,y)\right)\ \llt\cos\theta(x,y),\,\sin\theta(x,y)\rgt
   </mrow><mrow>
-  &amp;\ \ +\frac{1}{r(x,y)}f_\theta\big(r(x,y),\theta(x,y)\big)\
+  &amp;\ \ +\frac{1}{r(x,y)}f_\theta\left(r(x,y),\theta(x,y)\right)\
   \llt-\sin\theta(x,y),\,\cos\theta(x,y)\rgt
   </mrow></md>.
   </p>
@@ -526,12 +528,12 @@
 
   </p>
     <p>
-    Nous allons utiliser un procédé semblable à celui qui nous a servi lors de notre discussion au sujet des fonctions implicites, mais avec une surface au lieu d'une courbe. Soit <m>\plan{S}</m> la surface  <m>G(x,y,z)=0</m> et  <m>R_0\big(x_0,\,y_0,\,z_0\big)</m> un point sur <m>\plan{S}</m>.
+    Nous allons utiliser un procédé semblable à celui qui nous a servi lors de notre discussion au sujet des fonctions implicites, mais avec une surface au lieu d'une courbe. Soit <m>\plan{S}</m> la surface  <m>G(x,y,z)=0</m> et  <m>R_0\left(x_0,\,y_0,\,z_0\right)</m> un point sur <m>\plan{S}</m>.
   </p>
     <sidebyside widths="45% 5% 50%" valign="middle">
       <p>
-    Imaginons que nous nous promenons sur la surface et que, à l'instant <m> t= 0</m>, nous passons au point <m>R_0\big(x_0,\,y_0,\,z_0\big)</m>. Soit <m>\vr(t)
-  =\big(x(t),\,y(t),\,z(t)\big)</m> la position au temps  <m>t</m>.
+    Imaginons que nous nous promenons sur la surface et que, à l'instant <m> t= 0</m>, nous passons au point <m>R_0\left(x_0,\,y_0,\,z_0\right)</m>. Soit <m>\vr(t)
+  =\left(x(t),\,y(t),\,z(t)\right)</m> la position au temps  <m>t</m>.
   </p>
       <p></p>
       <image source="images/CLP-figs/tanPlaneG"/>
@@ -539,7 +541,7 @@
     <p>
     Puisque notre balade a lieu sur la surface, nous savons que <m>\vr(t)</m> se trouve sur la surface, c'est-à-dire
     <md>
-    G \circ \vr(t) = G\big( x(t),\,y(t),\,z(t)\big)=0
+    G \circ \vr(t) = G\left( x(t),\,y(t),\,z(t)\right)=0
     </md>
     pour tout  <m>t</m>. En dérivant par rapport à <m>t</m>, on obtient, en vertu de la règle de la chaîne,
     <md>
@@ -547,14 +549,14 @@
     </md>,
     c'est-à-dire
     <md><mrow>
-    \pdiff{G}{x}\big( x(t),\,y(t),\,z(t)\big)\ x'(t)
-    &amp;+\pdiff{G}{y}\big( x(t),\,y(t),\,z(t)\big)\ y'(t)
+    \pdiff{G}{x}\left( x(t),\,y(t),\,z(t)\right)\ x'(t)
+    &amp;+\pdiff{G}{y}\left( x(t),\,y(t),\,z(t)\right)\ y'(t)
     </mrow><mrow>
-    &amp;+\pdiff{G}{z}\big( x(t),\,y(t),\,z(t)\big)\ z'(t) = 0
+    &amp;+\pdiff{G}{z}\left( x(t),\,y(t),\,z(t)\right)\ z'(t) = 0
     </mrow></md>.
     En particulier, en  <m>t=0</m>, on obtient
-    <md><mrow> \amp \pdiff{G}{x}\big( x_0,\,y_0,\,z_0\big)\ x'(0)
-      +\pdiff{G}{y}\big( x_0,\,y_0,\,z_0\big)\ y'(0)</mrow><mrow xml:id="tgt-surf-impl" tag="ddagger"> \amp +\pdiff{G}{z}\big( x_0,\,y_0,\,z_0\big)\ z'(0) = 0 </mrow></md>.
+    <md><mrow> \amp \pdiff{G}{x}\left( x_0,\,y_0,\,z_0\right)\ x'(0)
+      +\pdiff{G}{y}\left( x_0,\,y_0,\,z_0\right)\ y'(0)</mrow><mrow xml:id="tgt-surf-impl" tag="ddagger"> \amp +\pdiff{G}{z}\left( x_0,\,y_0,\,z_0\right)\ z'(0) = 0 </mrow></md>.
 
     À nouveau, compte tenu de la définition du gradient de <m>G</m>, l'égalité <xref ref="tgt-surf-impl"/> se lit simplement
     <md>
@@ -790,10 +792,10 @@ t^2+ \frac{1}{2}t^2 +3t^2 &amp;= 72
 </mrow></md>
 de sorte que
 <ul><li>
-le point sur la surface   <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel <m>x+y+3z</m> atteint sa valeur maximale est  <m>(a,b,c) = \big(t,\frac{t}{2},t\big)\Big|_{t\,=\,4}=(4,2,4)</m>, et
+le point sur la surface   <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel <m>x+y+3z</m> atteint sa valeur maximale est  <m>(a,b,c) = \left(t,\frac{t}{2},t\right)\Big|_{t\,=\,4}=(4,2,4)</m>, et
 </li><li><m>x+y+3z</m> prend la valeur  <m>4+2+3\times 4 =18</m> en ce point;
 </li><li>
-le point sur la surface <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel  <m>x+y+3z</m> atteint sa valeur minimale est  <m>(a,b,c) =\big(t,\frac{t}{2},t\big)\Big|_{t\,=\,-4}= (-4,-2,-4)</m>, et
+le point sur la surface <m>x^2+ 2y^2 +3z^2 = 72</m> pour lequel  <m>x+y+3z</m> atteint sa valeur minimale est  <m>(a,b,c) =\left(t,\frac{t}{2},t\right)\Big|_{t\,=\,-4}= (-4,-2,-4)</m>, et
 </li><li><m>x+y+3z</m> prend la valeur <m>-4-2+3\times (-4) =-18</m> en ce point.
 </li></ul>
 </p>
@@ -826,8 +828,8 @@ On peut donc utiliser le produit vectoriel des deux vecteurs gradients pour cons
                  \vj &amp; F_y &amp; G_y \\
                  \vk &amp; F_z &amp; G_z \end{matrix}\right]
 </mrow><mrow>
-&amp; =\big(F_yG_z-F_z G_y\big)\,\vi + \big(F_zG_x-F_x G_z\big)\,\vj
-    +\big(F_xG_y-F_y G_x\big)\,\vk
+&amp; =\left(F_yG_z-F_z G_y\right)\,\vi + \left(F_zG_x-F_x G_z\right)\,\vj
+    +\left(F_xG_y-F_y G_x\right)\,\vk
 </mrow></md>,
 où, bien entendu, toutes les dérivées partielles doivent être évaluées en <m>(x,y,z)=(x_0,y_0,z_0)</m>.
 </p>
@@ -841,15 +843,15 @@ où, bien entendu, toutes les dérivées partielles doivent être évaluées en 
 Considérer la courbe intersection des surfaces
 <m>
 x^2+y^2+z^2=5</m> et <m>x^2+y^2=4z</m>.
-Trouver un vecteur tangent à cette courbe au point <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m>.
+Trouver un vecteur tangent à cette courbe au point <m>\left(\sqrt{3}\,,\,1\,,\,1\right)</m>.
 </p>
       </statement>
       <solution>
         <p>
-Vérifions tout d'abord que le point  <m>\big(\sqrt{3}\,,\,1\,,\,1\big)</m> se trouve bel et bien sur la courbe, c'est-à-dire qu'il vérifie les deux équations :
+Vérifions tout d'abord que le point  <m>\left(\sqrt{3}\,,\,1\,,\,1\right)</m> se trouve bel et bien sur la courbe, c'est-à-dire qu'il vérifie les deux équations :
 <md>
-\big(\sqrt{3}\big)^2+1^2+1^2=5\qquad
-\big(\sqrt{3}\big)^2+1^2=4\times 1
+\left(\sqrt{3}\right)^2+1^2+1^2=5\qquad
+\left(\sqrt{3}\right)^2+1^2=4\times 1
 </md>.
 Nous trouverons le vecteur tangent voulu en utilisant la stratégie de l'<xref ref="eg_tan_plane_H" text="global">exemple</xref>.
 </p>
@@ -861,14 +863,14 @@ le vecteur
  =\llt 2x,\,2y,\,2z \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
  = 2\llt \sqrt{3},\,1,\,1 \rgt
 </md>
-est normal à <m>F(x,y,z)=5</m> en <m>\big(\sqrt{3},\,1,\,1\big)</m>, et
+est normal à <m>F(x,y,z)=5</m> en <m>\left(\sqrt{3},\,1,\,1\right)</m>, et
 </li><li>
 le vecteur
 <md>
 \vnabla G\left(\sqrt{3},1,1\right)
  =\llt 2x,\,2y,\,-4 \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
  = 2\llt \sqrt{3},\,1,\,-2 \rgt
-</md>est normal à <m>G(x,y,z)=0</m> en <m>\big(\sqrt{3},\,1,\,1\big)</m>.
+</md>est normal à <m>G(x,y,z)=0</m> en <m>\left(\sqrt{3},\,1,\,1\right)</m>.
 </li></ul>
 Ainsi, un vecteur tangent est
 <md><mrow>
@@ -877,8 +879,8 @@ Ainsi, un vecteur tangent est
                  \vj &amp;  1  &amp; 1 \\
                  \vk &amp;  1  &amp; -2 \end{matrix}\right]
 </mrow><mrow>
-&amp;\hskip0.5in =\big(-2-1\big)\,\vi + \big(\sqrt{3}+2\sqrt{3}\big)\,\vj
-    +\big(\sqrt{3}-\sqrt{3}\big)\,\vk
+&amp;\hskip0.5in =\left(-2-1\right)\,\vi + \left(\sqrt{3}+2\sqrt{3}\right)\,\vj
+    +\left(\sqrt{3}-\sqrt{3}\right)\,\vk
 </mrow><mrow>
 &amp;\hskip0.5in= -3\,\vi + 3\sqrt{3}\,\vj
 </mrow></md>.
@@ -935,9 +937,9 @@ Il y a un facteur <m>3</m> dans les deux composantes non nulles, de sorte que l'
 </li></ul>
 Alors,
 <ul><li>
-au point <m>(x,y,z)</m> où le rayon entre dans le solide, qui est un point visible, le vecteur <m>\vv</m> pointe vers l'intérieur du solide. L'angle <m>\theta</m> entre <m>\vv</m> et le normal  <m>\vn</m> pointant vers l'extérieur est plus grand que  <m>\pi /2</m>, de sorte que  <m>\vv\cdot\vn=|\vv|\,|\vn|\,\cos\theta \lt 0</m>. Mais
+au point <m>(x,y,z)</m> où le rayon entre dans le solide, qui est un point visible, le vecteur <m>\vv</m> pointe vers l'intérieur du solide. L'angle <m>\theta</m> entre <m>\vv</m> et le normal  <m>\vn</m> pointant vers l'extérieur est plus grand que  <m>\pi /2</m>, de sorte que  <m>\vv\cdot\vn=\norm{\vv}\,\norm{\vn}\,\cos\theta \lt 0</m>. Mais
 </li><li>
-au point  <m>(x',y',z')</m> où le rayon quitte le solide, qui est un point caché, le vecteur  <m>\vv</m> pointe vers l'extérieur. L'angle <m>\theta</m> entre <m>\vv</m> et le normal <m>\vn'</m> pointant vers l'extérieur est inférieur à <m>\pi/2</m>, de sorte que  <m>\vv\cdot\vn'=|\vv|\,|\vn'|\,\cos\theta\gt 0</m>.
+au point  <m>(x',y',z')</m> où le rayon quitte le solide, qui est un point caché, le vecteur  <m>\vv</m> pointe vers l'extérieur. L'angle <m>\theta</m> entre <m>\vv</m> et le normal <m>\vn'</m> pointant vers l'extérieur est inférieur à <m>\pi/2</m>, de sorte que  <m>\vv\cdot\vn'=\norm{\vv}\,\norm{\vn'}\,\cos\theta\gt 0</m>.
 </li></ul>
 </p>
           </li>

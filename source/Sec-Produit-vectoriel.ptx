@@ -41,7 +41,7 @@
         <md>
           \va \times \vb = \left|\begin{array}{ccc}a_2 \amp a_3 \\ b_2 \amp b_3\end{array}\right|\,\vi - \begin{vmatrix}a_1 \amp a_3\\ b_1 \amp b_3\end{vmatrix}\,\vj + \begin{vmatrix}a_1 \amp b_1\\ a_2 \amp b_2\end{vmatrix}\,\vk \text{;}
         </md>
-        </p></li><li><p><m>|\va \times \vb| = |\va|\, |\vb|\, \sin \theta</m>, où <m>\theta\in [0, \pi]</m> est l'angle (non orienté) formé par <m>\va</m> et <m>\vb</m>. En particulier, <m>\va</m> et <m>\vb</m> sont parallèles si et seulement si <m>\va \times \vb = \vZero</m>.
+        </p></li><li><p><m>\norm{\va \times \vb} = \norm{\va}\, \norm{\vb}\, \sin \theta</m>, où <m>\theta\in [0, \pi]</m> est l'angle (non orienté) formé par <m>\va</m> et <m>\vb</m>. En particulier, <m>\va</m> et <m>\vb</m> sont parallèles si et seulement si <m>\va \times \vb = \vZero</m>.
         </p></li></ol>
 
     </p>
@@ -82,7 +82,7 @@
           <li>
             <p>
             Nous avons
-            <md><mrow> |\va\times \vb|^2 \amp =
+            <md><mrow> \norm{\va\times \vb}^2 \amp =
               \begin{vmatrix}a_2 \amp a_3\\ b_2 \amp b_3 \end{vmatrix}^2 + \begin{vmatrix}a_1 \amp a_3\\ b_1 \amp b_3 \end{vmatrix}^2 + \begin{vmatrix}a_1 \amp a_2\\ b_1 \amp b_2 \end{vmatrix}^2
                 </mrow><mrow>   \amp = \left(a_2 b_3 - a_3 b_2\right)^2 + \left( a_1 b_3 - b_1 a_3 \right)^2 + \left(a_1 b_2 - b_1 a_2\right)^2.
                 </mrow></md>
@@ -91,7 +91,7 @@
               \left(a_1 ^2 + a_2^2+a_3^2\right)\left(b_1^2+ b_2^2+b_3^2\right)- \left(a_1 b_1 + a_2 b_2 + a_3 b_3\right)^2,
             </md>
             qui à son tour est égal à
-            <md><mrow> |\va|^2 |\vb|^2  - (\va \cdot \vb)^2 \amp = |\va|^2 |\vb|^2 - |\va|^2 |\vb|^2 \cos^2 \theta </mrow><mrow> \amp =   |\va|^2 |\vb|^2 (1-\cos^2 \theta)</mrow></md>
+            <md><mrow> \norm{\va}^2 \norm{\vb}^2  - (\va \cdot \vb)^2 \amp = \norm{\va}^2 \norm{\vb}^2 - \norm{\va}^2 \norm{\vb}^2 \cos^2 \theta </mrow><mrow> \amp =   \norm{\va}^2 \norm{\vb}^2 (1-\cos^2 \theta)</mrow></md>
             et le résultat suit de ce que <m>1-\cos^2 \theta = \sin^2\theta</m>, et nous considérons l'angle <m>\theta \in [0,\pi]</m>, de sorte que son sinus est positif.
 
           </p>
@@ -140,7 +140,7 @@
   <subsection xml:id="subsec-PV-applications">
     <title>Applications géométriques</title>
     <p>
-Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">proposition</xref> nous disent que si <m>\va</m>  et <m>\vb </m> ne sont pas colinéaires, alors <m>\va \times \vb</m> est orthogonal au plan engendré par <m>\va</m> et <m>\vb</m>, et sa norme est <m>|\va|\, |\vb|\, \sin \theta</m>. Ceci laisse encore deux choix pour le produit vectoriel. Dans la figure de gauche ci-bas, les vecteurs <m>\vc</m>  et <m>\vd</m> sont des candidats potentiels. Lequel des deux choisir? La <term>règle de la main droite</term> fournit la réponse : lorsque vos doigts de la main droite tournent d'un angle <m>\theta</m> de <m>\va</m> jusqu'à <m>\vb</m>, alors votre pouce indique la direction de <m>\va \times \vb</m>.
+Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">proposition</xref> nous disent que si <m>\va</m>  et <m>\vb </m> ne sont pas colinéaires, alors <m>\va \times \vb</m> est orthogonal au plan engendré par <m>\va</m> et <m>\vb</m>, et sa norme est <m>\norm{\va}\, \norm{\vb}\, \sin \theta</m>. Ceci laisse encore deux choix pour le produit vectoriel. Dans la figure de gauche ci-bas, les vecteurs <m>\vc</m>  et <m>\vd</m> sont des candidats potentiels. Lequel des deux choisir? La <term>règle de la main droite</term> fournit la réponse : lorsque vos doigts de la main droite tournent d'un angle <m>\theta</m> de <m>\va</m> jusqu'à <m>\vb</m>, alors votre pouce indique la direction de <m>\va \times \vb</m>.
 </p>
   <figure>
     <caption>Pour le produit vectoriel, l'ordre des facteurs est important. À droite, la règle de la main droite. </caption>
@@ -155,12 +155,12 @@ Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">propositio
 </p>
   <corollary xml:id="cor-Aire">
     <statement>
-      <p>Soit <m>\va</m> et <m>\vb</m> deux vecteurs dans <m>\R^3</m>. Alors, l'aire du parallélogramme qu'ils déterminent est <m>|\va \times \vb|</m>.
+      <p>Soit <m>\va</m> et <m>\vb</m> deux vecteurs dans <m>\R^3</m>. Alors, l'aire du parallélogramme qu'ils déterminent est <m>\norm{\va \times \vb}</m>.
     </p>
     </statement>
     <proof>
       <sidebyside widths="60% 22% 18%" valign="top">
-        <p>En effet, l'aire du parallélogramme en question est donnée par le produit de la longueur d'un de ses côtés, disons <m>\va</m> par la distance <m>h</m> d'un sommet à ce côté. Cette distance vaut <m>h = |\vb| \sin \theta</m>.
+        <p>En effet, l'aire du parallélogramme en question est donnée par le produit de la longueur d'un de ses côtés, disons <m>\va</m> par la distance <m>h</m> d'un sommet à ce côté. Cette distance vaut <m>h = \norm{\vb} \sin \theta</m>.
         </p>
         <p></p>
         <image source="images/CLP-figs/areaB"/>
@@ -186,8 +186,8 @@ Les propriétés 2 et 5 de la <xref ref="prop-ppt-vect" text="global">propositio
     </statement>
     <proof>
       <p>
-      En effet, on peut choisir comme base le parallélogramme déterminé par <m>\vb</m> et <m>\vc</m>. Soit <m>\vn =\vb \times \vc</m>. L'aire de la base est donc  <m>A= |\vn|</m>. Par ailleurs,  <m>\vn </m>  est orthogonal au plan qui contient cette base. La hauteur du parallélépipède est donnée par <m>h = \left| \proj_{\vn}\, \va \right| </m>. Il vient alors que le volume cherché est
-      <md><mrow> V \amp = h\cdot A  = \left| \proj_{\vn}\, \va \right| |\vn|   = \left|\frac{\va \cdot \vn}{\vn \cdot \vn}\vn \right|\, |\vn|</mrow><mrow>  \amp = \frac{\left|\va \cdot \vn\right|}{|\vn|^2}|\vn|^2 = \left|\va \cdot (\vb\times \vc)\right|.</mrow></md>
+      En effet, on peut choisir comme base le parallélogramme déterminé par <m>\vb</m> et <m>\vc</m>. Soit <m>\vn =\vb \times \vc</m>. L'aire de la base est donc  <m>A= \norm{\vn}</m>. Par ailleurs,  <m>\vn </m>  est orthogonal au plan qui contient cette base. La hauteur du parallélépipède est donnée par <m>h = \norm{ \proj_{\vn}\, \va } </m>. Il vient alors que le volume cherché est
+      <md><mrow> V \amp = h\cdot A  = \norm{ \proj_{\vn}\, \va } \norm{\vn}   = \norm{\frac{\va \cdot \vn}{\vn \cdot \vn}\vn }\, \norm{\vn}</mrow><mrow>  \amp = \frac{\left|\va \cdot \vn\right|}{\norm{\vn}^2}\norm{\vn}^2 = \left|\va \cdot (\vb\times \vc)\right|.</mrow></md>
     </p>
     </proof>
   </corollary>

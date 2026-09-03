@@ -1,59 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_StokesThm">
-  <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
-  <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
-  <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-  <title>Le Théorème de Stokes</title>
-  <introduction>
-    <p>Cette section s'occupe du théorème de Stokes<fn>
+    <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+    <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+    <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+    <title>Le Théorème de Stokes</title>
+
+    <introduction>
+        <p>
+            Cette section s'occupe du théorème de Stokes
+            <fn>
     Sir George Gabriel Stokes (1819-1903), physicien et mathématicien irlandais. En plus du théorème de Stokes, il est connu pour les équations de Navier-Stokes utilisées pour l'étude de la dynamique des fluides.
   </fn>,
-  un analogue du théorème de Green, dans sa version tangentielle, mais en trois dimensions. Le résultat lie l'intégrale d'un champ à travers une surface de <m>\R^3</m> à une intégrale autour de la frontière de la surface.
-</p>
-  </introduction>
-  <subsection xml:id="pars-Stokes">
-    <title>Le Théorème de Stokes</title>
-    <theorem xml:id="thm_Stokes">
-      <title>Théorème de Stokes</title>
-      <statement>
-        <p>
-Soit
-<ul><li><m>\cS</m> une surface lisse par morceaux, orientée par un  vecteur normal unitaire  <m>\vn</m> (de classe <m>C^1)</m>;
-</li><li><p>
-la frontière <m>\partial \cS</m> de <m>\cS</m>, formée d'un nombre fini de courbes lisses par morceaux, orientées par l'orientation induite du choix de  <m>\vn</m>, c'est-à-dire que :
-<ul><li>
-    lorsqu'on parcourt le long de  <m>\partial \cS</m> dans la direction choisie de <m>\partial \cS</m>,
-</li><li>
-     avec le vecteur normal <m>\vn</m> allant des pieds à la tête,
-</li><li>
-    alors <m>\cS</m> se trouve à gauche;
-</li></ul>
-</p><sidebyside width="41%"><image source="images/CLP4-figs/stokes0"/></sidebyside></li><li><m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur <m>\cS</m>.
-</li></ul>
-Alors,
-<md><mrow>
+            un analogue du théorème de Green, dans sa version tangentielle, mais
+            en trois dimensions.
+            Le résultat lie l'intégrale d'un champ à travers une surface de
+            <m>\R^3</m> à une intégrale autour de la frontière de la surface.
+        </p>
+    </introduction>
+
+    <subsection xml:id="pars-Stokes">
+        <title>Le Théorème de Stokes</title>
+
+        <theorem xml:id="thm_Stokes">
+            <title>Théorème de Stokes</title>
+
+            <statement>
+                <p>
+                    Soit
+                    <ul>
+                        <li>
+                            <m>\cS</m> une surface lisse par morceaux, orientée
+                            par un vecteur normal unitaire <m>\vn</m> (de classe
+                            <m>C^1)</m>;
+                        </li>
+
+                        <li>
+                            <sidebyside widths="55% 5% 40%" valign="middle">
+                                <p>
+                                    la frontière <m>\partial \cS</m> de
+                                    <m>\cS</m>, formée d'un nombre fini de
+                                    courbes lisses par morceaux, orientées par
+                                    l'orientation induite du choix de
+                                    <m>\vn</m>, c'est-à-dire que :
+                                    <ul>
+                                        <li>
+                                            lorsqu'on parcourt le long de
+                                            <m>\partial \cS</m> dans la
+                                            direction choisie de
+                                            <m>\partial \cS</m>,
+                                        </li>
+
+                                        <li>
+                                            avec le vecteur normal <m>\vn</m>
+                                            allant des pieds à la tête,
+                                        </li>
+
+                                        <li>
+                                            alors <m>\cS</m> se trouve à gauche;
+                                        </li>
+                                    </ul>
+                                </p>
+
+                                <p/>
+                                <image source="images/CLP4-figs/stokes0"/>
+                            </sidebyside>
+                        </li>
+
+                        <li>
+                            <m>\vF</m> un champ de vecteurs de classe <m>C^1</m>
+                            sur <m>\cS</m>.
+                        </li>
+                    </ul>
+                    Alors,
+                    <md>
+                        <mrow>
 \oint_{\partial S}\vF\cdot \dee{\vr}
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}
-</mrow></md>.
-</p>
-      </statement>
-    </theorem>
-    <p>
-Remarquons que,
-<ul><li>
-dans le théorème de Stokes, <m>\cS</m> doit être une surface orientée, elle ne peut donc pas être un ruban de Möbius;
-</li><li>
-si <m>\cS</m> est contenue dans le plan  <m>Oxy</m>, alors le théorème de Stokes devient la version tangentielle du théorème de Green;
-</li><li><p>
-si <m>\partial \cS</m> est une courbe fermée simple et que,
-<ul><li>
-lorsqu'on regarde <m>\partial \cS</m> de la partie positive de l'axe des <m>z</m>, elle est orientée dans le sens antihoraire (voir la figure dans le <xref ref="thm_Stokes" text="global">théorème</xref>), alors
-</li><li><m>\vn</m> pointe vers le haut, c'est-à-dire qu'il a une composante <m>\vk</m> positive près de
-<m>\partial \cS</m>.
-</li></ul>
-</p></li></ul>
-</p>
-    <!--
+</mrow>
+                    </md>.
+                </p>
+            </statement>
+        </theorem>
+
+        <remark>
+            <p>
+                <ul>
+                    <li>
+                        Dans le théorème de Stokes, <m>\cS</m> doit être une surface orientée, elle ne peut donc pas être un ruban de Möbius;
+                    </li>
+
+                    <li>
+                        si <m>\cS</m> est contenue dans le plan <m>Oxy</m>,
+                        alors le théorème de Stokes devient la version
+                        tangentielle du théorème de Green;
+                    </li>
+
+                    <li>
+                        <p>
+                            si <m>\partial \cS</m> est une courbe fermée simple
+                            et que,
+                            <ul>
+                                <li>
+                                    lorsqu'on regarde <m>\partial \cS</m> de la
+                                    partie positive de l'axe des <m>z</m>, elle
+                                    est orientée dans le sens antihoraire (voir
+                                    la figure dans le
+                                    <xref ref="thm_Stokes" text="global">théorème</xref>
+                                    ), alors
+                                </li>
+
+                                <li>
+                                    <m>\vn</m> pointe vers le haut, c'est-à-dire
+                                    qu'il a une composante <m>\vk</m> positive
+                                    près de <m>\partial \cS</m>.
+                                </li>
+                            </ul>
+                        </p>
+                    </li>
+                    <!--
 <proof>
 <p>
 Write <m>\vF=F_1\,\vi+F_2\,\vj+F_3\,\vk</m>.
@@ -67,7 +132,7 @@ that the boundary of <m>\cS</m> consists of just a single curve, and that we can
 <li>
 pick a parametrization of <m>\cS</m> with
 <me>
-S=\Set{\vr(u,v)=\big(x(u,v),y(u,v),z(u,v)\big)}{ (u,v)\text{ in }
+S=\Set{\vr(u,v)=\left(x(u,v),y(u,v),z(u,v)\right)}{ (u,v)\text{ in }
                  R\subset\R^2}
 </me>
 and with <m>\vr(u,v)</m> orientation preserving in the sense that
@@ -75,13 +140,13 @@ and with <m>\vr(u,v)</m> orientation preserving in the sense that
 \times \frac{\partial \vr}{\partial v}\,\dee{u}\,\dee{v}</m>. Also
 </li>
 <li>  pick a parametrization of the curve, <m>\partial R</m>, bounding <m>R</m> as
-<m>\big( u(t), v(t)\big)</m>, <m>a\leqslant  t\leqslant  b</m>, in such a way that
+<m>\left( u(t), v(t)\right)</m>, <m>a\leqslant  t\leqslant  b</m>, in such a way that
 when you walk along <m>\partial R</m> in the direction of increasing <m>t</m>, then <m>R</m>
 is on your left.
 </li>
 </ul>
 Then the curve <m>\partial \cS</m> bounding <m>\cS</m>
-can be parametrized as <m>\vR(t)=\vr\big(u(t),v(t)\big)</m>, <m>a\leqslant  t\leqslant  b</m>.
+can be parametrized as <m>\vR(t)=\vr\left(u(t),v(t)\right)</m>, <m>a\leqslant  t\leqslant  b</m>.
 </p>
 
 <sidebyside widths="41% 32%" valign="middle">
@@ -106,16 +171,16 @@ tangent vector is a positive multiple of <m>\,\vi</m>. The horizontal
 arrow on <m>\partial R</m>
 in the figure on the left below is at such a point. Suppose that
 <m>t=t_0</m> at this point <mdash/> in other words, suppose
-that <m>(u_0,v_0)=\big(u(t_0),v(t_0)\big)</m>.
+that <m>(u_0,v_0)=\left(u(t_0),v(t_0)\right)</m>.
 Because  the forward pointing tangent vector to <m>\partial R</m> at
-<m>(u_0,v_0)</m>, namely <m>\big(u'(t_0),v'(t_0)\big)</m>,
+<m>(u_0,v_0)</m>, namely <m>\left(u'(t_0),v'(t_0)\right)</m>,
  is a positive multiple of <m>\,\vi</m>, we have <m>u'(t_0) \gt 0</m> and
 <m>v'(t_0)=0</m>.
-The tangent vector to <m>\partial \cS</m> at <m> \vR(t_0)=\vr\big(u_0,v_0\big)</m>,
+The tangent vector to <m>\partial \cS</m> at <m> \vR(t_0)=\vr\left(u_0,v_0\right)</m>,
 pointing in the direction of increasing <m>t</m>, is
 <md> 
 <mrow>
-\vR'(t_0)&amp;=\diff{ }{t}\vr\big(u(t),v(t)\big)\big|_{t=t_0}
+\vR'(t_0)&amp;=\diff{ }{t}\vr\left(u(t),v(t)\right)\big|_{t=t_0}
 =u'(t_0)\frac{\partial \vr}{\partial u}(u_0,v_0)
 +v'(t_0) \frac{\partial \vr}{\partial v}(u_0,v_0)
 </mrow><mrow>
@@ -231,12 +296,12 @@ Now we examine the line integral and show that it equals this one.
 <md>
 <mrow>
 &amp;\oint_{\partial S}\vF\cdot \dee{\vr}
-=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\diff{ }{t}
-\vr\big(u(t),v(t)\big)\ \dee{t}
+=\int_a^b\vF\Big(\vr\left(u(t),v(t)\right)\Big)\cdot\diff{ }{t}
+\vr\left(u(t),v(t)\right)\ \dee{t}
 </mrow><mrow>
-&amp;\hskip0.1in=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\Big[
-\frac{\partial\vr}{\partial u}\big(u(t),v(t)\big)\diff{u}{t}(t)
-+\frac{\partial\vr}{\partial v}\big(u(t),v(t)\big)\diff{v}{t}(t)\Big]\ \dee{t}
+&amp;\hskip0.1in=\int_a^b\vF\Big(\vr\left(u(t),v(t)\right)\Big)\cdot\Big[
+\frac{\partial\vr}{\partial u}\left(u(t),v(t)\right)\diff{u}{t}(t)
++\frac{\partial\vr}{\partial v}\left(u(t),v(t)\right)\diff{v}{t}(t)\Big]\ \dee{t}
 </mrow>
 </md>
 We can write this as the line integral
@@ -244,18 +309,18 @@ We can write this as the line integral
 <mrow>
 &amp;\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}
 </mrow><mrow>
-&amp;\hskip1in=\int_a^b \Big[M\big(u(t),v(t)\big)\ \diff{u}{t}(t)
-+N\big(u(t),v(t))\ \diff{v}{t}(t)\Big]\ \dee{t}
+&amp;\hskip1in=\int_a^b \Big[M\left(u(t),v(t)\right)\ \diff{u}{t}(t)
++N\left(u(t),v(t))\ \diff{v}{t}(t)\Big]\ \dee{t}
 </mrow>
 </md>
 around <m>\partial R</m>, if we choose
 <md alignment="alignat">
 <mrow>
-M(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial u}(u,v)
-&amp;&amp;=F_1\big({x(u,v),y(u,v),z(u,v)}\big)\frac{\partial x}{\partial u}(u,v)
+M(u,v)&amp;=\vF\left(\vr(u,v)\right)\cdot\frac{\partial\vr}{\partial u}(u,v)
+&amp;&amp;=F_1\left({x(u,v),y(u,v),z(u,v)}\right)\frac{\partial x}{\partial u}(u,v)
 </mrow><mrow>
-N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
-&amp;&amp;=F_1\big({x(u,v),y(u,v),z(u,v)}\big)\frac{\partial x}{\partial v}(u,v)
+N(u,v)&amp;=\vF\left(\vr(u,v)\right)\cdot\frac{\partial\vr}{\partial v}(u,v)
+&amp;&amp;=F_1\left({x(u,v),y(u,v),z(u,v)}\right)\frac{\partial x}{\partial v}(u,v)
 </mrow>
 </md>
 </p>
@@ -273,12 +338,12 @@ N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
 \bigg\}\ \dee{u} \dee{v}\cr
 =\dblInt_{R}\bigg\{&amp;
                \frac{\partial }{\partial u}\big[
-                     F_1\big({x(u,v),y(u,v),z(u,v)}\big)
+                     F_1\left({x(u,v),y(u,v),z(u,v)}\right)
                      \big]\frac{\partial x}{\partial v}
                    +F_1\frac{\partial^2 x}{\partial u\partial v}
 </mrow><mrow>
 -&amp; \frac{\partial }{\partial v}\big[
-                     F_1\big({x(u,v),y(u,v),z(u,v)}\big)
+                     F_1\left({x(u,v),y(u,v),z(u,v)}\right)
                      \big]\frac{\partial x}{\partial u}
                    -F_1\frac{\partial^2 x}{\partial v\partial u}
                                         \bigg\}\ \dee{u} \dee{v}
@@ -325,30 +390,51 @@ which is the conclusion that we wanted.
 </p></proof>
 
 -->
-    <p>Avant de faire des exemples, faisons quelques remarques.
-    <ul><li><p>
-Le théorème de Stokes dit que
-<m>\oint_{\cC}\vF\cdot \dee{\vr}
+                    <li>
+                        <p>
+                            Le théorème de Stokes dit que
+                            <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}</m>
-pour toute surface (convenablement orientée) dont le bord est <m>\cC</m>. Ainsi, si
-<m>\cS_1</m> et <m>\cS_2</m> sont deux surfaces différentes (convenablement orientées) qui ont un bord commun <m>\cC</m>, alors
-<md><mrow>
+                            pour toute surface (convenablement orientée) dont le
+                            bord est <m>\cC</m>.
+                            Ainsi, si <m>\cS_1</m> et <m>\cS_2</m> sont deux
+                            surfaces différentes (convenablement orientées) qui
+                            ont un bord commun <m>\cC</m>, alors
+                            <md>
+                                <mrow>
 \iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
 =\iint_{\cS_2}\vnabla\times\vF\cdot\vn\ \dee{S}
-</mrow></md>.
-Par exemple, si <m>\cC</m> est le cercle
-<md><mrow>
+</mrow>
+                            </md>.
+                        </p>
+
+                        <sidebyside widths="65% 10% 25%" valign="middle">
+                            <p>
+                            Par exemple, si <m>\cC</m> est le cercle
+                            <md>
+                                <mrow>
 \cC=\Set{(x,y,z)}{x^2+y^2=1,\ z=0}
-</mrow></md>
-orienté dans le sens antihoraire, alors
-<md><mrow>
+</mrow>
+                            </md>
+                            orienté dans le sens antihoraire, alors
+                            <md>
+                                <mrow>
 \cS_1&amp;= \Set{(x,y,z)}{x^2+y^2\leqslant  1,\ z=0},
-</mrow><mrow>
-\cS_2&amp;= \Set{(x,y,z)}{z\ge0,\ x^2+y^2+z^2=1},
-</mrow></md>
-avec un vecteur normal unitaire pointant vers le haut, ont le cercle <m>\cC</m> pour bord. Ainsi, le théorème de Stokes dit que <m>\iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
+</mrow>
+                                <mrow>
+\cS_2&amp;= \Set{(x,y,z)}{z\geqslant 0,\ x^2+y^2+z^2=1},
+</mrow>
+                            </md>
+                            avec un vecteur normal unitaire pointant vers le
+                            haut, ont le cercle <m>\cC</m> pour bord.
+                            Ainsi, le théorème de Stokes dit que
+                            <m>\displaystyle \iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
 =\iint_{\cS_2}\vnabla\times\vF\cdot\vn\ \dee{S}</m>.
-</p><sidebyside width="26%"><image source="images/CLP4-figs/twoSurfaceA"/></sidebyside><!--
+                            </p>
+                            <p></p>
+                            <image source="images/CLP4-figs/twoSurfaceA"/>
+                        </sidebyside>
+                        <!--
 <p>
 It should not be a surprise that <m>\iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
 =\iint_{\cS_2}\vnabla\times\vF\cdot\vn\ \dee{S}</m>, for the following reason.
@@ -378,7 +464,7 @@ theorem gives
 </mrow><mrow>
 &amp;\hskip0.5in= \dblInt_{\partial V}\vnabla\times\vF\cdot\vn\ \dee{S}
 </mrow><mrow>
-&amp;\hskip0.5in= \tripInt_{V}\vnabla\cdot\big(\vnabla\times\vF\big)\ \dee{V}
+&amp;\hskip0.5in= \tripInt_{V}\vnabla\cdot\left(\vnabla\times\vF\right)\ \dee{V}
 </mrow><mrow>
 &amp;\hskip2in\qquad\text{by the divergence theorem}
 </mrow><mrow>
@@ -387,36 +473,76 @@ theorem gives
 </md>
 by the vector identity Theorem <xref ref="thm_degTwoIdentities" text="global">théorème</xref>.a.
 </p>
---></li><li><p>
-Une seconde remarque concerne les champs <m>\vF</m> tels que <m>\vnabla\times\vF=\vZero</m> partout. Alors, le théorème de Stokes donne <m>\oint_{\cC}\vF\cdot \dee{\vr}=0</m> le long de toute courbe fermée  <m>\cC</m>, ce qui entraîne que <m>\vF</m> est conservatif, en vertu du <xref ref="thm_pathIndepConserv" text="global">théorème</xref>. Ainsi, le théorème de Stokes fournit une autre preuve du <xref ref="thm_screenConserv" text="global">théorème</xref>.
-</p></li></ul>
-</p>
-    <p>Voyons un premier exemple simple qui illustre comment le théorème de Stokes peut être utile lorsque <m>\vnabla\times\vF</m> peut être simplifié.
-</p>
-    <example xml:id="eg_stokesAA">
-      <statement>
+-->
+                    </li>
+
+                    <li>
+                        <p>
+                            Notons également que, pour les champs <m>\vF</m>
+                            tels que <m>\vnabla\times\vF=\vZero</m> partout, le
+                            théorème de Stokes donne
+                            <m>\oint_{\cC}\vF\cdot \dee{\vr}=0</m> le long de
+                            toute courbe fermée <m>\cC</m>, ce qui entraîne que
+                            <m>\vF</m> est conservatif, en vertu du
+                            <xref ref="thm_pathIndepConserv" text="global">théorème</xref>.
+                            Ainsi, le théorème de Stokes fournit une autre
+                            preuve du
+                            <xref ref="thm_screenConserv" text="global">théorème</xref>.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </remark>
+
         <p>
-Calculer <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr} </m>, où <m>\vF= \big[2z+\sin\big(x^{146}\big)\big]\,\vi-5z\,\vj -5y\,\vk</m> et où la courbe <m>\cC</m> est le cercle <m>x^2+y^2=4</m> du plan <m>z=1</m>, orienté dans le sens antihoraire lorsque vu d'en haut.
-</p>
-      </statement>
-      <solution>
-        <p>Le terme <m>x^{146}</m> dans  <m>\vF</m> va vraisemblablement faire que l'évaluation directe de l'intégrale de ligne sera très difficile. Afin d'utiliser le théorème de Stokes, nous avons besoin d'une surface <m>\cS</m> telle que  <m>\partial S=C</m>. Le choix le plus simple est le disque
-<md><mrow>
+            Voyons un premier exemple simple qui illustre comment le théorème de
+            Stokes peut être utile lorsque <m>\vnabla\times\vF</m> peut être
+            simplifié.
+        </p>
+
+        <example xml:id="eg_stokesAA">
+            <statement>
+                <sidebyside widths="60% 8% 32%" valign="middle">
+                    <p>
+                        Calculer la valeur de 
+                        <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr} </m>, où
+                        <md>\vF= \big[2z+\sin\left(x^{146}\right)\big]\,\vi-5z\,\vj -5y\,\vk</md>
+                        et où la courbe <m>\cC</m> est le cercle 
+                        <m>x^2+y^2=4</m> du plan <m>z=1</m>, orienté dans le
+                        sens antihoraire lorsque vu d'en haut.
+                    </p>
+
+                    <p/>
+                    <image source="images/CLP4-figs/horizontalDiskB"/>
+                </sidebyside>
+            </statement>
+
+            <solution>
+                <p>
+                    Le terme <m>x^{146}</m> dans <m>\vF</m> va vraisemblablement
+                    faire que l'évaluation directe de l'intégrale de ligne sera
+                    très difficile.
+                    Afin d'utiliser le théorème de Stokes, nous avons besoin
+                    d'une surface <m>\cS</m> telle que <m>\partial S=C</m>.
+                    Le choix le plus simple est le disque
+                    <md>
+                        <mrow>
 S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
-</mrow></md>.
-</p>
-        <sidebyside width="40%">
-          <image source="images/CLP4-figs/horizontalDiskB"/>
-        </sidebyside>
-        <p>
-Puisque
-<md><mrow>
+</mrow>
+                    </md>.
+                </p>
+
+                <p>
+                    Puisque
+                    <md>
+                        <mrow>
     \vnabla\times\vF &amp; = \det\left[\begin{matrix}
-      \vi &amp; \frac{\partial }{\partial x} &amp; 2z+\sin\big(x^{146}\big) \\
+      \vi &amp; \frac{\partial }{\partial x} &amp; 2z+\sin\left(x^{146}\right) \\
       \vj &amp; \frac{\partial }{\partial y} &amp; -5z \\
       \vk &amp; \frac{\partial }{\partial z} &amp; -5y
     \end{matrix}\right]
-  </mrow><mrow>
+  </mrow>
+                        <mrow>
 &amp; =\vi \det\left[\begin{matrix}
                          \frac{\partial }{\partial y} &amp;
                          \frac{\partial }{\partial z} \\
@@ -425,232 +551,401 @@ Puisque
    -\vj\det\left[\begin{matrix}
                          \frac{\partial }{\partial x} &amp;
                          \frac{\partial }{\partial z} \\
-                              2z+\sin\big(x^{146}\big)   &amp; -5y
+                              2z+\sin\left(x^{146}\right)   &amp; -5y
                                \end{matrix}\right]
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;\hskip1in
    +\vk\det\left[\begin{matrix}
                          \frac{\partial }{\partial x} &amp;
                          \frac{\partial }{\partial y} \\
-                              2z+\sin\big(x^{146}\big)  &amp;  -5z
+                              2z+\sin\left(x^{146}\right)  &amp;  -5z
                                \end{matrix}\right]
-</mrow><mrow>
+</mrow>
+                        <mrow>
   &amp;=2\vj
-</mrow></md>
-et que le vecteur normal unitaire à <m>\cS</m> est <m>\vk</m>, le théorème de Stokes donne
-<md><mrow>
+</mrow>
+                    </md>
+                    et que le vecteur normal unitaire à <m>\cS</m> est
+                    <m>\vk</m>, le théorème de Stokes donne
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot\dee{\vr}
 &amp; = \iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =  \iint_{\cS} (2\vj)\cdot\vk\,\dee{S}
 = 0
-</mrow></md>.
-</p>
-      </solution>
-    </example>
-    <p>Reprenons l'exemple précédent avec une courbe un peu plus compliquée. </p>
-    <example xml:id="eg_stokesA">
-      <statement>
-        <p> Calculer <m> \displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>, où <m>\vF= \big[2z+\sin\big(x^{146}\big)\big]\,\vi-5z\,\vj -5y\,\vk</m> et où <m>\cC</m> est l'intersection de <m>x^2+y^2+z^2=4</m> et <m>z=y</m>, orientée dans le sens antihoraire lorsque vue d'en haut.
-</p>
-      </statement>
-      <solution>
+</mrow>
+                    </md>.
+                </p>
+            </solution>
+        </example>
+
         <p>
-La surface <m>x^2+y^2+z^2=4</m> est la sphère de rayon <m>2</m> centrée à l'origine, et <m>z=y</m> est un plan qui contient l'origine. La courbe <m>\cC</m> est donc un cercle centré à l'origine et de rayon <m>2</m>. La portion du cercle qui se trouve dans le premier octant est esquissée dans la figure ci-après.
-</p>
-        <sidebyside widths="24% 32%" valign="middle">
-          <image source="images/CLP4-figs/circle4c"/>
-          <image source="images/CLP4-figs/circle4d"/>
-        </sidebyside>
-        <p>
-De nouveau, afin d'utiliser le théorème de Stokes, nous avons besoin d'une surface admettant <m>\cC</m> comme bord. Le choix le plus simple semble être le disque
-<md><mrow>
+            Reprenons l'exemple précédent avec une courbe un peu plus
+            compliquée.
+        </p>
+
+        <example xml:id="eg_stokesA">
+            <statement>
+                <p>
+                    Calculer <m> \displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>,
+                    où
+                    <m>\vF= \big[2z+\sin\left(x^{146}\right)\big]\,\vi-5z\,\vj -5y\,\vk</m>
+                    et où <m>\cC</m> est l'intersection de <m>x^2+y^2+z^2=4</m>
+                    et <m>z=y</m>, orientée dans le sens antihoraire lorsque vue
+                    d'en haut.
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    La surface <m>x^2+y^2+z^2=4</m> est la sphère de rayon
+                    <m>2</m> centrée à l'origine, et <m>z=y</m> est un plan qui
+                    contient l'origine.
+                    La courbe <m>\cC</m> est donc un cercle centré à l'origine
+                    et de rayon <m>2</m>.
+                    La portion du cercle qui se trouve dans le premier octant
+                    est esquissée dans la figure ci-après.
+                </p>
+
+                <sidebyside widths="20% 28%" valign="middle">
+                    <image source="images/CLP4-figs/circle4c"/>
+                    <image source="images/CLP4-figs/circle4d"/>
+                </sidebyside>
+
+                <p>
+                    De nouveau, afin d'utiliser le théorème de Stokes, nous
+                    avons besoin d'une surface admettant <m>\cC</m> comme bord.
+                    Le choix le plus simple semble être le disque
+                    <md>
+                        <mrow>
 S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
-</mrow></md>.
-La portion de <m>\cS</m> du premier octant est montrée ci-dessus. Nous avons vu dans l'<xref ref="eg_stokesAA" text="global">exemple</xref> que
-<md><mrow>
+</mrow>
+                    </md>.
+                    La portion de <m>\cS</m> du premier octant est montrée
+                    ci-dessus.
+                    Nous avons vu dans l'
+                    <xref ref="eg_stokesAA" text="global">exemple</xref> que
+                    <md>
+                        <mrow>
 \vnabla\times\vF &amp;=2\vj
-</mrow></md>,
-de sorte que le théorème de Stokes donne
-<md><mrow>
+</mrow>
+                    </md>,
+                    de sorte que le théorème de Stokes donne
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot\dee{\vr}
 &amp; = \iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
  = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
-</mrow></md>.
-</p>
-        <p>
-  Nous allons évaluer  <m>\displaystyle 2\iint_{\cS} \vj\cdot\vn\,\dee{S}</m> de deux façons différentes. La première est plus efficace, mais nécessite un peu plus de perspicacité. Puisque  <m>\vnabla(z-y)=\vk-\vj</m>, le vecteur normal unitaire pour le plan <m>z-y=0</m> (et donc pour  <m>\cS</m>) est <m>\vn = \frac{1}{\sqrt{2}}(\vk-\vj)</m>. Ainsi, l'intégrande est
-  <md><mrow>
+</mrow>
+                    </md>.
+                </p>
+
+                <p>
+                    Nous allons évaluer
+                    <m>\displaystyle 2\iint_{\cS} \vj\cdot\vn\,\dee{S}</m> de
+                    deux façons différentes.
+                    La première est plus efficace, mais nécessite un peu plus de
+                    perspicacité.
+                    Puisque <m>\vnabla(z-y)=\vk-\vj</m>, le vecteur normal
+                    unitaire pour le plan <m>z-y=0</m> (et donc pour <m>\cS</m>
+                    ) est <m>\vn = \frac{1}{\sqrt{2}}(\vk-\vj)</m>.
+                    Ainsi, l'intégrande est
+                    <md>
+                        <mrow>
   \vj\cdot\vn=\vj\cdot\Big(\frac{-\vj+\vk}{\sqrt{2}}\Big)=-\frac{1}{\sqrt{2}}
-  </mrow></md>,
-  qui est une constante, et nous n'avons pas besoin de calculer  <m>\vn\,dS</m> :
-  <md><mrow>
+  </mrow>
+                    </md>,
+                    qui est une constante, et nous n'avons pas besoin de
+                    calculer <m>\vn\,dS</m>:
+                    <md>
+                        <mrow>
   \oint_{\cC}\vF\cdot\dee{\vr}
   &amp; = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
   =-\sqrt{2} \iint_{\cS} \dee{S}
   = -\sqrt{2}\text{Aire}(S)
   =-\sqrt{2}\pi\, 2^2
-  </mrow><mrow>
+  </mrow>
+                        <mrow>
   &amp;=-4\sqrt{2}\pi
-  </mrow></md>.
-</p>
-        <p>Voici une autre façon, en faisant les calculs. Comme <m>\cS</m> est contenue dans le plan <m>z=f(x,y)=y</m>, nous avons
-<md><mrow>
-\vn\,dS = \pm\big(-f_x\,\vi-f_y\,\vj+\vk\big)\,\dee{x}\dee{y}
+  </mrow>
+                    </md>.
+                </p>
+
+                <p>
+                    Voici une autre façon, en faisant les calculs.
+                    Comme <m>\cS</m> est contenue dans le plan
+                    <m>z=f(x,y)=y</m>, nous avons
+                    <md>
+                        <mrow>
+\vn\,dS = \pm\left(-f_x\,\vi-f_y\,\vj+\vk\right)\,\dee{x}\dee{y}
         = \pm (-\vj+\vk)\,\dee{x}\dee{y}
-</mrow></md>.
-Afin d'obtenir le vecteur normal unitaire pointant vers le haut, nous prenons le signe <m>+</m>, de sorte que <m>\vn\,dS= (-\vj+\vk)\,\dee{x}\dee{y}</m>. Lorsque <m>(x,y,z)</m> parcourt
-<md><mrow>
+</mrow>
+                    </md>.
+                    Afin d'obtenir le vecteur normal unitaire pointant vers le
+                    haut, nous prenons le signe <m>+</m>, de sorte que
+                    <m>\vn\,dS= (-\vj+\vk)\,\dee{x}\dee{y}</m>.
+                    Lorsque <m>(x,y,z)</m> parcourt
+                    <md>
+                        <mrow>
 S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
   &amp;= \Set{(x,y,z)}{ x^2+2y^2\leqslant  4,\ \ z=y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
   &amp;= \Set{(x,y,z)}{ \tfrac{x^2}{4} +\tfrac{y^2}{2}\leqslant 1,\ \ z=y}
-</mrow></md>,
-<m>(x,y)</m> parcourt le disque elliptique
-<m>R=\Set{(x,y)}{\frac{x^2}{4} +\frac{y^2}{2}\leqslant 1}</m>.
-La portion de cette ellipse dans le premier octant est  la région ombragée dans la figure ci-bas.
-</p>
-        <sidebyside width="32%">
-          <image source="images/CLP4-figs/circle4e"/>
-        </sidebyside>
-        <p>
-Cette ellipse a pour demi-axes <m>a=2</m> et <m>b =\sqrt{2}</m>, de sorte que son aire est <m>\pi a b = 2\sqrt{2} \pi</m>. Ainsi,
-<md><mrow>
+</mrow>
+                    </md>,
+                    <m>(x,y)</m> parcourt le disque elliptique
+                    <m>R=\Set{(x,y)}{\frac{x^2}{4} +\frac{y^2}{2}\leqslant 1}</m>.
+                </p>
+
+                <sidebyside widths="60% 10% 25% 5%" valign="top">
+                    <stack>
+                        <p>
+                        La portion de cette ellipse dans le premier octant est la
+                        région ombragée dans la figure ci-contre.
+                        </p>
+                        <p>
+                        Cette ellipse a pour demi-axes <m>a=2</m> et
+                        <m>b =\sqrt{2}</m>, de sorte que son aire est
+                        <m>\pi a b = 2\sqrt{2} \pi</m>.
+                        </p>
+                    </stack>
+                    <p></p>
+                    <image source="images/CLP4-figs/circle4e"/>
+                    <p>
+                        
+                    </p>
+                </sidebyside>
+
+                <p>
+                    Ainsi,
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot\dee{\vr}
 &amp; = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
 =2\iint_{\cR}\vj\cdot(-\vj+\vk)\,\dee{x}\dee{y}
 =-2 \iint_{\cR}\dee{x}\dee{y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;= -2\text{Aire}(R)
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=-4\sqrt{2}\pi.
-</mrow></md>
-</p>
-      </solution>
-    </example>
-    <exercise>
-      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob1.pg" parse="text"/></webwork>
-    </exercise>
-    <p>
-  Dans l'exemple suivant nous calculons une intégrale de ligne de deux façons : comme une intégrale de ligne, puis grace à une intégrale double et le théorème de Stokes.
-</p>
-    <example xml:id="eg_stokesB">
-      <statement>
+</mrow>
+                    </md>
+                </p>
+            </solution>
+        </example>
+
+        <exercise>
+            <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob1.pg" parse="text"/></webwork>
+        </exercise>
+
         <p>
-Calculer <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>, où <m>\vF= (x+y)\,\vi+2(x-z)\,\vj +(y^2+z)\,\vk</m> et où <m>\cC</m> est la courbe orientée obtenue en allant de <m>(2,0,0)</m> à <m>(0, 3, 0)</m> puis à <m>(0, 0, 6)</m> et en retournant à <m>(2, 0, 0)</m>, le tout en suivant des segments de droite.
-</p>
-        <sidebyside width="25%">
-          <image source="images/CLP4-figs/domainTriangle"/>
-        </sidebyside>
-      </statement>
-      <solution>
-        <p>
-Dans cette première solution, nous évaluons l'intégrale directement. La première portion (<m>C_1</m> dans la figure) peut être paramétrée par
-<md><mrow>
+            Dans l'exemple suivant nous calculons une intégrale de ligne de deux
+            façons : comme une intégrale de ligne, puis grace à une intégrale
+            double et le théorème de Stokes.
+        </p>
+
+        <example xml:id="eg_stokesB">
+            <statement>
+                <sidebyside widths="65% 10% 20%" valign="middle">
+                    <p>
+                    Calculer <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>,
+                    où <m>\vF= (x+y)\,\vi+2(x-z)\,\vj +(y^2+z)\,\vk</m> et où
+                    <m>\cC</m> est la courbe orientée obtenue en allant de
+                    <m>(2,0,0)</m> à <m>(0, 3, 0)</m> puis à <m>(0, 0, 6)</m> et
+                    en retournant à <m>(2, 0, 0)</m>, le tout en suivant des
+                    segments de droite.
+                    </p>
+                    <p></p>
+                    <image source="images/CLP4-figs/domainTriangle"/>
+                </sidebyside>
+            </statement>
+
+            <solution>
+                <title>Calcul de l'intégrale de ligne</title>
+                
+                
+                <p>
+                    Dans cette première solution, nous évaluons l'intégrale
+                    directement.
+                    La première portion ( <m>C_1</m> dans la figure) peut être
+                    paramétrée par
+                    <md>
+                        <mrow>
 \vr(t)= 2\vi + t(3\vj - 2 \vi) = (2-2t)\vi +3t\vj \qquad 0\leqslant  t\leqslant  1
-</mrow></md>.
-Ainsi, l'intégrale le long de cette première portion est
-<md><mrow>
+</mrow>
+                    </md>.
+                    Ainsi, l'intégrale le long de cette première portion est
+                    <md>
+                        <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 &amp;=\int_0^1 (2+t,\, 2(2-2t),\, (3t)^2)\cdot(-2,\, 3,\, 0)\ \dee{t}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\int_0^1 (8-14t)\ \dee{t}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\Big[8t-7t^2\Big]_0^1=1
-</mrow></md>.
-</p>
-        <p>La deuxième courbe (<m>C_2</m> dans la figure) peut être paramétrée par
-<md><mrow>
+</mrow>
+                    </md>.
+                </p>
+
+                <p>
+                    La deuxième courbe ( <m>C_2</m> dans la figure) peut être
+                    paramétrée par
+                    <md>
+                        <mrow>
 \vr(t)=3\vj + t(6\vk - 3 \vj) = (3-3t)\vj + 6t\vk \qquad 0\leqslant  t\leqslant  1
-</mrow></md>.
-Ainsi, l'intégrale le long de cette portion est
-<md><mrow>
+</mrow>
+                    </md>.
+                    Ainsi, l'intégrale le long de cette portion est
+                    <md>
+                        <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-&amp;=\int_0^1 \big(3(1-t),\, - 12t,\, 9(1-t)^2+ 6t\big)\cdot(0, -3, 6)\ \dee{t}
-</mrow><mrow>
+&amp;=\int_0^1 \left(3(1-t),\, - 12t,\, 9(1-t)^2+ 6t\right)\cdot(0, -3, 6)\ \dee{t}
+</mrow>
+                        <mrow>
 &amp;=\int_0^1 [36t+54(1-t)^2+36t]\ \dee{t}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\Big[18t^2-18(1-t)^3+18t^2\Big]_0^1
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=54
-</mrow></md>.
-Le dernier segment (<m>C_3</m> dans la figure) peut être paramétré par
-<md><mrow>
+</mrow>
+                    </md>.
+                    Le dernier segment ( <m>C_3</m> dans la figure) peut être
+                    paramétré par
+                    <md>
+                        <mrow>
 \vr(t)= 6\vk + t(2\vj - 6\vk)  = 2t\vi + (6-6t)\vk
 \qquad 0\leqslant  t\leqslant  1
-</mrow></md>.
-Ainsi, l'intégrale de ligne le long de ce segment est
-<md><mrow>
+</mrow>
+                    </md>.
+                    Ainsi, l'intégrale de ligne le long de ce segment est
+                    <md>
+                        <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-&amp;=\int_0^1 \big(2t,\, 4t - 12(1-t),\,  6(1-t)\big)\cdot(2, 0, -6)\ \dee{t}
-</mrow><mrow>
+&amp;=\int_0^1 \left(2t,\, 4t - 12(1-t),\,  6(1-t)\right)\cdot(2, 0, -6)\ \dee{t}
+</mrow>
+                        <mrow>
 &amp;=\int_0^1 [4t-36(1-t)]\ \dee{t}
 =\Big[2t^2+18(1-t)^2\Big]_0^1
 =-16
-</mrow></md>.
-Globalement, l'intégrale qui nous intéresse est donc
-<md><mrow>
+</mrow>
+                    </md>.
+                    Globalement, l'intégrale qui nous intéresse est donc
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}=1+54-16=39
-</mrow></md>.
-</p>
-      </solution>
-      <solution>
-        <p>
-Cette fois, nous utilisons le théorème de Stokes. Le rotationnel de  <m>\vF</m> est
-<md><mrow>
+</mrow>
+                    </md>.
+                </p>
+            </solution>
+
+            <solution>
+                <title>Calcul de l'intégrale de surface</title>
+                
+                
+                <p>
+                    Cette fois, nous utilisons le théorème de Stokes.
+                    Le rotationnel de <m>\vF</m> est
+                    <md>
+                        <mrow>
     \vnabla\times\vF
     &amp;=\det\left[\begin{matrix}
       \vi &amp; \frac{\partial }{\partial x} &amp; x+y \\
       \vj &amp; \frac{\partial }{\partial y} &amp; 2(x-z) \\
       \vk &amp; \frac{\partial }{\partial z} &amp; y^2+z
     \end{matrix}\right]
-  </mrow><mrow>
+  </mrow>
+                        <mrow>
 &amp;
 =(2y+2)\vi-(0-0)\vj+(2-1)\vk
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=2(y+1)\vi+\vk
-</mrow></md>.
-La courbe <m>\cC</m> est un triangle contenu dans le plan  <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m>. De plus, <m>\cC</m> est la frontière de la surface <m>\cS</m> qui consiste en la portion du plan <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m> vérifiant <m>x\geqslant0</m>, <m>y\geqslant0</m> et <m>z\geqslant0</m>. Nous pouvons écrire l'équation du plan sous la forme <m>z=6-3x-2y</m>. Pour cette surface,
-<md><mrow>
+</mrow>
+                    </md>.
+                    La courbe <m>\cC</m> est un triangle contenu dans le plan
+                    <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m>.
+                    De plus, <m>\cC</m> est la frontière de la surface
+                    <m>\cS</m> qui consiste en la portion du plan
+                    <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m> vérifiant
+                    <m>x\geqslant0</m>, <m>y\geqslant0</m> et
+                    <m>z\geqslant0</m>.
+                    Nous pouvons écrire l'équation du plan sous la forme
+                    <m>z=6-3x-2y</m>.
+                    Pour cette surface,
+                    <md>
+                        <mrow>
 \vn\ \dee{S}=(3\vi+2\vj+\vk)\,\dee{x}\,\dee{y}
-</mrow></md>,
-en vertu de la <xref ref="eq_SUdSgraph" text="global">formule</xref>, et nous pouvons écrire
-<md><mrow>
+</mrow>
+                    </md>,
+                    en vertu de la
+                    <xref ref="eq_SUdSgraph" text="global">formule</xref>, et
+                    nous pouvons écrire
+                    <md>
+                        <mrow>
 S&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ z\ge0,\ z=6-3x-2y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\Set{(x,y,z)}{x\ge0, y\ge0,\ 6-3x-2y\ge0,\ z=6-3x-2y}
-</mrow></md>.
-Lorsque <m>(x,y,z)</m> parcourt <m>\cS</m>, <m>(x,y)</m> parcourt le triangle
-<md><mrow>
+</mrow>
+                    </md>.
+                </p>
+
+                <sidebyside widths="55% 8% 37%" valign="middle">
+                    <p>
+                    Lorsque <m>(x,y,z)</m> parcourt <m>\cS</m>, <m>(x,y)</m>
+                    parcourt le triangle
+                    <md>
+                        <mrow>
 R&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ 3x+2y\leqslant  6}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\Set{(x,y,z)}{x\ge0,\  0\leqslant  y \leqslant \tfrac{3}{2}(2-x)}
-</mrow></md>.
-</p>
-        <sidebyside width="42%">
-          <image source="images/CLP4-figs/domainTriangleB"/>
-        </sidebyside>
-        <p>
-Nous calculons alors
-<md><mrow>
+</mrow>
+                    </md>.
+                    </p>
+                    <p></p>
+                    <image source="images/CLP4-figs/domainTriangleB"/>
+                </sidebyside>
+
+                <p>
+                    Nous calculons alors
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}&amp;=\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\iint_{\cR}[2(y+1)\vi+\vk]\cdot[3\vi+2\vj+\vk]\ \dee{x}\,\dee{y}\cr
 &amp;=\iint_{\cR}[6y+7]\ \dee{x}\,\dee{y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp; =\int_0^3 \int_0^{{1\over 3}(6-2y)}\  [6y+7]\ \dee{x}\,\dee{y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\int_0^3  \frac{1}{3}[6y+7][6-2y]  \dee{y}\
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp; =\frac{1}{3}\int_0^3 \dee{y}\  [-12y^2+22y+42]
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\frac{1}{3}\Big[-4y^3+11y^2+42y\Big]_0^3
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp; =\big[-4\times 9 +11\times 3 +42\big]
 =39
-</mrow></md>.
-</p>
-        <!--
+</mrow>
+                    </md>.
+                </p>
+                <!--
 <sidebyside widths="31% 29%" valign="middle">
 <image source="images/CLP4-figs/limitsv3"/>
 <image source="images/CLP4-figs/limitsv2"/>
@@ -678,58 +973,95 @@ Nous calculons alors
 </p>
 
 -->
-      </solution>
-    </example>
-    <exercise>
-      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob2.pg" parse="text"/></webwork>
-    </exercise>
-    <p>
-  Voyons un exemple dans lequel notre attention sera dirigée surtout sur le champ à intégrer.
-</p>
-    <example xml:id="eg_stokesC">
-      <statement>
+            </solution>
+        </example>
+
+        <exercise>
+            <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob2.pg" parse="text"/></webwork>
+        </exercise>
+
         <p>
-Évaluer <m> \oint_{\cC}\vF\cdot\dee{\vr}</m>, où <m>\vF= (\cos x +y+z)\,\vi+(x+z)\,\vj +(x+y)\,\vk</m> et où <m>\cC</m> est l'intersection des surfaces
-<md><mrow>
-x^2+\frac{y^2}{2}+\frac{z^2}{3}=1\qquad\text{et}\qquad z=x^2+2y^2
-</mrow></md>
-orientée dans le sens antihoraire lorsque vue d'en haut.
-</p>
-      </statement>
-      <solution>
-        <p>Pour commencer, faisons une esquisse de la courbe. La surface d'équation <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> est un ellipsoïde centré à l'origine, et <m>z=x^2+2y^2</m> est un paraboloïde qui s'ouvre vers le haut. Ils sont esquissés dans la figure ci-après.
-</p>
-        <sidebyside width="60%">
-          <image source="images/CLP4-figs/stokes6"/>
-        </sidebyside>
-        <p>
-Leur intersection, la courbe <m>\cC</m>, est la courbe bleue dans la figure, c'est une espèce de cercle déformé<fn>
+            Voyons un exemple dans lequel notre attention sera dirigée surtout sur le champ à intégrer.
+        </p>
+
+        <example xml:id="eg_stokesC">
+            <statement>
+                <sidebyside widths="45% 5% 45%" valign="top">
+                    <p>
+                    Évaluer <m> \displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>, où
+                    <m>\vF= (\cos x +y+z)\,\vi+(x+z)\,\vj +(x+y)\,\vk</m> et où
+                    <m>\cC</m> est l'intersection des surfaces
+                    <md>
+                        <mrow>
+x^2+\frac{y^2}{2}+\frac{z^2}{3}=1,\  z=x^2+2y^2
+</mrow>
+                    </md>
+                    orientée dans le sens antihoraire lorsque vue d'en haut.
+                    </p>
+                    <p></p>
+                    <image source="images/CLP4-figs/stokes6"/>
+                </sidebyside>
+            </statement>
+
+            <solution>
+                <p>
+                    Pour commencer, faisons une esquisse de la courbe.
+                    La surface d'équation
+                    <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> est un ellipsoïde
+                    centré à l'origine, et <m>z=x^2+2y^2</m> est un paraboloïde
+                    qui s'ouvre vers le haut.
+                    Ils sont esquissés dans la figure accompagnant l'énoncé.
+                </p>
+
+                <p>
+                    Leur intersection, la courbe <m>\cC</m>, est la courbe bleue
+                    dans la figure, c'est une espèce de cercle déformé
+                    <fn>
   Cherchez <q>La Persistance de la mémoire</q>, puis regardez la montre suspendue sur la branche de l'arbre.
 </fn>.
-</p>
-        <p>On peut paramétrer <m>\cC</m>, par exemple en substituant <m>x^2 = z - 2y^2</m> dans l'équation de l'ellipsoïde, ce qui donne <m>-\frac{3}{2}y^2 + \frac{1}{3}(z+\frac{3}{2}\big)^2 = \frac{7}{4}</m>. On peut alors résoudre pour obtenir <m>y</m> comme fonction de <m>z</m>, puis <m>x^2=z-2y^2</m> donne aussi <m>x</m> en fonction de  <m>z</m>. Cependant, ceci va mener, au mieux, à une intégrale pas très sympathique. Essayons plutôt le théorème de Stokes.
-</p>
-        <p>Nous avons
-<md><mrow>
+                </p>
+
+                <p>
+                    On peut paramétrer <m>\cC</m>, par exemple en substituant  <m>x^2 = z - 2y^2</m> dans l'équation de l'ellipsoïde, ce qui donne
+                    <m>-\frac{3}{2}y^2 + \frac{1}{3}\left(z+\frac{3}{2}\right)^2 = \frac{7}{4}</m>.
+                    On peut alors résoudre pour obtenir <m>y</m> comme fonction
+                    de <m>z</m>, puis <m>x^2=z-2y^2</m> donne aussi <m>x</m> en
+                    fonction de <m>z</m>.
+                    Cependant, ceci va mener, au mieux, à une intégrale pas très
+                    sympathique.
+                    Essayons plutôt le théorème de Stokes.
+                </p>
+
+                <p>
+                    Nous avons
+                    <md>
+                        <mrow>
 \vnabla\times\vF
 &amp;=\det\left[\begin{matrix}\vi &amp; \frac{\partial }{\partial x} &amp; \cos x + y+z \\
            \vj &amp; \frac{\partial }{\partial y} &amp; x+z \\
            \vk &amp; \frac{\partial }{\partial z} &amp; x+y\end{matrix}\right]
-</mrow><mrow>
-&amp;=\vi\big(1-1\big)-\vj\big(1-1\big)+\vk\big(1-1\big)
-</mrow><mrow>
+</mrow>
+                        <mrow>
+&amp;=\vi\left(1-1\right)-\vj\left(1-1\right)+\vk\left(1-1\right)
+</mrow>
+                        <mrow>
 &amp;=\vZero
-</mrow></md>,
-de sorte que <m>\vF</m> est conservatif (en fait, <m>\vF=\vnabla\big(\sin x + xy + xz +yz\big)</m>). Comme <m>\cC</m> est une courbe fermée,  <m>
-\oint_{\cC}\vF\cdot\dee{\vr}=0
+</mrow>
+                    </md>,
+                    de sorte que <m>\vF</m> est conservatif (en fait,
+                    <m>\vF=\vnabla\left(\sin x + xy + xz +yz\right)</m> ).
+                    Comme <m>\cC</m> est une courbe fermée,
+                    <m>
+\displaystyle\oint_{\cC}\vF\cdot\dee{\vr}=0
 </m>.
-</p>
-      </solution>
-    </example>
-    <exercise>
-      <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob3.pg" parse="text"/></webwork>
-    </exercise>
-    <!-- Cet exemple nécessite le théorème de la divergence
+                </p>
+            </solution>
+        </example>
+
+        <exercise>
+            <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Stokes/Stokes-prob3.pg" parse="text"/></webwork>
+        </exercise>
+        <!-- Cet exemple nécessite le théorème de la divergence
 <example xml:id="eg_stokesD">
 <statement><p>
 Évaluer
@@ -739,7 +1071,7 @@ de sorte que <m>\vF</m> est conservatif (en fait, <m>\vF=\vnabla\big(\sin x + xy
 où <m>\vG= (2x)\,\vi+(2z-2x)\,\vj +(2x-2z)\,\vk</m>
 and
 <me>
-S=\Set{(x,y,z)}{z=\big(1-x^2-y^2\big)(1-y^3)\cos x\ e^{y},\ x^2+y^2\leqslant  1}
+S=\Set{(x,y,z)}{z=\left(1-x^2-y^2\right)(1-y^3)\cos x\ e^{y},\ x^2+y^2\leqslant  1}
 </me>
 avec vecteur normal pointant vers le haut.
 <sidebyside width="63%">
@@ -842,19 +1174,19 @@ is a vector potential for <m>\vG</m>, which we can quickly check.
 <p>Parametrizing <m>\cC</m> by
 <m>\vr(t) = \cos t\,\vi+\sin t\,\vj</m>, <m>0\leqslant  t\leqslant  2\pi</m>,
 Stokes' theorem gives (recalling that <m>z=0</m> on <m>\cC</m>  so that
-<m>\vF\big(\vr(t)\big)=x^2\,\vj\Big|_{x=\cos t}=\cos^2t</m>)
+<m>\vF\left(\vr(t)\right)=x^2\,\vj\Big|_{x=\cos t}=\cos^2t</m>)
 <md>
 <mrow>
 \iint_{\cS}\vG\cdot\vn\,\dee{S}
 &amp;= \iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
 = \oint_{\cC} \vF\cdot\dee{\vr}
-=\int_0^{2\pi} \vF\big(\vr(t)\big)\cdot\diff{\vr}{t}\ \dee{t}
+=\int_0^{2\pi} \vF\left(\vr(t)\right)\cdot\diff{\vr}{t}\ \dee{t}
 </mrow><mrow>
-&amp;= \int_0^{2\pi} \big(\cos^2 t\big)(\cos t)\ \dee{t}
+&amp;= \int_0^{2\pi} \left(\cos^2 t\right)(\cos t)\ \dee{t}
 </mrow>
 </md>
 Of course this integral can be evaluated by using that
-one antiderivative of the integrand <m>\cos^3 t =\big(1-\sin^2t\big)\cos t</m>
+one antiderivative of the integrand <m>\cos^3 t =\left(1-\sin^2t\right)\cos t</m>
 is <m>\sin t-\frac{1}{3}\sin^3 t</m> and that this antiderivative
 is zero at <m>t=0</m> and at <m>t=2\pi</m>. But it is easier to observe that the
 integral of any odd power of <m>\sin t</m> or <m>\cos t</m> over any full period
@@ -877,146 +1209,269 @@ Either way
 </p></solution>
 </example>
 -->
-    <example xml:id="eg_stokesLong">
-      <statement>
-        <p>Dans cet exemple, on calcule de deux façons différentes l'intégrale de ligne <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>, où
-<md><mrow>
-  \vF=(z-y)\,\vi-(x+z)\,\vj-(x+y)\,\vk
-</mrow></md>
-et où <m>\cC</m> est la courbe  <m>x^2+y^2+z^2=4</m>, <m>z=y</m> orientée dans le sens antihoraire lorsque vue d'en haut.
-</p>
-        <sidebyside width="29%">
-          <image source="images/CLP4-figs/circle4bb"/>
-        </sidebyside>
-      </statement>
-      <solution>
-        <p>
-          <em>Calcul direct :</em>
-        </p>
-        <p>
-Dans ce premier calcul, on utilise un paramétrage de <m>\cC</m>. Le plan <m>z=y</m> passe par l'origine, qui est le centre de la sphère  <m>x^2+y^2+z^2=4</m>. Ainsi, <m>\cC</m> est un cercle qui, comme la sphère, a un rayon égal à <m>2</m> et est centré à l'origine. Nous paramétrons <m>\cC</m> par
-<md><mrow>
+        <example xml:id="eg_stokesLong">
+            <statement>
+                <sidebyside widths="55% 20% 25%" valign="top">
+                    <p>
+                    Dans cet exemple, on calcule de deux façons différentes
+                    l'intégrale de ligne
+                    <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>, où
+                    <m>\cC</m> est la courbe <m>x^2+y^2+z^2=4</m>,
+                    <m>z=y</m> orientée dans le sens antihoraire lorsque vue
+                    d'en haut.
+                    </p>
+                    <p></p>
+                    <image source="images/CLP4-figs/circle4bb"/>
+                </sidebyside>
+
+                <p>
+                    Le champ est
+                    <m>\vF=(z-y)\,\vi-(x+z)\,\vj-(x+y)\,\vk
+                    </m>.
+                </p>
+            </statement>
+
+            <solution>
+                <title>Intégrale de ligne</title>
+                
+                
+                <p>
+                    <em>Calcul direct :</em>
+                </p>
+
+                <p>
+                    Dans ce premier calcul, on utilise un paramétrage de
+                    <m>\cC</m>.
+                    Le plan <m>z=y</m> passe par l'origine, qui est le centre de
+                    la sphère <m>x^2+y^2+z^2=4</m>.
+                    Ainsi, <m>\cC</m> est un cercle qui, comme la sphère, a un
+                    rayon égal à <m>2</m> et est centré à l'origine.
+                    Nous paramétrons <m>\cC</m> par
+                    <md>
+                        <mrow>
 \vr(t)=\vc+\rho\cos t\,\vi'+ \rho\sin t\,\vj'
 \qquad 0\leqslant  t\leqslant  2\pi
-</mrow></md>,
-où
- <ul><li><m>\vc=(0,0,0)</m> est le centre de  <m>\cC</m>,
-</li><li><m>\rho=2</m> est le rayon <m>\cC</m>, et
-</li><li><p><m>\vi'</m> et <m>\vj'</m> sont deux vecteurs
-<ol marker="(a)"><li> unitaires,
-</li><li> parallèles au plan <m>z=y</m>, et
-</li><li> orthogonaux.
-</li></ol></p></li></ul>
-</p>
-        <sidebyside width="38%">
-          <image source="images/CLP4-figs/circle4a"/>
-        </sidebyside>
-        <p>
-La partie la plus difficile est de trouver ces vecteurs  <m>\vi'</m> et <m>\vj'</m>.
-<ul><li>
-  Le point  <m>(2,0,0)</m> vérifie <m>x^2+y^2+z^2=4</m> et <m>z=y</m>, de sorte qu'il se trouve sur <m>\cC</m>. Nous pouvons choisir <m>\vi'</m> comme un vecteur unitaire parallèle au vecteur joignant le centre du cercle <m>(0,0,0)</m> à <m>(2,0,0)</m>, c'est-à-dire <m>\vi'=(1,0,0)</m>.
-</li><li>
-  Puisque le plan contenant le cercle est <m>z-y=0</m>, le vecteur  <m>\vnabla(z-y)=(0,-1,1)</m> est perpendiculaire à ce plan. Ainsi,   <m>\vk'=\frac{1}{\sqrt{2}}(0,-1,1)</m> est un vecteur normal unitaire pour le plan <m>z=y</m>. Ainsi, <m>\vj'=\vk'\times\vi'=\frac{1}{\sqrt{2}}(0,-1,1)\times(1,0,0) = \frac{1}{\sqrt{2}}(0,1,1)</m> est un vecteur qui est orthogonal à <m>\vi'</m> et à  <m>\vk'</m>. Comme
- <m>\vj'</m> est orthogonal à <m>\vk'</m>, il est parallèle au plan <m>z=y</m>.
-</li></ul>
-En remplaçant dans  <m>\vc=(0,0,0)</m>, <m>\rho=2</m>, <m>\vi'=(1,0,0)</m> et <m>\vj'=\frac{1}{\sqrt{2}}(0,1,1)</m>, on trouve
-<md><mrow>
+</mrow>
+                    </md>,
+                    où
+                </p>
+
+                <sidebyside widths="55% 8% 32%" valign="middle">
+                    <ul>
+                        <li><m>\vc=(0,0,0)</m> est le centre de <m>\cC</m>,</li>
+                        <li><m>\rho=2</m> est le rayon <m>\cC</m>, et</li>
+                        <li>
+                            <p>
+                                <m>\vi'</m> et <m>\vj'</m> sont deux vecteurs
+                                <ol marker="(a)">
+                                    <li>unitaires,</li>
+                                    <li>parallèles au plan <m>z=y</m>, et</li>
+                                    <li>orthogonaux.</li>
+                                </ol>
+                            </p>
+                        </li>
+                    </ul>
+                    <p></p>
+                    <image source="images/CLP4-figs/circle4a"/>
+                </sidebyside>
+
+                <p>
+                    La partie la plus difficile est de trouver ces vecteurs
+                    <m>\vi'</m> et <m>\vj'</m>.
+                    <ul>
+                        <li>
+                            Le point <m>(2,0,0)</m> vérifie <m>x^2+y^2+z^2=4</m>
+                            et <m>z=y</m>, de sorte qu'il se trouve sur
+                            <m>\cC</m>.
+                            Nous pouvons choisir <m>\vi'</m> comme un vecteur
+                            unitaire parallèle au vecteur joignant le centre du
+                            cercle <m>(0,0,0)</m> à <m>(2,0,0)</m>, c'est-à-dire
+                            <m>\vi'=(1,0,0)</m>.
+                        </li>
+
+                        <li>
+                            Puisque le plan contenant le cercle est
+                            <m>z-y=0</m>, le vecteur
+                            <m>\vnabla(z-y)=(0,-1,1)</m> est perpendiculaire à
+                            ce plan.
+                            Ainsi, <m>\vk'=\frac{1}{\sqrt{2}}(0,-1,1)</m> est un
+                            vecteur normal unitaire pour le plan <m>z=y</m>.
+                            Ainsi,
+                            <m>\vj'=\vk'\times\vi'=\frac{1}{\sqrt{2}}(0,-1,1)\times(1,0,0) = \frac{1}{\sqrt{2}}(0,1,1)</m>
+                            est un vecteur qui est orthogonal à <m>\vi'</m> et à
+                            <m>\vk'</m>.
+                            Comme <m>\vj'</m> est orthogonal à <m>\vk'</m>, il
+                            est parallèle au plan <m>z=y</m>.
+                        </li>
+                    </ul>
+                    En remplaçant dans <m>\vc=(0,0,0)</m>, <m>\rho=2</m>,
+                    <m>\vi'=(1,0,0)</m> et
+                    <m>\vj'=\frac{1}{\sqrt{2}}(0,1,1)</m>, on trouve
+                    <md>
+                        <mrow>
 &amp;\vr(t)=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
 =2\Big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\Big)
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;0\leqslant  t\leqslant  2\pi
-</mrow></md>.
-Afin de vérifier que ce paramétrage est correct, notons que
-<m>x=2\cos t</m>, <m>y=\sqrt{2}\sin t</m>, <m>z=\sqrt{2}\sin t</m> vérifie
-<m>x^2+y^2+z^2=4</m> et <m>z=y</m>.
-</p>
-        <p>À <m>t=0</m>, <m>\vr(0)=(2,0,0)</m>. Lorsque <m>t</m> croît,
-<m>z(t)=\sqrt{2}\sin t</m> croît aussi, et  <m>\vr(t)</m> bouge vers le haut, vers <m>\vr\big(\frac{\pi}{2}\big)=(0,\sqrt{2},\sqrt{2})</m>. Ceci donne donc la bonne orientation antihoraire. Nous pouvons maintenant intégrer.
-<md><mrow>
-\vr(t)&amp;=\big(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\big)\cr
-\vr\,'(t)&amp;=\big(-2\sin t,\sqrt{2}\cos t,\sqrt{2}\cos t\big)\cr
-\vF\big(\vr(t)\big)&amp;=\big(z(t)-y(t),-x(t)-z(t),-x(t)-y(t)\big)\cr
-&amp;=\big(\sqrt{2}\sin t-\sqrt{2}\sin t,
-              -2\cos t-\sqrt{2}\sin t,-2\cos t-\sqrt{2}\sin t\big)\cr
-&amp;=-\big(0, 2\cos t+\sqrt{2}\sin t,2\cos t+\sqrt{2}\sin t\big)\cr
-\vF\big(\vr(t)\big)\cdot \vr\,'(t)
+</mrow>
+                    </md>.
+                    Afin de vérifier que ce paramétrage est correct, notons que
+                    <m>x=2\cos t</m>, <m>y=\sqrt{2}\sin t</m>,
+                    <m>z=\sqrt{2}\sin t</m> vérifie <m>x^2+y^2+z^2=4</m> et
+                    <m>z=y</m>.
+                </p>
+
+                <p>
+                    À <m>t=0</m>, <m>\vr(0)=(2,0,0)</m>.
+                    Lorsque <m>t</m> croît, <m>z(t)=\sqrt{2}\sin t</m> croît
+                    aussi, et <m>\vr(t)</m> bouge vers le haut, vers
+                    <m>\vr\left(\frac{\pi}{2}\right)=(0,\sqrt{2},\sqrt{2})</m>.
+                    Ceci donne donc la bonne orientation antihoraire.
+                    Nous pouvons maintenant intégrer.
+                    <md>
+                        <mrow>
+\vr(t)&amp;=\left(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\right)\cr
+\vr\,'(t)&amp;=\left(-2\sin t,\sqrt{2}\cos t,\sqrt{2}\cos t\right)\cr
+\vF\left(\vr(t)\right)&amp;=\left(z(t)-y(t),-x(t)-z(t),-x(t)-y(t)\right)\cr
+&amp;=\left(\sqrt{2}\sin t-\sqrt{2}\sin t,
+              -2\cos t-\sqrt{2}\sin t,-2\cos t-\sqrt{2}\sin t\right)\cr
+&amp;=-\left(0, 2\cos t+\sqrt{2}\sin t,2\cos t+\sqrt{2}\sin t\right)\cr
+\vF\left(\vr(t)\right)\cdot \vr\,'(t)
 &amp;=-\big[4\sqrt{2}\cos^2 t+4\cos t\sin t\big]
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]
-</mrow></md>
-En vertu des formules des angles doubles, <m>\sin(2t)=2\sin t\,\cos t</m> et <m>\cos(2t) = 2\cos^2t-1</m>. Ainsi,
-<md><mrow>
+</mrow>
+                    </md>
+                    En vertu des formules des angles doubles,
+                    <m>\sin(2t)=2\sin t\,\cos t</m> et
+                    <m>\cos(2t) = 2\cos^2t-1</m>.
+                    Ainsi,
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}
-&amp;=\int_0^{2\pi}\vF\big(\vr(t)\big)\cdot \vr\,'(t)\ \dee{t}
-</mrow><mrow>
+&amp;=\int_0^{2\pi}\vF\left(\vr(t)\right)\cdot \vr\,'(t)\ \dee{t}
+</mrow>
+                        <mrow>
 &amp;=\int_0^{2\pi}-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]\ \dee{t}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=-\Big[\sqrt{2}\sin(2t)+2\sqrt{2}t-\cos(2t)\Big]_0^{2\pi}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=-4\sqrt{2}\pi
-</mrow></md>.
-Voyons une autre façon de procéder.
-</p>
-      </solution>
-      <solution>
-        <p>
-          <em>Théorème de Stokes</em>
-        </p>
-        <p>Afin d'utiliser le théorème de Stokes, nous devons exprimer  <m>\cC</m> comme le bord <m>\partial \cS</m> d'une surface <m>\cS</m>. Puisque
-<md><mrow>
+</mrow>
+                    </md>.
+                    Voyons une autre façon de procéder.
+                </p>
+            </solution>
+
+            <solution>
+                <title>Théorème de Stokes</title>
+                
+                
+                <p>
+                    <em>Théorème de Stokes</em>
+                </p>
+
+                <p>
+                    Afin d'utiliser le théorème de Stokes, nous devons exprimer
+                    <m>\cC</m> comme le bord <m>\partial \cS</m> d'une surface
+                    <m>\cS</m>.
+                    Puisque
+                    <md>
+                        <mrow>
 \cC=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ z=y}
-</mrow></md>
-est une courbe fermée, ceci est possible. En fait, nous avons plusieurs choix pour <m>\cS</m>. Trois possibilités, esquissées ci-bas, sont
-<md><mrow>
+</mrow>
+                    </md>
+                    est une courbe fermée, ceci est possible.
+                    En fait, nous avons plusieurs choix pour <m>\cS</m>.
+                    Trois possibilités, esquissées ci-contre, sont
+                    <md>
+                        <mrow>
 
 S&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant  4,\ z=y},\cr
 S'&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\geqslant y},\cr
 S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\leqslant  y}
-</mrow></md>.
-</p>
-        <sidebyside width="29%">
-          <image source="images/CLP4-figs/circle4b"/>
-        </sidebyside>
-        <p>
-La première de ces surfaces, qui fait partie d'un plan, est la plus susceptible de donner lieu à des calculs simples.
-</p>
-        <p>Afin de nous préparer, calculons <m>\vnabla\times\vF</m> et <m>\vn\,\dee{S}</m>. Pour le dernier, nous appliquons la formule <m>\vn\,\dee{S}=\pm(-f_x,-f_y,1)\,\dee{x}dy</m> (de la <xref ref="eq_SUdSgraph" text="global">formule</xref>) à la surface  <m>z=f(x,y)=y</m>. Nous choisissons le signe <m>+</m> pour avoir le vecteur normal pointant vers le haut.
-<md><mrow>
+</mrow>
+                    </md>.
+                </p>
+
+                <sidebyside widths="55% 8% 29%" valign="middle">
+                    <p>
+                    La première de ces surfaces, qui fait partie d'un plan, est
+                    la plus susceptible de donner lieu à des calculs simples.
+                    </p>
+                    <p></p>
+                    <image source="images/CLP4-figs/circle4b"/>
+                </sidebyside>
+
+                <p>
+                    Afin de nous préparer, calculons <m>\vnabla\times\vF</m> et
+                    <m>\vn\,\dee{S}</m>.
+                    Pour le dernier, nous appliquons la formule
+                    <m>\vn\,\dee{S}=\pm(-f_x,-f_y,1)\,\dee{x}dy</m> (de la
+                    <xref ref="eq_SUdSgraph" text="global">formule</xref> ) à la
+                    surface <m>z=f(x,y)=y</m>.
+                    Nous choisissons le signe <m>+</m> pour avoir le vecteur
+                    normal pointant vers le haut.
+                    <md>
+                        <mrow>
     \vnabla\times\vF
     &amp;=\det\left[\begin{matrix}
       \vi &amp; \frac{\partial }{\partial x} &amp; z-y \\
       \vj &amp; \frac{\partial }{\partial y} &amp; -x-z \\
       \vk &amp; \frac{\partial }{\partial z} &amp; -x-y
     \end{matrix}\right]
-  </mrow><mrow>
-&amp;=\vi\big(-1-(-1)\big)-\vj\big(-1-1\big)+\vk\big(-1-(-1)\big)
-</mrow><mrow>
+  </mrow>
+                        <mrow>
+&amp;=\vi\left(-1-(-1)\right)-\vj\left(-1-1\right)+\vk\left(-1-(-1)\right)
+</mrow>
+                        <mrow>
 &amp;=2\,\vj
-</mrow><mrow>
+</mrow>
+                        <mrow>
 \vn\,\dee{S}&amp;=(0,-1,1)\,\dee{x}\dee{y}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 \vnabla\times\vF\cdot\vn\,\dee{S}&amp;=(0,2,0)\cdot(0,-1,1)\,\dee{x}\dee{y}
 =-2\,\dee{x}\dee{y}
-</mrow></md>
-Les variables d'intégration sont <m>x</m> et <m>y</m>. Par définition, le domaine d'intégration est
-<md><mrow>
+</mrow>
+                    </md>
+                    Les variables d'intégration sont <m>x</m> et <m>y</m>.
+                    Par définition, le domaine d'intégration est
+                    <md>
+                        <mrow>
 R=\Set{(x,y)}{(x,y,z)\text{ est dans  }S\text{ pour un certain }z}
-</mrow></md>.
-Afin de déterminer ce domaine plus précisément, observons que, puisque <m>z=y</m> sur <m>\cS</m>, <m>x^2+y^2+z^2\leqslant  4</m> équivaut à  <m>x^2+2y^2\leqslant  4</m> sur <m>\cS</m> :
-<md><mrow>
+</mrow>
+                    </md>.
+                    Afin de déterminer ce domaine plus précisément, observons
+                    que, puisque <m>z=y</m> sur <m>\cS</m>,
+                    <m>x^2+y^2+z^2\leqslant  4</m> équivaut à
+                    <m>x^2+2y^2\leqslant  4</m> sur <m>\cS</m>:
+                    <md>
+                        <mrow>
 \cS=\Set{(x,y,z)}{x^2+2y^2\leqslant  4,\ z=y}
 \implies R=\Set{(x,y)}{x^2+2y^2\leqslant  4}
-</mrow></md>.
-Ainsi, le domaine d'intégration est une ellipse avec semi-axe majeur <m>a=2</m> et semi-axe mineur <m>b=\sqrt{2}</m>, de sorte que son aire est  <m>\pi a b=2\sqrt{2}\pi</m>. L'intégrale est alors
-<md><mrow>
+</mrow>
+                    </md>.
+                    Ainsi, le domaine d'intégration est une ellipse avec
+                    semi-axe majeur <m>a=2</m> et semi-axe mineur
+                    <m>b=\sqrt{2}</m>, de sorte que son aire est
+                    <m>\pi a b=2\sqrt{2}\pi</m>.
+                    L'intégrale est alors
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}
 =\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =\iint_{\cR}(-2)\,\dee{x}\dee{y}
 =-2\ \text{Aire}\,(R)
 =-4\sqrt{2}\pi
-</mrow></md>.
-</p>
-        <!--
+</mrow>
+                    </md>.
+                </p>
+                <!--
 <p><em>Noter les bornes d'intégration:</em>
 </p>
 
@@ -1071,25 +1526,41 @@ This corresponds to a rectangular domain of integration, not what we have here.
 </p>
 
 -->
-        <p>
-          <em>Théorème de Stokes, prise 2</em>
-        </p>
-        <p>
-Puisque l'intégrande est une constante  (après <em>Stokage</em>, pas l'intégrande original) et que <m>\cS</m> est si simple (nous avons fait de bons choix!), nous pouvons évaluer l'intégrale <m>\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}</m> sans calculer <m>\dee{S}</m> explicitement et même établir les limites d'intégration. Nous avons  <m>\vnabla\times\vF=2\,\vj</m>. Puisque  <m>\cS</m> est la surface de niveau <m>z-y=0</m>, le gradient <m>\vnabla(z-y)=-\vj+\vk</m> est normal à  <m>\cS</m>.
-Ainsi, <m>\vn = \frac{1}{\sqrt{2}}(-\vj+\vk)</m> et
-<md><mrow>
+                <p>
+                    <em>Théorème de Stokes, prise 2</em>
+                </p>
+
+                <p>
+                    Puisque l'intégrande est une constante (après
+                    <em>Stokage</em>, pas l'intégrande original) et que
+                    <m>\cS</m> est si simple (nous avons fait de bons choix!),
+                    nous pouvons évaluer l'intégrale
+                    <m>\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}</m> sans
+                    calculer <m>\dee{S}</m> explicitement et même établir les
+                    limites d'intégration.
+                    Nous avons <m>\vnabla\times\vF=2\,\vj</m>.
+                    Puisque <m>\cS</m> est la surface de niveau <m>z-y=0</m>, le
+                    gradient <m>\vnabla(z-y)=-\vj+\vk</m> est normal à
+                    <m>\cS</m>.
+                    Ainsi, <m>\vn = \frac{1}{\sqrt{2}}(-\vj+\vk)</m> et
+                    <md>
+                        <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}
 &amp;=\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =\iint_{\cS} (2\vj)\cdot \frac{1}{\sqrt{2}}(-\vj+\vk)\,\dee{S}
-</mrow><mrow>
+</mrow>
+                        <mrow>
 &amp;=\iint_{\cS} -\sqrt{2}\,\dee{S}
 =-\sqrt{2}\ {\rm Aire}\,(S)
-</mrow></md>.
-Puisque <m>\cS</m> est un cercle de rayon  <m>2</m>, <m>\oint_{\cC}\vF\cdot \dee{\vr}=-4\sqrt{2}\pi</m>, encore une fois.
-</p>
-      </solution>
-    </example>
-    <!--
+</mrow>
+                    </md>.
+                    Puisque <m>\cS</m> est un cercle de rayon <m>2</m>,
+                    <m>\oint_{\cC}\vF\cdot \dee{\vr}=-4\sqrt{2}\pi</m>, encore
+                    une fois.
+                </p>
+            </solution>
+        </example>
+        <!--
 <example xml:id="eg_stokesE">
 <p>
 In Warning <xref ref="warn_screeningC"/>, we stated that if a vector field
@@ -1150,7 +1621,7 @@ the origin is <m>4\pi</m>.
 
 </example>
 -->
-    <!-- <p>
+        <!-- <p>
 
 </p>
 <p>
@@ -1159,92 +1630,166 @@ the origin is <m>4\pi</m>.
 <p>
 
 </p> -->
-    <p>
-  Voyons maintenant un exemple pour lequel il faut travailler un peu plus pour trouver la surface qui permet d'effectuer les calculs.
-</p>
-    <example>
-      <statement>
-        <p> Soit
-      <md><mrow>
-        \vF = \left(z^2 - \cos(x^2) \right)\vi + \left(x^2 - \sin(y^2)\right)\vj + \left(xy - \tan(z^2)\right)\vk
-      </mrow></md>
-      et <m>\cC</m> la courbe paramétrée par <m>\vr(t) = 2\cos(t)\, \vi + 2 \sin t\, \vj + 4 \sin^2 t \, \vk</m>, pour <m>t\in [0,2\pi]</m>. Calculer la valeur de <m>\int_{\cC} \vF \cdot d\vr</m>.
+        <p>
+            Voyons maintenant un exemple pour lequel il faut travailler un peu
+            plus pour trouver la surface qui permet d'effectuer les calculs.
+        </p>
 
-    </p>
-      </statement>
-      <solution>
-        <p>
-      Notons pour commencer que la courbe est fermée et simple. Le calcul de l'intégrale de ligne risque d'être ardu, en raison des termes <m>\cos(x^2),\ \sin(y^2)</m> et <m>\tan(z^2)</m>.
-    </p>
-        <p>
-      Afin d'utiliser le théorème de Stokes, il faudrait identifier une surface <m>\cS</m> telle que <m>\partial \cS = \cC</m>. En général, plusieurs choix sont possibles. Dans notre exemple, les composantes du chemin sont   <m>x(t) = 2\cos(t),\ y(t) =   2 \sin t</m> et <m>z(t) = 4 \sin^2 t</m>. Ces composantes vérifient <m>z(t)^2= y(t)^2</m>, de sorte que notre courbe se trouve sur le cylindre parabolique <m>z=y^2</m>. Soit donc <m>\cS</m> la portion de ce cylindre qui est limitée par <m>\cC</m>.
-    </p>
-        <figure xml:id="fig-ex-Stokes">
-          <caption>La courbe <m>\cC</m> dans <m>\R^3</m> ainsi qu'une surface <m>\cS</m> dont elle est la frontière. La surface est orientée par le vecteur en bleu et elle est le graphe d'une fonction avec domaine <m>\cR</m>, en vert.</caption>
-          <image xml:id="im-ex-Stokes" platform="sage" width="85%">
-            <sageplot variant="3d" aspect="1.5">
+        <example>
+            <statement>
+                <p>
+                    Soit
+                    <md>
+                        <mrow>
+        \vF = \left(z^2 - \cos(x^2) \right)\vi + \left(x^2 - \sin(y^2)\right)\vj + \left(xy - \tan(z^2)\right)\vk
+      </mrow>
+                    </md>
+                    et <m>\cC</m> la courbe paramétrée par
+                    <m>\vr(t) = 2\cos(t)\, \vi + 2 \sin t\, \vj + 4 \sin^2 t \, \vk</m>,
+                    pour <m>t\in [0,2\pi]</m>.
+                    Calculer la valeur de <m> \displaystyle \int_{\cC} \vF \cdot d\vr</m>.
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    Notons pour commencer que la courbe est fermée et simple.
+                    Le calcul de l'intégrale de ligne risque d'être ardu, en
+                    raison des termes <m>\cos(x^2),\ \sin(y^2)</m> et
+                    <m>\tan(z^2)</m>.
+                </p>
+
+                <sidebyside widths="45% 5% 50%" valign="top">
+                    <p>
+                        Afin d'utiliser le théorème de Stokes, il faudrait
+                        identifier une surface <m>\cS</m> telle que
+                        <m>\partial \cS = \cC</m>.
+                        En général, plusieurs choix sont possibles.
+                        Dans notre exemple, les composantes du chemin sont
+                        <m>x(t) = 2\cos(t),\ y(t) =   2 \sin t</m> et
+                        <m>z(t) = 4 \sin^2 t</m>.
+                        Ces composantes vérifient <m>z(t)^2= y(t)^2</m>, de
+                        sorte que notre courbe se trouve sur le cylindre
+                        parabolique <m>z=y^2</m>.
+                        Soit donc <m>\cS</m> la portion de ce cylindre qui est
+                        limitée par <m>\cC</m>.
+                    </p>
+
+                    <p/>
+                    <figure xml:id="fig-ex-Stokes">
+                        <caption>
+                            La courbe <m>\cC</m> et une surface <m>\cS</m> dont    elle est le bord, orientée par le vecteur rouge; en                           vert, le domaine <m>\cR</m>.
+                        </caption>
+
+                        <image xml:id="im-ex-Stokes" width="100%">
+                            <sageplot variant="3d" aspect="1">
             var('x,y,z,r,t')
             L = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(0,pi/4, pi/80)]
-            Fig = line3d(L, arrow_head = True, thickness= 2, color = "red")
+            Fig = line3d(L, thickness= 2, color = "red")
             L1 = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(pi/4, 2*pi, pi/200)]
-            Fig +=line3d(L1, arrow_head = True,  thickness= 2, color = "red")
+            Fig +=line3d(L1, thickness= 2, color = "red")
             Fig += plot3d(y^2, (x,-2.1,2.1), (y,-2.1,2.1), color = "orange", opacity = 0.25)
             Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 4*r^2 * sin(t)^2], (r,0,1), (t,0,2*pi), mesh = True, opacity = 0.65, color = "orange")
             Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 0], (r,0,1), (t,0,2*pi), opacity = 0.65, color = "darkgreen")
-            Fig += arrow3d((0,1,1), (0,0.5, 1.25), color = "blue")
+            Fig += arrow3d((1, 1.732, 3), (0.654, 1.932, 3.693), color = "red", width = 2)
+            Fig += arrow3d((-1, -1.732, 3), (-0.78, -1.857, 3.433), color = "red", width = 2)
+            Fig += arrow3d((0,1,1), (0,0.2, 1.4), color = "crimson", width =2)
             Fig += arrow3d((0,0,0),(2.4,0,0), width=1, color = "black",frame = False)
-            Fig += text3d("x", (2.6,0,0), color = "black",frame = False)
+            Fig += text3d("x", (2.6,0,0), color = "black",frame = False, fontsize = 20)
             Fig += arrow3d((0,0,0),(0,2.2,0), width=1, color = "black",frame = False)
-            Fig += text3d("y", (0,2.4,0), color = "black",frame = False)
+            Fig += text3d("y", (0,2.4,0), color = "black",frame = False, fontsize = 20)
             Fig += arrow3d((0,0,0),(0,0,4.5), width=1, color = "black",frame = False)
-            Fig += text3d("z", (0,0,4.7), color = "black")
+            Fig += text3d("z", (0,0,4.7), color = "black", fontsize = 20)
             Fig
-          </sageplot>
-          </image>
-        </figure>
-        <p>
-      Le théorème de Stokes nous donne alors
-        <md><mrow>
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+
+                <p>
+                    Le théorème de Stokes nous donne alors
+                    <md>
+                        <mrow>
       \int_{\cC} \vF\cdot d\vr = \int_{\partial \cS} \vF\cdot d\vr = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS.
-    </mrow></md>
-    </p>
-        <p>
-      Calculons le rotationnel de notre champ
-        <md><mrow>\vnabla \times \vF  \amp =
+    </mrow>
+                    </md>
+                </p>
+
+                <p>
+                    Calculons le rotationnel de notre champ
+                    <md>
+                        <mrow>\vnabla \times \vF  \amp =
         \left| \begin{array}{ccc} \vi &amp; \pdiff{}{x} &amp; z^2 - \cos(x^2)\\
          \vj &amp; \pdiff{}{y} &amp; x^2 - \sin(y^2)\\
          \vk &amp; \pdiff{}{z} &amp; xy - \tan(z^2)\end{array} \right|
-      </mrow><mrow> \amp = x\, \vi + (-y+2z)\vj + 2x\, \vk</mrow>
-    </md>.
-    </p>
-        <p>
-      La surface <m>\cS</m> est le graphe de la fonction  <m>f(x,y) = y^2</m> avec <m>(x,y)\in \cR</m>, où <m>\cR</m> est définie par <m>x^2+ y^2 \leqslant 2^2</m>.
-    </p>
-        <p>
-      Le paramétrage donné de <m>\cC</m> lui impose une orientation. Lorsque vue d'en haut (avec le vecteur <m>\vk</m> pointant vers nous), <m>\cC</m> est parcourue dans le sens antihoraire. Le vecteur normal pour <m>\cS</m> qui est compatible avec cette orientation de <m>\cC</m> doit donc avoir une composante <m>\vk</m> positive. Nous choisissons  donc le signe <m>+</m> dans la <xref ref="eq-Flux-dS-graphe">formule</xref> de notre  <xref ref="fact-Int-surf-champs">inventaire de formules</xref>. Nous calculons alors
-    </p>
-        <p><md><mrow>\left(\vnabla \times \vF\right)\cdot \left(-f_x\, \vi - f_y\, \vj + \vk\right) \amp = \left(x\,\vi + (-y+2z)\vj + 2x\, \vk\right)\cdot\left(0\vi -2y\,\vj + \vk\right)  </mrow><mrow> \amp = 2y^2 -4yz+2x = 2y^2 -4y^3 +2x </mrow>.
-    </md>
-    où, dans la dernière égalité, nous avons utilisé le fait que <m>z = f(x,y) = y^2</m>.
-    </p>
-        <p>
-      Ainsi, le flux qui nous intéresse vaut
-    </p>
-        <p>
-          <md><mrow>\iint_{\cR} 2y^2 -4y^3 +2x   \, dA\amp = 2\iint_{\cR}y^2\, dA +4 \iint_{\cR}y^3 \, dA + 2\iint_{\cR} x\, dA</mrow>.
-      </md>
-        </p>
-        <p>
-      La symétrie de <m>\cR</m> et le fait que les intégrandes des deuxième et troisième intégrales sont des fonctions impaires font en sorte que ces deux intégrales sont nulles. Afin de calculer celle qui compte, nous utilisons les coordonnées polaires pour obtenir
-    </p>
-        <p>
-          <md><mrow>\int_{\cC} \vF \cdot d\vr \amp= \iint_{\cS} \vnabla\times \vF \cdot d\vS = 2\iint_{\cR} y^2 \, dA</mrow><mrow>  \amp = 2\int_0^{2\pi}\int_0^2 r^2(\sin^2 \theta)\, r\, dr\, d\theta </mrow><mrow>  \amp =2 \left(\int_0^{2\pi}\sin^2 \theta\, d\theta \right)\left(\int_0^2 r^3 \, dr\right) </mrow><mrow>  \amp = 2 \left(\int_0^{2\pi} \frac{1}{2}(1-\cos 2\theta)\ d\theta\right)\left(\int_0^2 r^3 \, dr\right) = 2\pi\cdot \frac{16}{4} = 8\pi </mrow>.
-      </md>
-        </p>
-      </solution>
-    </example>
-  </subsection>
-  <!--
+      </mrow>
+                        <mrow> \amp = x\, \vi + (-y+2z)\vj + 2x\, \vk</mrow>
+                    </md>.
+                </p>
+
+                <p>
+                    La surface <m>\cS</m> est le graphe de la fonction
+                    <m>f(x,y) = y^2</m> avec <m>(x,y)\in \cR</m>, où <m>\cR</m>
+                    est définie par <m>x^2+ y^2 \leqslant 2^2</m>.
+                </p>
+
+                <p>
+                    Le paramétrage donné de <m>\cC</m> lui impose une
+                    orientation.
+                    Lorsque vue d'en haut (avec le vecteur <m>\vk</m> pointant
+                    vers nous), <m>\cC</m> est parcourue dans le sens
+                    antihoraire.
+                    Le vecteur normal pour <m>\cS</m> qui est compatible avec
+                    cette orientation de <m>\cC</m> doit donc avoir une
+                    composante <m>\vk</m> positive.
+                    Nous choisissons donc le signe <m>+</m> dans la
+                    <xref ref="eq-Flux-dS-graphe">formule</xref> de notre
+                    <xref ref="fact-Int-surf-champs">inventaire de formules</xref>.
+                    Nous calculons alors
+                </p>
+
+                <p>
+                    <md>
+                        <mrow>\left(\vnabla \times \vF\right)\cdot \left(-f_x\, \vi - f_y\, \vj + \vk\right) \amp = \left(x\,\vi + (-y+2z)\vj + 2x\, \vk\right)\cdot\left(0\vi -2y\,\vj + \vk\right)  </mrow>
+                        <mrow> \amp = 2y^2 -4yz+2x = 2y^2 -4y^3 +2x </mrow>
+                        .
+                    </md>
+                    où, dans la dernière égalité, nous avons utilisé le fait que
+                    <m>z = f(x,y) = y^2</m>.
+                </p>
+
+                <p>
+                    Ainsi, le flux qui nous intéresse vaut
+                </p>
+
+                <p>
+                    <md>
+                        <mrow>\iint_{\cR} 2y^2 -4y^3 +2x   \, dA\amp = 2\iint_{\cR}y^2\, dA +4 \iint_{\cR}y^3 \, dA + 2\iint_{\cR} x\, dA</mrow>
+                        .
+                    </md>
+                </p>
+
+                <p>
+                    La symétrie de <m>\cR</m> et le fait que les intégrandes des
+                    deuxième et troisième intégrales sont des fonctions impaires
+                    font en sorte que ces deux intégrales sont nulles.
+                    Afin de calculer celle qui compte, nous utilisons les
+                    coordonnées polaires pour obtenir
+                </p>
+
+                <p>
+                    <md>
+                        <mrow>\int_{\cC} \vF \cdot d\vr \amp= \iint_{\cS} \vnabla\times \vF \cdot d\vS = 2\iint_{\cR} y^2 \, dA</mrow>
+                        <mrow>  \amp = 2\int_0^{2\pi}\int_0^2 r^2(\sin^2 \theta)\, r\, dr\, d\theta </mrow>
+                        <mrow>  \amp =2 \left(\int_0^{2\pi}\sin^2 \theta\, d\theta \right)\left(\int_0^2 r^3 \, dr\right) </mrow>
+                        <mrow>  \amp = 2 \left(\int_0^{2\pi} \frac{1}{2}(1-\cos 2\theta)\ d\theta\right)\left(\int_0^2 r^3 \, dr\right) = 2\pi\cdot \frac{16}{4} = 8\pi </mrow>
+                        .
+                    </md>
+                </p>
+            </solution>
+        </example>
+    </subsection>
+    <!--
 <subsection xml:id="sec_interpBis">
   <title>The Interpretation of Div and Curl Revisited</title>
 <introduction>
@@ -1276,7 +1821,7 @@ constant in <m>B_\veps(x_0,y_0,z_0)</m> and we
 essentially have
 <me>
 \tripInt_{B_\veps(x_0,y_0,z_0)} \vnabla\cdot \vv\ \dee{V}
-=\vnabla\cdot \vv(x_0,y_0,z_0)\ \text{Vol}\big(B_\veps(x_0,y_0,z_0)\big)
+=\vnabla\cdot \vv(x_0,y_0,z_0)\ \text{Vol}\left(B_\veps(x_0,y_0,z_0)\right)
 </me>
 Of course we are really making an approximation
 here, based on the assumption that <m>\vv(x,y,z)</m> is continuous and so
@@ -1285,7 +1830,7 @@ domain of integration. The approximation gets better and better as <m>\veps\righ
 <me>
 \vnabla\cdot\vv(x_0,y_0,z_0)=\lim_{\veps\rightarrow 0}
 \frac{\tripInt_{B_\veps(x_0,y_0,z_0)} \vnabla\cdot \vv\ \dee{V}}
-       {\text{Vol}\big(B_\veps(x_0,y_0,z_0)\big)}
+       {\text{Vol}\left(B_\veps(x_0,y_0,z_0)\right)}
 </me>
 By the divergence theorem, we also have
 <me>
@@ -1312,7 +1857,7 @@ We conclude that, as we said in <xref ref="eq_divInterp"/>,
 \vnabla\cdot\vv(x_0,y_0,z_0)
 &amp;=\lim_{\veps\rightarrow 0}
 \frac{\text{the rate at which fluid is exiting $B_\veps(x_0,y_0,z_0)$}}
-{\text{Vol}\big(B_\veps(x_0,y_0,z_0)\big)}
+{\text{Vol}\left(B_\veps(x_0,y_0,z_0)\right)}
 </mrow><mrow>
 &amp;=\left\{
 \begin{array}{l}
@@ -1355,7 +1900,7 @@ essentially constant on <m>D_\veps(x_0,y_0,z_0)</m> and we essentially have
 <md>
 <mrow>
 \dblInt_{D_\veps(x_0,y_0,z_0)} \vnabla\!\times \vv\cdot\vn\ \dee{S}
-&amp;=\vnabla\!\times \vv(x_0,y_0,z_0)\cdot\vn\ \text{Area}\big(D_\veps(x_0,y_0,z_0)\big)
+&amp;=\vnabla\!\times \vv(x_0,y_0,z_0)\cdot\vn\ \text{Area}\left(D_\veps(x_0,y_0,z_0)\right)
 </mrow><mrow>
 &amp;=\pi\veps^2\ \vnabla\times\! \vv(x_0,y_0,z_0)\cdot\vn
 </mrow>
@@ -1457,56 +2002,103 @@ is twice that maximum rate of rotation. For this reason,
 
 <xi:include href="../problems/prob_s4.4.ptx" />
 -->
-  <subsection>
-    <title>Application :  la loi de Faraday</title>
-    <p>
-    L'induction magnétique est un processus physique par lequel une différence de potentiel (un voltage) est induite par un champ magnétique qui varie dans le temps. Ce processus est exploité dans de nombreuses applications, notamment les générateurs électriques, les moteurs à induction, la cuisson par induction, le soudage par induction et le chargement par induction. On attribue généralement à Michael Faraday<fn>Michael Faraday (1791-1867) était un physicien et chimiste anglais. Il est devenu un scientifique extrêmement influent bien qu'il n'ait reçu qu'une éducation formelle des plus élémentaires.</fn>  la découverte de l'induction magnétique. La loi de Faraday est la suivante. Soit <m>\cS</m> une surface orientée de bord <m>\cC</m>. Soit <m>\vE</m> et <m>\vB</m> les champs électrique et magnétique (qui varient avec le temps). On pose alors 
-  </p>
-    <sidebyside widths="45% 28%" valign="middle">
-      <p>
-        <md>
-          <mrow>
+    <subsection>
+        <title>Application : la loi de Faraday</title>
+
+        <p>
+            L'induction magnétique est un processus physique par lequel une
+            différence de potentiel (un voltage) est induite par un champ
+            magnétique qui varie dans le temps.
+            Ce processus est exploité dans de nombreuses applications, notamment
+            les générateurs électriques, les moteurs à induction, la cuisson par
+            induction, le soudage par induction et le chargement par induction.
+            On attribue généralement à Michael Faraday
+            <fn>Michael Faraday (1791-1867) était un physicien et chimiste anglais. Il est devenu un scientifique extrêmement influent bien qu'il n'ait reçu qu'une éducation formelle des plus élémentaires.</fn>
+            la découverte de l'induction magnétique.
+            La loi de Faraday est la suivante.
+            Soit <m>\cS</m> une surface orientée de bord <m>\cC</m>.
+            Soit <m>\vE</m> et <m>\vB</m> les champs électrique et magnétique
+            (qui varient avec le temps).
+            On pose alors
+        </p>
+
+        <sidebyside widths="55% 20%" valign="middle">
+            <p>
+                <md>
+                    <mrow>
   \oint_{\cC}\vE\cdot \dee{\vr}&amp;=\text{tension le long de }\cC,
   </mrow>
-          <mrow>
+                    <mrow>
   \iint_{\cS}\vB\cdot \vn  \,\dee{S}&amp;=\text{flux magnétique à travers }\cS.
   </mrow>
-        </md>
-      </p>
-      <image source="images/CLP4-figs/faraday"/>
-    </sidebyside>
-    <p>
-    Le voltage le long de <m>\cC</m> est l'opposé du taux de changement du flux magnétique à travers <m>\cS</m> : 
-    <md><mrow>
+                </md>
+            </p>
+
+            <image source="images/CLP4-figs/faraday"/>
+        </sidebyside>
+
+        <p>
+            Le voltage le long de <m>\cC</m> est l'opposé du taux de changement
+            du flux magnétique à travers <m>\cS</m>:
+            <md>
+                <mrow>
       \oint_{\cC}\vE\cdot \dee{\vr}=-\frac{\partial }{\partial t}\iint_{\cS}\vB\cdot\vn \,\dee{S}.
-      </mrow></md>
-  </p>
-    <p>
-    Nous pouvons reformuler ceci comme une équation aux dérivées partielles. En vertu du théorème de Stokes,
-    <md><mrow>
+      </mrow>
+            </md>
+        </p>
+
+        <p>
+            Nous pouvons reformuler ceci comme une équation aux dérivées
+            partielles.
+            En vertu du théorème de Stokes,
+            <md>
+                <mrow>
     \oint_{\cC}\vE\cdot \dee{\vr}=\iint_{\cS}(\vnabla\times\vE)\cdot \vn\,\dee{S},
-    </mrow></md>
-    de sorte que la loi de Faraday devient 
-    <md><mrow>
+    </mrow>
+            </md>
+            de sorte que la loi de Faraday devient
+            <md>
+                <mrow>
     \iint_{\cS}\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)\cdot\vn\,\dee{S}=0.
-    </mrow></md>
-    Ceci étant vrai pour toutes les surfaces <m>\cS</m>, l'intégrande, si on le suppose continu, doit être nul.
-  </p>
-    <p>En effet, soit <m>\vG=\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)</m> et supposons qu'il existe un point <m>\vx_0</m> tel que  <m>\vG(\vx_0)\ne 0</m>. Soit un vecteur unitaire <m>\vn</m> dans la direction  <m>\vG(\vx_0)</m>. Soit en plus <m>\cS</m> un petit disque centré à  <m>\vx_0</m> avec normal <m>\vn</m>. Alors, <m>\vG(\vx_0)\cdot\vn \gt 0</m> et, si nous choisissons notre disque suffisamment  petit, la continuité de <m>\vG</m> donnera que  <m>\vG(\vx)\cdot\vn \gt 0</m> pour tout <m>\vx</m> sur <m>\cS</m>. Alors, <m>\iint_{\cS}\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)\cdot \vn\,\dee{S} \gt 0</m>, une contradiction.
-  </p>
-    <p>    
-    Ainsi, <m>\vG=\vZero</m> partout, et l'on conclut que 
-      <md><mrow>
+    </mrow>
+            </md>
+            Ceci étant vrai pour toutes les surfaces <m>\cS</m>, l'intégrande,
+            si on le suppose continu, doit être nul.
+        </p>
+
+        <p>
+            En effet, soit
+            <m>\vG=\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)</m>
+            et supposons qu'il existe un point <m>\vx_0</m> tel que
+            <m>\vG(\vx_0)\ne 0</m>.
+            Soit un vecteur unitaire <m>\vn</m> dans la direction
+            <m>\vG(\vx_0)</m>.
+            Soit en plus <m>\cS</m> un petit disque centré à <m>\vx_0</m> avec
+            normal <m>\vn</m>.
+            Alors, <m>\vG(\vx_0)\cdot\vn \gt 0</m> et, si nous choisissons notre
+            disque suffisamment petit, la continuité de <m>\vG</m> donnera que
+            <m>\vG(\vx)\cdot\vn \gt 0</m> pour tout <m>\vx</m> sur <m>\cS</m>.
+            Alors,
+            <m>\iint_{\cS}\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)\cdot \vn\,\dee{S} \gt 0</m>,
+            une contradiction.
+        </p>
+
+        <p>
+            Ainsi, <m>\vG=\vZero</m> partout, et l'on conclut que
+            <md>
+                <mrow>
         \vnabla\times\vE+\frac{\partial\vB}{\partial t}=0.
-      </mrow></md>
-    Il s'agit de l'une des équations de Maxwell.
-    <!--
+      </mrow>
+            </md>
+            Il s'agit de l'une des équations de Maxwell.
+            <!--
     This is one of Maxwell's electromagnetic field equations<fn>For the others, see Example <xref ref="eg_ITmaxwell"/></fn>.
-    -->  
-  </p>
-  </subsection>
-  <xi:include href="./Problemes/Prob-sec-Stokes.ptx"/>
-  <!-- 
+    -->
+        </p>
+    </subsection>
+
+    <xi:include href="./Problemes/Prob-sec-Stokes.ptx"/>
+    <!-- 
 <p>
   <term>Fin nouveau</term>
 </p> -->

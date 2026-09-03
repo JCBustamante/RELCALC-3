@@ -231,11 +231,11 @@
         </mrow><mrow>
         \dee{S}
         &amp;=
-         \left|\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
-        \times\Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)\right|\,
+         \norm{\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
+        \times\Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)}\,
              \dee{\theta}\, \dee{y}
         </mrow><mrow>
-        &amp;=\big|(-a\cos\theta,0,-a\sin\theta)\big|\,\dee{\theta}\,\dee{y}
+        &amp;=\norm{(-a\cos\theta,0,-a\sin\theta)}\,\dee{\theta}\,\dee{y}
         </mrow><mrow>
         &amp;=a\,\dee{\theta}\,\dee{y}
         </mrow>
@@ -329,9 +329,11 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>4\pi a^{2n+3}</m></p><p>
-      (b) <m>3abc</m></p><p>
-      (c) <m>\frac{\pi}{3}</m>
+      <ol marker="(a)" cols="3">
+      <li><p><m>4\pi a^{2n+3}</m></p></li>
+      <li><p><m>3abc</m></p></li>
+      <li><p><m>\frac{\pi}{3}</m></p></li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -339,10 +341,10 @@
       on the surface of the sphere,
       <md>
       <mrow>
-      &amp;\vn =\frac{\vnabla g}{|\vnabla g|}=\frac{x\vi+y\vj+z\vk}{\sqrt{x^2+y^2+z^2}}
+      &amp;\vn =\frac{\vnabla g}{\norm{\vnabla g}}=\frac{x\vi+y\vj+z\vk}{\sqrt{x^2+y^2+z^2}}
       </mrow><mrow>
-      &amp;\implies\   \vF\cdot\vn = \big(x^2+y^2+z^2\big)^{n+1-1/2}
-      ={\big(a^2\big)}^{n+1/2}=a^{2n+1}
+      &amp;\implies\   \vF\cdot\vn = \left(x^2+y^2+z^2\right)^{n+1-1/2}
+      ={\left(a^2\right)}^{n+1/2}=a^{2n+1}
       </mrow><mrow>
       &amp;\implies\  \iint_S\vF\cdot\vn \,\dee{S}\ =a^{2n+1}\iint_S\,\dee{S}
       =a^{2n+1}\text{Area}(S)
@@ -385,12 +387,12 @@
       <md alignment="alignat">
       <mrow>
       \int_{\Atop{z=c}{\rm face}}\vF\cdot\vn\, \dee{S}
-      &amp;=\int_{\Atop{z=c}{\rm face}}\big(x\,\vi+y\,\vj+c\,\vk\big)\cdot \vk \  \dee{x}\,\dee{y}
+      &amp;=\int_{\Atop{z=c}{\rm face}}\left(x\,\vi+y\,\vj+c\,\vk\right)\cdot \vk \  \dee{x}\,\dee{y}
       &amp;&amp;=c\int_{\Atop{z=c}{\rm face}}\dee{x}\,\dee{y}
       =abc
       </mrow><mrow>
       \int_{\Atop{z=0}{\rm face}}\vF\cdot\vn\, \dee{S}
-      &amp;=\int_{\Atop{z=0}{\rm face}}\big(x\,\vi+y\,\vj+0\,\vk\big)\cdot(-\vk)\  \dee{x}\,\dee{y}
+      &amp;=\int_{\Atop{z=0}{\rm face}}\left(x\,\vi+y\,\vj+0\,\vk\right)\cdot(-\vk)\  \dee{x}\,\dee{y}
       &amp;&amp;=0
       </mrow>
       </md>
@@ -446,7 +448,7 @@
       \implies \vn\,\dee{S}&amp;=\pdiff{\vr}{r}\times\pdiff{\vr}{\theta}
                             \, \dee{r}\,\dee{\theta}
       </mrow><mrow>
-      &amp;=\big(r\cos\theta\,\vi+r\sin\theta\,\vj+r\vk\big)\, \dee{r}\,\dee{\theta}
+      &amp;=\left(r\cos\theta\,\vi+r\sin\theta\,\vj+r\vk\right)\, \dee{r}\,\dee{\theta}
       </mrow>
       </md>
       by (<xref ref="SUR_paramGraph"/>).
@@ -457,11 +459,11 @@
       &amp;\int_{{\rm top}}\vF\cdot\vn\, \dee{S}
       </mrow><mrow>
       &amp;\hskip0.25in=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\
-                         \big(\overbrace{r\sin\theta}^{y}\,\vi
-                         +\overbrace{(1-r)}^{z}\,\vk\big)
-      \cdot\big(r\cos\theta\,\vi+r\sin\theta\,\vj+r\,\vk\big)
+                         \left(\overbrace{r\sin\theta}^{y}\,\vi
+                         +\overbrace{(1-r)}^{z}\,\vk\right)
+      \cdot\left(r\cos\theta\,\vi+r\sin\theta\,\vj+r\,\vk\right)
       </mrow><mrow>
-      &amp;\hskip0.25in=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\ \big(r^2\sin\theta\cos\theta+r(1-r)\big)
+      &amp;\hskip0.25in=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\ \left(r^2\sin\theta\cos\theta+r(1-r)\right)
       </mrow><mrow>
       &amp;\hskip0.25in= \bigg[\int_0^1 \dee{r}\ r^2\bigg]
                \bigg[\int_0^{2\pi}\dee{\theta}\ \frac{1}{2}\sin(2\theta)\bigg]
@@ -486,12 +488,13 @@
       <li>
       Pour trouver l'aire d'une surface <m>z = f (x,y)</m> au-dessus d'une région <m>D</m>, on intègre <m>\iint_D F(x,y)\ \dee{A}</m>. Qu'est-ce que <m>F(x,y)</m> en termes de <m>f</m>?
       </li>
-      <li><p>
-      Considérer l'<q>Étoile de la mort</q>, une boule de rayon <m>2</m> centrée à l'origine avec une autre boule de rayon <m>2</m> centrée à <m>(0, 0, 2\sqrt{3})</m> coupée de celle-ci. Le diagramme ci-dessous montre la tranche où <m>y = 0</m>.
-      </p>
-
-      <sidebyside width="40%">
-        <image source="images/CLP4-figs/pfigs/OE253_16D_2"/>
+      <li>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+        Considérer l'<q>Étoile de la mort</q>, une boule de rayon <m>2</m> centrée à l'origine avec une autre boule de rayon <m>2</m> centrée à <m>(0, 0, 2\sqrt{3})</m> coupée de celle-ci. Le diagramme ci-contre montre la tranche où <m>y = 0</m>.
+        </p>
+        <p/>
+        <image source="images/CLP4-figs/pfigs/OE253_16D_2" width="100%"/>
       </sidebyside>
 
       <p>
@@ -501,9 +504,9 @@
       Pour les aider à déterminer la quantité de peinture nécessaire, remplir soigneusement les parties manquantes de cette intégrale :
       <md><mrow>
       \text{Aire} =
-      \int_{\fbox{\(\vphantom{L}\qquad\)}}^{\fbox{\(\vphantom{L}\qquad\)}}
-      \int_{\fbox{\(\vphantom{L}\qquad\)}}^{\fbox{\(\vphantom{L}\qquad\)}}
-      \fbox{\(\vphantom{L}\qquad\qquad\qquad\)}\ \dee{r}\,\dee{\theta}.
+      \int_{\fbox{\(\vphantom{L}\quad\)}}^{\fbox{\(\vphantom{L}\quad\)}}
+      \int_{\fbox{\(\vphantom{L}\quad\)}}^{\fbox{\(\vphantom{L}\quad\)}}
+      \fbox{\(\vphantom{L}\quad\quad\)}\ \dee{r}\,\dee{\theta}.
       </mrow></md>
       </li>
       <li>
@@ -521,9 +524,15 @@
 
       <answer><p>
       (a)  <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>
-      </p><p>
-      (b) (i) <m>\int_0^{2\pi}\int_0^1\ \frac{2r}{\sqrt{4-r^2}}\dee{r}\dee{\theta}</m>
-      </p><p>
+      </p>
+      <p>
+      (b) (i)
+      <md><mrow>
+      \text{Aire} =
+      \int_{0}^{2\pi}
+      \int_{0}^{1}
+      \frac{2r}{\sqrt{4-r^2}}\,\dee{r}\,\dee{\theta}.
+      </mrow></md>
       (b) (ii) <m>16\pi</m>
       </p></answer>
 
@@ -534,7 +543,7 @@
       </p>
 
       <p>(b)  (i) The <q>dimple</q> to be painted is part of the upper sphere
-      <m>x^2+y^2+\big(z-2\sqrt{3}\big)^2=4</m>. It is on the bottom half of the sphere
+      <m>x^2+y^2+\left(z-2\sqrt{3}\right)^2=4</m>. It is on the bottom half of the sphere
       and so has equation <m>z=f(x,y)=2\sqrt{3}-\sqrt{4-x^2-y^2}</m>. Note that
       <md>
       <mrow>
@@ -567,12 +576,13 @@
       </md>
       </p>
 
-      <p>(b) (ii) Observe that if we flip the dimple up by reflecting it
-      in the plane <m>z=\sqrt{3}</m>, as in the figure below, the <q>Death Star</q>
-      becomes a perfect ball of radius <m>2</m>.
-      </p>
-      <sidebyside width="45%">
-      <image source="pfigs/OE253_16D_2a"/>
+      <sidebyside widths="50% 5% 45%" valign="top">
+        <p>(b) (ii) Observe that if we flip the dimple up by reflecting it
+        in the plane <m>z=\sqrt{3}</m>, as in the figure alongside, the <q>Death Star</q>
+        becomes a perfect ball of radius <m>2</m>.
+        </p>
+        <p/>
+        <image source="pfigs/OE253_16D_2a" width="100%"/>
       </sidebyside>
 
       <p>
@@ -643,7 +653,7 @@
       &amp;=\iint_\cS (x^2+y^2)\ \dee{x}\dee{y}
       =4\int_0^1\dee{x}\int_0^1\dee{y}\ (x^2+y^2)
       </mrow><mrow>
-      &amp;=4\int_0^1\dee{x}\ \big(x^2+\frac{1}{3}\big)
+      &amp;=4\int_0^1\dee{x}\ \left(x^2+\frac{1}{3}\right)
       =4\Big(\frac{1}{3}+\frac{1}{3}\Big)
       =\frac{8}{3}
       </mrow>
@@ -663,9 +673,7 @@
     <!-- No 24 section 3.3.6 CLP4 -->
     <exercise> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
       <statement><p>Évaluer le flux
-      <md><mrow>
-      \iint_S \vF \cdot\vn\, \dee{S},
-      </mrow></md>
+      <m>\displaystyle  \iint_S \vF \cdot\vn\, \dee{S},</m>
       où <m>\vF(x, y, z) = (x+1)\,\vi + (y +1)\,\vj + 2z\,\vk</m> et
       <m>S</m> est la partie du paraboloïde <m>z = 4-x^2 -y^2</m>
       se trouvant au-dessus du triangle <m>0\leqslant x\leqslant1</m>, <m>0\leqslant y\leqslant1 - x</m>.
@@ -685,9 +693,9 @@
       <m>f(x,y) = 4-x^2-y^2</m>,
       <md>
       <mrow>
-      \vn\,\dee{S} &amp;=\pm \big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
+      \vn\,\dee{S} &amp;=\pm \left(-f_x\,,\,-f_y\,,\, 1\right)\dee{x}\dee{y}
       </mrow><mrow>
-      &amp;=\pm\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+      &amp;=\pm\left(2x\,,\,2y\,,\, 1\right)\,\dee{x}\dee{y}
       </mrow>
       </md>
       To get the downward pointing normal, we want the minus sign.
@@ -699,16 +707,16 @@
       <md>
       <mrow>
       \iint_S \vF \cdot\vn\, \dee{S}
-      &amp;=-\iint_T \big(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\big)
-             \cdot\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+      &amp;=-\iint_T \left(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\right)
+             \cdot\left(2x\,,\,2y\,,\, 1\right)\,\dee{x}\dee{y}
       </mrow><mrow>
-      &amp;=-\iint_T \big(8+2x+2y\big)\,\dee{x}\dee{y}
+      &amp;=-\iint_T \left(8+2x+2y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
-      &amp;=-\int_0^1\dee{x}\int_0^{1-x}\dee{y}\ \big(8+2x+2y\big)
+      &amp;=-\int_0^1\dee{x}\int_0^{1-x}\dee{y}\ \left(8+2x+2y\right)
       </mrow><mrow>
-      &amp;=-\int_0^1\dee{x}\ \big(8(1-x)+2x(1-x)+(1-x)^2\big)
+      &amp;=-\int_0^1\dee{x}\ \left(8(1-x)+2x(1-x)+(1-x)^2\right)
       </mrow><mrow>
-      &amp;=-\int_0^1\dee{x}\ \big(9-8x-x^2\big)
+      &amp;=-\int_0^1\dee{x}\ \left(9-8x-x^2\right)
       </mrow><mrow>
       &amp;=-\Big(9-4-\frac{1}{3}\Big)=-\frac{14}{3}
       </mrow>

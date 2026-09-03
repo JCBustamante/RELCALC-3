@@ -24,7 +24,7 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
     <md>
       \lim_{\vx\to \va}f(\vx) = L
     </md>
-    si la valeur de <m>f(\vx)</m> peut être aussi près de <m>L</m> que l'on veut, pourvu que l'écart entre <m>\vx</m> et <m>\va</m> soit suffisamment près de <m>0</m>, mais sans être nul. Ceci revient à dire que, pour tout <m>\e \gt 0</m>, il existe <m>\d \gt 0</m> tel que <m>0 \lt |\vx - \va| \lt \d</m>, et  <m>\vx \in \plan{D}</m>  entraîne <m>|f(\vx) - L| \lt \epsilon</m>.
+    si la valeur de <m>f(\vx)</m> peut être aussi près de <m>L</m> que l'on veut, pourvu que l'écart entre <m>\vx</m> et <m>\va</m> soit suffisamment près de <m>0</m>, mais sans être nul. Ceci revient à dire que, pour tout <m>\e \gt 0</m>, il existe <m>\d \gt 0</m> tel que <m>0 \lt \norm{\vx - \va} \lt \d</m>, et  <m>\vx \in \plan{D}</m>  entraîne <m>|f(\vx) - L| \lt \epsilon</m>.
     </p>
       </statement>
     </definition>
@@ -296,21 +296,23 @@ Dans la pratique, il est fastidieux d'étudier les limites en utilisant la défi
       </statement>
     </example>
     <p>
-Une technique utile pour l'étude de certaines limites est le passage aux coordonnées polaires. Rappelons qu'à un point <m>P</m> de coordonnées <m>(x,y)</m> du plan, on associe ses coordonnées polaires <m>(r,\theta)</m>, où <m>r = |\overrightarrow{OP}|</m> et où <m>\theta</m> est l'angle orienté formé par l'axe des abscisses et la demi-droite <m>OP</m>.
+Une technique utile pour l'étude de certaines limites est le passage aux coordonnées polaires. Rappelons qu'à un point <m>P</m> de coordonnées <m>(x,y)</m> du plan, on associe ses coordonnées polaires <m>(r,\theta)</m>, où <m>r = \|\overrightarrow{OP}\|</m> et où <m>\theta</m> est l'angle orienté formé par l'axe des abscisses et la demi-droite <m>OP</m>.
 
 </p>
-    <sidebyside width="20%">
+    <sidebyside widths="60% 15% 25%">
       <p>
         <md>
           <mrow>
-x&amp;=r\cos\theta
-</mrow>
+            x&amp;=r\cos\theta
+          </mrow>
           <mrow>
-y&amp;=r\sin\theta
-</mrow>
+            y&amp;=r\sin\theta
+          </mrow>
         </md>
       </p>
       <image source="images/CLP-figs/polar"/>
+      <p>
+      </p>
     </sidebyside>
     <p>
   En particulier, les points qui sont près de l'origine sont ceux pour lesquels <m>r</m> est petit, sans égard à la valeur de <m>\theta</m>.

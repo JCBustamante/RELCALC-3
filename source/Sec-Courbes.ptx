@@ -34,11 +34,11 @@
 </p>
     <ul>
       <li>
-        <p><m>n=2</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj = \dvect{x(t)}{y(t)}</m>;
+        <p><m>n=2</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj = \rvd{x(t)}{y(t)}</m>;
     </p>
       </li>
       <li>
-        <p><m>n=3</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj + z(t)\vk  = \tvect{x(t)}{y(t)}{z(t)}</m>.
+        <p><m>n=3</m> et, dans ce cas, nous écrirons <m>\vr(t) = x(t)\vi + y(t)\vj + z(t)\vk  = \rvt{x(t)}{y(t)}{z(t)}</m>.
     </p>
       </li>
     </ul>
@@ -128,8 +128,8 @@ On peut obtenir des paramétrages des courbes  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2
 <ul><li>
 Si l'on pose <m>\ \cos t=\frac{x}{a}\ </m> et <m>\ \sin t=\frac{y}{b} </m>, alors l'égalité  <m>\cos^2 t +\sin^2 t =1</m> devient  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>.
 </li><li>
-Si l'on pose <m>\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}</m>, et
-<m>\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}</m>, alors
+Si l'on pose <m>\ \cos t= \left(\frac{x}{a}\right)^{\frac{1}{3}}</m>, et
+<m>\ \sin t=\left(\frac{y}{a}\right)^{\frac{1}{3}}</m>, alors
 <m>\cos^2 t +\sin^2 t =1</m> devient <m>\frac{x^{2/3}}{a^{2/3}}+\frac{y^{2/3}}{a^{2/3}}=1</m>.
 </li></ul>
 Ainsi,
@@ -160,7 +160,7 @@ In particular, the above sketch is carefully developed there.
     <example xml:id="eg_paramMessy">
       <title>Paramétrage de <m>e^y=1+x^2</m></title>
       <p>
-Une méthode simple qui peut être utilisée pour paramétrer une courbe donnée par une équation de la forme <m>f(x,y)=0</m> consiste à utiliser  <m>x</m> ou <m>y</m> comme paramètre et à isoler pour l'autre variable. Dans cet exemple, puisqu'on peut résoudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux côtés, on obtient <m>y=\ln\big(1+x^2\big)</m>, on utilise  <m>x</m> comme paramètre en posant <m>t=x</m>. Ceci donne le paramétrage
+Une méthode simple qui peut être utilisée pour paramétrer une courbe donnée par une équation de la forme <m>f(x,y)=0</m> consiste à utiliser  <m>x</m> ou <m>y</m> comme paramètre et à isoler pour l'autre variable. Dans cet exemple, puisqu'on peut résoudre  <m>e^y=1+x^2</m> pour avoir <m>y</m> comme fonction de  <m>x</m>, en prenant les logarithmes des deux côtés, on obtient <m>y=\ln\left(1+x^2\right)</m>, on utilise  <m>x</m> comme paramètre en posant <m>t=x</m>. Ceci donne le paramétrage
 <md>
 \vr(t) = t\,\vi + \ln(1+t^2)\,\vj \qquad -\infty\lt t\lt \infty.
 </md>
@@ -527,7 +527,7 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
                                 \vj &amp; t^4 &amp; e^{-3t}\\
                                 \vk &amp; t^6 &amp; e^{-5t}\end{matrix}\right]
     </mrow><mrow>
-    &amp;=\vi\big(t^4 e^{-5t}-t^6 e^{-3t})
+    &amp;=\vi\left(t^4 e^{-5t}-t^6 e^{-3t}\right)
       -\vj(t^2 e^{-5t}- t^6 e^{-t})
       +\vk(t^2 e^{-3t}-t^4 e^{-t})
     </mrow></md>
@@ -535,10 +535,10 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
     <md><mrow>
     &amp;\diff{}{t}\big[\va(t)\times\vb(t)\big]
     </mrow><mrow>
-    &amp;=\ \vi\big(\ {\color{blue}{4t^3}} e^{-5t}\ \ -\ {\color{blue}{6t^5}} e^{-3t})
+    &amp;=\ \vi\left(\ {\color{blue}{4t^3}} e^{-5t}\ \ -\ {\color{blue}{6t^5}} e^{-3t}\right)
       \ -\ \vj(\ {\color{blue}{2t}} e^{-5t}\ -\  {\color{blue}{6t^5}} e^{-t})
       +\vk(\ {\color{blue}{2t}} e^{-3t}\ -\ {\color{blue}{4t^3}} e^{-t}) \\&amp;\hskip0.1in
-    +\vi\big({\color{blue}{-5}}t^4 {\color{blue}{e^{-5t}}}{\color{blue}{+3}}t^6 {\color{blue}{e^{-3t}}})
+    +\vi\left({\color{blue}{-5}}t^4 {\color{blue}{e^{-5t}}}{\color{blue}{+3}}t^6 {\color{blue}{e^{-3t}}}\right)
       -\vj({\color{blue}{-5}}t^2 {\color{blue}{e^{-5t}}}{\color{blue}{+}} t^6 {\color{blue}{e^{-t}}})
       +\vk({\color{blue}{-3}}t^2 {\color{blue}{e^{-3t}}}{\color{blue}{+}}t^4 {\color{blue}{e^{-t}}})
     </mrow><mrow>
@@ -551,15 +551,15 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
     </mrow></md>
     et
     <md><mrow>
-    \va\big(s(t)\big)
+    \va\left(s(t)\right)
     &amp;=(\sin t)^2\,\vi +(\sin t)^4\,\vj + (\sin t)^6\,\vk
     </mrow><mrow>
-    \implies \diff{}{t}\big[\va\big(s(t)\big)\big]
+    \implies \diff{}{t}\big[\va\left(s(t)\right)\big]
     &amp;=2(\sin t)\cos t\,\vi +4(\sin t)^3\cos t\,\vj + 6(\sin t)^5\cos t\,\vk
     </mrow><mrow>
     &amp;=\big\{2(\sin t)\,\vi +4(\sin t)^3\vj + 6(\sin t)^5\vk\big\}\cos t
     </mrow><mrow>
-    &amp;=\va'\big(s(t)\big)\,s'(t).
+    &amp;=\va'\left(s(t)\right)\,s'(t).
     </mrow></md>
     </p>
     </example>
@@ -594,8 +594,8 @@ Alors,
          =\va'(t)\times\vb(t)+\va(t)\times\vb'(t);
            \ \ &amp;&amp;\text{(produit vectoriel)}
 </mrow><mrow>
-&amp;\text{(e)} &amp;&amp;\diff{}{t}\big[\va\big(s(t)\big)\big]
-         =\va'\big(s(t)\big)\,s'(t).
+&amp;\text{(e)} &amp;&amp;\diff{}{t}\big[\va\left(s(t)\right)\big]
+         =\va'\left(s(t)\right)\,s'(t).
            &amp;&amp;\text{(composition)}
 </mrow></md>
 </p>
@@ -644,7 +644,7 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
         <p>
     Soit <m>\vr : I \to \R</m> un chemin et <m>t_0</m> un point intérieur de <m>I</m>.
     <ol marker="(a)"><li>
-        Si <m>\vr(t_0) \ne \vZero</m>, le vecteur <term>tangent unitaire</term> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{|\vr'(t_0)|}\vr'(t_0)</m>.
+        Si <m>\vr(t_0) \ne \vZero</m>, le vecteur <term>tangent unitaire</term> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{\norm{\vr'(t_0)}}\vr'(t_0)</m>.
       </li><li>
         Le <em>chemin tangent</em> à <m>\vr</m> en <m>t_0</m> est le chemin <m>\vL(t) = \vr(t_0) + (t-t_0)\vr'(t_0)</m>.
 </li></ol>
@@ -668,20 +668,20 @@ Afin d'utiliser le   <xref ref="thm-Longueur" text="global">théorème</xref>, c
 </mrow><mrow>
 \vr'(t) &amp;= -3a\sin t\cos^2t\,\vi + 3a\sin^2 t\cos t\,\vj,
 </mrow><mrow>
-\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
+\diff{s}{t}(t)&amp;=\norm{\vr'(t)}
 = \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}
 </mrow><mrow>
 &amp; = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)}
 </mrow><mrow>
  &amp;=3a\big|\sin t\cos t\big|,
 </mrow><mrow>
-\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t)|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\vi+\sin t\,\vj\big)
+\vT(t) &amp;= \frac{\vr'(t)}{\norm{\vr'(t)}}
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \left(-\cos t\,\vi+\sin t\,\vj\right)
 
 </mrow><mrow>
- &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\vi+\sin t\,\vj\big).
+ &amp;=  \sgn\!\left(\!\sin t\cos t\right)\ \left(-\cos t\,\vi+\sin t\,\vj\right).
 </mrow></md>
-Ici, <m>\sgn\!\big(\!\sin t\cos t\big)</m> dénote  <q>le signe de <m>\sin t\cos t</m></q>, c'est-à-dire <m>+1</m> lorsque <m>\sin t\cos t \gt 0</m> et <m>-1</m> lorsque <m>\sin t\cos t \lt 0</m>. Ainsi,
+Ici, <m>\sgn\!\left(\!\sin t\cos t\right)</m> dénote  <q>le signe de <m>\sin t\cos t</m></q>, c'est-à-dire <m>+1</m> lorsque <m>\sin t\cos t \gt 0</m> et <m>-1</m> lorsque <m>\sin t\cos t \lt 0</m>. Ainsi,
 <md><mrow>
 \vT(t) &amp;=\begin{cases}-\cos t\, \vi +\sin t \, \vj &amp;\text{si  } 0 \lt  t \lt \frac{\pi}{2} \text{ ou }  \pi \lt  t \lt \frac{3\pi}{2}
 </mrow><mrow>
@@ -709,27 +709,27 @@ Ainsi, la courbe fait le tour de l'origine exactement une fois lorsque <m>t</m> 
 Quelque chose de particulier arrive lorsque  <m>\sin t\cos t</m> s'annule en changeant de signe, c'est-à-dire lorsque <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. En effet, <m>\vT(t)</m> change de direction abruptement. Plus précisément,
 <md><mrow>
 \lim_{t\rightarrow 0-}\vT(t)
-&amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)
+&amp;= \lim_{t\rightarrow 0-} \sgn\!\left(\!\sin t\cos t\right)
 </mrow><mrow>
-      \amp = \lim_{t\rightarrow 0-} \big(-\cos t\,\vi+\sin t\,\vj\big)
+      \amp = \lim_{t\rightarrow 0-} \left(-\cos t\,\vi+\sin t\,\vj\right)
 =\vi,
 </mrow><mrow>
 \lim_{t\rightarrow 0+}\vT(t)
-&amp;= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)
+&amp;= \lim_{t\rightarrow 0+}\sgn\!\left(\!\sin t\cos t\right)
 </mrow><mrow>
-      \amp =\lim_{t\rightarrow 0+}\big(-\cos t\,\vi+\sin t\,\vj\big)
+      \amp =\lim_{t\rightarrow 0+}\left(-\cos t\,\vi+\sin t\,\vj\right)
 =-\vi
 </mrow></md>
 et
 <md><mrow>
 \lim_{t\rightarrow \pi/2-}\vT(t)
-&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)</mrow><mrow>
-      \amp =\lim_{t\rightarrow \pi/2-}\big(-\cos t\,\vi+\sin t\,\vj\big)
+&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\left(\!\sin t\cos t\right)</mrow><mrow>
+      \amp =\lim_{t\rightarrow \pi/2-}\left(-\cos t\,\vi+\sin t\,\vj\right)
 =\vj,
 </mrow><mrow>
 \lim_{t\rightarrow \pi/2+}\vT(t)
-&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)</mrow><mrow>
-      \amp = \lim_{t\rightarrow \pi/2+}\big(-\cos t\,\vi+\sin t\,\vj\big)
+&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\left(\!\sin t\cos t\right)</mrow><mrow>
+      \amp = \lim_{t\rightarrow \pi/2+}\left(-\cos t\,\vi+\sin t\,\vj\right)
 =-\vj,
 </mrow></md>
 et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> dans la courbe pour <m>t=0</m>, c'est-à-dire à <m>\vr(0) = a\vi</m> et à  <m>t=\frac{\pi}{2}</m>, c'est-à-dire à <m>\vr(\frac{\pi}{2}) = a\vj</m>, et ainsi de suite. En somme, s'il est vrai que l'astroïde ressemble à un cercle, elle possède des points de rebroussement à <m>\pm a\vi</m> et à <m>\pm a\vj</m>. Voici une figure.
@@ -841,8 +841,8 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
     </p>
       </statement>
       <solution>
-        <p>Soit <m>\vr</m> un chemin tel que <m>|\vr| = c</m>. Nous avons alors
-    <md><mrow>|\vr|^2  = c^2  \amp  \iff \vr \cdot \vr = c^2</mrow><mrow> \amp\implies (\vr \cdot \vr)' = 0 </mrow><mrow> \amp \iff 2 \vr \cdot \vr' =0, </mrow></md>
+        <p>Soit <m>\vr</m> un chemin tel que <m>\norm{\vr} = c</m>. Nous avons alors
+    <md><mrow>\norm{\vr}^2  = c^2  \amp  \iff \vr \cdot \vr = c^2</mrow><mrow> \amp\implies (\vr \cdot \vr)' = 0 </mrow><mrow> \amp \iff 2 \vr \cdot \vr' =0, </mrow></md>
  et la conclusion suit.
     </p>
       </solution>
@@ -876,7 +876,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
     </md>
       L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">théorème</xref>. On a donc
         <md>
-    \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{|\vr_1'(1)|\, |\vr_2'(2)|} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.
+    \cos \theta = \frac{\vr_1'(1) \cdot  \vr_2'(2)}{\norm{\vr_1'(1)}\, \norm{\vr_2'(2)}} = \frac{8}{\sqrt{6}\sqrt{18}} = \frac{4}{3\sqrt{3}}.
     </md>
     </p>
       </solution>

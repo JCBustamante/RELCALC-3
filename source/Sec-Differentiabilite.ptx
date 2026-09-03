@@ -57,9 +57,9 @@
   &amp;=-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk
   </mrow></md>
   </p>
-    <p>Le plan tangent à la surface  <m>z=f(x,y)</m> au point  <m>\big(x_0\,,\,y_0\,,\,f(x_0,y_0)\big)</m> est le plan passant par ce point et ayant pour vecteur normal <m>-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk</m>. L'équation du plan est donc
+    <p>Le plan tangent à la surface  <m>z=f(x,y)</m> au point  <m>\left(x_0\,,\,y_0\,,\,f(x_0,y_0)\right)</m> est le plan passant par ce point et ayant pour vecteur normal <m>-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk</m>. L'équation du plan est donc
   <md>
-  -f_x(x_0,y_0)\,(x-x_0) - f_y(x_0,y_0)\,(y-y_0) +\big(z-f(x_0,y_0)\big) =0
+  -f_x(x_0,y_0)\,(x-x_0) - f_y(x_0,y_0)\,(y-y_0) +\left(z-f(x_0,y_0)\right) =0
   </md>,
   ou encore
   <md>
@@ -141,7 +141,7 @@
       <statement>
         <p>Soit <m>f:\cD \to \R</m> une fonction avec <m>\cD\subseteq \R^n</m> et <m>\vr_0</m> un point intérieur de <m>\cD</m>. La fonction <m>f</m> est <em>différentiable en </em> <m>\vr_0</m> s'il existe une matrice <m>T\in \R^{1\times n}</m> (c'est-à-dire une matrice à une rangée et à <m>n</m> colonnes) telle que
       <md>
-        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} =0
+        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{\norm{\vr - \vr_0}} =0
       </md>.
       </p>
       </statement>
@@ -165,7 +165,7 @@
         Soit <m>f</m> différentiable en <m>\vr_0</m> et <m>T</m> comme dans la définition. Avant de poursuivre, notons que <m>T \ve_1 = t_1</m>.
       </p><p>
         Par ailleurs, posons <m>\vr = \vr_0 + h\ve_1</m>, nous aurons alors, en vertu de la différentiabilité de <m>f</m>, que
-      </p><md><mrow>0 \amp =   \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} </mrow><mrow> \amp  =   \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - T (h\ve_1)|}{|h\ve_1|}</mrow><mrow>  \amp = \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - h t_1|}{|h|} </mrow><mrow>  \amp= \lim_{h \to 0} \left|\frac{f(\vr) - f(\vr_0)}{h} - t_1 \right|. </mrow></md>
+      </p><md><mrow>0 \amp =   \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{\norm{\vr - \vr_0}} </mrow><mrow> \amp  =   \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - T (h\ve_1)|}{\norm{h\ve_1}}</mrow><mrow>  \amp = \lim_{h \to 0} \frac{|f(\vr_0 + h\ve_1) - f(\vr_0) - h t_1|}{|h|} </mrow><mrow>  \amp= \lim_{h \to 0} \left|\frac{f(\vr) - f(\vr_0)}{h} - t_1 \right|. </mrow></md>
       <p>
         Ceci montre que <m>t_1 = \pdiff{f}{x_1}(\vr_0)</m>. Le reste de la preuve se fait de la même façon.
       </p></proof>
@@ -218,7 +218,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
       <statement>
         <p>Soit <m>f : \cD \subseteq \R^n \to \R^m</m> une fonction différentiable et <m>T\in \R^{m\times n}</m> une matrice telle que
     <md>
-        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{|\vr - \vr_0|} =0.
+        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{\norm{\vr - \vr_0}} =0.
     </md>
     Alors, toutes les dérivées partielles de toutes les composantes de <m>f</m> existent en <m>\vr_0</m>, et <m>T</m> est la matrice
     <md>
@@ -404,7 +404,7 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
         <p>
       En effet, nous avons
       <md>
-        \frac{|f(\vr) - L(\vr)|}{\vr - \vZero} = \frac{|f(\vr)|}{|\vr|} = \frac{\frac{xy}{\sqrt{x^2 + y^2}}}{\sqrt{x^2 + y^2}} = \frac{xy}{x^2 + y^2}
+        \frac{|f(\vr) - L(\vr)|}{\norm{\vr - \vZero}} = \frac{|f(\vr)|}{\norm{\vr}} = \frac{\frac{xy}{\sqrt{x^2 + y^2}}}{\sqrt{x^2 + y^2}} = \frac{xy}{x^2 + y^2}
       </md>,
       et cette quantité ne tend pas vers <m>0</m> lorsque <m>(x,y)\to (0,0)</m>.
     </p>
@@ -481,11 +481,11 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
     <p>
   Soit <m>f : \cD \to \R</m> différentiable en <m>\vr_0</m>, et posons <m>\De \vr = \vr - \vr_0</m>. Pour tout <m>\e \gt 0</m>, nous avons que, lorsque <m>\De \vr</m> est suffisamment petit,
   <md>
-    \frac{|f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)\, \De \vr|}{|\De \vr|} \lt \e
+    \frac{|f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)\, \De \vr|}{\norm{\De \vr}} \lt \e
   </md>,
   c'est-à-dire
   <md>
-    |f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)\, \De \vr| \lt \e |\De \vr|.
+    |f(\vr_0 + \De \vr) - f(\vr_0) - \vD f(\vr_0)\, \De \vr| \lt \e \norm{\De \vr}.
   </md>
  De là, on tire un version raffinée du <xref ref="principle-continuite" text="global">principe</xref>.
 </p>
@@ -505,10 +505,10 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
         Lorsque <m>n=2</m> et <m>f</m> est <m>f(x,y)</m>, l'approximation linéaire autour de <m>(x_0,y_0)</m> est
         <md>
             <mrow>
-                L\big(x,y\big)
-                &amp;= f\big(x_0\,,\,y_0\big)
-         + \pdiff{f}{x}\big(x_0\,,\,y_0\big)\,\De x
-         + \pdiff{f}{y}\big(x_0\,,\,y_0\big)\,\De y
+                L\left(x,y\right)
+                &amp;= f\left(x_0\,,\,y_0\right)
+         + \pdiff{f}{x}\left(x_0\,,\,y_0\right)\,\De x
+         + \pdiff{f}{y}\left(x_0\,,\,y_0\right)\,\De y
   </mrow>
   </md>
   ou, si on garde à l'esprit le point d'évaluation des dérivées partielles
@@ -522,13 +522,13 @@ Nous nous contentons d'énoncer le résultat suivant, dont la preuve dépasse (d
         Lorsque <m>n=3</m> et <m>f</m> est <m>f(x,y,z)</m>, l'approximation linéaire autour de <m>(x_0,y_0,z_0)</m> est
         <md>
         <mrow>
-        &amp;L\big(x,y,z)
+        &amp;L\left(x,y,z)
         </mrow><mrow>
-        &amp;\hskip0.25in= f\big(x_0\,,\,y_0\,,\,z_0\big)
-               + \pdiff{f}{x}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De x
-               + \pdiff{f}{y}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De y
+        &amp;\hskip0.25in= f\left(x_0\,,\,y_0\,,\,z_0\right)
+               + \pdiff{f}{x}\left(x_0\,,\,y_0\,,\,z_0\right)\,\De x
+               + \pdiff{f}{y}\left(x_0\,,\,y_0\,,\,z_0\right)\,\De y
         </mrow><mrow>
-        &amp;\hskip2in                + \pdiff{f}{z}\big(x_0\,,\,y_0\,,\,z_0\big)\,\De z
+        &amp;\hskip2in                + \pdiff{f}{z}\left(x_0\,,\,y_0\,,\,z_0\right)\,\De z
         </mrow>
         </md>
         ou, si on garde à l'esprit le point d'évaluation des dérivées partielles
@@ -625,9 +625,9 @@ Ainsi, on pose  <m>\De x=-0.002</m> et <m>\De y=0.003</m>, ce qui donne
 &amp;=f(0.998,\,1.003)
 =f(1+\De x,\,1+\De y)
 </mrow><mrow>
-&amp;\approx f\big(1,1\big)
-       + \pdiff{f}{x}\big(1,1\big)\,\De x
-       + \pdiff{f}{y}\big(1,1\big)\,\De y
+&amp;\approx f\left(1,1\right)
+       + \pdiff{f}{x}\left(1,1\right)\,\De x
+       + \pdiff{f}{y}\left(1,1\right)\,\De y
 </mrow><mrow>
 &amp;\approx 1 +3(-0.002)-1(0.003)
 =0.991
@@ -670,11 +670,11 @@ Ainsi, si l'on pose  <m>\De x=0.2</m>, <m>\De y=-0.3</m> et <m>\De z=0.4</m>, on
 </mrow><mrow>
 &amp;\hskip0.5in=f(4+\De x,\,27+\De y,\,256+\De z)
 </mrow><mrow>
-&amp;\hskip0.5in\approx f\big(4,27,256\big)
-       + \pdiff{f}{x}\big(4,27,256\big)\,\De x
-       + \pdiff{f}{y}\big(4,27,256\big)\,\De y
+&amp;\hskip0.5in\approx f\left(4,27,256\right)
+       + \pdiff{f}{x}\left(4,27,256\right)\,\De x
+       + \pdiff{f}{y}\left(4,27,256\right)\,\De y
 </mrow><mrow>
-&amp;\hskip1in  + \pdiff{f}{z}\big(4,27,256\big)\,\De z
+&amp;\hskip1in  + \pdiff{f}{z}\left(4,27,256\right)\,\De z
 </mrow><mrow>
 &amp;\hskip0.5in\approx 9 +\frac{0.2}{2\times2}-\frac{0.3}{3\times9}
             +\frac{0.4}{4\times64}
@@ -737,7 +737,7 @@ Le facteur <m>\sin\theta</m> dans cette formule cache un piège. Nous devons cal
          =\Big(\frac{\pi}{6} + \frac{\pi}{36}\Big)\ \text{radian}
 </md>
 Nous devons donc approcher la valeur de
-<m>A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36}\big)</m>.
+<m>A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36})</m>.
 Nous allons choisir naturellement
 <md><mrow>
 a_0&amp;=10,    &amp;  b_0&amp;=20,    &amp; \theta_0&amp;=\frac{\pi}{6},
@@ -746,29 +746,29 @@ a_0&amp;=10,    &amp;  b_0&amp;=20,    &amp; \theta_0&amp;=\frac{\pi}{6},
 </mrow></md>.
 On évalue donc
 <md><mrow>
-A\big(a_0,b_0,\theta_0\big)
+A\left(a_0,b_0,\theta_0\right)
 &amp;=\frac{1}{2}a_0b_0\sin\theta_0 =\frac{1}{2}(10)(20)\frac{1}{2}=50,
 </mrow><mrow>
-\pdiff{A}{a}\big(a_0,b_0,\theta_0\big)
+\pdiff{A}{a}\left(a_0,b_0,\theta_0\right)
 &amp;=\frac{1}{2}b_0\sin\theta_0 =\frac{1}{2}(20)\frac{1}{2} =5,
 </mrow><mrow>
-\pdiff{A}{b}\big(a_0,b_0,\theta_0\big)
+\pdiff{A}{b}\left(a_0,b_0,\theta_0\right)
 &amp;=\frac{1}{2}a_0\sin\theta_0 =\frac{1}{2}(10)\frac{1}{2} =\frac{5}{2},
 </mrow><mrow>
-\pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)
+\pdiff{A}{\theta}\left(a_0,b_0,\theta_0\right)
 &amp;=\frac{1}{2}a_0b_0\cos\theta_0 =\frac{1}{2}(10)(20)\frac{\sqrt{3}}{2}
  = 50\,\sqrt{3}
 </mrow></md>,
 de sorte que l'approximation linéaire est
 <md><mrow>
-\text{Aire} &amp; = A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36}\big)
-              = A(a_0+\De a,\,b_0+\De b,\,\theta_0+\De\theta\big)
+\text{Aire} &amp; = A(10.1,\,19.8,\,\frac{\pi}{6}+\frac{\pi}{36})
+              = A(a_0+\De a,\,b_0+\De b,\,\theta_0+\De\theta)
 </mrow><mrow>
-&amp;\approx A\big(a_0,b_0,\theta_0\big)
-    + \pdiff{A}{a}\big(a_0,b_0,\theta_0\big)\De a
-    + \pdiff{A}{b}\big(a_0,b_0,\theta_0\big)\De b
+&amp;\approx A\left(a_0,b_0,\theta_0\right)
+    + \pdiff{A}{a}\left(a_0,b_0,\theta_0\right)\De a
+    + \pdiff{A}{b}\left(a_0,b_0,\theta_0\right)\De b
 </mrow><mrow>
-&amp;\hskip1in + \pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)\De\theta
+&amp;\hskip1in + \pdiff{A}{\theta}\left(a_0,b_0,\theta_0\right)\De\theta
 </mrow><mrow>
 &amp;=50 +5\times 0.1  +\frac{5}{2}\times (-0.2) +50\sqrt{3}\frac{\pi}{36}
 </mrow><mrow>
@@ -800,9 +800,9 @@ Bien entendu, dans le monde réel<fn>Dans notre <q>monde réel</q>, tout le mond
       <p>Soit  <m>a_0</m> et  <m>b_0</m> les longueurs exactes des côtés et
 <m>\theta_0</m> celle de l'angle, ainsi que  <m>a_0+\De a</m>, <m>b_0+\De b</m> et <m>\theta_0+\De\theta</m> les valeurs mesurées, de sorte que <m>\De a</m>, <m>\De b</m> et <m>\De\theta</m> représentent les erreurs de nos mesures. Alors, l'erreur dans l'aire calculée sera approximativement
 <md><mrow>
-\De A &amp;\approx \pdiff{A}{a}\big(a_0,b_0,\theta_0\big)\,\De a
-    + \pdiff{A}{b}\big(a_0,b_0,\theta_0\big)\,\De b
-    + \pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)\,\De\theta
+\De A &amp;\approx \pdiff{A}{a}\left(a_0,b_0,\theta_0\right)\,\De a
+    + \pdiff{A}{b}\left(a_0,b_0,\theta_0\right)\,\De b
+    + \pdiff{A}{\theta}\left(a_0,b_0,\theta_0\right)\,\De\theta
 </mrow><mrow>
 &amp;=\frac{\De a}{2} b_0\sin\theta_0
    +\frac{\De b}{2} a_0\sin\theta_0

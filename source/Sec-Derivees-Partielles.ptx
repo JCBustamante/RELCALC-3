@@ -133,12 +133,12 @@
       <image source="images/CLP-figs/xderivSide"/>
     </sidebyside>
     <p>
-      Ainsi, le numérateur <m>f(a+h,b) - f(a,b)</m> et le dénominateur  <m>h</m> sont respectivement la variation verticale et la variation horizontale de la courbe  <m>z=f(x,b)</m> de  <m>x=a</m> à <m>x=a+h</m>. Ainsi, <m>\pdiff{f}{x}(a,b)</m> est précisément la <em>pente de (la tangente à) la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan  <m>y=b</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+      Ainsi, le numérateur <m>f(a+h,b) - f(a,b)</m> et le dénominateur  <m>h</m> sont respectivement la variation verticale et la variation horizontale de la courbe  <m>z=f(x,b)</m> de  <m>x=a</m> à <m>x=a+h</m>. Ainsi, <m>\pdiff{f}{x}(a,b)</m> est précisément la <em>pente de (la tangente à) la courbe intersection de la surface <m>z=f(x,y)</m> avec le plan  <m>y=b</m> au point <m>\left(a,b, f(a,b)\right)</m>.</em>
     </p>
     <p>
   De la même façon, <m>\pdiff{f}{y}(a,b)</m> est la
   <em>pente de (la tangente à) la courbe intersection de la surface
-  <m>z=f(x,y)</m> avec le plan  <m>x=a</m> au point <m>\big(a,b, f(a,b)\big)</m>.</em>
+  <m>z=f(x,y)</m> avec le plan  <m>x=a</m> au point <m>\left(a,b, f(a,b)\right)</m>.</em>
   </p>
     <!-- Cet exercice fonctionne, mais est-il pertinent? -->
     <!--
@@ -208,12 +208,12 @@ Voyons quelques exemples.
   <m>\pdiff{}{x} e^{yx}=y e^{yx}</m> et
   <md><mrow>
   \pdiff{f}{x}(x,y) &amp;= y\pdiff{}{x}(\cos x) + e^{xy}\pdiff{}{x}(x)
-                           +x\pdiff{}{x}\big(e^{xy}\big)
+                           +x\pdiff{}{x}\left(e^{xy}\right)
                            \qquad\text{(règle du produit)}
   </mrow><mrow>
                     &amp;= -y\sin x + e^{xy} +xye^{xy},
                     </mrow><mrow>
-  \pdiff{f}{y}(x,y) &amp;= \cos x\pdiff{}{y}(y) + x\pdiff{}{y}\big(e^{xy}\big)
+  \pdiff{f}{y}(x,y) &amp;= \cos x\pdiff{}{y}(y) + x\pdiff{}{y}\left(e^{xy}\right)
   </mrow><mrow>
                     &amp;= \cos x + x^2e^{xy}
   </mrow></md>.
@@ -403,7 +403,7 @@ Voyons quelques exemples.
       <p>Pour voir que, néanmoins, <m>f(x,y)</m> n'est pas continue à <m>(0,0)</m>, on considère la limite de <m>f(x,y)</m> lorsque <m>(x,y)</m> tend vers  <m>(0,0)</m> le long de la courbe  <m>y=x-x^3</m>.
   Cette limite est
   <md><mrow>
-  \lim_{x\rightarrow 0} f\big(x,x-x^3\big)
+  \lim_{x\rightarrow 0} f\left(x,x-x^3\right)
   =\lim_{x\rightarrow 0} \frac{x^2}{x-(x-x^3)}
   =\lim_{x\rightarrow 0} \frac{1}{x}
   </mrow></md>,
@@ -587,7 +587,7 @@ Cet exemple pourrai venir après la règle de la chaîne car il utilise la déri
   </p>
       <p>
     Ci-bas, on présente les deux figures ensemble. Nous avons arrangé les choses pour avoir le même  <m>\dee{r}</m> dans les calculs. Afin que les deux  <m>\dee{r}</m> soient le même, les deux  <m>\dee{x}</m> doivent être différents  (sauf si <m>\theta_0=0,\pi</m>). Ainsi, en général,
-  <m>\pdiff{x}{r}(r_0,\theta_0)\ne \big(\pdiff{r}{x}(x_0,y_0)\big)^{-1}</m>.
+  <m>\pdiff{x}{r}(r_0,\theta_0)\ne \left(\pdiff{r}{x}(x_0,y_0)\right)^{-1}</m>.
   </p>
       <sidebyside width="40%">
         <image source="images/CLP-figs/dxdrdrdx3"/>
@@ -603,13 +603,13 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
   <example xml:id="eg_partials_GG"><title>Optional <mdash/> <xref ref="eg_partials_G" text="global">exemple</xref>, continued</title>
   <p>
   The inverse function theorem, for functions of one variable, says that,
-  if <m>y(x)</m> and <m>x(y)</m> are inverse functions, meaning that <m>y\big(x(y)\big)=y</m>
-  and <m>x\big(y(x)\big)=x</m>, and are differentiable with <m>\diff{y}{x}\ne 0</m>, then
+  if <m>y(x)</m> and <m>x(y)</m> are inverse functions, meaning that <m>y\left(x(y)\right)=y</m>
+  and <m>x\left(y(x)\right)=x</m>, and are differentiable with <m>\diff{y}{x}\ne 0</m>, then
   <md>
-  \diff{x}{y}(y) = \frac{1}{\diff{y}{x}\big(x(y)\big)}
+  \diff{x}{y}(y) = \frac{1}{\diff{y}{x}\left(x(y)\right)}
   </md>
-  To see this, just apply <m>\diff{}{y}</m> to both sides of <m>y\big(x(y)\big)=y</m>
-  to get <m>\diff{y}{x}\big(x(y)\big)\ \diff{x}{y}(y)=1</m>, by the chain rule
+  To see this, just apply <m>\diff{}{y}</m> to both sides of <m>y\left(x(y)\right)=y</m>
+  to get <m>\diff{y}{x}\left(x(y)\right)\ \diff{x}{y}(y)=1</m>, by the chain rule
   (see Theorem 2.9.3 in the CLP-1 text).
   In the CLP-1 text, we used this to compute the derivatives of the logarithm
   (see Theorem 2.10.1 in the CLP-1 text) and
@@ -677,10 +677,10 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
   and if you evaluate the second matrix at <m>x=x(r,\theta)</m>, <m>y=y(r,\theta)</m>,
   <md>
   \left[\begin{matrix}
-        \pdiff{r}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
-                       \pdiff{r}{y}\big(x(r,\theta),y(r,\theta)\big) \\
-        \pdiff{\theta}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
-                        \pdiff{\theta}{y}\big(x(r,\theta),y(r,\theta)\big)
+        \pdiff{r}{x}\left(x(r,\theta),y(r,\theta)\right) &amp;
+                       \pdiff{r}{y}\left(x(r,\theta),y(r,\theta)\right) \\
+        \pdiff{\theta}{x}\left(x(r,\theta),y(r,\theta)\right) &amp;
+                        \pdiff{\theta}{y}\left(x(r,\theta),y(r,\theta)\right)
         \end{matrix}\right]
   =\left[\begin{matrix}
         \cos\theta &amp; \sin\theta \\
@@ -694,10 +694,10 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
   <md>
   <mrow>
   &amp;\left[\begin{matrix}
-        \pdiff{r}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
-                       \pdiff{r}{y}\big(x(r,\theta),y(r,\theta)\big) \\
-        \pdiff{\theta}{x}\big(x(r,\theta),y(r,\theta)\big) &amp;
-                        \pdiff{\theta}{y}\big(x(r,\theta),y(r,\theta)\big)
+        \pdiff{r}{x}\left(x(r,\theta),y(r,\theta)\right) &amp;
+                       \pdiff{r}{y}\left(x(r,\theta),y(r,\theta)\right) \\
+        \pdiff{\theta}{x}\left(x(r,\theta),y(r,\theta)\right) &amp;
+                        \pdiff{\theta}{y}\left(x(r,\theta),y(r,\theta)\right)
         \end{matrix}\right]\
         \left[\begin{matrix}
         \pdiff{x}{r}(r,\theta) &amp; \pdiff{x}{\theta}(r,\theta) \\
@@ -737,9 +737,9 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
   This two variable version of the inverse function theorem can be derived by applying the derivatives <m>\pdiff{}{r}</m> and <m>\pdiff{}{\theta}</m> to the equations
   <md>
   <mrow>
-  r\big(x(r,\theta),y(r,\theta)\big) &amp;=r
+  r\left(x(r,\theta),y(r,\theta)\right) &amp;=r
   </mrow><mrow>
-  \theta\big(x(r,\theta),y(r,\theta)\big) &amp;=\theta
+  \theta\left(x(r,\theta),y(r,\theta)\right) &amp;=\theta
   </mrow>
   </md>
   and using the two variable version of the chain rule, which we will see in §<xref ref="sec_chain_rule" text="global">section</xref>.
@@ -995,7 +995,7 @@ Cet exemple doit venir après, une fois que la règle de la chaîne aura éte fa
       </mrow></md>.
       </li><li><p>
       Le théorème des accroissements finis dit que, pour toute fonction dérivable  <m>\varphi(x)</m>,
-      <ul><li> la pente de la droite joignant les points <m>\big(x_0,\varphi(x_0)\big)</m> et <m>\big(x_0+k,\varphi(x_0+k)\big)</m> sur la courbe de  <m>\varphi</m>
+      <ul><li> la pente de la droite joignant les points <m>\left(x_0,\varphi(x_0)\right)</m> et <m>\left(x_0+k,\varphi(x_0+k)\right)</m> sur la courbe de  <m>\varphi</m>
       </li></ul>
       est la même que
       <ul><li>

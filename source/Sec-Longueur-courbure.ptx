@@ -10,14 +10,14 @@
   </p><p>On commence par diviser l'intervalle <m>[a,b]</m> en <m>N</m> sous-intervalles de même longueur <m>\De t = \frac{1}{N}(b-a)</m> en posant
   <md><mrow>\amp a= t_0  \lt t_1 \lt \cdots \lt t_N = b,</mrow><mrow> \amp t_{i+1} - t_i = \De t \text{ pour } i\in\{1,2\ldots N-1\}.</mrow></md>
   On considère l'approximation de la courbe <m>\plan{C}</m> donnée par la ligne polygonale (brisée) reliant deux points successifs <m>\vr(t_i)</m> et <m>\vr(t_{i+1})</m>, pour <m>i</m> allant de <m>1</m> à <m>N-1</m>. La longueur de cette ligne polygonale est
-  </p><p><md> L_N = \sum_{i = 1}^N |\vr(t_{i+1}) - \vr(t_i)|. </md></p><p>La formule pour le calcul de la norme nous donne
+  </p><p><md> L_N = \sum_{i = 1}^N \norm{\vr(t_{i+1}) - \vr(t_i)}. </md></p><p>La formule pour le calcul de la norme nous donne
   <md>
-    |\vr(t_{i+1}) - \vr(t_i)| = \sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2}.
+    \norm{\vr(t_{i+1}) - \vr(t_i)} = \sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2}.
   </md>
   Si l'on suppose que les composantes de la fonction <m>\vr</m>, c'est-à-dire les fonctions <m>x</m> et <m>y</m>, sont dérivables, le théorème de la moyenne donne l'existence de <m>t_i^\ast, t_i^{\ast \ast} \in[t_1, t_{i+1}]</m> tels que
 </p><md><mrow>x(t_{i+1}) - x(t_i) \amp = x'(t_i^\ast)(t_{i+1}-t_i),</mrow><mrow>y(t_{i+1}) - y(t_i) \amp = y'(t_i^{\ast\ast})(t_{i+1}-t_i),</mrow></md>
   <p>de sorte que la longueur devient
-  <md><mrow> L_N =\sum_{i = 1}^{N-1}|\vr(t_{i+1}) - \vr(t_i)| \amp = \sum_{i = 1}^{N-1}\sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2} </mrow><mrow> \amp  = \sum_{i = 1}^{N-1}\sqrt{x'(t_i^\ast)^2 + y'(t_i^{\ast \ast})^2 }\Delta t.</mrow></md>
+  <md><mrow> L_N =\sum_{i = 1}^{N-1}\norm{\vr(t_{i+1}) - \vr(t_i)} \amp = \sum_{i = 1}^{N-1}\sqrt{ [x(t_{i+1}) - x(t_i)]^2 + [y(t_{i+1}) - y(t_i)]^2} </mrow><mrow> \amp  = \sum_{i = 1}^{N-1}\sqrt{x'(t_i^\ast)^2 + y'(t_i^{\ast \ast})^2 }\Delta t.</mrow></md>
   </p>
   <p>
     Lorsque <m>N</m> tend vers l'infini, la ligne polygonale approche de mieux en mieux la courbe. Ainsi, on définit la longueur du chemin comme étant la limite, si elle existe de la somme ci-haut.
@@ -39,21 +39,21 @@
     n'est pas une somme de Riemann pour une intégrale, puisque les points d'évaluation sont différents.
   </p>
 <p>
-  Par ailleurs, on a <m>\vr'(t) = x'(t)\,\vi + y'(t)\, \vj</m>, de sorte qu'on peut écrire <m>|\vr'(t)|</m> à la place de la racine carrée dans l'intégrale ci-haut. Finalement, le même argument que celui qui vient d'être exposé est valable si l'on considère un chemin à valeurs dans <m>\R^3</m>.
+  Par ailleurs, on a <m>\vr'(t) = x'(t)\,\vi + y'(t)\, \vj</m>, de sorte qu'on peut écrire <m>\norm{\vr'(t)}</m> à la place de la racine carrée dans l'intégrale ci-haut. Finalement, le même argument que celui qui vient d'être exposé est valable si l'on considère un chemin à valeurs dans <m>\R^3</m>.
 </p>
 
 
 <theorem xml:id="thm-Longueur"><idx><h>abscisse curviligne</h></idx><statement><p>Soit <m>\vr : [a,b]\to \R^n</m> un chemin dont les composantes sont des fonctions ayant des dérivées continues sur <m>]a,b[</m> et tel que la courbe <m>\plan{C}</m> est parcourue une seule fois lorsque <m>t</m> parcourt <m>[a,b]</m>. Alors, la longueur de la courbe est
     <md>
-      L =\int_a^b |\vr'(t)|\, dt.
+      L =\int_a^b \norm{\vr'(t)}\, dt.
     </md>
       Par ailleurs, pour <m>t</m> entre <m>a</m> et <m>b</m>, <terms>l'abscisse curviligne</terms>, mesurée à partir de <m>a</m>, est la quantité
     <md>
-      s(t) = \int_a^t |\vr'(u)|\, du.
+      s(t) = \int_a^t \norm{\vr'(u)}\, du.
     </md>
     Elle mesure la longueur de la portion de la courbe lorsque le paramètre varie de  <m>a</m> à <m>t</m>. De plus, on a
     <md>
-      \diff{}{t}s(t) = |\vr'(t)|.
+      \diff{}{t}s(t) = \norm{\vr'(t)}.
     </md>
 
     </p></statement></theorem>
@@ -69,7 +69,7 @@
   <md><mrow>
     \vr'(\theta) &amp;= -a\sin\theta\,\vi + a\cos\theta\, \vj,
     </mrow><mrow>
-    |\vr'(\theta)| &amp; = a.
+    \norm{\vr'(\theta)} &amp; = a.
     </mrow></md>
     Ainsi, la longueur totale est
     <md>
@@ -81,7 +81,7 @@
       <p>
 Par ailleurs,
 <md>
-  \vT = \frac{\vr'}{|\vr'|} = \dvect{-\sin \theta}{\cos \theta}.
+  \vT = \frac{\vr'}{\norm{\vr'}} = \dvect{-\sin \theta}{\cos \theta}.
 </md>
 Ainsi,
 <md>
@@ -134,12 +134,12 @@ Utilisons maintenant le <xref ref="thm-Longueur" text="global">théorème</xref>
 </mrow><mrow>
 \vr'(t) &amp;= 12\cos(2t)\vi -12\sin(2t)\vj +5\vk
 </mrow><mrow>
-&amp;=\big|\vr'(t)\big|
+&amp;=\norm{\vr'(t)}
 =\sqrt{12^2\cos^2(2t) +12^2\sin^2(2t)+5^2}
 = \sqrt{12^2+5^2}= 13
 </mrow><mrow>
 </mrow><mrow>
-s(\pi) &amp;= \int_{0}^\pi \big|\vr'(t)\big|\, dt
+s(\pi) &amp;= \int_{0}^\pi \norm{\vr'(t)}\, dt
           =13\pi
 </mrow></md>
 </p></example>
@@ -148,26 +148,26 @@ s(\pi) &amp;= \int_{0}^\pi \big|\vr'(t)\big|\, dt
 <p>
 Imagine that, at time <m>t</m>, a particle is at
 <me>
-\vr(t) = \leqslantft[h+a\cos\leqslantft(2\pi\frac{t}{T}\right)\right]\vi
-            +\leqslantft[k+a\sin\leqslantft(2\pi\frac{t}{T}\right)\right]\vj
+\vr(t) = \left[h+a\cos\left(2\pi\frac{t}{T}\right)\right]\vi
+            +\left[k+a\sin\left(2\pi\frac{t}{T}\right)\right]\vj
 </me>
-As <m>|\vr(t) -h\,\vi-k\,\vj| = a</m>, the particle is running around the circle of radius <m>a</m> centred on <m>(h,k)</m>. When <m>t</m> increases by <m>T</m>, the argument, <m>2\pi\frac{t}{T}</m>, of <m>\cos\leqslantft(2\pi\tfrac{t}{T}\right)</m> and
-<m>\sin\leqslantft(2\pi\tfrac{t}{T}\right)</m> increases by exactly <m>2\pi</m> and the particle runs exactly once around the circle. In particular, it travels a distance
+As <m>\norm{\vr(t) -h\,\vi-k\,\vj} = a</m>, the particle is running around the circle of radius <m>a</m> centred on <m>(h,k)</m>. When <m>t</m> increases by <m>T</m>, the argument, <m>2\pi\frac{t}{T}</m>, of <m>\cos\left(2\pi\tfrac{t}{T}\right)</m> and
+<m>\sin\left(2\pi\tfrac{t}{T}\right)</m> increases by exactly <m>2\pi</m> and the particle runs exactly once around the circle. In particular, it travels a distance
 <m>2\pi a</m>. So it is moving at speed  <m>\frac{2\pi a}{T}</m>.
 According to Lemma <xref ref="lem_CVvelocityEtc"/>, it has
 <md>
 <mrow>
 \text{velocity }
-      =\vr'(t) &amp;=-\frac{2\pi a}{T}\sin\leqslantft(2\pi\frac{t}{T}\right)\vi
-            +\frac{2\pi a}{T}\cos\leqslantft(2\pi\frac{t}{T}\right)\vj
+      =\vr'(t) &amp;=-\frac{2\pi a}{T}\sin\left(2\pi\frac{t}{T}\right)\vi
+            +\frac{2\pi a}{T}\cos\left(2\pi\frac{t}{T}\right)\vj
 </mrow><mrow>
 \text{speed}
-       = \diff{s}{t}(t)&amp;=|\vr'(t)|=\frac{2\pi a}{T}
+       = \diff{s}{t}(t)&amp;=\norm{\vr'(t)}=\frac{2\pi a}{T}
 </mrow><mrow>
 \text{acceleration}
        =\vr''(t)
-        &amp;=-\frac{4\pi^2 a}{T^2}\cos\leqslantft(2\pi\frac{t}{T}\right)\vi
-            -\frac{4\pi^2 a}{T^2}\sin\leqslantft(2\pi\frac{t}{T}\right)\vj
+        &amp;=-\frac{4\pi^2 a}{T^2}\cos\left(2\pi\frac{t}{T}\right)\vi
+            -\frac{4\pi^2 a}{T^2}\sin\left(2\pi\frac{t}{T}\right)\vj
 </mrow><mrow>
         &amp;= - \frac{4\pi^2}{T^2}\big[\vr(t) -h\,\vi-k\,\vj\big]
 </mrow>
@@ -197,7 +197,7 @@ vector.
 <example xml:id="eg_peri_astroide"><title>Le périmètre de l'astroïde</title><statement><p>
     Calculer le périmètre de l'astroïde d'équation <m>x^{2/3}+y^{2/3}=a^{2/3}</m>.
   </p></statement><solution><p>
-  Nous avons vu à l'<xref ref="eg_paramEllipse" text="global">exemple</xref> que l'astroïde d'équation <m>x^{2/3}+y^{2/3}=a^{2/3}</m> peut être paramétrée par <m>\vr(t) = (a\cos^3 t)\vi + (a\sin^3 t)\vj</m> avec <m>t\in[0,2\pi]</m>. De plus, à l'<xref ref="eg_astroid" text="global">exemple</xref> nous avons calculé que <m>\|\vr'(t)\| = 3a|\sin t\, \cos t|</m>. Par ailleurs,     l'astroïde est invariante sous les réflexions par rapport aux axes de coordonnées, c'est-à-dire que <m>x^{2/3}+y^{2/3} = a^{2/3}</m> est invariante par les transformations  <m>x\mapsto-x</m> et aussi <m>y\mapsto -y</m>. Ainsi, pour trouver le périmètre, il suffit de trouver la longueur de la portion de la courbe dans le premier quadrant et de multiplier par <m>4</m>.
+  Nous avons vu à l'<xref ref="eg_paramEllipse" text="global">exemple</xref> que l'astroïde d'équation <m>x^{2/3}+y^{2/3}=a^{2/3}</m> peut être paramétrée par <m>\vr(t) = (a\cos^3 t)\vi + (a\sin^3 t)\vj</m> avec <m>t\in[0,2\pi]</m>. De plus, à l'<xref ref="eg_astroid" text="global">exemple</xref> nous avons calculé que <m>\norm{\vr'(t)} = 3a|\sin t\, \cos t|</m>. Par ailleurs,     l'astroïde est invariante sous les réflexions par rapport aux axes de coordonnées, c'est-à-dire que <m>x^{2/3}+y^{2/3} = a^{2/3}</m> est invariante par les transformations  <m>x\mapsto-x</m> et aussi <m>y\mapsto -y</m>. Ainsi, pour trouver le périmètre, il suffit de trouver la longueur de la portion de la courbe dans le premier quadrant et de multiplier par <m>4</m>.
   </p><md><mrow>
       L
       &amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
@@ -242,7 +242,7 @@ vector.
       </statement>
       <proof>
         <p>
-      Nous savons que <m>s'(t) = |\vr'(t)|</m>, et notre hypothèse nous dit que <m>\vr</m>  ne s'annule pas sur <m>]a,b]</m>, de sorte que <m>s</m> est une fonction strictement croissante. Pour chaque <m>y\in[0,L]</m>, il existe donc un unique <m>x\in[a,b]</m> tel que <m>y=s(x)</m>. Il suffit alors de poser <m>x= t(y)</m>.
+      Nous savons que <m>s'(t) = \norm{\vr'(t)}</m>, et notre hypothèse nous dit que <m>\vr</m>  ne s'annule pas sur <m>]a,b]</m>, de sorte que <m>s</m> est une fonction strictement croissante. Pour chaque <m>y\in[0,L]</m>, il existe donc un unique <m>x\in[a,b]</m> tel que <m>y=s(x)</m>. Il suffit alors de poser <m>x= t(y)</m>.
     </p>
       </proof>
     </proposition>
@@ -252,7 +252,7 @@ vector.
     <example xml:id="ex-reparam-s">
       <title>Reparamétrage naturel : segment</title>
       <statement>
-        <p>Soit <m>P=(2,-2)</m> et <m>Q=(6,1)</m>. Le segment de droite joignant <m>P</m> et <m>Q</m> peut être paramétré par <m>\vr(t) = \vp + t(\vq - \vp) = (1-t)\vp + t\vq</m> pour <m>t\in [0,1]</m>. Nous avons alors <m>\vr'(t) = \vq- \vp = 3\,\vi + 4\,\vj</m>, de sorte que <m>\diff{s}{t} = |\vr'| = 5</m>,
+        <p>Soit <m>P=(2,-2)</m> et <m>Q=(6,1)</m>. Le segment de droite joignant <m>P</m> et <m>Q</m> peut être paramétré par <m>\vr(t) = \vp + t(\vq - \vp) = (1-t)\vp + t\vq</m> pour <m>t\in [0,1]</m>. Nous avons alors <m>\vr'(t) = \vq- \vp = 3\,\vi + 4\,\vj</m>, de sorte que <m>\diff{s}{t} = \norm{\vr'} = 5</m>,
     et donc 
     <md>
       s(t) = \int_0^t 5\, \dee{u} = 5t,
@@ -341,17 +341,17 @@ vector.
     <p>
   Si d'une part cette quantité traduit très bien le concept voulu, il est d'autre part généralement difficile de trouver le paramétrage naturel d'une courbe donnée, et les calculs peuvent être fastidieux, voire impossibles. Afin de contourner cette difficulté technique, on suppose qu'on a un paramétrage par rapport au paramètre <m>t</m> et l'on invoque la dérivation des fonctions composées pour obtenir
     <md>
-  \frac{d\vT}{ds} = \frac{d\vT}{dt}\frac{dt}{ds} =\frac{d\vT}{dt} \frac{1}{dt/ds} = \frac{d\vT}{dt} \frac{ds}{dt} = \frac{d\vT}{dt}\frac{1}{|\vr'(t)|}.
+  \frac{d\vT}{ds} = \frac{d\vT}{dt}\frac{dt}{ds} =\frac{d\vT}{dt} \frac{1}{dt/ds} = \frac{d\vT}{dt} \frac{ds}{dt} = \frac{d\vT}{dt}\frac{1}{\norm{\vr'(t)}}.
 </md>
     </p>
     <definition xml:id="def-Courbure">
       <statement>
         <p>Soit <m>\vr : [a,b] \to \R^n</m> un chemin de classe <m>C^2</m> avec <m>\vr'(t) \ne \vZero</m> pour <m>t\in [a,b]</m>. Son vecteur de courbure est, par définition,
     <md>
-      \vK(t) =\frac{1}{|\vr'(t)|} \frac{d\vT(t)}{dt},
+      \vK(t) =\frac{1}{\norm{\vr'(t)}} \frac{d\vT(t)}{dt},
     </md>
     et sa fonction de courbure est
-    <md>\kappa(t)  = | \vK(t)|.</md>
+    <md>\kappa(t)  = \norm{\vK(t)}.</md>
     </p>
       </statement>
     </definition>
@@ -363,12 +363,12 @@ vector.
 
 Par ailleurs, le <em><term>vecteur normal principal</term></em>  est un vecteur unitaire dans la direction de <m>\vT'</m>, c'est-à-dire
  <md>
-   \vN = \frac{\vT'}{|\vT'|}. </md>
+   \vN = \frac{\vT'}{\norm{\vT'}}. </md>
 </p>
     <example xml:id="Courbure-cercle">
       <title>Courbure d'un cercle</title>
       <statement>
-        <p> Soit <m>\vr (t) = a \cos t \, \vi + a \sin t\, \vj</m> avec <m>t\in[0,2\pi]</m> un paramétrage du cercle centré à l'origine et de rayon <m>a</m>. Nous avons alors <m>\vr'(t) = -a\sin t\,\vi + a\cos t\, \vj</m>, dont la norme vaut <m>|\vr'(t)| = a</m>. Ainsi, le vecteur tangent unitaire est <md>
+        <p> Soit <m>\vr (t) = a \cos t \, \vi + a \sin t\, \vj</m> avec <m>t\in[0,2\pi]</m> un paramétrage du cercle centré à l'origine et de rayon <m>a</m>. Nous avons alors <m>\vr'(t) = -a\sin t\,\vi + a\cos t\, \vj</m>, dont la norme vaut <m>\norm{\vr'(t)} = a</m>. Ainsi, le vecteur tangent unitaire est <md>
       \vT(t) = \frac{1}{a}\vr'(t) = -\sin t\, \vi + \cos t \, \vj,
     </md>
     de sorte que
@@ -389,7 +389,7 @@ Par ailleurs, le <em><term>vecteur normal principal</term></em>  est un vecteur 
     <example>
       <title>Courbure d'une droite</title>
       <statement>
-        <p>Soit <m>\vr(t) = \vp_0 + t\vd</m> un paramétrage d'une droite. On a alors <m>\vr'(t) = \vd</m> qui est constant. Le vecteur tangent unitaire est alors <m>\vT(t) = \frac{1}{|\vd|}\vd</m>, de sorte que <m>\vT'(t) = \vZero</m>. Ainsi, le vecteur de courbure de la droite est <m>\vK = \vZero</m>, et sa fonction de courbure est nulle. En somme, les droites ne sont pas courbées, ce qui est plutôt rassurant.
+        <p>Soit <m>\vr(t) = \vp_0 + t\vd</m> un paramétrage d'une droite. On a alors <m>\vr'(t) = \vd</m> qui est constant. Le vecteur tangent unitaire est alors <m>\vT(t) = \frac{1}{\norm{\vd}}\vd</m>, de sorte que <m>\vT'(t) = \vZero</m>. Ainsi, le vecteur de courbure de la droite est <m>\vK = \vZero</m>, et sa fonction de courbure est nulle. En somme, les droites ne sont pas courbées, ce qui est plutôt rassurant.
     </p>
       </statement>
     </example>
@@ -400,7 +400,7 @@ Par ailleurs, le <em><term>vecteur normal principal</term></em>  est un vecteur 
       </webwork>
     </exercise>
     <p>
-Nous l'avons vu, la courbure est le changement de direction; or, un changement de direction requiert une accélération. Afin de préciser ce lien, convenons d'écrire <m>\vv = \vr', \va = \vv', v = |\vv|</m>. Ainsi, <m>\vv</m> et <m>\va</m> sont les vecteurs vitesse et accélération, tandis que <m>v</m> est la vitesse scalaire.
+Nous l'avons vu, la courbure est le changement de direction; or, un changement de direction requiert une accélération. Afin de préciser ce lien, convenons d'écrire <m>\vv = \vr', \va = \vv', v = \norm{\vv}</m>. Ainsi, <m>\vv</m> et <m>\va</m> sont les vecteurs vitesse et accélération, tandis que <m>v</m> est la vitesse scalaire.
 </p>
     <proposition xml:id="prop-courbure-accel">
       <statement>
@@ -414,7 +414,7 @@ Nous l'avons vu, la courbure est le changement de direction; or, un changement d
         <p>
     Afin d'alléger l'écriture, nous omettons la variable <m>t</m>, et écrivons par exemple <m>\vr</m> au lieu de <m>\vr(t)</m> et ainsi de suite.</p>
         <p>
-    Nous avons <m>\vr' = |\vr'|\vT = \frac{ds}{dt}\vT</m>, donc, dérivant par rapport à <m>t</m>, avec la règle du produit, nous obtenons
+    Nous avons <m>\vr' = \norm{\vr'}\vT = \frac{ds}{dt}\vT</m>, donc, dérivant par rapport à <m>t</m>, avec la règle du produit, nous obtenons
         <md>
       \vr''  = \frac{d}{dt}\left(\frac{ds}{dt}\vT\right) =
       \left(\frac{d}{dt}\frac{ds}{dt}\right)\vT + \frac{ds}{dt}\frac{d\vT}{dt}
@@ -458,7 +458,7 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
       <statement>
         <p>Soit <m>\vr : [a,b] \to \R^n</m> un chemin régulier en <m>t_0</m>. Le cercle osculateur à la courbe associée à <m>\vr</m> au point <m>\vr(t_0)</m> est le cercle de rayon <m>1/\kappa(t_0)</m> et de centre
     <md>
-      \vr(t_0) + \frac{1}{\kappa(t_0)}\frac{\vK(t_0)}{|\vK(t_0)|} = \vr(t_0) + \frac{1}{\kappa(t_0)^2} \vK(t_0).
+      \vr(t_0) + \frac{1}{\kappa(t_0)}\frac{\vK(t_0)}{\norm{\vK(t_0)}} = \vr(t_0) + \frac{1}{\kappa(t_0)^2} \vK(t_0).
     </md>
 
 
@@ -469,12 +469,12 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
 Avant de voir des exemples, nous avons besoin d'un outil qui permet de faire efficacement les calculs nécessaires. Nous l'avons déjà mentionné, calculer le paramétrage naturel peut être ardu. Si, en plus, on doit dériver, les choses risquent de devenir compliquées.
 </p>
     <p>
-Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>, quitte à ajouter une troisième coordonnée nulle si le chemin original est à valeurs dans <m>\R^2</m>. Aussi, écrivons <m>\vv = \vr',\ \va = \vv' = \vr''</m> pour le vecteur vitesse et le vecteur accélération, et <m>v = |\vv|</m> pour la norme de la vitesse.
+Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>, quitte à ajouter une troisième coordonnée nulle si le chemin original est à valeurs dans <m>\R^2</m>. Aussi, écrivons <m>\vv = \vr',\ \va = \vv' = \vr''</m> pour le vecteur vitesse et le vecteur accélération, et <m>v = \norm{\vv}</m> pour la norme de la vitesse.
 </p>
     <proposition xml:id="prop-Formules-K">
       <statement>
-        <p>Soit <m>\vr : [a,b] \to \R^3</m> un chemin régulier. Alors,
-    <ol marker="(a)"><li><p><m>\vv \times \va = v^3 (\vT \times \vK);</m></p></li><li><p><m>\kappa = \frac{|\vv \times \va|}{|\vv|^3};</m></p></li><li><p><m>\vK = \frac{(\vv \times \va) \times \vv}{v^4}.</m></p></li></ol>
+        <p>Soit <m>\vr : [a,b] \to \R^3</m> un chemin régulier, <m>\vv = \vr''</m> et <m>\va = \vr''</m>. Alors,
+    <ol marker="(a)"><li><p><m>\vv \times \va = v^3 (\vT \times \vK);</m></p></li><li><p><m>\kappa = \frac{\norm{\vv \times \va}}{\norm{\vv}^3};</m></p></li><li><p><m>\vK = \frac{(\vv \times \va) \times \vv}{v^4}.</m></p></li></ol>
 
     </p>
       </statement>
@@ -495,9 +495,9 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
             <p>
           En effet, il suit de la première partie que
             <md>
-          |\vv \times \va| = v^3 |\vT \times \vK| = v^3 |\vT|\, |\vK| = v^3 \kappa ,
+          \norm{\vv \times \va} = v^3 \norm{\vT \times \vK} = v^3 \norm{\vT}\, \norm{\vK} = v^3 \kappa ,
           </md>
-          où la troisième égalité suit de <xref ref="KperpT"/> et du fait que <m>\vT</m> est unitaire. Puisque <m>v = |\vv|</m> et que le chemin est supposé régulier, ceci fournit le résultat voulu.
+          où la troisième égalité suit de <xref ref="KperpT"/> et du fait que <m>\vT</m> est unitaire. Puisque <m>v = \norm{\vv}</m> et que le chemin est supposé régulier, ceci fournit le résultat voulu.
         </p>
           </li>
           <li>
@@ -555,7 +555,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
           </md>
           Ceci donne directement la fonction de courbure :
           <md>
-            \kappa(t) = \frac{ab}{|\vv|^3} = \frac{ab}{v^3} = \frac{ab}{\left(a^2 \sin^2 t + b^2 \cos^2 t \right)^{3/2}}.
+            \kappa(t) = \frac{ab}{\norm{\vv}^3} = \frac{ab}{v^3} = \frac{ab}{\left(a^2 \sin^2 t + b^2 \cos^2 t \right)^{3/2}}.
           </md>
           Comme <m>a</m> et <m>b</m> sont constantes, cette expression atteint son maximum (respectivement son minimum) lorsque le dénominateur atteint son minimum (respectivement son maximum). De plus, comme <m>v\geqslant 0</m>, les intervalles de monotonie de <m>v^3</m> sont les mêmes que ceux de <m>v^2</m>. Ainsi, il suffit d'étudier les variations de la fonction <m>c(t) = v(t)^2 = a^2 \sin^2t + b^2 \cos^2 t</m>. Nous avons
         </p>
@@ -611,7 +611,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
   De plus, <m>v(t) = \sqrt{1+f'(t)^2}</m>, ce qui donne
   <md>
     <mrow>\vK(t) \amp = \frac{1}{\left(1+f'(t)^2\right)^2}\ctvec{-f''(t)f'(t)}{f''(t)}{0}  </mrow>
-    <mrow> \amp \implies \kappa(t) = |\vK(t)| = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}. </mrow>
+    <mrow> \amp \implies \kappa(t) = \norm{\vK(t)} = \frac{|f''(t)|}{\left[1+f'(t)^2\right]^{3/2}}. </mrow>
    
 </md>
 On retrouve notamment le fait que la composante <m>y</m> du vecteur de courbure a le même signe que la dérivée seconde, <m>f''</m>. Ceci fournit une autre preuve, s'il en faut, du fait que lorsqu'une fonction admet une dérivée seconde positive, sa courbe est courbée vers le haut, et inversement.

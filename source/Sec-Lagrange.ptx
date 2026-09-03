@@ -23,7 +23,7 @@ est un type de <em>problème d'optimisation avec une contrainte</em>. La fonctio
 </p>
     <p>Jusqu'à présent, nous avons toujours résolu ce genre de problèmes avec contrainte :
 <ul><li>en isolant <m>y</m> à partir de  <m>g(x,y)=0</m> pour avoir <m>y</m> en fonction de <m>x</m> (ou réciproquement), ou
-</li><li>en paramétrant la courbe <m>g(x,y)=0</m>, c'est-à-dire en écrivant les points sur la courbe sous la forme  <m>\big(x(t), y(t)\big)</m> pour certaines fonctions  <m>x(t)</m> et  <m>y(t)</m>. Par exemple, nous avons utilisé <m>x(t)=\cos t</m>, <m>y(t)=\sin t</m> pour paramétrer le cercle  <m>x^2+y^2=1</m> dans l'<xref ref="eg_MXMNabsA" text="global">exemple</xref>.
+</li><li>en paramétrant la courbe <m>g(x,y)=0</m>, c'est-à-dire en écrivant les points sur la courbe sous la forme  <m>\left(x(t), y(t)\right)</m> pour certaines fonctions  <m>x(t)</m> et  <m>y(t)</m>. Par exemple, nous avons utilisé <m>x(t)=\cos t</m>, <m>y(t)=\sin t</m> pour paramétrer le cercle  <m>x^2+y^2=1</m> dans l'<xref ref="eg_MXMNabsA" text="global">exemple</xref>.
 </li></ul>
 Cependant, très souvent, la fonction <m>g(x,y)</m> est tellement compliquée qu'on ne peut pas résoudre explicitement <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m> ni pour <m>x</m> en fonction de <m>y</m> et, en plus, on ne peut pas paramétrer <m>g(x,y)=0</m>. Parfois, on pourrait résoudre <m>g(x,y)=0</m> pour <m>y</m> en fonction de <m>x</m>, mais la solution résultante peut être si compliquée qu'il peut être vraiment difficile, ou même virtuellement impossible, de travailler avec elle. Ce type de traitement peut devenir encore plus difficile dans les dimensions supérieures lorsque, par exemple, on souhaite optimiser une fonction <m>f(x,y,z)</m> soumise à une contrainte <m>g(x,y,z)=0</m>.
 </p>
@@ -59,13 +59,13 @@ Le scalaire <m>\la</m> est appelé un <em>multiplicateur de Lagrange</em>.
       <proof>
         <p> Écrivons <m>\vr = (x,y,z)</m> et supposons que <m>\vr_0=(x_0, y_0, z_0)</m> est un point sur  <m>\plan{S}</m> tel que <m>f(\vr)\geqslant f(\vr_0)</m> pour tous les points <m>\vr</m> sur  <m>\plan{S}</m> qui sont près de <m>\vr_0</m>. En d'autres termes,  <m>\vr_0</m> est un point de minimum local pour  <m>f</m> sur <m>\plan{S}</m>. Naturellement, l'argument pour les maximums locaux sera identique.
 </p>
-        <p> Imaginons que nous nous promenons sur la surface <m>\plan{S}</m> avec le temps (disons <m>t</m>) allant de  <m>t=-1</m> à <m>t=+1</m>, de sorte que la position à <m>t=0</m> est exactement <m>\vr_0</m>. Notre position est donnée par un chemin <m>\vr(t) =\big(x(t),y(t),z(t)\big)</m>.
+        <p> Imaginons que nous nous promenons sur la surface <m>\plan{S}</m> avec le temps (disons <m>t</m>) allant de  <m>t=-1</m> à <m>t=+1</m>, de sorte que la position à <m>t=0</m> est exactement <m>\vr_0</m>. Notre position est donnée par un chemin <m>\vr(t) =\left(x(t),y(t),z(t)\right)</m>.
 </p>
         <p> Posons
 <md><mrow>
-F(t) = f\circ\vr\,(t)  = f\big(x(t),y(t),z(t)\big)
+F(t) = f\circ\vr\,(t)  = f\left(x(t),y(t),z(t)\right)
 </mrow></md>,
-de sorte que <m>F(t)</m> est la valeur de  <m>f</m> observée au temps <m>t</m> de notre balade. Alors, pour <m>t</m> près de <m>0</m>, <m>\vr(t)</m> est près de  <m>\vr_0 = \big(x(0),y(0),z(0)\big)</m>, et
+de sorte que <m>F(t)</m> est la valeur de  <m>f</m> observée au temps <m>t</m> de notre balade. Alors, pour <m>t</m> près de <m>0</m>, <m>\vr(t)</m> est près de  <m>\vr_0 = \left(x(0),y(0),z(0)\right)</m>, et
 <md><mrow>
 F(0) = f\circ \vr(0) = f(\vr_0)
      \leqslant f\circ \vr(t) = F(t)
@@ -252,7 +252,7 @@ Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et
   L'équation (E1) donne <m>y=\frac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
 <md><mrow>
 4x=2\la^2 x \qquad\text{ou}\qquad
-         2x\big(2-\la^2\big)=0
+         2x\left(2-\la^2\right)=0
 </mrow></md>.
 Ainsi, (E2) est vérifiée si <m>x=0</m> ou <m>\la=\sqrt{2}</m> ou <m>\la=-\sqrt{2}</m>.
 <ul><li> Si <m>x=0</m>, alors (E1) donne <m>y=0</m> aussi. Mais
@@ -271,12 +271,12 @@ Ainsi, (E2) est vérifiée si <m>x=0</m> ou <m>\la=\sqrt{2}</m> ou <m>\la=-\sqrt
 </li><li><m>y=\pm\frac{1}{2}</m> et <m>x=-\sqrt{2}y=\mp\frac{1}{\sqrt{2}}</m>.
 </li></ul></p></li></ul>
 Nous avons à présent les quatre points candidats  <m>(x,y)</m>, à savoir
-<m>\big(\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>,
-<m>\big(-\frac{1}{\sqrt{2}},\,-\frac{1}{2}\big)</m>,
-<m>\big(\frac{1}{\sqrt{2}},\,-\frac{1}{2}\big)</m>
+<m>\left(\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>,
+<m>\left(-\frac{1}{\sqrt{2}},\,-\frac{1}{2}\right)</m>,
+<m>\left(\frac{1}{\sqrt{2}},\,-\frac{1}{2}\right)</m>
 et
-<m>\big(-\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>.
-Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <m>(x,y)</m> soit le coin du premier quadrant, il s'agit de <m>\big(\frac{1}{\sqrt{2}},\,\frac{1}{2}\big)</m>.
+<m>\left(-\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>.
+Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <m>(x,y)</m> soit le coin du premier quadrant, il s'agit de <m>\left(\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>.
 </p>
       </solution>
     </example>
@@ -300,7 +300,7 @@ g(x,y)=3x^2-2xy+3y^2-4=0
 Notons cependant que de maximiser ou de minimiser <m>\sqrt{x^2+y^2}</m> est équivalent<fn>
   Car la fonction <m>S(z)=z^2</m> est strictement croissante pour  <m>z\geqslant 0</m>. Ainsi, pour  <m>a,b\geqslant 0</m>, le fait d'avoir <q><m>a \lt b</m></q> équivaut à avoir  <q><m>S(a) \lt S(b)</m></q>.
 </fn>
- à maximiser ou à minimiser son carré, <m>\big(\sqrt{x^2+y^2}\big)^2=x^2+y^2</m>. Ainsi, nous pouvons choisir la fonction objectif
+ à maximiser ou à minimiser son carré, <m>\left(\sqrt{x^2+y^2}\right)^2=x^2+y^2</m>. Ainsi, nous pouvons choisir la fonction objectif
 <md><mrow>
 f(x,y)=x^2+y^2
 </mrow></md>,
@@ -374,8 +374,8 @@ Nous avons que <m>\la</m> doit être <m>\frac{1}{2}</m> ou <m>\frac{1}{4}</m>. R
 </mrow></md>.
 Ici, <q><m>\impliesover{(E3)}</m></q> signifie que l'on utilise (E3). Nous avons maintenant  <m>(x,y)=\pm (1,1)</m> (de <m>\la=\frac{1}{2}</m>) et  <m>(x,y)=\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m> (de <m>\la=\frac{1}{4}</m>).
 
-La distance de  <m>(0,0)</m> à <m>\pm (1,1)</m>, à savoir  <m>\sqrt{2}</m>, est supérieure à la distance de <m>(0,0)</m> à <m>\pm\big(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\big)</m>, à savoir  <m>1</m>.
-Ainsi, les extrémités du petit demi-axe sont  <m>\pm\big(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\big)</m>, et celles du grand demi-axe sont <m>\pm(1,1)</m>. Ces points sont esquissés dans la figure de gauche ci-bas. Une fois ces points trouvés, il devient aisé de dessiner l'ellipse<fn>
+La distance de  <m>(0,0)</m> à <m>\pm (1,1)</m>, à savoir  <m>\sqrt{2}</m>, est supérieure à la distance de <m>(0,0)</m> à <m>\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m>, à savoir  <m>1</m>.
+Ainsi, les extrémités du petit demi-axe sont  <m>\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m>, et celles du grand demi-axe sont <m>\pm(1,1)</m>. Ces points sont esquissés dans la figure de gauche ci-bas. Une fois ces points trouvés, il devient aisé de dessiner l'ellipse<fn>
   Si l'on incline la tête de sorte à ce que la droite par <m>(1,1)</m> et <m>(-1,-1)</m> apparaisse horizontale.
 </fn>.
 </p>

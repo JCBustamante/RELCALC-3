@@ -142,13 +142,20 @@
     <sage>
       <input>
           var('x,y')
+          #Fig = plot_vector_field((-y,x), (x,-2,2),(y,-2,2),
+          #  color = "steelblue", axes = True,
+          #  axes_labels = ['$x$','$y$'],
+          #  axes_labels_size=1.4, aspect_ratio = 1,
+          #  ticks = [[],[]],
+          #  frame= False,
+          #  plot_points = 10)
           Fig = plot_vector_field((-y,x), (x,-2,2),(y,-2,2),
             color = "steelblue", axes = True,
             axes_labels = ['$x$','$y$'],
-            axes_labels_size=1.4, aspect_ratio = 1,
+            axes_labels_size=2, aspect_ratio = 1,
             ticks = [[],[]],
             frame= False,
-            plot_points = 10)
+            plot_points = 10, width=0.004)
           show(Fig)
         </input>
     </sage>

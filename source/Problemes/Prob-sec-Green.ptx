@@ -26,9 +26,11 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>1</m> </p><p>
-      (b) <m>1</m> </p><p>
-      (c) <m>0</m>
+      <ol marker="(a)" cols="3">
+      <li><p><m>1</m></p></li>
+      <li><p><m>1</m></p></li>
+      <li><p><m>0</m></p></li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -132,7 +134,7 @@
     <!--5 -->
     <exercise>
       <statement><p>
-      Évaluer <m>\int_C\vF\cdot d\vr</m>, où
+      Évaluer <m>\displaystyle \int_C\vF\cdot d\vr</m>, où
       <m>\vF = x^2y^2\,\vi + 2xy\,\vj</m> et <m>\cC</m> est la frontière du carré dans le plan
       <m>xy</m> ayant un sommet à l'origine et un sommet diagonalement opposé au point <m>(3, 3)</m>, orientée en sens antihoraire.
       </p></statement>
@@ -184,7 +186,7 @@
       <md>
       <mrow>
       \int_0^3 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-      &amp;=\int_0^3 \big(9(3-t)^2\,,\, 6(3-t)\big)\cdot(-1\,,\,0)\ \dee{t}
+      &amp;=\int_0^3 \left(9(3-t)^2\,,\, 6(3-t)\right)\cdot(-1\,,\,0)\ \dee{t}
       </mrow><mrow>
       &amp;=-\int_0^3 9(3-t)^2\ \dee{t}
       =-81
@@ -262,9 +264,9 @@
       &amp;\hskip1in=\iint_T\left\{\pdiff{}{x}(x^2y\cos y^2+3x)
       -\pdiff{}{y} (x\sin y^2 -y^2)\right\}\,\dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;\hskip1in=\iint_T\big(2xy\cos y^2+3-2xy\cos y^2+2y\big)\,\dee{x}\,\dee{y}
+      &amp;\hskip1in=\iint_T\left(2xy\cos y^2+3-2xy\cos y^2+2y\right)\,\dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;\hskip1in=\iint_T\big(3+2y\big)\,\dee{x}\,\dee{y}
+      &amp;\hskip1in=\iint_T\left(3+2y\right)\,\dee{x}\,\dee{y}
       </mrow>
       </md>
       The integral <m>\iint_T(2y)\,\dee{x}\,\dee{y}</m> vanishes because <m>2y</m> changes
@@ -285,7 +287,7 @@
       Évaluer
       <m> I=
       \ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
-      +\big(xy^4+x^3y^2\big)\,\dee{y}
+      +\left(xy^4+x^3y^2\right)\,\dee{y}
       </m>
       en sens antihoraire sur la frontière du demi-disque <m>0\leqslant y\leqslant \sqrt{4-x^2}</m>.
       </p></statement>
@@ -306,22 +308,22 @@
       <md>
       <mrow>
       &amp;\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
-      +\big(xy^4+x^3y^2\big)\,\dee{y}
+      +\left(xy^4+x^3y^2\right)\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in
-      =\iint_D\Big[\pdiff{}{x}\big(xy^4+x^3y^2\big)
+      =\iint_D\Big[\pdiff{}{x}\left(xy^4+x^3y^2\right)
       -\pdiff{}{y}\Big(\frac{1}{3}x^2y^3-x^4y\Big) \Big] \dee{x} \dee{y}
       </mrow><mrow>
-      &amp;\hskip1in=\iint_D\big(x^4+2x^2y^2+y^4\big)\ \dee{x} \dee{y}
+      &amp;\hskip1in=\iint_D\left(x^4+2x^2y^2+y^4\right)\ \dee{x} \dee{y}
       </mrow><mrow>
-      &amp;=\iint_D\big(x^2+y^2\big)^2\ \dee{x} \dee{y}
+      &amp;=\iint_D\left(x^2+y^2\right)^2\ \dee{x} \dee{y}
       </mrow>
       </md>
       Switching to polar coordinates
       <md>
       <mrow>
       \ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
-      +\big(xy^4+x^3y^2\big)\,\dee{y}
+      +\left(xy^4+x^3y^2\right)\,\dee{y}
       &amp;=\int_0^2 dr\ r\int_0^{\pi}\dee{\theta}\ r^4
       ={\pi\frac{r^6}{6}\bigg|}_0^2
       </mrow><mrow>
@@ -337,30 +339,30 @@
       <m>(-2,0)</m> to <m>(2,0)</m>, and <m>\cC_2</m>, the half-circle <m>\vr(\theta)=x(\theta)\,\vi+y(\theta)\,\vj=2\cos\theta\,\vi+2\sin\theta\,\vj</m>,
       <m>0\le\theta\leqslant \pi</m>. As <m>y=0</m> at every point of <m>\cC_1</m>,
       <m>\
-      \int_{\cC_1} \big(\frac{1}{3}x^2y^3-x^4y\big)\,\dee{x}
-      +\big(xy^4+x^3y^2\big)\,\dee{y}=0
+      \int_{\cC_1} \left(\frac{1}{3}x^2y^3-x^4y\right)\,\dee{x}
+      +\left(xy^4+x^3y^2\right)\,\dee{y}=0
       \ </m> and
       <md>
       <mrow>
       I&amp;=\int_{\cC_2} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
-      +\big(xy^4+x^3y^2\big)\,\dee{y}
+      +\left(xy^4+x^3y^2\right)\,\dee{y}
       </mrow><mrow>
       &amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}x(\theta)^2y(\theta)^3-x(\theta)^4y(\theta)\Big)\,x'(\theta)
       </mrow><mrow>
       &amp;\hskip2in
-      +\big(x(\theta)y(\theta)^4+x(\theta)^3y(\theta)^2\big)y'(\theta)\Big]
+      +\left(x(\theta)y(\theta)^4+x(\theta)^3y(\theta)^2\right)y'(\theta)\Big]
                 \dee{\theta}
       </mrow><mrow>
       &amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}2^5\cos^2\theta\sin^3\theta-2^5\cos^4\theta\sin\theta\Big)\,
                        (-2\sin\theta)
       </mrow><mrow>&amp;\hskip2in
-      +\big(2^5\cos\theta\sin^4\theta+2^5\cos^3\theta\sin^2\theta\big)\,
+      +\left(2^5\cos\theta\sin^4\theta+2^5\cos^3\theta\sin^2\theta\right)\,
                      (2\cos\theta)\Big]\dee{\theta}
       </mrow><mrow>
       &amp;=2^5\int_0^\pi \Big(\frac{4}{3}\cos^2\theta\sin^4\theta+4\cos^4\theta\sin^2\theta\Big)
       \dee{\theta}
       </mrow><mrow>
-      &amp;=2^5\int_0^\pi \sin^2(2\theta)\big(\frac{1}{3}\sin^2\theta+\cos^2\theta\big)\,
+      &amp;=2^5\int_0^\pi \sin^2(2\theta)\left(\frac{1}{3}\sin^2\theta+\cos^2\theta\right)\,
       \dee{\theta}
       </mrow><mrow>
       &amp;=2^4\int_0^\pi \sin^2(2\theta)\Big(\frac{1}{3}[1-\cos(2\theta)]+[1+\cos(2\theta)]\Big)\,
@@ -384,7 +386,7 @@
       Soit <m>\cC</m> le rectangle orienté en sens antihoraire
       formé par les sommets <m>(1,0)</m>, <m>(3,0)</m>, <m>(3,1)</m> et <m>(1,1)</m>. Évaluer
       <md><mrow>
-      \oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}.
+      \oint_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}.
       </mrow></md>
       </p></statement>
 
@@ -410,11 +412,11 @@
       So Green's theorem gives
       <md>
       <mrow>
-      &amp;\oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}
+      &amp;\oint_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in=\iint_\cR \Big[
-            \pdiff{}{x}\big(2yx^2 e^{y^2}\big)
-           -\pdiff{}{y}\big(3y^2+2xe^{y^2}\big)
+            \pdiff{}{x}\left(2yx^2 e^{y^2}\right)
+           -\pdiff{}{y}\left(3y^2+2xe^{y^2}\right)
          \Big]\,\dee{x} \dee{y}
       </mrow><mrow>
       &amp;\hskip1in=\iint_\cR \Big[
@@ -443,12 +445,10 @@
     <exercise>
       <statement><p>
       Montrer que
-      <md>
-      <mrow>
+      <m>
       \pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
       =\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)
-      </mrow>
-      </md>
+      </m>
       pour tout <m>(x,y)\ne (0,0)</m>. Discuter du lien entre ce résultat et le résultat de l'<xref ref="prb_Green_singular" text="global">exercice</xref>.
       </p></statement>
 
@@ -476,7 +476,7 @@
       </p>
 
       <p><em>Petite discussion :</em>
-      S'il n'y avait pas la singularité à <m>(0,0)</m>, le champ de vecteurs du dernier exercice serait conservatif, et l'intégrale <m>\int\vF\cdot \dee{\vr}</m>
+      S'il n'y avait pas la singularité à <m>(0,0)</m>, le champ de vecteurs du dernier exercice serait conservatif, et l'intégrale <m>\displaystyle \int\vF\cdot \dee{\vr}</m>
       autour de toute courbe fermée serait nulle. Mais comme nous avons vu dans les parties (a) et (b) de l'<xref ref="prb_Green_singular" text="global">exercice</xref>, ce n'est pas le cas. De l'autre côté,
       par le théorème de Green (<xref ref="thm_Green_tgt"/>),
       l'intégrale autour de la limite de toute région qui
@@ -664,7 +664,7 @@
       <statement><p>
       Soit
       <md><mrow>
-      \vF(x, y) = \big(y^2 - e^{-y^2} + \sin x\,,\, 2xye^{-y^2} + x\big),
+      \vF(x, y) = \left(y^2 - e^{-y^2} + \sin x\,,\, 2xye^{-y^2} + x\right),
       </mrow></md>
       et soit <m>\cC</m> la frontière du triangle délimité par les sommets <m>(0, 0)</m>, <m>(1, 0)</m> et
       <m>(1, 2)</m>, orientée en sens antihoraire. Calculer
@@ -698,18 +698,18 @@
       <md>
       <mrow>
       \int_C \vF\cdot\dee{\vr}
-      &amp;= \int_C \big\{\big(y^2 - e^{-y^2} + \sin x\big)\dee{x}
-                     +\big(2xye^{-y^2} + x\big)\dee{y}\big\}
+      &amp;= \int_C \big\{\left(y^2 - e^{-y^2} + \sin x\right)\dee{x}
+                     +\left(2xye^{-y^2} + x\right)\dee{y}\big\}
       </mrow><mrow>
       &amp;= \iint_T \big\{
-                   \tfrac{\partial }{\partial x}\big(2xye^{-y^2} + x\big)
-                 -\tfrac{\partial }{\partial y}\big(y^2 - e^{-y^2} + \sin x\big)
+                   \tfrac{\partial }{\partial x}\left(2xye^{-y^2} + x\right)
+                 -\tfrac{\partial }{\partial y}\left(y^2 - e^{-y^2} + \sin x\right)
                      \big\}\dee{x}\dee{y} \hskip0.1in
 
       </mrow><mrow>
       &amp;= \iint_T \big\{
-                   \big(2ye^{-y^2} + 1\big)
-                 - \big(2y +2y e^{-y^2} \big)
+                   \left(2ye^{-y^2} + 1\right)
+                 - \left(2y +2y e^{-y^2} \right)
                      \big\}\dee{x}\dee{y}
       </mrow><mrow>
       &amp;= \int_0^1\dee{x}\int_0^{2x}\dee{y}\  \big\{1-2y\big\}
@@ -730,7 +730,7 @@
       les courbes <m>y = x^2 - 4x+3</m> et <m>y = 3 - x^2 + 2x</m>. Déterminer la valeur
       de l'intégrale de ligne
       <md><mrow>
-      \int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
+      \int_C \left(2xe^y + \sqrt{2 + x^2}\right)\, \dee{x}
                   + x^2 (2 + e^y)\, \dee{y},
       </mrow></md>
       où <m>\cC</m> est parcourue en sens antihoraire.
@@ -769,7 +769,7 @@
       By Green's theorem, which is Theorem <xref ref="thm_Green_tgt"/>,
       <md>
       <mrow>
-      \int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
+      \int_C \left(2xe^y + \sqrt{2 + x^2}\right)\, \dee{x}
                   + x^2 (2 + e^y)\, \dee{y}
       &amp;=\iint_R\left\{\frac{\partial F_2}{\partial x}
                        -\frac{\partial F_1}{\partial y}\right\}\ \dee{x}\dee{y}
@@ -795,11 +795,11 @@
       Soit
       <md>
       <mrow>
-      \vF(x,y) = \big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)\,\vi
-                 +\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)\,\vj.
+      \vF(x,y) = \left(\tfrac{3}{2}y^2 + e^{-y} +\sin x\right)\,\vi
+                 +\left(\tfrac{1}{2}x^2+x-x e^{-y}\right)\,\vj.
       </mrow>
       </md>
-      Trouver <m>\int_C\vF\cdot\dee{\vr}</m>, où <m>\cC</m> est la frontière du triangle ayant pour sommets
+      Trouver <m>\displaystyle \int_C\vF\cdot\dee{\vr}</m>, où <m>\cC</m> est la frontière du triangle ayant pour sommets
       <m>(0,0)</m>, <m>(1,-2)</m> et <m>(1,2)</m>, orientée en sens antihoraire.
       </p>
 
@@ -833,17 +833,17 @@
       <md>
       <mrow>
       \int_C \vF\cdot\dee{\vr}
-      &amp;= \int_{\partial T} \big\{\big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)\dee{x}
-                     +\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)\dee{y}\big\}
+      &amp;= \int_{\partial T} \big\{\left(\tfrac{3}{2}y^2 + e^{-y} +\sin x\right)\dee{x}
+                     +\left(\tfrac{1}{2}x^2+x-x e^{-y}\right)\dee{y}\big\}
       </mrow><mrow>
       &amp;= \iint_T \big\{
-          \tfrac{\partial }{\partial x}\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)
-         -\tfrac{\partial }{\partial y}\big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)
+          \tfrac{\partial }{\partial x}\left(\tfrac{1}{2}x^2+x-x e^{-y}\right)
+         -\tfrac{\partial }{\partial y}\left(\tfrac{3}{2}y^2 + e^{-y} +\sin x\right)
                      \big\}\dee{x}\dee{y}
       </mrow><mrow>
       &amp;= \iint_T \big\{
-                   \big(x + 1-e^{-y}\big)
-                 - \big(3y - e^{-y} \big)
+                   \left(x + 1-e^{-y}\right)
+                 - \left(3y - e^{-y} \right)
                      \big\}\dee{x}\dee{y}
       </mrow><mrow>
       &amp;= \iint_T \big\{ x -3y + 1 \big\}\dee{x}\dee{y}
@@ -911,13 +911,15 @@
       </p>
 
       <p>On peut utiliser le fait que
-      <m>\int \frac{\dee{t}}{1+t^2} = \arctan(t) + C</m>.
+      <m>\displaystyle \int \frac{\dee{t}}{1+t^2} = \arctan(t) + C</m>.
       </p></hint>
 
       <answer><p>
-      (a) <m>-\frac{\pi}{2}</m></p><p>
-      (b) <m>\frac{3\pi}{2}</m></p><p>
-      (c) Non.
+      <ol marker="(a)" cols="3">
+      <li><p><m>-\frac{\pi}{2}</m></p></li>
+      <li><p><m>\frac{3\pi}{2}</m></p></li>
+      <li><p>Non.</p></li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -1058,12 +1060,12 @@
       <md>
       <mrow>
       \int_{C_\rho}\vF\cdot\dee{\vr}
-      &amp;=\int_0^{2\pi} \vF\big(\vr(\theta)\big)\cdot\vr'(\theta)\,\dee{\theta}
+      &amp;=\int_0^{2\pi} \vF\left(\vr(\theta)\right)\cdot\vr'(\theta)\,\dee{\theta}
       </mrow><mrow>
       &amp;= \int_0^{2\pi} \Big(\overbrace{-\frac{1}{\rho}\sin\theta\,\vi+\frac{1}{\rho}\cos\theta\,\vj}^
                      {\vF(\vr(\theta))}\Big)
-       \cdot\big(\overbrace{-\rho\sin\theta\,\vi +\rho\cos\theta\,\vj}^
-                           {\vr'(\theta)}\big)\,\dee{\theta}
+       \cdot\left(\overbrace{-\rho\sin\theta\,\vi +\rho\cos\theta\,\vj}^
+                           {\vr'(\theta)}\right)\,\dee{\theta}
       </mrow><mrow>
       &amp;=\int_0^{2\pi}\dee{\theta}
       </mrow><mrow>
@@ -1094,8 +1096,8 @@
       courbes <m>y = x^2 - 4x + 3</m> et <m>y = 3 - x^2 + 2x</m>. Déterminer la valeur de
       l'intégrale de ligne
       <md><mrow>
-      \int_C \big(2xe^y + \sqrt{2} + x^2\big)\dee{x}
-            + x^2 \big(2 + e^y)\dee{y},
+      \int_C \left(2xe^y + \sqrt{2} + x^2\right)\dee{x}
+            + x^2 \left(2 + e^y\right)\dee{y},
       </mrow></md>
       où <m>\cC</m> est traversée en sens antihoraire.
       </p></statement>
@@ -1114,8 +1116,8 @@
       The given integral is of the form <m>\int_C \vF\cdot\dee{\vr}</m>
       with
       <md><mrow>
-      \vF = \big(2xe^y + \sqrt{2} + x^2\big)\,\vi
-            + x^2 \big(2 + e^y)\,\vj
+      \vF = \left(2xe^y + \sqrt{2} + x^2\right)\,\vi
+            + x^2 \left(2 + e^y\right)\,\vj
       </mrow></md>
       If we were to try to evaluate this integral directly, then on the
       <m>y=x^2-4x+3</m> part of <m>\cC</m>, the
@@ -1150,22 +1152,22 @@
       By Green's theorem  (Theorem <xref ref="thm_Green_tgt"/>),
       <md>
       <mrow>
-      &amp;\int_C \big(2xe^y + \sqrt{2} + x^2\big)\dee{x}
-            + x^2 \big(2 + e^y)\dee{y}
+      &amp;\int_C \left(2xe^y + \sqrt{2} + x^2\right)\dee{x}
+            + x^2 \left(2 + e^y\right)\dee{y}
       </mrow><mrow>
       &amp;\hskip1in
-      = \iint_R\Big[\pdiff{}{x}\big(x^2 \big(2 + e^y)\big)
-      -\pdiff{}{y}\big(2xe^y + \sqrt{2} + x^2\big)\Big] \dee{x}\dee{y}
+      = \iint_R\Big[\pdiff{}{x}\left(x^2 \left(2 + e^y\right)\right)
+      -\pdiff{}{y}\left(2xe^y + \sqrt{2} + x^2\right)\Big] \dee{x}\dee{y}
 
       </mrow><mrow>
-      &amp;\hskip1in = \iint_R \big(2x(2+e^y) - 2xe^y\big)\,\dee{x}\dee{y}
+      &amp;\hskip1in = \iint_R \left(2x(2+e^y) - 2xe^y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
       &amp;\hskip1in =4 \int_0^3\dee{x}\int_{x^2 - 4x + 3}^{3 - x^2 + 2x}\dee{y}\  x
       </mrow><mrow>
       &amp;=4 \int_0^3\dee{x}\ x\big[(3 - x^2 + 2x) - (x^2 - 4x + 3)\big]
       </mrow><mrow>
-      &amp;\hskip1in =4 \int_0^3\dee{x}\ \big(6x^2-2x^3\big)
-      = 4\big(2\times 3^3-\frac{1}{2}3^4\big)
+      &amp;\hskip1in =4 \int_0^3\dee{x}\ \left(6x^2-2x^3\right)
+      = 4\left(2\times 3^3-\frac{1}{2}3^4\right)
       =54
       </mrow>
       </md>
@@ -1197,9 +1199,11 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>I_2=0</m></p><p>
-      (b) <m>I_3=\pi</m></p><p>
-      (c) <m>I_4=\pi</m>
+      <ol marker="(a)" cols="3">
+      <li><p><m>I_2=0</m></p></li>
+      <li><p><m>I_3=\pi</m></p></li>
+      <li><p><m>I_4=\pi</m></p></li>
+      </ol>
       </p></answer>
 
       <solution><p> (a) Denote by
@@ -1211,7 +1215,7 @@
       by Green's theorem (Theorem <xref ref="thm_Green_tgt"/>),
       <md><mrow>
       I_2 = \int_{C_2} \vF\cdot\dee{\vr}
-          =\iint_{R_2} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+          =\iint_{R_2} \left(Q_x-P_y\right)\,\dee{x}\dee{y}
           =0
       </mrow></md>
       </p>
@@ -1245,7 +1249,7 @@
       by Green's theorem,
       <md>
       <mrow>
-         0 &amp;=\iint_{R_3} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+         0 &amp;=\iint_{R_3} \left(Q_x-P_y\right)\,\dee{x}\dee{y}
            = \int_{C_3} \vF\cdot\dee{\vr}
                    + \int_{-C_1} \vF\cdot\dee{\vr}
       </mrow><mrow>
@@ -1288,7 +1292,7 @@
       by Green's theorem,
       <md>
       <mrow>
-         0 &amp;=\iint_{R_4} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+         0 &amp;=\iint_{R_4} \left(Q_x-P_y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
           &amp;= \int_{C_4} \vF\cdot\dee{\vr}
                    + \int_{-C_\rho} \vF\cdot\dee{\vr}
@@ -1311,7 +1315,7 @@
       and, as <m>Q_x-P_y</m> is well-defined and zero throughout <m>R_5</m>,
       <md>
       <mrow>
-         0 &amp;=\iint_{R_5} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+         0 &amp;=\iint_{R_5} \left(Q_x-P_y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
           &amp;= \int_{C_1} \vF\cdot\dee{\vr}
                    + \int_{-C_\rho} \vF\cdot\dee{\vr}
@@ -1343,7 +1347,7 @@
       Calculer et simplifier <m>Q_x - P_y</m>.
       </li>
       <li>
-      Calculer l'intégrale <m>\int_{C_R} \vF \cdot \dee{\vr}</m>
+      Calculer l'intégrale <m>\displaystyle \int_{C_R} \vF \cdot \dee{\vr}</m>
       directement en utilisant une paramétrisation où <m>C_R</m> est le cercle de rayon <m>R</m>,
       centré à l'origine et orienté en sens antihoraire.
       </li>
@@ -1352,24 +1356,24 @@
       résultats obtenus dans les deux premières parties.
       </li>
       <li>
-      Utiliser le théorème de Green pour calculer <m>\int_C \vF \cdot \dee{\vr}</m>, où <m>\cC</m>
+      Utiliser le théorème de Green pour calculer <m>\displaystyle \int_C \vF \cdot \dee{\vr}</m>, où <m>\cC</m>
       est le triangle formé des sommets <m>(1, 1)</m>, <m>(1, 0)</m> et <m>(0, 1)</m> orienté dans le sens antihoraire.
       </li>
       <li>
-      Utiliser le théorème de Green pour calculer <m>\int_C \vF \cdot \dee{\vr}</m>, où <m>\cC</m>
+      Utiliser le théorème de Green pour calculer <m>\displaystyle \int_C \vF \cdot \dee{\vr}</m>, où <m>\cC</m>
       est le triangle formé des sommets <m>(-1, -1)</m>, <m>(1, 0)</m> et <m>(0, 1)</m> orienté dans le sens antihoraire.
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>Q_x-P_y=0</m> sauf en <m>(0,0)</m> où ce n'est pas défini.
-      </p>
-
-      <p>(b) <m>-2\pi</m></p><p>
-      (c) Non.</p><p>
-      (d) <m>0</m></p><p>
-      (e) <m>-2\pi</m>
+      <ol marker="(a)" cols="2">
+      <li><p><m>Q_x-P_y=0</m> sauf en <m>(0,0)</m> où ce n'est pas défini.</p></li>
+      <li><p><m>-2\pi</m></p></li>
+      <li><p>Non.</p></li>
+      <li><p><m>0</m></p></li>
+      <li><p><m>-2\pi</m></p></li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)  If <m>(x,y)\ne (0,0)</m>, we have
@@ -1397,11 +1401,11 @@
       <mrow>
       \int_{C_R} \vF \cdot \dee{\vr}
       &amp;=\int_0^{2\pi} \overbrace{\frac{1}{R}
-         \left\{\big(\cos\theta+\sin\theta\big)\vi
-                 +\big(\sin\theta-\cos\theta\big)\vj\right\}}^{\vF(\vr(\theta))}
+         \left\{\left(\cos\theta+\sin\theta\right)\vi
+                 +\left(\sin\theta-\cos\theta\right)\vj\right\}}^{\vF(\vr(\theta))}
       </mrow><mrow>
       &amp;\hskip2in       \cdot
-           \big(\overbrace{-R\sin\theta\,\vi+R\cos\theta\,\vj}^{\vr'(\theta)}\big)
+           \left(\overbrace{-R\sin\theta\,\vi+R\cos\theta\,\vj}^{\vr'(\theta)}\right)
                  \,\dee{\theta}
 
       </mrow><mrow>
@@ -1434,7 +1438,7 @@
       <md>
       <mrow>
       \int_C \vF \cdot \dee{\vr}
-      &amp;= \iint_\cR\big(Q_x - P_y\big)\,\dee{x}\dee{y}
+      &amp;= \iint_\cR\left(Q_x - P_y\right)\,\dee{x}\dee{y}
       =0
       </mrow>
       </md>
@@ -1476,7 +1480,7 @@
       by Green's theorem,
       <md>
       <mrow>
-         0 &amp;=\iint_\cR \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+         0 &amp;=\iint_\cR \left(Q_x-P_y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
           &amp;= \int_C \vF\cdot\dee{\vr}
                    + \int_{-C_r} \vF\cdot\dee{\vr}
@@ -1497,14 +1501,14 @@
       <li>
       Évaluer
       <md><mrow>
-      \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y},
+      \int_C \sqrt{1+x^3}\,\dee{x} +\left(2xy^2 + y^2\right)\,\dee{y},
       </mrow></md>
       où <m>\cC</m> est le cercle unitaire <m>x^2+y^2 = 1</m>, orienté en sens antihoraire.
       </li>
       <li>
       Évaluer
       <md><mrow>
-      \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y},
+      \int_C \sqrt{1+x^3}\,\dee{x} +\left(2xy^2 + y^2\right)\,\dee{y},
       </mrow></md>
       où <m>\cC</m> est maintenant la partie du cercle unitaire <m>x^2+y^2 = 1</m>, avec <m>x\geqslant 0</m>,
       encore orienté en sens antihoraire.
@@ -1532,7 +1536,7 @@
       gives
       <md>
       <mrow>
-      \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+      \int_C \sqrt{1+x^3}\,\dee{x} +\left(2xy^2 + y^2\right)\,\dee{y}
       &amp; = \int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}
       </mrow><mrow>
       &amp;  = \iint_R \Big(\frac{\partial F_2}{\partial x}
@@ -1544,9 +1548,9 @@
       Switching to polar coordinates
       <md>
       <mrow>
-      \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+      \int_C \sqrt{1+x^3}\,\dee{x} +\left(2xy^2 + y^2\right)\,\dee{y}
       &amp;= 2\int_0^{2\pi}\dee{\theta} \int_0^1\dee{r}\
-               r\big(r\sin\theta\big)^2
+               r\left(r\sin\theta\right)^2
       </mrow><mrow>
       &amp;= 2\left[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\right]
          \left[\int_0^1\dee{r}\ r^3\right]
@@ -1598,7 +1602,7 @@
       on all of <m>R</m>. So, by Green's theorem (Theorem <xref ref="thm_Green_tgt"/>),
       <md>
       <mrow>
-      \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+      \int_C \sqrt{1+x^3}\,\dee{x} +\left(2xy^2 + y^2\right)\,\dee{y}
       &amp;=\iint_R \Big(\frac{\partial F_2}{\partial x} -
                 \frac{\partial F_1}{\partial y} \Big)\dee{x}\dee{y}
        - \int_L\vF\cdot\dee{\vr}
@@ -1716,8 +1720,8 @@
                  -\frac{\pi}{2}\leqslant y\leqslant \frac{\pi}{2} }
       </mrow></md>
       (sketched below) consists of two parts, one of which is <m>\cC</m>. The other
-      is the line <m>L</m> from <m>\big(0,\frac{\pi}{2}\big)</m>
-      to <m>\big(0,-\frac{\pi}{2}\big)</m>.
+      is the line <m>L</m> from <m>\left(0,\frac{\pi}{2}\right)</m>
+      to <m>\left(0,-\frac{\pi}{2}\right)</m>.
       </p>
 
       <sidebyside width="28%">
@@ -1795,10 +1799,10 @@
       </mrow><mrow>
       &amp;= \int_C\vnabla g\cdot\dee{\vr} + \int_C\vH\cdot\dee{\vr}
       </mrow><mrow>
-      &amp;=g\big(\vr(\frac{\pi}{2})\big) -g\big(\vr(-\frac{\pi}{2})\big)
+      &amp;=g\left(\vr(\frac{\pi}{2})\right) -g\left(\vr(-\frac{\pi}{2})\right)
          + \int_{-\pi/2}^{\pi/2} x(t) \cos(y(t)) \diff{y}{t}(t)\ \dee{t}
       </mrow><mrow>
-      &amp; =g\big(0,\frac{\pi}{2}\big) -g\big(0,-\frac{\pi}{2}\big)
+      &amp; =g\left(0,\frac{\pi}{2}\right) -g\left(0,-\frac{\pi}{2}\right)
          +\int_{-\pi/2}^{\pi/2} \cos^2 t \,\dee{t}
       </mrow><mrow>
       &amp;=\frac{\pi}{2} -\Big(-\frac{\pi}{2}\Big)
@@ -1850,14 +1854,14 @@
       <mrow>
       A&amp;=\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}
       </mrow><mrow>
-      &amp;=\frac{1}{2}\int_0^{2\pi}\big( x(\theta)y'(\theta)-y(\theta)x'(\theta)\big)\ \dee{\theta}
+      &amp;=\frac{1}{2}\int_0^{2\pi}\left( x(\theta)y'(\theta)-y(\theta)x'(\theta)\right)\ \dee{\theta}
       </mrow><mrow>
-      &amp;=\frac{1}{2}\int_0^{2\pi}\big( 3\cos^4\theta\sin^2\theta+3\sin^4\theta\cos^2\theta\big)\ \dee{\theta}
+      &amp;=\frac{1}{2}\int_0^{2\pi}\left( 3\cos^4\theta\sin^2\theta+3\sin^4\theta\cos^2\theta\right)\ \dee{\theta}
       </mrow><mrow>
       &amp;=\frac{3}{2}\int_0^{2\pi}\sin^2\theta\cos^2\theta\ \dee{\theta}
       =\frac{3}{8}\int_0^{2\pi}\sin^2(2\theta)\ \dee{\theta}
       </mrow><mrow>
-      &amp;=\frac{3}{16}\int_0^{2\pi}\big(1-\cos(4\theta)\big)\ \dee{\theta}
+      &amp;=\frac{3}{16}\int_0^{2\pi}\left(1-\cos(4\theta)\right)\ \dee{\theta}
       =\frac{3}{16}\Big[\theta-\frac{1}{4}\sin(4\theta)\Big]_0^{2\pi}
       =\frac{3\pi}{8}
       </mrow>
@@ -1876,7 +1880,7 @@
       </p></statement>
 
       <hint><p>
-      Écrire <m>\oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
+      Écrire <m>\displaystyle \oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
       =\oint_C(\vF-A\vG)\cdot \dee{\vr}</m>.
       </p></hint>
 
@@ -1924,11 +1928,10 @@
                     -\frac{xy^2}{ {(x^2+y^2)}^2}\vj</m>, <m>(x,y)\ne (0,0)</m>.
       <ol marker = "(a)">
       <li>
-      Calculer <m>\oint_C\vF\cdot \dee{\vr}</m>, où <m>\cC</m> est le cercle unitaire
-      dans le plan <m>xy</m>, orienté positivement.
+      Calculer <m>\displaystyle \oint_C\vF\cdot \dee{\vr}</m>, où <m>\cC</m> est le cercle unitaire   dans le plan <m>xy</m>, orienté positivement.
       </li>
       <li>
-      Utiliser (a) et le théorème de Green pour trouver <m>\oint_{C_0}\vF\cdot \dee{\vr}</m>,
+      Utiliser (a) et le théorème de Green pour trouver <m>\displaystyle \oint_{C_0}\vF\cdot \dee{\vr}</m>,
       où <m>C_0</m> est l'ellipse <m>\frac{x^2}{16}+\frac{y^2}{25}=1</m>, orientée positivement.
       </li>
       </ol>
@@ -1939,23 +1942,23 @@
       </p></hint>
 
       <answer><p>
-      <m>-\pi</m>
+      D'une façon ou d'une autre, la valeur est <m>-\pi</m>.
       </p></answer>
 
       <solution><p>
       (a) Parametrize the circle <m>\vr(\theta)=(\cos\theta,\sin\theta)</m>. Then
       <md>
       <mrow>
-      \vF\big(\vr(\theta)\big)
+      \vF\left(\vr(\theta)\right)
       &amp;=\sin^3\theta\,\vi -\cos\theta \sin^2\theta\,\vj
       </mrow><mrow>
       \diff{\vr}{\theta}(\theta)&amp;=-\sin\theta\,\vi+\cos\theta\,\vj
       </mrow><mrow>
-      \vF\big(\vr(\theta)\big)\cdot \diff{\vr}{\theta}(\theta)
+      \vF\left(\vr(\theta)\right)\cdot \diff{\vr}{\theta}(\theta)
       &amp;=-\sin^4\theta-\cos^2\theta\sin^2\theta=-\sin^2\theta
       </mrow><mrow>
       \oint_C\vF\cdot \dee{\vr}
-      &amp;=\int_0^{2\pi}\vF\big(\vr(\theta)\big)\cdot \diff{\vr}{\theta}(\theta)\ \dee{\theta}
+      &amp;=\int_0^{2\pi}\vF\left(\vr(\theta)\right)\cdot \diff{\vr}{\theta}(\theta)\ \dee{\theta}
       =-\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
       </mrow><mrow>
       &amp;=-\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}
@@ -2015,7 +2018,7 @@
       Soit <m>\cC_1</m> le cercle <m>(x-2)^2+y^2=1</m> et soit <m>\cC_2</m> le
       cercle <m>(x-2)^2+y^2=9</m>. Soit
       <m>\vF=-\frac{y}{x^2+y^2}\,\vi+\frac{x}{x^2+y^2}\,\vj</m>. Trouver les intégrales
-      <m>\oint_{\cC_1}\vF\cdot \dee{\vr}</m> et <m>\oint_{\cC_2}\vF\cdot \dee{\vr}</m>.
+      <m>\displaystyle \oint_{\cC_1}\vF\cdot \dee{\vr}</m> et <m>\displaystyle \oint_{\cC_2}\vF\cdot \dee{\vr}</m>.
       </p></statement>
 
       <hint><p>
@@ -2023,7 +2026,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\oint_{\cC_1}\vF\cdot \dee{\vr}=0</m> et <m>\oint_{\cC_2}\vF\cdot \dee{\vr}=2\pi</m>
+      <m>\displaystyle \oint_{\cC_1}\vF\cdot \dee{\vr}=0</m> et <m>\displaystyle \oint_{\cC_2}\vF\cdot \dee{\vr}=2\pi</m>
       </p></answer>
 
       <solution><p>
@@ -2076,9 +2079,9 @@
       </mrow><mrow>
       \vr'(\theta)&amp;=-\sin\theta\,\vi+\cos\theta\,\vj
       </mrow><mrow>
-      \vF\big(\vr(\theta)\big)&amp;=-\sin\theta\,\vi+\cos\theta\,\vj
+      \vF\left(\vr(\theta)\right)&amp;=-\sin\theta\,\vi+\cos\theta\,\vj
       </mrow><mrow>
-      \vF\big(\vr(\theta)\big)\cdot\vr'(\theta)
+      \vF\left(\vr(\theta)\right)\cdot\vr'(\theta)
       &amp;=1
       </mrow>
       </md>
@@ -2099,11 +2102,11 @@
       <m>R</m>, orientée en sens antihoraire.
       <ol marker = "(a)">
       <li>
-      Évaluer <m>\int_\cC x\,\dee{s}</m>.
+      Évaluer <m>\displaystyle \int_\cC x\,\dee{s}</m>.
       </li>
       <li>
-      Évaluer <m>\int_\cC \vF\cdot \dee{\vr}</m>, où <m>\vF(x,y)
-      =\big(\sin(x^2)-xy\big)\,\vi+\big(x^2+\cos(y^2)\big)\,\vj</m>.
+      Évaluer <m>\displaystyle \int_\cC \vF\cdot \dee{\vr}</m>, où <m>\vF(x,y)
+      =\left(\sin(x^2)-xy\right)\,\vi+\left(x^2+\cos(y^2)\right)\,\vj</m>.
       </li>
       </ol>
       </p></statement>
@@ -2160,8 +2163,8 @@
       <md>
       <mrow>
       \int_\cC \vF\cdot \dee{\vr}
-      &amp;=\iint_R\Big[\pdiff{}{x}\big(x^2+\cos(y^2)\big)
-      -\pdiff{}{y}\big(\sin(x^2)-xy\big) \Big]\ \dee{x} \dee{y}
+      &amp;=\iint_R\Big[\pdiff{}{x}\left(x^2+\cos(y^2)\right)
+      -\pdiff{}{y}\left(\sin(x^2)-xy\right) \Big]\ \dee{x} \dee{y}
       </mrow><mrow>
       &amp;=\iint_R3x\ \dee{x} \dee{y}
       </mrow><mrow>
@@ -2185,7 +2188,7 @@
       </li>
       <li>
       <p>
-      Évaluer <m>\oint_C \vF \cdot \dee{\vr}</m>, où
+      Évaluer <m>\displaystyle \oint_C \vF \cdot \dee{\vr}</m>, où
       <ol marker="(i)">
       <li>
        <m>\vF = x^2\,\vi + y^2\,\vj + 3 e^z\,\vk</m>,
@@ -2208,11 +2211,21 @@
       </p></hint>
 
       <answer><p>
-      (a) La projection de la courbe sur le plan <m>xy</m> (c'est-à-dire la vue du dessus de la courbe) est un cercle. Voir la solution pour plus de détails.
+      <ol marker="(a)">
+      <li>
+      <p>
+      La projection de la courbe sur le plan <m>xy</m> (c'est-à-dire la vue du dessus de la courbe) est un cercle. Voir la solution pour plus de détails.
       </p>
-
-      <p>(b) (i) <m>0</m></p><p>
-      (b) (ii) <m>0</m>
+      </li>
+      <li>
+      <p>
+      <ol marker="(i)" cols="2">
+      <li><p><m>0</m></p></li>
+      <li><p><m>0</m></p></li>
+      </ol>
+      </p>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)
@@ -2230,10 +2243,10 @@
       </mrow>
       </md>
       with <m>0\le\theta \lt 2\pi</m>. As <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>,
-      <m>\big(x(\theta),y(\theta)\big)</m> runs once around the circle without
-      crossing itself so that  <m>\big(x(\theta),y(\theta),z(\theta)\big)</m> runs
+      <m>\left(x(\theta),y(\theta)\right)</m> runs once around the circle without
+      crossing itself so that  <m>\left(x(\theta),y(\theta),z(\theta)\right)</m> runs
       once around the curve without crossing itself. As
-      <m>\big(x(2\pi),y(2\pi),z(2\pi)\big)=\big(x(0),y(0),z(0)\big)</m>,
+      <m>\left(x(2\pi),y(2\pi),z(2\pi)\right)=\left(x(0),y(0),z(0)\right)</m>,
       <m>\cC</m> is a simple closed curve.
       </p>
 
@@ -2473,9 +2486,16 @@
 
     <!-- La réponse et la solution correspondent -->
     <exercise>
-      <statement><p>
-      Soit <m>\cR</m> une région finie dans le plan <m>xy</m>, dont la frontière, <m>\cC</m>, consiste en un seul chemin fermé, simple et lisse qui est orienté en sens antihoraire.
-      <q>Simple</q> signifie que la courbe ne s'intersecte pas elle-même.
+      <statement>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+        Soit <m>\cR</m> une région bornée dans le plan <m>xy</m>, dont la frontière, <m>\cC</m>, consiste en un seul chemin fermé, simple et lisse qui est orienté en sens antihoraire.
+        <q>Simple</q> signifie que la courbe ne s'intersecte pas elle-même.
+        </p>
+        <p/>
+        <image source="images/CLP4-figs/pfigs/GreenDivJC" width="100%"/>
+      </sidebyside>
+      <p>
       Utiliser le théorème de Green pour montrer que
       <md><mrow>
       \iint_{\cR}\vnabla\cdot\vF\ \dee{x}\,\dee{y}=\oint_{\cC}\vF\cdot\vn\,\dee{s},
@@ -2483,10 +2503,6 @@
       où <m>\vF=F_1\,\vi+F_2\,\vj</m>, <m>\vn</m> est la normale unitaire extérieure à <m>\cC</m> et <m>s</m>
       est la longueur d'arc le long de <m>\cC</m>.
       </p>
-
-      <sidebyside width="45%">
-      <image source="images/CLP4-figs/pfigs/GreenDivJC"/>
-      </sidebyside>
       </statement>
 
       <hint><p>
@@ -2541,24 +2557,29 @@
       </ul>
       </p>
 
-      <sidebyside width="35%">
-      <image source="images/CLP4-figs/pfigs/GreenDivB"/>
+      <sidebyside widths="30% 5% 65%" valign="top">
+        <image source="images/CLP4-figs/pfigs/GreenDivB" width="100%"/>
+        <p/>
+        <p>
+        Donc, par le théorème de Green,
+        <md>
+        <mrow>
+        \oint_C\vF\cdot\vn\,\dee{s}
+        &amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
+        </mrow>
+        <mrow>
+        \amp =\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
+        </mrow>
+        <mrow>
+        \amp=\iint_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
+        </mrow>
+        <mrow>        \amp =
+        \iint_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}.
+        </mrow>
+        </md>
+        </p>
       </sidebyside>
-
-      <p>
-      Donc, par le théorème de Green,
-      <md>
-      <mrow>
-      \oint_C\vF\cdot\vn\,\dee{s}
-      &amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
-      =\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
-      </mrow><mrow>
-      &amp;=\iint_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
-      </mrow><mrow>
-      &amp;=\iint_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}.
-      </mrow>
-      </md>
-      </p></answer>
+      </answer>
 
       <solution><p>
       Soit <m>\vr(s)=x(s)\,\vi+y(s)\,\vj</m> une paramétrisation en sens antihoraire de
@@ -2586,24 +2607,25 @@
       </ul>
       </p>
 
-      <sidebyside width="35%">
-      <image source="pfigs/GreenDivB"/>
+      <sidebyside widths="40% 5% 55%" valign="top">
+        <image source="pfigs/GreenDivB" width="100%"/>
+        <p/>
+        <p>
+        Donc, par le théorème de Green,
+        <md>
+        <mrow>
+        \oint_C\vF\cdot\vn\,\dee{s}
+        &amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
+        =\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
+        </mrow><mrow>
+        &amp;=\iint_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
+        </mrow><mrow>
+        &amp;=\iint_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}
+        </mrow>
+        </md>
+        </p>
       </sidebyside>
-
-      <p>
-      Donc, par le théorème de Green,
-      <md>
-      <mrow>
-      \oint_C\vF\cdot\vn\,\dee{s}
-      &amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
-      =\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
-      </mrow><mrow>
-      &amp;=\iint_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
-      </mrow><mrow>
-      &amp;=\iint_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}
-      </mrow>
-      </md>
-      </p></solution>
+      </solution>
     </exercise>
 
     <exercise>
@@ -2611,7 +2633,7 @@
       Trouver une courbe lisse <m>\cC</m> simple, fermée et
       orientée en sens antihoraire dans le plan <m>xy</m> pour laquelle
       la valeur de l'intégrale de ligne
-       <m>\oint_{\cC}(y^3-y)\,\dee{x}-2x^3\,dy</m> est un maximum parmi toutes les
+       <m>\displaystyle \oint_{\cC}(y^3-y)\,\dee{x}-2x^3\,dy</m> est un maximum parmi toutes les
       courbes lisses, simples, fermées et orientées dans le sens antihoraire.
       </p></statement>
 

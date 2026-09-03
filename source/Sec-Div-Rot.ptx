@@ -12,66 +12,81 @@
   </introduction>
   <subsection xml:id="pars-rot">
     <title>Le rotationnel</title>
-    <p>
-    Nous voulons mesurer la tendance que notre champ <m>\vF</m> a à créer un tourbillon en un point <m>(x_0,y_0)</m> donné. Imaginons que nous disposons d'une roue à palettes, que nous déposons sur la surface de notre liquide. La roue ne peut pas bouger vers un autre point, mais le liquide peut faire tourner la roue.
-  </p>
-    <figure xml:id="OpenStax-roue">
-      <image source="images/OpenStax/CNX_Calc_Figure_16_05_005" width="75%"/>
-      <caption>Un champ de vitesses d'un liquide peut avoir tendance à créer un tourbillon en un point donné. La rotation a un axe dirigé par le vecteur <m>\vn</m>, normal au plan de rotation. Dans le cas des champs dans <m>\R^2</m>, cet axe est le vecteur <m>\vk</m>. Figure tirée de <em>Calculus Volume 3, d'OpenStax</em><xref ref="Strang-2018"/>.</caption>
-    </figure>
-    <p>
-  Considérons la trajectoire orientée dans le sens contraire des aiguilles d'une montre <m>\cC</m>, formée par :
-  <ul><li><p><m>\cC_1</m>, le segment joignant <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,
-      </p></li><li><p><m>\cC_2</m>, le segment joignant <m>(x_0+\De x,y_0)</m> à <m>(x_0+\De x, y_0+ \De y)</m>,
-      </p></li><li><p><m>\cC_3</m>, le segment joignant <m>(x_0+\De x,y_0 + \De y)</m> à <m>(x_0, y_0+ \De y)</m>, et finalement
-      </p></li><li><p><m>\cC_4</m>, le segment joignant <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.
-      </p></li></ul>
-  </p>
-    <p>
-    Ainsi, nous avons le flux de <m>\vF</m> autour de <m>\cC</m>:
-    <md><mrow>
-      \oint_{\cC} \vF \cdot \dee{\vr} = \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr}.
-    </mrow></md>
-  </p>
-    <image xml:id="sageplot-idee-rot" width="85%">
-      <description>
-        <p> Une trajectoire rectangulaire</p>
-      </description>
-      <sageplot>
+    <sidebyside widths="55% 5% 40%" valign="middle">
+      <p>
+      Nous voulons mesurer la tendance que notre champ <m>\vF</m> a à créer un tourbillon en un point <m>(x_0,y_0)</m> donné. Imaginons que nous disposons d'une roue à palettes, que nous déposons sur la surface de notre liquide. La roue ne peut pas bouger vers un autre point, mais le liquide peut faire tourner la roue. La rotation a un axe dirigé par le vecteur <m>\vn</m>, normal au plan de rotation ; dans le cas des champs dans <m>\R^2</m>, cet axe est le vecteur <m>\vk</m>.
+      </p>
+      <p/>
+      <figure xml:id="OpenStax-roue">
+        <caption>Figure tirée de <em>Calculus Volume 3, d'OpenStax</em><xref ref="Strang-2018"/>.</caption>
+        <image source="images/OpenStax/CNX_Calc_Figure_16_05_005" width="100%"/>
+      </figure>
+    </sidebyside>
+    <sidebyside widths="42% 5% 53%" valign="top">
+      <stack>
+        <p>
+    Considérons une trajectoire rectangulaire, qu'on considère comme étant la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens contraire des aiguilles d'une montre :
+    <ul><li>
+        <p><m>\cC_1</m> de <m>(x_0,y_0)</m>à <m>(x_0+\De x,y_0)</m> </p>
+        </li><li>
+        <p><m>\cC_2</m> de <m>(x_0+\De x,y_0)</m></p>
+        <p>à <m>(x_0+\De x, y_0+ \De y)</m>,</p>
+        </li><li>
+        <p><m>\cC_3</m> de <m>(x_0+\De x,y_0 + \De y)</m></p>
+        <p>à <m>(x_0, y_0+ \De y)</m>,</p>
+        </li><li>
+        <p><m>\cC_4</m> de <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.</p>
+        </li></ul>
+        </p>
+      </stack>
+      <p/>
+      <image xml:id="sageplot-idee-rot" width="100%">
+        <description>
+          <p> Une trajectoire rectangulaire</p>
+        </description>
+        <sageplot>
     var('x,y')
     Dx=2
     Dy=1
     P(x,y) = (-y+x-1)/sqrt((x-1)^2 + y^2)
     Q(x,y) = (y+x-1)/sqrt((x-1)^2 + y^2)
     Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.2,2.2), (y,-0.2,1.2),
-      color = "grey", plot_points=12, frame = False, zorder = -1)
-    Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1,
-      axes = False)
-    Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1)
-    Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1)
-    Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1)
-    Fig += arrow2d((0.9,0), (1.1,0), color = "red", zorder =1)
-    Fig += arrow2d((2,0.4), (2,0.6), color = "red", zorder =1)
-    Fig += arrow2d((1.1,1), (0.9,1), color = "red", zorder =1)
-    Fig += arrow2d((0,0.7), (0,0.5), color = "red", zorder =1)
-    Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.1), color = "blue",
-      fontsize = 14)
-    Fig += text("$\\mathcal{C}_2$", (Dx+0.1,Dy-0.2), color = "blue",
-      fontsize = 14)
-    Fig += text("$\\mathcal{C}_3$", (0.3,Dy-0.1), color = "blue",
-      fontsize = 14)
-    Fig += text("$\\mathcal{C}_4$", (-0.1,0.1), color = "blue", fontsize = 14)
-    Fig += text("$(x_0,y_0)$", (0,-0.1), fontsize = 14, color = "black",
+      color = "grey", plot_points=10, width=0.004, figsize = 4, frame = False, zorder = -1)
+    Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1.5,
+      axes = False, width=0.8, arrowsize=2)
+    Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+    Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+    Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+    Fig += arrow2d((0.9,0), (1.1,0), color = "red", zorder =1, arrowsize=2)
+    Fig += arrow2d((2,0.4), (2,0.6), color = "red", zorder =1, arrowsize=2)
+    Fig += arrow2d((1.1,1), (0.9,1), color = "red", zorder =1, arrowsize=2)
+    Fig += arrow2d((0,0.7), (0,0.5), color = "red", zorder =1, arrowsize=2)
+    Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.2), color = "blue",
+      fontsize = 16, background_color = "white")
+    Fig += text("$\\mathcal{C}_2$", (Dx+0.2,Dy-0.2), color = "blue",
+      fontsize = 16, background_color = "white")
+    Fig += text("$\\mathcal{C}_3$", (0.23,Dy-0.15), color = "blue",
+      fontsize = 16, background_color = "white")
+    Fig += text("$\\mathcal{C}_4$", (-0.25,0.1), color = "blue",
+      fontsize = 16, background_color = "white")
+    Fig += text("$(x_0,y_0)$", (0,-0.2), fontsize = 16, color = "black",
       zorder = 2, background_color = "white")
-    Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.1), fontsize = 14,
+    Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.2), fontsize = 16,
       color = "black", zorder = 0, background_color = "white")
     Fig += text("$(x_0+ \\Delta x,y_0 + \\Delta y)$", (Dx,Dy+0.1),
-      fontsize = 14, color = "black", zorder = 0, background_color = "white")
-    Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 14,
+      fontsize = 16, color = "black", zorder = 0, background_color = "white")
+    Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 16,
       color = "black", zorder = 0, background_color = "white")
     Fig
    </sageplot>
-    </image>
+      </image>
+    </sidebyside>
+            <p>
+        Ainsi, nous avons le flux de <m>\vF</m> autour, ou la circulation  de <m>\cC</m>:
+     <md><mrow>
+        \oint_{\cC} \vF \cdot \dee{\vr} = \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr}.
+        </mrow></md>
+        </p>
     <p>
     Comme d'habitude, nous supposons <m>\De x</m> et  <m>\De y</m> petits et que les composantes du champ <m>\vF</m> sont continues et possèdent des dérivées partielles continues. Sur chacun des segments, nous voulons une approximation de <m>\vF \cdot \De \vr</m>, ce que nous obtenons en choisissant un point d'échantillonnage pour l'évaluation du champ <m>\vF</m> sur chaque portion du trajet.
   </p>
@@ -165,40 +180,41 @@
     <example>
       <statement>
         <p>
-        Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est
-        <md><mrow>
-          \pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x.
-        </mrow></md>
+        Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est <m>\pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x.</m>
       </p>
-        <p>
-        Le champ est représenté dans la figure ci-bas. Notons que toutes les flèches sont verticales vers le bas. On pourrait donc penser que ce champ représente une translation et que le rotationnel devrait être nul. En bout de ligne, ce n'est pas à une figure comme celle-ci qu'on pense lorsque l'idée d'un tourbillon est considérée.
-      </p>
-        <figure xml:id="fig-rot-translation">
-          <caption>Le champ <m>\vv = (x^2 - 1)\vj</m></caption>
-          <image xml:id="sageplot-rot-translation" width="75%">
-            <description>
-              <p>
-           Un champ vectoriel.</p>
-            </description>
-            <sageplot>
+        <sidebyside widths="50% 5% 45%" valign="top">
+          <p>
+          Le champ est représenté dans la figure ci-contre. Notons que toutes les flèches sont verticales vers le bas. On pourrait donc penser que ce champ représente une translation et que le rotationnel devrait être nul. En bout de ligne, ce n'est pas à une figure comme celle-ci qu'on pense lorsque l'idée d'un tourbillon est considérée.
+          </p>
+          <p/>
+          <figure xml:id="fig-rot-translation">
+            <caption><m>\vF = (x^2 - 1)\vj</m></caption>
+            <image xml:id="sageplot-rot-translation" width="100%">
+              <description>
+                <p>
+             Un champ vectoriel.</p>
+              </description>
+              <sageplot>
           var('x,y')
           Fig = plot_vector_field((0,x^2 -1), (x,-0.9,0.9),(y,-0.3,1),
                         color = "steelblue", axes = True,
+                        figsize = 4,
                         axes_labels = ['$x$','$y$'],
-                        axes_labels_size=1.4, #aspect_ratio = 1,
+                        axes_labels_size=1.8, width=0.004, #aspect_ratio = 1,
                         ticks = [[],[]],
                         frame= False,
-                        plot_points = 11,
-                        headlength = 3,
-                        headwidth = 3,
-                        headaxislength = 3, zorder=2)
+                        plot_points = 9,
+                        headlength = 4,
+                        headwidth = 5,
+                        headaxislength = 5, zorder=2)
           Fig += point([(0.45,0.52), (-0.45,0.52)], color = "red", size = 20)
-          Fig += text("$A$", (0.45,0.58), color = "red", fontsize = 14)
-          Fig += text("$B$", (-0.45,0.58), color = "red", fontsize = 14)
+          Fig += text("$A$", (0.57,0.58), color = "red", fontsize = 16, background_color = "white")
+          Fig += text("$B$", (-0.57,0.58), color = "red", fontsize = 16, background_color = "white")
           Fig
         </sageplot>
-          </image>
-        </figure>
+            </image>
+          </figure>
+        </sidebyside>
         <p>
         Cependant, pensons à notre roue à palettes. S'il est vrai qu'elle voyagerait en suivant une translation donnée par des lignes droites vers le bas (les lignes de courant de ce champ sont effectivement ces droites), elle voyagerait en tournant sur elle-même. Au point <m>A</m>, par exemple, la vitesse du fluide à la droite de la roulette est légèrement inférieure à celle à la gauche (mais toujours près de <m>A</m>). Il en résulterait une faible rotation dans le sens contraire des aiguilles d'une montre. Ceci correspond au fait que <m>x_A \gt 0</m>, et donc la densité de circulation en ce point vaut <m>2x_A \gt 0</m>.
       </p>
@@ -211,37 +227,9 @@
   <p>
     <term>Fin nouveau</term>
   </p> -->
-    <example>
-      <statement>
-        <p>Considérons le champ de vecteurs <m>\vF = \sin y \, \vi + \cos x\, \vj </m>. Son rotationnel (à proprement parler sa composante <m>\vk</m>) est <m>\pdiff{}{x}\cos x - \pdiff{}{y}\sin y = -(\sin x + \cos y)</m>.
-    </p>
-        <p>
-      La figure ci-bas montre
-      <ul><li><p>
-            le champ <m>\vF</m>, indiqué par les flèches noires;
-          </p></li><li><p>
-            les courbes de niveau de la fonction <m>-(\sin x + \cos y)</m>.
-          </p></li></ul>
-    </p>
-        <image xml:id="sageplot-rot-illustration" width="85%">
-          <description>
-            <p> Un champ, et la composante <m>\vk</m> de son rotationnel</p>
-          </description>
-          <sageplot>
-        var('x,y')
-        Fig =contour_plot(-cos(y)-sin(x), (x,-3*pi/2,3*pi/2),
-          (y,-3*pi/2,3*pi/2), cmap = "Spectral", zorder = -1, colorbar=True )
-        Fig += plot_vector_field((sin(y), cos(x)), (x,-3*pi/2,3*pi/2),
-          (y,-3*pi/2,3*pi/2), color='black', ticks=[pi/2,pi/2],
-          tick_formatter=[pi,pi], aspect_ratio = 1, plot_points=15, zorder =3)
-        Fig
-       </sageplot>
-        </image>
-        <p> On observe notamment que les valeurs élevées du rotationnel, ce qui correspond aux zones bleues, par exemple près du point <m>(-\pi/2,\pi)</m>, correspondent aux endroits où le champ a une forte tendance à tourbillonner (sur lui même) dans le sens antihoraire.  De la même façon, les zones rouges correspondent aux endroits où le tourbillon est fort en intensité, mais tourne dans le sens horaire. La droite qui joint <m>(-3\pi/2,\pi)</m> à <m>(\pi, -3\pi/2)</m>, par exemple, correspond à une zone de faible rotation, nous avons plutôt une tendance à un mouvement de translation sur cette région.
+ Cet 
 
-    </p>
-      </statement>
-    </example>
+
     <!-- <p>
 
 </p>
@@ -257,7 +245,7 @@
     <definition xml:id="def_curl">
       <statement>
         <p>
-Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est le champ <m>\vnabla\times\vF(x,y,z)</m>, aussi noté <m>\rot \vF</m>, défini par
+Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable. Le <term>rotationnel</term> de <m>\vF</m> est le champ <m>\vnabla\times\vF(x,y,z)</m>, aussi noté <m>\rot \vF</m>, défini par
 <md><mrow>
 \vnabla\times\vF
 &amp;=\Big(\frac{\partial R }{\partial y} -\frac{\partial Q }{\partial z} \Big)\vi
@@ -306,13 +294,12 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
       
       <statement>
         <p>Soit <m>f</m> une fonction de classe <m>C^2</m>, alors
-    <md><mrow>
+    <m>\displaystyle 
       \vnabla \times \vnabla f = \vZero,
-    </mrow></md>
+    </m>
     ou encore
-    <md><mrow>
-      \rot (\grad f ) = \vZero.
-    </mrow></md>
+    <m>      \rot (\grad f ) = \vZero.
+    </m>
 
 
 
@@ -354,79 +341,78 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
     <p>
     Nous voulons maintenant savoir dans quelle mesure le champ <m>\vF</m> se comporte comme une source  (voir <xref ref="eg_ptSource">l'exemple</xref> ) dans un voisinage d'un point <m>(x_0,y_0)</m> donné. Ceci revient à considérer le flux de <m>\vF</m> <em>à travers</em> une courbe fermée <m>\cC</m>.
   </p>
-    <p>
-    Pour ceci, nous considérons la trajectoire fermée orientée dans le sens des aiguilles d'une montre <m>\cC</m>, formée par
-  </p>
-    <p>
-      <ul>
-        <li>
-          <p><m>\cC_1</m>, le segment joignant <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,
-      </p>
-        </li>
-        <li>
-          <p><m>\cC_2</m>, le segment joignant <m>(x_0+\De x,y_0)</m> à <m>(x_0+\De x, y_0+ \De y)</m>,
-      </p>
-        </li>
-        <li>
-          <p><m>\cC_3</m>, le segment joignant <m>(x_0+\De x,y_0 + \De y)</m> à <m>(x_0, y_0+ \De y)</m>, et finalement
-      </p>
-        </li>
-        <li>
-          <p><m>\cC_4</m>, le segment joignant <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.
-      </p>
-        </li>
-      </ul>
-    </p>
-    <p>
-  Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
-  <md><mrow>
-      \int_{\cC} \vF \cdot \vn \, \dee{s} = \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn \, \dee{s}.
-  </mrow></md>
-</p>
-    <p>
-  Comme précédemment, nous faisons une approximation de <m>\vF \cdot \vn</m> sur chaque portion de la trajectoire en choisissant un point d'évaluation pour <m>\vF</m>. Par ailleurs, la longueur de chaque portion de déplacement est <m>\De s =  \De x</m> ou <m>\De s= \De y</m>, selon qu'on se trouve sur une portion horizontale ou verticale.
-</p>
-    <image xml:id="sageplot-idee-div" width="85%">
-      <description>
+    <sidebyside widths="42% 5% 53%" valign="top">
+      <stack>
         <p>
-    Une trajectoire rectangulaire.
-  </p>
-      </description>
-      <sageplot>
+    Considérons une trajectoire rectangulaire fermée <m>\cC</m>, formée par la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens des aiguilles d'une montre :
+    <ul><li>
+        <p><m>\cC_1</m> de <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,</p>
+        </li><li>
+        <p><m>\cC_2</m> de <m>(x_0+\De x,y_0)</m></p>
+        <p>à <m>(x_0+\De x, y_0+ \De y)</m>,</p>
+        </li><li>
+        <p><m>\cC_3</m> de <m>(x_0+\De x,y_0 + \De y)</m></p>
+        <p>à <m>(x_0, y_0+ \De y)</m>,</p>
+        </li><li>
+        <p><m>\cC_4</m> de <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.</p>
+        </li></ul>
+        </p>
+      </stack>
+      <p/>
+      <image xml:id="sageplot-idee-div" width="100%">
+        <description>
+          <p>
+      Une trajectoire rectangulaire.
+    </p>
+        </description>
+        <sageplot>
   var('x,y')
   Dx=2
   Dy=1
   P(x,y) = (-y+x-1)/sqrt((x-1)^2 + y^2)
   Q(x,y) = (y+x-1)/sqrt((x-1)^2 + y^2)
+  #Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.2,2.2), (y,-0.2,1.2),
+  #  color = "grey", plot_points=8, width=0.003, frame = False, zorder = -1)
   Fig = plot_vector_field([P(x,y), Q(x,y)], (x,-0.2,2.2), (y,-0.2,1.2),
-    color = "grey", plot_points=12, frame = False, zorder = -1)
-  Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1,
-    axes = False)
-  Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1)
-  Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1)
-  Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1)
-  Fig += arrow2d((0.9,0), (0.9, -0.2), color = "red", zorder =1)
-  Fig += arrow2d((2,0.4), (2.2,0.4), color = "red", zorder =1)
-  Fig += arrow2d((1.1,1), (1.1,1.2), color = "red", zorder =1)
-  Fig += arrow2d((0,0.7), (-0.2,0.7), color = "red", zorder =1)
-  Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.1), color = "blue",
-    fontsize = 14)
-  Fig += text("$\\mathcal{C}_2$", (Dx+0.1,Dy-0.2), color = "blue",
-    fontsize = 14)
-  Fig += text("$\\mathcal{C}_3$", (0.3,Dy-0.1), color = "blue",
-    fontsize = 14)
-  Fig += text("$\\mathcal{C}_4$", (-0.1,0.1), color = "blue", fontsize = 14)
-  Fig += text("$(x_0,y_0)$", (0,-0.1), fontsize = 14, color = "black",
+    color = "grey", plot_points=10, width=0.004, figsize = 4, frame = False, zorder = -1)
+  Fig += arrow2d((0,0), (Dx,0), color = "blue", zorder = 1, aspect_ratio=1.5,
+    axes = False, width=0.8, arrowsize=2)
+  Fig += arrow2d((Dx,0), (Dx,Dy), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+  Fig += arrow2d((Dx,Dy), (0,Dy), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+  Fig += arrow2d((0,Dy), (0,0), color = "blue", zorder = 1, aspect_ratio=1.5, width=0.8, arrowsize=2)
+  Fig += arrow2d((0.9,0), (0.9, -0.2), color = "red", zorder =1, arrowsize=2)
+  Fig += arrow2d((2,0.4), (2.2,0.4), color = "red", zorder =1, arrowsize=2)
+  Fig += arrow2d((1.1,1), (1.1,1.2), color = "red", zorder =1, arrowsize=2)
+  Fig += arrow2d((0,0.7), (-0.2,0.7), color = "red", zorder =1, arrowsize=2)
+  Fig += text("$\\mathcal{C}_1$", (Dx-0.3,0.2), color = "blue",
+    fontsize = 16, background_color = "white")
+  Fig += text("$\\mathcal{C}_2$", (Dx+0.2,Dy-0.2), color = "blue",
+    fontsize = 16, background_color = "white")
+  Fig += text("$\\mathcal{C}_3$", (0.23,Dy-0.15), color = "blue",
+    fontsize = 16, background_color = "white")
+  Fig += text("$\\mathcal{C}_4$", (-0.4,0.1), color = "blue",
+    fontsize = 16, background_color = "white")
+  Fig += text("$(x_0,y_0)$", (0,-0.2), fontsize = 16, color = "black",
     zorder = 2, background_color = "white")
-  Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.1), fontsize = 14,
+  Fig += text("$(x_0+ \\Delta x,y_0)$", (Dx,-0.2), fontsize = 16,
     color = "black", zorder = 0, background_color = "white")
-  Fig += text("$(x_0+ \\Delta x,y_0 + \\Delta y)$", (Dx,Dy+0.1),
-    fontsize = 14, color = "black", zorder = 0, background_color = "white")
-  Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 14,
+  Fig += text("$(x_0+ \\Delta x,y_0 + \\Delta y)$", (Dx+0.15,Dy+0.2),
+    fontsize = 16, color = "black", zorder = 0, background_color = "white")
+  Fig += text("$(x_0,y_0 + \\Delta y)$", (0,Dy+0.1), fontsize = 16,
     color = "black", zorder = 0, background_color = "white")
   Fig
  </sageplot>
-    </image>
+      </image>
+    </sidebyside>
+    <p>
+      Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
+    </p>
+    <md><mrow>
+        \int_{\cC} \vF \cdot \vn \, \dee{s} = \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn \, \dee{s}.
+    </mrow></md>
+    <p>
+      Comme précédemment, nous faisons une approximation de <m>\vF \cdot \vn</m> sur chaque portion de la trajectoire en choisissant un point d'évaluation pour <m>\vF</m>. Par ailleurs, la longueur de chaque portion de déplacement est <m>\De s =  \De x</m> ou <m>\De s= \De y</m>, selon qu'on se trouve sur une portion horizontale ou verticale.
+    </p>
     <p>
       <tabular>
         <row header="yes" bottom="major">
@@ -509,7 +495,7 @@ Le <term>rotationnel</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\
     <definition xml:id="def_div">
       <statement>
         <p>
-La <term>divergence</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est le champ  <m>\vnabla \cdot \vF(x,y,z)</m>, aussi noté <m>\div \vF</m>, et est le champ défini par
+La <term>divergence</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est la fonction scalaire  <m>\vnabla \cdot \vF(x,y,z)</m>, aussi noté <m>\div \vF</m>, est définie par 
 
 <md><mrow>\vnabla \cdot \vF \amp = \pdiff{P}{x} + \pdiff{Q}{y} + \pdiff{R}{z}. </mrow></md>
 
@@ -565,13 +551,12 @@ Devoir 12, problème 4
       
       <statement>
         <p>Soit <m>\vF = P\, \vi + Q\, \vj + R\, \vk</m> un champ de classe <m>C^2</m>. Alors
-    <md><mrow>
+    <m>
       \vnabla \cdot (\vnabla \times \vF) = 0
-    </mrow></md>
+    </m>
     ou encore
-    <md><mrow>
-      \div (\rot(\vF)) =0
-    </mrow></md>
+    <m>      \div (\rot(\vF)) =0
+    </m>
 
     </p>
       </statement>
@@ -671,7 +656,7 @@ Devoir 12, problème 4
             <li>
               <m>\color{blue}{\vnabla(fg)=(\vnabla f)g+ f(\vnabla g)}</m>
             </li>
-            <li><m>\vnabla(f/g)=\big(g\,\vnabla f-f\,\vnabla g\big)/g^2</m> aux points <m>\vx</m> où  <m>g(\vx)\ne 0</m>
+            <li><m>\vnabla(f/g)=\left(g\,\vnabla f-f\,\vnabla g\right)/g^2</m> aux points <m>\vx</m> où  <m>g(\vx)\ne 0</m>
     </li>
             <li>
               <p>
@@ -772,7 +757,7 @@ Devoir 12, problème 4
        (rotationnel d'un gradient, c'est la formule du <xref ref="thm-rot-grad-zero" text="global">théorème</xref>)
       </li>
             <li>
-              <m>\vnabla\cdot\big(f\{\vnabla g\times\vnabla h\}\big)
+              <m>\vnabla\cdot\left(f\{\vnabla g\times\vnabla h\}\right)
                    =\vnabla f\cdot(\vnabla g\times\vnabla h)</m>
             </li>
             <li>

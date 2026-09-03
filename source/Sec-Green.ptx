@@ -52,7 +52,7 @@
     <p>
   Voici quelques exemples.
   </p>
-    <sidebyside widths="20% 26% 20% 23%" valign="middle">
+    <sidebyside widths="18% 26% 16% 18%" valign="middle">
       <image source="images/CLP4-figs/curve1JC"/>
       <image source="images/CLP4-figs/curve2JC"/>
       <image source="images/CLP4-figs/curve3JC"/>
@@ -257,12 +257,13 @@
 
   <example xml:id="eg_greenA">
     <statement>
-      <p>
-        Calculer <m>\displaystyle   \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y}, </m> où <m>\cC</m> est le carré montré dans la figure.
-    </p>
-    
-    <sidebyside width="39%"><image source="images/CLP4-figs/greensSquare"/>
-    </sidebyside>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+          Calculer <m>\displaystyle   \int_C\big[(x-xy)\,\dee{x} + (y^3+1)\big]\,\dee{y}, </m> où <m>\cC</m> est le carré montré dans la figure ci-contre.
+        </p>
+        <p/>
+        <image source="images/CLP4-figs/greensSquare" width="100%"/>
+      </sidebyside>
   </statement>
   
   <solution>
@@ -356,33 +357,46 @@
   </p>
   <example xml:id="ex-green-bord-x2">
     <statement>
-      <p>
-        Soit <m>\cR</m> la région du plan donnée en coordonnées polaires par <m>1\leqslant  r \leqslant 2</m> et <m>0\leqslant  \theta  \leqslant 2\pi</m>. Calculer la valeur de <m>\displaystyle\int_{\partial \cR} \left(\sin x - \frac{1}{3}y^3\right)\, \dee{x} + \left(\frac{1}{3}x^3 + \sin y\right)\, \dee{y}</m>.
-      </p>
-      
-      <image xml:id="sageplot-eg_non-simp-connexte" width="60%">
-        <description><p>Théorème de Green avec une région non simplement connexe</p></description>
-        <sageplot>
-        N=60
-        p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
-        L1 = [[p] for p in p1]
-        Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1.2,
-          zorder = 5, color= "blue", axes= True, ticks = [[1],[1]],
-          axes_labels = ['$x$','$y$'], axes_labels_size=1.4)
-        p2 = [(cos(-j*pi/N+pi/4), sin(-j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
-        L2 = [[p] for p in p2]
-        Fig += arrow2d(path=L2, aspect_ratio =1, arrowsize = 4, width=1.2,
-          zorder = 5, color= "blue")
-        Fig += polar_plot(2, 0, 2*pi, fill=1, fillcolor='orange',
-          color="white", zorder = -1)
-        Fig += text("$\\mathcal{R}$", (1,1), color = "brown", fontsize = 14)
-        Fig += text("$\\mathcal{C}_2$", (1.55,1.55), color = "blue",
-          fontsize = 14)
-        Fig += text("$\\mathcal{C}_1$", (0.55,0.55), color = "blue",
-          fontsize = 14)
-        Fig
-       </sageplot>
-      </image>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <p>
+          Soit <m>\cR</m> la région du plan donnée en coordonnées polaires par <md>1\leqslant  r \leqslant 2 \text{ et } 0\leqslant  \theta  \leqslant 2\pi</md>. 
+          Calculer la valeur de <md>\displaystyle\int_{\partial \cR} \left(\sin x - \frac{1}{3}y^3\right)\, \dee{x} + \left(\frac{1}{3}x^3 + \sin y\right)\, \dee{y}</md>.
+        </p>
+        <p/>
+        <image xml:id="sageplot-eg_non-simp-connexte" width="100%">
+          <description><p>Théorème de Green avec une région non simplement connexe</p></description>
+          <sageplot>
+          N=60
+          #p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
+          #L1 = [[p] for p in p1]
+          #Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1.2,
+          #  zorder = 5, color= "blue", axes= True, ticks = [[1],[1]],
+          #  axes_labels = ['$x$','$y$'], axes_labels_size=1.4)
+          p1 = [(2*cos(j*pi/N+pi/4), 2*sin(j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
+          L1 = [[p] for p in p1]
+          Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1.2,
+            zorder = 5, color= "blue", axes= True, ticks = [[1],[1]],
+            axes_labels = ['$x$','$y$'], axes_labels_size=2, figsize=4)
+          p2 = [(cos(-j*pi/N+pi/4), sin(-j*pi/N+pi/4) ) for j in [0,1,..,2*N]]
+          L2 = [[p] for p in p2]
+          Fig += arrow2d(path=L2, aspect_ratio =1, arrowsize = 4, width=1.2,
+            zorder = 5, color= "blue")
+          Fig += polar_plot(2, 0, 2*pi, fill=1, fillcolor='orange',
+            color="white", zorder = -1)
+          #Fig += text("$\\mathcal{R}$", (1,1), color = "brown", fontsize = 14)
+          #Fig += text("$\\mathcal{C}_2$", (1.55,1.55), color = "blue",
+          #  fontsize = 14)
+          #Fig += text("$\\mathcal{C}_1$", (0.55,0.55), color = "blue",
+          #  fontsize = 14)
+          Fig += text("$\\mathcal{R}$", (1,1), color = "brown", fontsize = 18)
+          Fig += text("$\\mathcal{C}_2$", (1.55,1.75), color = "blue",
+            fontsize = 18)
+          Fig += text("$\\mathcal{C}_1$", (0.45,0.45), color = "blue",
+            fontsize = 18)
+          Fig
+         </sageplot>
+        </image>
+      </sidebyside>
     </statement>
     
     <solution><p>
@@ -506,18 +520,24 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
         <p>
     Le cas où <m>\cC</m> entoure l'origine pose problème, l'hypothèse du théorème de Green n'est pas satisfaite. Nous pouvons cependant adapter notre argument comme suit.
   </p>
-        <p>
+        <sidebyside widths="55% 5% 40%" valign="top">
+          <p>
     Puisque <m>\cC</m> contourne l'origine, il existe un réel <m>h\gt 0 </m> tel que <m>\cC</m> entoure le cercle <m>\cC_h</m> centré à l'origine et de rayon <m>h</m>. Soit alors <m>\cR</m> la région comprise entre <m>\cC_h</m> et <m>\cC</m>. Sur cette région, l'argument de la première partie peut être appliqué. Il faut noter que <m>\partial \cR</m> est cette fois composée de deux courbes : d'une part <m>\cC</m> orientée en s'éloignant de l'origine, d'autre part <m>\cC_h</m> avec le vecteur normal pointant vers l'origine.
   </p>
-        <image xml:id="sageplot-eg-nb-enroulement" width="80%">
-          <description><p>Le nombre d'enroulement</p></description>
-          <sageplot>
+          <p/>
+          <image xml:id="sageplot-eg-nb-enroulement" width="100%">
+            <description><p>Le nombre d'enroulement</p></description>
+            <sageplot>
     var('x,y,t')
     r=3/4
+    #Fig = parametric_plot([r*cos(t), r*sin(t)], (t,0,2*pi), color = "darkblue",
+    #                  gridlines = False, axes = True, ticks = [[],[]],
+    #                  axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
+    #                  fillalpha = 0.25, zorder = 6)
     Fig = parametric_plot([r*cos(t), r*sin(t)], (t,0,2*pi), color = "darkblue",
                       gridlines = False, axes = True, ticks = [[],[]],
-                      axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
-                      fillalpha = 0.25, zorder = 6)
+                      axes_labels = ['$x$','$y$'], axes_labels_size=2, fill="grey",
+                      fillalpha = 0.25, zorder = 6, figsize=4)
     chemin = [[(2,0),(2,1),(1,0),(1,1)],
       [(1,2),(1,3), (0,3)],
       [(-1,3), (-1.5,2.5),(-2,2)],
@@ -527,14 +547,20 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Fig += bezier_path(chemin, rgbcolor = "darkblue", thickness = 1)
     Fig += arrow2d((2,0), (2.5,0), color = "red", arrowsize = 1, zorder = 5)
     Fig += arrow2d((r,0), (r-0.5,0), color = "red", arrowsize= 1, zorder = 5)
-    Fig += text("$\\mathcal{C}$", (1.3,1.1), fontsize = 14, color= "darkblue")
-    Fig += text("$\\mathcal{C}_h$", (-0.7,0.7), fontsize = 14,
+    #Fig += text("$\\mathcal{C}$", (1.3,1.1), fontsize = 14, color= "darkblue")
+    #Fig += text("$\\mathcal{C}_h$", (-0.7,0.7), fontsize = 14,
+    #  color= "darkblue")
+    #Fig += text("$\\mathbf{n}$", (2.2,0.2), color = "red", fontsize = 14)
+    #Fig += text("$\\mathbf{n}$", (0.5,0.2), color = "red", fontsize = 14)
+    Fig += text("$\\mathcal{C}$", (1.3,1.1), fontsize = 18, color= "darkblue")
+    Fig += text("$\\mathcal{C}_h$", (-0.8,0.8), fontsize = 18,
       color= "darkblue")
-    Fig += text("$\\mathbf{n}$", (2.2,0.2), color = "red", fontsize = 14)
-    Fig += text("$\\mathbf{n}$", (0.5,0.2), color = "red", fontsize = 14)
+    Fig += text("$\\mathbf{n}$", (2.3,0.3), color = "red", fontsize = 18)
+    Fig += text("$\\mathbf{n}$", (0.45,0.3), color = "red", fontsize = 18)
     Fig
    </sageplot>
-        </image>
+          </image>
+        </sidebyside>
         <p>
     Nous avons alors
     <md><mrow>0 \amp= \iint_{\cR} 0\, \dee{A} = \iint_{\cR} \div \vF\, \dee{A} = \int_{\partial \cR} \vF\cdot \vn\, \dee{s}   </mrow><mrow> \amp= \int_{\cC} \vF\cdot \vn\, \dee{s} +  \int_{\cC_h}\vF\cdot \vn\, \dee{s}.</mrow></md>
@@ -545,9 +571,9 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     <md><mrow>
       \vF \cdot \vn  = \left(\frac{x}{x^2 + y^2}\vi + \frac{y}{x^2 + y^2}\vj\right)\cdot \left(\frac{-1}{h} x\, \vi - \frac{1}{h} y\, \vj \right) = \frac{-1}{h}.
     </mrow></md>
-    Ainsi, puisque <m>|\vr'| = h</m>, nous avons
+    Ainsi, puisque <m>\norm{\vr'} = h</m>, nous avons
     <md><mrow>
-      \int_{\cC_h}\vF \cdot \vn\, \dee{s} = \int_0^{2\pi} \vF \cdot \vn\ |\vr'(t)|\, \dee{t} = -\int_0^{2\pi}\, \dee{t} =-2\pi.
+      \int_{\cC_h}\vF \cdot \vn\, \dee{s} = \int_0^{2\pi} \vF \cdot \vn\ \norm{\vr'(t)}\, \dee{t} = -\int_0^{2\pi}\, \dee{t} =-2\pi.
     </mrow></md>
     Comme <m>\int_{\cC} \vF \cdot \vn \, \dee{s} + \int_{\cC_h} \vF \cdot \vn \, \dee{s} = 0 </m>, nous avons
     <md><mrow>
@@ -586,35 +612,41 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
   </p>
     <example xml:id="Aire-astroide-Green">
       <statement>
-        <p>Calculer l'aire de la région limitée par l'astroïde <m>x^{2/3} + y^{2/3} = 1</m>.
-
-      </p>
-      </statement>
-      <solution>
-        <sidebyside widths="45% 15% 40%">
-          <image xml:id="sageplot-Aire-astroide">
+        <sidebyside widths="55% 5% 40%" valign="top">
+          <p>Calculer l'aire de la région limitée par l'astroïde <m>x^{2/3} + y^{2/3} = 1</m>.</p>
+          <p/>
+          <image xml:id="sageplot-Aire-astroide" width="90%">
             <description><p>L'aire de l'astroïde</p></description>
             <sageplot>
           var('t')
+          #Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
+          #  color= "steelblue", axes= True, ticks = [[],[]],
+          #  axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
+          #  fillalpha = 0.25, figsize = 3)
+          #Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 14,
+          #  color="black")
+          #Fig +=text("$\\mathcal{C} = \\partial \\mathcal{R}$",
+          #  (0.5,0.5), fontsize = 14, color="black")
           Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
             color= "steelblue", axes= True, ticks = [[],[]],
-            axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
-            fillalpha = 0.25, figsize = 3)
-          Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 14,
+            axes_labels = ['$x$','$y$'], axes_labels_size=2.8, fill="orange",
+            fillalpha = 0.25, figsize = 4)
+          Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 18,
             color="black")
           Fig +=text("$\\mathcal{C} = \\partial \\mathcal{R}$",
-            (0.5,0.5), fontsize = 14, color="black")
+            (0.5,0.5), fontsize = 18, color="black")
           Fig
          </sageplot>
           </image>
-          <p></p>
-          <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
+        </sidebyside>
+      </statement>
+      <solution>
+        <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
         L'aire est alors donnée par
           <md><mrow>
             \frac{1}{2}\int_{\cC} x\dee{y} - y\dee{x} = \frac{1}{2}\int_0^{2\pi} xy' - yx'\, \dee{t}.
           </mrow></md>
         </p>
-        </sidebyside>
         <p>
         Or, <m>\vr'(t) = -(3\sin t\, \cos^2 t)\, \vi + 3 (\cos t\, \sin^2 t)\vj</m>, de sorte que
         <md><mrow>x(t)y'(t) - y(t)x'(t) \amp= \cos^3t\ 3\cos t\ \sin^2 t+ \sin^3 t\, \ 3 \sin t\, \cos^2 t </mrow><mrow> \amp=3\left(\cos^4 t\, \sin^2 t + \sin^4 t\, \cos^2t\right)

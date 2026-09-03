@@ -10,8 +10,8 @@
     <p>
       La règle de dérivation des fonctions composées, souvent appelée la <q>règle de la chaîne</q>, à savoir
       <md>
-        \diff{}{t}f\big(x(t)\big)
-        = \diff{f}{x}\big(x(t)\big)\ \diff{x}{t}(t)
+        \diff{}{t}f\left(x(t)\right)
+        = \diff{f}{x}\left(x(t)\right)\ \diff{x}{t}(t)
       </md>,
       nous est déjà familière. On s'en sert, par exemple, lorsqu'on calcule
       <md>
@@ -72,14 +72,14 @@
       </p>
       <example xml:id="eg_chainRuleA">
         <title>
-          <m>\diff{}{t}f\big(x(t),y(t)\big)</m>
+          <m>\diff{}{t}f\left(x(t),y(t)\right)</m>
         </title>
         <p>
-          Calculer <m>\diff{}{t}f\big(x(t),y(t)\big)</m> lorsque <m>
+          Calculer <m>\diff{}{t}f\left(x(t),y(t)\right)</m> lorsque <m>
           f(x,y)=x^2-y^2</m> avec <m>x(t)=\cos t </m> et <m> y(t)=\sin t
           </m>.
         </p>
-        <p>Posons <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t \, \vi + \sin t\ \vj</m> et   <m>F(t)=f\circ \vr(t) = f\big(x(t),y(t)\big)</m>. Nous avons, d'une part,
+        <p>Posons <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t \, \vi + \sin t\ \vj</m> et   <m>F(t)=f\circ \vr(t) = f\left(x(t),y(t)\right)</m>. Nous avons, d'une part,
           <md>
             \vD f = \begin{bmatrix} \pdiff{f}{x} \amp \pdiff{f}{y} \end{bmatrix} = \begin{bmatrix} 2x \amp -2y\end{bmatrix}
           </md>
@@ -92,7 +92,7 @@
 
           Bien entendu, dans cet exemple, on peut calculer  <m>F(t)</m> explicitement,
           <md>
-            F(t)=f\big(x(t),y(t)\big)=x(t)^2-y(t)^2=\cos^2t-\sin^2t
+            F(t)=f\left(x(t),y(t)\right)=x(t)^2-y(t)^2=\cos^2t-\sin^2t
           </md>,
           puis calculer la dérivée
           <md>
@@ -105,11 +105,11 @@
           <m>\diff{}{t}f(a+ct)</m>
         </title>
         <p>
-          Dans cet exemple, la variable intermédiaire n'est pas donnée. Posons donc  <m>u(t)=a+ct</m> et <m>w(t) = f(a+ct) = f\big(u(t)\big)</m>. Ainsi,
+          Dans cet exemple, la variable intermédiaire n'est pas donnée. Posons donc  <m>u(t)=a+ct</m> et <m>w(t) = f(a+ct) = f\left(u(t)\right)</m>. Ainsi,
           <md>
             \diff{}{t}f(x+ct)
             =\diff{w}{t}(t)
-            =\diff{f}{u}\big(u(t)\big)  \diff{u}{t}(t)
+            =\diff{f}{u}\left(u(t)\right)  \diff{u}{t}(t)
             =c\, f'(a+ct)
           </md>.
         </p>
@@ -156,29 +156,29 @@
       </p>
       <example xml:id="eg_chainRuleAA">
         <title>
-          <m>\pdiff{}{s}f\big(x(s,t),y(s,t)\big)</m>
+          <m>\pdiff{}{s}f\left(x(s,t),y(s,t)\right)</m>
         </title>
         <p>
-          Dans cet exemple, on trouve <m>\pdiff{}{s}f\big(x(s,t),y(s,t)\big)</m> lorsque
+          Dans cet exemple, on trouve <m>\pdiff{}{s}f\left(x(s,t),y(s,t)\right)</m> lorsque
           <md>
             f(x,y)=e^{xy},\qquad x(s,t)=s, \qquad y(s,t)=\cos t
           </md>.
-          Posons  <m>F(s,t)=f\big(x(s,t),\,y(s,t)\big)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
+          Posons  <m>F(s,t)=f\left(x(s,t),\,y(s,t)\right)</m>. Le <xref ref="thm_chainRule" text="global">théorème</xref> ou, plus directement, la formule <xref ref="Chaine-svar-1"/> ci-haut donnent
           <md>
             \pdiff{F}{s}(s,t)
-            =  \pdiff{f}{x}\big(x(s,t),\,y(s,t)\big)\, \pdiff{x}{s}(s,t)
-              +\pdiff{f}{y}\big(x(s,t),\,y(s,t)\big)\, \pdiff{y}{s}(s,t)
+            =  \pdiff{f}{x}\left(x(s,t),\,y(s,t)\right)\, \pdiff{x}{s}(s,t)
+              +\pdiff{f}{y}\left(x(s,t),\,y(s,t)\right)\, \pdiff{y}{s}(s,t)
           </md>.
           Pour les fonctions données,
           <md><mrow>
               f(x,y)&amp;=e^{xy},
             </mrow><mrow>
               \pdiff{f}{x}(x,y)&amp;= ye^{xy},  &amp;
-              \pdiff{f}{x}\big(x(s,t),y(s,t)\big)&amp;= y(s,t) e^{x(s,t)\,y(s,t)}
+              \pdiff{f}{x}\left(x(s,t),y(s,t)\right)&amp;= y(s,t) e^{x(s,t)\,y(s,t)}
                                                   = \cos t\ e^{s\cos t},
             </mrow><mrow>
               \pdiff{f}{y}(x,y)&amp;= xe^{xy},  &amp;
-              \pdiff{f}{y}\big(x(s,t),y(s,t)\big)&amp;= x(s,t) e^{x(s,t)\,y(s,t)}
+              \pdiff{f}{y}\left(x(s,t),y(s,t)\right)&amp;= x(s,t) e^{x(s,t)\,y(s,t)}
                                                   = s\ e^{s\cos t},
             </mrow><mrow>
               \pdiff{x}{s}&amp;=1, &amp;
@@ -550,7 +550,7 @@
             f(x,y),\qquad
             x(s,t),\qquad
             y(s,t),\qquad
-            F(s,t)=f\big(x(s,t),y(s,t)\big)
+            F(s,t)=f\left(x(s,t),y(s,t)\right)
           </md>.
           Bien que les fonctions <m>f</m> et <m>F</m> soient intimement liées, elles ne sont pas la même chose. L'une est une fonction de <m>x</m> et <m>y</m> tandis que l'autre est une fonction de  <m>s</m> et  <m>t</m>.
         </li><li><p> Étape 2 :
@@ -576,13 +576,13 @@
         </li><li>Étape 4 : Écrire <alert>explicitement</alert> la relation fonctionnelle et ses variables. Il y a une seule relation fonctionnelle qui a du sens. Le terme de gauche est une fonction des variables  <m>s</m> et  <m>t</m>. Ainsi, le terme de droite doit aussi être une fonction de ces variables. Comme <m>f</m> est une fonction de <m>x</m> et <m>y</m>, ceci est obtenu en évaluant  <m>f</m> en  <m>x=x(s,t)</m> et <m>y=y(s,t)</m>.
           <md>
             \pdiff{F}{s}(s,t)=
-              \pdiff{f}{x}\big(x(s,t),y(s,t)\big)
+              \pdiff{f}{x}\left(x(s,t),y(s,t)\right)
               \pdiff{x}{s}(s,t)
-              +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
+              +\pdiff{f}{y}\left(x(s,t),y(s,t)\right)
               \pdiff{y}{s}(s,t)
           </md>
-          Si l'on omet les arguments, ou si l'on oublie quels sont ces arguments, il est possible d'oublier que  <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> dépendent de <m>s</m> et <m>t</m>. Ainsi, si l'on doit calculer une autre dérivée, on aura des problèmes pour différentier les facteurs <m>\pdiff{f}{x}\big(x(s,t),y(s,t)\big)</m> et
-          <m>\pdiff{f}{y}\big(x(s,t),y(s,t)\big)</m>.
+          Si l'on omet les arguments, ou si l'on oublie quels sont ces arguments, il est possible d'oublier que  <m>\pdiff{f}{x}</m> et <m>\pdiff{f}{y}</m> dépendent de <m>s</m> et <m>t</m>. Ainsi, si l'on doit calculer une autre dérivée, on aura des problèmes pour différentier les facteurs <m>\pdiff{f}{x}\left(x(s,t),y(s,t)\right)</m> et
+          <m>\pdiff{f}{y}\left(x(s,t),y(s,t)\right)</m>.
         </li></ul>
     </p>
     <p>Afin de s'aider à retenir les formules du <xref ref="thm_chainRule" text="global">théorème</xref>, il peut être utile de penser que les variables sont des quantités physiques : <m>f</m> et <m>F</m> mesurées en grammes, <m>x</m> et <m>y</m> mesurées en mètres, et <m>s</m> et <m>t</m> mesurées en secondes. Notons alors que
@@ -595,7 +595,7 @@
     <p>
       Voici une représentation graphique qui utilise un <em>arbre de dépendances</em> afin de se rappeler de la règle de dérivation des fonctions composées.
       <m>
-        \pdiff{}{s}f\big(x(s,t),y(s,t)\big)=
+        \pdiff{}{s}f\left(x(s,t),y(s,t)\right)=
         \pdiff{f}{x} \pdiff{x}{s} + \pdiff{f}{y}\pdiff{y}{s}
       </m>.
       Comme dans la figure de gauche ci-bas :
@@ -620,11 +620,11 @@
             </li><li> On écrit les arguments, comme à l'étape 4 ci-haut.
             </li></ul></p></li><li><p> On obtient alors
             <md><mrow>
-                \pdiff{}{s}f\big(x(s,t),y(s,t)\big)
-                &amp;=  \pdiff{f}{x}\big(x(s,t),y(s,t)\big)
+                \pdiff{}{s}f\left(x(s,t),y(s,t)\right)
+                &amp;=  \pdiff{f}{x}\left(x(s,t),y(s,t)\right)
                   \pdiff{x}{s}(s,t)
               </mrow><mrow>
-                &amp;\hskip0.5in  +\pdiff{f}{y}\big(x(s,t),y(s,t)\big)
+                &amp;\hskip0.5in  +\pdiff{f}{y}\left(x(s,t),y(s,t)\right)
                   \pdiff{y}{s}(s,t)
               </mrow></md>.
           </p><sidebyside width="30%"><image source="images/CLP-figs/decTreeS"/></sidebyside></li></ul>
@@ -633,10 +633,10 @@
       <p>
         Le terme de droite de l'égalité
         <md><mrow>
-            \diff{}{t}f\big(x(t),y(t),z(t)\big) &amp;= \pdiff{f}{x}\big(x(t),y(t),z(t)\big)\, \diff{x}{t}(t)
-                       +\pdiff{f}{y}\big(x(t),y(t),z(t)\big)\, \diff{y}{t}(t)
+            \diff{}{t}f\left(x(t),y(t),z(t)\right) &amp;= \pdiff{f}{x}\left(x(t),y(t),z(t)\right)\, \diff{x}{t}(t)
+                       +\pdiff{f}{y}\left(x(t),y(t),z(t)\right)\, \diff{y}{t}(t)
           </mrow><mrow>
-               &amp;\hskip1in   +\pdiff{f}{z}\big(x(t),y(t),z(t)\big)\, \diff{z}{t}(t)
+               &amp;\hskip1in   +\pdiff{f}{z}\left(x(t),y(t),z(t)\right)\, \diff{z}{t}(t)
           </mrow></md>,
         sans les variables, est
         <m>\pdiff{f}{x}\, \diff{x}{t}

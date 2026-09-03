@@ -14,7 +14,7 @@
         <p>
           Soit <m>\plan{D} \subseteq \R^n</m> et <m>f:\plan{D} \to \R</m>. Soit <m>\vr_0 \in \plan{D}</m>.
           <ul>
-            <li><m>\vr_0</m> est un  <em>point de maximum local de </em> <m>f</m> si <m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>. Plus précisément, <m>\vr_0</m> est un maximum local de  <m>f</m> s'il existe  <m>\e \gt 0</m> tel que <m>f(\vr)\leqslant f(\vr_0)</m> lorsque <m>|\vr - \vr_0| \lt \e </m>.</li>
+            <li><m>\vr_0</m> est un  <em>point de maximum local de </em> <m>f</m> si <m>f(\vr)\leqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>. Plus précisément, <m>\vr_0</m> est un maximum local de  <m>f</m> s'il existe  <m>\e \gt 0</m> tel que <m>f(\vr)\leqslant f(\vr_0)</m> lorsque <m>\norm{\vr - \vr_0} \lt \e </m>.</li>
             <li><m>\vr_0</m> est un <em>point de minimum local de </em> <m>f</m> si <m>f(\vr)\geqslant f(\vr_0)</m> pour tout  <m>\vr</m> près de  <m>\vr_0</m>.
 </li><li>
 Les valeurs prises par <m>f</m> aux points de minimum ou de maximum locaux sont appelées les <em>valeurs extrémales</em> de <m>f</m>.
@@ -337,12 +337,12 @@ Q_y&amp;=2-\tfrac{8y}{2\times 10^6}=0 \tag{E2}
 L'équation (E1) donne   <m>x=\half 10^6</m>, et l'équation  (E2) donne  <m>y=\half 10^6</m>.
 Connaissant  <m>x</m> et <m>y</m>, on peut déterminer  <m>P</m>, <m>Q</m>  et le profit total :
 <md><mrow>
-P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)
+P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\left(\tfrac{5}{2}x^2+3y^2\right)
 </mrow><mrow>
-   &amp;=10^6\big(1+1-\tfrac{5}{8}-\tfrac{3}{4}\big)
+   &amp;=10^6\left(1+1-\tfrac{5}{8}-\tfrac{3}{4}\right)
                        =\tfrac{5}{8}10^6
 </mrow></md>.
-Ensuite, si le tandem   <m>(A,B)</m> ajuste <m>(x,y)</m> afin de maximiser  <m>P+Q =2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)</m>,  alors <m>x</m> et <m>y</m> sont déterminés par
+Ensuite, si le tandem   <m>(A,B)</m> ajuste <m>(x,y)</m> afin de maximiser  <m>P+Q =2(x+y)-\tfrac{1}{10^6}\left(\tfrac{5}{2}x^2+3y^2\right)</m>,  alors <m>x</m> et <m>y</m> sont déterminés par
 <md><mrow>
 (P+Q)_x&amp;=2-\tfrac{5x}{10^6}=0, \tag{E1}
 </mrow><mrow>
@@ -351,9 +351,9 @@ Ensuite, si le tandem   <m>(A,B)</m> ajuste <m>(x,y)</m> afin de maximiser  <m>P
 L'équation (E1) donne  <m>x=\tfrac{2}{5} 10^6</m>, et l'équation (E2) donne   <m>y=\tfrac{1}{3} 10^6</m>.
 De nouveau, connaissant  <m>x</m> et <m>y</m>, on peut déterminer le profit total :
 <md><mrow>
-P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\big(\tfrac{5}{2}x^2+3y^2\big)
+P+Q&amp;=2(x+y)-\tfrac{1}{10^6}\left(\tfrac{5}{2}x^2+3y^2\right)
 </mrow><mrow>
-   &amp;=10^6\big(\tfrac{4}{5}+\tfrac{2}{3}-\tfrac{2}{5}-\tfrac{1}{3}\big)
+   &amp;=10^6\left(\tfrac{4}{5}+\tfrac{2}{3}-\tfrac{2}{5}-\tfrac{1}{3}\right)
                        =\tfrac{11}{15}10^6
 </mrow></md>.
 Ainsi, la coopération bénéficie aux deux brasseries.
@@ -482,11 +482,11 @@ même dans le monde réel <mdash/> pas seulement dans le monde réel des mathém
     Il s'agit d'équations linéaires en  <m>m</m> et <m>b</m>. Elles peuvent être résolues de plusieurs façons. L'une d'elles est  d'utiliser (E2)  pour isoler <m>b</m> en termes de  <m>m</m>,
 
     <md><mrow>
-      b=\frac{1}{n}\big(S_y-S_xm\big)\tag{E3}
+      b=\frac{1}{n}\left(S_y-S_xm\right)\tag{E3}
       </mrow></md>,
   puis de remplacer dans (E1) pour obtenir
     <md><mrow>
-    S_{x^2}\, m+\frac{1}{n}S_x\, \big(S_y-S_xm\big)=S_{xy}\quad\implies\quad \big(nS_{x^2} -S_x^2\big) m = nS_{xy}-S_xS_y
+    S_{x^2}\, m+\frac{1}{n}S_x\, \left(S_y-S_xm\right)=S_{xy}\quad\implies\quad \left(nS_{x^2} -S_x^2\right) m = nS_{xy}-S_xS_y
     </mrow></md>
   pour  <m>m</m>. On peut résoudre cette équation pour  <m>m</m> et remplacer à nouveau dans (E3) pour obtenir  <m>b</m>. Ceci donne
     <md><mrow>
@@ -547,7 +547,7 @@ Une analyse semblable, mais passablement plus complexe, peut être faite pour le
       <p>
 Soit <m>f(x,y)= x^2+3xy+3y^2-6x-3y-6</m>. Le gradient de <m>f</m> est
 <md><mrow>
-\vnabla f(x,y) = \big(2x+3y-6\big)\,\vi +\big(3x+6y-3\big)\,\vj
+\vnabla f(x,y) = \left(2x+3y-6\right)\,\vi +\left(3x+6y-3\right)\,\vj
 </mrow></md>,
 de sorte que <m>(x,y)</m> est un point critique de <m>f</m> si et seulement si
 <md><mrow>
@@ -598,7 +598,7 @@ y=-4+\De y
 </mrow></md>,
 et d'étudier le comportement de  <m>f</m> pour <m>\De x</m> et <m>\De y</m> près de  zéro.
 <md><mrow>
-f\big(9+\De x,\,-4+\De y\big)
+f\left(9+\De x,\,-4+\De y\right)
 &amp;=(9+\De x)^2+3(9+\De x)(-4+\De y)+3(-4+\De y)^2
 </mrow><mrow>
 &amp;\hskip1in-6(9+\De x)-3(-4+\De y)-6
@@ -620,13 +620,13 @@ Lorsque plus d'une variable est présente, comme <m>\De x</m> et <m>\De y</m>, o
 </mrow></md>.
 À présent, nous avons exprimé
 <md><mrow>
-f\big(9+\De x,\,-4+\De y\big)
+f\left(9+\De x,\,-4+\De y\right)
   = \left(\De x +\frac{3}{2}\De y\right)^2  + \frac{3}{4}(\De y)^2 -27
 </mrow></md>.
 Comme les plus petites valeurs de  <m>\left(\De x +\frac{3}{2}\De y\right)^2</m>
 et <m>\frac{3}{4}(\De y)^2</m> sont toutes les deux nulles, nous avons
 <md><mrow>
-f(x,y)=f\big(9+\De x,\,-4+\De y\big)\geqslant -27 =f(9,-4)
+f(x,y)=f\left(9+\De x,\,-4+\De y\right)\geqslant -27 =f(9,-4)
 </mrow></md>
 pour tout  <m>(x,y)</m>, de sorte que  <m>(9,-4)</m> est un minimum local, et global, de  <m>f</m>.
 </p>
@@ -719,9 +719,9 @@ curves that
         <p>
 Soit <m>\vr_0</m> un point critique d'une fonction <m>f</m>. Alors, <m>\vr_0</m> est appelé un <em>point de selle</em> pour <m>f</m> si, pour tout  <m>\e \gt 0</m>,
 <ul><li>
-il existe au moins un point  <m>\vr</m> tel que  <m>|\vr- \vr_0| \lt \e</m> et  <m>f(\vr) \gt f(\vr_0)</m>, et
+il existe au moins un point  <m>\vr</m> tel que  <m>\norm{\vr- \vr_0} \lt \e</m> et  <m>f(\vr) \gt f(\vr_0)</m>, et
 </li><li>
-il existe au moins un point  <m>\vr </m> tel que  <m>|\vr- \vr_0| \lt \e</m> et  <m>f(\vr) \lt f(\vr_0)</m>.
+il existe au moins un point  <m>\vr </m> tel que  <m>\norm{\vr- \vr_0} \lt \e</m> et  <m>f(\vr) \lt f(\vr_0)</m>.
 </li></ul>
 </p>
       </statement>
@@ -735,7 +735,7 @@ il existe au moins un point  <m>\vr </m> tel que  <m>|\vr- \vr_0| \lt \e</m> et 
       <p>
 Considérer  <m>f(x,y)= x^2-2xy-y^2+4y-2</m>. Le gradient de <m>f</m> est
 <md><mrow>
-\vnabla f(x,y) = \big(2x-2y\big)\,\vi +\big(-2x-2y+4\big)\,\vj
+\vnabla f(x,y) = \left(2x-2y\right)\,\vi +\left(-2x-2y+4\right)\,\vj
 </mrow></md>.
 Ainsi,  <m>(x,y)</m> est un point critique de  <m>f</m> si et seulement si
 <md><mrow>
@@ -758,27 +758,27 @@ y=1+\De y
 </mrow></md>,
 ce qui donne
 <md><mrow>
-&amp;f\big(1+\De x,\,1+\De y\big)
+&amp;f\left(1+\De x,\,1+\De y\right)
 </mrow><mrow>&amp;\hskip0.5in=(1+\De x)^2-2(1+\De x)(1+\De y)-(1+\De y)^2 + 4(1+\De y)-2
 </mrow><mrow>
 &amp;\hskip0.5in= (\De x)^2 -2\De x\,\De y-(\De y)^2
 </mrow></md>.
 Après complétion des carrés,
 <md><mrow>
-f\big(1+\De x,\,1+\De y\big)
+f\left(1+\De x,\,1+\De y\right)
 =(\De x)^2 -2\De x\,\De y-(\De y)^2
 =\left(\De x - \De y\right)^2  -2 (\De y)^2
 </mrow></md>.
 Notons que  <m>f</m> a été écrite comme la différence de deux carrés, comme la fonction  <m>f</m> de l'<xref ref="eg_maxminA" text="global">exemple</xref>.
 <ul><li>
 Si <m>\De x</m> et <m>\De y</m> sont tels que le premier carré
-<m>\left(\De x - \De y\right)^2</m> est non nul, mais que le second carré <m>(\De y)^2</m> est nul, alors  <m>f\big(1+\De x,\,1+\De y\big)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
+<m>\left(\De x - \De y\right)^2</m> est non nul, mais que le second carré <m>(\De y)^2</m> est nul, alors  <m>f\left(1+\De x,\,1+\De y\right)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
 En somme, lorsque <m>\De y=0</m>,  <m>\De x\ne \De y</m>, alors
-<m>f\big(1+\De x,\,1+\De y\big)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
+<m>f\left(1+\De x,\,1+\De y\right)=\left(\De x - \De y\right)^2   \gt  0 = f(1,1)</m>.
 </li><li>
-Aussi, si  <m>\De x</m> et <m>\De y</m> sont tels que le premier carré <m>\left(\De x - \De y\right)^2</m> est nul, mais que le second carré  <m>(\De y)^2</m> ne l'est pas, alors <m>f\big(1+\De x,\,1+\De y\big)=- 2(\De y)^2    \lt  0 = f(1,1)</m>.
+Aussi, si  <m>\De x</m> et <m>\De y</m> sont tels que le premier carré <m>\left(\De x - \De y\right)^2</m> est nul, mais que le second carré  <m>(\De y)^2</m> ne l'est pas, alors <m>f\left(1+\De x,\,1+\De y\right)=- 2(\De y)^2    \lt  0 = f(1,1)</m>.
 En somme, lorsque  <m>\De x=\De y\ne 0</m>, alors
-<m>f\big(1+\De x,\,1+\De y\big) =- 2(\De y)^2  \lt  0 = f(1,1)</m>.
+<m>f\left(1+\De x,\,1+\De y\right) =- 2(\De y)^2  \lt  0 = f(1,1)</m>.
 </li></ul>
 </p>
       <sidebyside widths="60% 5% 35%" valign="middle">
@@ -803,19 +803,19 @@ On conclut que  <m>(1,1)</m> est le seul point critique pour <m>f</m> et qu'il s
   Supposons que <m>(a,b)</m> est un point critique pour une fonction  <m>f(x,y)</m>. Pour  <m>\De x</m> et <m>\De y</m> petits, l'approximation quadratique de la <xref ref="def-Taylor-2" text="global">définition</xref> donne
 <md><mrow>
 \begin{split}
-&amp;f\big(a + \De x,\,b+\De y\big) \\
-&amp;\hskip0.25in\approx f\big(a\,,\,b\big)
-       + f_x\big(a,\,b\big)\,\De x
-       + f_y\big(a,\,b\big)\,\De y \\
+&amp;f\left(a + \De x,\,b+\De y\right) \\
+&amp;\hskip0.25in\approx f\left(a\,,\,b\right)
+       + f_x\left(a,\,b\right)\,\De x
+       + f_y\left(a,\,b\right)\,\De y \\
 &amp;\hskip0.75in +\frac{1}{2}\left\{
-        f_{xx}\big(a,b\big)\,\De x^2
-       +2f_{xy}\big(a,b\big) \,\De x\De y
-       + f_{yy}\big(a,b\big)\,\De y^2 \right\}\\
-&amp;\hskip0.25in= f\big(a\,,\,b\big)
+        f_{xx}\left(a,b\right)\,\De x^2
+       +2f_{xy}\left(a,b\right) \,\De x\De y
+       + f_{yy}\left(a,b\right)\,\De y^2 \right\}\\
+&amp;\hskip0.25in= f\left(a\,,\,b\right)
         +\frac{1}{2}\left\{
-        f_{xx}\big(a,b\big)\,\De x^2
-       +2f_{xy}\big(a,b\big) \,\De x\De y
-       + f_{yy}\big(a,b\big)\,\De y^2 \right\}.
+        f_{xx}\left(a,b\right)\,\De x^2
+       +2f_{xy}\left(a,b\right) \,\De x\De y
+       + f_{yy}\left(a,b\right)\,\De y^2 \right\}.
 \end{split}\tag{$*$}
 </mrow></md>
 Puisque  <m>(a,b)</m> est un point critique, <m>f_x(a,b)=f_y(a,b)=0</m>. Alors, avec la technique de l'<xref ref="eg_maxminB" text="global">exemple</xref> et de l'<xref ref="eg_maxminC" text="global">exemple</xref>,
@@ -826,7 +826,7 @@ on obtient<fn>
     <theorem xml:id="thm_second_deriv_test">
       <title>Test de la dérivée seconde</title>
       <statement>
-        <p>Soit <m>\vr = (x,y)</m> et <m>\vr_0 = (x_0,y_0)</m> un point critique de <m>f</m> tel qu'il existe  <m>\e \gt 0</m> de sorte que toutes les dérivées partielles jusqu'au deuxième ordre de <m>f</m> sont continues en tout point vérifiant <m>|\vr - \vr_0| \lt \e</m>.
+        <p>Soit <m>\vr = (x,y)</m> et <m>\vr_0 = (x_0,y_0)</m> un point critique de <m>f</m> tel qu'il existe  <m>\e \gt 0</m> de sorte que toutes les dérivées partielles jusqu'au deuxième ordre de <m>f</m> sont continues en tout point vérifiant <m>\norm{\vr - \vr_0} \lt \e</m>.
 
 Soit <m>Hf(\vr) = \left[\begin{matrix}f_{xx}(\vr) \amp f_{xy}(\vr)\\ f_{yx}(\vr) \amp f_{yy}(\vr) \end{matrix}\right]</m> la matrice hessienne de <m>f</m>, et définissons
 <md><mrow>
@@ -866,8 +866,8 @@ que nous appelons <em>hessien de <m>f</m> en <m>\vr</m></em> (ou <em>discriminan
        +\frac{f_{xy}}{f_{xx}}\De y\right)^2
        +\left(f_{yy}-\frac{f_{xy}^2}{f_{xx}}\right)\,\De y^2
 </mrow><mrow>
-&amp;\hskip0.5in=\frac{1}{f_{xx}}\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
-                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+&amp;\hskip0.5in=\frac{1}{f_{xx}}\left\{\left(f_{xx}\,\De x+f_{xy}\,\De y\right)^2
+                         +\left(f_{xx}f_{yy}-f_{xy}^2\right)\,\De y^2\right\}
 </mrow></md>.
 De la même façon, si <m>f_{yy}(\vr_0)\ne 0</m>,
 <md><mrow>
@@ -875,20 +875,20 @@ De la même façon, si <m>f_{yy}(\vr_0)\ne 0</m>,
        +2f_{xy}\,\De x\De y
        + f_{yy}\,\De y^2
 </mrow><mrow>
-&amp;\hskip0.5in=\frac{1}{f_{yy}}\left\{\big(f_{xy}\,\De x+f_{yy}\,\De y\big)^2
-                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De x^2\right\}
+&amp;\hskip0.5in=\frac{1}{f_{yy}}\left\{\left(f_{xy}\,\De x+f_{yy}\,\De y\right)^2
+                         +\left(f_{xx}f_{yy}-f_{xy}^2\right)\,\De x^2\right\}
 </mrow></md>.
 Il faut remarquer que ceci ne tient plus si  <m>f_{xx}(\vr_0)=f_{yy}(\vr_0)=0</m>. Nous allons traiter ce cas plus loin. Qui plus est, remarquons que
 <ul><li><p>
-si <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \gt 0</m>, alors  <m>f_{xx}</m> et  <m>f_{yy}</m> doivent être non nulles et du même signe. De plus, si <m>\De x</m>
+si <m>\left(f_{xx}f_{yy}-f_{xy}^2\right) \gt 0</m>, alors  <m>f_{xx}</m> et  <m>f_{yy}</m> doivent être non nulles et du même signe. De plus, si <m>\De x</m>
 ou <m>\De y</m> sont non nuls,
 <md><mrow>
-\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
-                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+\left\{\left(f_{xx}\,\De x+f_{xy}\,\De y\right)^2
+                         +\left(f_{xx}f_{yy}-f_{xy}^2\right)\,\De y^2\right\}
 &amp; \gt 0\quad\text{et}
 </mrow><mrow>
-\left\{\big(f_{xy}\,\De x+f_{yy}\,\De y\big)^2
-                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De x^2\right\}
+\left\{\left(f_{xy}\,\De x+f_{yy}\,\De y\right)^2
+                         +\left(f_{xx}f_{yy}-f_{xy}^2\right)\,\De x^2\right\}
 &amp; \gt 0
 </mrow></md>,
 de sorte que, en vertu de <m>(*)</m>,
@@ -897,14 +897,14 @@ si <m>f_{xx}(\vr_0) \gt 0</m>, alors <m>\vr_0</m> est un point de minimum local,
 </li><li>
 si <m>f_{xx}(\vr_0) \lt 0</m>, alors  <m>\vr_0</m> est un point de maximum local;
 </li></ul></p></li><li>
-si  <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \lt 0</m> et <m>f_{xx}</m> est non nulle, alors
+si  <m>\left(f_{xx}f_{yy}-f_{xy}^2\right) \lt 0</m> et <m>f_{xx}</m> est non nulle, alors
 <md><mrow>
-\left\{\big(f_{xx}\,\De x+f_{xy}\,\De y\big)^2
-                         +\big(f_{xx}f_{yy}-f_{xy}^2\big)\,\De y^2\right\}
+\left\{\left(f_{xx}\,\De x+f_{xy}\,\De y\right)^2
+                         +\left(f_{xx}f_{yy}-f_{xy}^2\right)\,\De y^2\right\}
 </mrow></md>
 est strictement positive lorsque <m>\De x\ne 0</m> et <m>\De y= 0</m>, et est strictement négative lorsque  <m>f_{xx}\,\De x+f_{xy}\,\De y=0</m> et <m>\De y\ne 0</m>, de sorte que <m>\vr_0</m>  est un point de selle.
 
-De la même façon, <m>\vr_0</m> est un point de selle si <m>\big(f_{xx}f_{yy}-f_{xy}^2\big) \lt 0</m> et que <m>f_{yy}</m> est non nulle;
+De la même façon, <m>\vr_0</m> est un point de selle si <m>\left(f_{xx}f_{yy}-f_{xy}^2\right) \lt 0</m> et que <m>f_{yy}</m> est non nulle;
 </li><li>
 finalement, si <m>f_{xy}\ne 0</m> et <m>f_{xx}=f_{yy}=0</m>, alors
 <md><mrow>
@@ -1274,25 +1274,25 @@ Comme il n'y a qu'un point critique, on peut espérer qu'il donne lieu à un min
 Utilisons le test de la dérivée seconde. Les dérivées partielles requises sont
 <md><mrow>
 S_{xx}(x,y)&amp;=\frac{4V}{x^3}, &amp;
-    S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2,
+    S_{xx}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)&amp;=2,
 </mrow><mrow>
 S_{xy}(x,y)&amp;=1,&amp;
-    S_{xy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=1,
+    S_{xy}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)&amp;=1,
 </mrow><mrow>
 S_{yy}(x,y)&amp;=\frac{4V}{y^3}, &amp;
-    S_{yy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2
+    S_{yy}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)&amp;=2
 </mrow></md>.
 Alors,
 <md><mrow>
-S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)\
-S_{yy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)
--S_{xy}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)^2
+S_{xx}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)\
+S_{yy}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)
+-S_{xy}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)^2
 &amp;=3 \gt 0,
 </mrow><mrow>
-S_{xx}\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)&amp;=2 \gt 0
+S_{xx}\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)&amp;=2 \gt 0
 </mrow></md>,
 et, en vertu du <xref ref="thm_second_deriv_test" text="global">théorème</xref>,
-<m>\big(\root{3}\of{2V},\,\root{3}\of{2V}\big)</m> est un point de minimum local. Ainsi, les dimensions requises sont
+<m>\left(\root{3}\of{2V},\,\root{3}\of{2V}\right)</m> est un point de minimum local. Ainsi, les dimensions requises sont
 <md><mrow>
 x=y=\root{3}\of{2V},\qquad
 z=\root{3}\of{\frac{V}{4}}
@@ -1338,7 +1338,7 @@ Remarquons que, dans la solution, nous avons <m>x=y</m>. C'est une bonne chose :
 <ol marker="(a)"><li><m>\vr_0 = (x_0,y_0)</m> est un point à l'intérieur du disque (c'est-à-dire, dans notre exemple, que <m>x_0^2+y_0^2 \lt 1</m>) et <m>\vnabla f(\vr_0) = \vZero</m>, ou
 </li><li><m>\vr_0 </m> est un point intérieur, et l'une des dérivées partielles  <m>f_x(\vr_0)</m> ou <m>f_y(\vr_0)</m> n'existe pas, ou
 </li><li><p><m>\vr_0 </m> est un point sur le bord du disque<fn>
-    Il devrait être clair que la frontière, ou le bord, du disque est l'ensemble des points <m>\vr</m> tels que  <m>|\vr| =  1</m>, c'est-à-dire le cercle. Plus généralement, un point <m>\vr</m>  est un point de la frontière d'un ensemble  <m>S</m> s'il existe une suite de points de <m>S</m> qui converge vers <m>\vr </m> et qu'il existe aussi une suite de points du complément de <m>S</m> qui converge vers <m>\vr</m>.
+    Il devrait être clair que la frontière, ou le bord, du disque est l'ensemble des points <m>\vr</m> tels que  <m>\norm{\vr} =  1</m>, c'est-à-dire le cercle. Plus généralement, un point <m>\vr</m>  est un point de la frontière d'un ensemble  <m>S</m> s'il existe une suite de points de <m>S</m> qui converge vers <m>\vr </m> et qu'il existe aussi une suite de points du complément de <m>S</m> qui converge vers <m>\vr</m>.
   </fn>
   et peut donner lieu à un maximum ou à un minimum (plus de détails plus bas);
 </p></li></ol></p></li><li>
@@ -1387,7 +1387,7 @@ T = (\cos t+\sin t)e^{-\cos^2 t -\sin^2 t}
 Il suffit donc d'étudier les variations de <m>T(t) = (\cos t + \sin t)e^{-1}</m>.
 </p>
         <p><md><mrow>
-\frac{dT}{dt}=\big(-\sin t+\cos t\big)e^{-1}
+\frac{dT}{dt}=\left(-\sin t+\cos t\right)e^{-1}
 </mrow></md>
 Ainsi, <m>(\cos t+\sin t)e^{-1}</m> atteint son maximum ou son minimum lorsque
 <ul><li><m>\sin t=\cos t</m>,
@@ -1593,7 +1593,7 @@ Ainsi, en bout de ligne, nous avons les candidats suivants pour les maximum et m
                 <m>(1,0)</m>
               </cell>
               <cell>
-                <m>\big(-\half,\pm\tfrac{\sqrt{3}}{2}\big)</m>
+                <m>\left(-\half,\pm\tfrac{\sqrt{3}}{2}\right)</m>
               </cell>
             </row>
             <row>
@@ -1914,7 +1914,7 @@ La fonction  <m>\ f(x,y)=\sqrt{x^2+y^2}\ </m> admet une interprétation géomét
 <ul><li>
 le minimum de <m>f(x,y)</m> est atteint au point sur le carré qui est le plus près de l'origine, c'est-à-dire l'origine elle-même. Ainsi, <m>(0,0,0)</m> est le point le plus bas sur la surface, et sa hauteur est <m>0</m>.
 </li><li>
-le maximum de <m>f(x,y)</m> est atteint aux points sur le carré se trouvant le plus loin de l'origine, c'est-à-dire les 4 coins du carré <m>\big(\pm 1,\pm 1\big)</m>. À ces points,  <m>z=\sqrt{2}</m>. Ainsi, les points les plus hauts sur la surface sont <m>(\pm 1,\pm 1,\sqrt{2})</m>.
+le maximum de <m>f(x,y)</m> est atteint aux points sur le carré se trouvant le plus loin de l'origine, c'est-à-dire les 4 coins du carré <m>\left(\pm 1,\pm 1\right)</m>. À ces points,  <m>z=\sqrt{2}</m>. Ainsi, les points les plus hauts sur la surface sont <m>(\pm 1,\pm 1,\sqrt{2})</m>.
 </li></ul>
 Même si nous avons déjà répondu à la question, il sera illustratif de voir ce qu'il serait arrivé si nous avions suivi notre protocole usuel. Les dérivées partielles de  <m>f(x,y)=\sqrt{x^2+y^2}</m> sont définies pour
 <m>(x,y)\ne (0,0)</m> et sont

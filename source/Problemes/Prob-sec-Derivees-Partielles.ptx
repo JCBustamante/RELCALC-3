@@ -366,7 +366,7 @@
       (a) On sait que <m>z(x,y)</m> vérifie
       <md>
       <mrow>
-      z(x,y)\, y - y + x = \ln\big(xy\,z(x,y)\big)
+      z(x,y)\, y - y + x = \ln\left(xy\,z(x,y)\right)
       \tag{$*$}</mrow>
       </md>
       pour tout <m>(x,y)</m> (près de <m>(-1,-2)</m>). En dérivant <m>(*)</m> par rapport à <m>x</m>,
@@ -439,29 +439,29 @@
       traiter <m>T</m>, <m>V</m> et <m>W</m> comme des variables indépendantes et de considérer <m>U</m>
       comme une fonction <m>U(T,V,W)</m> qui vérifie
       <md>
-      \big(T\, U(T,V,W)-V\big)^2 \ln\big(W-U(T,V,W)\,V\big) = \ln 2
+      \left(T\, U(T,V,W)-V\right)^2 \ln\left(W-U(T,V,W)\,V\right) = \ln 2
       \tag{E1}</md>
       pour tout <m>(T, U, V, W)</m> suffisamment près de <m>(1, 1, 2, 4)</m>.
       En dérivant (E1) par rapport à <m>T</m>, on obtient
       <md>
       <mrow>
-      &amp;2\big(T\, U(T,V,W)\!-\!V\big)\!
+      &amp;2\left(T\, U(T,V,W)\!-\!V\right)\!
                \left[ U(T,V,W)\!+\!T\,\pdiff{U}{T}(T,V,W)\right]
-                  \ln\big(W\!-\!U(T,V,W)\,V\big)
+                  \ln\left(W\!-\!U(T,V,W)\,V\right)
       </mrow><mrow>
       &amp;\hskip0.5in
-        -\big(T\, U(T,V,W)-V\big)^2 \frac{1}{W-U(T,V,W)\,V}\pdiff{U}{T}(T,V,W)\,V = 0
+        -\left(T\, U(T,V,W)-V\right)^2 \frac{1}{W-U(T,V,W)\,V}\pdiff{U}{T}(T,V,W)\,V = 0
       </mrow>
       </md>
       En particulier, pour <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
       <md>
       <mrow>
-      &amp;2\big((1)(1)-2\big)
+      &amp;2\left((1)(1)-2\right)
                \left[ 1 +(1)\pdiff{U}{T}(1,2,4)\right]
-                  \ln\big(4-(1)(2)\big)
+                  \ln\left(4-(1)(2)\right)
       </mrow><mrow>
       &amp;\hskip1in
-        -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)}\pdiff{U}{T}(1,2,4)\,(2) = 0
+        -\left((1)(1)-2\right)^2 \frac{1}{4-(1)(2)}\pdiff{U}{T}(1,2,4)\,(2) = 0
       </mrow>
       </md>
       Ce qui se simplifie en
@@ -481,28 +481,28 @@
       traiter <m>U</m>, <m>V</m> et <m>W</m> comme des variables indépendantes et de considérer <m>T</m>
       comme une fonction <m>T(U,V,W)</m> qui vérifie
       <md>
-      \big(T(U,V,W)\, U-V\big)^2 \ln\big(W-U\,V\big) = \ln 2
+      \left(T(U,V,W)\, U-V\right)^2 \ln\left(W-U\,V\right) = \ln 2
       \tag{E2}</md>
       pour tout <m>(T, U, V, W)</m> suffisamment près de <m>(1, 1, 2, 4)</m>.
       En dérivant (E2) par rapport à <m>V</m>, on obtient
       <md>
       <mrow>
-      &amp;2\big(T(U,V,W)\, U-V\big)\ \left[\pdiff{T}{V}(U,V,W)\ U-1\right]
-                  \ln\big(W-U\,V\big)
+      &amp;2\left(T(U,V,W)\, U-V\right)\ \left[\pdiff{T}{V}(U,V,W)\ U-1\right]
+                  \ln\left(W-U\,V\right)
       </mrow><mrow>
       &amp;\hskip2.5in
-        -\big(T(U,V,W)\, U-V\big)^2 \frac{U}{W-U\,V} = 0
+        -\left(T(U,V,W)\, U-V\right)^2 \frac{U}{W-U\,V} = 0
       </mrow>
       </md>
       En particulier, pour <m>(T, U, V, W)=(1, 1, 2, 4)</m>,
       <md>
       <mrow>
-      &amp;2\big((1)(1)-2\big)
+      &amp;2\left((1)(1)-2\right)
                \left[ (1)\pdiff{T}{V}(1,2,4)-1\right]
-                  \ln\big(4-(1)(2)\big)
+                  \ln\left(4-(1)(2)\right)
       </mrow><mrow>
       &amp;\hskip2.5in
-        -\big((1)(1)-2\big)^2 \frac{1}{4-(1)(2)} = 0
+        -\left((1)(1)-2\right)^2 \frac{1}{4-(1)(2)} = 0
       </mrow>
       </md>
       Ce qui se simplifie en
@@ -745,25 +745,25 @@
       La hauteur de la surface au point <m>(x,y)</m> est la valeur <m>z(x,y)</m> obtenue en résolvant
       cette équation. C'est-à-dire,
       <md>
-      x^2+\big(y-z(x,y)\big)^2=1
+      x^2+\left(y-z(x,y)\right)^2=1
       \tag{$*$}
       </md>
       Nous dérivons cette équation implicitement pour trouver <m>z_x(x,y)</m> et <m>z_y(x,y)</m> au point voulu <m>(x,y)= (0,-1)</m>. D'abord, en dérivant <m>(*)</m> par rapport
       à <m>y</m>, on obtient
       <md>
       <mrow>
-      0+2\big(y-z(x,y)\big)\big(1- z_y(x,y)\big)&amp;=0
+      0+2\left(y-z(x,y)\right)\left(1- z_y(x,y)\right)&amp;=0
       </mrow><mrow>
-      2(-1-0)\big(1-z_y(0,-1)\big)&amp;=0&amp; &amp; \mbox{ en } (0,-1,0)
+      2(-1-0)\left(1-z_y(0,-1)\right)&amp;=0&amp; &amp; \mbox{ en } (0,-1,0)
       </mrow>
       </md>
       de sorte que la pente en regardant dans la direction des <m>y</m> positifs est <m>z_y(0,-1)=1</m>.
       De même, en dérivant <m>(*)</m> par rapport à <m>x</m>, on obtient
       <md>
       <mrow>
-      2x+2\big(y-z(x,y)\big)\cdot\big(0-z_x(x,y)\big)&amp;=0
+      2x+2\left(y-z(x,y)\right)\cdot\left(0-z_x(x,y)\right)&amp;=0
       </mrow><mrow>
-      2x&amp;=2\big(y-z(x,y)\big)\cdot z_x(x,y)
+      2x&amp;=2\left(y-z(x,y)\right)\cdot z_x(x,y)
       </mrow><mrow>
       z_x(x,y)&amp;=\frac{x}{y-z(x,y)}
       </mrow><mrow>
@@ -988,9 +988,9 @@
       </p>
 
       <p>(b) <m>f_{xx}(x,y)= y^4e^{xy^2}</m></p><p>
-          <m>f_{xy}(x,y)= \big(2y+2xy^3\big)e^{xy^2}</m></p><p>
-          <m>f_{xxy}(x,y)= \big(4y^3 + 2xy^5\big)e^{xy^2}</m></p><p>
-          <m>f_{xyy}(x,y) = \big(2+10xy^2+4x^2y^4\big)e^{xy^2}</m>
+          <m>f_{xy}(x,y)= \left(2y+2xy^3\right)e^{xy^2}</m></p><p>
+          <m>f_{xxy}(x,y)= \left(4y^3 + 2xy^5\right)e^{xy^2}</m></p><p>
+          <m>f_{xyy}(x,y) = \left(2+10xy^2+4x^2y^4\right)e^{xy^2}</m>
       </p>
 
       <p>(c) <m>\displaystyle\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
@@ -1025,10 +1025,10 @@
       f_{xxy}(x,y) &amp;= 4y^3e^{xy^2} + 2xy^5e^{xy^2}
       </mrow><mrow>
       f_{xy}(x,y) &amp;= 2ye^{xy^2}+2xy^3e^{xy^2}\quad &amp;
-      f_{xyy}(x,y) &amp;= \big(2\!+\!4xy^2\!+\!6xy^2\!+\!4x^2y^4\big)e^{xy^2}
+      f_{xyy}(x,y) &amp;= \left(2\!+\!4xy^2\!+\!6xy^2\!+\!4x^2y^4\right)e^{xy^2}
       </mrow><mrow>
        &amp; &amp;
-       &amp;= \big(2+10xy^2+4x^2y^4\big)e^{xy^2}
+       &amp;= \left(2+10xy^2+4x^2y^4\right)e^{xy^2}
       </mrow>
       </md>
       </p>
@@ -1104,15 +1104,15 @@
       Trouvez toutes les dérivées partielles spécifiées.
       <ol marker = "(a)">
       <li>
-      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>; <m>f_{xyz}(x,y,z)</m>
+      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m>; <m>f_{xyz}(x,y,z)</m>
       </li>
       <li>
-      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)
-                  +\arctan\big(e^{\sqrt{xz}}\big)
-                  +\arctan\big(e^{\sqrt{yz}}\big)</m>; <m>f_{xyz}(x,y,z)</m>
+      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)
+                  +\arctan\left(e^{\sqrt{xz}}\right)
+                  +\arctan\left(e^{\sqrt{yz}}\right)</m>; <m>f_{xyz}(x,y,z)</m>
       </li>
       <li>
-      <m>f(x,y,z) = \arctan\big(e^{\sqrt{xyz}}\big)</m>; <m>f_{xx}(1,0,0)</m>
+      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xyz}}\right)</m>; <m>f_{xx}(1,0,0)</m>
       </li>
       </ol>
       </p></statement>
@@ -1138,7 +1138,7 @@
 
       <solution><p>
       (a)
-      Comme <m>f(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> ne dépend pas de <m>z</m>,
+      Comme <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m> ne dépend pas de <m>z</m>,
       on a <m>f_z(x,y,z) = 0</m> et donc
       <md>
       f_{xyz}(x,y,z)
@@ -1147,13 +1147,13 @@
       </md>
       </p>
 
-      <p>(b) Posons <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m>,
-                <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> et
-                <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m>.
+      <p>(b) Posons <m>u(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m>,
+                <m>v(x,y,z) = \arctan\left(e^{\sqrt{xz}}\right)</m> et
+                <m>w(x,y,z) = \arctan\left(e^{\sqrt{yz}}\right)</m>.
       Alors
       <ul>
       <li>
-      comme <m>u(x,y,z) = \arctan\big(e^{\sqrt{xy}}\big)</m> ne dépend pas de <m>z</m>,
+      comme <m>u(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m> ne dépend pas de <m>z</m>,
       on a <m>u_z(x,y,z) = 0</m> et donc
       <m>
       u_{xyz}(x,y,z)
@@ -1162,7 +1162,7 @@
       </m>
       </li>
       <li>
-      comme <m>v(x,y,z) = \arctan\big(e^{\sqrt{xz}}\big)</m> ne dépend pas de <m>y</m>,
+      comme <m>v(x,y,z) = \arctan\left(e^{\sqrt{xz}}\right)</m> ne dépend pas de <m>y</m>,
       on a <m>v_y(x,y,z) = 0</m> et donc
       <m>
       v_{xyz}(x,y,z)
@@ -1171,7 +1171,7 @@
       </m>
       </li>
       <li>
-      comme <m>w(x,y,z) = \arctan\big(e^{\sqrt{yz}}\big)</m> ne dépend pas de <m>x</m>,
+      comme <m>w(x,y,z) = \arctan\left(e^{\sqrt{yz}}\right)</m> ne dépend pas de <m>x</m>,
       on a <m>w_x(x,y,z) = 0</m> et donc
       <m>
       w_{xyz}(x,y,z)
@@ -1188,7 +1188,7 @@
       <p>(c) Lors du calcul de <m>f_{xx}(x,0,0)</m>, <m>y</m> et <m>z</m> sont tous deux fixés à <m>0</m>. Ainsi, si on pose <m>g(x) = f(x,0,0)</m>, alors <m>f_{xx}(x,0,0)=g''(x)</m>.
       Or
       <md>
-      g(x) = f(x,0,0) = \arctan\big(e^{\sqrt{xyz}}\big)\Big|_{y=z=0}
+      g(x) = f(x,0,0) = \arctan\left(e^{\sqrt{xyz}}\right)\Big|_{y=z=0}
                       =\arctan(1)
                       =\frac{\pi}{4}
       </md>
@@ -1447,7 +1447,7 @@
       Montrez que <m>\displaystyle u(x,y,z,t) =\frac{1}{t^{3/2}}
                    e^{-(x^2+y^2+z^2)/(4\a t)}</m> satisfait l'équation de la chaleur
       <md>
-      u_t =  \a\big(u_{xx} + u_{yy} + u_{zz} \big)
+      u_t =  \a\left(u_{xx} + u_{yy} + u_{zz} \right)
       </md>
       pour tout <m>t \gt 0</m>
       </p></statement>
@@ -1481,7 +1481,7 @@
         on a
         <md>
         <mrow>
-        \a\big(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \big)
+        \a\left(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \right)
         &amp;=-\frac{3}{2\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
           \!+\!\frac{x^2\!+\!y^2\!+\!z^2}{4\a\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
         </mrow><mrow>
@@ -1519,7 +1519,7 @@
       on a
       <md>
       <mrow>
-      \a\big(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \big)
+      \a\left(u_{xx}\!+\!u_{yy}\!+\!u_{zz} \right)
       &amp;=-\frac{3}{2\,t^{5/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
         \!+\!\frac{x^2\!+\!y^2\!+\!z^2}{4\a\,t^{7/2}} e^{-(x^2+y^2+z^2)/(4\a t)}
       </mrow><mrow>

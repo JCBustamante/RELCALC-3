@@ -6,13 +6,10 @@
 
     <!-- CLP4 Section 2.1 No 1 -->
     <exercise>
-        <statement><p>
-        Ci-dessous se trouve une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
+        <statement>
+        <p>
+        Voici une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
         </p>
-
-
-
-
 
         <!-- Note 26-07-2023 -->
         <!-- Je ne sais pas pourquoi, le champ produit avec Tikz rend bien dans la version LaTeX puis .pdf, mais pas pour html. J'ai donc refait le champ avec sage.
@@ -41,43 +38,54 @@
           \end{tikzpicture}</latex-image></image>
 
         -->
-        <sidebyside width = "85%">
-        <image xml:id="sageplot-exo-champ" width="85%">
-          <description><p>Un champ de vecteurs</p></description>
-         <sageplot>
-            var('x,y')
-            Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
-              (x,-4,4), (y,-4,4), plot_points=[9,9],
-              color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-              gridlines= True,
-              axes = True,
-              axes_labels = ['$x$','$y$'],
-              axes_labels_size=1.4, frame = False)
-            Fig
-         </sageplot>
-        </image>
+        <sidebyside widths="55% 5% 40%" valign="top">
+          <stack>
+            <p>Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
+            <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
+             \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+            =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+             \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+            \end{cases}</mrow></md>
+            <md><mrow>
+            \vv(x,y) \cdot \vj
+            \begin{cases}
+             \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+              =0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+             \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+            \end{cases}
+            </mrow></md>
+            </p>
+
+            <p>Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles.
+            Autrement dit, les échantillons sont représentatifs d'une fonction vectorielle continue et lisse. Supposer également que les repères sur les axes correspondent à des distances unitaires.
+            </p>
+          </stack>
+          <p/>
+          <image xml:id="sageplot-exo-champ" width="100%">
+            <description><p>Un champ de vecteurs</p></description>
+           <sageplot>
+              var('x,y')
+              #Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
+              #  (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+              #  color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+              #  gridlines= True,
+              #  axes = True,
+              #  figsize = 4,
+              #  axes_labels = ['$x$','$y$'],
+              #  axes_labels_size=2, frame = False)
+              Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
+                (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+                color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+                gridlines= True,
+                axes = True,
+                figsize = 4,
+                axes_labels = ['$x$','$y$'],
+                axes_labels_size=2, width=0.004, frame = False)
+              Fig
+           </sageplot>
+          </image>
         </sidebyside>
-
-
-        <p>Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
-        <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
-         \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-        =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-         \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-        \end{cases}</mrow></md>
-        <md><mrow>
-        \vv(x,y) \cdot \vj
-        \begin{cases}
-         \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-          =0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-         \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-        \end{cases}
-        </mrow></md>
-        </p>
-
-        <p>Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles.
-        Autrement dit, les échantillons sont représentatifs d'une fonction vectorielle continue et lisse. Supposer également que les repères sur les axes correspondent à des distances unitaires.
-        </p></statement>
+        </statement>
 
         <hint><p>
         Tous les blancs ne représentent pas un seul intervalle.
@@ -172,44 +180,51 @@
       \end{tikzpicture}</latex-image></image>
       </sidebyside>
       -->
-      <sidebyside width = "85%">
-      <image xml:id="sageplot-exo-champ-2" width="85%">
-        <description><p>Un champ de vecteurs</p></description>
-       <sageplot>
-          var('x,y')
-          Fig = plot_vector_field([x+y, x-y],
-            (x,-4,4), (y,-4,4), plot_points=[9,9],
-            color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-            gridlines= True,
-            axes = True,
-            axes_labels = ['$x$','$y$'],
-            axes_labels_size=1.4, frame = False)
-          Fig
-       </sageplot>
-      </image>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <stack>
+          <p>
+          	Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
+          <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
+           \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}\\
+          =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+           \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+          \end{cases}</mrow></md>
+          <md><mrow>\vv(x,y)\cdot \vj \begin{cases}
+           \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+          =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+           \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+          \end{cases}</mrow></md>
+          </p>
+
+          <p>
+            Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles. Supposer également que les repères sur les axes correspondent à des distances unitaires.
+          </p>
+        </stack>
+        <p/>
+        <image xml:id="sageplot-exo-champ-2" width="100%">
+          <description><p>Un champ de vecteurs</p></description>
+         <sageplot>
+            var('x,y')
+            #Fig = plot_vector_field([x+y, x-y],
+            #  (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+            #  color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+            #  gridlines= True,
+            #  axes = True,
+            #  figsize = 4,
+            #  axes_labels = ['$x$','$y$'],
+            #  axes_labels_size=2, frame = False)
+            Fig = plot_vector_field([x+y, x-y],
+              (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+              color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+              gridlines= True,
+              axes = True,
+              figsize = 4,
+              axes_labels = ['$x$','$y$'],
+              axes_labels_size=2, width=0.004, frame = False)
+            Fig
+         </sageplot>
+        </image>
       </sidebyside>
-
-
-      <p>
-      	Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
-      </p>
-
-      <p>
-      <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
-       \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}\\
-      =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-       \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-      \end{cases}</mrow></md>
-      <md><mrow>\vv(x,y)\cdot \vj \begin{cases}
-       \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-      =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-       \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-      \end{cases}</mrow></md>
-      </p>
-
-      <p>
-        Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles. Supposer également que les repères sur les axes correspondent à des distances unitaires.
-      </p>
       </statement>
 
       <hint><p>
@@ -355,24 +370,25 @@
         </p>
       </solution>
     </exercise>
-  </exercisegroup>
 
-  <exercisegroup>
-    <title>Pour mieux comprendre</title>
-    <!-- CLP4 Section 2.1 No 4 -->
+
     <exercise>
-      <statement><p>
-      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions esquissé ci-dessous.
+      <statement>
+      <sidebyside widths="55% 5% 40%" valign="top">
+      <stack>
+      <p>
+      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions esquissé ci-contre.
       </p>
-
-      <sidebyside width="51%">
-      <image source="images/CLP4-figs/pfigs/VFe"/>
-      </sidebyside>
 
       <p>
       Déterminer les signes de <m>P</m>, <m>Q</m>, <m>\pdiff{Q}{x}</m>
       et <m>\pdiff{Q}{y}</m> au point <m>A</m>.
-      </p></statement>
+      </p>
+      </stack>
+      <p/>
+      <image source="images/CLP4-figs/pfigs/VFe"/>
+      </sidebyside>
+      </statement>
 
       <!-- <hint></hint> -->
 
@@ -414,6 +430,12 @@
       </solution>
     </exercise>
 
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <!-- CLP4 Section 2.1 No 4 -->
+    
     <!-- CLP4 Section 2.1 No 5 -->
     <exercise>
       <statement><p>
@@ -442,9 +464,17 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>(1.01,\,1.01)</m></p><p>
-      (b) <m>(0,\,0)</m></p><p>
-      (c) <m>(0,\,0)</m>
+      <ol marker="(a)" cols="3">
+      <li>
+      <m>(1.01,\,1.01)</m>
+      </li>
+      <li>
+      <m>(0,\,0)</m>
+      </li>
+      <li>
+      <m>(0,\,0)</m>
+      </li>
+      </ol>
       </p></answer>
 
       <solution><p>

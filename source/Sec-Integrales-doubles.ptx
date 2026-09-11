@@ -232,31 +232,36 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
   
 <p>
       Notons que<nbsp/>:
+    </p>
     <ul>
-      <li><p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
+      <li>
+        <p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
+        </p>
         <ul>
-          <li> nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
+          <li> Nous évaluons en premier l'intégrale à l'intérieur <m>\displaystyle \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
           </li>
-          
+
           <li> Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
           </li>
         </ul>
-      </p>
-    </li>
-    <li>
-      <p> Il peut arriver que l'écriture suivante soit utilisée dans certains textes  
+      </li>
+      <li>
+        <p> Il peut arriver que l'écriture suivante soit utilisée dans certains textes
         <md>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</md>,
-        
         mais nous ne le ferons pas, autant que possible.
-      <ul>
-        <li>
-          <p>
-            Pour cette calcul, nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Pour ce calcul, nous évaluons en premier l'intégrale <m>\displaystyle \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\displaystyle\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\displaystyle \int_{L(y)}^{R(y)} f\left(x,y\right)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
             </p>
-</li><li>
-   Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d \dee{y}\,F(y)</m>, dont l'intégrande est le résultat de l'intégrale intérieure et dont les bornes d'intégration sont à la gauche de <m>\dee{y}</m>.
-</li></ul></p></li></ul>
-</p>
+          </li>
+          <li>
+            Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d \dee{y}\,F(y)</m>, dont l'intégrande est le résultat de l'intégrale intérieure et dont les bornes d'intégration sont à la gauche de <m>\dee{y}</m>.
+          </li>
+        </ul>
+      </li>
+    </ul>
     <p>En résumé, nous avons maintenant deux intégrales qui calculent la masse de la même plaque dans le plan <m>Oxy</m>.
 </p>
     <theorem xml:id="thm_xy_mass">

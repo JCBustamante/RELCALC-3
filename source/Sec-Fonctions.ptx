@@ -4,62 +4,64 @@
   <introduction>
     <p>Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. Une telle fonction est une règle qui associe exactement une quantité (un nombre ou un vecteur par exemple) à une valeur donnée. On étudie les fonctions réelles d'une variable réelle et leurs applications à l'aide de graphiques, des limites, de leurs dérivées ou de leurs intégrales notamment. Nous verrons que la plupart des idées du calcul à une variable trouvent leur place avec plusieurs variables. Bien entendu, certains ajustements seront nécessaires.</p>
   </introduction>
-  <definition xml:id="def-Fonctions-2-3-vars">
-    <statement>
-      <p>
-         Une <em>fonction de plusieurs variables à valeurs réelles</em>, disons <m>f</m>, est la donnée d'une région <m>\plan{D} \subseteq \R^n</m> et d'une règle qui, à chaque point <m>\vr \in \plan{D}</m>, fait correspondre un nombre réel <m>f(\vr)</m>. Le domaine de <m>f</m> est l'ensemble <m>\plan{D}</m>, tandis que son image est l'ensemble des valeurs prises par <m>f</m>, c'est-à-dire <m>\{ f(\vr)| \vr\in \plan{D}\}</m>; il s'agit d'un sous-ensemble de <m>\R</m>. On écrit dans ce cas
-         <md><mrow>f : \amp  \plan{D}\ \longrightarrow \R</mrow><mrow> \amp  \vr \longmapsto f(\vr)</mrow></md>
-         et on lit  <q><m>f</m> va de <m>\plan{D}</m> dans <m>\R</m> et applique (ou envoie) <m>\vr</m> sur <m>f(\vr)</m></q>.
-         <ul><li><p> Dans le cas <m>n=2</m>, on aura que <m>\plan{D}</m> est une région du plan <m>\R^2</m> et l'on écrira <m>f(x,y)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2)</m> au lieu de <m>f(\vx)</m>.
-             </p></li><li><p>Dans le cas <m>n=3</m>, on aura que <m>\plan{D}</m> est une région de l'espace <m>\R^3</m> et l'on écrira <m>f(x,y,z)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2,x_3)</m> au lieu de <m>f(\vx)</m>.
-             </p></li></ul>
-         Si seule la règle est donnée sans préciser le domaine, on conviendra que le domaine est le plus grand ensemble de points <m>\vr</m> tel que l'expression donnée est un nombre réel.
-        </p>
-    </statement>
-  </definition>
-  <example>
-    <statement><p> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
-  <ol marker="(a)"><li><p>Trouver le domaine de <m>f</m> et le représenter graphiquement.
-      </p></li><li><p>
-        Calculer <m>f(1/4,1/4)</m>.
-      </p></li></ol>
-
-  </p></statement>
-    <solution>
-      <ol marker="(a)">
-        <li>
-          <sidebyside widths="50% 10% 40%" valign="middle">
-            <p> La présence des termes <m>\sqrt{x}</m> et <m>\sqrt{y}</m> impose d'avoir <m>x\geqslant 0</m> et <m>y\geqslant 0</m>, de sorte que le domaine se trouve dans le premier quadrant. Par ailleurs, il faut aussi avoir <m>4-x^2 - 4y^2 \gt 0</m>. L'équation <m>x^2 + 4y^2 = 4</m> définit une ellipse, la région qui nous intéresse est donc la partie du premier quadrant contenant l'origine, limitée par l'ellipse <m>(x/2)^2 + y^2 = 1</m>. Les segments de droite correspondant aux axes font partie du domaine, mais pas la portion de l'ellipse.
-            </p>
-            <p></p>
-            <figure xml:id="figure-domaine-fxy">
-              <caption>Le domaine de la fonction <m>f.</m></caption>
-              <image xml:id="sageplot-domainefxy">
-                <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
-                <sageplot>
-            var('x')
-            Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
-              axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
-            Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
-            Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
-            Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
-            Fig
-                </sageplot>
-              </image>
-            </figure>
-          </sidebyside>
-        </li>
-        <li>
-          <p>
-            Un calcul direct nous donne
-            <md><mrow>f(1/4,1/4) \amp= \sqrt{1/4} + \sqrt{1/4} + \ln (4-1/16 - 4/16) </mrow><mrow> \amp = 1 + \ln (59 /16).</mrow></md>
-          </p>
-        </li>
-      </ol>
-    </solution>
-  </example>
   <subsection xml:id="pars-Graphes-niveau">
-    <title>Graphes et ensembles de niveau</title>
+    <title>Domaine, graphe et ensembles de niveau</title>
+    <definition xml:id="def-Fonctions-2-3-vars">
+      <statement>
+        <p>
+           Une <em>fonction de plusieurs variables à valeurs réelles</em>, disons <m>f</m>, est la donnée d'une région <m>\plan{D} \subseteq \R^n</m> et d'une règle qui, à chaque point <m>\vr \in \plan{D}</m>, fait correspondre un nombre réel <m>f(\vr)</m>. Le domaine de <m>f</m> est l'ensemble <m>\plan{D}</m>, tandis que son image est l'ensemble des valeurs prises par <m>f</m>, c'est-à-dire <m>\{ f(\vr)| \vr\in \plan{D}\}</m>; il s'agit d'un sous-ensemble de <m>\R</m>. On écrit dans ce cas
+           <md><mrow>f : \amp  \plan{D}\ \longrightarrow \R</mrow><mrow> \amp  \vr \longmapsto f(\vr)</mrow></md>
+           et on lit  <q><m>f</m> va de <m>\plan{D}</m> dans <m>\R</m> et applique (ou envoie) <m>\vr</m> sur <m>f(\vr)</m></q>.
+           <ul><li><p> Dans le cas <m>n=2</m>, on aura que <m>\plan{D}</m> est une région du plan <m>\R^2</m> et l'on écrira <m>f(x,y)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2)</m> au lieu de <m>f(\vx)</m>.
+               </p></li><li><p>Dans le cas <m>n=3</m>, on aura que <m>\plan{D}</m> est une région de l'espace <m>\R^3</m> et l'on écrira <m>f(x,y,z)</m> au lieu de <m>f(\vr)</m>, ou <m>f(x_1, x_2,x_3)</m> au lieu de <m>f(\vx)</m>.
+               </p></li></ul>
+           Si seule la règle est donnée sans préciser le domaine, on conviendra que le domaine est le plus grand ensemble de points <m>\vr</m> tel que l'expression donnée est un nombre réel.
+          </p>
+      </statement>
+    </definition>
+    <example>
+      <statement><p> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
+    <ol marker="(a)"><li><p>Trouver le domaine de <m>f</m> et le représenter graphiquement.
+        </p></li><li><p>
+          Calculer <m>f(1/4,1/4)</m>.
+        </p></li></ol>
+
+    </p></statement>
+      <solution>
+        <p>
+        <ol marker="(a)">
+          <li>
+            <sidebyside widths="50% 10% 40%" valign="middle">
+              <p> La présence des termes <m>\sqrt{x}</m> et <m>\sqrt{y}</m> impose d'avoir <m>x\geqslant 0</m> et <m>y\geqslant 0</m>, de sorte que le domaine se trouve dans le premier quadrant. Par ailleurs, il faut aussi avoir <m>4-x^2 - 4y^2 \gt 0</m>. L'équation <m>x^2 + 4y^2 = 4</m> définit une ellipse, la région qui nous intéresse est donc la partie du premier quadrant contenant l'origine, limitée par l'ellipse <m>(x/2)^2 + y^2 = 1</m>. Les segments de droite correspondant aux axes font partie du domaine, mais pas la portion de l'ellipse.
+              </p>
+              <p></p>
+              <figure xml:id="figure-domaine-fxy">
+                <caption>Le domaine de la fonction <m>f.</m></caption>
+                <image xml:id="sageplot-domainefxy">
+                  <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
+                  <sageplot>
+              var('x')
+              Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
+                axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
+              Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
+              Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
+              Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
+              Fig
+                  </sageplot>
+                </image>
+              </figure>
+            </sidebyside>
+          </li>
+          <li>
+            <p>
+              Un calcul direct nous donne
+              <md><mrow>f(1/4,1/4) \amp= \sqrt{1/4} + \sqrt{1/4} + \ln (4-1/16 - 4/16) </mrow><mrow> \amp = 1 + \ln (59 /16).</mrow></md>
+            </p>
+          </li>
+        </ol>
+        </p>
+      </solution>
+    </example>
     <p>
   Lorsqu'on étudie une fonction d'une variable, on la représente à l'aide de sa courbe associée, ou son graphe. Si <m>f : [a,b] \to \R</m> est donnée, la courbe est l'ensemble <m>\{(x,y)\in \R^2 |y= f(x), x\in [a,b] \}</m>. Cette définition se généralise aux fonctions de plusieurs variables.
     </p>
@@ -123,27 +125,46 @@
       <statement>
         <p>
       Considérons la fonction <m>f(x,y) = x^2 \sin 2y</m>. Nous avons alors quelques traces :
-      <ul><li><p>
-          Dans la direction des <m>x</m>, elles sont données par les courbes d'équation
-          </p><ul><li><p><m>z=f(x,0) = 0</m> à la valeur <m>y=0</m>;
-              </p></li><li><p><m>z=f(x,\pi/6) = x^2 \sin \pi/3 = x^2 \sqrt{3}/2</m> à la valeur <m>y=\pi/6</m>;
-              </p></li><li><p><m>z=f(x,3\pi/4) =  x^2 \sin 2\pi/2 = -x^2 </m> à la valeur <m>y=3\pi /4</m>.
-              </p></li></ul><p>
-          On voit tout de suite qu'il s'agit de paraboles, à l'exception des  traces à <m>y=0, y=\pi/2, y=\pi</m>. Dans ces cas, on a des droites horizontales.
-          </p></li><li><p>
-            Dans la direction des <m>y</m>, les traces sont données par les courbes d'équation
-          </p><ul><li><p><m>z=f(0,y) = 0</m> à la valeur <m>x=0</m>;
-             </p></li><li><p><m>z=f(5,y) =  25 \sin 2y </m> à la valeur <m>x=5</m>;
-             </p></li><li><p><m>z=f(10,y) = 100\sin 2y </m> à la valeur <m>x=10</m>.
-             </p></li></ul><p>
-         Dans ce cas, il s'agit de courbes sinusoïdales.
-         </p></li></ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Dans la direction des <m>x</m>, elles sont données par les courbes d'équation
+            </p>
+            <ul>
+              <li><p><m>z=f(x,0) = 0</m> à la valeur <m>y=0</m>;
+                  </p></li>
+              <li><p><m>z=f(x,\pi/6) = x^2 \sin \pi/3 = x^2 \sqrt{3}/2</m> à la valeur <m>y=\pi/6</m>;
+                  </p></li>
+              <li><p><m>z=f(x,3\pi/4) =  x^2 \sin 2\pi/2 = -x^2 </m> à la valeur <m>y=3\pi /4</m>.
+                  </p></li>
+            </ul>
+            <p>
+              On voit tout de suite qu'il s'agit de paraboles, à l'exception des  traces à <m>y=0, y=\pi/2, y=\pi</m>. Dans ces cas, on a des droites horizontales.
+            </p>
+          </li>
+          <li>
+            <p>
+              Dans la direction des <m>y</m>, les traces sont données par les courbes d'équation
+            </p>
+            <ul>
+              <li><p><m>z=f(0,y) = 0</m> à la valeur <m>x=0</m>;
+                 </p></li>
+              <li><p><m>z=f(5,y) =  25 \sin 2y </m> à la valeur <m>x=5</m>;
+                 </p></li>
+              <li><p><m>z=f(10,y) = 100\sin 2y </m> à la valeur <m>x=10</m>.
+                 </p></li>
+            </ul>
+            <p>
+              Dans ce cas, il s'agit de courbes sinusoïdales.
+            </p>
+          </li>
+        </ul>
 
-      <figure xml:id="Traces-ggb"><caption>La surface d'équation <m>z=x^2\sin 2y </m> ainsi que quelques traces</caption><interactive xml:id="Traces" platform="geogebra" aspect="7:5" preview="images/GeoGebra-Statique/Trace-statique.png"><slate surface="geogebra" source="GeoGebra/Traces.ggb" aspect="7:5">
+      <figure xml:id="Traces-ggb"><caption>La surface d'équation <m>z=x^2\sin 2y </m> ainsi que quelques traces</caption><interactive xml:id="Traces" platform="geogebra" width="100%" aspect="7:5" preview="images/GeoGebra-Statique/Trace-statique.png"><slate surface="geogebra" source="GeoGebra/Traces.ggb" aspect="7:5">
         setWidth(600)
         setHeight(428)
       </slate></interactive></figure>
-    </p>
       </statement>
     </example>
     <!-- Cet exercice ne compile pas comme il faut!
@@ -196,22 +217,47 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
     </p>
         </statement>
       </definition>
-    <sidebyside widths="50% 5% 45%" valign="top">
-      <p>
-On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>.
+    <p>
+On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>. Il est commun dutiliser des couleurs sur une surface pour représenter ses variations.   
+ </p>
+  <p>
+Les figures ci-bas montrent la surface <m>z=f(x,y)</m> de la fonction considérée, ainsi que le diagramme de ses courbes de niveau.
+    </p>
+    <sidebyside widths="50% 50%" valign="middle">
+      <figure xml:id="Surface-C-niveau">
+        <caption>La surface <m>z=f(x,y)</m></caption>
+        <image xml:id="Surface-niveau">
+          <sageplot variant="3d" aspect="1.0">
+            var('x y z')
+            g(x,y) = (2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2))/2
 
-La figure ci-contre montre le diagramme des courbes de niveau de la fonction considérée à la <xref ref="fig-sage3d-Traces-horizontales" text="global">figure</xref>.
-      </p>
-      <p></p>
+            cm = colormaps.Spectral
+            zmin, zmax = 1, 3.5
+            def c(x,y):
+                return float((g(x,y)-zmin)/(zmax-zmin))
+            S = plot3d(g(x,y), (x,-2,2),(y,-2,2), color = (cm,c), frame = False, mesh = False)
+            S += arrow3d((0,0,0),(2.4,0,0), color = "black")
+            S += text3d("x", (2.5,0,0), color = "black", fontsize = 20)
+            S += arrow3d((0,0,0),(0,3,0), color = "black")
+            S += text3d("y", (0,3.2,0), color = "black", fontsize = 20)
+            S += arrow3d((0,0,0),(0,0,3.5), color = "black")
+            S += text3d("z", (0,0,3.7), color = "black", fontsize = 20)
+            S += plot3d(0, (x,-2,2),(y,-2,2), color = "blue", opacity=0.25, projection = "orthogonal")
+            S
+          </sageplot>
+        </image>
+      </figure>
+      
       <figure xml:id="Courbes-niveau">
-        <caption>Un diagramme de courbes de niveau</caption>
+        <caption>Un diagramme de courbes de niveau.</caption>
         <image xml:id="C-niveau">
           <sageplot>
-          var('x,y')
-          g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
-          C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), figsize = [3,3], ticks = [[],[]], cmap = "Spectral", contours = [1.5,2,2.5,2.7,3,3.5,4,4.5,5,5.5,6,6.5,7], axes = True, frame = False, fill = True,
-            labels = True, label_fmt=lambda x: "$%s$"%round(x,1), label_colors = "black", label_inline = True, label_fontsize = 10,
-            gridlines = True, axes_labels = ["$x$","$y$"], axes_labels_size=2.2, fontsize = 8)
+            var('x,y')
+            g(x,y) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
+            C = contour_plot(g(x,y), (x,-2,2),(y,-2,2), colorbar = True,
+                 cmap = "Spectral", contours = [1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7], axes = False, fill = True, labels = True, label_colors = "black",
+                 label_inline = True, label_fontsize = 8,
+                 gridlines = True, axes_labels = ["$x$","$y$"], ticks=[[-2,-1,0,1,2],[-2,-1,0,1,2]],                 axes_labels_size=1.3, tick_formatter = "latex", figsize = 4)
             C
           </sageplot>
         </image>

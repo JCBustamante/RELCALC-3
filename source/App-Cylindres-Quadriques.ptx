@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-cylindres-quadriques">
+    <title>Cylindres et surfaces quadriques</title>
+
+ <p>
+        Dans le plan, une courbe admet une équation générale
+        <m>F(x,y) = 0</m> : penser à <m>x^2 + y^2 - 1 = 0</m>, où il
+        n'est pas toujours possible d'isoler <m>y</m>. Dans l'espace, l'ensemble solution d'une équation de la forme
+        <m>F(x,y,z) = 0</m> est une <term>surface</term>. Les <term>surfaces quadriques</term> et les <term>cylindres</term>
+        sont parmi les surfaces les plus simples, après les plans. On les retrouve un peu partout (antennes, réservoirs,
+        géolocalisation...).
+    </p>
+    <definition xml:id="def-cylindre">
+        <title>Les cylindres</title>
+        <statement>
+            <p>
+                Les cylindres ne sont pas toujours circulaires. Un
+                <term>cylindre</term> est une surface obtenue au moyen de :
+            </p>
+            <ul>
+                <li>
+                    <p>une courbe plane quelconque ;</p>
+                </li>
+                <li>
+                    <p>
+                        toutes les droites parallèles à une droite donnée qui passent
+                        par chacun des points de la courbe.
+                    </p>
+                </li>
+            </ul>
+        </statement>
+    </definition>
+
+    <example xml:id="ex-cylindres">
+      <statement>
+        <ol marker="(a)">
+            <li xml:id="ex-cylindre-parabolique">
+                <p>
+                    La surface d'équation
+                    <m>z = x^2</m> est un <term>cylindre parabolique</term>.
+                </p>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        La courbe <m>z=x^2</m> est une parabole dans le plan
+                        <m>Oxz</m> ; comme la variable <m>y</m> n'apparaît pas dans
+                        l'équation, on peut prendre cette parabole et la déplacer dans
+                        la direction des <m>y</m>.
+                    </p>
+                    <figure xml:id="fig-cylindre-parabolique">
+                        <caption>
+                            Le cylindre parabolique <m>z=x^2</m>.
+                        </caption>
+                        <image xml:id="sageplot-cylindre-parabolique">
+                            <description>
+                                <p>La parabole <m>z=x^2</m> dans le plan <m>Oxz</m>,
+                                déplacée dans la direction des <m>y</m>.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('x,y')
+def macouleur(x,y):
+    return float(x^2/4)
+S = plot3d(x^2, (x,-2,2), (y,-2,2), color=(macouleur, colormaps.Spectral), mesh=True, opacity=0.85, frame=False)
+S += arrow3d((0,0,0), (2.3,0,0), color="black")
+S += text3d("x", (2.6,0,0), color="black", fontsize=24)
+S += arrow3d((0,0,0), (0,2.3,0), color="black")
+S += text3d("y", (0,2.6,0), color="black", fontsize=24)
+S += arrow3d((0,0,0), (0,0,4.5), color="black")
+S += text3d("z", (0,0,4.8), color="black", fontsize=24)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <p>
+                    Un cylindre <q>cardiaque</q> : la courbe plane de départ est ici un
+                    cardioïde.
+                </p>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        Le cardioïde <m>r = 1+\cos\theta</m> (en coordonnées polaires
+                        dans le plan <m>Oxy</m>) est déplacé dans la direction des
+                        <m>z</m>.
+                    </p>
+                    <figure xml:id="fig-cylindre-cardioide">
+                        <caption>
+                            Un cylindre dont la base est un cardioïde.
+                        </caption>
+                        <image xml:id="sageplot-cylindre-cardioide">
+                            <description>
+                                <p>Un cylindre en forme de coeur, obtenu en déplaçant un
+                                cardioïde dans la direction verticale.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('t,z')
+r(t) = 1 + cos(t)
+def macouleur(t,z):
+    return float((z+1)/2)
+S = parametric_plot3d([r(t)*cos(t), r(t)*sin(t), z], (t,0,2*pi), (z,-1,1), color=(macouleur, colormaps.Spectral), mesh=True, opacity=0.85)
+S += arrow3d((0,0,0), (2.3,0,0), color="black")
+S += text3d("x", (2.6,0,0), color="black", fontsize=24)
+S += arrow3d((0,0,0), (0,1.8,0), color="black")
+S += text3d("y", (0,2.1,0), color="black", fontsize=24)
+S += arrow3d((0,0,0), (0,0,1.5), color="black")
+S += text3d("z", (0,0,1.8), color="black", fontsize=24, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+        </ol>
+      </statement>
+    </example>
+
+    <definition xml:id="def-surface-quadrique">
+        <title>Les surfaces quadriques</title>
+        <statement>
+            <p>
+                Ce sont des surfaces obtenues par une équation de la forme
+                <md>
+                    F(x,y,z) = 0,
+                </md>
+                où <m>F</m> est un polynôme de degré <m>2</m> dans les variables
+                <m>x</m>, <m>y</m>, <m>z</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <remark xml:id="rem-forme-generale-quadrique">
+        <title>Forme générale</title>
+        <p>
+            Dans un système d'axes <m>X,Y,Z</m> quelconque, l'équation générale
+            d'une surface quadrique est
+            <md>
+                AX^2+BY^2+CZ^2+DXY+EYZ+FXZ+GX+HY+IZ+J=0.
+            </md>
+        </p>
+        <p>
+            Des changements de variables appropriés (rotations et translation)
+            permettent toujours de se ramener, en minuscules <m>x,y,z</m> pour les
+            nouvelles coordonnées, à l'une des deux formes suivantes :
+            <md>
+                Ax^2+By^2+Cz^2+D=0 \qquad \text{ou} \qquad Ax^2+By^2+Cz=0.
+            </md>
+        </p>
+    </remark>
+    <p>
+        La classification des surfaces quadriques est basée sur les signes de <m>A,B,C</m> et de <m>D</m> dans la première forme, et sur les signes de <m>A,B</m> dans la seconde. Notons que les traces et les sections selon les différentes directions sont des coniques (cercles, ellipses, paraboles, hyperboles), ou des droites (cas dégénérés).
+    </p>
+
+
+    <paragraphs xml:id="par-cas-abc-non-nuls">
+        <title>Cas <m>A,B,C \ne 0</m></title>
+        <ul>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        si <m>A,B,C</m> sont de même signe et <m>D</m> de signe opposé, on se ramène à la forme
+
+                        <md>\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2+\left(\frac{z}{c}\right)^2=1.</md>
+                        La surface est un <term>ellipsoïde</term>,
+
+                        Toutes ses traces et sections sont des ellipses (des cercles si
+                        deux des trois dénominateurs coïncident). Si <m>a=b=c</m>, c'est
+                        une <term>sphère</term> de rayon <m>a</m> ;
+                    </p>
+                    <figure xml:id="fig-ellipsoide">
+                        <caption>
+                            Un ellipsoïde.
+                        </caption>
+                        <image xml:id="sageplot-ellipsoide">
+                            <description>
+                                <p>Un ellipsoïde aux trois demi-axes distincts.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('u,v,t')
+a,b,c = 1, 2.5, 1.5
+def macouleur(u,v):
+    z = c*cos(v)
+    return float(0.5 + 0.25*(z/c))
+S = parametric_plot3d([a*cos(u)*sin(v), b*sin(u)*sin(v), c*cos(v)], (u,0,2*pi), (v,0,pi), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=1, frame=False)
+S += parametric_plot3d([a*cos(t), b*sin(t), 0], (t,0,2*pi), color="firebrick", thickness=1.5)
+S += parametric_plot3d([a*cos(t), 0, c*sin(t)], (t,0,2*pi), color="seagreen", thickness=1.5)
+S += parametric_plot3d([0, b*cos(t), c*sin(t)], (t,0,2*pi), color="steelblue", thickness=1.5)
+s = sqrt(3)/2
+S += parametric_plot3d([a*s*cos(t), b*s*sin(t), c/2], (t,0,2*pi), color="firebrick", thickness=1.5)
+S += parametric_plot3d([a*s*cos(t), b/2, c*s*sin(t)], (t,0,2*pi), color="seagreen", thickness=1.5)
+S += parametric_plot3d([a/2, b*s*cos(t), c*s*sin(t)], (t,0,2*pi), color="steelblue", thickness=1.5)
+S += arrow3d((0,0,0), (a+0.5,0,0), color="black")
+S += text3d("x", (a+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,b+0.5,0), color="black")
+S += text3d("y", (0,b+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,c+0.5), color="black")
+S += text3d("z", (0,0,c+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        Si <m>A,B,C</m> ne sont pas tous de même signe (disons
+                        <m>A,B</m> de même signe et <m>C</m> de signe opposé) et
+                        <m>D</m> de signe opposé à celui de <m>C</m>, on se ramène
+                        à la forme
+                        <md>\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2-\left(\frac{z}{c}\right)^2=1.</md>
+                        La surface est un <term>hyperboloïde à une nappe</term> :
+                        une seule surface connexe, en forme de manchon. Ses traces
+                        horizontales (<m>z=\text{cste}</m>) sont des ellipses, et ses
+                        sections verticales (<m>x=\text{cste}</m> ou
+                        <m>y=\text{cste}</m>) sont des hyperboles.
+                    </p>
+                    <figure xml:id="fig-hyperboloide-une-nappe">
+                        <caption>
+                            Un hyperboloïde à une nappe.
+                        </caption>
+                        <image xml:id="sageplot-hyperboloide-une-nappe">
+                            <description>
+                                <p>Un hyperboloïde à une nappe, avec ses traces
+                                elliptiques horizontales et ses sections
+                                hyperboliques verticales.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('u,v,t')
+a,b,c = 1, 2.5, 1.5
+vmax = 1.1
+def macouleur(u,v):
+    z = c*sinh(v)
+    zmax = c*sinh(vmax)
+    return float(0.5 + 0.25*(z/zmax))
+S = parametric_plot3d([a*cosh(v)*cos(u), b*cosh(v)*sin(u), c*sinh(v)], (u,0,2*pi), (v,-vmax,vmax), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=1, frame=False)
+S += parametric_plot3d([a*cos(t), b*sin(t), 0], (t,0,2*pi), color="firebrick", thickness=1.5)
+v2 = vmax/2
+S += parametric_plot3d([a*cosh(v2)*cos(t), b*cosh(v2)*sin(t), c*sinh(v2)], (t,0,2*pi), color="firebrick", thickness=1.5)
+S += parametric_plot3d([a*cosh(t), 0, c*sinh(t)], (t,-vmax,vmax), color="seagreen", thickness=1.5)
+S += parametric_plot3d([-a*cosh(t), 0, c*sinh(t)], (t,-vmax,vmax), color="seagreen", thickness=1.5)
+S += parametric_plot3d([0, b*cosh(t), c*sinh(t)], (t,-vmax,vmax), color="steelblue", thickness=1.5)
+S += parametric_plot3d([0, -b*cosh(t), c*sinh(t)], (t,-vmax,vmax), color="steelblue", thickness=1.5)
+xmax, ymax, zmax = a*cosh(vmax), b*cosh(vmax), c*sinh(vmax)
+S += arrow3d((0,0,0), (xmax+0.5,0,0), color="black")
+S += text3d("x", (xmax+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,ymax+0.5,0), color="black")
+S += text3d("y", (0,ymax+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,zmax+0.5), color="black")
+S += text3d("z", (0,0,zmax+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        Si au contraire <m>D</m> est de même signe que <m>C</m>
+                        (donc de signe opposé à <m>A</m> et <m>B</m>), on se ramène
+                        à la forme
+                        <md>\left(\frac{z}{c}\right)^2-\left(\frac{x}{a}\right)^2-\left(\frac{y}{b}\right)^2=1.</md>
+                        La surface est un <term>hyperboloïde à deux nappes</term> :
+                        deux surfaces disjointes, l'une pour <m>z \ge c</m> et
+                        l'autre pour <m>z \le -c</m>. Ses traces horizontales sont
+                        des ellipses, mais seulement pour <m>|z| \ge c</m> ; ses
+                        sections verticales sont des hyperboles ;
+                    </p>
+                    <figure xml:id="fig-hyperboloide-deux-nappes">
+                        <caption>
+                            Un hyperboloïde à deux nappes.
+                        </caption>
+                        <image xml:id="sageplot-hyperboloide-deux-nappes">
+                            <description>
+                                <p>Un hyperboloïde à deux nappes, avec ses traces
+                                elliptiques horizontales et ses sections
+                                hyperboliques verticales.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('u,v,t')
+a,b,c = 1.5, 2.5, 1
+vmax = 1.1
+vcap = 1.2*vmax  # la nappe est tronquée à v = vcap (un peu au-delà de vmax)
+def macouleur(u,v):
+    return float(0.4 + 0.1*(v/vmax))
+# la nappe du haut (z positif), puis celle du bas (z négatif)
+S = parametric_plot3d([a*sinh(v)*cos(u), b*sinh(v)*sin(u), c*cosh(v)], (u,0,2*pi), (v,0,vcap), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=0.85, frame=False)
+S += parametric_plot3d([a*sinh(v)*cos(u), b*sinh(v)*sin(u), -c*cosh(v)], (u,0,2*pi), (v,0,vcap), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=0.85, frame=False)
+# trace horizontale (z = cste) au sommet de chaque nappe : une ellipse
+S += parametric_plot3d([a*sinh(vmax)*cos(t), b*sinh(vmax)*sin(t), c*cosh(vmax)], (t,0,2*pi), color="firebrick", thickness=1.5)
+S += parametric_plot3d([a*sinh(vmax)*cos(t), b*sinh(vmax)*sin(t), -c*cosh(vmax)], (t,0,2*pi), color="firebrick", thickness=1.5)
+# trace verticale dans le plan y=0 (donc y = cste = 0) : une hyperbole, sur les deux nappes
+S += parametric_plot3d([a*sinh(t), 0, c*cosh(t)], (t,-vcap,vcap), color="seagreen", thickness=1.5)
+S += parametric_plot3d([a*sinh(t), 0, -c*cosh(t)], (t,-vcap,vcap), color="seagreen", thickness=1.5)
+# trace verticale dans le plan x=0 (donc x = cste = 0) : une hyperbole, sur les deux nappes
+S += parametric_plot3d([0, b*sinh(t), c*cosh(t)], (t,-vcap,vcap), color="steelblue", thickness=1.5)
+S += parametric_plot3d([0, b*sinh(t), -c*cosh(t)], (t,-vcap,vcap), color="steelblue", thickness=1.5)
+# on répète les deux traces verticales précédentes, mais décalées à x = x0 et
+# y = y0 strictement positifs (plutôt que par l'origine) ; tx, ty sont calculés
+# pour que ces courbes s'arrêtent exactement au bord de la nappe tronquée
+# (v = vcap), sans le dépasser
+x0, y0 = a/2, b/2
+ty = b*sqrt(sinh(vcap)^2 - (x0/a)^2)
+tx = a*sqrt(sinh(vcap)^2 - (y0/b)^2)
+S += parametric_plot3d([x0, t, c*sqrt(1+(x0/a)^2+(t/b)^2)], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([x0, t, -c*sqrt(1+(x0/a)^2+(t/b)^2)], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([t, y0, c*sqrt(1+(y0/b)^2+(t/a)^2)], (t,-tx,tx), color="seagreen", thickness=1.5)
+S += parametric_plot3d([t, y0, -c*sqrt(1+(y0/b)^2+(t/a)^2)], (t,-tx,tx), color="seagreen", thickness=1.5)
+xmax, ymax, zmax = a*sinh(vmax), b*sinh(vmax), c*cosh(vmax)
+S += arrow3d((0,0,0), (xmax+0.5,0,0), color="black")
+S += text3d("x", (xmax+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,ymax+0.5,0), color="black")
+S += text3d("y", (0,ymax+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,1.2*zmax+0.5), color="black")
+S += text3d("z", (0,0,1.2*zmax+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        si <m>A,B,C</m> ne sont pas tous de même signe et
+                        <m>D=0</m>, on se ramène à la forme
+                        <md>\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2=\left(\frac{z}{c}\right)^2.</md>
+                        La surface est un <term>cône</term> : ses traces
+                        horizontales (<m>z=\text{cste} \ne 0</m>) sont des
+                        ellipses, et ses sections verticales
+                        (<m>x=\text{cste}</m> ou <m>y=\text{cste}</m>) sont
+                        des hyperboles, où, dans le cas <m>x=0</m> ou <m>y=0</m> des paires de droites passant par l'origine, le                       <term>sommet</term> du cône.
+                    </p>
+                    <figure xml:id="fig-cone">
+                        <caption>
+                            Un cône elliptique.
+                        </caption>
+                        <image xml:id="sageplot-cone">
+                            <description>
+                                <p>Un cône elliptique, avec ses traces
+                                elliptiques horizontales et ses génératrices
+                                verticales.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('u,v,t')
+a,b,c = 1, 2.5, 1.5
+vmax = 1.3
+def macouleur(u,v):
+    z = c*v
+    zmax = c*vmax
+    return float(0.5 + 0.25*(z/zmax))
+# le double cône, en entier (v négatif donne la nappe du bas)
+S = parametric_plot3d([a*v*cos(u), b*v*sin(u), c*v], (u,0,2*pi), (v,-vmax,vmax), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=1, frame=False)
+# traces horizontales (z = cste) : des ellipses, une au-dessus, une en-dessous du sommet
+S += parametric_plot3d([a*vmax*cos(t), b*vmax*sin(t), c*vmax], (t,0,2*pi), color="firebrick", thickness=1.5)
+v0 = vmax/2
+S += parametric_plot3d([a*v0*cos(t), b*v0*sin(t), c*v0], (t,0,2*pi), color="firebrick", thickness=1.5)
+S += parametric_plot3d([-a*v0*cos(t), -b*v0*sin(t), -c*v0], (t,0,2*pi), color="firebrick", thickness=1.5)
+# génératrices (droites passant par le sommet) dans les plans y=0 et x=0
+S += parametric_plot3d([a*t, 0, c*t], (t,-vmax,vmax), color="seagreen", thickness=1.5)
+S += parametric_plot3d([0, b*t, c*t], (t,-vmax,vmax), color="steelblue", thickness=1.5)
+# traces verticales décalées à x = x0 et y = y0 strictement positifs : ce ne sont
+# plus des génératrices (elles ne passent pas par le sommet), mais des hyperboles.
+# x0, y0 sont les coordonnées d'un même point p0 = (x0,y0,c*v0) du cône, à la
+# hauteur v0 de l'ellipse ci-dessus : les trois traces (l'ellipse et les deux
+# hyperboles) passent donc toutes par p0, comme demandé.
+u0 = pi/4
+x0 = a*v0*cos(u0)
+y0 = b*v0*sin(u0)
+ty = b*sqrt(vmax^2 - (x0/a)^2)
+tx = a*sqrt(vmax^2 - (y0/b)^2)
+S += parametric_plot3d([x0, t, c*sqrt((x0/a)^2+(t/b)^2)], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([x0, t, -c*sqrt((x0/a)^2+(t/b)^2)], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([t, y0, c*sqrt((y0/b)^2+(t/a)^2)], (t,-tx,tx), color="seagreen", thickness=1.5)
+S += parametric_plot3d([t, y0, -c*sqrt((y0/b)^2+(t/a)^2)], (t,-tx,tx), color="seagreen", thickness=1.5)
+xmax, ymax, zmax = a*vmax, b*vmax, c*vmax
+S += arrow3d((0,0,0), (xmax+0.5,0,0), color="black")
+S += text3d("x", (xmax+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,ymax+0.5,0), color="black")
+S += text3d("y", (0,ymax+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,zmax+0.5), color="black")
+S += text3d("z", (0,0,zmax+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+        </ul>
+    </paragraphs>
+
+    <paragraphs xml:id="par-cas-c-non-nul">
+        <title>Cas <m>C \ne 0</m></title>
+        <ul>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        si <m>A,B \ne 0</m> sont de même signe, on se ramène à la forme
+                        <md>z=\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2.</md>
+                        La surface est un <term>paraboloïde elliptique</term> : ses
+                        traces horizontales (<m>z=\text{cste}>0</m>) sont des
+                        ellipses, et ses sections verticales (<m>x=\text{cste}</m> ou
+                        <m>y=\text{cste}</m>) sont des paraboles. On peut penser à un bol elliptique (ou rond si m <m>a=b</m>) ou à une antenne parabolique.
+                    </p>
+                    <figure xml:id="fig-paraboloide-elliptique">
+                        <caption>
+                            Un paraboloïde elliptique.
+                        </caption>
+                        <image xml:id="sageplot-paraboloide-elliptique">
+                            <description>
+                                <p>Un paraboloïde elliptique, avec sa trace elliptique
+                                horizontale et ses sections paraboliques verticales.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('r,theta,t')
+a,b = 1.2, 1.8
+rmax = 1.5
+# paramétrage en coordonnées polaires (r,theta) : x=a*r*cos(theta), y=b*r*sin(theta),
+# d'où z=(x/a)^2+(y/b)^2 = r^2, indépendant de theta
+def macouleur(r,theta):
+    return float(0.35 + 0.3*(r/rmax)^2)
+S = parametric_plot3d([a*r*cos(theta), b*r*sin(theta), r^2], (r,0,rmax), (theta,0,2*pi), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=1, frame=False)
+xmax, ymax, zmax = a*rmax, b*rmax, rmax^2
+# trace horizontale (z = cste), à mi-hauteur : une ellipse
+r0 = rmax/1.3
+S += parametric_plot3d([a*r0*cos(theta), b*r0*sin(theta), r0^2], (theta,0,2*pi), color="firebrick", thickness=1.5)
+# sections verticales dans les plans y=0 et x=0 (à travers le sommet) : des paraboles
+S += parametric_plot3d([t, 0, (t/a)^2], (t,-xmax,xmax), color="seagreen", thickness=1.5)
+S += parametric_plot3d([0, t, (t/b)^2], (t,-ymax,ymax), color="steelblue", thickness=1.5)
+# sections décalées à x=x0 et y=y0 strictement positifs : x0, y0 sont les
+# coordonnées d'un même point p0 = (x0,y0,r0^2) de la surface, à la hauteur r0
+# de l'ellipse ci-dessus (theta0 arbitraire) — les trois traces se croisent donc
+# toutes en p0. ty, tx sont calculés pour que ces courbes restent sur la
+# surface tronquée (r au plus rmax), sans la dépasser
+theta0 = pi/4
+x0 = a*r0*cos(theta0)
+y0 = b*r0*sin(theta0)
+ty = b*sqrt(rmax^2-(x0/a)^2)
+tx = a*sqrt(rmax^2-(y0/b)^2)
+S += parametric_plot3d([x0, t, (x0/a)^2+(t/b)^2], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([t, y0, (t/a)^2+(y0/b)^2], (t,-tx,tx), color="seagreen", thickness=1.5)
+S += arrow3d((0,0,0), (xmax+0.5,0,0), color="black")
+S += text3d("x", (xmax+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,ymax+0.5,0), color="black")
+S += text3d("y", (0,ymax+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,zmax+0.5), color="black")
+S += text3d("z", (0,0,zmax+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        Si <m>A,B \ne 0</m> sont de signes opposés, on se ramène à la
+                        forme
+                        <md>z=\left(\frac{x}{a}\right)^2-\left(\frac{y}{b}\right)^2.</md>
+                        La surface est un <term>paraboloïde hyperbolique</term> (une
+                        <q>selle de cheval</q>) : ses traces horizontales
+                        (<m>z=\text{cste}\ne 0</m>) sont des hyperboles, et sa trace
+                        <m>z=0</m> dégénère en deux droites qui se croisent au
+                        <term>col</term> ; ses sections verticales sont des paraboles,
+                        tournées vers le haut dans le plan <m>y=0</m> et vers le bas
+                        dans le plan <m>x=0</m>.
+                    </p>
+                    <figure xml:id="fig-paraboloide-hyperbolique">
+                        <caption>
+                            Un paraboloïde hyperbolique.
+                        </caption>
+                        <image xml:id="sageplot-paraboloide-hyperbolique">
+                            <description>
+                                <p>Un paraboloïde hyperbolique (une selle), avec sa
+                                trace dégénérée en deux droites et ses sections
+                                paraboliques verticales.</p>
+                            </description>
+                            <sageplot variant="3d" aspect="1.0">
+var('r,theta,t')
+a,b = 1.2, 1.8
+rmax = 1.5
+# paramétrage en coordonnées polaires (r,theta) : x=a*r*cos(theta), y=b*r*sin(theta),
+# d'où z=(x/a)^2-(y/b)^2 = r^2*cos(2*theta) (identité cos^2-sin^2=cos(2*theta))
+def macouleur(r,theta):
+    z = r^2*cos(2*theta)
+    return float(0.5 + 0.25*(z/rmax^2))
+S = parametric_plot3d([a*r*cos(theta), b*r*sin(theta), r^2*cos(2*theta)], (r,0,rmax), (theta,0,2*pi), color=(macouleur, colormaps.YlOrBr), mesh=False, opacity=1, frame=False)
+xmax, ymax, zmax = a*rmax, b*rmax, rmax^2
+# trace z=0 (cos(2*theta)=0 en theta=+-pi/4) : dégénère en deux droites x/a = +- y/b,
+# qui se croisent au col
+S += parametric_plot3d([a*r*cos(pi/4), b*r*sin(pi/4), 0], (r,-rmax,rmax), color="firebrick", thickness=1.5)
+S += parametric_plot3d([a*r*cos(-pi/4), b*r*sin(-pi/4), 0], (r,-rmax,rmax), color="firebrick", thickness=1.5)
+# sections verticales dans les plans y=0 et x=0 (à travers le col) : des paraboles
+# de concavités opposées
+S += parametric_plot3d([t, 0, (t/a)^2], (t,-xmax,xmax), color="seagreen", thickness=1.5)
+S += parametric_plot3d([0, t, -(t/b)^2], (t,-ymax,ymax), color="steelblue", thickness=1.5)
+# sections décalées à x=x0 et y=y0 strictement positifs ; ty, tx sont calculés
+# pour que ces courbes restent sur la surface tronquée (r au plus rmax), sans la dépasser
+x0, y0 = xmax/2, ymax/2
+ty = b*sqrt(rmax^2-(x0/a)^2)
+tx = a*sqrt(rmax^2-(y0/b)^2)
+S += parametric_plot3d([x0, t, (x0/a)^2-(t/b)^2], (t,-ty,ty), color="steelblue", thickness=1.5)
+S += parametric_plot3d([t, y0, (t/a)^2-(y0/b)^2], (t,-tx,tx), color="seagreen", thickness=1.5)
+S += arrow3d((0,0,0), (xmax+0.5,0,0), color="black")
+S += text3d("x", (xmax+0.8,0,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,ymax+0.5,0), color="black")
+S += text3d("y", (0,ymax+0.8,0), color="black", fontsize=26)
+S += arrow3d((0,0,0), (0,0,zmax+0.5), color="black")
+S += text3d("z", (0,0,zmax+0.8), color="black", fontsize=26, frame = False)
+S
+                            </sageplot>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <p>
+                    Si l'un des deux, disons <m>B</m>, est nul : un
+                    <term>cylindre parabolique</term> — comme celui de
+                    l'<xref ref="ex-cylindres" text="global">exemple</xref> (partie a).
+                </p>
+            </li>
+        </ul>
+    </paragraphs>
+
+  
+</section>

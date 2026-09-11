@@ -889,7 +889,7 @@ Il y a un facteur <m>3</m> dans les deux composantes non nulles, de sorte que l'
       </solution>
     </example>
     <example xml:id="eg_hidden_surface">
-      <title>(Optionnel) Graphiques par ordinateur, élimination de surfaces cachées</title>
+      <title>Graphiques par ordinateur, élimination de surfaces cachées</title>
       <p>
   Lorsque nous regardons un objet tridimensionnel, nous ne le voyons pas au complet : certaines portions de l'objet nous sont cachées par d'autres portions de celui-ci. Par exemple, l'esquisse ci-bas schématise la trajectoire d'un rayon de lumière entre l'œil et la surface de l'objet. L'objet est solide, de sorte que le rayon ne peut pas le traverser. S'il le pouvait, il traverserait, suivant la ligne pointillée, rencontrant la surface de l'objet à trois autres reprises. L'œil peut voir un seul point, mais pas les trois autres.
 </p>
@@ -910,7 +910,7 @@ Il y a un facteur <m>3</m> dans les deux composantes non nulles, de sorte que l'
         <ul>
           <li>
             <p>
-  Travaillons à reculons et considérons pour commencer un rayon de lumière qui quitte l'œil et  effleure le solide en <m>(x,y,z)</m>, comme dans la figure de gauche ci-bas. Le rayon est tangent à la surface en <m>(x,y,z)</m>. Ainsi, le vecteur donnant la direction du rayon,  <m>\llt x-x_e,y-y_e,z-z_e \rgt</m>, est tangent à la surface en  <m>(x,y,z)</m> et, conséquemment, il est orthogonal au vecteur normal
+  Travaillons à reculons et considérons pour commencer un rayon de lumière qui quitte l'œil et  effleure le solide en <m>(x,y,z)</m>, comme dans la figure de gauche ci-bas. Le rayon est tangent à la surface en <m>(x,y,z)</m>. Ainsi, le vecteur donnant la direction du rayon,  <m>\rvt{x-x_e}{y-y_e}{z-z_e}</m>, est tangent à la surface en  <m>(x,y,z)</m> et, conséquemment, il est orthogonal au vecteur normal
 <m>\vn=\vnabla G(x,y,z)</m>, à la surface en <m>(x,y,z)</m>. Ainsi,
 <md>
 \ctvec{x-x_e}{y-y_e}{z-z_e}\cdot \vnabla G(x,y,z) = 0
@@ -929,7 +929,7 @@ Il y a un facteur <m>3</m> dans les deux composantes non nulles, de sorte que l'
             <p>
   Considérons maintenant un rayon qui quitte l'œil et qui passe à travers le solide, tel qu'illustré dans la figure de droite ci-haut. Soit <m>(x,y,z)</m> le point par lequel le rayon entre dans le solide et <m>(x',y',z')</m> le point <q>de sortie</q>.
 <ul><li>
-  Soit <m>\vv</m> un vecteur de même direction, c'est-à-dire un multiple positif, de <m>\llt x-x_e, y-y_e, z-z_e\rgt</m>.
+  Soit <m>\vv</m> un vecteur de même direction, c'est-à-dire un multiple positif, de <m>\rvt{x-x_e}{y-y_e}{z-z_e}</m>.
 </li><li>
   Soit  <m>\vn</m> un vecteur normal pointant vers l'extérieur du solide à  <m>(x,y,z)</m>. Il s'agira, par exemple, de  <m>\vnabla G(x,y,z)</m> ou de <m>-\vnabla G(x,y,z)</m>.
 </li><li>

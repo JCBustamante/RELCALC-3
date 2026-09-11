@@ -39,6 +39,18 @@
   <!-- DEPOT: masquer les <answer> des <example> (mais garder les <solution>) -->
   <xsl:template match="example/answer"/>
 
+  <!-- BUG FIX 2026-09-10 : les réponses/solutions/indices des exercices       -->
+  <!-- s'affichaient dans le PDF malgré publication.ptx (answer="no", etc.,    -->
+  <!-- dans le bloc <latex>). En fait, PreTeXt-CLI (vérifié jusqu'à 2.52.3)    -->
+  <!-- ne branche ces réglages de visibilité que sur la sortie HTML (et sur    -->
+  <!-- la cible séparée "solution manual") ; ils sont ignorés par la chaîne   -->
+  <!-- LaTeX/PDF standard, qui inclut toujours <answer>/<solution>/<hint>.     -->
+  <!-- On masque donc ici explicitement le contenu des exercices dans le PDF  -->
+  <!-- (il reste visible dans le HTML, qui n'est pas touché par ce fichier).   -->
+  <xsl:template match="exercise//answer"/>
+  <xsl:template match="exercise//solution"/>
+  <xsl:template match="exercise//hint"/>
+
 <!-- Hack 2024-08-21 to improve layout of matching exercises -->
 <xsl:template match="exercise/matches/match" mode="matching-statement">
     <xsl:variable name="premise-number" select="count(preceding-sibling::match) + 1"/>
@@ -75,12 +87,21 @@
 </xsl:template>
 
 
-<!-- Include a style file at the end of the preamble: -->
-<!-- 
+<!-- BUG FIX 2026-09-10 (cause racine du "Chapter" en anglais, cf. commentaire  -->
+<!-- plus bas près de \chaptername) : le coeur de PreTeXt (vérifié 2.45.0 et   -->
+<!-- 2.52.3) ne connaît, pour la cible xelatex (utilisée par nos cibles print  -->
+<!-- et latex), aucune correspondance polyglossia pour "fr-CA" (ni pour le     -->
+<!-- français en général) dans son xsl:choose de langues, voir               -->
+<!-- pretext-latex-common.xsl, template qui écrit \usepackage{polyglossia}.   -->
+<!-- Résultat : \setmainlanguage n'est JAMAIS émis, polyglossia reste donc en -->
+<!-- anglais par défaut, et réinitialise \chaptername (et autres captions) à -->
+<!-- l'anglais au \begin{document}, écrasant notre renewcommand du préambule  -->
+<!-- "early". On répare ici, dans le hook "late" (donc après le              -->
+<!-- \usepackage{polyglossia} du coeur, qui doit être chargé avant qu'on      -->
+<!-- puisse appeler \setmainlanguage).                                       -->
 <xsl:param name="latex.preamble.late">
-  <xsl:text>%This should load all the style information that ptx does not.&#xa;</xsl:text>
-    <xsl:text>\input{external/latex-preamble-styles}&#xa;</xsl:text>
-</xsl:param> -->
+  <xsl:text>\setmainlanguage{french}&#xa;</xsl:text>
+</xsl:param>
 
 <xsl:param name="latex.preamble.early">
   <xsl:text>% --- REL-AL: define worksheet-section (7 args) ---&#xa;</xsl:text>
@@ -102,6 +123,14 @@
   <xsl:text>\usepackage{xcolor}&#xa;</xsl:text>
   <xsl:text>\definecolor{UdeSVertFonce}{HTML}{018849}&#xa;</xsl:text>
   <xsl:text>\definecolor{UdeSOcre}{HTML}{E5A939}&#xa;</xsl:text>
+  <!-- BUG FIX 2026-09-10 : le premier chapitre affichait "Chapter 1" au lieu   -->
+  <!-- de "Chapitre 1". Le coeur de PreTeXt ne fait \renewcommand{\chaptername} -->
+  <!-- qu'au début du corps de CHAQUE chapitre (donc APRÈS le \chapter{} qui a  -->
+  <!-- déjà typographié le titre avec notre \titleformat personnalisé, qui     -->
+  <!-- utilise \chaptername). Pour le premier chapitre, \chaptername vaut donc -->
+  <!-- encore la valeur par défaut anglaise "Chapter" au moment du titre.      -->
+  <!-- On fixe la valeur correcte dès le préambule pour couvrir ce cas.        -->
+  <xsl:text>\renewcommand*{\chaptername}{Chapitre}&#xa;</xsl:text>
 </xsl:param>
 
 <!-- Override default frontmatter pages: -->

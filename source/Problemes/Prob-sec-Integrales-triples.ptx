@@ -10,37 +10,39 @@
   <exercisegroup>
     <title>Pour se pratiquer</title>
 
+    <!-- 1 -->
     <exercise>
       <statement><p>
       Évaluez l'intégrale
-      <m>\displaystyle    \iint_R \sqrt{b^2-y^2}\ \dee{A}</m> où <m>R</m> est le rectangle  <m> 0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b</m>.
+      <m>\iint_\cR \sqrt{b^2-y^2}\ \dee{A}</m> où <m>\cR</m> est le rectangle  <m> 0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b</m>.
       
       <em>sans</em> calculer les intégrales itérées. Interprétez plutôt l'intégrale
       géométriquement.
       </p></statement>
 
       <answer><p>
-      <m>\frac{1}{4}\pi ab^2</m>
+      <m>\tfrac{1}{4}\pi ab^2</m>
       </p></answer>
 
       <solution><p>
-      <m>\iint_R \sqrt{b^2-y^2}\,\dee{x}\,\dee{y}
+      <m>\iint_\cR \sqrt{b^2-y^2}\,\dee{x}\,\dee{y}
       =\iiint_V \dee{x}\,\dee{y}\,\dee{z}</m>, where
       <md>
       <mrow>
-      V&amp;=\Set{(x,y,z)} {0\leqslant z\le\sqrt{b^2-y^2},\  0\leqslant x\leqslant a,\  0\leqslant y\leqslant b}
+      V&amp;=\Set{(x,y,z)} {0\leqslant z\leqslant\sqrt{b^2-y^2},\  0\leqslant x\leqslant a,\  0\leqslant y\leqslant b}
       </mrow><mrow>
        &amp;=\Set{(x,y,z)} {y^2+z^2\leqslant b^2,\  0\leqslant x\leqslant a,\  y\geqslant 0,\ z\geqslant 0}
       </mrow>
       </md>
-      Now <m>y^2+z^2\leqslant b^2</m> is a cylinder of radius <m>b</m> centièred on the <m>x</m>--axis and the part of <m>y^2+z^2\leqslant b^2</m>, with <m>y\ge0,\ z\ge0</m> is one quarter of this cylinder.
+      Now <m>y^2+z^2\leqslant b^2</m> is a cylinder of radius <m>b</m> centièred on the <m>x</m>--axis and the part of <m>y^2+z^2\leqslant b^2</m>, with <m>y\geqslant0,\ z\geqslant0</m> is one quarter of this cylinder.
       It has cross--sectional area <m>\frac{1}{4}\pi b^2</m>. <m>V</m> is the part of
       this quarter--cylinder with <m>0\leqslant x\leqslant a</m>. It has length <m>a</m> and
       cross--sectional area <m>\frac{1}{4}\pi b^2</m>. So,
-      <m>\iint_R \sqrt{b^2-y^2}\,\dee{x}\,\dee{y}=\frac{1}{4}\pi ab^2</m>.
+      <m>\iint_\cR \sqrt{b^2-y^2}\,\dee{x}\,\dee{y}=\frac{1}{4}\pi ab^2</m>.
       </p></solution>
     </exercise>
 
+    <!-- 2 -->
     <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
       <statement><p>
       Trouvez la masse totale de la boîte rectangulaire
@@ -64,6 +66,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 3 -->
     <exercise>
       <statement><p>
       Pour chacun des cas suivants, exprimez les intégrales itérées données en intégrales itérées
@@ -71,21 +74,25 @@
       d'abord <m>z</m>, ensuite <m>y</m>, puis <m>x</m>.
       <ol marker = "(a)" cols = "2">
       <li>
-      <m>\ds\int_0^1\int_0^{1-z}\int_0^{1-z}\ f(x,y,z)\dee{x}\dee{y}\dee{z}</m>
+      <m>\ds\int_0^1\int_0^{1-z}\int_0^{1-z}\ f(x,y,z)\dee{x}\dee{y}\dee{z}</m>.
       </li>
       <li>
-      <m>\ds\int_0^1\int_{\sqrt z}^1\int_0^y\ f(x,y,z)\dee{x}\dee{y}\dee{z}</m>
+      <m>\ds\int_0^1\int_{\sqrt z}^1\int_0^y\ f(x,y,z)\dee{x}\dee{y}\dee{z}</m>.
       </li>
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a) <m>\ds\int_0^1\int_0^{x}\int_0^{1-x}\hskip-10pt \hskip3pt f(x,y,z)\dee{z}\dee{y}\dee{x}
-      +\int_0^1\int_x^{1}\int_0^{1-y}\hskip-10pt \hskip3pt f(x,y,z)\dee{z}\dee{y}\dee{x}</m>
-      </p>
-
-      <p>(b) <m>\ds\int_0^1\int_x^{1}\int_0^{y^2}\!\! \  f(x,y,z)\dee{z}\dee{y}\dee{x}</m>
-      </p></answer>
+      <answer>
+        <ol marker="(a)">
+          <li>
+            <md><mrow>\int_0^1\int_0^{x}\int_0^{1-x}\, f(x,y,z)\dee{z}\dee{y}\dee{x}
+      +\int_0^1\int_x^{1}\int_0^{1-y}\, f(x,y,z)\dee{z}\dee{y}\dee{x}</mrow></md>
+          </li>
+          <li>
+            <m>\int_0^1\int_x^{1}\int_0^{y^2}\, f(x,y,z)\dee{z}\dee{y}\dee{x}</m>
+          </li>
+        </ol>
+      </answer>
 
       <solution><p>
       (a)
@@ -130,7 +137,7 @@
       for each fixed <m>y</m> between <m>0</m> and <m>x</m>, <m>z</m> runs from <m>0</m> to <m>1-x</m> and
       </li>
       <li>
-      for each fixed <m>y</m> between <m>x</m> and <m>1</m>, <m>z</m> runs from <m>0</m> to <m>1-y</m>
+      for each fixed <m>y</m> between <m>x</m> and <m>1</m>, <m>z</m> runs from <m>0</m> to <m>1-y</m>.
       </li>
       </ul></p>
       </li>
@@ -170,18 +177,18 @@
 
       <p>
       In the new order, the integral is
-      <m>\displaystyle
-      \int_0^1\dee{x}\iint_{D_x} \dee{y}\,\dee{z}\ f(x,y,z)
+      <m>\int_0^1\dee{x}\iint_{D_x} \dee{y}\,\dee{z}\ f(x,y,z)
       =\int_0^1\dee{x}\int_x^{1}\dee{y}\int_0^{y^2}\!\! \dee{z}\  f(x,y,z)
       </m>
       </p></solution>
     </exercise>
 
+    <!-- 4 -->
     <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
       <statement><p>
       Écrire les intégrales données ci-dessous de <m>5</m> autres façons, chacune avec un ordre d'intégration différent.
       <md><mrow>
-      I=\int_0^1 \int_{\sqrt{x}}^1 \int_0^{1-y}\!\! f(x,y,z)\,\dee{z}\,\dee{y}\,\dee{x}
+      I=\int_0^1 \int_{\sqrt{x}}^1 \int_0^{1-y}\!\! f(x,y,z)\,\dee{z}\,\dee{y}\,\dee{x}.
       </mrow></md>
       </p></statement>
 
@@ -404,6 +411,7 @@
       </solution>
     </exercise>
 
+    <!-- 5 -->
     <exercise>
       <statement>
         <sidebyside widths="45%  55%" valign="top">
@@ -439,10 +447,11 @@
       </statement>
     </exercise>
 
+    <!-- 6 -->
     <exercise> <!-- <title><fromexam>M200 2011A</fromexam></title> -->
       <statement><p>
-      Soit <m>E</m> la portion du premier octant qui se trouve au-dessus du plan <m>z = x + y</m>
-      et sous le plan <m>z = 2</m>. La densité dans <m>E</m> est <m>\rho(x, y, z) = z</m>. Trouvez la masse de <m>E</m>.
+      Soit <m>\cE</m> la portion du premier octant qui se trouve au-dessus du plan <m>z = x + y</m>
+      et sous le plan <m>z = 2</m>. La densité dans <m>\cE</m> est <m>\rho(x, y, z) = z</m>. Trouvez la masse de <m>\cE</m>.
       </p></statement>
 
       <answer><p>
@@ -467,10 +476,10 @@
         &amp;= \Set{(x,y,z)}{0\leqslant x\leqslant 2,\ 0\leqslant y\leqslant 2-x,\ x+y\leqslant z\leqslant 2}
       </mrow>
       </md>
-      and the mass of <m>E</m> is
+      and the mass of <m>\cE</m> is
       <md>
       <mrow>
-      \iiint_E \rho(x,y,z)\,\dee{V}
+      \iiint_\cE \rho(x,y,z)\,\dee{V}
       &amp;=\int_0^2\dee{x} \int_0^{2-x}\dee{y} \int_{x+y}^2\dee{z}\ z
       </mrow><mrow>
       &amp;=\frac{1}{2}\int_0^2\dee{x} \int_0^{2-x}\dee{y} \ \big[4-(x+y)^2\big]
@@ -490,19 +499,20 @@
       </p></solution>
     </exercise>
 
+    <!-- 7 -->
     <exercise> <!-- <title><fromexam>M200 2011D</fromexam></title> -->
       <statement><p>
-      Évaluez l'intégrale triple <m>\ds\iiint_E x\ \dee{V}</m>, où <m>E</m> est
+      Évaluez l'intégrale triple <m>\iiint_\cE x\ \dee{V}</m>, où <m>\cE</m> est
       la région du premier octant bornée par le cylindre paraboloïque <m>y = x^2</m>
       et les plans <m>y + z = 1</m>, <m>x = 0</m>, et <m>z = 0</m>.
       </p></statement>
 
       <answer><p>
-      <m>\frac{1}{12}</m>
+      <m>\tfrac{1}{12}</m>
       </p></answer>
 
       <solution><p>
-      First, we need to develop an understanding of what <m>E</m> looks like.
+      First, we need to develop an understanding of what <m>\cE</m> looks like.
       Here are sketches of the parabolic cylinder <m>y=x^2</m>, on the left,
       and the plane <m>y+z=1</m>, on the right.
       </p>
@@ -513,7 +523,7 @@
       </sidebyside>
 
       <p>
-      <m>E</m> is constructed by using the plane <m>y+z=1</m> to chop the top
+      <m>\cE</m> is constructed by using the plane <m>y+z=1</m> to chop the top
       off of the parabolic cylinder <m>y=x^2</m>. Here is a sketch.
       </p>
 
@@ -529,7 +539,7 @@
       and the integral
       <md>
       <mrow>
-      \iiint_E x\ \dee{V}
+      \iiint_\cE x\ \dee{V}
       &amp;=\int_0^1\dee{x}\int_{x^2}^1\dee{y}\int_0^{1-y}\dee{z}\ x
       </mrow><mrow>
       &amp;=\int_0^1\dee{x}\int_{x^2}^1\dee{y}\ x(1-y)
@@ -546,11 +556,12 @@
       </p></solution>
     </exercise>
 
+    <!-- 8 -->
     <exercise> <!-- <title><fromexam>M200 2014A</fromexam></title> -->
       <statement><p>
       Soit
       <md><mrow>
-      J=\int_0^1 \int_0^x\int_0^y f(x,y,z)\ \dee{z}\,\dee{y}\,\dee{x}
+      J=\int_0^1 \int_0^x\int_0^y f(x,y,z)\ \dee{z}\,\dee{y}\,\dee{x}.
       </mrow></md>
       Exprimez <m>J</m> comme une intégrale où les intégrations sont effectuées
       dans l'ordre <m>x</m> en premier, <m>y</m> en deuxième, puis <m>z</m> en dernier.
@@ -612,15 +623,16 @@
   <exercisegroup>
     <title>Pour mieux comprendre</title>
 
+    <!-- 9 -->
     <exercise>
       <statement><p>
-      Évaluez <m>\ds\iiint_R x\ \dee{V}</m>, où <m>R</m> est le tétraèdre borné par
+      Évaluez <m>\iiint_\cR x\ \dee{V}</m>, où <m>\cR</m> est le tétraèdre borné par
       les plans de coordonnées et le plan
       <m>\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1</m>.
       </p></statement>
 
       <answer><p>
-      <m>\frac{a^2bc}{24}</m>
+      <m>\tfrac{a^2bc}{24}</m>
       </p></answer>
 
       <solution><p>
@@ -630,7 +642,7 @@
       </mrow></md>
       <ul>
       <li>
-      In <m>V</m>, <m>\tfrac{z}{c}\leqslant 1-\tfrac{x}{a}-\tfrac{y}{b}</m> and <m>x,y\ge0</m>, so
+      In <m>V</m>, <m>\tfrac{z}{c}\leqslant 1-\tfrac{x}{a}-\tfrac{y}{b}</m> and <m>x,y\geqslant0</m>, so
       the biggest value of <m>z</m> in <m>V</m> is achieved when <m>x=y=0</m> and is <m>c</m>.
       Thus, in <m>V</m>, <m>z</m> runs from <m>0</m> to <m>c</m>.
       </li>
@@ -665,7 +677,7 @@
       So the specified integral is
       <md>
       <mrow>
-      \iiint_R x\ \dee{V}
+      \iiint_\cR x\ \dee{V}
       &amp;=\int_0^c \dee{z} \iint_{D_z} \dee{x}\,\dee{y}\ x
        = \int_0^c \dee{z}\int_0^{b(1-{z\over c})}\dee{y}\int_{D_{y,z}}\dee{x}\ x
       </mrow><mrow>
@@ -688,21 +700,22 @@
       </p></solution>
     </exercise>
 
+    <!-- 10 -->
     <exercise>
       <statement><p>
-      Évaluez <m>\ds\iiint_R y\ \dee{V}</m>, où <m>R</m> est la portion du cube
+      Évaluez <m>\iiint_\cR y\ \dee{V}</m>, où <m>\cR</m> est la portion du cube
       <m>0\leqslant x,y,z\leqslant 1</m> se trouvant au-dessus du plan <m>y+z=1</m> et sous le
       plan <m>x+y+z=2</m>.
       </p></statement>
 
       <answer><p>
-      <m>\frac{5}{24}</m>
+      <m>\tfrac{5}{24}</m>
       </p></answer>
 
       <solution><p>
       The domain of integration is
       <md><mrow>
-      R = \Set{(x,y,z)}{0\leqslant x,y,z\leqslant 1,\ z\geqslant 1-y,\ z\le2-x-y}
+      R = \Set{(x,y,z)}{0\leqslant x,y,z\leqslant 1,\ z\geqslant 1-y,\ z\leqslant2-x-y}
       </mrow></md>
       In the figure on the  below, the more darkly shaded région
       is part of <m>z=1-y</m> and the more lightly shaded région is part
@@ -716,14 +729,14 @@
       <p>
       <ul>
       <li>
-      In <m>R</m>, <m>z</m> runs from <m>0</m> (for example <m>(0,1,0)</m> is in <m>R</m>)
-      to <m>1</m> (for example <m>(0,0,1)</m> is in <m>R</m>).
+      In <m>\cR</m>, <m>z</m> runs from <m>0</m> (for example <m>(0,1,0)</m> is in <m>\cR</m>)
+      to <m>1</m> (for example <m>(0,0,1)</m> is in <m>\cR</m>).
       </li>
       <li>
         <p>
       For each fixed <m>0\leqslant z\leqslant 1</m>, <m>(x,y)</m> runs over
       <md><mrow>
-      D_z = \Set{(x,y)}{0\leqslant x,y\leqslant 1,\ y\geqslant 1-z,\ x+y\le2-z}
+      D_z = \Set{(x,y)}{0\leqslant x,y\leqslant 1,\ y\geqslant 1-z,\ x+y\leqslant2-z}
       </mrow></md>
       Here is a sketch of a top view of <m>D_z</m>.
       </p>
@@ -744,7 +757,7 @@
       So the specified integral is
       <md>
       <mrow>
-      \iiint_R y\ \dee{V}
+      \iiint_\cR y\ \dee{V}
       &amp;=\int_0^1\dee{z}\iint_{D_z} \dee{x}\dee{y}\ y
       =\int_0^1 \dee{z}\int_{1-z}^1 \dee{y}\int_0^{2-y-z} \dee{x}\ y
       </mrow><mrow>
@@ -763,11 +776,12 @@
       </p></solution>
     </exercise>
 
+    <!-- 11 -->
     <exercise> <!-- <title><fromexam>M200 2005D</fromexam></title> -->
       <statement><p>
-      Une intégrale triple <m>\ds\iiint_E f\ \dee{V}</m> est donnée en forme d'intégrales itérées par
+      Une intégrale triple <m>\iiint_E f\ \dee{V}</m> est donnée en forme d'intégrales itérées par
       <md><mrow>
-      \int_{y=-1}^{y=1} \int_{z=0}^{z=1-y^2} \int_{x=0}^{2-y-z} f(x,y,z)
+      \int_{-1}^{1} \int_{0}^{1-y^2} \int_{0}^{2-y-z} f(x,y,z)
                                           \ \dee{x}\,\dee{z}\,\dee{y}
       </mrow></md>
       <ol marker = "(a)">
@@ -775,12 +789,12 @@
       Dessinez une image assez précise de <m>E</m> en 3 dimensions. S'assurer de montrer les unités des axes de coordonnées.
       </li>
       <li>
-      Réécrire l'intégrale triple <m>\ds\iiint_E f\ \dee{V}</m> comme une ou plusieurs
+      Réécrire l'intégrale triple <m>\iiint_E f\ \dee{V}</m> comme une ou plusieurs
       intégrales itérées triples dans l'ordre
       <md><mrow>
       \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
                                           \ \dee{z}\,\dee{x}\,\dee{y}
-      </mrow></md>
+      </mrow></md>.
       </li>
       </ol>
       </p></statement>
@@ -795,11 +809,11 @@
       (b)
       <md>
       <mrow>
-      &amp;\int_{y=-1}^{y=1} \int_{x=0}^{x=1+y^2-y} \int_{z=0}^{z=1-y^2} f(x,y,z)
+      &amp;\int_{-1}^{1} \int_{0}^{1+y^2-y} \int_{0}^{1-y^2} f(x,y,z)
                                           \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in
-      +\int_{y=-1}^{y=1} \int_{x=1+y^2-y}^{x=2-y} \int_{z=0}^{z=2-x-y} f(x,y,z)
+      +\int_{-1}^{1} \int_{1+y^2-y}^{2-y} \int_{0}^{2-x-y} f(x,y,z)
                                           \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow>
       </md>
@@ -834,7 +848,7 @@
       It passes through the points  <m>(2,0,0)</m>, <m>(0,2,0)</m> and <m>(0,0,2)</m>.
       It is sketched in the bottom figure below. We know that our
       domain of integration extends to <m>y=-1</m>, so we have chosen to include
-      in the sketch the part of the plane in <m>x\geqslant 0</m>, <m>y\ge-1</m>, <m>z\geqslant 0</m>.
+      in the sketch the part of the plane in <m>x\geqslant 0</m>, <m>y\geqslant-1</m>, <m>z\geqslant 0</m>.
       </li>
       </ul>
       </p>
@@ -870,7 +884,7 @@
       For each fixed <m>y</m> in that range, <m>(x,z)</m> runs over
       <md><mrow>
       E_y=\Set{(x,z)}{0\leqslant z\leqslant 1-y^2,\ 0\leqslant x+z\leqslant 2-y}
-      </mrow></md>
+      </mrow></md>.
       </li>
       <li>
       The biggest value of <m>x</m> in <m>E_y</m> is <m>2-y</m>. It is achieved
@@ -901,23 +915,24 @@
       So the integral is
       <md>
       <mrow>
-      &amp;\int_{y=-1}^{y=1} \int_{x=0}^{x=1+y^2-y} \int_{z=0}^{z=1-y^2} f(x,y,z)
+      &amp;\int_{-1}^{1} \int_{0}^{1+y^2-y} \int_{0}^{1-y^2} f(x,y,z)
                                           \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in
-      +\int_{y=-1}^{y=1} \int_{x=1+y^2-y}^{x=2-y} \int_{z=0}^{z=2-x-y} f(x,y,z)
+      +\int_{-1}^{1} \int_{1+y^2-y}^{2-y} \int_{0}^{2-x-y} f(x,y,z)
                                           \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow>
       </md>
       </p></solution>
     </exercise>
 
+    <!-- 12 -->
     <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
       <statement><p>
-      Une intégrale triple <m>\ds\iiint_E f(x,y,z)\ \dee{V}</m> est donnée sous la forme d'intégrale itérée par
+      Une intégrale triple <m>\iiint_E f(x,y,z)\ \dee{V}</m> est donnée sous la forme d'intégrale itérée par
       <md><mrow>
       J = \int_0^1 \int_0^{1-\frac{x}{2}} \int_0^{4-2x-4z} f(x,y,z)
-                                          \ \dee{y}\,\dee{z}\,\dee{x}
+                                          \ \dee{y}\,\dee{z}\,\dee{x}.
       </mrow></md>
       <ol marker = "(a)">
       <li>
@@ -925,8 +940,8 @@
       </li>
       <li>
       Réécrire l'intégrale comme une ou plusieurs intégrales itérées de la forme
-      <m>\displaystyle J = \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
-                                          \ \dee{z}\,\dee{x}\,\dee{y}</m>
+<md><mrow>J = \int_{y=}^{y=} \int_{x=}^{x=} \int_{z=}^{z=} f(x,y,z)
+                                          \ \dee{z}\,\dee{x}\,\dee{y}.</mrow></md>
       </li>
       </ol>
       </p></statement>
@@ -941,10 +956,10 @@
       (b)
       <md>
       <mrow>
-      J &amp;= \int_{y=0}^{y=2} \int_{x=0}^{x=1} \int_{z=0}^{z=\frac{4-2x-y}{4}}
+      J &amp;= \int_{0}^{2} \int_{0}^{1} \int_{0}^{\frac{4-2x-y}{4}}
               \!\!\!\! f(x,y,z)  \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;\hskip0.5in+\int_{y=2}^{y=4} \int_{x=0}^{x=\frac{4-y}{2}} \int_{z=0}^{z=\frac{4-2x-y}{4}}
+      &amp;\hskip0.5in+\int_{2}^{4} \int_{0}^{\frac{4-y}{2}} \int_{0}^{\frac{4-2x-y}{4}}
               \!\!\!\!  f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}
       </mrow>
       </md>
@@ -1029,7 +1044,7 @@
       for each fixed <m>y</m> in that range, <m>(x,z)</m> runs over
       <md><mrow>
       \Set{(x,z)}{0\leqslant x\leqslant 1,\ 2x+4z\leqslant 4-y,\ z\geqslant 0}
-      </mrow></md>
+      </mrow></md>.
       </li>
       <li><p>
       for each fixed <m>y</m> between <m>0</m> and <m>2</m> (as in the left hand shaded bit in
@@ -1060,20 +1075,21 @@
       So the integral
       <md>
       <mrow>
-      J &amp;= \int_{y=0}^{y=2} \int_{x=0}^{x=1} \int_{z=0}^{z=\frac{4-2x-y}{4}}
+      J &amp;= \int_{0}^{2} \int_{0}^{1} \int_{0}^{\frac{4-2x-y}{4}}
               \!\!\!\! f(x,y,z)  \ \dee{z}\,\dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;\hskip0.5in+\int_{y=2}^{y=4} \int_{x=0}^{x=\frac{4-y}{2}} \int_{z=0}^{z=\frac{4-2x-y}{4}}
+      &amp;\hskip0.5in+\int_{2}^{4} \int_{0}^{\frac{4-y}{2}} \int_{0}^{\frac{4-2x-y}{4}}
               \!\!\!\!  f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}
       </mrow>
       </md>
       </p></solution>
     </exercise>
 
+    <!-- 13 -->
     <exercise> <!-- <title><fromexam>M200 2009A</fromexam></title> -->
       <statement><p>
-      Soit <m>\displaystyle I = \iiint_E f(x,y,z)\ \dee{V}</m>,
-      où <m>E</m> est le tétraèdre ayant pour sommets <m>(-1, 0, 0)</m>,
+      Soit <m>I = \iiint_\cE f(x,y,z)\ \dee{V}</m>,
+      où <m>\cE</m> est le tétraèdre ayant pour sommets <m>(-1, 0, 0)</m>,
       <m>(0, 0, 0)</m>, <m>(0, 0, 3)</m> et <m>(0, -2, 0)</m>.
       </p>
 
@@ -1083,29 +1099,29 @@
       <md><mrow>
       I = \int_{x=}^{x=}\int_{y=}^{y=}\int_{z=}^{z=} f(x,y,z)\
                                             \dee{z}\,\dee{y}\,\dee{x}
-      </mrow></md>
+      </mrow></md>.
       </li>
       <li>
       Réécrire l'intégrale <m>I</m> dans la forme
       <md><mrow>
       I = \int_{z=}^{z=}\int_{x=}^{x=}\int_{y=}^{y=} f(x,y,z)\
                                             \dee{y}\,\dee{x}\,\dee{z}
-      </mrow></md>
+      </mrow></md>.
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>I = \int_{x=-1}^{x=0}\int_{y=-2(1+x)}^{y=0}\int_{z=0}^{z=3(1+x+y/2)}
+      (a) <m>I = \int_{-1}^{0}\int_{-2(1+x)}^{0}\int_{0}^{3(1+x+y/2)}
                   f(x,y,z)\ \dee{z}\,\dee{y}\,\dee{x}</m>
       </p>
 
-      <p>(b) <m>I = \int_{z=0}^{z=3}\int_{x=-(1-z/3)}^{x=0}\int_{y=-2(1+x-z/3)}^{y=0}
+      <p>(b) <m>I = \int_{0}^{3}\int_{-(1-z/3)}^{0}\int_{-2(1+x-z/3)}^{0}
                    f(x,y,z)\ \dee{y}\,\dee{x}\,\dee{z}</m>
       </p></answer>
 
       <solution><p>
-      First we have to get some idea as to what <m>E</m> looks like.
+      First we have to get some idea as to what <m>\cE</m> looks like.
       Here is a sketch.
       </p>
 
@@ -1135,8 +1151,8 @@
       is <m>-x-\frac{y}{2}+\frac{z}{3}=1</m>.
       </p>
 
-      <p>We can now get a detailed mathematical description of <m>E</m>.
-      A point <m>(x,y,z)</m> is in <m>E</m> if and only if
+      <p>We can now get a detailed mathematical description of <m>\cE</m>.
+      A point <m>(x,y,z)</m> is in <m>\cE</m> if and only if
       <ul>
       <li>
       <m>(x,y,z)</m> lies above the <m>xy</m>--plane, i.e. <m>z\geqslant 0</m>, and
@@ -1161,7 +1177,7 @@
       </p>
 
       <p>(a) Note that we want the outside integral to be the <m>x</m>--integral.
-      On <m>E</m>
+      On <m>\cE</m>
       <ul>
       <li>
       <m>x</m> runs from <m>-1</m> to <m>0</m> and
@@ -1185,7 +1201,7 @@
       On <m>E_x</m>, <m>y</m> runs from <m>-2(1+x)</m> to <m>0</m> and
       </li>
       <li>
-      for each fixed such <m>y</m>, <m>z</m> runs from <m>0</m> to <m>3(1+x+y/2)</m>
+      for each fixed such <m>y</m>, <m>z</m> runs from <m>0</m> to <m>3(1+x+y/2)</m>.
       </li>
       </ul>
       So
@@ -1198,7 +1214,7 @@
       </p>
 
       <p>(b) This time we want the outside integral to be the <m>z</m>--integral.
-      Looking back at the sketch of <m>E</m>, we see that, on <m>E</m>,
+      Looking back at the sketch of <m>\cE</m>, we see that, on <m>\cE</m>,
       <ul>
       <li>
       <m>z</m> runs from <m>0</m> to <m>3</m> and
@@ -1222,7 +1238,7 @@
       On <m>E_z</m>, <m>x</m> runs from <m>-(1-z/3)</m> to <m>0</m> and
       </li>
       <li>
-      for each fixed such <m>x</m>, <m>y</m> runs from <m>-2(1+x-z/3)</m> to <m>0</m>
+      for each fixed such <m>x</m>, <m>y</m> runs from <m>-2(1+x-z/3)</m> to <m>0</m>.
       </li>
       </ul>
       So
@@ -1235,17 +1251,18 @@
       </p></solution>
     </exercise>
 
+    <!-- 14 -->
     <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
       <statement><p>
-      Soit <m>T</m> le tétraèdre borné par les plans de coordonnées <m>x = 0</m>, <m>y = 0</m>, <m>z = 0</m> et
+      Soit <m>\cT</m> le tétraèdre borné par les plans de coordonnées <m>x = 0</m>, <m>y = 0</m>, <m>z = 0</m> et
       le plan <m>x + y + z = 1</m>. Calculez
-      <m>\displaystyle
-      K = \iiint_T \frac{1}{ (1 + x + y + z)^4}\ \dee{V}
-      </m>
+      <md>
+      K = \iiint_{\cT} \frac{1}{ (1 + x + y + z)^4}\ \dee{V}.
+      </md>
       </p></statement>
 
       <answer><p>
-      <m>\frac{1}{48}</m>
+      <m>\tfrac{1}{48}</m>
       </p></answer>
 
       <solution><p>
@@ -1253,7 +1270,7 @@
       along the line <m>x+y=1</m>, <m>z=0</m>. So
       <md>
       <mrow>
-      T&amp;=\Set{(x,y,z)}{x\geqslant 0,\  y\ge0,\ x+y\leqslant 1,\ 0\leqslant z\leqslant 1-x-y}
+      T&amp;=\Set{(x,y,z)}{x\geqslant 0,\  y\geqslant0,\ x+y\leqslant 1,\ 0\leqslant z\leqslant 1-x-y}
       </mrow><mrow>
        &amp;=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\  0\leqslant y\leqslant 1-x,\ 0\leqslant z\leqslant 1-x-y}
       </mrow>
@@ -1298,15 +1315,16 @@
       </p></solution>
     </exercise>
 
+    <!-- 15 -->
     <exercise> <!-- <title><fromexam>M200 2012A</fromexam></title> -->
       <statement><p>
-      Soit <m>E</m> la région du premier octant bornée par les plans de coordonnées,
+      Soit <m>\cE</m> la région du premier octant bornée par les plans de coordonnées,
       le plan <m>x + y = 1</m> et la surface <m>z = y^2</m>.  Évaluez
-      <m>\iiint_E z\ \dee{V}</m> .
+      <m>\iiint_{\cE} z\ \dee{V}</m> .
       </p></statement>
 
       <answer><p>
-      <m>\frac{1}{60}</m>
+      <m>\tfrac{1}{60}</m>
       </p></answer>
 
       <solution><p>
@@ -1356,23 +1374,24 @@
       </p></solution>
     </exercise>
 
+    <!-- 16 -->
     <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
       <statement><p>
-      Évaluez  <m>\iiint_R yz^2 e^{-xyz}\ \dee{V}</m> sur la boîte rectangulaire
+      Évaluez  <m>\iiint_\cR yz^2 e^{-xyz}\ \dee{V}</m> sur la boîte rectangulaire
       <md><mrow>
       R=\Set{(x,y,z)}{0\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 2,\  0\leqslant z\leqslant 3}
       </mrow></md>
       </p></statement>
 
       <answer><p>
-      <m>\frac{13}{2}-\frac{e^{-6}}{2}</m>
+      <m>\tfrac{13}{2}-\tfrac{e^{-6}}{2}</m>
       </p></answer>
 
       <solution><p>
       L'intégrale
       <md>
       <mrow>
-      \iiint_R yz^2 e^{-xyz}\ \dee{V}
+      \iiint_\cR yz^2 e^{-xyz}\ \dee{V}
       &amp;=\int_0^3\dee{z}\int_0^2\dee{y}\int_0^1\dee{x}\ yz^2 e^{-xyz}
       </mrow><mrow>
       &amp;=\int_0^3\dee{z}\int_0^2\dee{y}\ \Big[-z e^{-xyz}\Big]_{x=0}^{x=1}
@@ -1390,6 +1409,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 17 -->
     <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
@@ -1397,10 +1417,9 @@
       Esquissez la surface donnée par l'équation <m>z = 1 - x^2</m>.
       </li>
       <li>
-      Soit <m>E</m> le solide borné par le plan <m>y = 0</m>, le cylindre
+      Soit <m>\cE</m> le solide borné par le plan <m>y = 0</m>, le cylindre
       <m>z = 1 - x^2</m>, et le plan <m>y = z</m>. Exprimez l'intégrale
-      <m>\displaystyle
-      \iiint_E f(x,y,z)\,\dee{V}
+      <m>\iiint_\cE f(x,y,z)\,\dee{V}
       </m>
       comme une intégrale itérée.
       </li>
@@ -1444,7 +1463,7 @@
 
       <p>
       Observe that, on the curve <m>z=1-x^2</m>, <m>z=y</m>, we have
-      <m>y=1-x^2</m>. So that when one looks at the solid <m>E</m> from high on the <m>z</m>--axis,
+      <m>y=1-x^2</m>. So that when one looks at the solid <m>\cE</m> from high on the <m>z</m>--axis,
       one sees
       <md><mrow>
       \Set{(x,y)}{0\leqslant y\leqslant 1-x^2}
@@ -1455,13 +1474,13 @@
       E = \Set{(x,y,z)}{-1\leqslant x\leqslant 1,\ 0\leqslant y\leqslant 1-x^2,\ y\leqslant z\leqslant 1-x^2}
       </mrow></md>
       and the integral
-      <m>\displaystyle
-      \iiint_E f(x,y,z)\,\dee{V}
+      <m>\iiint_\cE f(x,y,z)\,\dee{V}
       =\int_{-1}^1\dee{x}\int_0^{1-x^2}\dee{y}\int_y^{1-x^2}\dee{z}\ f(x,y,z)
       </m>
       </p></solution>
     </exercise>
 
+    <!-- 18 -->
     <exercise> <!-- <title><fromexam>M200 2014D</fromexam></title> -->
       <statement><p>
       Soit <m>E</m> la région bornée par <m>z = 2x</m>, <m>z = y^2</m>, et <m>x = 3</m>.
@@ -1483,15 +1502,15 @@
       </p></statement>
 
       <answer><p>
-      <m>\int_{y=-\sqrt{6}}^{y=\sqrt{6}}\int_{x=y^2/2}^{x=3}\int_{z=y^2}^{z=2x}
+      <m>\int_{-\sqrt{6}}^{\sqrt{6}}\int_{y^2/2}^{3}\int_{y^2}^{2x}
                       f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}</m>
       </p>
 
-      <p><m>\int_{y=-\sqrt{6}}^{y=\sqrt{6}}\int_{z=y^2}^{z=6}\int_{x=z/2}^{x=3}
+      <p><m>\int_{-\sqrt{6}}^{\sqrt{6}}\int_{y^2}^{6}\int_{z/2}^{3}
                       f(x,y,z)\ \dee{x}\,\dee{z}\,\dee{y}</m>
       </p>
 
-      <p><m>\int_{z=0}^{z=6}\int_{x=z/2}^{x=3}\int_{y=-\sqrt{z}}^{y=\sqrt{z}}
+      <p><m>\int_{0}^{6}\int_{z/2}^{3}\int_{-\sqrt{z}}^{\sqrt{z}}
                       f(x,y,z)\ \dee{y}\,\dee{x}\,\dee{z}</m>
       </p></answer>
 
@@ -1558,7 +1577,7 @@
       </mrow></md>
       and the integral is
       <md><mrow>
-      \int_{y=-\sqrt{6}}^{y=\sqrt{6}}\int_{x=y^2/2}^{x=3}\int_{z=y^2}^{z=2x}
+      \int_{-\sqrt{6}}^{\sqrt{6}}\int_{y^2/2}^{3}\int_{y^2}^{2x}
                       f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}
       </mrow></md>
       </p>
@@ -1570,7 +1589,7 @@
       </mrow></md>
       and the integral is
       <md><mrow>
-      \int_{y=-\sqrt{6}}^{y=\sqrt{6}}\int_{z=y^2}^{z=6}\int_{x=z/2}^{x=3}
+      \int_{-\sqrt{6}}^{\sqrt{6}}\int_{y^2}^{6}\int_{z/2}^{3}
                       f(x,y,z)\ \dee{x}\,\dee{z}\,\dee{y}
       </mrow></md>
       </p>
@@ -1590,18 +1609,18 @@
       </md>
       So the integral is
       <md><mrow>
-      \int_{z=0}^{z=6}\int_{x=z/2}^{x=3}\int_{y=-\sqrt{z}}^{y=\sqrt{z}}
+      \int_{0}^{6}\int_{z/2}^{3}\int_{-\sqrt{z}}^{\sqrt{z}}
                       f(x,y,z)\ \dee{y}\,\dee{x}\,\dee{z}
       </mrow></md>
       </p></solution>
     </exercise>
 
+        <!-- 19 -->
         <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
           <statement><p>
-          Soit <m>E</m> la région à l'intérieur du cylindre <m>x^2 + y^2 = 1</m>, sous le plan <m>z = y</m> et au-dessus du plan <m>z = -1</m>. Exprimez
+          Soit <m>\cE</m> la région à l'intérieur du cylindre <m>x^2 + y^2 = 1</m>, sous le plan <m>z = y</m> et au-dessus du plan <m>z = -1</m>. Exprimez
           l'intégrale
-          <m>\displaystyle
-          \iiint_E f(x,y,z)\ \dee{V}
+          <m>\iiint_\cE f(x,y,z)\ \dee{V}
           </m>
           comme trois intégrales itérées différentes correspondantes à l'ordre d'intégration:
           <ol marker = "(a)" cols="3">
@@ -1624,11 +1643,11 @@
           </p></statement>
 
           <answer><p>
-          (a) <m>\int_{-1}^1\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}
+          (a) <m>\ds\int_{-1}^1\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}
                   \int_{-1}^y f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y} </m>
           </p>
           <p>
-          (b) <m>\int_{-1}^1\int_z^1 \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}
+          (b) <m>\ds\int_{-1}^1\int_z^1 \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}
                         f(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}</m>
           </p>
 
@@ -1646,14 +1665,14 @@
 
           <solution><p>
           (a)
-          The région <m>E</m> is
+          The région <m>\cE</m> is
           <md>
           <mrow>
           E &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant 1,\ -1\leqslant z\leqslant y}
           </mrow>
           </md>
           Here is are sketches, one without axes and one with axes,
-          of the front half of <m>E</m>, outlined in red.
+          of the front half of <m>\cE</m>, outlined in red.
           </p>
 
           <sidebyside width="60%">
@@ -1668,7 +1687,7 @@
           The integral
           <md>
           <mrow>
-          \iiint_E f(x,y,z)\ \dee{V}
+          \iiint_\cE f(x,y,z)\ \dee{V}
           &amp;=\int_{x^2+y^2\leqslant 1}\dee{x}\,\dee{y}\int_{-1}^y\dee{z}\ f(x,y,z)
           </mrow><mrow>
           &amp;=\int_{-1}^1\dee{y}\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\dee{x}
@@ -1681,7 +1700,7 @@
           </p>
 
           <p>(b)
-          Here is a sketch of (the front half of) a constant <m>z</m>  slice of <m>E</m>.
+          Here is a sketch of (the front half of) a constant <m>z</m>  slice of <m>\cE</m>.
           </p>
 
           <sidebyside width="66%">
@@ -1692,24 +1711,24 @@
           Note that
           <ul>
           <li>
-            in <m>E</m>, <m>z</m> runs from <m>-1</m> to <m>1</m>.
+            in <m>\cE</m>, <m>z</m> runs from <m>-1</m> to <m>1</m>.
           </li>
           <li>
             Once <m>z</m> has been fixed, <m>x</m> and <m>y</m> must obey <m>x^2+y^2\leqslant 1</m>,
-               <m>z\leqslant y\leqslant 1</m>
+               <m>z\leqslant y\leqslant 1</m>.
           </li>
           </ul>
           So
           <md>
           <mrow>
           E &amp;= \Set{(x,y,z)}{-1\leqslant z\leqslant 1,\ z\leqslant y\leqslant 1,\
-                      -\sqrt{1-y^2}\leqslant x\le\sqrt{1-y^2}}
+                      -\sqrt{1-y^2}\leqslant x\leqslant\sqrt{1-y^2}}
           </mrow>
           </md>
           and
           <md>
           <mrow>
-          \iiint_E f(x,y,z)\ \dee{V}
+          \iiint_\cE f(x,y,z)\ \dee{V}
           &amp;=\int_{-1}^1\dee{z}\int_z^1\dee{y}
                    \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\dee{x}\ f(x,y,z)
           </mrow><mrow>
@@ -1720,7 +1739,7 @@
           </p>
 
           <p>(c)
-          Here is a sketch of a constant <m>x</m>  slice of <m>E</m>.
+          Here is a sketch of a constant <m>x</m>  slice of <m>\cE</m>.
           </p>
 
           <sidebyside width="95%">
@@ -1731,13 +1750,13 @@
           Note that
           <ul>
           <li>
-            in <m>E</m>, <m>x</m> runs from <m>-1</m> to <m>1</m>.
+            in <m>\cE</m>, <m>x</m> runs from <m>-1</m> to <m>1</m>.
           </li>
           <li>
             Once <m>x</m> has been fixed, <m>y</m> and <m>z</m> must obey
              <md><mrow>
-                 -\sqrt{1-x^2}\leqslant y\le\sqrt{1-x^2}\qquad -1\leqslant z\leqslant y
-             </mrow></md>
+                 -\sqrt{1-x^2}\leqslant y\leqslant\sqrt{1-x^2}\qquad -1\leqslant z\leqslant y
+             </mrow></md>.
           </li>
           </ul>
           Here is a sketch.
@@ -1763,7 +1782,7 @@
           So
           <md>
           <mrow>
-          \iiint_E f(x,y,z)\ \dee{V}
+          \iiint_\cE f(x,y,z)\ \dee{V}
           &amp;=\int_{-1}^1\dee{x} \int_{-1}^{-\sqrt{1-x^2}}\dee{z}
                                \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\dee{y}  \ f(x,y,z)
           </mrow><mrow>
@@ -1774,7 +1793,7 @@
           or
           <md>
           <mrow>
-          \iiint_E f(x,y,z)\ \dee{V}
+          \iiint_\cE f(x,y,z)\ \dee{V}
           &amp;=\int_{-1}^1 \int_{-1}^{-\sqrt{1-x^2}} \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
                         f(x,y,z)\ \dee{y}\,\dee{z}\,\dee{x}
           </mrow><mrow>
@@ -1786,47 +1805,26 @@
         </exercise>
 
 
+        <!-- 20 -->
         <exercise> <!-- <title><fromexam>M200 2016D</fromexam></title> -->
           <statement><p>
-          Soit <m>E</m> la région bornée par les plans <m>y=0</m>, <m>y=2</m>,
+          Soit <m>\cE</m> la région bornée par les plans <m>y=0</m>, <m>y=2</m>,
           <m>y+z=3</m> et la surface <m>z=x^2</m>. Considérez l'intégrale
-          <m>\displaystyle
-          I=\iiint_E f(x,y,z)\ \dee{V}
-          </m>
-          Remplir les espaces ci-dessous. Dans chaque partie,
-          vous pouvez n'utiliser qu'une seule intégrale pour exprimer votre réponse. Dans chaque cas, laisser les autres espaces vides.
+          <md>
+          I=\iiint_\cE f(x,y,z)\ \dee{V}.
+          </md>
+          Écrivez cette intégrale dans chacun des ordres d'intégration suivants ; pour certains d'entre eux, une somme de deux intégrales sera nécessaire.
           </p>
 
           <p><ol marker = "(a)">
           <li>
-          <m>\displaystyle I=\int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                 \! f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y} +
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                 \! f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y} </m>
+          <m>\dee{z}\,\dee{x}\,\dee{y}</m>
           </li>
           <li>
-          <m>\displaystyle I=\int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                 \! f(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z} +
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                 \! f(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z} </m>
+          <m>\dee{x}\,\dee{y}\,\dee{z}</m>
           </li>
           <li>
-          <m>\displaystyle I=\int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                \!  f(x,y,z)\ \dee{y}\,\dee{x}\,\dee{z} +
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                           \int_{\underline{\ \ \ \ }}^{\underline{\ \ \ \ }}
-                                \!  f(x,y,z)\ \dee{y}\,\dee{x}\,\dee{z} </m>
+          <m>\dee{y}\,\dee{x}\,\dee{z}</m>
           </li>
           </ol>
           </p></statement>
@@ -1849,11 +1847,11 @@
           </p></answer>
 
           <solution><p>
-          First, we need to develop an understanding of what <m>E</m> looks like.
+          First, we need to develop an understanding of what <m>\cE</m> looks like.
           Note that all of the equations <m>y=0</m>, <m>y=2</m>, <m>y+z=3</m> and <m>z=x^2</m>
-          are invariant under <m>x\rightarrow -x</m>. So <m>E</m> is invariant under
+          are invariant under <m>x\rightarrow -x</m>. So <m>\cE</m> is invariant under
           <m>x\rightarrow -x</m>, i.e. is symmetric about the <m>yz</m>--plane. We'll sketch
-          the first octant (i.e. <m>x,y,z\geqslant 0</m>) part of <m>E</m>. There is also a
+          the first octant (i.e. <m>x,y,z\geqslant 0</m>) part of <m>\cE</m>. There is also a
           <m>x\leqslant 0</m>, <m>y\geqslant 0</m>, <m>z\geqslant 0</m> part.
           </p>
 
@@ -1877,7 +1875,7 @@
 
           <p>
           Now here is the parabolic cylinder <m>z=x^2</m> on the top.
-          <m>E</m> is constructed by using the parabolic cylinder <m>z=x^2</m> to chop the front
+          <m>\cE</m> is constructed by using the parabolic cylinder <m>z=x^2</m> to chop the front
           off of the tunnel <m>x\geqslant 0</m>, <m>0\leqslant y\leqslant 2</m>, <m>z\geqslant 0</m>,  <m>y+z\leqslant 3</m>. The figure
           on the bottom is a sketch.
           </p>
@@ -1897,7 +1895,7 @@
           </mrow></md>
           </p>
 
-          <p>(a) On <m>E</m>
+          <p>(a) On <m>\cE</m>
           <ul>
           <li>
           <m>y</m> runs from <m>0</m> to <m>2</m>.
@@ -1915,13 +1913,12 @@
           </li>
           </ul>
           so that
-          <m>\displaystyle
-          I=\iiint_E f(x,y,z)\ \dee{V}
+          <m>I=\iiint_\cE f(x,y,z)\ \dee{V}
           = \int_0^2 \int_{-\sqrt{3-y}}^{\sqrt{3-y}} \int_{x^2}^{3-y} f(x,y,z)\ \dee{z}\,\dee{x}\,\dee{y}
           </m>
           </p>
 
-          <p>(b) On <m>E</m>
+          <p>(b) On <m>\cE</m>
           <ul>
           <li>
           <m>z</m> runs from <m>0</m> to <m>3</m>.
@@ -1958,7 +1955,7 @@
           </md>
           </p>
 
-          <p>(c) On <m>E</m>
+          <p>(c) On <m>\cE</m>
           <ul>
           <li>
           <m>z</m> runs from <m>0</m> to <m>3</m>.
@@ -1993,21 +1990,22 @@
         </exercise>
 
 
+        <!-- 21 -->
         <exercise> <!-- <title><fromexam>M200 2002D</fromexam></title> -->
           <statement><p>
-          Évaluez <m>\iiint_E z\,\dee{V}</m>, où <m>E</m> est la région bornée
+          Évaluez <m>\iiint_\cE z\,\dee{V}</m>, où <m>\cE</m> est la région bornée
           par les plans <m>y=0</m>, <m>z=0</m> <m>x+y=2</m> et le cylindre <m>y^2+z^2=1</m> dans le premier octant.
           </p></statement>
 
           <hint><p>
-          Esquissez <m>E</m>. Vous pouvez imaginer <m>E</m> en pensant à la région bornée par les
+          Esquissez <m>\cE</m>. Vous pouvez imaginer <m>\cE</m> en pensant à la région bornée par les
           plans <m>x=0</m>, <m>y=0</m>, <m>z=0</m> et <m>x+y=2</m> comme un grand morceau de fromage et en pensant
           au cylindre <m>y^2+z^2=1</m> comme un trou de forage dans le coin. Ainsi, pour fixer les
-          bornes d'intégration, d'abord esquisser la vue du dessus de <m>E</m>.
+          bornes d'intégration, d'abord esquisser la vue du dessus de <m>\cE</m>.
           </p></hint>
 
           <answer><p>
-          <m>\frac{13}{24}\approx 0.5417</m>
+          <m>\tfrac{13}{24}\approx 0.5417</m>
           </p></answer>
 
           <solution><p>
@@ -2015,7 +2013,7 @@
           in the first octant intersects the plane <m>z=0</m> in the line <m>y= 1</m>,
           intersects to plane <m>y=0</m> in the line <m>z=1</m> and intersects the plane
           <m>x=0</m> in the quarter circle <m>y^2+z^2=1</m>, <m>x=0</m>, <m>y,z\geqslant 0</m>. Here is a
-          sketch of <m>E</m>.
+          sketch of <m>\cE</m>.
           </p>
 
           <sidebyside width="50%">
@@ -2024,7 +2022,7 @@
 
           <p>
           Viewed from above, the région
-          <m>E</m> is bounded by the lines <m>x=0</m>, <m>y=0</m>, <m>x+y=2</m> and <m>y=1</m>. This base région is pictured below.
+          <m>\cE</m> is bounded by the lines <m>x=0</m>, <m>y=0</m>, <m>x+y=2</m> and <m>y=1</m>. This base région is pictured below.
           </p>
 
           <sidebyside width="60%">
@@ -2043,17 +2041,17 @@
           </li>
           <li>
              For each fixed <m>(x,y)</m> in the base région <m>z</m> runs from <m>0</m>
-             to <m>\sqrt{1-y^2}</m>
+             to <m>\sqrt{1-y^2}</m>.
           </li>
           </ul>
           So
           <md><mrow>
-          E=\Set{(x,y,z)}{0\leqslant y\leqslant 1,\ 0\leqslant x\leqslant 2-y,\ 0\leqslant z\le\sqrt{1-y^2} }
+          E=\Set{(x,y,z)}{0\leqslant y\leqslant 1,\ 0\leqslant x\leqslant 2-y,\ 0\leqslant z\leqslant\sqrt{1-y^2} }
           </mrow></md>
           and
           <md>
           <mrow>
-          \iiint_E z\,\dee{V}&amp;=\int_0^1 \dee{y}\int_0^{2-y}\dee{x}\int_0^{\sqrt{1-y^2}}\dee{z}\ z
+          \iiint_\cE z\,\dee{V}&amp;=\int_0^1 \dee{y}\int_0^{2-y}\dee{x}\int_0^{\sqrt{1-y^2}}\dee{z}\ z
           </mrow><mrow>
           &amp;=\int_0^1 \dee{y}\int_0^{2-y}\dee{x}\ \frac{1}{2} z^2\Big|_0^{\sqrt{1-y^2}}
           </mrow><mrow>
@@ -2069,18 +2067,19 @@
           </p></solution>
         </exercise>
 
+        <!-- 22 -->
         <exercise> <!-- <title><fromexam>M200 2001D</fromexam></title> -->
           <statement><p>
-          Trouvez <m>\ds\iiint_D x\,\dee{V}</m>, où <m>D</m> est le tétraèdre borné par
+          Trouvez <m>\iiint_\cD x\,\dee{V}</m>, où <m>\cD</m> est le tétraèdre borné par
           les plans <m>x=1</m>, <m>y=1</m>, <m>z=1</m>, et <m>x+y+z=2</m>.
           </p></statement>
 
           <answer><p>
-          <m>\frac{1}{8}=0.125</m>
+          <m>\tfrac{1}{8}=0.125</m>
           </p></answer>
 
           <solution><p>
-          The planes <m>x=1</m>, <m>y=1</m>, <m>z=1</m>, and <m>x+y+z=2</m> and the région <m>D</m> are
+          The planes <m>x=1</m>, <m>y=1</m>, <m>z=1</m>, and <m>x+y+z=2</m> and the région <m>\cD</m> are
           sketched below.
           </p>
 
@@ -2089,7 +2088,7 @@
           </sidebyside>
 
           <p>
-          And here is a sketch of <m>D</m> without the planes cluttering up the figure.
+          And here is a sketch of <m>\cD</m> without the planes cluttering up the figure.
           </p>
 
           <sidebyside width="40%">
@@ -2097,7 +2096,7 @@
           </sidebyside>
 
           <p>
-          On <m>D</m>
+          On <m>\cD</m>
           <ul>
           <li>
           <m>z</m> runs from <m>0</m> to <m>1</m> and
@@ -2125,13 +2124,13 @@
           <m>x</m> runs from <m>1-z</m> to <m>1</m> and
           </li>
           <li>
-          for each fixed <m>x</m> between <m>1-z</m> and <m>1</m>, <m>y</m> runs from <m>2-x-z</m> to <m>1</m>
+          for each fixed <m>x</m> between <m>1-z</m> and <m>1</m>, <m>y</m> runs from <m>2-x-z</m> to <m>1</m>.
           </li>
           </ul>
           so that
           <md>
           <mrow>
-          \iiint_D x\,\dee{V}
+          \iiint_\cD x\,\dee{V}
           &amp;=\int_0^1\dee{z}\iint_{T_z}\dee{x}\,\dee{y}\ x
           =\int_0^1 \dee{z}\int_{1-z}^1 \dee{x}\int_{2-x-z}^1 \dee{y}\ x
           </mrow><mrow>
@@ -2155,16 +2154,17 @@
         </exercise>
 
 
+        <!-- 23 -->
         <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
           <statement><p>
-          La région solide <m>T</m> est bornée par les plans <m>x=0</m>, <m>y=0</m>,
+          La région solide <m>\cT</m> est bornée par les plans <m>x=0</m>, <m>y=0</m>,
           <m>z=0</m>, et <m>x+y+z=2</m> et la surface <m>x^2+z=1</m>.
           <ol marker = "(a)">
           <li>
           Dessinez la région en indiquant les coordonnées de chaque coin.
           </li>
           <li>
-          Calculez <m>\iiint_T x\,\dee{V}</m>.
+          Calculez <m>\iiint_\cT x\,\dee{V}</m>.
           </li>
           </ol>
           </p></statement>
@@ -2190,7 +2190,7 @@
           </sidebyside>
 
           <p>
-          (b) <m>\frac{17}{60}</m>
+          (b) <m>\tfrac{17}{60}</m>
           </p></answer>
 
           <solution><p>
@@ -2214,7 +2214,7 @@
           </sidebyside>
 
           <p>
-          (b) Here is a sketch of the side view of <m>T</m>, looking down the <m>y</m> axis.
+          (b) Here is a sketch of the side view of <m>\cT</m>, looking down the <m>y</m> axis.
           </p>
 
           <sidebyside width="40%">
@@ -2233,14 +2233,14 @@
           for each fixed <m>x</m> between <m>0</m> and <m>1</m>, <m>z</m> runs from <m>0</m> to <m>1-x^2</m>.
           </li>
           <li>
-          In <m>T</m>, for each fixed <m>(x,y)</m> in the base région, <m>y</m> runs from <m>0</m> to
+          In <m>\cT</m>, for each fixed <m>(x,y)</m> in the base région, <m>y</m> runs from <m>0</m> to
           <m>2-x-z</m>.
           </li>
           </ul>
           So
           <md>
           <mrow>
-          \iiint_T x\,\dee{V}
+          \iiint_\cT x\,\dee{V}
           &amp;=\int_0^1\dee{x}\int_0^{1-x^2}\dee{z}\int_0^{2-x-z}\dee{y}\ x
           </mrow><mrow>
           &amp;=\int_0^1\dee{x}\int_0^{1-x^2}\dee{z}\ (2-x-z)x\cr

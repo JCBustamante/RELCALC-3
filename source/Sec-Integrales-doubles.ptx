@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_2d_integrals">
   <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
@@ -99,6 +101,9 @@ Cette expression est notre première intégrale double. Il existe d'autres notat
 </p>
     <definition xml:id="notn_dbl_int">
       <statement>
+        <p>
+Soit <m>\cR=\big\{\ (x,y)\ \big|\ a\leqslant  x\leqslant  b,\ B(x)\leqslant y\leqslant  T(x)\ \big\}</m>, où <m>B(x)</m> et <m>T(x)</m> sont des fonctions continues, et soit <m>f</m> une fonction continue sur <m>\cR</m>. On note
+        </p>
         <p><md><mrow>
 \iint_\cR f\left(x,y\right)\,\dee{x}\,\dee{y}
 &amp;= \int_a^b \left[\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\right]\dee{x}
@@ -116,7 +121,9 @@ Les trois dernières intégrales sont dites des intégrales itérées, pour des 
         <li>
           <p>
 Pour évaluer l'intégrale
-<m>\displaystyle\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x}</m>,
+<md><mrow>
+\int_a^b \int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}\,\dee{x},
+</mrow></md>
 <ul><li>
   nous évaluons d'abord l'intégrale à l'intérieur
   <m>\int_{B(x)}^{T(x)} f\left(x,y\right)\,\dee{y}</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>y=B(x)</m> à <m>y=T(x)</m> et en traitant <m>x</m> comme une constante. Nous intégrons en utilisant les techniques d'intégration à une variable vues en calcul intégral. Le résultat de cette intégrale est une fonction de  <m>x</m> seulement, nommons-la <m>F(x)</m>.
@@ -129,7 +136,9 @@ Nous utiliserons cette notation.</p>
         <li>
           <p>
 Pour évaluer l'intégrale
-<m>\displaystyle\int_a^b  \int_{B(x)}^{T(x)}  f\left(x,y\right)\,\dee{y}\dee{x} </m>,
+<md><mrow>
+\int_a^b \dee{x} \int_{B(x)}^{T(x)} \dee{y}\, f\left(x,y\right),
+</mrow></md>
 <ul><li>
   nous évaluons d'abord l'intégrale à l'intérieur
   <m>\int_{B(x)}^{T(x)} \dee{y}\, f\left(x,y\right)</m> en intégrant <m>f(x,y)</m> par rapport à <m>y</m> de <m>B(x)</m> à <m>T(x)</m>.
@@ -220,6 +229,9 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
 <definition xml:id="notn_dbl_int_again">
       <statement>
         <p>
+Soit <m>\cR = \big\{\ (x,y)\ \big|\ c\leqslant  y\leqslant  d,\ L(y)\leqslant x\leqslant  R(y)\ \big\}</m>, où <m>L(y)</m> et <m>R(y)</m> sont des fonctions continues, et soit <m>f</m> une fonction continue sur <m>\cR</m>. On note
+        </p>
+        <p>
           <md>
             <mrow> \iint_\cR f\left(x,y\right)\,\dee{x}\,\dee{y} &amp;=\int_c^d \left[\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\right]\dee{y}
             </mrow>
@@ -235,10 +247,10 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
     </p>
     <ul>
       <li>
-        <p> Pour évaluer l'intégrale <m>\displaystyle\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
+        <p> Pour évaluer l'intégrale <m>\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
         </p>
         <ul>
-          <li> Nous évaluons en premier l'intégrale à l'intérieur <m>\displaystyle \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
+          <li> Nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
           </li>
 
           <li> Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
@@ -247,13 +259,13 @@ Les notations standards de la <xref ref="notn_dbl_int" text="global">définition
       </li>
       <li>
         <p> Il peut arriver que l'écriture suivante soit utilisée dans certains textes
-        <md>\displaystyle\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</md>,
+        <md>\int_c^d \dee{y} \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</md>,
         mais nous ne le ferons pas, autant que possible.
         </p>
         <ul>
           <li>
             <p>
-              Pour ce calcul, nous évaluons en premier l'intégrale <m>\displaystyle \int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\displaystyle\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\displaystyle \int_{L(y)}^{R(y)} f\left(x,y\right)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
+              Pour ce calcul, nous évaluons en premier l'intégrale <m>\int_{L(y)}^{R(y)} \dee{x}\, f\left(x,y\right)</m> en utilisant les bornes d'intégration qui se trouvent à la gauche de  <m>\dee{x}</m>.  <lq/><nbsp/><m>\dee{x}</m><nbsp/><rq/> est écrit directement à côté de <m>\int_{L(y)}^{R(y)}</m> pour mettre en évidence que les bornes d'intégration  <m>L(y)</m> et <m>R(y)</m> sont pour l'intégrale par rapport à  <m>x</m>.  Cette intégrale définie est habituellement écrite   <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\ \dee{x}</m>. Le résultat de l'intégrale intérieure est de nouveau une fonction de  <m>y</m> seulement, que nous nommons <m>F(y)</m>.
             </p>
           </li>
           <li>
@@ -499,7 +511,7 @@ et que l'intégrande est un produit  <m>f(x,y)=g(x)h(y)</m>, alors
     </theorem>
     <example>
       <statement>
-        <p>Soit <m>\cR = [0,2] \times [0,1]</m>. Calculer la valeur de <m>\displaystyle  \iint_{\cR} \frac{yx^3}{2+y^2}\, \dee{A}</m>.
+        <p>Soit <m>\cR = [0,2] \times [0,1]</m>. Calculer la valeur de <m>\displaystyle\iint_{\cR} \frac{yx^3}{2+y^2}\, \dee{A}</m>.
 
     </p>
       </statement>
@@ -652,7 +664,7 @@ Trouver la masse de  <m>\cR</m> si sa densité est  <m>f(x,y)=xy</m>.
 </p>
       </statement>
       <solution>
-        <p>Pour illustrer les méthodes, nous présentons deux solutions : avec des tranches verticales, puis avec des tranches horizontales. Pour commencer, esquissons la région  <m>\cR</m>. Notons d'abord que, puisque  <m>y\ge\frac{x^2}{4\nu}</m> et <m>x\geqslant \frac{2y^2}{\nu}</m>, les valeurs de  <m>x</m> et de <m>y</m> sont positives sur  <m>\cR</m>. Les deux courbes se coupent aux points <m>(x,y)</m> vérifiant les équations <md><mrow>
+        <p>Pour illustrer les méthodes, nous présentons deux solutions : avec des tranches verticales, puis avec des tranches horizontales. Pour commencer, esquissons la région  <m>\cR</m>. Notons d'abord que, puisque  <m>y\geqslant\frac{x^2}{4\nu}</m> et <m>x\geqslant \frac{2y^2}{\nu}</m>, les valeurs de  <m>x</m> et de <m>y</m> sont positives sur  <m>\cR</m>. Les deux courbes se coupent aux points <m>(x,y)</m> vérifiant les équations <md><mrow>
 x = \frac{2y^2}{\nu}\text{ et }y=\frac{x^2}{4\nu}
 &amp;\implies\quad x  = \frac{2y^2}{\nu} = \frac{2}{\nu}\left(\frac{x^2}{4\nu}\right)^2
                  = \frac{x^4}{8\nu^3}
@@ -913,7 +925,7 @@ Ce point se trouve dans le second cylindre si et seulement si  <m>x^2+z^2\leqsla
 <md><mrow>
 \cV_1&amp;=\Set{(x,y,z)}{x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0,\ x^2+y^2\leqslant  a^2,\ x^2+z^2\leqslant  a^2}.
 </mrow></md>
-Notons que, dans  <m>\cV_1</m>, <m>z^2\leqslant  a^2-x^2</m>, de sorte que <m>z\le\sqrt{a^2-x^2}</m>. Ainsi,
+Notons que, dans  <m>\cV_1</m>, <m>z^2\leqslant  a^2-x^2</m>, de sorte que <m>z\leqslant\sqrt{a^2-x^2}</m>. Ainsi,
 <md><mrow>
 \cV_1
 &amp;=\Set{(x,y,z)}{x\geqslant 0,\ y\geqslant 0,\ x^2+y^2\leqslant  a^2,\ 0\leqslant  z\leqslant  \sqrt{a^2-x^2}}.
@@ -1089,38 +1101,56 @@ comme obtenu dans l'<xref ref="eg_dblInt_C" text="global">exemple</xref>.
     </example>
     <example xml:id="eg_dblInt_D">
       <title> Ordre d'intégration</title>
-      <p>
-L'intégrale  <m>\displaystyle\int_{-1}^2\int_{x^2}^{x+2}\dee{y}\,\dee{x}</m> calcule l'aire d'une région du plan <m>Oxy</m>. Exprimer la même aire par une intégrale double en inversant l'ordre d'intégration.
-</p>
+      <statement>
+        <p>
+          Soit <m>\cR</m> la région du plan dont l'aire est donnée par
+<md>
+  \int_{-1}^2\int_{x^2}^{x+2}\dee{y}\,\dee{x}.
+</md>
+Esquisser <m>\cR</m> et exprimer l'aire en échangeant l'ordre d'intégration
+        </p>
+      </statement>
+      <solution>
       <p> L'étape critique lorsqu'on change l'ordre d'intégration est d'illustrer la région dans le plan <m>Oxy</m>. À partir de l'intégrale donnée, nous voyons que, sur le domaine d'intégration,
-<ul><li><m>x</m> varie de  <m>-1</m> à <m>2</m> et que,
-</li><li>
-pour chaque  <m>x</m> fixe,  <m>y</m> varie de la parabole  <m>y=x^2</m> à la droite  <m>y=x+2</m>.
-</li></ul>
-Cette intégrale itérée correspond aux découpes verticales de la figure de gauche ci-dessous.
-</p>
+        <ul>
+          <li>
+            <m>x</m> varie de  <m>-1</m> à <m>2</m> et que,
+        </li>
+        
+        <li> pour chaque  <m>x</m> fixe,  <m>y</m> varie de la parabole  <m>y=x^2</m> à la droite  <m>y=x+2</m>.
+        </li></ul>
+
+        Cette intégrale itérée correspond aux découpes verticales de la figure de gauche ci-dessous.
+      </p>
       <sidebyside>
         <image source="images/CLP-figs/reverseA"/>
         <image source="images/CLP-figs/reverseB"/>
       </sidebyside>
       <p>
-Pour inverser l'ordre d'intégration, on doit considérer dans la même région et faire des découpes en rectangles horizontaux, comme illustré dans la figure de droite ci-dessus.
-</p>
+        Pour inverser l'ordre d'intégration, on doit considérer dans la même région et faire des découpes en rectangles horizontaux, comme illustré dans la figure de droite ci-dessus.
+      </p>
       <p>Nous faisons face à un nouveau problème : l'expression de la valeur de  <m>x</m> à l'extrémité gauche d'un rectangle dépend de si son ordonnée  <m>y</m> est inférieure ou supérieure à <m>y=1</m>. Plus précisément,  nous avons que, sur le domaine d'intégration,
-<ul><li><m>y</m> varie de  <m>0</m> à <m>4</m> et que,
-</li><li>
-pour chaque <m>y</m> fixe tel que  <m>0\leqslant  y\leqslant  1</m>, <m>x</m> varie de <m>x=-\sqrt{y}</m> à <m>x=+\sqrt{y}</m> et que,
-</li><li>
-pour chaque  <m>y</m> fixe tel que <m>1\leqslant  y\leqslant  4</m>, <m>x</m> varie de  <m>x=y-2</m> à <m>x=+\sqrt{y}</m>.
-</li></ul>
-Ainsi,
-<md><mrow>
-\int_{-1}^2\int_{x^2}^{x+2}\dee{y}\, \dee{x}
-=\int_0^1\int_{-\sqrt{y}}^{\sqrt{y}}\dee{x}\, \dee{y}
-  + \int_1^4\int_{y-2}^{\sqrt{y}}\dee{x}\, \dee{y}.
-</mrow></md>
 
-</p>
+        <ul>
+          <li><m>y</m> varie de  <m>0</m> à <m>4</m> et que,</li>
+          <li> pour chaque <m>y</m> fixe tel que  <m>0\leqslant  y\leqslant  1</m>, <m>x</m> varie de <m>x=-\sqrt{y}</m> à <m>x=+\sqrt{y}</m> et que, </li>
+          <li>  pour chaque  <m>y</m> fixe tel que <m>1\leqslant  y\leqslant  4</m>, <m>x</m> varie de  <m>x=y-2</m> à <m>x=+\sqrt{y}</m>.
+        </li>
+      </ul>
+        Ainsi,
+        <md>
+          <mrow>
+            \int_{-1}^2\int_{x^2}^{x+2}\dee{y}\, \dee{x}
+            =\int_0^1\int_{-\sqrt{y}}^{\sqrt{y}}\dee{x}\, \dee{y}
+              + \int_1^4\int_{y-2}^{\sqrt{y}}\dee{x}\, \dee{y}.
+          </mrow></md>
+
+      </p>
+
+       
+      </solution>
+      
+
 </example>
 
 
@@ -1293,7 +1323,7 @@ Finalement, en considérant que <m>\int_0^{\frac{\pi}{2}} \cos(4\theta)\,\dee{\t
 
   </subsection>
   <subsection xml:id="sec_def_int_more">
-    <title> Quelques compléments au sujet de la définition de  <m>\ \iint_\cR f(x,y)\ \dee{A}</m> </title>
+    <title> Quelques compléments au sujet de la définition de  l'intégrale double </title>
     <p>En principe, l'intégrale  <m>\iint_\cR f(x,y)\ \dee{A}</m>, où
 <m>\cR</m> est une région bornée du plan <m>\R^2</m>, est définie comme suit.
 </p>
@@ -1334,7 +1364,7 @@ avec des fonctions continues <m>B(x)</m> et  <m>T(x)</m>, alors
 <m>c\leqslant y\leqslant d</m> et <m>L(y)\leqslant x\leqslant R(y)</m>
 avec des fonctions continues  <m>L(y)</m> et  <m>R(y)</m>, alors
 <md><mrow>
-\iint_R f(x,y)\ \dee{A}\ =
+\iint_\cR f(x,y)\ \dee{A}\ =
 \int_c^d  \int_{L(y)}^{R(y)} f(x,y) \ \dee{x} \ \dee{y}.
 </mrow></md>
 </p>

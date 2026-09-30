@@ -192,22 +192,25 @@ Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange" 
 Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et la valeur minimale est  <m>-24</m>.
 </p>
         <figure xml:id="figure-eg_LagrangeA">
-          <caption>Les courbes de niveau de la fonction objectif <m>f(x,y) = x^2-10x-y^2 </m>, en bleu. La contrainte  <m>x^2 + 4y^2 =16</m> est l'ellipse en brun.</caption>
+          <caption>Les courbes de niveau de la fonction objectif <m>f(x,y) = x^2-10x-y^2</m>, sur fond orange. La contrainte <m>x^2 + 4y^2 =16</m> est l'ellipse en bleu, et les points où <m>f</m> atteint ses extrema sur l'ellipse sont marqués en vert.</caption>
           <image xml:id="sageplot-eg_LagrangeA" width="80%">
-            <description><p>Une parabole standard sur l'intervale  [-2,4]</p></description>
+            <description><p>Courbes de niveau de la fonction x^2-10x-y^2 et ellipse x^2+4y^2=16, avec les points (-4,0) et (4,0).</p></description>
             <sageplot>
+      import matplotlib.colors as mcolors
+      import matplotlib.pyplot as plt
       var('x,y')
-      f(x,y) = x^2 -2*x-y^2
+      f(x,y) = x^2 -10*x-y^2
+      OrangesPale = mcolors.LinearSegmentedColormap.from_list("OrangesPale", plt.get_cmap("Oranges")(srange(0.0,0.4,0.01)))
       Ellipse = implicit_plot(x^2 + 4*y^2 -16,(x,-4.5,4.5),(y,-2.5,2.5),
-        color = "red", zorder =2, axes= True)
-      Contour = contour_plot(f(x,y),(x,-4.5,4.5),(y,-2.5,2.5), cmap= "Blues",
+        color = "steelblue", linewidth = 2, zorder =2, axes= True)
+      Contour = contour_plot(f(x,y),(x,-4.5,4.5),(y,-2.5,2.5), cmap= OrangesPale,
         labels = True,  label_fmt=lambda x: "$%s$"%x,  label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
         contours=[-56,-24,-15,-10,-5,0,5,10,15,24,56],
       axes_labels=["$x$","$y$"], axes_labels_size=1.5, tick_formatter =   "latex", fontsize= 10, axes=True)
       Fig = Contour +Ellipse
       Fig += point([(4,0), (-4,0)], marker = "X",  size = 60, color =
-      "orange", zorder = 3)
-      Fig += text("$x^2 + 4y^2 =16$", (3.2,1.8), color = "red", fontsize = 12)
+      "seagreen", zorder = 3)
+      Fig += text("$x^2 + 4y^2 =16$", (3.2,1.8), color = "steelblue", fontsize = 12)
       Fig
     </sageplot>
           </image>

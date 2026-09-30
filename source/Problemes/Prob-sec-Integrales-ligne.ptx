@@ -3,6 +3,7 @@
 <exercises>
   <exercisegroup>
     <title>Pour se pratiquer</title>
+    <!-- 1 -->
     <exercise>
       <statement><p>
       Évaluer <m>\int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}</m> en sens antihoraire autour du carré ayant pour sommets
@@ -14,7 +15,7 @@
       comme paramètre. Les deux autres côtés peuvent être facilement paramétrés en utilisant <m>y</m>  comme paramètre.
       </p></hint>
       <answer><p>
-      <m>\frac{1}{6}</m>
+      <m>\tfrac{1}{6}</m>
       </p></answer>
       <solution><p>
       The square has four sides, each of which is a line segment.
@@ -61,18 +62,19 @@
     </exercise>
 
     <!-- CLP4 Section 2.4 No 9 -->
+    <!-- 2 -->
     <exercise>
       <statement><p>
       Considérer le champ de vecteurs
       <md><mrow>
-      \vF(x, y) = (e^x \cos y + x^2, \, x^2y + 3).
+      \vF(x, y) = (e^x \cos y + x^2)\,\vi + (x^2y + 3)\,\vj.
       </mrow></md>
-      Évaluer l'intégrale de ligne <m>\int_C\vF\cdot \dee{\vr}</m> le long de la courbe orientée <m>C</m> obtenue en se déplaçant de <m>(0, 0)</m> à <m>(1,0)</m> à
+      Évaluer l'intégrale de ligne <m>\int_\cC\vF\cdot \dee{\vr}</m> le long de la courbe orientée <m>\cC</m> obtenue en se déplaçant de <m>(0, 0)</m> à <m>(1,0)</m> à
       <m>(1, \pi)</m> et finalement à <m>(0, \pi)</m> le long de segments droits.
       </p></statement>
 
       <answer><p>
-      <m>2(e-1)+\frac{\pi^2}{2}+3\pi</m>
+      <m>2(e-1)+\tfrac{\pi^2}{2}+3\pi</m>
       </p></answer>
 
       <solution><p>
@@ -86,7 +88,7 @@
       <li>
       Along the line segment from <m>(1, 0)</m> to <m>(1,\pi)</m>, <m>y</m> increases
       from <m>0</m> to <m>\pi</m>, while <m>x</m> is held fixed at <m>x=1</m>.
-      So we may parametrize this segment by <m>\vr(x) = \vi + y\,\vj</m>, <m>0\leqslant y\le\pi</m>.
+      So we may parametrize this segment by <m>\vr(x) = \vi + y\,\vj</m>, <m>0\leqslant y\leqslant\pi</m>.
       </li>
       <li>
       Along the line segment from <m>(1, \pi)</m> to <m>(0,\pi)</m>, <m>x</m> decreases
@@ -98,7 +100,7 @@
       Hence
       <md>
       <mrow>
-      \int_C \vF\cdot \dee{\vr}
+      \int_\cC \vF\cdot \dee{\vr}
       &amp;=\int_0^1 \vF(x,0)\cdot\vi\ \dee{x}+\int_0^\pi \vF(1,y)\cdot\vj\ \dee{y}
       +\int_1^0 \vF(x,\pi)\cdot\vi\ \dee{x}
       </mrow><mrow>
@@ -113,6 +115,7 @@
     </exercise>
 
     <!-- CLP4 Section 2.4 No 10 -->
+    <!-- 3 -->
     <exercise>
       <statement><p>
       Évaluer <m>\int_\cC\vF\cdot \dee{\vr}</m> pour
@@ -130,10 +133,10 @@
       <answer><p>
       <ol marker="(a)" cols="2">
       <li>
-      <m>-\frac{1}{4}</m>
+      <m>-\tfrac{1}{4}</m>.
       </li>
       <li>
-      <m>-1</m>
+      <m>-1</m>.
       </li>
       </ol>
       </p></answer>
@@ -191,15 +194,18 @@
     </exercise>
 
     <!-- CLP4 Section 2.4 No 14 -->
+    <!-- 4 -->
     <exercise> <!-- <title><fromexam>M317 2016D</fromexam></title> -->
       <statement><p>
       Trouver le travail effectué par le champ de forces
-      <m>\vF(x,y,z) = (x - y^2, \, y - z^2, \, z - x^2)</m> sur une particule
-      se déplaçant le long du segment droit allant de <m>(0, 0, 1)</m> à <m>(2, 1, 0)</m>.
+      <md><mrow>
+      \vF(x,y,z) = (x - y^2)\,\vi + (y - z^2)\,\vj + (z - x^2)\,\vk
+      </mrow></md>
+      sur une particule se déplaçant le long du segment droit allant de <m>(0, 0, 1)</m> à <m>(2, 1, 0)</m>.
       </p></statement>
 
       <answer><p>
-      <m>\frac{7}{3}</m>
+      <m>\tfrac{7}{3}</m>
       </p></answer>
 
       <solution><p>
@@ -234,25 +240,26 @@
     </exercise>
 
     <!-- CLP4 Section 2.4 No 17 -->
+    <!-- 5 -->
     <exercise> <!-- <title><fromexam>M317 2010D</fromexam></title> -->
       <statement><p>
-      Soit <m>C</m> la moitié supérieure du cercle unité centré en <m>(1, 0)</m>
+      Soit <m>\cC</m> la moitié supérieure du cercle unité centré en <m>(1, 0)</m>
       (c'est-à-dire la partie du cercle se situant au-dessus de l'axe <m>x</m>),
       orientée en sens horaire. Calculer l'intégrale de ligne
-      <m>\int_C xy\,\dee{y}</m>.
+      <m>\int_\cC xy\,\dee{y}</m>.
       </p></statement>
 
       <hint><p>
-      Esquisser <m>C</m>, évaluez une intégrale trigonométrique, une substitution pourrait être de mise.
+      Esquisser <m>\cC</m>, évaluez une intégrale trigonométrique, une substitution pourrait être de mise.
       </p></hint>
 
       <answer><p>
-      <m>-\frac{2}{3}</m>
+      <m>-\tfrac{2}{3}</m>
       </p></answer>
 
       <solution><p>
       We are being asked to evaluate the line integral
-      <m>\int_C\vF\cdot\dee{\vr}</m> with <m>C</m> being the specified semi-circle and
+      <m>\int_\cC\vF\cdot\dee{\vr}</m> with <m>\cC</m> being the specified semi-circle and
       <m>\vF=xy\,\vj</m>. As <m>\vnabla\times\vF\ne\vZero</m>, the vector field <m>\vF</m>
       is not conservative. So we'll evaluate the integral directly.
       First, using the figure,
@@ -263,16 +270,16 @@
       </sidebyside>
 
       <p>
-      we parametrize <m>C</m> by
+      we parametrize <m>\cC</m> by
       <md><mrow>
       \vr(\theta) =
       \left(x(\theta)\,,\,y(\theta)\right)
-      =(1-\cos\theta)\,\vi +\sin\theta\,\vj\qquad 0\le\theta\le\pi
+      =(1-\cos\theta)\,\vi +\sin\theta\,\vj\qquad 0\leqslant\theta\leqslant\pi
       </mrow></md>
       So the integral is
       <md>
       <mrow>
-      \int_C xy\,\dee{y}
+      \int_\cC xy\,\dee{y}
       =\int_0^\pi x(\theta)\,y(\theta)\, y'(\theta)\ \dee{\theta}
       =\int_0^\pi (1-\cos\theta)\,\sin\theta\,\cos\theta \ \dee{\theta}
       </mrow>
@@ -281,7 +288,7 @@
       <m>u(0)=1</m>, <m>u(\pi)=-1</m>,
       <md>
       <mrow>
-      \int_C xy\,\dee{y}
+      \int_\cC xy\,\dee{y}
       &amp;=\int_1^{-1} (1-u)\, u\, (-\dee{u})
       =\int_{-1}^1 (u-u^2)\,\dee{u}
       </mrow><mrow>
@@ -294,17 +301,17 @@
       </solution>
       <solution>
       <p>
-      We can write <m>x</m> in terms of <m>y</m> over <m>C</m> in two pieces:
+      We can write <m>x</m> in terms of <m>y</m> over <m>\cC</m> in two pieces:
       <ul>
-      <li> Let <m>C_1</m> be the quarter-circle <m>x=1-\sqrt{1-y^2}</m> as <m>y</m> goes from 0 to 1,  and
+      <li> Let <m>\cC_1</m> be the quarter-circle <m>x=1-\sqrt{1-y^2}</m> as <m>y</m> goes from 0 to 1,  and
       </li>
-      <li> Let <m>C_2</m> be the quarter-circle <m>x=1+\sqrt{1-y^2}</m> as <m>y</m> goes from 1 to 0.
+      <li> Let <m>\cC_2</m> be the quarter-circle <m>x=1+\sqrt{1-y^2}</m> as <m>y</m> goes from 1 to 0.
       </li>
       </ul>
       Then:
       <md>
       <mrow>
-      \int_C xy\dee{y} &amp;=\int_{C_1} xy\dee{y}+\int_{C_2}xy\dee{y}
+      \int_\cC xy\dee{y} &amp;=\int_{\cC_1} xy\dee{y}+\int_{\cC_2}xy\dee{y}
       </mrow><mrow>
       &amp;=\int_0^1\left(1-\sqrt{1-y^2}\right)y\,\dee{y}+\int_1^0\left(1+\sqrt{1-y^2}\right)y\,\dee{y}
       </mrow><mrow>
@@ -318,6 +325,47 @@
       </mrow>
       </md>
       </p></solution>
+    </exercise>
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour aller plus loin</title>
+
+    <!-- 6 -->
+    <exercise xml:id="ex-reparametrage-integrales">
+      <title>L'intégrale de ligne ne dépend pas du paramétrage</title>
+      <statement>
+        <p>
+          Soit <m>\vr : [c,d] \to \R^n</m> un chemin simple et lisse, de courbe <m>\cC</m>, et <m>\vgc = \vr \circ h</m> un reparamétrage ou un anti-reparamétrage de <m>\vr</m>, au sens de l'<xref ref="ex-reparametrage" text="global">exercice</xref> de la <xref ref="sec-Longueur-courbure" text="global">section</xref>. Soit enfin <m>f</m> une fonction continue et <m>\vF</m> un champ de vecteurs continu, définis sur une région contenant <m>\cC</m>.
+          <ol marker="(a)">
+            <li>
+              Montrer que l'intégrale <m>\int_\cC f\,\dee{s}</m> donne le même résultat, qu'on la calcule avec <m>\vr</m> ou avec <m>\vgc</m>, et ce dans les deux cas.
+            </li>
+            <li>
+              Montrer que l'intégrale <m>\int_\cC \vF\cdot\dee{\vr}</m> donne le même résultat avec <m>\vr</m> et avec <m>\vgc</m> si <m>\vgc</m> est un reparamétrage, et qu'elle change de signe si <m>\vgc</m> est un anti-reparamétrage.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          On utilise l'<xref ref="ex-reparametrage" text="global">exercice</xref> de la <xref ref="sec-Longueur-courbure" text="global">section</xref> : <m>\vgc'(t) = h'(t)\,\vr'\big(h(t)\big)</m>.
+        </p>
+        <p>
+          (a) On a <m>\norm{\vgc'(t)} = \left|h'(t)\right|\,\norm{\vr'\big(h(t)\big)}</m>, et le calcul est le même que pour la longueur dans l'<xref ref="ex-reparametrage" text="global">exercice</xref> de la <xref ref="sec-Longueur-courbure" text="global">section</xref>, avec le facteur supplémentaire <m>f\Big(\vr\big(h(t)\big)\Big)</m>. Le changement de variable <m>u = h(t)</m> donne, dans les deux cas,
+          <md>
+            <mrow>\int_a^b f\big(\vgc(t)\big)\norm{\vgc'(t)}\,\dee{t} = \int_c^d f\big(\vr(u)\big)\norm{\vr'(u)}\,\dee{u}.</mrow>
+          </md>
+        </p>
+        <p>
+          (b) Ici, il n'y a pas de valeur absolue :
+          <md>
+            <mrow>\int_a^b \vF\big(\vgc(t)\big)\cdot\vgc'(t)\,\dee{t} = \int_a^b \vF\Big(\vr\big(h(t)\big)\Big)\cdot\vr'\big(h(t)\big)\,h'(t)\,\dee{t} = \int_{h(a)}^{h(b)} \vF\big(\vr(u)\big)\cdot\vr'(u)\,\dee{u}.</mrow>
+          </md>
+          Pour un reparamétrage, <m>h(a) = c</m> et <m>h(b) = d</m>, et on retrouve l'intégrale calculée avec <m>\vr</m>. Pour un anti-reparamétrage, <m>h(a) = d</m> et <m>h(b) = c</m>, et l'on obtient l'opposé de cette intégrale.
+        </p>
+      </solution>
     </exercise>
   </exercisegroup>
 

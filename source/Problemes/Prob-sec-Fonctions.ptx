@@ -58,7 +58,7 @@
     (a) <m>\varphi =\frac{\pi}{3}</m> is a surface of constant (spherical coordinate)
     <m>\varphi</m>. So it is a cone with vertex at the origin. We can express
     <m>\varphi=\frac{\pi}{3}</m> in cartesian coordinates by observing that
-    <m>0\le\varphi\le\frac{\pi}{2}</m> so that <m>z\geqslant 0</m>, and
+    <m>0\leqslant\varphi\leqslant\frac{\pi}{2}</m> so that <m>z\geqslant 0</m>, and
     <md>
     <mrow>
     \varphi=\frac{\pi}{3}
@@ -136,6 +136,7 @@
   <exercisegroup>
     <title> Pour se pratiquer</title>
 
+    <!-- 1 -->
     <exercise>
       <statement><p>
       Dans chacun des points (a) et (b) ci-dessous, on vous fournit un croquis des parties du premier quadrant de quelques courbes de niveau d'une certaine fonction <m>f(x,y)</m>.
@@ -174,7 +175,7 @@
       </mrow><mrow>
       &amp; =\Set{(x,y,z)}{z=f(x,y),\ z=C,\ x\geqslant 0, y\geqslant 0}
       </mrow>
-      </md>
+      </md>.
       </li>
       <li>
       Enfin, dans le troisième croquis, on dessine la partie du graphe <m>z=f(x,y)</m> dans le
@@ -200,6 +201,7 @@
       </solution>
     </exercise>
 
+    <!-- 2 -->
     <exercise>
       <statement>
       <sidebyside widths="55% 10% 32%" valign="top">
@@ -258,15 +260,16 @@
       </solution>
     </exercise>
 
+    <!-- 3 -->
     <exercise>
       <statement><p>
       Esquissez quelques courbes de niveau de
       <ol marker = "(a)" cols= "3">
-      <li> <m>f(x,y)=x^2+2y^2</m>
+      <li> <m>f(x,y)=x^2+2y^2</m>.
       </li>
-      <li> <m>f(x,y)=xy</m>
+      <li> <m>f(x,y)=xy</m>.
       </li>
-      <li> <m>f(x,y)=xe^{-y}</m>
+      <li> <m>f(x,y)=xe^{-y}</m>.
       </li>
       </ol>
       </p>
@@ -281,8 +284,7 @@
             var('x,y')
             f(x,y) = x^2+2*y^2
             C = contour_plot(f(x,y), (x,-3,3),(y,-2.2,2.2),
-              contours = [-20,0,1,2,4,6,8], fill = False, cmap = "Spectral",
-              # -20 : niveau fantôme (courbe vide, x^2+2y^2>=0) pour pousser les couleurs
+              contours = [0,1,2,4,6,8], fill = False, cmap = ["steelblue"],
               # visibles vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -299,8 +301,7 @@
             var('x,y')
             f(x,y) = x*y
             C = contour_plot(f(x,y), (x,-3,3),(y,-3,3),
-              contours = [-20,-4,-2,-1,0,1,2,4], fill = False, cmap = "Spectral",
-              # -20 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              contours = [-4,-2,-1,0,1,2,4], fill = False, cmap = ["steelblue"],
               # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -315,8 +316,7 @@
             var('x,y')
             f(x,y) = x*e^(-y)
             C = contour_plot(f(x,y), (x,-3,3),(y,-2,3),
-              contours = [-25,-2,-1,0,1,2], fill = False, cmap = "Spectral",
-              # -25 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              contours = [-2,-1.5,-1,0,1,1.5,2], fill = False, cmap = ["steelblue"],
               # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -340,8 +340,7 @@
             var('x,y')
             f(x,y) = x^2+2*y^2
             C = contour_plot(f(x,y), (x,-3,3),(y,-2.2,2.2),
-              contours = [-20,0,1,2,4,6,8], fill = False, cmap = "Spectral",
-              # -20 : niveau fantôme (courbe vide, x^2+2y^2>=0) pour pousser les couleurs
+              contours = [0,1,2,4,6,8], fill = False, cmap = ["steelblue"],
               # visibles vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -371,8 +370,7 @@
             var('x,y')
             f(x,y) = x*y
             C = contour_plot(f(x,y), (x,-3,3),(y,-3,3),
-              contours = [-20,-4,-2,-1,0,1,2,4], fill = False, cmap = "Spectral",
-              # -20 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              contours = [-4,-2,-1,0,1,2,4], fill = False, cmap = ["steelblue"],
               # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -418,8 +416,7 @@
             var('x,y')
             f(x,y) = x*e^(-y)
             C = contour_plot(f(x,y), (x,-3,3),(y,-2,3),
-              contours = [-25,-2,-1,0,1,2], fill = False, cmap = "Spectral",
-              # -25 : niveau fantôme (courbe vide) pour pousser les couleurs visibles
+              contours = [-2,-1,0,1,2], fill = False, cmap = ["steelblue"],
               # vers la portion bleue (haute) du dégradé Spectral, plutôt que pâles
               axes = True, frame = False,
               labels = True, label_fmt=lambda x: "$f=%d$"%x, label_colors = "black", label_inline = True, label_fontsize = 18,
@@ -431,6 +428,7 @@
       </solution>
     </exercise>
 
+    <!-- 4 -->
     <exercise><!-- <title><fromexam>M200 2010D</fromexam></title> -->
       <statement><p>
       Esquissez les courbes de niveau de <m>f(x,y)=\frac{2y}{x^2+y^2}</m>.
@@ -476,6 +474,7 @@
   <exercisegroup>
     <title> Pour mieux comprendre</title>
 
+    <!-- 5 -->
     <exercise><!-- <title><fromexam>M200 2011D</fromexam></title> -->
       <statement><p>
       Dessinez un diagramme de courbes de niveau de <m>f(x, y) = e^{-x^2 +4y^2}</m>, montrant tous les types de courbes de niveau qui se produisent.
@@ -509,6 +508,7 @@
       </solution>
     </exercise>
 
+    <!-- 6 -->
     <exercise><!-- <title><fromexam>M253 2011D</fromexam></title> -->
       <statement><p>
       Une surface est donnée implicitement par
@@ -578,6 +578,7 @@
       </solution>
     </exercise>
 
+    <!-- 7 -->
     <exercise><!-- <title><fromexam>M226 2009A</fromexam></title> -->
       <statement><p>
       Esquissez l'hyperboloïde <m>z^2=4x^2+y^2-1</m>.
@@ -607,15 +608,16 @@
       </solution>
     </exercise>
 
+    <!-- 8 -->
     <exercise>
       <statement><p>
       Décrivez les surfaces de niveau de
       <ol marker = "(a)" cols = "2">
-      <li> <m>f(x,y,z)=x^2+y^2+z^2</m>
+      <li> <m>f(x,y,z)=x^2+y^2+z^2</m>.
       </li>
-      <li> <m>f(x,y,z)=x+2y+3z</m>
+      <li> <m>f(x,y,z)=x+2y+3z</m>.
       </li>
-      <li> <m>f(x,y,z)=x^2+y^2</m>
+      <li> <m>f(x,y,z)=x^2+y^2</m>.
       </li>
       </ol>
       </p></statement>
@@ -663,15 +665,16 @@
       </solution>
     </exercise>
 
+    <!-- 9 -->
     <exercise>
       <statement><p>
       Esquissez les graphes de
       <ol marker = "(a)">
-      <li> <m>f(x,y)=\sin x\qquad 0\leqslant x\leqslant 2\pi,\ 0\leqslant y\leqslant 1</m>
+      <li> <m>f(x,y)=\sin x\qquad 0\leqslant x\leqslant 2\pi,\ 0\leqslant y\leqslant 1</m>.
       </li>
-      <li> <m>f(x,y)=\sqrt{x^2+y^2}</m>
+      <li> <m>f(x,y)=\sqrt{x^2+y^2}</m>.
       </li>
-      <li> <m>f(x,y)=|x|+|y|</m>
+      <li> <m>f(x,y)=|x|+|y|</m>.
       </li>
       </ol>
       </p>
@@ -736,33 +739,34 @@
       </solution>
     </exercise>
 
+    <!-- 10 -->
     <exercise>
       <statement><p>
       Esquissez et décrivez les surfaces suivantes.
       <ol marker = "(a)" cols = "2">
       <li>
-      <m>4x^2+y^2=16</m>
+      <m>4x^2+y^2=16</m>.
       </li>
       <li>
-      <m>x+y+2z=4</m>
+      <m>x+y+2z=4</m>.
       </li>
       <li>
-      <m>\frac{y^2}{9}+\frac{z^2}{4}=1+\frac{x^2}{16}</m>
+      <m>\frac{y^2}{9}+\frac{z^2}{4}=1+\frac{x^2}{16}</m>.
       </li>
       <li>
-      <m>y^2=x^2+z^2</m>
+      <m>y^2=x^2+z^2</m>.
       </li>
       <li>
-      <m>\frac{x^2}{9}+\frac{y^2}{12}+\frac{z^2}{9}=1</m>
+      <m>\frac{x^2}{9}+\frac{y^2}{12}+\frac{z^2}{9}=1</m>.
       </li>
       <li>
       <m>x^2+y^2+z^2+4x-by+9z-b=0</m>, où <m>b</m> est une constante.
       </li>
       <li>
-       <m>\frac{x}{4}=\frac{y^2}{4}+\frac{z^2}{9}</m>
+       <m>\frac{x}{4}=\frac{y^2}{4}+\frac{z^2}{9}</m>.
       </li>
       <li>
-      <m>z=x^2</m>
+      <m>z=x^2</m>.
       </li>
       </ol>
       </p>
@@ -810,8 +814,8 @@
       </sidebyside>
       <p>
       (f)
-      Il s'agit de la sphère de rayon <m>r_b=\frac{1}{2}\sqrt{b^2+4b+97}</m> centrée en
-      <m>\frac{1}{2}(-4,b,-9)</m>.
+      Il s'agit de la sphère de rayon <m>r_b=\tfrac{1}{2}\sqrt{b^2+4b+97}</m> centrée en
+      <m>\tfrac{1}{2}(-4,b,-9)</m>.
       </p>
       <sidebyside width="90%">
         <image source="images/CLP-figs/pfigs/shiftSphere"/>
@@ -926,10 +930,142 @@
       </sidebyside>
       </solution>
       </exercise>
+
+    <!-- 11 -->
+    <exercise xml:id="ex-appariement-graphes-interactif">
+      <statement>
+        <p>
+          (Tiré de <xref ref="Stewart-2016"/>.) Associer chacune des fonctions
+          suivantes à son diagramme de courbes de niveau (repéré par
+          <m>\text{I}</m>–<m>\text{VI}</m>), puis
+          utiliser l'applet ci-dessous — des boutons A à F permettent
+          d'afficher, une à la fois, la surface correspondant à chacune des
+          fonctions (a)–(f) — pour vérifier ses réponses.
+        </p>
+        <ol marker="(a)" cols="2">
+          <li><p><m>f(x,y) = \sin(xy)</m></p></li>
+          <li><p><m>f(x,y) = e^x\cos y</m></p></li>
+          <li><p><m>f(x,y) = \sin(x-y)</m></p></li>
+          <li><p><m>f(x,y) = \sin x - \sin y</m></p></li>
+          <li><p><m>f(x,y) = (1-x^2)(1-y^2)</m></p></li>
+          <li><p><m>f(x,y) = \frac{x-y}{1+x^2+y^2}</m></p></li>
+        </ol>
+
+        <figure xml:id="fig-appariement-contours">
+          <caption>
+            Les courbes de niveau, dans l'ordre <m>\text{I}</m>–<m>\text{VI}</m> des
+            fonctions (a)–(f) ci-dessus.
+          </caption>
+          <image xml:id="sageplot-appariement-contours">
+            <description>
+              <p>Une grille de six diagrammes de courbes de niveau, sans étiquette
+              d'axes, chacun identifié par un chiffre romain I à VI.</p>
+            </description>
+            <sageplot aspect="2.0">
+var('x,y')
+f1(x,y) = sin(x*y)
+C1 = contour_plot(f1, (x,-pi,pi), (y,-pi,pi), cmap="winter", fill=False,
+    axes=True, ticks=[[],[]], axes_labels=['', '$III$'], fontsize=6, frame=False)
+
+f2(x,y) = e^x*cos(y)
+C2 = contour_plot(f2, (x,-3,9), (y,-6,6), cmap="winter", fill=False,
+    contours=[-200,-50,-25,-10,-5,-1,-0.5,0,0.5,1,5,10,25,50,200],
+    axes=True, ticks=[[],[]], axes_labels=['', '$V$'], fontsize=6, frame=False)
+
+f3(x,y) = sin(x-y)
+C3 = contour_plot(f3, (x,-pi,pi), (y,-pi,pi), cmap="winter", fill=False,
+    axes=True, ticks=[[],[]], axes_labels=['', '$I$'], fontsize=6, frame=False)
+
+f4(x,y) = sin(x)-sin(y)
+C4 = contour_plot(f4, (x,-3*pi,3*pi), (y,-3*pi,3*pi), cmap="winter", fill=False,
+    axes=True, ticks=[[],[]], axes_labels=['', '$VI$'], fontsize=6, frame=False)
+
+f5(x,y) = (1-x^2)*(1-y^2)
+C5 = contour_plot(f5, (x,-2,2), (y,-2,2), cmap="winter", fill=False,
+    contours=[-3,-2,-1,-0.5,-0.1,0.1,0.5,1,2,3],
+    axes=True, ticks=[[],[]], axes_labels=['', '$II$'], fontsize=6, frame=False)
+
+f6(x,y) = (x-y)/(1+x^2+y^2)
+C6 = contour_plot(f6, (x,-2,2), (y,-2,2), cmap="winter", fill=False, contours=15,
+    axes=True, ticks=[[],[]], axes_labels=['', '$IV$'], fontsize=6, frame=False)
+
+G = graphics_array([[C2,C4,C1],[C3,C6,C5]])
+G
+            </sageplot>
+          </image>
+        </figure>
+
+        <figure xml:id="fig-appariement-interactif">
+          <caption>
+            Applet interactif : choisir une lettre pour afficher la surface
+            correspondante.
+          </caption>
+          <interactive platform="sage" aspect="1" width="100%" preview="/images/Sage3D-Statique/Preview-Exercice-appariement.png">
+            <description>
+              <p>Des boutons permettant de choisir l'une des six lettres A à
+              F ; la surface correspondante s'affiche alors, une seule à la
+              fois, coloriée selon la hauteur avec la même palette que le
+              diagramme de courbes de niveau.</p>
+            </description>
+            <slate surface="sage" aspect="1">
+var('x,y')
+# (fonction, bornes en x, bornes en y, hauteur min, hauteur max)
+# les bornes min/max sont calculées une fois pour toutes ici (à la main),
+# plutôt qu'à chaque appel de l'interact, pour ne pas alourdir l'applet
+# NOTE : les lettres A-F sont volontairement distinctes des chiffres
+# romains I-VI du diagramme de courbes de niveau, et suivent leur propre
+# ordre (indépendant), pour éviter qu'on associe les deux figures entre
+# elles sans regarder les surfaces
+donnees = {
+    'A':   (fast_callable(e^x*cos(y), vars=[x,y]), (-3,9), (-6,6), -8104, 8104),
+    'B':   (fast_callable(sin(x-y), vars=[x,y]), (-pi,pi), (-pi,pi), -1, 1),
+    'C':   (fast_callable(sin(x)-sin(y), vars=[x,y]), (-3*pi,3*pi), (-3*pi,3*pi), -2, 2),
+    'D':   (fast_callable((1-x^2)*(1-y^2), vars=[x,y]), (-2,2), (-2,2), -3, 9),
+    'E':   (fast_callable((x-y)/(1+x^2+y^2), vars=[x,y]), (-2,2), (-2,2), -0.45, 0.45),
+    'F':   (fast_callable(sin(x*y), vars=[x,y]), (-pi,pi), (-pi,pi), -1, 1),
+}
+
+@interact
+def _(numero=selector(['A','B','C','D','E','F'], label="Surface", buttons=True)):
+    f, xr, yr, zmin, zmax = donnees[numero]
+    def macouleur(x,y):
+        return float((f(x,y)-zmin)/(zmax-zmin))
+    S = plot3d(f, xr, yr, color=(macouleur, colormaps.winter), mesh=True, opacity=1, frame=False)
+    # axes (segments, pas des flèches — arrow3d a une vraie géométrie 3D que
+    # l'échelle non uniforme d'aspect_ratio déforme) + étiquettes, sans échelle
+    # numérique, dimensionnés à partir des bornes réelles de la surface choisie ;
+    # couleur contraste avec la palette winter (bleu-vert) de la surface
+    coul_axes = "black"
+    xa, ya, za = xr[1], yr[1], zmax
+    S += line3d([(0,0,0), (xa*1.15,0,0)], color=coul_axes, thickness=4)
+    S += text3d("x", (xa*1.25,0,0), color=coul_axes, fontsize=20, fontweight="bold")
+    S += line3d([(0,0,0), (0,ya*1.15,0)], color=coul_axes, thickness=4)
+    S += text3d("y", (0,ya*1.25,0), color=coul_axes, fontsize=20, fontweight="bold")
+    S += line3d([(0,0,0), (0,0,za*1.4)], color=coul_axes, thickness=4)
+    S += text3d("z", (0,0,za*1.55), color=coul_axes, fontsize=20, fontweight="bold")
+    # aspect_ratio (et non frame_aspect_ratio, qui n'a aucun effet ici) : ce
+    # paramètre multiplie chaque sommet affiché par [a,b,c] au moment du rendu
+    # threejs (vérifié dans le code source généré), sans changer f ni son domaine
+    dx = xr[1]-xr[0]
+    dy = yr[1]-yr[0]
+    dz = zmax-zmin
+    m = max(dx,dy)
+    k = 0.6*m/dz
+    show(S, aspect_ratio=[dx/m, dy/m, k])
+            </slate>
+          </interactive>
+        </figure>
+        <p>
+          <term>Note.</term> Cet applet a besoin d'une connexion internet (il
+          s'exécute sur un serveur Sage public).
+        </p>
+      </statement>
+    </exercise>
   </exercisegroup>
 
   <exercisegroup>
     <title>Pour aller plus loin</title>
+    <!-- 12 -->
     <exercise>
       <statement><p>
       La surface inférieure présente des courbes de niveau circulaires, centrées le long de l'axe <m>z</m>. Les lignes données sont l'intersection de la surface avec la moitié droite du plan <m>yz</m>. Donnez une équation de la surface.
@@ -953,7 +1089,7 @@
       Puisque les courbes de niveau sont des cercles centrés à l'origine (dans le plan <m>xy</m>), l'équation aura la forme <m>x^2+y^2=g(z)</m>, où <m>g(z)</m> est une fonction dépendant uniquement de <m>z</m>.
       </p></hint>
       <answer><p>
-      <m>\displaystyle x^2+y^2=\left( \frac{|z|}{3}+1\right)^2</m>
+      <m>x^2+y^2=\left( \tfrac{|z|}{3}+1\right)^2</m>
       </p></answer>
       <solution><p>
       Puisque les courbes de niveau sont des cercles centrés à l'origine (dans le plan <m>xy</m>), lorsque <m>z</m> est une constante, l'équation aura la forme <m>x^2+y^2=c</m> pour une certaine constante. C'est-à-dire que notre équation ressemble à
@@ -963,7 +1099,7 @@
       </p>
 
       <p>Comme nos coupes transversales sont si joliment symétriques, on connaît aussi l'intersection de la figure avec le côté gauche du plan <m>yz</m> : <m>z=3(-y-1)=-3(y+1)</m>
-      (lorsque <m>z\ge0</m>) et <m>z=-3(-y-1)=3(y+1)</m> (lorsque <m>z \lt 0</m>). Voici ci-dessous l'intersection de notre surface avec le plan <m>yz</m>.
+      (lorsque <m>z\geqslant0</m>) et <m>z=-3(-y-1)=3(y+1)</m> (lorsque <m>z \lt 0</m>). Voici ci-dessous l'intersection de notre surface avec le plan <m>yz</m>.
       </p>
 
       <sidebyside width="66%">
@@ -978,7 +1114,7 @@
       </sidebyside><p>
       En posant <m>x=0</m>, notre équation devient <m>y^2=g(z)</m>. En regardant le côté droit du plan <m>yz</m>, on devrait obtenir :
       <m>\left.\begin{cases}
-      z=3(y-1) &amp;\mbox{si } z\geq 0,\ y\geqslant 1\\
+      z=3(y-1) &amp;\mbox{si } z\geqslant 0,\ y\geqslant 1\\
       z=-3(y-1) &amp;\mbox{si } z \lt  0,\ y\geqslant 1
       \end{cases}\right\} </m>. C'est-à-dire :
       </p>
@@ -1009,29 +1145,29 @@
        \end{cases}
       </mrow><mrow>
       &amp; \Leftrightarrow&amp;&amp; \begin{cases}
-       \frac{|z|}{3}+1 =y &amp; y\ge1\\
-        \frac{|z|}{3}+1 =-y &amp; y\le-1
+       \frac{|z|}{3}+1 =y &amp; y\geqslant1\\
+        \frac{|z|}{3}+1 =-y &amp; y\leqslant-1
        \end{cases}
        </mrow><mrow>
       &amp;\Leftrightarrow&amp;&amp;  \begin{cases}
-      |z| =3(y-1) &amp; y\ge1\\
-      |z|=-3(y+1) &amp; y\le-1
+      |z| =3(y-1) &amp; y\geqslant1\\
+      |z|=-3(y+1) &amp; y\leqslant-1
        \end{cases}
       </mrow><mrow>
       &amp;\Leftrightarrow&amp;&amp;  \begin{cases}
-      z =\pm \underbrace{3(y-1)}_{\text{positif}} &amp; y\ge1
+      z =\pm \underbrace{3(y-1)}_{\text{positif}} &amp; y\geqslant1
       \\
-      z=\pm \underbrace{3(y+1)}_{\text{négatif}} &amp; y\le-1
+      z=\pm \underbrace{3(y+1)}_{\text{négatif}} &amp; y\leqslant-1
        \end{cases}
       </mrow><mrow>
       &amp;\Leftrightarrow&amp;&amp;  \begin{cases}
-      z =3(y-1) &amp; y\ge1,\ z\ge0
+      z =3(y-1) &amp; y\geqslant1,\ z\geqslant0
       \\
-      z =-3(y-1) &amp; y\ge1,\ z\le0
+      z =-3(y-1) &amp; y\geqslant1,\ z\leqslant0
       \\
-      z=-3(y+1) &amp; y\le-1,\ z \geqslant 0
+      z=-3(y+1) &amp; y\leqslant-1,\ z \geqslant 0
       \\
-      z=3(y+1) &amp; y\le-1,\ z\leqslant 0
+      z=3(y+1) &amp; y\leqslant-1,\ z\leqslant 0
        \end{cases}
       </mrow>
       </md>

@@ -231,7 +231,7 @@ vector.
       </li>
     </ul>
     <p>
-    Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses à ces deux questions sont positives. La première sera traitée dans les problèmes, et, pour la seconde, nous avons besoin de revenir sur la fonction de longueur d'arc.
+    Nous verrons qu'avec certaines hypothèses pas trop restrictives, les réponses à ces deux questions sont positives. La première est traitée à l'<xref ref="ex-reparametrage" text="global">exercice</xref>, et, pour la seconde, nous avons besoin de revenir sur la fonction de longueur d'arc.
   </p>
     <!-- Il faudrait rajouter quelque chose comme l'exercic 15 p. 234 de Marsden-Tromba dans un exercice -->
     <proposition xml:id="prop-s-inversible">
@@ -242,7 +242,7 @@ vector.
       </statement>
       <proof>
         <p>
-      Nous savons que <m>s'(t) = \norm{\vr'(t)}</m>, et notre hypothèse nous dit que <m>\vr</m>  ne s'annule pas sur <m>]a,b]</m>, de sorte que <m>s</m> est une fonction strictement croissante. Pour chaque <m>y\in[0,L]</m>, il existe donc un unique <m>x\in[a,b]</m> tel que <m>y=s(x)</m>. Il suffit alors de poser <m>x= t(y)</m>.
+      Nous savons que <m>s'(t) = \norm{\vr'(t)}</m>, et notre hypothèse nous dit que <m>\vr'</m> ne s'annule pas sur <m>]a,b[</m>, de sorte que <m>s</m> est une fonction strictement croissante. Pour chaque <m>y\in[0,L]</m>, il existe donc un unique <m>x\in[a,b]</m> tel que <m>y=s(x)</m>. Il suffit alors de poser <m>x= t(y)</m>.
     </p>
       </proof>
     </proposition>
@@ -404,7 +404,7 @@ Nous l'avons vu, la courbure est le changement de direction; or, un changement d
 </p>
     <proposition xml:id="prop-courbure-accel">
       <statement>
-        <p> Soit <m>\vr : [a,b] \to \R^n</m> un chemin régulier. Alors, son vecteur accélération vérifie
+        <p> Soit <m>\vr : [a,b] \to \R^n</m> un chemin lisse. Alors, son vecteur accélération vérifie
     <md>
       \vr''(t) = \frac{d^2s}{dt^2} \vT(t) + \left(\frac{ds}{dt}\right)^2,\ \vK(t) = v' \vT(t) + v^2 \vK(t)
     </md>.
@@ -473,7 +473,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
 </p>
     <proposition xml:id="prop-Formules-K">
       <statement>
-        <p>Soit <m>\vr : [a,b] \to \R^3</m> un chemin régulier, <m>\vv = \vr''</m> et <m>\va = \vr''</m>. Alors,
+        <p>Soit <m>\vr : [a,b] \to \R^3</m> un chemin lisse, <m>\vv = \vr'</m> et <m>\va = \vr''</m>. Alors,
     <ol marker="(a)"><li><p><m>\vv \times \va = v^3 (\vT \times \vK);</m></p></li><li><p><m>\kappa = \frac{\norm{\vv \times \va}}{\norm{\vv}^3};</m></p></li><li><p><m>\vK = \frac{(\vv \times \va) \times \vv}{v^4}.</m></p></li></ol>
 
     </p>
@@ -497,7 +497,7 @@ Pour la suite, supposons que nous avons affaire à des chemins dans <m>\R^3</m>,
             <md>
           \norm{\vv \times \va} = v^3 \norm{\vT \times \vK} = v^3 \norm{\vT}\, \norm{\vK} = v^3 \kappa ,
           </md>
-          où la troisième égalité suit de <xref ref="KperpT"/> et du fait que <m>\vT</m> est unitaire. Puisque <m>v = \norm{\vv}</m> et que le chemin est supposé régulier, ceci fournit le résultat voulu.
+          où la troisième égalité suit de <xref ref="KperpT"/> et du fait que <m>\vT</m> est unitaire. Puisque <m>v = \norm{\vv}</m> et que le chemin est supposé lisse, ceci fournit le résultat voulu.
         </p>
           </li>
           <li>

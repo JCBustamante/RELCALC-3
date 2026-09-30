@@ -27,7 +27,7 @@
             <md><mrow>
                  \iiint_{\cE} f(x,y,z)\ dV = \lim_{n,m,l\to \infty} \sum_{i=1}^n \sum_{j=1}^m \sum_{k=1}^l f(x_{ijk}^*,y_{ijk}^*,z_{ijk}^*)  \De z\,\De y\, \De x
             </mrow></md>.
-            On écrit aussi, de façon plus concise, <m>\displaystyle \iiint_\cE f\ dV</m>.
+            On écrit aussi, de façon plus concise, <m>\iiint_\cE f\ dV</m>.
             </p>
       </statement>
     </definition>
@@ -64,7 +64,7 @@
     <example>
       <statement>
         <p>
-          Soit <m>\cE = \{(x,y,z)\in \R^3|\, 0 \leqslant x \leqslant 1,\ 1\leqslant  y \leqslant 2, 0\leqslant  z \leqslant 3\}</m> et <m>f(x,y,z) = xz+y^3</m>. Calculer l'intégrale <m>\displaystyle \iiint_\cE f\, \dee{V}</m>.
+          Soit <m>\cE = \{(x,y,z)\in \R^3|\, 0 \leqslant x \leqslant 1,\ 1\leqslant  y \leqslant 2, 0\leqslant  z \leqslant 3\}</m> et <m>f(x,y,z) = xz+y^3</m>. Calculer l'intégrale <m>\iiint_\cE f\, \dee{V}</m>.
         </p>
       </statement>
       <solution>
@@ -119,7 +119,11 @@
     <example>
       <statement>
         <p>
-      Soit <m>\displaystyle I = \int_0^2 \int_0^{2-y}\int_0^{(2-y)/2} f(x,y,z)\, \dee{x}\, \dee{z}\, \dee{y}</m>, où <m>f</m> est une fonction intégrable. Écrire les intégrales itérées équivalentes dans les ordres d'intégration <m>\dee{y}\, \dee{x}\, \dee{z}</m> et <m>\dee{x}\, \dee{y}\, \dee{z}</m>.
+      Soit
+      <md>
+      I = \int_0^2 \int_0^{2-y}\int_0^{(2-y)/2} f(x,y,z)\, \dee{x}\, \dee{z}\, \dee{y},
+      </md>
+      où <m>f</m> est une fonction intégrable. Écrire les intégrales itérées équivalentes dans les ordres d'intégration <m>\dee{y}\, \dee{x}\, \dee{z}</m> et <m>\dee{x}\, \dee{y}\, \dee{z}</m>.
     </p>
       </statement>
       <solution>
@@ -292,17 +296,12 @@
       </solution>
     </example>
 
-    <exercise>
-    <webwork><xi:include href="WebWork/Chap_Integrales/Sec_Triples/Triples-prob2.pg" parse="text"/></webwork>
-    </exercise>  
-    
-
 
   </subsection>
   <subsection xml:id="pars-app-Int-3">
     <title>Applications des intégrales triples</title>
     <p>
-    Si une intégrale de la forme <m>\displaystyle \int_a^bf(x)\, \dee{x}</m> permet de calculer une aire (affectée d'un signe) et que, de la même façon, une intégrale double <m>\displaystyle \iint_{\cD}f(x,y)\, \dee{A}</m> permet de calculer un volume (affecté d'un signe), une intégrale triple <m>\displaystyle \iiint_\cE f(x,y,z)\, \dee{V}</m> permet de calculer un <em>hypervolume</em>. En effet, le graphe de <m>f(x,y,z)</m> est un sous-ensemble de <m>\R^4</m>, le domaine d'intégration <m>\cE</m> est contenu dans <m>\R^3</m>.
+    Si une intégrale de la forme <m>\int_a^bf(x)\, \dee{x}</m> permet de calculer une aire (affectée d'un signe) et que, de la même façon, une intégrale double <m>\iint_{\cD}f(x,y)\, \dee{A}</m> permet de calculer un volume (affecté d'un signe), une intégrale triple <m>\iiint_\cE f(x,y,z)\, \dee{V}</m> permet de calculer un <em>hypervolume</em>. En effet, le graphe de <m>f(x,y,z)</m> est un sous-ensemble de <m>\R^4</m>, le domaine d'intégration <m>\cE</m> est contenu dans <m>\R^3</m>.
   </p>
     <p>
     Cependant, d'autres interprétations que nous avons déjà rencontrées admettent leurs analogues avec des intégrales triples. Par exemple, on peut tout de même calculer des volumes, des masses, des centres de masse et des moments d'inertie. Pour la suite, supposons que <m>\cE</m> est soit une région élémentaire, soit une réunion finie de régions élémentaires.
@@ -377,7 +376,7 @@
               </p></sidebyside>
             Allons-y.
             <ul><li><p>
-                  On peut conclure sans calculs que <m>\displaystyle \iiint_{\cE} kxy\ \dee{V} = 0</m>. En effet, la région d'intégration est invariante sous la transformation <m>(x,y,z)\mapsto (-x,y,z)</m>. De plus, la fonction à intégrer, à savoir <m>f(x,y,z) = xy</m>, est une fonction impaire comme fonction de <m>x</m>, c'est-à-dire <m>f(-x,y,z) = -f(x,y,z)</m>.
+                  On peut conclure sans calculs que <m>\iiint_{\cE} kxy\ \dee{V} = 0</m>. En effet, la région d'intégration est invariante sous la transformation <m>(x,y,z)\mapsto (-x,y,z)</m>. De plus, la fonction à intégrer, à savoir <m>f(x,y,z) = xy</m>, est une fonction impaire comme fonction de <m>x</m>, c'est-à-dire <m>f(-x,y,z) = -f(x,y,z)</m>.
                 </p></li><li><p>Notre deuxième intégrale doit être calculée :
                 <md><mrow>\iiint_{\cE} y \rho \ \dee{V} \amp = \int_{-1}^1 \int_{x^2}^1 \int_{0}^{1-y} k y^2 \ \dee{z}\, \dee{y}\, \dee{x}  </mrow><mrow> \amp = k\int_{-1}^1 \int_{x^2}^1 \left[y^2 z\right]_{z=0}^{z=1-y} \dee{y}\, \dee{x}</mrow><mrow>  \amp=\int_{-1}^1 \int_{x^2}^1 y^2(1-y)\ \dee{y}\, \dee{x} </mrow><mrow> \amp = k \int_{-1}^1\left[\frac{y^3}{3}- \frac{y^4}{4}\right]_{y=x^2}^{y=1}\, \dee{x}
                     </mrow><mrow>  \amp =  k\int_{-1}^1 \frac{x^8}{4}-\frac{x^6}{3}+\frac{1}{12}\ \dee{x}  </mrow><mrow> \amp = k \left[\frac{x^9}{36} - \frac{x^7}{21}+\frac{x}{12}\right]_{x=-1}^{x=1}

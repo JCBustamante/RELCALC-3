@@ -187,8 +187,8 @@
   =-\Om y\ \
   \begin{cases}
      =0 &amp;\text{si } y=0\\
-      \lt 0 &amp;\text{si } y \geqslant0\\
-      \geqslant0 &amp;\text{si } y \lt 0
+      \lt 0 &amp;\text{si } y \gt 0\\
+      \gt 0 &amp;\text{si } y \lt 0.
   \end{cases}
   </mrow>
                 </md>
@@ -200,7 +200,7 @@
   \begin{cases}
      =0 &amp;\text{si } x=0 \\
       \lt 0 &amp;\text{si } x \lt 0 \\
-      \geqslant0 &amp;\text{si } x \geqslant0
+      \gt 0 &amp;\text{si } x \gt 0.
   \end{cases}
   </mrow>
                 </md>
@@ -209,27 +209,27 @@
                 nulle :
                 <ul>
                     <li>
-                        <m>\vi\cdot\vv \geqslant0</m> et
-                        <m>\vj\cdot\vv \geqslant0</m> sur
-                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>
+                        <m>\vi\cdot\vv \gt 0</m> et
+                        <m>\vj\cdot\vv \gt 0</m> sur
+                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \gt 0\ \big\}</m>;
                     </li>
 
                     <li>
-                        <m>\vi\cdot\vv \geqslant0</m> et <m>\vj\cdot\vv=0</m>
+                        <m>\vi\cdot\vv \gt 0</m> et <m>\vj\cdot\vv=0</m>
                         sur
-                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>
+                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>;
                     </li>
 
                     <li>
-                        <m>\vi\cdot\vv \geqslant0</m> et
+                        <m>\vi\cdot\vv \gt 0</m> et
                         <m>\vj\cdot\vv \lt 0</m> sur
-                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \lt 0\ \big\}</m>
+                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \lt 0\ \big\}</m>;
                     </li>
 
                     <li>
-                        <m>\vi\cdot\vv=0</m> et <m>\vj\cdot\vv \geqslant0</m>
+                        <m>\vi\cdot\vv=0</m> et <m>\vj\cdot\vv \gt 0</m>
                         sur
-                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y=0,\ x \geqslant0\ \big\}</m>
+                        <m>\big\{\ (x,y)\in\R^2\ \big|\  y=0,\ x \gt 0\ \big\}</m>;
                     </li>
 
                     <li>et ainsi de suite.</li>
@@ -243,15 +243,15 @@
                             Regardons le premier point ci-haut.
                             Il nous dit que, sur la première des 9 régions,
                             c'est-à-dire, sur
-                            <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \geqslant0\ \big\}</m>,
+                            <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x \gt 0\ \big\}</m>,
                             qui est le quatrième quadrant, la vitesse
-                            horizontale <m>\vi\cdot\vv \geqslant0</m>.
+                            horizontale <m>\vi\cdot\vv \gt 0</m>.
                             Ceci veut dire que le fluide bouge vers la droite.
                             Nous signifions ceci dans notre esquisse par une
                             flèche qui va horizontalement vers la droite (il
                             s'agit de la flèche bleue dans la figure ci-contre).
                             La composante verticale
-                            <m>\vj\cdot\vv \geqslant0</m>, ce qui signifie que
+                            <m>\vj\cdot\vv \gt 0</m>, ce qui signifie que
                             le fluide bouge aussi vers le haut.
                             On signifie ceci par la flèche verticale vers le
                             haut (c'est la flèche rouge).
@@ -271,7 +271,7 @@
                             <m>\big\{\ (x,y)\in\R^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>,
                             qui est la moitié inférieure de l'axe <m>Oy</m>, la
                             composante horizontale
-                            <m>\vi\cdot\vv \geqslant0</m>, ce qui veut dire que
+                            <m>\vi\cdot\vv \gt 0</m>, ce qui veut dire que
                             le fluide bouge vers la droite.
                             On indique ceci par une flèche horizontale vers la
                             droite dont la source est un point sur la moitié
@@ -299,17 +299,17 @@
                 <p>
                     De ceci, on voit que, par exemple, dans le premier quadrant,
                     <ul>
-                        <li>le fluide bouge vers la gauche et vers le haut,</li>
+                        <li>le fluide bouge vers la gauche et vers le haut;</li>
                         <li>
                             le fluide croise l'axe <m>x</m> verticalement (donc,
                             près de l'axe <m>x</m>, les flèches seront presque
-                            verticales), et
+                            verticales);
                         </li>
 
                         <li>
                             le fluide croise l'axe des <m>y</m> horizontalement
                             (donc, près de l'axe <m>y</m>, les flèches seront
-                            presque horizontales), et
+                            presque horizontales);
                         </li>
 
                         <li>
@@ -348,7 +348,7 @@
                 </stack>
                 <p/>
                 <figure xml:id="fig-sageplot-vortex">
-                    <caption>Le champ <m>\vv = \Omega(-y\vi + x\vj)</m></caption>
+                    <caption><m>\vv = \Omega(-y\vi + x\vj)</m></caption>
                     <image xml:id="sageplot-vortex" width="100%">
                         <description>
                             <p>
@@ -419,18 +419,18 @@
                     <li>
                         doit pointer en s'éloignant de l'origine, c'est-à-dire
                         que le vecteur de direction du champ <m>\vv(x,y,z)</m>
-                        doit être le vecteur unitaire radial :
+                        doit être le vecteur unitaire radial<nbsp/>:
                         <md>
                           <mrow>
             \hat\vr(x,y,z) = \frac{x\vi + y\vj + z\vk}{\sqrt{x^2+y^2+z^2}}
                           </mrow>
-                        </md>.
+                        </md>;
                     </li>
 
                     <li>
-                        La norme de la vitesse, <m>\norm{\vv(x,y,z)}</m>, doit
-                        dépendre seulement de la distance à l'origine,
-                        c'est-à-dire qu'elle doit être fonction de
+                        doit avoir une norme <m>\norm{\vv(x,y,z)}</m> qui ne
+                        dépend que de la distance à l'origine,
+                        c'est-à-dire qui est fonction de
                         <md>
                             <mrow> 
                               r(x,y,z) = \sqrt{x^2+y^2+z^2}
@@ -445,7 +445,7 @@
   </mrow>
                 </md>.
                 Nous devons simplement déterminer la fonction <m>v(r)</m>.
-                Fixons <m>r \geqslant0</m> et concentrons-nous sur la sphère
+                Fixons <m>r \gt 0</m> et concentrons-nous sur la sphère
                 <m>x^2+y^2+z^2=r^2</m>.
                 Elle est esquissée dans la figure ci-contre.
             </p>
@@ -505,8 +505,8 @@
                 et le champ de vitesses est
                 <md>
                     <mrow>
-  \vv(x,y) = \frac{m}{r(x,y)}\,\hat\vr(x,y)\qquad
-  r(x,y) = \sqrt{x^2+y^2}\qquad
+  \vv(x,y) = \frac{m}{r(x,y)}\,\hat\vr(x,y),\qquad
+  r(x,y) = \sqrt{x^2+y^2},\qquad
   \hat\vr(x,y) = \frac{x\vi + y\vj}{\sqrt{x^2+y^2}}
   </mrow>
                 </md>.
@@ -516,23 +516,22 @@
                 origine en <m>(x,y)</m>.
                 Notons que <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
                 <ul>
-                    <li>pointe en direction opposée à l'origine,</li>
+                    <li>pointe en direction opposée à l'origine;</li>
                     <li>
                         <p>
                             a une norme <m>\frac{m}{r(x,y)}</m> qui
                             <ul>
                                 <li>
-                                    dépend seulement de <m>r=\norm{(x,y)}</m>,
-                                    et
+                                    dépend seulement de <m>r=\norm{(x,y)}</m>;
                                 </li>
 
                                 <li>
-                                    est très longue lorsque <m>(x,y)</m> est
-                                    près de l'origine, et
+                                    est très grande lorsque <m>(x,y)</m> est
+                                    près de l'origine;
                                 </li>
 
                                 <li>
-                                    a une norme décroissante <m>\frac{1}{r}</m>
+                                    décroît comme <m>\frac{1}{r}</m>
                                     lorsque <m>r=\norm{(x,y)}</m> grandit.
                                 </li>
                             </ul>
@@ -552,7 +551,7 @@
 
                 <figure xml:id="fig_sourceField">
                     <caption>
-                        <m>\vv = \frac{m}{\norm{\vr}}\vr</m>
+                        <m>\vv = \frac{m}{\norm{\vr}^2}\vr</m>
                     </caption>
 
                     <image xml:id="sageplot-source" width="100%">
@@ -563,15 +562,7 @@
                         </description>
                         <sageplot>
       var('x,y')
-      #Fig = plot_vector_field((x/sqrt(x^2 + y^2),y/sqrt(x^2 + y^2)),
-      #    (x,-2,2),(y,-2,2), color = "steelblue", axes = True,
-      #    figsize = 4,
-      #    axes_labels = ['$x$','$y$'],
-      #    axes_labels_size=2, aspect_ratio = 1,
-      #    ticks = [[],[]],
-      #    frame= False,
-      #    plot_points = 10)
-      Fig = plot_vector_field((x/sqrt(x^2 + y^2),y/sqrt(x^2 + y^2)),
+      Fig = plot_vector_field((x/(x^2 + y^2),y/(x^2 + y^2)),
           (x,-2,2),(y,-2,2), color = "steelblue", axes = True,
           figsize = 4,
           axes_labels = ['$x$','$y$'],
@@ -642,7 +633,7 @@
               #    axes_labels_size=1, aspect_ratio = 1,
               #    ticks=[pi/2, pi/2], tick_formatter=[pi, pi], figsize=4)
               Champ =  plot_vector_field((diff(f,x),diff(f,y)),
-                  (x,-pi,pi), (y,-pi,pi), axes = True, color = "blue",
+                  (x,-pi,pi), (y,-pi,pi), axes = True, color = "steelblue",
                   plot_points = 14, headlength=4, headwidth=4,
                   headaxislength=4, axes_labels = ['$x$','$y$'],
                   axes_labels_size=1, aspect_ratio = 1, width=0.004,
@@ -659,10 +650,13 @@
                             </p>
                         </description>
                         <sageplot>
+              import matplotlib.colors as mcolors
+              import matplotlib.pyplot as plt
               var('x,y')
               f(x,y) = x*sin(y) + y
+              OrangesPale = mcolors.LinearSegmentedColormap.from_list("OrangesPale", plt.get_cmap("Oranges")(srange(0.0,0.4,0.01)))
               Fig = contour_plot(f,(x,-pi,pi), (y,-pi,pi),
-                  zorder = -2, cmap = "Oranges", contours = 17)
+                  zorder = -2, cmap = OrangesPale, contours = 17)
               #Fig += plot_vector_field((diff(f,x),diff(f,y)),
               #   (x,-pi,pi), (y,-pi,pi), axes = True, color = "blue",
               #   plot_points = 14, headlength=3, headwidth=3,
@@ -670,7 +664,7 @@
               #   axes_labels_size=1, aspect_ratio = 1,zorder = 2,
               #   ticks=[pi/2, pi/2], tick_formatter=[pi, pi], figsize=4)
               Fig += plot_vector_field((diff(f,x),diff(f,y)),
-                 (x,-pi,pi), (y,-pi,pi), axes = True, color = "blue",
+                 (x,-pi,pi), (y,-pi,pi), axes = True, color = "steelblue",
                  plot_points = 14, headlength=4, headwidth=4,
                  headaxislength=4, axes_labels = ['$x$','$y$'],
                  axes_labels_size=1, aspect_ratio = 1,zorder = 2, width=0.004,
@@ -816,7 +810,7 @@
             <statement>
                 <sidebyside widths="45% 5% 50%" valign="top">
                     <p>
-                    Si <m>\vF = P\vi + Q \vj</m> est une champ de vecteurs donné, une  <term>ligne de courant</term> <m>\cC</m> est un courbe paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, telle que le vecteur vitesse <m>\vv(t) = x'(t) \vi + y'(t) \vj</m>
+                    Si <m>\vF = P\vi + Q \vj</m> est un champ de vecteurs donné, une  <term>ligne de courant</term> <m>\cC</m> est une courbe paramétrée par <m>\vr(t) = x(t) \vi + y(t) \vj</m>, telle que le vecteur vitesse <m>\vv(t) = x'(t) \vi + y'(t) \vj</m>
                     vérifie
                     <md>
                         <mrow>x'(t) \amp = P(x(t), y(t) )   </mrow>
@@ -1067,8 +1061,8 @@
 
                 <p>
                     En effet, on calcule
-                    <m>\displaystyle \frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C.
-                    </m>
+                    <m>\frac{x(u)^2}{2} + y(u)^2 = \frac{2C \cos^2 u}{2} + C\sin^2 u  = C
+                    </m>.
                 </p>
 
                 <p>

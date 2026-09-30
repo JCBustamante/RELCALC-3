@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-surfaces-parametrees">
+  <title>Surfaces paramétrées</title>
+  <p>
+    Lorsqu'une surface est donnée par une équation cartésienne <m>F(x,y,z)=k</m>, on peut la tracer directement avec la commande <c>implicit_plot3d(...)</c>, sans avoir à la paramétrer. Voyons l'exemple de l'ellipsoïde de l'<xref ref="fig-ellipsoide" text="global"/> (voir l'<xref ref="sec-cylindres-quadriques" text="global"/>), d'équation
+    <md>
+      \left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2+\left(\frac{z}{c}\right)^2=1.
+    </md>
+  </p>
+  <sage>
+    <input>
+      var('x,y,z')
+      a,b,c = 1, 2.5, 1.5
+      implicit_plot3d(x^2/a^2 + y^2/b^2 + z^2/c^2 ==1, (x,-a,a), (y,-b,b), (z,-c,c),
+        plot_points=(15,15,15),
+        mesh=True, opacity=0.65, frame=True)
+    </input>
+  </sage>
+  <p>
+    Ceci donne une surface d'une seule couleur uniforme. Pour faire varier la couleur d'un point à l'autre de la surface, il faut faire appel à une <term>colormap</term> (palette de couleurs) : il s'agit d'une fonction qui associe à chaque nombre de l'intervalle <m>[0,1]</m> une couleur, de sorte qu'en faisant varier ce nombre de façon continue, on obtient une progression de couleurs. SageMath fournit les colormaps de <c>matplotlib</c> (voir <url href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">la documentation de matplotlib à ce sujet</url> pour une liste et un aperçu visuel de celles-ci); on y accède par <c>colormaps.NomDeLaColormap</c>, par exemple <c>colormaps.YlOrBr</c> ou <c>colormaps.Greens</c>.
+  </p>
+  <p>
+    Reprenons l'exemple de l'ellipsoïde, en choisissant cette fois de faire varier la couleur en fonction de la hauteur <m>z</m>, en paramétrant la surface. De la même façon qu'une courbe dans l'espace peut être décrite par une fonction d'un seul paramètre, <m>t\mapsto \vr(t)</m>, une surface peut être décrite par une fonction de <em>deux</em> paramètres,
+    <md>
+      (u,v) \mapsto \vr(u,v) = \big(x(u,v),\, y(u,v),\, z(u,v)\big),
+    </md>
+    où <m>(u,v)</m> parcourt une région du plan <m>uv</m>. En SageMath, une telle surface se trace avec la commande <c>parametric_plot3d(...)</c>, à qui l'on passe la liste <c>[x(u,v), y(u,v), z(u,v)]</c> ainsi que les intervalles parcourus par <m>u</m> et par <m>v</m>; l'argument <c>color</c> peut alors être une paire <c>(fonction, colormap)</c>, où <c>fonction</c> retourne, pour chaque <m>(u,v)</m>, le nombre de <m>[0,1]</m> à envoyer dans la colormap.
+  </p>
+  <p>
+    Une paramétrisation naturelle de l'ellipsoïde, calquée sur les coordonnées sphériques, est
+    <md>
+      \vr(u,v) = \big(a\cos u \sin v,\, b\sin u \sin v,\, c\cos v\big), \qquad u\in [0,2\pi],\ v\in[0,\pi],
+    </md>
+    de sorte que la hauteur est <m>z=c\cos v</m>. Le code ci-dessous trace l'ellipsoïde avec une couleur qui varie avec <m>z</m>, ainsi que ses traces sur les trois plans de coordonnées (chacune étant elle-même une courbe paramétrée par un seul paramètre <m>t</m>, obtenue en fixant l'un des deux paramètres <m>u,v</m>). Les appels à <c>arrow3d</c> et <c>text3d</c> ne servent qu'à dessiner les axes.
+  </p>
+  <sage>
+    <input>
+      var('u,v,t')
+      a,b,c = 1, 2.5, 1.5
+      def macouleur(u,v):
+          z = c*cos(v)
+          return float(0.5 + 0.25*(z/c))
+      S = parametric_plot3d([a*cos(u)*sin(v), b*sin(u)*sin(v), c*cos(v)],
+            (u,0,2*pi), (v,0,pi), color=(macouleur, colormaps.YlOrBr),
+            mesh=False, opacity=1, frame=False)
+      S += parametric_plot3d([a*cos(t), b*sin(t), 0], (t,0,2*pi), color="firebrick", thickness=1.5)
+      S += parametric_plot3d([a*cos(t), 0, c*sin(t)], (t,0,2*pi), color="seagreen", thickness=1.5)
+      S += parametric_plot3d([0, b*cos(t), c*sin(t)], (t,0,2*pi), color="steelblue", thickness=1.5)
+      S += arrow3d((0,0,0), (a+0.5,0,0), color="black")
+      S += text3d("x", (a+0.8,0,0), color="black", fontsize=26)
+      S += arrow3d((0,0,0), (0,b+0.5,0), color="black")
+      S += text3d("y", (0,b+0.8,0), color="black", fontsize=26)
+      S += arrow3d((0,0,0), (0,0,c+0.5), color="black")
+      S += text3d("z", (0,0,c+0.8), color="black", fontsize=26, frame=False)
+      show(S)
+    </input>
+  </sage>
+  <p>
+    Contrairement aux quadriques, une surface paramétrique n'a pas besoin d'être décrite par une équation cartésienne <m>F(x,y,z)=k</m> simple (ni donc d'être tracée avec <c>implicit_plot3d</c>), ni même d'avoir une topologie familière. Le <term>ruban de Möbius</term> en est un exemple classique : une surface qui n'a qu'un seul côté et qu'une seule courbe frontière. Avec <m>R=2</m> fixant le rayon du cercle central, une paramétrisation possible est
+    <md>
+      \vr(s,t) = \Big((R+s\cos\tfrac{t}{2})\cos t,\ (R+s\cos\tfrac{t}{2})\sin t,\ s\sin\tfrac{t}{2}\Big), \qquad s\in[-1,1],\ t\in[0,2\pi].
+    </md>
+    Le paramètre <m>t</m> fait le tour du cercle central, alors que <m>s</m> déplace le point transversalement, en tordant d'un demi-tour (<m>t/2</m>) au fur et à mesure que <m>t</m> parcourt <m>[0,2\pi]</m> — c'est cette torsion qui rend la surface non orientable. Le code ci-dessous trace le ruban, ainsi que sa courbe frontière (en rouge, correspondant à <m>s=-1</m>) : en la suivant, on constate qu'elle rejoint, après un tour complet en <m>t</m>, l'endroit où se trouverait <m>s=1</m> — la surface entière n'a donc qu'une seule frontière, malgré les deux valeurs extrêmes de <m>s</m>.
+  </p>
+  <sage>
+    <input>
+      var('s,t')
+      R = 2
+      def x(s,t):
+          return (R+s*cos(t/2))*cos(t)
+      def y(s,t):
+          return (R+s*cos(t/2))*sin(t)
+      def z(s,t):
+          return s*sin(t/2)
+      def macouleur(s,t):
+          return 0.5+0.5*sin(t)**2
+      S = parametric_plot3d((x(s,t), y(s,t), z(s,t)), (s,-1,1), (t,0,2*pi), color=(macouleur, colormaps.Greens))
+      Bord = parametric_plot3d((x(-1,t), y(-1,t), z(-1,t)), (t,0,2*pi), color="red", thickness=3)
+      show(S + Bord)
+    </input>
+  </sage>
+</section>

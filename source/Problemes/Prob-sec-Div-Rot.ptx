@@ -5,9 +5,10 @@
   <exercisegroup>
     <title>Pour se pratiquer</title>
 
+    <!-- 1 -->
     <exercise>
           <statement><p>
-          Est-ce que <m>\vnabla\times \vF</m> doit être perpendiculaire à <m>\vF</m>?
+          Est-ce que <m>\vnabla\times \vF</m> doit être orthogonal à <m>\vF</m>?
           </p></statement>
 
           <hint><p>
@@ -38,13 +39,14 @@
           </p></solution>
         </exercise>
 
+    <!-- 2 -->
     <exercise>
       <statement><p>
       Évaluer <m>\vnabla\cdot\vF</m> et <m>\vnabla\times\vF</m> pour chacun des champs de vecteurs suivants.
       <ol marker = "(a)">
-      <li> <m>\vF=x\,\vi+y\,\vj+z\,\vk</m>
+      <li> <m>\vF=x\,\vi+y\,\vj+z\,\vk</m>.
       </li>
-      <li> <m>\vF=xy^2\vi-yz^2\vj+zx^2\vk</m>
+      <li> <m>\vF=xy^2\vi-yz^2\vj+zx^2\vk</m>.
       </li>
       <li> <m>\vF=\frac{x\vi+y\vj}{\sqrt{x^2+y^2}}</m>
                      (le vecteur polaire de base <m>\hat{\bf r}</m> en 2D)
@@ -59,21 +61,23 @@
       </statement>
 
       <answer><p>
-      (a) <m>\vnabla\cdot\vF=3</m>, <m>\vnabla\times\vF=\vZero</m>
-      </p>
-
-      <p>(b) <m>\vnabla\cdot\vF=y^2-z^2+x^2</m>,
-          <m>\vnabla\times\vF=2yz\,\vi-2xz\,\vj-2xy\,\vk</m>
-      </p>
-
-      <p>(c) <m>\vnabla\cdot\vF=\frac{1}{\sqrt{x^2+y^2}}</m>,
+      <ol marker="(a)">
+        <li>
+          <m>\vnabla\cdot\vF=3</m>, <m>\vnabla\times\vF=\vZero</m>
+        </li>
+        <li>
+          <m>\vnabla\cdot\vF=y^2-z^2+x^2</m>,
+          <m>{\vnabla\times\vF=2yz\,\vi-2xz\,\vj-2xy\,\vk}</m>
+        </li>
+        <li>
+          <m>\vnabla\cdot\vF=\tfrac{1}{\sqrt{x^2+y^2}}</m>,
           <m>\vnabla\times\vF=\vZero</m>
-      </p>
-
-      <p>(d) <m>\vnabla\cdot\vF=0</m>, <m>\vnabla\times\vF=\frac{\vk}{\sqrt{x^2+y^2}}</m>
-      </p>
-
-      </answer>
+        </li>
+        <li>
+          <m>\vnabla\cdot\vF=0</m>, <m>\vnabla\times\vF=\tfrac{\vk}{\sqrt{x^2+y^2}}</m>
+        </li>
+      </ol>
+      </p></answer>
 
       <solution><p>
       (a)
@@ -189,12 +193,13 @@
       </p></solution>
     </exercise>
 
+    <!-- 3 -->
     <exercise> <!-- <title><fromexam>M317 2015A</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
       <li>
-      Calculer et simplifier <m>\vnabla\cdot\left(\frac{\vr}{r}\right)</m>
-      pour <m>\vr=(x,y,z)</m> et <m>r=\norm{(x,y,z)}</m>. Exprimer la réponse en termes de <m>r</m>.
+      Calculer et simplifier <m>\vnabla\cdot\left(\tfrac{\vr}{r}\right)</m>
+      pour <m>{\vr=x\,\vi+y\,\vj+z\,\vk}</m> et <m>r=\norm{\vr}</m>. Exprimer la réponse en termes de <m>r</m>.
       </li>
       <li>
       Calculer <m>\vnabla\times\left(yz\,\vi + 2xz\,\vj + e^{xy}\,\vk\right)</m>.
@@ -205,8 +210,14 @@
       </statement>
 
       <answer><p>
-      (a) <m>\frac{2}{r}</m></p><p>
-      (b) <m>\left(xe^{xy}-2x\right)\,\vi+y\left(1-e^{xy}\right)\,\vj+z\,\vk</m>
+      <ol marker="(a)">
+        <li>
+          <m>\tfrac{2}{r}</m>
+        </li>
+        <li>
+          <m>\left(xe^{xy}-2x\right)\,\vi+y\left(1-e^{xy}\right)\,\vj+z\,\vk</m>
+        </li>
+      </ol>
       </p></answer>
 
       <solution><p> (a)
@@ -268,6 +279,7 @@
     <title>Pour mieux comprendre</title>
     <!-- Section 4.1 CLP4 -->
 
+    <!-- 4 -->
     <exercise> <!-- <title><fromexam>M317 2012J</fromexam></title> -->
       <statement>
       <sidebyside widths="25% 5% 70%" valign="top">
@@ -301,13 +313,13 @@
       </li>
       <li>
         <p>
-          Quel énoncé est <q>le plus vrai</q> à propos de l'intégrale de ligne <m>\int_{C_2} \vF\cdot\dee{\vr}</m> ?
+          Quel énoncé est <q>le plus vrai</q> à propos de l'intégrale de ligne <m>\int_{\cC_2} \vF\cdot\dee{\vr}</m> ?
           <ol marker = "(A)" cols = "2">
-            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \gt 0</m>
+            <li>  <m>\int_{\cC_2} \vF\cdot\dee{\vr} \gt 0</m>.
             </li>
-            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>
+            <li>  <m>\int_{\cC_2} \vF\cdot\dee{\vr}=0</m>.
             </li>
-            <li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \lt 0</m>
+            <li>  <m>\int_{\cC_2} \vF\cdot\dee{\vr} \lt 0</m>.
             </li>
             <li> Pas assez d'information pour le déterminer.
             </li>
@@ -357,11 +369,11 @@
       <li>
         <p>  En supposant que <m>\vF = P\,\vi + Q\,\vj</m>, lequel des énoncés suivants est correct à propos de <m>\frac{\partial P}{\partial x}</m> au point <m>D</m>?
         <ol marker="(A)">
-          <li> <m>\frac{\partial P}{\partial x}=0</m> en <m>D</m>
+          <li> <m>\frac{\partial P}{\partial x}=0</m> en <m>D</m>.
           </li>
-          <li> <m>\frac{\partial P}{\partial x} \gt 0</m> en <m>D</m>
+          <li> <m>\frac{\partial P}{\partial x} \gt 0</m> en <m>D</m>.
           </li>
-          <li> <m>\frac{\partial P}{\partial x} \lt 0</m> en <m>D</m>
+          <li> <m>\frac{\partial P}{\partial x} \lt 0</m> en <m>D</m>.
           </li>
           <li> Le signe de <m>\frac{\partial P}{\partial x}</m>
           en <m>D</m> ne peut être déterminé avec l'information donnée.
@@ -374,11 +386,13 @@
       </statement>
 
       <answer><p>
-      (a) A</p><p>
-      (b) B</p><p>
-      (c) C</p><p>
-      (d) A</p><p>
-      (e) B
+      <ol marker="(a)" cols="5">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>A</li>
+        <li>B</li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -389,8 +403,8 @@
       </p>
 
       <p>(b)
-      B. <m>\vF</m> is perpendicular to <m>\dee{\vr}</m> along all of <m>C_2</m>.
-      So <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>.
+      B. <m>\vF</m> is perpendicular to <m>\dee{\vr}</m> along all of <m>\cC_2</m>.
+      So <m>\int_{\cC_2} \vF\cdot\dee{\vr}=0</m>.
       </p>
 
       <p>(c)
@@ -409,20 +423,21 @@
       </p></solution>
     </exercise>
     <!-- Solution et réponse correspondent -->
+    <!-- 5 -->
     <exercise>
       <statement><p>
       Vérifier les identités vectorielles suivantes.
       <ol marker = "(a)">
       <li>
-      <m>\vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f</m>
+      <m>\vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f</m>.
       </li>
       <li>
       <m>\vnabla\cdot(\vF\times\vG)
                             =\vG\cdot(\vnabla\times\vF)-
-                             \vF\cdot(\vnabla\times\vG)</m>
+                             \vF\cdot(\vnabla\times\vG)</m>.
       </li>
       <li>
-      <m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>
+      <m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>.
       </li>
       </ol>
       </p>
@@ -433,105 +448,6 @@
       Pour les parties (a) et (b), écrire les définitions des côtés gauche et droit et observer qu'ils sont égaux.
       La partie (c) peut être réalisée facilement en utilisant d'autres identités vectorielles plus simples.
       </p></hint>
-
-      <answer>
-        <p>
-        (a) Par la règle du produit,
-        <md>
-        <mrow>
-        \vnabla\cdot(f\vF)
-        &amp;=\pdiff{}{x}(fF_1)
-         +\pdiff{}{y}(fF_2)
-         +\pdiff{}{z}(fF_3)
-        </mrow><mrow>
-        &amp;=\phantom{+}f\pdiff{F_1}{x}
-         +f\pdiff{F_2}{y}
-         +f\pdiff{F_3}{z}
-        </mrow><mrow>
-        &amp;\phantom{=}+F_1\pdiff{f}{x}
-         +F_2\pdiff{f}{y}
-         +F_3\pdiff{f}{z}
-        </mrow><mrow>
-        &amp;=f\,\vnabla\cdot\vF+\vF\cdot\vnabla f
-        </mrow>.
-        </md>
-        </p>
-
-        <p>(b) Encore, par la règle du produit,
-        <md>
-        <mrow>
-        &amp;\vnabla\cdot(\vF\times\vG)
-        </mrow><mrow>&amp;\hskip0.25in=\pdiff{}{x}(F_2G_3-F_3G_2)
-         +\pdiff{}{y}(F_3G_1-F_1G_3)
-         +\pdiff{}{z}(F_1G_2-F_2G_1)
-        </mrow><mrow>
-        &amp;\hskip0.25in=\phantom{+}\pdiff{F_2}{x}G_3
-                -\pdiff{F_3}{x}G_2
-         +\pdiff{F_3}{y}G_1
-                - \pdiff{F_1}{y}G_3
-         +\pdiff{F_1}{z}G_2
-               - \pdiff{F_2}{z}G_1
-        </mrow><mrow>
-        &amp;\hskip0.25in\phantom{=}+F_2\pdiff{G_3}{x}
-               -F_3\pdiff{G_2}{x}
-         +F_3\pdiff{G_1}{y}
-               -F_1\pdiff{G_3}{y}
-         +F_1\pdiff{G_2}{z}
-              - F_2\pdiff{G_1}{z}
-        </mrow><mrow>
-        &amp;\hskip0.25in=\phantom{+}
-          \left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
-          +\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
-          +\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3
-        </mrow><mrow>
-        &amp;\hskip0.25in\phantom{=}
-          -F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
-          -F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
-          -F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)
-        </mrow><mrow>
-        &amp;=\vG\cdot(\vnabla\times\vF)-
-                               \vF\cdot(\vnabla\times\vG)
-        </mrow>.
-        </md>
-        </p>
-
-        <p>(c) Se rappeler que <m>\vnabla^2(fg) = \vnabla\cdot\big[\vnabla(fg)\big]</m>.
-        Premièrement,
-        <md>
-        <mrow>
-        \vnabla(fg)
-        &amp;=\vi\pdiff{}{x}(fg)
-         +\vj\pdiff{}{y}(fg)
-         +\vk\pdiff{}{z}(fg)
-        </mrow><mrow>
-        &amp;=\phantom{+}\vi g\pdiff{f}{x}
-         +\vj g\pdiff{f}{y}
-         +\vk g\pdiff{f}{z}
-        </mrow><mrow>
-        &amp;\phantom{=}+\vi f\frac{\partial g}{\partial x}
-         +\vj f\frac{\partial g}{\partial y}
-         +\vk f\frac{\partial g}{\partial z}
-        </mrow><mrow>
-        &amp;=g\vnabla f+f\vnabla g
-        </mrow>.
-        </md>
-        Donc, par la partie (a), deux fois,
-        <md>
-        <mrow>
-        \vnabla^2(fg)
-        &amp; = \vnabla\cdot\left(g\vnabla f\right)
-           +\vnabla\cdot\left(f\vnabla g\right)
-        </mrow><mrow>
-        &amp;= g\left(\vnabla\cdot \vnabla f\right)
-                  + \left(\vnabla g\right)\cdot\left(\vnabla f\right)
-           +f\left(\vnabla\cdot\vnabla g\right)
-               + \left(\vnabla f\right)\cdot\left(\vnabla g\right)
-        </mrow><mrow>
-        &amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
-        </mrow>.
-        </md>
-        </p>
-      </answer>
 
       <solution><p>
       (a) Par la règle du produit,
@@ -631,26 +547,23 @@
       </p></solution>
     </exercise>
 
+    <!-- 6 -->
     <exercise xml:id="poisson"> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
       <statement><p>
       Dans ce qui suit, on utilise la notation
-      <m>\vr = x\,\vi + y\,\vj + z\,\vk</m>, <m>r = \norm{\vr}</m>, et <m>k</m> est un nombre
-      <m>k = 0, 1, -1, 2, -2, \dots</m>
+      <m>{\vr = x\,\vi + y\,\vj + z\,\vk}</m>, <m>r = \norm{\vr}</m>, et <m>k</m> est un entier
+      (<m>k = 0, \pm 1, \pm 2, \dots</m>).
       <ol marker = "(a)">
       <li>
-      Trouver la valeur <m>k</m> pour laquelle <m>\vnabla (r^k) = -3\frac{\vr}{r^5}.      </m>
+      Trouver la valeur <m>k</m> pour laquelle <m>{\vnabla (r^k) = -3\tfrac{\vr}{r^5}}</m>.
       </li>
       <li>
       Trouver la valeur <m>k</m> pour laquelle
-      <m>
-      \vnabla  \cdot (r^k\vr) = 5r^2.
-      </m>
+      <m>{\vnabla \cdot (r^k\vr) = 5r^2}</m>.
       </li>
       <li>
       Trouver la valeur <m>k</m> pour laquelle
-      <m>
-      \vnabla^2 (r^k) = \frac{2}{r^4}.
-      </m>
+      <m>{\vnabla^2 (r^k) = \tfrac{2}{r^4}}</m>.
       </li>
       </ol>
       </p></statement>
@@ -733,6 +646,7 @@
       </solution>
     </exercise>
 
+    <!-- 7 -->
     <exercise> <!-- <title><fromexam>M317 2017A</fromexam></title> -->
       <statement><p>
       Soit <m>\vr</m> le champ de vecteurs <m>\vr = x\,\vi + y\,\vj + z\,\vk</m> et soit
@@ -743,16 +657,16 @@
       <m>x</m>, <m>y</m> ou <m>z</m> dans les réponses.
       <ol marker = "(a)" cols = "2">
       <li>
-      <m>\vnabla\cdot\vr</m>
+      <m>\vnabla\cdot\vr</m>.
       </li>
       <li>
-      <m>\vnabla(r^2)</m>
+      <m>\vnabla(r^2)</m>.
       </li>
       <li>
-      <m>\vnabla\times(\vr\times\va)</m>
+      <m>\vnabla\times(\vr\times\va)</m>.
       </li>
       <li>
-      <m>\vnabla\cdot\left(\vnabla(r)\right)</m>
+      <m>\vnabla\cdot\left(\vnabla(r)\right)</m>.
       </li>
       </ol>
       </p></statement>
@@ -760,16 +674,16 @@
       <answer><p>
       <ol marker="(a)" cols="4">
       <li>
-      <m>3</m>
+      <m>3</m>.
       </li>
       <li>
-      <m>2\vr</m>
+      <m>2\vr</m>.
       </li>
       <li>
-      <m>-2\va</m>
+      <m>-2\va</m>.
       </li>
       <li>
-      <m>\frac{2}{r}</m>
+      <m>\tfrac{2}{r}</m>.
       </li>
       </ol>
       </p></answer>
@@ -856,6 +770,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 8 -->
     <exercise> <!-- <title><fromexam>M317 2017D</fromexam></title> -->
       <statement><p>
       Soit <m> \vr = x\,\vi + y\,\vj + z\,\vk </m> et <m> r = \norm{\vr}</m>.
@@ -875,13 +790,13 @@
       <answer><p>
       <ol marker="(a)" cols="3">
       <li>
-      <m>a=-3</m>
+      <m>a=-3</m>.
       </li>
       <li>
-      <m>a=4</m>
+      <m>a=4</m>.
       </li>
       <li>
-      <m>a=12</m>
+      <m>a=12</m>.
       </li>
       </ol>
       </p></answer>
@@ -956,28 +871,30 @@
       </p></solution>
     </exercise>
 
+    <!-- 9 -->
     <exercise>
       <statement><p>
-      Trouver, si possible, un champ de vecteurs <m>\vA</m> qui a pour composante <m>\vk</m>
-      <m>A_3=0</m> et qui est un potentiel vectoriel pour
+      Trouver, si possible, un potentiel vectoriel <m>\vA</m> dont la troisième composante est nulle, c'est-à-dire de la forme <m>{\vA=A_1\,\vi+A_2\,\vj}</m>, pour chacun des champs suivants.
       <ol marker = "(a)">
-      <li> <m>\vF=(1+yz)\vi+(2y+zx)\vj+(3z^2+xy)\vk</m>.
+      <li> <m>{\vF=(1+yz)\,\vi+(2y+zx)\,\vj+(3z^2+xy)\,\vk}</m>
       </li>
-      <li> <m>\vG= yz\vi+zx\vj+xy\vk</m>.
+      <li> <m>{\vG= yz\,\vi+zx\,\vj+xy\,\vk}</m>
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>\vF</m> ne peut avoir un potentiel vectoriel.
-      </p>
-
-      <p>(b) Deux solutions possibles sont
-      <m>\vA=\frac{1}{2}(z^2-y^2)x\vi-\frac{1}{2} yz^2\vj</m> et
-      <m>\vA=\frac{1}{2} xz^2\vi+\frac{1}{2}(x^2-z^2)y\vj</m>.
-      </p>
-
-      </answer>
+      <ol marker="(a)">
+        <li>
+          <m>\vF</m> n'admet pas de potentiel vectoriel.
+        </li>
+        <li>
+          Deux solutions possibles sont
+          <m>{\vA=\tfrac{1}{2}(z^2-y^2)x\,\vi-\tfrac{1}{2} yz^2\,\vj}</m> et
+          <m>{\vA=\tfrac{1}{2} xz^2\,\vi+\tfrac{1}{2}(x^2-z^2)y\,\vj}</m>.
+        </li>
+      </ol>
+      </p></answer>
 
       <solution><p>
       (a) Since
@@ -1013,10 +930,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 10 -->
     <exercise> <!-- <title><fromexam>M317 2006D</fromexam></title> -->
       <statement><p>
       Soit
-      <m>\displaystyle \vF = \frac{-z}{x^2+z^2}\,\vi +y\,\vj +\frac{x}{x^2+z^2}\,\vk</m>.
+      <md><mrow>\vF = \frac{-z}{x^2+z^2}\,\vi +y\,\vj +\frac{x}{x^2+z^2}\,\vk.</mrow></md>
       </p>
 
       <p><ol marker = "(a)">
@@ -1036,21 +954,27 @@
       </p></statement>
 
       <answer><p>
-      (a) <m>D=\Set{(x,y,z)}{x^2+z^2\ne 0}</m></p><p>
-      (b) <m>\vnabla\times\vF=\vZero</m> sur <m>D</m></p><p>
-      (c) <m>\vnabla\cdot\vF=1</m> sur <m>D</m>
-      </p>
-
-      <p>(d) <m>\vF</m> n'est pas conservatif sur le domaine <m>D</m> de la partie (a).
-      </p>
-
-      </answer>
+      <ol marker="(a)">
+        <li>
+          <m>\cD=\Set{(x,y,z)}{x^2+z^2\ne 0}</m>
+        </li>
+        <li>
+          <m>\vnabla\times\vF=\vZero</m> sur <m>\cD</m>
+        </li>
+        <li>
+          <m>\vnabla\cdot\vF=1</m> sur <m>\cD</m>
+        </li>
+        <li>
+          <m>\vF</m> n'est pas conservatif sur le domaine <m>\cD</m> de la partie (a).
+        </li>
+      </ol>
+      </p></answer>
 
       <solution><p>(a) <m>\vF</m> is well-defined wherever the denominator
       <m>x^2+z^2</m> is nonzero. So the (largest possible) domain is
       <md>
       <mrow>
-      D=\Set{(x,y,z)}{x^2+z^2\ne 0}
+      \cD=\Set{(x,y,z)}{x^2+z^2\ne 0}
       </mrow>
       </md>
       </p>
@@ -1130,7 +1054,7 @@
       The line integral is
       <md>
       <mrow>
-      \int_C \vF \cdot \dee{\vr}
+      \int_\cC \vF \cdot \dee{\vr}
       &amp;=\int_0^{2\pi}\!\!\big\{
              \overbrace{-\sin t}^{\frac{-z}{x^2+z^2}}\,\vi
             +\overbrace{\cos t}^{\frac{x}{x^2+z^2}}\,\vk\big\}
@@ -1142,7 +1066,7 @@
       </mrow>
       </md>
       As the integral of <m>\vF</m> around the simple closed curve <m>\cC</m>
-      is not zero, <m>\vF</m> cannot be conservative on <m>D</m>.
+      is not zero, <m>\vF</m> cannot be conservative on <m>\cD</m>.
       See Theorem <xref ref="thm_pathIndepConserv"/> and
       Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="ex-green-bord-x2"/>.
       </p>
@@ -1151,6 +1075,7 @@
     </exercise>
 
     
+    <!-- 11 -->
     <exercise> <!-- <title><fromexam>M317 2004A</fromexam></title> -->
       <statement><p>
       Un physicien étudie un champ de vecteurs <m>\vF</m> dans son laboratoire. Il sait, d'après des considérations théoriques, que <m>\vF</m> doit être de la forme
@@ -1165,7 +1090,10 @@
       Déterminer <m>\alpha</m> et <m>\beta</m>.
       </li>
       <li>
-      Des expériences supplémentaires montrent que <m>\vG=xyz\vi-xyz\vj+g(x,y,z)\vk</m>.
+      Des expériences supplémentaires montrent que
+      <md><mrow>
+      \vG=xyz\,\vi-xyz\,\vj+g(x,y,z)\,\vk.
+      </mrow></md>
       Trouver la fonction inconnue <m>g(x,y,z)</m>.
       </li>
       </ol>
@@ -1174,10 +1102,14 @@
       </statement>
 
       <answer><p>
-      (a) <m>\alpha=\beta=-1</m>
-      </p>
-
-      <p>(b)  N'importe quelle fonction de la forme <m>g(x,y,z)=xyz+w(z)</m> fonctionne.
+      <ol marker="(a)">
+        <li>
+          <m>\alpha=\beta=-1</m>
+        </li>
+        <li>
+          N'importe quelle fonction de la forme <m>g(x,y,z)=xyz+w(z)</m> fonctionne.
+        </li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -1237,6 +1169,7 @@
     <title>Pour aller plus loin</title>
 
     <!-- Solution et réponse correspondent pour (a) -->
+    <!-- 12 -->
     <exercise>
       <statement><p>
       Un corps rigide effectue une rotation à une vitesse angulaire de <m>\Om</m> rad/s
@@ -1245,11 +1178,11 @@
       est en sens antihoraire. Soit <m>\vOm=\Om\hat{\bf a}</m>.
       <ol marker = "(a)">
       <li>
-      Montrer que la vitesse scalaire d'un point <m>\vr=(x,y,z)</m> sur le corps est <m>\vOm\times\vr</m>.
+      Montrer que le vecteur vitesse d'un point <m>{\vr=x\,\vi+y\,\vj+z\,\vk}</m> du corps est <m>{\vOm\times\vr}</m>.
       </li>
       <li>
-      Évaluer <m>\vnabla\times(\vOm\times\vr)</m> et
-      <m>\vnabla\cdot(\vOm\times\vr)</m>, en traitant <m>\vOm</m> comme une constante.
+      Évaluer <m>{\vnabla\times(\vOm\times\vr)}</m> et
+      <m>{\vnabla\cdot(\vOm\times\vr)}</m>, en traitant <m>\vOm</m> comme une constante.
       </li>
       <li>
       Trouver la vitesse des personnes étudiantes dans une classe située à la
@@ -1262,45 +1195,22 @@
 
       <hint><p>
       (a) Trouver la longueur et la direction du vecteur vitesse.
-      Vérifier alors que <m>\vOm\times\vr</m> a cette longueur et direction.
+      Vérifier alors que <m>{\vOm\times\vr}</m> a cette longueur et direction.
       </p></hint>
 
       <answer><p>
-      (a)
-      Dénoter par <m>\theta</m> l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>.
-      Le point <m>\vr</m> est à une distance de <m>\ell=\norm{\vr}\,\sin\theta</m> de l'axe de
-      rotation. Donc, lorsque le corps effectue une rotation, le point balaie un cercle de rayon
-      <m>\ell</m> centré sur l'axe de rotation.
-      </p>
-
-      <sidebyside width="30%">
-        <image source="images/CLP4-figs/pfigs/rigid"/>
-      </sidebyside>
-
-      <p>
-        En une seconde, le point balaie
-      un arc de ce cercle qui sous-tend un angle de <m>\Om</m> radians. Cet arc
-      est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
-      <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om\norm{\vr}\,\sin\theta</m>. Ainsi, le point
-      se déplace à une vitesse <m>\Om\norm{\vr}\,\sin\theta</m>. Le vecteur vitesse du point
-      doit avoir une longueur de <m>\Om\norm{\vr}\,\sin\theta</m> et une direction perpendiculaire
-      à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
-      <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
-      et a une longueur de
-      <m>\
-      \norm{\vOm}\,\norm{\vr}\,\sin\theta
-      =\Om\norm{\vr}\,\sin\theta
-      \ </m>
-      comme voulu. Donc, le vecteur de vélocité est soit
-      <m>\vOm\times\vr</m> soit son négatif. Par la règle de la main droite, c'est <m>\vOm\times\vr</m>.
-      </p>
-
-      <p>(b) <m>\vnabla\times(\vOm\times\vr)=2 \vOm, \qquad \vnabla\cdot(\vOm\times\vr)=0</m>
-      </p><p>
-      (c) <m>1095</m> km/h
-      </p>
-
-      </answer>
+      <ol marker="(a)">
+        <li>
+          Le vecteur vitesse a pour norme <m>\Om\norm{\vr}\,\sin\theta</m>, où <m>\theta</m> est l'angle entre <m>\hat{\bf a}</m> et <m>\vr</m>, et il est orthogonal à <m>\vOm</m> et à <m>\vr</m>; par la règle de la main droite, c'est <m>{\vOm\times\vr}</m>.
+        </li>
+        <li>
+          <m>{\vnabla\times(\vOm\times\vr)=2\vOm}</m>, <m>{\vnabla\cdot(\vOm\times\vr)=0}</m>
+        </li>
+        <li>
+          <m>1095</m> km/h
+        </li>
+      </ol>
+      </p></answer>
 
       <solution><p>
         (a)
@@ -1320,9 +1230,9 @@
         est la fraction <m>\frac{\Om}{2\pi}</m> d'un cercle entier et a donc une longueur de
         <m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om\norm{\vr}\,\sin\theta</m>. Ainsi, le point
         se déplace à une vitesse <m>\Om\norm{\vr}\,\sin\theta</m>. Le vecteur vitesse du point
-        doit avoir une longueur de <m>\Om\norm{\vr}\,\sin\theta</m> et une direction perpendiculaire
+        doit avoir une longueur de <m>\Om\norm{\vr}\,\sin\theta</m> et une direction orthogonale
         à <m>\hat{\bf a}</m> et <m>\vr</m>. Le vecteur
-        <m>\vOm\times\vr</m> est perpendiculaire à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
+        <m>\vOm\times\vr</m> est orthogonal à <m>\vr</m> et à <m>\vOm=\Om\hat{\bf a}</m>
         et a une longueur de
         <m>\
         \norm{\vOm}\,\norm{\vr}\,\sin\theta
@@ -1397,6 +1307,7 @@
     </exercise>
 
     <!-- Solution et réponse correspondent -->
+    <!-- 13 -->
     <exercise>
       <statement><p>
       Supposer que le champ de vecteurs <m>\vF</m> vérifie <m>\vnabla\cdot \vF=0</m> dans
@@ -1465,9 +1376,9 @@
       </mrow>.
       </md>
       Comme, par hypothèse,
-         <m>\vnabla\cdot\vF=\frac{\partial F_1}{\partial x}
-         +\frac{\partial F_2}{\partial y}
-         +\frac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
+         <m>\vnabla\cdot\vF=\tfrac{\partial F_1}{\partial x}
+         +\tfrac{\partial F_2}{\partial y}
+         +\tfrac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
       <md>
       <mrow>
       -t^2x\Big\{\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)

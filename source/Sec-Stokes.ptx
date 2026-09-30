@@ -4,7 +4,7 @@
     <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-    <title>Le Théorème de Stokes</title>
+    <title>Le théorème de Stokes</title>
 
     <introduction>
         <p>
@@ -14,13 +14,14 @@
   </fn>,
             un analogue du théorème de Green, dans sa version tangentielle, mais
             en trois dimensions.
-            Le résultat lie l'intégrale d'un champ à travers une surface de
-            <m>\R^3</m> à une intégrale autour de la frontière de la surface.
+            Le résultat lie l'intégrale du rotationnel d'un champ sur une
+            surface de <m>\R^3</m> à l'intégrale du champ le long du bord de
+            cette surface.
         </p>
     </introduction>
 
     <subsection xml:id="pars-Stokes">
-        <title>Le Théorème de Stokes</title>
+        <title>Le théorème de Stokes</title>
 
         <theorem xml:id="thm_Stokes">
             <title>Théorème de Stokes</title>
@@ -32,7 +33,7 @@
                         <li>
                             <m>\cS</m> une surface lisse par morceaux, orientée
                             par un vecteur normal unitaire <m>\vn</m> (de classe
-                            <m>C^1)</m>;
+                            <m>C^1</m>);
                         </li>
 
                         <li>
@@ -45,7 +46,7 @@
                                     <m>\vn</m>, c'est-à-dire que :
                                     <ul>
                                         <li>
-                                            lorsqu'on parcourt le long de
+                                            lorsqu'on se déplace le long de
                                             <m>\partial \cS</m> dans la
                                             direction choisie de
                                             <m>\partial \cS</m>,
@@ -75,7 +76,7 @@
                     Alors,
                     <md>
                         <mrow>
-\oint_{\partial S}\vF\cdot \dee{\vr}
+\int_{\partial \cS}\vF\cdot \dee{\vr}
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}
 </mrow>
                     </md>.
@@ -106,8 +107,8 @@
                                     partie positive de l'axe des <m>z</m>, elle
                                     est orientée dans le sens antihoraire (voir
                                     la figure dans le
-                                    <xref ref="thm_Stokes" text="global">théorème</xref>
-                                    ), alors
+                                    <xref ref="thm_Stokes" text="global">théorème</xref>),
+                                    alors
                                 </li>
 
                                 <li>
@@ -393,7 +394,7 @@ which is the conclusion that we wanted.
                     <li>
                         <p>
                             Le théorème de Stokes dit que
-                            <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}
+                            <m>\oint_{\cC}\vF\cdot \dee{\vr}
   =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}</m>
                             pour toute surface (convenablement orientée) dont le
                             bord est <m>\cC</m>.
@@ -428,7 +429,7 @@ which is the conclusion that we wanted.
                             avec un vecteur normal unitaire pointant vers le
                             haut, ont le cercle <m>\cC</m> pour bord.
                             Ainsi, le théorème de Stokes dit que
-                            <m>\displaystyle \iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
+                            <m>\iint_{\cS_1}\vnabla\times\vF\cdot\vn\ \dee{S}
 =\iint_{\cS_2}\vnabla\times\vF\cdot\vn\ \dee{S}</m>.
                             </p>
                             <p></p>
@@ -504,9 +505,9 @@ by the vector identity Theorem <xref ref="thm_degTwoIdentities" text="global">th
             <statement>
                 <sidebyside widths="60% 8% 32%" valign="middle">
                     <p>
-                        Calculer la valeur de 
-                        <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr} </m>, où
-                        <md>\vF= \big[2z+\sin\left(x^{146}\right)\big]\,\vi-5z\,\vj -5y\,\vk</md>
+                        Calculer la valeur de
+                        <m>\displaystyle\int_{\cC}\vF\cdot\dee{\vr}</m>, où
+                        <m>\vF= \big[2z+\sin\left(x^{146}\right)\big]\,\vi-5z\,\vj -5y\,\vk</m>
                         et où la courbe <m>\cC</m> est le cercle 
                         <m>x^2+y^2=4</m> du plan <m>z=1</m>, orienté dans le
                         sens antihoraire lorsque vu d'en haut.
@@ -523,12 +524,10 @@ by the vector identity Theorem <xref ref="thm_degTwoIdentities" text="global">th
                     faire que l'évaluation directe de l'intégrale de ligne sera
                     très difficile.
                     Afin d'utiliser le théorème de Stokes, nous avons besoin
-                    d'une surface <m>\cS</m> telle que <m>\partial S=C</m>.
+                    d'une surface <m>\cS</m> telle que <m>\partial \cS=\cC</m>.
                     Le choix le plus simple est le disque
                     <md>
-                        <mrow>
-S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
-</mrow>
+                        <mrow>\cS = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}</mrow>
                     </md>.
                 </p>
 
@@ -540,37 +539,14 @@ S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
       \vi &amp; \frac{\partial }{\partial x} &amp; 2z+\sin\left(x^{146}\right) \\
       \vj &amp; \frac{\partial }{\partial y} &amp; -5z \\
       \vk &amp; \frac{\partial }{\partial z} &amp; -5y
-    \end{matrix}\right]
+    \end{matrix}\right] = 2\vj
   </mrow>
-                        <mrow>
-&amp; =\vi \det\left[\begin{matrix}
-                         \frac{\partial }{\partial y} &amp;
-                         \frac{\partial }{\partial z} \\
-                               -5z  &amp; -5y
-                               \end{matrix}\right]
-   -\vj\det\left[\begin{matrix}
-                         \frac{\partial }{\partial x} &amp;
-                         \frac{\partial }{\partial z} \\
-                              2z+\sin\left(x^{146}\right)   &amp; -5y
-                               \end{matrix}\right]
-</mrow>
-                        <mrow>
-&amp;\hskip1in
-   +\vk\det\left[\begin{matrix}
-                         \frac{\partial }{\partial x} &amp;
-                         \frac{\partial }{\partial y} \\
-                              2z+\sin\left(x^{146}\right)  &amp;  -5z
-                               \end{matrix}\right]
-</mrow>
-                        <mrow>
-  &amp;=2\vj
-</mrow>
                     </md>
                     et que le vecteur normal unitaire à <m>\cS</m> est
                     <m>\vk</m>, le théorème de Stokes donne
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot\dee{\vr}
+\int_{\cC}\vF\cdot\dee{\vr}
 &amp; = \iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =  \iint_{\cS} (2\vj)\cdot\vk\,\dee{S}
 = 0
@@ -588,7 +564,7 @@ S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
         <example xml:id="eg_stokesA">
             <statement>
                 <p>
-                    Calculer <m> \displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>,
+                    Calculer <m>\displaystyle\int_{\cC}\vF\cdot\dee{\vr}</m>,
                     où
                     <m>\vF= \big[2z+\sin\left(x^{146}\right)\big]\,\vi-5z\,\vj -5y\,\vk</m>
                     et où <m>\cC</m> est l'intersection de <m>x^2+y^2+z^2=4</m>
@@ -619,13 +595,13 @@ S = \Set{(x,y,z)}{ x^2+y^2\leqslant  4,\ \ z=1}
                     Le choix le plus simple semble être le disque
                     <md>
                         <mrow>
-S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
+\cS = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 </mrow>
                     </md>.
                     La portion de <m>\cS</m> du premier octant est montrée
                     ci-dessus.
-                    Nous avons vu dans l'
-                    <xref ref="eg_stokesAA" text="global">exemple</xref> que
+                    Nous avons vu dans
+                    l'<xref ref="eg_stokesAA" text="global">exemple</xref> que
                     <md>
                         <mrow>
 \vnabla\times\vF &amp;=2\vj
@@ -634,7 +610,7 @@ S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                     de sorte que le théorème de Stokes donne
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot\dee{\vr}
+\int_{\cC}\vF\cdot\dee{\vr}
 &amp; = \iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
  = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
 </mrow>
@@ -643,13 +619,13 @@ S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 
                 <p>
                     Nous allons évaluer
-                    <m>\displaystyle 2\iint_{\cS} \vj\cdot\vn\,\dee{S}</m> de
+                    <m>2\iint_{\cS} \vj\cdot\vn\,\dee{S}</m> de
                     deux façons différentes.
                     La première est plus efficace, mais nécessite un peu plus de
                     perspicacité.
                     Puisque <m>\vnabla(z-y)=\vk-\vj</m>, le vecteur normal
-                    unitaire pour le plan <m>z-y=0</m> (et donc pour <m>\cS</m>
-                    ) est <m>\vn = \frac{1}{\sqrt{2}}(\vk-\vj)</m>.
+                    unitaire pour le plan <m>z-y=0</m> (et donc pour <m>\cS</m>)
+                    est <m>{\vn = \tfrac{1}{\sqrt{2}}(\vk-\vj)}</m>.
                     Ainsi, l'intégrande est
                     <md>
                         <mrow>
@@ -657,13 +633,13 @@ S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
   </mrow>
                     </md>,
                     qui est une constante, et nous n'avons pas besoin de
-                    calculer <m>\vn\,dS</m>:
+                    calculer <m>\vn\,\dee{S}</m><nbsp/>:
                     <md>
                         <mrow>
-  \oint_{\cC}\vF\cdot\dee{\vr}
+  \int_{\cC}\vF\cdot\dee{\vr}
   &amp; = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
   =-\sqrt{2} \iint_{\cS} \dee{S}
-  = -\sqrt{2}\text{Aire}(S)
+  = -\sqrt{2}\,\text{Aire}(\cS)
   =-\sqrt{2}\pi\, 2^2
   </mrow>
                         <mrow>
@@ -678,17 +654,17 @@ S = \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                     <m>z=f(x,y)=y</m>, nous avons
                     <md>
                         <mrow>
-\vn\,dS = \pm\left(-f_x\,\vi-f_y\,\vj+\vk\right)\,\dee{x}\dee{y}
+\vn\,\dee{S} = \pm\left(-f_x\,\vi-f_y\,\vj+\vk\right)\dee{x}\dee{y}
         = \pm (-\vj+\vk)\,\dee{x}\dee{y}
 </mrow>
                     </md>.
                     Afin d'obtenir le vecteur normal unitaire pointant vers le
                     haut, nous prenons le signe <m>+</m>, de sorte que
-                    <m>\vn\,dS= (-\vj+\vk)\,\dee{x}\dee{y}</m>.
+                    <m>{\vn\,\dee{S}= (-\vj+\vk)\,\dee{x}\dee{y}}</m>.
                     Lorsque <m>(x,y,z)</m> parcourt
                     <md>
                         <mrow>
-S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
+\cS &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 </mrow>
                         <mrow>
   &amp;= \Set{(x,y,z)}{ x^2+2y^2\leqslant  4,\ \ z=y}
@@ -698,7 +674,7 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 </mrow>
                     </md>,
                     <m>(x,y)</m> parcourt le disque elliptique
-                    <m>R=\Set{(x,y)}{\frac{x^2}{4} +\frac{y^2}{2}\leqslant 1}</m>.
+                    <m>{\cR=\Set{(x,y)}{\tfrac{x^2}{4} +\tfrac{y^2}{2}\leqslant 1}}</m>.
                 </p>
 
                 <sidebyside widths="60% 10% 25% 5%" valign="top">
@@ -724,16 +700,13 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                     Ainsi,
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot\dee{\vr}
+\int_{\cC}\vF\cdot\dee{\vr}
 &amp; = 2\iint_{\cS} \vj\cdot\vn\,\dee{S}
 =2\iint_{\cR}\vj\cdot(-\vj+\vk)\,\dee{x}\dee{y}
 =-2 \iint_{\cR}\dee{x}\dee{y}
 </mrow>
                         <mrow>
-&amp;= -2\text{Aire}(R)
-</mrow>
-                        <mrow>
-&amp;=-4\sqrt{2}\pi.
+&amp;= -2\,\text{Aire}(\cR) =-4\sqrt{2}\pi.
 </mrow>
                     </md>
                 </p>
@@ -746,7 +719,7 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 
         <p>
             Dans l'exemple suivant nous calculons une intégrale de ligne de deux
-            façons : comme une intégrale de ligne, puis grace à une intégrale
+            façons<nbsp/>: comme une intégrale de ligne, puis grâce à une intégrale
             double et le théorème de Stokes.
         </p>
 
@@ -754,8 +727,10 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
             <statement>
                 <sidebyside widths="65% 10% 20%" valign="middle">
                     <p>
-                    Calculer <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>,
-                    où <m>\vF= (x+y)\,\vi+2(x-z)\,\vj +(y^2+z)\,\vk</m> et où
+                    Calculer <m>\displaystyle\int_{\cC}\vF\cdot\dee{\vr}</m>,
+                    où
+                    <md>\vF= (x+y)\,\vi+2(x-z)\,\vj +(y^2+z)\,\vk</md>
+                    et où
                     <m>\cC</m> est la courbe orientée obtenue en allant de
                     <m>(2,0,0)</m> à <m>(0, 3, 0)</m> puis à <m>(0, 0, 6)</m> et
                     en retournant à <m>(2, 0, 0)</m>, le tout en suivant des
@@ -773,76 +748,83 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                 <p>
                     Dans cette première solution, nous évaluons l'intégrale
                     directement.
-                    La première portion ( <m>C_1</m> dans la figure) peut être
+                    La première portion (<m>\cC_1</m> dans la figure) peut être
                     paramétrée par
                     <md>
                         <mrow>
-\vr(t)= 2\vi + t(3\vj - 2 \vi) = (2-2t)\vi +3t\vj \qquad 0\leqslant  t\leqslant  1
+\vr(t)= 2\vi + t(3\vj - 2 \vi) = (2-2t)\vi +3t\vj, \qquad 0\leqslant  t\leqslant  1
 </mrow>
                     </md>.
                     Ainsi, l'intégrale le long de cette première portion est
                     <md>
                         <mrow>
-\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-&amp;=\int_0^1 (2+t,\, 2(2-2t),\, (3t)^2)\cdot(-2,\, 3,\, 0)\ \dee{t}
+&amp;\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 </mrow>
                         <mrow>
-&amp;=\int_0^1 (8-14t)\ \dee{t}
+&amp;\qquad=\int_0^1 \big[(2+t)\,\vi+2(2-2t)\,\vj+(3t)^2\,\vk\big]\cdot(-2\,\vi+3\,\vj)\,\dee{t}
 </mrow>
                         <mrow>
-&amp;=\Big[8t-7t^2\Big]_0^1=1
+&amp;\qquad=\int_0^1 (8-14t)\ \dee{t}
+</mrow>
+                        <mrow>
+&amp;\qquad=\Big[8t-7t^2\Big]_0^1=1
 </mrow>
                     </md>.
                 </p>
 
                 <p>
-                    La deuxième courbe ( <m>C_2</m> dans la figure) peut être
+                    La deuxième courbe (<m>\cC_2</m> dans la figure) peut être
                     paramétrée par
                     <md>
                         <mrow>
-\vr(t)=3\vj + t(6\vk - 3 \vj) = (3-3t)\vj + 6t\vk \qquad 0\leqslant  t\leqslant  1
+\vr(t)=3\vj + t(6\vk - 3 \vj) = (3-3t)\vj + 6t\vk, \qquad 0\leqslant  t\leqslant  1
 </mrow>
                     </md>.
                     Ainsi, l'intégrale le long de cette portion est
                     <md>
                         <mrow>
-\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-&amp;=\int_0^1 \left(3(1-t),\, - 12t,\, 9(1-t)^2+ 6t\right)\cdot(0, -3, 6)\ \dee{t}
+&amp;\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 </mrow>
                         <mrow>
-&amp;=\int_0^1 [36t+54(1-t)^2+36t]\ \dee{t}
+&amp;\qquad=\int_0^1 \big[3(1-t)\,\vi-12t\,\vj+\big(9(1-t)^2+6t\big)\vk\big]\cdot(-3\,\vj+6\,\vk)\,\dee{t}
 </mrow>
                         <mrow>
-&amp;=\Big[18t^2-18(1-t)^3+18t^2\Big]_0^1
+&amp;\qquad=\int_0^1 [36t+54(1-t)^2+36t]\ \dee{t}
 </mrow>
                         <mrow>
-&amp;=54
+&amp;\qquad=\Big[18t^2-18(1-t)^3+18t^2\Big]_0^1
+</mrow>
+                        <mrow>
+&amp;\qquad=54
 </mrow>
                     </md>.
-                    Le dernier segment ( <m>C_3</m> dans la figure) peut être
+                    Le dernier segment (<m>\cC_3</m> dans la figure) peut être
                     paramétré par
                     <md>
                         <mrow>
-\vr(t)= 6\vk + t(2\vj - 6\vk)  = 2t\vi + (6-6t)\vk
+\vr(t)= 6\vk + t(2\vi - 6\vk)  = 2t\vi + (6-6t)\vk,
 \qquad 0\leqslant  t\leqslant  1
 </mrow>
                     </md>.
                     Ainsi, l'intégrale de ligne le long de ce segment est
                     <md>
                         <mrow>
-\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-&amp;=\int_0^1 \left(2t,\, 4t - 12(1-t),\,  6(1-t)\right)\cdot(2, 0, -6)\ \dee{t}
+&amp;\int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 </mrow>
                         <mrow>
-&amp;=\int_0^1 [4t-36(1-t)]\ \dee{t}
-=\Big[2t^2+18(1-t)^2\Big]_0^1
-=-16
+&amp;\qquad=\int_0^1 \big[2t\,\vi+\big(4t-12(1-t)\big)\vj+6(1-t)\,\vk\big]\cdot(2\,\vi-6\,\vk)\,\dee{t}
+</mrow>
+                        <mrow>
+&amp;\qquad=\int_0^1 [4t-36(1-t)]\ \dee{t}
+</mrow>
+                        <mrow>
+&amp;\qquad=\Big[2t^2+18(1-t)^2\Big]_0^1=-16
 </mrow>
                     </md>.
                     Globalement, l'intégrale qui nous intéresse est donc
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot \dee{\vr}=1+54-16=39
+\int_{\cC}\vF\cdot \dee{\vr}=1+54-16=39
 </mrow>
                     </md>.
                 </p>
@@ -873,10 +855,10 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
 </mrow>
                     </md>.
                     La courbe <m>\cC</m> est un triangle contenu dans le plan
-                    <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m>.
+                    <m>{\tfrac{x}{2}+\tfrac{y}{3}+\tfrac{z}{6}=1}</m>.
                     De plus, <m>\cC</m> est la frontière de la surface
                     <m>\cS</m> qui consiste en la portion du plan
-                    <m>\frac{x}{2}+\frac{y}{3}+\frac{z}{6}=1</m> vérifiant
+                    <m>{\tfrac{x}{2}+\tfrac{y}{3}+\tfrac{z}{6}=1}</m> vérifiant
                     <m>x\geqslant0</m>, <m>y\geqslant0</m> et
                     <m>z\geqslant0</m>.
                     Nous pouvons écrire l'équation du plan sous la forme
@@ -884,7 +866,7 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                     Pour cette surface,
                     <md>
                         <mrow>
-\vn\ \dee{S}=(3\vi+2\vj+\vk)\,\dee{x}\,\dee{y}
+\vn\,\dee{S}=(3\,\vi+2\,\vj+\vk)\,\dee{x}\,\dee{y}
 </mrow>
                     </md>,
                     en vertu de la
@@ -892,24 +874,24 @@ S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\leqslant  4,\ \ z=y}
                     nous pouvons écrire
                     <md>
                         <mrow>
-S&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ z\ge0,\ z=6-3x-2y}
+\cS&amp;=\Set{(x,y,z)}{x\geqslant0,\ y\geqslant0,\ z\geqslant0,\ z=6-3x-2y}
 </mrow>
                         <mrow>
-&amp;=\Set{(x,y,z)}{x\ge0, y\ge0,\ 6-3x-2y\ge0,\ z=6-3x-2y}
+&amp;=\Set{(x,y,z)}{x\geqslant0, y\geqslant0,\ 6-3x-2y\geqslant0,\ z=6-3x-2y}
 </mrow>
                     </md>.
                 </p>
 
-                <sidebyside widths="55% 8% 37%" valign="middle">
+                <sidebyside widths="58% 5% 37%" valign="middle">
                     <p>
                     Lorsque <m>(x,y,z)</m> parcourt <m>\cS</m>, <m>(x,y)</m>
                     parcourt le triangle
                     <md>
                         <mrow>
-R&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ 3x+2y\leqslant  6}
+\cR&amp;=\Set{(x,y)}{x\geqslant0,\ y\geqslant0,\ 3x+2y\leqslant  6}
 </mrow>
                         <mrow>
-&amp;=\Set{(x,y,z)}{x\ge0,\  0\leqslant  y \leqslant \tfrac{3}{2}(2-x)}
+&amp;=\Set{(x,y)}{x\geqslant0,\  0\leqslant  y \leqslant \tfrac{3}{2}(2-x)}
 </mrow>
                     </md>.
                     </p>
@@ -921,17 +903,19 @@ R&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ 3x+2y\leqslant  6}
                     Nous calculons alors
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot \dee{\vr}&amp;=\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
+\int_{\cC}\vF\cdot \dee{\vr}&amp;=\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
 </mrow>
                         <mrow>
-&amp;=\iint_{\cR}[2(y+1)\vi+\vk]\cdot[3\vi+2\vj+\vk]\ \dee{x}\,\dee{y}\cr
+&amp;=\iint_{\cR}\big[2(y+1)\,\vi+\vk\big]\cdot(3\,\vi+2\,\vj+\vk)\,\dee{x}\,\dee{y}
+</mrow>
+                        <mrow>
 &amp;=\iint_{\cR}[6y+7]\ \dee{x}\,\dee{y}
 </mrow>
                         <mrow>
-&amp; =\int_0^3 \int_0^{{1\over 3}(6-2y)}\  [6y+7]\ \dee{x}\,\dee{y}
+&amp; =\int_0^3 \int_0^{\frac{1}{3}(6-2y)}\  [6y+7]\ \dee{x}\,\dee{y}
 </mrow>
                         <mrow>
-&amp;=\int_0^3  \frac{1}{3}[6y+7][6-2y]  \dee{y}\
+&amp;=\int_0^3  \frac{1}{3}[6y+7][6-2y]\,\dee{y}
 </mrow>
                         <mrow>
 &amp; =\frac{1}{3}\int_0^3 \dee{y}\  [-12y^2+22y+42]
@@ -986,14 +970,17 @@ R&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ 3x+2y\leqslant  6}
 
         <example xml:id="eg_stokesC">
             <statement>
-                <sidebyside widths="45% 5% 45%" valign="top">
+                <sidebyside widths="48% 2% 45%" valign="top">
                     <p>
-                    Évaluer <m> \displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>, où
-                    <m>\vF= (\cos x +y+z)\,\vi+(x+z)\,\vj +(x+y)\,\vk</m> et où
+                    Évaluer <m>\displaystyle\int_{\cC}\vF\cdot\dee{\vr}</m>, où
+                    <md>
+                        <mrow> \vF\amp = (\cos x +y+z)\,\vi  </mrow>
+                        <mrow> \amp +(x+z)\,\vj +(x+y)\,\vk </mrow>
+                        </md> et où
                     <m>\cC</m> est l'intersection des surfaces
                     <md>
                         <mrow>
-x^2+\frac{y^2}{2}+\frac{z^2}{3}=1,\  z=x^2+2y^2
+x^2+\frac{y^2}{2}+\frac{z^2}{3}=1, z=x^2+2y^2,
 </mrow>
                     </md>
                     orientée dans le sens antihoraire lorsque vue d'en haut.
@@ -1007,7 +994,7 @@ x^2+\frac{y^2}{2}+\frac{z^2}{3}=1,\  z=x^2+2y^2
                 <p>
                     Pour commencer, faisons une esquisse de la courbe.
                     La surface d'équation
-                    <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> est un ellipsoïde
+                    <m>{x^2+\tfrac{y^2}{2}+\tfrac{z^2}{3}=1}</m> est un ellipsoïde
                     centré à l'origine, et <m>z=x^2+2y^2</m> est un paraboloïde
                     qui s'ouvre vers le haut.
                     Ils sont esquissés dans la figure accompagnant l'énoncé.
@@ -1022,8 +1009,8 @@ x^2+\frac{y^2}{2}+\frac{z^2}{3}=1,\  z=x^2+2y^2
                 </p>
 
                 <p>
-                    On peut paramétrer <m>\cC</m>, par exemple en substituant  <m>x^2 = z - 2y^2</m> dans l'équation de l'ellipsoïde, ce qui donne
-                    <m>-\frac{3}{2}y^2 + \frac{1}{3}\left(z+\frac{3}{2}\right)^2 = \frac{7}{4}</m>.
+                    On peut paramétrer <m>\cC</m>, par exemple en substituant <m>x^2 = z - 2y^2</m> dans l'équation de l'ellipsoïde, ce qui donne
+                    <m>{-\tfrac{3}{2}y^2 + \tfrac{1}{3}\left(z+\tfrac{3}{2}\right)^2 = \tfrac{7}{4}}</m>.
                     On peut alors résoudre pour obtenir <m>y</m> comme fonction
                     de <m>z</m>, puis <m>x^2=z-2y^2</m> donne aussi <m>x</m> en
                     fonction de <m>z</m>.
@@ -1049,10 +1036,10 @@ x^2+\frac{y^2}{2}+\frac{z^2}{3}=1,\  z=x^2+2y^2
 </mrow>
                     </md>,
                     de sorte que <m>\vF</m> est conservatif (en fait,
-                    <m>\vF=\vnabla\left(\sin x + xy + xz +yz\right)</m> ).
+                    <m>{\vF= \vnabla f} </m>, pour <m>f(x,y,z)= \left(\sin x + xy + xz +yz\right)</m>).
                     Comme <m>\cC</m> est une courbe fermée,
                     <m>
-\displaystyle\oint_{\cC}\vF\cdot\dee{\vr}=0
+\int_{\cC}\vF\cdot\dee{\vr}=0
 </m>.
                 </p>
             </solution>
@@ -1215,9 +1202,9 @@ Either way
                     <p>
                     Dans cet exemple, on calcule de deux façons différentes
                     l'intégrale de ligne
-                    <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>, où
-                    <m>\cC</m> est la courbe <m>x^2+y^2+z^2=4</m>,
-                    <m>z=y</m> orientée dans le sens antihoraire lorsque vue
+                    <m>\int_{\cC}\vF\cdot \dee{\vr}</m>, où
+                    <m>\cC</m> est la courbe d'équations <m>x^2+y^2+z^2=4</m>
+                    et <m>z=y</m>, orientée dans le sens antihoraire lorsque vue
                     d'en haut.
                     </p>
                     <p></p>
@@ -1226,8 +1213,7 @@ Either way
 
                 <p>
                     Le champ est
-                    <m>\vF=(z-y)\,\vi-(x+z)\,\vj-(x+y)\,\vk
-                    </m>.
+                    <m>{\vF=(z-y)\,\vi-(x+z)\,\vj-(x+y)\,\vk}</m>.
                 </p>
             </statement>
 
@@ -1249,7 +1235,7 @@ Either way
                     Nous paramétrons <m>\cC</m> par
                     <md>
                         <mrow>
-\vr(t)=\vc+\rho\cos t\,\vi'+ \rho\sin t\,\vj'
+\vr(t)=\vc+\rho\cos t\,\vi'+ \rho\sin t\,\vj',
 \qquad 0\leqslant  t\leqslant  2\pi
 </mrow>
                     </md>,
@@ -1258,14 +1244,14 @@ Either way
 
                 <sidebyside widths="55% 8% 32%" valign="middle">
                     <ul>
-                        <li><m>\vc=(0,0,0)</m> est le centre de <m>\cC</m>,</li>
-                        <li><m>\rho=2</m> est le rayon <m>\cC</m>, et</li>
+                        <li><m>\vc=\vZero</m> est le centre de <m>\cC</m>;</li>
+                        <li><m>\rho=2</m> est le rayon de <m>\cC</m>;</li>
                         <li>
                             <p>
                                 <m>\vi'</m> et <m>\vj'</m> sont deux vecteurs
                                 <ol marker="(a)">
-                                    <li>unitaires,</li>
-                                    <li>parallèles au plan <m>z=y</m>, et</li>
+                                    <li>unitaires;</li>
+                                    <li>parallèles au plan <m>z=y</m>;</li>
                                     <li>orthogonaux.</li>
                                 </ol>
                             </p>
@@ -1286,31 +1272,31 @@ Either way
                             Nous pouvons choisir <m>\vi'</m> comme un vecteur
                             unitaire parallèle au vecteur joignant le centre du
                             cercle <m>(0,0,0)</m> à <m>(2,0,0)</m>, c'est-à-dire
-                            <m>\vi'=(1,0,0)</m>.
+                            <m>\vi'=\vi</m>.
                         </li>
 
                         <li>
                             Puisque le plan contenant le cercle est
                             <m>z-y=0</m>, le vecteur
-                            <m>\vnabla(z-y)=(0,-1,1)</m> est perpendiculaire à
+                            <m>{\vnabla(z-y)=-\vj+\vk}</m> est orthogonal à
                             ce plan.
-                            Ainsi, <m>\vk'=\frac{1}{\sqrt{2}}(0,-1,1)</m> est un
+                            Ainsi, <m>{\vk'=\tfrac{1}{\sqrt{2}}(-\vj+\vk)}</m> est un
                             vecteur normal unitaire pour le plan <m>z=y</m>.
                             Ainsi,
-                            <m>\vj'=\vk'\times\vi'=\frac{1}{\sqrt{2}}(0,-1,1)\times(1,0,0) = \frac{1}{\sqrt{2}}(0,1,1)</m>
+                            <m>{\vj'=\vk'\times\vi'=\tfrac{1}{\sqrt{2}}(-\vj+\vk)\times\vi = \tfrac{1}{\sqrt{2}}(\vj+\vk)}</m>
                             est un vecteur qui est orthogonal à <m>\vi'</m> et à
                             <m>\vk'</m>.
                             Comme <m>\vj'</m> est orthogonal à <m>\vk'</m>, il
                             est parallèle au plan <m>z=y</m>.
                         </li>
                     </ul>
-                    En remplaçant dans <m>\vc=(0,0,0)</m>, <m>\rho=2</m>,
-                    <m>\vi'=(1,0,0)</m> et
-                    <m>\vj'=\frac{1}{\sqrt{2}}(0,1,1)</m>, on trouve
+                    En remplaçant <m>\vc=\vZero</m>, <m>\rho=2</m>,
+                    <m>\vi'=\vi</m> et
+                    <m>{\vj'=\tfrac{1}{\sqrt{2}}(\vj+\vk)}</m>, on trouve
                     <md>
                         <mrow>
-&amp;\vr(t)=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
-=2\Big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\Big)
+&amp;\vr(t)=2\cos t\,\vi+ 2\sin t\,\frac{1}{\sqrt{2}}(\vj+\vk)
+=2\cos t\,\vi+\sqrt{2}\sin t\,\vj+\sqrt{2}\sin t\,\vk,
 </mrow>
                         <mrow>
 &amp;0\leqslant  t\leqslant  2\pi
@@ -1323,25 +1309,27 @@ Either way
                 </p>
 
                 <p>
-                    À <m>t=0</m>, <m>\vr(0)=(2,0,0)</m>.
+                    À <m>t=0</m>, <m>\vr(0)=2\vi</m>.
                     Lorsque <m>t</m> croît, <m>z(t)=\sqrt{2}\sin t</m> croît
                     aussi, et <m>\vr(t)</m> bouge vers le haut, vers
-                    <m>\vr\left(\frac{\pi}{2}\right)=(0,\sqrt{2},\sqrt{2})</m>.
+                    <m>{\vr\left(\tfrac{\pi}{2}\right)=\sqrt{2}\,\vj+\sqrt{2}\,\vk}</m>.
                     Ceci donne donc la bonne orientation antihoraire.
                     Nous pouvons maintenant intégrer.
                     <md>
                         <mrow>
-\vr(t)&amp;=\left(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\right)\cr
-\vr\,'(t)&amp;=\left(-2\sin t,\sqrt{2}\cos t,\sqrt{2}\cos t\right)\cr
-\vF\left(\vr(t)\right)&amp;=\left(z(t)-y(t),-x(t)-z(t),-x(t)-y(t)\right)\cr
-&amp;=\left(\sqrt{2}\sin t-\sqrt{2}\sin t,
-              -2\cos t-\sqrt{2}\sin t,-2\cos t-\sqrt{2}\sin t\right)\cr
-&amp;=-\left(0, 2\cos t+\sqrt{2}\sin t,2\cos t+\sqrt{2}\sin t\right)\cr
+\vr(t)&amp;=\rvt{2\cos t}{\sqrt{2}\sin t}{\sqrt{2}\sin t},\qquad
+\vr\,'(t)=\rvt{-2\sin t}{\sqrt{2}\cos t}{\sqrt{2}\cos t},
+</mrow>
+                    <mrow>
+\vF\left(\vr(t)\right)&amp;=\rvt{z(t)-y(t)}{-x(t)-z(t)}{-x(t)-y(t)}
+=-\rctvec{0}{2\cos t+\sqrt{2}\sin t}{2\cos t+\sqrt{2}\sin t},
+</mrow>
+                    <mrow>
 \vF\left(\vr(t)\right)\cdot \vr\,'(t)
 &amp;=-\big[4\sqrt{2}\cos^2 t+4\cos t\sin t\big]
 </mrow>
-                        <mrow>
-&amp;=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]
+                    <mrow>
+&amp;=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big].
 </mrow>
                     </md>
                     En vertu des formules des angles doubles,
@@ -1350,7 +1338,7 @@ Either way
                     Ainsi,
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot \dee{\vr}
+\int_{\cC}\vF\cdot \dee{\vr}
 &amp;=\int_0^{2\pi}\vF\left(\vr(t)\right)\cdot \vr\,'(t)\ \dee{t}
 </mrow>
                         <mrow>
@@ -1391,9 +1379,13 @@ Either way
                     <md>
                         <mrow>
 
-S&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant  4,\ z=y},\cr
-S'&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\geqslant y},\cr
-S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\leqslant  y}
+\cS&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\leqslant  4,\ z=y},
+</mrow>
+                    <mrow>
+\cS'&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\geqslant y},
+</mrow>
+                    <mrow>
+\cS''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\leqslant  y}
 </mrow>
                     </md>.
                 </p>
@@ -1411,8 +1403,8 @@ S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\leqslant  y}
                     Afin de nous préparer, calculons <m>\vnabla\times\vF</m> et
                     <m>\vn\,\dee{S}</m>.
                     Pour le dernier, nous appliquons la formule
-                    <m>\vn\,\dee{S}=\pm(-f_x,-f_y,1)\,\dee{x}dy</m> (de la
-                    <xref ref="eq_SUdSgraph" text="global">formule</xref> ) à la
+                    <m>{\vn\,\dee{S}=\pm(-f_x\,\vi-f_y\,\vj+\vk)\,\dee{x}\dee{y}}</m> (de la
+                    <xref ref="eq_SUdSgraph" text="global">formule</xref>) à la
                     surface <m>z=f(x,y)=y</m>.
                     Nous choisissons le signe <m>+</m> pour avoir le vecteur
                     normal pointant vers le haut.
@@ -1432,41 +1424,41 @@ S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\leqslant  y}
 &amp;=2\,\vj
 </mrow>
                         <mrow>
-\vn\,\dee{S}&amp;=(0,-1,1)\,\dee{x}\dee{y}
+\vn\,\dee{S}&amp;=(-\vj+\vk)\,\dee{x}\dee{y}
 </mrow>
                         <mrow>
-\vnabla\times\vF\cdot\vn\,\dee{S}&amp;=(0,2,0)\cdot(0,-1,1)\,\dee{x}\dee{y}
-=-2\,\dee{x}\dee{y}
+\vnabla\times\vF\cdot\vn\,\dee{S}&amp;=2\,\vj\cdot(-\vj+\vk)\,\dee{x}\dee{y}
+=-2\,\dee{x}\dee{y}.
 </mrow>
                     </md>
                     Les variables d'intégration sont <m>x</m> et <m>y</m>.
                     Par définition, le domaine d'intégration est
                     <md>
                         <mrow>
-R=\Set{(x,y)}{(x,y,z)\text{ est dans  }S\text{ pour un certain }z}
+\cR=\Set{(x,y)}{(x,y,z)\text{ est dans }\cS\text{ pour un certain }z}
 </mrow>
                     </md>.
                     Afin de déterminer ce domaine plus précisément, observons
                     que, puisque <m>z=y</m> sur <m>\cS</m>,
                     <m>x^2+y^2+z^2\leqslant  4</m> équivaut à
-                    <m>x^2+2y^2\leqslant  4</m> sur <m>\cS</m>:
+                    <m>x^2+2y^2\leqslant  4</m> sur <m>\cS</m><nbsp/>:
                     <md>
                         <mrow>
 \cS=\Set{(x,y,z)}{x^2+2y^2\leqslant  4,\ z=y}
-\implies R=\Set{(x,y)}{x^2+2y^2\leqslant  4}
+\implies \cR=\Set{(x,y)}{x^2+2y^2\leqslant  4}
 </mrow>
                     </md>.
-                    Ainsi, le domaine d'intégration est une ellipse avec
-                    semi-axe majeur <m>a=2</m> et semi-axe mineur
+                    Ainsi, le domaine d'intégration est une ellipse de
+                    demi-grand axe <m>a=2</m> et de demi-petit axe
                     <m>b=\sqrt{2}</m>, de sorte que son aire est
                     <m>\pi a b=2\sqrt{2}\pi</m>.
                     L'intégrale est alors
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot \dee{\vr}
+\int_{\cC}\vF\cdot \dee{\vr}
 =\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =\iint_{\cR}(-2)\,\dee{x}\dee{y}
-=-2\ \text{Aire}\,(R)
+=-2\,\text{Aire}(\cR)
 =-4\sqrt{2}\pi
 </mrow>
                     </md>.
@@ -1536,26 +1528,26 @@ This corresponds to a rectangular domain of integration, not what we have here.
                     <m>\cS</m> est si simple (nous avons fait de bons choix!),
                     nous pouvons évaluer l'intégrale
                     <m>\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}</m> sans
-                    calculer <m>\dee{S}</m> explicitement et même établir les
-                    limites d'intégration.
+                    calculer <m>\dee{S}</m> explicitement ni même établir les
+                    bornes d'intégration.
                     Nous avons <m>\vnabla\times\vF=2\,\vj</m>.
                     Puisque <m>\cS</m> est la surface de niveau <m>z-y=0</m>, le
                     gradient <m>\vnabla(z-y)=-\vj+\vk</m> est normal à
                     <m>\cS</m>.
-                    Ainsi, <m>\vn = \frac{1}{\sqrt{2}}(-\vj+\vk)</m> et
+                    Ainsi, <m>{\vn = \tfrac{1}{\sqrt{2}}(-\vj+\vk)}</m> et
                     <md>
                         <mrow>
-\oint_{\cC}\vF\cdot \dee{\vr}
+\int_{\cC}\vF\cdot \dee{\vr}
 &amp;=\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
 =\iint_{\cS} (2\vj)\cdot \frac{1}{\sqrt{2}}(-\vj+\vk)\,\dee{S}
 </mrow>
                         <mrow>
 &amp;=\iint_{\cS} -\sqrt{2}\,\dee{S}
-=-\sqrt{2}\ {\rm Aire}\,(S)
+=-\sqrt{2}\,\text{Aire}(\cS)
 </mrow>
                     </md>.
-                    Puisque <m>\cS</m> est un cercle de rayon <m>2</m>,
-                    <m>\oint_{\cC}\vF\cdot \dee{\vr}=-4\sqrt{2}\pi</m>, encore
+                    Puisque <m>\cS</m> est un disque de rayon <m>2</m>,
+                    <m>\int_{\cC}\vF\cdot \dee{\vr}=-4\sqrt{2}\pi</m>, encore
                     une fois.
                 </p>
             </solution>
@@ -1639,15 +1631,15 @@ the origin is <m>4\pi</m>.
             <statement>
                 <p>
                     Soit
-                    <md>
-                        <mrow>
+                    <m>
+                       
         \vF = \left(z^2 - \cos(x^2) \right)\vi + \left(x^2 - \sin(y^2)\right)\vj + \left(xy - \tan(z^2)\right)\vk
-      </mrow>
-                    </md>
+
+                    </m>
                     et <m>\cC</m> la courbe paramétrée par
-                    <m>\vr(t) = 2\cos(t)\, \vi + 2 \sin t\, \vj + 4 \sin^2 t \, \vk</m>,
-                    pour <m>t\in [0,2\pi]</m>.
-                    Calculer la valeur de <m> \displaystyle \int_{\cC} \vF \cdot d\vr</m>.
+                    <m>{\vr(t) = 2\cos t\, \vi + 2 \sin t\, \vj + 4 \sin^2 t \, \vk}</m>,
+                    pour <m>{t\in [0,2\pi]}</m>.
+                    Calculer la valeur de <m>\int_{\cC} \vF \cdot \dee{\vr}</m>.
                 </p>
             </statement>
 
@@ -1655,7 +1647,7 @@ the origin is <m>4\pi</m>.
                 <p>
                     Notons pour commencer que la courbe est fermée et simple.
                     Le calcul de l'intégrale de ligne risque d'être ardu, en
-                    raison des termes <m>\cos(x^2),\ \sin(y^2)</m> et
+                    raison des termes <m>\cos(x^2)</m>, <m>\sin(y^2)</m> et
                     <m>\tan(z^2)</m>.
                 </p>
 
@@ -1666,9 +1658,9 @@ the origin is <m>4\pi</m>.
                         <m>\partial \cS = \cC</m>.
                         En général, plusieurs choix sont possibles.
                         Dans notre exemple, les composantes du chemin sont
-                        <m>x(t) = 2\cos(t),\ y(t) =   2 \sin t</m> et
+                        <m>x(t) = 2\cos t</m>, <m>y(t) = 2 \sin t</m> et
                         <m>z(t) = 4 \sin^2 t</m>.
-                        Ces composantes vérifient <m>z(t)^2= y(t)^2</m>, de
+                        Ces composantes vérifient <m>z(t)= y(t)^2</m>, de
                         sorte que notre courbe se trouve sur le cylindre
                         parabolique <m>z=y^2</m>.
                         Soit donc <m>\cS</m> la portion de ce cylindre qui est
@@ -1678,22 +1670,22 @@ the origin is <m>4\pi</m>.
                     <p/>
                     <figure xml:id="fig-ex-Stokes">
                         <caption>
-                            La courbe <m>\cC</m> et une surface <m>\cS</m> dont    elle est le bord, orientée par le vecteur rouge; en                           vert, le domaine <m>\cR</m>.
+                            La courbe <m>\cC</m> et une surface <m>\cS</m> dont elle est le bord, orientée par le vecteur rouge; en vert, le domaine <m>\cR</m>.
                         </caption>
 
                         <image xml:id="im-ex-Stokes" width="100%">
                             <sageplot variant="3d" aspect="1">
             var('x,y,z,r,t')
             L = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(0,pi/4, pi/80)]
-            Fig = line3d(L, thickness= 2, color = "red")
+            Fig = line3d(L, thickness= 2, color = "steelblue")
             L1 = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(pi/4, 2*pi, pi/200)]
-            Fig +=line3d(L1, thickness= 2, color = "red")
+            Fig +=line3d(L1, thickness= 2, color = "steelblue")
             Fig += plot3d(y^2, (x,-2.1,2.1), (y,-2.1,2.1), color = "orange", opacity = 0.25)
             Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 4*r^2 * sin(t)^2], (r,0,1), (t,0,2*pi), mesh = True, opacity = 0.65, color = "orange")
-            Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 0], (r,0,1), (t,0,2*pi), opacity = 0.65, color = "darkgreen")
-            Fig += arrow3d((1, 1.732, 3), (0.654, 1.932, 3.693), color = "red", width = 2)
-            Fig += arrow3d((-1, -1.732, 3), (-0.78, -1.857, 3.433), color = "red", width = 2)
-            Fig += arrow3d((0,1,1), (0,0.2, 1.4), color = "crimson", width =2)
+            Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 0], (r,0,1), (t,0,2*pi), opacity = 0.65, color = "seagreen")
+            Fig += arrow3d((1, 1.732, 3), (0.654, 1.932, 3.693), color = "steelblue", width = 2)
+            Fig += arrow3d((-1, -1.732, 3), (-0.78, -1.857, 3.433), color = "steelblue", width = 2)
+            Fig += arrow3d((0,1,1), (0,0.2, 1.4), color = "firebrick", width =2)
             Fig += arrow3d((0,0,0),(2.4,0,0), width=1, color = "black",frame = False)
             Fig += text3d("x", (2.6,0,0), color = "black",frame = False, fontsize = 20)
             Fig += arrow3d((0,0,0),(0,2.2,0), width=1, color = "black",frame = False)
@@ -1710,13 +1702,13 @@ the origin is <m>4\pi</m>.
                     Le théorème de Stokes nous donne alors
                     <md>
                         <mrow>
-      \int_{\cC} \vF\cdot d\vr = \int_{\partial \cS} \vF\cdot d\vr = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS.
+      \int_{\cC} \vF\cdot \dee{\vr} = \int_{\partial \cS} \vF\cdot \dee{\vr} = \iint_{\cS} (\vnabla \times \vF)\cdot \dee{\vS}.
     </mrow>
                     </md>
                 </p>
 
                 <p>
-                    Calculons le rotationnel de notre champ
+                    Calculons le rotationnel de notre champ<nbsp/>:
                     <md>
                         <mrow>\vnabla \times \vF  \amp =
         \left| \begin{array}{ccc} \vi &amp; \pdiff{}{x} &amp; z^2 - \cos(x^2)\\
@@ -1750,9 +1742,8 @@ the origin is <m>4\pi</m>.
 
                 <p>
                     <md>
-                        <mrow>\left(\vnabla \times \vF\right)\cdot \left(-f_x\, \vi - f_y\, \vj + \vk\right) \amp = \left(x\,\vi + (-y+2z)\vj + 2x\, \vk\right)\cdot\left(0\vi -2y\,\vj + \vk\right)  </mrow>
-                        <mrow> \amp = 2y^2 -4yz+2x = 2y^2 -4y^3 +2x </mrow>
-                        .
+                        <mrow>\left(\vnabla \times \vF\right)\cdot \rctvec{-f_x}{-f_y}{1} \amp = \rctvec{x}{-y+2z}{2x}\cdot\rctvec{0}{-2y}{1}  </mrow>
+                        <mrow> \amp = 2y^2 -4yz+2x = 2y^2 -4y^3 +2x, </mrow>
                     </md>
                     où, dans la dernière égalité, nous avons utilisé le fait que
                     <m>z = f(x,y) = y^2</m>.
@@ -1764,8 +1755,7 @@ the origin is <m>4\pi</m>.
 
                 <p>
                     <md>
-                        <mrow>\iint_{\cR} 2y^2 -4y^3 +2x   \, dA\amp = 2\iint_{\cR}y^2\, dA +4 \iint_{\cR}y^3 \, dA + 2\iint_{\cR} x\, dA</mrow>
-                        .
+                        <mrow>\iint_{\cR} \left(2y^2 -4y^3 +2x\right) \dee{A} = 2\iint_{\cR}y^2\, \dee{A} -4 \iint_{\cR}y^3 \, \dee{A} + 2\iint_{\cR} x\, \dee{A}.</mrow>
                     </md>
                 </p>
 
@@ -1779,11 +1769,10 @@ the origin is <m>4\pi</m>.
 
                 <p>
                     <md>
-                        <mrow>\int_{\cC} \vF \cdot d\vr \amp= \iint_{\cS} \vnabla\times \vF \cdot d\vS = 2\iint_{\cR} y^2 \, dA</mrow>
-                        <mrow>  \amp = 2\int_0^{2\pi}\int_0^2 r^2(\sin^2 \theta)\, r\, dr\, d\theta </mrow>
-                        <mrow>  \amp =2 \left(\int_0^{2\pi}\sin^2 \theta\, d\theta \right)\left(\int_0^2 r^3 \, dr\right) </mrow>
-                        <mrow>  \amp = 2 \left(\int_0^{2\pi} \frac{1}{2}(1-\cos 2\theta)\ d\theta\right)\left(\int_0^2 r^3 \, dr\right) = 2\pi\cdot \frac{16}{4} = 8\pi </mrow>
-                        .
+                        <mrow>\int_{\cC} \vF \cdot \dee{\vr} \amp= \iint_{\cS} \vnabla\times \vF \cdot \dee{\vS} = 2\iint_{\cR} y^2 \, \dee{A}</mrow>
+                        <mrow>  \amp = 2\int_0^{2\pi}\int_0^2 r^2(\sin^2 \theta)\, r\, \dee{r}\, \dee{\theta} </mrow>
+                        <mrow>  \amp =2 \left(\int_0^{2\pi}\sin^2 \theta\, \dee{\theta} \right)\left(\int_0^2 r^3 \, \dee{r}\right) </mrow>
+                        <mrow>  \amp = 2 \left(\int_0^{2\pi} \frac{1}{2}(1-\cos 2\theta)\, \dee{\theta}\right)\left(\int_0^2 r^3 \, \dee{r}\right) = 2\pi\cdot \frac{16}{4} = 8\pi. </mrow>
                     </md>
                 </p>
             </solution>
@@ -2039,7 +2028,7 @@ is twice that maximum rate of rotation. For this reason,
 
         <p>
             Le voltage le long de <m>\cC</m> est l'opposé du taux de changement
-            du flux magnétique à travers <m>\cS</m>:
+            du flux magnétique à travers <m>\cS</m><nbsp/>:
             <md>
                 <mrow>
       \oint_{\cC}\vE\cdot \dee{\vr}=-\frac{\partial }{\partial t}\iint_{\cS}\vB\cdot\vn \,\dee{S}.
@@ -2070,11 +2059,11 @@ is twice that maximum rate of rotation. For this reason,
             En effet, soit
             <m>\vG=\Big(\vnabla\times\vE+\frac{\partial\vB}{\partial t}\Big)</m>
             et supposons qu'il existe un point <m>\vx_0</m> tel que
-            <m>\vG(\vx_0)\ne 0</m>.
+            <m>\vG(\vx_0)\ne \vZero</m>.
             Soit un vecteur unitaire <m>\vn</m> dans la direction
             <m>\vG(\vx_0)</m>.
-            Soit en plus <m>\cS</m> un petit disque centré à <m>\vx_0</m> avec
-            normal <m>\vn</m>.
+            Soit en plus <m>\cS</m> un petit disque centré à <m>\vx_0</m>, de
+            vecteur normal <m>\vn</m>.
             Alors, <m>\vG(\vx_0)\cdot\vn \gt 0</m> et, si nous choisissons notre
             disque suffisamment petit, la continuité de <m>\vG</m> donnera que
             <m>\vG(\vx)\cdot\vn \gt 0</m> pour tout <m>\vx</m> sur <m>\cS</m>.
@@ -2087,7 +2076,7 @@ is twice that maximum rate of rotation. For this reason,
             Ainsi, <m>\vG=\vZero</m> partout, et l'on conclut que
             <md>
                 <mrow>
-        \vnabla\times\vE+\frac{\partial\vB}{\partial t}=0.
+        \vnabla\times\vE+\frac{\partial\vB}{\partial t}=\vZero.
       </mrow>
             </md>
             Il s'agit de l'une des équations de Maxwell.

@@ -6,23 +6,24 @@
 
     <!-- No 2 section 3.3.6 CLP4 -->
     <!-- Solution b) et réponse coïncident -->
+    <!-- 1 -->
     <exercise>
       <statement><p>
-      Soit <m>a,b,c  \gt  0</m>. Dénoter par <m>S</m> le triangle ayant pour sommets <m>(a,0,0)</m>,
+      Soit <m>a,b,c  \gt  0</m>. Dénoter par <m>\cS</m> le triangle ayant pour sommets <m>(a,0,0)</m>,
       <m>(0,b,0)</m> et <m>(0,0,c)</m>.
       <ol marker = "(a)">
       <li>
-      Trouver l'aire de la surface <m>S</m> de trois façons différentes, chacune en utilisant la
-      <xref ref="eq_SUdSgraph"/>.
+      Trouver l'aire de la surface <m>\cS</m> de trois façons différentes, chacune en utilisant la
+      <xref ref="eq_SUdSgraph" text="global">formule</xref>.
       </li>
       <li>
-      Dénoter par <m>T_{xy}</m> la projection de <m>S</m> sur le plan <m>xy</m> (c'est le triangle ayant pour sommets <m>(0,0,0)</m>, <m>(a,0,0)</m> et <m>(0,b,0)</m>). De façon similaire, utiliser
-      <m>T_{xz}</m> pour dénoter la projection de <m>S</m> sur le plan <m>xz</m> et
-      <m>T_{yz}</m> pour dénoter la projection de <m>S</m> sur le plan <m>yz</m>. Montrer que
+      Dénoter par <m>\cT_{xy}</m> la projection de <m>\cS</m> sur le plan <m>xy</m> (c'est le triangle ayant pour sommets <m>(0,0,0)</m>, <m>(a,0,0)</m> et <m>(0,b,0)</m>). De façon similaire, utiliser
+      <m>\cT_{xz}</m> pour dénoter la projection de <m>\cS</m> sur le plan <m>xz</m> et
+      <m>\cT_{yz}</m> pour dénoter la projection de <m>\cS</m> sur le plan <m>yz</m>. Montrer que
       <md><mrow>
-      \text{Aire}(S) =\sqrt{\text{Aire}(T_{xy})^2
-                           +\text{Aire}(T_{xz})^2
-                           +\text{Aire}(T_{yz})^2
+      \text{Aire}(\cS) =\sqrt{\text{Aire}(\cT_{xy})^2
+                           +\text{Aire}(\cT_{xz})^2
+                           +\text{Aire}(\cT_{yz})^2
                            }.
       </mrow></md>
       </li>
@@ -34,28 +35,33 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}</m>
-      </p>
-
-      <p>(b) La solution de la partie (a) donne
+      <ol marker="(a)">
+        <li>
+          <m>{\tfrac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}}</m>
+        </li>
+        <li>
+          <p> La solution de la partie (a) donne
       <md><mrow>
-      \text{Aire}(T_{xy})=\frac{ab}{2}, \qquad
-      \text{Aire}(T_{xz})=\frac{ac}{2}, \qquad
-      \text{Aire}(T_{yz})=\frac{bc}{2}.
+      \text{Aire}(\cT_{xy})=\frac{ab}{2}, \qquad
+      \text{Aire}(\cT_{xz})=\frac{ac}{2}, \qquad
+      \text{Aire}(\cT_{yz})=\frac{bc}{2}.
       </mrow></md>
       Ainsi,
       <md>
       <mrow>
-      \text{Aire}(S)
+      \text{Aire}(\cS)
       &amp;=\sqrt{\frac{a^2b^2}{4}+\frac{a^2c^2}{4}+\frac{b^2c^2}{4}}
       </mrow><mrow>
-      &amp;=\sqrt{\text{Aire}(T_{xy})^2
-                           +\text{Aire}(T_{xz})^2
-                           +\text{Aire}(T_{yz})^2
+      &amp;=\sqrt{\text{Aire}(\cT_{xy})^2
+                           +\text{Aire}(\cT_{xz})^2
+                           +\text{Aire}(\cT_{yz})^2
                            }.
       </mrow>
-      </md>
-      </p></answer>
+      </md></p>
+        </li>
+      </ol>
+      </p>
+      </answer>
 
       <solution><p>
       Note that all three vertices <m>(a,0,0)</m>, <m>(0,b,0)</m> and <m>(0,0,c)</m> lie on
@@ -64,26 +70,26 @@
       </p>
 
       <p><em>Method 1.</em>
-       <m>S</m> is the part of the surface <m>z=f(x,y)</m> with
+       <m>\cS</m> is the part of the surface <m>z=f(x,y)</m> with
       <m>f(x,y) = c\left(1-\frac{x}{a}-\frac{y}{b}\right)</m>
-      and with <m>(x,y)</m> running over the triangle <m>T_{xy}</m> in the <m>xy</m>-plane
+      and with <m>(x,y)</m> running over the triangle <m>\cT_{xy}</m> in the <m>xy</m>-plane
       with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,b,0)</m>.
       Hence by the first part of (<xref ref="eq_SUdSgraph"/>),
       <md>
       <mrow>
-      \text{Area}(S)&amp;=\iint_{T_{xy}} \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+      \text{Area}(\cS)&amp;=\iint_{\cT_{xy}} \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;=\iint_{T_{xy}}\ \sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\
+      &amp;=\iint_{\cT_{xy}}\ \sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\
       \dee{x}\,\dee{y}
       </mrow><mrow>
-      &amp;=\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ A(T_{xy})
+      &amp;=\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ A(\cT_{xy})
       </mrow>
       </md>
-      where <m>A(T_{xy})</m> is the area of <m>T_{xy}</m>. Since the triangle <m>T_{xy}</m>
+      where <m>A(\cT_{xy})</m> is the area of <m>\cT_{xy}</m>. Since the triangle <m>\cT_{xy}</m>
       has base <m>a</m> and height <m>b</m> (see the figure below), it has
       area <m>\frac{1}{2}ab</m>. So
       <md><mrow>
-      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ ab
+      \text{Area}(\cS)=\frac{1}{2}\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ ab
        =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
       </mrow></md>
       </p>
@@ -94,68 +100,68 @@
 
       <p>
       <em>Method 2.</em>
-       <m>S</m> is the part of the surface <m>x=g(y,z)</m> with
+       <m>\cS</m> is the part of the surface <m>x=g(y,z)</m> with
       <m>g(y,z) = a\left(1-\frac{y}{b}-\frac{z}{c}\right)</m>
-      and with <m>(y,z)</m> running over the triangle <m>T_{yz}</m> in the <m>yz</m>-plane
+      and with <m>(y,z)</m> running over the triangle <m>\cT_{yz}</m> in the <m>yz</m>-plane
       with vertices <m>(0,0,0)</m> <m>(0,b,0)</m> and <m>(0,0,c)</m>.
       Hence by the second part of (<xref ref="eq_SUdSgraph"/>),
       <md>
       <mrow>
-      \text{Area}(S)&amp;=\iint_{T_{yz}} \sqrt{1+g_y(y,z)^2+g_z(y,z)^2}\ \dee{y}\,\dee{z}
+      \text{Area}(\cS)&amp;=\iint_{\cT_{yz}} \sqrt{1+g_y(y,z)^2+g_z(y,z)^2}\ \dee{y}\,\dee{z}
       </mrow><mrow>
-      &amp;=\iint_{T_{yz}}\ \sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\
+      &amp;=\iint_{\cT_{yz}}\ \sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\
       \dee{y}\,\dee{z}
       </mrow><mrow>
-      &amp;=\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ A(T_{yz})
+      &amp;=\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ A(\cT_{yz})
       </mrow>
       </md>
-      where <m>A(T_{yz})</m> is the area of <m>T_{yz}</m>. Since <m>T_{yz}</m> has base <m>b</m> and
+      where <m>A(\cT_{yz})</m> is the area of <m>\cT_{yz}</m>. Since <m>\cT_{yz}</m> has base <m>b</m> and
       height <m>c</m>, it has area <m>\frac{1}{2}bc</m>. So
       <md><mrow>
-      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ bc
+      \text{Area}(\cS)=\frac{1}{2}\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ bc
        =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
       </mrow></md>
       </p>
 
       <p><em>Method 3.</em>
-       <m>S</m> is the part of the surface <m>y=h(x,z)</m> with
+       <m>\cS</m> is the part of the surface <m>y=h(x,z)</m> with
       <m>h(x,z) = b\left(1-\frac{x}{a}-\frac{z}{c}\right)</m>
-      and with <m>(x,z)</m> running over the triangle <m>T_{xz}</m> in the <m>xz</m>-plane
+      and with <m>(x,z)</m> running over the triangle <m>\cT_{xz}</m> in the <m>xz</m>-plane
       with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,0,c)</m>.
       Hence by the third part of (<xref ref="eq_SUdSgraph"/>),
       <md>
       <mrow>
-      \text{Area}(S)&amp;=\iint_{T_{xz}} \sqrt{1+h_x(x,z)^2+h_z(x,z)^2}\ \dee{x}\,\dee{z}
+      \text{Area}(\cS)&amp;=\iint_{\cT_{xz}} \sqrt{1+h_x(x,z)^2+h_z(x,z)^2}\ \dee{x}\,\dee{z}
       </mrow><mrow>
-      &amp;=\iint_{T_{xz}}\ \sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\
+      &amp;=\iint_{\cT_{xz}}\ \sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\
       \dee{x}\,\dee{z}
       </mrow><mrow>
-      &amp;=\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ A(T_{xz})
+      &amp;=\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ A(\cT_{xz})
       </mrow>
       </md>
-      where <m>A(T_{xz})</m> is the area of <m>T_{xz}</m>. Since <m>T_{xz}</m> has base <m>a</m> and
+      where <m>A(\cT_{xz})</m> is the area of <m>\cT_{xz}</m>. Since <m>\cT_{xz}</m> has base <m>a</m> and
       height <m>c</m>, it has area <m>\frac{1}{2}ac</m>. So
       <md><mrow>
-      \text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ ac
+      \text{Area}(\cS)=\frac{1}{2}\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ ac
        =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
       </mrow></md>
       </p>
 
       <p>(b) La solution de la partie (a) donne
       <md><mrow>
-      \text{Aire}(T_{xy})=\frac{ab}{2}, \qquad
-      \text{Aire}(T_{xz})=\frac{ac}{2}, \qquad
-      \text{Aire}(T_{yz})=\frac{bc}{2}, \qquad
+      \text{Aire}(\cT_{xy})=\frac{ab}{2}, \qquad
+      \text{Aire}(\cT_{xz})=\frac{ac}{2}, \qquad
+      \text{Aire}(\cT_{yz})=\frac{bc}{2}, \qquad
       </mrow></md>
       Ainsi,
       <md>
       <mrow>
-      \text{Aire}(S)
+      \text{Aire}(\cS)
       &amp;=\sqrt{\frac{a^2b^2}{4}+\frac{a^2c^2}{4}+\frac{b^2c^2}{4}}
       </mrow><mrow>
-      &amp;=\sqrt{\text{Aire}(T_{xy})^2
-                           +\text{Aire}(T_{xz})^2
-                           +\text{Aire}(T_{yz})^2
+      &amp;=\sqrt{\text{Aire}(\cT_{xy})^2
+                           +\text{Aire}(\cT_{xz})^2
+                           +\text{Aire}(\cT_{yz})^2
                            }.
       </mrow>
       </md>
@@ -165,10 +171,11 @@
     </exercise>
 
     <!-- No 3 section 3.3.6 CLP4 -->
+    <!-- 2 -->
     <exercise>
         <statement><p>
         Soit <m>a,h \gt 0</m>. Dénoter par <m>\cS</m> la partie du cylindre <m>x^2+z^2=a^2</m> avec
-        <m>x\geqslant  0</m>, <m>0\leqslant y\leqslant h</m> et <m>z\geqslant  0</m>.
+        <m>{x\geqslant  0}</m>, <m>{0\leqslant y\leqslant h}</m> et <m>{z\geqslant  0}</m>.
         </p>
 
         <sidebyside width="38%">
@@ -178,16 +185,16 @@
         <p>
         <ol marker = "(a)">
         <li>
-        Trouver l'aire de la surface <m>S</m> sans faire de calcul.
+        Trouver l'aire de la surface <m>\cS</m> sans faire de calcul.
         </li>
         <li>
-        Paramétriser <m>S</m> par
+        Paramétrer <m>\cS</m> par
         <md><mrow>
-        \vr(\theta,y) = a\,\cos\theta\ \vi +y\,\vj +a\sin\theta\ \vk, \quad
-        0\le\theta\le\frac{\pi}{2},\
+        \vr(\theta,y) = a\cos\theta\,\vi +y\,\vj +a\sin\theta\,\vk, \quad
+        0\leqslant\theta\leqslant\frac{\pi}{2},\
         0\leqslant y\leqslant h.
         </mrow></md>
-        Trouver l'aire de la surface <m>S</m> en utilisant la <xref ref="eq_SUdSparam" text="global">formule</xref>.
+        Trouver l'aire de la surface <m>\cS</m> en utilisant la <xref ref="eq_SUdSparam" text="global">formule</xref>.
         </li>
         </ol>
         </p>
@@ -195,11 +202,11 @@
         </statement>
 
         <hint><p>
-        Applatir <m>S</m>.
+        Applatir <m>\cS</m>.
         </p></hint>
 
         <answer><p>
-        <m>\frac{\pi ah}{2}</m>
+        <m>\tfrac{\pi ah}{2}</m>
         </p></answer>
 
         <solution><p>
@@ -208,11 +215,11 @@
         up. If you flatten the piece of paper out, you get a rectangle
         with the length of one side being <m>h</m> and the length of the other side
         being one quarter of the circumference of a circle of radius <m>a</m>,
-        i.e. <m>\frac{1}{4}(2\pi a)=\frac{\pi a}{2}</m>. So the area of <m>S</m> is
+        i.e. <m>\frac{1}{4}(2\pi a)=\frac{\pi a}{2}</m>. So the area of <m>\cS</m> is
         <m>\frac{\pi a h}{2}</m>.
         </p>
 
-        <p>(b) <m>S</m> is parametrized by
+        <p>(b) <m>\cS</m> is parametrized by
         <md><mrow>
         x(\theta,y)=a\cos\theta\qquad
         y(\theta,y)=y\qquad
@@ -243,7 +250,7 @@
         So
         <md>
         <mrow>
-        \text{Area}(S)&amp;=\iint_S\dee{S}
+        \text{Area}(\cS)&amp;=\iint_\cS\dee{S}
         =\int_0^{\pi/2}\dee{\theta}\int_0^h\dee{y}\ a
         =a\left(\frac{\pi}{2}\right)h
         </mrow>
@@ -254,18 +261,19 @@
       </exercise>
 
     <!-- No 4 section 3.3.6 CLP4 -->
+    <!-- 3 -->
     <exercise>
       <statement><p>
-      Soit <m>S</m> la partie de la surface <m>z = xy</m> se trouvant à l'intérieur du cylindre
-      <m>x^2 + y^2 = 3</m>. Trouver le moment d'inertie de <m>S</m> autour de l'axe
+      Soit <m>\cS</m> la partie de la surface <m>z = xy</m> se trouvant à l'intérieur du cylindre
+      <m>x^2 + y^2 = 3</m>. Trouver le moment d'inertie de <m>\cS</m> par rapport à l'axe des
       <m>z</m>, c'est-à-dire
       <md><mrow>
-            I =  \iint_S (x^2 + y^2)\ \dee{S}.
+            I =  \iint_\cS (x^2 + y^2)\,\dee{S}.
       </mrow></md>
       </p></statement>
 
       <answer><p>
-      <m>\frac{116}{15}\pi</m>
+      <m>\tfrac{116}{15}\pi</m>
       </p></answer>
 
       <solution><p>
@@ -278,7 +286,7 @@
       and
       <md>
       <mrow>
-      I &amp;=  \iint_S (x^2 + y^2)\ \dee{S}
+      I &amp;=  \iint_\cS (x^2 + y^2)\ \dee{S}
         = \iint_{x^2+y^2\leqslant 3} (x^2 + y^2)\ \sqrt{1+x^2+y^2}\ \dee{x}\,\dee{y}
       </mrow><mrow>
         &amp;= \int_0^{2\pi}\dee{\theta}\int_0^{\sqrt{3}} \dee{r}\ r\ r^2\sqrt{1+r^2}
@@ -300,22 +308,23 @@
     </exercise>
 
     <!-- No 16 section 3.3.6 CLP4 -->
+    <!-- 4 -->
     <exercise>
       <statement><p>
       Évaluer, pour chacun des cas suivants,
-      le flux <m>\ \iint_S\vF\cdot\vn \,\dee{S}</m>, où <m>\vn</m> est
-      la normale extérieure à la surface <m>S</m>.
+      le flux <m>\iint_\cS\vF\cdot\vn \,\dee{S}</m>, où <m>\vn</m> est
+      la normale extérieure à la surface <m>\cS</m>.
       <ol marker = "(a)">
       <li>
-      <m>\ \vF={(x^2+y^2+z^2)}^n(x\,\vi+y\,\vj+z\,\vk)\ </m>,
-      et la surface <m>S</m> est la sphère <m>x^2+y^2+z^2=a^2</m>.
+      <m>{\vF={(x^2+y^2+z^2)}^n(x\,\vi+y\,\vj+z\,\vk)}</m>,
+      et la surface <m>\cS</m> est la sphère <m>x^2+y^2+z^2=a^2</m>.
       </li>
       <li>
-      <m>\ \vF=x\,\vi+y\,\vj+z\,\vk\ </m>, et <m>S</m> est la surface de la boîte rectangulaire <m>0\leqslant x\leqslant a</m>, <m>0\leqslant y\le
-      b</m>, <m>0\leqslant z\leqslant c</m>.
+      <m>{\vF=x\,\vi+y\,\vj+z\,\vk}</m>, et <m>\cS</m> est la surface de la boîte rectangulaire <m>0\leqslant x\leqslant a</m>, <m>0\leqslant y\leqslant
+      b</m> et <m>0\leqslant z\leqslant c</m>.
       </li>
       <li>
-      <m>\ \vF=y\,\vi+z\,\vk\ </m>, et <m>S</m> est la surface du cône solide <m>0\leqslant z\leqslant 1-\sqrt{x^2+y^2}</m>.
+      <m>{\vF=y\,\vi+z\,\vk}</m>, et <m>\cS</m> est la surface du cône solide <m>0\leqslant z\leqslant 1-\sqrt{x^2+y^2}</m>.
       </li>
       </ol>
       </p></statement>
@@ -332,7 +341,7 @@
       <ol marker="(a)" cols="3">
       <li><p><m>4\pi a^{2n+3}</m></p></li>
       <li><p><m>3abc</m></p></li>
-      <li><p><m>\frac{\pi}{3}</m></p></li>
+      <li><p><m>\tfrac{\pi}{3}</m></p></li>
       </ol>
       </p></answer>
 
@@ -346,8 +355,8 @@
       &amp;\implies\   \vF\cdot\vn = \left(x^2+y^2+z^2\right)^{n+1-1/2}
       ={\left(a^2\right)}^{n+1/2}=a^{2n+1}
       </mrow><mrow>
-      &amp;\implies\  \iint_S\vF\cdot\vn \,\dee{S}\ =a^{2n+1}\iint_S\,\dee{S}
-      =a^{2n+1}\text{Area}(S)
+      &amp;\implies\  \iint_\cS\vF\cdot\vn \,\dee{S}\ =a^{2n+1}\iint_\cS\,\dee{S}
+      =a^{2n+1}\text{Area}(\cS)
       =4\pi a^{2n+3}
       </mrow>
       </md>
@@ -357,22 +366,22 @@
       <p>(b) The box has six faces.
       <md>
       <mrow>
-      S_1&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=c}\
+      \cS_1&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=c}\
          \text{with outward normal } \vn=\vk
       </mrow><mrow>
-      S_2&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=0}\
+      \cS_2&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b,\ z=0}\
          \text{with outward normal } \vn=-\vk
       </mrow><mrow>
-      S_3&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=b}\
+      \cS_3&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=b}\
          \text{with outward normal } \vn=\vj
       </mrow><mrow>
-      S_4&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=0}\
+      \cS_4&amp;=\Set{(x,y,z)}{0\leqslant x\leqslant a,\ 0\leqslant z\leqslant c,\ y=0}\
          \text{with outward normal } \vn=-\vj
       </mrow><mrow>
-      S_5&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=a}\
+      \cS_5&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=a}\
          \text{with outward normal } \vn=\vi
       </mrow><mrow>
-      S_6&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=0}\
+      \cS_6&amp;=\Set{(x,y,z)}{0\leqslant y\leqslant b,\ 0\leqslant z\leqslant c,\ x=0}\
          \text{with outward normal } \vn=-\vi
       </mrow>
       </md>
@@ -383,7 +392,7 @@
       </sidebyside>
 
       <p>
-      For <m>S_1</m>, i.e. the <m>z=c</m> face, and <m>S_2</m>, i.e. the <m>z=0</m> face,
+      For <m>\cS_1</m>, i.e. the <m>z=c</m> face, and <m>\cS_2</m>, i.e. the <m>z=0</m> face,
       <md alignment="alignat">
       <mrow>
       \int_{\Atop{z=c}{\rm face}}\vF\cdot\vn\, \dee{S}
@@ -410,7 +419,7 @@
       </p>
 
       <p>(c)
-      The base of the cone is <m>\Set{(x,y,z)}{x^2+y^2\le1,\ z=0}</m>
+      The base of the cone is <m>\Set{(x,y,z)}{x^2+y^2\leqslant1,\ z=0}</m>
       and has (outward) normal <m>\vn=-\vk</m>. So
       The flux through the base is
       <md><mrow>
@@ -426,7 +435,7 @@
       <md><mrow>
       \vr(r,\theta)=r\cos\theta\,\vi+r\sin\theta\,\vj
       +(1-r)\,\vk
-      \qquad\text{with } 0\le\theta\leqslant 2\pi,\ 0\leqslant r\leqslant 1
+      \qquad\text{with } 0\leqslant\theta\leqslant 2\pi,\ 0\leqslant r\leqslant 1
       </mrow></md>
       Then
       <md>
@@ -482,11 +491,12 @@
     <title>Pour mieux comprendre</title>
 
     <!-- No 8 Section 3.3.6 CLP4 -->
+    <!-- 5 -->
     <exercise> <!-- <title><fromexam>M253 2016D</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
       <li>
-      Pour trouver l'aire d'une surface <m>z = f (x,y)</m> au-dessus d'une région <m>D</m>, on intègre <m>\iint_D F(x,y)\ \dee{A}</m>. Qu'est-ce que <m>F(x,y)</m> en termes de <m>f</m>?
+      Pour trouver l'aire d'une surface <m>z = f (x,y)</m> au-dessus d'une région <m>\cD</m>, on intègre <m>\iint_\cD F(x,y)\ \dee{A}</m>. Qu'est-ce que <m>F(x,y)</m> en termes de <m>f</m>?
       </li>
       <li>
       <sidebyside widths="55% 5% 40%" valign="top">
@@ -510,7 +520,7 @@
       </mrow></md>
       </li>
       <li>
-      Quelle est l'aire totale de l'Étoile de la mort ?
+      Quelle est l'aire totale de l'Étoile de la mort?
       </li>
       </ol></p>
       </li>
@@ -523,17 +533,26 @@
       </p></hint>
 
       <answer><p>
-      (a)  <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>
-      </p>
-      <p>
-      (b) (i)
-      <md><mrow>
-      \text{Aire} =
-      \int_{0}^{2\pi}
-      \int_{0}^{1}
-      \frac{2r}{\sqrt{4-r^2}}\,\dee{r}\,\dee{\theta}.
-      </mrow></md>
-      (b) (ii) <m>16\pi</m>
+      <ol marker="(a)">
+        <li>
+          <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>
+        </li>
+        <li>
+          <p><ol marker="(i)">
+            <li>
+              <md><mrow>
+              \text{Aire} =
+              \int_{0}^{2\pi}
+              \int_{0}^{1}
+              \frac{2r}{\sqrt{4-r^2}}\,\dee{r}\,\dee{\theta}
+              </mrow></md>
+            </li>
+            <li>
+              <m>16\pi</m>
+            </li>
+          </ol></p>
+        </li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -596,23 +615,26 @@
     </exercise>
 
     <!-- No 18 section 3.3.6 CLP4 -->
+    <!-- 6 -->
     <exercise> <!-- <title><fromexam>M317 2000A</fromexam></title> -->
       <statement><p>
       Soit <m>\cS</m> la partie de la surface <m>x^2+y^2+2z=2</m> se trouvant au-dessus du carré
       <m>-1\leqslant x\leqslant 1</m>, <m>-1\leqslant y\leqslant 1</m>.
       <ol marker = "(a)">
       <li>
-      Trouver <m>\ds\iint_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
+      Trouver <m>{\iint_\cS \tfrac{x^2+y^2}{\sqrt{1+x^2+y^2}}\,\dee{S}}</m>.
       </li>
       <li>
-      Trouver le flux de <m>\vF=x\vi+y\vj+z\vk</m> vers le haut à travers <m>\cS</m>.
+      Trouver le flux de <m>{\vF=x\,\vi+y\,\vj+z\,\vk}</m> vers le haut à travers <m>\cS</m>.
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>\frac{8}{3}</m></p><p>
-      (b) <m>\frac{16}{3}</m>
+      <ol marker="(a)" cols="2">
+        <li><m>\tfrac{8}{3}</m></li>
+        <li><m>\tfrac{16}{3}</m></li>
+      </ol>
       </p></answer>
 
       <solution><p>
@@ -671,13 +693,14 @@
     </exercise>
 
     <!-- No 24 section 3.3.6 CLP4 -->
+    <!-- 7 -->
     <exercise> <!-- <title><fromexam>M317 2008A</fromexam></title> -->
       <statement><p>Évaluer le flux
-      <m>\displaystyle  \iint_S \vF \cdot\vn\, \dee{S},</m>
-      où <m>\vF(x, y, z) = (x+1)\,\vi + (y +1)\,\vj + 2z\,\vk</m> et
-      <m>S</m> est la partie du paraboloïde <m>z = 4-x^2 -y^2</m>
-      se trouvant au-dessus du triangle <m>0\leqslant x\leqslant1</m>, <m>0\leqslant y\leqslant1 - x</m>.
-      <m>S</m> est orientée de telle sorte que son vecteur unitaire a une composante <m>z</m> négative.
+      <m>\iint_\cS \vF \cdot\vn\, \dee{S}</m>,
+      où <m>{\vF(x, y, z) = (x+1)\,\vi + (y +1)\,\vj + 2z\,\vk}</m> et
+      <m>\cS</m> est la partie du paraboloïde <m>z = 4-x^2 -y^2</m>
+      se trouvant au-dessus du triangle <m>{0\leqslant x\leqslant 1}</m>, <m>0\leqslant y\leqslant1 - x</m>.
+      <m>\cS</m> est orientée de telle sorte que son vecteur normal unitaire a une composante <m>z</m> négative.
       </p></statement>
 
       <hint><p>
@@ -685,7 +708,7 @@
       </p></hint>
 
       <answer><p>
-      <m>-\frac{14}{3}</m>
+      <m>-\tfrac{14}{3}</m>
       </p></answer>
 
       <solution><p>
@@ -701,16 +724,16 @@
       To get the downward pointing normal, we want the minus sign.
       Set
       <md><mrow>
-      T=\Set{(x,y)}{0\leqslant x\le1,\ 0\leqslant y\leqslant 1-x}
+      \cT=\Set{(x,y)}{0\leqslant x\leqslant1,\ 0\leqslant y\leqslant 1-x}
       </mrow></md>
       Then
       <md>
       <mrow>
-      \iint_S \vF \cdot\vn\, \dee{S}
-      &amp;=-\iint_T \left(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\right)
+      \iint_\cS \vF \cdot\vn\, \dee{S}
+      &amp;=-\iint_\cT \left(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\right)
              \cdot\left(2x\,,\,2y\,,\, 1\right)\,\dee{x}\dee{y}
       </mrow><mrow>
-      &amp;=-\iint_T \left(8+2x+2y\right)\,\dee{x}\dee{y}
+      &amp;=-\iint_\cT \left(8+2x+2y\right)\,\dee{x}\dee{y}
       </mrow><mrow>
       &amp;=-\int_0^1\dee{x}\int_0^{1-x}\dee{y}\ \left(8+2x+2y\right)
       </mrow><mrow>
@@ -753,7 +776,7 @@
       =\int_0^1 f(x,1)\ \dee{x}
         - \int_0^1 f(x,0)\ \dee{x}
       </mrow>
-      </md>
+      </md>.
       </li>
       <li>
       Utiliser le théorème de Green pour montrer que
@@ -763,7 +786,7 @@
       =\int_0^1 f(x,1)\ \dee{x}
         - \int_0^1 f(x,0)\ \dee{x}
       </mrow>
-      </md>
+      </md>.
       </li>
       </ol>
       </p></statement>

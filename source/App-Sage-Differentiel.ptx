@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Sage-Differentiel">
-  <title>SageMath : Calcul différentiel </title>
-  <section>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Sage-Differentiel">
+  <title>Calcul différentiel</title>
+  <subsection>
     <title>Fonctions de plusieurs variables</title>
     <p>
       La figure de <xref ref="def-Fonctions-2-3-vars">l'exemple</xref>. On voit comment composer une figure, étape par étape. De plus, la commande <c>text(...)</c> sert à ajouter des annotations. Il existe d'autres façons de le faire, par exemple en utilisant les options <c>legend</c> ou <c>legend_label</c>.
@@ -103,8 +103,8 @@
         show(S)     
       </input>
     </sage>
-  </section>
-  <section>
+  </subsection>
+  <subsection>
     <title>Dérivées partielles et champs gradients</title>
     <p>
         Le calcul des dérivées partielles avec SageMath se fait avec la commande <c>diff(...)</c>. À nouveau, plusieurs options sont disponibles : <c>diff(f,x,1,y,2)</c> par exemple retourne la dérivée partielle d'une fonction <m>f</m> (qui doit être définie) par rapport à <m>x</m> une fois, et par rapport à <m>y</m> deux fois, c'est-à-dire <m>\frac{\partial^3 f}{\partial x\, \partial y^2}</m>. Voici d'autres exemples.
@@ -122,7 +122,7 @@
     </sage>
     <p>
         Ceci définit la fonction <m>f(x,y) = xye^{x^2}</m> puis on calcule certaines dérivées, à savoir :
-        <ol marker="a"><li><p>
+        <ol marker="(a)"><li><p>
               La dérivée partielle d'ordre 2 : <m>\frac{\partial^2 f}{\partial x\, \partial y}</m>
             </p></li><li><p>
               La dérivée partielle d'ordre 2 : <m>\frac{\partial^2 f}{\partial x^2}</m>
@@ -162,8 +162,8 @@
     <p>
         Pour le champ gradient d'une fonction <m>f</m> déjà définie, on pourrait faire <c>plot_vector_field(f.gradient()...)</c>.
       </p>
-  </section>
-  <section>
+  </subsection>
+  <subsection>
     <title>Approximations de Taylor</title>
     <p>
         Afin de calculer les polynômes de Taylor d'une fonction d'une ou de plusieurs variables, c'est la commande <c>taylor(...)</c> qu'il faut utiliser. On doit spécifier le point autour duquel on calcule le polynôme, et le degré total.
@@ -177,8 +177,8 @@
           taylor(exp(2*x)*sin(3*y), (x,0),(y,1),2)          
         </input>
     </sage>
-  </section>
-  <section>
+  </subsection>
+  <subsection>
     <title>Points critiques et multiplicateurs de Lagrange</title>
     <p>
         Pour trouver les points critiques d'une fonction il faut résoudre certaines équations. La commande <c>solve(...)</c> fait ceci. On doit lui passer en paramètres deux listes, d'abord les équations à résoudre, puis les variables pour lesquelles on veut les solutions. Ci-après on fait les calculs de <xref ref="eg_MXMNlocalC">l'exemple </xref>.
@@ -222,5 +222,5 @@
               g(x,y)==4],[x,y,L])
         </input>
     </sage>
-  </section>
-</appendix>
+  </subsection>
+</section>

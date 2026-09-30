@@ -46,7 +46,7 @@
                 <li>
                     Nous divisons l'intervalle <m>a\leqslant  t\leqslant  b</m>
                     en <m>n</m> sous-intervalles de longueur
-                    <m>\De t=\frac{b-a}{n}</m>.
+                    <m>\De t=\tfrac{b-a}{n}</m>.
                     Posons en plus <m>t_\ell = a + \ell\De t</m> pour
                     <m>\ell \in \{1,\ldots, n\}</m>.
                 </li>
@@ -84,27 +84,45 @@
 
         <p>
             Puis, on prend la limite lorsque <m>n\rightarrow\infty</m>.
-            Si nous supposons que
-            <fn>
-      On peut affaiblir ces conditions et exiger que <m>\vr'(t)</m> et <m>\rho(t)</m> soient continues et bornées sauf peut-être en un nombre fini de points (le vecteur <m>\vr'(t)</m> n'a pas besoin d'exister en ces points).
-    </fn>
-            que <m>\vr(t)</m> est de classe <m>C^1</m> et que <m>\rho(\vr)</m>
-            est continue, on obtient
+            Si nous supposons que le chemin <m>\vr</m> est simple
+            (<xref ref="def-chemin-simple" text="global">définition</xref>)
+            et lisse
+            (<xref ref="def-approx-lin-chemin" text="global">définition</xref>)
+            et que <m>\rho(\vr)</m> est continue, on obtient
             <md>
                 <mrow>
     \text{Masse de } \cC = \int_a^b \rho\left(\vr(t)\right) \norm{\diff{\vr}{t}(t)}\,\dee{t}
     </mrow>
             </md>,
-            qui fournit la définition qui suit.
+            ce qui nous mènera à la définition de l'intégrale de ligne.
+            Tout ceci reste valable lorsque la courbe est formée de plusieurs
+            morceaux lisses mis bout à bout : il suffit d'additionner les
+            intégrales obtenues sur chacun des morceaux.
+            Précisons cette idée.
         </p>
+
+        <definition xml:id="def-lisse-morceaux">
+            <statement>
+                <p>
+                    Un chemin <m>{\vr : [a,b] \to \R^n}</m> est dit
+                    <term>lisse par morceaux</term> s'il est continu et
+                    qu'il existe une subdivision
+                    <m>{a = t_0 \lt t_1 \lt \cdots \lt t_k = b}</m> telle que
+                    <m>\vr</m> est lisse sur chacun des intervalles
+                    <m>[t_{i-1}, t_i]</m>.
+                </p>
+            </statement>
+        </definition>
 
         <definition xml:id="def_lineIntegral">
             <statement>
                 <p>
                     Soit <m>\cC</m> une courbe dans <m>\R^n</m> paramétrée par
-                    <m>\vr(t)</m> avec <m>a\leqslant  t\leqslant  b</m>, et
+                    un chemin simple et lisse par morceaux
+                    <m>{\vr : [a,b] \to \R^n}</m>, et
                     <m>f</m> une fonction continue définie dans une région de
-                    <m>\R^n</m> contenant <m>\cC</m>, alors on définit
+                    <m>\R^n</m> contenant <m>\cC</m>.
+                    On définit alors
                     <md>
                         <mrow>
                 \int_\cC f\,\dee{s} =\int_a^b f\circ \vr(t) \norm{\vr'(t)}\,  \dee{t}
@@ -155,7 +173,7 @@
         <remark>
             <p>
                 Dans la définition donnée,
-                <m>\displaystyle \int_{\cC}f\, \dee{s}</m> est définie en termes
+                <m>\int_{\cC}f\, \dee{s}</m> est définie en termes
                 du paramétrage de la courbe, mais le chemin <m>\vr</m>
                 n'apparaît pas dans le terme défini.
                 Ceci laisse penser que, même si <m>\vr</m> apparaît dans la
@@ -163,7 +181,8 @@
                 donnent le même résultat.
                 C'est en effet le cas, c'est-à-dire que l'intégrale de ligne
                 dépend de la courbe et non du paramétrage.
-                Cette question sera abordée plus tard.
+                Cette question est traitée à
+                l'<xref ref="ex-reparametrage-integrales" text="global">exercice</xref>.
             </p>
         </remark>
 
@@ -187,7 +206,7 @@
                 <p>
                     Soit <m>\cC</m> le segment de droite allant de <m>A(0,1)</m>
                     vers <m>B(1,0)</m>, et <m>f(x,y) = x + y </m>.
-                    Calculer <m>\displaystyle \int_\cC f\, \dee{s}</m>.
+                    Calculer <m>\int_\cC f\, \dee{s}</m>.
                 </p>
             </statement>
 
@@ -200,7 +219,7 @@
                         <m>A</m> à <m>B</m> est d'écrire
                         <md>
                             <mrow> \vr(t) \amp= (1-t)\overrightarrow{OA} + t \overrightarrow{OB} \amp \amp   </mrow>
-                            <mrow> \amp= (1-t)\va + t \vb  \amp \amp 0\leqslant  t \leqslant 1 </mrow>
+                            <mrow> \amp= (1-t)\va + t \vb,  \amp \amp 0\leqslant  t \leqslant 1 </mrow>
                         </md>.
                     </p>
 
@@ -250,14 +269,14 @@
             <statement>
                 <p>
                     Soit <m>f(x,y) = y</m>.
-                    Calculer <m>\displaystyle \int_\cC f\, \dee{s}</m> lorsque
+                    Calculer <m>\int_\cC f\, \dee{s}</m> lorsque
                     <m>\cC</m> est la portion de la parabole <m>y^2 = 4x</m>
                     allant de <m>(0,0)</m> à <m>(9,6)</m>.
                 </p>
             </statement>
 
             <solution>
-                <sidebyside widths="60% 40%">
+                <sidebyside widths="50% 10% 40%">
                     <p>
                         Nous commençons par obtenir un paramétrage de
                         <m>\cC</m>.
@@ -267,6 +286,9 @@
                         pour <m>t\in[0,3]</m>.
                         Ainsi, notre chemin est
                         <m>\vr(t) = t^2 \, \vi + 2t\vj</m>.
+                    </p>
+                    <p>
+                        
                     </p>
 
                     <image xml:id="sageplot-int-ligne-eg2">
@@ -317,7 +339,7 @@
                     trajectoire de <m>(0,0,0)</m> à <m>(1,1,0)</m> suivant la
                     parabole <m>y=x^2</m> du plan <m>Oxy</m>, suivie du segment
                     de droite de <m>(1,1,0)</m> à <m>(1,1,1)</m>.
-                    Calculer <m>\displaystyle \int_{\cC} f\, \dee{s}</m>.
+                    Calculer <m>\int_{\cC} f\, \dee{s}</m>.
                 </p>
             </statement>
 
@@ -349,7 +371,7 @@
                                 donc <m>\norm{\vr'_1(t)} = \sqrt{1+4t^2}</m>, et
                                 donc :
                                 <md>
-                                    <mrow>\int_{\cC_1} f\, \dee{s} \amp= \int_0^1 \left(t+(\sqrt{t})^2 - 0^2 \right) \sqrt{1+4t^2}\, \dee{t} = \int_0^1 2t\sqrt{1+4t^2}\,  \dee{t}</mrow>
+                                    <mrow>\int_{\cC_1} f\, \dee{s} \amp= \int_0^1 \left(t+\sqrt{t^2} - 0^2 \right) \sqrt{1+4t^2}\, \dee{t} = \int_0^1 2t\sqrt{1+4t^2}\,  \dee{t}</mrow>
                                     <mrow> \amp= \left.\frac{1}{6} \, {\left(4 \, t^{2} + 1\right)}^{\frac{3}{2}}\right|_{t=0}^{t=1} = \frac{1}{6}\left(5^{3/2}-1\right) </mrow>
                                 </md>.
                             </p>
@@ -364,7 +386,7 @@
                                 Ceci donne <m>\vr_2'(t) = \vk</m>, et donc
                                 <m>\norm{\vr_2'(t)} = 1</m>, et donc
                                 <md>
-                                    <mrow>\int_{\cC_2} f\, \dee{s} \amp= \int_0^1 \left(1+1^2-t^2\right) \cdot 1 \, \dee{t} = \int_0^1 2-t^2 \, \dee{t} = 5/3.</mrow>
+                                    <mrow>\int_{\cC_2} f\, \dee{s} \amp= \int_0^1 \left(1+\sqrt{1}-t^2\right) \cdot 1 \, \dee{t} = \int_0^1 \left(2-t^2\right) \dee{t} = \frac{5}{3}.</mrow>
                                 </md>
                             </p>
                         </li>
@@ -392,8 +414,8 @@
             différents axes de rotation.
             Supposons donc que la courbe <m>\cC</m>, c'est-à-dire la forme de
             notre fil, est une courbe dans <m>\R^3</m> (s'il s'agit d'une courbe
-            dans <m>\R^2</m>, il faut simplement ignorer la coordonnée <m>z</m>
-            ).
+            dans <m>\R^2</m>, il faut simplement ignorer la coordonnée
+            <m>z</m>).
             La masse totale est
             <md>
                 <mrow>
@@ -402,13 +424,13 @@
             </md>
             De même, les coordonnées de son centre de gravité sont
             <md>
-                <mrow>\bar{x} \amp= \frac{\displaystyle \int_{\cC}x\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s},}  \amp
-  \bar{y} \amp= \frac{\displaystyle \int_{\cC}y\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s},}  \amp \bar{z} \amp= \frac{\displaystyle \int_{\cC}z\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s}}   </mrow>
+                <mrow>\bar{x} \amp= \frac{\displaystyle \int_{\cC}x\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s}},  \amp
+  \bar{y} \amp= \frac{\displaystyle \int_{\cC}y\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s}},  \amp \bar{z} \amp= \frac{\displaystyle \int_{\cC}z\, \rho(x,y,z)\,  \dee{s} }{\displaystyle \int_{\cC}\rho(x,y,z) \, \dee{s}}   </mrow>
                 <mrow> \amp= \frac{1}{M}\int_{\cC} x \rho \, \dee{s} \amp  \amp=\frac{1}{M}\int_{\cC} y \rho \, \dee{s} \amp \amp= \frac{1}{M}\int_{\cC} z \rho \, \dee{s}</mrow>
             </md>.
             On comparera ces formules à celle pour le centre de masse d'une
             plaque occupant une région <m>\cR</m> du plan (voir
-            <xref ref="eq_cofm" text="global">formule</xref> ).
+            <xref ref="eq_cofm" text="global">formule</xref>).
         </p>
 
         <p>
@@ -452,7 +474,7 @@
                 dont la forme est donnée par
                 <md>
                     <mrow>
-\vr(t) = x(t)\vi + y(t) \vj + z(t)\vk = a\cos t\,\vi + a\sin t\,\vj + bt\, \vk \qquad 0\leqslant  t\leqslant  2\pi
+\vr(t) = x(t)\vi + y(t) \vj + z(t)\vk = a\cos t\,\vi + a\sin t\,\vj + bt\, \vk, \qquad 0\leqslant  t\leqslant  2\pi,
 </mrow>
                 </md>
                 et que ce fil a une densité de masse constante <m>\rho</m>.
@@ -508,12 +530,10 @@
         <title>Intégrales de ligne des champs de vecteurs</title>
 
         <p>
-            Rappelons qu'un champ de vecteurs <m>\vF</m> est une fonction qui à
+            Rappelons qu'un champ de vecteurs <m>\vF</m> est une fonction qui, à
             chaque point <m>\vr</m> d'une région de <m>\R^2</m> ou <m>\R^3</m>,
-            associe un vecteur <m>\vF(\vr) = P\vi + Q \vj </m> ou
-            <m>\vF(\vr) = P\,\vi + Q\,\vj  + R\, \vk</m> (ici les composantes
-            <m>P,Q, R</m> sont des fonctions de la variable vectorielle
-            <m>\vr</m> ).
+            associe un vecteur <m>\vF = P\vi + Q \vj </m> ou
+            <m>\vF= P\,\vi + Q\,\vj  + R\, \vk</m> (les composantes <m>P,Q,R</m> sont des fonctions de la variable vectorielle <m>\vr</m>).
         </p>
 
         <p>
@@ -582,8 +602,10 @@
         <definition xml:id="not_workIntegral">
             <statement>
                 <p>
-                    Soit <m>\cC</m> une courbe paramétrée par <m>\vr(t)</m> avec
-                    <m>t_0\leqslant  t\leqslant  t_1</m>.
+                    Soit <m>\cC</m> une courbe paramétrée par un chemin simple
+                    et lisse par morceaux <m>{\vr : [t_0, t_1] \to \R^n}</m>, et
+                    <m>\vF</m> un champ de vecteurs continu défini sur une
+                    région contenant <m>\cC</m>.
                     Alors,
                     <md>
                         <mrow>
@@ -591,9 +613,74 @@
         =\int_{t_0}^{t_1}\vF\left(\vr(t)\right)\cdot \vr'(t)\,\dee{t}
     </mrow>
                     </md>.
+                    Le chemin <m>\vr</m> donne à <m>\cC</m> une
+                    <term>orientation</term> : celle du sens de parcours,
+                    de <m>\vr(t_0)</m> vers <m>\vr(t_1)</m>.
                 </p>
             </statement>
         </definition>
+
+        <remark xml:id="rem-orientation-oint">
+            <title>Orientation et courbes fermées</title>
+            <p>
+                <ol marker = "(a)">
+                    <li>
+                        <p>
+                            Contrairement à l'intégrale de ligne d'une fonction
+                            scalaire, l'intégrale de ligne d'un champ de vecteurs
+                            dépend de l'orientation de la courbe.
+                            Un reparamétrage qui conserve le sens de parcours
+                            donne le même résultat, mais un anti-reparamétrage,
+                            qui parcourt <m>\cC</m> dans le sens inverse, change
+                            le signe de l'intégrale (partie (b) de
+                            l'<xref ref="ex-reparametrage-integrales" text="global">exercice</xref>).
+                            On doit donc toujours préciser le sens de parcours
+                            lorsqu'on intègre un champ de vecteurs.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Un chemin <m>{\vr : [a,b] \to \R^n}</m> est dit
+                            <term>fermé</term> si <m>\vr(a)=\vr(b)</m>,
+                            c'est-à-dire si l'on revient au point de départ.
+                            Une <term>courbe fermée simple</term> est l'image
+                            d'un chemin fermé et simple
+                            (<xref ref="def-chemin-simple" text="global">définition</xref>)<nbsp/>:
+                            elle ne se recoupe pas, comme un cercle ou le bord
+                            d'un triangle.
+                            Lorsque la courbe <m>\cC</m> est fermée, on écrit
+                            parfois <m>\oint_{\cC}\vF\cdot\dee{\vr}</m> plutôt
+                            que <m>\int_{\cC}\vF\cdot\dee{\vr}</m>.
+                            Le petit cercle rappelle seulement que la courbe est
+                            fermée<nbsp/>: il n'indique pas l'orientation et ne
+                            change rien au calcul.
+                            Nous l'emploierons avec parcimonie, lorsque le fait
+                            que la courbe est fermée n'apparaît pas déjà
+                            ailleurs, et jamais pour le bord d'une région
+                            (noté <m>\partial\cR</m>, voir la section sur le
+                            théorème de Green), qui est toujours fermé.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Pour une courbe fermée, le point de départ n'a pas
+                            d'importance, mais le sens de parcours en a une.
+                            Dans le plan, on le précise en disant que la courbe
+                            est parcourue dans le sens antihoraire (contraire à
+                            celui des aiguilles d'une montre) ou dans le sens
+                            horaire.
+                            Dans l'espace, il faut ajouter d'où l'on regarde,
+                            par exemple <q>dans le sens antihoraire lorsque vue
+                            d'en haut</q>.
+                            Nous y reviendrons avec les théorèmes de Green et de
+                            Stokes.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </remark>
 
         <p>
             Voyons maintenant quelques exemples.
@@ -602,12 +689,12 @@
         <example xml:id="eg_workIntegralA">
             <sidebyside widths="55% 5% 40%" valign="middle">
                 <p>
-                Soit <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> et
-                <m>
-    \vF(x,y) = xy\,\vi + (y^2+1)\,\vj
-    </m>.
+                Soit <m>P_0(0,0)</m>, <m>P_1(1,1)</m> et
+                <md>
+                    <mrow>\vF(x,y) = xy\,\vi + (y^2+1)\,\vj.</mrow>
+                </md>
                 Nous considérons trois trajectoires, toutes allant de <m>P_0</m>
-                à <m>P_1</m>.
+                à <m>P_1</m> pour calculer les intégrales de ligne correspondantes. 
                 <ol marker="(a)">
                     <li>
                         Soit <m>\cC_1</m> le segment de droite de <m>P_0</m> à
@@ -674,19 +761,14 @@
             </sidebyside>
 
             <p>
-                Nous allons calculer l'intégrale de <m>\vF</m> le long de ces
-                trois trajectoires.
+                Nous allons calculer l'intégrale de <m>\vF</m> le long de ces trois trajectoires.
                 <ol marker="(a)">
                     <li>
                         Nous paramétrons <m>\cC_1</m> par
                         <m>\vr(t) = t\,\vi+t\,\vj</m> avec <m>t\in[0,1]</m>.
-                        Ainsi, <m>x(t)=t</m> et <m>y(t)=t</m>, de sorte que
-                        <md>
-                            <mrow>
-    \vF\left(\vr(t)\right) = t^2\,\vi + (t^2+1)\,\vj\qquad\text{et}\qquad
-    \diff{\vr}{t}(t) = \vi + \vj
-    </mrow>
-                        </md>,
+                        Ainsi, <m>{x(t)=t}</m> et <m>{y(t)=t}</m>, de sorte que
+                        <m>{\vF\left(\vr(t)\right) = t^2\,\vi + (t^2+1)\,\vj}</m> et
+                        <m>{\diff{\vr}{t}(t) = \vi + \vj}</m>,
                         ce qui permet de calculer
                         <md>
                             <mrow>
@@ -695,10 +777,7 @@
     =\int_{0}^{1}\big[t^2\,\vi + (t^2+1)\,\vj\big]\cdot[\vi + \vj]\,\dee{t}
     </mrow>
                             <mrow>
-    &amp;=\int_{0}^{1}\big[2t^2+1\big]\,\dee{t}
-    </mrow>
-                            <mrow>
-    &amp;=\frac{5}{3}
+    &amp;=\int_{0}^{1}\big[2t^2+1\big]\,\dee{t} =\frac{5}{3}
     </mrow>
                         </md>.
                     </li>
@@ -713,6 +792,7 @@
                         <m>\vr(x) = x\,\vi</m> avec <m>x \in [0,1]</m>, et
                         <m>\cC_{2,y}</m> par <m>\vr(y) = \vi+y\,\vj</m> avec
                         <m>y \in[0,1]</m>.
+                        On a alors
                         <md>
                             <mrow>
     &amp;\int_{\cC_2}\vF\cdot\dee{\vr}
@@ -728,10 +808,7 @@
     </mrow>
                             <mrow>
     &amp;\hskip0.25in=\int_{0}^{1}0\,\dee{x}
-     + \int_{0}^{1}\left(y^2+1\right)\,\dee{y}
-    </mrow>
-                            <mrow>
-    &amp;\hskip0.25in=\frac{4}{3}
+     + \int_{0}^{1}\left(y^2+1\right)\,\dee{y} =\frac{4}{3}.
     </mrow>
                         </md>
                         Notons que l'intégrale le long de <m>\cC_{2,x}</m> est
@@ -744,13 +821,9 @@
                     <li>
                         Nous paramétrons <m>\cC_3</m> par
                         <m>\vr(t) = t^2\,\vi+t\,\vj</m> avec <m>t\in[0,1]</m>.
-                        Alors, <m>x(t)=t^2</m> et <m>y(t)=t</m>, de sorte que
-                        <md>
-                            <mrow>
-    \vF\left(\vr(t)\right) = t^3\,\vi + (t^2+1)\,\vj\qquad\text{et}\qquad
-    \diff{\vr}{t}(t) = 2t\,\vi + \vj
-    </mrow>
-                        </md>,
+                        Alors, <m>{x(t)=t^2}</m> et <m>{y(t)=t}</m>, de sorte que
+                        <m>{\vF\left(\vr(t)\right) = t^3\,\vi + (t^2+1)\,\vj}</m> et
+                        <m>{\diff{\vr}{t}(t) = 2t\,\vi + \vj}</m>,
                         ce qui permet de calculer
                         <md>
                             <mrow>
@@ -778,102 +851,77 @@
         <example xml:id="eg_workIntegralB">
             <statement>
                 <p>
-                    Soit <m>\vF(x,y) = 2y\,\vi + 3x\,\vj</m>.
-                    Calculer les intégrales curvilignes de <m>\vF</m> le long
-                    des trajectoires suivantes.
-                    <ol marker="(a)">
-                        <li>
-                            Soit <m>\cC_1</m> le cercle <m>x^2+y^2=1</m>,
-                            parcouru une fois dans le sens contraire à celui des
-                            aiguilles d'une montre, en partant (et finissant) en
-                            <m>(1,0)</m>.
-                        </li>
-
-                        <li>
-                            Soit <m>\cC_2</m> le chemin trivial qui est formé du
-                            seul point <m>(1,0)</m>.
-                        </li>
-                    </ol>
+                    Soit <m>\vF(x,y) = 2y\,\vi + 3x\,\vj</m> et <m>\cC</m> le
+                    cercle <m>x^2+y^2=1</m>, parcouru une fois dans le sens
+                    contraire à celui des aiguilles d'une montre, en partant (et
+                    finissant) en <m>(1,0)</m>.
+                    Calculer l'intégrale de ligne de <m>\vF</m> le long de
+                    <m>\cC</m>.
                 </p>
             </statement>
 
             <solution>
                 <p>
-                    Nous calculons l'intégrale
-                    <m>\displaystyle \int_{\cC_i}\vF\cdot\dee{\vr}</m> pour
-                    chacune des courbes.
-                    <ol marker="(a)">
-                        <li>
-                            <p>
-                                Nous paramétrons <m>\cC_1</m> par
-                                <m>\vr(t) = \cos t\,\vi+\sin t\,\vj</m> avec
-                                <m>t\in[0,2\pi]</m>.
-                                Ainsi,
-                                <md>
-                                    <mrow>
-    \oint_{\cC_1}\vF\cdot\dee{\vr}
+                    Nous paramétrons <m>\cC</m> par
+                    <m>\vr(t) = \cos t\,\vi+\sin t\,\vj</m> avec
+                    <m>t\in[0,2\pi]</m>.
+                    Ainsi,
+                    <md>
+                        <mrow>
+    \oint_{\cC}\vF\cdot\dee{\vr}
     &amp;=\int_{0}^{2\pi}\big[2\sin t\,\vi + 3\cos t\,\vj\big]
                \cdot[-\sin t\,\vi + \cos t\,\vj]\,\dee{t}
     </mrow>
-                                    <mrow>
+                        <mrow>
     &amp;=\int_{0}^{2\pi}\big[-2\sin^2 t+3\cos^2 t\big]\,\dee{t}
     </mrow>
-                                </md>.
-                                On pourrait calculer ces intégrales au moyen des
-                                identités trigonométriques des angles doubles,
-                                mais on peut s'en tirer avec moins d'effort.
-                                Puisque <m>\sin^2 t</m> et <m>\cos^2 t</m>
-                                s'obtiennent l'une de l'autre par translation et
-                                que les deux sont périodiques de période
-                                <m>\pi</m>, les deux intégrales
-                                <m>\int_0^{2\pi}\sin ^2 t\,\dee{t}</m> et
-                                <m>\int_0^{2\pi}\cos ^2 t\,\dee{t}</m> sont
-                                égales (puisqu'elles représentent la même aire,
-                                voir la figure ci-bas).
-                            </p>
+                    </md>.
+                    On pourrait calculer ces intégrales au moyen des
+                    identités trigonométriques des angles doubles,
+                    mais on peut s'en tirer avec moins d'effort.
+                    Puisque <m>\sin^2 t</m> et <m>\cos^2 t</m>
+                    s'obtiennent l'une de l'autre par translation et
+                    que les deux sont périodiques de période
+                    <m>\pi</m>, les deux intégrales
+                    <m>\int_0^{2\pi}\sin ^2 t\,\dee{t}</m> et
+                    <m>\int_0^{2\pi}\cos ^2 t\,\dee{t}</m> sont
+                    égales (puisqu'elles représentent la même aire,
+                    voir la figure ci-bas).
+                </p>
 
-                            <sidebyside width="48%">
-                                <image source="images/CLP4-figs/sin2Graph"/>
-                                <image source="images/CLP4-figs/cos2Graph"/>
-                            </sidebyside>
+                <sidebyside width="48%">
+                    <image source="images/CLP4-figs/sin2Graph"/>
+                    <image source="images/CLP4-figs/cos2Graph"/>
+                </sidebyside>
 
-                            <p>
-                                Ainsi,
-                                <md>
-                                    <mrow>
+                <p>
+                    Ainsi,
+                    <md>
+                        <mrow>
     \int_{0}^{2\pi} \sin^2 t\,\dee{t}
     &amp;=\int_{0}^{2\pi} \cos^2 t\,\dee{t}
     =\int_{0}^{2\pi} \frac{1}{2}\big[\sin^2 t+\cos^2t\big]\,\dee{t}
     </mrow>
-                                    <mrow>
+                        <mrow>
     &amp;=\frac{1}{2}\int_{0}^{2\pi} \dee{t}
     =\pi
     </mrow>
-                                </md>
-                                et
-                                <md>
-                                    <mrow>
-    \oint_{\cC_1}\vF\cdot\dee{\vr}
+                    </md>
+                    et
+                    <md>
+                        <mrow>
+    \oint_{\cC}\vF\cdot\dee{\vr}
     =-2\int_{0}^{2\pi} \sin^2 t\,\dee{t}
     +3\int_{0}^{2\pi} \cos^2 t\,\dee{t}
     =\pi.
     </mrow>
-                                </md>
-                            </p>
-                        </li>
+                    </md>
+                </p>
 
-                        <li>
-                            Nous obtenons un paramétrage de <m>\cC_2</m> par
-                            <m>\vr(t) = \vi</m> pour, disons, <m>t\in[0,1]</m>.
-                            Alors, <m>\diff{\vr}{t}(t) = \vZero</m> et
-                            <m>\int_{\cC_2}\vF\cdot\dee{\vr}=0</m>.
-                        </li>
-                    </ol>
-                    De nouveau, il convient de noter que, malgré le fait que
-                    <m>\cC_1</m> et <m>\cC_2</m> ont le même point initial et
-                    final, <m>(1,0)</m>, les deux intégrales
-                    <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m> et
-                    <m>\int_{\cC_2}\vF\cdot\dee{\vr}</m> sont différentes.
+                <p>
+                    Il convient de noter que, même si la courbe <m>\cC</m>
+                    commence et se termine au même point, l'intégrale de
+                    <m>\vF</m> le long de <m>\cC</m> n'est pas nulle.
                 </p>
             </solution>
         </example>
@@ -887,9 +935,7 @@
             <m>\vr' = \norm{\vr'}\vT</m>.
             Par ailleurs, l'abscisse curviligne <m>s</m> vérifie
             <m>\diff{s}{t} = \norm{\vr'}</m>
-            <fn>
-        Et l'on écrit souvent <m>\dee{s} = \norm{\vr'}\dee{t}</m>.
-      </fn>.
+            (et l'on écrit souvent <m>\dee{s} = \norm{\vr'}\dee{t}</m>).
             Ainsi, nous avons, en vertu de la définition de l'intégrale de ligne
             d'une fonction scalaire, la formule qui suit.
         </p>
@@ -897,8 +943,15 @@
         <fact xml:id="fact-FdR-FTdS">
             <statement>
                 <p>
+                    Soit <m>\cC</m> une courbe paramétrée par un chemin simple
+                    et lisse par morceaux <m>{\vr : [a,b] \to \R^n}</m>,
+                    <m>\vT</m> le vecteur tangent unitaire
+                    (<xref ref="def-TUnitaire" text="global">définition</xref>)
+                    et <m>\vF</m> un champ de vecteurs continu défini sur une
+                    région contenant <m>\cC</m>.
+                    Alors,
                     <md>
-                        <mrow>\int_{\cC}\vF \cdot \dee{\vr} \amp = \int_a^b \vF(\vr(t))\cdot \vr'(t)\,\dee{t} = \int_a^b \vF(\vr(t)) \cdot \vT(t)\norm{\vr'(t)} \dee{t} = \int_{\cC}\vF \cdot \vT \, \dee{s}</mrow>
+                        <mrow>\int_{\cC}\vF \cdot \dee{\vr} = \int_a^b \vF(\vr(t))\cdot \vr'(t)\,\dee{t} = \int_a^b \vF(\vr(t)) \cdot \vT(t)\norm{\vr'(t)} \dee{t} = \int_{\cC}\vF \cdot \vT \, \dee{s}.</mrow>
                     </md>
                 </p>
             </statement>
@@ -909,9 +962,9 @@
             projections du champ <m>\vF</m> tangentiellement à la courbe
             <m>\cC</m>.
             Pour cette raison, on appelle souvent cette intégrale le
-            <term><em>flux de <m>\vF</m> le long de <m>\cC</m></em></term>, ou
+            <term>flux de <m>\vF</m> le long de <m>\cC</m></term>, ou
             encore la
-            <term><em>circulation de <m>\vF</m> le long de <m>\cC</m></em></term>.
+            <term>circulation de <m>\vF</m> le long de <m>\cC</m></term>.
             Il sera utile de penser en ces termes.
         </p>
 
@@ -942,7 +995,7 @@
           \int_{\cC} P \dee{x} + Q \dee{y}.
       </mrow>
             </md>
-            Cette écriture équivalente pour <m>\int_{\cC} \vF \dee{\vr}</m>
+            Cette écriture équivalente pour <m>\int_{\cC} \vF \cdot \dee{\vr}</m>
             donne lieu aux intégrales de ligne de la forme
             <md>
                 <mrow>
@@ -950,7 +1003,7 @@
       </mrow>
             </md>
             Une remarque analogue tient pour les champs (et les chemins) dans
-            <m>\R^3</m>: si <m>\vF = P \vi + Q \vj + R \vk</m>, on aura
+            <m>\R^3</m><nbsp/>: si <m>{\vF = P \vi + Q \vj + R \vk}</m>, on aura
             <md>
                 <mrow> \int_{\cC} \vF \cdot \dee{\vr} \amp = \int_{\cC} P\,\dee{x} + Q\,\dee{y} + R\,\dee{z} </mrow>
             </md>.
@@ -964,8 +1017,8 @@
             <statement>
                 <p>
                     Calculer l'intégrale de ligne
-                    <m>\displaystyle \int_{\cC} (x-y)\dee{x} + (x+y)\dee{y}</m>,
-                    où <m>\cC</m> est le triangle de sommets <m>(0,0), (1,0)</m>
+                    <m>\int_{\cC} (x-y)\dee{x} + (x+y)\dee{y}</m>,
+                    où <m>\cC</m> est le triangle de sommets <m>(0,0)</m>, <m>(1,0)</m>
                     et <m>(0,1)</m> orienté dans le sens contraire des aiguilles
                     d'une montre.
                 </p>
@@ -981,7 +1034,10 @@
                         <m>(0,1)</m>, puis <m>\cC_3</m> celui de <m>(0,1)</m> à
                         <m>(0,0)</m>.
                         Dans la figure ci-contre, nous avons aussi le champ de
-                        vecteurs <m>\vF(x,y) = (x-y)\vi + (x+y)\vj</m>.
+                        vecteurs
+                        <md>
+                            <mrow>\vF(x,y) = (x-y)\vi + (x+y)\vj.</mrow>
+                        </md>
                     </p>
 
                     <image xml:id="sageplot-int-ligne-Pdx">
@@ -1031,9 +1087,10 @@
                                 <m>\vr'(t) = x'(t)\vi + y'(t) \vj = \vi</m>.
                                 Ainsi,
                                 <md>
-                                    <mrow>\int_{\cC_1} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow>
-                                    <mrow> \amp=\int_0^1 (t-0)\cdot 1 + (t+0)\cdot 0 \ \dee{t} </mrow>
-                                    <mrow>  \amp=\int_0^1 t\ \dee{t} = \frac{1}{2} </mrow>
+                                    <mrow>\int_{\cC_1}\vF\cdot\dee{\vr} \amp= \int_{\cC_1} (x-y)\dee{x} + (x+y)\dee{y} </mrow>
+                                    <mrow> \amp=\int_0^1\Big[\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\Big]\dee{t} </mrow>
+                                    <mrow> \amp=\int_0^1 \big[(t-0)\cdot 1 + (t+0)\cdot 0\big]\dee{t} </mrow>
+                                    <mrow>  \amp=\int_0^1 t\,\dee{t} = \frac{1}{2} </mrow>
                                 </md>.
                             </p>
                         </li>
@@ -1047,9 +1104,10 @@
                                 <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vi + \vj</m>.
                                 Ainsi,
                                 <md>
-                                    <mrow>\int_{\cC_2} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow>
-                                    <mrow> \amp=\int_0^1 ((1-t) - t)(-1) + ((1-t)+t)(1) \ \dee{t} </mrow>
-                                    <mrow>  \amp=\int_0^1 2t\ \dee{t} = 1 </mrow>
+                                    <mrow>\int_{\cC_2}\vF\cdot\dee{\vr} \amp= \int_{\cC_2} (x-y)\dee{x} + (x+y)\dee{y} </mrow>
+                                    <mrow> \amp=\int_0^1\Big[\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\Big]\dee{t} </mrow>
+                                    <mrow> \amp=\int_0^1 \big[((1-t) - t)(-1) + ((1-t)+t)(1)\big]\dee{t} </mrow>
+                                    <mrow>  \amp=\int_0^1 2t\,\dee{t} = 1 </mrow>
                                 </md>.
                             </p>
                         </li>
@@ -1063,9 +1121,10 @@
                                 <m>\vr'(t) = x'(t)\vi + y'(t) \vj = -\vj</m>.
                                 Ainsi,
                                 <md>
-                                    <mrow>\int_{\cC_3} (x-y)\dee{x} + (x+y)\dee{y} \amp=\int_0^1\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\ \dee{t} </mrow>
-                                    <mrow> \amp=\int_0^1 (0-(1-t))\cdot 0 + (0+(1-t))(-1) \ \dee{t} </mrow>
-                                    <mrow>  \amp=\int_0^1 t-1 \dee{t} = -\frac{1}{2} </mrow>
+                                    <mrow>\int_{\cC_3}\vF\cdot\dee{\vr} \amp= \int_{\cC_3} (x-y)\dee{x} + (x+y)\dee{y} </mrow>
+                                    <mrow> \amp=\int_0^1\Big[\left(x(t) - y(t)\right)x'(t) + \left(x(t) + y(t)\right)y'(t)\Big]\dee{t} </mrow>
+                                    <mrow> \amp=\int_0^1 \big[(0-(1-t))\cdot 0 + (0+(1-t))(-1)\big]\dee{t} </mrow>
+                                    <mrow>  \amp=\int_0^1 (t-1)\,\dee{t} = -\frac{1}{2} </mrow>
                                 </md>.
                             </p>
                         </li>
@@ -1074,15 +1133,17 @@
 
                 <p>
                     Il vient alors que
-                    <m>\int_{\cC} (x-y)\dee{x}  + (x+y)\dee{y} = 1+\frac{1}{2}-\frac{1}{2}</m>.
+                    <md>
+                        <mrow>\int_{\cC} (x-y)\dee{x}  + (x+y)\dee{y} \amp= \int_{\cC_1}\vF\cdot\dee{\vr} + \int_{\cC_2}\vF\cdot\dee{\vr} + \int_{\cC_3}\vF\cdot\dee{\vr}</mrow>
+                        <mrow>\amp= \frac{1}{2}+1-\frac{1}{2} = 1.</mrow>
+                    </md>
                 </p>
 
                 <p>
                     Le fait que l'intégrale sur <m>\cC_3</m> soit négative et
                     les deux autres positives peut être lu dans le graphique
                     ci-haut.
-                    En effet, pendant la portion du trajet le long de
-                    <m>\cC_3</m>, on observe que le champ <m>\vF</m> pointe en
+                    En effet, le long de la portion du trajet sur        <m>\cC_3</m>, on observe que le champ <m>\vF</m> pointe en
                     s'opposant au déplacement : le champ a une composante
                     verticale positive, tandis que le déplacement se fait vers
                     le bas.
@@ -1094,9 +1155,11 @@
             <statement>
                 <p>
                     Calculer le travail effectué par le champ
-                    <m>\vF(x,y,z) = (y-x^2)\vi + (z-y^2)\vj + (x-z^2)\vk</m>
+                    <md>
+                        <mrow>\vF(x,y,z) = (y-x^2)\vi + (z-y^2)\vj + (x-z^2)\vk</mrow>
+                    </md>
                     entre l'origine et le point <m>(1,1,1)</m> le long de la
-                    courbe paramétrée par <m>\vr(t) = t\vi + t^2\vj +t^3\vk</m>
+                    courbe paramétrée par <m>{\vr(t) = t\vi + t^2\vj +t^3\vk}</m>
                     avec <m>t\in[0,1]</m>.
                 </p>
             </statement>
@@ -1112,7 +1175,7 @@
 
                 <p>
                     Par ailleurs, on a directement
-                    <m>\vr'(t) = \frac{d}{dt}\left( t\vi + t^2\vj +t^3\vk\right) = \vi + 2t \vj + 3t^2 \vk</m>,
+                    <m>\vr'(t) = \tfrac{d}{dt}\left( t\vi + t^2\vj +t^3\vk\right) = \vi + 2t \vj + 3t^2 \vk</m>,
                     de sorte que
                     <md>
                         <mrow>
@@ -1137,16 +1200,16 @@
         </exercise>
 
         <p>
-            Supposons maintenant nous voulons calculer le taux d'entrée ou de
+            Supposons maintenant que nous voulons calculer le taux d'entrée ou de
             sortie d'un fluide dans une région du plan limitée par une courbe
             fermée <m>\cC</m>.
             Si <m>\vF</m> est le champ de vitesses du fluide, on ne doit plus
             projeter <m>\vF</m> tangentiellement à <m>\cC</m> (ce qu'on fait
-            lorsqu'on calcule <m>\vF \cdot \vT</m> ), mais plutôt projeter
+            lorsqu'on calcule <m>\vF \cdot \vT</m>), mais plutôt projeter
             <m>\vF</m> sur un vecteur <m>\vn </m> unitaire et orthogonal à la
             courbe en chaque point.
             Dans ce cas, le
-            <term><em>flux de <m>\vF</m>à travers <m>\cC</m></em></term> sera
+            <term>flux de <m>\vF</m> à travers <m>\cC</m></term> sera
             donné par
             <md>
                 <mrow>
@@ -1192,23 +1255,21 @@
 
         <example>
             <statement>
-                <sidebyside widths="55% 5% 40%" valign="middle">
-                    <p>
-                    Soit
-                    <m>\vF(x,y) = P(x,y)\vi + Q(x,y) \vj = (x-y)\vi + x \vj</m>.
-                    Calculer le flux de <m>\vF</m> à travers (vers l'extérieur)
-                    le cercle <m>x^2 + y^2 = 1</m>.
-                    </p>
-                    <p/>
-                    <figure xml:id="fig-int-ligne-Pdy-Qdx">
-                        <caption>Le cercle <m>\cC</m> et le champ <m>\vF</m>.</caption>
-                        <image xml:id="sageplot-int-ligne-Pdy-Qdx" width="100%">
-                        <description>
-                            <p>
-                                La trajectoire et le champ
-                            </p>
-                        </description>
-                        <sageplot>
+                <p>
+                Soit
+                <m>\vF(x,y) = {P(x,y)\vi + Q(x,y) \vj} = {(x-y)\vi + x \vj}</m>.
+                Calculer le flux de <m>\vF</m> à travers (vers l'extérieur)
+                le cercle <m>\cC</m> d'équation <m>x^2 + y^2 = 1</m>.
+                </p>
+                <figure xml:id="fig-int-ligne-Pdy-Qdx">
+                    <caption>Le cercle <m>\cC</m> et le champ <m>\vF</m></caption>
+                    <image xml:id="sageplot-int-ligne-Pdy-Qdx" width="50%">
+                    <description>
+                        <p>
+                            La trajectoire et le champ
+                        </p>
+                    </description>
+                    <sageplot>
              var('x,y,j')
              N = 100
              a = 1.2
@@ -1217,12 +1278,12 @@
              L = [[p] for p in pts]
              C = arrow2d(path=L,  axes = True, aspect_ratio =1,
                  arrowsize = 3, width=1, zorder = 5, color= "red",
-                 axes_labels = ['$x$','$y$'], axes_labels_size=2,
+                 axes_labels = ['$x$','$y$'], axes_labels_size=1.4,
                  ticks = [[],[]], figsize = 4)
              C += text("$\\mathcal{C}$", (-0.4,0.8), color = "red",
-                 fontsize=18)
+                 fontsize=14)
              C += text("$\\mathbf{n}$", (0.7,1.1), color = "blue",
-                 fontsize=18)
+                 fontsize=14)
              #C += plot_vector_field([x-y, x], (x,-1.2,1.2), (y,-1.2,1.2),
              #    color = "grey",plot_points = 10,  frame = False)
              C += plot_vector_field([x-y, x], (x,-1.2,1.2), (y,-1.2,1.2),
@@ -1230,19 +1291,18 @@
              C += sum([arrow((cos(j*2*pi/20), sin(j*2*pi/20)),
                  (a*cos(j*2*pi/20), a*sin(2*j*pi/20)), arrowsize =1, width=1, color = "blue",zorder=5) for j in [0,1,..19]])
              C
-                        </sageplot>
-                        </image>
-                    </figure>
-                </sidebyside>
+                    </sageplot>
+                    </image>
+                </figure>
             </statement>
 
             <solution>
                 <p>
                     Nous avons un paramétrage du cercle <m>\cC</m> qui le
                     parcourt dans le sens trigonométrique, à savoir
-                    <m>\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj</m>
-                    avec <m>0\leqslant  t \leqslant 2\pi</m>.
-                    On calcule <m>\vr'(t) = -\sin t\, \vi + \cos t\ \vj</m>, et
+                    <m>{\vr(t) = x(t)\vi + y(t)\vj = \cos t\, \vi + \sin t\, \vj}</m>
+                    avec <m>{0\leqslant t \leqslant 2\pi}</m>.
+                    On calcule <m>{\vr'(t) = -\sin t\, \vi + \cos t\, \vj}</m>, et
                     le flux est
                     <md>
                         <mrow>\int_{\cC}P \dee{y} - Q\dee{x} \amp = \int_0^{2\pi}(x(t) - y(t))y'(t) - x(t) x'(t)\ \dee{t} </mrow>

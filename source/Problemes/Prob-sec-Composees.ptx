@@ -7,6 +7,8 @@
 
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
 
   <exercisegroup>
@@ -651,7 +653,7 @@
     </exercise>
 
 
-    <!-- 5 -->
+    <!-- déplacé de 2.4 (ancien exercice 5) -->
     <exercise>
           <statement><p>
            Évaluez
@@ -673,22 +675,24 @@
           Pour chaque partie, déterminez d'abord de quelle(s) variable(s) <m>y</m> est une fonction.
           </p></hint>
 
-          <answer><p>
-          (a) <m>\pdiff{y}{z}(x,z)
-                     =\tfrac{x^2 \ln y(x,z)-y(x,z)e^{y(x,z)\,z}}
-                               {ze^{y(x,z)\,z}-\frac{x^2 z}{y(x,z)}}</m>
-          </p>
-
-          <p>(b) <m>\diff{y}{x}(x)
-          =-\tfrac{F_1\left(x,y(x),x^2-y(x)^2\right)+2x\,F_3\left(x,y(x),x^2-y(x)^2\right)}
-          {F_2\left(x,y(x),x^2-y(x)^2\right)-2y(x)\,F_3\left(x,y(x),x^2-y(x)^2\right)}</m>
-          </p>
-
-          <p>(c) <m>\left(\pdiff{y}{x}\right)_u\!\!(x,u)
-          =\tfrac{y(x,u)\,v(x,u)-x\,y(x,u)}{x\,y(x,u)-x\,v(x,u)}</m>
-          </p>
-
-          </answer>
+          <answer>
+      <ol marker="(a)">
+        <li>
+          <m>\pdiff{y}{z}(x,z)
+          =\frac{x^2 \ln y(x,z)-y(x,z)e^{y(x,z)\,z}}
+          {ze^{y(x,z)\,z}-\frac{x^2 z}{y(x,z)}}</m>
+        </li>
+        <li>
+          <md><mrow>\diff{y}{x}(x)
+          =-\frac{F_1\left(x,y(x),x^2-y(x)^2\right)+2x\,F_3\left(x,y(x),x^2-y(x)^2\right)}
+          {F_2\left(x,y(x),x^2-y(x)^2\right)-2y(x)\,F_3\left(x,y(x),x^2-y(x)^2\right)}</mrow></md>
+        </li>
+        <li>
+          <m>\left(\pdiff{y}{x}\right)_u\!\!(x,u)
+          =\frac{y(x,u)\,v(x,u)-x\,y(x,u)}{x\,y(x,u)-x\,v(x,u)}</m>
+        </li>
+      </ol>
+      </answer>
 
           <solution><p>
           (a)
@@ -792,6 +796,299 @@
           </solution>
         </exercise>
 
+
+
+    <!-- 5 -->
+    <exercise> <!-- <title><fromexam>M200 2014D</fromexam></title> -->
+      <statement><p>
+      Soit <m>z = f(x,y)</m> donnée implicitement par
+      <md>
+        e^z + yz = x + y.
+      </md>
+      </p>
+
+      <p><ol marker = "(a)">
+      <li>
+      Trouvez la différentielle <m>\dee{z}</m>.
+      </li>
+      <li>
+      Utilisez l'approximation linéaire au point <m>(1,0)</m> pour approximer <m>f(0.99,0.01)</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer>
+      <ol marker="(a)">
+        <li>
+          La différentielle en <m>(x,y)=(a,b)</m> est
+          <md><mrow>\dee{z} = \frac{1}{e^{f(a,b)}+b}\,\dee{x} + \frac{1-f(a,b)}{e^{f(a,b)}+b} \,\dee{y}.</mrow></md>
+        </li>
+        <li>
+          <m>f\left(0.99\,,\,0.01\right) \approx 0</m>
+        </li>
+      </ol>
+      </answer>
+
+      <solution><p>
+      Par définition, la différentielle en <m>x=a</m>, <m>y=b</m> est
+      <md>
+      f_x(a,b)\,\dee{x} + f_y(a,b)\,\dee{y}
+      </md>
+      donc il nous faut déterminer les dérivées partielles <m>f_x(a,b)</m> et <m>f_y(a,b)</m>.
+      On sait que
+      <md>
+      e^{f(x,y)} + y\,f(x,y) = x + y
+      </md>
+      pour tous <m>x</m> et <m>y</m>.
+      En dérivant cette équation par rapport à <m>x</m>
+      et par rapport à <m>y</m>, on obtient, par la règle de dérivation en chaîne,
+      <md>
+      <mrow>
+      e^{f(x,y)}f_x(x,y) + y\,f_x(x,y) = 1
+      </mrow><mrow>
+      e^{f(x,y)}f_y(x,y) + f(x,y) +y\,f_y(x,y) = 1
+      </mrow>
+      </md>
+      En isolant <m>f_x</m> dans la première équation et <m>f_y</m> dans la seconde, on obtient
+      <md>
+      <mrow>
+      f_x(x,y) &amp;=  \frac{1}{e^{f(x,y)}+y}
+      </mrow><mrow>
+      f_y(x,y) &amp;= \frac{1-f(x,y)}{e^{f(x,y)}+y}
+      </mrow>
+      </md>
+      Donc la différentielle en <m>x=a</m>, <m>y=b</m> est
+      <md>
+      \frac{\dee{x}}{e^{f(a,b)}+b} + \frac{1-f(a,b)}{e^{f(a,b)}+b} \,\dee{y}
+      </md>
+      Comme on ne peut pas résoudre explicitement pour <m>f(a,b)</m> pour des <m>a</m> et <m>b</m> généraux,
+      on ne peut pas faire beaucoup plus avec ceci.
+      </p>
+
+      <p>(b) En particulier, quand <m>a=1</m> et <m>b=0</m>, on a
+      <md>
+      e^{f(1,0)} + 0\,f(1,0) = 1 + 0
+      \implies
+      e^{f(1,0)}  = 1
+      \implies
+      f(1,0)=0
+      </md>
+      et l'approximation linéaire se simplifie en
+      <md>
+      f\left(1+\dee{x}\,,\,\dee{y}\right)
+        \approx f(1,0) + \frac{\dee{x}}{e^{f(1,0)}+0}
+              + \frac{1-f(1,0)}{e^{f(1,0)}+0}   \,\dee{y}
+        = \dee{x} +\dee{y}
+      </md>
+      En choisissant <m>\dee{x} = -0.01</m> et <m>\dee{y} = 0.01</m>, on a
+      <md>
+      f\left(0.99\,,\,0.01\right)
+        \approx  -0.01 + 0.01
+        =0
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- déplacé de 2.4 (ancien exercice 10) -->
+    <exercise> <!-- <title><fromexam>M200 2001A</fromexam></title> -->
+      <statement><p>
+      La surface <m>x^4+y^4+z^4+xyz=17</m> passe par le point <m>(0,1,2)</m>,
+      et près de ce point la surface détermine <m>x</m> comme une fonction, <m>x=F(y,z)</m>,
+      de <m>y</m> et de <m>z</m>.
+      <ol marker = "(a)">
+      <li>
+      Trouvez <m>F_y</m> et <m>F_z</m> en <m>(x,y,z)=(0,1,2)</m>.
+      </li>
+      <li>
+      Utilisez l'approximation par le plan tangent (aussi connue sous le nom d'approximation linéaire de premier ordre ou approximation différentielle) pour trouver la valeur approximative
+      de <m>x</m> (près de <m>0</m>) tel que <m>(x,1.01, 1.98)</m> se trouve sur la surface.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>F_y(1,2)=-2</m>,\ <m>F_z(1,2)=-16</m></p><p>
+      (b) <m>0.3</m>
+      </p></answer>
+
+      <solution><p>
+      (a) La fonction <m>F(y,z)</m> vérifie <m>F(y,z)^4+y^4+z^4+F(y,z)yz=17</m> pour tous <m>y</m> et <m>z</m> près de <m>y=1</m>, <m>z=2</m>.
+      En appliquant les dérivées <m>\pdiff{}{y}</m> et <m>\pdiff{}{z}</m>
+      à cette équation, on obtient
+      <md>
+      <mrow>
+      4F(y,z)^3F_y(y,z)+4y^3+F_y(y,z)yz +F(y,z)z&amp;=0
+      </mrow><mrow>
+      4F(y,z)^3F_z(y,z)+4z^3+F_z(y,z)yz +F(y,z)y&amp;=0
+      </mrow>
+      </md>
+      En substituant <m>F(1,2)=0</m>, <m>y=1</m> et <m>z=2</m>, on obtient
+      <md alignment="alignat">
+      <mrow>
+      4+2F_y(1,2)&amp;=0 &amp; &amp;\ \implies\  &amp; &amp;F_y(1,2)=-2
+      </mrow><mrow>
+      32+2F_z(1,2)&amp;=0 &amp; &amp;\ \implies\  &amp; &amp; F_z(1,2)=-16
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b) En utilisant le plan tangent à <m>x=F(y,z)</m> en <m>y=1</m> et <m>z=2</m>, soit
+      <md>
+      x \approx F(1,2) +F_y(1,2)\,(y-1) +F_z(1,2)\,(z-2)
+      </md>
+      avec <m>y=1.01</m> et <m>z=1.98</m>, on obtient
+      <md>
+      <mrow>
+      x=F(1.01, 1.98)
+      &amp;\approx F(1,2)+F_y(1,2)(1.01-1)+F_z(1,2)(1.98-2)
+      </mrow><mrow>
+      &amp;=0-2(.01)-16(-0.02)
+      =0.3
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
+
+    <!-- déplacé de 2.4 (ancien exercice 18) -->
+    <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
+      <statement><p>
+      Considérez la surface donnée par:
+      <m>
+      z^3 - xyz^2 - 4x = 0.
+      </m>
+      <ol marker = "(a)">
+      <li>
+      Trouvez les expressions pour <m>\pdiff{z}{x}</m>, <m>\pdiff{z}{y}</m> comme fonctions de <m>x</m>, <m>y</m> et <m>z</m>.
+      </li>
+      <li>
+      Évaluez <m>\pdiff{z}{x}</m>, <m>\pdiff{z}{y}</m> en <m>(1, 1, 2)</m>.
+      </li>
+      <li>
+      Les mesures sont entachées d'erreurs : on a mesuré <m>x=1</m>, avec une erreur d'au plus <m>0.03</m>, et <m>y=1</m>, avec une erreur d'au plus <m>0.02</m>.
+      Trouvez l'erreur maximale de mesure pour <m>z</m>.
+      </li>
+      <li>
+      Une particule se déplace sur la surface le long d'un chemin dont la projection dans le plan
+      <m>xy</m> est donnée en termes de l'angle <m>\theta</m> comme étant
+      <md>
+      x(\theta) = 1 + \cos\theta,\ y(\theta) = \sin\theta
+      </md>
+      du point <m>A : x = 2,\ y = 0</m> jusqu'au point <m>B : x = 1,\ y = 1</m>.
+      Trouvez <m>\diff{z}{\theta}</m> aux points <m>A</m> et <m>B</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\pdiff{z}{x} = \frac{4+yz^2}{3z^2-2xyz}</m>,
+          <m>\pdiff{z}{y} = \frac{xz^2}{3z^2-2xyz}</m></p><p>
+      (b) <m>\pdiff{z}{x}(1,1) = 1</m>,
+          <m>\pdiff{z}{y}(1,1) = \tfrac{1}{2}</m></p><p>
+      (c) <m>\pm 0.04</m></p><p>
+      </p>
+
+      <p>(d) À <m>A</m>, <m> \diff{z}{\theta} =\tfrac{2}{3}</m>.</p><p>
+      À <m>B</m>, <m>\diff{z}{\theta}  = -1</m>.
+      </p></answer>
+
+      <solution><p>
+      (a)  On sait que
+      <md>
+      z(x,y)^3 - xy\,z(x,y)^2 - 4x = 0
+      </md>
+      pour tout <m>(x,y)</m> (suffisamment près de <m>(1,1)</m>).
+      En dérivant cette équation par rapport à <m>x</m>, on obtient
+      <md>
+      <mrow>
+      &amp; 3z(x,y)^2\,\pdiff{z}{x}(x,y) -y\, z(x,y)^2 -2xy\,z(x,y)\pdiff{z}{x}(x,y) - 4=0
+      </mrow><mrow>
+      &amp; \implies \pdiff{z}{x} = \frac{4+yz^2}{3z^2-2xyz}
+      </mrow>
+      </md>
+      et en dérivant par rapport à <m>y</m>, on obtient
+      <md>
+      <mrow>
+      &amp; 3z(x,y)^2\,\pdiff{z}{y}(x,y) -x\, z(x,y)^2 -2xy\,z(x,y)\pdiff{z}{y}(x,y) =0
+      </mrow><mrow>
+      &amp; \implies \pdiff{z}{y} = \frac{xz^2}{3z^2-2xyz}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(b)
+      Quand <m>(x,y,z)=(1,1,2)</m>,
+      <md>
+      <mrow>
+      \pdiff{z}{x}(1,1) &amp;= \frac{4+(1)(2)^2}{3(2)^2-2(1)(1)(2)} = 1
+      </mrow><mrow>
+      \pdiff{z}{y}(1,1) &amp;= \frac{(1)(2)^2}{3(2)^2-2(1)(1)(2)} = \frac{1}{2}
+      </mrow>
+      </md>
+      </p>
+
+      <p>(c) D'après l'approximation linéaire en <m>(1,1)</m>,
+      <md>
+      <mrow>
+      z(x,y) &amp;\approx z(1,1) + z_x(1,1)\,(x-1) + z_y\,(1,1)\,(y-1)
+      </mrow><mrow>
+             &amp;= 2 + (x-1) +\frac{1}{2}(y-1)
+      </mrow>
+      </md>
+      des erreurs de <m>\pm 0.03</m> en <m>x</m> et de <m>\pm 0.02</m> en <m>y</m> entraînent des erreurs
+      d'environ
+      <md>
+      \pm\left[0.03 + \frac{1}{2}(0.02)\right]
+      =\pm 0.04
+      </md>
+      en <m>z</m>.
+      </p>
+
+      <p>(d) Par la règle de dérivation en chaîne,
+      <md>
+      <mrow>
+      \diff{}{\theta} z\left(x(\theta),y(\theta)\right)
+      &amp;= z_x\left(x(\theta),y(\theta)\right)\,x'(\theta)
+        +z_y\left(x(\theta),y(\theta)\right)\,y'(\theta)
+      </mrow><mrow>
+      &amp;=-z_x\left(1 + \cos\theta,\sin\theta\right)\,\sin\theta
+        +z_y\left(1 + \cos\theta,\sin\theta\right)\,\cos\theta
+      </mrow>
+      </md>
+      En <m>A</m>, <m>x=2</m>, <m>y=0</m>, <m>z=2</m> (puisque <m>z^3-(2)(0)z^2-4(2)=0</m>) et <m>\theta=0</m>,
+      de sorte que
+      <md>
+      <mrow>
+      \pdiff{z}{x}(2,0) &amp;= \frac{4+(0)(2)^2}{3(2)^2-2(2)(0)(2)} = \frac{1}{3}
+      </mrow><mrow>
+      \pdiff{z}{y}(2,0) &amp;= \frac{(2)(2)^2}{3(2)^2-2(2)(0)(2)} = \frac{2}{3}
+      </mrow>
+      </md>
+      et
+      <md>
+      <mrow>
+      \diff{z}{\theta}
+      &amp;=-\frac{1}{3}\sin(0) +\frac{2}{3}\cos(0) =\frac{2}{3}
+      </mrow>
+      </md>
+      </p>
+
+      <p>En <m>B</m>, <m>x=1</m>, <m>y=1</m>, <m>z=2</m> et <m>\theta=\frac{\pi}{2}</m>,
+      de sorte que, d'après la partie (b),
+      <md>
+      <mrow>
+      \pdiff{z}{x}(1,1) = 1\qquad
+      \pdiff{z}{y}(1,1) = \frac{1}{2}
+      </mrow>
+      </md>
+      et
+      <md>
+      <mrow>
+      \diff{z}{\theta}
+      &amp;=-\sin\frac{\pi}{2} +\frac{1}{2}\cos\frac{\pi}{2} = -1
+      </mrow>
+      </md>
+      </p></solution>
+    </exercise>
 
   </exercisegroup>
 
@@ -3533,7 +3830,7 @@
       </p></statement>
 
       <answer><p>
-      (a) <m>f_x(x,y) = -\tfrac{y\,f(x,y) +1}{3f(x,y)^2 +xy}</m></p><p>
+      (a) <m>f_x(x,y) = -\frac{y\,f(x,y) +1}{3f(x,y)^2 +xy}</m></p><p>
       (b) <m>f(x,y) \approx  -1 -\tfrac{3}{2} (y-1)</m></p><p>
       (c) <m>-0.955</m>
       </p></answer>
@@ -3624,8 +3921,8 @@
       </p></statement>
 
       <answer><p>
-      (a) <m>\pdiff{z}{x} = \tfrac{y^2 z^2}{4z^3-2xy^2z}</m>,
-          <m>\pdiff{z}{y} = \tfrac{2xy\, z^2-1}{4z^3-2xy^2 z}</m>
+      (a) <m>\pdiff{z}{x} = \frac{y^2 z^2}{4z^3-2xy^2z}</m>,
+          <m>\pdiff{z}{y} = \frac{2xy\, z^2-1}{4z^3-2xy^2 z}</m>
       </p>
 
       <p>(b)

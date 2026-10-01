@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
   <exercisegroup>
     <title>Pour se pratiquer</title>
@@ -1315,95 +1317,19 @@
       <md><mrow>
       \vr(t)=tx\,\vi+ty\,\vj+tz\,\vk,\qquad 0\leqslant t\leqslant 1
       </mrow></md>
-      une paramétrisation de la droite allant de l'origine à <m>(x,y,z)</m>. Définir
+      un paramétrage du segment allant de l'origine à <m>(x,y,z)</m>. Définir
       <md><mrow>
-      \vG(x,y,z)=\int_0^1 t\,\vF\left(\vr(t)\right)\times\frac{d\vr}{dt}(t)\,dt
+      \vG(x,y,z)=\int_0^1 t\,\vF\left(\vr(t)\right)\times\diff{\vr}{t}(t)\,\dee{t}
       </mrow></md>.
       Montrer que <m>\vnabla\times \vG=\vF</m> sur <m>\R^3</m>.
       </p></statement>
 
       <answer><p>
-      Il faut montrer que <m>\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1</m>. Les autres composantes sont
-      similaires. Premièrement,
-      <md>
-      <mrow>
-      t\,\vF\left(\vr(t)\right)\times\diff{\vr}{t}(t)
-      &amp;=t\,\vF\left(tx,ty,tz\right)\times\left(x\,\vi+y\,\vj+z\,\vk\right)
-      </mrow><mrow>
-      &amp;=t\det\left[\begin{matrix}\vi  &amp; \vj &amp; \vk
-      </mrow><mrow>
-                           F_1 &amp; F_2 &amp; F_3
-      </mrow><mrow>
-                           x &amp; y &amp; z\end{matrix}\right]
-      </mrow>.
-      </md>
-      En lisant les composantes <m>\vk</m> et <m>\vj</m> du déterminant, ça donne
-      <md>
-      <mrow>
-      G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\left(tx,ty,tz\right)\,y-F_2\left(tx,ty,tz\right)\,x\big]\,dt
-      </mrow>.
-      <mrow>
-      G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\left(tx,ty,tz\right)\,x-F_1\left(tx,ty,tz\right)\,z\big]\,dt
-      </mrow>.
-      </md>
-      Donc,
-      <md>
-      <mrow>
-      \pdiff{G_3}{y}
-      &amp;=\int_0^1 t\Big[F_1\left(tx,ty,tz\right)+
-      \frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)\,ty
-      -\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)\,tx\Big]\,dt
-      </mrow>.
-      <mrow>
-      \pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
-      \frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\,tx
-      -\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\,tz
-      -F_1\left(tx,ty,tz\right)\Big]\,dt
-      </mrow>.
-      </md>
-      de sorte que
-      <md>
-      <mrow>
-      \pdiff{G_3}{y}-\pdiff{G_2}{z}
-      &amp;=\int_0^1 \Big[2t\,F_1\left(tx,ty,tz\right)
-      </mrow><mrow>
-      &amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
-      +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)
-      </mrow><mrow>
-      &amp;\hskip1in
-      -t^2x\,\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
-      -t^2x\,\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
-      </mrow>.
-      </md>
-      Comme, par hypothèse,
-         <m>\vnabla\cdot\vF=\tfrac{\partial F_1}{\partial x}
-         +\tfrac{\partial F_2}{\partial y}
-         +\tfrac{\partial F_3}{\partial z}=0</m>, les deux derniers termes
-      <md>
-      <mrow>
-      -t^2x\Big\{\frac{\partial F_2}{\partial y}\left(tx,ty,tz\right)
-      +\frac{\partial F_3}{\partial z}\left(tx,ty,tz\right)\Big\}
-      =-t^2x\Big\{-\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)\Big\}
-      </mrow>,
-      </md>
-      de telle sorte que
-      <md>
-      <mrow>
-      &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
-      </mrow><mrow>
-      &amp;\hskip0.25in=\int_0^1 \Big[2tF_1\left(tx,ty,tz\right)
-       +t^2x\frac{\partial F_1}{\partial x}\left(tx,ty,tz\right)
-      +t^2y\frac{\partial F_1}{\partial y}\left(tx,ty,tz\right)
-      </mrow><mrow>
-      &amp;\hskip3.5in
-      +t^2z\frac{\partial F_1}{\partial z}\left(tx,ty,tz\right)\Big]\,dt
-      </mrow><mrow>
-      &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
-      =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
-      </mrow><mrow>
-      &amp;\hskip0.25in= F_1(x,y,z)
-      </mrow>.
-      </md>
+      Il suffit de vérifier la première composante,
+      <m>{\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1}</m>, les deux autres étant analogues.
+      En dérivant sous le signe d'intégration et en utilisant <m>\vnabla\cdot\vF=0</m>,
+      l'intégrande devient <m>{\diff{}{t}\Big[t^2F_1(tx,ty,tz)\Big]}</m>, dont
+      l'intégrale de <m>0</m> à <m>1</m> vaut <m>F_1(x,y,z)</m>.
       </p></answer>
 
       <solution><p>

@@ -6,6 +6,8 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
   <exercisegroup>
     <title>Pour se pratiquer</title>
@@ -467,16 +469,22 @@ C
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a)
-      <m>\pdiff{z}{x} = \tfrac{z(1-x)}{x(yz-1)}</m>,</p><p>
-      <m>\pdiff{z}{y} = \tfrac{z(1+y-yz)}{y(yz-1)}</m>
-      </p>
-
-      <p>(b)
-      <m>\pdiff{z}{x}(-1,-2) =\tfrac{1}{2}</m>,</p><p>
-      <m>\pdiff{z}{y}(-1,-2) =0</m>.
-      </p></answer>
+      <answer>
+      <ol marker="(a)">
+        <li>
+          <sidebyside widths="50% 50%">
+            <p><m>\pdiff{z}{x} = \tfrac{z(1-x)}{x(yz-1)}</m></p>
+            <p><m>\pdiff{z}{y} = \tfrac{z(1+y-yz)}{y(yz-1)}</m></p>
+          </sidebyside>
+        </li>
+        <li>
+          <sidebyside widths="50% 50%">
+            <p><m>\pdiff{z}{x}(-1,-2) =\tfrac{1}{2}</m></p>
+            <p><m>\pdiff{z}{y}(-1,-2) =0</m></p>
+          </sidebyside>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a) On sait que <m>z(x,y)</m> vérifie
@@ -543,10 +551,12 @@ C
       </md>
       </p></statement>
 
-      <answer><p>
-      <m>\pdiff{U}{T}(1,2,4) = -\tfrac{2\ln(2)}{1+2\ln(2)}</m></p><p>
-      <m>\pdiff{T}{V}(1,2,4) = 1 -\tfrac{1}{4\ln(2)}</m>
-      </p></answer>
+      <answer>
+      <sidebyside widths="50% 50%">
+        <p><m>\pdiff{U}{T}(1,2,4) = -\tfrac{2\ln(2)}{1+2\ln(2)}</m></p>
+        <p><m>\pdiff{T}{V}(1,2,4) = 1 -\tfrac{1}{4\ln(2)}</m></p>
+      </sidebyside>
+      </answer>
 
       <solution><p>
       On sait que les quatre variables <m>T</m>, <m>U</m>, <m>V</m>, <m>W</m> vérifient l'unique équation <m>(TU-V)^2 \ln(W-UV) = \ln 2</m>. Elles ne sont donc pas toutes indépendantes. En gros, on peut traiter trois d'entre elles comme des variables indépendantes et résoudre l'équation donnée pour la quatrième, exprimée comme fonction des trois variables indépendantes choisies.
@@ -1119,9 +1129,9 @@ C
           <m>f_{xyy}(x,y) = \left(2+10xy^2+4x^2y^4\right)e^{xy^2}</m>
       </p>
 
-      <p>(c) <m>\tfrac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
-              = -\tfrac{36}{(u+2v+3w)^4}</m></p><p>
-          <m>\tfrac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
+      <p>(c) <m>\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
+              = -\frac{36}{(u+2v+3w)^4}</m></p><p>
+          <m>\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
                = -0.0036
                = -\tfrac{9}{2500}</m>
       </p>

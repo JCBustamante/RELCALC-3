@@ -247,13 +247,16 @@ Soit <m>\cR = \big\{\ (x,y)\ \big|\ c\leqslant  y\leqslant  d,\ L(y)\leqslant x\
     </p>
     <ul>
       <li>
-        <p> Pour évaluer l'intégrale <m>\int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y}</m>,
+        <p> Pour évaluer l'intégrale
+        <md><mrow>
+        \int_c^d \int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}\,\dee{y},
+        </mrow></md>
         </p>
         <ul>
-          <li> Nous évaluons en premier l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
+          <li> nous évaluons d'abord l'intégrale à l'intérieur <m>\int_{L(y)}^{R(y)} f\left(x,y\right)\,\dee{x}</m> en intégrant <m>f(x,y)</m> par rapport à <m>x</m> de <m>x=L(y)</m> à <m>x=R(y)</m>. Le résultat de cette intégrale est une fonction de  <m>y</m> seulement. Nommons-la <m>F(y)</m>.
           </li>
 
-          <li> Puis, nous évaluons l'intégrale à l'extérieur  <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
+          <li> puis nous évaluons l'intégrale extérieure <m>\int_c^d F(y)\,\dee{y}</m>, dont l'intégrande est le résultat de l'intégrale intérieure.
           </li>
         </ul>
       </li>

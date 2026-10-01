@@ -99,8 +99,13 @@
 <!-- "early". On répare ici, dans le hook "late" (donc après le              -->
 <!-- \usepackage{polyglossia} du coeur, qui doit être chargé avant qu'on      -->
 <!-- puisse appeler \setmainlanguage).                                       -->
+<!-- 2026-09-30 : \setmainlanguage n'existe que si polyglossia est chargé,   -->
+<!-- c'est-à-dire avec xelatex/lualatex. Avec pdflatex (compilation manuelle -->
+<!-- de main.tex, p. ex. par un éditeur), polyglossia n'est pas chargé et    -->
+<!-- \setmainlanguage provoquait « Undefined control sequence ». On se      -->
+<!-- rabat alors sur babel.                                                  -->
 <xsl:param name="latex.preamble.late">
-  <xsl:text>\setmainlanguage{french}&#xa;</xsl:text>
+  <xsl:text>\ifdefined\setmainlanguage\setmainlanguage{french}\else\usepackage[french]{babel}\fi&#xa;</xsl:text>
 </xsl:param>
 
 <xsl:param name="latex.preamble.early">

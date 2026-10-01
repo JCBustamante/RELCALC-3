@@ -4,6 +4,8 @@
 <!-- settings. -->
 <docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- A unique name for the book in a catalog; for example, see https://pretextbook.org/catalog.html and https://runestone.academy/ns/books/index. It contains a simple lowercase string with no dashes or other special characters. See https://pretextbook.org/doc/guide/html/sec-publishing-to-runestone-academy.html for more information. -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <document-id>Calcul Libre</document-id>
   <!-- A brief description for the book in a catalog; see the links above. The @shelf is used only when publishing to Runestone; see https://runestone.academy/ns/books/index for a list of valid values. You must copy these @shelf names exactly, including capitalization. -->
   <blurb>Calcul multivariable</blurb>
@@ -83,6 +85,7 @@
     \newcommand{\Om}{\Omega}
     \newcommand{\om}{\omega}
     \newcommand{\vOm}{\pmb{\Omega}}
+    \newcommand{\vgc}{\boldsymbol{\gamma}}
     \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
   
   
@@ -175,11 +178,16 @@
   \newcommand{\cC}{\mathcal{C}}
   \newcommand{\cD}{\mathcal{D}}
   \newcommand{\cE}{\mathcal{E}}
+  \newcommand{\cF}{\mathcal{F}}
+  \newcommand{\cG}{\mathcal{G}}
+  \newcommand{\cL}{\mathcal{L}}
+  \newcommand{\cQ}{\mathcal{Q}}
   \newcommand{\cR}{\mathcal{R}}
   \newcommand{\cS}{\mathcal{S}}
   \newcommand{\cT}{\mathcal{T}}
   
   \newcommand{\cV}{\mathcal{V}}
+  \newcommand{\cW}{\mathcal{W}}
   \newcommand{\cH}{\mathcal{H}}
   
   
@@ -214,6 +222,13 @@
     \tikzstyle{opendot}=[shape=circle, minimum size=2mm, inner sep=0, fill=white, draw]
 
     \definecolor{junglegreen}{HTML}{018849}
+    <!-- Palette des figures (mêmes teintes que matplotlib/Sage) -->
+    \definecolor{steelblue}{RGB}{70,130,180}
+    \definecolor{firebrick}{RGB}{178,34,34}
+    \definecolor{seagreen}{RGB}{46,139,87}
+    \definecolor{regionorange}{RGB}{255,165,0}
+    \definecolor{darkgray}{RGB}{169,169,169}
+    \definecolor{dimgray}{RGB}{105,105,105}
     \usepackage{pgfplots}
     \pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
     \usepackage{mathrsfs}

@@ -5,6 +5,8 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
     <!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021, juin 2022 -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Vecteur gradient</title>
 
     <subsection xml:id="pars-Gradient-motiv">
@@ -172,7 +174,7 @@
                 Supposons que nous nous déplaçons avec une vitesse de norme
                 constante (que nous supposons égale à <m>1</m> ) en passant par
                 le point <m>\vr_0 = (x_0,y_0)</m>.
-                Lors du passage, la vitesse est <m>\vu=\llt u_1,u_2\rgt </m>, et
+                Lors du passage, la vitesse est <m>{\vu=u_1\,\vi+u_2\,\vj}</m>, et
                 l'on se demande quel est le taux de variation de la température
                 ressentie.
                 Par exemple, dans la figure ci-contre, en partant de
@@ -283,9 +285,13 @@
                     </md>.
                     Or, cette limite n'existe pas.
                     Cette fonction n'admet donc pas de dérivée directionnelle en
-                    <m>(0,0)</m> dans la direction donnée (on peut voir aisément
-                    qu'il en va de même pour toute direction), et ce, même si
+                    <m>(0,0)</m> dans la direction donnée, et ce, même si
                     les dérivées partielles de <m>f</m> existent.
+                    On voit de la même façon qu'il n'y a pas de dérivée
+                    directionnelle dans toute direction
+                    <m>{\vu=a\,\vi+b\,\vj}</m> telle que <m>{ab\ne 0}</m>.
+                    Dans les directions des axes, par contre, <m>f</m> est nulle,
+                    et les dérivées directionnelles existent et valent <m>0</m>.
                 </p>
             </statement>
         </example>
@@ -351,11 +357,12 @@
                     Par ailleurs, le vecteur donnant la direction doit être
                     normalisé, puisque la norme de <m>-\vi + \vj</m> est
                     <m>\sqrt{2}</m>.
-                    La dérivée directionnelle dans la direction de
-                    <m>-\vi + \vj</m> est
+                    Posons donc <m>{\vu = \tfrac{1}{\sqrt{2}}(-\vi+\vj)}</m>,
+                    le vecteur unitaire dans la direction de <m>-\vi + \vj</m>.
+                    La dérivée directionnelle cherchée est
                     <md>
-                        D_{\frac{-\vi +\vj}{\norm{-\vi +\vj}}} f(0,1)
-     = \vnabla f(0,1)\cdot\frac{-\vi +\vj}{\norm{-\vi +\vj}}
+                        \vD_\vu f(0,1)
+     = \vnabla f(0,1)\cdot\vu
      = \left(e\,\vi + 2e\,\vj\right)\cdot \frac{-\vi +\vj}{\sqrt{2}}
      = \frac{e}{\sqrt{2}}
                     </md>.
@@ -368,7 +375,7 @@
                 <p>
                     Trouver la dérivée directionnelle de la fonction
                     <m>w(x,y,z)=xyz +\ln(xz)</m> au point <m>(1,3,1)</m> dans la
-                    direction de <m>\llt 1\,,\,0\,,\,1\rgt</m>.
+                    direction de <m>\vi+\vk</m>.
                 </p>
             </statement>
 
@@ -390,17 +397,17 @@
                     </md>,
                     de sorte que le gradient qui nous intéresse est
                     <md>
-                        \vnabla w(1,3,1) = \llt w_x(1,3,1),\,w_y(1,3,1),\,w_z(1,3,1)\rgt
-                 = \llt 4,\,1,\,4\rgt
-                    </md>,
-                    et la dérivée directionnelle dans la direction de
-                    <m>\llt 1\,,\,0\,,\,1\rgt</m> est
+                        \vnabla w(1,3,1) = w_x(1,3,1)\,\vi+w_y(1,3,1)\,\vj+w_z(1,3,1)\,\vk
+                 = 4\,\vi+\vj+4\,\vk
+                    </md>.
+                    Le vecteur unitaire dans la direction de <m>\vi+\vk</m> est
+                    <m>{\vu=\tfrac{1}{\sqrt{2}}(\vi+\vk)}</m>, et la dérivée
+                    directionnelle cherchée est
                     <md>
                         <mrow>
-  D_{\frac{\llt 1\,,\,0\,,\,1\rgt}{\norm{\llt 1\,,\,0\,,\,1\rgt}}} w(1,3,1)
-     &amp;= \vnabla w(1,3,1)\cdot
-                \frac{\llt 1\,,\,0\,,\,1\rgt}{\norm{\llt 1\,,\,0\,,\,1\rgt}}
-     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\llt 1\,,\,0\,,\,1\rgt}{\sqrt{2}}
+  \vD_\vu w(1,3,1)
+     &amp;= \vnabla w(1,3,1)\cdot\vu
+     = (4\,\vi+\vj+4\,\vk)\cdot \frac{\vi+\vk}{\sqrt{2}}
   </mrow>
                         <mrow>
     &amp;= \frac{8}{\sqrt{2}}=4\sqrt{2}
@@ -408,17 +415,17 @@
                     </md>.
                     La dérivée directionnelle de <m>w</m> en <m>(1,3,1)</m> dans
                     la direction de <m>\vd\ne\vZero</m> est nulle si et
-                    seulement si
+                    seulement si, en posant <m>{\vu=\tfrac{\vd}{\norm{\vd}}}</m>,
                     <md>
-                        0 = \vD_{\frac{\vd}{\norm{\vd}}} w(1,3,1)
-     = \vnabla w(1,3,1)\cdot\frac{\vd}{\norm{\vd}}
-     = \llt 4\,,\,1\,,\,4\rgt\cdot \frac{\vd}{\norm{\vd}}
+                        0 = \vD_\vu w(1,3,1)
+     = \vnabla w(1,3,1)\cdot\vu
+     = (4\,\vi+\vj+4\,\vk)\cdot \frac{\vd}{\norm{\vd}}
                     </md>,
                     ce qui arrive si et seulement si <m>\vd</m> est orthogonal à
-                    <m>\llt 4\,,\,1\,,\,4\rgt</m>.
+                    <m>4\,\vi+\vj+4\,\vk</m>.
                     Ainsi, si l'on se déplace dans la direction de n'importe
-                    quel vecteur dans le plan <m>4x+y+4z=0</m> (dont le vecteur
-                    normal est <m>\llt 4\,,\,1\,,\,4\rgt</m> ), alors la dérivée
+                    quel vecteur dans le plan <m>{4x+y+4z=0}</m> (dont le vecteur
+                    normal est <m>4\,\vi+\vj+4\,\vk</m>), alors la dérivée
                     directionnelle est nulle.
                 </p>
             </solution>
@@ -538,29 +545,29 @@
                     <li>
                         Le vecteur gradient
                         <md>
-                            \vnabla f(x_0,y_0)=\llt -2x,-4y\rgt \big|_{(-1,-1)}=\llt 2,4\rgt
-       =2\llt 1,2\rgt
+                            \vnabla f(x_0,y_0)=(-2x\,\vi-4y\,\vj) \big|_{(-1,-1)}=2\,\vi+4\,\vj
+       =2(\vi+2\,\vj)
                         </md>
                         au point <m>(-1,-1)</m> est aussi illustré dans la
                         figure de droite.
                     </li>
                 </ul>
-                À <m>(x_0,y_0)=(-1,-1)</m>:
+                À <m>(x_0,y_0)=(-1,-1)</m><nbsp/>:
                 <ul>
                     <li>
                         Le vecteur unitaire donnant la direction de taux
                         d'accroissement maximal est le vecteur gradient
-                        normalisé, c'est-à-dire <m>2\llt 1,2\rgt</m> normalisé :
-                        <m>\frac{1}{\sqrt{5}}\llt 1,2\rgt</m>.
+                        normalisé, c'est-à-dire <m>{2(\vi+2\,\vj)}</m> normalisé<nbsp/>:
+                        <m>{\tfrac{1}{\sqrt{5}}(\vi+2\,\vj)}</m>.
                         Le taux maximal d'accroissement est
-                        <m>\norm{\llt 2,4\rgt}=2\sqrt{5}</m>.
+                        <m>{\norm{2\,\vi+4\,\vj}=2\sqrt{5}}</m>.
                     </li>
 
                     <li>
                         Le vecteur unitaire donnant la direction de décroissance
-                        plus rapide est <m>-\frac{1}{\sqrt{5}}\llt 1,2\rgt </m>,
+                        plus rapide est <m>{-\tfrac{1}{\sqrt{5}}(\vi+2\,\vj)}</m>,
                         et le taux de décroissance est
-                        <m>-\norm{\llt 2,4\rgt}=-2\sqrt{5}</m>.
+                        <m>{-\norm{2\,\vi+4\,\vj}=-2\sqrt{5}}</m>.
                     </li>
 
                     <li>
@@ -570,10 +577,10 @@
                             <m>\vnabla f(x_0,y_0)</m>.
                             Un tel vecteur est
                             <fn>Vérifiez-le avec le produit scalaire!</fn>
-                            <m>\llt 2,-1\rgt</m>.
+                            <m>2\,\vi-\vj</m>.
                             Ainsi, les vecteurs unitaires donnant un taux de
                             variation nul sont
-                            <m>\pm\frac{1}{\sqrt{5}}(2,-1)</m>.
+                            <m>{\pm\tfrac{1}{\sqrt{5}}(2\,\vi-\vj)}</m>.
                             Il s'agit, bien entendu, de deux vecteurs directeurs
                             pour la tangente à la courbe de niveau
                             <m>f(x_0,y_0)</m> au point <m>(x_0,y_0)</m>,
@@ -602,9 +609,9 @@
                     Le taux de variation d'une fonction donnée <m>f(x,y)</m> au
                     point <m>P_0(1,2)</m> dans la direction du point
                     <m>P_1(2,3)</m> est <m>2\sqrt{2}</m> et dans la direction de
-                    <m>P_2=(1,0)</m> est <m>-3</m>.
+                    <m>P_2(1,0)</m> est <m>-3</m>.
                     Quel est le taux de variation de <m>f</m> en <m>P_0</m> dans
-                    la direction de l'origine <m>P_3(0,0)</m>?
+                    la direction de l'origine <m>P_3(0,0)</m><nbsp/>?
                 </p>
             </statement>
 
@@ -624,24 +631,26 @@
                     vecteurs
                     <md>
                         <mrow>
-  \overrightarrow{P_0P_1} = \llt 1,1\rgt, \qquad
-  \overrightarrow{P_0P_2} = \llt 0,-2\rgt
+  \overrightarrow{P_0P_1} = \vi+\vj, \qquad
+  \overrightarrow{P_0P_2} = -2\,\vj,
   </mrow>
-                    </md>.
-                    Ainsi, on sait que :
+                    </md>
+                    dont les vecteurs unitaires sont
+                    <m>{\vu_1=\tfrac{1}{\sqrt{2}}(\vi+\vj)}</m> et <m>{\vu_2=-\vj}</m>.
+                    Ainsi, on sait que<nbsp/>:
                     <md alignment="alignat">
                         <mrow>
-  2\sqrt{2}&amp;=D_{\frac{\llt 1,1\rgt}{\norm{\llt 1,1\rgt}}} f(1,2)
-     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 1,1\rgt}{\norm{\llt 1,1\rgt}}
-     &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 1,1\rgt}{\sqrt{2}},
+  2\sqrt{2}&amp;=\vD_{\vu_1} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\vu_1
+     &amp;&amp;= (a\,\vi+b\,\vj)\cdot\frac{\vi+\vj}{\sqrt{2}}
   </mrow>
                         <mrow>
      &amp;=\frac{a}{\sqrt{2}} +\frac{b}{\sqrt{2}}
   </mrow>
                         <mrow>
-  -3&amp;=D_{\frac{\llt 0,-2\rgt}{\norm{\llt 0,-2\rgt}}} f(1,2)
-     &amp;&amp;= \vnabla f(1,2)\cdot\frac{\llt 0,-2\rgt}{\norm{\llt 0,-2\rgt}}
-     &amp;&amp;= \llt a,b\rgt\cdot\frac{\llt 0,-2\rgt}{2}
+  -3&amp;=\vD_{\vu_2} f(1,2)
+     &amp;&amp;= \vnabla f(1,2)\cdot\vu_2
+     &amp;&amp;= (a\,\vi+b\,\vj)\cdot(-\vj)
   </mrow>
                         <mrow>
      &amp;=-b
@@ -654,18 +663,19 @@
                     Le vecteur direction de <m>P_0(1,2)</m> vers <m>P_3(0,0)</m>
                     est
                     <md>
-                        \overrightarrow{P_0P_3} = \llt -1,-2\rgt
+                        \overrightarrow{P_0P_3} = -\vi-2\,\vj
                     </md>,
+                    de vecteur unitaire <m>{\vu_3=-\tfrac{1}{\sqrt{5}}(\vi+2\,\vj)}</m>,
                     et le taux de variation (par unité de distance) dans cette
                     direction est
                     <md>
                         <mrow>
-  D_{\frac{\llt -1,-2\rgt}{\norm{\llt -1,-2\rgt}}} f(1,2)
-     &amp;= \vnabla f(1,2)\cdot\frac{\llt -1,-2\rgt}{\norm{\llt -1,-2\rgt}}
-      = \llt a,b\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
+  \vD_{\vu_3} f(1,2)
+     &amp;= \vnabla f(1,2)\cdot\vu_3
+      = (a\,\vi+b\,\vj)\cdot\vu_3
   </mrow>
                         <mrow>
-      &amp;= \llt 1,3\rgt\cdot\frac{\llt -1,-2\rgt}{\sqrt{5}}
+      &amp;= (\vi+3\,\vj)\cdot\frac{-\vi-2\,\vj}{\sqrt{5}}
   =-\frac{7}{\sqrt{5}}
   </mrow>
                     </md>.
@@ -693,7 +703,7 @@
                     Par la
                     <xref ref="def-Gradient" text="global">définition</xref>, le
                     gradient d'une fonction <m>g(x,y)</m> est le vecteur
-                    <m>\llt g_x(x,y),g_y(x,y)\rgt</m>.
+                    <m>{g_x(x,y)\,\vi+g_y(x,y)\,\vj}</m>.
                     Dans cette question, on nous donne une fonction
                     <m>f(r,\theta)</m> exprimée avec les coordonnées polaires
                     <m>r</m> et <m>\theta</m>.
@@ -705,8 +715,10 @@
                     où
                     <md>
                         <mrow>
-  r(x,y)&amp;=\sqrt{x^2+y^2},\cr
-  \theta(x,y)&amp;= \arctan\,\frac{y}{x}
+  r(x,y)&amp;=\sqrt{x^2+y^2},
+  </mrow>
+                        <mrow>
+  \theta(x,y)&amp;= \arctan\frac{y}{x}
   </mrow>
                     </md>.
                     Puis, nous voulons calculer le gradient de <m>g(x,y)</m> et
@@ -768,21 +780,122 @@
                     </md>,
                     de sorte que
                     <md>
-                        \llt g_x,g_y\rgt= f_r\ \llt\cos\theta,\sin\theta\rgt
-             +\frac{f_\theta}{r}\llt-\sin\theta,\cos\theta\rgt
+                        \vnabla g = g_x\,\vi+g_y\,\vj= f_r\,(\cos\theta\,\vi+\sin\theta\,\vj)
+             +\frac{f_\theta}{r}(-\sin\theta\,\vi+\cos\theta\,\vj)
+                    </md>.
+                    Les deux vecteurs qui apparaissent ici sont unitaires et
+                    orthogonaux. Si on les nomme
+                    <md>
+                        <mrow>
+  \ve_r = \cos\theta\,\vi+\sin\theta\,\vj \qquad\text{et}\qquad
+  \ve_\theta = -\sin\theta\,\vi+\cos\theta\,\vj,
+  </mrow>
+                    </md>
+                    le premier pointe dans la direction où <m>r</m> croît, et le
+                    second dans la direction où <m>\theta</m> croît. Le
+                    gradient s'écrit alors simplement
+                    <md>
+                        <mrow>
+  \vnabla g = f_r\,\ve_r + \frac{f_\theta}{r}\,\ve_\theta
+  </mrow>
                     </md>,
                     ou, avec les points d'évaluation écrits explicitement,
                     <md>
                         <mrow>
-  \llt g_x(x,y),g_y(x,y)\rgt
+  \vnabla g(x,y)
   &amp;=
-  f_r\left(r(x,y),\theta(x,y)\right)\ \llt\cos\theta(x,y),\,\sin\theta(x,y)\rgt
+  f_r\left(r(x,y),\theta(x,y)\right)\ \big(\cos\theta(x,y)\,\vi+\sin\theta(x,y)\,\vj\big)
   </mrow>
                         <mrow>
   &amp;\ \ +\frac{1}{r(x,y)}f_\theta\left(r(x,y),\theta(x,y)\right)\
-  \llt-\sin\theta(x,y),\,\cos\theta(x,y)\rgt
+  \big(-\sin\theta(x,y)\,\vi+\cos\theta(x,y)\,\vj\big)
   </mrow>
                     </md>.
+                </p>
+            </solution>
+        </example>
+
+        <p>
+            Le calcul de l'exemple précédent repose sur la règle de la chaîne,
+            appliquée séparément à chacune des deux dérivées partielles. La
+            forme matricielle de cette règle
+            (<xref ref="thm_chainRule" text="global">théorème</xref>) permet
+            d'organiser le même calcul de façon plus compacte, en travaillant
+            avec la dérivée <m>\vD g</m> (un vecteur ligne) plutôt qu'avec le
+            gradient. C'est ce que fait l'exemple suivant.
+        </p>
+
+        <example xml:id="eg_chainRuleF_matriciel">
+            <title>Le gradient en coordonnées polaires<nbsp/>: approche matricielle</title>
+
+            <statement>
+                <p>
+                    Reprendre l'<xref ref="eg_chainRuleF" text="global">exemple</xref>
+                    précédent en utilisant la forme matricielle de la règle de la
+                    chaîne.
+                </p>
+            </statement>
+
+            <solution>
+                <p>
+                    Comme dans l'exemple précédent, posons
+                    <m>{g(x,y)=f\big(r(x,y),\theta(x,y)\big)}</m>. Autrement
+                    dit, <m>g=f\circ\Phi</m>, où
+                    <m>{\Phi(x,y)=\big(r(x,y),\theta(x,y)\big)}</m>, avec
+                    <m>{r=\sqrt{x^2+y^2}}</m> et <m>{\theta=\arctan\tfrac{y}{x}}</m>.
+                    La règle de la chaîne donne
+                    <md>
+                        <mrow>
+  \vD g(x,y) = \vD f\big(r,\theta\big)\ \vD\Phi(x,y),
+  </mrow>
+                    </md>
+                    un produit d'un vecteur ligne <m>1\times 2</m> par une matrice
+                    <m>2\times 2</m>.
+                </p>
+
+                <p>
+                    La dérivée de <m>f</m> est le vecteur ligne
+                    <m>{\vD f(r,\theta)=\begin{bmatrix} f_r \amp f_\theta\end{bmatrix}}</m>.
+                    La matrice <m>\vD\Phi(x,y)</m> regroupe les dérivées partielles
+                    de <m>r</m> et de <m>\theta</m>, déjà calculées dans
+                    l'exemple précédent<nbsp/>:
+                    <md>
+                        <mrow>
+  \vD\Phi(x,y)\amp =\begin{bmatrix} r_x \amp r_y \\ \theta_x \amp \theta_y\end{bmatrix}
+  =\frac{1}{\sqrt{x^2+y^2}}\begin{bmatrix} x \amp y \\[1ex]
+                    -\dfrac{y}{\sqrt{x^2+y^2}} \amp \dfrac{x}{\sqrt{x^2+y^2}}\end{bmatrix}   </mrow> <mrow>
+  \amp =\begin{bmatrix} \cos\theta \amp \sin\theta \\[1ex]
+                    -\dfrac{\sin\theta}{r} \amp \dfrac{\cos\theta}{r}\end{bmatrix}.
+  </mrow>
+                    </md>
+                    Le produit matriciel donne alors, en une seule étape,
+                    <md>
+                        <mrow>
+  \begin{bmatrix} g_x \amp g_y\end{bmatrix}
+  \amp=\begin{bmatrix} f_r \amp f_\theta\end{bmatrix}
+   \begin{bmatrix} \cos\theta \amp \sin\theta \\[1ex]
+                    -\dfrac{\sin\theta}{r} \amp \dfrac{\cos\theta}{r}\end{bmatrix}
+  </mrow>
+                        <mrow>
+  \amp=\begin{bmatrix} f_r\cos\theta-\dfrac{f_\theta}{r}\sin\theta \amp
+                    f_r\sin\theta+\dfrac{f_\theta}{r}\cos\theta\end{bmatrix}.
+  </mrow>
+                    </md>
+                </p>
+
+                <p>
+                    Le gradient est la transposée de la dérivée,
+                    <m>{\vnabla g=\vD g^T}</m>. On retrouve donc
+                    <md>
+                        <mrow>
+  \vnabla g
+  =\Big(f_r\cos\theta-\frac{f_\theta}{r}\sin\theta\Big)\vi
+   +\Big(f_r\sin\theta+\frac{f_\theta}{r}\cos\theta\Big)\vj
+  = f_r\,\ve_r + \frac{f_\theta}{r}\,\ve_\theta,
+  </mrow>
+                    </md>
+                    comme dans l'<xref ref="eg_chainRuleF" text="global">exemple</xref>
+                    précédent.
                 </p>
             </solution>
         </example>
@@ -1051,34 +1164,36 @@
                 <p>
                     Soit <m>\plan{S}</m> la surface d'équation
                     <m>G(x,y,z)= k</m> et
-                    <m>\vr_0 = x_0\, \vi + y_0 \, \vj +  z_0\,\vk</m> sur
-                    <m>\plan{S}</m> tel que le gradient <m>\vnabla G (\vr_0)</m>
+                    <m>{\vr_0 = x_0\, \vi + y_0 \, \vj +  z_0\,\vk}</m> un point de
+                    <m>\plan{S}</m> où le gradient <m>\vnabla G (\vr_0)</m>
                     existe et est non nul.
-                    Alors :
+                    Pour un point <m>(x,y,z)</m> quelconque, posons
+                    <m>{\vr = x\,\vi + y\,\vj + z\,\vk}</m>.
+                    Alors<nbsp/>:
                     <ol marker="(a)">
                         <li>
-                            Le vecteur <m>\vnabla G(\vr_0)</m> est orthogonal à
+                            le vecteur <m>\vnabla G(\vr_0)</m> est orthogonal à
                             <m>\plan{S}</m> en <m>\vr_0</m>;
                         </li>
 
                         <li>
-                            L'équation du plan tangent à <m>\plan{S}</m> en
-                            <m>\vr_0</m> est
+                            le plan tangent à <m>\plan{S}</m> en
+                            <m>\vr_0</m> a pour équation
                             <md>
-                                \vnabla G(x_0,y_0,z_0)\cdot\ctvec{x-x_0}{y-y_0}{z-z_0} =0
+                                \vnabla G(\vr_0)\cdot (\vr - \vr_0) = 0,
                             </md>
-                            ou encore
+                            c'est-à-dire, en coordonnées,
                             <md>
-                                \vnabla G(\vr_0)\cdot (\vr - \vr_0) = 0
-                            </md>;
+                                G_x(\vr_0)\,(x-x_0) + G_y(\vr_0)\,(y-y_0) + G_z(\vr_0)\,(z-z_0) = 0;
+                            </md>
                         </li>
 
                         <li>
-                            Un paramétrage de la droite normale à
-                            <m>\plan{S}</m> en <m>\vr_0</m> est
+                            la droite normale à <m>\plan{S}</m> en <m>\vr_0</m>
+                            admet le paramétrage
                             <md>
-                                \ctvec{x}{y}{z} =\vr_0 + t \vnabla G(\vr_0)
-                            </md>.
+                                \vr =\vr_0 + t\, \vnabla G(\vr_0),\qquad t\in\R.
+                            </md>
                         </li>
                     </ol>
                 </p>
@@ -1088,8 +1203,9 @@
         <remark xml:id="rem_tan_plane">
             <p>
                 Nous avons quelques idées au sujet des plans tangents aux
-                surfaces <m>z=f(x,y)</m> et des approximations linéaires au
-                <xref ref="principle-Plan-tg-idee" text="global">principe</xref>.
+                surfaces <m>z=f(x,y)</m> et des approximations linéaires,
+                voir la <xref ref="def-Approx-lin-2var" text="global">définition</xref>
+                et le paragraphe qui la suit.
                 Il s'agit de conséquences du
                 <xref ref="thm_tan_plane_G" text="global">théorème</xref>.
                 En effet, il est toujours possible d'écrire l'équation
@@ -1100,9 +1216,7 @@
                     \vnabla G(x_0,y_0,z_0) = -f_x(x_0,y_0)\,\vi -f_y(x_0,y_0)\,\vj +\vk
                 </md>.
                 Le <xref ref="thm_tan_plane_G" text="global">théorème</xref>
-                donne alors les points du
-                <xref ref="principle-Plan-tg-idee" text="global">principe</xref>
-                comme une conséquence.
+                donne alors ces faits comme une conséquence.
             </p>
 
             <p>
@@ -1154,8 +1268,8 @@ z= x^2+5xy-2y^2
                     Ayant le vecteur normal, nous n'avons plus qu'à trouver
                     l'équation du plan tangent.
                     <md>
-                        \vn\cdot\llt x-1\,,\,y-2\,,\,z-3 \rgt
-=\llt 12\,,\,-3\,,\, -1\rgt\cdot\llt x-1\,,\,y-2\,,\,z-3 \rgt
+                        \vn\cdot\big((x-1)\,\vi+(y-2)\,\vj+(z-3)\,\vk\big)
+=\tvect{12}{-3}{-1}\cdot\tvect{x-1}{y-2}{z-3}
 =0
                     </md>
                     ou encore
@@ -1211,7 +1325,7 @@ x^2+y^2+z^2=1
                 plan tangent en <m>(0,0,1)</m> est
                 <md>
                     <mrow>
-\vnabla G(0,0,1)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt = 0
+\vnabla G(0,0,1)\cdot\big(x\,\vi+y\,\vj+(z-1)\,\vk\big) = 0
 \quad\text{ou}\quad 2(z-1)=0
 \quad\text{ou}\quad z=1
 </mrow>
@@ -1227,7 +1341,7 @@ x^2+y^2+z^2=1
                 trouverait que le <q>plan tangent </q> est
                 <md>
                     <mrow>
-&amp;\vnabla G(x,y,z)\cdot\llt x-0\,,\,y-0\,,\,z-1\rgt =0
+&amp;\vnabla G(x,y,z)\cdot\big(x\,\vi+y\,\vj+(z-1)\,\vk\big) =0
 </mrow>
                     <mrow>
 \qquad\text{ou}\qquad &amp;2x(x-0) +2y(y-0) + 2z(z-1)=0
@@ -1406,18 +1520,18 @@ G(x,y,z) &amp;= x^2-2x +y^2-4y + z^2-6z
                         le vecteur normal à la surface
                         <m>x^2+ 2y^2 +3z^2 = 72</m> en <m>(a,b,c)</m> est
                         parallèle au vecteur normal du plan, c'est-à-dire à
-                        <m>\llt 1,1,3\rgt</m>.
+                        <m>\vi+\vj+3\,\vk</m>.
                     </li>
                 </ul>
                 Étant donné que le gradient de <m>x^2+ 2y^2 +3z^2</m> est
-                <m>\llt 2x\,,\,4y\,,\,6z\rgt=2\llt x\,,\,2y\,,\,3z\rgt</m>, ces
+                <m>{2x\,\vi+4y\,\vj+6z\,\vk=2(x\,\vi+2y\,\vj+3z\,\vk)}</m>, ces
                 conditions sont équivalentes aux équations ci-après.
                 <md>
                     <mrow>
 a^2+ 2b^2 +3c^2 &amp;= 72
 </mrow>
                     <mrow>
-\llt a\,,\,2b\,,\,3c\rgt &amp;=t \llt 1,1,3\rgt\qquad
+a\,\vi+2b\,\vj+3c\,\vk &amp;=t (\vi+\vj+3\,\vk),\qquad
 \text{pour un scalaire } t
 </mrow>
                 </md>
@@ -1562,8 +1676,8 @@ x^2+y^2+z^2=5</m> et <m>x^2+y^2=4z</m>.
                             le vecteur
                             <md>
                                 \vnabla F\left(\sqrt{3},1,1\right)
- =\llt 2x,\,2y,\,2z \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
- = 2\llt \sqrt{3},\,1,\,1 \rgt
+ =\left.\tvect{2x}{2y}{2z}\right|_{(\sqrt{3},1,1)}
+ = 2\tvect{\sqrt{3}}{1}{1}
                             </md>
                             est normal à <m>F(x,y,z)=5</m> en
                             <m>\left(\sqrt{3},\,1,\,1\right)</m>, et
@@ -1573,8 +1687,8 @@ x^2+y^2+z^2=5</m> et <m>x^2+y^2=4z</m>.
                             le vecteur
                             <md>
                                 \vnabla G\left(\sqrt{3},1,1\right)
- =\llt 2x,\,2y,\,-4 \rgt\Big|_{(x,y,z)=(\sqrt{3},1,1)}
- = 2\llt \sqrt{3},\,1,\,-2 \rgt
+ =\left.\tvect{2x}{2y}{-4}\right|_{(\sqrt{3},1,1)}
+ = 2\tvect{\sqrt{3}}{1}{-2}
                             </md>
                             est normal à <m>G(x,y,z)=0</m> en
                             <m>\left(\sqrt{3},\,1,\,1\right)</m>.

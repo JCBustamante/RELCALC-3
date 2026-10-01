@@ -5,16 +5,19 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <!-- Traduit et adapté par Juan Carlos Bustamante, 2022 - 2023-->
 <exercises>
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <exercisegroup>
         <title>Pour se pratiquer</title>
 
+        <!-- 1 -->
         <exercise>
             <statement>
                 <p>
                     Chacune des figures ci-bas contient une esquisse d'une
                     surface <m>\cS</m> et son bord <m>\partial \cS</m>.
                     Le théorème de Stokes dit que
-                    <m>\displaystyle \oint_{\partial \cS} \vF\cdot \dee{\vr}   =\iint_{\cS} \vnabla \times \vF \cdot \vn\,\dee{S}</m>
+                    <m>\int_{\partial \cS} \vF\cdot \dee{\vr} =\iint_{\cS} \vnabla \times \vF \cdot \vn\,\dee{S}</m>
                     lorsque <m>\vn</m> est un vecteur unitaire normal à
                     <m>\cS</m> compatible avec l'orientation du bord.
                     Dans chaque cas, esquisser un vecteur normal unitaire
@@ -102,7 +105,7 @@
 
                         <li>
                             with the vector from your feet to your head having
-                            direction <m>\vn</m>
+                            direction <m>\vn</m>.
                         </li>
 
                         <li>then <m>\cS</m> is on your left hand side.</li>
@@ -152,6 +155,7 @@
             </solution>
         </exercise>
 
+        <!-- 2 -->
         <exercise>
             <statement>
                 <p>
@@ -163,12 +167,12 @@
 
                         <li>
                             <p>
-                                Le bord <m>\cC</m> de <m>\cR</m> est formé d'une
+                                le bord <m>\cC</m> de <m>\cR</m> est formé d'une
                                 seule courbe fermée, simple et lisse par
                                 morceaux
                                 <ul>
                                     <li>
-                                        qui est orienté de façon compatible avec
+                                        qui est orientée de façon compatible avec
                                         l'orientation de <m>\cR</m>,
                                         c'est-à-dire de sorte que si l'on marche
                                         le long de <m>\cC</m> dans le sens
@@ -190,7 +194,7 @@
                     Utiliser le théorème de Stokes pour montrer que
                     <md>
                         <mrow>
-      \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+      \int_{\cC} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
       =\iint_{\cR}\Big(\frac{\partial F_2}{\partial x}
                       - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y},
       </mrow>
@@ -228,7 +232,7 @@
                         <li>
                             the unit normal vector to <m>\cS</m> specified in
                             Stokes theorem is <m>\vk</m> (if you walk along
-                            <m>\partial S = C</m> in the direction of the arrow
+                            <m>\partial \cS = C</m> in the direction of the arrow
                             on <m>\cC</m> with the vector from your feet to your
                             head having direction <m>\vk</m> then <m>S=R</m> is
                             on your left hand side) and
@@ -247,15 +251,15 @@
   =\Big(\frac{\partial F_2}{\partial x}
                   - \frac{\partial F_1}{\partial y}\Big)\,\vk
   </mrow>
-                            </md>
+                            </md>.
                         </li>
                     </ul>
                     So Stokes' theorem gives
                     <md>
                         <mrow>
-  \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
-  &amp;=\oint_{\partial S}\vF\cdot \dee{\vr}
-    =\iint_{S}\vnabla\times\vF\cdot\vn\ \dee{S}
+  \oint_{\cC} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+  &amp;=\oint_{\partial \cS}\vF\cdot \dee{\vr}
+    =\iint_{\cS}\vnabla\times\vF\cdot\vn\ \dee{S}
   </mrow>
                         <mrow>
   &amp;=\iint_{\cR}\Big(\frac{\partial F_2}{\partial x}
@@ -266,11 +270,12 @@
             </solution>
         </exercise>
 
+        <!-- 3 -->
         <exercise>
             <statement>
                 <p>
                     Montrer que
-                    <m>\displaystyle\oint_\cC\phi\vnabla\psi\cdot \dee{\vr}=-\oint_\cC\psi\vnabla\phi\cdot \dee{\vr}\ </m>
+                    <m>{\int_\cC\phi\vnabla\psi\cdot \dee{\vr}=-\int_\cC\psi\vnabla\phi\cdot \dee{\vr}}</m>
                     pour toute paire de fonctions <m>\phi</m> et <m>\psi</m> qui
                     ont des dérivées de premier ordre continues et toute courbe
                     <m>\cC</m> qui est le bord d'une surface orientable lisse
@@ -293,8 +298,8 @@
             <solution>
                 <p>
                     We are to show that
-                    <m>\displaystyle \oint_{\cC}[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=0</m>.
-                    Suppose that <m>C=\partial S</m>.
+                    <m>\oint_{\cC}[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=0</m>.
+                    Suppose that <m>C=\partial \cS</m>.
                     Then, by Stokes' theorem
                     <md>
                         <mrow>
@@ -305,7 +310,7 @@
                     We will show below that
                     <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>.
                     This will imply that
-                    <m>\displaystyle \oint_{\cC}[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=\vZero</m>.
+                    <m>\oint_{\cC}[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=\vZero</m>.
                     One way to see that
                     <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>
                     is
@@ -345,15 +350,16 @@
 
   <exercisegroup><introduction><procedural/></introduction>
   -->
+        <!-- 4 -->
         <exercise>
             <statement>
                 <p>
                     Soit <m>\cC</m> la courbe intersection du cylindre
-                    <m>x^2+y^2=1</m> avec la surface <m>z=y^2</m> orientée dans
+                    <m>x^2+y^2=1</m> avec la surface <m>z=y^2</m>, orientée dans
                     le sens contraire des aiguilles d'une montre lorsque vue
                     d'en haut.
-                    Soit <m>\vF=(x^2-y, \, y^2+x, \, 1)</m>.
-                    Calculer <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>
+                    Soit <m>{\vF=(x^2-y)\,\vi+(y^2+x)\,\vj+\vk}</m>.
+                    Calculer <m>\int_{\cC}\vF\cdot \dee{\vr}</m>
                     <ol marker="(a)">
                         <li>par calcul direct;</li>
                         <li>en utilisant le théorème de Stokes.</li>
@@ -373,10 +379,14 @@
             </hint>
 
             <answer>
-                <sidebyside widths="50% 50%">
-                    <p>(a) <m>2\pi</m></p>
-                    <p>(b) <m>2\pi</m></p>
-                </sidebyside>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>2\pi</m>
+                    </li>
+                    <li>
+                        <m>2\pi</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -445,11 +455,12 @@
             </solution>
         </exercise>
 
+        <!-- 5 -->
         <exercise>
             <statement>
                 <p>
-                    Évaluer <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>, où
-                    <m>\vF=ye^x\,\vi+(x+e^x)\,\vj+z^2\,\vk</m> et <m>\cC</m> est
+                    Évaluer <m>\int_{\cC}\vF\cdot \dee{\vr}</m>, où
+                    <m>{\vF=ye^x\,\vi+(x+e^x)\,\vj+z^2\,\vk}</m> et <m>\cC</m> est
                     la courbe
                     <md>
                         <mrow>  \vr(t)=(1+\cos t)\,\vi+(1+\sin t)\,\vj+(1-\sin t-\cos t)\,\vk, \qquad   0\leqslant t\leqslant 2\pi.
@@ -529,12 +540,13 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2011A</fromexam></title> -->
+        <!-- 6 -->
         <exercise>
             <statement>
                 <p>
                     Trouver la valeur de
-                    <m>\displaystyle \iint_{\cS} \vnabla \times \vF \cdot \vn\,\dee{S}</m>, où
-                    <m>\vF = \left( z - y, \, x, \, -x \right)</m> et <m>\cS</m>
+                    <m>\iint_{\cS} \vnabla \times \vF \cdot \vn\,\dee{S}</m>, où
+                    <m>{\vF = (z - y)\,\vi + x\,\vj - x\,\vk}</m> et <m>\cS</m>
                     est l'hémisphère
                     <md>
                         <mrow>
@@ -563,14 +575,14 @@
                     The boundary of <m>\cS</m> is
                     <md>
                         <mrow>
-  \partial S = \Set{(x,y,z)}{z=0,\ x^2+y^2=4}
+  \partial \cS = \Set{(x,y,z)}{z=0,\ x^2+y^2=4}
   </mrow>
                     </md>
                     and can be parametrized
                     <md>
                         <mrow>
   \vr(\theta) = 2\cos\theta\,\vi +2\sin\theta\,\vj\qquad
-  0\le\theta\leqslant 2\pi
+  0\leqslant\theta\leqslant 2\pi
   </mrow>
                     </md>
                 </p>
@@ -584,7 +596,7 @@
                     <md>
                         <mrow>
   &amp;\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
-  =\oint_{\partial S}\vF\cdot\dee{\vr}
+  =\oint_{\partial \cS}\vF\cdot\dee{\vr}
   </mrow>
                         <mrow>
   &amp;\hskip0.5in=\int_0^{2\pi} (\overbrace{-2\sin\theta\,\vi+2\cos\theta\,\vj-2\cos\theta\,\vk}^
@@ -603,14 +615,15 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 1998D</fromexam></title> -->
+        <!-- 7 -->
         <exercise>
             <statement>
                 <p>
                     Soit <m>\cS</m> la portion de la surface
-                    <m>z=16-{(x^2+y^2)}^2</m> qui se trouve sur le plan
+                    <m>{z=16-(x^2+y^2)^2}</m> qui se trouve au-dessus du plan
                     <m>xy</m>.
                     Soit
-                    <m>\vF = x\ln(1+z) \, \vi + x(3+y) \, \vj + y\cos z \, \vk </m>.
+                    <m>{\vF = x\ln(1+z) \, \vi + x(3+y) \, \vj + y\cos z \, \vk}</m>.
                     Calculer
                     <md>
                         <mrow>
@@ -664,7 +677,7 @@
           </mrow>
                     </md>
                     For an efficient, sneaky, way to evaluate
-                    <m>\displaystyle \int_0^{2\pi} \cos^2 t\,\dee{t}</m>, see Example
+                    <m>\int_0^{2\pi} \cos^2 t\,\dee{t}</m>, see Example
                     <xref ref="eg_workIntegralB"/>.
                 </p>
             </solution>
@@ -720,7 +733,7 @@
                 <p>
                     As <m>y</m> is odd under <m>y\rightarrow-y</m> and
                     <m>\cD</m> is invariant under <m>y\rightarrow-y</m>, we have
-                    <m>\displaystyle \iint_{\cD}y\,\dee{S}=0</m> and
+                    <m>\iint_{\cD}y\,\dee{S}=0</m> and
                     <md>
                         <mrow>
     \iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
@@ -733,6 +746,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2001A</fromexam></title> -->
+        <!-- 8 -->
         <exercise>
             <statement>
                 <p>
@@ -740,8 +754,8 @@
                     <m>z=4-x^2-y^2</m> et du cylindre <m>x^2+(y-1)^2=1</m>,
                     orientée dans le sens contraire des aiguilles d'une montre
                     lorsque vue d'en haut.
-                    Soit <m>\vF=xz\,\vi+x\,\vj+yz\,\vk</m>.
-                    Trouver <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>.
+                    Soit <m>{\vF=xz\,\vi+x\,\vj+yz\,\vk}</m>.
+                    Trouver <m>\int_{\cC}\vF\cdot \dee{\vr}</m>.
                 </p>
             </statement>
 
@@ -774,7 +788,7 @@
                     over the circular disk
                     <md>
                         <mrow>
-  D = \Set{(x,y)}{x^2+(y-1)^2\leqslant 1}
+  \cD = \Set{(x,y)}{x^2+(y-1)^2\leqslant 1}
   </mrow>
                     </md>
                     For the given vector field
@@ -805,7 +819,7 @@
   &amp;=\iint_{\cS} \vnabla\times\vF\cdot \vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_D
+  &amp;=\iint_\cD
      \big[2x\overbrace{(4-x^2-y^2)}^{z=f(x,y)}+2xy+1\big]\,\dee{x}\dee{y}
   </mrow>
                     </md>
@@ -815,7 +829,7 @@
                     <md>
                         <mrow>
   \oint_{\cC}\vF\cdot \dee{\vr}
-  =\iint_D\,\dee{x}\dee{y}
+  =\iint_\cD\,\dee{x}\dee{y}
   =\text{Area}(D)
   =\pi
   </mrow>
@@ -824,15 +838,16 @@
             </solution>
         </exercise>
 
+        <!-- 9 -->
         <exercise>
             <statement>
                 <p>
                     Soit
-                    <m>\vF = - ye^z\,\vi + x^3\cos z\,\vj + z\sin(xy)\,\vk</m>
+                    <m>{\vF = - ye^z\,\vi + x^3\cos z\,\vj + z\sin(xy)\,\vk}</m>
                     et <m>\cS</m> la portion de la surface
-                    <m> z = (1-x^2)(1-y^2)</m> qui se trouve au-dessus du carré
-                    <m>-1\leqslant x\leqslant 1</m>,
-                    <m>-1\leqslant y\leqslant 1</m> du plan <m>xy</m>.
+                    <m>{z = (1-x^2)(1-y^2)}</m> qui se trouve au-dessus du carré
+                    <m>{-1\leqslant x\leqslant 1}</m>,
+                    <m>{-1\leqslant y\leqslant 1}</m> du plan <m>xy</m>.
                     Trouver le flux de <m>\vnabla\times \vF</m> vers le haut à
                     travers <m>\cS</m>.
                 </p>
@@ -841,7 +856,7 @@
             <hint>
                 <p>
                     Nous devons évaluer une intégrale de flux de la forme
-                    <m>\displaystyle \iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}</m>.
+                    <m>\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}</m>.
                     Cela ressemble bien à un côté du théorème de Stokes.
                 </p>
             </hint>
@@ -857,7 +872,7 @@
                     The surface
                     <md>
                         <mrow>
-  S&amp;=\Set{(x,y,z)}{-1\leqslant x\leqslant 1,\ -1\leqslant y\leqslant 1,\ z\geqslant 0,\ z = (1-x^2)(1-y^2)}
+  \cS&amp;=\Set{(x,y,z)}{-1\leqslant x\leqslant 1,\ -1\leqslant y\leqslant 1,\ z\geqslant 0,\ z = (1-x^2)(1-y^2)}
   </mrow>
                         <mrow>
    &amp;=\Set{(x,y,z)}{-1\leqslant x\leqslant 1,\ -1\leqslant y\leqslant 1,\ \ z = (1-x^2)(1-y^2)}
@@ -899,11 +914,12 @@
             </solution>
         </exercise>
 
+        <!-- 10 -->
         <exercise>
             <statement>
                 <p>
-                    Calculer l'intégrale <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>,
-                    avec <m>\vF = (e^{x^2} - yz, \, \sin y - yz, \, xz + 2y)</m>
+                    Calculer l'intégrale <m>\int_{\cC}\vF\cdot \dee{\vr}</m>,
+                    avec <m>{\vF = (e^{x^2} - yz)\,\vi + (\sin y - yz)\,\vj + (xz + 2y)\,\vk}</m>
                     et <m>\cC</m> le parcours triangulaire de <m>(1, 0, 0)</m> à
                     <m>(0, 1, 0)</m> puis à <m>(0, 0, 1)</m> et qui retourne à
                     <m>(1, 0, 0)</m>.
@@ -942,7 +958,7 @@
                     The curve <m>\cC</m> is a triangle.
                     All three vertices of the triangle obey <m>x+y+z=1</m>.
                     So the triangle is the boundary of the surface
-                    <m>S=\Set{(x,y,z)}{x\geqslant 0,\ y\geqslant 0,\ z=1-x-y\geqslant 0}</m>.
+                    <m>\cS=\Set{(x,y,z)}{x\geqslant 0,\ y\geqslant 0,\ z=1-x-y\geqslant 0}</m>.
                 </p>
 
                 <sidebyside width="23%">
@@ -964,7 +980,7 @@
                     Here <m>\vn</m> is the upward pointing unit normal.
                     The set of points <m>(x,y)</m> for which there is a
                     corresponding <m>(x,y,z)</m> in <m>\cS</m> is
-                    <m>T=\Set{(x,y)}{x\geqslant 0,\ y\geqslant 0,\ x+y\leqslant 1}</m>,
+                    <m>\cT=\Set{(x,y)}{x\geqslant 0,\ y\geqslant 0,\ x+y\leqslant 1}</m>,
                     which is a triangle of area <m>\frac{1}{2}</m>.
                     Since
                     <md>
@@ -982,7 +998,7 @@
   \oint_{\cC}\vF\cdot \dee{\vr}&amp;=\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_T 2\ \dee{x}\,\dee{y}
+  &amp;=\iint_\cT 2\ \dee{x}\,\dee{y}
   = 2\,\text{Area}(T)
   =1
   </mrow>
@@ -991,19 +1007,19 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2001D</fromexam></title> -->
+        <!-- 11 -->
         <exercise>
             <statement>
                 <p>
-                    Soit <m>\vF(x,y,z)=-z\,\vi+x\,\vj+y\,\vk</m> un champ de
+                    Soit <m>{\vF=-z\,\vi+x\,\vj+y\,\vk}</m> un champ de
                     vecteurs.
                     Utiliser le théorème de Stokes pour calculer
-                    <m>\displaystyle 
-  \oint_{\cC}\vF\cdot \dee{\vr},
-  </m> où <m>\cC</m>
+                    <m>\int_{\cC}\vF\cdot \dee{\vr}</m>, où <m>\cC</m>
+
                     est l'intersection du plan <m>z=y</m> et de l'ellipsoïde
-                    <m>\frac{x^2}{4}+\frac{y^2}{2}+\frac{z^2}{2}=1</m>, orientée
+                    <m>{\tfrac{x^2}{4}+\tfrac{y^2}{2}+\tfrac{z^2}{2}=1}</m>, orientée
                     dans le sens contraire des aiguilles d'une montre lorsque
-                    vue d'en-haut.
+                    vue d'en haut.
                 </p>
             </statement>
 
@@ -1017,7 +1033,7 @@
                 <p>
                     Stokes' theorem, which is Theorem <xref ref="thm_Stokes"/>,
                     says that
-                    <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}
+                    <m>\oint_{\cC}\vF\cdot \dee{\vr}
   =\iint_{\cS}\nabla\times\vF\cdot\vn\,\dee{S}</m>
                     for any surface <m>\cS</m> whose boundary is <m>\cC</m>.
                     For the given vector field
@@ -1043,7 +1059,7 @@
                     Choose
                     <md>
                         <mrow>
-  S &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+\tfrac{y^2}{2}+\tfrac{z^2}{2}\leqslant 1}
+  \cS &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+\tfrac{y^2}{2}+\tfrac{z^2}{2}\leqslant 1}
   </mrow>
                         <mrow>
     &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+y^2\leqslant 1}
@@ -1078,7 +1094,7 @@
                     over
                     <md>
                         <mrow>
-  D=\Set{(x,y)}{\tfrac{x^2}{4}+y^2\leqslant 1}
+  \cD=\Set{(x,y)}{\tfrac{x^2}{4}+y^2\leqslant 1}
   </mrow>
                     </md>
                     Consequently, Stokes' theorem gives that
@@ -1086,7 +1102,7 @@
                         <mrow>
   \oint_{\cC}\vF\cdot \dee{\vr}
 
-  &amp;=\iint_D\overbrace{(1,-1,1)}^{\nabla\times\vF}\cdot
+  &amp;=\iint_\cD\overbrace{(1,-1,1)}^{\nabla\times\vF}\cdot
               \overbrace{(0\,,\,-1\,,\, 1)\dee{x}\dee{y} }^{\vn\,\dee{S}}
   </mrow>
                         <mrow>
@@ -1109,17 +1125,18 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2016D</fromexam></title> -->
+        <!-- 12 -->
         <exercise>
             <statement>
                 <p>
                     Considérer le champ de vecteurs
-                    <m>\vF(x,y, z) = z^2 \,\vi + x^2 \,\vj + y^2\,\vk</m> dans
+                    <m>{\vF = z^2 \,\vi + x^2 \,\vj + y^2\,\vk}</m> dans
                     <m>\R^3</m>.
                     <ol marker="(a)">
                         <li>
                             Calculer l'intégrale de ligne
-                            <m>\displaystyle I_1 = \int_{C_1}\vF\cdot\dee{\vr}</m> lorsque
-                            <m>C_1</m> est la courbe formée par les segments de
+                            <m>I_1 = \int_{\cC_1}\vF\cdot\dee{\vr}</m> lorsque
+                            <m>\cC_1</m> est la courbe formée par les segments de
                             droites <m>L_1</m> de <m>(2, 0, 0)</m> à
                             <m>(0, 2, 0)</m>, <m>L_2</m> de <m>(0, 2, 0)</m> à
                             <m>(0, 0, 2)</m> et finalement <m>L_3</m> de
@@ -1127,24 +1144,28 @@
                         </li>
 
                         <li>
-                            Une courbe fermée simple <m>C_2</m> sur plan
-                            <m>E\,:\, x + y + z = 2</m>, qui délimite une région
-                            <m>\cR</m> de ce plan dont l'aire est <m>3</m> et
-                            est orientée dans le sens contraire aux aiguilles
-                            d'une montre lorsque vue de la direction du demi-axe
-                            <m>x</m> positif.
+                            Soit <m>\cC_2</m> une courbe fermée simple du plan
+                            <m>{x + y + z = 2}</m>, qui délimite une région
+                            <m>\cR</m> de ce plan d'aire <m>3</m> et qui
+                            est orientée dans le sens contraire des aiguilles
+                            d'une montre lorsque vue du demi-axe des
+                            <m>x</m> positifs.
                             Calculer l'intégrale
-                            <m>\displaystyle I_2 = \int_{C_2}\vF\cdot\dee{\vr}</m>.
+                            <m>I_2 = \int_{\cC_2}\vF\cdot\dee{\vr}</m>.
                         </li>
                     </ol>
                 </p>
             </statement>
 
             <answer>
-                <sidebyside widths="50% 50%">
-                    <p>(a) <m>8</m></p>
-                    <p>(b) <m>4\sqrt{3}</m></p>
-                </sidebyside>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>8</m>
+                    </li>
+                    <li>
+                        <m>4\sqrt{3}</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -1178,7 +1199,7 @@
                 </p>
 
                 <p>
-                    (b) We are not told explicitly what <m>C_2</m> is, so we
+                    (b) We are not told explicitly what <m>\cC_2</m> is, so we
                     certainly can't do a direct evaluation.
                     Instead, let's use Stokes' theorem (Theorem
                     <xref ref="thm_Stokes"/> ).
@@ -1209,15 +1230,15 @@
                     So, by Stokes' theorem,
                     <md>
                         <mrow>
-  I_2 &amp;= \int_{C_2}\vF\cdot\dee{\vr}
-      =\iint_R \vnabla\times\vF\cdot\vn\,\dee{S}
+  I_2 &amp;= \int_{\cC_2}\vF\cdot\dee{\vr}
+      =\iint_\cR \vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;    =\iint_R \left(2y\,\vi +2z\,\vj +2x\,\vk\right)\cdot
+  &amp;    =\iint_\cR \left(2y\,\vi +2z\,\vj +2x\,\vk\right)\cdot
                  \frac{\vi+\vj+\vk}{\sqrt{3}}\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\frac{2}{\sqrt{3}}\iint_R \left(\overbrace{y + z + x}^
+  &amp;=\frac{2}{\sqrt{3}}\iint_\cR \left(\overbrace{y + z + x}^
                                {=2\ {\rm on}\ R}\right)\,\dee{S}
 
   =\frac{4}{\sqrt{3}}\text{Area}(R)
@@ -1227,11 +1248,11 @@
                 </p>
 
                 <p>
-                    (a) Denote by <m>T</m> the triangle enclosed by <m>C_1</m>.
+                    (a) Denote by <m>T</m> the triangle enclosed by <m>\cC_1</m>.
                     By the computation that we have just done in part (b)
                     <md>
                         <mrow>
-  I_1 &amp;= \int_{C_1}\vF\cdot\dee{\vr}
+  I_1 &amp;= \int_{\cC_1}\vF\cdot\dee{\vr}
        =\frac{4}{\sqrt{3}}\text{Area}(T)
        =8
   </mrow>
@@ -1240,6 +1261,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2017A</fromexam></title> -->
+        <!-- 13 -->
         <exercise>
             <statement>
                 <p>
@@ -1247,15 +1269,15 @@
                     l'union des courbes paramétrées
                     <md alignment="alignat">
                         <mrow>
-  \vr_1(t) &amp;= \left(2\cos t, 2\sin t, 0\right), &amp;\qquad
+  \vr_1(t) &amp;= 2\cos t\,\vi+2\sin t\,\vj, &amp;\qquad
   &amp;0 \leqslant t \leqslant \pi/2,
   </mrow>
                         <mrow>
-  \vr_2(t) &amp;= \left(0, 2\cos t, 2\sin t\right), &amp;
+  \vr_2(t) &amp;= 2\cos t\,\vj+2\sin t\,\vk, &amp;
   &amp;0 \leqslant t \leqslant \pi/2,
   </mrow>
                         <mrow>
-  \vr_3(t) &amp;= \left(2\sin t, 0, 2\cos t\right), &amp;
+  \vr_3(t) &amp;= 2\sin t\,\vi+2\cos t\,\vk, &amp;
   &amp;0 \leqslant t \leqslant \pi/2.
   </mrow>
                     </md>
@@ -1263,7 +1285,7 @@
                     <ol marker="(a)">
                         <li>
                             Faire une esquisse de <m>\cC</m> montrant chacune
-                            des portions <m>\cC_1</m>, <m>\cC_2</m>, et
+                            des portions <m>\cC_1</m>, <m>\cC_2</m> et
                             <m>\cC_3</m> en indiquant les orientations induites
                             par les paramétrages donnés.
                         </li>
@@ -1276,10 +1298,10 @@
 
                         <li>
                             Calculer l'intégrale
-                            <m>\displaystyle \int_{\cC} \vF\cdot\dee{\vr}</m>, où
+                            <m>\int_{\cC} \vF\cdot\dee{\vr}</m>, où
                             <md>
                                 <mrow>
-  \vF = \Big(y + \sin(x^2), \, z - 3x + \ln(1 + y^2), \, y + e^{z^2}\Big).
+  \vF = \big(y + \sin(x^2)\big)\,\vi + \big(z - 3x + \ln(1 + y^2)\big)\,\vj + \big(y + e^{z^2}\big)\,\vk
   </mrow>
                             </md>
                         </li>
@@ -1288,17 +1310,16 @@
             </statement>
 
             <answer>
-                <p>
-                    (a)
-                </p>
-
+                <ol marker="(a)">
+                    <li>
                 <sidebyside width="40%">
                     <image source="images/CLP4-figs/pfigs/OE17A_5"/>
                 </sidebyside>
+                    </li>
 
+                    <li>
                 <p>
-                    (b)
-                    <m>S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0}</m>
+                    <m>\cS=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0}</m>
                     avec
                     <md>
                         <mrow>
@@ -1308,8 +1329,8 @@
   + 2\cos\varphi\ \vk,
   </mrow>
                         <mrow>
-  &amp;0\le\theta\le\frac{\pi}{2},\
-  0\le\varphi\le\frac{\pi}{2}
+  &amp;0\leqslant\theta\leqslant\frac{\pi}{2},\qquad
+  0\leqslant\varphi\leqslant\frac{\pi}{2}
   </mrow>
                     </md>
                     et
@@ -1322,10 +1343,12 @@
   </mrow>
                     </md>
                 </p>
+                    </li>
 
-                <p>
-                    (c) <m>-4\pi</m>
-                </p>
+                    <li>
+                    <m>-4\pi</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -1333,21 +1356,21 @@
                     (a) Observe that
                     <ul>
                         <li>
-                            the curve <m>C_1</m> is one quarter of a circle in
+                            the curve <m>\cC_1</m> is one quarter of a circle in
                             the <m>xy</m>-plane, centred on the origin, of
                             radius <m>2</m>, starting at <m>(2,0,0)</m> and
                             ending at <m>(0,2,0)</m> and
                         </li>
 
                         <li>
-                            the curve <m>C_2</m> is one quarter of a circle in
+                            the curve <m>\cC_2</m> is one quarter of a circle in
                             the <m>yz</m>-plane, centred on the origin, of
                             radius <m>2</m>, starting at <m>(0,2,0)</m> and
                             ending at <m>(0,0,2)</m> and
                         </li>
 
                         <li>
-                            the curve <m>C_3</m> is one quarter of a circle in
+                            the curve <m>\cC_3</m> is one quarter of a circle in
                             the <m>xz</m>-plane, centred on the origin, of
                             radius <m>2</m>, starting at <m>(0,0,2)</m> and
                             ending at <m>(2,0,0)</m>.
@@ -1366,7 +1389,7 @@
                     So it is natural to choose
                     <md>
                         <mrow>
-  S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0}
+  \cS=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0}
   </mrow>
                     </md>
                     and to parametrize <m>\cS</m> using spherical coordinates
@@ -1378,8 +1401,8 @@
   + 2\cos\varphi\ \vk
   </mrow>
                         <mrow>
-  &amp;0\le\theta\le\frac{\pi}{2},\
-  0\le\varphi\le\frac{\pi}{2}
+  &amp;0\leqslant\theta\leqslant\frac{\pi}{2},\
+  0\leqslant\varphi\leqslant\frac{\pi}{2}
   </mrow>
                     </md>
                     Since
@@ -1484,6 +1507,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2016A</fromexam></title> -->
+        <!-- 14 -->
         <exercise>
             <statement>
                 <p>
@@ -1491,13 +1515,13 @@
                     Noter que son sommet se trouve à l'origine <m>(0, 0, 0)</m>.
                     Le cône est orienté de sorte que, en chaque point, le
                     vecteur normal pointe vers le bas (et en s'éloignant de
-                    l'axe des <m>z</m> ).
+                    l'axe des <m>z</m>).
                     Dans les questions qui suivent, tant <m>\cS_1</m> que
                     <m>\cS_2</m> sont orientées de la sorte.
                 </p>
 
                 <p>
-                    Soit <m>\vF = \left(-zy, \, zx, \, xy \cos(yz)\right)</m>.
+                    Soit <m>{\vF = -zy\,\vi + zx\,\vj + xy \cos(yz)\,\vk}</m>.
                 </p>
 
                 <p>
@@ -1511,7 +1535,7 @@
                             valeur de
                             <md>
                                 <mrow>
-  \iint_{S_1} \vnabla\times\vF \cdot \vn\,\dee{S}.
+  \iint_{\cS_1} \vnabla\times\vF \cdot \vn\,\dee{S}.
   </mrow>
                             </md>
                             Faire une esquisse inscrivant les orientations de
@@ -1536,21 +1560,25 @@
             </statement>
 
             <answer>
-                <sidebyside widths="50% 50%">
-                    <p>(a) <m>-128\pi</m></p>
-                    <p>(b) <m>-126\pi</m></p>
-                </sidebyside>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>-128\pi</m>
+                    </li>
+                    <li>
+                        <m>-126\pi</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
                 <p>
-                    (a) The boundary, <m>\partial S_1</m>, of <m>\cS_1</m> as
+                    (a) The boundary, <m>\partial \cS_1</m>, of <m>\cS_1</m> as
                     specified in Stokes' theorem (Theorem
                     <xref ref="thm_Stokes"/> ) is the circle
                     <m>\sqrt{x^2+y^2}=4</m>, <m>z=4</m> oriented
                     <em>clockwise</em> when viewed from high on the
                     <m>z</m>-axis.
-                    That is, we can parametrize <m>\partial S_1</m> by
+                    That is, we can parametrize <m>\partial \cS_1</m> by
                     <md>
                         <mrow>
   \vr(t) = 4\cos t\,\vi -4\sin t\,\vj +4\,\vk,\qquad 0\leqslant t\leqslant 2\pi
@@ -1573,8 +1601,8 @@
                     and, by Stokes' theorem,
                     <md>
                         <mrow>
-  \iint_{S_1} \vnabla\times\vF \cdot \vn\,\dee{S}
-  &amp;= \oint_{\partial S_1} \vF\left(\vr(t)\right)\cdot\dee{\vr}
+  \iint_{\cS_1} \vnabla\times\vF \cdot \vn\,\dee{S}
+  &amp;= \oint_{\partial \cS_1} \vF\left(\vr(t)\right)\cdot\dee{\vr}
   = -64 \int_0^{2\pi} \dee{t}
   =-128\pi
   </mrow>
@@ -1587,12 +1615,12 @@
                 </sidebyside>
 
                 <p>
-                    (b) The boundary, <m>\partial S_2</m>, of <m>\cS_2</m>
+                    (b) The boundary, <m>\partial \cS_2</m>, of <m>\cS_2</m>
                     consists of two parts, a circle in the plane <m>z=4</m> and
                     a circle in the plane <m>z=1</m>.
-                    We'll call the first part <m>\partial S_{2a}</m>.
-                    It is the same as <m>\partial S_1</m>.
-                    We'll call the second part <m>\partial S_{2b}</m>.
+                    We'll call the first part <m>\partial \cS_{2a}</m>.
+                    It is the same as <m>\partial \cS_1</m>.
+                    We'll call the second part <m>\partial \cS_{2b}</m>.
                     It is the circle <m>\sqrt{x^2+y^2}=1</m>, <m>z=1</m>
                     oriented <em>counterclockwise</em> when viewed from high on
                     the <m>z</m>-axis.
@@ -1602,7 +1630,7 @@
   \vr(t) = \cos t\,\vi +\sin t\,\vj + \vk,\qquad 0\leqslant t\leqslant 2\pi
   </mrow>
                     </md>
-                    So, on <m>\partial S_{2b}</m>,
+                    So, on <m>\partial \cS_{2b}</m>,
                     <md>
                         <mrow>
   \vF\left(\vr(t)\right)\cdot\dee{\vr}
@@ -1617,9 +1645,9 @@
                     and, by Stokes' theorem,
                     <md>
                         <mrow>
-  \iint_{S_2} \vnabla\times\vF \cdot \vn\,\dee{S}
-  &amp;= \oint_{\partial S_{2a}} \vF\left(\vr(t)\right)\cdot\dee{\vr}
-     +\oint_{\partial S_{2b}} \vF\left(\vr(t)\right)\cdot\dee{\vr}
+  \iint_{\cS_2} \vnabla\times\vF \cdot \vn\,\dee{S}
+  &amp;= \oint_{\partial \cS_{2a}} \vF\left(\vr(t)\right)\cdot\dee{\vr}
+     +\oint_{\partial \cS_{2b}} \vF\left(\vr(t)\right)\cdot\dee{\vr}
   </mrow>
                         <mrow>
   &amp;= -128\pi +  \int_0^{2\pi} \dee{t}
@@ -1632,6 +1660,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2015A</fromexam></title> -->
+        <!-- 15 -->
         <exercise>
             <statement>
                 <p>
@@ -1643,12 +1672,12 @@
 
                 <p>
                     Soit
-                    <m>\vF(x, y, z) = \left(x^3 + 2y, \, \sin(y) + z, \, x + \sin(z^2)\right)</m>.
+                    <m>{\vF = (x^3 + 2y)\,\vi + (\sin y + z)\,\vj + \big(x + \sin(z^2)\big)\,\vk}</m>.
                 </p>
 
                 <p>
                     Utiliser le théorème de Stokes pour évaluer l'intégrale de
-                    ligne <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>.
+                    ligne <m>\int_{\cC}\vF\cdot\dee{\vr}</m>.
                 </p>
             </statement>
 
@@ -1663,7 +1692,7 @@
                     Denote by
                     <md>
                         <mrow>
-  S=\Set{(x,y,z)}{z=x+4,\ x^2+y^2\leqslant 4}
+  \cS=\Set{(x,y,z)}{z=x+4,\ x^2+y^2\leqslant 4}
   </mrow>
                     </md>
                     the part of the plane <m>z=x+4</m> that is contained in the
@@ -1750,14 +1779,14 @@
   <statement><p>
   <ol marker="(a)">
   <li>
-  Soit  <m>\vF(x, y, z) = (z^2, \, x^2, \, y^2)</m> dans <m>\R^3</m>. Calculer l'intégrale  <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m>, où
+  Soit  <m>\vF(x, y, z) = (z^2, \, x^2, \, y^2)</m> dans <m>\R^3</m>. Calculer l'intégrale  <m>\oint_{\cC}\vF\cdot\dee{\vr}</m>, où
   <m>\cC</m> est la courbe formée par les segmens de droite
   <m>L_1</m> de <m>(2, 0, 0)</m> à <m>(0, 2, 0)</m>, puis
   <m>L_2</m> de <m>(0, 2, 0)</m> à <m>(0, 0, 2)</m>, et finalement
   <m>L_3</m> de <m>(0, 0, 2)</m> à <m>(2, 0, 0)</m>.
   </li>
   <li>
-  une courbe fermée simple <m>\cC</m> qui se trouve sur le plan  <m>x + y + z = 2</m>. La surface que  <m>\cC</m> délimite dans le plan  <m>x + y + z = 2</m> a une aire égale à  <m>3</m>. La courbe <m>\cC</m> est orientée dans le sens contraire à celui des aiguilles d'une montre lorsque vue du demi-axe  <m>x</m>. Calculer l'intégrale  <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m> , où <m>\vF</m> est le champ de la partie  (a).
+  une courbe fermée simple <m>\cC</m> qui se trouve sur le plan  <m>x + y + z = 2</m>. La surface que  <m>\cC</m> délimite dans le plan  <m>x + y + z = 2</m> a une aire égale à  <m>3</m>. La courbe <m>\cC</m> est orientée dans le sens contraire à celui des aiguilles d'une montre lorsque vue du demi-axe  <m>x</m>. Calculer l'intégrale  <m>\oint_{\cC}\vF\cdot \dee{\vr}</m> , où <m>\vF</m> est le champ de la partie  (a).
   </li>
   </ol>
   </p></statement>
@@ -1766,10 +1795,16 @@
   Les trois points de la partie  (a) se trouvent dans le plan de la partie (b).
   </p></hint>
 
-  <answer><p>
-  (a) 8</p><p>
-  (b) <m>4\sqrt{3}</m>
-  </p></answer>
+  <answer>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        8
+                    </li>
+                    <li>
+                        <m>4\sqrt{3}</m>
+                    </li>
+                </ol>
+            </answer>
 
   <solution><p>
   (a) Note that all three vertices, <m>(2,0,0)</m>, <m>(0,2,0)</m> and <m>0,0,2)</m>, lie in the
@@ -1854,6 +1889,7 @@
   </p></solution>
   </exercise> -->
         <!-- <exercise><title><fromexam>M317 2009A</fromexam></title> -->
+        <!-- 16 -->
         <exercise>
             <statement>
                 <p>
@@ -1868,7 +1904,7 @@
                     où <m>\cC</m> est la courbe paramétrée par
                     <md>
                         <mrow>
-  \vr(t) = \left( \cos t, \, \sin t, \, 1 - \cos^2 t \sin t \right), \qquad
+  \vr(t) = \cos t\,\vi + \sin t\,\vj + (1 - \cos^2 t \sin t)\,\vk, \qquad
   0 \leqslant t \leqslant 2\pi.
   </mrow>
                     </md>
@@ -1886,7 +1922,7 @@
 
             <answer>
                 <p>
-                    <m>5\pi/4</m>
+                    <m>\tfrac{5\pi}{4}</m>
                 </p>
             </answer>
 
@@ -1927,7 +1963,7 @@
                     Write
                     <md>
                         <mrow>
-  S=\Set{(x,y,z)}{z=f(x,y)=1-x^2y,\ x^2+y^2\leqslant 1}
+  \cS=\Set{(x,y,z)}{z=f(x,y)=1-x^2y,\ x^2+y^2\leqslant 1}
   </mrow>
                     </md>
                     For <m>\cS</m>, with the upward pointing normal, by (
@@ -1998,12 +2034,13 @@
   </mrow>
                     </md>
                     For an efficient, sneaky, way to evaluate
-                    <m>\displaystyle \int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>, see Example
+                    <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>, see Example
                     <xref ref="eg_workIntegralB"/>.
                 </p>
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2008D</fromexam></title> -->
+        <!-- 17 -->
         <exercise>
             <statement>
                 <p>
@@ -2017,7 +2054,7 @@
 
                 <p>
                     Calculer la circulation de
-                    <m>\vF (x, y, z) = (z^2, \, x^2, \, y^2)</m> autour de
+                    <m>{\vF = z^2\,\vi + x^2\,\vj + y^2\,\vk}</m> autour de
                     <m>\cC</m>.
                 </p>
             </statement>
@@ -2031,7 +2068,7 @@
 
             <answer>
                 <p>
-                    <m>-\frac{10}{\sqrt{3}}</m>
+                    <m>-\tfrac{10}{\sqrt{3}}</m>
                 </p>
             </answer>
 
@@ -2111,6 +2148,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2008A</fromexam></title> -->
+        <!-- 18 -->
         <exercise>
             <statement>
                 <p>
@@ -2124,10 +2162,10 @@
                         <mrow>
   \vF = (-y+e^x\sin x)\,\vi
            +y^4\,\vj
-           +\sqrt{z}\tan z\,\vk.
+           +e^z\,\vk.
   </mrow>
                     </md>
-                    Calculer l'intégrale <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>.
+                    Calculer l'intégrale <m>\int_{\cC}\vF\cdot\dee{\vr}</m>.
                 </p>
             </statement>
 
@@ -2164,7 +2202,7 @@
                         <mrow>
   \tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
                   \tfrac{\partial }{\partial z} \\
-  -y+e^x\sin x &amp; y^4 &amp; \sqrt{z}\tan z
+  -y+e^x\sin x &amp; y^4 &amp; e^z
   \end{matrix}
   \right]
   =\vk
@@ -2184,19 +2222,19 @@
                     flat parts:
                     <ul>
                         <li>
-                            the quadralateral <m>Q</m> in the <m>yz</m>-plane
+                            the quadralateral <m>\cQ</m> in the <m>yz</m>-plane
                             with vertices <m>(0,0,0)</m>, <m>(0,1,1)</m>,
                             <m>(0,1,2)</m> and <m>(0,2,0)</m> and
                         </li>
 
                         <li>
-                            the triangle <m>T</m> in the <m>xy</m>-plane with
+                            the triangle <m>\cT</m> in the <m>xy</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(0,2,0)</m> and
                             <m>(2,2,0)</m>.
                         </li>
                     </ul>
-                    The normal to <m>Q</m> is <m>-\vi</m> and the normal to
-                    <m>T</m> is <m>-\vk</m>.
+                    The normal to <m>\cQ</m> is <m>-\vi</m> and the normal to
+                    <m>\cT</m> is <m>-\vk</m>.
                     Then Stokes' theorem gives
                     <md>
                         <mrow>
@@ -2204,10 +2242,10 @@
   &amp;=\iint_{\cS}  \vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_Q  \vk\cdot(-\vi)\,\dee{S} + \iint_T  \vk\cdot(-\vk)\,\dee{S}
+  &amp;=\iint_\cQ  \vk\cdot(-\vi)\,\dee{S} + \iint_\cT  \vk\cdot(-\vk)\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;= - \iint_T \dee{S}
+  &amp;= - \iint_\cT \dee{S}
   </mrow>
                         <mrow>
   &amp;=-\text{Area}(T)
@@ -2223,6 +2261,7 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2007A</fromexam></title> -->
+        <!-- 19 -->
         <exercise>
             <statement>
                 <p>
@@ -2298,10 +2337,10 @@
                     by ( <xref ref="eq_SUdSgraph"/> ), So, writing
                     <md>
                         <mrow>
-     S&amp;=\Set{(x,y,z)}{z=xy^2,\ x^2+y^2\leqslant 1}
+     \cS&amp;=\Set{(x,y,z)}{z=xy^2,\ x^2+y^2\leqslant 1}
   </mrow>
                         <mrow>
-     D&amp;=\Set{(x,y)}{x^2+y^2\leqslant 1}
+     \cD&amp;=\Set{(x,y)}{x^2+y^2\leqslant 1}
   </mrow>
                     </md>
                     Stoke's theorem gives
@@ -2309,7 +2348,7 @@
                         <mrow>
   \int_{\cC}\vF\cdot\dee{\vr}
   &amp;=\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
-  =\iint_D\big\{-y^2+2xy -3x^2+2xy\big\}\,\dee{x}\dee{y}
+  =\iint_\cD\big\{-y^2+2xy -3x^2+2xy\big\}\,\dee{x}\dee{y}
   </mrow>
                         <mrow>
   &amp;=-\iint_{x^2+y^2\leqslant 1}\big\{3x^2+y^2-4xy\big\}\,\dee{x}\dee{y}
@@ -2328,10 +2367,10 @@
   </mrow>
                     </md>
                     since
-                    <m>\displaystyle \int_0^{2\pi}\sin\theta\cos\theta\,\dee{\theta}
+                    <m>\int_0^{2\pi}\sin\theta\cos\theta\,\dee{\theta}
    =\frac{1}{2}\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}=0</m>
                     and
-                    <m>\displaystyle \int_0^{2\pi}\sin^2\theta\,\dee{\theta}
+                    <m>\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
           =\int_0^{2\pi}\cos^2\theta\,\dee{\theta}
           =\pi</m>.
                     (See Example <xref ref="eg_workIntegralB"/>.)
@@ -2339,17 +2378,18 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2006A</fromexam></title> -->
+        <!-- 20 -->
         <exercise>
             <statement>
                 <p>
                     Calculer
-                    <m>\displaystyle \iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}</m>, où
+                    <m>\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}</m>, où
                     <m>\cS</m> est la portion de la sphère <m>x^2+y^2+z^2=2</m>
                     au-dessus du plan <m>z=1</m>, <m>\vn</m> pointe vers le haut
                     et
                     <md>
                         <mrow>
-  \vF(x,y,z) = -y^2\,\vi  +x^3\,\vj + \left(e^x + e^y +z\right)\,\vk.
+  \vF = -y^2\,\vi  +x^3\,\vj + \left(e^x + e^y +z\right)\,\vk.
   </mrow>
                     </md>
                 </p>
@@ -2363,7 +2403,7 @@
 
             <answer>
                 <p>
-                    <m>\frac{3\pi}{4}</m>
+                    <m>\tfrac{3\pi}{4}</m>
                 </p>
             </answer>
 
@@ -2392,7 +2432,7 @@
                     <md>
                         <mrow>
   &amp;\iint_{\cS} \vnabla\times\vF\cdot\vn\,\dee{S}
-    = \oint_{\partial S}\vF\cdot\dee{\vr}
+    = \oint_{\partial \cS}\vF\cdot\dee{\vr}
   </mrow>
                         <mrow>
     &amp;\hskip0.5in = \int_0^{2\pi} \Big(\overbrace{
@@ -2406,10 +2446,10 @@
   </mrow>
                     </md>
                     The integral of any odd power of <m>\sin\theta</m> or
-                    <m>\cos\theta</m> over <m>0\le\theta\leqslant 2\pi</m> is
+                    <m>\cos\theta</m> over <m>0\leqslant\theta\leqslant 2\pi</m> is
                     zero.
                     (See Example <xref ref="eg_stokesD"/>.) In particular,
-                    <m>\displaystyle \int_0^{2\pi}\sin^3\theta\,\dee{\theta} =0</m>.
+                    <m>\int_0^{2\pi}\sin^3\theta\,\dee{\theta} =0</m>.
                     To integrate <m>\cos^4\theta</m> we use the trig identity
                     <md>
                         <mrow>
@@ -2440,11 +2480,12 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2005D</fromexam></title> -->
+        <!-- 21 -->
         <exercise>
             <statement>
                 <p>
                     Soit
-                    <m> \vF = x \sin y\,\vi - y \sin x\,\vj + (x - y)z^2\,\vk </m>.
+                    <m>{\vF = x \sin y\,\vi - y \sin x\,\vj + (x - y)z^2\,\vk}</m>.
                     Au moyen du théorème de Stokes, calculer la valeur de
                     <md>
                         <mrow>
@@ -2452,17 +2493,17 @@
   </mrow>
                     </md>
                     le long du chemin formé par les segments de droites joignant
-                    successivement les points <m>P_0 = (0, 0, 0)</m>,
-                    <m>P_1 = (\pi/2, 0, 0)</m>, <m>P_2 = (\pi/2, 0, 1)</m>,
-                    <m>P_3 = (0, 0, 1)</m>, <m>P_4 = (0, \pi/2, 1)</m> et
-                    <m>P_5 = (0, \pi/2, 0)</m>, puis de retour à
+                    successivement les points <m>P_0(0, 0, 0)</m>,
+                    <m>P_1(\tfrac{\pi}{2}, 0, 0)</m>, <m>P_2(\tfrac{\pi}{2}, 0, 1)</m>,
+                    <m>P_3(0, 0, 1)</m>, <m>P_4(0, \tfrac{\pi}{2}, 1)</m> et
+                    <m>P_5(0, \tfrac{\pi}{2}, 0)</m>, puis de retour à
                     <m>(0, 0, 0)</m>.
                 </p>
             </statement>
 
             <answer>
                 <p>
-                    <m>\frac{\pi}{3}</m>
+                    <m>\tfrac{\pi}{3}</m>
                 </p>
             </answer>
 
@@ -2505,20 +2546,20 @@
                     flat parts:
                     <ul>
                         <li>
-                            the rectangle <m>S_x</m> in the <m>xz</m>-plane with
+                            the rectangle <m>\cS_x</m> in the <m>xz</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(\frac{\pi}{2},0,0)</m>,
                             <m>(\frac{\pi}{2},0,1)</m> and <m>(0,0,1)</m> and
                         </li>
 
                         <li>
-                            the rectangle <m>S_y</m> in the <m>yz</m>-plane with
+                            the rectangle <m>\cS_y</m> in the <m>yz</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(0,0,1)</m>,
                             <m>(0,\frac{\pi}{2},1)</m> and
-                            <m>(0,\frac{\pi}{2},0)</m>
+                            <m>(0,\frac{\pi}{2},0)</m>.
                         </li>
                     </ul>
-                    The normal to <m>S_x</m> is <m>-\vj</m> and the normal to
-                    <m>S_y</m> is <m>-\vi</m>.
+                    The normal to <m>\cS_x</m> is <m>-\vj</m> and the normal to
+                    <m>\cS_y</m> is <m>-\vi</m>.
                     Then Stokes' theorem gives
                     <md>
                         <mrow>
@@ -2526,8 +2567,8 @@
   &amp;=\iint_{\cS}  \vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_{S_x}  \vnabla\times\vF\cdot(-\vj)\,\dee{S}
-    + \iint_{S_y}  \vnabla\times\vF\cdot(-\vi)\,\dee{S}
+  &amp;=\iint_{\cS_x}  \vnabla\times\vF\cdot(-\vj)\,\dee{S}
+    + \iint_{\cS_y}  \vnabla\times\vF\cdot(-\vi)\,\dee{S}
   </mrow>
                         <mrow>
   &amp;=\int_0^{\frac{\pi}{2}} \dee{x}\int_0^1\dee{z}\ z^2
@@ -2545,15 +2586,16 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2017D</fromexam></title> -->
+        <!-- 22 -->
         <exercise>
             <statement>
                 <p>
                     Soit
                     <md>
                         <mrow>
-  \vF=\left( \frac{2z}{1+y}+\sin(x^2), \,
-             \frac{3z}{1+x}+\sin(y^2), \,
-             5(x+1)(y+2) \right)
+  \vF=\left( \frac{2z}{1+y}+\sin(x^2)\right)\vi
+             +\left(\frac{3z}{1+x}+\sin(y^2)\right)\vj
+             +5(x+1)(y+2)\,\vk
   </mrow>
                     </md>
                     et <m>\cC</m> la courbe orientée formée des segments de
@@ -2571,20 +2613,21 @@
 
                         <li>
                             Calculer la valeur de
-                            <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr}</m>.
+                            <m>\int_{\cC}\vF\cdot\dee{\vr}</m>.
                         </li>
                     </ol>
                 </p>
             </statement>
 
             <answer>
-                <sidebyside widths="45% 55%" valign="middle">
-                    <stack>
-                        <p>(a)</p>
+                <ol marker="(a)" cols="2">
+                    <li>
                         <image source="images/CLP4-figs/pfigs/OE17D_4"/>
-                    </stack>
-                    <p>(b) <m>\displaystyle \int_{\cC}\vF\cdot\dee{\vr} = 10</m></p>
-                </sidebyside>
+                    </li>
+                    <li>
+                        <m>\int_{\cC}\vF\cdot\dee{\vr} = 10</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -2631,31 +2674,31 @@
                     flat parts:
                     <ul>
                         <li>
-                            the triangle <m>S_x</m> in the <m>xz</m>-plane with
+                            the triangle <m>\cS_x</m> in the <m>xz</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(2,0,0)</m>, and
                             <m>(0,0,2)</m> and
                         </li>
 
                         <li>
-                            the triangle <m>S_y</m> in the <m>yz</m>-plane with
+                            the triangle <m>\cS_y</m> in the <m>yz</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(0,0,2)</m>, and
-                            <m>(0,3,0)</m>
+                            <m>(0,3,0)</m>.
                         </li>
                     </ul>
                     Note that
                     <ul>
                         <li>
-                            The normal to <m>S_x</m> specified by Stokes'
+                            The normal to <m>\cS_x</m> specified by Stokes'
                             theorem is <m>-\vj</m>.
-                            On <m>S_x</m> we have <m>y=0</m>, so that
+                            On <m>\cS_x</m> we have <m>y=0</m>, so that
                             <m>\vnabla\times\vF\cdot\vj</m> simplifies to
                             <m>-\left(5(0+2)-\frac{2}{1+0}\right)=-8</m>.
                         </li>
 
                         <li>
-                            The normal to <m>S_y</m> specified by Stokes'
+                            The normal to <m>\cS_y</m> specified by Stokes'
                             theorem is <m>-\vi</m>.
-                            On <m>S_y</m> we have <m>x=0</m>, so that
+                            On <m>\cS_y</m> we have <m>x=0</m>, so that
                             <m>\vnabla\times\vF\cdot\vi</m> simplifies to
                             <m>\left(5(0+1)-\frac{3}{1+0}\right)=2</m>.
                         </li>
@@ -2667,8 +2710,8 @@
   &amp;=\iint_{\cS}  \vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_{S_x}  \overbrace{\vnabla\times\vF\cdot(-\vj)}^{8}\,\dee{S}
-    + \iint_{S_y}  \overbrace{\vnabla\times\vF\cdot(-\vi)}^{-2}\,\dee{S}
+  &amp;=\iint_{\cS_x}  \overbrace{\vnabla\times\vF\cdot(-\vj)}^{8}\,\dee{S}
+    + \iint_{\cS_y}  \overbrace{\vnabla\times\vF\cdot(-\vi)}^{-2}\,\dee{S}
   </mrow>
                         <mrow>
   &amp;=8\,\text{Area}(S_x)  -2\,\text{Area}(S_y)
@@ -2682,12 +2725,13 @@
             </solution>
         </exercise>
         <!-- <exercise><title><fromexam>M317 2004A</fromexam></title> -->
+        <!-- 23 -->
         <exercise>
             <statement>
                 <p>
                     Calculer
-                    <m>\displaystyle\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}</m>,
-                    où <m>\vF=y\,\vi+2z\,\vj+3x\,\vk</m> et <m>\cS</m> est la surface d'équation '<m>z=\sqrt{1-x^2-y^2}</m>, <m>z\geqslant 0</m>
+                    <m>\iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}</m>,
+                    où <m>{\vF=y\,\vi+2z\,\vj+3x\,\vk}</m> et <m>\cS</m> est la demi-sphère d'équation <m>{z=\sqrt{1-x^2-y^2}}</m>
                     orientée par un vecteur normal unitaire <m>\vn</m> vérifiant
                     <m>\vn\cdot\vk\geqslant 0</m>.
                 </p>
@@ -2705,12 +2749,12 @@
                     circle <m>x^2+y^2=1</m> oriented counter clockwise as usual.
                     It may be parametrized by
                     <m>\vr(\theta)=\cos\theta\,\vi+\sin\theta\vj</m>,
-                    <m>0\le\theta\leqslant 2\pi</m>.
+                    <m>0\leqslant\theta\leqslant 2\pi</m>.
                     By Stokes' theorem
                     <md>
                         <mrow>
   \iint_{\cS}\vnabla\times\vF\cdot\vn\,\dee{S}
-  &amp;=\oint_{\partial S} \vF\cdot\dee{\vr}
+  &amp;=\oint_{\partial \cS} \vF\cdot\dee{\vr}
   =\int_0^{2\pi}\vF\left(\vr(\theta)\right)\cdot\diff{\vr}{\theta}(\theta)
          \,\dee{\theta}
   </mrow>
@@ -2730,37 +2774,35 @@
   </mrow>
                     </md>
                     For an efficient, sneaky, way to evaluate
-                    <m>\displaystyle \int_0^{2\pi}\dee{\theta}\ \sin^2\theta</m>, see Example
+                    <m>\int_0^{2\pi}\dee{\theta}\ \sin^2\theta</m>, see Example
                     <xref ref="eg_workIntegralB"/>.
                 </p>
             </solution>
         </exercise>
 
+        <!-- 24 -->
         <exercise>
             <!-- <title><fromexam>M317 2000D</fromexam></title> -->
             <statement>
                 <p>
                     Soit <m>\cS</m> la surface
-                    <md>
-                        <mrow>
-  x^2 + y^2 + 2(z-1)^2 = 6, \quad z \geqslant 0
-  </mrow>
-                    </md>
+                    <m>  x^2 + y^2 + 2(z-1)^2 = 6</m>,  <m> z \geqslant 0,
+                    </m>
                     orientée par le vecteur normal unitaire qui pointe vers
                     l'extérieur (par exemple, au point le plus haut de la
-                    surface, le vecteur normal est <m>\vk</m> ).
+                    surface, le vecteur normal est <m>\vk</m>).
                 </p>
 
                 <p>
                     Soit
                     <md>
                         <mrow>
-  \vG = \nabla\times\vF,
+  \vG = \vnabla\times\vF,
   \quad\text{où}\quad
   \vF = (xz - y^3\cos z)\,\vi + x^3 e^z\,\vj + xyze^{x^2+y^2+z^2}\,\vk.
   </mrow>
                     </md>
-                    Calculer <m>\displaystyle \iint_\cS \vG\cdot \vn\dee{S}</m>.
+                    Calculer <md>\iint_\cS \vG\cdot \vn\,\dee{S}</md>.
                 </p>
             </statement>
 
@@ -2837,7 +2879,7 @@
                     Parametrize the circle <m>\cC</m> using
                     <md>
                         <mrow>
-  \vr(\theta) = 2\cos\theta\,\vi + 2\sin\theta\,\vj,\qquad 0\le\theta\leqslant 2\pi
+  \vr(\theta) = 2\cos\theta\,\vi + 2\sin\theta\,\vj,\qquad 0\leqslant\theta\leqslant 2\pi
   </mrow>
                     </md>
                     to obtain
@@ -2895,6 +2937,7 @@
             </solution>
         </exercise>
 
+        <!-- 25 -->
         <exercise>
             <!-- <title><fromexam>M317 1999A</fromexam></title> -->
             <statement>
@@ -2902,8 +2945,8 @@
                     Soit <m>\cC</m> un cercle de rayon <m>R</m> contenu dans le
                     plan <m>x+y+z=3</m>.
                     Utiliser le théorème de Stokes pour calculer
-                    <m>\displaystyle  \oint_{\cC}\vF\cdot \dee{\vr}. </m>
-                    où <m>\vF=z^2\vi+x^2\vj+y^2\vk</m> (utiliser n'importe
+                    <m>\int_{\cC}\vF\cdot \dee{\vr}</m>,
+                    où <m>{\vF=z^2\,\vi+x^2\,\vj+y^2\,\vk}</m> (utiliser n'importe
                     quelle orientation du cercle).
                 </p>
             </statement>
@@ -2913,12 +2956,12 @@
                     Soit <m>\cD</m> le disque dans le plan <m>x+y+z=3</m> dont
                     la frontière est <m>\cC</m>.
                     Supposons que, lorsque <m>(x,y,z)</m> parcourt <m>\cD</m>,
-                    <m>(x,y)</m> parcourt l'ellipse <m>D_{xy}</m>.
+                    <m>(x,y)</m> parcourt l'ellipse <m>\cD_{xy}</m>.
                     On nous dit que l'aire de <m>\cD</m> est <m>\pi R^2</m>,
                     mais on ne nous dit pas l'aire de <m>D'</m>.
                     Il est donc plus facile de traiter l'intégrale
-                    <m>\displaystyle \iint_{\cD}\dee{S}</m> que l'intégrale
-                    <m>\displaystyle \iint_{D'}\dee{x}\dee{y}</m>.
+                    <m>\iint_{\cD}\dee{S}</m> que l'intégrale
+                    <m>\iint_{\cD'}\dee{x}\dee{y}</m>.
                 </p>
             </hint>
 
@@ -2958,7 +3001,7 @@
   \iint_{\cD}\left(2y\,\vi+2z\,\vj+2x\,\vk\right)\cdot(\vi+\vj+\vk)\ \dee{S}
   </mrow>
                         <mrow>
-  &amp;=\frac{1}{\sqrt{3}}\iint_D2\overbrace{\left(x+y+z\right)}^{=3\text{ on } D}\ \dee{S}
+  &amp;=\frac{1}{\sqrt{3}}\iint_\cD2\overbrace{\left(x+y+z\right)}^{=3\text{ on } D}\ \dee{S}
   </mrow>
                         <mrow>
   &amp;=2\sqrt{3}\iint_{\cD}\dee{S}
@@ -2969,21 +3012,22 @@
             </solution>
         </exercise>
 
+        <!-- 26 -->
         <exercise>
             <statement>
                 <p>
                     Soit <m>\cS</m> la surface formée de la partie supérieure et
                     des 4 faces latérales du cube de sommets
-                    <m>(\pm 1, \, \pm 1, \, \pm 1)</m>, orientée vers
+                    <m>(\pm 1, \pm 1, \pm 1)</m>, orientée vers
                     l'extérieur du cube.
-                    Si <m>\vF(x,y,z)=(xyz,xy^2,x^2yz)</m>, trouver le flux de
+                    Si <m>{\vF=xyz\,\vi+xy^2\,\vj+x^2yz\,\vk}</m>, trouver le flux de
                     <m>\vnabla\times\vF</m> à travers <m>\cS</m>.
                 </p>
             </statement>
 
             <answer>
                 <p>
-                    <m>\frac{4}{3}</m>
+                    <m>\tfrac{4}{3}</m>
                 </p>
             </answer>
 
@@ -2992,13 +3036,13 @@
                     Let <m>S'</m> be the bottom surface of the cube, oriented
                     with normal <m>\vk</m>.
                     Then, by Stokes' theorem, since
-                    <m>\partial S=\partial S'</m>,
+                    <m>\partial \cS=\partial \cS'</m>,
                     <md>
                         <mrow>
   \iint_{\cS}\vnabla\times\vF\cdot\vn\, \dee{S}
-  =\oint_{\partial S}\vF\cdot \dee{\vr}
-  =\oint_{\partial S'}\vF\cdot \dee{\vr}
-  =\iint_{S'}\vnabla\times\vF\cdot\vn\, \dee{S}
+  =\oint_{\partial \cS}\vF\cdot \dee{\vr}
+  =\oint_{\partial \cS'}\vF\cdot \dee{\vr}
+  =\iint_{\cS'}\vnabla\times\vF\cdot\vn\, \dee{S}
   </mrow>
                     </md>
                     Since
@@ -3015,7 +3059,7 @@
                     and <m>\vn=\vk</m> on <m>S'</m> and <m>z=-1</m> on <m>S'</m>
                     <md>
                         <mrow>
-  \iint_{S'}\vnabla\times\vF\cdot\vn\, \dee{S}
+  \iint_{\cS'}\vnabla\times\vF\cdot\vn\, \dee{S}
   &amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\
            \left(\cdots,\cdots,y^2-xz\right)\cdot\vk\Big|_{z=-1}
   </mrow>
@@ -3036,7 +3080,7 @@
             <solution>
                 <p>
                     The boundary of <m>\cS</m> is the square <m>\cC</m>, with
-                    sides <m>C_1</m>, <m>\cdots</m>, <m>C_4</m>, in the sketch
+                    sides <m>\cC_1</m>, <m>\cdots</m>, <m>\cC_4</m>, in the sketch
                 </p>
 
                 <sidebyside width="45%">
@@ -3048,16 +3092,16 @@
                     <md>
                         <mrow>
   \iint_{\cS}\vnabla\times\vF\cdot\vn\, \dee{S}
-  =\oint_{C}\vF\cdot \dee{\vr}
+  =\oint_{\cC}\vF\cdot \dee{\vr}
   </mrow>
                     </md>
-                    Parametrize <m>C_1</m> by <m>x</m>.
+                    Parametrize <m>\cC_1</m> by <m>x</m>.
                     That is, <m>\vr(x)= x\vi - \vj -\vk</m>,
                     <m>-1\leqslant x\leqslant 1</m>.
-                    Since <m>\vr'(x) = \vi</m>, and <m>y=z=-1</m> on <m>C_1</m>,
+                    Since <m>\vr'(x) = \vi</m>, and <m>y=z=-1</m> on <m>\cC_1</m>,
                     <md>
                         <mrow>
-  \int_{C_1}\vF\cdot \dee{\vr}
+  \int_{\cC_1}\vF\cdot \dee{\vr}
   &amp;=\int_{-1}^1 \vF\left(\vr(x)\right)\cdot\vr'(x)\ \dee{x}
   =\int_{-1}^1 \vF\left(\vr(x)\right)\cdot\vi\ \dee{x}
   </mrow>
@@ -3068,42 +3112,42 @@
   &amp;=0\qquad\text{(since $x$ is odd)}
   </mrow>
                     </md>
-                    Parametrize <m>C_2</m> by <m>y</m>.
+                    Parametrize <m>\cC_2</m> by <m>y</m>.
                     That is, <m>\vr(y)= \vi + y\,\vj -\vk</m>,
                     <m>-1\leqslant y\leqslant 1</m>.
-                    Since <m>\vr'(y) = \vj</m>, and <m>x=1</m> on <m>C_2</m>,
+                    Since <m>\vr'(y) = \vj</m>, and <m>x=1</m> on <m>\cC_2</m>,
                     <md>
                         <mrow>
-  \int_{C_2}\vF\cdot \dee{\vr}
+  \int_{\cC_2}\vF\cdot \dee{\vr}
   =\int_{-1}^1 \vF\left(\vr(y)\right)\cdot\vj\ \dee{y}
   =\int_{-1}^1\overbrace{y^2}^{xy^2}\ \dee{y}
   =\left[\frac{y^3}{3}\right]_{-1}^1
   =\frac{2}{3}
   </mrow>
                     </md>
-                    Parametrize <m>C_3</m> by <m>x</m>.
+                    Parametrize <m>\cC_3</m> by <m>x</m>.
                     That is, <m>\vr(x)= x\vi + \vj -\vk</m> with <m>x</m>
                     running from <m>1</m> to <m>-1</m>.
                     (If you're nervous about this, parametrize by <m>t=-x</m>.
                     That is <m>\vr(t)= -t\,\vi + \vj -\vk</m>,
                     <m>-1\leqslant t\leqslant 1</m>.) Since
                     <m>\vr'(x) = \vi</m>, and <m>y=1</m>, <m>z=-1</m> on
-                    <m>C_3</m>,
+                    <m>\cC_3</m>,
                     <md>
                         <mrow>
-  \int_{C_3}\vF\cdot \dee{\vr}
+  \int_{\cC_3}\vF\cdot \dee{\vr}
   =\int^{-1}_1\!\! \vF\left(\vr(x)\right)\cdot\vi\ \dee{x}
   =\int^{-1}_1\overbrace{x\ (1)(-1)}^{xyz}\ \dee{x}
   =0\quad\text{(since $x$ is odd)}
   </mrow>
                     </md>
-                    Parametrize <m>C_4</m> by <m>y</m>.
+                    Parametrize <m>\cC_4</m> by <m>y</m>.
                     That is, <m>\vr(y)= -\vi + y\,\vj -\vk</m>, with <m>y</m>
                     running from <m>1</m> to <m>-1</m>.
-                    Since <m>\vr'(y) = \vj</m>, and <m>x=-1</m> on <m>C_4</m>,
+                    Since <m>\vr'(y) = \vj</m>, and <m>x=-1</m> on <m>\cC_4</m>,
                     <md>
                         <mrow>
-  \int_{C_4}\vF\cdot \dee{\vr}
+  \int_{\cC_4}\vF\cdot \dee{\vr}
   =\int^{-1}_1 \vF\left(\vr(y)\right)\cdot\vj\ \dee{y}
   =\int^{-1}_1\overbrace{(-1)y^2}^{xy^2}\ \dee{y}
   =-\left[\frac{y^3}{3}\right]^{-1}_1
@@ -3114,8 +3158,8 @@
                     <md>
                         <mrow>
   \iint_{\cS}\vnabla\times\vF\cdot\vn\, \dee{S}
-  =\int_{C_1}\vF\cdot \dee{\vr} + \int_{C_2}\vF\cdot \dee{\vr}
-   +\int_{C_3}\vF\cdot \dee{\vr} + \int_{C_4}\vF\cdot \dee{\vr}
+  =\int_{\cC_1}\vF\cdot \dee{\vr} + \int_{\cC_2}\vF\cdot \dee{\vr}
+   +\int_{\cC_3}\vF\cdot \dee{\vr} + \int_{\cC_4}\vF\cdot \dee{\vr}
   =\frac{4}{3}
   </mrow>
                     </md>
@@ -3123,21 +3167,21 @@
             </solution>
         </exercise>
 
+        <!-- 27 -->
         <exercise>
             <statement>
                 <p>
-                    Soit <m>\cS</m> la portion de la rampe spirale (c'est une
-                    surface hélicoïdale) donnée par
-                    <m> x=u\cos v,\ y=u\sin v,\ z=v, 
-  0\leqslant u\leqslant 1,\ 0\leqslant v\leqslant 2\pi.
-                    </m>
+                    Soit <m>\cS</m> la portion de la rampe en spirale (une
+                    surface hélicoïdale) paramétrée par
+                    <md><mrow>\vr(u,v)=u\cos v\,\vi+u\sin v\,\vj+v\,\vk,\qquad
+  0\leqslant u\leqslant 1,\ 0\leqslant v\leqslant 2\pi.</mrow>
+                    </md>
                     Soit <m>\cC</m> le bord de <m>\cS</m> avec l'orientation
                     donnée par le vecteur normal pointant vers le haut.
                     Trouver
-                    <m> \displaystyle 
-  \int_{\cC} y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}.
-  
-                    </m>
+                    <m>{\int_{\cC} y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}}</m>.
+
+
                 </p>
             </statement>
 
@@ -3218,6 +3262,7 @@
             <application/>
         </introduction>
 
+        <!-- 28 -->
         <exercise>
             <statement>
                 <p>
@@ -3233,7 +3278,7 @@
      +\left(\sin(z^2)+xy\right)\,\vk.
   </mrow>
                     </md>
-                    Calculer <m>\displaystyle \oint_{\cC}\vF\cdot \dee{\vr}</m>.
+                    Calculer <m>\int_{\cC}\vF\cdot \dee{\vr}</m>.
                 </p>
             </statement>
 
@@ -3249,8 +3294,8 @@
                     <m>\cR</m> dans le plan <m>xy</m>:
                     <md>
                         <mrow>
-  \bar x =\frac{\iint_R x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
-  \bar y =\frac{\iint_R y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
+  \bar x =\frac{\iint_\cR x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
+  \bar y =\frac{\iint_\cR y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
   </mrow>
                     </md>
                 </p>
@@ -3316,19 +3361,19 @@
                     that, for any région <m>\cR</m> in the <m>xy</m>--plane,
                     <md>
                         <mrow>
-  \bar x =\frac{\iint_R x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
-  \bar y =\frac{\iint_R y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
+  \bar x =\frac{\iint_\cR x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
+  \bar y =\frac{\iint_\cR y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
   </mrow>
                     </md>
                     Our ellipse is <m>\frac{(x-1)^2}{4^2}+\frac{y^2}{2^2}=1</m>
                     and so has area <m>\pi ab = \pi\times4\times 2=8\pi</m> and
                     centroid <m>(\bar x,\bar y) = (1,0)</m>.
                     So, using
-                    <m>R=\Set{(x,y)}{\frac{(x-1)^2}{4^2}+\frac{y^2}{2^2}\leqslant 1}</m>,
+                    <m>\cR=\Set{(x,y)}{\frac{(x-1)^2}{4^2}+\frac{y^2}{2^2}\leqslant 1}</m>,
                     <md>
                         <mrow>
   \oint_{\cC}\vF\cdot \dee{\vr}
-  &amp;=\iint_R [7-4x-2y]\,\dee{x}\,\dee{y}
+  &amp;=\iint_\cR [7-4x-2y]\,\dee{x}\,\dee{y}
   </mrow>
                         <mrow>
   &amp;=\text{Area}(R) \big\{7-4\bar x-2\bar y\}
@@ -3341,6 +3386,7 @@
             </solution>
         </exercise>
 
+        <!-- 29 -->
         <exercise>
             <!-- <title><fromexam>M317 2012D</fromexam></title> -->
             <statement>
@@ -3348,20 +3394,20 @@
                     <ol marker="(a)">
                         <li>
                             Calculer le rotationnel du champ
-                            <m>\vF  = \left(2 + x^2 + z, \, 0, \, 3 + x^2 z\right)</m>.
+                            <m>{\vF = (2 + x^2 + z)\,\vi + (3 + x^2 z)\,\vk}</m>.
                         </li>
 
                         <li>
                             Soit <m>\cC</m> la courbe dans <m>\R^3</m> allant de
                             <m>(0, 0, 0)</m> au point <m>(2, 0, 0)</m>, formée
-                            de trois segments de droites consécutifs : de
+                            de trois segments de droites consécutifs<nbsp/>: de
                             <m>(0, 0, 0)</m> à <m>(0, 0, 3)</m>, de
                             <m>(0, 0, 3)</m> à <m>(0, 1, 0)</m> et de
                             <m>(0, 1, 0)</m> à <m>(2, 0, 0)</m>.
                             Calculer
                             <md>
                                 <mrow>
-  \int_{\cC} \vF\cdot\dee{\vr}.
+  \int_{\cC} \vF\cdot\dee{\vr},
   </mrow>
                             </md>
                             où <m>\vF</m> est le champ de la partie (a).
@@ -3378,13 +3424,14 @@
             </hint>
 
             <answer>
-                <p>
-                    (a) <m>\vnabla\times\vF=(1-2xz)\,\vj</m>
-                </p>
-
-                <p>
-                    (b) <m>\frac{20}{3}</m>
-                </p>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>\vnabla\times\vF=(1-2xz)\,\vj</m>
+                    </li>
+                    <li>
+                        <m>\tfrac{20}{3}</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -3414,7 +3461,7 @@
                     The specified curve <m>\cC</m> is not closed and so is not
                     the boundary of a surface.
                     So we extend <m>\cC</m> to a closed curve <m>\tilde C</m> by
-                    appending to <m>\cC</m> the line segment <m>L</m> from
+                    appending to <m>\cC</m> the line segment <m>\cL</m> from
                     <m>(2,0,0)</m> to <m>(0,0,0)</m>.
                     In the figure below, <m>\cC</m> is the red curve and
                     <m>\tilde C</m> is <m>\cC</m> plus the blue line segment.
@@ -3429,14 +3476,14 @@
                     <m>\cS</m> that is the union of
                     <ul>
                         <li>
-                            the triangle <m>T_1</m> in the <m>yz</m>-plane with
+                            the triangle <m>\cT_1</m> in the <m>yz</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(0,0,3)</m> and
                             <m>(0,1,0)</m> and with normal vector <m>-\vi</m>
                             and
                         </li>
 
                         <li>
-                            the triangle <m>T_2</m> in the <m>xy</m>-plane with
+                            the triangle <m>\cT_2</m> in the <m>xy</m>-plane with
                             vertices <m>(0,0,0)</m>, <m>(0,1,0)</m> and
                             <m>(2,0,0)</m> and with normal vector <m>-\vk</m>.
                         </li>
@@ -3444,17 +3491,17 @@
                     So, by Stokes' theorem
                     <md>
                         <mrow>
-  &amp;\int_{\cC} \vF\cdot\dee{\vr} + \int_L \vF\cdot\dee{\vr}
-  =  \int_{\partial S} \vF\cdot\dee{\vr}
+  &amp;\int_{\cC} \vF\cdot\dee{\vr} + \int_\cL \vF\cdot\dee{\vr}
+  =  \int_{\partial \cS} \vF\cdot\dee{\vr}
   = \iint_{\cS} \vnabla\times \vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;\hskip0.5in= \iint_{T_1} \vnabla\times \vF\cdot(-\vi)\,\dee{S}
-    + \iint_{T_2} \vnabla\times \vF\cdot(-\vk)\,\dee{S}
+  &amp;\hskip0.5in= \iint_{\cT_1} \vnabla\times \vF\cdot(-\vi)\,\dee{S}
+    + \iint_{\cT_2} \vnabla\times \vF\cdot(-\vk)\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;\hskip0.5in= \iint_{T_1} (1-2xz)\,\vj\cdot(-\vi)\,\dee{S}
-    + \iint_{T_2} (1-2xz)\,\vj\cdot(-\vk)\,\dee{S}
+  &amp;\hskip0.5in= \iint_{\cT_1} (1-2xz)\,\vj\cdot(-\vi)\,\dee{S}
+    + \iint_{\cT_2} (1-2xz)\,\vj\cdot(-\vk)\,\dee{S}
   </mrow>
                         <mrow>
   &amp;\hskip0.5in=0
@@ -3464,7 +3511,7 @@
                     <md>
                         <mrow>
   \int_{\cC} \vF\cdot\dee{\vr}
-  &amp;=- \int_L \vF\cdot\dee{\vr}
+  &amp;=- \int_\cL \vF\cdot\dee{\vr}
   =- \int_2^0 (2+x^2)\,\dee{x}
   \quad\text{since } \dee{y}=\dee{z}=z=0  \text{ on } L
   </mrow>
@@ -3478,6 +3525,7 @@
             </solution>
         </exercise>
 
+        <!-- 30 -->
         <exercise>
             <!-- <title><fromexam>M317 2012D</fromexam></title> -->
             <statement>
@@ -3493,12 +3541,12 @@
                             Orienter <m>\cS</m> de sorte que le vecteur normal
                             pointe vers l'extérieur.
                             Calculer le flux de <m>\vnabla\times\vG</m> à
-                            travers <m>\cS</m>, lorsque <m>\vG = (x, -z, y)</m>.
+                            travers <m>\cS</m>, lorsque <m>{\vG = x\,\vi - z\,\vj + y\,\vk}</m>.
                         </li>
 
                         <li>
                             Calculer le flux de
-                            <m>\vF = (2 + z, \, xz^2, \, x \cos y) </m> à
+                            <m>{\vF = (2 + z)\,\vi + xz^2\,\vj + x \cos y\,\vk}</m> à
                             travers <m>\cS</m>, où <m>\cS</m> est comme dans la
                             partie (a).
                         </li>
@@ -3515,13 +3563,14 @@
             </hint>
 
             <answer>
-                <p>
-                    (a) <m>-18\pi</m>
-                </p>
-
-                <p>
-                    (b) <m>-18\pi</m>
-                </p>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>-18\pi</m>
+                    </li>
+                    <li>
+                        <m>-18\pi</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -3550,13 +3599,13 @@
                     surface
                     <md>
                         <mrow>
-  S_1 = \Set{(x,y,z)}{y^2+z^2=9,\ 0\leqslant x\leqslant 5}
+  \cS_1 = \Set{(x,y,z)}{y^2+z^2=9,\ 0\leqslant x\leqslant 5}
   </mrow>
                     </md>
                     and the disc
                     <md>
                         <mrow>
-  S_2 = \Set{(x,y,z)}{x=0,\ y^2+z^2\leqslant 9}
+  \cS_2 = \Set{(x,y,z)}{x=0,\ y^2+z^2\leqslant 9}
   </mrow>
                     </md>
                     The normal <m>\vn</m> to <m>\cS_1</m> always points radially
@@ -3567,11 +3616,11 @@
                     <md>
                         <mrow>
   \iint_{\cS} \vnabla\times \vG \cdot \vn\,\dee{S}
-  &amp;= \iint_{S_1} 2\vi \cdot \vn\,\dee{S}
-     + \iint_{S_2} 2\vi \cdot (-\vi)\,\dee{S}
+  &amp;= \iint_{\cS_1} 2\vi \cdot \vn\,\dee{S}
+     + \iint_{\cS_2} 2\vi \cdot (-\vi)\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;= -2 \iint_{S_2} \dee{S}
+  &amp;= -2 \iint_{\cS_2} \dee{S}
   </mrow>
                         <mrow>
   &amp;= -2 \left(\pi 3^2\right) = -18\pi
@@ -3591,7 +3640,7 @@
                     <md>
                         <mrow>
   \iint_{\cS} \vnabla\times\vG\cdot\vn\,\dee{S}
-  &amp;=\oint_{\partial S}\vG\cdot\dee{\vr}
+  &amp;=\oint_{\partial \cS}\vG\cdot\dee{\vr}
   </mrow>
                         <mrow>
   &amp;=\int_0^{2\pi} \left(5\,,\,3\sin\theta,3\cos\theta\right)\cdot
@@ -3616,16 +3665,16 @@
                     The surface <m>\cS</m> is not closed.
                     So we'll use the auxilary surface formed by
                     <q>topping <m>\cS</m> off</q> with the cap
-                    <m>T=\Set{(5,y,z)}{y^2+z^2\leqslant 9}</m>.
-                    If we give <m>T</m> the normal vector <m>\vi</m>, this
-                    auxiliary surface, the union of <m>\cS</m> and <m>T</m>, is
+                    <m>\cT=\Set{(5,y,z)}{y^2+z^2\leqslant 9}</m>.
+                    If we give <m>\cT</m> the normal vector <m>\vi</m>, this
+                    auxiliary surface, the union of <m>\cS</m> and <m>\cT</m>, is
                     the boundary of
                     <m>V=\Set{(x,y,z)}{y^2+z^2\leqslant 9,\ 0\leqslant x\leqslant 5}</m>.
                     So the divergence theorem gives
                     <md>
                         <mrow>
   \iint_{\cS}  \vF\cdot\vn\,\dee{S}
-  +\iint_T \vF\cdot\vn\,\dee{S}
+  +\iint_\cT \vF\cdot\vn\,\dee{S}
   &amp;= \iint_{\partial V} \vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
@@ -3640,13 +3689,13 @@
                     <md>
                         <mrow>
   \iint_{\cS}  \vF\cdot\vn\,\dee{S}
-  &amp;=-\iint_T \vF\cdot\vn\,\dee{S}
-  =-\iint_T \vF\cdot\vi\,\dee{S}
-  =-\iint_T (2+z)\,\dee{S}
+  &amp;=-\iint_\cT \vF\cdot\vn\,\dee{S}
+  =-\iint_\cT \vF\cdot\vi\,\dee{S}
+  =-\iint_\cT (2+z)\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=-2\iint_T \,\dee{S}
-     \qquad\text{since } \iint_T z\,\dee{S}=0, \text{ because $z$ is odd}
+  &amp;=-2\iint_\cT \,\dee{S}
+     \qquad\text{since } \iint_\cT z\,\dee{S}=0, \text{ because $z$ is odd}
   </mrow>
                         <mrow>
   &amp;= -18\pi
@@ -3657,23 +3706,22 @@
             </solution>
         </exercise>
 
+        <!-- 31 -->
         <exercise>
             <!-- <title><fromexam>M317 2010D</fromexam></title> -->
             <statement>
                 <p>
                     Soit
-                    <md>
-                        <mrow>
-  \vF(x, y, z) = \Big( \frac{y}{x} +x^{1+x^2}, \, x^2-y^{1+y^2}, \,
-                         \cos^5(\ln z)\Big).
-  </mrow>
-                    </md>
+                    <m>
+  \vF = \Big( \frac{y}{x} +x^{1+x^2}\Big)\,\vi + \big(x^2-y^{1+y^2}\big)\,\vj
+                         + \cos^5(\ln z)\,\vk.
+                    </m>
 
                     <ol marker="(a)">
                         <li>Donner le domaine <m>\cD</m> de <m>\vF</m>.</li>
                         <li>
                             <p>
-                                Encercler les énoncés qui sont vrais :
+                                Encercler les énoncés qui sont vrais<nbsp/>:
                                 <ol marker="(i)">
                                     <li><m>\cD</m> est connexe.</li>
                                     <li><m>\cD</m> est simplement connexe.</li>
@@ -3685,8 +3733,8 @@
                         <li>Calculer <m>\vnabla\times\vF</m>.</li>
                         <li>
                             Soit <m>\cC</m> le carré dont les sommets sont
-                            <m>(3 \pm 1, 3 \pm 1, 2)</m> orienté dans le sens
-                            des aiguilles d'une montre lorsque vu d'en bas.
+                            <m>(3 \pm 1, 3 \pm 1, 2)</m>, orienté dans le sens
+                            des aiguilles d'une montre lorsque vu d'en haut.
                             Calculer
                             <md>
                                 <mrow>
@@ -3695,7 +3743,7 @@
                             </md>
                         </li>
 
-                        <li>Le champ <m>\vF</m> est-il conservatif?</li>
+                        <li>Le champ <m>\vF</m> est-il conservatif<nbsp/>?</li>
                     </ol>
                 </p>
             </statement>
@@ -3716,26 +3764,23 @@
             </hint>
 
             <answer>
-                <p>
-                    (a) <m>D=\Set{(x,y,z)}{x \gt 0,\ y \gt 0,\ z \gt 0}</m>
-                </p>
-
-                <p>
-                    (b) Le domaine <m>\cD</m> est connexe et simplement connexe.
-                </p>
-
-                <p>
-                    (c) <m>\vnabla\times\vF=\left(2x-\frac{1}{x}\right)\vk</m>
-                </p>
-
-                <p>
-                    (d) <m>2\ln 2-24</m>
-                </p>
-
-                <p>
-                    (e) Non.
-                    <m>\vF</m> n'est pas conservatif.
-                </p>
+                <ol marker="(a)">
+                    <li>
+                        <m>\cD=\Set{(x,y,z)}{x \gt 0,\ y \gt 0,\ z \gt 0}</m>
+                    </li>
+                    <li>
+                        Le domaine <m>\cD</m> est connexe et simplement connexe.
+                    </li>
+                    <li>
+                        <m>\vnabla\times\vF=\left(2x-\tfrac{1}{x}\right)\vk</m>
+                    </li>
+                    <li>
+                        <m>2\ln 2-24</m>
+                    </li>
+                    <li>
+                        Non. <m>\vF</m> n'est pas conservatif.
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -3761,7 +3806,7 @@
 
                         <li>
                             <m>\cos^5(\ln z)</m> is defined when <m>\ln z</m> is
-                            defined, which when <m>z \gt 0</m>
+                            defined, which when <m>z \gt 0</m>.
                         </li>
                     </ul>
                     the domain of <m>\vF</m> is
@@ -3809,7 +3854,7 @@
                     Denote
                     <md>
                         <mrow>
-  S=\Set{(x,y,z)}{2\leqslant x\leqslant 4,\ 2\leqslant y\leqslant 4,\ z=2}
+  \cS=\Set{(x,y,z)}{2\leqslant x\leqslant 4,\ 2\leqslant y\leqslant 4,\ z=2}
   </mrow>
                     </md>
                     The boundary of <m>\cS</m> is <m>\cC</m>.
@@ -3854,6 +3899,7 @@
             </solution>
         </exercise>
 
+        <!-- 32 -->
         <exercise>
             <!-- <title><fromexam>M317 2007A</fromexam></title> -->
             <statement>
@@ -3864,7 +3910,7 @@
                     la forme
                     <md>
                         <mrow>
-  \vF(x, y, z) = xz\,\vi + (axe^y z + byz)\,\vj + (y^2 - xe^y z^2 )\,\vk
+  \vF = xz\,\vi + (axe^y z + byz)\,\vj + (y^2 - xe^y z^2 )\,\vk
   </mrow>
                     </md>
                     pour certains nombres réels <m>a</m> et <m>b</m>.
@@ -3876,11 +3922,11 @@
                             Calculer l'intégrale de surface
                             <md>
                                 <mrow>
-  \iint_{\cS}\vF\cdot\vn\,\dee{S}.
+  \iint_{\cS}\vF\cdot\vn\,\dee{S},
   </mrow>
                             </md>
                             où <m>\cS</m> est la portion de l'ellipsoïde
-                            <m>x^2 + y^2 + \frac{1}{4} z^2 = 1</m> telle que
+                            <m>{x^2 + y^2 + \tfrac{1}{4} z^2 = 1}</m> telle que
                             <m>z \geqslant 0</m>, orientée de sorte que le
                             vecteur normal ait une composante <m>z</m> positive.
                         </li>
@@ -3892,13 +3938,14 @@
   </p></hint>
  -->
             <answer>
-                <p>
-                    (a) <m>a=2</m>, <m>b=-1</m>
-                </p>
-
-                <p>
-                    (b) <m>\frac{\pi}{4}</m>
-                </p>
+                <ol marker="(a)" cols="2">
+                    <li>
+                        <m>a=2</m>, <m>b=-1</m>
+                    </li>
+                    <li>
+                        <m>\tfrac{\pi}{4}</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -3934,7 +3981,7 @@
                         <mrow>
   \iint_{\cS}\vF\cdot\vn\,\dee{S}
   &amp;= \iint_{\cS}(\vnabla\times\vG)\cdot\vn\,\dee{S}
-  =\oint_{\partial S} \vG\cdot\dee{\vr}
+  =\oint_{\partial \cS} \vG\cdot\dee{\vr}
   </mrow>
                     </md>
                     So let's find a vector potential <m>\vG</m>.
@@ -4053,12 +4100,12 @@
   \vr'(\theta) &amp; = -\sin\theta\,\vi +\cos\theta\,\vj
   </mrow>
                     </md>
-                    with <m>0\le\theta\leqslant 2\pi</m>.
+                    with <m>0\leqslant\theta\leqslant 2\pi</m>.
                     So
                     <md>
                         <mrow>
   \iint_{\cS}\vF\cdot\vn\,\dee{S}
-     &amp;=\oint_{\partial S} \vG\cdot\dee{\vr}
+     &amp;=\oint_{\partial \cS} \vG\cdot\dee{\vr}
   </mrow>
                         <mrow>
   &amp;=\int_0^{2\pi}
@@ -4093,6 +4140,7 @@
             </solution>
         </exercise>
 
+        <!-- 33 -->
         <exercise>
             <!-- <title><fromexam>M317 2006D</fromexam></title> -->
             <statement>
@@ -4180,16 +4228,16 @@
                     contains <m>\cC</m>.
                     Let <m>\cR</m> be the shaded région in the figure on the
                     right above.
-                    The boundary <m>\partial R</m> of <m>\cR</m> consists of two
-                    parts <mdash/> <m>\cC</m> and the line segment <m>L</m>.
+                    The boundary <m>\partial \cR</m> of <m>\cR</m> consists of two
+                    parts <mdash/> <m>\cC</m> and the line segment <m>\cL</m>.
                     The normal of <m>\cR</m> for <m>-\vk</m> (since
-                    <m>\partial R</m> is oriented clockwise).
+                    <m>\partial \cR</m> is oriented clockwise).
                     So Stokes' theorem gives
                     <md>
                         <mrow>
-  \int_{\cC} \vF \cdot\dee{\vr} + \int_L \vF \cdot\dee{\vr}
-  &amp;= \iint_R  \vnabla\times\vF \cdot(-\vk)\ \dee{S}
-  = \iint_R  (\vk) \cdot(-\vk)\ \dee{S}
+  \int_{\cC} \vF \cdot\dee{\vr} + \int_\cL \vF \cdot\dee{\vr}
+  &amp;= \iint_\cR  \vnabla\times\vF \cdot(-\vk)\ \dee{S}
+  = \iint_\cR  (\vk) \cdot(-\vk)\ \dee{S}
   </mrow>
                         <mrow>
   &amp;= -\text{Area}(R)
@@ -4223,7 +4271,7 @@
                     <md>
                         <mrow>
   \int_{\cC} \vF \cdot\dee{\vr}
-  &amp;= -\text{Area}(R) - \int_L \vF \cdot\dee{\vr}
+  &amp;= -\text{Area}(R) - \int_\cL \vF \cdot\dee{\vr}
   = -\text{Area}(R) + \int_{-L} \vF \cdot\dee{\vr}
   =-\frac{5}{2}-\frac{25}{2}
   </mrow>
@@ -4235,12 +4283,13 @@
             </solution>
         </exercise>
 
+        <!-- 34 -->
         <exercise>
             <!-- <title><fromexam>M317 2005A</fromexam></title> -->
             <statement>
                 <p>
-                    Soit <m>\vF = \left(\sin x^2, \, xz, \, z^2\right)</m>.
-                    Calculer <m>\displaystyle \oint_{\cC}\vF\cdot\dee{\vr}</m> le long de la
+                    Soit <m>{\vF = \sin(x^2)\,\vi + xz\,\vj + z^2\,\vk}</m>.
+                    Calculer <m>\int_{\cC}\vF\cdot\dee{\vr}</m> le long de la
                     courbe <m>\cC</m> qui est l'intersection du cylindre
                     <m>x^2+y^2=4</m> avec la surface <m>z=x^2</m>, parcourue
                     dans le sens contraire des aiguilles d'une montre lorsque
@@ -4268,7 +4317,7 @@
   x = 2\cos\theta\qquad
   y = 2\sin\theta\qquad
   z= x^2 = 4\cos^2\theta\qquad
-  0\le\theta\leqslant 2\pi
+  0\leqslant\theta\leqslant 2\pi
   </mrow>
                     </md>
                     then the term <m>\sin x(\theta)^2\ x'(\theta)</m> in the
@@ -4297,7 +4346,7 @@
                     The curve <m>\cC</m> is the boundary of the surface
                     <md>
                         <mrow>
-  S = \Set{(x,y,z)}{x^2+y^2\leqslant 4,\ z=x^2}
+  \cS = \Set{(x,y,z)}{x^2+y^2\leqslant 4,\ z=x^2}
   </mrow>
                     </md>
                     with upward pointing normal.
@@ -4351,12 +4400,13 @@
   </mrow>
                     </md>
                     For an efficient, sneaky, way to evaluate
-                    <m>\displaystyle \int_0^{2\pi} \cos^2 t\ \dee{t}</m> see Example
+                    <m>\int_0^{2\pi} \cos^2 t\ \dee{t}</m> see Example
                     <xref ref="eg_workIntegralB"/>.
                 </p>
             </solution>
         </exercise>
 
+        <!-- 35 -->
         <exercise>
             <!-- <title><fromexam>M317 2005A</fromexam></title> -->
             <statement>
@@ -4380,14 +4430,14 @@
 
             <hint>
                 <p>
-                    Écrivez <m>\displaystyle \oint_{\cC}\vE\cdot\dee{\vr}</m> comme une
+                    Écrivez <m>\oint_{\cC}\vE\cdot\dee{\vr}</m> comme une
                     intégrale de surface.
                 </p>
             </hint>
 
             <answer>
                 <p>
-                    Réécrire <m>\displaystyle \oint_{\cC}\vE\cdot\dee{\vr}</m> comme une
+                    Réécrire <m>\oint_{\cC}\vE\cdot\dee{\vr}</m> comme une
                     intégrale de surface.
                     Puis utiliser le fait que si l'intégrale d'une fonction
                     continue est nulle sur toute région, alors la fonction
@@ -4427,7 +4477,7 @@
                     <m>\vG(\vx)\cdot\vn \gt 0</m> pour tout <m>\vx</m> sur
                     <m>\cS</m>, si nous avons choisi <m>\cS</m> assez petit.
                     Alors
-                    <m>\displaystyle \iint_{\cS}\Big(\vnabla\times\vE + \frac{1}{c}\frac{\partial\vH}{\partial t}\Big)\cdot \vn\,\dee{S} \gt 0</m>,
+                    <m>\iint_{\cS}\Big(\vnabla\times\vE + \frac{1}{c}\frac{\partial\vH}{\partial t}\Big)\cdot \vn\,\dee{S} \gt 0</m>,
                     ce qui est une contradiction.
                     Donc <m>\vG=\vZero</m> partout et nous concluons que
                     <md>
@@ -4439,6 +4489,7 @@
             </solution>
         </exercise>
 
+        <!-- 36 -->
         <exercise>
             <!-- <title><fromexam>M317 2004A</fromexam></title> -->
             <statement>
@@ -4461,7 +4512,7 @@
                     Utiliser le théorème de Stokes pour calculer
                     <md>
                         <mrow>
-  \oint_{\cC}\vF\cdot \dee{\vr}.
+  \int_{\cC}\vF\cdot \dee{\vr}.
   </mrow>
                     </md>
                 </p>
@@ -4511,7 +4562,7 @@
                     This curve is the boundary of the circular disk
                     <md>
                         <mrow>
-  D = \Set{(x,y,z)}{x=z,\ x^2+y^2+z^2\leqslant 2}
+  \cD = \Set{(x,y,z)}{x=z,\ x^2+y^2+z^2\leqslant 2}
   </mrow>
                     </md>
                     The curve is oriented so that
@@ -4526,17 +4577,17 @@
                     <md>
                         <mrow>
   \oint_{\cC}\vF\cdot \dee{\vr}
-  &amp;=\iint_D\nabla\times\vF\cdot\vn\ \dee{S}
-  =\frac{1}{\sqrt{2}}\iint_D(3y^2z^3,1,1)\cdot(-1,0,1)\ \dee{S}
+  &amp;=\iint_\cD\nabla\times\vF\cdot\vn\ \dee{S}
+  =\frac{1}{\sqrt{2}}\iint_\cD(3y^2z^3,1,1)\cdot(-1,0,1)\ \dee{S}
   </mrow>
                         <mrow>
-  &amp;=\frac{1}{\sqrt{2}}\iint_D(1-3y^2z^3)\ \dee{S}
+  &amp;=\frac{1}{\sqrt{2}}\iint_\cD(1-3y^2z^3)\ \dee{S}
   </mrow>
                     </md>
                     The disk <m>\cD</m> is invariant under the reflection
                     <m>(x,y,z)\rightarrow(-x,y,-z)</m>.
                     Since <m>y^2z^3</m> is odd under this reflection,
-                    <m>\displaystyle \iint_{\cD}y^2z^3\ \dee{s}=0</m> and
+                    <m>\iint_{\cD}y^2z^3\ \dee{s}=0</m> and
                     <md>
                         <mrow>
   \oint \vF\cdot \dee{\vr}
@@ -4561,6 +4612,7 @@
             </solution>
         </exercise>
 
+        <!-- 37 -->
         <exercise>
             <!-- <title><fromexam>M317 2002A</fromexam></title> -->
             <statement>
@@ -4568,7 +4620,7 @@
                     Utiliser le théorème de Stokes pour calculer
                     <md>
                         <mrow>
-  \oint_{\cC}z\,\dee{x}+x\,\dee{y}-y\,\dee{z}
+  \int_{\cC}z\,\dee{x}+x\,\dee{y}-y\,\dee{z}
   </mrow>
                     </md>
                     lorsque <m>\cC</m> est la courbe fermée donnée par
@@ -4589,7 +4641,7 @@
 
             <answer>
                 <p>
-                    <m>\frac{2\pi}{3\sqrt{3}}</m>
+                    <m>\tfrac{2\pi}{3\sqrt{3}}</m>
                 </p>
             </answer>
 
@@ -4611,10 +4663,10 @@
                     <md>
                         <mrow>
   \oint_{\cC}z\,\dee{x}+x\,\dee{y}-y\,\dee{z}=\oint_{\cC}\vF\cdot \dee{\vr}
-  &amp;=\iint_D\vnabla\times\vF\cdot\vn\,\dee{S}
+  &amp;=\iint_\cD\vnabla\times\vF\cdot\vn\,\dee{S}
   </mrow>
                         <mrow>
-  &amp;=\iint_D(-1,1,1)\cdot\frac{1}{\sqrt{3}}(1,1,1)\,\dee{S}
+  &amp;=\iint_\cD(-1,1,1)\cdot\frac{1}{\sqrt{3}}(1,1,1)\,\dee{S}
   </mrow>
                         <mrow>
   &amp;=\frac{1}{\sqrt{3}}{\rm Area}(D)
@@ -4650,6 +4702,7 @@
             </solution>
         </exercise>
 
+        <!-- 38 -->
         <exercise>
             <!-- <title><fromexam>M317 2018A</fromexam></title> -->
             <statement>
@@ -4657,7 +4710,7 @@
                     Soit <m>\cS</m> la portion du demi-cône
                     <md>
                         <mrow>
-  z=\sqrt{x^2+y^2},\quad  y\geqslant 0,
+  z=\sqrt{x^2+y^2},\qquad  y\geqslant 0,
   </mrow>
                     </md>
                     qui se trouve en dessous du plan <m>z=1</m>.
@@ -4703,16 +4756,17 @@
             </hint>
 
             <answer>
-                <p>
-                    (a) Une paramétrisation possible est
-                    <m>\vr(r, \theta) = r\cos \theta\, \vi +r\sin \theta\, \vj + r\,\vk</m>
-                    avec <m>0\leqslant r\leqslant 1</m>,
-                    <m>0\leqslant \theta \leqslant \pi</m>.
-                </p>
-
-                <p>
-                    (b) <m>\pi</m>
-                </p>
+                <ol marker="(a)">
+                    <li>
+                        Un paramétrage possible est <m>{\vr(r, \theta) = r\cos \theta\, \vi +r\sin \theta\, \vj + r\,\vk}</m> avec <m>0\leqslant r\leqslant 1</m> et <m>0\leqslant \theta \leqslant \pi</m>.
+                    </li>
+                    <li>
+                        <m>\pi</m>
+                    </li>
+                    <li>
+                        <m>\pi</m>
+                    </li>
+                </ol>
             </answer>
 
             <solution>
@@ -4782,7 +4836,7 @@
                     </md>
                     by Stokes' Theorem.
                     Along <m>\cP</m>, the vector field <m>\vF</m> is orthogonal
-                    to the curve so that <m>\displaystyle \int_\cP \vF\cdot \dee{\vr}=0</m>.
+                    to the curve so that <m>\int_\cP \vF\cdot \dee{\vr}=0</m>.
                     Note that <m>\nabla\times \vF</m> is the vector field
                     <m>\vv</m> from part (b).
                     Thus
@@ -4798,7 +4852,7 @@
                     from <m>(1,0,1)</m> to <m>(-1,0,1)</m> and let
                     <md>
                         <mrow>
-  \cR=\set{(x,y,z)}{x^2+y^2\le1, y\geqslant 0, z=1}
+  \cR=\set{(x,y,z)}{x^2+y^2\leqslant1, y\geqslant 0, z=1}
   </mrow>
                     </md>
                     Here is a sketch.
@@ -4820,7 +4874,7 @@
                     by Stokes' Theorem.
                     Along <m>\cL</m>, the vector field <m>\vF=\vj</m> is
                     orthogonal to the curve (which has direction <m>-\vi</m> so
-                    that <m>\displaystyle \int_\cL \vF\cdot \dee{\vr}=0</m>.
+                    that <m>\int_\cL \vF\cdot \dee{\vr}=0</m>.
                     Note that <m>\nabla\times \vF</m> is the vector field
                     <m>\vv</m> from part (b).
                     Thus
@@ -4837,19 +4891,20 @@
             </solution>
         </exercise>
 
+        <!-- 39 -->
         <exercise>
             <statement>
                 <p>
-                    Soit <m>\displaystyle \iint_{\cS}(\vnabla\times\vF)\cdot\vn\,dS</m>, où
+                    On considère <m>\iint_{\cS}(\vnabla\times\vF)\cdot\vn\,\dee{S}</m>, où
                     <m>\cS</m> est la portion de la sphère <m>x^2+y^2+z^2=1</m>
                     vérifiant <m>x+y+z\geqslant 1</m>, <m>\vn</m> est le vecteur
                     normal qui pointe vers le haut et
-                    <m>\vF=(y-z)\vi+(z-x)\vj+(x-y)\vk</m>.
+                    <m>{\vF=(y-z)\,\vi+(z-x)\,\vj+(x-y)\,\vk}</m>.
                     Trouver une autre surface <m>\cS'</m> avec la propriété que
-                    <m>\displaystyle \iint_{\cS}(\vnabla\times\vF)\cdot\vn\,\dee{S}
-  =\iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}</m>
+                    <m>{\iint_{\cS}(\vnabla\times\vF)\cdot\vn\,\dee{S}
+  =\iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}}</m>
                     et évaluer
-                    <m>\displaystyle \iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}</m>.
+                    <m>\iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}</m>.
                 </p>
             </statement>
 
@@ -4863,7 +4918,7 @@
 
             <answer>
                 <p>
-                    <m>-\frac{4}{\sqrt{3}}\pi</m>
+                    <m>-\tfrac{4\pi}{\sqrt{3}}</m>
                 </p>
             </answer>
 
@@ -4871,14 +4926,14 @@
                 <p>
                     Let <m>S'</m> be the portion of <m>x+y+z=1</m> that is
                     inside the sphere <m>x^2+y^2+z^2=1</m>.
-                    Then <m>\partial S=\partial S'</m>, so, by Stokes' theorem,
+                    Then <m>\partial \cS=\partial \cS'</m>, so, by Stokes' theorem,
                     (with <m>\vn</m> always the upward pointing normal)
                     <md>
                         <mrow>
-  \iint_{S'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
-  =\oint_{\partial S'}\vF\cdot \dee{\vr}
-  =\oint_{\partial S}\vF\cdot \dee{\vr}
-  =\iint_{S}(\vnabla\times\vF)\cdot\vn\,\dee{S}
+  \iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
+  =\oint_{\partial \cS'}\vF\cdot \dee{\vr}
+  =\oint_{\partial \cS}\vF\cdot \dee{\vr}
+  =\iint_{\cS}(\vnabla\times\vF)\cdot\vn\,\dee{S}
   </mrow>
                     </md>
                     As
@@ -4896,8 +4951,8 @@
                     <m>\vn=\frac{1}{\sqrt{3}}(\vi+\vj+\vk)</m>
                     <md>
                         <mrow>
-  \iint_{S'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
-  =\iint_{S'}\left(-2\sqrt{3}\right)\,\dee{S}
+  \iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
+  =\iint_{\cS'}\left(-2\sqrt{3}\right)\,\dee{S}
   =-2\sqrt{3}\times{\rm Area}(S')
   </mrow>
                     </md>
@@ -4928,7 +4983,7 @@
                     area of <m>S'</m> is <m>\frac{2}{3}\pi</m> and
                     <md>
                         <mrow>
-  \iint_{S'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
+  \iint_{\cS'}(\vnabla\times\vF)\cdot\vn\,\dee{S}
   =-2\sqrt{3}\times{\rm Area}(S')
   =-\frac{4}{\sqrt{3}}\pi
   </mrow>

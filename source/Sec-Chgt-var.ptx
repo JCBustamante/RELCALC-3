@@ -4,6 +4,8 @@
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
   <!-- Traduit et adapté par Juan Carlos Bustamante, Octobre 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Changements de variables pour les intégrales multiples</title>
   <subsection xml:id="pars-intro-chgt-var">
     <title>Quelques rappels</title>
@@ -225,7 +227,7 @@
             \pdiff{x}{r}&amp;=\cos\theta,   &amp;\pdiff{y}{r}&amp;=\sin\theta,
           </mrow><mrow>
             \pdiff{x}{\theta}&amp;=-r\sin\theta,   &amp;\pdiff{y}{\theta}&amp;=r\cos\theta
-          </mrow></md>,
+          </mrow></md>, la formule
         <xref ref="eq_dA"/>, avec <m>r</m> dans le rôle de  <m>u</m> et avec <m>\theta</m> dans celui de  <m>v</m>, donne alors
         <md><mrow>
             \dee{A} &amp;= \left|\det\left[\begin{matrix}\cos\theta &amp;\sin\theta \\
@@ -296,7 +298,7 @@
     </p>
     <example xml:id="exa_2d_sub">
       <statement>
-        <p>Soit <m>\cR</m> la région à l'intérieur du parallélogramme limité par les droites <m>y=2x,\ y=2x-2,\ y=x</m> et <m>y=x+1</m>. Calculer la valeur de <m>\displaystyle \iint_\cR xy \ \dee{A}.</m>
+        <p>Soit <m>\cR</m> la région à l'intérieur du parallélogramme limité par les droites <m>y=2x,\ y=2x-2,\ y=x</m> et <m>y=x+1</m>. Calculer la valeur de <m>\iint_\cR xy \ \dee{A}.</m>
         </p>
       </statement>
       <solution>
@@ -367,10 +369,11 @@
     <example xml:id="eg_2d_sub">
       <statement>
         <p>
-          Évaluer <md><mrow>
-            \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}, \qquad\text{où }
-            \cR=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 1+x\leqslant  y\leqslant  2+2x}
-          </mrow></md>.
+          Soit <m>\cR</m> la région du plan définie par <m>{0\leqslant x\leqslant 1}</m>
+          et <m>{1+x\leqslant y\leqslant 2+2x}</m>. Évaluer l'intégrale
+          <md><mrow>
+            \iint_\cR\frac{y}{1+x}\ \dee{x}\,\dee{y}.
+          </mrow></md>
         </p>
       </statement>
       <solution>
@@ -382,7 +385,7 @@
             </mrow></md>.
           Notons que ce changement de variables n'est pas un changement linéaire. À gauche, nous avons l'expression de <m>(s,t)</m> en termes de <m>(x,y)</m>. À droite, ce sont <m>(x,y)</m> qui sont données en fonction de <m>(s,t)</m>. Pour obtenir ceci, il faut simplement isoler les variables. Notons que ceci nous permet d'obtenir l'intégrande en fonction de <m>(s,t)</m>.
 
-          Bien entendu, afin d'effectuer le calcul, nous devons aussi :
+          Bien entendu, afin d'effectuer le calcul, nous devons aussi<nbsp/>:
           <ul><li> exprimer le domaine d'intégration <m>\cS</m> en fonction des variables <m>s</m> et <m>t</m>, puis
             </li><li> calculer le jacobien de la transformation afin d'exprimer  <m>\dee{x}\,\dee{y}</m> en termes de  <m>\dee{s}\,\dee{t}</m>.
             </li></ul>
@@ -449,7 +452,10 @@
 
     <example xml:id="ex-chgt-vars-3">
       <statement>
-        <p> Soit <m>\cR</m> la région du premier quadrant limitée par les courbes <m>xy=1,\ xy = 9</m> et par les droites <m>y=x,\, y=4x</m>. Calculer <m>\displaystyle \iint_{\cR} \sqrt{\frac{y}{x}} + \sqrt{xy}\ \dee{A}</m>.
+        <p> Soit <m>\cR</m> la région du premier quadrant limitée par les courbes <m>xy=1,\ xy = 9</m> et par les droites <m>y=x,\, y=4x</m>. Calculer
+          <md>
+          \iint_{\cR} \sqrt{\frac{y}{x}} + \sqrt{xy}\ \dee{A}.
+          </md>
         </p>
       </statement>
       <solution>

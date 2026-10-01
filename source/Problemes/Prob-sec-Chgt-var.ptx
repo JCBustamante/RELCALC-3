@@ -1,44 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <exercises>
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <exercisegroup>
         <title>Pour se pratiquer</title>
 
         <!-- Open Stax No 357, 359 et 361 insérer figure? -->
+        <!-- 1 -->
         <exercise>
             <statement>
                 <p>
-                    Soit la fonction <m>\vr:\cS \rightarrow \cR</m> définie par
-                    <m>\vr(u,v) = (x(u,v),y(u,v))</m> sur la région
-                    <m>S = \{(u, v)|0 \leqslant u \leqslant 1, 0 \leqslant v \leqslant 1\}</m>
-                    et où <m>\cR \subset \R^2</m> est l'image de <m>S</m> sous
-                    <m>r</m>.
+                    Soit <m>\cS = \{(u, v)|0 \leqslant u \leqslant 1, 0 \leqslant v \leqslant 1\}</m> le carré unité,
+                    et soit <m>\vr:\cS \rightarrow \R^2</m> la transformation
+                    définie par <m>\vr(u,v) = \rvd{x(u,v)}{y(u,v)}</m>. Notons
+                    <m>\cR \subset \R^2</m> l'image de <m>\cS</m> sous
+                    <m>\vr</m>.
                     Pour chaque définition de <m>\vr(u,v)</m>:
                     <ol marker="i.">
                         <li>
-                            Justifiez que la fonction <m>r</m> est une
+                            Justifiez que la fonction <m>\vr</m> est une
                             transformation de classe <m>C^1</m>.
                         </li>
 
                         <li>
-                            Trouvez l'image des sommets du carré unité <m>S</m>
-                            sous la fonction <m>r</m>.
+                            Trouvez l'image des sommets du carré unité <m>\cS</m>
+                            sous la fonction <m>\vr</m>.
                         </li>
 
                         <li>
                             Déterminez l'image <m>\cR</m> du carré unité
-                            <m>S</m> puis dessinez le graphe.
+                            <m>\cS</m> puis dessinez le graphe.
                         </li>
                     </ol>
                 </p>
 
                 <ol marker="(a)">
-                    <li><m>\vr(u,v) = (2u - v, u + 2v)</m></li>
+                    <li><m>\vr(u,v) = \rvd{2u - v}{u + 2v}</m></li>
                     <li>
-                        <m>\vr(u,v) = \left(\frac{u}{2}, \frac{v}{3}\right)</m>
+                        <m>\vr(u,v) = \rvd{\tfrac{u}{2}}{\tfrac{v}{3}}</m>
                     </li>
 
-                    <li><m>\vr(u,v) = (u^3, v^3)</m></li>
+                    <li><m>\vr(u,v) = \rvd{u^3}{v^3}</m></li>
                 </ol>
             </statement>
 
@@ -49,7 +52,7 @@
                             <ol marker="i">
                                 <li>
                                     Par définition,
-                                    <m>\vr(u,v) = (g(u,v), h(u,v))</m>, où
+                                    <m>\vr(u,v) = \rvd{g(u,v)}{h(u,v)}</m>, où
                                     <m>x = g(u, v) = 2u - v</m> et
                                     <m>y = h(u, v) = u + 2v</m>.
                                     Les fonctions <m>g</m> et <m>h</m> sont
@@ -57,14 +60,14 @@
                                     partielles <m>g_u(u, v) = 2</m>,
                                     <m>g_v(u, v) = -1</m>, <m>h_u(u, v) = 1</m>
                                     et <m>h_v(u, v) = 2</m> sont continues sur
-                                    <m>S</m>.
+                                    <m>\cS</m>.
                                 </li>
 
                                 <li>
-                                    <m>r(0,0) = (0,0)</m>,
-                                    <m>r(1,0) = (2,1)</m>,
-                                    <m>r(0,1) = (-1,2)</m> et
-                                    <m>r(1,1) = (1,3)</m>.
+                                    <m>\vr(0,0) = \rvd{0}{0}</m>,
+                                    <m>\vr(1,0) = \rvd{2}{1}</m>,
+                                    <m>\vr(0,1) = \rvd{-1}{2}</m> et
+                                    <m>\vr(1,1) = \rvd{1}{3}</m>.
                                 </li>
 
                                 <li>
@@ -80,30 +83,30 @@
                             <ol marker="i">
                                 <li>
                                     Par définition,
-                                    <m>\vr(u,v) = (g(u,v), h(u,v))</m>, où
-                                    <m>x = g(u, v) = \frac{u}{2}</m> et
-                                    <m>y = h(u, v) = \frac{v}{3}</m>.
+                                    <m>\vr(u,v) = \rvd{g(u,v)}{h(u,v)}</m>, où
+                                    <m>x = g(u, v) = \tfrac{u}{2}</m> et
+                                    <m>y = h(u, v) = \tfrac{v}{3}</m>.
                                     Les fonctions <m>g</m> et <m>h</m> sont
                                     continues, différentiables et les dérivées
-                                    partielles <m>g_u(u, v) = \frac{1}{2}</m>,
+                                    partielles <m>g_u(u, v) = \tfrac{1}{2}</m>,
                                     <m>g_v(u, v) = 0</m>, <m>h_u(u, v) = 0</m>
-                                    et <m>h_v(u, v) = \frac{1}{3}</m> sont
-                                    continues sur <m>S</m>.
+                                    et <m>h_v(u, v) = \tfrac{1}{3}</m> sont
+                                    continues sur <m>\cS</m>.
                                 </li>
 
                                 <li>
-                                    <m>r(0,0) = (0,0)</m>,
-                                    <m>r(1,0) = (\frac{1}{2},0)</m>,
-                                    <m>r(0,1) = (0,\frac{1}{3})</m> et
-                                    <m>r(1,1) = (\frac{1}{2},\frac{1}{3})</m>.
+                                    <m>\vr(0,0) = \rvd{0}{0}</m>,
+                                    <m>\vr(1,0) = \rvd{\tfrac{1}{2}}{0}</m>,
+                                    <m>\vr(0,1) = \rvd{0}{\tfrac{1}{3}}</m> et
+                                    <m>\vr(1,1) = \rvd{\tfrac{1}{2}}{\tfrac{1}{3}}</m>.
                                 </li>
 
                                 <li>
                                     La région <m>\cR</m> est le rectangle ayant
                                     pour sommets <m>(0,0)</m>,
-                                    <m>(\frac{1}{2},0)</m>,
-                                    <m>(0,\frac{1}{3})</m> et
-                                    <m>(\frac{1}{2},\frac{1}{3})</m> dans le
+                                    <m>(\tfrac{1}{2},0)</m>,
+                                    <m>(0,\tfrac{1}{3})</m> et
+                                    <m>(\tfrac{1}{2},\tfrac{1}{3})</m> dans le
                                     plan <m>xy</m>.
                                 </li>
                             </ol>
@@ -113,7 +116,7 @@
                             <ol marker="i">
                                 <li>
                                     Par définition,
-                                    <m>\vr(u,v) = (g(u,v), h(u,v))</m>, où
+                                    <m>\vr(u,v) = \rvd{g(u,v)}{h(u,v)}</m>, où
                                     <m>x = g(u, v) = u^3</m> et
                                     <m>y = h(u, v) = v^3</m>.
                                     Les fonctions <m>g</m> et <m>h</m> sont
@@ -121,13 +124,13 @@
                                     partielles <m>g_u(u, v) = 3u^2</m>,
                                     <m>g_v(u, v) = 0</m>, <m>h_u(u, v) = 0</m>
                                     et <m>h_v(u, v) = 3v^2</m> sont continues
-                                    sur <m>S</m>.
+                                    sur <m>\cS</m>.
                                 </li>
 
                                 <li>
-                                    <m>r(0,0) = (0,0)</m>,
-                                    <m>r(1,0) = (1,0)</m>, <m>r(0,1) = (0,1)</m>
-                                    et <m>r(1,1) = (1,1)</m>.
+                                    <m>\vr(0,0) = \rvd{0}{0}</m>,
+                                    <m>\vr(1,0) = \rvd{1}{0}</m>, <m>\vr(0,1) = \rvd{0}{1}</m>
+                                    et <m>\vr(1,1) = \rvd{1}{1}</m>.
                                 </li>
 
                                 <li>
@@ -141,39 +144,40 @@
             </answer>
         </exercise>
         <!-- Open Stax No 362, 363, 364 et 365 -->
+        <!-- 2 -->
         <exercise>
             <statement>
                 <p>
                     Déterminez si les transformations
-                    <m>\vr:\cS \rightarrow \cR \subset \R^2</m> sont injectives
+                    <m>\vr:\cS \rightarrow  \R^2</m> sont injectives
                     ou non.
                     <ol marker="(a)">
                         <li>
-                            <m>\vr(u, v) = (x, y)</m>, où <m>x = u^4</m> et
+                            <m>\vr(u, v) = \rvd{x}{y}</m>, où <m>x = u^4</m> et
                             <m>y = u^2 + v</m>, où <m>\cS</m> est le triangle
                             ayant pour sommets <m>(-2, 0)</m>, <m>(2, 0)</m> et
-                            <m>(0, 2)</m>.
+                            <m>(0, 2)</m>
                         </li>
 
                         <li>
-                            <m>\vr(u,v) = (x, y)</m>, où <m>x = 2u - v</m> et
+                            <m>\vr(u,v) = \rvd{x}{y}</m>, où <m>x = 2u - v</m> et
                             <m>y = u</m>, où <m>\cS</m> est le triangle ayant
                             pour sommets <m>(-1, 1)</m>, <m>(-1, -1)</m> et
-                            <m>(1, -1)</m>.
+                            <m>(1, -1)</m>
                         </li>
 
                         <li>
-                            <m>\vr(u, v) = (x, y)</m>, où <m>x = u^2</m> et
+                            <m>\vr(u, v) = \rvd{x}{y}</m>, où <m>x = u^2</m> et
                             <m>y = v^2</m>, où <m>\cS</m> est le rectangle ayant
                             pour sommets <m>(-1,0)</m> <m>(1,0)</m>,
-                            <m>(1,1)</m> et <m>(-1,1)</m>.
+                            <m>(1,1)</m> et <m>(-1,1)</m>
                         </li>
 
                         <li>
-                            <m>\vr(u, v) = (x, y)</m>, où <m>x = 2u</m> et
+                            <m>\vr(u, v) = \rvd{x}{y}</m>, où <m>x = 2u</m> et
                             <m>y = 3v</m>, où <m>\cS</m> est le carré ayant pour
                             sommets <m>(-1, 1)</m>, <m>(-1, -1)</m>,
-                            <m>(1, -1)</m> et <m>(1, 1)</m>.
+                            <m>(1, -1)</m> et <m>(1, 1)</m>
                         </li>
                     </ol>
                 </p>
@@ -191,34 +195,34 @@
             </answer>
         </exercise>
         <!-- Open Stax No 369 -->
+        <!-- 3 -->
         <exercise>
             <statement>
                 <p>
-                    Soit la transformation injective
-                    <m>\vr:S \rightarrow \cR</m> définie par
-                    <m>r(u, v) = (x, y)</m>.
-                    Déterminez la transformation inverse
-                    <m>\vr^{-1}: \cR \rightarrow S</m> pour les cas suivants:
+                    Soit <m>\cS \subset \R^2</m> et soit la transformation
+                    injective <m>\vr:\cS \rightarrow \R^2</m> définie par
+                    <m>\vr(u, v) = \rvd{x}{y}</m>.
+                    Pour chacun des cas suivants, déterminez l'image
+                    <m>\cR</m> de <m>\cS</m> sous <m>\vr</m>, ainsi que la
+                    transformation inverse <m>\vr^{-1}: \cR \rightarrow \cS</m>:
                     <ol marker="(a)">
                         <li>
-                            <m>r(u, v) = (4u, 5v)</m>, où <m>S = \cR = \R^2</m>.
+                            <m>\vr(u, v) = \rvd{4u}{5v}</m>, où <m>\cS = \R^2</m>
                         </li>
 
                         <li>
-                            <m>r(u, v) = (u + 2v, -u + v)</m>, où
-                            <m>S = \cR = \R^2</m>.
+                            <m>\vr(u, v) = \rvd{u + 2v}{-u + v}</m>, où
+                            <m>\cS = \R^2</m>
                         </li>
 
                         <li>
-                            <m>r(u, v) = (e^{2u + v}, e^{u - v})</m>, où
-                            <m>S = \R^2</m> et
-                            <m>\cR = \{(x,y)|x &gt; 0, y &gt; 0\}</m>.
+                            <m>\vr(u, v) = \rvd{e^{2u + v}}{e^{u - v}}</m>, où
+                            <m>\cS = \R^2</m>
                         </li>
 
                         <li>
-                            <m>r(u, v) = (\ln (u), \ln (uv))</m>, où
-                            <m>S = \{(u,v)|u &gt; 0, v &gt;0\}</m> et
-                            <m>\cR = \R^2</m>.
+                            <m>\vr(u, v) = \rvd{\ln (u)}{\ln (uv)}</m>, où
+                            <m>\cS = \{(u,v)|u &gt; 0, v &gt;0\}</m>
                         </li>
                     </ol>
                 </p>
@@ -228,42 +232,49 @@
                 <p>
                     <ol marker="(a)">
                         <li>
-                            <m>\vr^{-1}(x, y) = (\frac{x}{4}, \frac{y}{5})</m>
+                            <m>\cR = \R^2</m> et
+                            <m>\vr^{-1}(x, y) = \rvd{\tfrac{x}{4}}{\tfrac{y}{5}}</m>
                         </li>
 
                         <li>
-                            <m>\vr^{-1}(x, y) = (\frac{x - 2y}{3}, \frac{x + y}{3})</m>
+                            <m>\cR = \R^2</m> et
+                            <m>\vr^{-1}(x, y) = \rvd{\tfrac{x - 2y}{3}}{\tfrac{x + y}{3}}</m>
                         </li>
 
                         <li>
-                            <m>\vr^{-1}(x, y) = (\frac{\ln (xy)}{3}, \frac{\ln (xy)}{3} - \ln (y))</m>
+                            <m>\cR = \{(x,y)|x &gt; 0, y &gt; 0\}</m> et
+                            <m>\vr^{-1}(x, y) = \rvd{\tfrac{\ln (xy)}{3}}{\tfrac{\ln (xy)}{3} - \ln (y)}</m>
                         </li>
 
-                        <li><m>\vr^{-1}(x, y) = (e^x, e^{-x+y})</m></li>
+                        <li>
+                            <m>\cR = \R^2</m> et
+                            <m>\vr^{-1}(x, y) = \rvd{e^x}{e^{-x+y}}</m>
+                        </li>
                     </ol>
                 </p>
             </answer>
         </exercise>
         <!-- Open Stax No 374 et 375 -->
+        <!-- 4 -->
         <exercise>
             <statement>
                 <p>
-                    Considérons les transformations
-                    <m>\vr: S \rightarrow \cR</m> définies par
-                    <m>\vr(u,v) = (x,y)</m> sur les régions
-                    <m>\cR \subset \R^2</m> données.
-                    Déterminez la région <m>S \subset \R^2</m>.
+                    Soit <m>\vr:\R^2 \rightarrow \R^2</m> la transformation
+                    définie par <m>\vr(u,v) = \rvd{x}{y}</m>. Pour chacun des cas
+                    suivants, la région <m>\cR \subset \R^2</m> donnée est
+                    l'image d'une région <m>\cS \subset \R^2</m> sous
+                    <m>\vr</m>; déterminez <m>\cS</m>.
                     <ol marker="(a)">
                         <li>
                             <m>x = au</m>, <m>y = bv</m> et
                             <m>\cR = \{(x,y)|x^2 + y^2 \leqslant a^2b^2\}</m>,
-                            où <m>a,b &gt; 0</m>.
+                            où <m>a,b &gt; 0</m>
                         </li>
 
                         <li>
                             <m>x = au</m>, <m>y = bv</m> et
                             <m>\cR = \{(x,y)|\frac{x^2}{a^2} + \frac{y^2}{b^2} \leqslant 1\}</m>,
-                            où <m>a,b &gt; 0</m>.
+                            où <m>a,b &gt; 0</m>
                         </li>
                     </ol>
                 </p>
@@ -273,28 +284,29 @@
                 <p>
                     <ol marker="(a)">
                         <li>
-                            <m>S = \{(u,v)|\frac{u^2}{b^2} + \frac{v^2}{a^2} \leqslant 1\}</m>
+                            <m>\cS = \{(u,v)|\tfrac{u^2}{b^2} + \tfrac{v^2}{a^2} \leqslant 1\}</m>
                         </li>
 
-                        <li><m>S = \{(u,v)|u^2 + v^2 \leqslant 1\}</m></li>
+                        <li><m>\cS = \{(u,v)|u^2 + v^2 \leqslant 1\}</m></li>
                     </ol>
                 </p>
             </answer>
         </exercise>
         <!-- Open Stax No 379, 381, 383, 385 et 387 -->
+        <!-- 5 -->
         <exercise>
             <statement>
                 <p>
                     Pour chacune des transformations, déterminez le Jacobien.
                     <ol marker="(a)">
                         <li>
-                            <m>\vr(u,v) = \left(\frac{u^3}{2}, \frac{v}{u^2}\right)</m>
+                            <m>\vr(u,v) = \rvd{\tfrac{u^3}{2}}{\tfrac{v}{u^2}}</m>
                         </li>
 
-                        <li><m>\vr(u,v) = (ue^v, e^{-v})</m></li>
-                        <li><m>\vr(u,v) = (v\sin (u^2), v\cos {u^2})</m></li>
+                        <li><m>\vr(u,v) = \rvd{ue^v}{e^{-v}}</m></li>
+                        <li><m>\vr(u,v) = \rvd{v\sin (u^2)}{v\cos (u^2)}</m></li>
                         <li>
-                            <m>r(u,v,w) = \left(v\cosh \left(\frac{1}{u}\right), v\sinh \left(\frac{1}{u}\right), u + w^2\right)</m>
+                            <m>\vr(u,v,w) = \rvt{v\cosh \left(\tfrac{1}{u}\right)}{v\sinh \left(\tfrac{1}{u}\right)}{u + w^2}</m>
                         </li>
 
                         <li><m>r(u,v,w) = (u - v, u + v, u + v + w)</m></li>
@@ -305,10 +317,10 @@
             <answer>
                 <p>
                     <ol marker="(a)">
-                        <li><m>\frac{3}{2}</m></li>
+                        <li><m>\tfrac{3}{2}</m></li>
                         <li><m>-1</m></li>
                         <li><m>2uv </m></li>
-                        <li><m>\frac{2vw}{u^2}</m></li>
+                        <li><m>\tfrac{2vw}{u^2}</m></li>
                         <li><m>2</m></li>
                     </ol>
                 </p>
@@ -319,41 +331,24 @@
         <title>Pour mieux comprendre</title>
 
         <!-- Open Stax No 388 et 389 (solution seulement pour le numéro 389) -->
+        <!-- 6 -->
         <exercise>
             <statement>
+                <sidebyside widths="60% 5% 35%" valign="top">
                 <p>
                     La région triangulaire <m>\cR</m> ayant pour sommets
                     <m>(0,0)</m>, <m>(1,1)</m> et <m>(1,2)</m> est montrée dans
-                    la figure ci-dessous.
-                </p>
-
-                <image xml:id="sageplot-OpenStax-p388" width="40%">
-                    <shortdescription>
-                        Le triangle de sommets (0,0), (1,1) et (1,2)
-                    </shortdescription>
-                    <sageplot>
-              var('x,y')
-              L= [(0,0),(1,1),(1,2),(0,0)]
-              Fig = line(L, color = "blue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
-                tick_formatter = "latex", axes_labels = ["$x$", "$y$"], figsize = 4,
-                xmin=-0.1, xmax =1.5)
-              Fig +=polygon2d(L, fill = True, alpha = 0.35, color ="orange")
-              Fig += text("$\\mathcal{R}$", (0.75,1.1), color = "blue", fontsize = 12)
-              Fig
-                    </sageplot>
-                </image>
-
-                <p>
+                    la figure ci-contre.
                     <ol marker="(a)">
                         <li>
                             Trouvez une transformation
                             <m>\vr:\cS \rightarrow \cR </m> de la forme
-                            <m>\vr(u,v) = (x,y) = (au + bv, cu + dv)</m>, où
+                            <m>\vr(u,v) = \rvd{au + bv}{cu + dv}</m>, où
                             <m>a</m>, <m>b</m>, <m>c</m> et <m>d</m> sont des
                             nombres réels avec <m>ad - bc \neq 0</m>, telle que
-                            <m>\vr^{-1}(0,0) = (0,0)</m>,
-                            <m>\vr^{-1}(1,1) = (1,0)</m> et
-                            <m>\vr^{-1}(1,2) = (0,1)</m>.
+                            <m>\vr^{-1}(0,0) = \rvd{0}{0}</m>,
+                            <m>\vr^{-1}(1,1) = \rvd{1}{0}</m> et
+                            <m>\vr^{-1}(1,2) = \rvd{0}{1}</m>.
                         </li>
 
                         <li>
@@ -363,65 +358,83 @@
                         </li>
                     </ol>
                 </p>
+                <p></p>
+                <image xml:id="sageplot-OpenStax-p388" width="90%">
+                    <shortdescription>
+                        Le triangle de sommets (0,0), (1,1) et (1,2)
+                    </shortdescription>
+                    <sageplot>
+              var('x,y')
+              L= [(0,0),(1,1),(1,2),(0,0)]
+              Fig = line(L, color = "steelblue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
+                tick_formatter = "latex", axes_labels = ["$x$", "$y$"], figsize = 4,
+                xmin=-0.1, xmax =1.5, fontsize = 12, axes_labels_size = 1)
+              Fig +=polygon2d(L, fill = True, alpha = 0.25, color ="orange")
+              Fig += text("$\\mathcal{R}$", (0.75,1.1), color = "black", fontsize = 12)
+              Fig
+                    </sageplot>
+                </image>
+                </sidebyside>
             </statement>
         </exercise>
 
+        <!-- 7 -->
         <exercise>
             <statement>
+                <sidebyside widths="60% 5% 35%" valign="top">
                 <p>
                     La région triangulaire <m>\cR</m> ayant pour sommets
                     <m>(0,0)</m>, <m>(2,0)</m> et <m>(1,3)</m> est montrée dans
-                    la figure ci-dessous.
-                </p>
+                    la figure ci-contre.
+                    <ol marker="(a)">
+                        <li>
+                            Trouvez une transformation
+                            <m>\vr:\cS \rightarrow \cR </m> de la forme
+                            <m>\vr(u,v) = \rvd{au + bv}{cu + dv}</m>, où
+                            <m>a</m>, <m>b</m>, <m>c</m> et <m>d</m> sont des
+                            nombres réels avec <m>ad - bc \neq 0</m>, telle que
+                            <m>\vr^{-1}(0,0) = \rvd{0}{0}</m>,
+                            <m>\vr^{-1}(2,0) = \rvd{1}{0}</m> et
+                            <m>\vr^{-1}(1,3) = \rvd{0}{1}</m>.
+                        </li>
 
-                <image xml:id="sageplot-OpenStax-p389" width="40%">
+                        <li>
+                            Utilisez la transformation <m>\vr</m> afin de
+                            déterminer l'aire <m>A(\cR)</m> de la région
+                            <m>\cR</m>.
+                        </li>
+                    </ol>
+                </p>
+                <p></p>
+                <image xml:id="sageplot-OpenStax-p389" width="90%">
                     <shortdescription>
                         Le triangle de sommets (0,0), (2,0) et (1,3)
                     </shortdescription>
                     <sageplot>
             var('x,y')
             L= [(0,0),(2,0),(1,3),(0,0)]
-            Fig = line(L, color = "blue", aspect_ratio = 1, ticks = [[0,1,2],[1,2,3]],
+            Fig = line(L, color = "steelblue", aspect_ratio = 1, ticks = [[0,1,2],[1,2,3]],
               tick_formatter = "latex", axes_labels = ["$x$", "$y$"], figsize = 4,
-              xmin=-0.1, xmax =2.2)
-            Fig +=polygon2d(L, fill = True, alpha = 0.35, color ="orange")
-            Fig += text("$\\mathcal{R}$", (1,1.3), color = "blue", fontsize = 12)
+              xmin=-0.1, xmax =2.2, fontsize = 12, axes_labels_size = 1)
+            Fig +=polygon2d(L, fill = True, alpha = 0.25, color ="orange")
+            Fig += text("$\\mathcal{R}$", (1,1.3), color = "black", fontsize = 12)
             Fig
                     </sageplot>
                 </image>
-
-                <p>
-                    <ol marker="(a)">
-                        <li>
-                            Trouvez une transformation
-                            <m>r:S \rightarrow \cR </m> de la forme
-                            <m>\vr(u,v) = (x,y) = (au + bv, cu + dv)</m>, où
-                            <m>a</m>, <m>b</m>, <m>c</m> et <m>d</m> sont des
-                            nombres réels avec <m>ad - bc \neq 0</m>, telle que
-                            <m>\vr^{-1}(0,0) = (0,0)</m>,
-                            <m>\vr^{-1}(2,0) = (1,0)</m> et
-                            <m>\vr^{-1}(1,3) = (0,1)</m>.
-                        </li>
-
-                        <li>
-                            Utilisez la transformation <m>r</m> afin de
-                            déterminer l'aire <m>A(\cR)</m> de la région
-                            <m>\cR</m>.
-                        </li>
-                    </ol>
-                </p>
+                </sidebyside>
             </statement>
 
             <answer>
                 <p>
                     <ol marker="(a)">
-                        <li><m>\vr(u,v) = (2u + v, 3v)</m></li>
+                        <li><m>\vr(u,v) = \rvd{2u + v}{3v}</m></li>
                         <li><m>A(\cR) = 3</m></li>
                     </ol>
                 </p>
             </answer>
         </exercise>
         <!-- Open Stax No 390, 391, 392 et 393 (1 solution sur 2) -->
+        <!-- 8 -->
         <exercise>
             <statement>
                 <p>
@@ -444,11 +457,11 @@
                     <sageplot>
             var('x,y')
             L= [(0,0),(1,0),(2,1),(1,1), (0,0)]
-            Fig = line(L, color = "blue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
+            Fig = line(L, color = "steelblue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
               tick_formatter = "latex", axes_labels = ["$x$", "$y$"], figsize = 5,
               xmin=-0.1, xmax =2.2)
-            Fig +=polygon2d(L, fill = True, alpha = 0.35, color ="orange")
-            Fig += text("$\\mathcal{R}$", (1,0.75), color = "blue", fontsize = 12)
+            Fig +=polygon2d(L, fill = True, alpha = 0.25, color ="orange")
+            Fig += text("$\\mathcal{R}$", (1,0.75), color = "black", fontsize = 12)
             Fig
                     </sageplot>
                 </image>
@@ -457,40 +470,41 @@
             <answer>
                 <p>
                     <ol marker="(a)">
-                        <li><m>-\frac{1}{4}</m></li>
+                        <li><m>-\tfrac{1}{4}</m></li>
                         <li>Laissé au lecteur.</li>
                     </ol>
                 </p>
             </answer>
         </exercise>
 
+        <!-- 9 -->
         <exercise>
             <statement>
                 <p>
-                    Utilisez la transformation <m>u = y - x</m>,
-                    <m>v = x + y</m> afin d'évaluer les intégrales
+                    Soit <m>\cR</m> le carré limité par les droites
+                    <m>y = x</m> et <m>y = x + 2</m>, et par les droites
+                    <m>y = -x</m> et <m>y = -x + 2</m> (voir la figure ci-dessous).
+                    À l'aide du changement de variables <m>u = y - x</m>,
+                    <m>v = x + y</m>, évaluez les intégrales suivantes.
                     <ol marker="(a)">
-                        <li><m>\iint_{\cR}\sin(x - y)dA</m></li>
-                        <li><m>\iint_{\cR}e^{x + y}dA</m></li>
+                        <li><m>\ds\iint_{\cR}\sin(x - y)\,\dee{A}</m></li>
+                        <li><m>\ds\iint_{\cR}e^{x + y}\,\dee{A}</m></li>
                     </ol>
-                    sur le carré <m>\cR</m> déterminé par les droites
-                    <m>y = x</m>, <m>y = -x + 2</m>, <m>y = x + 2</m> et
-                    <m>y = -x</m> montrée dans la figure ci-dessous.
                 </p>
 
-                <image xml:id="sageplot-OpenStax-prob392-393" width="50%">
+                <image xml:id="sageplot-OpenStax-prob392-393" width="40%">
                     <shortdescription>
-                        Le polygone de sommets (0,0), (1,0), (2,1) et (*1,1)
+                        Le carré de sommets (0,0), (1,1), (0,2) et (-1,1)
                     </shortdescription>
                     <sageplot>
             var('x,y')
             L= [(0,0),(1,1),(0,2),(-1,1), (0,0)]
-            Fig = line(L, color = "blue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
+            Fig = line(L, color = "steelblue", aspect_ratio = 1, ticks = [[0,1,2],[1,2]],
               tick_formatter = "latex", axes_labels = ["$x$", "$y$"], figsize = 4,
               xmin=-1.2, xmax =1.2)
-            Fig +=polygon2d(L, fill = True, alpha = 0.35, color ="orange")
-            Fig += text("$\\mathcal{R}$", (0.5, 1), color = "blue", fontsize = 12)
-            Fig += text("$y= x+2$", (-0.75, 1.5), color = "blue", fontsize = 12,
+            Fig +=polygon2d(L, fill = True, alpha = 0.25, color ="orange")
+            Fig += text("$\\mathcal{R}$", (0.5, 1), color = "black", fontsize = 12)
+            Fig += text("$y= x+2$", (-0.75, 1.5), color = "steelblue", fontsize = 12,
               rotation = 45)
             Fig
                     </sageplot>
@@ -501,12 +515,13 @@
                 <p>
                     <ol marker="(a)">
                         <li><m>-1 + \cos (2)</m></li>
-                        <li>Laissé au lecteur.</li>
+                        <li><m>e^2-1</m></li>
                     </ol>
                 </p>
             </answer>
         </exercise>
         <!-- Open Stax exercices 404 et 405 -->
+        <!-- 10 -->
         <exercise>
             <statement>
                 <p>
@@ -528,6 +543,7 @@
             </answer>
         </exercise>
 
+        <!-- 11 -->
         <exercise>
             <statement>
                 <p>

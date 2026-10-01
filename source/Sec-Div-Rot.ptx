@@ -4,10 +4,12 @@
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
   <!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Le rotationnel et la divergence</title>
   <introduction>
     <p>
-     Dans cette section, nous nous intéressons au calcul différentiel des champs vectoriels. Plus précisément, nous considérons le rotationnel et la divergence d'un champ de vecteurs. Si l'on pense au champ comme un à champ de vitesses, il s'agit de mesures qui permettent, jusqu'à un certain point, de caractériser ce champ par sa tendance à créer des rotations (sans déplacement) ou comme une source. Ces quantités seront intimement liées aux intégrales de flux rencontrées dans la section précédente, à savoir la circulation d'un champ (en lien avec le rotationnel) et le flux d'un champ à travers une courbe (en lien avec la divergence).
+     Dans cette section, nous nous intéressons au calcul différentiel des champs vectoriels. Plus précisément, nous considérons le rotationnel et la divergence d'un champ de vecteurs. Si l'on pense au champ comme à un champ de vitesses, il s'agit de mesures qui permettent, jusqu'à un certain point, de caractériser ce champ par sa tendance à créer des rotations (sans déplacement) ou comme une source. Ces quantités seront intimement liées aux intégrales de flux rencontrées dans la section précédente, à savoir la circulation d'un champ (en lien avec le rotationnel) et le flux d'un champ à travers une courbe (en lien avec la divergence).
     </p>
   </introduction>
   <subsection xml:id="pars-rot">
@@ -18,22 +20,22 @@
       </p>
       <p/>
       <figure xml:id="OpenStax-roue">
-        <caption>Figure tirée de <em>Calculus Volume 3, d'OpenStax</em><xref ref="Strang-2018"/>.</caption>
+        <caption>Figure tirée de <em>Calculus Volume 3, d'OpenStax</em><xref ref="Strang-2018"/></caption>
         <image source="images/OpenStax/CNX_Calc_Figure_16_05_005" width="100%"/>
       </figure>
     </sidebyside>
     <sidebyside widths="42% 5% 53%" valign="top">
       <stack>
         <p>
-    Considérons une trajectoire rectangulaire, qu'on considère comme étant la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens contraire des aiguilles d'une montre :
+    Considérons une trajectoire rectangulaire fermée <m>\cC</m>, formée par la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens contraire des aiguilles d'une montre<nbsp/>:
     <ul><li>
-        <p><m>\cC_1</m> de <m>(x_0,y_0)</m>à <m>(x_0+\De x,y_0)</m> </p>
+        <p><m>\cC_1</m> de <m>(x_0,y_0)</m> à <m>(x_0+\De x,y_0)</m>;</p>
         </li><li>
         <p><m>\cC_2</m> de <m>(x_0+\De x,y_0)</m></p>
-        <p>à <m>(x_0+\De x, y_0+ \De y)</m>,</p>
+        <p>à <m>(x_0+\De x, y_0+ \De y)</m>;</p>
         </li><li>
         <p><m>\cC_3</m> de <m>(x_0+\De x,y_0 + \De y)</m></p>
-        <p>à <m>(x_0, y_0+ \De y)</m>,</p>
+        <p>à <m>(x_0, y_0+ \De y)</m>;</p>
         </li><li>
         <p><m>\cC_4</m> de <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.</p>
         </li></ul>
@@ -82,7 +84,7 @@
       </image>
     </sidebyside>
             <p>
-        Ainsi, nous avons le flux de <m>\vF</m> autour, ou la circulation  de <m>\cC</m>:
+        Ainsi, la circulation de <m>\vF</m> le long de <m>\cC</m> est
      <md><mrow>
         \oint_{\cC} \vF \cdot \dee{\vr} = \int_{\cC_1} \vF \cdot \dee{\vr} + \int_{\cC_2} \vF \cdot \dee{\vr} + \int_{\cC_3} \vF \cdot \dee{\vr} + \int_{\cC_4} \vF \cdot \dee{\vr}.
         </mrow></md>
@@ -94,7 +96,7 @@
       <tabular>
         <row header="yes" bottom="major">
           <cell>Portion</cell>
-          <cell>Point évaluation</cell>
+          <cell>Point d'évaluation</cell>
           <cell>
             <m>\De \vr</m>
           </cell>
@@ -180,7 +182,7 @@
     <example>
       <statement>
         <p>
-        Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est <m>\pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x.</m>
+        Considérons le champ <m>\vF(x,y) = (x^2 -1)\vj</m>. Sa densité de circulation est <m>{\pdiff{(x^2 -1)}{x} - \pdiff{0}{y} = 2x}</m>.
       </p>
         <sidebyside widths="50% 5% 45%" valign="top">
           <p>
@@ -227,7 +229,6 @@
   <p>
     <term>Fin nouveau</term>
   </p> -->
- Cet 
 
 
     <!-- <p>
@@ -260,7 +261,7 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
 </mrow></md>.
 
 <ul><li><p>
-      En particulier, lorsqu'on a affaire à un champ dans le plan, le rotationnel devient <m>\displaystyle\Big(\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y} \Big)\vk</m>. C'est un champ dont une seule composante est non nulle. Pour cette raison, on commet souvent l'abus de langage qui consiste à dire que le rotationnel de <m>\vF(x,y) = P(x,y)\, \vi + Q(x,y)\, \vj</m> est la quantité <m>\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y}</m>.
+      En particulier, lorsqu'on a affaire à un champ dans le plan, le rotationnel devient <m>\Big(\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y} \Big)\vk</m>. C'est un champ dont une seule composante est non nulle. Pour cette raison, on commet souvent l'abus de langage qui consiste à dire que le rotationnel de <m>\vF(x,y) = P(x,y)\, \vi + Q(x,y)\, \vj</m> est la quantité <m>\frac{\partial Q }{\partial x} -\frac{\partial P}{\partial y}</m>.
     </p></li><li><p>
       L'utilisation du déterminant est en réalité un procédé mnémotechnique, souvent utilisé afin de faire les calculs, puisqu'il est facile de se tromper dans les signes.
     </p></li></ul>
@@ -269,9 +270,10 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
     </definition>
     <example xml:id="ex-rot-3d">
       <statement>
-        <p>Soit <m>\vF(x,y,z) = (x^2 -y)\, \vi + 4z\, \vj + x^2\, \vk </m>. Calculer le rotationnel de <m>\vF</m>.
-
+        <p>Soit <m>{\vF(x,y,z) = (x^2 -y)\, \vi + 4z\, \vj + x^2\, \vk}</m>. Calculer le rotationnel de <m>\vF</m>.
     </p>
+      </statement>
+      <solution>
         <p>On calcule directement
       <md><mrow>\rot \vF = \vnabla \times \vF \amp = \begin{vmatrix}
                         \vi &amp; \pdiff{}{x} &amp; x^2-y  \\
@@ -280,7 +282,7 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
                     \end{vmatrix}   </mrow><mrow>  \amp =\left(\pdiff{x^2}{y} - \pdiff{}{z}(4z) \right)\vi - \left(\pdiff{x^2}{x} - \pdiff{}{z}(x^2 - y)\right)\vj </mrow><mrow>  \amp+ \left(\pdiff{}{x}(4z) -\pdiff{}{y}(x^2 - y) \right)\vk </mrow><mrow>  \amp=-4\,\vi -2x\, \vj + \vk.</mrow></md>
 
     </p>
-      </statement>
+      </solution>
     </example>
     <p>
   Nous savons que le champ gradient d'une fonction <m>f</m> donne la direction de plus forte augmentation de la valeur de cette fonction. Nous verrons dans la <xref ref="sec_Indep-traj" text="global">section</xref> d'autres raisons pour lesquelles il est important de pouvoir décider si un champ est un champ gradient ou pas.
@@ -293,13 +295,10 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
       
       
       <statement>
-        <p>Soit <m>f</m> une fonction de classe <m>C^2</m>, alors
-    <m>\displaystyle 
-      \vnabla \times \vnabla f = \vZero,
-    </m>
+        <p>Si <m>f</m> est une fonction de classe <m>C^2</m>, alors
+    <md><mrow>\vnabla \times \vnabla f = \vZero,</mrow></md>
     ou encore
-    <m>      \rot (\grad f ) = \vZero.
-    </m>
+    <md><mrow>\rot (\grad f ) = \vZero.</mrow></md>
 
 
 
@@ -321,10 +320,10 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
     <example>
       <statement>
         <p>
-      Nous avons vu à l'<xref ref="ex-non-conserv" text = "global">exemple</xref> qu'il n'existe pas de fonction <m>f</m> telle que <m>\vnabla f = xy\, \vi + (y^2 +1)\, \vj</m>.
+      Nous avons vu à l'<xref ref="ex-non-conserv" text = "global">exemple</xref> qu'il n'existe pas de fonction <m>f</m> telle que <m>{\vnabla f = xy\, \vi + (y^2 +1)\, \vj}</m>.
     </p>
         <p>
-      Avec les notations et les concepts introduits dans cette section, nous pouvons revoir ceci comme suit : posons <m>\vG = xy\, \vi + (y^2 +1)\, \vj </m>. Comme <m>\vnabla \times \vG = -x\,\vk</m>, qui est non nul, le champ <m>\vG</m> n'est pas irrotationnel. Il ne peut donc pas être un champ gradient.
+      Avec les notations et les concepts introduits dans cette section, nous pouvons revoir ceci comme suit : posons <m>{\vG = xy\, \vi + (y^2 +1)\, \vj}</m>. Comme <m>\vnabla \times \vG = -x\,\vk</m>, qui est non nul, le champ <m>\vG</m> n'est pas irrotationnel. Il ne peut donc pas être un champ gradient.
     </p>
       </statement>
     </example>
@@ -339,20 +338,20 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
   <subsection xml:id="pars-div">
     <title>La divergence</title>
     <p>
-    Nous voulons maintenant savoir dans quelle mesure le champ <m>\vF</m> se comporte comme une source  (voir <xref ref="eg_ptSource">l'exemple</xref> ) dans un voisinage d'un point <m>(x_0,y_0)</m> donné. Ceci revient à considérer le flux de <m>\vF</m> <em>à travers</em> une courbe fermée <m>\cC</m>.
+    Nous voulons maintenant savoir dans quelle mesure le champ <m>\vF</m> se comporte comme une source  (voir l'<xref ref="eg_ptSource" text="global">exemple</xref>) dans un voisinage d'un point <m>(x_0,y_0)</m> donné. Ceci revient à considérer le flux de <m>\vF</m> <em>à travers</em> une courbe fermée <m>\cC</m>.
   </p>
     <sidebyside widths="42% 5% 53%" valign="top">
       <stack>
         <p>
-    Considérons une trajectoire rectangulaire fermée <m>\cC</m>, formée par la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens des aiguilles d'une montre :
+    Considérons une trajectoire rectangulaire fermée <m>\cC</m>, formée par la réunion de quatre segments <m>\cC_1</m>, <m>\cC_2</m>, <m>\cC_3</m> et <m>\cC_4</m>, orientée dans le sens contraire des aiguilles d'une montre<nbsp/>:
     <ul><li>
-        <p><m>\cC_1</m> de <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>,</p>
+        <p><m>\cC_1</m> de <m>(x_0,y_0)</m> à <m>(x_0+\De x, y_0)</m>;</p>
         </li><li>
         <p><m>\cC_2</m> de <m>(x_0+\De x,y_0)</m></p>
-        <p>à <m>(x_0+\De x, y_0+ \De y)</m>,</p>
+        <p>à <m>(x_0+\De x, y_0+ \De y)</m>;</p>
         </li><li>
         <p><m>\cC_3</m> de <m>(x_0+\De x,y_0 + \De y)</m></p>
-        <p>à <m>(x_0, y_0+ \De y)</m>,</p>
+        <p>à <m>(x_0, y_0+ \De y)</m>;</p>
         </li><li>
         <p><m>\cC_4</m> de <m>(x_0,y_0 + \De y)</m> à <m>(x_0, y_0)</m>.</p>
         </li></ul>
@@ -405,7 +404,7 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
       </image>
     </sidebyside>
     <p>
-      Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cV</m> est
+      Soit, par ailleurs, <m>\vn</m> un vecteur unitaire normal à la courbe, pointant vers l'extérieur. Comme nous l'avons vu, le flux à travers <m>\cC</m> est
     </p>
     <md><mrow>
         \int_{\cC} \vF \cdot \vn \, \dee{s} = \int_{\cC_1} \vF \cdot \vn \, \dee{s} + \int_{\cC_2} \vF \cdot \vn \, \dee{s} + \int_{\cC_3} \vF \cdot \vn \, \dee{s} + \int_{\cC_4} \vF \cdot \vn \, \dee{s}.
@@ -417,7 +416,7 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
       <tabular>
         <row header="yes" bottom="major">
           <cell>Portion</cell>
-          <cell>Point évaluation</cell>
+          <cell>Point d'évaluation</cell>
           <cell>
             <m> \vn</m>
           </cell>
@@ -495,15 +494,15 @@ Soit <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> un champ de vecteurs différentiable.
     <definition xml:id="def_div">
       <statement>
         <p>
-La <term>divergence</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\vk</m> est la fonction scalaire  <m>\vnabla \cdot \vF(x,y,z)</m>, aussi noté <m>\div \vF</m>, est définie par 
+La <term>divergence</term> du champ de vecteurs <m>{\vF = P\,\vi + Q\,\vj + R\,\vk}</m> est la fonction scalaire <m>{\vnabla \cdot \vF(x,y,z)}</m>, aussi notée <m>\div \vF</m>, définie par 
 
 <md><mrow>\vnabla \cdot \vF \amp = \pdiff{P}{x} + \pdiff{Q}{y} + \pdiff{R}{z}. </mrow></md>
 
 
 <ul><li><p>
-        En particulier, lorsqu'on a affaire à un champ dans le plan, la divergence est   <m>\displaystyle \pdiff{P}{x} + \pdiff{Q}{y}</m>.
+        En particulier, lorsqu'on a affaire à un champ dans le plan, la divergence est <m>{\pdiff{P}{x} + \pdiff{Q}{y}}</m>.
       </p></li><li><p>
-        À nouveau, l'écriture <m>\vnabla \cdot \vF</m> est un léger abus de notation, on conçoit <m>\vnabla</m> comme un vecteur formel,  <m>\vnabla = \pdiff{}{x}\vi + \pdiff{}{y}\vj + \pdiff{}{z}\vk</m>.
+        À nouveau, l'écriture <m>\vnabla \cdot \vF</m> est un léger abus de notation, on conçoit <m>\vnabla</m> comme un vecteur formel,  <m>{\vnabla = \pdiff{}{x}\vi + \pdiff{}{y}\vj + \pdiff{}{z}\vk}</m>.
       </p></li></ul>
 
 
@@ -511,19 +510,23 @@ La <term>divergence</term> du champ de vecteurs <m>\vF = P\,\vi + Q\,\vj + R\,\v
       </statement>
     </definition>
     <p>
-  Il faut noter que la divergence d'un champ vectoriel est une fonction à valeurs scalaires, à différence du rotationnel qui, lui, est un champ vectoriel.
+  Il faut noter que la divergence d'un champ vectoriel est une fonction à valeurs scalaires, à la différence du rotationnel qui, lui, est un champ vectoriel.
 </p>
     <!-- WeBWork à inclure>
 Devoir 12, problème 4
 -->
     <example>
       <statement>
-        <p>Soit <m>\vF(x,y) = -y\, \vi + x\, \vj</m>. Alors sa divergence est
-    <md><mrow>
-    \div \vF = \vnabla \cdot \vF = \pdiff{}{x}(-y) + \pdiff{}{y}(x) = 0
-    </mrow></md>
+        <p>Calculer la divergence du champ <m>{\vF(x,y) = -y\, \vi + x\, \vj}</m>.
     </p>
       </statement>
+      <solution>
+        <p>On calcule directement
+    <md><mrow>
+    \div \vF = \vnabla \cdot \vF = \pdiff{}{x}(-y) + \pdiff{}{y}(x) = 0.
+    </mrow></md>
+    </p>
+      </solution>
     </example>
     <example>
       <statement>
@@ -550,13 +553,10 @@ Devoir 12, problème 4
       
       
       <statement>
-        <p>Soit <m>\vF = P\, \vi + Q\, \vj + R\, \vk</m> un champ de classe <m>C^2</m>. Alors
-    <m>
-      \vnabla \cdot (\vnabla \times \vF) = 0
-    </m>
+        <p>Soit <m>{\vF = P\, \vi + Q\, \vj + R\, \vk}</m> un champ de classe <m>C^2</m>. Alors
+    <md><mrow>\vnabla \cdot (\vnabla \times \vF) = 0,</mrow></md>
     ou encore
-    <m>      \div (\rot(\vF)) =0
-    </m>
+    <md><mrow>\div (\rot(\vF)) = 0.</mrow></md>
 
     </p>
       </statement>
@@ -566,8 +566,8 @@ Devoir 12, problème 4
         \rot(\vF) = \vnabla \times \vF =(R_y-Q_z)\,\vi + (P_z-R_x)\,\vj + (Q_x - P_y)\,\vk
       </mrow></md>
       et donc
-      <md><mrow>\vnabla \cdot (\vnabla \times \vF) \amp = \pdiff{}{x}(R_y - Q_z)  + \pdiff{}{y}(P_z - R_x) + \pdiff{}{z}(Q_x - P_y)</mrow><mrow> \amp = R_{yx} - Q_{zx} + P_{zy} - R_{xy} + Q_{xz} - P_{yz}</mrow><mrow>  \amp = 0 </mrow></md>
-      où la dernière égalité vient encore une fois du <xref ref="thm_mixed_partials">Théorème de Clairault - Schwarz</xref>
+      <md><mrow>\vnabla \cdot (\vnabla \times \vF) \amp = \pdiff{}{x}(R_y - Q_z)  + \pdiff{}{y}(P_z - R_x) + \pdiff{}{z}(Q_x - P_y)</mrow><mrow> \amp = R_{yx} - Q_{zx} + P_{zy} - R_{xy} + Q_{xz} - P_{yz}</mrow><mrow>  \amp = 0, </mrow></md>
+      où la dernière égalité vient encore une fois du <xref ref="thm_mixed_partials" text="global">théorème</xref> de Clairaut-Schwarz.
 
 
     </p>
@@ -576,11 +576,14 @@ Devoir 12, problème 4
     <example>
       <statement>
         <p>
-      Montrer qu'il n'existe pas de champ dont le rotationnel soit <m>\vF = x\, \vi + y\, \vj + z\vk</m>
+      Montrer qu'il n'existe pas de champ dont le rotationnel soit <m>{\vF = x\, \vi + y\, \vj + z\,\vk}</m>.
     </p>
       </statement>
       <solution>
-        <p>En effet, on calcule  <m>\vnabla \cdot \vF =\pdiff{x}{x} + \pdiff{y}{y} + \pdiff{z}{z} = 3.</m>
+        <p>On calcule <m>\vnabla \cdot \vF =\pdiff{x}{x} + \pdiff{y}{y} + \pdiff{z}{z} = 3</m>.
+    Or, la divergence d'un rotationnel est toujours nulle
+    (<xref ref="thm-div-rot-zero" text="global">théorème</xref>).
+    Le champ <m>\vF</m> ne peut donc pas être le rotationnel d'un champ.
 
     </p>
       </solution>
@@ -626,12 +629,13 @@ Devoir 12, problème 4
           </li>
           <li>
             <p>
-            Si <m>\vF : (x,y,z) \mapsto \vF(x,y,z)</m> est un champ de vecteurs, alors son laplacien est le champ de vecteurs 
+            Si <m>{\vF = P\,\vi + Q\,\vj + R\,\vk}</m> est un champ de vecteurs, alors son laplacien est le champ de vecteurs
             <md><mrow>
-              \Delta\vF= \vnabla^2\vF =\vnabla\cdot\vnabla \vF
+              \Delta\vF= \vnabla^2\vF
               = \frac{\partial^2 \vF}{\partial x^2}
               +\frac{\partial^2 \vF}{\partial y^2}
               +\frac{\partial^2 \vF}{\partial z^2}
+              = (\Delta P)\,\vi + (\Delta Q)\,\vj + (\Delta R)\,\vk
               </mrow></md>.
           </p>
           </li>
@@ -652,27 +656,24 @@ Devoir 12, problème 4
             <li>
               <m>\color{blue}{\vnabla(f+g)=\vnabla f+\vnabla g}</m>
             </li>
-            <li><m>\color{blue}{\vnabla(cf)=c\,\vnabla f}</m>, pour toute <em>constante</em><m>c</m></li>
+            <li><m>\color{blue}{\vnabla(cf)=c\,\vnabla f}</m>, pour toute <em>constante</em> <m>c</m></li>
             <li>
               <m>\color{blue}{\vnabla(fg)=(\vnabla f)g+ f(\vnabla g)}</m>
             </li>
-            <li><m>\vnabla(f/g)=\left(g\,\vnabla f-f\,\vnabla g\right)/g^2</m> aux points <m>\vx</m> où  <m>g(\vx)\ne 0</m>
+            <li><m>\vnabla(f/g)=\left(g\,\vnabla f-f\,\vnabla g\right)/g^2</m> aux points <m>\vx</m> où <m>g(\vx)\ne 0</m>
     </li>
             <li>
               <p>
       Si <m>\vF</m> et <m>\vG</m> sont deux champs de vecteurs, le gradient de la <em>fonction (à valeurs scalaires)</em> <m>\vF \cdot \vG</m> est donné par 
-    <m>\vnabla(\vF\cdot\vG)=\vF\times(\vnabla\times\vG)-
-    (\vnabla\times\vF)\times\vG+(\vG\cdot\vnabla)\vF+(\vF\cdot\vnabla)\vG</m>.
+    <md><mrow>\vnabla(\vF\cdot\vG)=\vF\times(\vnabla\times\vG)-
+    (\vnabla\times\vF)\times\vG+(\vG\cdot\vnabla)\vF+(\vF\cdot\vnabla)\vG</mrow></md>.
     </p>
               <p>Ici<fn>Il s'agit de la seule définition qui a du sens; par exemple, 
     <m>\vG\cdot(\vnabla\vF)</m> n'a pas de sens parce que nous ne pouvons pas calculer le gradient d'un champ.
-    </fn>,
-    <md><mrow>
-    (\vG\cdot\vnabla)\vF
-    =\vG_1\frac{\partial\vF}{\partial x}
-     +\vG_2\frac{\partial\vF}{\partial y}
-     +\vG_3\frac{\partial\vF}{\partial z}
-    </mrow></md></p>
+    </fn>, <m>{(\vG\cdot\vnabla)\vF}
+    = {G_1\tfrac{\partial\vF}{\partial x}
+     +G_2\tfrac{\partial\vF}{\partial y}
+     +G_3\tfrac{\partial\vF}{\partial z}}</m>.</p>
             </li>
           </ol>
         </p>
@@ -686,13 +687,13 @@ Devoir 12, problème 4
             <li>
               <m>\color{blue}{\vnabla\cdot(\vF+\vG)=\vnabla\cdot\vF+\vnabla \cdot\vG}</m>
             </li>
-            <li><m>\color{blue}{\vnabla\cdot(c\vF)=c\,\vnabla\cdot\vF}</m>, pour toute <em>constante</em><m>c</m></li>
+            <li><m>\color{blue}{\vnabla\cdot(c\vF)=c\,\vnabla\cdot\vF}</m>, pour toute <em>constante</em> <m>c</m></li>
             <li>
               <m>\color{blue}{\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF}</m>
             </li>
             <li>
               <m>\vnabla\cdot(\vF\times\vG)=(\vnabla\times\vF)\cdot\vG
-                              - \vF\cdot(\vnabla\times\vG)</m>
+                              - \vF\cdot(\vnabla\times\vG)</m>.
             </li>
           </ol>
         </p>
@@ -706,7 +707,7 @@ Devoir 12, problème 4
             <li>
               <m>\color{blue}{\vnabla\times(\vF+\vG)=\vnabla\times\vF+\vnabla \times\vG} </m>
             </li>
-            <li><m>\color{blue}{\vnabla\times(c\vF)=c\,\vnabla\times\vF} </m>, pour toute  <em>constante</em><m>c</m></li>
+            <li><m>\color{blue}{\vnabla\times(c\vF)=c\,\vnabla\times\vF} </m>, pour toute <em>constante</em> <m>c</m></li>
             <li>
               <m>\color{blue}{\vnabla\times(f\vF)=(\vnabla f)\times\vF+f\,\vnabla\times\vF} </m>
             </li>
@@ -716,13 +717,10 @@ Devoir 12, problème 4
     =\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
     +(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG</m>
               </p>
-              <p>Ici, 
-    <md><mrow>
-    (\vG\cdot\vnabla)\vF
-    =\vG_1\frac{\partial\vF}{\partial x}
-     +\vG_2\frac{\partial\vF}{\partial y}
-     +\vG_3\frac{\partial\vF}{\partial z}
-    </mrow></md></p>
+              <p>Ici, <m>{(\vG\cdot\vnabla)\vF}
+    = {G_1\tfrac{\partial\vF}{\partial x}
+     +G_2\tfrac{\partial\vF}{\partial y}
+     +G_3\tfrac{\partial\vF}{\partial z}}</m>.</p>
             </li>
           </ol>
         </p>
@@ -736,7 +734,7 @@ Devoir 12, problème 4
             <li>
               <m>\color{blue}{ \vnabla^2(f+g)=\vnabla^2 f+\vnabla^2 g }</m>
             </li>
-            <li><m>\color{blue}{\vnabla^2(cf)=c\,\vnabla^2 f}</m>, pour toute <em>constante</em><m>c</m></li>
+            <li><m>\color{blue}{\vnabla^2(cf)=c\,\vnabla^2 f}</m>, pour toute <em>constante</em> <m>c</m></li>
             <li>
               <m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>
             </li>
@@ -753,7 +751,7 @@ Devoir 12, problème 4
        (divergence d'un rotationnel, c'est la formule du <xref ref="thm-div-rot-zero" text="global">théorème</xref>)
       
       </li>
-            <li><m>\color{blue}{\vnabla\times(\vnabla f)=0 \qquad}</m>
+            <li><m>\color{blue}{\vnabla\times(\vnabla f)=\vZero \qquad}</m>
        (rotationnel d'un gradient, c'est la formule du <xref ref="thm-rot-grad-zero" text="global">théorème</xref>)
       </li>
             <li>
@@ -771,30 +769,30 @@ Devoir 12, problème 4
       </statement>
     </theorem>
     <p><alert>Aide-mémoire.</alert>
-      La plupart des identités listées ci-haut, (en fait toutes sauf le <xref ref="thm_gradIdentities" text="global">théorème</xref>e, le <xref ref="thm_curlIdentities" text="global">théorème</xref>d et le <xref ref="thm_degTwoIdentities" text="global">théorème</xref>) sont faciles à imaginer. Il faut simplement combiner la linéarité, les règles des produits avec les faits suivants :
+      La plupart des identités listées ci-haut (en fait toutes sauf l'identité (e) du <xref ref="thm_gradIdentities" text="global">théorème</xref>, l'identité (d) du <xref ref="thm_curlIdentities" text="global">théorème</xref> et celles du <xref ref="thm_degTwoIdentities" text="global">théorème</xref>) sont faciles à imaginer. Il faut simplement combiner la linéarité, les règles des produits avec les faits suivants :
       <ul><li>
-      Si le terme de gauche est un vecteur  (ou un scalaire), alors le terme de droite doit aussi être un vecteur (ou un scalaire), et
+      si le terme de gauche est un vecteur (ou un scalaire), alors le terme de droite doit aussi être un vecteur (ou un scalaire);
       </li><li>
-        les seuls produits valables entre des vecteurs sont le produit scalaire et le produit vectoriel, et 
+        les seuls produits valables entre des vecteurs sont le produit scalaire et le produit vectoriel;
       </li><li>
-        le produit d'un scalaire avec un scalaire ou un vecteur ne peut ni être un produit scalaire ni un produit vectoriel, et 
+        le produit d'un scalaire avec un scalaire ou un vecteur ne peut être ni un produit scalaire ni un produit vectoriel;
       </li><li><m>\vA\times\vB = - \vB\times\vA</m>, le produit vectoriel est anticommutatif.
       </li></ul>
-      Par exemple, considérons le <xref ref="thm_divIdentities" text="global">théorème</xref>c, qui dit que 
+      Par exemple, considérons l'identité (c) du <xref ref="thm_divIdentities" text="global">théorème</xref>, qui dit que 
       <m>\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF</m>.
       <ul><li>
       Le terme de gauche, <m>\vnabla\cdot(f\vF)</m>, est un scalaire, de sorte que celui de droite doit être un scalaire également.
       </li><li>
       Le terme de gauche,  <m>\vnabla\cdot(f\vF)</m>, est la dérivée du produit de  <m>f</m> et <m>\vF</m>, de sorte que, imitant la règle du produit, le terme de droite sera la somme de deux termes : l'un d'eux avec <m>\vF</m> multiplié par la <q>dérivée</q> de <m>f</m>, et un autre avec  <m>f</m> multiplié par la <q>dérivée</q> de <m>\vF</m>.
       </li><li>
-      La <q>dérivée</q> de  <m>f</m> doit être <m>\vnabla f</m>, car  <m>\vnabla\cdot f</m> et <m>\vnabla\times f</m> n'ont pas de sens. Pour obtenir un scalaire et non avec un vecteur, on doit prendre le produit scalaire de  <m>\vnabla f</m> et <m>\vF</m>. Ainsi, le terme voulu est  <m>(\vnabla f)\cdot\vF</m>.
+      La <q>dérivée</q> de  <m>f</m> doit être <m>\vnabla f</m>, car  <m>\vnabla\cdot f</m> et <m>\vnabla\times f</m> n'ont pas de sens. Pour obtenir un scalaire et non un vecteur, on doit prendre le produit scalaire de  <m>\vnabla f</m> et <m>\vF</m>. Ainsi, le terme voulu est  <m>(\vnabla f)\cdot\vF</m>.
       </li><li>
       La <q>dérivée</q> de <m>\vF</m> doit être  <m>\vnabla\cdot\vF</m>
       ou <m>\vnabla\times\vF</m>. Nous avons aussi besoin de multiplier par le scalaire <m>f</m> pour obtenir un scalaire. Ainsi, la <q>dérivée</q> doit être un scalaire, c'est-à-dire <m>f\{\vnabla\cdot\vF\}</m>.
       </li><li>
       Notre intuition est donc 
       <m>\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF</m>,
-      qui est, heureusement, correct.
+      qui est, heureusement, correcte.
       </li></ul>
       </p>
   </subsection>

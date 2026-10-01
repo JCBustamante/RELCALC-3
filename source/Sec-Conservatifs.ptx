@@ -5,6 +5,8 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
     <!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Champs conservatifs et indépendance de la trajectoire</title>
 
     <p>
@@ -22,12 +24,12 @@
     <definition xml:id="def-Conservatif">
         <statement>
             <p>
-                Un champ <m>\vF</m> est dit être
-                <term><em>conservatif</em></term> sur une région <m>\cD</m> s'il
+                Un champ <m>\vF</m> est dit
+                <term>conservatif</term> sur une région <m>\cD</m> s'il
                 existe une fonction <m>f</m> telle que <m>\vF = \vnabla f</m>
                 sur <m>\cD</m>.
-                Dans ce cas, on dit que <m>f</m> est une fonction
-                <term><em>potentielle</em></term> pour <m>\vF</m>.
+                Dans ce cas, on dit que <m>f</m> est une
+                <term>fonction potentielle</term> pour <m>\vF</m>.
             </p>
         </statement>
     </definition>
@@ -35,8 +37,8 @@
     <warning xml:id="warn_potential">
         <p>
             En physique, lorsqu'un champ est de la forme <m>\vF=-\vnabla f </m>,
-            alors <m>f</m> est dite être une fonction potentielle pour
-            <m>\vF</m>: <em>notez</em> le signe dans
+            alors <m>f</m> est dite <em>fonction potentielle</em> pour
+            <m>\vF</m><nbsp/>: <em>notez</em> le signe dans
             <m>\vF=\underset{\uparrow}{-}\vnabla f </m>.
         </p>
     </warning>
@@ -102,16 +104,16 @@
 
         <p>
             Ainsi,
-            <m>\frac{1}{2} m \norm{\vv(t)}^2 -f\left(x(t),y(t),z(t)\right)</m>,
+            <m>\tfrac{1}{2} m \norm{\vv(t)}^2 -f\left(x(t),y(t),z(t)\right)</m>,
             qui est appelée l'énergie
-            <fn><m>\frac{1}{2} m \norm{\vv(t)}^2</m> est l'énergie cinétique, et <m>-f</m> est l'énergie potentielle. Voir la <xref ref="warn_potential" text="global">mise en garde</xref>.
+            <fn><m>\tfrac{1}{2} m \norm{\vv(t)}^2</m> est l'énergie cinétique, et <m>-f</m> est l'énergie potentielle. Voir la <xref ref="warn_potential" text="global">mise en garde</xref>.
   </fn>
-            de la particule au temps <m>t</m>, ne dépend pas du temps <m>t</m>:
+            de la particule au temps <m>t</m>, ne dépend pas du temps <m>t</m><nbsp/>:
             elle est conservée.
             Si nous appelons l'énergie initiale <m>E</m>, c'est-à-dire
-            <m>E=\frac{1}{2} m \norm{\vv(0)}^2 -f\left(x(0),y(0),z(0)\right)</m>,
+            <m>{E=\tfrac{1}{2} m \norm{\vv(0)}^2 -f\left(x(0),y(0),z(0)\right)}</m>,
             alors
-            <m>\frac{1}{2} m \norm{\vv(t)}^2 -f\left(x(t),y(t),z(t)\right)=E</m>
+            <m>{\tfrac{1}{2} m \norm{\vv(t)}^2 -f\left(x(t),y(t),z(t)\right)=E}</m>
             pour tout <m>t</m>, et, en particulier,
             <md>
                 <mrow> f\left(x(t),y(t),z(t)\right) = \frac{1}{2} m \norm{\vv(t)}^2 -E \geqslant -E </mrow>
@@ -138,7 +140,7 @@
             où <m>r=\norm{\vr}=\sqrt{x^2+y^2+z^2}</m> et où <m>G</m> est la
             constante gravitationnelle.
             La force est conservative, avec un potentiel
-            <m>f(\vr) = \frac{GMm}{r}</m>.
+            <m>f(\vr) = \tfrac{GMm}{r}</m>.
             En effet, on calcule
             <md alignment="alignat">
                 <mrow>
@@ -166,14 +168,25 @@
     <p>
         Les exemples précédents contiennent le germe de l'idée de ce qu'on
         appelle le <em>théorème fondamental pour les intégrales de ligne</em>.
-        Supposons que nous nous déplaçons sur une surface <m>\cS</m> d'équation
-        <m>z= f(x,y)</m> entre deux points <m>P_0</m> et <m>P_1</m>.
-        On s'intéresse au travail effectué par le champ <m>\vF = \vnabla f</m>
-        lors de deux déplacements entre <m>P_0</m> et <m>P_1</m>, mais selon
-        deux trajectoires différentes.
-        La loi de conservation de l'énergie nous dit que le travail effectué
-        dépend seulement des points initial et final, pas de la trajectoire
-        suivie.
+        Imaginons une randonnée en montagne, où l'altitude au point
+        <m>(x,y)</m> est <m>f(x,y)</m>.
+        Nous marchons sur la surface d'équation <m>{z=f(x,y)}</m>, au-dessus
+        d'une courbe <m>\cC</m> du plan <m>Oxy</m> qui va de <m>P_0</m> à
+        <m>P_1</m> (la projection du sentier sur le plan <m>Oxy</m>).
+        Le vecteur <m>-\vnabla f</m> pointe dans la direction de plus forte
+        descente, c'est-à-dire la direction dans laquelle la gravité nous
+        entraîne. Plus précisément, si <m>{\vr(t) = x(t)\,\vi+y(t)\,\vj}</m> est un paramétrage de  <m>\cC</m>, notre position est
+        <m>{x(t)\,\vi+y(t)\,\vj+f\big(x(t),y(t)\big)\,\vk}</m>, et le
+        travail effectué par la force de gravité <m>-mg\,\vk</m> est
+        <md>
+            <mrow>-mg\int\diff{}{t}f\big(x(t),y(t)\big)\,\dee{t}=-mg\big(f(P_1)-f(P_0)\big).</mrow>
+        </md>
+        Ce travail ne dépend que de l'altitude des points de départ et
+        d'arrivée, et non du sentier emprunté.
+        Or, par la règle de dérivation des fonctions composées,
+        <m>{\diff{}{t}f\big(x(t),y(t)\big)=\vnabla f\cdot\vr'(t)}</m>. Ce
+        travail est donc l'intégrale de ligne du champ <m>{-mg\,\vnabla f}</m>
+        le long de <m>\cC</m>.
         En termes d'intégrales de ligne, nous avons le résultat suivant, souvent
         appelé <em>théorème fondamental pour les intégrales de ligne</em>.
     </p>
@@ -184,8 +197,8 @@
                 Soit <m>\vF=\vnabla f</m> un champ vectoriel conservatif de
                 classe <m>C^1</m> défini sur une région
                 <m>\cD\subseteq \R^n</m>.
-                Si <m>\cC</m> est une courbe lisse par morceaux allant de
-                <m>P_0</m> à <m>P_1</m>, nous avons
+                Si <m>\cC</m> est une courbe lisse par morceaux contenue dans
+                <m>\cD</m> et allant de <m>P_0</m> à <m>P_1</m>, nous avons
                 <md>
                     <mrow>
           \int_\cC\vF\cdot\dee{\vr} =f(P_1)-f(P_0)
@@ -199,8 +212,8 @@
         <proof>
             <p>
                 En effet, soit <m>\vr</m> un paramétrage de <m>\cC</m> avec
-                <m>t_0\leqslant  t\leqslant  t_1</m> tel que <m>\vr(t_0)=P_0</m>
-                et <m>\vr(t_1)=P_1</m>.
+                <m>{t_0\leqslant t\leqslant t_1}</m> tel que <m>{\vr(t_0)=P_0}</m>
+                et <m>{\vr(t_1)=P_1}</m>.
                 Alors, par définition,
                 <md>
                     <mrow>\int_{\cC} \vnabla f \cdot \dee{\vr} \amp = \int_{t_0}^{t_1} \vnabla f(\vr(t)) \cdot \vr'(t)\, \dee{t} =\int_{t_0}^{t_1} \diff{}{t} \left(f(\vr(t))\right)\, \dee{t} </mrow>
@@ -222,11 +235,12 @@
         a lieu seulement pour les champs vectoriels conservatifs.
         Dans la section précédente, nous avons vu plusieurs exemples de champs
         vectoriels qui ne sont pas conservatifs.
-        Les champs de l'
-        <xref ref="eg_workIntegralA" text="global">exemple</xref> ainsi que
-        celui de l' <xref ref="eg_workIntegralB" text="global">exemple</xref>
-        donnent des intégrales dont la valeur dépend du chemin choisi, ils ne
-        sont donc pas des champs conservatifs.
+        Le champ de
+        l'<xref ref="eg_workIntegralA" text="global">exemple</xref> donne des
+        intégrales dont la valeur dépend du chemin choisi, et celui de
+        l'<xref ref="eg_workIntegralB" text="global">exemple</xref> donne une
+        intégrale non nulle le long d'une courbe fermée; ils ne sont donc pas
+        des champs conservatifs.
     </p>
 
     <p>
@@ -250,8 +264,8 @@
     \int_{P_0}^{P_1}\vF\cdot\dee{\vr} = \int_{\cC}\vF\cdot\dee{\vr}
     </mrow>
         </md>
-        pour tout chemin <m>\cC</m> de <m>P_0</m> à <m>P_1</m>.
-        La suite de cette section est dévouée à la relation très étroite qui
+        pour toute courbe <m>\cC</m> de <m>P_0</m> à <m>P_1</m>.
+        La suite de cette section est consacrée à la relation très étroite qui
         existe entre l'indépendance de la trajectoire et le fait qu'un champ
         soit conservatif ou pas.
         C'est ce que nous verrons au
@@ -279,7 +293,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         </md>
         pour toutes les courbes <m>\cC_1</m>, <m>\cC_2</m> allant de <m>P_0</m>
         vers <m>P_1</m>, alors ceci est aussi vrai pour
-        <em>n'importe quelle paire de points</em> <m>P_0'</m>, <m>P_1'</m>:
+        <em>n'importe quelle paire de points</em> <m>P_0'</m>, <m>P_1'</m><nbsp/>:
         <md>
             <mrow>
       \int_{\cC'_1}\vF\cdot\dee{\vr} = \int_{\cC'_2}\vF\cdot\dee{\vr}
@@ -295,9 +309,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <statement>
             <p>
                 Soit <m>\vF</m> un champ de vecteurs défini et continu sur
-                <m>\R^2</m> (ou <m>\R^3</m> ).
+                <m>\R^2</m> (ou <m>\R^3</m>).
                 Soit <m>P_0</m>, <m>P_1</m>, <m>P'_0</m>, <m>P'_1</m> quatre
-                points quelconques dans <m>\R^2</m> (ou <m>\R^3</m> ).
+                points quelconques dans <m>\R^2</m> (ou <m>\R^3</m>).
                 Supposons que
                 <md>
                     <mrow>
@@ -330,7 +344,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
             <sidebyside widths="40% 20% 40%" valign="middle">
                 <ul>
                     <li>
-                        <m>\cC_\ell</m> qui va de <m>P_0</m> à <m>P'_0</m> et
+                        <m>\cC_\ell</m> qui va de <m>P_0</m> à <m>P'_0</m>;
                     </li>
 
                     <li><m>\cC_r</m> qui va de <m>P'_1</m> à <m>P_1</m>.</li>
@@ -343,7 +357,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 <ul>
                     <li>
                         <m>\cC_1</m> comme étant <m>\cC_\ell</m> suivie de
-                        <m>\cC'_1</m> puis suivie de <m>\cC_r</m>, et
+                        <m>\cC'_1</m> puis suivie de <m>\cC_r</m>;
                     </li>
 
                     <li>
@@ -386,8 +400,8 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <statement>
             <p>
                 Soit <m>\vF</m> un champ de vecteurs défini sur <m>\R^2</m> (ou
-                <m>\R^3</m> ).
-                Alors, les conditions suivantes sont équivalentes.
+                <m>\R^3</m>).
+                Alors, les conditions suivantes sont équivalentes<nbsp/>:
                 <ol marker="(a)">
                     <li>
                         <m>\vF</m> est conservatif, c'est-à-dire qu'il existe
@@ -395,7 +409,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                     </li>
 
                     <li>
-                        On a <m>\displaystyle \int_\cC\vF\cdot\dee{\vr}=0</m>
+                        On a <m>\int_\cC\vF\cdot\dee{\vr}=0</m>
                         pour toute courbe fermée <m>\cC</m>.
                     </li>
 
@@ -403,7 +417,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                         La valeur de <m>\int\vF\cdot\dee{\vr}</m> est
                         indépendante de la trajectoire, c'est-à-dire que pour
                         toute paire de points <m>P_0</m>, <m>P_1</m>, on a
-                        <m> \int_{\cC_1}\vF\cdot\dee{\vr} = \int_{\cC_2}\vF\cdot\dee{\vr} </m>
+                        <m>{\int_{\cC_1}\vF\cdot\dee{\vr}} = {\int_{\cC_2}\vF\cdot\dee{\vr}}</m>
                         pour toute paire de courbes <m>\cC_1</m>, <m>\cC_2</m>
                         qui vont de <m>P_0</m> à <m>P_1</m>.
                     </li>
@@ -413,10 +427,10 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
 
         <proof>
             <p>
-                Il suffit de montrer que
+                Il suffit de montrer que<nbsp/>:
                 <ul>
-                    <li>(a) entraîne (b),</li>
-                    <li>(b) entraîne (c),</li>
+                    <li>(a) entraîne (b);</li>
+                    <li>(b) entraîne (c);</li>
                     <li>(c) entraîne (a).</li>
                 </ul>
             </p>
@@ -479,7 +493,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
             <p>
                 Vérifions à présent que <m>f</m> vérifie effectivement
                 <m>\vF=\vnabla f</m>.
-                Choisissons un point arbitraire et une courbe <m>\cC_{\vx}</m>
+                Choisissons un point arbitraire <m>\vx</m> et une courbe <m>\cC_{\vx}</m>
                 allant de l'origine à <m>\vx</m>.
                 Pour n'importe quel vecteur unitaire <m>\vu</m>, soit
                 <m>\cD_{\vu}</m> la courbe paramétrée par
@@ -498,22 +512,22 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 Ainsi, pour tout réel <m>s</m>, nous avons
                 <md>
                     <mrow>
-          f(\vx+s\vu) = \int_{\cC_{\vx}+\cD_{s\vu}}\vF\cdot d\vr
+          f(\vx+s\vu) = \int_{\cC_{\vx}+\cD_{s\vu}}\vF\cdot \dee{\vr}
           </mrow>
                 </md>,
-                où la notation <m>C_{\vx}+D_{s\vu}</m> désigne la courbe qui
-                suit <m>C_{\vx}</m> de l'origine à <m>\vx</m>, puis qui suit
-                <m>D_{s\vu}</m> de <m>\vx</m> à <m>\vx+s\vu</m>.
+                où la notation <m>\cC_{\vx}+\cD_{s\vu}</m> désigne la courbe qui
+                suit <m>\cC_{\vx}</m> de l'origine à <m>\vx</m>, puis qui suit
+                <m>\cD_{s\vu}</m> de <m>\vx</m> à <m>\vx+s\vu</m>.
                 Nous avons
                 <md>
                     <mrow>
-          \int_{C_{\vx}+D_{s\vu}}\vF\cdot d\vr
-          &amp;=\int_{C_{\vx}}\vF\cdot d\vr
-          +\int_{D_{s\vu}}\vF\cdot d\vr
+          \int_{\cC_{\vx}+\cD_{s\vu}}\vF\cdot \dee{\vr}
+          &amp;=\int_{\cC_{\vx}}\vF\cdot \dee{\vr}
+          +\int_{\cD_{s\vu}}\vF\cdot \dee{\vr}
           </mrow>
                     <mrow>
-          &amp;=\int_{C_{\vx}}\vF\cdot d\vr
-          +\int_0^1 \vF(\vx+ts\vu)\cdot (s\vu)\,dt
+          &amp;=\int_{\cC_{\vx}}\vF\cdot \dee{\vr}
+          +\int_0^1 \vF(\vx+ts\vu)\cdot (s\vu)\,\dee{t}
           </mrow>
                 </md>.
                 Dans la seconde intégrale, nous faisons le changement de
@@ -521,8 +535,8 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 Ceci donne
                 <md>
                     <mrow>
-          f(\vx+s\vu)=\int_{C_{\vx}}\vF\cdot d\vr
-          +\int_0^s \vF(\vx+\tau\vu)\cdot \vu\,d\tau
+          f(\vx+s\vu)=\int_{\cC_{\vx}}\vF\cdot \dee{\vr}
+          +\int_0^s \vF(\vx+\tau\vu)\cdot \vu\,\dee{\tau}
           </mrow>
                 </md>.
                 Le théorème fondamental du calcul, appliqué à la seconde
@@ -533,7 +547,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
           =\vF(\vx+s\vu)\cdot \vu\Big|_{s=0}=\vF(\vx)\cdot \vu
           </mrow>
                 </md>.
-                On applique ceci avec les vecteurs <m>\vu=\vi  ,\ \vj,\ \vk</m>,
+                On applique ceci avec les vecteurs <m>\vu=\vi</m>, <m>\vj</m> et <m>\vk</m>,
                 ce qui donne
                 <md>
                     <mrow>
@@ -568,10 +582,10 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     <example xml:id="ex-int-cons-facile">
         <statement>
             <p>
-                Vérifier que <m>f(x,y) = \frac{1}{2}(x^2- y^2)</m> est une
-                fonction potentiel pour <m>\vF(x,y) = x\,\vi  - y\, \vj</m> et
+                Vérifier que <m>f(x,y) = \tfrac{1}{2}(x^2- y^2)</m> est une
+                fonction potentielle pour <m>{\vF(x,y) = x\,\vi  - y\, \vj}</m> et
                 déduire la valeur de l'intégrale
-                <m>\int_{\cC} \vF \cdot d\vr</m>, où <m>\cC</m> est une courbe
+                <m>\int_{\cC} \vF \cdot \dee{\vr}</m>, où <m>\cC</m> est une courbe
                 lisse allant de <m>(1,0)</m> à <m>(0,1)</m>.
             </p>
         </statement>
@@ -593,7 +607,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 pour calculer
                 <md>
                     <mrow>
-        \int_{\cC} \vF \cdot d \vr = \int_{\cC} \vnabla f \cdot d\vr = f(0,1) - f(1,0) = -\frac{1}{2} - \frac{1}{2} = -1.
+        \int_{\cC} \vF \cdot \dee{\vr} = \int_{\cC} \vnabla f \cdot \dee{\vr} = f(0,1) - f(1,0) = -\frac{1}{2} - \frac{1}{2} = -1.
       </mrow>
                 </md>
             </p>
@@ -604,7 +618,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
   <term>Fin nouveau</term>
 </p> -->
     <p>
-        Nous avons vu au <xref ref="thm-rot-grad-zero">théorème</xref> que les
+        Nous avons vu au <xref ref="thm-rot-grad-zero" text="global">théorème</xref> que les
         champs gradients (donc conservatifs) sont irrotationnels.
         Il est temps d'étudier une réciproque partielle de ce résultat.
     </p>
@@ -613,7 +627,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <statement>
             <p>
                 Soit <m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur
-                <m>\R^2</m> (ou <m>\R^3</m> ).
+                <m>\R^2</m> (ou <m>\R^3</m>).
                 Alors, <m>\vF</m> est conservatif si et seulement si
                 <m>\vnabla\times\vF=\vZero</m>, c'est-à-dire si et seulement si
                 <m>\vF</m> est <em>irrotationnel</em>.
@@ -627,15 +641,15 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
             </p>
 
             <p>
-                Le théorème de Clairaut permet, comme à l'
-                <xref ref="ex-non-conserv" text="global">exemple</xref>, de
-                montrer que si <m>\vF = \vnabla f</m>, alors on a
-                <m>\vnabla \times \vF = \vZero</m>.
+                Le théorème de Clairaut permet, comme à
+                l'<xref ref="ex-non-conserv" text="global">exemple</xref>, de
+                montrer que si <m>{\vF = \vnabla f}</m>, alors on a
+                <m>{\vnabla \times \vF = \vZero}</m>.
             </p>
 
             <p>
                 Supposons donc que <m>\vF</m> vérifie
-                <m>\frac{\partial P}{\partial y}(x,y) =  \frac{\partial Q}{\partial x}(x,y)</m>
+                <m>{\tfrac{\partial P}{\partial y}(x,y) = \tfrac{\partial Q}{\partial x}(x,y)}</m>
                 sur <em>tout le plan</em> <m>\R^2</m> et montrons que le champ
                 est conservatif.
                 Nous le ferons en utilisant la stratégie de notre
@@ -650,7 +664,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
               \end{split}
             </mrow>
                 </md>
-                La dérivée partielle <m>\frac{\partial \ }{\partial x}</m>
+                La dérivée partielle <m>\tfrac{\partial \ }{\partial x}</m>
                 traite <m>y</m> comme une constante, de sorte que <m>f(x,y)</m>
                 vérifie la première équation si et seulement s'il existe une
                 fonction <m>\psi(y)</m> telle que
@@ -682,7 +696,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 est, le terme de gauche est indépendant de <m>x</m>, tandis
                 qu'il semblerait que le terme de droite dépende de <m>x</m>.
                 Heureusement, nous pouvons utiliser l'hypothèse fournie par le
-                test de dépistage:
+                test de dépistage<nbsp/>:
                 <md>
                     <mrow>
                 Q(x,y) -  \int_0^x \frac{\partial P}{\partial y}(X,y)\,\dee{X} &amp;=Q(x,y) -  \int_0^x \frac{\partial Q}{\partial x}(X,y)\,\dee{X}
@@ -691,7 +705,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
               &amp;= Q(x,y) - Q(X,y)\Big|_{X=0}^{X=x}
             </mrow>
                     <mrow>
-              &amp;=Q(0,y)
+              &amp;=Q(0,y).
             </mrow>
                 </md>
                 En passant de la première ligne à la deuxième, nous avons
@@ -711,7 +725,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <statement>
             <p>
                 Calculer l'intégrale
-                <m>\displaystyle \int_{\cC}\sin y \,\dee{x} + \left(x\cos y - \sin y\right)\, \dee{y}</m>,
+                <m>{\int_{\cC}\sin y \,\dee{x} + \left(x\cos y - \sin y\right)\, \dee{y}}</m>,
                 où <m>\cC</m> est le chemin de <m>(1,0)</m> à <m>(0,1)</m>
                 suivant la portion du cercle <m>x^2 + y^2 = 1</m> du premier
                 quadrant.
@@ -747,7 +761,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 test de dépistage pour les champs conservatifs.
                 Afin de calculer l'intégrale de ligne qui nous intéresse, il
                 nous faut plus que ça : nous devons connaître une fonction
-                potentiel.
+                potentielle.
                 On cherche donc une fonction <m>f</m> vérifiant
             </p>
             <!-- 
@@ -767,7 +781,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 on obtient
                 <md>
                     <mrow>
-          f(x,y) = \int f_x(x,y)\, \dee{x} = \int \sin y\, \dee{y} = x\sin y + \phi(y).
+          f(x,y) = \int f_x(x,y)\, \dee{x} = \int \sin y\, \dee{x} = x\sin y + \phi(y).
       </mrow>
                 </md>
                 En effet, il faut noter que, lorsqu'on intègre par rapport à
@@ -816,9 +830,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 <m>t\in [0,\pi/2]</m>, à l'intégrale
                 <md>
                     <mrow>\int_{\cC} P\, \dee{x} +  Q\, \dee{y} \amp= \int_\cC \sin y\, \dee{x} + \left(x\cos y - \sin y\right)\, \dee{y}  </mrow>
-                    <mrow> \amp = \int_0^{\pi/2} \sin y(t)\ x'(t) + \left[x(t)\cos(y(t) - \sin y(t)\right] y'(t)\, \dee{t} </mrow>
+                    <mrow> \amp = \int_0^{\pi/2} \sin y(t)\ x'(t) + \left[x(t)\cos(y(t)) - \sin y(t)\right] y'(t)\, \dee{t} </mrow>
                     <mrow>  \amp= \int_0^{\pi/2} \sin(\sin t)(-\sin(t))  </mrow>
-                    <mrow>  \amp \qquad + \left[ (\cos t) \cos(\sin(t) - \sin(\sin t)  \right] \cos t\, \dee{t} </mrow>
+                    <mrow>  \amp \qquad + \left[ (\cos t) \cos(\sin t) - \sin(\sin t)  \right] \cos t\, \dee{t} </mrow>
                 </md>,
                 qui n'est pas particulièrement invitante.
             </p>
@@ -834,7 +848,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 pour obtenir
                 <md>
                     <mrow>
-          f(x,y) = \int x\cos y - \sin y\ \dee{y} = x\sin y + \cos y + \psi(x).
+          f(x,y) = \int (x\cos y - \sin y)\, \dee{y} = x\sin y + \cos y + \psi(x).
       </mrow>
                 </md>
                 Le résultat aurait été le même.
@@ -851,7 +865,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 Calculer la valeur de l'intégrale
                 <md>
                     <mrow>
-        I = \int_{\cC} (2xy-z^2)\, dx + (x^2 + 2z)\, dy + (2y-2xz)\, dz,
+        I = \int_{\cC} (2xy-z^2)\, \dee{x} + (x^2 + 2z)\, \dee{y} + (2y-2xz)\, \dee{z},
       </mrow>
                 </md>
                 où <m>\cC</m> est une courbe lisse allant de <m>(0,1,1)</m> à
@@ -862,7 +876,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <solution>
             <p>
                 Posons pour commencer
-                <m>\vF = P \, \vi + Q \, \vj + R \, \vk = (2xy-z^2) \, \vi + (x^2 + 2z) \, \vj + (2y-2xz) \, \vk</m>
+                <md><mrow>\vF = P \, \vi + Q \, \vj + R \, \vk = (2xy-z^2) \, \vi + (x^2 + 2z) \, \vj + (2y-2xz) \, \vk</mrow></md>
                 et remarquons que toutes les composantes de notre champ sont
                 continues sur tout <m>\R^3</m>.
             </p>
@@ -877,7 +891,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                   \end{matrix}\right|
         \amp=(R_y-Q_z)\vi + (P_z - R_x)\vj + (Q_x - P_y)\vk
       </mrow>
-                    <mrow>  \amp=(2-2)\vi + (-2z--2z)\vj + (2x - 2x)\vk = \vZero </mrow>
+                    <mrow>  \amp=(2-2)\vi + (-2z-(-2z))\vj + (2x - 2x)\vk = \vZero </mrow>
                 </md>.
             </p>
 
@@ -891,35 +905,29 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 Nous intégrons par rapport à la variable <m>x</m> pour obtenir
                 <md>
                     <mrow>
-      f= \int f_x \, dx = \int 2xy-z^2 \, dx = yx^2 -xz^2 + \phi(y,z).
+      f= \int f_x \, \dee{x} = \int (2xy-z^2) \, \dee{x} = yx^2 -xz^2 + \phi(y,z),
     </mrow>
                 </md>
-            </p>
-
-            <p>
+            
                 où <m>\phi</m> est la <em>constante d'intégration</em>.
                 Mais c'est une constante par rapport à <m>x</m>, il s'agit donc
                 d'une quantité qui peut varier en fonction de <m>y</m> et
                 <m>z</m>.
-                Afin de la trouver, on dérive par rapport à <m>y</m>:
+                Afin de la trouver, on dérive par rapport à <m>y</m><nbsp/>:
                 <md>
                     <mrow>
   x^2 + 2z = Q = f_y = x^2 + \phi_y(y,z),
   </mrow>
                 </md>
-            </p>
-
-            <p>
+            
                 ce qui donne directement <m>2z = \phi_y</m>.
                 Après intégration par rapport à <m>y</m>, nous trouvons
                 <md>
                     <mrow>
-    \phi(y,z) = \int \phi_y(y,z)\, dy = \int 2z\, dy = 2yz + \psi(z),
+    \phi(y,z) = \int \phi_y(y,z)\, \dee{y} = \int 2z\, \dee{y} = 2yz + \psi(z),
   </mrow>
                 </md>
-            </p>
-
-            <p>
+            
                 où <m>\psi</m> est une fonction de la variable <m>z</m>
                 seulement.
             </p>
@@ -941,26 +949,22 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
     2y-2xz = R = f_z = -2xz + 2y + \psi'(z),
   </mrow>
                 </md>
-            </p>
-
-            <p>
+            
                 et nous concluons que <m>\psi'(z) =0</m>, d'où
                 <m>\psi(z) = K</m>.
                 Ainsi, toute fonction de la forme
                 <md>
                     <mrow>f(x,y,z) = yx^2 -xz^2 +2yz + K \text{ avec } K \in \R</mrow>
                 </md>
-            </p>
-
-            <p>
-                est une fonction potentiel pour <m>\vF</m>.
+            
+                est une fonction potentielle pour <m>\vF</m>.
             </p>
 
             <p>
                 L'intégrale de ligne qui nous intéresse est alors
                 <md>
                     <mrow>
-    I = \int_{\cC} \vnabla f\cdot d\vr = f(2,2,4) - f(0,1,1) = -8 - 2 = -10.
+    I = \int_{\cC} \vnabla f\cdot \dee{\vr} = f(2,2,4) - f(0,1,1) = -8 - 2 = -10.
   </mrow>
                 </md>
             </p>
@@ -994,7 +998,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
         <statement>
             <sidebyside widths="55% 5% 40%" valign="top">
                 <p>
-                Soit le champ de vecteurs défini, pour <m>(x,y)\ne(0,0)</m> par 
+                Soit le champ de vecteurs défini, pour <m>(x,y)\ne(0,0)</m>, par
                 <md>
                     <mrow>
 \vF(x,y) = -\frac{y}{x^2+y^2}\vi + \frac{x}{x^2+y^2}\vj
@@ -1004,7 +1008,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                 </p>
                 <p/>
                 <figure xml:id="fig_screeningCounterexample">
-                    <caption>Un champ irrotationnel non conservatif.</caption>
+                    <caption>Un champ irrotationnel non conservatif</caption>
                     <image xml:id="sageplot-eg_screeningCounterexample" width="100%">
                         <description>
                             <p>
@@ -1059,9 +1063,9 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                     <li>
                         <p>
                             Calculer les intégrales de ligne
-                            <m>\displaystyle \int_{\cC_1}\vF \cdot \dee{\vr}</m>
+                            <m>\int_{\cC_1}\vF \cdot \dee{\vr}</m>
                             et
-                            <m>\displaystyle \int_{\cC_2}\vF \cdot \dee{\vr}</m>,
+                            <m>\int_{\cC_2}\vF \cdot \dee{\vr}</m>,
                             où <m>\cC_1</m> et <m>\cC_2</m> sont respectivement
                             les trajectoires de <m>(1,0)</m> à <m>(-1,0)</m>
                             suivant les moitiés supérieure et inférieure du
@@ -1088,7 +1092,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                             Posons <m>\vF = P\, \vi + Q\, \vj</m>, où
                             <m>P(x,y) = \frac{-y}{x^2 + y^2}</m> et où
                             <m>Q(x,y) = \frac{x}{x^2 + y^2}</m>.
-                            Calculons le rotationnel de <m>\vF</m>:
+                            Calculons le rotationnel de <m>\vF</m><nbsp/>:
                             <md alignment="alignat">
                                 <mrow>
       \pdiff{P}{y}&amp;=\frac{\partial\ }{\partial y}\Big(-\frac{y}{x^2+y^2}\Big)
@@ -1124,12 +1128,12 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                                     <p>
                                         La courbe <m>\cC_1</m> est paramétrée
                                         par
-                                        <m>\vr(t) = x(t)\, \vi + y(t)\, \vj = (\cos t)\, \vi + (\sin t) \, \vj</m>,
-                                        avec <m>t\in [0, \pi].</m> Nous
+                                        <m>\vr(t) = {x(t)\, \vi + y(t)\, \vj} = {(\cos t)\, \vi + (\sin t) \, \vj}</m>,
+                                        avec <m>t\in [0, \pi]</m>. Nous
                                         calculons alors
                                         <md>
-                                            <mrow>\vr'(t) \amp= x'(t)\, \vi + y'(t)\, \vj = -\sin t \, \vi + \cos t \, \vj = -y(t)\,\vi + x(t)\, \vj  </mrow>
-                                            <mrow> \vF(\vr(t))\amp = \frac{-y(t)}{x(t)^2 + y(t)^2}\vi + \frac{x(t)}{x(t)^2 + y(t)^2}\vj  = -y(t)\, \vi + x(t)\, \vj,</mrow>
+                                            <mrow>\vr'(t) \amp= x'(t)\, \vi + y'(t)\, \vj = -\sin t \, \vi + \cos t \, \vj = -y(t)\,\vi + x(t)\, \vj,  </mrow>
+                                            <mrow> \vF(\vr(t))\amp = \frac{-y(t)}{x(t)^2 + y(t)^2}\vi + \frac{x(t)}{x(t)^2 + y(t)^2}\vj  = -y(t)\, \vi + x(t)\, \vj</mrow>
                                         </md>,
                                         où nous avons utilisé que
                                         <m>x(t)^2 + y(t)^2 =1</m>.
@@ -1141,7 +1145,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                                             <mrow> \vF(\vr(t))\cdot \vr'(t)\amp= (-y\,\vi + x\, \vj )\cdot(-y\,\vi + x\, \vj ) = y^2 + x^2 = 1  </mrow>
                                         </md>,
                                         de sorte que
-                                        <m>\displaystyle \int_{\cC_1} \vF \cdot \dee{\vr} = \int_0^\pi \dee{t} = \pi</m>.
+                                        <m>\int_{\cC_1} \vF \cdot \dee{\vr} = \int_0^\pi \dee{t} = \pi</m>.
                                     </p>
                                 </li>
 
@@ -1149,7 +1153,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                                     <p>
                                         La courbe <m>\cC_2</m>, pour sa part,
                                         est paramétrée par
-                                        <m>\vr(t) = x(t)\, \vi + y(t)\, \vj = (\cos t)\, \vi - (\sin t) \, \vj</m>,
+                                        <m>\vr(t) = {x(t)\, \vi + y(t)\, \vj} = {(\cos t)\, \vi - (\sin t) \, \vj}</m>,
                                         avec <m>t\in [0, \pi]</m>.
                                         Cette fois, nous avons
                                         <m>y(t) = -\sin t</m>.
@@ -1157,7 +1161,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                                         celui fait pour <m>\cC_1</m> mène à
                                         <m>\vF(\vr(t)) \cdot \vr'(t) = -1</m>,
                                         de sorte que
-                                        <m>\displaystyle \int_{\cC_2} \vF \cdot \dee{\vr} = -\int_0^\pi \dee{t} = -\pi</m>.
+                                        <m>\int_{\cC_2} \vF \cdot \dee{\vr} = -\int_0^\pi \dee{t} = -\pi</m>.
                                     </p>
                                 </li>
                             </ul>
@@ -1197,12 +1201,12 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                             </md>.
                             Il semblerait que nous ayons trouvé une fonction
                             potentielle pour <m>\vF</m>, à savoir
-                            <m>\arctan\frac{y}{x}</m>.
+                            <m>\arctan\tfrac{y}{x}</m>.
                             Mais il y a un problème.
                             Rappelons que, par définition,
-                            <m>\arctan\frac{y}{x}</m> est un angle
+                            <m>\arctan\tfrac{y}{x}</m> est un angle
                             <m>\theta(x,y)</m> qui vérifie
-                            <m>\tan\theta(x,y)= \arctan\frac{y}{x}</m>.
+                            <m>\tan\theta(x,y)= \tfrac{y}{x}</m>.
                             Mais, pour tout
                             <m>(x,y)\in\R^2\setminus\{(0,0)\}</m>, il y a une
                             infinité de tels angles.
@@ -1218,7 +1222,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                             <m>x^2+y^2=r^2</m>.
                             Au temps <m>\theta</m>, nous sommes au point
                             <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m> puis
-                            <m>\frac{y}{x} = \tan\theta</m>, et nous pouvons
+                            <m>\tfrac{y}{x} = \tan\theta</m>, et nous pouvons
                             définir <m>f(x,y)=\theta+k\pi</m> pour n'importe
                             quelle valeur entière de <m>k</m>.
                         </p>
@@ -1241,7 +1245,7 @@ on part of <m>\R2</m> or <m>\R3</m> is given in the optional
                         <sidebyside widths="42% 3% 55%" valign="top">
                             <ul>
                                 <li>
-                                    nous nous approchons <m>(r,0)</m> par en bas
+                                    nous nous approchons de <m>(r,0)</m> par en bas
                                     comme dans la figure ci-contre, et
                                 </li>
 

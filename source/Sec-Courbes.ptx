@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Courbes">
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Courbes paramétriques et leurs tangentes</title>
   <introduction>
     <p>
@@ -18,7 +20,7 @@
     <definition xml:id="def-chemin">
       <statement>
         <p>
-      Soit <m>I\subseteq \R</m> un intervalle. Un <term><em>chemin</em></term> dans  <m>\R^n</m> est une fonction
+      Soit <m>I\subseteq \R</m> un intervalle. Un <term>chemin</term> dans  <m>\R^n</m> est une fonction
         <md>
           <mrow>\vr :\ \amp  I \longrightarrow \R^n</mrow>
           <mrow>   \amp t \longmapsto \vr(t)</mrow>
@@ -57,8 +59,50 @@ décrit une <term>courbe</term> dans <m>\R^n</m>. Réciproquement, on dira que l
       <p></p>
       <image source="images/CLP-figs/parCurve"/>
     </sidebyside>
+    <example xml:id="eg_paramDroite">
+      <title>Plusieurs paramétrages d'une droite</title>
+      <p>
+  Nous avons vu à la <xref ref="sec-1-5-Droites-plans" text="global">section</xref> qu'une droite <m>\plan{D}</m> passant par le point de vecteur position <m>\vp_0</m> et de vecteur directeur <m>\vd</m> admet le paramétrage
+  <md>
+    <mrow>\vr_1(t) = \vp_0 + t\,\vd, \qquad t\in\R.</mrow>
+  </md>
+  Le chemin
+  <md>
+    <mrow>\vr_2(t) = \vp_0 + t^3\,\vd, \qquad t\in\R,</mrow>
+  </md>
+  a lui aussi <m>\plan{D}</m> pour image, puisque <m>t^3</m> prend toutes les valeurs réelles lorsque <m>t</m> parcourt <m>\R</m>.
+      </p>
+      <p>
+  Interprétons ces chemins comme la position d'un mobile<nbsp/>:
+  <ul>
+    <li>
+      avec <m>\vr_1</m>, le mobile parcourt la droite à vitesse constante, toujours dans le même sens;
+    </li>
+    <li>
+      avec <m>\vr_2</m>, il parcourt aussi la droite une seule fois et dans le même sens, mais il ralentit à l'approche du point <m>\vp_0</m>, s'y arrête un instant (en <m>t=0</m>), puis repart.
+    </li>
+  </ul>
+      </p>
+      <p>
+  Si <m>\vp</m> et <m>\vq</m> sont les vecteurs position de deux points <m>P</m> et <m>Q</m>, le chemin
+  <md>
+    <mrow>\vr_3(t) = \vp + t\left(\vq-\vp\right), \qquad 0\leqslant t\leqslant 1,</mrow>
+  </md>
+  va de <m>P</m> à <m>Q</m> en parcourant le segment <m>PQ</m> une seule fois, à vitesse constante.
+      </p>
+    </example>
     <p>
-  Il faut noter qu'une même courbe peut admettre plusieurs paramétrages différents, ce qui soulève des questions délicates. Pour l'instant, voyons quelques exemples.
+  L'exemple précédent montre qu'une même courbe peut admettre plusieurs paramétrages différents, ce qui soulève des questions délicates. Un chemin peut notamment repasser plusieurs fois par une même portion de la courbe, ou encore s'arrêter et rebrousser chemin, ou avoir un changement abrupt de direction. Pour mesurer la longueur d'une courbe (<xref ref="sec-Longueur-courbure" text="global">section</xref>), et plus tard pour intégrer le long d'une courbe, il faudra écarter ces comportements. Le premier est exclu par la définition qui suit ; les deux autres le seront à l'aide de la dérivée (<xref ref="def-approx-lin-chemin" text="global">définition</xref>).
+</p>
+    <definition xml:id="def-chemin-simple">
+      <statement>
+        <p>
+      Un chemin <m>\vr : [a,b] \to \R^n</m> est dit <term>simple</term> si c'est une fonction injective sur <m>[a,b[</m>, c'est-à-dire si à deux valeurs distinctes <m>a \leqslant t_1 \lt t_2 \lt b</m> correspondent deux valeurs différentes <m>\vr(t_1) \ne \vr(t_2)</m>.
+    </p>
+      </statement>
+    </definition>
+    <p>
+  Pour l'instant, voyons quelques exemples.
 </p>
     <example xml:id="eg_paramCircle">
       <title>Paramétrage du cercle  <m>x^2+y^2=a^2</m></title>
@@ -434,7 +478,7 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
     <title>Tangentes aux courbes paramétriques</title>
     <definition xml:id="def__curve_deriv">
       <statement>
-        <p>Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point intérieur de <m>I</m><fn>Ceci veut dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>.</fn>. La <term> dérivée de <m>\vr</m> en <m>t_0</m></term> est
+        <p>Soit <m>\vr : I \to \R^n</m> une fonction à valeurs vectorielles, avec <m>I\subseteq \R</m> et <m>t_0\in I</m> un point intérieur de <m>I</m> (c'est-à-dire qu'il existe <m>\e \gt 0</m> tel que <m>]t_0-\e, t_0+\e[\ \subseteq\  I</m>). La <term> dérivée de <m>\vr</m> en <m>t_0</m></term> est
     </p>
         <sidebyside widths="50% 15% 35%" valign="middle">
           <p>
@@ -610,13 +654,30 @@ Alors,
       <image source="images/CLP-figs/parCurveDerivAJC"/>
     </sidebyside>
     <p>
-  Lorsque  <m>h</m> est très petit, ce vecteur a la direction du vecteur tangent à la courbe <m>\plan{C}_{\vr}</m> au point <m>\vr(t_0)</m>. À la limite, ce vecteur donne la direction de cette tangente. Comme, de plus, elle passe par le point correspondant à <m>\vr(t_0)</m>, on peut déduire aisément une équation vectorielle.
+  Lorsque  <m>h</m> est très petit, ce vecteur a la direction du vecteur tangent à la courbe <m>\plan{C}_{\vr}</m> au point <m>\vr(t_0)</m>. À la limite, ce vecteur donne la direction de cette tangente, pourvu qu'il ne soit pas nul. Comme, de plus, la tangente passe par le point <m>\vr(t_0)</m>, on en déduit aisément un paramétrage de celle-ci.
 <md><mrow xml:id="tgt" tag="star">
     \vx(t) = \vr(t_0) + t\, \vr'(t_0)
     </mrow></md>
 Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_0</m>, ce sont donc des vecteurs constants.
-
 </p>
+    <p>
+  Si l'on pense encore à un mobile, le chemin <m>\vx</m> a cependant son propre chronomètre : il passe par le point <m>\vr(t_0)</m> au temps <m>t=0</m>, alors que le mobile décrit par <m>\vr</m> y passe au temps <m>t=t_0</m>. Par ailleurs, la droite tangente admet bien d'autres paramétrages, par exemple <m>\vr(t_0) - t\,\vr'(t_0)</m> ou <m>\vr(t_0) + 2t\,\vr'(t_0)</m>. Lequel choisir? Il est naturel de retenir celui qui <q>accompagne</q> <m>\vr</m> au voisinage de <m>t_0</m>, c'est-à-dire qui passe par <m>\vr(t_0)</m> au même instant <m>t_0</m>, avec la même vitesse <m>\vr'(t_0)</m>. C'est ce que fait la définition suivante.
+</p>
+    <definition xml:id="def-approx-lin-chemin">
+      <statement>
+        <p>
+    Soit <m>\vr : I \to \R^n</m> un chemin et <m>t_0</m> un point intérieur de <m>I</m> où <m>\vr</m> est dérivable.
+    <ol marker="(a)"><li>
+        L'<term>approximation linéaire</term> de <m>\vr</m> en <m>t_0</m> est le chemin
+        <md><mrow>\vL(t) = \vr(t_0) + (t-t_0)\,\vr'(t_0).</mrow></md>
+      </li><li>
+        On dit que <m>\vr</m> est <term>régulier</term> en <m>t_0</m> si <m>\vr'(t_0) \ne \vZero</m>. Dans ce cas, l'image de <m>\vL</m> est une droite, appelée <term>droite tangente</term> à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>.
+      </li><li>
+        On dit que <m>\vr</m> est <term>lisse</term> si sa dérivée <m>\vr'</m> est continue et que <m>\vr</m> est régulier en tout point intérieur de <m>I</m>.
+      </li></ol>
+    </p>
+      </statement>
+    </definition>
     <example xml:id="ex-tangente">
       <statement>
         <p>
@@ -626,10 +687,11 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
       <solution>
         <p>
       Le point <m>(1,1,1)</m> correspond à <m>t=0</m>. Par ailleurs, <md>\vr'(t) = -e^{-t}\,\vi + e^t\,\vj - \sin t\,\vk. </md>
-      de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'équation de la droite tangente est donc
+      de sorte que <m>\vr'(0) = -\vi + \vj</m>. L'approximation linéaire de <m>\vr</m> en <m>t_0=0</m> est donc
       <md><mrow>
-      \vx(t) &amp;= \vr(0) + t\,\vr'(0)= \rvt{1}{1}{1} + t\rvt{-1}{1}{0} + t(-1,1,0).
+      \vL(t) &amp;= \vr(0) + t\,\vr'(0)= \rvt{1}{1}{1} + t\rvt{-1}{1}{0},
       </mrow></md>
+      et son image est la droite tangente cherchée.
     </p>
       </solution>
     </example>
@@ -642,12 +704,7 @@ Il faut noter ici que <m>\vr</m> et <m>\vr'</m> sont évaluées au point <m>t=t_
     <definition xml:id="def-TUnitaire">
       <statement>
         <p>
-    Soit <m>\vr : I \to \R</m> un chemin et <m>t_0</m> un point intérieur de <m>I</m>.
-    <ol marker="(a)"><li>
-        Si <m>\vr(t_0) \ne \vZero</m>, le vecteur <term>tangent unitaire</term> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{\norm{\vr'(t_0)}}\vr'(t_0)</m>.
-      </li><li>
-        Le <em>chemin tangent</em> à <m>\vr</m> en <m>t_0</m> est le chemin <m>\vL(t) = \vr(t_0) + (t-t_0)\vr'(t_0)</m>.
-</li></ol>
+    Soit <m>\vr : I \to \R^n</m> un chemin régulier en un point intérieur <m>t_0</m> de <m>I</m>. Le vecteur <term>tangent unitaire</term> en <m>\vr(t_0)</m> est <m>\vT(t_0) = \frac{1}{\norm{\vr'(t_0)}}\vr'(t_0)</m>.
 </p>
       </statement>
     </definition>
@@ -752,7 +809,7 @@ et ainsi de suite. Ceci trahit la présence de <em>points de rebroussement</em> 
         </li>
         <li>
           <p>
-        S'il est vrai que l'équation <xref ref="tgt"/> fournit un paramétrage de la droite tangente à la courbe <m>\plan{C}_\vr</m> au point <m>\vr(t_0)</m>, le <term>chemin tangent</term> est une fonction vectorielle, et elle donne aussi un paramétrage de la droite tangente. De plus, <m>\vL</m> coïncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera aussi la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
+        L'approximation linéaire <m>\vL</m> coïncide avec <m>\vr</m> <term>jusqu'au premier ordre</term>, c'est-à-dire  <m>\vL(t_0) = \vr(t_0)</m> et <m>\vL'(t_0) = \vr'(t_0)</m>. On remarquera la ressemblance de la définition de <m>\vL</m> avec la formule donnant l'approximation linéaire d'une fonction <m>f</m> en un point  <m>t_0</m>, à savoir
         <md>
           f(t) \approx L(t) = f(t_0) + f'(t_0)(t-t_0).
         </md>
@@ -823,11 +880,11 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
          </p>
             <p>
             Le point <m>P_0</m> correspond à la valeur <m>t=0</m>. Par ailleurs, <md>\vr'(t) = e^{-t} \ctvec{-\cos t - \sin t}{\cos t - \sin t}{-1}. </md>
-            de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. Ainsi, on a un paramétrage de tangente
+            de sorte que <m>\vr'(0) = -\vi + \vj - \vk</m>. L'approximation linéaire de <m>\vr</m> en <m>t_0=0</m>,
             <md>
-            \vx(t) =  \vp_0 + t \vr'(0) = \rvt{1}{0}{1} + t \rvt{-1}{1}{-1}.
+            \vL(t) =  \vp_0 + t \vr'(0) = \rvt{1}{0}{1} + t \rvt{-1}{1}{-1},
             </md>
-            Notons que, puisque <m>t_0 = 0</m>, ceci est aussi le chemin tangent à <m>\vr</m> en <m>t_0</m>.
+            fournit donc un paramétrage de la droite tangente.
 
 
           </p>
@@ -862,17 +919,17 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
       </statement>
       <solution>
         <p>S'il est vrai que le paramètre <m>t</m> est utilisé dans la définition des deux courbes, afin de trouver le point commun, on doit résoudre l'équation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du paramètre au point commun n'a aucune raison d'être la même pour les deux courbes<fn>De façon imagée, on pense aux deux courbes comme aux trajectoires décrites par deux particules. Le point commun aux deux trajectoires n'est pas nécessairement un point de collision : les deux particules passent par un même point, mais pas nécessairement au même moment. L'équation <m>\vr_1(t) = \vr_2(t)</m> cherche à trouver un point de collision.</fn>. Le système d'équations résultant est
-        <md><mrow> t\amp = 3-s, </mrow><mrow> 1-t \amp = 2-s, </mrow><mrow> 3+t^2  \amp = s^2. </mrow>.
+        <md><mrow> t\amp = 3-s, </mrow><mrow> 1-t \amp = 2-s, </mrow><mrow> 3+t^2  \amp = s^2. </mrow>
     </md>
     On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
-    <md>\vr_1(1) = \vr_2(2) = \tvect{1}{0}{4}.
+    <md>\vr_1(1) = \vr_2(2) = \rvt{1}{0}{4}.
     </md>
     </p>
         <p> L'angle formé par les courbes est l'angle formé par leurs tangentes respectives au point commun. Les vecteurs vitesse respectifs sont
-    <md><mrow> \vr_1'(t) = \tvect{1}{-1}{2t} \amp \amp  \text{ et } \amp \amp  \vr_2'(s) = \tvect{-1}{-1}{2s}. </mrow><mrow> \amp </mrow>.
+    <md><mrow> \vr_1'(t) = \rvt{1}{-1}{2t} \qquad \text{et} \qquad \vr_2'(s) = \rvt{-1}{-1}{2s}. </mrow>
     </md>
     Au point commun, ces vecteurs sont
-        <md><mrow>\vr_1'(1) = \tvect{1}{-1}{2} \amp \amp \text{ et } \amp \amp \vr_2'(2) = \tvect{-1}{-1}{4}. </mrow><mrow> \amp </mrow>.
+        <md><mrow>\vr_1'(1) = \rvt{1}{-1}{2} \qquad \text{et} \qquad \vr_2'(2) = \rvt{-1}{-1}{4}. </mrow>
     </md>
       L'angle <m>\theta </m> qu'ils forment se calcule au moyen du <xref ref="thm-cosinus" text="global">théorème</xref>. On a donc
         <md>

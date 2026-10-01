@@ -7,14 +7,17 @@
 
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
   <exercisegroup>
     <title>Pour se pratiquer</title>
 
+    <!-- 1 -->
     <exercise>
       <statement><p>
-      Évaluez les intégrales doubles
-      <em>sans</em> calculer en termes d'intégrales itérées. Plutôt, interprétez l'intégrale comme étant, par exemple, une aire ou un volume.
+      Évaluez les intégrales doubles suivantes
+      <em>sans</em> les calculer en termes d'intégrales itérées. Interprétez plutôt chaque intégrale comme étant, par exemple, une aire ou un volume.
       <ol marker = "(a)"  cols = "2">
       <li>
       <m>\ds\int_{-1}^3\int_{-4}^1 \dee{y}\,\dee{x}</m>
@@ -50,10 +53,10 @@
 
       <solution><p>
       (a) L'intégrale double donnée
-      <m>\int_{-1}^3\int_{-4}^1 \dee{y}\,\dee{x}=\iint_R \dee{x}\,\dee{y}</m>
+      <m>\int_{-1}^3\int_{-4}^1 \dee{y}\,\dee{x}=\iint_\cR \dee{x}\,\dee{y}</m>
       où
       <md><mrow>
-      R=\Set{(x,y)}{ -1\leqslant x\leqslant 3,\ -4\leqslant y\le1}
+      \cR=\Set{(x,y)}{ -1\leqslant x\leqslant 3,\ -4\leqslant y\leqslant1}
       </mrow></md>
       et l'intégrale est donc l'aire d'un rectangle dont les côtés ont pour longueurs
       <m>4</m> et <m>5</m>. Ainsi, <m>\int_{-1}^3\int_{-4}^1 \dee{y}\,\dee{x}=4\times 5=20</m>.
@@ -61,16 +64,16 @@
 
       <p>(b) L'intégrale double donnée
       <m>\ds\int_0^2\int_0^{\sqrt{4-y^2}} \dee{x}\,\dee{y}
-           =\ds\iint_R \dee{x}\,\dee{y}</m>
+           =\ds\iint_\cR \dee{x}\,\dee{y}</m>
       où
       <md>
       <mrow>
-      R&amp;=\Set{(x,y)}{ 0\leqslant y\leqslant 2,\ 0\leqslant x\le\sqrt{4-y^2}}
+      \cR&amp;=\Set{(x,y)}{ 0\leqslant y\leqslant 2,\ 0\leqslant x\leqslant\sqrt{4-y^2}}
       </mrow><mrow>
       &amp;=\Set{(x,y)}{ x\geqslant 0,\ y\geqslant 0,\ y\leqslant 2,\ x^2+y^2\leqslant 4}
       </mrow>
       </md>
-      Ainsi, <m>R</m> est la portion, dans le premier quadrant, du disque de rayon <m>2</m>
+      Ainsi, <m>\cR</m> est la portion, dans le premier quadrant, du disque de rayon <m>2</m>
       centré en <m>(0,0)</m>. L'aire du disque complet est <m>\pi\,2^2=4\pi</m>.
       L'intégrale donnée en vaut le quart, à savoir <m>\pi</m>.
       </p>
@@ -81,7 +84,7 @@
       où <m>z(x,y)=\sqrt{9-x^2-y^2}</m> et
       <md>
       <mrow>
-      \cR&amp;=\Set{(x,y)}{ -3\leqslant y\leqslant 3,\ 0\leqslant x\le\sqrt{9-y^2}}
+      \cR&amp;=\Set{(x,y)}{ -3\leqslant y\leqslant 3,\ 0\leqslant x\leqslant\sqrt{9-y^2}}
       </mrow><mrow>
       &amp;=\Set{(x,y)}{ x\geqslant 0,\ -3\leqslant y\leqslant 3,\ \ x^2+y^2\leqslant 9}
       </mrow>
@@ -107,15 +110,16 @@
       </solution>
     </exercise>
 
+    <!-- 2 -->
     <exercise>
       <statement><p>
-      Soit <m>f(x,y)= 12 x^2y^3</m>. Évaluez
+      Soit <m>f(x,y)= 12 x^2y^3</m>. Évaluez les intégrales suivantes.
       <ol marker = "(a)" cols="2">
       <li>
-      <m>\ds\int_0^3 f(x,y)\,\dee{x}</m>
+      <m>\ds \int_0^3 f(x,y)\,\dee{x}</m>
       </li>
       <li>
-      <m>\ds\int_0^2 f(x,y)\,\dee{y}</m>
+      <m>\ds \int_0^2 f(x,y)\,\dee{y}</m>
       </li>
       <li>
       <m>\ds\int_0^2\int_0^3 f(x,y)\,\dee{x}\,\dee{y}</m>
@@ -235,33 +239,35 @@
 
     <p>Questions<nbsp/><xref ref="prob_s3_1a"/> à <xref ref="prob_s3_1f"/> fournissent une pratique avec les bornes d'intégration pour les intégrales doubles dans les coordonnées cartésiennes.</p>
 
+    <!-- 3 -->
     <exercise xml:id="prob_s3_1a">
       <statement><p>
       Pour chacun des cas suivants, évaluez l'intégrale double donnée
-      <em>en considérant</em> les intégrales comme des intégrales itérées.
+      <md>\iint_R f(x,y)\,\dee{A}</md>
+      <em>en la considérant</em> comme une intégrale itérée.
       <ol marker = "(a)">
       <li>
-      <m>\displaystyle\iint_R (x^2+y^2)\,\dee{A}</m>, où <m>R</m> est le rectangle
-      <m>0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b</m>, où <m>a \gt 0</m> et <m>b \gt 0</m>.
+      <m>f(x,y)=x^2+y^2</m> et <m>R</m> est le rectangle
+      <m>0\leqslant x\leqslant a,\ 0\leqslant y\leqslant b</m>, où <m>a \gt 0</m> et <m>b \gt 0</m>
       </li>
       <li>
-      <m>\displaystyle\iint_T (x-3y)\,\dee{A}</m>, où <m>T</m> est le triangle
-      avec sommets <m>(0,0),\ (a,0),\ (0,b)</m>.
+      <m>f(x,y)=x-3y</m> et <m>R</m> est le triangle
+      avec sommets <m>(0,0),\ (a,0),\ (0,b)</m>
       </li>
       <li>
-      <m>\displaystyle\iint_R xy^2\,\dee{A}</m>, où <m>R</m> est la région finie
-      dans le premier cadran bornée par la courbe <m>y=x^2</m> et <m>x=y^2</m>.
+      <m>f(x,y)=xy^2</m> et <m>R</m> est la région finie
+      dans le premier cadran bornée par la courbe <m>y=x^2</m> et <m>x=y^2</m>
       </li>
       <li>
-      <m>\displaystyle\iint_D x\cos y\,\dee{A}</m>, où <m>D</m> est la région finie dans le premier cadran
-      bornée par les axes de coordonnées et la courbe <m>y=1-x^2</m>.
+      <m>f(x,y)=x\cos y</m> et <m>R</m> est la région finie dans le premier cadran
+      bornée par les axes de coordonnées et la courbe <m>y=1-x^2</m>
       </li>
       <li>
-      <m>\displaystyle\iint_R {x\over y}e^y\,\dee{A}</m>, où <m>R</m> est
-      la région <m>0\leqslant x\leqslant 1,\ x^2\leqslant y\leqslant x</m>.
+      <m>f(x,y)={x\over y}e^y</m> et <m>R</m> est
+      la région <m>0\leqslant x\leqslant 1,\ x^2\leqslant y\leqslant x</m>
       </li>
       <li>
-      <m>\displaystyle\iint_T {xy\over 1+x^4}\,\dee{A}</m>, où <m>T</m> est le triangle avec les sommets <m>(0,0),\ (0,1),\ (1,1)</m>.
+      <m>f(x,y)={xy\over 1+x^4}</m> et <m>R</m> est le triangle avec les sommets <m>(0,0),\ (0,1),\ (1,1)</m>
       </li>
       </ol>
       </p></statement>
@@ -270,32 +276,32 @@
         <ol marker = "(a)" cols = "2">
           <li>
             <p>
-              <m>\frac{1}{3}\left(a^3b+ab^3\right)</m>
+              <m>\tfrac{1}{3}\left(a^3b+ab^3\right)</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{a^2b}{6}-\frac{ab^2}{2}</m>
+              <m>\tfrac{a^2b}{6}-\tfrac{ab^2}{2}</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{3}{56}</m>
+              <m>\tfrac{3}{56}</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{1}{2}(1-\cos 1)</m>
+              <m>\tfrac{1}{2}(1-\cos 1)</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{1}{2}(e-2)</m>
+              <m>\tfrac{1}{2}(e-2)</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{1}{4}\left(\frac{\pi}{4}-\frac{1}{2}\ln 2\right)</m>
+              <m>\tfrac{1}{4}\left(\tfrac{\pi}{4}-\tfrac{1}{2}\ln 2\right)</m>
             </p>
           </li>
         </ol>
@@ -330,7 +336,7 @@
       </mrow><mrow>
       &amp;=\frac{1}{3}\left(a^3b+ab^3\right)
       </mrow><mrow>
-      \iint_T (x-3y)\,\dee{x}\,\dee{y}
+      \iint_R (x-3y)\,\dee{x}\,\dee{y}
       &amp;=\int_0^a \dee{x}\int_0^{b(1-{x\over a})}\dee{y}\,(x-3y)
       \tag{b}
       </mrow><mrow>
@@ -354,7 +360,7 @@
       &amp;=\frac{1}{3}\left(\frac{2}{7}-\frac{1}{8}\right)
       =\frac{3}{56}
       </mrow><mrow>
-      \iint_D x\cos y\,\dee{x}\,\dee{y}
+      \iint_R x\cos y\,\dee{x}\,\dee{y}
       &amp;=\int_0^1 \dee{x}\int_{0}^{1-x^2}\dee{y}\ x\cos y
       \tag{d}</mrow><mrow>
       &amp;=\int_0^1 \dee{x}\ x\sin(1-x^2)
@@ -373,7 +379,7 @@
       =\frac{1}{2}(e-2)
       \notag
       </mrow><mrow>
-      \iint_T \frac{xy}{1+x^4}\,\dee{x}\,\dee{y}
+      \iint_R \frac{xy}{1+x^4}\,\dee{x}\,\dee{y}
       &amp;=\int_0^1 \dee{x}\int_{x}^{1}\dee{y}\ \frac{xy}{1+x^4}
       \tag{f}</mrow><mrow>
       &amp;=\frac{1}{2}\int_0^1 \dee{x}\ \frac{x(1-x^2)}{1+x^4}
@@ -389,18 +395,19 @@
       </p></solution>
     </exercise>
 
+    <!-- 4 -->
     <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
       <statement><p>
       Combinez la somme des deux intégrales doubles itérées
       <md><mrow>
-      \int_{y=0}^{y=1}\int_{x=0}^{x=y} f(x,y)\ \dee{x}\,\dee{y}
-      +\int_{y=1}^{y=2}\int_{x=0}^{x=2-y} f(x,y)\ \dee{x}\,\dee{y}
+      \int_0^1\int_0^y f(x,y)\ \dee{x}\,\dee{y}
+      +\int_1^2\int_0^{2-y} f(x,y)\ \dee{x}\,\dee{y}
       </mrow></md>
       en une seule intégrale double itérée avec l'ordre d'intégration inversé.
       </p></statement>
 
       <answer><p>
-      <m>\int_{x=0}^{x=1}\int_{y=x}^{y=2-x} f(x,y)\ \dee{y}\,\dee{x}</m>
+      <m>\int_0^1\int_x^{2-x} f(x,y)\ \dee{y}\,\dee{x}</m>
       </p></answer>
 
       <solution><p>
@@ -414,7 +421,7 @@
       et
       </li>
       <li>
-      pour chaque <m>y</m> fixe entre <m>1</m> et <m>2</m>, <m>x</m> varie de <m>0</m> à <m>2-y</m>
+      pour chaque <m>y</m> fixe entre <m>1</m> et <m>2</m>, <m>x</m> varie de <m>0</m> à <m>2-y</m>.
       </li>
       </ul>
       La figure de gauche ci-dessous montre une esquisse de cette région, avec
@@ -448,10 +455,11 @@
       </solution>
     </exercise>
 
+    <!-- 5 -->
     <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
       <statement><p>
       Considérez l'intégrale
-      <m>\displaystyle\int_0^1\int_x^1 e^{x/y}\ \dee{y}\ \dee{x}</m>
+      <m>\displaystyle\int_0^1\int_x^1 e^{x/y}\ \dee{y}\ \dee{x}.</m>
       <ol marker = "(a)">
       <li>
       Esquissez le domaine d'intégration.
@@ -463,14 +471,12 @@
       </p></statement>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside width="50%">
+      <sidebyside widths="10% 40% 50%" valign="middle">
+        <p>(a)</p>
         <image source="images/CLP-figs/pfigs/OE04Q7a"/>
+        <p>(b) <m>\half(e-1)</m></p>
       </sidebyside>
-
-      <p>
-      (b) <m>\half(e-1)</m>
-      </p></answer>
+      </answer>
 
       <solution><p>
       (a) Dans l'intégrale donnée,
@@ -479,7 +485,7 @@
         <m>x</m> varie de <m>0</m> à <m>1</m>, et
       </li>
       <li>
-        pour chaque <m>x</m> fixe entre <m>0</m> et <m>1</m>, <m>y</m> varie de <m>x</m> à <m>1</m>
+        pour chaque <m>x</m> fixe entre <m>0</m> et <m>1</m>, <m>y</m> varie de <m>x</m> à <m>1</m>.
       </li>
       </ul>
       Le domaine d'intégration est donc
@@ -503,7 +509,7 @@
         faire varier <m>y</m> de <m>0</m> à <m>1</m>, et
       </li>
       <li>
-        pour chaque <m>y</m> fixe entre <m>0</m> et <m>1</m>, faire varier <m>x</m> de <m>0</m> à <m>y</m>
+        pour chaque <m>y</m> fixe entre <m>0</m> et <m>1</m>, faire varier <m>x</m> de <m>0</m> à <m>y</m>.
       </li>
       </ul>
       On obtient ainsi
@@ -520,6 +526,7 @@
   <exercisegroup>
     <title>Pour mieux comprendre</title>
 
+    <!-- 6 -->
     <exercise>
       <statement><p>
       Pour chacune des intégrales suivantes (i) esquissez la région d'intégration,
@@ -544,12 +551,12 @@
           </li>
           <li>
             <p>
-              <m>\frac{8}{3}</m>
+              <m>\tfrac{8}{3}</m>
             </p>
           </li>
           <li>
             <p>
-              <m>\frac{9}{2}</m>
+              <m>\tfrac{9}{2}</m>
             </p>
           </li>
         </ol>
@@ -622,11 +629,12 @@
       </p></solution>
     </exercise>
 
+    <!-- 7 -->
     <exercise> <!-- <title><fromexam>M200 2006D</fromexam></title> -->
       <statement><p>
       L'intégrale <m>I</m> est définie par
       <md><mrow>
-      I =\iint_R f(x,y)\ \dee{A}
+      I =\iint_\cR f(x,y)\ \dee{A}
         = \int_1^{\sqrt{2}} \int_{1/y}^{\sqrt{y}} f(x,y)\,\dee{x}\,\dee{y}
           +\int_{\sqrt{2}}^4 \int_{y/2}^{\sqrt{y}} f(x,y)\,\dee{x}\,\dee{y}
       </mrow></md>
@@ -634,7 +642,7 @@
 
       <p><ol marker = "(a)">
       <li>
-       Esquissez la région <m>R</m>.
+       Esquissez la région <m>\cR</m>.
       </li>
       <li>
        Réécrire l'intégrale <m>I</m> en inversant l'ordre d'intégration.
@@ -645,7 +653,7 @@
       </p></statement>
 
       <answer><p>
-      (a) La région <m>R</m> est la région ombragée dans la figure
+      (a) La région <m>\cR</m> est la région ombragée dans la figure
       </p>
       <sidebyside width="50%">
         <image source="images/CLP-figs/pfigs/OE06D_4"/>
@@ -654,11 +662,11 @@
       (b) <m>I= \int_{1/\sqrt{2}}^1 \int_{1/x}^{2x} f(x,y)\,\dee{y}\,\dee{x}
           +\int_1^2 \int_{x^2}^{2x} f(x,y)\,\dee{y}\,\dee{x}</m>
         </p><p>
-      (c) <m>\frac{1}{2}</m>
+      (c) <m>\tfrac{1}{2}</m>
       </p></answer>
 
       <solution><p>
-      (a) Sur <m>R</m>,
+      (a) Sur <m>\cR</m>,
       <ul>
       <li>
       <m>y</m> varie de <m>1</m> à <m>4</m> (de <m>1</m> à <m>\sqrt{2}</m> dans la première intégrale et
@@ -673,7 +681,7 @@
       à <m>\sqrt{y}</m>.
       </li>
       </ul>
-      La figure de gauche ci-dessous est une esquisse de <m>R</m>, avec des
+      La figure de gauche ci-dessous est une esquisse de <m>\cR</m>, avec des
       bandes horizontales génériques telles qu'utilisées pour poser l'intégrale.
       </p>
       <sidebyside width="45%">
@@ -682,7 +690,7 @@
       </sidebyside>
       <p>
       (b) Pour inverser l'ordre d'intégration, nous utilisons des bandes verticales, comme dans
-      la figure de droite ci-dessus. En regardant cette figure, on voit que, sur <m>R</m>,
+      la figure de droite ci-dessus. En regardant cette figure, on voit que, sur <m>\cR</m>,
       <ul>
       <li>
       <m>x</m> varie de <m>1/\sqrt{2}</m> à <m>2</m>.
@@ -728,31 +736,32 @@
       </p></solution>
     </exercise>
 
+    <!-- 8 -->
     <exercise xml:id="prob_s3_1f"> <!-- <title><fromexam>M200 2007A</fromexam></title> -->
       <statement><p>
-      Une région <m>E</m> dans le plan <m>xy</m> a la propriété que pour toutes fonctions continues f
+      Une région <m>\cE</m> dans le plan <m>xy</m> a la propriété que pour toutes fonctions continues<nbsp/><m>f</m>,
       <md><mrow>
-      \iint_E f(x,y)\,\dee{A}
-      = \int_{x=-1}^{x=3}\left[\int_{y=x^2}^{y=2x+3} f(x,y) \dee{y}\right] \dee{x}
+      \iint_{\cE} f(x,y)\,\dee{A}
+      = \int_{-1}^{3}\left[\int_{x^2}^{2x+3} f(x,y) \dee{y}\right] \dee{x}
       </mrow></md>
       </p>
 
       <p><ol marker = "(a)">
       <li>
-       Calculez <m>\iint_E x\,\dee{A}</m>.
+       Calculez <m>\iint_\cE x\,\dee{A}</m>.
       </li>
       <li>
-       Esquissez la région E.
+       Esquissez la région <m>\cE</m>.
       </li>
       <li>
-       Poser <m>\iint_E x\,\dee{A}</m> comme étant l'intégrale ou la somme d'intégrales
+       Poser <m>\iint_\cE x\,\dee{A}</m> comme étant l'intégrale ou la somme d'intégrales
       dans l'ordre opposé.
       </li>
       </ol>
       </p></statement>
 
       <answer><p>
-      (a) <m>\frac{32}{3}</m>
+      (a) <m>\tfrac{32}{3}</m>
       </p>
 
       <p>(b)</p>
@@ -781,16 +790,16 @@
       </md>
       </p>
 
-      <p>(b) Sur la région <m>E</m>,
+      <p>(b) Sur la région <m>\cE</m>,
       <ul>
       <li>
        <m>x</m> varie de <m>-1</m> à <m>3</m>, et
       </li>
       <li>
-       pour chaque <m>x</m> dans cet intervalle, <m>y</m> varie de <m>x^2</m> à <m>2x+3</m>
+       pour chaque <m>x</m> dans cet intervalle, <m>y</m> varie de <m>x^2</m> à <m>2x+3</m>.
       </li>
       </ul>
-      Voici deux esquisses de <m>E</m>, la première incluant une bande
+      Voici deux esquisses de <m>\cE</m>, la première incluant une bande
       verticale générique, telle qu'utilisée pour poser l'intégrale donnée.
       </p>
       <sidebyside widths="45% 50%" valign="middle">
@@ -801,16 +810,16 @@
       <p>
       (c) Pour inverser l'ordre d'intégration, nous utilisons des bandes horizontales,
       comme dans la figure de droite ci-dessus. En regardant cette figure, on voit que,
-      sur la région <m>E</m>,
+      sur la région <m>\cE</m>,
       <ul>
       <li>
        <m>y</m> varie de <m>0</m> à <m>9</m>, et
       </li>
       <li>
-       pour chaque <m>y</m> entre <m>0</m> et <m>1</m>, <m>x</m> varie de <m>-\sqrt{y}</m> à <m>\sqrt{y}</m>
+       pour chaque <m>y</m> entre <m>0</m> et <m>1</m>, <m>x</m> varie de <m>-\sqrt{y}</m> à <m>\sqrt{y}</m>.
       </li>
       <li>
-       pour chaque <m>y</m> entre <m>1</m> et <m>9</m>, <m>x</m> varie de <m>(y-3)/2</m> à <m>\sqrt{y}</m>
+       pour chaque <m>y</m> entre <m>1</m> et <m>9</m>, <m>x</m> varie de <m>(y-3)/2</m> à <m>\sqrt{y}</m>.
       </li>
       </ul>
       Donc
@@ -823,11 +832,12 @@
       </p></solution>
     </exercise>
 
+    <!-- 9 -->
     <exercise> <!-- <title><fromexam>M200 2008A</fromexam></title> -->
       <statement><p>
       Calculez l'intégrale:
-      <m>\displaystyle\iint_D \sin(y^2)\ \dee{A}</m>
-      où <m>D</m> est la région bornée par <m>x + y = 0</m>, <m>2x - y = 0</m>, et <m>y = 4</m>.
+      <m>\iint_\cD \sin(y^2)\ \dee{A}</m>
+      où <m>\cD</m> est la région bornée les droites d'équations <m>x + y = 0</m>, <m>2x - y = 0</m>, et <m>y = 4</m>.
       </p></statement>
 
       <hint><p>
@@ -835,7 +845,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\frac{3}{4}\big[1-\cos(16)\big]</m>
+      <m>\tfrac{3}{4}\big[1-\cos(16)\big]</m>
       </p></answer>
 
       <solution><p>
@@ -854,13 +864,13 @@
          <m>y</m> varie de <m>0</m> à <m>4</m>, et
       </li>
       <li>
-         pour chaque <m>y</m> fixe dans cet intervalle, <m>x</m> varie de <m>-y</m> à <m>y/2</m>
+         pour chaque <m>y</m> fixe dans cet intervalle, <m>x</m> varie de <m>-y</m> à <m>y/2</m>.
       </li>
       </ul>
       L'intégrale donnée
       <md>
       <mrow>
-      \iint_D \sin(y^2)\ \dee{A}
+      \iint_\cD \sin(y^2)\ \dee{A}
       &amp;=\int_0^4\dee{y}\int_{-y}^{y/2}\dee{x}\ \sin(y^2)
       </mrow><mrow>
       &amp;=\int_0^4 \dee{y}\ \frac{3}{2}y\,\sin(y^2)
@@ -875,10 +885,11 @@
       </solution>
     </exercise>
 
+    <!-- 10 -->
     <exercise> <!-- <title><fromexam>M200 2008D</fromexam></title> -->
       <statement><p>
       Considérez l'intégrale
-      <m>\displaystyle I = \int_0^1 \int_{\sqrt{y}}^1 \frac{\sin(\pi x^2)}{x}\ \dee{x}\,\dee{y}</m>
+      <m>\displaystyle I = \int_0^1 \int_{\sqrt{y}}^1 \frac{\sin(\pi x^2)}{x}\ \dee{x}\,\dee{y}.</m>
       </p>
 
       <p><ol marker = "(a)">
@@ -897,14 +908,17 @@
       </p></hint>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside widths="40%">
-      <image source="images/CLP-figs/pfigs/OE08D_6"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>\frac{1}{\pi}</m>
-      </p>
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="40%">
+          <image source="images/CLP-figs/pfigs/OE08D_6"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>\tfrac{1}{\pi}</m>
+        </li>
+      </ol>
       </answer>
 
       <solution><p>
@@ -958,6 +972,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 11 -->
     <exercise> <!-- <title><fromexam>M200 2009A</fromexam></title> -->
       <statement><p>
       Soit <m>I</m> l'intégrale double de la fonction <m>f(x,y) = y^2 \sin xy</m>
@@ -980,7 +995,7 @@
                  =\int_0^1\dee{y}\int_0^y\dee{x}\ y^2\sin xy</m>
       </p>
 
-      <p>(b) <m>\frac{1-\sin 1}{2}</m>
+      <p>(b) <m>\tfrac{1-\sin 1}{2}</m>
       </p></answer>
 
       <solution><p>
@@ -1054,12 +1069,12 @@
       </solution>
     </exercise>
 
+    <!-- 12 -->
     <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
       <statement><p>
       Trouvez le volume <m>(V)</m> du solide borné au-dessus par la surface
-      <md><mrow>
-      z = f (x,y) = e^{-x^2},
-      </mrow></md>
+      d'équation <m>z = f (x,y) = e^{-x^2},
+      </m>
       et en-dessous par le plan <m>z = 0</m> et sur le triangle dans le plan <m>xy</m>
       formé par les droites <m>x = 1</m>, <m>y = 0</m> et <m>y = x</m>.
       </p>
@@ -1067,7 +1082,7 @@
       </statement>
 
       <answer><p>
-      <m>\frac{1-e^{-1}}{2}</m>
+      <m>\tfrac{1-e^{-1}}{2}</m>
       </p></answer>
 
       <solution><p>
@@ -1115,6 +1130,7 @@
       </solution>
     </exercise>
 
+    <!-- 13 -->
     <exercise> <!-- <title><fromexam>M200 2009D</fromexam></title> -->
       <statement><p>
       Considérez l'intégrale
@@ -1135,16 +1151,22 @@
       </p></statement>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside widths="60%">
-        <image source="images/CLP-figs/pfigs/OE09D_6"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>I=\int_0^1\dee{x}\int_0^x\dee{y}\ \frac{y}{x}
-        +\int_1^2\dee{x}\int_0^{2-x}\dee{y}\ \frac{y}{x}</m></p><p>
-      (c) <m>2\ln 2 -1</m>
-      </p></answer>
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="60%">
+          <image source="images/CLP-figs/pfigs/OE09D_6"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>I=\int_0^1\dee{x}\int_0^x\dee{y}\ \tfrac{y}{x}
+          +\int_1^2\dee{x}\int_0^{2-x}\dee{y}\ \tfrac{y}{x}</m>
+        </li>
+        <li>
+          <m>2\ln 2 -1</m>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a) Sur le domaine d'intégration,
@@ -1210,10 +1232,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 14 -->
     <exercise> <!-- <title><fromexam>M200 2010A</fromexam></title> -->
       <statement><p>
       Pour l'intégrale
-      <m>\displaystyle I = \int_0^1 \int_{\sqrt{x}}^1 \sqrt{1+y^3}\ \dee{y}\,\dee{x}</m>
+      <m>\displaystyle I = \int_0^1 \int_{\sqrt{x}}^1 \sqrt{1+y^3}\ \dee{y}\,\dee{x}.</m>
       <ol marker = "(a)">
       <li>
       Esquissez la région d'intégration.
@@ -1230,14 +1253,18 @@
       </p></hint>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside width="50%">
-        <image source="images/CLP-figs/pfigs/OE10A_6"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>\frac{2\left(2\sqrt{2}-1\right)}{9}</m>
-      </p></answer>
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="50%">
+          <image source="images/CLP-figs/pfigs/OE10A_6"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>\tfrac{2\left(2\sqrt{2}-1\right)}{9}</m>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a)
@@ -1295,16 +1322,17 @@
       </p></solution>
     </exercise>
 
+    <!-- 15 -->
     <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
       <li>
-      <m>D</m> est la région bornée par la parabole <m>y^2 = x</m> et la droite <m>y = x - 2</m>.
-      Esquissez <m>D</m> et évaluez       <m>\displaystyle J = \iint_D 3y\ \dee{A}</m>
+      <m>\cD</m> est la région bornée par la parabole <m>y^2 = x</m> et la droite <m>y = x - 2</m>.
+      Esquissez <m>\cD</m> et évaluez       <m>J = \iint_\cD 3y\ \dee{A}</m>.
       </li>
       <li>
-      Esquissez la région d'intégration et ensuite évaluez l'intégrale 
-      <m>\displaystyle \int_0^4  \int_{\frac{1}{2}\sqrt{x}}^1  e^{y^3}\ \dee{y}\,\dee{x}</m>
+      Esquissez la région d'intégration et ensuite évaluez l'intégrale
+<md><mrow>\int_0^4  \int_{\frac{1}{2}\sqrt{x}}^1  e^{y^3}\ \dee{y}\,\dee{x}.</mrow></md>
       </li>
       </ol>
       </p></statement>
@@ -1316,14 +1344,14 @@
       </p></hint>
 
       <answer><p>
-      (a) <m>J=\frac{27}{4}</m>
+      (a) <m>J=\tfrac{27}{4}</m>
       </p>
       <sidebyside width="60%">
         <image source="images/CLP-figs/pfigs/OE10D_5a"/>
       </sidebyside>
 
       <p>
-      (b) <m>I=\frac{4}{3}\big[e-1\big]</m>
+      (b) <m>I=\tfrac{4}{3}\big[e-1\big]</m>
       </p>
       <sidebyside width="60%">
       <image source="images/CLP-figs/pfigs/OE10D_5b"/>
@@ -1339,7 +1367,7 @@
       \iff (y-2)(y+1)=0
       </mrow></md>
       Ainsi, les points d'intersection de <m>x=y^2</m> et <m>y=x-2</m> sont <m>(1,-1)</m>
-      et <m>(4,2)</m>. Voici une esquisse de <m>D</m>.
+      et <m>(4,2)</m>. Voici une esquisse de <m>\cD</m>.
       </p>
 
       <sidebyside width="60%">
@@ -1350,7 +1378,7 @@
       Pour évaluer <m>J</m>, nous utiliserons des tranches horizontales, comme dans la figure ci-dessus.
       (Si nous utilisions des tranches verticales, il faudrait scinder l'intégrale en deux,
       avec <m>0\leqslant x\leqslant 1</m> dans une partie et <m>1\leqslant x\leqslant 4</m> dans l'autre.)
-      D'après la figure, on voit que, sur <m>D</m>,
+      D'après la figure, on voit que, sur <m>\cD</m>,
       <ul>
       <li>
       <m>y</m> varie de <m>-1</m> à <m>2</m>, et
@@ -1362,7 +1390,7 @@
       Ainsi,
       <md>
       <mrow>
-      J &amp;=\iint_D 3y\ \dee{A}
+      J &amp;=\iint_\cD 3y\ \dee{A}
         =\int_{-1}^2\dee{y}\int_{y^2}^{y+2}\dee{x}\ 3y
       </mrow><mrow>
         &amp;=3\int_{-1}^2\dee{y}\ y(y+2-y^2)
@@ -1425,10 +1453,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 16 -->
     <exercise> <!-- <title><fromexam>M200 2011D</fromexam></title> -->
       <statement><p>
       Considérez l'intégrale itérée
-      <m>\displaystyle\int_{-4}^0\int_{\sqrt{-y}}^2 \cos(x^3)\,\dee{x}\,\dee{y}</m>
+      <m>\displaystyle\int_{-4}^0\int_{\sqrt{-y}}^2 \cos(x^3)\,\dee{x}\,\dee{y}.</m>
       <ol marker = "(a)">
       <li>
       Dessinez la région d'intégration.
@@ -1445,14 +1474,18 @@
       </p></hint>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside width="35%">
-        <image source="images/CLP-figs/pfigs/OE11D_5"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>\frac{\sin(8)}{3}</m>
-      </p></answer>
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="35%">
+          <image source="images/CLP-figs/pfigs/OE11D_5"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>\tfrac{\sin(8)}{3}</m>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a)  Sur le domaine d'intégration,
@@ -1504,6 +1537,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 17 -->
     <exercise> <!-- <title><fromexam>M200 2012A</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
@@ -1523,7 +1557,7 @@
 
       <answer><p>
       (a) <m>I = \int_{-1}^2\int_{x^2}^{x+2} f(x,y)\ \dee{y}\,\dee{x}</m></p><p>
-      (b) <m> 2e^2 + \frac{1}{e}</m>
+      (b) <m> 2e^2 + \tfrac{1}{e}</m>
       </p></answer>
 
       <solution><p>
@@ -1586,10 +1620,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 18 -->
     <exercise> <!-- <title><fromexam>M200 2012D</fromexam></title> -->
       <statement><p>
       Soit
-      <m>\displaystyle I=\int_0^4\int_{\sqrt{y}}^{\sqrt{8-y}} f(x,y)\,\dee{x}\,\dee{y}</m>
+      <m>\ds I=\int_0^4\int_{\sqrt{y}}^{\sqrt{8-y}} f(x,y)\,\dee{x}\,\dee{y}</m>.
       <ol marker = "(a)">
       <li>
       Esquissez le domaine d'intégration.
@@ -1610,17 +1645,27 @@
       </p></hint>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside width="40%">
-        <image source="images/CLP-figs/pfigs/OE12D_7aa"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>\int_0^2\int_0^{x^2} f(x,y)\,\dee{y}\,\dee{x}
-      +\int_2^{\sqrt{8}}\int_0^{8-x^2} f(x,y)\,\dee{y}\,\dee{x}</m></p><p>
-      (c) <m>\sqrt{8}-\arctan 2 -\frac{1}{6}\left[\ln\frac{3+\sqrt{8}}{3-\sqrt{8}}
+      <ol marker = "(a)">
+        <li>
+          <p>
+            La région en question est la région en gris dans la figure ci-bas.
+          </p>
+          <sidebyside width="40%">
+            <image source="images/CLP-figs/pfigs/OE12D_7aa"/>
+          </sidebyside>
+        </li>
+        <li>
+          <md><mrow>\int_0^2\int_0^{x^2} f(x,y)\,\dee{y}\,\dee{x}
+          +\int_2^{\sqrt{8}}\int_0^{8-x^2} f(x,y)\,\dee{y}\,\dee{x}</mrow></md>
+        </li>
+        <li>
+          <p>
+          <m>\sqrt{8}-\arctan 2 -\tfrac{1}{6}\left[\ln\tfrac{3+\sqrt{8}}{3-\sqrt{8}}
                                              -\ln 5\right]</m>
-      </p></answer>
+          </p>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       Sur le domaine d'intégration,
@@ -1690,10 +1735,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 19 -->
     <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
       <statement><p>
       Évaluez
-      <m>\displaystyle\int_{-1}^0 \int_{-2}^{2x} e^{y^2}\ \dee{y}\,\dee{x}</m>
+      <m>\ds \int_{-1}^0 \int_{-2}^{2x} e^{y^2}\ \dee{y}\,\dee{x}.</m>
       </p></statement>
 
       <hint><p>
@@ -1703,7 +1749,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\frac{1}{4}\big[e^4-1\big]</m>
+      <m>\tfrac{1}{4}\big[e^4-1\big]</m>
       </p></answer>
 
       <solution><p>
@@ -1756,11 +1802,12 @@
       </p></solution>
     </exercise>
 
+    <!-- 20 -->
     <exercise> <!-- <title><fromexam>M200 2014A</fromexam></title> -->
       <statement><p>
       Soit
-      <m>\displaystyle I = \int_0^2 \int_0^x f(x,y)\ \dee{y}\,\dee{x}
-          + \int_2^6 \int_0^{\sqrt{6-x}} f(x,y)\ \dee{y}\,\dee{x}</m>
+      <md> I = \int_0^2 \int_0^x f(x,y)\ \dee{y}\,\dee{x}
+          + \int_2^6 \int_0^{\sqrt{6-x}} f(x,y)\ \dee{y}\,\dee{x}.</md>
       Exprimez <m>I</m> comme une intégrale où on intègre d'abord par rapport à <m>x</m>.
       </p></statement>
 
@@ -1806,17 +1853,18 @@
       </p></solution>
     </exercise>
 
+    <!-- 21 -->
     <exercise> <!-- <title><fromexam>M200 2015D</fromexam></title> -->
       <statement><p>
-      Considérez le domaine <m>D</m> sur l'axe des <m>x</m> sous la parabole
+      Considérez le domaine <m>\cD</m> sur l'axe des <m>x</m> sous la parabole
       <m>y = 1-x^2</m> dans le plan <m>xy</m>.
       <ol marker = "(a)">
       <li>
-      Esquissez <m>D</m>.
+      Esquissez <m>\cD</m>.
       </li>
       <li>
       Exprimez
-      <m>\displaystyle\iint_D f(x,y)\ \dee{A}</m>
+      <m>\iint_{\cD} f(x,y)\ \dee{A}</m>
       comme une intégrale itérée correspondante à l'ordre <m>\dee{x}\,\dee{y}</m>.
       Exprimez ensuite cette intégrale comme une intégrale itérée correspondante à
       l'ordre <m>\dee{y}\,\dee{x}</m>.
@@ -1828,29 +1876,33 @@
       </p></statement>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside width="50%">
-      <image source="images/CLP-figs/pfigs/OE15D_6"/>
-      </sidebyside>
-
-      <p>
-      (b) <m>\int_0^1 \int_{-\sqrt{1-y}}^{\sqrt{1-y}} f(x,y)\ \dee{x}\,\dee{y}</m>,
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="50%">
+          <image source="images/CLP-figs/pfigs/OE15D_6"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>\int_0^1 \int_{-\sqrt{1-y}}^{\sqrt{1-y}} f(x,y)\ \dee{x}\,\dee{y}</m>,
           <m>\int_{-1}^1 \int_0^{1-x^2} f(x,y)\ \dee{y}\,\dee{x}</m>
-      </p>
-
-      <p>(c) <m>e^{2/3}-e^{-2/3}</m>
-      </p></answer>
+        </li>
+        <li>
+          <m>e^{2/3}-e^{-2/3}</m>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a), (b)
       En regardant la figure de gauche ci-dessous, on voit qu'on peut écrire
       le domaine
       <md><mrow>
-      D = \Set{(x,y)}{0\leqslant y\leqslant 1,\ -\sqrt{1-y}\leqslant x\le\sqrt{1-y}}
+      D = \Set{(x,y)}{0\leqslant y\leqslant 1,\ -\sqrt{1-y}\leqslant x\leqslant\sqrt{1-y}}
       </mrow></md>
       Donc
       <md><mrow>
-      \iint_D f(x,y)\ \dee{A}
+      \iint_\cD f(x,y)\ \dee{A}
       =\int_0^1\dee{y} \int_{-\sqrt{1-y}}^{\sqrt{1-y}}\dee{x}\ f(x,y)
       =\int_0^1 \int_{-\sqrt{1-y}}^{\sqrt{1-y}} f(x,y)\ \dee{x}\,\dee{y}
       </mrow></md>
@@ -1869,7 +1921,7 @@
       </mrow></md>
       Donc
       <md><mrow>
-      \iint_D f(x,y)\ \dee{A}
+      \iint_\cD f(x,y)\ \dee{A}
       =\int_{-1}^1\dee{x} \int_0^{1-x^2}\dee{y}\ f(x,y)
       =\int_{-1}^1 \int_0^{1-x^2} f(x,y)\ \dee{y}\,\dee{x}
       </mrow></md>
@@ -1878,7 +1930,7 @@
       <p>(c) En utilisant la seconde forme de la partie (b),
       <md>
       <mrow>
-      \iint_D e^{x-(x^3/3)}\ \dee{A}
+      \iint_\cD e^{x-(x^3/3)}\ \dee{A}
       &amp;=\int_{-1}^1\dee{x} \int_0^{1-x^2}\dee{y}\ e^{x-(x^3/3)}
       </mrow><mrow>
       &amp;=\int_{-1}^1 (1-x^2) e^{x-(x^3/3)}\ \dee{x}
@@ -1893,9 +1945,10 @@
       </p></solution>
     </exercise>
 
+    <!-- 22 -->
     <exercise> <!-- <title><fromexam>M200 2016D</fromexam></title> -->
       <statement><p>
-      Soit <m>I=\int_0^1 \int_{x^2}^1 x^3\ \sin(y^3)\ \dee{y}\ \dee{x}</m>.
+      Soit <md> I=\int_0^1 \int_{x^2}^1 x^3\ \sin(y^3)\ \dee{y}\ \dee{x}</md>.
       <ol marker = "(a)">
       <li>
       Esquissez la région d'intégration dans le plan <m>xy</m>. Étiquettez votre esquisse
@@ -1914,11 +1967,12 @@
 
       <answer><p><ol marker = "(a)" cols = "2">
       <li>
-        <sidebyside width="90%">
+        <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="90%" valign = "top">
           <image source="images/CLP-figs/pfigs/OE16D_6"/>
         </sidebyside>
       </li>
-      <li><m>\frac{1-\cos(1)}{12}</m></li>
+      <li><m>\tfrac{1-\cos(1)}{12}</m></li>
       </ol></p></answer>
 
       <solution><p>
@@ -1973,12 +2027,13 @@
       </p></solution>
     </exercise>
 
+    <!-- 23 -->
     <exercise> <!-- <title><fromexam>M200 2003D et M200 2002D</fromexam></title> -->
       <statement><p>
       <ol marker = "(a)">
       <li><p>
       Considérez le solide sous la surface <m>z=6-xy</m>, borné par
-      les cinq plans <m>x=0</m>, <m>x=3</m>, <m>y=0</m>, <m>y=3</m>, <m>z=0</m>. Notez qu'aucune partie de
+      les plans d'équations <m>x=0</m>, <m>x=3</m>, <m>y=0</m>, <m>y=3</m>, <m>z=0</m>. Notez qu'aucune partie de
       ce solide se trouve sous le plan <m>xy</m>.
       </p>
       <p><ol marker = "(i)">
@@ -1993,7 +2048,7 @@
       </li>
       <li>
       Évaluez l'intégrale suivante :
-      <m>\displaystyle\int_{-2}^2\int_{x^2}^4\cos\left(y^{3/2}\right)\ \dee{y}\,\dee{x}</m>
+      <m>\displaystyle\int_{-2}^2\int_{x^2}^4\cos\left(y^{3/2}\right)\ \dee{y}\,\dee{x}</m>.
       </li>
       </ol>
       </p></statement>
@@ -2007,14 +2062,15 @@
       <p>(a)
       <ol marker = "(i)" cols = "2">
       <li>
+        <p>La région en question est illustrée ci-bas.</p>
         <sidebyside width="90%">
           <image source="images/CLP-figs/pfigs/OE03DQ6a"/>
         </sidebyside>
       </li>
-      <li><m>27+18\ln\frac{3}{2}\approx 34.30</m></li>
+      <li><m>27+18\ln\tfrac{3}{2}\approx 34.30</m></li>
       </ol>
       </p>
-      <p>(b) <m>\frac{4}{3}\sin 8\approx 1.319</m>
+      <p>(b) <m>\tfrac{4}{3}\sin 8\approx 1.319</m>
       </p></answer>
 
       <solution><p>
@@ -2044,7 +2100,7 @@
       pour chaque <m>x</m> fixe entre <m>0</m> et <m>2</m>, <m>y</m> varie de <m>0</m> à <m>3</m>, tandis que
       </li>
       <li>
-      pour chaque <m>x</m> fixe entre <m>2</m> et <m>3</m>, <m>y</m> varie de <m>0</m> à <m>6/x</m>
+      pour chaque <m>x</m> fixe entre <m>2</m> et <m>3</m>, <m>y</m> varie de <m>0</m> à <m>6/x</m>.
       </li>
       </ul>
       et que, pour chaque <m>(x,y)</m> dans la base, <m>z</m> varie de <m>0</m> à <m>6-xy</m>.
@@ -2072,7 +2128,7 @@
       <m>x</m> varie de <m>-2</m> à <m>2</m>, et
       </li>
       <li>
-      pour chaque <m>x</m> fixe entre <m>-2</m> et <m>2</m>, <m>y</m> varie de <m>x^2</m> à <m>4</m>
+      pour chaque <m>x</m> fixe entre <m>-2</m> et <m>2</m>, <m>y</m> varie de <m>x^2</m> à <m>4</m>.
       </li>
       </ul>
       Le domaine d'intégration est donc
@@ -2121,20 +2177,21 @@
       </p></solution>
     </exercise>
 
+    <!-- 24 -->
     <exercise> <!-- <title><fromexam>M200 2001D</fromexam></title> -->
       <statement><p>
-      Évaluez l'intégrale suivante:
-      <m>\displaystyle       \int_0^9\int_{\sqrt{y}}^3\sin(\pi x^3)\ \dee{x}\dee{y}
+      Évaluez l'intégrale suivante<nbsp/>:
+      <m>\displaystyle       \int_0^9\int_{\sqrt{y}}^3\sin(\pi x^3)\ \dee{x}\dee{y}.
       </m>
       </p></statement>
 
       <hint><p>
-      L'intégrale à l'intérieur, <m>\ds\int_{\sqrt{y}}^3\sin\left(\pi x^3\right)\ \dee{x}</m>,
+      L'intégrale à l'intérieur, <m>\int_{\sqrt{y}}^3\sin\left(\pi x^3\right)\ \dee{x}</m>,
       dans l'intégrale donnée à l'air méchante. Essayez d'échanger l'ordre d'intégration.
       </p></hint>
 
       <answer><p>
-      <m>\frac{2}{3\pi}\approx 0.212</m>
+      <m>\tfrac{2}{3\pi}\approx 0.212</m>
       </p></answer>
 
       <solution><p>
@@ -2144,7 +2201,7 @@
       <m>y</m> varie de <m>0</m> à <m>9</m>, et
       </li>
       <li>
-      pour chaque <m>y</m> fixe entre <m>0</m> et <m>9</m>, <m>x</m> varie de <m>\sqrt{y}</m> à <m>3</m>
+      pour chaque <m>y</m> fixe entre <m>0</m> et <m>9</m>, <m>x</m> varie de <m>\sqrt{y}</m> à <m>3</m>.
       </li>
       </ul>
       Le domaine d'intégration est donc
@@ -2193,12 +2250,13 @@
       </p></solution>
     </exercise>
 
+    <!-- 25 -->
     <exercise> <!-- <title><fromexam>M200 2000D</fromexam></title> -->
       <statement><p>
       L'intégrale itérée
-      <m>\displaystyle I=\int_0^1\bigg[\int_{-\sqrt{x}}^{\sqrt{x}} \sin\left(y^3-3y\right)\,\dee{y}\bigg]
-               \ \dee{x}</m>
-      est égale à <m>\iint_R\sin\left(y^3-3y\right)\ dA</m> pour une région <m>R</m> dans
+      <md> I=\int_0^1\bigg[\int_{-\sqrt{x}}^{\sqrt{x}} \sin\left(y^3-3y\right)\,\dee{y}\bigg]
+               \ \dee{x}</md>
+      est égale à <m>\iint_{\cR}\sin\left(y^3-3y\right)\,\dee{A}</m> pour une région <m>\cR</m> dans
       le plan <m>xy</m>.
       <ol marker = "(a)">
       <li>
@@ -2215,15 +2273,21 @@
       </p></statement>
 
       <answer>
-      <p>(a)</p>
-      <sidebyside widths="40%">
-      <image source="images/CLP-figs/pfigs/OE00DQ6"/>
-      </sidebyside>
-
-      <p>(b) <m>\ds\int_{-1}^1\bigg[\int_{y^2}^1 \sin\left(y^3-3y\right)\,\dee{x}\bigg]\ \dee{y}</m>
-      </p><p>
-       (c) <m>0</m>
-      </p></answer>
+      <ol marker="(a)">
+        <li>
+          <p>La région en question est illustrée ci-bas.</p>
+        <sidebyside width="40%">
+          <image source="images/CLP-figs/pfigs/OE00DQ6"/>
+        </sidebyside>
+        </li>
+        <li>
+          <m>\ds\int_{-1}^1\bigg[\int_{y^2}^1 \sin\left(y^3-3y\right)\,\dee{x}\bigg]\ \dee{y}</m>
+        </li>
+        <li>
+          <m>0</m>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a) Dans l'intégrale donnée,
@@ -2289,10 +2353,11 @@
       </p></solution>
     </exercise>
 
+    <!-- 26 -->
     <exercise> <!-- <title><fromexam>M200 2000A</fromexam></title> -->
       <statement><p>
       Trouvez l'intégrale double de la fonction <m>f(x, y) = xy</m>
-       sur la région bornée par <m>y = x - 1</m> et <m>y^2 = 2x + 6</m>.
+       sur la région bornée par les courbes d'équations <m>y = x - 1</m> et <m>y^2 = 2x + 6</m>.
       </p></statement>
 
       <answer><p>
@@ -2341,6 +2406,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 27 -->
     <exercise>
       <statement><p>
       Trouvez le volume du solide à l'intérieur du cylindre <m>x^2+2y^2=8</m>, au-dessus
@@ -2397,6 +2463,7 @@
   <exercisegroup>
     <title>Pour aller plus loin</title>
 
+    <!-- 28 -->
     <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
       <statement><p>
       Considérez le volume au-dessus du plan <m>xy</m> qui se trouve à l'intérieur du cylindre circulaire
@@ -2417,11 +2484,11 @@
       </p></statement>
       <!-- 
       <answer><p>
-      (a) <m>\ds I=\iint_D (8+2xy)\ \dee{x}\dee{y}</m> où
+      (a) <m>I=\iint_\cD (8+2xy)\ \dee{x}\dee{y}</m> où
           <m>D=\Set{(x,y)}{x^2+(y-1)^2\leqslant 1}</m>
       </p>
 
-      <p>(b) <m>\ds I
+      <p>(b) <m>I
         =\int_0^2 \dee{y}\int_{-\sqrt{2y-y^2}}^{\sqrt{2y-y^2}}\dee{x}\ (8+2xy)
         =\int_{-1}^1 \dee{x}\int_{1-\sqrt{1-x^2}}^{1+\sqrt{1-x^2}}\dee{y}\ (8+2xy)</m>
       </p>
@@ -2446,14 +2513,14 @@
       </mrow></md>
       Le volume est
       <md><mrow>
-      I=\iint_D (8+2xy)\ \dee{x}\dee{y}
+      I=\iint_\cD (8+2xy)\ \dee{x}\dee{y}
       </mrow></md>
       </p>
 
       <p>(b)
-      Nous pouvons exprimer l'intégrale double sur <m>D</m> comme des intégrales itérées en
-      décomposant <m>D</m> en bandes horizontales, comme la bande rose dans la
-      figure ci-dessous, et aussi en décomposant <m>D</m> en bandes bleues, comme la
+      Nous pouvons exprimer l'intégrale double sur <m>\cD</m> comme des intégrales itérées en
+      décomposant <m>\cD</m> en bandes horizontales, comme la bande rose dans la
+      figure ci-dessous, et aussi en décomposant <m>\cD</m> en bandes bleues, comme la
       bande bleue dans la figure ci-dessous.
       </p>
 
@@ -2463,28 +2530,28 @@
       </sidebyside>
 
       <p>
-      Pour les bandes horizontales, nous utilisons le fait que, sur <m>D</m>,
+      Pour les bandes horizontales, nous utilisons le fait que, sur <m>\cD</m>,
       <ul>
       <li>
       <m>y</m> varie de <m>0</m> à <m>2</m>, et,
       </li>
       <li>
       pour chaque <m>y</m> fixe entre <m>0</m> et <m>2</m>, <m>x</m> varie de <m>-\sqrt{2y-y^2}</m>
-      à <m>\sqrt{2y-y^2}</m>
+      à <m>\sqrt{2y-y^2}</m>.
       </li>
       </ul>
       de sorte que
       <md><mrow>
       D=\Set{(x,y)}{0\leqslant y\leqslant 2,\ -\sqrt{2y-y^2}\leqslant x\leqslant \sqrt{2y-y^2}}
       </mrow></md>
-      Pour les bandes verticales, nous utilisons le fait que, sur <m>D</m>,
+      Pour les bandes verticales, nous utilisons le fait que, sur <m>\cD</m>,
       <ul>
       <li>
       <m>x</m> varie de <m>-1</m> à <m>1</m>, et,
       </li>
       <li>
       pour chaque <m>x</m> fixe entre <m>-1</m> et <m>1</m>, <m>y</m> varie de <m>1-\sqrt{1-x^2}</m>
-      à <m>1+\sqrt{1-x^2}</m>
+      à <m>1+\sqrt{1-x^2}</m>.
       </li>
       </ul>
       de sorte que
@@ -2501,7 +2568,7 @@
       </md>
       </p>
 
-      <p>(c) Puisque <m>\iint_D 8\ \dee{x}\dee{y}</m> vaut simplement <m>8</m> fois l'aire de <m>D</m>,
+      <p>(c) Puisque <m>\iint_\cD 8\ \dee{x}\dee{y}</m> vaut simplement <m>8</m> fois l'aire de <m>\cD</m>,
       à savoir <m>\pi</m>,
       <md>
       <mrow>

@@ -2,6 +2,8 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_polars">
   <!-- Traduit et adapté par Juan Carlos Bustamante, Septembre 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Intégrales doubles en coordonnées polaires</title>
   <introduction>
     <sidebyside widths="65% 5% 25%" valign="top">
@@ -22,7 +24,7 @@
         <sidebyside widths="65% 5% 15%" valign="middle">
           <p>
           Les coordonnées polaires d'un point  <m>(x,y)</m> dans le plan <m>Oxy</m> sont :
-          <ol>
+          <ol marker="(a)">
             <li><m>r</m> est la distance de <m>(0,0)</m> à <m>(x,y)</m>;</li>
             <li><m>\theta</m> est l'angle orienté (sens antihoraire) entre l'axe des <m>x</m> et le segment de droite joignant le point <m>(0,0)</m> à <m>(x,y)</m>.</li>
           </ol>
@@ -401,58 +403,43 @@ Nous avons utilisé le mot <q>essentiellement</q>  afin d'éviter certains déta
       </statement>
 </fact>
     
-    <p>Nous pouvons d'emblée adapter l'exemple afin de calculer des aires. Ainsi, si nous posons la densité à <m>1</m>, la formule de l'aire de la région
-<md><mrow>
-\cR = \Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b, 0\leqslant  r \leqslant R(\theta)}
-</mrow></md>
-est
+    <p>Nous pouvons d'emblée adapter l'exemple afin de calculer des aires, en posant la densité à <m>1</m>.
 </p>
     <fact xml:id="eq_polar_area">
       <statement>
         <p>
+Soit <m>\cR</m> la région donnée par
+<md><mrow>
+\cR = \Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b, 0\leqslant  r \leqslant \phi(\theta)},
+</mrow></md>
+où <m>\phi(\theta)\geqslant 0</m> est une fonction continue. Alors l'aire de la région <m>\cR</m> est égale à
           <md><mrow>
-\text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta},
+\text{Aire}(\cR) =\frac{1}{2} \int_a^b \phi(\theta)^2\  \dee{\theta}.
 </mrow></md>
         </p>
       </statement>
-    </fact>
-    <p>
-  Voyons un exemple illustrant ce calcul.
-</p>
-    
-<example xml:id="eg_polar_area">
-      <title>Calcul d'aire en coordonnées polaires</title>
-      <statement>
-        <p>
-Soit  <m>0\leqslant  a \lt b\leqslant  2\pi</m> deux constantes. Trouver l'aire de la région
-<md><mrow>
-\cR=\Set{(r\cos\theta,r\sin\theta)}{a\leqslant \theta\leqslant  b,
-              0\leqslant  r\leqslant  R(\theta)},
-</mrow></md>
-où <m>R(\theta)\geqslant 0</m> est une fonction continue.
-</p>
-      </statement>
-      <solution>
-        <p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass" text="global">formule</xref>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=R(\theta)</m>,
+      <proof>
+        <p> Pour obtenir l'aire de  <m>\cR</m>, nous devons simplement lui attribuer une densité égale à <m>1</m> et calculer sa masse. Ainsi, en vertu de la <xref ref="eq_polar_mass" text="global">formule</xref>, avec <m>f(x,y)=1</m>, <m>B(\theta)=0</m> et <m>T(\theta)=\phi(\theta)</m>,
             <md><mrow>
-            \text{Aire}(\cR) &amp;= \int_a^b \int_0^{R(\theta)}\ r\, \dee{r}\, \dee{\theta}.
+            \text{Aire}(\cR) &amp;= \int_a^b \int_0^{\phi(\theta)}\ r\, \dee{r}\, \dee{\theta}.
             </mrow></md>
             On peut donc intégrer facilement par rapport à <m>r</m>, ce qui donne
             <md><mrow>
-            \text{Aire}(\cR) =\frac{1}{2} \int_a^b R(\theta)^2\  \dee{\theta}.
+            \text{Aire}(\cR) =\frac{1}{2} \int_a^b \phi(\theta)^2\  \dee{\theta}.
             </mrow></md>
             </p>
-                    <sidebyside widths="50% 5% 40%" valign="top">
-                      <p>
-            L'expression  <m>\frac{1}{2} R(\theta)^2\ \dee{\theta}</m> dans la
-            <xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>R(\theta)</m>
-            (avec <m>R(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>. Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi R(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area" text="global">formule</xref> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
-            </p>
-                      <p></p>
-                      <image source="images/CLP-figs/polarArea3"/>
-                    </sidebyside>
-      </solution>
-</example>
+      </proof>
+    </fact>
+    <remark>
+      <p>
+      L'expression  <m>\frac{1}{2} \phi(\theta)^2\ \dee{\theta}</m> dans la
+      <xref ref="eq_polar_area" text="global">formule</xref> a une interprétation géométrique. En effet, il s'agit de l'aire d'un secteur d'un disque de rayon <m>\phi(\theta)</m>
+      (avec <m>\phi(\theta)</m> traité comme une constante) qui sous-tend l'angle <m>\dee{\theta}</m>. Cela s'explique par le fait que l'aire du secteur est la fraction <m>\frac{\dee{\theta}}{2\pi}</m> de l'aire du disque complet, qui est  <m>\pi \phi(\theta)^2</m>. Ainsi, la <xref ref="eq_polar_area" text="global">formule</xref> dit simplement que l'aire de  <m>\cR</m> peut être calculée en découpant <m>\cR</m> en secteurs minces, puis en additionnant leur aire.
+      </p>
+      <sidebyside width="40%">
+        <image source="images/CLP-figs/polarArea3"/>
+      </sidebyside>
+    </remark>
     
 <example xml:id="eg_area_rose">
 <title>Aire en coordonnées polaires</title>
@@ -599,14 +586,14 @@ a des unités de mètres cubes, comme il se doit.
       <title>Passage aux coordonnées polaires</title>
       <statement>
         <p>
-Transformer l'intégrale  <m>\displaystyle \int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}</m> en coordonnées polaires et l'évaluer.
+Transformer l'intégrale  <m> \int_0^1\int_0^x y\sqrt{x^2+y^2}\ \dee{y}\,\dee{x}</m> en coordonnées polaires et l'évaluer.
 </p>
       </statement>
       <solution>
         <p>
   Commençons par établir une expression du domaine d'intégration en coordonnées polaires.
 </p>
-        <p>De l'intégrale donnée, <m>\displaystyle \int_0^1 \int_0^x y \sqrt{x^2 + y^2}\ \dee{y}\,\dee{x}</m>, on déduit que la région d'intégration est
+        <p>De l'intégrale donnée, <m>\int_0^1 \int_0^x y \sqrt{x^2 + y^2}\ \dee{y}\,\dee{x}</m>, on déduit que la région d'intégration est
 <md><mrow>
 \cD=\Set{(x,y)}{0\leqslant  x\leqslant  1,\ 0\leqslant  y\leqslant  x},
 </mrow></md>
@@ -735,7 +722,7 @@ Lorsque  <m>\theta=0</m>, <m>u=\cos\theta=1</m> et, lorsque  <m>\theta=\frac{\pi
 <example xml:id="eg_change_to_polar_B"><title>Changing to Polar Coordinates</title>
 <statement>
 <p>
-Evaluate <m>\displaystyle\int_0^\infty e^{-x^2}\ \dee{x}</m>.
+Evaluate <m>\int_0^\infty e^{-x^2}\ \dee{x}</m>.
 </p>
 </statement>
 
@@ -869,7 +856,7 @@ Ceci nous oblige naturellement à séparer en deux notre domaine d'intégration,
      \int_0^{\pi/3}\int_0^{1/\cos\theta}r\ \dee{r}\,\dee{\theta}
      +\int_{\pi/3}^{\pi/2}\int_0^{4\cos\theta}r\ \dee{r}\,\dee{\theta}.
 </mrow></md>
-Puisque<m>\displaystyle \int r\ \dee{r}=\frac{r^2}{2}+C</m>,
+Puisque<m>\int r\ \dee{r}=\frac{r^2}{2}+C</m>,
 <md><mrow>
 \text{Aire}(\cR_1)
 &amp;=\int_0^{\pi/3} \frac{\sec^2\theta}{2}\, \dee{\theta}
@@ -949,14 +936,14 @@ All together
     <title>Justification de la formule du calcul de l'aire en coordonnées polaires</title>
     <p>Nous avons précédemment établi la formule du calcul de l'aire en coordonnées polaires, la <xref ref="eq_polar_area" text="global">formule</xref>, de façon peu rigoureuse. Nous avons notamment utilisé le terme <q>essentiellement</q> à plus d'une reprise. Voyons maintenant la justification rigoureuse pour arriver à cette formule.
 </p>
-    <p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass" text="global">exemple</xref> et dans l'<xref ref="eg_polar_area" text="global">exemple</xref>, nous avons établi la formule
+    <p>Soit <m>0\leqslant  a \lt b\leqslant  2\pi</m>. Dans l'<xref ref="eg_polar_mass" text="global">exemple</xref> et dans la preuve de la <xref ref="eq_polar_area" text="global">formule</xref>, nous avons établi la formule
 <md><mrow>
-A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
+A=\frac{1}{2}\int_a^b \phi(\theta)^2\,d\theta
 </mrow></md>
 pour l'aire de la région
 <md><mrow>
 \cR=\Set{\left(r\cos\theta,r\sin\theta\right)}
-     {a\leqslant \theta\leqslant  b,\ 0\leqslant  r\leqslant  R(\theta)}.
+     {a\leqslant \theta\leqslant  b,\ 0\leqslant  r\leqslant  \phi(\theta)}.
 </mrow></md>
 
 </p>
@@ -968,9 +955,9 @@ pour l'aire de la région
     </sidebyside>
     <p>Nous allons justifier cette approximation sous l'hypothèse qu'il existe <m>M</m> et  <m>L\in \R</m> tels que
 <md><mrow>
-0\leqslant  R(\theta)\leqslant M \qquad\text{et}\qquad |R'(\theta)|\leqslant L
+0\leqslant  \phi(\theta)\leqslant M \qquad\text{et}\qquad |\phi'(\theta)|\leqslant L
 </mrow></md>
-pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>R(\theta)</m> est borné et que sa dérivée existe et est bornée également.
+pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>\phi(\theta)</m> est borné et que sa dérivée existe et est bornée également.
 </p>
     <p> On divise l'intervalle  <m>a\leqslant  \theta\leqslant  b</m> en <m>n</m> sous-intervalles de même longueur  <m>\De\theta=\frac{b-a}{n}</m>. Soit <m>\theta_i^*</m> le milieu du
 <m>i^{\text{ième}}</m> sous-intervalle. Sur ce  <m>i^{\text{ième}}</m> intervalle, <m>\theta</m> varie de
@@ -978,24 +965,24 @@ pour tout <m>a\leqslant  \theta\leqslant  b</m>, c'est-à-dire que <m>R(\theta)<
 </p>
     <p>En vertu du théorème des accroissements finis,
 <md><mrow>
-R(\theta)-R(\theta_i^*)  = R'(c) (\theta-\theta_i^*)
+\phi(\theta)-R(\theta_i^*)  = R'(c) (\theta-\theta_i^*)
 </mrow></md>
-pour un certain <m>c \in \, ]\theta ,\ \theta_i^*[ </m>. Comme  <m>|R'(\theta)|\leqslant L</m>, nous avons
+pour un certain <m>c \in \, ]\theta ,\ \theta_i^*[ </m>. Comme  <m>|\phi'(\theta)|\leqslant L</m>, nous avons
 <md><mrow>
-\big|R(\theta)-R(\theta_i^*)\big|  \leqslant L \big|\theta-\theta_i^*\big|.
+\big|\phi(\theta)-R(\theta_i^*)\big|  \leqslant L \big|\theta-\theta_i^*\big|.
 \tag{$*$}
 </mrow></md>
-Ceci nous dit que la différence entre  <m>R(\theta)</m> et <m>R(\theta_i^*)</m>
+Ceci nous dit que la différence entre  <m>\phi(\theta)</m> et <m>R(\theta_i^*)</m>
 ne peut pas être beaucoup plus grande que <m>\big|\theta-\theta_i^*\big|</m>.
 </p>
-    <p>Sur le  <m>i^{\text{ième}}</m> sous-intervalle, le rayon <m>r=R(\theta)</m> prend des valeurs <m>R(\theta)</m> avec  <m>\theta</m> vérifiant  <m>\big|\theta-\theta_i^*\big|\leqslant\frac{1}{2}\De\theta</m>.
-En vertu de  <m>(*)</m>, toutes ces valeurs de <m>R(\theta)</m> se situent entre
+    <p>Sur le  <m>i^{\text{ième}}</m> sous-intervalle, le rayon <m>r=\phi(\theta)</m> prend des valeurs <m>\phi(\theta)</m> avec  <m>\theta</m> vérifiant  <m>\big|\theta-\theta_i^*\big|\leqslant\frac{1}{2}\De\theta</m>.
+En vertu de  <m>(*)</m>, toutes ces valeurs de <m>\phi(\theta)</m> se situent entre
 <m>r_i=R(\theta_i^*)-\frac{1}{2} L\De\theta</m> et
 <m>R_i=R(\theta_i^*) +\frac{1}{2} L\De\theta</m>. En conséquence, la portion de  <m>\cR</m> définie par  <m>\theta</m> dans le <m>i^{\text{ième}}</m> sous-intervalle, à savoir
 <md><mrow>
 \cR_i=\Set{\left(r\cos\theta,r\sin\theta\right)}
      {\theta_i^*-\half\De\theta\leqslant \theta\leqslant  \theta_i^*+\half\De\theta,
-           \ 0\leqslant  r\leqslant  R(\theta)},
+           \ 0\leqslant  r\leqslant  \phi(\theta)},
 </mrow></md>
 doit contenir complètement le secteur circulaire
 <md><mrow>
@@ -1035,7 +1022,7 @@ En développant
 \left[R(\theta_i^*)\pm \frac{1}{2} L\De\theta\right]^2
 =R(\theta_i^*)^2 \pm L R(\theta_i^*)\De\theta +\frac{1}{4} L^2\De\theta^2
 </mrow></md>
-et puisque <m>0\leqslant  R(\theta)\leqslant M</m>, nous remarquons que
+et puisque <m>0\leqslant  \phi(\theta)\leqslant M</m>, nous remarquons que
 <md>
   <mrow>
 R(\theta_i^*)^2 - L M\De\theta +\frac{1}{4} L^2\De\theta^2 \amp \leqslant \left[R(\theta_i^*)\pm \frac{1}{2} L\De\theta\right]^2
@@ -1087,16 +1074,16 @@ Maintenant, évaluons la limite lorsque  <m>n\rightarrow\infty</m>. Étant donn�
    \pm \frac{ L M}{2}\frac{(b-a)^2}{n}
    +\frac{L^2}{8} \frac{(b-a)^3}{n^2}\right]
 \cr
-&amp;\hskip1in=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta
+&amp;\hskip1in=\frac{1}{2}\int_a^b \phi(\theta)^2\,d\theta
 \pm \lim_{n\rightarrow\infty}\frac{ L M}{2}\frac{(b-a)^2}{n}
 +\lim_{n\rightarrow\infty}\frac{L^2}{8} \frac{(b-a)^3}{n^2}
 </mrow><mrow>
-&amp;\hskip1in=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta \qquad
+&amp;\hskip1in=\frac{1}{2}\int_a^b \phi(\theta)^2\,d\theta \qquad
 \text{(car $L, M, a$ et $b$ sont des constantes)},
 </mrow></md>
 nous avons
 <md><mrow>
-A=\frac{1}{2}\int_a^b R(\theta)^2\,d\theta,
+A=\frac{1}{2}\int_a^b \phi(\theta)^2\,d\theta,
 </mrow></md>
 soit exactement ce que nous voulions obtenir.
 </p>

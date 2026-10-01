@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="S2-1-Plusieurs-variables">
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Fonctions de plusieurs variables</title>
   <introduction>
     <p>Dans le parcours mathématique usuel, on étudie les fonctions d'une variable. Une telle fonction est une règle qui associe exactement une quantité (un nombre ou un vecteur par exemple) à une valeur donnée. On étudie les fonctions réelles d'une variable réelle et leurs applications à l'aide de graphiques, des limites, de leurs dérivées ou de leurs intégrales notamment. Nous verrons que la plupart des idées du calcul à une variable trouvent leur place avec plusieurs variables. Bien entendu, certains ajustements seront nécessaires.</p>
@@ -36,16 +38,16 @@
               </p>
               <p></p>
               <figure xml:id="figure-domaine-fxy">
-                <caption>Le domaine de la fonction <m>f.</m></caption>
+                <caption>Le domaine de la fonction <m>f</m>.</caption>
                 <image xml:id="sageplot-domainefxy">
                   <description><p>Le domaine de la fonction <m> f(x,y) = \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m></p></description>
                   <sageplot>
               var('x')
-              Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, fill='axis',
-                axes_labels=['$x$', '$y$'], fillcolor = "blue", fillalpha=0.2, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
-              Fig+= line([(0,0), (2,0)], color = "blue", thickness=2)
-              Fig+= line([(0,0), (0,1)], color = "blue", thickness=2)
-              Fig += text("$x^2+4y^2 = 4$", (1.75,0.75), fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
+              Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, color = "steelblue", fill='axis',
+                axes_labels=['$x$', '$y$'], fillcolor = "orange", fillalpha=0.25, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
+              Fig+= line([(0,0), (2,0)], color = "steelblue", thickness=2)
+              Fig+= line([(0,0), (0,1)], color = "steelblue", thickness=2)
+              Fig += text("$x^2+4y^2 = 4$", (1.65,0.95), color = "steelblue", fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
               Fig
                   </sageplot>
                 </image>
@@ -67,7 +69,7 @@
     </p>
     <definition xml:id="def-Graphe">
       <statement>
-        <p>Soit <m>\plan{D}\subseteq \R^2</m> et <m>f:\plan{D} \to \R</m> une fonction donnée. Le <term><em>graphe de <m>f</m></em></term> est l'ensemble
+        <p>Soit <m>\plan{D}\subseteq \R^2</m> et <m>f:\plan{D} \to \R</m> une fonction donnée. Le <term>graphe de <m>f</m></term> est l'ensemble
             <md>
                 \{(x,y,z)\in \R^3| z = f(x,y), (x,y)\in  \plan{D}\}.
             </md>
@@ -210,7 +212,7 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
     </sidebyside>
       <definition xml:id="def-C-niveau">
         <statement>
-          <p>Soit <m>f</m> une fonction de deux variables définie sur une région <m>\plan{D}</m>. Pour un réel <m>k</m> donné, la <term><em>courbe de niveau <m>k</m> de <m>f</m></em></term> est l'ensemble
+          <p>Soit <m>f</m> une fonction de deux variables définie sur une région <m>\plan{D}</m>. Pour un réel <m>k</m> donné, la <term>courbe de niveau <m>k</m> de <m>f</m></term> est l'ensemble
     <md>
       f^{-1}(k) = \{(x,y)\in \plan{D}|\,f(x,y) = k\}
     </md>.
@@ -332,7 +334,7 @@ Les figures ci-bas montrent la surface <m>z=f(x,y)</m> de la fonction considér�
   </p>
     <definition xml:id="def-S-niveau">
       <statement>
-        <p>Soit <m>f</m> une fonction de trois variables définie sur une région <m>\plan{D}\subseteq \R^3</m>. Pour un réel <m>k</m> donné, l'<term><em>ensemble de niveau <m>k</m> de <m>f</m></em></term> est l'ensemble
+        <p>Soit <m>f</m> une fonction de trois variables définie sur une région <m>\plan{D}\subseteq \R^3</m>. Pour un réel <m>k</m> donné, l'<term>ensemble de niveau <m>k</m> de <m>f</m></term> est l'ensemble
     <md>
       f^{-1}(k) = \{(x,y,z)\in \plan{D}|\,f(x,y,z) = k\}
     </md>.

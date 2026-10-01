@@ -5,6 +5,8 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- Traduit et adapté par Juan Carlos Bustamante, automne 2021 -->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Surfaces</title>
 
     <introduction>
@@ -37,13 +39,13 @@
                     <xref ref="S2-1-Plusieurs-variables" text="global">section</xref>.
                     Il s'agit de donner une équation de la forme
                     <md>
-                        <mrow> z = f(x,y)\qquad (x,y)\in\cD\subset\R^2.
+                        <mrow> z = f(x,y),\qquad (x,y)\in\cD\subset\R^2.
                         </mrow>
                     </md>
                     Par exemple, si la surface est la moitié supérieure de la
                     sphère de rayon 1 centrée à l'origine, on a
                     <md>
-                        <mrow> z = \sqrt{1-x^2-y^2}\qquad \text{avec } x^2+y^2 \leqslant 1.
+                        <mrow> z = \sqrt{1-x^2-y^2},\qquad \text{avec } x^2+y^2 \leqslant 1.
                         </mrow>
                     </md>
                 </li>
@@ -59,8 +61,8 @@
                     <md>
                         <mrow>x^2+y^2+z^2=1.</mrow>
                     </md>
-                    Nous reviendrons sur cette surface à l'
-                    <xref ref="eg_SURsphere" text="global">exemple</xref> plus
+                    Nous reviendrons sur cette surface à
+                    l'<xref ref="eg_SURsphere" text="global">exemple</xref> plus
                     bas.
                 </li>
 
@@ -69,7 +71,7 @@
                     probablement de la façon la plus utile de spécifier une
                     surface.
                     Tout comme un chemin (une fonction d'une variable qui
-                    renvoie des points dans <m>\R^2</m> ou <m>\R^3</m> ) sert à
+                    renvoie des points dans <m>\R^2</m> ou <m>\R^3</m>) sert à
                     paramétrer une courbe, on peut obtenir une surface comme
                     l'image d'une fonction de deux variables :
                     <md>
@@ -90,17 +92,17 @@
                 est le graphe
                 <md>
                     <mrow>
- z = f(x,y)\qquad (x,y)\in\cD\subset\R^2
+ z = f(x,y),\qquad (x,y)\in\cD\subset\R^2
 </mrow>
                 </md>
                 est de choisir <m>x</m> et <m>y</m> comme paramètres,
                 c'est-à-dire de choisir
                 <md>
                     <mrow>
-\vr(u,v) &amp;= u\, \vi  + v\,\vj  + f(u,v)\, \vk \quad (u,v)\in\cD
+\vr(u,v) &amp;= u\, \vi  + v\,\vj  + f(u,v)\, \vk, \quad (u,v)\in\cD
 </mrow>
                     <mrow>\text{ ou }\qquad
-\vr(x,y) &amp;= x\, \vi + y\,\vj + f(x,y)\, \vk \quad (x,y)\in\cD.
+\vr(x,y) &amp;= x\, \vi + y\,\vj + f(x,y)\, \vk, \quad (x,y)\in\cD.
 </mrow>
                 </md>
             </p>
@@ -127,7 +129,7 @@
                 <md>
                     <mrow>z=\pm\sqrt{1-x^2-y^2}.</mrow>
                 </md>
-                De plus, localement, cette surface est le graphe d'une fonction.
+                Cependant, localement, cette surface est le graphe d'une fonction.
                 Ceci veut dire que, pour tout point <m>(x_0, y_0, z_0)</m> sur
                 la sphère, les points sur cette surface qui sont suffisamment
                 près de <m>(x_0, y_0, z_0)</m> peuvent être exprimés sous une
@@ -137,19 +139,19 @@
                 est
                 <md>
                     <mrow>
-&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ \norm{(x,y,z) - (0,0,1)} \leqslant \sqrt{2}}
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ \norm{(x,y,z) - (0,0,1)} \lt \sqrt{2}}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+(z-1)^2  \leqslant  2}
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+(z-1)^2 \lt 2}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+z^2-2z+1  \leqslant  2}
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+z^2-2z+1 \lt 2}
 </mrow>
                     <mrow>
 &amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ z \gt 0}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ z=\sqrt{1-x^2-y^2},\ x^2+y^2 \leqslant 1}.
+&amp;=\Set{(x,y,z)}{ z=\sqrt{1-x^2-y^2},\ x^2+y^2 \lt 1}.
 </mrow>
                 </md>
             </p>
@@ -174,19 +176,19 @@
                 inférieure à <m>\sqrt{2}</m> du point <m>(1,0,0)</m> est
                 <md>
                     <mrow>
-&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ \norm{(x,y,z) - (1,0,0)} \leqslant \sqrt{2}}
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ \norm{(x,y,z) - (1,0,0)} \lt \sqrt{2}}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ (x-1)^2+y^2+z^2  \leqslant  2}
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ (x-1)^2+y^2+z^2 \lt 2}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2-2x+1+y^2+z^2  \leqslant  2}
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2-2x+1+y^2+z^2 \lt 2}
 </mrow>
                     <mrow>
 &amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x \gt 0}
 </mrow>
                     <mrow>
-&amp;=\Set{(x,y,z)}{ x=\sqrt{1-y^2-z^2},\ y^2+z^2 \leqslant 1}.
+&amp;=\Set{(x,y,z)}{ x=\sqrt{1-y^2-z^2},\ y^2+z^2 \lt 1}.
 </mrow>
                 </md>
             </p>
@@ -254,12 +256,12 @@ z&amp;=\rho\cos\varphi.
 </mrow>
                 </md>
                 Les points sur la sphère <m>x^2+y^2+z^2=1</m> sont exactement
-                les points vérifiant <m>\rho=1</m>, de sorte que nous avons un
+                les points vérifiant <m>{\rho=1}</m>, de sorte que nous avons un
                 paramétrage
                 <md>
                     <mrow>
 \vr(\theta,\varphi)
-=\sin\varphi\cos\theta\,\vi  + \sin\varphi\sin\theta\,\vj+ \,\cos\varphi\vk.
+=\sin\varphi\cos\theta\,\vi  + \sin\varphi\sin\theta\,\vj+ \cos\varphi\,\vk,\qquad 0\leqslant\theta\leqslant 2\pi,\ 0\leqslant\varphi\leqslant\pi.
 </mrow>
                 </md>
             </p>
@@ -298,7 +300,7 @@ through the point
 </sidebyside>
 </li>
 <li>
-Finally have <m>\theta</m>  run over <m>0\le\theta \leqslant 2\pi</m>. Then the semicircle
+Finally have <m>\theta</m>  run over <m>0\leqslant\theta \leqslant 2\pi</m>. Then the semicircle
 rotates about the <m>z</m>-axis, sweeping out the full sphere, except for
 the north and south poles.
 </li>
@@ -351,9 +353,9 @@ The figure on the right below gives the lines of longitude
                     </p>
 
                     <p>
-                        Remarquons que la section de ce cylindre au plan
-                        <m>Oxy</m>, et en fait à n'importe quel plan
-                        <m>z=c</m>, est le cercle <m>x^2+z^2=1</m>.
+                        Remarquons que la section de ce cylindre par le plan
+                        <m>Oxy</m>, et en fait par n'importe quel plan
+                        <m>z=c</m>, est le cercle <m>x^2+y^2=1</m>.
                         Nous pouvons en donner un paramétrage en posant
                         <m>x=\cos\theta</m>, <m>y=\sin\theta</m>, de sorte que
                         la figure en entier peut être paramétrée avec les
@@ -366,10 +368,10 @@ The figure on the right below gives the lines of longitude
                 <image source="images/CLP4-figs/cylinder" width="100%"/>
             </sidebyside>
             <md>
-                            <mrow>
-\vr(\theta,z) = \cos\theta\, \vi + \sin\theta\,\vj + z\, \vk
+            <mrow>
+\vr(\theta,z) = \cos\theta\, \vi + \sin\theta\,\vj + z\, \vk,
 \qquad
-0\leqslant\theta \leqslant 2\pi,\ \ -\infty \leqslant z \leqslant \infty.
+0\leqslant\theta \leqslant 2\pi,\ z\in\R.
 </mrow>
                         </md>
         </example>
@@ -385,7 +387,7 @@ The figure on the right below gives the lines of longitude
                 faisant tourner la courbe du plan <m>Oyz</m>,
                 <md>
                     <mrow>
-z=g(y)=e^y \qquad 0\leqslant  y\leqslant  1,
+z=g(y)=e^y, \qquad 0\leqslant  y\leqslant  1,
 </mrow>
                 </md>
                 autour de l'axe <m>Oz</m>.
@@ -427,16 +429,16 @@ z=g(y)=e^y \qquad 0\leqslant  y\leqslant  1,
                 Ceci donne aussi un paramétrage de la surface de révolution.
                 <md>
                     <mrow>
-x(Y,\theta) &amp; = Y\sin\theta
+x(Y,\theta) &amp; = Y\sin\theta,
 </mrow>
                     <mrow>
-y(Y,\theta) &amp; = Y\cos\theta
+y(Y,\theta) &amp; = Y\cos\theta,
 </mrow>
                     <mrow>
-z(Y,\theta) &amp; = e^Y
+z(Y,\theta) &amp; = e^Y,
 </mrow>
                     <mrow>
-&amp;0\leqslant  Y\leqslant  1,\qquad 0\le\theta \leqslant 2\pi
+&amp;0\leqslant  Y\leqslant  1,\qquad 0\leqslant\theta \leqslant 2\pi.
 </mrow>
                 </md>
                 Remarquons, pour des fins de vérification, que
@@ -460,7 +462,7 @@ z(Y,\theta) &amp; = e^Y
                         <m>\left( x(Y,\theta),\,y(Y,\theta),\,z(Y,\theta)\right) </m>
                         parcourt le cercle <m>x^2+y^2=Y^2</m> du plan
                         <m>z=e^Y</m>, lorsque <m>\theta</m> vérifie
-                        <m>0\le\theta \leqslant 2\pi</m>.
+                        <m>0\leqslant\theta \leqslant 2\pi</m>.
                     </li>
                 </ul>
                 Notons aussi que
@@ -472,7 +474,7 @@ x(Y,\theta)^2 + y(Y,\theta)^2 = Y^2,
                 de sorte que
                 <md>
                     <mrow>
-Y=\sqrt{x(Y,\theta)^2 + y(Y,\theta)^2}
+Y=\sqrt{x(Y,\theta)^2 + y(Y,\theta)^2},
 </mrow>
                 </md>
                 et que
@@ -493,7 +495,7 @@ z=e^{\sqrt{x^2+y^2}}.
                 La surface de révolution est
                 <md>
                     <mrow>
-z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
+z=e^{\sqrt{x^2+y^2}}, \qquad 1\leqslant  z\leqslant  e.
 </mrow>
                 </md>
             </p>
@@ -608,9 +610,9 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
                 ou encore
                 <md>
                     <mrow>
-      &amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \vi
-                        + (R + r\cos\theta)\sin\psi \ \vj
-                        + r\sin\theta\ \vk
+      &amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \,\vi
+                        + (R + r\cos\theta)\sin\psi \,\vj
+                        + r\sin\theta\,\vk,
       </mrow>
                     <mrow>
       &amp; 0\leqslant  \theta,\psi  \leqslant  2\pi.
@@ -635,11 +637,11 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
             Lorsqu'on rencontre une surface <q>compliquée</q> et qu'on veut
             l'étudier au voisinage d'un point, il est naturel de penser à
             utiliser le plan tangent en ce point.
-            Afin de spécifier un plan, on doit avoir
+            Afin de spécifier un plan, on doit avoir<nbsp/>:
             <ul>
                 <li>
                     un vecteur non nul <m>\vn</m>, le vecteur normal pour ce
-                    plan, et
+                    plan;
                 </li>
 
                 <li>un point <m>(x_0,y_0,z_0)</m> appartenant au plan.</li>
@@ -647,18 +649,18 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
             Si <m>(x,y,z)</m> est un autre point sur le plan, alors le vecteur
             <md>
                 <mrow>
-(x\, \vi + y\, \vj + z\, \vk) - (x_0\, \vi + y_0\, \vj + z_0\, \vk) = (x-x_0)\vi + (y-y_0)\vj + (z-z_0)\vk
+\tvect{x}{y}{z} - \tvect{x_0}{y_0}{z_0} = \tvect{x-x_0}{y-y_0}{z-z_0}
 </mrow>
             </md>
             est parallèle au plan et, donc, est orthogonal à <m>\vn</m>.
-            Ceci donne une équation pour le plan
+            Ceci donne une équation pour le plan<nbsp/>:
         </p>
 
         <sidebyside widths="45% 30%" valign="middle">
             <p>
                 <md>
                     <mrow>
-\vn\cdot(x-x_0,\,y-y_0,\,z-z_0) = 0.
+\vn\cdot\tvect{x-x_0}{y-y_0}{z-z_0} = 0.
 </mrow>
                 </md>
             </p>
@@ -681,42 +683,35 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
                 <p>
                     <ol marker="(a)">
                         <li>
-                            Soit
+                            Soit <m>\cS</m> une surface paramétrée par  
                             <md>
                                 <mrow>
 \vr&amp;: \cD\subset\R ^2 \rightarrow \R ^3
 </mrow>
                                 <mrow>
-   &amp;(u,v) \in\cD \mapsto \vr(u,v) =\left( x(u,v),\,y(u,v),\,z(u,v)\right)
+   &amp;(u,v) \in\cD \mapsto \vr(u,v) =x(u,v)\,\vi + y(u,v)\,\vj + z(u,v)\,\vk
 </mrow>
-                            </md>
-                            une surface paramétrée et
+                            </md> et
                             <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m> un point sur la
                             surface.
                             Soit
                             <md>
                                 <mrow>
-\vT_u &amp;= \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
-=\left( \frac{\partial x}{\partial u}(u_0,v_0),\,
-      \frac{\partial y}{\partial u}(u_0,v_0),\,
-      \frac{\partial z}{\partial u}(u_0,v_0)\right),
-</mrow>
-                                <mrow>
-\vT_v &amp;= \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
-=\left( \frac{\partial x}{\partial v}(u_0,v_0),\,
-      \frac{\partial y}{\partial v}(u_0,v_0),\,
-      \frac{\partial z}{\partial v}(u_0,v_0)\right).
+\vT_u = \frac{\partial\ }{\partial u}\vr(u_0,v_0)
+=\left.\tvect{\frac{\partial x}{\partial u}}{\frac{\partial y}{\partial u}}{\frac{\partial z}{\partial u}}\right|_{(u_0,v_0)},\ 
+\vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v_0)
+=\left.\tvect{\frac{\partial x}{\partial v}}{\frac{\partial y}{\partial v}}{\frac{\partial z}{\partial v}}\right|_{(u_0,v_0)}.
 </mrow>
                             </md>
                             Alors,
                             <md>
                                 <mrow>
             \vn = \vT_u\times\vT_v
-            =\det\left[\begin{matrix}
-              \vi &amp; \frac{\partial x}{\partial u}(u_0,v_0) &amp; \frac{\partial x}{\partial v}(u_0,v_0) \\
-              \vj &amp; \frac{\partial y}{\partial u}(u_0,v_0) &amp; \frac{\partial y}{\partial v}(u_0,v_0) \\
-              \vk &amp; \frac{\partial z}{\partial u}(u_0,v_0) &amp; \frac{\partial z}{\partial v}(u_0,v_0)
-            \end{matrix}\right]
+            =\left.\det\left[\begin{matrix}
+              \vi &amp; \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\[2pt]
+              \vj &amp; \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \\[2pt]
+              \vk &amp; \frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}
+            \end{matrix}\right]\right|_{(u_0,v_0)}
           </mrow>
                             </md>
                             est normal à la surface au point
@@ -724,12 +719,12 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
                         </li>
 
                         <li>
-                            Soit <m>(x_0,y_0,z_0)=f(x_0,y_0)</m> un point sur la
+                            Soit <m>(x_0,y_0,z_0)</m>, avec <m>z_0=f(x_0,y_0)</m>, un point sur la
                             surface d'équation <m>z=f(x,y)</m>.
                             Alors,
                             <md>
                                 <mrow>
-\vn =-f_x(x_0,y_0)\,\vi   - f_y(x_0,y_0)\,\vj  + \vk
+\vn =-f_x(x_0,y_0)\vi - f_y(x_0,y_0) + \vk
 </mrow>
                             </md>
                             est normal à la surface au point
@@ -770,169 +765,166 @@ z=e^{\sqrt{x^2+y^2}}\qquad 1\leqslant  z\leqslant  e.
         </p>
 
         <proof>
-            <p>
-                (a) Fixons d'abord <m>v=v_0</m> et faisons varier <m>u</m>.
-                Alors,
-                <md>
-                    <mrow>
-u\mapsto \vr(u,v_0) = \left( x(u,v_0),\,y(u,v_0),\,z(u,v_0)\right)
-</mrow>
-                </md>
-                est un chemin, sa courbe fait partie de la surface (la courbe
-                rouge dans la figure de droite ci-bas) et elle passe par
-                <m>(x_0,y_0,z_0)</m> (le point noir sur la figure) lorsque
-                <m>u=u_0</m>.
-            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        Fixons d'abord <m>v=v_0</m> et faisons varier <m>u</m>.
+                        Alors,
+                        <md>
+                            <mrow>
+        u\mapsto \vr(u,v_0) = x(u,v_0)\,\vi + y(u,v_0)\,\vj + z(u,v_0)\,\vk
+        </mrow>
+                        </md>
+                        est un chemin, sa courbe fait partie de la surface (la courbe
+                        rouge dans la figure de droite ci-bas) et elle passe par
+                        <m>(x_0,y_0,z_0)</m> (le point noir sur la figure) lorsque
+                        <m>u=u_0</m>.
+                    </p>
 
-            <sidebyside widths="38% 38%">
-                <image source="images/CLP4-figs/surfaceSlice"/>
-                <image source="images/CLP4-figs/saddleA"/>
-            </sidebyside>
+                    <sidebyside widths="38% 38%">
+                        <image source="images/CLP4-figs/surfaceSlice"/>
+                        <image source="images/CLP4-figs/saddleA"/>
+                    </sidebyside>
 
-            <p>
-                Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>,
-                qui est aussi tangent à la surface en <m>(x_0,y_0,z_0)</m>, est
-                <md>
-                    <mrow>
-\vT_u = \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
-=\left( \frac{\partial x}{\partial u}(u_0,v_0),\,
-      \frac{\partial y}{\partial u}(u_0,v_0),\,
-      \frac{\partial z}{\partial u}(u_0,v_0)\right).
-</mrow>
-                </md>
-                Il s'agit de la flèche rouge dans la figure de droite ci-haut.
-            </p>
+                    <p>
+                        Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>,
+                        qui est aussi tangent à la surface en <m>(x_0,y_0,z_0)</m>, est
+                        <md>
+                            <mrow>
+        \vT_u = \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
+        =\left.\tvect{\frac{\partial x}{\partial u}}{\frac{\partial y}{\partial u}}{\frac{\partial z}{\partial u}}\right|_{(u_0,v_0)}.
+        </mrow>
+                        </md>
+                        Il s'agit de la flèche rouge dans la figure de droite ci-haut.
+                    </p>
 
-            <p>
-                Fixons maintenant <m>u=u_0</m> et faisons varier <m>v</m>.
-                Alors,
-                <md>
-                    <mrow>
-v\mapsto \vr(u_0,v) = \left( x(u_0,v),\,y(u_0,v),\,z(u_0,v)\right)
-</mrow>
-                </md>
-                est un chemin dont la courbe se trouve sur la surface (c'est la
-                courbe bleue dans la surface ci-haut) qui passe par
-                <m>(x_0,y_0,z_0)</m> lorsque <m>v=v_0</m>.
-                Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>,
-                qui est aussi tangent à la surface au point
-                <m>(x_0,y_0,z_0)</m>, est
-                <md>
-                    <mrow>
-\vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
-=\left( \frac{\partial x}{\partial v}(u_0,v_0),\,
-      \frac{\partial y}{\partial v}(u_0,v_0),\,
-      \frac{\partial z}{\partial v}(u_0,v_0)\right).
-</mrow>
-                </md>
-                C'est la flèche bleue dans la figure de droite ci-haut.
-            </p>
+                    <p>
+                        Fixons maintenant <m>u=u_0</m> et faisons varier <m>v</m>.
+                        Alors,
+                        <md>
+                            <mrow>
+        v\mapsto \vr(u_0,v) = x(u_0,v)\,\vi + y(u_0,v)\,\vj + z(u_0,v)\,\vk
+        </mrow>
+                        </md>
+                        est un chemin dont la courbe se trouve sur la surface (c'est la
+                        courbe bleue dans la surface ci-haut) qui passe par
+                        <m>(x_0,y_0,z_0)</m> lorsque <m>v=v_0</m>.
+                        Le vecteur tangent à cette courbe au point <m>(x_0,y_0,z_0)</m>,
+                        qui est aussi tangent à la surface au point
+                        <m>(x_0,y_0,z_0)</m>, est
+                        <md>
+                            <mrow>
+        \vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
+        =\left.\tvect{\frac{\partial x}{\partial v}}{\frac{\partial y}{\partial v}}{\frac{\partial z}{\partial v}}\right|_{(u_0,v_0)}.
+        </mrow>
+                        </md>
+                        C'est la flèche bleue dans la figure de droite ci-haut.
+                    </p>
 
-            <p>
-                Nous avons deux vecteurs tangents à la surface au point
-                <m>(x_0,y_0,z_0)</m>, à savoir <m>\vT_u</m> et <m>\vT_v</m>.
-                Leur produit vectoriel
-                <md>
-                    <mrow>
-            \vn = \vT_u\times\vT_v
-            =\det\left[\begin{matrix}
-              \vi &amp; \frac{\partial x}{\partial u}(u_0,v_0) &amp; \frac{\partial x}{\partial v}(u_0,v_0) \\
-              \vj &amp; \frac{\partial y}{\partial u}(u_0,v_0) &amp; \frac{\partial y}{\partial v}(u_0,v_0) \\
-              \vk &amp; \frac{\partial z}{\partial u}(u_0,v_0) &amp; \frac{\partial z}{\partial v}(u_0,v_0)
-            \end{matrix}\right]
-</mrow>
-                </md>
-                est donc normal à la surface au point <m>(x_0,y_0,z_0)</m>.
-            </p>
-
-            <p>
-                (b) Supposons maintenant que la surface est donnée comme le
-                graphe de la fonction <m>z=f(x,y)</m>.
-                Après avoir changé les noms des variables/paramètres, <m>u</m>
-                devient <m>x</m>, et <m>v</m> devient <m>y</m>, nous pouvons
-                utiliser le résultat de (a) :
-                <md>
-                    <mrow>
-\vr(x,y) = \left( x,y, f(x,y)\right),
-</mrow>
-                </md>
-                est un paramétrage de la surface, et, au point
-                <m>\left( x_0,y_0,z_0\right) =f(x_0,y_0) </m>,
-                <md>
-                    <mrow>
-\vT_x &amp;= \frac{\partial\vr }{\partial x}(x_0,y_0)
-=\left( 1,\,
-      0,\,
-      f_x(x_0,y_0)\right)
-</mrow>
-                    <mrow>
-\vT_y &amp;= \frac{\partial\vr }{\partial y}(x_0,y_0)
-=\left( 0,\,
-      1,\,
-      f_y(x_0,y_0)\right)
-</mrow>
-                </md>
-                et
-                <md>
-                    <mrow> 
-      \vn &amp;= \vT_x\times\vT_y  =\det\left[\begin{matrix}
-              \vi &amp; 1 &amp; 0 \\
-              \vj &amp; 0 &amp; 1 \\
-              \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)
-            \end{matrix}\right]
-          </mrow>
-                    <mrow> \amp              =-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj + \vk. </mrow>
-                </md>
-            </p>
-
-            <p>
-                (c) Ce résultat a été établi au
-                <xref ref="thm_tan_plane_G" text="global">théorème</xref>.
-                <!--
-Fianlement, supposons que la surface est donnée implicitement par  <m>G(x,y,z) = K</m>, où <m>K</m> est une constante. Si <m>\vr(t)=\left( x(t)\,\,y(t)\,,\,z(t)\right) </m> is any curve
-with <m>\vr(0) = (x_0,y_0,z_0)</m> that lies on the surface, then
-<md alignment="alignat">
-<mrow>
-&amp; &amp; G\left( \vr(t)\right) &amp;=K &amp;\qquad &amp;\text{for all } t
-</mrow><mrow>
-&amp;\implies &amp; \diff{\ }{t} G\left( x(t),y(t),z(t)\right) &amp;=0 &amp; &amp;\text{for all } t
-</mrow>
-</md>
-Applying the chain rule gives
-<md>
-<mrow>
-\frac{\partial G}{\partial x}\left( x(t),y(t),z(t)\right) \diff{x}{t}(t)
-&amp;+\frac{\partial G}{\partial y}\left( x(t),y(t),z(t)\right) \diff{y}{t}(t)
-</mrow><mrow>
-&amp;+\frac{\partial G}{\partial z}\left( x(t),y(t),z(t)\right) \diff{z}{t}(t)
-=0
-</mrow>
-</md>
-The left hand side is exactly the dot product
-of <m>\left( \frac{\partial G}{\partial x}
-\,,\,\frac{\partial G}{\partial y}
-\,,\,\frac{\partial G}{\partial z}\right) =\vnabla G</m>
-with
-<m>\left( \diff{x}{t}
-\,,\,\diff{y}{t}
-\,,\,\diff{z}{t}\right)
-=\diff{\vr}{t}</m>, so that
-<md>
-<mrow>
-\vnabla G\left( \vr(t)\right) \cdot\vr'(t)&amp;=0 \qquad
-          \text{for all } t
-</mrow><mrow>
-\implies  \vnabla G\left( x_0,y_0,z_0\right) \cdot\vr'(0)&amp;=0 &amp;
-</mrow>
-</md>
-This tell us that <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is perpendicular
-to <m>\vr'(0)</m>, which is a tangent vector to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
-This is true for all curves <m>\vr(t)</m> on <m>G=K</m> and so is true
-for all tangent vectors to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
-So <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is a normal vector to <m>G(x,y,z)=K</m>
-at <m>(x_0,y_0,z_0)</m>.
--->
-            </p>
+                    <p>
+                        Nous avons deux vecteurs tangents à la surface au point
+                        <m>(x_0,y_0,z_0)</m>, à savoir <m>\vT_u</m> et <m>\vT_v</m>.
+                        Leur produit vectoriel
+                        <md>
+                            <mrow>
+                    \vn = \vT_u\times\vT_v
+                    =\left.\det\left[\begin{matrix}
+                      \vi &amp; \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\[2pt]
+                      \vj &amp; \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \\[2pt]
+                      \vk &amp; \frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v}
+                    \end{matrix}\right]\right|_{(u_0,v_0)}
+        </mrow>
+                        </md>
+                        est donc normal à la surface au point <m>(x_0,y_0,z_0)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Supposons maintenant que la surface est donnée comme le
+                        graphe de la fonction <m>z=f(x,y)</m>.
+                        Après avoir changé les noms des variables/paramètres, <m>u</m>
+                        devient <m>x</m>, et <m>v</m> devient <m>y</m>, nous pouvons
+                        utiliser le résultat de (a) :
+                        <md>
+                            <mrow>
+        \vr(x,y) = x\,\vi + y\,\vj + f(x,y)\,\vk
+        </mrow>
+                        </md>
+                        est un paramétrage de la surface, et, au point
+                        <m>\left( x_0,y_0,z_0\right)</m>, où <m>z_0=f(x_0,y_0)</m>,
+                        <md>
+                            <mrow>
+        \vT_x = \frac{\partial\vr }{\partial x}\Big|_{(x_0,y_0)}
+        =\left.\ctvec{1}{0}{f_x}\right|_{(x_0,y_0)},
+        \qquad
+        \vT_y = \frac{\partial\vr }{\partial y}\Big|_{(x_0,y_0)}
+        =\left.\ctvec{0}{1}{f_y}\right|_{(x_0,y_0)}
+        </mrow>
+                        </md>
+                        et
+                        <md>
+                            <mrow> 
+              \vn &amp;= \vT_x\times\vT_y  =\det\left[\begin{matrix}
+                      \vi &amp; 1 &amp; 0 \\
+                      \vj &amp; 0 &amp; 1 \\
+                      \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)
+                    \end{matrix}\right]
+                  </mrow>
+                            <mrow> \amp              =\left.\ctvec{-f_x}{-f_y}{1}\right|_{(x_0,y_0)}. </mrow>
+                        </md>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Ce résultat a été établi au
+                        <xref ref="thm_tan_plane_G" text="global">théorème</xref>.
+                        <!--
+        Fianlement, supposons que la surface est donnée implicitement par  <m>G(x,y,z) = K</m>, où <m>K</m> est une constante. Si <m>\vr(t)=\left( x(t)\,\,y(t)\,,\,z(t)\right) </m> is any curve
+        with <m>\vr(0) = (x_0,y_0,z_0)</m> that lies on the surface, then
+        <md alignment="alignat">
+        <mrow>
+        &amp; &amp; G\left( \vr(t)\right) &amp;=K &amp;\qquad &amp;\text{for all } t
+        </mrow><mrow>
+        &amp;\implies &amp; \diff{\ }{t} G\left( x(t),y(t),z(t)\right) &amp;=0 &amp; &amp;\text{for all } t
+        </mrow>
+        </md>
+        Applying the chain rule gives
+        <md>
+        <mrow>
+        \frac{\partial G}{\partial x}\left( x(t),y(t),z(t)\right) \diff{x}{t}(t)
+        &amp;+\frac{\partial G}{\partial y}\left( x(t),y(t),z(t)\right) \diff{y}{t}(t)
+        </mrow><mrow>
+        &amp;+\frac{\partial G}{\partial z}\left( x(t),y(t),z(t)\right) \diff{z}{t}(t)
+        =0
+        </mrow>
+        </md>
+        The left hand side is exactly the dot product
+        of <m>\left( \frac{\partial G}{\partial x}
+        \,,\,\frac{\partial G}{\partial y}
+        \,,\,\frac{\partial G}{\partial z}\right) =\vnabla G</m>
+        with
+        <m>\left( \diff{x}{t}
+        \,,\,\diff{y}{t}
+        \,,\,\diff{z}{t}\right)
+        =\diff{\vr}{t}</m>, so that
+        <md>
+        <mrow>
+        \vnabla G\left( \vr(t)\right) \cdot\vr'(t)&amp;=0 \qquad
+                  \text{for all } t
+        </mrow><mrow>
+        \implies  \vnabla G\left( x_0,y_0,z_0\right) \cdot\vr'(0)&amp;=0 &amp;
+        </mrow>
+        </md>
+        This tell us that <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is perpendicular
+        to <m>\vr'(0)</m>, which is a tangent vector to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+        This is true for all curves <m>\vr(t)</m> on <m>G=K</m> and so is true
+        for all tangent vectors to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+        So <m>\vnabla G\left( x_0,y_0,z_0\right) </m> is a normal vector to <m>G(x,y,z)=K</m>
+        at <m>(x_0,y_0,z_0)</m>.
+        -->
+                    </p>
+                </li>
+            </ol>
         </proof>
 
         <example xml:id="eg_tangentPlaneA">
@@ -947,7 +939,10 @@ x &amp;= x(u,v) = u\cos v,
 y &amp;=y(u,v) = u\sin v,
 </mrow>
                     <mrow>
-z &amp;=z(u,v) = u.
+z &amp;=z(u,v) = u,
+</mrow>
+                    <mrow>
+&amp; u\in\R,\quad v\in[0,2\pi[.
 </mrow>
                 </md>
                 Remarquons que
@@ -971,39 +966,40 @@ G(x,y,z) = x^2+y^2-z^2 = 0.
                 <md>
                     <mrow>
 \vT_u &amp;= \frac{\partial\vr}{\partial u}(u_0,v_0)
-       =  \cos v_0\,\vi   + \sin v_0\,\vj  + \vk,
+       =  \ctvec{\cos v_0}{\sin v_0}{1},
 </mrow>
                     <mrow>
 \vT_v &amp;= \frac{\partial\vr}{\partial v}(u_0,v_0)
-       =  -u_0\sin v_0\,\vi   + u_0\cos v_0\,\vj,
+       =  \ctvec{-u_0\sin v_0}{u_0\cos v_0}{0},
 </mrow>
                 </md>
                 de sorte que
                 <md>
                     <mrow>
-\vn &amp;= \left( \cos v_0\,\vi   + \sin v_0\,\vj  + \vk  \right) \times
-      \left( -u_0\sin v_0\,\vi   + u_0\cos v_0\,\vj \right)
+\vn &amp;= \ctvec{\cos v_0}{\sin v_0}{1} \times \ctvec{-u_0\sin v_0}{u_0\cos v_0}{0}
+      = \tvect{-u_0\cos v_0}{-u_0\sin v_0}{u_0}
 </mrow>
                     <mrow>
-    &amp;= \left( -u_0\cos v_0,\,-u_0\sin v_0,\, u_0\right)
-      = (-x_0,-y_0,z_0).
+    &amp;= \tvect{-x_0}{-y_0}{z_0}.
 </mrow>
                 </md>
                 Par ailleurs, avec l'équation <m>G(x,y,z) = x^2+y^2-z^2=0</m>,
                 nous avons le vecteur normal
                 <md>
                     <mrow>
-\vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =-2(-x_0,-y_0,z_0).
+\vnabla G\left( x_0,y_0,z_0\right)  = \tvect{2x_0}{2y_0}{-2z_0} = -2\tvect{-x_0}{-y_0}{z_0}.
 </mrow>
                 </md>
-                Bien entendu, les deux vecteurs <m>(-x_0,-y_0,z_0)</m> et
-                <m>-2(-x_0,-y_0,z_0)</m> sont colinéaires, les deux peuvent être
+                Bien entendu, les deux vecteurs <m>{-x_0\,\vi - y_0\,\vj + z_0\,\vk}</m> et
+                <m>{-2\left(-x_0\,\vi - y_0\,\vj + z_0\,\vk\right)}</m> sont colinéaires, les deux peuvent être
                 utilisés comme vecteur normal pour le plan tangent.
                 L'équation de ce plan est
                 <md>
                     <mrow>
-0=\vn\cdot(x-x_0,y-y_0,z-z_0)
- = -x_0(x-x_0)-y_0(y-y_0) + z_0(z-z_0),
+0&amp;=\vn\cdot\tvect{x-x_0}{y-y_0}{z-z_0}
+</mrow>
+                    <mrow>
+ &amp;= -x_0(x-x_0)-y_0(y-y_0) + z_0(z-z_0),
 </mrow>
                 </md>
                 <em>pourvu que </em> <m>(x_0,y_0,z_0)\ne \vZero</m>.
@@ -1052,8 +1048,13 @@ G(x,y,z) = x^2+y^2-z^2 = 0.
                     Le rayon du cercle dans le plan <m>Oxy</m> est nul, et ce
                     rayon croît linéairement à mesure qu'on s'éloigne du plan
                     <m>Oxy</m>.
-                    Notre surface est un cône, elle n'a pas de plan tangent à
-                    <m>(0,0,0)</m>.
+                    Notre surface est un cône, avec ses deux portions, une
+                    au-dessus et une au-dessous du plan <m>Oxy</m>; elle n'a pas
+                    de plan tangent à <m>(0,0,0)</m>.
+                    La figure ci-contre ne montre que la portion supérieure,
+                    <m>z\geqslant 0</m>, qui correspond aux valeurs
+                    <m>u\geqslant 0</m> du paramètre; la portion inférieure en
+                    est le reflet par rapport au plan <m>Oxy</m>.
                 </p>
 
                 <p/>
@@ -1095,24 +1096,26 @@ x^2 + y^2 -z^2 = 1.
                 Avec l'équation <m>G(x,y,z) = x^2+y^2-z^2=1</m>, nous avons
                 <md>
                     <mrow>
-\vnabla G\left( x_0,y_0,z_0\right)  = (2x_0,2y_0,-2z_0) =2(x_0,y_0,-z_0)
+\vnabla G\left( x_0,y_0,z_0\right)  = \tvect{2x_0}{2y_0}{-2z_0} =2\tvect{x_0}{y_0}{-z_0}
 </mrow>
                 </md>
-                et nous pouvons prendre <m>(x_0,y_0,-z_0)</m> comme vecteur
+                et nous pouvons prendre <m>{\vn=x_0\,\vi+y_0\,\vj-z_0\,\vk}</m> comme vecteur
                 normal au point <m>(x_0,y_0,z_0)</m>.
                 Ainsi, le plan tangent à <m>x^2+y^2-z^2=1</m> au point
                 <m>(x_0,y_0,z_0)</m> est
                 <md>
                     <mrow>
-0=\vn\cdot(x-x_0,y-y_0,z-z_0)
- = x_0(x-x_0)+y_0(y-y_0) - z_0(z-z_0).
+0&amp;=\vn\cdot\tvect{x-x_0}{y-y_0}{z-z_0}
+</mrow>
+                    <mrow>
+ &amp;= x_0(x-x_0)+y_0(y-y_0) - z_0(z-z_0).
 </mrow>
                 </md>
-                Cette fois, <m>\vn=(x_0,y_0,-z_0)\ne \vZero</m>, de sorte que
+                Cette fois, <m>{\vn\ne \vZero}</m>, de sorte que
                 nous avons un plan tangent en chaque point.
                 Comme <m>(0,0,0)</m> n'appartient pas à la surface, nous n'avons
                 pas le problème d'annulation du vecteur normal
-                <m>\vn=(x_0,y_0,-z_0)</m>.
+                <m>\vn</m>.
             </p>
         </example>
         
@@ -1130,9 +1133,9 @@ x^2 + y^2 -z^2 = 1.
 
                     <p>
                         <md>
-                            <mrow> x &amp;= r\cos\theta </mrow>
-                            <mrow> y &amp;= r\sin\theta </mrow>
-                            <mrow> z &amp;= z </mrow>
+                            <mrow> x &amp;= r\cos\theta, </mrow>
+                            <mrow> y &amp;= r\sin\theta, </mrow>
+                            <mrow> z &amp;= z. </mrow>
                         </md>
                     </p>
                 </stack>
@@ -1145,17 +1148,17 @@ x^2 + y^2 -z^2 = 1.
             <p>
                 En coordonnées cylindriques, la surface <m>x^2+y^2-z^2=1</m> est
                 <m>r^2-z^2=1</m>, et l'on peut la paramétrer en prenant
-                <m>\vr(\theta,z) = \sqrt{1+z^2}\,\cos\theta\,\vi   +\sqrt{1+z^2}\,\sin\theta\,\vj
-      +z\,\vk  </m>.
+                <m>\vr(\theta,z) = {\sqrt{1+z^2}\,\cos\theta\,\vi   +\sqrt{1+z^2}\,\sin\theta\,\vj
+      +z\,\vk}</m>, avec <m>{0\leqslant\theta\leqslant 2\pi}</m> et <m>z\in\R</m>.
             </p>
 
             <p>
                 Une autre façon de procéder est de tirer profit des propriétés
-                des fonctions trigonométriques hyperboliques.
+                des fonctions trigonométriques hyperboliques<nbsp/>:
                 <md>
                     <mrow>
 \sinh u = \frac{1}{2}\left( e^u-e^{-u}\right),  \qquad
-\cosh u = \frac{1}{2}\left( e^u+e^{-u}\right),
+\cosh u = \frac{1}{2}\left( e^u+e^{-u}\right).
 </mrow>
                 </md>
                 Celles-ci ont des propriétés analogues à celles des fonctions
@@ -1165,8 +1168,8 @@ x^2 + y^2 -z^2 = 1.
                 En effet, on montre que
                 <md>
                     <mrow>
-\diff{}{u} \cosh u= \sinh u \qquad
-\diff{}{u} \sinh u= \cosh u \qquad
+\diff{}{u} \cosh u= \sinh u, \qquad
+\diff{}{u} \sinh u= \cosh u, \qquad
 \cosh^2 u -\sinh^2 u =1.
 </mrow>
                 </md>
@@ -1175,7 +1178,7 @@ x^2 + y^2 -z^2 = 1.
                 <md>
                     <mrow>
 \vr(\theta,u) = \cosh u\,\cos\theta\,\vi   +\cosh u\,\sin\theta\,\vj
-      +\sinh u\,\vk.
+      +\sinh u\,\vk,\qquad 0\leqslant\theta\leqslant 2\pi,\ u\in\R.
 </mrow>
                 </md>
                 Afin de nous exercer avec les fonctions trigonométriques
@@ -1199,7 +1202,7 @@ y_\theta&amp;= \phantom{-}\cosh u\,\cos\theta
 
 z&amp;=\sinh u &amp;
 z_u&amp;=\cosh u &amp;
-z_\theta&amp;=0
+z_\theta&amp;=0.
 </mrow>
                 </md>
                 Ainsi,
@@ -1213,9 +1216,7 @@ z_\theta&amp;=0
             \end{matrix}\right]
           </mrow>
                     <mrow>
-&amp;= -\cosh^2u\,\cos\theta\, \vi 
-       -\cosh^2u\,\sin\theta\, \vj +  
-       \sinh u\cosh u\vk.
+&amp;= \tvect{-\cosh^2u\,\cos\theta}{-\cosh^2u\,\sin\theta}{\sinh u\cosh u}.
 </mrow>
                 </md>
             </p>

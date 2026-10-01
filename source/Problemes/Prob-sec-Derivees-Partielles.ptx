@@ -6,9 +6,124 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
   <exercisegroup>
     <title>Pour se pratiquer</title>
+    <!-- 1 -->
+    <exercise xml:id="ex-partielles-signe-courbes-niveau">
+      <statement>
+        <p>
+          Le diagramme ci-contre montre quelques courbes de niveau d'une
+          fonction <m>f(x,y)</m>, ainsi que trois points <m>A, B, C</m>.
+          <sidebyside widths="50% 50%" valign="top">
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Sans calculer <m>f_x</m> ni <m>f_y</m>, déterminer leur
+                  signe en chacun de ces points, uniquement à partir du
+                  diagramme.
+                </p>
+              </li>
+              <li>
+                <p>
+                  La fonction considérée est en fait
+                  <m>f(x,y) = 2x^3 - 6xy + y^2 + 4y</m>. Calculez les
+                  dérivées partielles et comparez vos résultats avec ceux de
+                  la question précédente.
+                </p>
+              </li>
+            </ol>
+            <figure xml:id="fig-partielles-signe-courbes-niveau">
+              <caption>
+                Courbes de niveau de <m>f(x,y)</m>.
+              </caption>
+              <image xml:id="sageplot-partielles-signe" width="100%">
+                <description>
+                  <p>Un diagramme de courbes de niveau avec trois points
+                  marqués <m>A</m>, <m>B</m> et <m>C</m>.</p>
+                </description>
+                <sageplot aspect="1.0">
+import matplotlib.colors as mcolors
+import matplotlib.pyplot as plt
+import numpy as np
+couleurs = plt.get_cmap("Spectral")(np.linspace(0.1,0.9,100))
+couleurs[:,:3] = 0.55*couleurs[:,:3] + 0.45
+SpectralPale = mcolors.LinearSegmentedColormap.from_list("SpectralPale", couleurs)
+var('x,y')
+f(x,y) = 2*x^3 - 6*x*y + y^2 + 4*y
+C = contour_plot(f(x,y), (x,-2,3), (y,-2,3), cmap = SpectralPale, contours=[-30, -20,-10,-5,0,2, 5,10,20,30,40,50,60],
+    fill=True, labels=True, label_inline=True, label_fontsize=13,
+    label_fmt=lambda x: "$%g$"%round(x,2),
+    label_colors="black", gridlines=True, axes_labels=["$x$","$y$"],
+    axes_labels_size=1.4, fontsize=13, colorbar=False)
+C += point((1,0), color="black", size=60, zorder=5)
+C += text("$A$", (1.25,-0.35), fontsize=16, color="black", zorder=5)
+C += point((0,2), color="black", size=60, zorder=5)
+C += text("$B$", (-0.25,1.85), fontsize=16, color="black", zorder=5)
+C += point((-1,0), color="black", size=60, zorder=5)
+C += text("$C$", (-0.75,-0.35), fontsize=16, color="black", zorder=5)
+C
+                </sageplot>
+              </image>
+            </figure>
+          </sidebyside>
+        </p>
+      </statement>
+
+      <hint><p>
+        Le long d'une courbe de niveau, <m>f</m> ne varie pas. En s'éloignant
+        d'un point donné, <m>f</m> croît si l'on traverse des courbes de
+        niveau de plus en plus élevé, et décroît sinon.
+      </p></hint>
+
+      <answer><p>
+        (a)
+        <ul>
+          <li><p><m>A</m> : <m>f_x&gt;0</m>, <m>f_y&lt;0</m>.</p></li>
+          <li><p><m>B</m> : <m>f_x&lt;0</m>, <m>f_y&gt;0</m>.</p></li>
+          <li><p><m>C</m> : <m>f_x&gt;0</m>, <m>f_y&gt;0</m>.</p></li>
+        </ul>
+        (b)
+        <md>
+          f_x(x,y) = 6x^2-6y, \qquad f_y(x,y)=-6x+2y+4,
+        </md>
+        d'où <m>f_x(1,0)=6,\ f_y(1,0)=-2</m> ; <m>f_x(0,2)=-12,\ f_y(0,2)=8</m> ;
+        <m>f_x(-1,0)=6,\ f_y(-1,0)=10</m> — cohérent avec (a).
+      </p></answer>
+
+      <solution>
+        <p>
+          (a) En <m>A=(1,0)</m>, les courbes de niveau croisées en se
+          déplaçant vers les <m>x</m> croissants passent à des valeurs plus
+          élevées (<m>f_x&gt;0</m>), tandis qu'en se déplaçant vers les
+          <m>y</m> croissants elles passent à des valeurs plus basses
+          (<m>f_y&lt;0</m>). Un raisonnement analogue, point par point,
+          donne <m>f_x&lt;0,\ f_y&gt;0</m> en <m>B=(0,2)</m>, et
+          <m>f_x&gt;0,\ f_y&gt;0</m> en <m>C=(-1,0)</m>.
+        </p>
+        <p>
+          (b) Puisque <m>f(x,y) = 2x^3 - 6xy + y^2 + 4y</m>,
+          <md>
+            f_x(x,y) = 6x^2-6y, \qquad f_y(x,y)=-6x+2y+4.
+          </md>
+          En évaluant en chacun des trois points :
+          <md>
+            <mrow>
+              f_x(1,0)&amp;=6(1)^2-6(0)=6, &amp; f_y(1,0)&amp;=-6(1)+2(0)+4=-2,
+            </mrow><mrow>
+              f_x(0,2)&amp;=6(0)^2-6(2)=-12, &amp; f_y(0,2)&amp;=-6(0)+2(2)+4=8,
+            </mrow><mrow>
+              f_x(-1,0)&amp;=6(-1)^2-6(0)=6, &amp; f_y(-1,0)&amp;=-6(-1)+2(0)+4=10.
+            </mrow>
+          </md>
+          Les signes obtenus concordent avec ceux lus au diagramme en (a).
+        </p>
+      </solution>
+    </exercise>
+
+    <!-- 2 -->
     <exercise>
       <statement><p>
       Soit <m>f(x,y) = e^x\cos y</m>. Les tables suivantes donnent des valeurs de <m>f(x,y)</m>.
@@ -61,7 +176,7 @@
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
       =\frac{1.01005-1}{0.01}
       =1.005
-      </md>
+      </md>.
       </li><li>
       <md>
       \pdiff{f}{y}(0,0)
@@ -75,7 +190,7 @@
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
       =\frac{0.99995-1}{0.01}
       =.0050
-      </md>
+      </md>.
       </li><li>
       <m>
       \pdiff{f}{x}(0,0) =1
@@ -83,7 +198,7 @@
       et
       <m>
       \pdiff{f}{y}(0,0) = 0
-      </m>
+      </m>.
       </li>
       </ol>
       </p></answer>
@@ -109,7 +224,7 @@
       \approx \left.\frac{f(h,0)-f(0,0)}{h}\right|_{h=0.01}
       =\frac{1.01005-1}{0.01}
       =1.005
-      </md>
+      </md>.
       </li><li>
       Par définition
       <md>
@@ -129,7 +244,7 @@
       \approx \left.\frac{f(0,h)-f(0,0)}{h}\right|_{h=-0.01}
       =\frac{0.99995-1}{0.01}
       =.0050
-      </md>
+      </md>.
       </li><li>
       Pour calculer la dérivée partielle par rapport à <m>x</m> en <m>(0,0)</m>,
       on pose <m>y=0</m>, on dérive par rapport à <m>x</m>, puis on pose <m>x=0</m>. Ainsi
@@ -143,12 +258,13 @@
       \pdiff{f}{y}(0,0) = \left.\diff{}{y} e^0\cos y\right|_{y=0}
       =\left.\sin y\right|_{y=0}
       =0
-      </md>
+      </md>.
       </li>
       </ol>
       </p></solution>
     </exercise>
 
+    <!-- 3 -->
     <exercise> <!-- <title><fromexam>M226 2009D</fromexam></title> -->
       <statement><p>
       Soit
@@ -160,13 +276,13 @@
       Calculez, directement d'après les définitions,
       <ol marker = "(a)"  cols = "3">
       <li>
-      <m>\pdiff{f}{x}(0,0)</m>
+      <m>\pdiff{f}{x}(0,0)</m>.
       </li>
       <li>
-      <m>\pdiff{f}{y}(0,0)</m>
+      <m>\pdiff{f}{y}(0,0)</m>.
       </li>
       <li>
-      <m>\diff{}{t} f(t,t)\Big|_{t=0}</m>
+      <m>\diff{}{t} f(t,t)\Big|_{t=0}</m>.
       </li>
       </ol>
       </p></statement>
@@ -245,19 +361,20 @@
       </solution>
     </exercise>
 
+    <!-- 4 -->
     <exercise>
       <statement><p>
       Trouvez toutes les dérivées partielles premières des fonctions suivantes
       et évaluez-les au point donné.
       <ol marker = "(a)">
       <li>
-      <m>f(x,y,z)=x^3y^4z^5</m> en <m>(0,-1,-1)</m>
+      <m>f(x,y,z)=x^3y^4z^5</m> en <m>(0,-1,-1)</m>.
       </li>
       <li>
-      <m>w(x,y,z)=\ln\left(1+e^{xyz}\right)</m> en <m>(2,0,-1)</m>
+      <m>w(x,y,z)=\ln\left(1+e^{xyz}\right)</m> en <m>(2,0,-1)</m>.
       </li>
       <li>
-      <m>f(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> en <m>(-3,4)</m>
+      <m>f(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> en <m>(-3,4)</m>.
       </li>
       </ol>
       </p></statement>
@@ -338,6 +455,7 @@
       </solution>
     </exercise>
 
+    <!-- 5 -->
     <exercise> <!-- <title><fromexam>M200 2010A</fromexam></title> -->
       <statement><p>
       Une surface <m>z(x, y)</m> est définie par <m>zy - y + x = \ln(xyz)</m>.
@@ -351,16 +469,22 @@
       </ol>
       </p></statement>
 
-      <answer><p>
-      (a)
-      <m>\pdiff{z}{x} = \frac{z(1-x)}{x(yz-1)}</m>,</p><p>
-      <m>\pdiff{z}{y} = \frac{z(1+y-yz)}{y(yz-1)}</m>
-      </p>
-
-      <p>(b)
-      <m>\pdiff{z}{x}(-1,-2) =\frac{1}{2}</m>,</p><p>
-      <m>\pdiff{z}{y}(-1,-2) =0</m>.
-      </p></answer>
+      <answer>
+      <ol marker="(a)">
+        <li>
+          <sidebyside widths="50% 50%">
+            <p><m>\pdiff{z}{x} = \tfrac{z(1-x)}{x(yz-1)}</m></p>
+            <p><m>\pdiff{z}{y} = \tfrac{z(1+y-yz)}{y(yz-1)}</m></p>
+          </sidebyside>
+        </li>
+        <li>
+          <sidebyside widths="50% 50%">
+            <p><m>\pdiff{z}{x}(-1,-2) =\tfrac{1}{2}</m></p>
+            <p><m>\pdiff{z}{y}(-1,-2) =0</m></p>
+          </sidebyside>
+        </li>
+      </ol>
+      </answer>
 
       <solution><p>
       (a) On sait que <m>z(x,y)</m> vérifie
@@ -418,6 +542,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 6 -->
     <exercise> <!-- <title><fromexam>M200 2010D</fromexam></title> -->
       <statement><p>
       Trouvez  <m>\pdiff{U}{T}</m> et <m>\pdiff{T}{V}</m> à <m>(1, 1, 2, 4)</m> si <m>(T, U, V, W)</m> vérifient la relation
@@ -426,10 +551,12 @@
       </md>
       </p></statement>
 
-      <answer><p>
-      <m>\pdiff{U}{T}(1,2,4) = -\frac{2\ln(2)}{1+2\ln(2)}</m></p><p>
-      <m>\pdiff{T}{V}(1,2,4) = 1 -\frac{1}{4\ln(2)}</m>
-      </p></answer>
+      <answer>
+      <sidebyside widths="50% 50%">
+        <p><m>\pdiff{U}{T}(1,2,4) = -\tfrac{2\ln(2)}{1+2\ln(2)}</m></p>
+        <p><m>\pdiff{T}{V}(1,2,4) = 1 -\tfrac{1}{4\ln(2)}</m></p>
+      </sidebyside>
+      </answer>
 
       <solution><p>
       On sait que les quatre variables <m>T</m>, <m>U</m>, <m>V</m>, <m>W</m> vérifient l'unique équation <m>(TU-V)^2 \ln(W-UV) = \ln 2</m>. Elles ne sont donc pas toutes indépendantes. En gros, on peut traiter trois d'entre elles comme des variables indépendantes et résoudre l'équation donnée pour la quatrième, exprimée comme fonction des trois variables indépendantes choisies.
@@ -516,6 +643,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 7 -->
     <exercise> <!-- <title><fromexam>M200 2013D</fromexam></title> -->
       <statement><p>
       Supposons que <m>u = x^2 + yz</m>, <m>x = \rho r \cos(\theta)</m>,
@@ -555,6 +683,7 @@
       </p></solution>
     </exercise>
 
+    <!-- 8 -->
     <exercise>
       <statement><p>
       Utilisez la définition de la dérivée pour évaluer <m>f_x(0,0)</m> et <m>f_y(0,0)</m> pour
@@ -604,6 +733,7 @@
       </solution>
     </exercise>
 
+    <!-- 9 -->
     <exercise>
       <statement><p>
       Définissez la fonction
@@ -682,6 +812,7 @@
       </solution>
     </exercise>
 
+    <!-- 10 -->
     <exercise>
       <statement>
         <p>
@@ -806,6 +937,7 @@
   <exercisegroup>
     <title>Pour mieux comprendre</title>
 
+    <!-- 11 -->
     <exercise>
       <statement><p>
         Vous traversez un paysage vallonné. Considérez que l'axe des <m>z</m> pointe vers le ciel, que l'axe des <m>x</m> positifs pointe vers le sud, et que l'axe des <m>y</m> positifs pointe vers l'est. Alors le paysage autour de vous est décrit par l'équation <m>z=f(x,y)</m>, avec vous au point <m>(0,0,f(0,0))</m>. La fonction <m>f(x,y)</m> est différentiable.
@@ -835,6 +967,7 @@
     </exercise>
 
 
+    <!-- 12 -->
     <exercise>
       <statement><p>
       Montrez que la fonction <m>z(x,y)=\frac{x+y}{x-y}</m> vérifie
@@ -893,6 +1026,7 @@
     </exercise>
 
 
+    <!-- 13 -->
     <exercise>
       <statement><p>
       Soit <m>f</m> une fonction différentiable quelconque d'une variable. Définissez
@@ -932,6 +1066,7 @@
     </exercise>
 
 
+    <!-- 14 -->
     <exercise>
       <statement><p>
       Trouvez, si possible, une fonction <m>f(x,y)</m> pour laquelle <m>f_x(x,y)=e^y</m> et
@@ -962,22 +1097,23 @@
     </exercise>
 
 
+    <!-- 15 -->
     <exercise>
       <statement><p>
       Trouvez les dérivées partielles spécifiées.
       <ol marker = "(a)">
       <li>
       <m>f(x,y) = x^2y^3</m>;
-      <m>f_{xx}(x,y)</m>, <m>f_{xyy}(x,y)</m>, <m>f_{yxy}(x,y)</m>
+      <m>f_{xx}(x,y)</m>, <m>f_{xyy}(x,y)</m>, <m>f_{yxy}(x,y)</m>.
       </li>
       <li>
       <m>f(x,y) = e^{xy^2}</m>;
-      <m>f_{xx}(x,y)</m>, <m>f_{xy}(x,y)</m>, <m>f_{xxy}(x,y)</m>, <m>f_{xyy}(x,y)</m>
+      <m>f_{xx}(x,y)</m>, <m>f_{xy}(x,y)</m>, <m>f_{xxy}(x,y)</m>, <m>f_{xyy}(x,y)</m>.
       </li>
       <li>
-      <m>\displaystyle f(u,v,w) = \frac{1}{u+2v+3w}\ </m>,
-         <m>\displaystyle \frac{\partial^3 f}{\partial u\partial v\partial w}(u,v,w)\ </m>,
-         <m>\displaystyle \frac{\partial^3 f}{\partial u\partial v\partial w}(3,2,1)</m>
+      <m>f(u,v,w) = \frac{1}{u+2v+3w}\ </m>,
+         <m>\frac{\partial^3 f}{\partial u\partial v\partial w}(u,v,w)\ </m>,
+         <m>\frac{\partial^3 f}{\partial u\partial v\partial w}(3,2,1)</m>.
       </li>
       </ol>
       </p></statement>
@@ -993,11 +1129,11 @@
           <m>f_{xyy}(x,y) = \left(2+10xy^2+4x^2y^4\right)e^{xy^2}</m>
       </p>
 
-      <p>(c) <m>\displaystyle\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
+      <p>(c) <m>\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(u,v,w)
               = -\frac{36}{(u+2v+3w)^4}</m></p><p>
-          <m>\displaystyle\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
+          <m>\frac{\partial^3 f}{\partial u\,\partial v\,\partial w}(3,2,1)
                = -0.0036
-               = -\frac{9}{2500}</m>
+               = -\tfrac{9}{2500}</m>
       </p>
 
       </answer>
@@ -1059,15 +1195,16 @@
     </exercise>
 
 
+    <!-- 16 -->
     <exercise>
       <statement><p>
       Trouvez toutes les dérivées partielles de deuxième ordre de <m>f(x,y)=\sqrt{x^2+5y^2}</m>.
       </p></statement>
 
       <answer><p>
-      <m>f_{xx}=\frac{5y^2}{(x^2+5y^2)^{3/2}}</m></p><p>
-      <m>f_{xy}=f_{yx}=-\frac{5xy}{(x^2+5y^2)^{3/2}}</m></p><p>
-      <m>f_{yy}=\frac{5x^2}{(x^2+5y^2)^{3/2}}</m>
+      <m>f_{xx}=\tfrac{5y^2}{(x^2+5y^2)^{3/2}}</m></p><p>
+      <m>f_{xy}=f_{yx}=-\tfrac{5xy}{(x^2+5y^2)^{3/2}}</m></p><p>
+      <m>f_{yy}=\tfrac{5x^2}{(x^2+5y^2)^{3/2}}</m>
       </p></answer>
 
       <solution><p>
@@ -1099,20 +1236,21 @@
     </exercise>
 
 
+    <!-- 17 -->
     <exercise>
       <statement><p>
       Trouvez toutes les dérivées partielles spécifiées.
       <ol marker = "(a)">
       <li>
-      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m>; <m>f_{xyz}(x,y,z)</m>
+      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)</m>; <m>f_{xyz}(x,y,z)</m>.
       </li>
       <li>
       <m>f(x,y,z) = \arctan\left(e^{\sqrt{xy}}\right)
                   +\arctan\left(e^{\sqrt{xz}}\right)
-                  +\arctan\left(e^{\sqrt{yz}}\right)</m>; <m>f_{xyz}(x,y,z)</m>
+                  +\arctan\left(e^{\sqrt{yz}}\right)</m>; <m>f_{xyz}(x,y,z)</m>.
       </li>
       <li>
-      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xyz}}\right)</m>; <m>f_{xx}(1,0,0)</m>
+      <m>f(x,y,z) = \arctan\left(e^{\sqrt{xyz}}\right)</m>; <m>f_{xx}(1,0,0)</m>.
       </li>
       </ol>
       </p></statement>
@@ -1159,7 +1297,7 @@
       u_{xyz}(x,y,z)
       =u_{zxy}(x,y,z)
       =0
-      </m>
+      </m>.
       </li>
       <li>
       comme <m>v(x,y,z) = \arctan\left(e^{\sqrt{xz}}\right)</m> ne dépend pas de <m>y</m>,
@@ -1168,7 +1306,7 @@
       v_{xyz}(x,y,z)
       =v_{yxz}(x,y,z)
       =0
-      </m>
+      </m>.
       </li>
       <li>
       comme <m>w(x,y,z) = \arctan\left(e^{\sqrt{yz}}\right)</m> ne dépend pas de <m>x</m>,
@@ -1176,7 +1314,7 @@
       <m>
       w_{xyz}(x,y,z)
       =0
-      </m>
+      </m>.
       </li>
       </ul>
       Comme <m>f(x,y,z)=u(x,y,z)+v(x,y,z)+w(x,y,z)</m>, on a
@@ -1206,6 +1344,7 @@
   <exercisegroup>
     <title>Pour aller plus loin</title>
 
+    <!-- 18 -->
     <exercise>
       <statement><p>
       Supposons que toutes les dérivées partielles de troisième ordre de la fonction
@@ -1236,7 +1375,7 @@
         <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
         <md>
         f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
-        </md>
+        </md>.
         </li>
         <li>
         Pour tout nombre réel fixé <m>z</m>,
@@ -1249,7 +1388,7 @@
         Jusqu'à présent, nous avons
         <md>
         f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
-        </md>
+        </md>.
         </li>
         <li>
         Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
@@ -1261,7 +1400,7 @@
         Jusqu'à présent, nous avons
         <md>
         f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
-        </md>
+        </md>.
         </li>
         <li>
         Pour tout nombre réel fixé <m>y</m>,
@@ -1278,7 +1417,7 @@
         </mrow><mrow>
         &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
         </mrow>
-        </md>
+        </md>.
         </li>
         <li>
         Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
@@ -1295,7 +1434,7 @@
         &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
         = f_{zxy}(x,y,z)
         </mrow>
-        </md>
+        </md>.
         </li>
         </ul>
         </p>
@@ -1309,7 +1448,7 @@
       <m>g_{yz}(y,z)=g_{zy}(y,z)</m>, ainsi
       <md>
       f_{xyz}(x,y,z) = g_{yz}(y,z) =g_{zy}(y,z) = f_{xzy}(x,y,z)
-      </md>
+      </md>.
       </li>
       <li>
       Pour tout nombre réel fixé <m>z</m>,
@@ -1322,7 +1461,7 @@
       Jusqu'à présent, nous avons
       <md>
       f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)
-      </md>
+      </md>.
       </li>
       <li>
       Fixons n'importe quel nombre réel <m>y</m> et posons <m>g(x,z)=f_y(x,y,z)</m>. Par le théorème
@@ -1334,7 +1473,7 @@
       Jusqu'à présent, nous avons
       <md>
       f_{xyz}(x,y,z) = f_{xzy}(x,y,z)=f_{yxz}(x,y,z)= f_{yzx}(x,y,z)
-      </md>
+      </md>.
       </li>
       <li>
       Pour tout nombre réel fixé <m>y</m>,
@@ -1351,7 +1490,7 @@
       </mrow><mrow>
       &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
       </mrow>
-      </md>
+      </md>.
       </li>
       <li>
       Fixons n'importe quel nombre réel <m>z</m> et posons <m>g(x,y)=f_z(x,y,z)</m>. Par
@@ -1368,12 +1507,13 @@
       &amp;= f_{yzx}(x,y,z)=f_{zxy}(x,y,z)
       = f_{zyx}(x,y,z)
       </mrow>
-      </md>
+      </md>.
       </li>
       </ul>
       </p></solution>
     </exercise>
 
+    <!-- 19 -->
     <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
       <statement><p>
        Soit <m>f(r,\theta)=r^m\cos m\theta</m> une fonction de <m>r</m> et de <m>\theta</m>,
@@ -1388,7 +1528,7 @@
       satisfait l'équation différentielle
       <md>
       f_{rr}+\frac{\la}{r}f_r+\frac{1}{r^2}f_{\theta\theta}=0
-      </md>
+      </md>.
       </li>
       </ol>
       </p></statement>
@@ -1441,10 +1581,11 @@
     </exercise>
 
     <!-- Solution et réponse sont les mêmes -->
+    <!-- 20 -->
     <exercise>
       <statement><p>
       Soit <m>\a \gt 0</m> une constante.
-      Montrez que <m>\displaystyle u(x,y,z,t) =\frac{1}{t^{3/2}}
+      Montrez que <m>u(x,y,z,t) =\frac{1}{t^{3/2}}
                    e^{-(x^2+y^2+z^2)/(4\a t)}</m> satisfait l'équation de la chaleur
       <md>
       u_t =  \a\left(u_{xx} + u_{yy} + u_{zz} \right)

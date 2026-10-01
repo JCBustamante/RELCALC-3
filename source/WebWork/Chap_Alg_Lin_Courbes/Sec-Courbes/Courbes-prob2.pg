@@ -57,24 +57,24 @@ TEXT(beginproblem());
 BEGIN_TEXT
 $BR
 
-Trouver une  équation paramétrique de la tangente à la courbe 
-\[ x =
-    t^{$a} - 1, y = t^{$b} + 1, z = t^{$c}
+Soit le chemin
+\[ \mathbf{r}(t) = \left(t^{$a} - 1\right)\mathbf{i} + \left(t^{$b} + 1\right)\mathbf{j} + t^{$c}\,\mathbf{k}.
 \]
-au point  \(($x0, $y0, $z0)\). Utilisez la variable \(t\) comme paramètre.
+Trouver l'approximation linéaire \(\mathbf{L}(t) = \mathbf{r}(t_0) + (t-t_0)\,\mathbf{r}'(t_0)\) de \(\mathbf{r}\) au point \(($x0, $y0, $z0)\), c'est-à-dire en \(t_0 = $t0\). Son image est la droite tangente à la courbe en ce point.
+Entrer les composantes de \(\mathbf{L}(t)\) en fonction de \(t\).
 
  $BR
 
 
-\( x = \)\{ans_rule(25)\},$BR
-\( y = \)\{ans_rule(25 )\},$BR
-\( z = \)\{ans_rule(25)\}
+\( L_1(t) = \)\{ans_rule(25)\},$BR
+\( L_2(t) = \)\{ans_rule(25 )\},$BR
+\( L_3(t) = \)\{ans_rule(25)\}
 $PAR
 END_TEXT
 
- ANS(fun_cmp("$x0 + t*$a*$t0**($a - 1)", vars=>["t"]));
- ANS(fun_cmp("$y0 + t*$b*$t0**($b-1)", vars=>["t"]));
- ANS(fun_cmp("$z0 + t*$c*$t0**($c-1)", vars=>["t"]));
+ ANS(fun_cmp("$x0 + (t - $t0)*$a*$t0**($a - 1)", vars=>["t"]));
+ ANS(fun_cmp("$y0 + (t - $t0)*$b*$t0**($b-1)", vars=>["t"]));
+ ANS(fun_cmp("$z0 + (t - $t0)*$c*$t0**($c-1)", vars=>["t"]));
 ENDDOCUMENT();
 
 

@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
-<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Sage-Alg-Lin-Courbes">
-  <title>SageMath : Vecteurs et courbes</title>
-  <section>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Sage-Alg-Lin-Courbes">
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
+  <title>Vecteurs et courbes</title>
+  <subsection>
     <title>Vecteurs, produit scalaire, produit vectoriel</title>
     <p>
     Pour déclarer un vecteur on l'entre comme une liste de nombres. L'addition des vecteurs et la multiplication par une constante se font de la façon naturelle. Voyons un exemple avec des vecteurs de <m>\R^4</m>.
@@ -32,8 +34,8 @@
     <p>
       De la même façon, la commande <c>norm(...)</c> permet de calculer la norme d'un vecteur.
     </p>
-  </section>
-  <section>
+  </subsection>
+  <subsection>
     <title>Courbes</title>
     <p>
       Afin de tracer une courbe parametrique, c'est la commande <c>parametric_plot(...)</c> qu'il faut utiliser. Noter que si le paramètre est une variable autre que <m>x</m>, il faut la déclarer. Il y a plusieurs options, voyons l'exemple de l'astroïde <m>x^{2/3} + y^{2/3} = a^{2/3}</m>, traité à <xref ref="eg_paramEllipse">l'exemple </xref>.
@@ -87,8 +89,8 @@
         show(Courbe, frame = True)
       </input>
     </sage>
-  </section>
-  <section>
+  </subsection>
+  <subsection>
     <title>Coordonnées polaires</title>
     <p>
       Bien que les coordonnées polaires aient été traitées dans le <xref ref="C-3">Chapitre 3</xref>, finissons cette section avec un exemple de tracée de courbes en coordonnées polaires. En plus on remarquera l'utilisation de la commande <c>graphics_array(...)</c>. On trace les courbes dont l'équation polaire est <m>r=1+c\sin t</m> pour différentes valeurs de <m>c</m>. La commande <c>Courbes(...)</c> construit une liste de courbes, puis avec <c>graphics_array(...)</c> on les dispose en tableau.
@@ -111,5 +113,5 @@
       Graphique.show(figsize  = 7)
       </input>
     </sage>
-  </section>
-</appendix>
+  </subsection>
+</section>

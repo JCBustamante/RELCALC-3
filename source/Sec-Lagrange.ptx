@@ -2,8 +2,12 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Lagrange">
   <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
-  <!-- Traduit au francçais et adapté par Juan Carlos Bustamante, août 2021 -->
+  <!-- Traduit au français et adapté par Juan Carlos Bustamante, août 2021 -->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions --> 
+
+
   <title>Multiplicateurs de Lagrange</title>
   <introduction>
     <p>
@@ -57,7 +61,7 @@ Le scalaire <m>\la</m> est appelé un <em>multiplicateur de Lagrange</em>.
 </p>
       </statement>
       <proof>
-        <p> Écrivons <m>\vr = (x,y,z)</m> et supposons que <m>\vr_0=(x_0, y_0, z_0)</m> est un point sur  <m>\plan{S}</m> tel que <m>f(\vr)\geqslant f(\vr_0)</m> pour tous les points <m>\vr</m> sur  <m>\plan{S}</m> qui sont près de <m>\vr_0</m>. En d'autres termes,  <m>\vr_0</m> est un point de minimum local pour  <m>f</m> sur <m>\plan{S}</m>. Naturellement, l'argument pour les maximums locaux sera identique.
+        <p> Écrivons <m>{\vr = x\,\vi+y\,\vj+z\,\vk}</m> et supposons que <m>{\vr_0=x_0\,\vi+y_0\,\vj+z_0\,\vk}</m> est un point sur  <m>\plan{S}</m> tel que <m>f(\vr)\geqslant f(\vr_0)</m> pour tous les points <m>\vr</m> sur  <m>\plan{S}</m> qui sont près de <m>\vr_0</m>. En d'autres termes,  <m>\vr_0</m> est un point de minimum local pour  <m>f</m> sur <m>\plan{S}</m>. Naturellement, l'argument pour les maximums locaux sera identique.
 </p>
         <p> Imaginons que nous nous promenons sur la surface <m>\plan{S}</m> avec le temps (disons <m>t</m>) allant de  <m>t=-1</m> à <m>t=+1</m>, de sorte que la position à <m>t=0</m> est exactement <m>\vr_0</m>. Notre position est donnée par un chemin <m>\vr(t) =\left(x(t),y(t),z(t)\right)</m>.
 </p>
@@ -90,7 +94,7 @@ pour un certain scalaire  <m>\la</m>.
       </proof>
     </theorem>
     <p>Ainsi, pour trouver le maximum et le minimum de <m>f(x,y,z)</m> parmi les points d'une surface <m>\plan{S}</m> donnée par <m>g(x,y,z)=0</m>, avec l'hypothèse supplémentaire que  <m>f</m> et <m>g</m> ont des dérivées partielles continues et que  <m>\vnabla g\ne\vZero</m>, on doit :
-<ol marker="(a)"><li> Dresser la liste de points candidats  <m>\vr = (x,y,z)</m> en résolvant les équations
+<ol marker="(a)"><li> Dresser la liste des points candidats <m>(x,y,z)</m> en résolvant les équations
 <md><mrow>
 \vnabla f(\vr) &amp;= \la\vnabla g(\vr) \qquad \text{ et } \qquad
 g(\vr)&amp;=0
@@ -147,9 +151,9 @@ Après réarrangement, on obtient
    x^2+4y^2-16&amp;=0   \tag{E3}
 </mrow></md>.
 De  (E2), nous avons
-<m>\la=-\frac{1}{4}</m> ou <m>y=0</m>.
-<ul><li> Si <m>\la=-\frac{1}{4}</m>, (E1) donne
-<m>-\frac{5}{4}x=-5</m>, et donc <m>x=4</m>, et alors (E3) donne <m>y=0</m>.
+<m>\la=-\tfrac{1}{4}</m> ou <m>y=0</m>.
+<ul><li> Si <m>\la=-\tfrac{1}{4}</m>, (E1) donne
+<m>-\tfrac{5}{4}x=-5</m>, et donc <m>x=4</m>, et alors (E3) donne <m>y=0</m>.
 </li><li> Si <m>y=0</m>, alors (E3) donne  <m>x=\pm 4</m> (et même si l'on aurait pu utiliser (E1) pour trouver  <m>\la</m>, nous n'en avons pas vraiment besoin).
 </li></ul>
 Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange" text="global">théorème</xref>
@@ -192,22 +196,25 @@ Ainsi, la méthode des multiplicateurs de Lagrange, le <xref ref="thm_Lagrange" 
 Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et la valeur minimale est  <m>-24</m>.
 </p>
         <figure xml:id="figure-eg_LagrangeA">
-          <caption>Les courbes de niveau de la fonction objectif <m>f(x,y) = x^2-10x-y^2 </m>, en bleu. La contrainte  <m>x^2 + 4y^2 =16</m> est l'ellipse en brun.</caption>
+          <caption>Les courbes de niveau de la fonction objectif <m>f(x,y) = x^2-10x-y^2</m>, sur fond orange. La contrainte <m>x^2 + 4y^2 =16</m> est l'ellipse en bleu, et les points où <m>f</m> atteint ses extrema sur l'ellipse sont marqués en vert.</caption>
           <image xml:id="sageplot-eg_LagrangeA" width="80%">
-            <description><p>Une parabole standard sur l'intervale  [-2,4]</p></description>
+            <description><p>Courbes de niveau de la fonction x^2-10x-y^2 et ellipse x^2+4y^2=16, avec les points (-4,0) et (4,0).</p></description>
             <sageplot>
+      import matplotlib.colors as mcolors
+      import matplotlib.pyplot as plt
       var('x,y')
-      f(x,y) = x^2 -2*x-y^2
+      f(x,y) = x^2 -10*x-y^2
+      OrangesPale = mcolors.LinearSegmentedColormap.from_list("OrangesPale", plt.get_cmap("Oranges")(srange(0.0,0.4,0.01)))
       Ellipse = implicit_plot(x^2 + 4*y^2 -16,(x,-4.5,4.5),(y,-2.5,2.5),
-        color = "red", zorder =2, axes= True)
-      Contour = contour_plot(f(x,y),(x,-4.5,4.5),(y,-2.5,2.5), cmap= "Blues",
+        color = "steelblue", linewidth = 2, zorder =2, axes= True)
+      Contour = contour_plot(f(x,y),(x,-4.5,4.5),(y,-2.5,2.5), cmap= OrangesPale,
         labels = True,  label_fmt=lambda x: "$%s$"%x,  label_colors="black", label_inline=True, label_fontsize=10, gridlines=True, fill = True,
         contours=[-56,-24,-15,-10,-5,0,5,10,15,24,56],
       axes_labels=["$x$","$y$"], axes_labels_size=1.5, tick_formatter =   "latex", fontsize= 10, axes=True)
       Fig = Contour +Ellipse
       Fig += point([(4,0), (-4,0)], marker = "X",  size = 60, color =
-      "orange", zorder = 3)
-      Fig += text("$x^2 + 4y^2 =16$", (3.2,1.8), color = "red", fontsize = 12)
+      "seagreen", zorder = 3)
+      Fig += text("$x^2 + 4y^2 =16$", (3.2,1.8), color = "steelblue", fontsize = 12)
       Fig
     </sageplot>
           </image>
@@ -249,7 +256,7 @@ Ainsi, la valeur maximale de  <m>x^2-10x-y^2</m> sur l'ellipse est <m>56</m>, et
     </mrow><mrow>
     x^2+2y^2-1&amp;=0  \tag{E3}
     </mrow></md>.
-  L'équation (E1) donne <m>y=\frac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
+  L'équation (E1) donne <m>y=\tfrac{1}{2}\la x</m>. En remplaçant dans l'équation (E2), nous obtenons
 <md><mrow>
 4x=2\la^2 x \qquad\text{ou}\qquad
          2x\left(2-\la^2\right)=0
@@ -261,22 +268,22 @@ Ainsi, (E2) est vérifiée si <m>x=0</m> ou <m>\la=\sqrt{2}</m> ou <m>\la=-\sqrt
 <ul><li>
 (E2) donne <m>x=\sqrt{2}y</m>, et alors
 </li><li>
-(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\frac{1}{4}</m>, de sorte que
-</li><li><m>y=\pm\frac{1}{2}</m> et <m>x=\sqrt{2}y=\pm\frac{1}{\sqrt{2}}</m>.
+(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\tfrac{1}{4}</m>, de sorte que
+</li><li><m>y=\pm\tfrac{1}{2}</m> et <m>x=\sqrt{2}y=\pm\tfrac{1}{\sqrt{2}}</m>.
 </li></ul></p></li><li><p> Si <m>\la=-\sqrt{2}</m>, alors
 <ul><li>
 (E2) donne <m>x=-\sqrt{2}y</m>, et alors
 </li><li>
-(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\frac{1}{4}</m>, et donc
-</li><li><m>y=\pm\frac{1}{2}</m> et <m>x=-\sqrt{2}y=\mp\frac{1}{\sqrt{2}}</m>.
+(E3) donne <m>2y^2+2y^2=1</m> ou <m>y^2=\tfrac{1}{4}</m>, et donc
+</li><li><m>y=\pm\tfrac{1}{2}</m> et <m>x=-\sqrt{2}y=\mp\tfrac{1}{\sqrt{2}}</m>.
 </li></ul></p></li></ul>
 Nous avons à présent les quatre points candidats  <m>(x,y)</m>, à savoir
-<m>\left(\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>,
-<m>\left(-\frac{1}{\sqrt{2}},\,-\frac{1}{2}\right)</m>,
-<m>\left(\frac{1}{\sqrt{2}},\,-\frac{1}{2}\right)</m>
+<m>\left(\tfrac{1}{\sqrt{2}},\,\tfrac{1}{2}\right)</m>,
+<m>\left(-\tfrac{1}{\sqrt{2}},\,-\tfrac{1}{2}\right)</m>,
+<m>\left(\tfrac{1}{\sqrt{2}},\,-\tfrac{1}{2}\right)</m>
 et
-<m>\left(-\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>.
-Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <m>(x,y)</m> soit le coin du premier quadrant, il s'agit de <m>\left(\frac{1}{\sqrt{2}},\,\frac{1}{2}\right)</m>.
+<m>\left(-\tfrac{1}{\sqrt{2}},\,\tfrac{1}{2}\right)</m>.
+Ils sont les quatre coins d'un rectangle. Nous avons dit que nous voulions que <m>(x,y)</m> soit le coin du premier quadrant, il s'agit de <m>\left(\tfrac{1}{\sqrt{2}},\,\tfrac{1}{2}\right)</m>.
 </p>
       </solution>
     </example>
@@ -347,16 +354,16 @@ En remplaçant ceci dans (E2), on obtient
 <md><mrow>
 \la x-\frac{(1-3\la)^2}{\la}x=0
 </mrow></md>.
-À nouveau, <m>x</m> ne peut pas être nul, car, dans ce cas, <m>y=-\frac{1-3\la}{\la}x</m> donnerait <m>y=0</m>, et <m>(0,0)</m> n'est toujours pas sur l'ellipse.
+À nouveau, <m>x</m> ne peut pas être nul, car, dans ce cas, <m>y=-\tfrac{1-3\la}{\la}x</m> donnerait <m>y=0</m>, et <m>(0,0)</m> n'est toujours pas sur l'ellipse.
 </p>
-        <p>Ainsi, on peut diviser <m>\la x-\frac{(1-3\la)^2}{\la}x=0</m> par  <m>x</m>, ce qui donne
+        <p>Ainsi, on peut diviser <m>\la x-\tfrac{(1-3\la)^2}{\la}x=0</m> par  <m>x</m>, ce qui donne
 <md><mrow>
 \la -\frac{(1-3\la)^2}{\la}=0
 &amp;\iff (1-3\la)^2-\la^2=0
 </mrow><mrow>
 &amp;\iff 8\la^2-6\la+1 =(2\la-1)(4\la-1)=0
 </mrow></md>.
-Nous avons que <m>\la</m> doit être <m>\frac{1}{2}</m> ou <m>\frac{1}{4}</m>. Remplacer ces valeurs dans (E1) ou (E2) donne
+Nous avons que <m>\la</m> doit être <m>\tfrac{1}{2}</m> ou <m>\tfrac{1}{4}</m>. Remplacer ces valeurs dans (E1) ou (E2) donne
 <md alignment="alignat"><mrow>
 \la&amp;=\frac{1}{2}
         &amp;\ \implies\  -\frac{1}{2} x+\frac{1}{2} y&amp;=0
@@ -372,10 +379,10 @@ Nous avons que <m>\la</m> doit être <m>\frac{1}{2}</m> ou <m>\frac{1}{4}</m>. R
         &amp;\ \impliesover{(E3)}\   3x^2+2x^2+3x^2&amp;=4
         &amp;\ \implies\  x&amp;=\pm \frac{1}{\sqrt{2}}
 </mrow></md>.
-Ici, <q><m>\impliesover{(E3)}</m></q> signifie que l'on utilise (E3). Nous avons maintenant  <m>(x,y)=\pm (1,1)</m> (de <m>\la=\frac{1}{2}</m>) et  <m>(x,y)=\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m> (de <m>\la=\frac{1}{4}</m>).
+Ici, <q><m>\impliesover{(E3)}</m></q> signifie que l'on utilise (E3). Nous avons maintenant  <m>(x,y)=\pm (1,1)</m> (de <m>\la=\tfrac{1}{2}</m>) et  <m>(x,y)=\pm\left(\tfrac{1}{\sqrt{2}},-\tfrac{1}{\sqrt{2}}\right)</m> (de <m>\la=\tfrac{1}{4}</m>).
 
-La distance de  <m>(0,0)</m> à <m>\pm (1,1)</m>, à savoir  <m>\sqrt{2}</m>, est supérieure à la distance de <m>(0,0)</m> à <m>\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m>, à savoir  <m>1</m>.
-Ainsi, les extrémités du petit demi-axe sont  <m>\pm\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)</m>, et celles du grand demi-axe sont <m>\pm(1,1)</m>. Ces points sont esquissés dans la figure de gauche ci-bas. Une fois ces points trouvés, il devient aisé de dessiner l'ellipse<fn>
+La distance de  <m>(0,0)</m> à <m>\pm (1,1)</m>, à savoir  <m>\sqrt{2}</m>, est supérieure à la distance de <m>(0,0)</m> à <m>\pm\left(\tfrac{1}{\sqrt{2}},-\tfrac{1}{\sqrt{2}}\right)</m>, à savoir  <m>1</m>.
+Ainsi, les extrémités du petit demi-axe sont  <m>\pm\left(\tfrac{1}{\sqrt{2}},-\tfrac{1}{\sqrt{2}}\right)</m>, et celles du grand demi-axe sont <m>\pm(1,1)</m>. Ces points sont esquissés dans la figure de gauche ci-bas. Une fois ces points trouvés, il devient aisé de dessiner l'ellipse<fn>
   Si l'on incline la tête de sorte à ce que la droite par <m>(1,1)</m> et <m>(-1,-1)</m> apparaisse horizontale.
 </fn>.
 </p>
@@ -467,10 +474,10 @@ En remplaçant (E1), (E2) et (E3) dans (E4), on obtient
 \implies (1-\la)^2 = 14
 \implies 1-\la = \pm\sqrt{14}
 </mrow></md>.
-On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pour <m>x</m>, <m>y</m>, <m>z</m> en termes de  <m>\la</m> pour obtenir les points <m>\frac{1}{\sqrt{14}}(1,2,3)</m> et <m>-\frac{1}{\sqrt{14}}(1,2,3)</m>.
+On peut alors remplacer les deux valeurs de  <m>\la</m> dans les expressions pour <m>x</m>, <m>y</m>, <m>z</m> en termes de  <m>\la</m> pour obtenir les points <m>\tfrac{1}{\sqrt{14}}(1,2,3)</m> et <m>-\tfrac{1}{\sqrt{14}}(1,2,3)</m>.
 </p>
-        <p>Le vecteur de  <m>\frac{1}{\sqrt{14}}(1,2,3)</m> à <m>(1,2,3)</m>, à savoir
- <m>\left\{1-\frac{1}{\sqrt{14}}\right\}(1,2,3)</m>, est clairement de norme plus petite que le vecteur de <m>-\frac{1}{\sqrt{14}}(1,2,3)</m> à <m>(1,2,3)</m>, c'est-à-dire  <m>\left\{1+\frac{1}{\sqrt{14}}\right\}(1,2,3)</m>. Ainsi, le point le plus proche est  <m>\frac{1}{\sqrt{14}}(1,2,3)</m>, et le point le plus éloigné est  <m>-\frac{1}{\sqrt{14}}(1,2,3)</m>.
+        <p>Le vecteur allant du point <m>\tfrac{1}{\sqrt{14}}(1,2,3)</m> au point <m>(1,2,3)</m>, à savoir
+ <m>{\left(1-\tfrac{1}{\sqrt{14}}\right)(\vi+2\,\vj+3\,\vk)}</m>, est clairement de norme plus petite que le vecteur allant de <m>-\tfrac{1}{\sqrt{14}}(1,2,3)</m> à <m>(1,2,3)</m>, c'est-à-dire <m>{\left(1+\tfrac{1}{\sqrt{14}}\right)(\vi+2\,\vj+3\,\vk)}</m>. Ainsi, le point le plus proche est  <m>\tfrac{1}{\sqrt{14}}(1,2,3)</m>, et le point le plus éloigné est  <m>-\tfrac{1}{\sqrt{14}}(1,2,3)</m>.
 </p>
       </solution>
     </example>
@@ -492,7 +499,7 @@ g(x,y,z)=h(x,y,z)=0
 c'est-à-dire que <m>\plan{C}</m> est l'intersection des deux surfaces <m>g(x,y,z)=0</m> et <m>h(x,y,z)=0</m>. Supposons que<fn>
   Ceci revient à dire que les deux vecteurs normaux aux surfaces <m>g=0</m> et <m>h=0</m> au point <m>(x,y,z)</m> ne sont pas parallèles. Ceci assure que les deux surfaces ne sont pas tangentes en <m>(x,y,z)</m>, de sorte qu'elles se coupent en formant une courbe.
 </fn>
-<m>\vnabla g \times \vnabla h \ne 0</m> sur  <m>\plan{C}</m>. Si <m>f</m> restreinte à <m>\plan{C}</m> admet une valeur extrémale au point <m>\vr_0 = (x_0,y_0,z_0)</m> sur <m>\plan{C}</m>, alors il existe deux nombres réels <m>\la</m> et <m>\mu</m> tels que
+<m>{\vnabla g \times \vnabla h \ne \vZero}</m> sur <m>\plan{C}</m>. Si <m>f</m> restreinte à <m>\plan{C}</m> admet une valeur extrémale au point <m>{\vr_0 = x_0\,\vi+y_0\,\vj+z_0\,\vk}</m> de <m>\plan{C}</m>, alors il existe deux nombres réels <m>\la</m> et <m>\mu</m> tels que
 <md><mrow>
 \vnabla f(\vr_0) &amp;= \la\vnabla g(\vr_0) + \mu\vnabla h(\vr_0),
 </mrow>
@@ -507,16 +514,20 @@ f_z(\vr_0) &amp;= \la\, g_z(\vr_0) + \mu\, h_z(\vr_0)
       </statement>
     </theorem>
     <p>
-On peut, bien entendu, formuler ce théorème avec une fonction auxiliaire, comme avant :
+On peut, bien entendu, formuler ce théorème avec une fonction auxiliaire, comme avant<nbsp/>:
 <md><mrow>
 L(x,y,z,\la,\mu)=f(x,y,z)-\la\, g(x,y,z) - \mu\, h(x,y,z)
 </mrow></md>.
-Il s'agit d'une fonction de cinq variables : les trois variables originales,  <m>x</m>, <m>y</m> et <m>z</m>, et les deux variables auxiliaires, <m>\la</m> et <m>\mu</m>.
-S'il y a un extremum local à <m>\vr_0</m>, alors <m>\vr_0</m> doit aussi satisfaire la formule suivante:
+Il s'agit d'une fonction de cinq variables<nbsp/>: les trois variables originales, <m>x</m>, <m>y</m> et <m>z</m>, et les deux variables auxiliaires, <m>\la</m> et <m>\mu</m>.
 </p>
     <fact xml:id="eqn_Ll">
+      <title>Multiplicateurs de Lagrange avec deux contraintes</title>
       <statement>
         <p>
+Sous les hypothèses du <xref ref="thm_doubleLagrange" text="global">théorème</xref>,
+soit <m>{L(x,y,z,\la,\mu)=f(x,y,z)-\la\, g(x,y,z) - \mu\, h(x,y,z)}</m>.
+Si <m>f</m> restreinte à la courbe <m>\plan{C}</m> admet une valeur extrémale au
+point <m>\vr_0</m>, alors il existe deux nombres réels <m>\la</m> et <m>\mu</m> tels que
           <md alignment="alignat">
             <mrow>
 0&amp;= L_x(x_0,y_0,z_0,\la,\mu)
@@ -538,12 +549,12 @@ S'il y a un extremum local à <m>\vr_0</m>, alors <m>\vr_0</m> doit aussi satisf
 0&amp;=L_\mu(x_0,y_0, z_0,\la,\mu)
  &amp;&amp;= h(\vr_0)
 </mrow>
-          </md>
+          </md>.
         </p>
       </statement>
     </fact>
     <p>
-  pour certains  <m>\la</m> et <m>\mu</m>. Ainsi, résoudre ce système de cinq équations donne les points candidats pour les extremums locaux. Nous verrons un exemple sous peu.
+  Ainsi, résoudre ce système de cinq équations donne les points candidats pour les extremums locaux. Nous verrons un exemple sous peu.
 </p>
     <proof>
       <title>Preuve du <xref ref="thm_doubleLagrange" text="global">théorème</xref></title>
@@ -583,10 +594,8 @@ et ceci tient pour tout vecteur  <m>\vv</m> qui est tangent à la courbe  <m>g=h
     <example xml:id="eg_double_Lagrange">
       <statement>
         <p>
-Trouver la distance de l'origine à la courbe intersection des surfaces
-<md><mrow>
-z^2=x^2+y^2,\qquad x-2z=3
-</mrow></md>.
+Soit <m>\cC</m> la courbe intersection des surfaces d'équations
+<m>z^2=x^2+y^2</m> et <m>x-2z=3</m>. Trouver la distance (la plus courte) de l'origine à <m>\cC</m>.
 </p>
       </statement>
       <solution>
@@ -693,7 +702,7 @@ De nouveau, même si elles ne sont pas nécessaires, on calcule les valeurs de <
 1-3\la=0
 \implies \la=\frac{1}{3}
 </mrow></md>,
-ce qui à son tour donne  <m>\mu=\frac{4}{3}</m>.
+ce qui à son tour donne  <m>\mu=\tfrac{4}{3}</m>.
 </p>
         <p><em>Conclusion :</em> Nous avons deux candidats pour les points de maximum et de minimum local, à savoir  <m>(-3,0,-3)</m> et <m>(1,0,-1)</m>. Le premier se trouve à distance <m>3\sqrt{2}</m> de l'origine, ce qui donne le maximum; le second se trouve à distance <m>\sqrt{2}</m>, ce qui donne le minimum. En particulier, la distance est <m>\sqrt{2}</m>.
 </p>

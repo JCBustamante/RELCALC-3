@@ -1,601 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <exercises>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <exercisegroup>
     <title>Pour se pratiquer</title>
 
-    <!-- CLP4 Section 2.1 No 1 -->
-    <exercise>
-        <statement>
-        <p>
-        Voici une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
-        </p>
-
-        <!-- Note 26-07-2023 -->
-        <!-- Je ne sais pas pourquoi, le champ produit avec Tikz rend bien dans la version LaTeX puis .pdf, mais pas pour html. J'ai donc refait le champ avec sage.
-        À la ligne \draw... il faut que les deux signes - soient collés. -->
-
-        <!--
-          <image><latex-image>\begin{tikzpicture}
-          \YEaxis{5.5}{3.5}
-          \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
-          \YExcoord{\x}{}
-          }
-          \foreach \x in {-1,-2,-3,1,2,3}{
-          \YEycoord{\x}{}
-          }
-          \foreach \x in {-4,...,4}{
-          \foreach \y in {-3,...,3}{
-          \MULTIPLY{\x}{\numberPI}{\xpi}
-          \DIVIDE{\xpi}{4}{\xx}
-          \COS{\xx}{\cosx}
-          \POWER{\y}{2}{\ysq}
-          \ADD{\ysq}{2}{\denom}
-          \DIVIDE{\cosx}{\denom}{\ynew}
-          \DIVIDE{\x}{4}{\xnew}
-          	\draw[- \gt , red, thick] (\x,\y)- -({\x+\xnew},{\y+\ynew});
-          	}}
-          \end{tikzpicture}</latex-image></image>
-
-        -->
-        <sidebyside widths="55% 5% 40%" valign="top">
-          <stack>
-            <p>Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
-            <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
-             \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-            =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-             \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-            \end{cases}</mrow></md>
-            <md><mrow>
-            \vv(x,y) \cdot \vj
-            \begin{cases}
-             \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-              =0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-             \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-            \end{cases}
-            </mrow></md>
-            </p>
-
-            <p>Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles.
-            Autrement dit, les échantillons sont représentatifs d'une fonction vectorielle continue et lisse. Supposer également que les repères sur les axes correspondent à des distances unitaires.
-            </p>
-          </stack>
-          <p/>
-          <image xml:id="sageplot-exo-champ" width="100%">
-            <description><p>Un champ de vecteurs</p></description>
-           <sageplot>
-              var('x,y')
-              #Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
-              #  (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
-              #  color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-              #  gridlines= True,
-              #  axes = True,
-              #  figsize = 4,
-              #  axes_labels = ['$x$','$y$'],
-              #  axes_labels_size=2, frame = False)
-              Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
-                (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
-                color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-                gridlines= True,
-                axes = True,
-                figsize = 4,
-                axes_labels = ['$x$','$y$'],
-                axes_labels_size=2, width=0.004, frame = False)
-              Fig
-           </sageplot>
-          </image>
-        </sidebyside>
-        </statement>
-
-        <hint><p>
-        Tous les blancs ne représentent pas un seul intervalle.
-        </p></hint>
-
-        <answer><p>
-        <md><mrow>\vv(x,y)\cdot \vi \left.\begin{cases}
-         \gt 0 &amp; \text{ lorsque } \fbox{$x \gt 0$}\\
-        =0 &amp;\text{ lorsque } \fbox{$x=0$}\\
-         \lt 0&amp;\text{ lorsque } \fbox{$x \lt 0$}
-        \end{cases}\right\}</mrow></md>
-        et
-        <md><mrow>\vv(x,y)\cdot \vj \left.\begin{cases}
-         \gt 0 &amp; \text{ lorsque } \fbox{$-2 \lt x \lt 2$}\\
-        =0 &amp;\mbox{ lorsque } \fbox{$x \in \{-2,2\}$}\\
-         \lt 0&amp;\mbox{ lorsque } \fbox{$x \lt -2$ ou $x \gt 2$}
-        \end{cases}\right\}</mrow></md>
-        au moins pour <m>(x,y)</m> montré dans l'esquisse.
-        </p></answer>
-
-        <solution><p>
-        The vectors are pointing to the right when <m>x \gt 0</m>, to the left when <m>x \lt 0</m>, and are vertical when <m>x=0</m>. So, at least for <m>(x,y)</m> shown in the sketch,
-        <md><mrow>
-        \vv(x,y)\cdot \vi \begin{cases}
-         \gt 0 &amp; \text{ when } \fbox{$x \gt 0$}\\
-        =0 &amp;\text{ when } \fbox{$x=0$}\\
-         \lt 0&amp;\text{ when } \fbox{$x \lt 0$}
-        \end{cases}</mrow></md>
-        </p>
-
-        <p>The behaviour of the <m>y</m>-values is more complicated. Vectors in one vertical line seem to be all pointing up, or all pointing down. So, the sign of <m>\vv\cdot\vj</m> depends only on <m>x</m>, not on <m>y</m> (although the <em>magnitude</em> of <m>\vv\cdot\vj</m> depends on both). Roughly,  the vectors are pointing
-        <ul>
-        <li> Down when <m>x \lt -2</m>;
-        </li>
-        <li> horizontally when <m>x=-2</m> (remember the vector is positioned with the <em>base</em> of <m>\vv(x,y)</m> at <m>(x,y)</m>;
-        </li>
-        <li> up when <m>-2 \lt x \lt 2</m>;
-        </li>
-        <li> horizontally  when <m>x=2</m>;
-        </li>
-        <li> up when <m>2 \lt x</m>.
-        </li>
-        </ul>
-        </p>
-
-        <p>Since we're assuming there's nothing surprising happening between the samples pictured, at least for <m>(x,y)</m> shown in the sketch,
-        </p>
-
-        <p><md><mrow>
-        \vv(x,y)\cdot \vj \begin{cases}
-         \gt 0 &amp; \text{ when } \fbox{$-2 \lt x \lt 2$}\\
-        =0 &amp;\text{ when } \fbox{$x \in \{-2,2\}$}\\
-         \lt 0&amp;\text{ when } \fbox{$x \lt -2$ or $x \gt 2$}
-        \end{cases}</mrow></md>
-        </p>
-
-        </solution>
-      </exercise>
-
-    <!-- CLP4 Section 2.1 No 2 -->
-    <exercise>
-      <statement><p>
-      Ci-dessous se trouve une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
-      </p>
-
-      <!-- Note 26-07-2023 -->
-      <!-- Je ne sais pas pourquoi, le champ produit avec Tikz rend bien dans la version LaTeX puis .pdf, mais pas pour html. J'ai donc refait le champ avec sage.
-      À la ligne \draw... il faut que les deux signes - soient collés. -->
-
-      <!--
-      <sidebyside>
-      <image><latex-image>\begin{tikzpicture}[xscale=1.2]
-      \YEaxis{5.5}{5.5}
-      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
-      \YExcoord{\x}{}
-      \YEycoord{\x}{}
-      }
-      \foreach \x in {-4,...,4}{
-      \foreach \y in {-4,...,4}{
-      \ADD{\x}{\y}{\xnew}
-      \SUBTRACT{\x}{\y}{\ynew}
-      \POWER{\x}{2}{\xtest}
-      \POWER{\y}{2}{\ytest}
-      \ADD{\xtest}{\ytest}{\test}
-      	\ifnum \test = 0
-      		{}
-      		\else
-      		\draw[- \gt , red, thick] (\x,\y)- -({\x+\xnew/6},{\y+\ynew/6});
-      	\fi
-      	}}
-      \draw[dotted]  (-4,-4) grid (4,4);
-      \end{tikzpicture}</latex-image></image>
-      </sidebyside>
-      -->
-      <sidebyside widths="55% 5% 40%" valign="top">
-        <stack>
-          <p>
-          	Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles :
-          <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
-           \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}\\
-          =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-           \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-          \end{cases}</mrow></md>
-          <md><mrow>\vv(x,y)\cdot \vj \begin{cases}
-           \gt 0 &amp; \mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-          =0 &amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
-           \lt 0&amp;\mbox{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
-          \end{cases}</mrow></md>
-          </p>
-
-          <p>
-            Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles. Supposer également que les repères sur les axes correspondent à des distances unitaires.
-          </p>
-        </stack>
-        <p/>
-        <image xml:id="sageplot-exo-champ-2" width="100%">
-          <description><p>Un champ de vecteurs</p></description>
-         <sageplot>
-            var('x,y')
-            #Fig = plot_vector_field([x+y, x-y],
-            #  (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
-            #  color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-            #  gridlines= True,
-            #  axes = True,
-            #  figsize = 4,
-            #  axes_labels = ['$x$','$y$'],
-            #  axes_labels_size=2, frame = False)
-            Fig = plot_vector_field([x+y, x-y],
-              (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
-              color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
-              gridlines= True,
-              axes = True,
-              figsize = 4,
-              axes_labels = ['$x$','$y$'],
-              axes_labels_size=2, width=0.004, frame = False)
-            Fig
-         </sageplot>
-        </image>
-      </sidebyside>
-      </statement>
-
-      <hint><p>
-      Écrire toutes les coordonnées où <m>\vv(x,y)\cdot\vi=0</m> ou <m>\vv(x,y)\cdot\vj=0</m>, et chercher une certaine répétition.
-      </p></hint>
-
-      <answer>
-      <p>
-      <md><mrow>
-      \vv(x,y)\cdot \vi \left.\begin{cases}
-       \gt 0 &amp; \mbox{ lorsque } \fbox{$y \gt -x$}\\
-      =0 &amp;\mbox{ lorsque } \fbox{$y=-x$}\\
-       \lt 0&amp;\mbox{ lorsque } \fbox{$y \lt -x$}
-      \end{cases}\right\}</mrow></md>
-      et
-      <md><mrow>\vv(x,y)\cdot \vj \left.\begin{cases}
-       \gt 0 &amp; \mbox{ lorsque } \fbox{$y \lt x$}\\
-      =0 &amp;\mbox{ lorsque } \fbox{$y=x$}\\
-       \lt 0&amp;\mbox{ lorsque } \fbox{$y \gt x$}
-      \end{cases}\right\}</mrow></md>
-      au moins pour <m>(x,y)</m> montré dans l'esquisse.
-      </p></answer>
-
-      <solution><p>
-      To start out, we find the places where <m>\vv(x,y)\cdot\vi=0</m> (vertical vectors) or <m>\vv(x,y)\cdot\vj=0</m> (horizontal vectors). Remember the vector <m>\vv(x,y)</m> has its <em>tail</em> at <m>(x,y)</m>.
-      </p>
-
-      <p>We see the vertical vectors  (those with <m>\vv(x,y)\cdot\vi=0</m>) occur at every point along the line <m>y=-x</m>, while
-      horizontal vectors  (those with <m>\vv(x,y)\cdot\vj=0</m>) occur at every point along the line <m>y=x</m>.
-      </p>
-
-      <p>Indeed, below the line <m>y=-x</m>, vectors point to the left, while above the line <m>y=-x</m> they point to the right.
-      Similarly, vectors point down when they're above the line <m>y=x</m>, and the point up when they're below the line <m>y=x</m>.
-      </p>
-
-      <sidebyside width="55%">
-      <image><latex-image>\begin{tikzpicture}[scale=0.6]
-      \fill[blue, opacity=0.3] (-5,5)|-(5,-5);
-      \draw[blue, dashed] (-5,5)--(5.5,-5.5);
-      \draw[blue] (-2.5,-6) node{LEFT};
-      \draw[red] (2.5,5.5) node{RIGHT};
-      \YEaxis{5.5}{5.5}
-      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
-      \YExcoord{\x}{}
-      \YEycoord{\x}{}
-      }
-      \foreach \x in {-4,...,4}{
-      \foreach \y in {-4,...,4}{
-      \ADD{\x}{\y}{\xnew}
-      \SUBTRACT{\x}{\y}{\ynew}
-      \POWER{\x}{2}{\xtest}
-      \POWER{\y}{2}{\ytest}
-      \ADD{\xtest}{\ytest}{\test}
-      	\ifnum \test = 0
-      		{}
-      		\else
-      		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
-      	\fi
-      	}}
-      \draw[dotted]  (-4,-4) grid (4,4);
-      \end{tikzpicture}</latex-image></image>
-      </sidebyside>
-
-      <sidebyside width="55%">
-      <image><latex-image>\begin{tikzpicture}[scale=0.6]
-      \fill[blue, opacity=0.3] (-5,-5)-|(5,5);
-      \draw[blue,dashed] (-5,-5)--(5.5,5.5) ;
-      \draw[blue] (2.5,-6) node{UP};
-      \draw[red] (-2.5,5.5) node{DOWN};
-      \YEaxis{5.5}{5.5}
-      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
-      \YExcoord{\x}{}
-      \YEycoord{\x}{}
-      }
-      \foreach \x in {-4,...,4}{
-      \foreach \y in {-4,...,4}{
-      \ADD{\x}{\y}{\xnew}
-      \SUBTRACT{\x}{\y}{\ynew}
-      \POWER{\x}{2}{\xtest}
-      \POWER{\y}{2}{\ytest}
-      \ADD{\xtest}{\ytest}{\test}
-      	\ifnum \test = 0
-      		{}
-      		\else
-      		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
-      	\fi
-      	}}
-      \draw[dotted]  (-4,-4) grid (4,4);
-      \end{tikzpicture}</latex-image></image>
-      </sidebyside>
-
-      <p>So, at least for <m>(x,y)</m> shown in the sketch,
-      <md><mrow>
-      \vv(x,y)\cdot \vi \begin{cases}
-       \gt 0 &amp; \mbox{ when } \fbox{$y \gt -x$}\\
-      =0 &amp;\mbox{ when } \fbox{$y=-x$}\\
-       \lt 0&amp;\mbox{ when } \fbox{$y \lt -x$}
-      \end{cases} \quad \text{and} \quad
-      \vv(x,y)\cdot \vj \begin{cases}
-       \gt 0 &amp; \mbox{ when } \fbox{$y \lt x$}\\
-      =0 &amp;\mbox{ when } \fbox{$y=x$}\\
-       \lt 0&amp;\mbox{ when } \fbox{$y \gt x$}
-      \end{cases}
-      </mrow></md>
-      </p></solution>
-    </exercise>
-
-    <!-- CLP4 Section 2.1 No 3 -->
-    <exercise>
-      <statement><p>
-      Une plateforme comportant de nombreux petits tapis roulants est alignée sur un plan de coordonnées.
-      Chaque bande transporteuse déplace un objet situé au-dessus d'elle dans la direction de l'origine, et une bande transporteuse en position <m>(x,y)</m> provoque le déplacement d'un objet situé au-dessus d'elle à une vitesse <m>y</m>.
-      Supposer que les objets n'interfèrent pas les uns avec les autres.
-      </p>
-
-      <p> Donner une formule vectorielle pour la vitesse d'un objet en position <m>(x,y)</m>.
-      </p></statement>
-
-      <hint><p>
-      Si vous connaissez la vitesse et la direction d'un objet, vous pouvez trouver sa vélocité.
-      </p></hint>
-
-      <answer><p>
-      <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>
-      </p></answer>
-
-      <solution>
-      <p>
-      Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
-      </p></solution>
-    </exercise>
-
-
-    <exercise>
-      <statement>
-        <p>
-          Trouver les lignes de courant du champ de vecteurs <m>\vF(x,y) = x^2\, \vi + y^2\, \vj</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
-    </exercise>
-
-
-    <exercise>
-      <statement>
-      <sidebyside widths="55% 5% 40%" valign="top">
-      <stack>
-      <p>
-      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions esquissé ci-contre.
-      </p>
-
-      <p>
-      Déterminer les signes de <m>P</m>, <m>Q</m>, <m>\pdiff{Q}{x}</m>
-      et <m>\pdiff{Q}{y}</m> au point <m>A</m>.
-      </p>
-      </stack>
-      <p/>
-      <image source="images/CLP4-figs/pfigs/VFe"/>
-      </sidebyside>
-      </statement>
-
-      <!-- <hint></hint> -->
-
-      <answer><p>
-        <ol marker = "(a)" cols="4">
-          <li>
-            <p>
-              <m>P \gt 0</m></p><p>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>Q \gt 0</m></p><p>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\pdiff{Q}{x} \lt 0</m></p><p>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\pdiff{Q}{y} \gt 0</m>
-            </p>
-          </li>
-        </ol>
-      </p></answer>
-
-      <solution><p>
-      The arrows near the point <m>A</m> are pointing to the
-      right, indicating that <m>P \gt 0</m>, and upward, indicating
-      that <m>Q \gt 0</m>. Moving from left to right near <m>A</m>, the
-      vertical component of the arrows is decreasing, indicating that
-      <m>\pdiff{Q}{x} \lt 0</m>.  Moving vertically
-      upwards near <m>A</m>, the vertical component of the arrows is
-      increasing, indicating that <m>\pdiff{Q}{y} \gt 0</m>.
-      </p>
-
-      </solution>
-    </exercise>
-
-  </exercisegroup>
-
-  <exercisegroup>
-    <title>Pour mieux comprendre</title>
-    <!-- CLP4 Section 2.1 No 4 -->
-    
-    <!-- CLP4 Section 2.1 No 5 -->
-    <exercise>
-      <statement><p>
-      Imaginer que le champ de vecteurs <m>\vv(x,y) = x\,\vi+y\,\vj</m> est le champ de vitesses d'un fluide en mouvement.
-      <ol marker = "(a)">
-      <li>
-      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
-      point <m>(1,1)</m>. Quelle est la position approximative de la brindille
-      au moment <m>t=0.01</m>?
-      </li>
-      <li>
-      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
-      point <m>(0,0)</m>. Quelle est la position de la brindille
-      au moment <m>t=0.01</m>?
-      </li>
-      <li>
-      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
-      point <m>(0,0)</m>. Quelle est la position de la brindille
-      au moment <m>t=10</m>?
-      </li>
-      </ol>
-      </p></statement>
-
-      <hint><p>
-      Lorsque la brindille est au point <m>(x,y)</m> sa vitesse est <m>\vv(x,y)</m>.
-      </p></hint>
-
-      <answer><p>
-      <ol marker="(a)" cols="3">
-      <li>
-      <m>(1.01,\,1.01)</m>
-      </li>
-      <li>
-      <m>(0,\,0)</m>
-      </li>
-      <li>
-      <m>(0,\,0)</m>
-      </li>
-      </ol>
-      </p></answer>
-
-      <solution><p>
-      (a)
-      At time <m>0</m> the velocity of the twig is
-      <m>\vv(1,1) =\vi+\vj</m>. So at time <m>t=0.01</m>, the position of the
-      twig is approximately
-      <md><mrow>
-      (1,1) + 0.01(1,1) = (1.01\,,\,1.01)
-      </mrow></md>
-      </p>
-
-      <p>(b)
-      At time <m>0</m> the velocity of the twig is
-      <m>\vv(0,0) =\vZero</m>. So at time <m>t=0.01</m>, the position of the
-      twig is
-      <md><mrow>
-      (0,0) + 0.01(0,0) = (0\,,\,0)
-      </mrow></md>
-      </p>
-
-      <p>(c) At time <m>0</m> the velocity of the twig is <m>\vv(0,0) =\vZero</m>.
-      So it is stationary and its velocity remains zero for all time.
-      The position of the twig at time <m>10</m>, and in fact at all times,
-      is <m>(0\,,\,0)</m>.
-      </p>
-
-      </solution>
-    </exercise>
-
-    <!-- CLP4 Section 2.1 No 6 -->
-    <exercise>
-      <statement><p>
-      Imaginer que le champ de vecteurs <m>\vv(x,y) = 2x\,\vi -\vj</m> est le champ de vitesses d'un fluide en mouvement.
-      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au point <m>(0,0)</m>.
-      Quelle est la position de la brindille au temps <m>t=10</m> ?
-      </p></statement>
-
-      <hint><p>
-      Chaque fois que la brindille est sur l'axe <m>y</m>, sa vitesse est parallèle à l'axe <m>y</m>.
-      Donc elle reste sur l'axe <m>y</m> pour toujours.
-      </p></hint>
-
-      <answer><p>
-      <m>(0\,,\,-10)</m>
-      </p></answer>
-
-      <solution><p>
-      The velocity of the fluid at all points of the <m>y</m>-axis
-      is <m>-\vj</m>. So the twig will remain on the <m>y</m>-axis and will
-      consequently have velocity <m>-\vj</m> for all time. The position
-      of the twig at time <m>10</m> will be
-      <md><mrow>
-      (0,0)+10(0,-1) = (0\,,\,-10)
-      </mrow></md>
-      </p></solution>
-    </exercise>
-
-    <!--
-     CLP4 Section 2.1 No 7 ATTENTION CET EXERCICE EST LE MÊME QUE LE NUMÉRO 3!!!
-    <exercise>
-    <statement><p>
-    Une plate-forme comportant de nombreux petits tapis roulants est alignée sur un plan de coordonnées.
-    Chaque bande transporteuse déplace un objet situé au-dessus d'elle dans la direction de l'origine, et une bande transporteuse située à la position <m>(x,y)</m> provoque le déplacement d'un objet situé au-dessus d'elle à une vitesse <m>y</m>.
-    Supposez que les objets n'interfèrent pas les uns avec les autres.
-    </p>
-
-    <p> Donnez une formule vectorielle pour la vitesse d'un objet à la position <m>(x,y)</m>.
-    </p></statement>
-
-    <hint><p>
-    Si vous connaissez la vitesse et la direction d'un objet, vous pouvez trouver sa vélocité.
-    </p></hint>
-
-    <answer><p>
-    <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>
-    </p></answer>
-
-    <solution><p>
-    Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
-    </p></solution>
-    </exercise>
-    -->
-
-    <!-- CLP4 Section 2.1 No 8 -->
-    <exercise>
-      <statement><p>
-      Des abeilles amicales volent vers votre visage depuis toutes les directions. La vitesse de chaque abeille est inversement proportionnelle à sa distance par rapport à votre visage. Trouver un champ de vecteurs pour la vitesse de l'essaim.
-      </p></statement>
-
-      <hint><p>
-      Positionnez votre visage pour qu'il soit à l'origine, <m>(0,0,0)</m>.
-      </p>
-
-      <p>Si <m>A</m> est <q>inversement proportionnel</q> à <m>B</m>, alors il existe une constante <m>\alpha</m> tel que <m>AB=\alpha</m>. De cette façon lorsque <m>|B|</m> augmente, <m>|A|</m> diminue, et vice-versa.
-      </p></hint>
-
-      <answer><p>
-      Si votre visage est à l'origine, alors <m>\vv(x,y,z)=-\frac{\alpha}{x^2+y^2+z^2}(x,y,z)</m> pour une certaine constante positive <m>\alpha</m>.
-      </p></answer>
-
-      <solution><p>
-      Set your face to be at the origin of our coordinate system, <m>(0,0,0)</m>. A bee at position <m>(x,y,z)</m> is a distance of <m>\sqrt{x^2+y^2+z^2}</m> from your face, heading in the direction <m>(-x,-y,-z)</m>. So, the unit vector indicating the direction of one friendly bee is <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m>. Now all we need to find is the length of this vector, i.e. the speed of the friendly bee.
-      </p>
-
-      <p>The speed of the friendly bee is inversely proportional to <m>\sqrt{x^2+y^2+z^2}</m>, its distance from your face. (Bees that are farther away are buzzing towards you more excitedly.) So, speed is given by <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some constant <m>\alpha</m>.
-      </p>
-
-      <p>The bee velocity has the direction of the unit vector <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m> with length  <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some positive constant <m>\alpha</m>. That is,
-      <md><mrow>
-      \vv(x,y,z)=-\frac{\alpha}{{x^2+y^2+z^2}}(x,y,z)</mrow></md>
-      </p>
-
-      </solution>
-    </exercise>
-
     <!-- CLP4 Section 2.1 No 9 -->
+    <!-- 1 -->
     <exercise>
       <statement><p>
       Esquisser le champ de vecteurs
-      <m>\vv(x,y)=(x^2,y)</m>.
+      <m>\vv(x,y)=x^2\,\vi+y\,\vj</m>.
       </p></statement>
 
       <hint><p>
@@ -685,7 +101,595 @@
       </sidebyside></solution>
     </exercise>
 
-</exercisegroup>
+    <!-- CLP4 Section 2.1 No 1 -->
+    <!-- 2 -->
+    <exercise>
+        <statement>
+        <p>
+        Voici une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
+        </p>
+
+        <!-- Note 26-07-2023 -->
+        <!-- Je ne sais pas pourquoi, le champ produit avec Tikz rend bien dans la version LaTeX puis .pdf, mais pas pour html. J'ai donc refait le champ avec sage.
+        À la ligne \draw... il faut que les deux signes - soient collés. -->
+
+        <!--
+          <image><latex-image>\begin{tikzpicture}
+          \YEaxis{5.5}{3.5}
+          \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+          \YExcoord{\x}{}
+          }
+          \foreach \x in {-1,-2,-3,1,2,3}{
+          \YEycoord{\x}{}
+          }
+          \foreach \x in {-4,...,4}{
+          \foreach \y in {-3,...,3}{
+          \MULTIPLY{\x}{\numberPI}{\xpi}
+          \DIVIDE{\xpi}{4}{\xx}
+          \COS{\xx}{\cosx}
+          \POWER{\y}{2}{\ysq}
+          \ADD{\ysq}{2}{\denom}
+          \DIVIDE{\cosx}{\denom}{\ynew}
+          \DIVIDE{\x}{4}{\xnew}
+          	\draw[- \gt , red, thick] (\x,\y)- -({\x+\xnew},{\y+\ynew});
+          	}}
+          \end{tikzpicture}</latex-image></image>
+
+        -->
+        <sidebyside widths="55% 5% 40%" valign="top">
+          <stack>
+            <p>Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles<nbsp/>:
+            <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
+             \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+            =0 &amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+             \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+            \end{cases}</mrow></md>
+            <md><mrow>
+            \vv(x,y) \cdot \vj
+            \begin{cases}
+             \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+              =0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+             \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+            \end{cases}
+            </mrow></md>
+            </p>
+
+            <p>Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles.
+            Autrement dit, les échantillons sont représentatifs d'une fonction vectorielle continue et lisse. Supposer également que les repères sur les axes correspondent à des distances unitaires.
+            </p>
+          </stack>
+          <p/>
+          <image xml:id="sageplot-exo-champ" width="100%">
+            <description><p>Un champ de vecteurs</p></description>
+           <sageplot>
+              var('x,y')
+              Fig = plot_vector_field([x/4, cos(pi*x/4)/(y^2 + 2)],
+                (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+                color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+                gridlines= True,
+                axes = True,
+                figsize = 4,
+                axes_labels = ['$x$','$y$'],
+                axes_labels_size=2, width=0.004, frame = False)
+              Fig
+           </sageplot>
+          </image>
+        </sidebyside>
+        </statement>
+
+        <hint><p>
+        Tous les blancs ne représentent pas un seul intervalle.
+        </p></hint>
+
+        <answer><p>
+        <md><mrow>\vv(x,y)\cdot \vi \left.\begin{cases}
+         \gt 0 &amp; \text{ lorsque } \fbox{$x \gt 0$}\\
+        =0 &amp;\text{ lorsque } \fbox{$x=0$}\\
+         \lt 0&amp;\text{ lorsque } \fbox{$x \lt 0$}
+        \end{cases}\right\}</mrow></md>
+        et
+        <md><mrow>\vv(x,y)\cdot \vj \left.\begin{cases}
+         \gt 0 &amp; \text{ lorsque } \fbox{$-2 \lt x \lt 2$}\\
+        =0 &amp;\text{ lorsque } \fbox{$x \in \{-2,2\}$}\\
+         \lt 0&amp;\text{ lorsque } \fbox{$x \lt -2$ ou $x \gt 2$}
+        \end{cases}\right\}</mrow></md>
+        au moins pour les points <m>(x,y)</m> montrés dans l'esquisse.
+        </p></answer>
+
+        <solution><p>
+        The vectors are pointing to the right when <m>x \gt 0</m>, to the left when <m>x \lt 0</m>, and are vertical when <m>x=0</m>. So, at least for <m>(x,y)</m> shown in the sketch,
+        <md><mrow>
+        \vv(x,y)\cdot \vi \begin{cases}
+         \gt 0 &amp; \text{ when } \fbox{$x \gt 0$}\\
+        =0 &amp;\text{ when } \fbox{$x=0$}\\
+         \lt 0&amp;\text{ when } \fbox{$x \lt 0$}
+        \end{cases}</mrow></md>
+        </p>
+
+        <p>The behaviour of the <m>y</m>-values is more complicated. Vectors in one vertical line seem to be all pointing up, or all pointing down. So, the sign of <m>\vv\cdot\vj</m> depends only on <m>x</m>, not on <m>y</m> (although the <em>magnitude</em> of <m>\vv\cdot\vj</m> depends on both). Roughly,  the vectors are pointing
+        <ul>
+        <li> Down when <m>x \lt -2</m>;
+        </li>
+        <li> horizontally when <m>x=-2</m> (remember the vector is positioned with the <em>base</em> of <m>\vv(x,y)</m> at <m>(x,y)</m>;
+        </li>
+        <li> up when <m>-2 \lt x \lt 2</m>;
+        </li>
+        <li> horizontally  when <m>x=2</m>;
+        </li>
+        <li> up when <m>2 \lt x</m>.
+        </li>
+        </ul>
+        </p>
+
+        <p>Since we're assuming there's nothing surprising happening between the samples pictured, at least for <m>(x,y)</m> shown in the sketch,
+        </p>
+
+        <p><md><mrow>
+        \vv(x,y)\cdot \vj \begin{cases}
+         \gt 0 &amp; \text{ when } \fbox{$-2 \lt x \lt 2$}\\
+        =0 &amp;\text{ when } \fbox{$x \in \{-2,2\}$}\\
+         \lt 0&amp;\text{ when } \fbox{$x \lt -2$ or $x \gt 2$}
+        \end{cases}</mrow></md>
+        </p>
+
+        </solution>
+      </exercise>
+
+    <!-- CLP4 Section 2.1 No 2 -->
+    <!-- 3 -->
+    <exercise>
+      <statement><p>
+      Ci-dessous se trouve une esquisse du champ de vecteurs <m>\vv(x,y)</m>.
+      </p>
+
+      <!-- Note 26-07-2023 -->
+      <!-- Je ne sais pas pourquoi, le champ produit avec Tikz rend bien dans la version LaTeX puis .pdf, mais pas pour html. J'ai donc refait le champ avec sage.
+      À la ligne \draw... il faut que les deux signes - soient collés. -->
+
+      <!--
+      <sidebyside>
+      <image><latex-image>\begin{tikzpicture}[xscale=1.2]
+      \YEaxis{5.5}{5.5}
+      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+      \YExcoord{\x}{}
+      \YEycoord{\x}{}
+      }
+      \foreach \x in {-4,...,4}{
+      \foreach \y in {-4,...,4}{
+      \ADD{\x}{\y}{\xnew}
+      \SUBTRACT{\x}{\y}{\ynew}
+      \POWER{\x}{2}{\xtest}
+      \POWER{\y}{2}{\ytest}
+      \ADD{\xtest}{\ytest}{\test}
+      	\ifnum \test = 0
+      		{}
+      		\else
+      		\draw[- \gt , red, thick] (\x,\y)- -({\x+\xnew/6},{\y+\ynew/6});
+      	\fi
+      	}}
+      \draw[dotted]  (-4,-4) grid (4,4);
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside>
+      -->
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <stack>
+          <p>
+          	Trouver les régions où les coordonnées <m>x</m> et <m>y</m> sont positives, négatives et nulles<nbsp/>:
+          <md><mrow>\vv(x,y)\cdot \vi \begin{cases}
+           \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}\\
+          =0 &amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+           \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+          \end{cases}</mrow></md>
+          <md><mrow>\vv(x,y)\cdot \vj \begin{cases}
+           \gt 0 &amp; \text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+          =0 &amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $} \\
+           \lt 0&amp;\text{ lorsque } \fbox{$\vphantom{L}\qquad\qquad $}
+          \end{cases}</mrow></md>
+          </p>
+
+          <p>
+            Supposer que <m>\vv(x,y)</m> se comporte comme prévu aux points qui ne sont pas visibles. Supposer également que les repères sur les axes correspondent à des distances unitaires.
+          </p>
+        </stack>
+        <p/>
+        <image xml:id="sageplot-exo-champ-2" width="100%">
+          <description><p>Un champ de vecteurs</p></description>
+         <sageplot>
+            var('x,y')
+            #Fig = plot_vector_field([x+y, x-y],
+            #  (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+            #  color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+            #  gridlines= True,
+            #  axes = True,
+            #  figsize = 4,
+            #  axes_labels = ['$x$','$y$'],
+            #  axes_labels_size=2, frame = False)
+            Fig = plot_vector_field([x+y, x-y],
+              (x,-4,4), (y,-4,4), plot_points=[7,7], ticks=[[],[]],
+              color = "steelblue", xmin=-5, xmax = 5,ymin = -5, ymax =5,
+              gridlines= True,
+              axes = True,
+              figsize = 4,
+              axes_labels = ['$x$','$y$'],
+              axes_labels_size=2, width=0.004, frame = False)
+            Fig
+         </sageplot>
+        </image>
+      </sidebyside>
+      </statement>
+
+      <hint><p>
+      Écrire toutes les coordonnées où <m>\vv(x,y)\cdot\vi=0</m> ou <m>\vv(x,y)\cdot\vj=0</m>, et chercher une certaine répétition.
+      </p></hint>
+
+      <answer>
+      <p>
+      <md><mrow>
+      \vv(x,y)\cdot \vi \left.\begin{cases}
+       \gt 0 &amp; \text{ lorsque } \fbox{$y \gt -x$}\\
+      =0 &amp;\text{ lorsque } \fbox{$y=-x$}\\
+       \lt 0&amp;\text{ lorsque } \fbox{$y \lt -x$}
+      \end{cases}\right\}</mrow></md>
+      et
+      <md><mrow>\vv(x,y)\cdot \vj \left.\begin{cases}
+       \gt 0 &amp; \text{ lorsque } \fbox{$y \lt x$}\\
+      =0 &amp;\text{ lorsque } \fbox{$y=x$}\\
+       \lt 0&amp;\text{ lorsque } \fbox{$y \gt x$}
+      \end{cases}\right\}</mrow></md>
+      au moins pour les points <m>(x,y)</m> montrés dans l'esquisse.
+      </p></answer>
+
+      <solution><p>
+      To start out, we find the places where <m>\vv(x,y)\cdot\vi=0</m> (vertical vectors) or <m>\vv(x,y)\cdot\vj=0</m> (horizontal vectors). Remember the vector <m>\vv(x,y)</m> has its <em>tail</em> at <m>(x,y)</m>.
+      </p>
+
+      <p>We see the vertical vectors  (those with <m>\vv(x,y)\cdot\vi=0</m>) occur at every point along the line <m>y=-x</m>, while
+      horizontal vectors  (those with <m>\vv(x,y)\cdot\vj=0</m>) occur at every point along the line <m>y=x</m>.
+      </p>
+
+      <p>Indeed, below the line <m>y=-x</m>, vectors point to the left, while above the line <m>y=-x</m> they point to the right.
+      Similarly, vectors point down when they're above the line <m>y=x</m>, and the point up when they're below the line <m>y=x</m>.
+      </p>
+
+      <sidebyside width="55%">
+      <image><latex-image>\begin{tikzpicture}[scale=0.6]
+      \fill[blue, opacity=0.3] (-5,5)|-(5,-5);
+      \draw[blue, dashed] (-5,5)--(5.5,-5.5);
+      \draw[blue] (-2.5,-6) node{LEFT};
+      \draw[red] (2.5,5.5) node{RIGHT};
+      \YEaxis{5.5}{5.5}
+      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+      \YExcoord{\x}{}
+      \YEycoord{\x}{}
+      }
+      \foreach \x in {-4,...,4}{
+      \foreach \y in {-4,...,4}{
+      \ADD{\x}{\y}{\xnew}
+      \SUBTRACT{\x}{\y}{\ynew}
+      \POWER{\x}{2}{\xtest}
+      \POWER{\y}{2}{\ytest}
+      \ADD{\xtest}{\ytest}{\test}
+      	\ifnum \test = 0
+      		{}
+      		\else
+      		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
+      	\fi
+      	}}
+      \draw[dotted]  (-4,-4) grid (4,4);
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside>
+
+      <sidebyside width="55%">
+      <image><latex-image>\begin{tikzpicture}[scale=0.6]
+      \fill[blue, opacity=0.3] (-5,-5)-|(5,5);
+      \draw[blue,dashed] (-5,-5)--(5.5,5.5) ;
+      \draw[blue] (2.5,-6) node{UP};
+      \draw[red] (-2.5,5.5) node{DOWN};
+      \YEaxis{5.5}{5.5}
+      \foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+      \YExcoord{\x}{}
+      \YEycoord{\x}{}
+      }
+      \foreach \x in {-4,...,4}{
+      \foreach \y in {-4,...,4}{
+      \ADD{\x}{\y}{\xnew}
+      \SUBTRACT{\x}{\y}{\ynew}
+      \POWER{\x}{2}{\xtest}
+      \POWER{\y}{2}{\ytest}
+      \ADD{\xtest}{\ytest}{\test}
+      	\ifnum \test = 0
+      		{}
+      		\else
+      		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
+      	\fi
+      	}}
+      \draw[dotted]  (-4,-4) grid (4,4);
+      \end{tikzpicture}</latex-image></image>
+      </sidebyside>
+
+      <p>So, at least for <m>(x,y)</m> shown in the sketch,
+      <md><mrow>
+      \vv(x,y)\cdot \vi \begin{cases}
+       \gt 0 &amp; \text{ when } \fbox{$y \gt -x$}\\
+      =0 &amp;\text{ when } \fbox{$y=-x$}\\
+       \lt 0&amp;\text{ when } \fbox{$y \lt -x$}
+      \end{cases} \quad \text{and} \quad
+      \vv(x,y)\cdot \vj \begin{cases}
+       \gt 0 &amp; \text{ when } \fbox{$y \lt x$}\\
+      =0 &amp;\text{ when } \fbox{$y=x$}\\
+       \lt 0&amp;\text{ when } \fbox{$y \gt x$}
+      \end{cases}
+      </mrow></md>
+      </p></solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.1 No 3 -->
+    <!-- 4 -->
+    <exercise>
+      <statement><p>
+      Une plateforme comportant de nombreux petits tapis roulants est alignée sur un plan de coordonnées.
+      Chaque bande transporteuse déplace un objet situé au-dessus d'elle dans la direction de l'origine, et une bande transporteuse en position <m>(x,y)</m> provoque le déplacement d'un objet situé au-dessus d'elle à une vitesse <m>y</m>.
+      Supposer que les objets n'interfèrent pas les uns avec les autres.
+      </p>
+
+      <p> Donner une formule vectorielle pour la vitesse d'un objet en position <m>(x,y)</m>.
+      </p></statement>
+
+      <hint><p>
+      Si on connaît la norme de la vitesse et la direction d'un objet, on peut trouver son vecteur vitesse.
+      </p></hint>
+
+      <answer><p>
+      <m>\vv(x,y)=-\tfrac{y}{\sqrt{x^2+y^2}}\,(x\,\vi+y\,\vj)</m>
+      </p></answer>
+
+      <solution>
+      <p>
+      Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
+      </p></solution>
+    </exercise>
+
+
+    <!-- 5 -->
+    <exercise>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li>
+              Trouver les lignes de courant du champ de vecteurs <m>\vF(x,y) = x^2\, \vi + y^2\, \vj</m>.
+            </li>
+            <li>
+              Trouver les lignes de courant du tourbillon <m>\vv(x,y) = \Om\left(-y\,\vi + x\,\vj\right)</m> de l'exemple <xref ref="eg_Vortex"/>, où <m>\Om</m> est une constante positive.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <ol marker="(a)">
+            <li>
+              Les lignes de courant se trouvent sur les courbes d'équation <m>\tfrac{1}{x} - \tfrac{1}{y} = C</m>, c'est-à-dire <m>y = \tfrac{x}{1-Cx}</m>, ainsi que sur les quatre demi-axes. L'origine est un point stationnaire.
+            </li>
+            <li>
+              Les lignes de courant sont les cercles <m>x^2+y^2 = R^2</m> centrés à l'origine, parcourus dans le sens antihoraire, par exemple <m>\vr(t) = R\cos(\Om t)\,\vi + R\sin(\Om t)\,\vj</m>. L'origine est un point stationnaire.
+            </li>
+          </ol>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          (a)
+          Une ligne de courant <m>\vr(t) = x(t)\,\vi + y(t)\,\vj</m> vérifie <m>x'(t) = x(t)^2</m> et <m>y'(t) = y(t)^2</m>.
+          Si <m>x = 0</m>, alors <m>x' = 0</m> et <m>x</m> reste nul : l'objet se déplace sur l'axe des <m>y</m>, vers le haut (<m>y' = y^2 \gt 0</m>), sans jamais franchir l'origine.
+          Chaque demi-axe des <m>y</m> est donc une ligne de courant, et de même pour les demi-axes des <m>x</m>.
+          L'origine, où <m>\vF = \vZero</m>, est un point stationnaire.
+        </p>
+
+        <p>
+          Lorsque <m>x \neq 0</m> et <m>y \neq 0</m>, on a
+          <md>
+            <mrow>\frac{dy}{dx} = \frac{y'(t)}{x'(t)} = \frac{y^2}{x^2}, \text{ d'où } \int \frac{dy}{y^2} = \int \frac{dx}{x^2} \text{ et } -\frac{1}{y} = -\frac{1}{x} + C.</mrow>
+          </md>
+          Les lignes de courant se trouvent donc sur les courbes <m>\frac{1}{x} - \frac{1}{y} = C</m>, soit <m>y = \frac{x}{1-Cx}</m>.
+          Pour <m>C = 0</m>, c'est la droite <m>y = x</m> privée de l'origine ; pour <m>C \neq 0</m>, c'est une hyperbole d'asymptotes <m>x = \frac{1}{C}</m> et <m>y = -\frac{1}{C}</m>.
+        </p>
+
+        <p>
+          (b)
+          Une ligne de courant vérifie <m>x'(t) = -\Om y(t)</m> et <m>y'(t) = \Om x(t)</m>.
+          On a alors
+          <md>
+            <mrow>\frac{d}{dt}\left(x^2 + y^2\right) = 2xx' + 2yy' = -2\Om xy + 2\Om xy = 0,</mrow>
+          </md>
+          de sorte que <m>x^2 + y^2 = R^2</m> est constant : les lignes de courant sont sur des cercles centrés à l'origine.
+          Le paramétrage <m>\vr(t) = R\cos(\Om t)\,\vi + R\sin(\Om t)\,\vj</m> convient, puisque
+          <md>
+            <mrow>\vr'(t) = -\Om R\sin(\Om t)\,\vi + \Om R\cos(\Om t)\,\vj = \Om\left(-y(t)\,\vi + x(t)\,\vj\right).</mrow>
+          </md>
+          Le cercle est donc parcouru dans le sens antihoraire, à vitesse angulaire <m>\Om</m>.
+          Pour <m>R = 0</m>, on obtient l'origine, qui est un point stationnaire.
+        </p>
+      </solution>
+    </exercise>
+
+
+    <!-- 6 -->
+    <exercise>
+      <statement>
+      <sidebyside widths="55% 5% 40%" valign="top">
+      <stack>
+      <p>
+      Soit <m>\vF = P\,\vi + Q\,\vj</m> le champ de vecteurs à deux dimensions esquissé ci-contre.
+      </p>
+
+      <p>
+      Déterminer les signes de <m>P</m>, <m>Q</m>, <m>\pdiff{Q}{x}</m>
+      et <m>\pdiff{Q}{y}</m> au point <m>A</m>.
+      </p>
+      </stack>
+      <p/>
+      <image source="images/CLP4-figs/pfigs/VFe"/>
+      </sidebyside>
+      </statement>
+
+      <!-- <hint></hint> -->
+
+      <answer><p>
+        <m>P \gt 0</m>, <m>Q \gt 0</m>, <m>\pdiff{Q}{x} \lt 0</m> et <m>\pdiff{Q}{y} \gt 0</m>
+      </p></answer>
+
+      <solution><p>
+      The arrows near the point <m>A</m> are pointing to the
+      right, indicating that <m>P \gt 0</m>, and upward, indicating
+      that <m>Q \gt 0</m>. Moving from left to right near <m>A</m>, the
+      vertical component of the arrows is decreasing, indicating that
+      <m>\pdiff{Q}{x} \lt 0</m>.  Moving vertically
+      upwards near <m>A</m>, the vertical component of the arrows is
+      increasing, indicating that <m>\pdiff{Q}{y} \gt 0</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup>
+
+  <exercisegroup>
+    <title>Pour mieux comprendre</title>
+    <!-- CLP4 Section 2.1 No 5 -->
+    <!-- 7 -->
+    <exercise>
+      <statement><p>
+      Imaginer que le champ de vecteurs <m>\vv(x,y) = x\,\vi+y\,\vj</m> est le champ de vitesses d'un fluide en mouvement.
+      <ol marker = "(a)">
+      <li>
+      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
+      point <m>(1,1)</m>. Quelle est la position approximative de la brindille
+      au temps <m>t=0.01</m>?
+      </li>
+      <li>
+      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
+      point <m>(0,0)</m>. Quelle est la position de la brindille
+      au temps <m>t=0.01</m>?
+      </li>
+      <li>
+      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au
+      point <m>(0,0)</m>. Quelle est la position de la brindille
+      au temps <m>t=10</m>?
+      </li>
+      </ol>
+      </p></statement>
+
+      <hint><p>
+      Lorsque la brindille est au point <m>(x,y)</m>, sa vitesse est <m>\vv(x,y)</m>.
+      </p></hint>
+
+      <answer><p>
+      <ol marker="(a)" cols="3">
+      <li>
+      <m>(1.01,\,1.01)</m>
+      </li>
+      <li>
+      <m>(0,\,0)</m>
+      </li>
+      <li>
+      <m>(0,\,0)</m>
+      </li>
+      </ol>
+      </p></answer>
+
+      <solution><p>
+      (a)
+      At time <m>0</m> the velocity of the twig is
+      <m>\vv(1,1) =\vi+\vj</m>. So at time <m>t=0.01</m>, the position of the
+      twig is approximately
+      <md><mrow>
+      (1,1) + 0.01(1,1) = (1.01\,,\,1.01)
+      </mrow></md>
+      </p>
+
+      <p>(b)
+      At time <m>0</m> the velocity of the twig is
+      <m>\vv(0,0) =\vZero</m>. So at time <m>t=0.01</m>, the position of the
+      twig is
+      <md><mrow>
+      (0,0) + 0.01(0,0) = (0\,,\,0)
+      </mrow></md>
+      </p>
+
+      <p>(c) At time <m>0</m> the velocity of the twig is <m>\vv(0,0) =\vZero</m>.
+      So it is stationary and its velocity remains zero for all time.
+      The position of the twig at time <m>10</m>, and in fact at all times,
+      is <m>(0\,,\,0)</m>.
+      </p>
+
+      </solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.1 No 6 -->
+    <!-- 8 -->
+    <exercise>
+      <statement><p>
+      Imaginer que le champ de vecteurs <m>\vv(x,y) = 2x\,\vi -\vj</m> est le champ de vitesses d'un fluide en mouvement.
+      Au temps <m>0</m>, vous laissez tomber une brindille dans le fluide au point <m>(0,0)</m>.
+      Quelle est la position de la brindille au temps <m>t=10</m> ?
+      </p></statement>
+
+      <hint><p>
+      Chaque fois que la brindille est sur l'axe <m>y</m>, sa vitesse est parallèle à l'axe <m>y</m>.
+      Donc elle reste sur l'axe <m>y</m> pour toujours.
+      </p></hint>
+
+      <answer><p>
+      <m>(0\,,\,-10)</m>
+      </p></answer>
+
+      <solution><p>
+      The velocity of the fluid at all points of the <m>y</m>-axis
+      is <m>-\vj</m>. So the twig will remain on the <m>y</m>-axis and will
+      consequently have velocity <m>-\vj</m> for all time. The position
+      of the twig at time <m>10</m> will be
+      <md><mrow>
+      (0,0)+10(0,-1) = (0\,,\,-10)
+      </mrow></md>
+      </p></solution>
+    </exercise>
+
+    <!-- CLP4 Section 2.1 No 8 -->
+    <!-- 9 -->
+    <exercise>
+      <statement><p>
+      Des abeilles amicales volent vers votre visage depuis toutes les directions. La norme de la vitesse de chaque abeille est inversement proportionnelle à sa distance par rapport à votre visage. Trouver un champ de vecteurs pour la vitesse de l'essaim.
+      </p></statement>
+
+      <hint><p>
+      Placer son visage à l'origine, <m>(0,0,0)</m>.
+      </p>
+
+      <p>Si <m>A</m> est <q>inversement proportionnel</q> à <m>B</m>, alors il existe une constante <m>\alpha</m> telle que <m>AB=\alpha</m>. De cette façon, lorsque <m>|B|</m> augmente, <m>|A|</m> diminue, et vice-versa.
+      </p></hint>
+
+      <answer><p>
+      Si votre visage est à l'origine, alors <m>\vv(x,y,z)=-\tfrac{\alpha}{x^2+y^2+z^2}\,(x\,\vi+y\,\vj+z\,\vk)</m> pour une certaine constante positive <m>\alpha</m>.
+      </p></answer>
+
+      <solution><p>
+      Set your face to be at the origin of our coordinate system, <m>(0,0,0)</m>. A bee at position <m>(x,y,z)</m> is a distance of <m>\sqrt{x^2+y^2+z^2}</m> from your face, heading in the direction <m>(-x,-y,-z)</m>. So, the unit vector indicating the direction of one friendly bee is <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m>. Now all we need to find is the length of this vector, i.e. the speed of the friendly bee.
+      </p>
+
+      <p>The speed of the friendly bee is inversely proportional to <m>\sqrt{x^2+y^2+z^2}</m>, its distance from your face. (Bees that are farther away are buzzing towards you more excitedly.) So, speed is given by <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some constant <m>\alpha</m>.
+      </p>
+
+      <p>The bee velocity has the direction of the unit vector <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m> with length  <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some positive constant <m>\alpha</m>. That is,
+      <md><mrow>
+      \vv(x,y,z)=-\frac{\alpha}{{x^2+y^2+z^2}}(x,y,z)</mrow></md>
+      </p>
+
+      </solution>
+    </exercise>
+
+  </exercisegroup>
 
 
 </exercises>

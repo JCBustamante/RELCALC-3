@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-cylindres-quadriques">
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Cylindres et surfaces quadriques</title>
 
  <p>
@@ -262,9 +264,9 @@ S
                         à la forme
                         <md>\left(\frac{z}{c}\right)^2-\left(\frac{x}{a}\right)^2-\left(\frac{y}{b}\right)^2=1.</md>
                         La surface est un <term>hyperboloïde à deux nappes</term> :
-                        deux surfaces disjointes, l'une pour <m>z \ge c</m> et
-                        l'autre pour <m>z \le -c</m>. Ses traces horizontales sont
-                        des ellipses, mais seulement pour <m>|z| \ge c</m> ; ses
+                        deux surfaces disjointes, l'une pour <m>z \geqslant c</m> et
+                        l'autre pour <m>z \leqslant -c</m>. Ses traces horizontales sont
+                        des ellipses, mais seulement pour <m>|z| \geqslant c</m> ; ses
                         sections verticales sont des hyperboles ;
                     </p>
                     <figure xml:id="fig-hyperboloide-deux-nappes">
@@ -524,5 +526,63 @@ S
         </ul>
     </paragraphs>
 
-  
+    <remark xml:id="rem-axe-symetrie-quadrique">
+        <title>Axe de symétrie</title>
+        <p>
+            Dans les équations sous forme standard ci-dessus (obtenues en
+            l'absence de termes croisés <m>XY,YZ,XZ</m>, ou après les
+            changements de variables qui les éliminent), les cylindres, cônes
+            et paraboloïdes ne traitent pas les trois variables de façon
+            symétrique : une seule d'entre elles apparaît au premier degré
+            (ou est carrément absente, dans le cas d'un cylindre). On appelle
+            <term>axe de symétrie</term> de la surface l'axe correspondant à
+            cette variable. Par exemple :
+        </p>
+        <ul>
+            <li>
+                <p>
+                    le cylindre <m>x^2+y^2=r^2</m> (variable <m>z</m>
+                    absente) a pour axe de symétrie l'axe des <m>z</m> ;
+                </p>
+            </li>
+            <li>
+                <p>
+                    le paraboloïde elliptique <m>z=x^2+4y^2</m> (variable
+                    <m>z</m> au premier degré) a pour axe de symétrie l'axe
+                    des <m>z</m> ;
+                </p>
+            </li>
+            <li>
+                <p>
+                    le cône <m>z^2=x^2+4y^2</m> (variable <m>z</m> au
+                    deuxième degré, mais seule à apparaître avec un signe
+                    opposé aux deux autres) a aussi pour axe de symétrie
+                    l'axe des <m>z</m>.
+                </p>
+            </li>
+        </ul>
+        <p>
+            <term>Attention :</term> malgré son nom, un axe de symétrie
+            n'est en général <em>pas</em> un axe de révolution. Ce qu'on a
+            montré ci-dessus, c'est que l'équation reste inchangée si on
+            remplace <m>x</m> par <m>-x</m>, ou <m>y</m> par <m>-y</m> :
+            l'axe de symétrie est l'intersection des deux plans de symétrie
+            correspondants (par exemple, les plans <m>xz</m> et <m>yz</m>
+            pour le paraboloïde <m>z=x^2+4y^2</m>). Ceci n'entraîne pas de
+            symétrie par rotation autour de cet axe : les sections
+            perpendiculaires à l'axe sont des ellipses (ici, dilatées d'un
+            facteur <m>2</m> selon <m>y</m>), pas des cercles. La surface
+            n'est donc une <term>surface de révolution</term> (image d'une
+            courbe par rotation autour de l'axe) que dans le cas particulier
+            où ces sections sont circulaires — par exemple <m>z=x^2+y^2</m>,
+            mais pas <m>z=x^2+4y^2</m>.
+        </p>
+        <p>
+            De même, un ellipsoïde n'a pas d'axe de symétrie privilégié au
+            sens ci-dessus (les trois variables jouent un rôle semblable),
+            sauf si deux des trois demi-axes coïncident, auquel cas il
+            devient une surface de révolution autour du troisième axe.
+        </p>
+    </remark>
+
 </section>

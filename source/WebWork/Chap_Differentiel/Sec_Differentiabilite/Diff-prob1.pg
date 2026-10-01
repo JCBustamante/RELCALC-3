@@ -98,9 +98,9 @@ Context()->texStrings;
 TEXT(beginproblem());
 BEGIN_TEXT
 
-Trouver l'équation du plan tangent à la surface
+Trouver l'approximation linéaire de
 \[ z = $f \]
-au point \( ($x0, $y0, $z0)\).
+en \( ($x0, $y0)\).
 
 $PAR
 \( z = \) \{ ans_rule(35) \}
@@ -126,7 +126,7 @@ et
 \[ {\partial z\over\partial y}\bigg|_{(x,y) = ($x0,$y0)} =
     $fy\bigg|_{(x,y)=($x0,$y0)} = $fy0.
 \]
-L'équation du plan tangent est donc
+L'approximation linéaire est donc
 \[
   z = $z0 + $fx0(x - $x0) + $fy0(y - $y0) = $pl.
 \]

@@ -3,24 +3,26 @@
   <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-  <title>Le Théorème de la divergence</title>
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
+  <title>Le théorème de la divergence</title>
   <introduction>
-    <p>Dans cette section nous verrons le troisième des théorèmes classiques du calcul vectoriel, à savoir, le Théorème de la divergence. Ce résultat est aussi connu sous le nom de Théorème de Gauss, ou encore Théorème d'Ostrogradsky.
+    <p>Dans cette section, nous verrons le troisième des théorèmes classiques du calcul vectoriel, à savoir le théorème de la divergence. Ce résultat est aussi connu sous le nom de théorème de Gauss, ou encore de théorème d'Ostrogradsky.
   </p>
     <p>
-    Le Théorème de Stokes est une généralisation de ce que nous avons appelé la <xref ref="thm_Green_tgt">forme tangentielle du Théorème de Green</xref>. En effet, celui-ci traite de régions dans le plan, tandis que le <xref ref="thm_Stokes"> Théorème de Stokes </xref> traite de surfaces dans l'espace. Le Théorème de Stokes restreint aux surfaces du plan devient le Théorème de Green (forme tangentielle).
+    Le théorème de Stokes est une généralisation de ce que nous avons appelé la <xref ref="thm_Green_tgt">forme tangentielle du théorème de Green</xref>. En effet, celui-ci traite de régions dans le plan, tandis que le <xref ref="thm_Stokes">théorème de Stokes</xref> traite de surfaces dans l'espace. Le théorème de Stokes restreint aux surfaces du plan devient le théorème de Green (forme tangentielle).
   </p>
     <p>
-    Une autre généralisation est possible :  plutôt que de passer de surfaces dans le plan à des surfaces dans l'espace, nous pouvons passer de régions planes dont le bord est une courbe fermée (ou une réunion de courbes fermées) à des régions solides dont le bord est une surface fermée (ou une réunion de surfaces fermées) et nous intéresser au flux d'un champ de vecteurs à travers la surface en question. La <xref ref="thm_Green-norm">version normale du Théorème de Green</xref> devient alors le Théorème de la divergence.
+    Une autre généralisation est possible<nbsp/>: plutôt que de passer de surfaces dans le plan à des surfaces dans l'espace, nous pouvons passer de régions planes dont le bord est une courbe fermée (ou une réunion de courbes fermées) à des régions solides dont le bord est une surface fermée (ou une réunion de surfaces fermées) et nous intéresser au flux d'un champ de vecteurs à travers la surface en question. La <xref ref="thm_Green-norm">forme normale du théorème de Green</xref> devient alors le théorème de la divergence.
   </p>
   </introduction>
   <subsection xml:id="pars-Regions-bords">
     <title>Régions dans l'espace et leurs bords</title>
     <p>
-    Pour commencer nous allons considérer des régions de <m>\R^3</m> avec lesquelles il est aisé de travailler. Lorsque nous avons étudié les intégrales triples, nous avons défini ce qu'une région <em>élémentaire</em> est (voir la <xref ref="def-Elementaire-3">définition</xref>). Une région de <m>\R^3</m> sera dite <term>simple</term> si elle est simultanément des types <xref ref="z-simple-3d"/>, <xref ref="y-simple-3d"/> et <xref ref="x-simple-3d"/>.
+    Pour commencer, nous allons considérer des régions de <m>\R^3</m> avec lesquelles il est aisé de travailler. Lorsque nous avons étudié les intégrales triples, nous avons défini ce qu'est une région <em>élémentaire</em> (voir la <xref ref="def-Elementaire-3">définition</xref>). Une région de <m>\R^3</m> sera dite <term>simple</term> si elle est simultanément des types <xref ref="z-simple-3d"/>, <xref ref="y-simple-3d"/> et <xref ref="x-simple-3d"/>.
   </p>
     <p>
-    Une telle région admet pour frontière une surface <m>\cS = \partial \cE</m> qui est la réunion de surfaces lisses. De plus, nous allons convenir que <m>\cS</m> sera orientée vers l'extérieur de <m>\cE</m>. Nous adopterons cette convention pour toute surface fermée (c'est à dire qui est le bord d'une région solide).
+    Une telle région admet pour frontière une surface <m>\cS = \partial \cE</m> qui est la réunion de surfaces lisses. De plus, nous allons convenir que <m>\cS</m> sera orientée vers l'extérieur de <m>\cE</m>. Nous adopterons cette convention pour toute surface fermée (c'est-à-dire qui est le bord d'une région solide).
   </p>
     <example xml:id="ex-region-3d-bord">
       <statement>
@@ -31,17 +33,17 @@
           <ul>
             <li>
               <p>
-                Le plan d'équation <m>z=0</m>,
+                le plan d'équation <m>z=0</m>;
               </p>
             </li>
             <li>
               <p>
-                Le cylindre parabolique d'équation <m>y=x^2</m>,
+                le cylindre parabolique d'équation <m>y=x^2</m>;
               </p>
             </li>
             <li>
               <p>
-                Le plan d'équation <m>y+z=1</m>.
+                le plan d'équation <m>y+z=1</m>.
               </p>
             </li>
           </ul>
@@ -57,9 +59,9 @@
             <image xml:id="im-region3d-bornes" width="100%">
               <sageplot variant="3d" aspect="1.0">
                 var('x,y,z')
-                Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
-                Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
-                Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
+                Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "firebrick", opacity = 0.35,frame = False, projection = 'orthographic')
+                Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "seagreen", opacity = 0.35,frame = False)
+                Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "steelblue", opacity = 0.35,frame = False)
                 Fig = Base + Cyl + Plan
                 Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
                 Fig += text3d("x", (1.4,0,0), color = "black",frame = False, fontsize = 20)
@@ -67,9 +69,9 @@
                 Fig += text3d("y", (0,1.4,0), color = "black",frame = False, fontsize = 20)
                 Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
                 Fig += text3d("z", (0,0,1.4), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0.5,0.7,0),(0.5,0.7,-0.5), width=0.75, color = "orange",frame = False)
-                Fig += arrow3d((-0.5, 0.7, 0.3), (-0.5,1.05,0.65), width=0.75, color = "blue",frame = False)
-                Fig += arrow3d((0.5, 0.25, 0.5), (0.85,-0.1,0.5), width=0.75, color = "green",frame = False)
+                Fig += arrow3d((0.5,0.7,0),(0.5,0.7,-0.5), width=0.75, color = "firebrick",frame = False)
+                Fig += arrow3d((-0.5, 0.7, 0.3), (-0.5,1.05,0.65), width=0.75, color = "steelblue",frame = False)
+                Fig += arrow3d((0.5, 0.25, 0.5), (0.85,-0.1,0.5), width=0.75, color = "seagreen",frame = False)
                 Fig
               </sageplot>
             </image>
@@ -77,28 +79,28 @@
         </sidebyside>
         <p>
         
-        <ol marker = "1)"><li><p><m>\cS_1 :</m> la portion du plan <m>z=0</m> vérifiant   <m>-1\leqslant  x \leqslant  1</m> et <m>x^2 \leqslant  y  \leqslant  1</m>. Dans cette région, le vecteur normal à la surface est <m>\vn_1 = - \vk</m> (en orange dans la figure). C'est le bord inférieur de <m>\cE</m>, en orange dans la figure.
-            </p></li><li><p><m>\cS_2 :</m> la portion du cylindre <m>y=x^2</m> comprise entre le plan <m>z=0</m> et le plan <m>y+z=1</m>.  C'est la partie latérale du bord de <m>\cE</m>, elle est en vert dans la figure. Le vecteur normal sur cette portion du bord de <m>\cE</m> est <m>\vn_2 = 2x\vi - \vj</m> (en vert).
-            </p></li><li><p><m>\cS_3 :</m> la portion du plan <m>z=1-y</m> qui se trouve au dessus de <m>\cS_1</m> ci haut, il s'agit du bord supérieur de <m>\cE</m>, en bleu dans la figure ci-haut. Le vecteur normal correspondant est <m>\vn_3 = \vj + \vk</m>, en bleu.
-            </p></li></ol>
+        <ul><li><p><m>\cS_1</m><nbsp/>: la portion du plan <m>z=0</m> vérifiant <m>{-1\leqslant x \leqslant 1}</m> et <m>{x^2 \leqslant y \leqslant 1}</m>. C'est le bord inférieur de <m>\cE</m>, en rouge dans la figure. Le vecteur normal sur cette portion du bord est <m>\vn_1 = - \vk</m> (en rouge).
+            </p></li><li><p><m>\cS_2</m><nbsp/>: la portion du cylindre <m>y=x^2</m> comprise entre le plan <m>z=0</m> et le plan <m>y+z=1</m>. C'est la partie latérale du bord de <m>\cE</m>, en vert dans la figure. Le vecteur normal sur cette portion du bord de <m>\cE</m> est <m>{\vn_2 = 2x\,\vi - \vj}</m> (en vert).
+            </p></li><li><p><m>\cS_3</m><nbsp/>: la portion du plan <m>z=1-y</m> qui se trouve au-dessus de <m>\cS_1</m>. C'est le bord supérieur de <m>\cE</m>, en bleu dans la figure. Le vecteur normal correspondant est <m>{\vn_3 = \vj + \vk}</m> (en bleu).
+            </p></li></ul>
       </p>
       </statement>
     </example>
   </subsection>
   <subsection xml:id="pars-divergence">
-    <title>Le Théorème de la divergence</title>
+    <title>Le théorème de la divergence</title>
     <p>
-    Nous pouvons maintenant énoncer le Théorème de la divergence. En essence il dit que le flux d'un champ <m>\vF</m> vers l'extérieur d'une région <m>\cE</m>, c'est à dire l'intégrale double de <m>\vF</m> à travers la surface  <m>\cS = \partial \cE</m> est égal à l'intégrale triple de la divergence de <m>\vF</m> sur toute la région <m>\cE.</m>
+    Nous pouvons maintenant énoncer le théorème de la divergence. Essentiellement, il dit que le flux d'un champ <m>\vF</m> vers l'extérieur d'une région <m>\cE</m>, c'est-à-dire l'intégrale de surface de <m>\vF</m> sur <m>\cS = \partial \cE</m>, est égal à l'intégrale triple de la divergence de <m>\vF</m> sur toute la région <m>\cE</m>.
   </p>
     <p>
-    De façon plus précise nous avons :
+    De façon plus précise, nous avons le résultat suivant.
   </p>
     <theorem xml:id="thm_divThm">
       <title>Théorème de la divergence</title>
       <statement>
-        <p>Soit <m>\cE</m> une région simple de <m>\R^3</m> et <m>\cS = \partial \cE</m> orientée vers l'extérieur de <m>\cE</m>. Soit <m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur une région contenant <m>\cE</m> dans son intérieur. Alors
+        <p>Soit <m>\cE</m> une région simple de <m>\R^3</m> et <m>\cS = \partial \cE</m> orientée vers l'extérieur de <m>\cE</m>. Soit <m>\vF</m> un champ de vecteurs de classe <m>C^1</m> sur une région contenant <m>\cE</m> dans son intérieur. Alors,
       <md><mrow>
-        \iint_{\partial \cE} \vF \cdot d\vS = \iiint_ \cE \vnabla \cdot \vF\, dV
+        \iint_{\partial \cE} \vF \cdot \dee{\vS} = \iiint_{\cE} \vnabla \cdot \vF\, \dee{V}.
       </mrow></md>
       </p>
       </statement>
@@ -106,7 +108,7 @@
     <p>
     Remarquons que si <m>\vF = P\,\vi + Q\, \vj + R\, \vk</m>, l'intégrale triple s'écrit
     <md><mrow>
-       \iiint_ \cE \vnabla \cdot \vF\, dV =  \iiint_ \cE \div \vF\, dV =  \iiint_ \cE P_x + Q_y + R_z\, dV
+       \iiint_{\cE} \vnabla \cdot \vF\, \dee{V} = \iiint_{\cE} \div \vF\, \dee{V} = \iiint_{\cE} (P_x + Q_y + R_z)\, \dee{V}.
     </mrow></md>
   </p>
     <p>
@@ -115,26 +117,26 @@
     <example xml:id="ex-divergence-a">
       <statement>
         <p>
-        Soit <m>\vF =(x^3 + y^3)\vi + (y^3 + z^3)\vj + (z^3+ x^3)\vk</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de la sphère <m>x^2 + y^2 + z^2 = 1</m>
+        Soit <m>{\vF =(x^3 + y^3)\,\vi + (y^3 + z^3)\,\vj + (z^3+ x^3)\,\vk}</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de la sphère <m>{x^2 + y^2 + z^2 = 1}</m>.
 
       </p>
       </statement>
       <solution>
-        <p>Soit <m>\cE</m> la boule unité, c'est à dire la région de <m>\R^3</m> vérifiant <m>x^2+ y^2 + z^2 \leqslant  1</m>. Nous avons <m>\partial \cE = \cS</m> est la sphère donnée.
+        <p>Soit <m>\cE</m> la boule unité, c'est-à-dire la région de <m>\R^3</m> définie par <m>{x^2+ y^2 + z^2 \leqslant 1}</m>. Son bord <m>\partial \cE = \cS</m> est la sphère donnée.
       </p>
         <p>
         Par ailleurs, écrivons <m>\vF = P\,\vi + Q \,\vj + R\, \vk</m>. Nous calculons alors
         <md><mrow>
-        \vnabla \cdot \vF = \div \vF = P_x + Q_y + R_z = 3x^2+ 3y^2 + 3z^2
+        \vnabla \cdot \vF = \div \vF = P_x + Q_y + R_z = 3x^2+ 3y^2 + 3z^2.
       </mrow></md>
       </p>
         <p>
         Ainsi, le flux qui nous intéresse est calculé par une intégrale triple, qu'on évalue en utilisant les coordonnées sphériques :
         <md>
-          <mrow>\iint_{\cS = \partial \cE} \amp = \iiint_{\cE} 3(x^2+ y^2 + z^2) </mrow>
-          <mrow> \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^1 3\rho^2 \, \rho^2\, \sin \phi\, d \rho\, d\phi\, d\theta</mrow>
-          <mrow>  \amp = 3\left(\int_0^{2\pi}d\theta\right)\left(\int_0^\pi\sin \phi\, d\phi\right)\left(\int_0^1\rho^4\, d\rho\right) </mrow>
-          <mrow>  \amp = 3\cdot 2\pi \cdot 2 \cdot \frac{1}{5} = \frac{12\pi}{5} </mrow>
+          <mrow>\iint_{\cS}\vF\cdot\dee{\vS} \amp = \iiint_{\cE} 3(x^2+ y^2 + z^2)\,\dee{V} </mrow>
+          <mrow> \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^1 3\rho^2 \, \rho^2\, \sin \phi\, \dee{\rho}\, \dee{\phi}\, \dee{\theta}</mrow>
+          <mrow>  \amp = 3\left(\int_0^{2\pi}\dee{\theta}\right)\left(\int_0^\pi\sin \phi\, \dee{\phi}\right)\left(\int_0^1\rho^4\, \dee{\rho}\right) </mrow>
+          <mrow>  \amp = 3\cdot 2\pi \cdot 2 \cdot \frac{1}{5} = \frac{12\pi}{5}. </mrow>
         </md>
       </p>
       </solution>
@@ -145,23 +147,23 @@
     <example>
       <statement>
         <p>
-        Soit <m>\cE</m> la région limitée par le cylindre <m>y=x^2</m> et les plans <m>z=0</m> et <m>y+z=1</m> (c'est la région de l'<xref ref="ex-region-3d-bord"> exemple </xref>, voir aussi la   <xref ref="fig-region3d-bord">figure </xref>). Calculer le flux de <m>\vF = xy\,\vi + y^2\, \vj + x^2\, \vk</m> à travers la surface <m>\cS = \partial \cE</m>, orientée vers l'extérieur de <m>\cE</m>.
+        Soit <m>\cE</m> la région limitée par le cylindre <m>y=x^2</m> et les plans <m>z=0</m> et <m>y+z=1</m> (c'est la région de l'<xref ref="ex-region-3d-bord">exemple</xref>, voir aussi la <xref ref="fig-region3d-bord">figure</xref>). Calculer le flux de <m>{\vF = xy\,\vi + y^2\, \vj + x^2\, \vk}</m> à travers la surface <m>\cS = \partial \cE</m>, orientée vers l'extérieur de <m>\cE</m>.
       </p>
       </statement>
       <solution>
-        <p>Posons <m>\vF = P\,\vi + Q\, \vj + R\,\vk</m>. On calcule la divergence du champ <m>\vF</m>
+        <p>Posons <m>{\vF = P\,\vi + Q\, \vj + R\,\vk}</m>. On calcule la divergence du champ <m>\vF</m><nbsp/>:
         <md><mrow>
-        \vnabla \cdot \vF = \div \vF = P_x + Q_y + R_z = y+2y+0= 3y
+        \vnabla \cdot \vF = \div \vF = P_x + Q_y + R_z = y+2y+0= 3y.
       </mrow></md>
       </p>
         <p>
-        Le Théorème de la divergence nous permet de ramener le calcul de l'intégrale de flux à une intégrale triple. À l'<xref ref="Int-3-ex1">exemple</xref> nous avons déjà considéré cette région et établi les bornes d'intégration. On obtient alors
+        Le théorème de la divergence nous permet de ramener le calcul de l'intégrale de flux à une intégrale triple. À l'<xref ref="Int-3-ex1">exemple</xref>, nous avons déjà considéré cette région et établi les bornes d'intégration. On obtient alors
         <md>
-          <mrow>\iint_{\cS} \vF \cdot d\vS = \iiint_{\cE} \vnabla \cdot \vF\, dV \amp = \iiint_{\cE} 3y \, dV </mrow>
-          <mrow> \amp = \int_{-1}^{1} \int_{x^2}^1 \int_0^{1-y} 3y\, dz\, dy\, dx</mrow>
-          <mrow>  \amp = 3 \int_{-1}^1 \int_{x^2}^1 y(1-y)\, dy\, dx </mrow>
-          <mrow>  \amp = 3 \int_{-1}^1 \frac{1}{3}x^6 - \frac{1}{2}x^4 + \frac{1}{6}\, dx</mrow>
-          <mrow>  \amp =  24/35</mrow>
+          <mrow>\iint_{\cS} \vF \cdot \dee{\vS} = \iiint_{\cE} \vnabla \cdot \vF\, \dee{V} \amp = \iiint_{\cE} 3y \, \dee{V} </mrow>
+          <mrow> \amp = \int_{-1}^{1} \int_{x^2}^1 \int_0^{1-y} 3y\, \dee{z}\, \dee{y}\, \dee{x}</mrow>
+          <mrow>  \amp = 3 \int_{-1}^1 \int_{x^2}^1 y(1-y)\, \dee{y}\, \dee{x} </mrow>
+          <mrow>  \amp = 3 \int_{-1}^1 \left(\frac{1}{3}x^6 - \frac{1}{2}x^4 + \frac{1}{6}\right) \dee{x}</mrow>
+          <mrow>  \amp = \frac{24}{35}.</mrow>
         </md>
       </p>
       </solution>
@@ -170,7 +172,7 @@
       <webwork><xi:include href="WebWork/Chap_Vectoriel/Sec_Divergence/Divergence-prob2.pg" parse="text"/></webwork>
     </exercise>
     <p>
-    Voyons maintenant un exemple montrant comment utiliser le théorème de la divergence pour calculer le flux d'un champ à travers une surface qui n'est pas fermée. On comparera avec <xref ref="Green-fermer-courbe">l'exemple</xref>.
+    Voyons maintenant un exemple montrant comment utiliser le théorème de la divergence pour calculer le flux d'un champ à travers une surface qui n'est pas fermée. On comparera avec l'<xref ref="Green-fermer-courbe">exemple</xref>.
   </p>
     <example xml:id="ex-div-fermer-surface">
       <statement>
@@ -181,7 +183,7 @@
           <md>
             \vF  = xy\, \vi + yz\, \vj + xz\, \vk
           </md>
-           et <m>\cS</m> la surface limitée par les plans de coordonnées et les plans verticaux <m>x=1</m> et <m>y=1</m>. 
+           et <m>\cS</m> la surface formée des faces du cube unité <m>[0,1]^3</m>, à l'exception de la face supérieure <m>z=1</m>. 
           </p>
           <p>
             Calculer le flux de <m>\vF</m> à travers <m>\cS</m>, orientée vers l'extérieur du cube.
@@ -189,17 +191,17 @@
           </stack>
           <p></p>
           <figure xml:id="fig-ex-div-fermer-surface">
-            <caption>La surface <m>\cS</m> (en gris) et le champ <m>\vF</m>. La face manquante, en brun, n'en fait pas partie.</caption>
+            <caption>La surface <m>\cS</m> (en bleu) et le champ <m>\vF</m>. La face manquante, en rouge, n'en fait pas partie.</caption>
             <image xml:id="im-ex-div-fermer-surface">
               <sageplot variant="3d" aspect="1.0">
               var('x,y,z')
-              Fig = plot_vector_field3d([x*y,y*z,x*z], (x,0,1), (y,0,1), (z,0,1), plot_points=[4,4,4])
-              Fig += polygon3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0]], color="grey", alpha=1)
-              Fig += polygon3d([[1,1,0], [0,1,0], [0,1,1], [1,1,1]], color="grey", alpha=1)
-              Fig += polygon3d([[0,0,0],[1,0,0],[1,0,1],[0,0,1]], color="grey", alpha=1)
-              Fig += polygon3d([[0,0,0],[0,1,0],[0,1,1],[0,0,1]], color="grey", alpha=1)
-              Fig += polygon3d([[1,0,0],[1,1,0],[1,1,1],[1,0,1]], color="grey", alpha=1)
-              Fig += polygon3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1]], color="brown", alpha=0.5)
+              Fig = plot_vector_field3d([x*y,y*z,x*z], (x,0,1), (y,0,1), (z,0,1), plot_points=[4,4,4], colors=["darkgray","darkgray"])
+              Fig += polygon3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0]], color="steelblue", alpha=0.85)
+              Fig += polygon3d([[1,1,0], [0,1,0], [0,1,1], [1,1,1]], color="steelblue", alpha=0.85)
+              Fig += polygon3d([[0,0,0],[1,0,0],[1,0,1],[0,0,1]], color="steelblue", alpha=0.85)
+              Fig += polygon3d([[0,0,0],[0,1,0],[0,1,1],[0,0,1]], color="steelblue", alpha=0.85)
+              Fig += polygon3d([[1,0,0],[1,1,0],[1,1,1],[1,0,1]], color="steelblue", alpha=0.85)
+              Fig += polygon3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1]], color="firebrick", alpha=0.3)
               Fig += line3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0],[0,0,0]], color="black", thickness= 5)
               Fig += line3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1],[0,0,1]], color="black", thickness= 5)
               Fig += line3d([[0, 0, 0], [0,0,1]], color="black", thickness= 5)
@@ -220,43 +222,43 @@
       </statement>
       <solution>
         <p>
-        Notons pour commencer que la surface <m>\cS</m> n'est pas le bord d'une région solide, il ne s'agit pas d'une surface fermée.
+        Notons pour commencer que la surface <m>\cS</m> n'est pas le bord d'une région solide<nbsp/>: il ne s'agit pas d'une surface fermée.
       </p>
         <p>
-        En effet, si <m>\cE</m> est le cube unité, alors <m>\partial \cE</m> est formée de <m>\cS</m> avec en plus le carré de sommets <m>(0,0,1), (0,1,1), (1,0,1), (1,1,1)</m>. Soit donc <m>\cS'</m> ce carré, de sorte que <m>\partial \cE = \cS \cup \cS'</m>. On peut appliquer le théorème de la divergence au cube <m>\cE</m>, ce qui nous donnera
-        <md><mrow xml:id="eg-div-eq1" tag="star"> \iiint_{\cE} \vnabla \cdot \vF \, dV  \amp = \iint_{\cS} \vF \cdot d\vS + \iint_{\cS'} \vF \cdot d\vS </mrow></md>
+        En effet, si <m>\cE</m> est le cube unité, alors <m>\partial \cE</m> est formée de <m>\cS</m> avec en plus le carré de sommets <m>(0,0,1)</m>, <m>(0,1,1)</m>, <m>(1,0,1)</m> et <m>(1,1,1)</m>. Soit donc <m>\cS'</m> ce carré, de sorte que <m>\partial \cE = \cS \cup \cS'</m>. On peut appliquer le théorème de la divergence au cube <m>\cE</m>, ce qui nous donnera
+        <md><mrow xml:id="eg-div-eq1" tag="star"> \iiint_{\cE} \vnabla \cdot \vF \, \dee{V}  \amp = \iint_{\cS} \vF \cdot \dee{\vS} + \iint_{\cS'} \vF \cdot \dee{\vS}. </mrow></md>
 
       </p>
         <p>
         Le flux qui nous intéresse est le premier terme de la somme, tout à droite. Nous allons calculer le terme de gauche (l'intégrale triple), ainsi que le tout dernier terme pour déduire la valeur qui nous intéresse.
       </p>
         <p>
-      Pour ceci on commence par calculer <m> \vnabla \cdot \vF = y+z+x </m>, de sorte que
-      <md><mrow>\iiint_{\cE}\vnabla \cdot \vF\, dV  \amp = \int_0^1 \int_0^1 \int_0^1 x+y+z\, dz\, dy\, dx </mrow><mrow> \amp = \int_0^1 \int_0^1 x+y+\frac{1}{2}\, dy\, dx</mrow><mrow>  \amp = \int_0^1 x+1\, dx = \frac{3}{2} </mrow></md>
+      Pour ceci, on commence par calculer <m>{\vnabla \cdot \vF = x+y+z}</m>, de sorte que
+      <md><mrow>\iiint_{\cE}\vnabla \cdot \vF\, \dee{V}  \amp = \int_0^1 \int_0^1 \int_0^1 (x+y+z)\, \dee{z}\, \dee{y}\, \dee{x} </mrow><mrow> \amp = \int_0^1 \int_0^1 \left(x+y+\frac{1}{2}\right) \dee{y}\, \dee{x}</mrow><mrow>  \amp = \int_0^1 (x+1)\, \dee{x} = \frac{3}{2}. </mrow></md>
       </p>
         <p>
-        Calculons maintenant le flux à travers <m>\cS'</m>. Sur cette surface, nous avons <m>z=1</m> et le vecteur normal est <m>\vk</m>. Ainsi, sur <m>\cS'</m>
+        Calculons maintenant le flux à travers <m>\cS'</m>. Sur cette surface, nous avons <m>z=1</m> et le vecteur normal est <m>\vk</m>. Ainsi, sur <m>\cS'</m>,
         <md><mrow>
-        \vF \cdot  \vk = (xy\, \vi + y\,\vj + x\,\vk)\cdot \vk = x
+        \vF \cdot  \vk = (xy\, \vi + y\,\vj + x\,\vk)\cdot \vk = x.
       </mrow></md>
       </p>
         <p>
         On calcule alors
         <md><mrow>
-        \iint_{\cS'} \vF \cdot d\vS = \iint_{\cS'} \vF \cdot \vn\, dS = \iint_{[0,1]\times[0,1]} x\, dA = \frac{1}{2}
+        \iint_{\cS'} \vF \cdot \dee{\vS} = \iint_{\cS'} \vF \cdot \vn\, \dee{S} = \iint_{[0,1]\times[0,1]} x\, \dee{A} = \frac{1}{2}.
       </mrow></md>
       </p>
         <p>
-        L'égalité <xref ref="eg-div-eq1"/>, ci-haut devient alors
+        L'égalité <xref ref="eg-div-eq1"/> ci-dessus devient alors
         <md><mrow>
-        \frac{3}{2} = \iint_{\cS}\vF \cdot d\vS + \frac{1}{2}
+        \frac{3}{2} = \iint_{\cS}\vF \cdot \dee{\vS} + \frac{1}{2},
       </mrow></md>
       </p>
         <p>
         et on déduit que le flux qui nous intéresse vaut <m>1</m>.
       </p>
         <p>
-        Notons que <m>\cS</m> est formée de 5 surfaces, on pourrait dont calculer notre flux avec 5 intègrales de surface. Aucune d'elles n'est particulièrement difficile, c'est un peu long.
+        Notons que <m>\cS</m> est formée de cinq faces<nbsp/>: on pourrait donc calculer notre flux avec cinq intégrales de surface. Aucune d'elles n'est particulièrement difficile, mais c'est un peu long.
       </p>
       </solution>
     </example>
@@ -270,12 +272,12 @@
       <statement>
         <sidebyside widths="45% 5% 50%" valign="top">
           <p>
-          Calculer le flux  <m>\displaystyle \iint_{\cS} \vF \cdot d\vS</m> où <m>\vn </m> est le vecteur normal unitaire pointant vers l'extérieur de <m>\cS</m>, la portion de la surface <m>z^2=x^2+y^2</m> vérifiant <m>1\leqslant z\leqslant 2</m>, et où
+          Calculer le flux <m>\iint_{\cS} \vF \cdot \vn\,\dee{S}</m>, où <m>\cS</m> est la portion du cône <m>z^2=x^2+y^2</m> vérifiant <m>1\leqslant z\leqslant 2</m>, <m>\vn</m> est le vecteur normal unitaire pointant vers l'extérieur du cône, et où
 
           <md><mrow>
-            \vF = 3x\,\vi + (5y+e^{\cos x})\,\vj + z\,\vk
+            \vF = 3x\,\vi + (5y+e^{\cos x})\,\vj + z\,\vk.
           </mrow></md>
-          La figure ci-contre montre <m>\cS</m>, en orange, ainsi que deux disques horizontaux, en gris, qui serviront à la refermer.
+          La figure ci-contre montre <m>\cS</m>, en bleu, ainsi que deux disques horizontaux, en rouge, qui serviront à la refermer.
           </p>
           <p></p>
           <figure xml:id="fig-eg_divThmB">
@@ -283,13 +285,13 @@
             <image xml:id="im-eg_divThmB" width="100%">
               <sageplot variant="3d" aspect="1.0">
                 var('r,t')
-                Fig = parametric_plot3d([r*cos(t), r*sin(t), r], (r,1,2), (t,0,2*pi), color = "orange", opacity = 0.85)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,0,1), (t,0,2*pi), color = "orange", opacity = 0.25)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,2,2.5), (t,0,2*pi), color = "orange", opacity = 0.25)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), 1], (r,0,1), (t,0,2*pi), color = "gray", opacity = 0.85)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), 2], (r,0,2), (t,0,2*pi), color = "gray", opacity = 0.85)
-                Fig += arrow3d((1,1,sqrt(2)),(3/2,3/2,sqrt(2)/2), width=1, color = "blue",frame = False, fontsize = 20)
-                Fig += text3d("n", (1.7,1.7,0.7), color = "blue")
+                Fig = parametric_plot3d([r*cos(t), r*sin(t), r], (r,1,2), (t,0,2*pi), color = "steelblue", opacity = 0.85)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,0,1), (t,0,2*pi), color = "steelblue", opacity = 0.25)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,2,2.5), (t,0,2*pi), color = "steelblue", opacity = 0.25)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), 1], (r,0,1), (t,0,2*pi), color = "firebrick", opacity = 0.5)
+                Fig += parametric_plot3d([r*cos(t), r*sin(t), 2], (r,0,2), (t,0,2*pi), color = "firebrick", opacity = 0.5)
+                Fig += arrow3d((1,1,sqrt(2)),(3/2,3/2,sqrt(2)/2), width=1, color = "steelblue",frame = False, fontsize = 20)
+                Fig += text3d("n", (1.7,1.7,0.7), color = "steelblue")
                 Fig += arrow3d((0,0,0),(2.5,0,0), width=0.7, color = "black",frame = False)
                 Fig += text3d("x", (2.7,0,0), color = "black",frame = False, fontsize = 20)
                 Fig += arrow3d((0,0,0),(0,2.5,0), width=0.7, color = "black", frame = False)
@@ -304,98 +306,96 @@
       </statement>
       <solution>
         <p>
-        Le terme <m>e^{\cos x}</m> dans  <m>\vF</m> suggère qu'une évaluation directe de l'intégrale peut être ardue<fn>En fait, il est possible d'évaluer l'intégrale directement. Il suffit de remarquer que la partie problématique est une fonction impaire par rapport à <m>y</m>, et donc son intégrale est nulle.</fn> et nous utilisons à nouveau le théorème de la divergence. À nouveau, <m>\cS</m> n'est pas la frontière d'une région solide  <m>\cE</m>. Il s'agit de la portion du cône illustré dans la figure accompagnant l'énoncé. Il manquerait un couvercle en haut et un autre en bas.
+        Le terme <m>e^{\cos x}</m> dans  <m>\vF</m> suggère qu'une évaluation directe de l'intégrale peut être ardue<fn>En fait, il est possible d'évaluer l'intégrale directement. Il suffit de remarquer que la partie problématique est une fonction impaire par rapport à <m>y</m>, et donc son intégrale est nulle.</fn> et nous utilisons à nouveau le théorème de la divergence. À nouveau, <m>\cS</m> n'est pas la frontière d'une région solide. Il s'agit de la portion du cône illustrée dans la figure accompagnant l'énoncé<nbsp/>; il manque un couvercle en haut et un autre en bas.
       </p>
         <p>
-        Heureusement nous avons une région solide <m>\cE</m> dont la frontière, sans être égale à <m>\cS</m>, contient  <m>\cS</m>. Il s'agit de
+        Heureusement, nous avons une région solide <m>\cE</m> dont la frontière, sans être égale à <m>\cS</m>, contient <m>\cS</m>. Il s'agit de
         <md><mrow>
-          \cE = \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\  1\leqslant z\leqslant 2}
+          \cE = \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\  1\leqslant z\leqslant 2}.
         </mrow></md>
-        Le bord, <m>\partial \cE</m> est la réunion de  <m>\cS</m> et deux disques
+        Le bord <m>\partial \cE</m> est la réunion de <m>\cS</m> et de deux disques
         <md><mrow>
-            \cD_1 &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\ \ z=1}
+            \cD_1 &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\ \ z=1},
           </mrow><mrow>
-            \cD_2 &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\ \ z=2}
+            \cD_2 &amp;= \Set{(x,y,z)}{x^2+y^2\leqslant z^2,\ \ z=2}.
           </mrow></md>
-        Le théorème de la divergence donne alors.
+        Le théorème de la divergence donne alors
 
         <md><mrow>
-            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} &amp;= \iint_{\partial V} \vF \cdot d\vS
+            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} &amp;= \iint_{\partial \cE} \vF \cdot \dee{\vS}
           </mrow><mrow>
-            &amp;= \iint_{\cS} \vF \cdot d\vS + \iint_{\cD_1} \vF \cdot d\vS +\iint_{\cD_2} \vF \cdot d\vS
+            &amp;= \iint_{\cS} \vF \cdot \dee{\vS} + \iint_{\cD_1} \vF \cdot \dee{\vS} +\iint_{\cD_2} \vF \cdot \dee{\vS},
           </mrow></md>
         ce qui implique
         <md><mrow>
-            \iint_{\cS} \vF \cdot d\vS &amp;= \iiint_{\cE}\vnabla\cdot\vF\ \dee{V}  -\iint_{\cD_1} \vF \cdot d\vS -\iint_{\cD_2} \vF \cdot d\vS
+            \iint_{\cS} \vF \cdot \dee{\vS} &amp;= \iiint_{\cE}\vnabla\cdot\vF\ \dee{V}  -\iint_{\cD_1} \vF \cdot \dee{\vS} -\iint_{\cD_2} \vF \cdot \dee{\vS}.
           </mrow></md>
-        Le terme de gauche, celui que nous voulons avoir, n'est pas facile à calculer directement. Cependant, les trois autres termes, ceux de droite, se calculent aisément.
+        Le terme de gauche, celui que nous cherchons, n'est pas facile à calculer directement. Cependant, les trois autres termes, ceux de droite, se calculent aisément.
       </p>
         <p>
-        Le vecteur normal pour le disque horizontal  <m>\cD_2</m> est <m>+\vk</m>, ainsi
+        Le vecteur normal au disque horizontal <m>\cD_2</m> est <m>+\vk</m>. Ainsi,
         <md><mrow>
-            \iint_{\cD_2} \vF \cdot d\vS &amp;=\iint_{\cD_2} \vF\cdot\vk\,\dee{S} = \iint_{\cD_2} z\,\dee{S}
+            \iint_{\cD_2} \vF \cdot \dee{\vS} &amp;=\iint_{\cD_2} \vF\cdot\vk\,\dee{S} = \iint_{\cD_2} z\,\dee{S}.
           </mrow></md>
         Comme <m>z=2</m> sur <m>\cD_2</m>, qui est un disque de rayon <m>2</m>, nous avons
 
-        <md><mrow> \iint_{\cD_2} \vF \cdot d\vS = 2\text{Aire}(\cD_2)  =2\pi 2^2 = 8\pi
+        <md><mrow> \iint_{\cD_2} \vF \cdot \dee{\vS} = 2\,\text{Aire}(\cD_2) = 2\pi\cdot 2^2 = 8\pi.
         </mrow></md>
       </p>
         <p>
-        De la même façon, le vecteur normal au disque horizontal <m>\cD_1</m> est <m>-\vk</m>, ainsi
+        De la même façon, le vecteur normal au disque horizontal <m>\cD_1</m> est <m>-\vk</m>. Ainsi,
         <md><mrow>
-            \iint_{\cD_1} \vF \cdot d\vS &amp;=-\iint_{\cD_1} \vF\cdot\vk\,\dee{S}
-            =-\iint_{\cD_1} z\,\dee{S}
+            \iint_{\cD_1} \vF \cdot \dee{\vS} &amp;=-\iint_{\cD_1} \vF\cdot\vk\,\dee{S}
+            =-\iint_{\cD_1} z\,\dee{S}.
           </mrow></md>
         Comme <m>z=1</m> sur <m>\cD_1</m>, qui est un disque de rayon <m>1</m>,
         <md><mrow>
-          \iint_{\cD_1} \vF \cdot d\vS =-\text{Aire}(\cD_1) = -\pi 1^2 = -\pi
+          \iint_{\cD_1} \vF \cdot \dee{\vS} =-\text{Aire}(\cD_1) = -\pi\cdot 1^2 = -\pi.
         </mrow></md>
-        Finalement, comme <m>\vnabla\cdot\vF = 3+5+1 = 9</m> nous avons
+        Finalement, comme <m>{\vnabla\cdot\vF = 3+5+1 = 9}</m>, nous avons
         <md><mrow>
-            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} = 9\,\text{Vol}(V)
+            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} = 9\,\text{Vol}(\cE).
           </mrow></md>
       </p>
         <sidebyside widths="55% 8% 35%" valign="middle">
           <p>
-          Le volume de <m>\cE</m> peut être calculé facilement de plusieurs façons. Nous le faisons avec une intégrale simple. Pour ceci nous découpons <m>\cE</m> en tranches horizontales, voir la figure ci-contre.
+          Le volume de <m>\cE</m> peut être calculé facilement de plusieurs façons. Nous le faisons avec une intégrale simple. Pour ceci, nous découpons <m>\cE</m> en tranches horizontales, voir la figure ci-contre.
           </p>
           <p></p>
           <image source="images/CLP4-figs/coneC"/>
         </sidebyside>
         <p>
-        La tranche à la hauteur <m>z</m> a :
+        La tranche à la hauteur <m>z</m> a
         <ul><li>
-            épaisseur <m>\dee{z}</m>,
+            une épaisseur <m>\dee{z}</m>;
           </li><li>
-            une section circulaire de rayon  <m>z</m> (puisque l'équation de la surface <m>\cS</m> est précisément <m>x^2+y^2=z^2</m>), et donc
+            une section circulaire de rayon <m>z</m> (puisque l'équation de la surface <m>\cS</m> est précisément <m>x^2+y^2=z^2</m>), donc d'aire <m>\pi z^2</m>;
           </li><li>
-             l'aire vaut  <m>\pi z^2</m> et
-          </li><li>
-            le volume est <m>\pi z^2\,\dee{z}</m>.
+            un volume de <m>\pi z^2\,\dee{z}</m>.
           </li></ul>
-        Ainsi
+        Ainsi,
         <md><mrow>
-            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} = 9 \,\text{Vol}(V) = 9\int_1^2 \pi z^2\,\dee{z} = 9\left[\frac{\pi z^3}{3}\right]_1^2 = 9\times \pi\frac{7}{3} =21\pi
+            \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} = 9 \,\text{Vol}(\cE) = 9\int_1^2 \pi z^2\,\dee{z} = 9\left[\frac{\pi z^3}{3}\right]_1^2 = 9\cdot \frac{7\pi}{3} =21\pi.
           </mrow></md>
         En bout de ligne,
-        <md><mrow> \iint_{\cS} \vF \cdot d\vS &amp;= \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} - \iint_{\cD_1} \vF \cdot d\vS -\iint_{\cD_2} \vF \cdot d\vS
+        <md><mrow> \iint_{\cS} \vF \cdot \dee{\vS} &amp;= \iiint_{\cE}\vnabla\cdot\vF\ \dee{V} - \iint_{\cD_1} \vF \cdot \dee{\vS} -\iint_{\cD_2} \vF \cdot \dee{\vS}
           </mrow><mrow>
-            &amp;= 21\pi - (-\pi) -8\pi =14\pi
+            &amp;= 21\pi - (-\pi) -8\pi =14\pi.
           </mrow></md>
       </p>
       </solution>
     </example>
     <warning xml:id="warn_divThm">
       <p>
-      L'hypothèse à l'effet que le champ <m>\vF</m> admet des dérivées partielles continues sur toute la région <m>\cE</m> est cruciale. L'exemple ci-après le montre. Gardons à l'esprit que pour le Théorème de Green nous avons quelque chose de semblable, voir notamment la <xref ref="warn_Green">mise en garde </xref> ainsi que l'<xref ref="ex-contre-green">exemple </xref>.
+      L'hypothèse selon laquelle le champ <m>\vF</m> admet des dérivées partielles continues sur toute la région <m>\cE</m> est cruciale. L'exemple ci-après le montre. Rappelons que nous avons quelque chose de semblable pour le théorème de Green<nbsp/>: voir notamment la <xref ref="warn_Green">mise en garde</xref> ainsi que l'<xref ref="ex-contre-green">exemple</xref>.
     </p>
     </warning>
     <p>
-  Tout comme le bord d'une région du plan peut être formé de plusieurs courbes (voir par exemple la <xref ref="OpenStax-Plusieurs-trous">figure </xref>), le bord d'une région solide <m>\cR</m> de <m>\R^3</m> peut être formé de plusieurs surfaces. Dans ce cas la formule du théorème de la divergence reste valable, mais il faut orienter chaque surface convenablement, c'est à dire toujours en pointant vers l'extérieur de <m>\cR</m>. Dans le fond, c'est la même idée que celle qui a été mise à l'oeuvre à <xref ref="ex-green-bord-x2">l'exemple </xref>.
+  Tout comme le bord d'une région du plan peut être formé de plusieurs courbes (voir par exemple la <xref ref="OpenStax-Plusieurs-trous">figure</xref>), le bord d'une région solide <m>\cE</m> de <m>\R^3</m> peut être formé de plusieurs surfaces. Dans ce cas, la formule du théorème de la divergence reste valable, mais il faut orienter chaque surface convenablement, c'est-à-dire toujours vers l'extérieur de <m>\cE</m>. Dans le fond, c'est la même idée que celle qui a été mise à l'œuvre dans l'<xref ref="ex-green-bord-x2">exemple</xref>.
 </p>
     <example xml:id="ex-div-bord-x2">
       <statement>
-        <p>Écrivons, comme à l'habitude, <m>\vr = x \vi + y\vj + z \vk</m> et considérons le champ
+        <p>Écrivons, comme à l'habitude, <m>{\vr = x\,\vi + y\,\vj + z\,\vk}</m> et considérons le champ
         <md><mrow>
           \vF = \frac{\vr}{\norm{\vr}^3}.
         </mrow></md>
@@ -407,7 +407,7 @@
         Calculer directement (c'est-à-dire sans utiliser le théorème de la divergence) le flux de <m>\vF</m> à travers la sphère unité <m>\cS = \Set{(x,y,z)}{x^2+y^2+z^2=1}</m>, orientée vers l'extérieur.
       </p></li>
       <li><p>
-        Soient <m>a,b</m> deux réels tels que <m>0 \lt a \lt b</m> et <m>\cE</m> la région de <m>\R^3</m> définie par <m>a^2 \leqslant x^2+ y^2 + z^2 \leqslant b^2</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de <m>\cE</m>.
+        Soit <m>a</m> et <m>b</m> deux réels tels que <m>0 \lt a \lt b</m>, et <m>\cE</m> la région de <m>\R^3</m> définie par <m>a^2 \leqslant x^2+ y^2 + z^2 \leqslant b^2</m>. Calculer le flux de <m>\vF</m> vers l'extérieur de <m>\cE</m>.
       </p></li>
       <li><p>
           Montrer que le flux de <m>\vF</m> à travers n'importe quelle sphère (vers l'extérieur de celle-ci) peut prendre seulement deux valeurs, selon que la sphère englobe l'origine ou pas. Calculer ces valeurs.
@@ -420,7 +420,7 @@
           <ol marker="(a)">
             <li>
               <p>
-        Si <m>\vr = (x,y,z) \ne\vZero</m>,
+        Si <m>\vr \ne\vZero</m>,
 <md><mrow>
 \vnabla\cdot\vF(x,y,z)
 &amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
@@ -439,7 +439,7 @@
             </li>
             <li>
               <p>
-        Le vecteur normal unitaire à <m>\cS</m> est <m>\vn = \frac{\vr}{\norm{\vr}}</m>, de sorte que
+        Le vecteur normal unitaire à <m>\cS</m> est <m>{\vn = \tfrac{\vr}{\norm{\vr}}}</m>, de sorte que
 <md><mrow>
 \iint_{\cS}\vF\cdot\vn\ \dee{S}
 &amp;=\iint_{\norm{\vr}=1}  \frac{\vr}{\norm{\vr}^3}\cdot \frac{\vr}{\norm{\vr}}\ \dee{S}
@@ -448,39 +448,42 @@
 </mrow><mrow>
 &amp;=4\pi.
 </mrow></md>
-        Ceci illustre la <xref ref="warn_divThm">mise en garde</xref> précédente : bien que <m>\vnabla\cdot\vF=0</m> partout où <m>\vF</m> est défini, on ne peut pas appliquer le théorème de la divergence à la boule <m>\cE = \Set{(x,y,z)}{x^2+y^2+z^2\leqslant 1}</m>, puisque <m>\vF</m> n'est même pas défini à l'origine, un point de <m>\cE</m>. Le flux <m>4\pi\ne 0</m> que nous venons de calculer directement le confirme.
+        Ceci illustre la <xref ref="warn_divThm">mise en garde</xref> précédente<nbsp/>: bien que <m>\vnabla\cdot\vF=0</m> partout où <m>\vF</m> est défini, on ne peut pas appliquer le théorème de la divergence à la boule <m>\cE = \Set{(x,y,z)}{x^2+y^2+z^2\leqslant 1}</m>, puisque <m>\vF</m> n'est même pas défini à l'origine, un point de <m>\cE</m>. Le flux <m>4\pi\ne 0</m> que nous venons de calculer directement le confirme.
           </p>
             </li>
             <li>
               <p>
             Cette fois, la région <m>\cE</m> n'englobe pas l'origine, de sorte qu'il n'y a aucun problème de continuité et que la formule du théorème de la divergence s'applique. En vertu de la partie (a), <m>\vnabla\cdot\vF = 0</m>, de sorte que le flux qui nous intéresse est
             <md><mrow>
-              \iint_{\partial \cE} \vF \cdot d\vS = \iiint_{\cE} \vnabla \cdot \vF \, dV = 0.
+              \iint_{\partial \cE} \vF \cdot \dee{\vS} = \iiint_{\cE} \vnabla \cdot \vF \, \dee{V} = 0.
             </mrow></md>
           </p>
             </li>
             <li>
               <p>
-            Soit <m>\cS</m> une sphère quelconque, et supposons pour commencer que <m>\cS</m> n'englobe pas l'origine. Ceci veut dire que la distance de son centre à l'origine est strictement supérieure à son rayon. Soit <m>\cB</m> la boule limitée par notre sphère. Notre hypothèse à l'effet que l'origine n'est pas englobé dans <m>\cB</m> permet d'utiliser le théorème de la divergence, et de calculer directement
+            Soit <m>\cS</m> une sphère quelconque, et supposons pour commencer que <m>\cS</m> n'englobe pas l'origine. Ceci veut dire que la distance de son centre à l'origine est strictement supérieure à son rayon. Soit <m>\cB</m> la boule limitée par notre sphère. Comme l'origine n'est pas dans <m>\cB</m>, nous pouvons utiliser le théorème de la divergence, ce qui donne
           </p>
               <md><mrow>
-            \iint_{\cS} \vF \cdot d\vS = \iint_{\partial \cB} \vF \cdot d\vS = \iiint_{\cB} \vnabla \cdot \vF = 0.
+            \iint_{\cS} \vF \cdot \dee{\vS} = \iint_{\partial \cB} \vF \cdot \dee{\vS} = \iiint_{\cB} \vnabla \cdot \vF\,\dee{V} = 0.
           </mrow></md>
               <p>
-            Supposons maintenant que <m>\cS</m> englobe l'origine. La distance du centre de <m>\cS</m> à l'origine est donc strictement inférieure à son rayon. Il existe donc <m>h\gt 0</m> tel que la sphère de rayon <m>h</m> centrée à l'origine, nommons-la <m>\cS_h</m> est totalement englobée par la sphère donnée <m>\cS</m>.
+            Supposons maintenant que <m>\cS</m> englobe l'origine. La distance du centre de <m>\cS</m> à l'origine est donc strictement inférieure à son rayon. Il existe donc <m>h\gt 0</m> tel que la sphère de rayon <m>h</m> centrée à l'origine, que nous nommons <m>\cS_h</m>, soit entièrement contenue à l'intérieur de la sphère <m>\cS</m>.
           </p>
               <p>
-            Soit cette fois <m>\cV</m> la région comprise entre <m>\cS_h</m> et <m>\cS</m>, c'est à dire <m>\cV = \cS \cup \cS_h</m>. Nous avons alors, grâce au même calcul que celui de la partie (c), que
+            Soit cette fois <m>\cV</m> la région comprise entre <m>\cS_h</m> et <m>\cS</m>, de sorte que <m>\partial\cV = \cS \cup \cS_h</m>. Grâce au même calcul que celui de la partie (c), nous avons
           </p>
               <md>
-                <mrow>0 \amp = \iiint_{\cV} \vnabla \cdot \vF\, dV = \iint_{\partial \cV} \vF \cdot d\vS =  \iint_{\cS} \vF \cdot d\vS  + \iint_{\cS_h} \vF \cdot d\vS</mrow>
+                <mrow>0 \amp = \iiint_{\cV} \vnabla \cdot \vF\, \dee{V} = \iint_{\partial \cV} \vF \cdot \dee{\vS} =  \iint_{\cS} \vF \cdot \dee{\vS}  + \iint_{\cS_h} \vF \cdot \dee{\vS}.</mrow>
               </md>
               <p>
             Comme partie de la frontière de <m>\cV</m>, la sphère <m>\cS_h</m> doit être orientée par le vecteur normal unitaire qui pointe vers l'origine, à savoir <m>-\vr / \norm{\vr}</m>. Compte tenu de cette orientation, le calcul de la partie (b) nous donne
           </p>
               <md><mrow>
-            \iint_{\cS_h} \vF \cdot d\vS = -4\pi.
+            \iint_{\cS_h} \vF \cdot \dee{\vS} = -4\pi,
           </mrow></md>
+              <p>
+            de sorte que <m>\iint_{\cS} \vF \cdot \dee{\vS} = 4\pi</m>. Les deux valeurs possibles du flux sont donc <m>0</m> (sphère n'englobant pas l'origine) et <m>4\pi</m> (sphère englobant l'origine).
+          </p>
             </li>
           </ol>
         </p>
@@ -488,9 +491,9 @@
     </example>
     <example xml:id="eg_stokesD">
       <statement>
-        <p> Calculer le flux <m>\displaystyle \iint_{\cS}\vG\cdot d\vS </m> où  <m>\vG= (2x)\,\vi +(2z-2x)\,\vj  +(2x-2z)\,\vk </m> et
+        <p> Calculer le flux <m>\iint_{\cS}\vG\cdot \dee{\vS}</m>, où <m>{\vG= 2x\,\vi +(2z-2x)\,\vj  +(2x-2z)\,\vk}</m> et
   <md><mrow>
-  \cS=\Set{(x,y,z)}{z=\left(1-x^2-y^2\right)(1-y^3)\cos x\ e^{y},\ x^2+y^2\leqslant 1}
+  \cS=\Set{(x,y,z)}{z=\left(1-x^2-y^2\right)(1-y^3)\cos x\ e^{y},\ x^2+y^2\leqslant 1},
   </mrow></md>
 orientée par le vecteur normal qui pointe vers le haut.
 </p>
@@ -498,7 +501,7 @@ orientée par le vecteur normal qui pointe vers le haut.
       <solution>
         <sidebyside widths="45% 5% 50%" valign="top">
           <p>
-La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plutôt compliquée, mais son bord <m>\partial \cS</m> est plutôt simple, il s'agit du cercle <m>x^2+y^2=1</m>, <m>z=0</m>. La figure montre aussi une surface auxiliaire <m>\cS'</m>, en bleu, qui nous servira bientôt, ainsi que les vecteurs normaux aux deux surfaces.
+La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plutôt compliquée, mais son bord <m>\partial \cS</m> est simple<nbsp/>: il s'agit du cercle <m>x^2+y^2=1</m>, <m>z=0</m>. La figure montre aussi une surface auxiliaire <m>\cS'</m>, en rouge, qui nous servira bientôt, ainsi que les vecteurs normaux aux deux surfaces.
 </p>
           <p></p>
           <figure xml:id="fig-ex-div-stokes">
@@ -514,12 +517,12 @@ La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plut�
                 x0, y0 = 0.5,0.3
                 h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
                 Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                        (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
+                                        (r,0,1), (t,0,2*pi), color = "steelblue", mesh = True,opacity = 0.65)
                 Fig += parametric_plot3d([X(r,t), Y(r,t), 0 ],
-                                        (r,0,1), (t,0,2*pi), color = "lightblue", mesh = False)
-                Fig+= arrow3d((0.5,0.3,0),(0.5,0.3,-0.5), width=1, color = "lightblue",frame = False)
+                                        (r,0,1), (t,0,2*pi), color = "firebrick", mesh = False)
+                Fig+= arrow3d((0.5,0.3,0),(0.5,0.3,-0.5), width=1, color = "firebrick",frame = False)
                 Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                  f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
+                  f(x0,y0) + 1/h), width=1, color = "steelblue",frame = False)
                 Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
                   frame = False)
                 Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
@@ -535,7 +538,7 @@ La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plut�
           </figure>
         </sidebyside>
         <p>
-  L'évaluation de l'intégrale de surface n'est pas quelque chose de simple, les formules sont suffisamment compliquées pour qu'on veuille procéder autrement. Dans cette solution nous allons nous servir du théorème de la divergence, notamment parce que
+  L'évaluation directe de l'intégrale de surface n'est pas simple<nbsp/>: les formules sont suffisamment compliquées pour qu'on veuille procéder autrement. Dans cette solution, nous allons nous servir du théorème de la divergence, notamment parce que
 <md><mrow>
 \vnabla\cdot\vG = \frac{\partial }{\partial x}(2x)+
                   \frac{\partial }{\partial y}(2z-2x)+
@@ -544,7 +547,7 @@ La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plut�
 </mrow></md>
 Voici la stratégie à suivre.
 <ul><li>
-  Nous commençons pat trouver une autre surface <m>\cS'</m> telle que son bord  <m>\partial \cS'</m> soit aussi le cercle <m>x^2+y^2=1</m>, <m>z=0</m>. Un choix raisonnable pour  <m>\cS'</m>, celle que nous allons utiliser, est le disque
+  Nous commençons par trouver une autre surface <m>\cS'</m> telle que son bord  <m>\partial \cS'</m> soit aussi le cercle <m>x^2+y^2=1</m>, <m>z=0</m>. Un choix raisonnable pour  <m>\cS'</m>, celle que nous allons utiliser, est le disque
   <md><mrow>
     \cS' =\Set{(x,y,z)}{x^2+y^2\leqslant 1,\ z=0}
   </mrow></md>
@@ -553,30 +556,30 @@ Voici la stratégie à suivre.
 </p></li><li> Nous aurons alors
 <md><mrow>
 \iiint_{\cV} \vnabla\cdot\vG\,\dee{V}
-=\iint{\cS}\vG\cdot\, d\vS + \iint_{\cS'} \vG\cdot\, d\vS
+=\iint_{\cS}\vG\cdot \dee{\vS} + \iint_{\cS'} \vG\cdot \dee{\vS}.
 </mrow></md>
 Le terme de gauche est nul, puisque <m>\vnabla\cdot\vG=0</m>. Ainsi,
 <md><mrow>
-\iint_{\cS}\vG\cdot\, d\vS
-= - \iint_{\cS'} \vG\cdot\, d\vS
+\iint_{\cS}\vG\cdot \dee{\vS}
+= - \iint_{\cS'} \vG\cdot \dee{\vS}.
 </mrow></md>
 </li><li>  Le vecteur normal pour  <m>\cS'</m>  est <m>-\vk</m>, car il doit pointer vers l'extérieur de <m>\cV</m>.
 </li></ul>
 </p>
         <p> Nous pouvons à présent calculer
 <md><mrow>
-\iint_{\cS}\vG\cdot\, d\vS
-&amp;=-\iint_{\cS'} \vG\cdot d\vS
-= - \iint_{\cS'} \vG\cdot \vn\,  dS
+\iint_{\cS}\vG\cdot \dee{\vS}
+&amp;=-\iint_{\cS'} \vG\cdot \dee{\vS}
+= - \iint_{\cS'} \vG\cdot \vn\, \dee{S}
 </mrow><mrow>
-&amp;= - \iint_{\cS'} \vG\cdot (-\vk) dS
-= - \iint_{\Atop{x^2+y^2\le 1}{z=0}}(2x-2z)\,\dee{x}\dee{y}
+&amp;= - \iint_{\cS'} \vG\cdot (-\vk)\, \dee{S}
+= \iint_{\Atop{x^2+y^2\leqslant 1}{z=0}}(2x-2z)\,\dee{x}\dee{y}
 </mrow><mrow>
-&amp;=\iint_{\Atop{x^2+y^2\le 1}{z=0}}(2x)\, dA
+&amp;=\iint_{x^2+y^2\leqslant 1}2x\, \dee{A}
 </mrow><mrow>
 &amp;=0
 </mrow></md>
-puisque le domaine d'intégration est symétrique par rapport à l'axe <m>x=0</m> et la fonction est une fonction impaire.
+puisque le domaine d'intégration est symétrique par rapport à la droite <m>x=0</m> et que la fonction <m>2x</m> est impaire en <m>x</m>.
 </p>
       </solution>
       <solution>
@@ -587,9 +590,9 @@ puisque le domaine d'intégration est symétrique par rapport à l'axe <m>x=0</m
             <p>
               Si c'était effectivement le cas, nous aurions, en vertu du théorème de Stokes,
                 <md>
-                  <mrow> \iint_{\cS} \vG\cdot d\vS \amp = \iint_{\cS} (\vnabla \times \vF)\cdot d\vS 
+                  <mrow> \iint_{\cS} \vG\cdot \dee{\vS} \amp = \iint_{\cS} (\vnabla \times \vF)\cdot \dee{\vS} 
                   </mrow>
-                  <mrow> \amp = \int_{\partial \cS}\vF \cdot d\vr.
+                  <mrow> \amp = \int_{\partial \cS}\vF \cdot \dee{\vr},
                   </mrow>
                 </md>
             </p>
@@ -611,11 +614,11 @@ puisque le domaine d'intégration est symétrique par rapport à l'axe <m>x=0</m
                 x0, y0 = 0.5,0.3
                 h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
                 Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                        (r,0,1), (t,0,2*pi), color = "orange", mesh = True,opacity = 0.65)
+                                        (r,0,1), (t,0,2*pi), color = "steelblue", mesh = True,opacity = 0.65)
                 Fig += parametric_plot3d([X(1,t), Y(1,t), 0 ],
-                                        (t,0,2*pi), color = "red", thickness= 2)
+                                        (t,0,2*pi), color = "firebrick", thickness= 2)
                 Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                  f(x0,y0) + 1/h), width=1, color = "orange",frame = False)
+                  f(x0,y0) + 1/h), width=1, color = "steelblue",frame = False)
                 Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
                   frame = False)
                 Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
@@ -647,11 +650,11 @@ pour une certaine fonction <m>\psi</m>.
 </p>
         <p>Finalement, la troisième égalité est satisfaite si et seulement si
 
-<md><mrow>\pdiff{}{x}\left(-2xz+ \phi\right) - \pdiff{}{y}\left(z^2 -2xz+\psi\right) \amp = 2x-2z</mrow><mrow>\Leftrightarrow -2z+\phi_x - \psi_ y = 2x-2z</mrow><mrow>\Leftrightarrow \amp \phi_x - \psi_y = 2x </mrow></md>
-Un choix possible est <m>\phi(x,y) = x^2</m> et <m>\psi(x,y) = 0</m>. Ceci conduit à <m>\vF = (z^2 -2xz)\vi + (x^2 -2xz)\vj + 0\vk</m>. On vérifie en effet que <m>\vnabla \times \vF = \vG</m>, comme on le voulait.
+<md><mrow>\pdiff{}{x}\left(-2xz+ \phi\right) - \pdiff{}{y}\left(z^2 -2xz+\psi\right) \amp = 2x-2z</mrow><mrow>\Leftrightarrow \amp -2z+\phi_x - \psi_ y = 2x-2z</mrow><mrow>\Leftrightarrow \amp \phi_x - \psi_y = 2x. </mrow></md>
+Un choix possible est <m>\phi(x,y) = x^2</m> et <m>\psi(x,y) = 0</m>. Ceci conduit à <m>{\vF = (z^2 -2xz)\,\vi + (x^2 -2xz)\,\vj}</m>. On vérifie en effet que <m>\vnabla \times \vF = \vG</m>, comme on le voulait.
 </p>
-        <p>Le cercle <m>\cC = \partial \cS</m> peut être paramétré par <m>\vr(t) = \cos t\, \vi + \sin t\, \vj + 0 \vk</m> pour <m>t\in[0,2\pi]</m> (l'orientation est compatible avec celle de <m>\cS</m>). On calcule alors
-<md><mrow>\int_{\cC}\vF \cdot d\vr \amp = \int_{\cC} (z^2 -2xz)\, dx + (x^2 -2xz)\, dy </mrow><mrow>\amp = \int_{\cC}x^2 \ dy = \int_0^{2\pi}\cos^2 t\cdot \cos t\, dt =0</mrow></md>
+        <p>Le cercle <m>\cC = \partial \cS</m> peut être paramétré par <m>{\vr(t) = \cos t\, \vi + \sin t\, \vj}</m> pour <m>{t\in[0,2\pi]}</m> (l'orientation est compatible avec celle de <m>\cS</m>). On calcule alors
+<md><mrow>\int_{\cC}\vF \cdot \dee{\vr} \amp = \int_{\cC} (z^2 -2xz)\, \dee{x} + (x^2 -2xz)\, \dee{y} </mrow><mrow>\amp = \int_{\cC}x^2 \,\dee{y} = \int_0^{2\pi}\cos^2 t\cdot \cos t\, \dee{t} =0,</mrow></md>
 
 </p>
       </solution>
@@ -660,10 +663,10 @@ Un choix possible est <m>\phi(x,y) = x^2</m> et <m>\psi(x,y) = 0</m>. Ceci condu
 Voyons maintenant quelques variations souvent utiles du théorème de la divergence.
 </p>
     <theorem xml:id="thm_divVrn">
-      <title>Variations du Théorème de la divergence </title>
+      <title>Variations du théorème de la divergence</title>
       <statement>
         <p>
-Soit <m>\cV</m> un solide dont le bord est une surface <m>\partial \cV</m>, alors <md><mrow>
+Soit <m>\cV</m> un solide dont le bord est une surface <m>\partial \cV</m>, <m>\vF</m> un champ de vecteurs et <m>f</m> une fonction de classe <m>C^1</m> sur une région contenant <m>\cV</m>. Alors, <md><mrow>
 \iint_{\partial \cV} \vF\cdot\vn \,\dee{S}
 &amp;=\iiint_{\cV} \vnabla\cdot\vF\ \dee{V}
 </mrow><mrow>
@@ -673,23 +676,23 @@ Soit <m>\cV</m> un solide dont le bord est une surface <m>\partial \cV</m>, alor
 \iint_{\partial \cV} \vn \times\vF\,\dee{S}
 &amp;=\iiint_{\cV} \vnabla\times\vF\ \dee{V}
 </mrow></md>
-où <m>\vn </m> est le vecteur normal unitaire à  <m>\partial \cV</m> pointant vers l'extérieur.
+où <m>\vn</m> est le vecteur normal unitaire à <m>\partial \cV</m> pointant vers l'extérieur.
 </p>
       </statement>
     </theorem>
-    <p><alert>Aide mémoire.</alert> Les trois formules peuvent être combinées en
+    <p><alert>Aide-mémoire.</alert> Les trois formules peuvent être combinées en
 <md><mrow>
 \iint_{\partial \cV} \vn  \ast \tilde F\,\dee{S}
 =\iiint_{\cV} \vnabla \ast \tilde F\ \dee{V}
 </mrow></md>
-où  <m>\ast </m> peut être  <m>\cdot</m> (un produit scalaire), <m>\times</m> (un produit vectoriel) ou rien du tout (le produit d'un vecteur par un scalaire). Lorsque <m>\ast =\cdot</m> ou <m>\ast =\times</m>, alors <m>\tilde F=\vF</m>. Lorsque <m>\ast </m> n'est rien du tout, <m>\tilde F=f</m>, une fonction à valeurs scalaires.
+où <m>\ast</m> peut être <m>\cdot</m> (un produit scalaire), <m>\times</m> (un produit vectoriel) ou rien du tout (le produit d'un vecteur par un scalaire). Lorsque <m>\ast =\cdot</m> ou <m>\ast =\times</m>, alors <m>\tilde F=\vF</m>. Lorsque <m>\ast</m> n'est rien du tout, <m>\tilde F=f</m>, une fonction à valeurs scalaires.
 </p>
     <proof>
       <p>
-La première formule n'est rien d'autre que le théorème de la divergence, c'est la formule du <xref ref="thm_divThm">théorème </xref>.
+La première formule n'est rien d'autre que le théorème de la divergence (<xref ref="thm_divThm">théorème</xref>).
 </p>
       <p>
-Afin de démontrer la deuxième formule, soit  <m>\vF=f\va</m>, où <m>\va</m> est un vecteur constant, et appliquons le théorème de la divergence.
+Afin de démontrer la deuxième formule, soit <m>\vF=f\va</m>, où <m>\va</m> est un vecteur constant, et appliquons le théorème de la divergence.
 <md><mrow>
 \iint_{\partial \cV} f\va\cdot\vn \,\dee{S}
 &amp;=\iiint_{\cV} \vnabla\cdot(f\va)\ \dee{V}
@@ -699,7 +702,7 @@ Afin de démontrer la deuxième formule, soit  <m>\vF=f\va</m>, où <m>\va</m> e
 </mrow><mrow>
 &amp;=\iiint_{\cV} (\vnabla f)\cdot\va\ \dee{V}
 </mrow></md>
-Pour utiliser le deuxième ligne, nous avons utilisé la formule du théorème <xref ref="thm_divIdentities">théorème </xref>.c. Pour avoir la troisième ligne, nous avons simplement utilisé le fait que  <m>\va</m> est constant, de sorte que toutes les dérivées sont nulles. On peut écrire de façon équivalente
+Pour obtenir la deuxième ligne, nous avons utilisé la partie (c) du <xref ref="thm_divIdentities">théorème</xref>. Pour obtenir la troisième ligne, nous avons simplement utilisé le fait que <m>\va</m> est constant, de sorte que toutes ses dérivées sont nulles. On peut écrire de façon équivalente
 <md><mrow>
 \iiint_{\cV} (\vnabla f)\cdot\va\ \dee{V}
 =\iiint_{\cV} \va\cdot(\vnabla f)\ \dee{V}
@@ -712,7 +715,7 @@ Puisque <m>\va</m> est constant, on peut le mettre en évidence, de sorte que
 \implies &amp;\va\cdot\bigg\{\iint_{\partial \cV} f\vn \,\dee{S}
 -\iiint_{\cV} \vnabla f\ \dee{V}\bigg\}=0
 </mrow></md>
-En particulier, en choisissant <m>\va=\vi</m>, <m>\vj</m> et <m>\vk</m>, nous obtenons que les trois composantes du vecteur  <m>\iint_{\partial \cV} f\vn \,\dee{S} -\iiint_{\cV} \vnabla f\ \dee{V}</m> sont nulles. Il vient donc
+En particulier, en choisissant <m>\va=\vi</m>, <m>\vj</m> et <m>\vk</m>, nous obtenons que les trois composantes du vecteur <m>\iint_{\partial \cV} f\vn \,\dee{S} -\iiint_{\cV} \vnabla f\ \dee{V}</m> sont nulles. Il vient donc
 <md><mrow>
 \iint_{\partial \cV} f\vn \,\dee{S}
 -\iiint_{\cV} \vnabla f\ \dee{V}=0
@@ -720,7 +723,7 @@ En particulier, en choisissant <m>\va=\vi</m>, <m>\vj</m> et <m>\vk</m>, nous ob
 qui est l'égalité que nous voulions établir.
 </p>
       <p>
-Afin d'établir la validité de la troisième formule, on applique le théorème de la divergence au champ  <m>\va\times\vF</m>, où  <m>\va</m> est n'importe quel vecteur constant.
+Afin d'établir la validité de la troisième formule, on applique le théorème de la divergence au champ <m>\va\times\vF</m>, où <m>\va</m> est n'importe quel vecteur constant.
 <md><mrow>
 &amp;\iint_{\partial \cV} (\va\times\vF)\cdot\vn \ \dee{S}
 =\iiint_{\cV} \vnabla\cdot(\va\times\vF)\ \dee{V}
@@ -731,7 +734,7 @@ Afin d'établir la validité de la troisième formule, on applique le théorème
 &amp;\hskip0.5in=-\iiint_{\cV} \va\cdot(\vnabla \times\vF)\ \dee{V}
 =-\va\cdot\iiint_{\cV} \vnabla \times\vF\ \dee{V}
 </mrow></md>
-Pour obtenir la deuxième ligne, nous avons utilisé l'identité établie à la  <xref ref="thm_divIdentities">partie d., théorème </xref> Pour obtenir la troisième ligne, nous utilisons à nouveau le fait que <m>\va</m> est constant, de sorte que ses dérivées sont nulles. Nous avons aussi une identité concernant une combinaison du produit vectoriel et le produit scalaire : <m>(\va\times\vb)\cdot\vc=\va\cdot(\vb\times\vc)</m> (ceci a été établi à la partie a. de la <xref ref="prop-vect-bis">proposition</xref>). Ainsi
+Pour obtenir la deuxième ligne, nous avons utilisé l'identité de la partie (d) du <xref ref="thm_divIdentities">théorème</xref>. Pour obtenir la troisième ligne, nous utilisons à nouveau le fait que <m>\va</m> est constant, de sorte que ses dérivées sont nulles. Nous avons aussi une identité qui combine le produit vectoriel et le produit scalaire<nbsp/>: <m>{(\va\times\vb)\cdot\vc=\va\cdot(\vb\times\vc)}</m> (établie à la partie (a) de la <xref ref="prop-vect-bis">proposition</xref>). Ainsi,
 <md><mrow>
 (\va\times\vF)\cdot\vn
 =\va\cdot(\vF\times\vn )
@@ -744,58 +747,58 @@ et
 \implies &amp;\va\cdot\bigg\{\iint_{\partial \cV} \vF\times\vn\ \dee{S}
 +\iiint_{\cV} \vnabla\times\vF\ \dee{V}\bigg\}=0
 </mrow></md>
-En particulier, en choisissant  <m>\va=\vi</m>, <m>\vj</m> et <m>\vk</m>, nous voyons que les trois composantes du vecteur <m>\iint_{\partial \cV} \vF\times\vn\ \dee{S} +\iiint_{\cV} \vnabla\times\vF\ \dee{V}</m> sont nulles. Ainsi
+En particulier, en choisissant <m>\va=\vi</m>, <m>\vj</m> et <m>\vk</m>, nous voyons que les trois composantes du vecteur <m>\iint_{\partial \cV} \vF\times\vn\ \dee{S} +\iiint_{\cV} \vnabla\times\vF\ \dee{V}</m> sont nulles. Ainsi
 <md><mrow>
 \iiint_{\cV} \vnabla\times\vF\ \dee{V}
 =-\iint_{\partial \cV} \vF\times\vn\ \dee{S}
 =\iint_{\partial \cV} \vn \times\vF\ \dee{S}
 </mrow></md>
-qui est precisément ce que nous voulions.
+ce qui est précisément ce que nous voulions.
 </p>
     </proof>
   </subsection>
   <subsection xml:id="sec_heatEqn">
     <title>Application : l'équation de la chaleur</title>
     <p>
-    Soit <m>T(x,y,z,t)</m> la température au temps  <m>t</m> au point <m>(x,y,z)</m> pour un objet occupant une région <m>\cB</m> de l'espace. L'équation de la chaleur <fn>L'équation de la chaleur a été formulée par le mathématicien et physicien français Jean-Baptiste Joseph Fourier en 1807. Il a vécu de 1768 à 1830, une période qui comprend à la fois la Révolution française et le règne de Napoléon. Fourier a fait partie du comité révolutionnaire local, a été brièvement emprisonné pendant la Terreur et a été le conseiller scientifique de Napoléon Bonaparte lors de son expédition en Égypte en 1798. Les séries de Fourier et la transformée de Fourier portent son nom. On lui attribue également la découverte de l'effet de serre.</fn> est l'équation aux dérivées partielles qui décrit le flux d'énergie thermique, et donc le comportement de <m>T</m>. Montrons comment le théorème de la divergence permet de déduire l'équation de la chaleur à partir de certaines  <q>lois</q>, de la physique que nous prenons pour acquises :
+    Soit <m>T(x,y,z,t)</m> la température au temps <m>t</m> au point <m>(x,y,z)</m> pour un objet occupant une région <m>\cB</m> de l'espace. L'équation de la chaleur <fn>L'équation de la chaleur a été formulée par le mathématicien et physicien français Jean-Baptiste Joseph Fourier en 1807. Il a vécu de 1768 à 1830, une période qui comprend à la fois la Révolution française et le règne de Napoléon. Fourier a fait partie du comité révolutionnaire local, a été brièvement emprisonné pendant la Terreur et a été le conseiller scientifique de Napoléon Bonaparte lors de son expédition en Égypte en 1798. Les séries de Fourier et la transformée de Fourier portent son nom. On lui attribue également la découverte de l'effet de serre.</fn> est l'équation aux dérivées partielles qui décrit le flux d'énergie thermique, et donc le comportement de <m>T</m>. Montrons comment le théorème de la divergence permet de déduire l'équation de la chaleur à partir de certaines <q>lois</q> de la physique que nous prenons pour acquises<nbsp/>:
       <ul><li>
-      La quantité d'énergie pour augmenter la température d'un objet de  <m>\De T</m> degrés est <m>CM\,\De T</m> où, <m>M</m> est la masse de l'objet et  <m>C</m> est une constante positive déterminée par le matériau duquel l'objet est fait, c'est ce qu'on appelle la <q>chaleur spécifique</q><fn>On comprend maintenant que la chaleur provient de l'énergie interne de l'objet. Dans une théorie antérieure, la chaleur était considérée comme la mesure d'un fluide invisible, appelé calorique. Le médecin et chimiste écossais Joseph Black (1728-1799) a appelé le <q>calorique</q>. La quantité de calorique qu'un objet peut contenir était appellée la <q> capacité calorique</q> par le médecin et chimiste écossais
-      Joseph Black (1728<ndash/>1799).</fn>, de l'objet.
+      La quantité d'énergie nécessaire pour augmenter la température d'un objet de <m>\De T</m> degrés est <m>CM\,\De T</m>, où <m>M</m> est la masse de l'objet et <m>C</m> est une constante positive déterminée par le matériau dont l'objet est fait<nbsp/>; c'est ce qu'on appelle la <q>chaleur spécifique</q><fn>On comprend maintenant que la chaleur provient de l'énergie interne de l'objet. Dans une théorie antérieure, la chaleur était considérée comme la mesure d'un fluide invisible, appelé <q>calorique</q>. La quantité de calorique qu'un objet peut contenir était appelée sa <q>capacité calorique</q> par le médecin et chimiste écossais
+      Joseph Black (1728<ndash/>1799).</fn> de l'objet.
     </li><li><p>
-      Pensons à l'énergie thermique comme un fluide en mouvement. Nous allons considérer son champ de vitesses de sorte que la chaleur dans la direction opposée à celle du gradient de température, c'est à dire <m>-\ka\vnabla T(x,y,z,t)</m>.
-      Ici <m>\ka</m> est une autre constante positive, appellée la <q>conductivité thermique</q> de l'objet. Ainsi, le taux avec lequel la chaleur est conduite à travers une portion de surface d'aire <m>\dee{S}</m> au point  <m>(x,y,z)</m> dans la direction du vecteur normal <m>\vn</m> est donnée par <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> au temps <m>t</m>. (voir le  <xref ref="lem_fluxInterp" text="global">lemme</xref> au besoin.)
+      Pensons à l'énergie thermique comme à un fluide en mouvement. La chaleur s'écoule dans la direction opposée à celle du gradient de température, avec un champ de flux égal à <m>-\ka\vnabla T(x,y,z,t)</m>.
+      Ici, <m>\ka</m> est une autre constante positive, appelée la <q>conductivité thermique</q> de l'objet. Ainsi, le taux auquel la chaleur est conduite à travers une portion de surface d'aire <m>\dee{S}</m> au point <m>(x,y,z)</m>, dans la direction du vecteur normal <m>\vn</m>, est donné par <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> au temps <m>t</m> (voir le <xref ref="lem_fluxInterp" text="global">lemme</xref> au besoin).
       </p>
       <sidebyside widths="65% 5% 25%" valign="middle">
         <p>
-        Par exemple, dans la figure ci-contre, le gradient de température, qui pointe dans la direction d'augmentation de température est l'opposé de <m>\vn</m>. En conséquence, le taux de flux <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> est  positif, ce qui indique le flux dans la direction de  <m>\vn</m>. Ceci correspond à ce qu'on attend <mdash/> la chaleur <q>s'écoule</q> des régions chaudes vers les régions froides. De plus, le taux de flux grandit à mesure que la norme du gradient de température grandit. Ceci fait du sens, et rappelle la loi du refroidissement de Newton.
+        Par exemple, dans la figure ci-contre, le gradient de température, qui pointe dans la direction où la température augmente, est de sens opposé à <m>\vn</m>. En conséquence, le taux <m>-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> est positif, ce qui indique un écoulement dans la direction de <m>\vn</m>. Ceci correspond à ce qu'on attend <mdash/> la chaleur <q>s'écoule</q> des régions chaudes vers les régions froides. De plus, ce taux grandit à mesure que la norme du gradient de température grandit. C'est raisonnable, et cela rappelle la loi du refroidissement de Newton.
         </p>
         <p></p>
         <image source="images/CLP4-figs/heat1-JC"/>
       </sidebyside></li></ul>
 
 
-    Soit  <m>\cV\subset\cB</m>  <em>n'importe quelle</em><fn>Il faut tout de même que sa frontière soit suffisamment raisonnable pour pouvoir appliquer nos théorèmes</fn> partie dans notre objet, soit <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entre</em> dans  <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\left(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\right)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>V</m> à travers toute sa frontière <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
+    Soit <m>\cV\subset\cB</m> <em>n'importe quelle</em><fn>Il faut tout de même que sa frontière soit suffisamment raisonnable pour pouvoir appliquer nos théorèmes.</fn> région contenue dans notre objet, <m>\partial \cV</m> sa frontière et <m>\vn</m> un vecteur normal à <m>\partial \cV</m> pointant vers l'extérieur de <m>\cV</m>. La quantité de chaleur qui <em>entre</em> dans <m>\cV</m> à travers un petit morceau de surface <m>\dee{S}</m> de <m>\partial \cV</m> pendant un petit intervalle de temps <m>\dee{t}</m> est <m>-\left(-\ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\right)\,\dee{t}</m>. La quantité de chaleur qui entre dans <m>\cV</m> à travers toute sa frontière <m>\partial \cV</m> pendant cet intervalle de temps est donnée par
   </p>
     <sidebyside widths="45% 27%" valign="middle">
       <p>
         <md><mrow>
-  \iint_{\partial V} \ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\,\dee{t}
+  \iint_{\partial \cV} \ka\vn\cdot\vnabla T(x,y,z,t)\,\dee{S}\,\dee{t}
   </mrow></md>
       </p>
       <image source="images/CLP4-figs/heat2"/>
     </sidebyside>
     <p>
-    Pendant cette même période de temps, la température au point <m>(x,y,z)</m> dans  <m>\cV</m> varie de <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. Si la densité de l'objet au point  <m>(x,y,z)</m> est <m>\rho(x,y,z)</m>, la quantité d'énergie requise pour faire accroitre la température d'un petit morceau de volume <m>\dee{V}</m> centré à  <m>(x,y,z)</m> de <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m> est  <m>C(\rho\dee{V})\,\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. La quantité d'énergie requise pour accroître la température de toute la région <m>\cV</m> de  <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m> est alors
+    Pendant cette même période de temps, la température au point <m>(x,y,z)</m> de <m>\cV</m> varie de <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. Si la densité de l'objet au point <m>(x,y,z)</m> est <m>\rho(x,y,z)</m>, la quantité d'énergie requise pour accroître la température d'un petit morceau de volume <m>\dee{V}</m> centré en <m>(x,y,z)</m> de <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m> est <m>C(\rho\dee{V})\,\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. La quantité d'énergie requise pour accroître la température de toute la région <m>\cV</m> de <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m> est alors
     <md><mrow>
     \iiint_{\cV} C\rho\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{V}\,\dee{t}
     </mrow></md>
 
-    Supposons maintenant que notre objet ne dissipe ni engendre de la chaleur <fn>La théorie du <q>calorique</q> a elle-même été réfutée par l'expérience du physicien états-unien / britannique Benjamin Thompson (1753<ndash/>1814) qui a réussi à faire bouillir de l'eau en utilisant la chaleur engendrée par la friction pendant l'alésage d'un canon.</fn> par lui-même. Ainsi, cette quantité doit être égale à la quantité de chaleur qui entre dans <m>\cV</m> pendant ce laps de temps, c'est à dire
+    Supposons maintenant que notre objet ne dissipe ni n'engendre de la chaleur<fn>La théorie du <q>calorique</q> a elle-même été réfutée par l'expérience du physicien états-unien / britannique Benjamin Thompson (1753<ndash/>1814) qui a réussi à faire bouillir de l'eau en utilisant la chaleur engendrée par la friction pendant l'alésage d'un canon.</fn> par lui-même. Ainsi, cette quantité doit être égale à la quantité de chaleur qui entre dans <m>\cV</m> pendant ce laps de temps, c'est-à-dire
     <md><mrow>
-    \iint_{\partial V} \ka\vn\cdot\vnabla T\,\dee{S}\,\dee{t}
+    \iint_{\partial \cV} \ka\vn\cdot\vnabla T\,\dee{S}\,\dee{t}
     =\iiint_{\cV} C\rho\frac{\partial T}{\partial t}\,\dee{V}\,\dee{t}
     </mrow></md>
-    Intégrer par rapport à <m>t</m> nous permet, en quelque sorte de simplifier <m>\dee{t}</m>. Nous pouvons écrire l'expression de gauche comme une intégrale triple sur tout  <m>\cV</m>, grâce au théorème de la divergence, ce qui donne
+    Divisons par <m>\dee{t}</m> et écrivons l'expression de gauche comme une intégrale triple sur <m>\cV</m>, grâce au théorème de la divergence. Cela donne
     <md><mrow>
     \iiint_{\cV} \ka\vnabla\cdot\vnabla T\,\dee{V}
     =\iiint_{\cV} C\rho\frac{\partial T}{\partial t}\,\dee{V}
@@ -810,53 +813,56 @@ qui est precisément ce que nous voulions.
             \tag{H}
       </mrow></md>
     où <m>\vnabla^2=\vnabla\cdot\vnabla=\frac{\partial^2 }{\partial x^2} +
-\frac{\partial^2 }{\partial y^2}+\frac{\partial^2 }{\partial z^2}</m> est le laplacien. Ceci étant vrai pour toute région <m>\cV</m>, et pour tout instant <m>t</m>, nous prétendons qu'il faut nécessairement avoir
+\frac{\partial^2 }{\partial y^2}+\frac{\partial^2 }{\partial z^2}</m> est le laplacien. Ceci étant vrai pour toute région <m>\cV</m> et pour tout instant <m>t</m>, nous affirmons qu'il faut nécessairement avoir
 <md><mrow>
 \ka\vnabla^2 T(x,y,z,t)-C\rho\frac{\partial T}{\partial t}(x,y,z,t)=0
 </mrow></md>
-pour tout <m>(x,y,z)\in \cB</m> et pour tout  <m>t</m>.
+pour tout <m>(x,y,z)\in \cB</m> et pour tout <m>t</m>.
 </p>
-    <p>En effet, supposons au contraire qu'il existe un point  <m>(x_0,y_0,z_0)</m> dans <m>\cB</m> et un instant  <m>t_0</m> tels  que, par exemple, <m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)    -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0) \gt 0</m>. En vertu de la continuité <m>\ka\vnabla^2 T(x,y,z,t_0) - C\rho\frac{\partial T}{\partial t}(x,y,z,t_0)</m> doit être près de  <m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)   -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0)</m> lorsque <m>(x,y,z)</m> est proche de  <m>(x_0,y_0,z_0)</m>. Ainsi, nous aurions
+    <p>En effet, supposons au contraire qu'il existe un point <m>(x_0,y_0,z_0)</m> dans <m>\cB</m> et un instant <m>t_0</m> tels que, par exemple, <m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)    -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0) \gt 0</m>. En vertu de la continuité, <m>\ka\vnabla^2 T(x,y,z,t_0) - C\rho\frac{\partial T}{\partial t}(x,y,z,t_0)</m> doit être proche de <m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)   -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0)</m> lorsque <m>(x,y,z)</m> est proche de <m>(x_0,y_0,z_0)</m>. Ainsi, nous aurions
 <md><mrow>
 \ka\vnabla^2 T(x,y,z,t_0) -C\rho\frac{\partial T}{\partial t}(x,y,z,t_0) \gt 0
 </mrow></md>
-pour  <m>(x,y,z)</m> dans une petite sphère <m>\cE</m> centrée à <m>(x_0,y_0,z_0)</m>.
+pour <m>(x,y,z)</m> dans une petite boule <m>\cE</m> centrée en <m>(x_0,y_0,z_0)</m>.
 Alors
 <md><mrow>
-\iint_{\cE} \Big[\ka\vnabla\cdot\vnabla T(x,y,z,t_0)
+\iiint_{\cE} \Big[\ka\vnabla\cdot\vnabla T(x,y,z,t_0)
       -C\rho\frac{\partial T}{\partial t}(x,y,z,t_0)\Big]\,\dee{V} \gt 0
 </mrow></md>
-ce qui contredit l'équation (H) lorsque  <m>\cV=\cE</m>.  Nous avons donc établi l'équation de la chaleur, à savoir
+ce qui contredit l'équation (H) lorsque <m>\cV=\cE</m>. Nous avons donc établi l'équation de la chaleur, à savoir
 </p>
     <fact xml:id="eqn_heat">
+      <title>Équation de la chaleur</title>
       <statement>
-        <p><md><mrow>
+        <p>
+Soit <m>T(x,y,z,t)</m> la température au point <m>(x,y,z)</m> et au temps <m>t</m> dans un objet de densité <m>\rho</m>, de chaleur spécifique <m>C</m> et de conductivité thermique <m>\ka</m>, qui ne produit ni ne dissipe de chaleur par lui-même. Alors,
+<md><mrow>
 \frac{\partial T}{\partial t}(x,y,z,t)
-=\alpha \vnabla^2 T(x,y,z,t)
+=\alpha \vnabla^2 T(x,y,z,t),
 </mrow></md>
-où <m>\alpha=\frac{\ka}{C\rho}</m> est appelée la <em>conductivité thermique </em>.
+où <m>{\alpha=\tfrac{\ka}{C\rho}}</m> est appelée la <term>diffusivité thermique</term> et <m>\vnabla^2</m> est le laplacien.
 </p>
       </statement>
     </fact>
     <p>
-En guise d'application, étudions la température à une certaine distance de la surface de la Terre. Pour simplifier, supposons que la Terre est plate et que la température  <m>T</m>, dépend seulement du temps <m>t</m>, et de la profondeur, <m>z</m>. Dans ce contexte, l'équation de la chaleur devient
+En guise d'application, étudions la température à une certaine distance de la surface de la Terre. Pour simplifier, supposons que la Terre est plate et que la température <m>T</m> dépend seulement du temps <m>t</m> et de la profondeur <m>z</m>. Dans ce contexte, l'équation de la chaleur devient
 <md><mrow>
 \frac{\partial T}{\partial t}(z,t)
 =\alpha \frac{\partial^2 T}{\partial z^2}(z,t)
 \tag{HE}
 </mrow></md>
-Nous choisissons notre système de coordonnées de sorte que la surface de la Terre correspond à  <m>z=0</m> et de sorte que <m>z</m> augmente à mesure qu'on descend. Nous supposerons aussi que la température à la surface, <m>T(0,t)</m> est principalement déterminée par le soleil et est donnée par
+Nous choisissons notre système de coordonnées de sorte que la surface de la Terre corresponde à <m>z=0</m> et que <m>z</m> augmente à mesure qu'on descend. Nous supposerons aussi que la température à la surface, <m>T(0,t)</m>, est principalement déterminée par le soleil et est donnée par
 <md><mrow>
 T(0,t)=T_0+T_A\cos(\sigma t)+T_D\cos(\delta t)
 \tag{BC}
 </mrow></md>
-Ici <m>T_0</m> est la température moyenne à long terme, <m>T_A\cos(\sigma t)</m> prend e compte des variations saisonnières, tandis que <m>T_D\cos(\delta t)</m> donne les variations quotidiennes.
+Ici <m>T_0</m> est la température moyenne à long terme, <m>T_A\cos(\sigma t)</m> prend en compte des variations saisonnières, tandis que <m>T_D\cos(\delta t)</m> donne les variations quotidiennes.
 </p>
     <sidebyside width="94%">
       <image source="images/CLP4-figs/heat3-FR"/>
     </sidebyside>
     <p>
-  Nous mesurons le temps en jours, de sorte que <m>\delta =2\pi</m> et <m>\sigma =\frac{2\pi}{1\ {\rm an}}=\frac{2\pi}{365{\rm jours}}</m>. Alors  <m>T_A\cos(\sigma t)</m> a une période d'un an et <m>T_D\cos(\delta t)</m> a une période d'un jour. La solution du problème à valeurs initiales (HE)+(BC) peut être trouvée avec la méthode de séparation des variables, un sujet standard dans les cours d'équations différentielles. La solution est
+  Nous mesurons le temps en jours, de sorte que <m>\delta =2\pi</m> et <m>{\sigma =\tfrac{2\pi}{1\text{ an}}=\tfrac{2\pi}{365\text{ jours}}}</m>. Alors, <m>T_A\cos(\sigma t)</m> a une période d'un an et <m>T_D\cos(\delta t)</m> a une période d'un jour. La solution de l'équation (HE) avec la condition au bord (BC) peut être trouvée avec la méthode de séparation des variables, un sujet standard dans les cours d'équations différentielles. La solution est
   <md><mrow>
     T(z,t)&amp;=T_0
     +T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
@@ -866,43 +872,43 @@ Ici <m>T_0</m> est la température moyenne à long terme, <m>T_A\cos(\sigma t)</
     \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)
     \tag{SLN}
     </mrow></md>
-Il est routinier de vérifier que (SLN) est en effet solution de  (HE) et (BC).
+Il est routinier de vérifier que (SLN) est en effet solution de (HE) et vérifie (BC).
 </p>
     <p>
-  Voyons maintenant ce qu'on peut tirer de la solution de (SLN). Pour une profondeur fixe <m>z</m>, la moyenne par rapport au temps de  <m>T(z,t)</m> est <m>T_0</m> (simplement parce que la valeur moyenne de la fonction cosinus est nulle), la même que la température moyenne à la surface, c'est à dire lorsque <m>z=0</m>.
+  Voyons maintenant ce qu'on peut tirer de la solution (SLN). Pour une profondeur fixe <m>z</m>, la moyenne par rapport au temps de  <m>T(z,t)</m> est <m>T_0</m> (simplement parce que la valeur moyenne de la fonction cosinus est nulle), la même que la température moyenne à la surface, c'est-à-dire lorsque <m>z=0</m>.
 </p>
     <p>Le terme
 <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
            \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\   z\Big)</m>
   <ul><li>
-    introduit une oscillation de période un an, tout comme  <m>T_A\cos(\sigma t)</m>
+    introduit une oscillation de période un an, tout comme <m>T_A\cos(\sigma t)</m>;
   </li><li>
-    a une amplitude  <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}</m> qui vaut  <m>T_A</m> à la surface et décroît exponentiellement à mesure que  <m>z</m> grandit. Un accroissement de la profondeur  <m>z</m> de <m>\sqrt{\frac{2\alpha}{\sigma}}</m> entraîne une diminution de l'amplitude de l'oscillation d'un facteur <m>\frac{1}{e}</m>. Ces deux premières observations sont probablement en accord avec notre intuition, mais la solution a aussi une troisième propriété, qui est peut être moins évidente.
+    a une amplitude <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}</m> qui vaut  <m>T_A</m> à la surface et décroît exponentiellement à mesure que <m>z</m> grandit. Un accroissement de la profondeur <m>z</m> de <m>\sqrt{\frac{2\alpha}{\sigma}}</m> entraîne une diminution de l'amplitude de l'oscillation d'un facteur <m>\frac{1}{e}</m>. Ces deux premières observations sont probablement en accord avec notre intuition, mais la solution a aussi une troisième propriété, peut-être moins évidente<nbsp/>;
   </li><li>
-    Elle a un décalage dans le temps de <m>\frac{z}{\sqrt{2\alpha\sigma}}</m> par rapport à  <m>T_A\cos(\sigma t)</m>. Le terme pour la surface, <m>T_A\cos(\sigma t)</m> atteint son maximum lorsque <m>t=0,\ \frac{2\pi}{\sigma},\ \frac{4\pi}{\sigma},\ \cdots</m>. À une profondeur <m>z</m> le terme correspondant  <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
-          \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)</m> atteint son maximum lorsque  <m>\ \sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z
-          =0,\ 2\pi, 4\pi,\ \cdots</m> de sorte que  <m>t=\frac{z}{\sqrt{2\alpha\sigma}},\ \frac{2\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},\ \frac{4\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},\ \cdots</m>.
+    présente un décalage dans le temps de <m>\frac{z}{\sqrt{2\alpha\sigma}}</m> par rapport à <m>T_A\cos(\sigma t)</m>. Le terme pour la surface, <m>T_A\cos(\sigma t)</m>, atteint son maximum lorsque <m>t=0,\ \frac{2\pi}{\sigma},\ \frac{4\pi}{\sigma},\ \cdots</m>. À une profondeur <m>z</m>, le terme correspondant <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
+          \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)</m> atteint son maximum lorsque <m>\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z
+          =0,\ 2\pi, 4\pi,\ \cdots</m> de sorte que <m>t=\frac{z}{\sqrt{2\alpha\sigma}},\ \frac{2\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},\ \frac{4\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},\ \cdots</m>.
   </li></ul>
 De la même façon, le terme
 <m>T_De^{-\sqrt{\delta \over 2\alpha}\ z}
           \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)</m>
 <ul><li>
-varie dans le temps avec une période d'une journée, tout comme <m>T_D\cos(\delta t)</m>
+varie dans le temps avec une période d'une journée, tout comme <m>T_D\cos(\delta t)</m>;
 </li><li>
-a une amplitude qui vaut <m>T_D</m> à la surface  et décroît exponentiellement d'un facteur  <m>\frac{1}{e}</m> pour une augmentation de
-<m>\sqrt{\frac{2\alpha}{\delta}}</m>  de la profondeur.
+a une amplitude qui vaut <m>T_D</m> à la surface et décroît exponentiellement d'un facteur <m>\frac{1}{e}</m> pour une augmentation de
+<m>\sqrt{\tfrac{2\alpha}{\delta}}</m> de la profondeur;
 </li><li>
-a un décalage dans le temps de  <m>\frac{z}{\sqrt{2\alpha\delta}}</m> par rapport à <m>T_D\cos(\delta t)</m>.
+présente un décalage dans le temps de <m>\frac{z}{\sqrt{2\alpha\delta}}</m> par rapport à <m>T_D\cos(\delta t)</m>.
 </li></ul>
 Pour l'eau, la valeur de <m>\alpha</m> est approximativement
- <m>0.012</m> m<m>^2</m>/jour. Cette valeur de  <m>\alpha</m> donne
+ <m>0.012\ \text{m}^2/\text{jour}</m>. Cette valeur de <m>\alpha</m> donne
 <md><mrow>
-\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2\,{\rm m}\quad
-\sqrt{\frac{2\alpha}{\delta}}\approx    0.062\,{\rm m} \quad
-\frac{z}{\sqrt{2\alpha\sigma}}\approx 49\, z\,{\rm jours} \quad
-\frac{z}{\sqrt{2\alpha\delta}}\approx 2.6\, z\,{\rm jours}
+\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2\ \text{m},\qquad
+\sqrt{\frac{2\alpha}{\delta}}\approx    0.062\ \text{m}, \qquad
+\frac{z}{\sqrt{2\alpha\sigma}}\approx 49\, z\ \text{jours}, \qquad
+\frac{z}{\sqrt{2\alpha\delta}}\approx 2.6\, z\ \text{jours}
 </mrow></md>
-pour  <m>z</m> mesurée en centimètres. Ainsi, à une profondeur de quelques mètres la température est relativement constante dans le temps. Ce qui varie est décalé par rapport à la surface de quelques mois.
+pour <m>z</m> mesurée en mètres. Ainsi, à une profondeur de quelques mètres, la température est relativement constante dans le temps, et ce qui en varie est décalé de quelques mois par rapport à la surface.
 </p>
 <!-- <exercise>
     <webwork source="Contrib/DMOI/1-Counting/1_3-Combinations_and_Permutations/1_3_11.pg"/>

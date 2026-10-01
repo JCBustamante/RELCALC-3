@@ -5,6 +5,8 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- Traduit et adapté par Juan Carlos Bustamante, automne 2021 -->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Intégrales de surface</title>
 
     <introduction>
@@ -14,7 +16,7 @@
             <ul>
                 <li>
                     Intégrales d'une fonction à valeurs scalaires, c'est-à-dire
-                    de la forme <m>\displaystyle \iint_{\cS} \rho\,\dee{S}</m>,
+                    de la forme <m>\iint_{\cS} \rho\,\dee{S}</m>,
                     qui sont utilisées pour calculer des aires ou, si
                     <m>\rho</m> est une densité de masse, la masse d'une surface
                     <m>\cS</m>.
@@ -22,7 +24,7 @@
 
                 <li>
                     Intégrales de la forme
-                    <m>\displaystyle \iint_{\cS} \vF\cdot\vn\,\dee{S}</m>, où
+                    <m>\iint_{\cS} \vF\cdot\vn\,\dee{S}</m>, où
                     <m>\vn(x,y,z)</m> est un vecteur unitaire normal à la
                     surface <m>\cS</m> au point <m>(x,y,z)</m>.
                     Celles-ci sont appelées des <q>intégrales de flux</q>.
@@ -37,7 +39,7 @@
     </introduction>
 
     <subsection xml:id="subsec-Integrales-surface">
-        <title>Integrales de surface</title>
+        <title>Intégrales de surface</title>
 
         <p>
             Nous commençons par calculer l'élément différentiel de surface,
@@ -49,10 +51,10 @@
         <p>
             Afin d'illustrer les différentes méthodes, dans les exemples qui
             suivent, nous considérons la sphère <m>x^2 + y^2 + z^2= a^2</m>
-            (avec <m>a \gt 0</m> ) et nous calculons l'aire de la portion
+            (avec <m>a \gt 0</m>) et nous calculons l'aire de la portion
             vérifiant <m>z\geqslant  0</m>.
             On se souvient probablement de l'enseignement secondaire que l'aire
-            cherchée est <m>\frac{1}{2}\times 4\pi a^2=2\pi a^2</m>.
+            cherchée est <m>{\tfrac{1}{2}\times 4\pi a^2=2\pi a^2}</m>.
             Nous allons voir pourquoi ceci est vrai.
             Notons pour commencer que, puisque <m>x^2+y^2 = a^2-z^2</m> sur
             l'hémisphère, l'ensemble des <m>(x,y)</m> pour lesquels il existe
@@ -91,12 +93,12 @@
             </sidebyside>
 
             <p>
-                Par exemple, le courbe rouge inférieure a été obtenue en
+                Par exemple, la courbe rouge inférieure a été obtenue en
                 laissant <m>v</m> fixe à la valeur <m>v_0</m>, en faisant varier
                 <m>u</m>.
                 Elle correspond à la courbe <m>\vr(u,v_0)</m>.
                 La courbe rouge supérieure a été construite en laissant <m>v</m>
-                à une valeur subtilement différente, <m>v_0+\dee{v}</m>, en
+                à une valeur légèrement différente, <m>v_0+\dee{v}</m>, en
                 faisant varier <m>u</m>.
                 Elle correspond à la courbe <m>\vr(u,v_0+\dee{v})</m>.
                 Ainsi, les quatre points d'intersection dans la figure sont
@@ -158,7 +160,7 @@
     +\frac{\partial\vr}{\partial v}(u_0,\,v_0)\,\dee{v}
   </mrow>
                 </md>
-                Nous avons ignoré les termes de degré supérieur à deux dans le
+                Nous avons ignoré les termes de degré deux et plus dans le
                 développement de Taylor.
                 Lorsque nous prenons la limite avec
                 <m>\dee{u},\dee{v}\rightarrow 0</m>, ces termes ont une
@@ -168,7 +170,7 @@
             <p>
                 Le petit morceau de surface avec les coins <m>P_0</m>,
                 <m>P_1</m>, <m>P_2</m>, <m>P_3</m> est approximativement un
-                parallélogramme de côtés:
+                parallélogramme de côtés<nbsp/>:
             </p>
 
             <sidebyside widths="45% 20%" valign="middle">
@@ -200,12 +202,14 @@
                 Ces deux courbes font partie de <m>\cS</m>.
                 Ainsi, <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)</m> et
                 <m>\frac{\partial\vr}{\partial v}(u_0,\,v_0)</m> sont tangents à
-                <m>\cS</m> en <m>\vr(u_0,v_0)</m>, et le produit vectoriel
+                <m>\cS</m> en <m>\vr(u_0,v_0)</m>, et donc le produit vectoriel
                 <m>\frac{\partial\vr}{\partial u}(u_0,\,v_0)\times
                 \frac{\partial\vr}{\partial v}(u_0,\,v_0)</m>
                 est orthogonal à <m>\cS</m> en <m>\vr(u_0,v_0)</m>.
-                Nous avons alors <m>\dee{S}</m> et <m>d\vS= \vn\,\dee{S}</m>, où
-                <m>\vn</m> est un vecteur unitaire normal à la surface.
+                Nous notons alors <m>\dee{S}</m> l'aire de ce petit
+                parallélogramme et <m>{\dee{\vS}= \vn\,\dee{S}}</m> l'élément
+                vectoriel de surface, où <m>\vn</m> est un vecteur unitaire
+                normal à la surface.
             </p>
 
             <fact xml:id="eq_SUdSparam">
@@ -214,7 +218,7 @@
                         Pour une surface paramétrée par <m>\vr(u,v)</m> (différentiable), l'élément vectoriel différentiel de surface est 
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\frac{\partial\vr}{\partial u}(u,\,v)\times
+        \dee{\vS}= \vn\, \dee{S}&amp; = \pm\frac{\partial\vr}{\partial u}(u,\,v)\times
                       \frac{\partial\vr}{\partial v}(u,\,v)\
                   \dee{u}\dee{v},
                   </mrow>
@@ -255,13 +259,13 @@
                 <p>
                     <md>
                         <mrow>
-x&amp;=\rho\sin\varphi\cos\theta
+x&amp;=\rho\sin\varphi\cos\theta,
 </mrow>
                         <mrow>
-y&amp;=\rho\sin\varphi\sin\theta
+y&amp;=\rho\sin\varphi\sin\theta,
 </mrow>
                         <mrow>
-z&amp;=\rho\cos\varphi
+z&amp;=\rho\cos\varphi.
 </mrow>
                     </md>
                 </p>
@@ -277,15 +281,15 @@ z&amp;=\rho\cos\varphi
                 est <m>0\leqslant \varphi\leqslant \frac{\pi}{2}</m>,
                 <m>0\leqslant \theta \lt  2\pi</m>.
                 Ainsi, l'hémisphère peut être paramétré
-                <fn>En fait, les coordonnées sphériques présentent un problème lorsque <m>\varphi=0</m>, puisque <m>\rho=1</m>, <m>\varphi=0</m> donnent le même point, à savoir le pôle nord <m>(0,0,1)</m>, pour toutes les valeurs de  <m>\theta</m>. Nous devrions, en toute rigueur, traiter notre intégrale comme une intégrale impropre, en intégrant d'abord sur
+                <fn>En fait, les coordonnées sphériques présentent un problème lorsque <m>\varphi=0</m>, puisque <m>\rho=a</m>, <m>\varphi=0</m> donnent le même point, à savoir le pôle nord <m>(0,0,a)</m>, pour toutes les valeurs de  <m>\theta</m>. Nous devrions, en toute rigueur, traiter notre intégrale comme une intégrale impropre, en intégrant d'abord sur
 <m>\veps \lt \varphi\leqslant \frac{\pi}{2}</m> puis en prenant la limite
 <m>\veps\rightarrow 0^+</m>. Cependant, cette faille à <m>\varphi=0</m>, tout comme celle des coordonnées polaires à <m>r=0</m>, cause rarement des ennuis, et il est souvent routinier de sauter par-dessus l'étape de l'intégrale impropre.
 </fn>
                 par
                 <md>
                     <mrow>
-&amp;\left(x(\theta,\varphi),\, y(\theta,\varphi),\, z(\theta,\varphi)\right)
-=\left(a\sin\varphi\cos\theta,\,a\sin\varphi\sin\theta,\,a\cos\varphi\right)
+&amp;\vr(\theta,\varphi)
+=a\sin\varphi\cos\theta\,\vi+a\sin\varphi\sin\theta\,\vj+a\cos\varphi\,\vk,
 </mrow>
                     <mrow>
 &amp;
@@ -347,7 +351,7 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
         </example>
 
         <example xml:id="eg_SphereAreaCyl">
-            <title>Aire d'hémisphère, avec les coordonnées cylindriques</title>
+            <title>Aire de l'hémisphère, avec les coordonnées cylindriques</title>
 
             <p>
                 Commençons par paramétrer l'hémisphère <m>x^2+y^2+z^2=a^2</m>,
@@ -358,9 +362,9 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
             <sidebyside widths="45% 25%" valign="middle">
                 <p>
                     <md>
-                        <mrow> x &amp;= r\cos\theta </mrow>
-                        <mrow> y &amp;= r\sin\theta </mrow>
-                        <mrow> z &amp;= z </mrow>
+                        <mrow> x &amp;= r\cos\theta, </mrow>
+                        <mrow> y &amp;= r\sin\theta, </mrow>
+                        <mrow> z &amp;= z. </mrow>
                     </md>
                 </p>
 
@@ -381,8 +385,8 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 Ainsi, l'hémisphère peut être paramétré par
                 <md>
                     <mrow>
-&amp;\left(x(r,\theta),\, y(r,\theta),\, z(r,\theta)\right)
-=\left(r\cos\theta,\,r\sin\theta,\,\sqrt{a^2-r^2}\,\right)
+&amp;\vr(r,\theta)
+=r\cos\theta\,\vi+r\sin\theta\,\vj+\sqrt{a^2-r^2}\,\vk,
 </mrow>
                     <mrow>
 &amp;\hskip1in\text{avec }\
@@ -400,11 +404,9 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 </md>
                 la <xref ref="eq_SUdSparam" text="global">formule</xref> donne
                 <md>
-                    <mrow>\vn\,\dee{S} &amp;=\pm\Big(\frac{\partial x}{\partial r},\,\frac{\partial y}{\partial r}
-   ,\,\frac{\partial z}{\partial r}\Big)
+                    <mrow>\vn\,\dee{S} &amp;=\pm\tvect{\frac{\partial x}{\partial r}}{\frac{\partial y}{\partial r}}{\frac{\partial z}{\partial r}}
 \times
-\Big(\frac{\partial x}{\partial\theta},\,\frac{\partial y}{\partial\theta}
-   ,\, \frac{\partial z}{\partial\theta}\Big)
+\tvect{\frac{\partial x}{\partial\theta}}{\frac{\partial y}{\partial\theta}}{\frac{\partial z}{\partial\theta}}
 \ \dee{r}\dee{\theta}
 </mrow>
                     <mrow>
@@ -416,9 +418,7 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
 
 </mrow>
                     <mrow>
-&amp;=\pm\Big(\frac{r^2\cos\theta}{\sqrt{a^2-r^2}},\,
-           \frac{r^2\sin\theta}{\sqrt{a^2-r^2}},\,
-          r\Big)\ \dee{r}\dee{\theta},
+&amp;=\pm\ctvec{\frac{r^2\cos\theta}{\sqrt{a^2-r^2}}}{\frac{r^2\sin\theta}{\sqrt{a^2-r^2}}}{r}\ \dee{r}\dee{\theta},
 </mrow>
                     <mrow>
 
@@ -467,17 +467,17 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 Nous allons déterminer la force gravitationnelle que la planète
                 exerce sur une particule de masse <m>m</m> qui se trouve à une
                 distance <m>b</m> du centre de la planète.
-                La particule peut se trouver soit à l'extérieur de la coquille (
-                <m>b \gt a</m> ), soit à l'intérieur de celle-ci (
-                <m>b \lt a</m> ).
-                Nous choisissons notre système de coordonnées de sorte à ce que
-                l'origine se trouve au centre de la coquille, et la particule au point   <m>(0,0,b)</m>.
+                La particule peut se trouver soit à l'extérieur de la coquille
+                (<m>b \gt a</m>), soit à l'intérieur de celle-ci
+                (<m>b \lt a</m>).
+                Nous choisissons notre système de coordonnées de sorte que
+                l'origine se trouve au centre de la coquille, et la particule au point <m>(0,0,b)</m>.
                 En vertu de la loi de gravitation, la force exercée sur la
                 particule par une petite portion de surface d'aire
                 <m>\dee{S}</m> située à <m>\vr</m> est
                 <md>
                     <mrow>
-\frac{G\,(\mu\dee{S})\,m}{\norm{\vr-(0,0,b)}^3}(\vr-(0,0,b)).
+\frac{G\,(\mu\dee{S})\,m}{\norm{\vr-b\,\vk}^3}(\vr-b\,\vk).
 </mrow>
                 </md>
                 Ici, <m>G</m> est la constante gravitationnelle,
@@ -491,11 +491,11 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
             </sidebyside>
 
             <p>
-                et <m>\vr-\rvt{0}{0}{b}</m> est le vecteur de la particule à la
+                et <m>\vr-b\,\vk</m> est le vecteur de la particule à la
                 portion de surface.
                 Nous travaillons en coordonnées sphériques, comme nous l'avons
-                fait à l'
-                <xref ref="eg_SphereAreaSC" text="global">exemple</xref>.
+                fait à
+                l'<xref ref="eg_SphereAreaSC" text="global">exemple</xref>.
                 <md>
                     <mrow>
 \dee{S} &amp;= a^2\sin\varphi\,\dee{\varphi}\dee{\theta}
@@ -509,12 +509,12 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
       + a\cos\varphi\,\vk
 </mrow>
                     <mrow>
-\vr-(0,0,b) &amp;= a\sin\varphi\cos\theta\,\vi
+\vr-b\,\vk &amp;= a\sin\varphi\cos\theta\,\vi
       + a\sin\varphi\sin\theta\,\vj
       + (a\cos\varphi-b)\,\vk
 </mrow>
                     <mrow>
-\norm{\vr-(0,0,b)}^2 &amp;= a^2+b^2 -2ab\cos\varphi
+\norm{\vr-b\,\vk}^2 &amp;= a^2+b^2 -2ab\cos\varphi
 </mrow>
                 </md>
                 La force totale est alors
@@ -531,7 +531,7 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 Notons, pour référence future, que la racine carrée dans
                 <m>[a^2+b^2 -2ab\cos\varphi]^{3/2}</m> est la racine carrée
                 <em>positive</em> puisque <m>[b^2+a^2 -2ab\cos\varphi]^{1/2}</m>
-                est la norme de <m>\vr-(0,0,b)</m>.
+                est la norme de <m>\vr-b\,\vk</m>.
             </p>
 
             <p>
@@ -539,7 +539,8 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 rencontrées jusqu'à présent.
                 En effet, maintenant, l'intégrande est un vecteur.
                 Par définition,
-                <m>\iint (\vA+\vB)\,\dee{S} = \iint \vA\,\dee{S} + \iint\vB\,\dee{S}</m>,
+                <m>{\iint (\vA+\vB)\,\dee{S} = \iint \vA\,\dee{S} + \iint\vB\,\dee{S}}</m>,
+                de sorte que
                 <md>
                     <mrow>
 \iint_{\cS} \big[G_1\,\vi + G_2\,\vj + G_3\,\vk \big]\ \dee{S}
@@ -596,7 +597,7 @@ a^2\int_0^{\frac{\pi}{2}} \int_0^{2\pi} \sin\varphi\, \dee{\theta}\ \dee{\varphi
                 <md>
                     <mrow>
 u=a^2+b^2 -2ab\cos\varphi,\qquad
-\dee{u} = 2ab\sin\varphi\,\dee{\varphi}\qquad
+\dee{u} = 2ab\sin\varphi\,\dee{\varphi},\qquad
 \cos\varphi = \frac{a^2+b^2-u}{2ab}.
 </mrow>
                 </md>
@@ -630,7 +631,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
    \Big].
 </mrow>
                 </md>
-                Si <m>b \gt a</m>, on aura <m>|a-b|=b-a</m>:
+                Si <m>b \gt a</m>, on aura <m>|a-b|=b-a</m><nbsp/>:
                 <md>
                     <mrow>
 \vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
@@ -642,7 +643,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
 =-\frac{G(4\pi a^2\mu)m}{b^2} \vk.
 </mrow>
                 </md>
-                Si <m>b \lt a</m>, on aura <m>|a-b|=a-b</m>:
+                Si <m>b \lt a</m>, on aura <m>|a-b|=a-b</m><nbsp/>:
                 <md>
                     <mrow>
 \vF&amp;=\frac{\pi G\mu m a}{b} \vk\Big[
@@ -660,13 +661,13 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                 <ul>
                     <li>
                         si la particule se trouve à l'intérieur de la coquille,
-                        elle ne ressentira aucune force gravitationnelle et,
+                        elle ne ressentira aucune force gravitationnelle;
                     </li>
 
                     <li>
                         si la particule se trouve à l'extérieur de la coquille,
                         elle ressentira la force gravitationnelle comme si toute
-                        la masse ( <m>4\pi a^2\mu</m> ) de la coquille était
+                        la masse (<m>4\pi a^2\mu</m>) de la coquille était
                         concentrée au centre de celle-ci.
                     </li>
                 </ul>
@@ -702,11 +703,11 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
               \vj &amp; 0 &amp; 1 \\
               \vk &amp; \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y}
               \end{matrix}\right]
-    = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk.
+    = \ctvec{-f_x(x,y)}{-f_y(x,y)}{1}.
   </mrow>
                 </md>
                 Ainsi, la <xref ref="eq_SUdSparam" text="global">formule</xref>
-                donne:
+                donne<nbsp/>:
             </p>
 
             <fact xml:id="eq_SUdSgraph">
@@ -715,7 +716,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                         Pour la surface <m>z=f(x,y)</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[-f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk\big]\
+        \dee{\vS}= \vn\, \dee{S}&amp; = \pm\ctvec{-f_x(x,y)}{-f_y(x,y)}{1}\
                   \dee{x}\dee{y},
         </mrow>
                             <mrow>
@@ -726,7 +727,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                         De la même façon, pour la surface <m>x=g(y,z)</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[\vi -g_y(y,z)\,\vj - g_z(y,z)\,\vk\big]\
+        \dee{\vS}= \vn\, \dee{S}&amp; = \pm\ctvec{1}{-g_y(y,z)}{-g_z(y,z)}\
                   \dee{y}\dee{z},
                   </mrow>
                             <mrow>
@@ -737,7 +738,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                         et pour la surface <m>y=h(x,z)</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; = \pm\big[-h_x(x,z)\,\vi +\vj - h_z(x,z)\,\vk\big]\
+        \dee{\vS}= \vn\, \dee{S}&amp; = \pm\ctvec{-h_x(x,z)}{1}{-h_z(x,z)}\
                   \dee{x}\dee{z},
                   </mrow>
                             <mrow>
@@ -780,7 +781,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                     <mrow>
       \frac{\partial\vr}{\partial x}\times
                     \frac{\partial\vr}{\partial y}
-      = -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk,
+      = \ctvec{-f_x(x,y)}{-f_y(x,y)}{1},
       </mrow>
                 </md>
                 de sorte que l'angle <m>\theta</m> formé par <m>\vn</m> et
@@ -801,7 +802,7 @@ u=a^2+b^2 -2ab\cos\varphi,\qquad
                 multipliée par le facteur <m>\frac{1}{\cos\theta}</m>, où
                 <m>\theta</m> est l'angle formé par <m>\vn</m> (qui est
                 orthogonal à la surface) et par <m>\vk</m> (qui est orthogonal
-                au plan <m>Oxy</m> ).
+                au plan <m>Oxy</m>).
                 Notons que
                 <ul>
                     <li>
@@ -856,9 +857,9 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
 </mrow>
                 </md>
                 de sorte que l'aire est
-                <m>\displaystyle\iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}</m>.
-                Nous avons déjà calculé, à l'
-                <xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que
+                <m>{\iint_{x^2+y^2\leqslant  a^2}\tfrac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}}</m>.
+                Nous avons déjà calculé, à
+                l'<xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que
                 cette intégrale vaut <m>2\pi a^2</m>.
             </p>
         </example>
@@ -877,7 +878,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                 <m>\frac{\partial G}{\partial z} \ne 0</m>.
                 Alors, le
                 <xref ref="thm-Implicites3" text="global">théorème</xref> nous
-                dit qu'il existe une fonction <m>f(x,z)</m> telle que
+                dit qu'il existe une fonction <m>f(x,y)</m> telle que
                 <m>z= f(x,y)</m> vérifie
                 <md>
                     <mrow>  G\left(x,y,f(x,y)\right) = K.  </mrow>
@@ -905,14 +906,13 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                 et
                 <md>
                     <mrow>
-  -f_x(x,y)\,\vi - f_y(x,y)\,\vj + \vk
-  &amp;=\frac{G_x\left(x,y,f(x,y)\right)}{G_z\left(x,y,f(x,y)\right)}\,\vi+
-  \frac{G_y\left(x,y,f(x,y)\right)}{G_z\left(x,y,f(x,y)\right)}\,\vj+\vk
-  </mrow>
-                    <mrow>
-  &amp;=\frac{\vnabla G\left(x,y,f(x,y)\right)}{G_z\left(x,y,f(x,y)\right)}.
+  \ctvec{-f_x(x,y)}{-f_y(x,y)}{1}
+  =\frac{1}{G_z}\tvect{G_x}{G_y}{G_z}
+  =\frac{\vnabla G}{G_z},
   </mrow>
                 </md>
+                où les dérivées partielles de <m>G</m> sont évaluées au point
+                <m>\left(x,y,f(x,y)\right)</m>.
                 Ainsi, il vient de la
                 <xref ref="eq_SUdSparam" text="global">formule</xref> les
                 formules suivantes.
@@ -925,7 +925,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                         <m>G_z(x,y,z)\ne 0</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; =
+        \dee{\vS}= \vn\, \dee{S}&amp; =
             \pm\frac{\vnabla G\left(x,y,z\right)}{\vnabla G\left(x,y,z\right)\cdot\vk}\
                   \dee{x}\dee{y},
   </mrow>
@@ -939,7 +939,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                         <m>G_x(x,y,z)\ne 0</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; =
+        \dee{\vS}= \vn\, \dee{S}&amp; =
             \pm\frac{\vnabla G\left(x,y,z\right)}{\vnabla G\left(x,y,z\right)\cdot\vi}\
                   \dee{y}\dee{z},
   </mrow>
@@ -953,7 +953,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                         <m>G_y(x,y,z)\ne 0</m>,
                         <md>
                             <mrow>
-        d\vS= \vn\, \dee{S}&amp; =
+        \dee{\vS}= \vn\, \dee{S}&amp; =
             \pm\frac{\vnabla G\left(x,y,z\right)}{\vnabla G\left(x,y,z\right)\cdot\vj}\
                   \dee{x}\dee{z},
   </mrow>
@@ -976,8 +976,8 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                 Très souvent, ceci est signe que notre surface n'est pas lisse
                 en <m>(x_0,y_0,z_0)</m> et donc que nous n'avons pas un vecteur
                 normal défini sans ambiguïté.
-                On pourra voir l'
-                <xref ref="eg_tangentPlaneA" text="global">exemple</xref>.
+                On pourra voir
+                l'<xref ref="eg_tangentPlaneA" text="global">exemple</xref>.
             </p>
         </paragraphs>
 
@@ -995,7 +995,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
                 Puisque
                 <md>
                     <mrow>
-\vnabla G(x,y,z) = \left(2x,\,2y,\,2z\right),
+\vnabla G(x,y,z) = \tvect{2x}{2y}{2z},
 </mrow>
                 </md>
                 la <xref ref="eq_SUdSimplicit" text="global">formule</xref>
@@ -1007,7 +1007,7 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
             \ \dee{x}\dee{y}
 </mrow>
                     <mrow>
-&amp;= \norm{\frac{\left(2x,\,2y,\,2z\right)}{2z}}
+&amp;= \frac{1}{2|z|}\norm{\tvect{2x}{2y}{2z}}
             \ \dee{x}\dee{y}
 </mrow>
                     <mrow>
@@ -1016,13 +1016,13 @@ z=f(x,y) = \sqrt{a^2-x^2-y^2}
 </mrow>
                     <mrow>
 &amp;= \frac{a}{\sqrt{a^2-x^2-y^2}}
-            \ \dee{x}\dee{y} \qquad\text{sur }  x^2+y^2+z^2=a^2.
+            \ \dee{x}\dee{y}, \qquad\text{sur }  x^2+y^2+z^2=a^2.
 </mrow>
                 </md>
                 Ainsi, l'aire est
-                <m>\displaystyle \iint_{x^2+y^2\leqslant  a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}</m>.
-                Nous avons déjà vu, à l'
-                <xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que
+                <m>{\iint_{x^2+y^2\leqslant  a^2}\tfrac{a}{\sqrt{a^2-x^2-y^2}}\ \dee{x}\dee{y}}</m>.
+                Nous avons déjà vu, à
+                l'<xref ref="eg_SphereAreaCyl" text="global">exemple</xref>, que
                 la valeur de cette intégrale est <m>2\pi a^2</m>.
             </p>
         </example>
@@ -1114,7 +1114,7 @@ area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
         <example xml:id="eg_surfaceIntegralA">
             <statement>
                 <p>
-                    Calculer <m>\displaystyle \iint_{\cS} x^2y^2z^2\ dS</m>, où <m>\cS</m>  est la portion du cône <m>x^2+y^2=z^2</m> vérifiant <m>0\leqslant  z\leqslant  1</m>.
+                    Calculer <m>\iint_{\cS} x^2y^2z^2\,\dee{S}</m>, où <m>\cS</m> est la portion du cône <m>x^2+y^2=z^2</m> vérifiant <m>0\leqslant  z\leqslant  1</m>.
                 </p>
             </statement>
 
@@ -1126,7 +1126,7 @@ area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
                 <sidebyside widths="45% 22%" valign="middle">
                     <p>
                         <md>
-                            <mrow>z = f(x,y)  \amp = \sqrt{x^2+y^2} </mrow>
+                            <mrow>z = f(x,y)  \amp = \sqrt{x^2+y^2}, </mrow>
                             <mrow> \amp x^2+y^2\leqslant  1. </mrow>
                         </md>
                     </p>
@@ -1135,7 +1135,7 @@ area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
                 </sidebyside>
 
                 <p>
-                    Mais, puisque
+                    Or, puisque
                     <md>
                         <mrow>
 f_x(x,y) = \frac{x}{\sqrt{x^2+y^2}},\qquad
@@ -1148,13 +1148,13 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                         <mrow>
 \dee{S} = \Big[1 + \frac{x^2}{x^2+y^2}  + \frac{y^2}{x^2+y^2}\Big]^{1/2}
              \ \dee{x}\dee{y}
-=\sqrt{2}\,\dee{x}\dee{y},
+=\sqrt{2}\,\dee{x}\dee{y}.
 </mrow>
                     </md>
                     Notre intégrale est donc
                     <md>
                         <mrow>
-\iint_{\cS} x^2y^2z^2\ dS
+\iint_{\cS} x^2y^2z^2\,\dee{S}
 &amp;=\sqrt{2}\iint_{x^2+y^2\leqslant  1} x^2 y^2 (x^2+y^2)\ \dee{x}\dee{y}.
 </mrow>
                     </md>
@@ -1162,7 +1162,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     passons aux coordonnées polaires.
                     <md>
                         <mrow>
-\iint_{\cS} x^2y^2z^2\ dS
+\iint_{\cS} x^2y^2z^2\,\dee{S}
 &amp;=\sqrt{2}\int_0^{2\pi}\int_0^1
           r(r\cos\theta)^2(r\sin\theta)^2 r^2\,\dee{r}\,\dee{\theta}
 </mrow>
@@ -1176,7 +1176,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
 =\frac{\sqrt{2}}{32} \int_0^{2\pi} \sin^2(2\theta)\,\dee{\theta}
 </mrow>
                         <mrow>
-&amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi} \big[1-\cos(4\theta)\big]\,\dee{\theta}
+&amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi} \big[1-\cos(4\theta)\big]\,\dee{\theta}.
 </mrow>
                     </md>
                     Rappelons que les intégrales de <m>\cos(\theta)</m>, ou
@@ -1185,7 +1185,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     Nous obtenons
                     <md>
                         <mrow>
-\iint_{\cS} x^2y^2z^2\ dS = \frac{\sqrt{2}}{64}(2\pi)
+\iint_{\cS} x^2y^2z^2\,\dee{S} = \frac{\sqrt{2}}{64}(2\pi)
    =\frac{\pi\sqrt{2}}{32}.
 </mrow>
                     </md>
@@ -1197,7 +1197,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     Nous pouvons paramétrer le cône par
                     <md>
                         <mrow>
-\vr(z,\theta) &amp;= z\cos\theta\,\vi +  z\sin\theta\,\vj + z\,\vk \qquad
+\vr(z,\theta) &amp;= z\cos\theta\,\vi +  z\sin\theta\,\vj + z\,\vk, \qquad
 0\leqslant  z\leqslant  1,\ 0\leqslant \theta\leqslant  2\pi.
 </mrow>
                     </md>
@@ -1205,9 +1205,9 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     <md>
                         <mrow>
 \frac{\partial\vr}{\partial z}
-   =  \cos\theta\,\vi +  \sin\theta\,\vj + \vk \qquad\text{et}\qquad
+   =  \ctvec{\cos\theta}{\sin\theta}{1} \qquad\text{et}\qquad
 \frac{\partial\vr}{\partial\theta}
-   =  -z\sin\theta\,\vi +  z\cos\theta\,\vj,
+   =  \ctvec{-z\sin\theta}{z\cos\theta}{0},
 </mrow>
                     </md>
                     la <xref ref="eq_SUdSparam" text="global">formule</xref>
@@ -1222,7 +1222,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                 \end{matrix}\right]\,\dee{z}\dee{\theta}
 </mrow>
                         <mrow>
-&amp;=\pm\big[-z\cos\theta\,\vi - z\sin\theta\,\vj + z\,\vk\big]\
+&amp;=\pm\tvect{-z\cos\theta}{-z\sin\theta}{z}\
           \dee{z}\dee{\theta},
 </mrow>
                         <mrow>
@@ -1232,7 +1232,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     Ainsi, notre intégrale devient
                     <md>
                         <mrow>
-\iint_{\cS} x^2y^2z^2\ dS
+\iint_{\cS} x^2y^2z^2\,\dee{S}
 &amp;= \sqrt{2}\int_0^{2\pi}\int_0^1
            z (z\cos\theta)^2 (z\sin\theta)^2 z^2\,\dee{z}\,\dee{\theta}
 </mrow>
@@ -1249,7 +1249,7 @@ f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}},
                     solution, nous obtenons donc, à nouveau,
                     <md>
                         <mrow>
-\iint_{\cS} x^2y^2z^2\ dS   =\frac{\pi\sqrt{2}}{32}.
+\iint_{\cS} x^2y^2z^2\,\dee{S}   =\frac{\pi\sqrt{2}}{32}.
 </mrow>
                     </md>
                 </p>
@@ -1510,17 +1510,17 @@ the Riemann sums, this error converges to exactly <m>0</m>.
         <p>
             Nous avons défini ci-haut deux types d'intégrales de surface.
             Nous avons vu quelques exemples d'intégrales de la forme
-            <m>\displaystyle \iint_{\cS} \rho\,\dee{S}</m>.
+            <m>\iint_{\cS} \rho\,\dee{S}</m>.
             Nous nous concentrons maintenant sur une application des intégrales
-            de la forme <m>\displaystyle \iint_{\cS} \vF\cdot\vn\,\dee{S}</m>.
+            de la forme <m>\iint_{\cS} \vF\cdot\vn\,\dee{S}</m>.
             Ces intégrales sont appelées <em>intégrales de flux</em>, nous
             allons voir pourquoi.
-            Imaginons un fluide tel que
+            Imaginons un fluide tel que<nbsp/>:
             <ul>
                 <li>
                     sa densité en, disons, kilogrammes par mètre cube à la
                     position <m>(x,y,z)</m> et au temps <m>t</m> est
-                    <m>\rho(x,y,z,t)</m>, et
+                    <m>\rho(x,y,z,t)</m>;
                 </li>
 
                 <li>
@@ -1620,7 +1620,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     la direction de <m>\vn </m>.
                     Si le flux est négatif, le fluide traverse dans la direction
                     opposée à celle de <m>\vn</m>.
-                    Le taux avec lequel le fluide traverse la surface <m>\cS</m>
+                    Le taux avec lequel le fluide (en volume) traverse la surface <m>\cS</m>
                     est l'intégrale
                     <md>
                         <mrow>
@@ -1649,26 +1649,66 @@ the Riemann sums, this error converges to exactly <m>0</m>.
             <statement>
                 <p>
                     Soit <m>\cS</m> une surface lisse orientée par un vecteur
-                    <m>\vn</m> et <m>\vF</m> un champ de vecteurs de classe
+                    normal unitaire <m>\vn</m> et <m>\vF</m> un champ de vecteurs de classe
                     <m>C^1</m> défini sur une région dont l'intérieur contient
                     <m>\cS</m>.
                     Alors, <term>l'intégrale de flux</term> de <m>\vF</m> à
                     travers <m>\cS</m> est définie comme
                     <md>
                         <mrow>
-          \iint_{\cS} \vF \cdot d\vS = \iint_{\cS} \vF \cdot \vn \, dS.
+          \iint_{\cS} \vF \cdot \dee{\vS} = \iint_{\cS} \vF \cdot \vn \, \dee{S}.
         </mrow>
                     </md>
                 </p>
             </statement>
         </definition>
 
+        <remark xml:id="rem-non-orientable">
+            <title>Orientabilité des surfaces</title>
+            <p>
+                L'hypothèse que <m>\cS</m> soit <em>orientée</em> n'est pas superflue : il existe des surfaces sur lesquelles il est impossible de choisir un vecteur normal unitaire <m>\vn</m> qui varie continûment et qui revient à sa valeur de départ une fois qu'on a parcouru toute la surface. L'exemple le plus célèbre est le <term>ruban de Möbius</term><fn>Voir aussi l'annexe <xref ref="sec-surfaces-parametrees" text="global"/>, où ce ruban est construit et tracé.</fn>.
+            </p>
+            <sidebyside widths="45% 5% 50%" valign="middle">
+                <p>
+                    En suivant les vecteurs normaux le long de la courbe centrale (<m>s=0</m>) du ruban, on constate qu'après un tour complet (<m>t</m> parcourant <m>[0,2\pi]</m>), le vecteur normal pointe dans la direction <em>opposée</em> à celle de départ. Il est donc impossible de définir une intégrale de flux sur le ruban de Möbius tout entier : le résultat dépendrait du point choisi pour amorcer le tour.
+                </p>
+                <p></p>
+                <figure xml:id="fig-mobius-normal">
+                    <caption>
+                        Le ruban de Möbius et son vecteur normal
+                    </caption>
+                    <image xml:id="sageplot-mobius-normal">
+                        <description>
+                            <p>Un ruban de Möbius avec des vecteurs normaux unitaires dessinés le long de sa courbe centrale, illustrant leur retournement après un tour complet.</p>
+                        </description>
+                        <sageplot variant="3d" aspect="1.0">
+var('s,t')
+R = 2
+def x(s,t):
+    return (R+s*cos(t/2))*cos(t)
+def y(s,t):
+    return (R+s*cos(t/2))*sin(t)
+def z(s,t):
+    return s*sin(t/2)
+def macouleur(s,t):
+    return (1+sin(t))/2
+S = parametric_plot3d((x(s,t), y(s,t), z(s,t)), (s,-1,1), (t,0,2*pi), color=(macouleur, colormaps.coolwarm), frame = False)
+Bord = parametric_plot3d((x(-1,t), y(-1,t), z(-1,t)), (t,0,2*pi), color="black", thickness=3)
+L = 0.6
+Normales = sum(arrow((x(0,t), y(0,t), z(0,t)),
+        (x(0,t) - L*cos(t)*sin(t/2), y(0,t) - L*sin(t)*sin(t/2), z(0,t) + L*cos(t/2)),
+        color="black", width=0.5) for t in sxrange(0,2*pi,0.3))
+S + Bord + Normales
+                        </sageplot>
+                    </image>
+                </figure>
+            </sidebyside>
+        </remark>
+
         <p>
-            Naturellement, la formule explicite à utiliser pour effectuer le
-            calcul dépendra de la façon dont la surface <m>\cS</m> est spécifiée
-            : surface paramétrique ( <xref ref="eq_SUdSparam">formule</xref> ),
-            graphe ( <xref ref="eq_SUdSgraph">formule</xref> ) ou surface donnée
-            implicitement ( <xref ref="eq_SUdSimplicit">formule</xref> ).
+            Naturellement, la formule explicite à utiliser pour effectuer le calcul dépendra de la façon dont la surface <m>\cS</m> est spécifiée<nbsp/>: surface paramétrée (<xref ref="eq_SUdSparam" text="global">formule</xref>),
+            graphe (<xref ref="eq_SUdSgraph" text="global">formule</xref>) ou surface donnée
+            implicitement (<xref ref="eq_SUdSimplicit" text="global">formule</xref>).
         </p>
 
         <fact xml:id="fact-Int-surf-champs">
@@ -1681,17 +1721,17 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     <ol marker="(a)">
                         <li>
                             <p>
-                                si <m>\cS</m> est donnée paramétriquement par
+                                Si <m>\cS</m> est donnée paramétriquement par
                                 <m>\vr(u,v)</m> pour <m>(u,v) \in \cR</m>, alors
                                 le vecteur normal unitaire est
                                 <m>\pm \frac{\vr_u \times \vr_v}{\norm{\vr_u \times \vr_v}}</m>,
                                 et donc
                                 <md>
-                                    <mrow xml:id="eq-Flux-dS-param" tag="star"> \iint_{\cS} \vF \cdot d\vS \amp   =\pm \iint_{\cR}\vF \cdot (\vr_u \times \vr_v)\, dA. </mrow>
+                                    <mrow xml:id="eq-Flux-dS-param" tag="star"> \iint_{\cS} \vF \cdot \dee{\vS} \amp   =\pm \iint_{\cR}\vF \cdot (\vr_u \times \vr_v)\, \dee{A}. </mrow>
                                 </md>
-                                Ici, <m>dA</m> réfère à l'élément différentiel
+                                Ici, <m>\dee{A}</m> réfère à l'élément différentiel
                                 dans l'espace des paramètres, c'est donc
-                                <m>du\, dv</m> ou <m>dv\, du</m>.
+                                <m>\dee{u}\, \dee{v}</m> ou <m>\dee{v}\, \dee{u}</m>.
                             </p>
                         </li>
 
@@ -1702,12 +1742,12 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                                 <m>\vn = \pm \frac{-f_x \, \vi - f_y\, \vj + \vk}{\sqrt{1+f_x^2 + f_y^2}}</m>,
                                 et donc
                                 <md>
-                                    <mrow xml:id="eq-Flux-dS-graphe" tag="dstar"> \iint_{\cS} \vF \cdot d\vS \amp    =\pm \iint_{\cR}\vF \cdot (-f_x\vi - f_y\vj + \vk)\, dA </mrow>
-                                    <mrow>  \amp= \pm \iint_{\cR} - P\,f_x - Q\, f_y + R  dA. </mrow>
+                                    <mrow xml:id="eq-Flux-dS-graphe" tag="dstar"> \iint_{\cS} \vF \cdot \dee{\vS} \amp    =\pm \iint_{\cR}\vF \cdot (-f_x\vi - f_y\vj + \vk)\, \dee{A} </mrow>
+                                    <mrow>  \amp= \pm \iint_{\cR} \left(- P\,f_x - Q\, f_y + R\right) \dee{A}. </mrow>
                                 </md>
-                                Ici, <m>dA</m> réfère à l'élément différentiel
+                                Ici, <m>\dee{A}</m> réfère à l'élément différentiel
                                 dans le domaine de <m>f</m>, c'est donc
-                                <m>dx\, dy</m> ou <m>dy\, dx</m>.
+                                <m>\dee{x}\, \dee{y}</m> ou <m>\dee{y}\, \dee{x}</m>.
                             </p>
                         </li>
 
@@ -1717,11 +1757,11 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                                 <m>G_z \ne 0</m> et <m>\cR</m> est la projection
                                 de <m>\cS</m> sur le plan <m>xy</m>, alors
                                 <md>
-                                    <mrow xml:id="eq-Flux-dS-implicite" tag="tstar"> \iint_{\cS} \vF \cdot d\vS \amp = \pm \iint_{\cR} \vF \cdot \frac{\vnabla G}{|\vnabla G \cdot \vk|}\, dA. </mrow>
+                                    <mrow xml:id="eq-Flux-dS-implicite" tag="tstar"> \iint_{\cS} \vF \cdot \dee{\vS} \amp = \pm \iint_{\cR} \vF \cdot \frac{\vnabla G}{|\vnabla G \cdot \vk|}\, \dee{A}. </mrow>
                                 </md>
-                                Ici, <m>dA</m> réfère à l'élément différentiel
+                                Ici, <m>\dee{A}</m> réfère à l'élément différentiel
                                 dans le plan de la projection <m>\cR</m>, c'est
-                                donc <m>dx\, dy</m> ou <m>dy\, dx</m>.
+                                donc <m>\dee{x}\, \dee{y}</m> ou <m>\dee{y}\, \dee{x}</m>.
                                 Si la surface <m>\cS</m> est projetée sur un
                                 autre des plans de coordonnées, il faudra
                                 ajuster le terme <m>\cdot \vk</m> apparaissant
@@ -1741,7 +1781,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
 
             <sidebyside widths="60% 15% 25%" valign="top">
                 <p>
-                    À l' <xref ref="eg_ptSource" text="global">exemple</xref>,
+                    À l'<xref ref="eg_ptSource" text="global">exemple</xref>,
                     nous avons trouvé que le champ de vecteurs d'une source
                     ponctuelle en trois dimensions qui crée <m>4\pi m</m>
                     litres par seconde est
@@ -1750,7 +1790,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     </md>
                     où
                     <md>
-                        <mrow> r(x,y,z) = \sqrt{x^2+y^2+z^2}</mrow>
+                        <mrow> r(x,y,z) = \sqrt{x^2+y^2+z^2},</mrow>
                         <mrow> \hat\vr(x,y,z) = \frac{x\vi + y\vj + z\vk }{\sqrt{x^2+y^2+z^2}}.
                         </mrow>
                     </md>
@@ -1852,15 +1892,15 @@ the Riemann sums, this error converges to exactly <m>0</m>.
         <example xml:id="eg_fluxIntegralC">
             <statement>
                 <p>
-                    Évaluer <m>\displaystyle \iint_{\cS}\vF\cdot\vn \ dS\ </m>, où
+                    Évaluer <m>\iint_{\cS}\vF\cdot\vn \,\dee{S}</m>, où
                     <md>
                         <mrow>\vF(x,y,z) = (x+y)\,\vi + (y+z)\,\vj + (x+z)\,\vk, </mrow>
                     </md>
-                    où <m>\cS</m> est la frontière de
-                    <m>V=\Set{(x,y,z)}{0\leqslant  x^2+y^2\leqslant  9,\ 0\leqslant  z\leqslant  5}</m>
-                    et où <m>\vn </m> est le vecteur normal unitaire pointant
+                    <m>\cS</m> est la frontière de
+                    <m>{\cV=\Set{(x,y,z)}{0\leqslant  x^2+y^2\leqslant  9,\ 0\leqslant  z\leqslant  5}}</m>
+                    et <m>\vn </m> est le vecteur normal unitaire pointant
                     vers l'extérieur
-                    <fn>Il est nécessaire qu'un problème donné spécifie d'une façon ou d'une autre si <m>\vn </m> pointe vers l'intérieur ou l'extérieur. Sans cela, l'expression   <m>\ \iint_{\cS}\vF\cdot\vn \ dS\ </m> est ambiguë.</fn>
+                    <fn>Il est nécessaire qu'un problème donné spécifie d'une façon ou d'une autre si <m>\vn </m> pointe vers l'intérieur ou l'extérieur. Sans cela, l'expression <m>\iint_{\cS}\vF\cdot\vn \,\dee{S}</m> est ambiguë.</fn>
                     de <m>\cS</m>.
                 </p>
             </statement>
@@ -1868,7 +1908,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
             <solution>
                 <sidebyside widths="60% 5% 33%" valign="top">
                     <p>
-                        Le volume <m>V</m> a l'air d'une boîte de conserve
+                        Le solide <m>\cV</m> a l'air d'une boîte de conserve
                         mince de rayon <m>3</m> et de hauteur <m>5</m>.
                     </p>
 
@@ -1886,7 +1926,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
   \cS_b &amp;= \Set{(x,y,z)}{0\leqslant  x^2+y^2\leqslant  9,\  z= 0} = \text{le bas,}
   </mrow>
                         <mrow>
-  S_s &amp;= \Set{(x,y,z)}{x^2+y^2 = 9,\  0\leqslant  z\leqslant  5} = \text{le côté.}
+  \cS_s &amp;= \Set{(x,y,z)}{x^2+y^2 = 9,\  0\leqslant  z\leqslant  5} = \text{le côté.}
   </mrow>
                     </md>
                     Nous allons calculer le flux à travers chacune de ces
@@ -1906,7 +1946,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     Ainsi, le flux à travers <m>\cS_t</m> est
                     <md>
                         <mrow>
-  \iint_{S_t}\vF\cdot\vn \ \dee{S}
+  \iint_{\cS_t}\vF\cdot\vn \ \dee{S}
   &amp;= \iint_{\atp{x^2+y^2\leqslant  9}{z=5}} (x+z)\ \dee{x}\dee{y}
   = \iint_{x^2+y^2\leqslant  9} (x+5)\ \dee{x}\dee{y}.
   </mrow>
@@ -1918,7 +1958,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     Ainsi,
                     <md>
                         <mrow>
-  \iint_{S_t}\vF\cdot\vn \ \dee{S}
+  \iint_{\cS_t}\vF\cdot\vn \ \dee{S}
   = \iint_{x^2+y^2\leqslant  9} 5\ \dee{x}\dee{y}
   =5\pi(3)^2
   =45\pi.
@@ -1933,7 +1973,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     Ainsi, le flux à travers <m>\cS_b</m> est
                     <md>
                         <mrow>
-  \iint_{S_b}\vF\cdot\vn \ \dee{S}
+  \iint_{\cS_b}\vF\cdot\vn \ \dee{S}
   &amp;= -\iint_{\atp{x^2+y^2\leqslant  9}{z=0}} (x+z)\ \dee{x}\dee{y}
   = -\iint_{x^2+y^2\leqslant  9} x\ \dee{x}\dee{y}
   =0.
@@ -1943,11 +1983,11 @@ the Riemann sums, this error converges to exactly <m>0</m>.
 
                 <p>
                     <em>Le côté :</em> Nous pouvons paramétrer le côté avec les
-                    coordonnées cylindriques:
+                    coordonnées cylindriques<nbsp/>:
                     <md>
                         <mrow>
-  \vr(\theta,z) = \left(3\cos\theta,\,3\sin\theta,\,z\right)\qquad
-  0\le\theta  \lt  2\pi,\ 0\leqslant  z\leqslant  5.
+  \vr(\theta,z) = 3\cos\theta\,\vi+3\sin\theta\,\vj+z\,\vk,\qquad
+  0\leqslant\theta  \lt  2\pi,\ 0\leqslant  z\leqslant  5.
   </mrow>
                     </md>
                     Ainsi, en vertu de la
@@ -1959,11 +1999,11 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                         <md>
                             <mrow>
   \frac{\partial\vr}{\partial\theta}
-  &amp;=(-3\sin\theta,\,3\cos\theta,\,0),
+  &amp;=\ctvec{-3\sin\theta}{3\cos\theta}{0},
   </mrow>
                             <mrow>
 
-  \frac{\partial\vr}{\partial z} &amp;=(0,\,0,\,1),
+  \frac{\partial\vr}{\partial z} &amp;=\ctvec{0}{0}{1},
   </mrow>
                             <mrow>
 
@@ -1973,7 +2013,7 @@ the Riemann sums, this error converges to exactly <m>0</m>.
 
   </mrow>
                             <mrow>
-  &amp;=(3\cos\theta,\,3\sin\theta,\,0)\ \dee{\theta}\,\dee{z}.
+  &amp;=\ctvec{3\cos\theta}{3\sin\theta}{0}\ \dee{\theta}\,\dee{z}.
   </mrow>
                         </md>
                     </p>
@@ -1982,8 +2022,8 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                 </sidebyside>
                 <!--Label de l'image est en anglais-->
                 <p>
-                    Notons que <m>\vn  = (\cos\theta,\,\sin\theta,\,0)</m> est
-                    normal à <m>\cS_c</m> et pointe vers l'extérieur.
+                    Notons que <m>{\vn  = \cos\theta\,\vi+\sin\theta\,\vj}</m> est
+                    normal à <m>\cS_s</m> et pointe vers l'extérieur.
                     Ainsi,
                     <md>
                         <mrow>
@@ -2003,13 +2043,13 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     de sorte que le flux à travers le côté est
                     <md>
                         <mrow>
-  \iint_{S_s}\vF\cdot\vn \ \dee{S}
+  \iint_{\cS_s}\vF\cdot\vn \ \dee{S}
   &amp;=\int_0^{2\pi}\int_0^5
        \left(9 +\tfrac{9}{2}\,\sin(2\theta)+3z\sin\theta\right)\,\dee{z}\,\dee{\theta}
   </mrow>
                         <mrow>
   &amp;=9\int_0^{2\pi}\int_0^5\,\dee{z}\,\dee{\theta}
-  \quad (\text{car  }\int_0^{2\pi}\sin\theta\,\dee{\theta}
+  \quad (\text{car }\int_0^{2\pi}\sin\theta\,\dee{\theta}
                      =\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}
                      =0)
   </mrow>
@@ -2020,10 +2060,10 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     Ainsi, le flux total est
                     <md>
                         <mrow>
-  \iint_{S}\vF\cdot\vn \ \dee{S}
-  &amp;=\iint_{S_t}\vF\cdot\vn \ \dee{S}
-   +\iint_{S_b}\vF\cdot\vn \ \dee{S}
-   +\iint_{S_s}\vF\cdot\vn \ \dee{S}
+  \iint_{\cS}\vF\cdot\vn \ \dee{S}
+  &amp;=\iint_{\cS_t}\vF\cdot\vn \ \dee{S}
+   +\iint_{\cS_b}\vF\cdot\vn \ \dee{S}
+   +\iint_{\cS_s}\vF\cdot\vn \ \dee{S}
   </mrow>
                         <mrow>
   &amp;=45\pi+0+90\pi

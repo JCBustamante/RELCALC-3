@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-Vecteurs">
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Vecteurs</title>
   <introduction>
     <p>
@@ -179,7 +181,7 @@ comme cela est indiqué dans la figure ci-dessus.
 
 </subsection>
   <subsection xml:id="pars-Composantes">
-    <title>Composantes et coordonnées</title>
+    <title>L'ensemble des vecteurs <m>\R^n</m></title>
     <p>
 Bien que l'approche du paragraphe précédent soit très utile en soi, notamment pour faire de la géométrie, il est très utile d'introduire un système de coordonnées afin d'utiliser la puissance de l'algèbre linéaire. On choisit donc un espace à deux ou trois dimensions dans lequel un point est choisi et désigné comme l'origine <m>O</m>, et un système de coordonnées rectangulaires associé. Chaque point <m>A</m> de notre espace aura alors ses coordonnées, <m>(a_1, a_2)</m> ou <m>(a_1,a_2,a_3)</m> selon que notre espace a deux ou trois dimensions. On écrira alors <m>A(a_1, a_2)</m> ou <m>A(a_1,a_2,a_3)</m>, confondant un point avec ses coordonnées, ou encore  <m>A(x_A,y_A)</m> ou <m>A(x_A,y_A,z_A)</m>.
   </p>
@@ -191,19 +193,31 @@ Bien que l'approche du paragraphe précédent soit très utile en soi, notamment
   Réciproquement, si un vecteur <m>\va</m> est dessiné avec sa source avec l'origine, alors son but se trouve au point <m>A(a_1,a_2)</m> ou <m>A(a_1,a_2, a_3)</m>. On dira alors que les coordonnées de <m>A</m> sont les composantes de <m>\va</m>, et l'on écrira ces composantes comme un vecteur colonne :
 </p>
     <md>
-      <mrow>\va = \dvect{a_1}{a_2} \amp \amp  \text{ ou } \amp \amp \va = \tvect{a_1}{a_2}{a_3}. </mrow>
+      <mrow>\va = \rvd{a_1}{a_2} \amp \amp  \text{ ou } \amp \amp \va = \rvt{a_1}{a_2}{a_3}. </mrow>
     </md>
     <p>
   Il est souvent pratique, afin d'alléger l'écriture, d'écrire les vecteurs en rangées, en utilisant la notation suivante :
-  <md><mrow>\va = \dvect{a_1}{a_2}= (a_1,a_2) \amp \amp \text{ ou }\amp \amp \va = \tvect{a_1}{a_2}{a_3}  = (a_1,a_2,a_3).</mrow></md>
+  <md><mrow>\va = \rvd{a_1}{a_2}= (a_1,a_2) \amp \amp \text{ ou }\amp \amp \va = \rvt{a_1}{a_2}{a_3}  = (a_1,a_2,a_3).</mrow></md>
+Certains textes écriraient aussi <m>\va = \langle a_1, a_2\rangle</m> ou <m>\va = \langle a_1, a_2, a_3\rangle</m>.
+
   Il faut bien comprendre qu'il s'agit simplement d'une convention d'écriture; nos vecteurs seront <em>toujours</em> des vecteurs colonnes, ceci sera important lorsque les matrices entreront en jeu.
-
-
 </p>
+    <definition xml:id="def-Rn">
+      <title>L'espace <m>\R^n</m></title>
+      <statement>
+        <p>
+    Pour <m>n\geqslant 1</m> un entier, <m>\R^n</m> désigne l'ensemble des vecteurs colonnes à <m>n</m> composantes réelles :
+    <md>
+      \R^n = \left\{ \rctvec{x_1}{\vdots}{x_n} \,:\, x_1,\ldots,x_n\in \R \right\}.
+    </md>
+    En particulier, <m>\R^2</m> et <m>\R^3</m> sont les ensembles des vecteurs colonnes à deux et trois composantes, respectivement : c'est donc, à nouveau, le même ensemble que celui des points du plan et de l'espace introduit plus haut, vu maintenant comme ensemble de <em>vecteurs</em> plutôt que de <em>points</em> — une distinction qui, comme on vient de le voir, n'en est pas vraiment une.
+  </p>
+      </statement>
+    </definition>
     <p>
   Prenons maintenant le vecteur <m>\vv = \overrightarrow{PQ}</m>, dessiné avec sa source au point <m>P(p_1,p_2,p_3)</m> et avec son but à <m>Q(q_1,q_2,q_3)</m>. Comme <m>\vv</m> est précisément le déplacement nécessaire pour aller de <m>P</m> à <m>Q</m>, on doit avoir <m>p_i + v_i = q_i</m> pour <m>i\in \{1,2,3\}</m><fn>L'expression <q><m>i\in \{1,2,3\}</m></q> doit se lire comme <q><m>i</m> dans l'ensemble formé des éléments <m>1,2,3</m></q>.</fn>. Ainsi, écrit avec ces composantes, nous avons :
     <md>
-  \vv = \tvect{v_1}{v_2}{v_3} = \tvect{q_1 - p_1}{q_2 - p_2}{q_3 - p_3}.
+  \vv = \rvt{v_1}{v_2}{v_3} = \rvt{q_1 - p_1}{q_2 - p_2}{q_3 - p_3}.
 </md>
     </p>
     <ul>
@@ -222,7 +236,7 @@ Bien que l'approche du paragraphe précédent soit très utile en soi, notamment
       <image source="images/CLP-figs/mscalmulJC"/>
     </sidebyside>
     <p>
-En somme, l'addition des vecteurs se fait de composante à composante, et la multiplication d'un vecteur par un scalaire se fait en multipliant chacune des composantes du vecteur par le scalaire en question. Les définitions données pour les vecteurs de <m>\R^2</m> se généralisent de façon évidente à <m>\R^3</m> et à <m>\R^n</m> en général. Nous formulons les définitions dans le cas général.
+En somme, l'addition des vecteurs se fait de composante à composante, et la multiplication d'un vecteur par un scalaire se fait en multipliant chacune des composantes du vecteur par le scalaire en question. Les définitions données pour les vecteurs de <m>\R^2</m> se généralisent de façon évidente à <m>\R^3</m> et à <m>\R^n</m> (<xref ref="def-Rn" text="global"/>) en général. Nous formulons les définitions dans le cas général.
 </p>
     <definition xml:id="def_addScalMult">
       <title>Addition de vecteurs et multiplication par un scalaire</title>
@@ -276,7 +290,7 @@ Soit <m>\va, \vb, \vc \in \R^n</m> et  <m>s,t\in \R</m>. Alors,
     <definition xml:id="def_basis_vectors">
       <statement>
         <p>
-Les vecteurs de la <term><em>base canonique</em></term> sont<fn>Certain(e)s auteur(e)s écrivent  <m>\ve_1</m>, <m>\ve_2</m> et  <m>\ve_3</m> à la place de <m>\vi</m>, <m>\vj</m> et <m>\vk</m>, respectivement.</fn>
+Les vecteurs de la <term>base canonique</term> sont<fn>Certain(e)s auteur(e)s écrivent  <m>\ve_1</m>, <m>\ve_2</m> et  <m>\ve_3</m> à la place de <m>\vi</m>, <m>\vj</m> et <m>\vk</m>, respectivement.</fn>
 <ul><li><p>en deux dimensions :
     <m>
     \vi = \rvd{1}{0}</m> et <m>\vj =\rvd{0}{1};

@@ -4,6 +4,8 @@
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
   <!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Règle de dérivation des fonctions composées</title>
   <introduction>
     <title>Le cas des fonctions à une variable</title>
@@ -124,6 +126,90 @@
           <xi:include href="WebWork/Chap_Differentiel/Sec_Composees/Composees-prob2.pg" parse="text"/>
         </webwork>
       </exercise>
+      <corollary xml:id="cor-Plan-tg-vrai">
+        <title>Retour au plan tangent</title>
+        <statement>
+          <p>
+            Soit <m>f : \cD \subseteq \R^2 \to \R</m> différentiable en
+            <m>(x_0,y_0)</m>, et soit <m>\cS</m> la surface d'équation
+            <m>z=f(x,y)</m>.
+            Alors le plan d'équation <m>z=L(x,y)</m>, où <m>L</m> est
+            l'approximation linéaire de <m>f</m> en <m>(x_0,y_0)</m> (voir
+            <xref ref="def-Approx-lin-2var" text="global"/>), est
+            effectivement le plan tangent à <m>\cS</m> en
+            <m>(x_0,y_0,f(x_0,y_0))</m> : il contient les
+            vecteurs vitesse en ce point de <em>toutes</em> les courbes
+            différentiables tracées sur <m>\cS</m> et y passant.
+          </p>
+        </statement>
+        <proof>
+          <p>
+            Posons <m>\vr_0 = x_0\,\vi + y_0\,\vj + f(x_0,y_0)\,\vk</m> et
+            <md>
+              \vn = -f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj + \vk,
+            </md>
+            le vecteur normal du plan candidat établi plus haut.
+            Les points <m>\vx = x\,\vi + y\,\vj + z\,\vk</m> du plan
+            vérifient donc
+            <md>
+              \vn \cdot (\vx - \vr_0) = 0,
+            </md>
+            de sorte qu'un vecteur <m>\vv</m> est une direction du plan
+            (c'est-à-dire que <m>\vr_0+\vv</m> y reste) si et seulement si
+            <m>\vn\cdot\vv=0</m>.
+          </p>
+          <p>
+            Soit maintenant
+            <m>\vr(t) = x(t)\,\vi + y(t)\,\vj + f(x(t),y(t))\,\vk</m> un
+            chemin différentiable <em>quelconque</em>, tracé sur
+            <m>\cS</m>, passant par <m>\vr_0</m> au temps <m>t_0</m>
+            (c'est-à-dire <m>x(t_0)=x_0</m>, <m>y(t_0)=y_0</m>).
+            On prétend que le vecteur vitesse <m>\vr'(t_0)</m> est
+            orthogonal à <m>\vn</m>,
+            <md>
+              \vn \cdot \vr'(t_0) = 0,
+            </md>
+            ce qui montrera, par ce qui précède, que <m>\vr'(t_0)</m> est
+            bel et bien une direction du plan candidat.
+          </p>
+          <p>
+            <term>Calcul du vecteur vitesse.</term>
+            Par la règle de la chaîne, la troisième composante de
+            <m>\vr'(t)</m>, évaluée en <m>t_0</m>, est
+            <md>
+              \left.\frac{d}{dt}f(x(t),y(t))\right|_{t_0} = f_x(x_0,y_0)\,x'(t_0) + f_y(x_0,y_0)\,y'(t_0).
+            </md>
+            Ainsi,
+            <md>
+              \vr'(t_0) = x'(t_0)\,\vi + y'(t_0)\,\vj + \big[f_x(x_0,y_0)\,x'(t_0) + f_y(x_0,y_0)\,y'(t_0)\big]\,\vk.
+            </md>
+          </p>
+          <p>
+            <term>Produit scalaire.</term>
+            On calcule directement
+            <md>
+              <mrow>
+                \vn \cdot \vr'(t_0)
+                \amp= -f_x(x_0,y_0)\,x'(t_0) - f_y(x_0,y_0)\,y'(t_0)
+              </mrow>
+              <mrow>
+                \amp\qquad + \big[f_x(x_0,y_0)\,x'(t_0) + f_y(x_0,y_0)\,y'(t_0)\big]
+              </mrow>
+              <mrow>
+                \amp= 0.
+              </mrow>
+            </md>
+          </p>
+          <p>
+            Comme le chemin <m>\vr(t)</m> était arbitraire, <em>tout</em>
+            vecteur vitesse en <m>\vr_0</m> de <em>toute</em> trajectoire
+            tracée sur <m>\cS</m> satisfait <m>\vn\cdot\vr'(t_0)=0</m>,
+            c'est-à-dire se trouve dans le plan candidat.
+            Par définition, ce plan est donc bel et bien le plan tangent à
+            <m>\cS</m> en <m>\vr_0</m>.
+          </p>
+        </proof>
+      </corollary>
     </paragraphs>
     <paragraphs xml:id="pars-Chaine-2-vars">
       <title>Composition avec une fonction de deux variables.<m>f(x(s,t), y(s,t))</m></title>
@@ -217,7 +303,7 @@
       </example>
       <example xml:id="ex_chaine">
         <statement>
-          <p>Soit <m>f(x,y)</m> une fonction différentiable et <m>F(s,t) = f(s^2 - t^2, t^2-s^2)</m>. Calculer  <m> \displaystyle t\pdiff{F}{s} + s \pdiff{F}{t}</m>.
+          <p>Soit <m>f(x,y)</m> une fonction différentiable et <m>F(s,t) = f(s^2 - t^2, t^2-s^2)</m>. Calculer  <m>t\pdiff{F}{s} + s \pdiff{F}{t}</m>.
           </p>
           <p>
             De nouveau, dans cet exemple, les variables intermédiaires ne sont pas données. Posons donc <m>g(s,t) = (x(s,t),y(s,t)) = (s^2 - t^2, t^2 - s^2)</m>, de sorte que <m>F(s,t) = f\circ g(s,t)</m>.
@@ -227,14 +313,14 @@
             <md>
               \pdiff{F}{s} = \pdiff{f}{x}\pdiff{x}{s} + \pdiff{f}{y}\pdiff{y}{s} = 2s \pdiff{f}{x} -2s\pdiff{f}{y}
             </md>,
-            et donc <m>\displaystyle t\pdiff{F}{s} = 2ts\left( \pdiff{f}{x} - \pdiff{f}{y}\right)</m>.
+            et donc <m>t\pdiff{F}{s} = 2ts\left( \pdiff{f}{x} - \pdiff{f}{y}\right)</m>.
           </p>
           <p>
             De la même façon,
             <md>
               \pdiff{F}{t} = \pdiff{f}{x}\pdiff{x}{t} + \pdiff{f}{y}\pdiff{y}{t} = -2t \pdiff{f}{x} +2t\pdiff{f}{y}
             </md>,
-            et donc  <m>\displaystyle t\pdiff{F}{t} = 2ts\left( -\pdiff{f}{x} + \pdiff{f}{y}\right)</m>.
+            et donc  <m>t\pdiff{F}{t} = 2ts\left( -\pdiff{f}{x} + \pdiff{f}{y}\right)</m>.
             Il s'ensuit que
             <md>
               t\pdiff{F}{s} + s \pdiff{F}{t} = 2st\left( \pdiff{f}{x} - \pdiff{f}{y}\right) + 2st\left(-\pdiff{f}{x} + \pdiff{f}{y}\right) = 0
@@ -528,8 +614,8 @@
         </p>
         <p>
           Posons <m>f(x,y,z) = x-z-\arctan(yz)</m>, de sorte que l'égalité donnée équivaut à <m>f(x,y,z) = 0</m>. On calcule alors <m>\pdiff{f}{z} = -1-\frac{y}{1+y^2z^2}</m>. Ainsi, la relation donnée définit implicitement <m>z</m> en fonction de <m>x</m> et <m>y</m> sauf  lorsque <m>1+y^2 z^2 =-y</m>. Par ailleurs :
-          <ul><li><p><m>\pdiff{f}{x} = 1</m>, d'où <m>\displaystyle \pdiff{z}{x} = \frac{-\pdiff{f}{x}}{\pdiff{f}{z}} = \frac{-1}{-1-\frac{y}{1+y^2 z^2}} = \frac{1+y^2 z^2}{1+y^2 z^2+y}</m>;
-              </p></li><li><p><m>\pdiff{f}{y} = \frac{-z}{1+y^2 z^2}</m>, d'où <m>\displaystyle \pdiff{z}{y} = \frac{-\pdiff{f}{y}}{\pdiff{f}{z}}  = \frac{\frac{z}{1+y^2 z^2}}{-1-\frac{y}{1+y^2 z^2}} = \frac{-z}{1+y^2 z^2 + y}</m>.
+          <ul><li><p><m>\pdiff{f}{x} = 1</m>, d'où <m>\pdiff{z}{x} = \frac{-\pdiff{f}{x}}{\pdiff{f}{z}} = \frac{-1}{-1-\frac{y}{1+y^2 z^2}} = \frac{1+y^2 z^2}{1+y^2 z^2+y}</m>;
+              </p></li><li><p><m>\pdiff{f}{y} = \frac{-z}{1+y^2 z^2}</m>, d'où <m>\pdiff{z}{y} = \frac{-\pdiff{f}{y}}{\pdiff{f}{z}}  = \frac{\frac{z}{1+y^2 z^2}}{-1-\frac{y}{1+y^2 z^2}} = \frac{-z}{1+y^2 z^2 + y}</m>.
               </p></li></ul>
         </p>
       </statement>
@@ -593,7 +679,7 @@
         </li></ul>
     </p>
     <p>
-      Voici une représentation graphique qui utilise un <em>arbre de dépendances</em> afin de se rappeler de la règle de dérivation des fonctions composées.
+      Voici une représentation graphique qui utilise un <em>arbre de dépendances</em> afin de se rappeler la règle de dérivation des fonctions composées.
       <m>
         \pdiff{}{s}f\left(x(s,t),y(s,t)\right)=
         \pdiff{f}{x} \pdiff{x}{s} + \pdiff{f}{y}\pdiff{y}{s}

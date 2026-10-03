@@ -265,7 +265,8 @@
                         point anguleux à l'origine.
                     </caption>
 
-                    <image xml:id="sageplot-Diffte-pas-plan-tangent" width="60%">
+                    <!-- Remplace un sageplot 3D (rendu Tachyon médiocre dans le PDF) -->
+                    <image xml:id="asy-point-anguleux" width="60%">
                         <description>
                             <p>
                                 Le graphe d'une fonction en forme de quatre
@@ -274,27 +275,9 @@
                                 point.
                             </p>
                         </description>
-                        <sageplot variant="3d" aspect="1.0">
-var('x,y')
-def cbrt(t):
-    return sign(t)*abs(t)^(1/3)
-g(x,y) = cbrt(x)*cbrt(y)
-cm = colormaps.Spectral
-zmin, zmax = float(-2^(2/3)), float(2^(2/3))
-def macouleur(x,y):
-    return float((g(x,y)-zmin)/(zmax-zmin))
-S = plot3d(g, (x,-2,2), (y,-2,2), color=(macouleur,cm), mesh=False,
-    opacity=0.9, frame=False, plot_points=150)
-coul_axes = "black"
-xa, ya, za = 2, 2, zmax
-S += line3d([(0,0,0), (xa*1.15,0,0)], color=coul_axes, thickness=4)
-S += text3d("x", (xa*1.25,0,0), color=coul_axes, fontsize=20, fontweight="bold")
-S += line3d([(0,0,0), (0,ya*1.15,0)], color=coul_axes, thickness=4)
-S += text3d("y", (0,ya*1.25,0), color=coul_axes, fontsize=20, fontweight="bold")
-S += line3d([(0,0,0), (0,0,za*1.4)], color=coul_axes, thickness=4)
-S += text3d("z", (0,0,za*1.55), color=coul_axes, fontsize=20, fontweight="bold")
-S
-                        </sageplot>
+                        <asymptote>
+<xi:include parse="text" href="asy/point-anguleux.asy"/>
+                        </asymptote>
                     </image>
                 </figure>
             </solution>
@@ -1072,10 +1055,13 @@ S
             <caption>
                 La différentielle <m>df</m> approche la variation <m>\De f</m>
                 de <m>f(x,y)</m>.
-                Figure provenant de "Active Calculus".
             </caption>
-
-            <image width="70%" source="images/AC3-images/fig_10_4_tangent_10"/>
+            <!-- Remplace images/AC3-images/fig_10_4_tangent_10 (Active Calculus) -->
+            <image xml:id="asy-differentielle" width="70%">
+                <asymptote>
+<xi:include parse="text" href="asy/differentielle.asy"/>
+                </asymptote>
+            </image>
         </figure>
 
         <p>

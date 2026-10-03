@@ -22,6 +22,29 @@
       </statement>
     </definition>
     <example>
+      <statement>
+        <p>
+      Supposons que nous lancions un projectile du niveau du sol (avec un bâton de golf, un canon...). Supposons que notre projectile ne tourne pas et qu'il est soumis seulement à la force gravitationnelle <m>g</m>. Dans ces conditions, la distance horizontale que le projectile voyagera, disons <m>z</m>, dépend de la vitesse initiale, disons <m>x</m> (en mètres par seconde), et de l'angle de tir, disons <m>y</m> (en radians). On aura alors <m>z = f(x,y) = \frac{1}{g} x^2 \sin 2y</m>.
+    </p>
+        <!--    <figure xml:id="Discontinuous-function">
+        <caption>La surface de <m> f(x,y)= \frac{1}{g} x^2 \sin 2y</m>
+        </caption>
+
+        <interactive xml:id="Dist-projectile" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+              @interact
+              def figure():
+                  var("x,y")
+                  S = plot3d(1/10*x^2 *sin(2*y), (x,0,100), (y,0,pi/2), color = "orange", mesh = True, opacity = 0.65)
+                  show(S)
+          </slate>
+        </interactive>
+
+    </figure>
+    -->
+      </statement>
+    </example>
+    <example>
       <statement><p> Soit <m>f : (x,y) \mapsto \sqrt{x} + \sqrt{y} + \ln(4-x^2 -4y^2)</m>.
     <ol marker="(a)"><li><p>Trouver le domaine de <m>f</m> et le représenter graphiquement.
         </p></li><li><p>
@@ -86,29 +109,6 @@
     <p>
       De façon plus générale, on peut définir le graphe d'une fonction <m>f</m> définie sur une partie <m>\plan{D}</m> de <m>\R^n</m> comme l'ensemble des points <m>(\vx, f(\vx))</m> de <m>\R^n \times \R</m> qu'on identifie naturellement à <m>\R^{n+1}</m>.
     </p>
-    <example>
-      <statement>
-        <p>
-      Supposons que nous lançons un projectile du niveau du sol (avec un bâton de golf, un canon...). Supposons que notre projectile ne tourne pas et qu'il est soumis seulement à la force gravitationnelle <m>g</m>. Dans ces conditions, la distance horizontale que le projectile voyagera, disons <m>z</m>, dépend de la vitesse initiale, disons <m>x</m> (en mètres par seconde), et de l'angle de tir, disons <m>y</m> (en radians). On aura alors <m>z = f(x,y) = \frac{1}{g} x^2 \sin 2y</m>.
-    </p>
-        <!--    <figure xml:id="Discontinuous-function">
-        <caption>La surface de <m> f(x,y)= \frac{1}{g} x^2 \sin 2y</m>
-        </caption>
-
-        <interactive xml:id="Dist-projectile" platform="sage" width="100%" aspect="1:1">
-        <slate surface="sage">
-              @interact
-              def figure():
-                  var("x,y")
-                  S = plot3d(1/10*x^2 *sin(2*y), (x,0,100), (y,0,pi/2), color = "orange", mesh = True, opacity = 0.65)
-                  show(S)
-          </slate>
-        </interactive>
-
-    </figure>
-    -->
-      </statement>
-    </example>
     <p>
   Lorsqu'on étudie une fonction à plusieurs variables, on s'intéresse au rôle isolé de chacune des variables. Si, par exemple, on s'intéresse à <m>f(x,y)</m> et que l'on fixe la valeur de la variable <m>x</m> à <m>x=x_0</m>, on obtient une fonction de la seconde variable : <m>g(y) = f(x_0, y)</m>. De la même façon, nous avons une fonction <m>h(x)= f(x,y_0)</m> lorsque <m>y_0</m> est fixée. La courbe de la fonction <m>z=h(x)</m>, tracée sur le plan vertical (parallèle à l'axe des <m>x</m>) d'équation <m>y=y_0</m>, fait partie de la surface <m>\plan{S}</m> d'équation <m>z=f(x,y)</m>. Cette courbe est en fait l'intersection du plan <m>y=y_0</m> avec la surface <m>\plan{S}</m>. Avant d'illustrer ces concepts à l'<xref ref="eg_traces">exemple</xref> , donnons une définition plus précise.
 </p>

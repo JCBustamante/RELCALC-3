@@ -11,7 +11,7 @@
     <!-- 1 -->
     <exercise xml:id="prb_Green_singular">
       <statement><p>
-      Intégrer <m>\tfrac{1}{2\pi}\oint_\cC \tfrac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}</m>
+      Intégrer <m>\tfrac{1}{2\pi}\int_\cC \tfrac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}</m>
       en sens antihoraire sur
       <ol marker = "(a)">
       <li> le cercle <m>x^2+y^2=a^2</m>;
@@ -43,7 +43,7 @@
       <m>\dee{y}=a\cos\theta\,\dee{\theta}</m> so that
       <md>
       <mrow>
-      \frac{1}{2\pi}\oint_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      \frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       &amp;=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
                    {a^2\cos^2\theta+a^2\sin^2\theta}
       =\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}
@@ -83,7 +83,7 @@
       so that the integral
       <md>
       <mrow>
-      \frac{1}{2\pi}\oint_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      \frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       &amp;=\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{-(-1)\dee{x}}{x^2+1}}^{y=-1{\rm\ part}}
       +\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{(1)\dee{y}}{1+y^2}}^{x=+1{\rm\ part}}
       </mrow><mrow>
@@ -126,7 +126,7 @@
       The two flat pieces each give zero, since
       on them <m>y=0</m> and <m>\dee{y}=0</m>. So
       <md><mrow>
-      \frac{1}{2\pi}\oint_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      \frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       =\frac{1}{2}+0-\frac{1}{2}+0=0
       </mrow></md>
       </p>
@@ -210,7 +210,7 @@
       </ul>
       The full line integral is
       <md><mrow>
-      \oint_\cC\vF\cdot d\vr=0+27-81+0=-54
+      \int_\cC\vF\cdot d\vr=0+27-81+0=-54
       </mrow></md>
       </p>
       </solution>
@@ -220,7 +220,7 @@
        We apply Green's Theorem.
       <md>
       <mrow>
-      \oint_\cC x^2y^2\,\dee{x}+2xy\,\dee{y}
+      \int_\cC x^2y^2\,\dee{x}+2xy\,\dee{y}
       &amp;=\int_0^3\dee{x}\int_0^3 \dee{y}\
                   \left[\pdiff{}{x}(2xy)-\pdiff{}{y}(x^2y^2)\right]
       </mrow><mrow>
@@ -238,7 +238,7 @@
     <exercise>
       <statement><p>
       Évaluer
-       <m>\oint_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}</m>,
+       <m>\int_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}</m>,
       où <m>\cC</m> est la frontière  du trapézoïde formé des sommets <m>(0,-2)</m>, <m>(1,-1)</m>, <m>(1,1)</m> et <m>(0,2)</m>, orientée en sens antihoraire.
       </p></statement>
 
@@ -263,7 +263,7 @@
       By Green's theorem,
       <md>
       <mrow>
-      &amp;\oint_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
+      &amp;\int_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in=\iint_\cT\left\{\pdiff{}{x}(x^2y\cos y^2+3x)
       -\pdiff{}{y} (x\sin y^2 -y^2)\right\}\,\dee{x}\,\dee{y}
@@ -280,7 +280,7 @@
       trapezoid, which is its width (1) times the average of its heights
       <m>(\half[2+4])=3</m>. So
       <md><mrow>
-      \oint_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
+      \int_\cC (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
                      =3\times 1\times 3 = 9
       </mrow></md>
       </p></solution>
@@ -291,7 +291,7 @@
       <statement><p>
       Évaluer
       <m> I=
-      \oint_{\cC} \Big(\tfrac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
+      \int_{\cC} \Big(\tfrac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
       +\left(xy^4+x^3y^2\right)\,\dee{y}
       </m>
       en sens antihoraire sur la frontière du demi-disque <m>0\leqslant y\leqslant \sqrt{4-x^2}</m>.
@@ -312,7 +312,7 @@
       denote the half-disk <m>0\leqslant y\leqslant \sqrt{4-x^2}</m>,
       <md>
       <mrow>
-      &amp;\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
+      &amp;\ds\int_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
       +\left(xy^4+x^3y^2\right)\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in
@@ -327,7 +327,7 @@
       Switching to polar coordinates
       <md>
       <mrow>
-      \ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
+      \ds\int_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
       +\left(xy^4+x^3y^2\right)\,\dee{y}
       &amp;=\int_0^2 dr\ r\int_0^{\pi}\dee{\theta}\ r^4
       ={\pi\frac{r^6}{6}\bigg|}_0^2
@@ -392,7 +392,7 @@
       Soit <m>\cC</m> le rectangle orienté en sens antihoraire
       formé par les sommets <m>(1,0)</m>, <m>(3,0)</m>, <m>(3,1)</m> et <m>(1,1)</m>. Évaluer
       <md><mrow>
-      \oint_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}.
+      \int_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}.
       </mrow></md>
       </p></statement>
 
@@ -418,7 +418,7 @@
       So Green's theorem gives
       <md>
       <mrow>
-      &amp;\oint_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}
+      &amp;\int_\cC\left(3y^2+2xe^{y^2}\right)\,\dee{x} + \left(2yx^2 e^{y^2}\right)\,\dee{y}
       </mrow><mrow>
       &amp;\hskip1in=\iint_\cR \Big[
             \pdiff{}{x}\left(2yx^2 e^{y^2}\right)
@@ -530,7 +530,7 @@
       theorem
       <md>
       <mrow>
-      \frac{1}{2\pi}\oint_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      \frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       &amp;=\frac{1}{2\pi}\iint_\cR\left[
          \pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
        -\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}
@@ -569,7 +569,7 @@
       are well-defined and equal everywhere in <m>\cR</m>. So by Green's theorem
       <md>
       <mrow>
-      \frac{1}{2\pi}\oint_{\partial \cR} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      \frac{1}{2\pi}\int_{\partial \cR} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       &amp;=\frac{1}{2\pi}\iint_\cR\left[
          \pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
        -\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}
@@ -580,13 +580,13 @@
       Consequently
       <md>
       <mrow>
-      0 &amp;= \frac{1}{2\pi}\oint_{\partial \cR} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-      = \frac{1}{2\pi}\oint_{\cC_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-      + \frac{1}{2\pi}\oint_{-\cC_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      0 &amp;= \frac{1}{2\pi}\int_{\partial \cR} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      = \frac{1}{2\pi}\int_{\cC_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      + \frac{1}{2\pi}\int_{-\cC_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
 
       </mrow><mrow>
-      &amp;=\frac{1}{2\pi}\oint_{\cC_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-      - \frac{1}{2\pi}\oint_{\cC_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      &amp;=\frac{1}{2\pi}\int_{\cC_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+      - \frac{1}{2\pi}\int_{\cC_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
       </mrow>
       </md>
       and we conclude that the answers to parts (a) and (b) should be
@@ -607,7 +607,7 @@
       <li>
           Déterminer la valeur de
           <md><mrow>
-               \oint_\cC xy\, \dee{x} + (e^y + x^2 ) \dee{y}
+               \int_\cC xy\, \dee{x} + (e^y + x^2 ) \dee{y}
            </mrow></md>.
       </li>
       </ol>
@@ -651,7 +651,7 @@
       By Green's theorem (Theorem <xref ref="thm_Green_tgt"/>)
       <md>
       <mrow>
-      \oint_\cC xy\, \dee{x} + (e^y + x^2 ) \dee{y}
+      \int_\cC xy\, \dee{x} + (e^y + x^2 ) \dee{y}
       &amp;=\iint_\cR \left\{
         \tfrac{\partial }{\partial x}(e^y+x^2)
         -\tfrac{\partial }{\partial y}(xy)
@@ -1845,7 +1845,7 @@
       <statement><p>
       Utiliser le théorème de Green afin d'établir que si <m>\cC</m> est une courbe fermée simple dans le plan, alors l'aire <m>A</m> de la région délimitée par <m>\cC</m> est donnée par
       <md><mrow>
-      A=\frac{1}{2}\oint_\cC x\,\dee{y}-y\,\dee{x}.
+      A=\frac{1}{2}\int_\cC x\,\dee{y}-y\,\dee{x}.
       </mrow></md>
       Utiliser ceci pour calculer l'aire à l'intérieur de la courbe
       <m>x^{2/3}+y^{2/3}=1</m>.
@@ -1860,7 +1860,7 @@
       Theorem <xref ref="thm_Green_tgt"/>,
       <md>
       <mrow>
-      \frac{1}{2}\oint_\cC x\,\dee{y}-y\,\dee{x}
+      \frac{1}{2}\int_\cC x\,\dee{y}-y\,\dee{x}
       &amp;=\frac{1}{2}\iint_\cR\Big(\pdiff{}{x}x
       -\pdiff{}{y}(-y)\Big)\ \dee{x}\dee{y}
       =\frac{1}{2}\iint_\cR 2\ \dee{x}\dee{y}
@@ -1873,7 +1873,7 @@
       <m>0\le\theta\leqslant 2\pi</m>. Then
       <md>
       <mrow>
-      A&amp;=\frac{1}{2}\oint_\cC x\,\dee{y}-y\,\dee{x}
+      A&amp;=\frac{1}{2}\int_\cC x\,\dee{y}-y\,\dee{x}
       </mrow><mrow>
       &amp;=\frac{1}{2}\int_0^{2\pi}\left( x(\theta)y'(\theta)-y(\theta)x'(\theta)\right)\ \dee{\theta}
       </mrow><mrow>
@@ -1951,10 +1951,10 @@
                     -\tfrac{xy^2}{ {(x^2+y^2)}^2}\vj</m>, <m>(x,y)\ne (0,0)</m>.
       <ol marker = "(a)">
       <li>
-      Calculer <m>\oint_\cC\vF\cdot \dee{\vr}</m>, où <m>\cC</m> est le cercle unitaire   dans le plan <m>xy</m>, orienté positivement.
+      Calculer <m>\int_\cC\vF\cdot \dee{\vr}</m>, où <m>\cC</m> est le cercle unitaire   dans le plan <m>xy</m>, orienté positivement.
       </li>
       <li>
-      Utiliser (a) et le théorème de Green pour trouver <m>\oint_{\cC_0}\vF\cdot \dee{\vr}</m>,
+      Utiliser (a) et le théorème de Green pour trouver <m>\int_{\cC_0}\vF\cdot \dee{\vr}</m>,
       où <m>\cC_0</m> est l'ellipse <m>\tfrac{x^2}{16}+\tfrac{y^2}{25}=1</m>, orientée positivement.
       </li>
       </ol>
@@ -1980,7 +1980,7 @@
       \vF\left(\vr(\theta)\right)\cdot \diff{\vr}{\theta}(\theta)
       &amp;=-\sin^4\theta-\cos^2\theta\sin^2\theta=-\sin^2\theta
       </mrow><mrow>
-      \oint_\cC\vF\cdot \dee{\vr}
+      \int_\cC\vF\cdot \dee{\vr}
       &amp;=\int_0^{2\pi}\vF\left(\vr(\theta)\right)\cdot \diff{\vr}{\theta}(\theta)\ \dee{\theta}
       =-\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
       </mrow><mrow>
@@ -2000,7 +2000,7 @@
       It is sketched below. By Green's theorem
       <md>
       <mrow>
-      \oint_{\cC_0}\vF\cdot \dee{\vr}-\oint_\cC\vF\cdot \dee{\vr}
+      \int_{\cC_0}\vF\cdot \dee{\vr}-\int_\cC\vF\cdot \dee{\vr}
       =\iint_\cW \Big[\pdiff{}{x}\vF_2
       -\pdiff{}{y}\vF_1\Big]\,\dee{x}\dee{y}
       </mrow>
@@ -2023,9 +2023,9 @@
       </md>
       Consequently
       <md><mrow>
-      \oint_{\cC_0}\vF\cdot \dee{\vr}-\oint_\cC\vF\cdot \dee{\vr}=0
+      \int_{\cC_0}\vF\cdot \dee{\vr}-\int_\cC\vF\cdot \dee{\vr}=0
       \implies
-      \oint_{\cC_0}\vF\cdot \dee{\vr}=\oint_\cC\vF\cdot \dee{\vr}=-\pi
+      \int_{\cC_0}\vF\cdot \dee{\vr}=\int_\cC\vF\cdot \dee{\vr}=-\pi
       </mrow></md>
       </p>
 
@@ -2042,7 +2042,7 @@
       Soit <m>\cC_1</m> le cercle <m>(x-2)^2+y^2=1</m> et soit <m>\cC_2</m> le
       cercle <m>(x-2)^2+y^2=9</m>. Soit
       <m>\vF=-\tfrac{y}{x^2+y^2}\,\vi+\tfrac{x}{x^2+y^2}\,\vj</m>. Trouver les intégrales
-      <m>\oint_{\cC_1}\vF\cdot \dee{\vr}</m> et <m>\oint_{\cC_2}\vF\cdot \dee{\vr}</m>.
+      <m>\int_{\cC_1}\vF\cdot \dee{\vr}</m> et <m>\int_{\cC_2}\vF\cdot \dee{\vr}</m>.
       </p></statement>
 
       <hint><p>
@@ -2050,7 +2050,7 @@
       </p></hint>
 
       <answer><p>
-      <m>\oint_{\cC_1}\vF\cdot \dee{\vr}=0</m> et <m>\oint_{\cC_2}\vF\cdot \dee{\vr}=2\pi</m>
+      <m>\int_{\cC_1}\vF\cdot \dee{\vr}=0</m> et <m>\int_{\cC_2}\vF\cdot \dee{\vr}=2\pi</m>
       </p></answer>
 
       <solution><p>
@@ -2068,11 +2068,11 @@
       </md>
       except at <m>(0,0)</m>, where <m>\vF</m> is not defined. Hence by Green's theorem
       (Theorem <xref ref="thm_Green_tgt"/>),
-      <m>\oint_{\cC}\vF\cdot \dee{\vr}=0</m> for any closed curve that does not contain
+      <m>\int_{\cC}\vF\cdot \dee{\vr}=0</m> for any closed curve that does not contain
       <m>(0,0)</m> in its interior.
-      In particular, <m>\oint_{\cC_1}\vF\cdot \dee{\vr}=0</m>. On the other hand,
+      In particular, <m>\int_{\cC_1}\vF\cdot \dee{\vr}=0</m>. On the other hand,
       <m>(0,0)</m> is contained in the interior of <m>\cC_2</m>, so we cannot use
-      Green's theorem to conclude that <m>\oint_{\cC_2}\vF\cdot \dee{\vr}=0</m>.
+      Green's theorem to conclude that <m>\int_{\cC_2}\vF\cdot \dee{\vr}=0</m>.
       </p>
 
       <p>Let <m>\cC_3</m> be the circle of radius one centred on <m>(0,0)</m> and
@@ -2088,14 +2088,14 @@
       By Green's theorem (Theorem <xref ref="thm_Green_tgt"/>),
       <md>
       <mrow>
-      \oint_{\cC_2}\vF\cdot \dee{\vr}-\oint_{\cC_3}\vF\cdot \dee{\vr}
+      \int_{\cC_2}\vF\cdot \dee{\vr}-\int_{\cC_3}\vF\cdot \dee{\vr}
       =\iint_\cW \Big[\pdiff{}{x}\vF_2
       -\pdiff{}{y}\vF_1\Big]\,\dee{x}\dee{y}
       =0
       </mrow>
       </md>
       So
-      <m>\oint_{\cC_2}\vF\cdot \dee{\vr}=\oint_{\cC_3}\vF\cdot \dee{\vr}</m>. Parameterize
+      <m>\int_{\cC_2}\vF\cdot \dee{\vr}=\int_{\cC_3}\vF\cdot \dee{\vr}</m>. Parameterize
       <m>\cC_3</m> by <m>x=\cos\theta</m>, <m>y=\sin\theta</m>. Then
       <md>
       <mrow>
@@ -2111,8 +2111,8 @@
       </md>
       so that
       <md><mrow>
-      \oint_{\cC_2}\vF\cdot \dee{\vr}
-      =\oint_{\cC_3}\vF\cdot \dee{\vr}
+      \int_{\cC_2}\vF\cdot \dee{\vr}
+      =\int_{\cC_3}\vF\cdot \dee{\vr}
       =\int_0^{2\pi} \dee{\theta}\ 1
       =2\pi
       </mrow></md>
@@ -2216,7 +2216,7 @@
       </li>
       <li>
       <p>
-      Évaluer <m>\oint_\cC \vF \cdot \dee{\vr}</m>, où
+      Évaluer <m>\int_\cC \vF \cdot \dee{\vr}</m>, où
       <ol marker="(i)">
       <li>
        <m>\vF = x^2\,\vi + y^2\,\vj + 3 e^z\,\vk</m>,
@@ -2280,7 +2280,7 @@
 
       <p> (b) (i) The vector field <m>\vF= x^2\,\vi + y^2\,\vj + 3 e^z\,\vk</m>
       is conservative (with potential <m>\frac{1}{3}x^3 +\frac{1}{3}y^3 + 3e^z</m>).
-      So <m>\oint_\cC\vF\cdot\dee{\vr}=0</m>.
+      So <m>\int_\cC\vF\cdot\dee{\vr}=0</m>.
       </p>
 
       <p> (b) (ii) Note that the question did not specify the orientation
@@ -2288,7 +2288,7 @@
       counterclockwise when viewed from high on the <m>z</m>-axis.
       The vector field <m>\vG= 3 e^z\,\vk</m>
       is conservative (with potential <m>3e^z</m>).
-      So <m>\oint_\cC\vG\cdot\dee{\vr}=0</m> and, using the parametrization
+      So <m>\int_\cC\vG\cdot\dee{\vr}=0</m> and, using the parametrization
       <md>
       <mrow>
       \vr(\theta) &amp;= \Big[\frac{1}{2}\!+\!\frac{1}{\sqrt{2}}\cos\theta\Big]\vi
@@ -2305,8 +2305,8 @@
       of part (a), we have
       <md>
       <mrow>
-      &amp;\oint_\cC\vF\cdot\dee{\vr}
-      = \oint_\cC(\vF-\vG)\cdot\dee{\vr}
+      &amp;\int_\cC\vF\cdot\dee{\vr}
+      = \int_\cC(\vF-\vG)\cdot\dee{\vr}
       </mrow><mrow>
       &amp;\hskip0.25in= \int_0^{2\pi} \big[y(\theta)^2x'(\theta) +x(\theta)^2y'(\theta)\big]
                  \dee{\theta}
@@ -2323,7 +2323,7 @@
       in the  text),
       <md>
       <mrow>
-      \oint_c\vF\cdot\dee{\vr}
+      \int_c\vF\cdot\dee{\vr}
       &amp;= \int_0^{2\pi} \Big\{-\frac{1}{2} \sin^2\theta
                              +\frac{1}{2} \cos^2\theta\Big\}
                  \dee{\theta}
@@ -2462,7 +2462,7 @@
       <p>
       Utiliser le théorème de Green pour montrer que
       <md><mrow>
-      \iint_{\cR}\vnabla\cdot\vF\ \dee{x}\,\dee{y}=\oint_{\cC}\vF\cdot\vn\,\dee{s},
+      \iint_{\cR}\vnabla\cdot\vF\ \dee{x}\,\dee{y}=\int_{\cC}\vF\cdot\vn\,\dee{s},
       </mrow></md>
       où <m>\vF=F_1\,\vi+F_2\,\vj</m>, <m>\vn</m> est la normale unitaire extérieure à <m>\cC</m> et <m>s</m>
       est la longueur d'arc le long de <m>\cC</m>.
@@ -2528,11 +2528,11 @@
         Donc, par le théorème de Green,
         <md>
         <mrow>
-        \oint_\cC\vF\cdot\vn\,\dee{s}
-        &amp;=\oint_\cC\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
+        \int_\cC\vF\cdot\vn\,\dee{s}
+        &amp;=\int_\cC\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
         </mrow>
         <mrow>
-        \amp =\oint_\cC\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
+        \amp =\int_\cC\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
         </mrow>
         <mrow>
         \amp=\iint_\cR\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
@@ -2578,9 +2578,9 @@
         Donc, par le théorème de Green,
         <md>
         <mrow>
-        \oint_\cC\vF\cdot\vn\,\dee{s}
-        &amp;=\oint_\cC\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
-        =\oint_\cC\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
+        \int_\cC\vF\cdot\vn\,\dee{s}
+        &amp;=\int_\cC\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
+        =\int_\cC\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
         </mrow><mrow>
         &amp;=\iint_\cR\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
         </mrow><mrow>

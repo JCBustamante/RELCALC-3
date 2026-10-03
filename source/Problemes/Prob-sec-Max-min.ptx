@@ -144,7 +144,7 @@
     </exercise>
     <!-- No 3 -->
     <!-- 2 -->
-    <exercise> <!-- <title><fromexam>M200 2005D</fromexam></title> -->
+    <exercise xml:id="max-min-courbes-selle"> <!-- <title><fromexam>M200 2005D</fromexam></title> -->
       <statement><p>
       Soit <m>z = f(x,y) = {(y^2 - x^2)}^2</m>.
       <ol marker = "(a)">
@@ -266,7 +266,7 @@
 
     <!-- No 5 -->
     <!-- 3 -->
-    <exercise> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
+    <exercise xml:id="max-min-constante-c"> <!-- <title><fromexam>M200 2006A</fromexam></title> -->
       <statement><p>
       Utilisez le test de la dérivée seconde pour trouver toutes les valeurs de la constante <m>c</m>
       pour lesquelles la fonction <m>z = x^2 + cxy + y^2</m> admet un point de selle en <m>(0,0)</m>.
@@ -840,6 +840,48 @@
         </p></solution>
       </exercise>
 
+    <!-- Tiré des notes de Mat194 de J. Dubois (question d'examen) -->
+    <exercise xml:id="max-min-quartique">
+      <statement><p>
+      Soit la fonction <m>f(x,y) = x^4 + y^4 - 4xy + 1</m>.
+      <ol marker = "(a)">
+      <li>
+      Montrez que <m>f</m> admet trois points critiques et déterminez-les.
+      </li>
+      <li>
+      Pour chacun de ces points critiques, dites s'il s'agit d'un maximum local, d'un minimum local ou d'un point de selle. Justifiez.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>(0,0)</m>, <m>(1,1)</m> et <m>(-1,-1)</m>.
+      </p><p>
+      (b) <m>(0,0)</m> est un point de selle; <m>(1,1)</m> et <m>(-1,-1)</m> sont des minimums locaux, où <m>f=-1</m>.
+      </p></answer>
+
+      <solution><p>
+      (a) Les dérivées partielles sont
+      <md><mrow>
+      f_x = 4x^3 - 4y \qquad f_y = 4y^3 - 4x
+      </mrow></md>
+      La première s'annule si et seulement si <m>y = x^3</m>. En substituant dans la seconde, on obtient <m>x = y^3 = x^9</m>, c'est-à-dire <m>x(x^8-1) = 0</m>, donc <m>x \in \{0, 1, -1\}</m>. Puisque <m>y=x^3</m>, les points critiques sont <m>(0,0)</m>, <m>(1,1)</m> et <m>(-1,-1)</m>.
+      </p>
+
+      <p>(b) Les dérivées secondes sont
+      <md><mrow>
+      f_{xx} = 12x^2 \qquad f_{xy} = -4 \qquad f_{yy} = 12y^2
+      </mrow></md>
+      donc <m>D = f_{xx}f_{yy} - f_{xy}^2 = 144x^2y^2 - 16</m>.
+      </p>
+      <p>
+      <ul>
+      <li>En <m>(0,0)</m> : <m>D = -16 \lt 0</m>, c'est un point de selle.</li>
+      <li>En <m>(1,1)</m> et en <m>(-1,-1)</m> : <m>D = 128 \gt 0</m> et <m>f_{xx} = 12 \gt 0</m>, ce sont des minimums locaux. On a <m>f(1,1) = f(-1,-1) = -1</m>.</li>
+      </ul>
+      </p></solution>
+    </exercise>
+
   </exercisegroup>
 
   <exercisegroup>
@@ -1213,7 +1255,7 @@
 
     <!-- No 21 -->
     <!-- 13 -->
-    <exercise> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
+    <exercise xml:id="max-min-classifier"> <!-- <title><fromexam>M200 2004A</fromexam></title> -->
         <statement><p>
         Considérez la fonction
         <md><mrow>
@@ -1360,7 +1402,7 @@
 
     <!-- No 25 -->
     <!-- 14 -->
-    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+    <exercise xml:id="max-min-plaque"> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
         <statement><p>
         Une plaque en métal est en forme de demi-disque borné par l'axe <m>x</m> et la moitié supérieure de <m>x^2+y^2=4</m>. La température au
         point <m>(x,y)</m> est donnée par <m>T(x,y)=\ln\left(1+x^2+y^2\right)-y</m>. Trouvez le point le plus froid sur la plaque, en expliquant vos étapes soigneusement. (Note:
@@ -1675,7 +1717,7 @@
 
     <!-- No 34 -->
     <!-- 17 -->
-    <exercise> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
+    <exercise xml:id="max-min-inegalite"> <!-- <title><fromexam>M200 2002A</fromexam></title> -->
         <statement><p>
         <ol marker = "(a)">
         <li>
@@ -1753,6 +1795,62 @@
         pour tout <m>x,y \gt 0</m>.
         </p></solution>
       </exercise>
+
+    <!-- Tiré des notes de Mat194 de J. Dubois -->
+    <exercise xml:id="max-min-parametres">
+      <statement><p>
+      Soient <m>a</m> et <m>b</m> deux nombres réels non nuls. On considère la fonction
+      <md><mrow>
+      \varphi(x,y) = (2ax - x^2)(2by - y^2).
+      </mrow></md>
+      <ol marker = "(a)">
+      <li>
+      Vérifiez que <m>(0,0)</m> est un point critique de <m>\varphi</m>, quelles que soient les valeurs de <m>a</m> et <m>b</m>.
+      </li>
+      <li>
+      Montrez que <m>\varphi</m> admet quatre autres points critiques (qui dépendent de <m>a</m> et de <m>b</m>) et déterminez-les.
+      </li>
+      <li>
+      Donnez la nature de chacun des cinq points critiques de <m>\varphi</m>.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      (a) <m>\varphi_x(0,0) = \varphi_y(0,0) = 0</m>.
+      </p><p>
+      (b) <m>(2a,0)</m>, <m>(0,2b)</m>, <m>(2a,2b)</m> et <m>(a,b)</m>.
+      </p><p>
+      (c) <m>(a,b)</m> est un maximum local, où <m>\varphi = a^2b^2</m>; les quatre autres points sont des points de selle.
+      </p></answer>
+
+      <solution><p>
+      (a) Les dérivées partielles sont
+      <md><mrow>
+      \varphi_x = 2(a - x)(2by - y^2) \qquad \varphi_y = 2(2ax - x^2)(b - y)
+      </mrow></md>
+      En <m>(0,0)</m>, on a <m>2by - y^2 = 0</m> et <m>2ax - x^2 = 0</m>, donc <m>\varphi_x(0,0) = \varphi_y(0,0) = 0</m>.
+      </p>
+
+      <p>(b) On a <m>\varphi_x = 0</m> si et seulement si <m>x = a</m> ou <m>y \in \{0, 2b\}</m>.
+      <ul>
+      <li>Si <m>x = a</m>, alors <m>2ax - x^2 = a^2 \neq 0</m>, et <m>\varphi_y = 0</m> force <m>y = b</m>. On obtient le point <m>(a,b)</m>.</li>
+      <li>Si <m>y \in \{0, 2b\}</m>, alors <m>y \neq b</m> (car <m>b \neq 0</m>), et <m>\varphi_y = 0</m> force <m>2ax - x^2 = 0</m>, c'est-à-dire <m>x \in \{0, 2a\}</m>. On obtient les points <m>(0,0)</m>, <m>(2a,0)</m>, <m>(0,2b)</m> et <m>(2a,2b)</m>.</li>
+      </ul>
+      </p>
+
+      <p>(c) Les dérivées secondes sont
+      <md><mrow>
+      \varphi_{xx} = -2(2by - y^2) \qquad \varphi_{xy} = 4(a-x)(b-y) \qquad \varphi_{yy} = -2(2ax - x^2)
+      </mrow></md>
+      </p>
+      <p>
+      <ul>
+      <li>En <m>(a,b)</m> : <m>\varphi_{xx} = -2b^2</m>, <m>\varphi_{yy} = -2a^2</m> et <m>\varphi_{xy} = 0</m>. Donc <m>D = 4a^2b^2 \gt 0</m> et <m>\varphi_{xx} \lt 0</m> : c'est un maximum local, où <m>\varphi(a,b) = a^2b^2</m>.</li>
+      <li>Aux quatre autres points, <m>2ax - x^2 = 0</m> et <m>2by - y^2 = 0</m>, donc <m>\varphi_{xx} = \varphi_{yy} = 0</m>, alors que <m>\varphi_{xy} = 4(\pm a)(\pm b) \neq 0</m>. Donc <m>D = -\varphi_{xy}^2 \lt 0</m> : ce sont des points de selle.</li>
+      </ul>
+      </p></solution>
+    </exercise>
 
   </exercisegroup>
 

@@ -146,6 +146,53 @@
     <xsl:text>%% no half-title&#xa;</xsl:text>
 </xsl:template> -->
 
+<!-- Faux-titre : copie du gabarit "half-title-ad-card" de PreTeXt 2.52.3,  -->
+<!-- avec la mention d'édition (tirée de <edition> du colophon) ajoutée    -->
+<!-- sous le sous-titre. À revérifier lors d'une mise à jour de PreTeXt.   -->
+<xsl:template match="book" mode="half-title-ad-card" >
+    <xsl:text>%% begin: half-title&#xa;</xsl:text>
+    <xsl:text>\thispagestyle{empty}&#xa;</xsl:text>
+    <xsl:text>{\titlepagefont\centering&#xa;</xsl:text>
+    <xsl:text>\vspace*{0.28\textheight}&#xa;</xsl:text>
+    <xsl:text>{\Huge </xsl:text>
+    <xsl:apply-templates select="." mode="title-full"/>
+    <xsl:text>}\\</xsl:text>
+    <xsl:if test="subtitle">
+        <xsl:text>[2\baselineskip]&#xa;</xsl:text>
+        <xsl:text>{\LARGE </xsl:text>
+        <xsl:apply-templates select="." mode="subtitle"/>
+        <xsl:text>}\\&#xa;</xsl:text>
+    </xsl:if>
+    <xsl:if test="$bibinfo/edition">
+        <xsl:text>[2\baselineskip]&#xa;</xsl:text>
+        <xsl:text>{\Large </xsl:text>
+        <xsl:apply-templates select="$bibinfo/edition"/>
+        <xsl:text> édition}\\&#xa;</xsl:text>
+    </xsl:if>
+    <xsl:text>}&#xa;</xsl:text>
+    <xsl:text>\clearpage&#xa;</xsl:text>
+    <xsl:text>%% end:   half-title&#xa;</xsl:text>
+    <xsl:variable name="the-ad-card">
+        <xsl:apply-templates select="." mode="ad-card"/>
+    </xsl:variable>
+    <xsl:choose>
+        <xsl:when test="not($the-ad-card = '')">
+            <xsl:text>%% begin: adcard&#xa;</xsl:text>
+            <xsl:value-of select="$the-ad-card"/>
+            <xsl:text>\clearpage&#xa;</xsl:text>
+            <xsl:text>%% end:   adcard&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:when test="($b-latex-two-sides) or ($latex-open-odd = 'add-blanks')">
+            <xsl:text>%% begin: adcard (empty)&#xa;</xsl:text>
+            <xsl:text>\thispagestyle{empty}&#xa;</xsl:text>
+            <xsl:text>\null%&#xa;</xsl:text>
+            <xsl:text>\clearpage&#xa;</xsl:text>
+            <xsl:text>%% end:   adcard (empty)&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise/>
+    </xsl:choose>
+</xsl:template>
+
 <!-- Remove Ad card (may contain list of other books        -->
 <!-- Or may be overridden to make title page spread -->
 <!-- Obverse of half-title                          -->

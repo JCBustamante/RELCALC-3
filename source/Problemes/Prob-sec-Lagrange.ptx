@@ -15,7 +15,7 @@
     <title>Pour se pratiquer</title>
 
     <!-- 1 -->
-    <exercise>
+    <exercise xml:id="lagrange-pratique">
       <!-- Ces exercices ont été traduits/adaptés par ChatGP à partir de OpenStax p. 469-->
       <statement>
         <p>Utilisez la méthode des multiplicateurs de Lagrange pour trouver les valeurs maximales et minimales des fonctions suivantes, sous les contraintes données :</p>
@@ -109,7 +109,7 @@
 
     <!-- No 3 -->
     <!-- 3 -->
-    <exercise>
+    <exercise xml:id="lagrange-sphere">
     <statement><p>
     Trouvez les valeurs maximales et minimales de la fonction
     <m>f(x,y,z)=x+y-z</m> sur la sphère <m>x^2+y^2+z^2=1</m>.
@@ -898,6 +898,52 @@
     <p>Le point le plus froid est donc <m>(0,0)</m>.
     </p></solution>
     </exercise>
+
+    <!-- Tiré des notes de Mat194 de J. Dubois -->
+    <exercise xml:id="lagrange-distance-plan">
+      <statement><p>
+      Déterminez la distance du plan <m>x + 2y + 2z = 3</m> à l'origine
+      <ol marker = "(a)">
+      <li>
+      à l'aide d'un argument géométrique;
+      </li>
+      <li>
+      en ramenant le problème à un problème d'optimisation à deux variables;
+      </li>
+      <li>
+      à l'aide de la méthode des multiplicateurs de Lagrange.
+      </li>
+      </ol>
+      </p></statement>
+
+      <answer><p>
+      La distance est <m>1</m>, atteinte au point <m>\left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right)</m>.
+      </p></answer>
+
+      <solution><p>
+      (a) Le point du plan le plus proche de l'origine est sur la droite qui passe par l'origine et qui est dirigée par le vecteur normal <m>\vn = \llt 1,2,2\rgt</m>. Les points de cette droite sont de la forme <m>t\llt 1,2,2\rgt</m>, et un tel point est dans le plan lorsque <m>t + 4t + 4t = 3</m>, c'est-à-dire <m>t = \frac{1}{3}</m>. Le point le plus proche est donc <m>\left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right)</m>, et la distance est <m>\frac{1}{3}|\vn| = \frac{1}{3}\cdot 3 = 1</m>.
+      </p>
+
+      <p>(b) Il suffit de minimiser le carré de la distance. Sur le plan, <m>x = 3 - 2y - 2z</m>, donc on cherche le minimum de
+      <md><mrow>
+      g(y,z) = (3 - 2y - 2z)^2 + y^2 + z^2.
+      </mrow></md>
+      On a
+      <md><mrow>
+      g_y = -4(3 - 2y - 2z) + 2y = 0 \qquad g_z = -4(3 - 2y - 2z) + 2z = 0
+      </mrow></md>
+      En soustrayant, on obtient <m>y = z</m>, puis <m>-4(3 - 4y) + 2y = 0</m>, donc <m>y = z = \frac{2}{3}</m> et <m>x = 3 - \frac{8}{3} = \frac{1}{3}</m>.
+      De plus, <m>g_{yy} = g_{zz} = 10</m> et <m>g_{yz} = 8</m>, donc <m>D = 100 - 64 = 36 \gt 0</m> et <m>g_{yy} \gt 0</m> : c'est un minimum local. Comme <m>g</m> tend vers <m>+\infty</m> lorsque <m>|(y,z)| \to \infty</m> et que c'est son seul point critique, c'est le minimum global. On a <m>g\left(\frac{2}{3},\frac{2}{3}\right) = \frac{1}{9} + \frac{4}{9} + \frac{4}{9} = 1</m>, et la distance est <m>\sqrt{1} = 1</m>.
+      </p>
+
+      <p>(c) On minimise <m>f(x,y,z) = x^2 + y^2 + z^2</m> sous la contrainte <m>g(x,y,z) = x + 2y + 2z = 3</m>. Les équations <m>\vnabla f = \lambda \vnabla g</m> s'écrivent
+      <md><mrow>
+      2x = \lambda \qquad 2y = 2\lambda \qquad 2z = 2\lambda
+      </mrow></md>
+      donc <m>x = \frac{\lambda}{2}</m> et <m>y = z = \lambda</m>. La contrainte donne <m>\frac{\lambda}{2} + 4\lambda = 3</m>, donc <m>\lambda = \frac{2}{3}</m> et le point est <m>\left(\frac{1}{3}, \frac{2}{3}, \frac{2}{3}\right)</m>. Comme <m>f</m> tend vers <m>+\infty</m> lorsqu'on s'éloigne sur le plan, son minimum sur le plan existe, et c'est ce point. La distance est <m>\sqrt{f} = \sqrt{1} = 1</m>.
+      </p></solution>
+    </exercise>
+
   </exercisegroup>
 
   <exercisegroup>

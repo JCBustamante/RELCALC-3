@@ -5,7 +5,7 @@
 <!-- Traduit et adapté par JC Bustamante et Gabriel Dupuis, août 2021 -->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<exercises>
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
   <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
 
@@ -420,30 +420,12 @@
           <p>
           La figure ci-contre montre la région dans le premier octant limitée par les plans <m>x=0, y=0, z=0, y+z=2</m> et le cylindre parabolique <m>x=4-y^2</m>. Écrivez les intégrales triples dans les 6 ordres d'intégration possibles pour trouver le volume de cette région.
         </p>
-          <image xml:id="im-ex-triples" width="100%">
-          <sageplot variant="3d" aspect="1.5">
-            var('s,t')
-            Fig =  parametric_plot3d((1-s)*vector([0,t,0]) + s*vector([4-t^2,t,0]), (s,0,1), (t,0,2), color = "orange", opacity = 0.55)
-            Fig +=  parametric_plot3d((1-s)*vector([0,t,0]) + s*vector([4-t^2,t,0]) + vector([0,0,2-t]), (s,0,1), (t,0,2), color = "crimson", opacity = 0.25)
-            Fig += parametric_plot3d([4-t^2, t, s*(2-t)], (t,0,2), (s,0,1), color = "steelblue", opacity = 0.65)
-            Fig += parametric_plot3d([0,t,s*(2-t)], (t,0,2), (s,0,1), color = "grey", opacity = 0.65)
-            Fig += parametric_plot3d([s,0,t], (s,0,4), (t,0,2), color = "green", opacity = 0.25)
-
-            Fig += parametric_plot3d([4-t^2,t,0], (t,0,2), color = "darkblue", thickness= 2)
-            Fig += parametric_plot3d([4-t^2,t,2-t], (t,0,2), color = "darkblue", thickness= 2)
-            Fig += parametric_plot3d([0,t,2-t], (t,0,2), color = "darkblue", thickness= 2)
-            Fig += parametric_plot3d([t,0,2], (t,0,4), color = "darkblue", thickness= 2)
-            Fig += parametric_plot3d([4,0,t], (t,0,2), color = "darkblue", thickness= 2)
-
-
-            Fig += arrow3d((0,0,0),(4.2,0,0), width=0.75, color = "black",frame = False)
-            Fig += text3d("x", (4.4,0,0), color = "black",frame = False, fontsize = 26)
-            Fig += arrow3d((0,0,0),(0,2.2,0), width=0.75, color = "black",frame = False)
-            Fig += text3d("y", (0,2.4,0), color = "black",frame = False, fontsize = 26)
-            Fig += arrow3d((0,0,0),(0,0,2.2), width=0.75, color = "black",frame = False)
-            Fig += text3d("z", (0,0,2.4), color = "black", projection ="orthographic", fontsize = 26)
-            Fig
-          </sageplot>
+          <!-- Code Sage d'origine : notebooks/Chapitre-3.ipynb, exercice 5 de la section 3.4 -->
+          <image xml:id="asy-region-triple-exercice" width="100%">
+          <asymptote>
+<xi:include parse="text" href="../asy/commun-3d.asy"/>
+<xi:include parse="text" href="../asy/region-triple-exercice.asy"/>
+          </asymptote>
         </image>
         </sidebyside>
       </statement>

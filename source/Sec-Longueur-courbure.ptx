@@ -87,7 +87,8 @@ Par ailleurs,
 </md>
 Ainsi,
 <md>
-  \vT \cdot \vr = \dvect{a\cos \theta}{a \sin \theta}\cdot\dvect{-\sin \theta}{\cos \theta} = 0,
+  <mrow>\vT \cdot \vr \amp   = \dvect{a\cos \theta}{a \sin \theta}\cdot\dvect{-\sin \theta}{\cos \theta}  </mrow>
+  <mrow> \amp = 0</mrow>,
 </md>
 
 ce qui montre que, en tout point, la tangente à un cercle est perpendiculaire au rayon en ce point. Ceci est une réalisation en deux dimensions de l'<xref ref="Chem-norm-cste" text="global">exemple</xref>, un autre fait connu d'Euclide<fn>C'est la proposition 18 du livre III des <em>Éléments</em> d'Euclide, vers 300 av. J.-C.</fn>. Dans ce cas, <m>s(\theta) = \int_0^\theta a\, du = a\theta</m>
@@ -446,9 +447,9 @@ Ceci donne une décomposition de l'accélération en deux composantes orthogonal
           <sageplot>
       var('t')
       k(t) = 2*(1+4*t^2)^(-3/2)
-      C= parametric_plot([t,t^2], (t,-1.7,1.7), color="red", thickness=2,
+      C= parametric_plot([t,t^2], (t,-1.7,1.7), color="steelblue", thickness=2,
         axes_labels=['$x$', '$y$'], ticks=[[],[]], fontsize=8, figsize=3)
-      Cercles = [circle((-4*t^3, 3*t^2 +1/2), 1/k(t), fill=False, linestyle =
+      Cercles = [circle((-4*t^3, 3*t^2 +1/2), 1/k(t), fill=False, color="firebrick", linestyle =
         "dashed", xmin=-2, xmax=3, ymin=-0.7, ymax=4) for t in[-3/4, -1/2, 0]]
       C += sum(Cercles)
       C

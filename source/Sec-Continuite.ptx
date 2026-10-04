@@ -82,18 +82,10 @@ Si on lit attentivement ce qui précède, on remarque que toutes les notions imp
               C
              </sageplot>
             </image>
-            <image xml:id="sageplot-Limite-NE-Surface">
-              <sageplot variant="3d" aspect="1.0">
-              var('x,y,z')
-              f(x,y) = (x^2-y^2)/(x^2 + y^2)
-              cm = colormaps.Spectral
-              zmin, zmax = -1, 1
-              def c(x,y,z):
-                  return float((f(x,y)-zmin)/(zmax-zmin))
-              fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2&gt;0.00001, frame = False, plot_points = 70)
-              fig
-             </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.2.4 --><image xml:id="asy-limite-cos2t"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/limite-cos2t.asy"/>
+</asymptote></image>
             <!-- <image source = "images/Jupyter-sage/Limite-NE-surf.png"/> -->
           </sidebyside>
         </figure>
@@ -143,7 +135,7 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
     </p><p>
       À l'instar de l'<xref ref="ex-Lim-NE1" text="global">exemple</xref>, essayons plusieurs droites non verticales, d'équation <m>y=kx</m>. Nous avons, sur une telle droite,
       <md>
-        f(x,y) =f(x,kx) = \frac{x(kx)^2}{x^2 + (kx)^2} =\frac{m^2 x^3}{x^2 + k^4x^4} = \frac{k^2 x}{1+k^4 x^2}
+        f(x,y) =f(x,kx) = \frac{x(kx)^2}{x^2 + (kx)^4} =\frac{k^2 x^3}{x^2 + k^4x^4} = \frac{k^2 x}{1+k^4 x^2}
       </md>,
       ce qui donne que <m>f(x,y) \longrightarrow 0</m> lorsque <m>(x,y)\to (0,0) </m> le long de la droite <m>y=kx</m>. Nous avons donc une infinité de trajectoires le long desquelles la limite est nulle. Ceci ne suffit pourtant pas pour établir que la limite existe et est zéro.
     </p><p>
@@ -154,16 +146,10 @@ Le phénomène observé dans l'exemple précédent fournit un critère permettan
           C = contour_plot(f ,(-2,2), (-2,2), cmap = "Spectral", labels = True, label_colors="black", label_inline=True, label_fontsize=14,
           gridlines=True, label_fmt=lambda x: "$%s$"%round(x,2), axes_labels=["$x$","$y$"], tick_formatter = "latex", fontsize= 14)
           C
-         </sageplot></image><image xml:id="sageplot3d-Limite-NE2-surface"><sageplot variant="3d" aspect="1.0">
-          var('x,y,z')
-          f(x,y) = (x*y^2)/(x^2 + y^4)
-          cm = colormaps.Spectral
-          zmin, zmax = -0.5, 0.5
-          def c(x,y,z):
-              return float((f(x,y)-zmin)/(zmax-zmin))
-          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2&gt;0.00001, frame = False, plot_points = 90)
-          fig
-        </sageplot></image><!-- <image source = "images/Jupyter-sage/Limite-NE2.png"/> --></sidebyside></figure><p>
+         </sageplot></image><!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.2.7 --><image xml:id="asy-limite-parabole"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/limite-parabole.asy"/>
+</asymptote></image><!-- <image source = "images/Jupyter-sage/Limite-NE2.png"/> --></sidebyside></figure><p>
   À nouveau, on voit un problème à l'origine. Les courbes de niveau indiquent que, près de l'origine, on a des points sur des courbes de niveau de niveaux très différents. Ces courbes ont l'aspect de paraboles. Le long de la parabole <m>x = y^2</m>, on a
 <md>
   f(x,y) = f(y^2,y) = \frac{y^2 y^2}{y^4 + y^4} = \frac{1}{2}
@@ -201,18 +187,10 @@ Voyons maintenant un exemple d'une limite qui existe.
           C
          </sageplot>
             </image>
-            <image xml:id="sageplot-Limite-E1-surface">
-              <sageplot variant="3d" aspect="1.0">
-          var('x,y,z')
-          f(x,y)=(2*x^2*y)/(x^2+y^2)
-          cm = colormaps.Spectral
-          zmin, zmax = -1, 1
-          def c(x,y,z):
-              return float((f(x,y)-zmin)/(zmax-zmin))
-          fig = implicit_plot3d(z==f, (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),région=lambda x,y,z: x^2+y^2+z^2&gt;0.00001, frame = False, plot_points = 70)
-          fig
-         </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.2.9 --><image xml:id="asy-limite-continue"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/limite-continue.asy"/>
+</asymptote></image>
             <!-- <image source ="images/Jupyter-sage/Limite-E1-surf.png"/> -->
           </sidebyside>
         </figure>
@@ -448,18 +426,10 @@ Une technique utile pour l'étude de certaines limites est le passage aux coordo
                     C
                    </sageplot>
             </image>
-            <image xml:id="sageplot-Cont-compose-surf">
-              <sageplot variant="3d" aspect="1.0">
-                    var('x,y,z')
-                    f(x,y) = arctan((x+y)/(x-y))
-                    cm = colormaps.Spectral
-                    zmin, zmax = -1.6, 1.6
-                    def c(x,y,z):
-                        return float((f(x,y)-zmin)/(zmax-zmin))
-                    fig = implicit_plot3d(z==f(x,y), (x,-2,2), (y,-2,2), (z,zmin,zmax), color = (c,cm),region=lambda x,y,z:abs(x-y)^2&gt;=0.0015, plot_points = 100, projection = "orthographic")
-                    fig
-                  </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.2.24 --><image xml:id="asy-limite-arctan"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/limite-arctan.asy"/>
+</asymptote></image>
             <!-- <image source = "images/Jupyter-sage/Continuite-composition.png"/> -->
           </sidebyside>
         </figure>

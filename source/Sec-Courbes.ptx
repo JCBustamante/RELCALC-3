@@ -252,39 +252,18 @@ x=\cos(7-y)
 </p>
 </example>
 -->
-    <sidebyside widths="35% 10% 55%" valign="top">
-      <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  d'équation <m>z=x^2+2y^2</m> est la courbe montrée dans la figure ci-contre.
+    <sidebyside widths="50% 7% 43%" valign="top">
+      <p>Les courbes apparaissent souvent comme intersections de deux surfaces. Par exemple, l'intersection de l'ellipsoïde <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m> avec le paraboloïde  d'équation <m>z=x^2+2y^2</m> est la courbe montrée dans la <xref ref="fig-ellipsoide-paraboloide" text="global">figure</xref>. Nous verrons à l'<xref ref="eg_paramIntersectB" text="global">exemple</xref> comment en obtenir un paramétrage. 
       </p>
       <p></p>
-      <figure>
+      <figure xml:id="fig-ellipsoide-paraboloide">
       <caption>L'intersection de deux surfaces</caption>
-      <image xml:id="sageplot3d-ellipsoide-paraboloide">
-        <sageplot variant="3d" aspect="1.0">
-        var('x,y,z')
-
-        f(x,y,z) = x^2+y^2/2+z^2/3
-        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,3),texture ='orange',frame = False)
-
-        g(x,y) = x^2+2*y^2
-        paraboloide = implicit_plot3d(z==g,(x,-2,2),(y,-2,2),(z,0,2.5), opacity = 0.65, texture ='lightblue', frame = False)
-
-        h = solve([f==1 , z==g], x,y)
-        ep = 0.00000001
-        intersection = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 3,color='red')
-        intersection += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 3,color = 'red')
-        intersection += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3, color = 'red')
-        intersection += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 3,color='red')
-
-        S = ellipsoide + paraboloide + intersection
-
-        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
-        S += text3d("z", (0,0,3.1), color = "black", fontsize = 22)
-        S
-      </sageplot>
+      <!-- Code Sage d'origine : notebooks/Chapitre-1.ipynb, figure 1.5.9 -->
+      <image xml:id="asy-ellipsoide-paraboloide">
+        <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/ellipsoide-paraboloide.asy"/>
+        </asymptote>
       </image>
       </figure>
     </sidebyside>
@@ -295,7 +274,7 @@ x=\cos(7-y)
   Une façon de paramétrer de telles courbes est de choisir une des trois coordonnées <m>x</m>, <m>y</m>, <m>z</m> comme paramètre et de résoudre les équations donnant les surfaces pour les deux autres coordonnées en termes du paramètre. Voyons deux exemples.
   </p>
     <example xml:id="eg_paramIntersect">
-      <sidebyside widths="35% 10% 55%" valign="middle">
+      <sidebyside widths="50% 10% 40%" valign="middle">
         <p>
   L'ensemble des points  <m>(x,y,z)</m> vérifiant
   <md alignment="alignat"><mrow>
@@ -315,25 +294,12 @@ x=\cos(7-y)
         <p></p>
         <figure>
         <caption> Courbe paramétrée par   <m>\vr(y) = e^y\,\vi + y\,\vj + (e^y-e^{2y})\,\vk</m> </caption>
-        <image>
-          <sageplot variant="3d" aspect="1.0">
-        var('x,y,z')
-        f(x,y,z) = x^3-exp(3*y)
-        g(x,y,z) = x^2-exp(y)+z
-        h = solve ([f == 0,g == 0],x,z)
-        ellipsoide = implicit_plot3d(f,(x,-2,2),(y,-2,2),(z,-2,1),opacity = 0.65,texture ='orange',frame = False)
-        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,-2,1), opacity = 0.65, texture ='lightblue', frame = False)
-        S = parametric_plot3d((x.subs(h[2][0]),y,z.subs(h[2][1])), (y,-2,0.70), thickness = 3,color='red')
-        S += ellipsoide
-        S += paraboloide
-        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,0,1.2), color = "black", width = 0.5)
-        S += text3d("z", (0,0,1.3), color = "black", fontsize = 22)
-        S
-      </sageplot>
+        <!-- Code Sage d'origine : notebooks/Chapitre-1.ipynb, figure 1.5.11 -->
+        <image xml:id="asy-courbe-exp">
+          <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/courbe-exp.asy"/>
+          </asymptote>
         </image>
         </figure>
       </sidebyside>
@@ -356,7 +322,7 @@ x=\cos(7-y)
         L'exemple précédent était truqué de sorte que les équations étaient faciles à résoudre pour trouver <m>x</m> et <m>z</m> en fonction de  <m>y</m>. Dans la pratique, ce n'est pas toujours facile, il peut même être impossible de le faire. Voyons un exemple un peu plus réaliste. 
     </p>
     <example xml:id="eg_paramIntersectB">
-      <sidebyside widths="35% 10% 55%" valign="top">
+      <sidebyside widths="50% 7% 43%" valign="top">
         <p>
 Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
   <md alignment="alignat"><mrow>
@@ -364,7 +330,7 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
   </mrow><mrow>
    x^2+2y^2&amp;=z,
   </mrow></md>
-  qui est la courbe bleue dans la figure ci-haut. On remplace <m>x^2=z-2y^2</m> (de la seconde équation) dans la première, ce qui donne
+  qui est la courbe rouge de la <xref ref="fig-ellipsoide-paraboloide" text="global">figure</xref>. On remplace <m>x^2=z-2y^2</m> (de la seconde équation) dans la première, ce qui donne
   <md>
   -\frac{3}{2}y^2+z+\frac{z^2}{3}=1.
   </md>
@@ -372,30 +338,13 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
   </p>
         <p></p>
         <figure>
-        <caption>Quatre portions de la courbe donnés par les différents signes de <m>x</m> et <m>y</m></caption>
-        <image>
-          <sageplot variant="3d" aspect="1.0">
-        var('x,y,z')
-        f(x,y,z) = x^2+y^2/2+z^2/3
-        g(x,y,z) = x^2+2*y^2 - z
-        h = solve ([f == 1,g == 0],x,y)
-        ep = 0.0000001
-        ellipsoide = implicit_plot3d(f==1,(x,-2,2),(y,-2,2),(z,0,2),texture ='orange',frame = False)
-        paraboloide = implicit_plot3d(g,(x,-2,2),(y,-2,2),(z,0,2), opacity = 0.65, texture ='lightblue', frame = False)
-        S = parametric_plot3d((x.subs(h[0][0]), y.subs(h[0][1]), z  ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep), thickness = 5,color='red')
-        S += parametric_plot3d( ( x.subs(h[1][0]), y.subs(h[1][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep),thickness = 5,color = 'blue')
-        S += parametric_plot3d( ( x.subs(h[2][0]), y.subs(h[2][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 5, color = 'green')
-        S += parametric_plot3d( ( x.subs(h[3][0]), y.subs(h[3][1]), z ), (z,-3/2 + sqrt(21)/2 +ep,-3/8 + sqrt(201)/8-ep) ,thickness = 5,color='black')
-        S += ellipsoide
-        S += paraboloide
-        S += arrow3d((0,0,0),(1.6,0,0), color = "black", width= 0.5)
-        S += text3d("x", (1.7,0,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,1.6,0), color = "black",  width= 0.5)
-        S += text3d("y", (0,1.7,0), color = "black", fontsize = 22)
-        S += arrow3d((0,0,0),(0,0,3), color = "black", width = 0.5)
-        S += text3d("z", (0,0,3.1), color = "black", fontsize = 22)
-        S
-      </sageplot>
+        <caption>Quatre portions de la courbe données par les différents signes de <m>x</m> et <m>y</m></caption>
+        <!-- Code Sage d'origine : notebooks/Chapitre-1.ipynb, figure 1.5.13 -->
+        <image xml:id="asy-ellipsoide-paraboloide-portions">
+          <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/ellipsoide-paraboloide-portions.asy"/>
+          </asymptote>
         </image>
       </figure>
       </sidebyside>
@@ -417,52 +366,53 @@ Considérons l'ensemble des <m>(x,y,z)</m> vérifiant
       </p>
     </example>
     <example xml:id="Param-intersec">
-      <sidebyside widths="35% 15% 50%" valign="top">
-        <p> Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan  <m>z=1+y</m>.
-        </p>
+      <sidebyside widths="55% 5% 40%" valign="top">
+        <stack>
+          <p>
+            Trouver un paramétrage de la courbe intersection du cône <m>z^2 = x^2+ y^2</m> et du plan <m>z=1+y</m>.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Pour commencer, on peut élever au carré <m>z</m> de l'équation du plan et remplacer dans celle du cône, ce qui mène à
+                <md>
+                  <mrow>(1+y)^2 = x^2 + y^2</mrow>
+                  <mrow>\implies 1+2y= x^2.</mrow>
+                </md>
+                De là, on tire <m>x = \pm \sqrt{1+2y}</m>.
+                Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme paramètre pour obtenir
+                <md>
+                  \vr(t) = \sqrt{1+2t}\, \vi + t\, \vj + (1+t)\,\vk,
+                </md>
+                avec <m>t\geqslant -\tfrac{1}{2}</m>.
+              </p>
+            </li>
+          </ul>
+        </stack>
         <p></p>
         <figure xml:id="plan-cone">
         <caption>Le plan <m>z = 1+y</m> et le cône <m>z^2 = x^2+ y^2</m>
         </caption>
-        <image xml:id="sageplot3d-plan-cone">
+        <!-- Code Sage d'origine : notebooks/Chapitre-1.ipynb, figure 1.5.15 -->
+        <image xml:id="asy-plan-cone">
           <description><p>L'intersection d'un plan avec un cône</p></description>
-          <sageplot variant="3d" aspect="1.0">
-            var('u,v,r,t')
-            Fig = parametric_plot3d([u,v,1+v],(u,-2,2),(v,-1,1.6), mesh = True,
-              texture = "lightblue", frame = False)
-            Fig += parametric_plot3d([r*cos(t), r*sin(t),r], (r,0, 2),(t,0,2*pi), mesh = True, texture = "orange", opacity = 0.75)
-            Fig += parametric_plot3d([r,(r^2 - 1)/2,(r^2 + 1)/2], (r,-2,2),
-              color = "red", thickness = 5)
-            Fig
-      </sageplot>
+          <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/plan-cone.asy"/>
+          </asymptote>
         </image>
       </figure>
       </sidebyside>
+      <p>
+        Il faut noter qu'on a en réalité deux paramétrages, selon le signe choisi pour la racine carrée dans l'expression de <m>x</m>. Chacun des deux paramétrages présente une moitié de la courbe (il s'agit en fait d'une parabole).
+      </p>
       <ul>
-        <li>
-          <p>
-            Pour commencer, on peut élever au carré <m>z</m> de l'équation du plan et remplacer dans celle du cône, ce qui mène à
-          </p>
-          <md>
-            (1+y)^2 = x^2 + y^2 \implies 1+2y= x^2.
-          </md>
-          <p>
-          De là, on tire <m>x = \pm \sqrt{1+2y}</m>.
-          Comme <m>z=1+y</m>, on choisit <m>y =t</m> comme paramètre pour obtenir
-          </p>
-          <md>
-            \vr(t) = \sqrt{1+2t}\, \vi + t\, \vj + (1+t)\,\vk \qquad t\in \R.
-          </md>
-          <p>
-            Il faut noter qu'on a en réalité deux paramétrages, selon le signe choisi pour la racine carrée dans l'expression de <m>x</m>. Chacun des deux paramétrages présente une moitié de la courbe (il s'agit en fait d'une parabole).
-          </p>
-        </li>
         <li>
           <p>
             On peut choisir d'utiliser <m>x = s</m> comme paramètre. De notre équation <m>1+2y = x^2</m>, on tire <m>y= \frac{1}{2}(s^2-1)</m>, et l'équation du plan fournit <m>z = \frac{1}{2}(s^2 + 1)</m>. On a donc un autre paramétrage :
           </p>
           <md>
-            \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad t\in \R.
+            \vr(s) = s\, \vi + \frac{1}{2}(s^2 -1)\, \vj + \frac{1}{2}(s^2 + 1)\, \vk \qquad s\in \R.
           </md>
         </li>
       </ul>
@@ -921,7 +871,7 @@ Nous avons vu dans l'exemple précédent que l'astroïde a des points de rebrous
         <p>S'il est vrai que le paramètre <m>t</m> est utilisé dans la définition des deux courbes, afin de trouver le point commun, on doit résoudre l'équation <m>\vr_1(t) = \vr_2(s)</m>. En effet, la valeur du paramètre au point commun n'a aucune raison d'être la même pour les deux courbes<fn>De façon imagée, on pense aux deux courbes comme aux trajectoires décrites par deux particules. Le point commun aux deux trajectoires n'est pas nécessairement un point de collision : les deux particules passent par un même point, mais pas nécessairement au même moment. L'équation <m>\vr_1(t) = \vr_2(t)</m> cherche à trouver un point de collision.</fn>. Le système d'équations résultant est
         <md><mrow> t\amp = 3-s, </mrow><mrow> 1-t \amp = 2-s, </mrow><mrow> 3+t^2  \amp = s^2. </mrow>
     </md>
-    On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>1-(3-s) = 2-s</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
+    On remplace <m>t=3-s</m> de la première équation dans la deuxième pour obtenir <m>{1-(3-s) = 2-s}</m>, ce qui donne <m>s=2</m>, et donc <m>t=1</m>. Ces deux valeurs sont des solutions pour la troisième équation également. Ainsi, le point commun est celui qui correspond à
     <md>\vr_1(1) = \vr_2(2) = \rvt{1}{0}{4}.
     </md>
     </p>

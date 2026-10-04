@@ -1677,30 +1677,12 @@ the Riemann sums, this error converges to exactly <m>0</m>.
                     <caption>
                         Le ruban de Möbius et son vecteur normal
                     </caption>
-                    <image xml:id="sageplot-mobius-normal">
-                        <description>
+                    <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.7.16 --><image xml:id="asy-mobius"><description>
                             <p>Un ruban de Möbius avec des vecteurs normaux unitaires dessinés le long de sa courbe centrale, illustrant leur retournement après un tour complet.</p>
-                        </description>
-                        <sageplot variant="3d" aspect="1.0">
-var('s,t')
-R = 2
-def x(s,t):
-    return (R+s*cos(t/2))*cos(t)
-def y(s,t):
-    return (R+s*cos(t/2))*sin(t)
-def z(s,t):
-    return s*sin(t/2)
-def macouleur(s,t):
-    return (1+sin(t))/2
-S = parametric_plot3d((x(s,t), y(s,t), z(s,t)), (s,-1,1), (t,0,2*pi), color=(macouleur, colormaps.coolwarm), frame = False)
-Bord = parametric_plot3d((x(-1,t), y(-1,t), z(-1,t)), (t,0,2*pi), color="black", thickness=3)
-L = 0.6
-Normales = sum(arrow((x(0,t), y(0,t), z(0,t)),
-        (x(0,t) - L*cos(t)*sin(t/2), y(0,t) - L*sin(t)*sin(t/2), z(0,t) + L*cos(t/2)),
-        color="black", width=0.5) for t in sxrange(0,2*pi,0.3))
-S + Bord + Normales
-                        </sageplot>
-                    </image>
+                        </description><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/mobius.asy"/>
+</asymptote></image>
                 </figure>
             </sidebyside>
         </remark>

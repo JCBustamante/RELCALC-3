@@ -265,7 +265,8 @@
                         point anguleux à l'origine.
                     </caption>
 
-                    <image xml:id="sageplot-Diffte-pas-plan-tangent" width="60%">
+                    <!-- Remplace un sageplot 3D (rendu Tachyon médiocre dans le PDF) -->
+                    <image xml:id="asy-point-anguleux" width="60%">
                         <description>
                             <p>
                                 Le graphe d'une fonction en forme de quatre
@@ -274,27 +275,9 @@
                                 point.
                             </p>
                         </description>
-                        <sageplot variant="3d" aspect="1.0">
-var('x,y')
-def cbrt(t):
-    return sign(t)*abs(t)^(1/3)
-g(x,y) = cbrt(x)*cbrt(y)
-cm = colormaps.Spectral
-zmin, zmax = float(-2^(2/3)), float(2^(2/3))
-def macouleur(x,y):
-    return float((g(x,y)-zmin)/(zmax-zmin))
-S = plot3d(g, (x,-2,2), (y,-2,2), color=(macouleur,cm), mesh=False,
-    opacity=0.9, frame=False, plot_points=150)
-coul_axes = "black"
-xa, ya, za = 2, 2, zmax
-S += line3d([(0,0,0), (xa*1.15,0,0)], color=coul_axes, thickness=4)
-S += text3d("x", (xa*1.25,0,0), color=coul_axes, fontsize=20, fontweight="bold")
-S += line3d([(0,0,0), (0,ya*1.15,0)], color=coul_axes, thickness=4)
-S += text3d("y", (0,ya*1.25,0), color=coul_axes, fontsize=20, fontweight="bold")
-S += line3d([(0,0,0), (0,0,za*1.4)], color=coul_axes, thickness=4)
-S += text3d("z", (0,0,za*1.55), color=coul_axes, fontsize=20, fontweight="bold")
-S
-                        </sageplot>
+                        <asymptote>
+<xi:include parse="text" href="asy/point-anguleux.asy"/>
+                        </asymptote>
                     </image>
                 </figure>
             </solution>
@@ -507,15 +490,15 @@ S
                     différentiable et <m>T\in \R^{m\times n}</m> une matrice
                     telle que
                     <md>
-                        \lim_{\vr \to \vr_0} \frac{|f(\vr) - f(\vr_0) - T (\vr - \vr_0)|}{\norm{\vr - \vr_0}} =0.
+                        \lim_{\vr \to \vr_0} \frac{\norm{f(\vr) - f(\vr_0) - T (\vr - \vr_0)}}{\norm{\vr - \vr_0}} =0.
                     </md>
                     Alors, toutes les dérivées partielles de toutes les
                     composantes de <m>f</m> existent en <m>\vr_0</m>, et
                     <m>T</m> est la matrice
                     <md>
-                        \vD f(\vr_0) = \left[ \begin{matrix} \pdiff{f_1}{x_1} \amp \cdots \amp \pdiff{f_1}{x_n}\\ \pdiff{f_2}{x_1} \amp \ddots \amp \pdiff{f_2}{x_n}\\
+                        \vD f(\vr_0) = \left.\left[ \begin{matrix} \pdiff{f_1}{x_1} \amp \cdots \amp \pdiff{f_1}{x_n}\\ \pdiff{f_2}{x_1} \amp \ddots \amp \pdiff{f_2}{x_n}\\
       \vdots \amp \vdots \amp \vdots \\
-      \pdiff{f_m}{x_1} \amp \cdots\amp \pdiff{f_m}{x_n} \end{matrix}\right].
+      \pdiff{f_m}{x_1} \amp \cdots\amp \pdiff{f_m}{x_n} \end{matrix}\right]\right|_{\vr_0}.
                     </md>
                     Dans ce cas, l'approximation linéaire de <m>f</m> autour de
                     <m>\vr_0</m> est
@@ -539,7 +522,7 @@ S
 
         <p>
             Dans ce cas, <m>\vD \vr(t_0)</m> est la matrice de
-            <m>\R^{n\times 1}</m>, c'est-à-dire le vecteur colonne à <m>m</m>
+            <m>\R^{m\times 1}</m>, c'est-à-dire le vecteur colonne à <m>m</m>
             composantes (puisque <m>\vr</m> est une fonction d'une partie de
             <m>\R</m> dans <m>\R^m</m> )
             <md>
@@ -586,7 +569,7 @@ S
         </theorem>
 
         <p>
-          En particulier, si <m>f</m> est de calsse <m>C^1</m> sur un ouvert <m>\cD</m>, alors l'approximation linéaire en un point <m>(x_0,y_0)</m> de <m>\cD</m> donne bel et bien l'équation du plan tangent à la surfae au point correspondant, à savoir <m>(x_, y_0, f(x_0,y_0))</m>.
+          En particulier, si <m>f</m> est de classe <m>C^1</m> sur un ouvert <m>\cD</m>, alors l'approximation linéaire en un point <m>(x_0,y_0)</m> de <m>\cD</m> donne bel et bien l'équation du plan tangent à la surface au point correspondant, à savoir <m>(x_0, y_0, f(x_0,y_0))</m>.
         </p>
 
         <p>
@@ -612,27 +595,12 @@ S
                             graphe ne s'aplatit pas.
                         </p>
 
-                        <image xml:id="sageplot-cone-diff-surf">
-                            <sageplot variant="3d" aspect="1.0">
-              var('x,y,z')
-
-              f(x,y) = sqrt(x^2+y^2)
-
-              cm = colormaps.Spectral
-              zmin, zmax = 0,1
-              def c(x,y,z):
-                  return float((f(x,y)-zmin)/(zmax-zmin))
-              S= implicit_plot3d(z==f(x,y), (x,-1,1), (y,-1,1), (z,zmin,zmax), color = (c,cm),
-                                     region=lambda x,y,z:x^2+y^2+z^2 &gt; 0.000000001,plot_points = 70, frame = False)
-
-              S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
-              S += text3d("x", (1.3,0,0), color = "black")
-              S += arrow3d((0,0,0),(0,1.2,0), color = "black",  width= 0.5)
-              S += text3d("y", (0,1.3,0), color = "black")
-              S += arrow3d((0,0,0),(0,0,0.8), color = "black", width = 0.5)
-              S += text3d("z", (0,0,0.9), color = "black")
-              S
-                            </sageplot>
+                        <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, exemple 2.4.13 -->
+                        <image xml:id="asy-cone-non-diff">
+                            <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cone-non-diff.asy"/>
+                            </asymptote>
                         </image>
                         <!-- <image source="/images/Jupyter-sage/Cone-differentiable.png"/> -->
                     </sidebyside>
@@ -754,26 +722,12 @@ S
                             <m> f(x,y)= \frac{xy}{\sqrt{x^2+ y^2}}</m>.
                         </caption>
 
-                        <image xml:id="img-Non-diff-mais-partielles">
-                            <sageplot variant="3d" aspect="1.0">
-            var("x,y,z")
-            h(x,y)= x*y/sqrt(x^2 + y^2)
-            cm = colormaps.Spectral
-            zmin, zmax = -0.7, 0.7
-            def c(x,y,z):
-                    return float((h(x,y)-zmin)/(zmax-zmin))
-            S = implicit_plot3d(z==h, (x,-1,1), (y,-1,1), (z,zmin,zmax),
-              color = (c,cm),
-              region=lambda x,y,z: x^2+y^2+z^2 &gt; 0.001,
-              frame = False)
-            S += arrow3d((0,0,0),(1.2,0,0), color = "black", width= 0.5)
-            S += text3d("x", (1.3,0,0), color = "black", fontsize = 20)
-            S += arrow3d((0,0,0),(0,1.2,0), color = "black",  width= 0.5)
-            S += text3d("y", (0,1.3,0), color = "black", fontsize = 20)
-            S += arrow3d((0,0,0),(0,0,0.8), color = "black", width = 0.5)
-            S += text3d("z", (0,0,0.9), color = "black", fontsize = 20)
-            S
-                            </sageplot>
+                        <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.4.16 -->
+                        <image xml:id="asy-froisse">
+                            <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/froisse.asy"/>
+                            </asymptote>
                         </image>
                     </figure>
 
@@ -1072,10 +1026,13 @@ S
             <caption>
                 La différentielle <m>df</m> approche la variation <m>\De f</m>
                 de <m>f(x,y)</m>.
-                Figure provenant de "Active Calculus".
             </caption>
-
-            <image width="70%" source="images/AC3-images/fig_10_4_tangent_10"/>
+            <!-- Remplace images/AC3-images/fig_10_4_tangent_10 (Active Calculus) -->
+            <image xml:id="asy-differentielle" width="70%">
+                <asymptote>
+<xi:include parse="text" href="asy/differentielle.asy"/>
+                </asymptote>
+            </image>
         </figure>
 
         <p>

@@ -67,10 +67,10 @@
                   <sageplot>
               var('x')
               Fig = plot(sqrt(1-x^2/4), 0, 2, thickness = 2, color = "steelblue", fill='axis',
-                axes_labels=['$x$', '$y$'], fillcolor = "orange", fillalpha=0.25, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 18)
+                axes_labels=['$x$', '$y$'], fillcolor = "orange", fillalpha=0.25, linestyle = "dashed", tick_formatter="latex", ticks = [[1,2],[1/2, 1]], fontsize = 25)
               Fig+= line([(0,0), (2,0)], color = "steelblue", thickness=2)
               Fig+= line([(0,0), (0,1)], color = "steelblue", thickness=2)
-              Fig += text("$x^2+4y^2 = 4$", (1.65,0.95), color = "steelblue", fontsize = 20, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
+              Fig += text("$x^2+4y^2 = 4$", (1.65,0.95), color = "steelblue", fontsize = 28, xmin=-0.5, xmax= 2, ymin=-0.25, ymax=1)
               Fig
                   </sageplot>
                 </image>
@@ -177,36 +177,20 @@
     <p>
 La méthode des traces permet de visualiser et d'esquisser une surface d'équation <m>z=f(x,y)</m>. En effet, on conçoit la surface comme un amoncellement de courbes (les traces). Ceci a été fait en considérant les coupes de la surface par des plans d'équation <m>x=x_0</m> ou <m>y=y_0</m>.
 </p>
-    <sidebyside widths="50% 5% 45%" valign="top">
+    <sidebyside widths="50% 9% 41%" valign="top">
       <p>
   On voit maintenant une autre méthode, apparentée à ce qui est souvent fait en cartographie, où l'on considère les lignes de niveau constant du terrain, ou en météorologie, où l'on considère les courbes isothermes. Ceci correspond à faire les coupes selon des plans horizontaux d'équation <m>z=z_0</m> et à faire la projection sur le plan <m>z=0</m> (voir la figure ci-contre).
       </p>
       <p></p>
       <figure xml:id="fig-sage3d-Traces-horizontales">
         <caption>Une surface <m>z=f(x,y)</m> ainsi que quelques courbes de niveau et quelques traces horizontales</caption>
-        <image xml:id="sageplot-Traces-horizontales">
+        <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.1.9 -->
+        <image xml:id="asy-traces-horizontales">
           <description><p>Une surface et des traces horizontales</p></description>
-          <sageplot variant="3d" aspect="1.0">
-    var('x y z')
-    g(x,y,z) = 2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2)
-    f = z==g
-    S = plot3d(g(x,y), (x,-2,2),(y,-2,2), mesh=0, color = "orange", opacity = 0.5, frame = False, projection = "orthographic")
-    levels=srange(2,7,0.5)
-    Contours = Graphics()
-    for zlevel in levels:
-            S+=implicit_plot3d(g(x,y,z)-zlevel, (x,-2,2),(y,-2,2),(z,zlevel - 0.02,zlevel + 0.02), color = "brown")
-    for zlevel in levels:
-            Contours+=implicit_plot3d(f(x,y,zlevel), (x,-2,2),(y,-2,2),(z,-     0.03,+0.03),thickness=3, color = "blue")
-    S +=Contours
-    S += arrow3d((0,0,0),(2,0,0), color = "black")
-    S += text3d("x", (2.2,0,0), color = "black", fontsize = 24)
-    S += arrow3d((0,0,0),(0,3,0), color = "black")
-    S += text3d("y", (0,3.2,0), color = "black", fontsize = 24)
-    S += arrow3d((0,0,0),(0,0,7), color = "black")
-    S += text3d("z", (0,0,7.2), color = "black", fontsize = 24)
-    S += plot3d(0, (x,-2,2),(y,-2,2), color = "blue", opacity=0.25)
-    S
-  </sageplot>
+          <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/traces-horizontales.asy"/>
+          </asymptote>
         </image>
       </figure>
     </sidebyside>
@@ -220,7 +204,7 @@ La méthode des traces permet de visualiser et d'esquisser une surface d'équati
         </statement>
       </definition>
     <p>
-On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>. Il est commun dutiliser des couleurs sur une surface pour représenter ses variations.   
+On doit noter que la trace au niveau <m>k</m> est l'intersection de la surface <m>z=f(x,y)</m> avec le plan <m>z=k</m>. La courbe de niveau <m>k</m>, pour sa part, est la projection de la trace sur le plan <m>z=0</m>. Il est commun d'utiliser des couleurs sur une surface pour représenter ses variations.   
  </p>
   <p>
 Les figures ci-bas montrent la surface <m>z=f(x,y)</m> de la fonction considérée, ainsi que le diagramme de ses courbes de niveau.
@@ -228,25 +212,12 @@ Les figures ci-bas montrent la surface <m>z=f(x,y)</m> de la fonction considér�
     <sidebyside widths="50% 50%" valign="middle">
       <figure xml:id="Surface-C-niveau">
         <caption>La surface <m>z=f(x,y)</m></caption>
-        <image xml:id="Surface-niveau">
-          <sageplot variant="3d" aspect="1.0">
-            var('x y z')
-            g(x,y) = (2+2*(1-x)^2*exp(-(x^2) - (y+1)^2) +2*abs(x/5 - x^3 - y^5)*exp(-x^2-y^2)+ 1*exp(-(x+1)^2 - y^2))/2
-
-            cm = colormaps.Spectral
-            zmin, zmax = 1, 3.5
-            def c(x,y):
-                return float((g(x,y)-zmin)/(zmax-zmin))
-            S = plot3d(g(x,y), (x,-2,2),(y,-2,2), color = (cm,c), frame = False, mesh = False)
-            S += arrow3d((0,0,0),(2.4,0,0), color = "black")
-            S += text3d("x", (2.5,0,0), color = "black", fontsize = 20)
-            S += arrow3d((0,0,0),(0,3,0), color = "black")
-            S += text3d("y", (0,3.2,0), color = "black", fontsize = 20)
-            S += arrow3d((0,0,0),(0,0,3.5), color = "black")
-            S += text3d("z", (0,0,3.7), color = "black", fontsize = 20)
-            S += plot3d(0, (x,-2,2),(y,-2,2), color = "blue", opacity=0.25, projection = "orthogonal")
-            S
-          </sageplot>
+        <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.1.11 -->
+        <image xml:id="asy-surface-niveau">
+          <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/surface-niveau.asy"/>
+          </asymptote>
         </image>
       </figure>
       
@@ -285,30 +256,24 @@ Les figures ci-bas montrent la surface <m>z=f(x,y)</m> de la fonction considér�
         <sidebyside widths="45% 45%">
           <figure xml:id="fig-Cone-Niveau">
             <caption>Le graphe et les courbes de niveau de <m>z=x^2 + y^2</m> </caption>
-            <image xml:id="sageplot3d-Cone-Niveau" width="40%">
+            <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.1.14 -->
+            <image xml:id="asy-paraboloide-niveau" width="40%">
               <description><p>Graphe et courbes de niveau</p></description>
-              <sageplot variant="3d" aspect="1.0">
-        r,t = var('r t')
-        def col2(r,t):
-          return r^2
-        S = parametric_plot3d([r*cos(t), r*sin(t), r^2],(r,0,1), (t,0,2*pi),  color=(col2,colormaps.Spectral), plot_points = 80, frame = False)
-        S += parametric_plot3d([r*cos(t), r*sin(t), 0],(r,0,1), (t,0,2*pi),     color=(col2,colormaps.Spectral), plot_points = 80)
-        S
-      </sageplot>
+              <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/paraboloide-niveau.asy"/>
+              </asymptote>
             </image>
           </figure>
           <figure xml:id="fig-Parab-Niveau">
             <caption>Le graphe et les courbes de niveau de <m>z=\sqrt{x^2 + y^2}</m></caption>
-            <image xml:id="sageplot3d-Parab_Niveau" width="40%">
+            <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.1.15 -->
+            <image xml:id="asy-cone-niveau" width="40%">
               <description><p>Un graphe et ses courbes de niveau.</p></description>
-              <sageplot variant="3d" aspect="1.0">
-        r,t = var('r t')
-        def col2(r,t):
-          return r
-        S = parametric_plot3d([r*cos(t), r*sin(t), r],(r,0,1), (t,0,2*pi),  color=(col2,colormaps.Spectral), plot_points = 80, frame = False)
-        S += parametric_plot3d([r*cos(t), r*sin(t), 0],(r,0,1), (t,0,2*pi),     color=(col2,colormaps.Spectral), plot_points = 80)
-        S
-      </sageplot>
+              <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cone-niveau.asy"/>
+              </asymptote>
             </image>
           </figure>
         </sidebyside>
@@ -369,17 +334,13 @@ Remarquons que si une surface <m>\plan{S}</m> est donnée explicitement par une 
     </p>
         <figure xml:id="fig-Surf-Niveau">
           <caption>Quelques surfaces de niveau de <m> f(x,y,z)= x^2 + y^2- z^2</m> </caption>
-          <image xml:id="sageplot3d-Surf-niveau" width="80%">
+          <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, figure 2.1.19 -->
+          <image xml:id="asy-surfaces-niveau-hyperboloides" width="55%">
             <description><p>Quelques surfaces de niveau de la fonction <m> f(x,y,z)= x^2 + y^2- z^2</m></p></description>
-            <sageplot variant="3d" aspect="1.5">
-            var('s,t')
-            Fig  = parametric_plot3d([s*cos(t), s*sin(t), sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85, frame = True)
-            Fig += parametric_plot3d([s*cos(t), s*sin(t), -sqrt(s^2 +4)], (s,0,3), (t,0,2*pi), mesh = True, color ="orange", opacity = 0.85)
-            Fig += parametric_plot3d([s*cos(t), s*sin(t), s], (s,0,3.6), (t,pi/6, 11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
-            Fig += parametric_plot3d([s*cos(t), s*sin(t), -s],(s,0,3.6),(t,pi/6,11*pi/6), mesh = True, color ="lightgreen", opacity = 0.65)
-            Fig +=  parametric_plot3d([2*cos(t)*cosh(s), 2*sin(t)*cosh(s), 2*sinh(s)],(s,-1.3,1.3), (t,pi/4,7*pi/4), mesh = True, color = "lightblue", opacity = 0.45)
-            Fig
-          </sageplot>
+            <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/surfaces-niveau-hyperboloides.asy"/>
+            </asymptote>
           </image>
         </figure>
         <!--

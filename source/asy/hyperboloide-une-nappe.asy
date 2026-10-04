@@ -4,7 +4,7 @@ real zmax = c*sinh(vmax);
 triple P(pair w) {   // w = (u, v)
   return (a*cosh(w.y)*cos(w.x), b*cosh(w.y)*sin(w.x), c*sinh(w.y));
 }
-surface Surf = surface(P, (0, -vmax), (2pi, vmax), 32, 12, Spline);
+surface Surf = surface(P, (0, -vmax), (2pi, vmax), 24, 8, Spline);
 colorer(Surf, YlOrBr, new real(triple q) { return 0.5 + 0.25*q.z/zmax; });
 draw(Surf);
 

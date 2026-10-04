@@ -6,7 +6,7 @@ settings.render = 8;   // résolution du rendu 3D en PDF (sans effet sur le WebG
 defaultpen(fontsize(7pt));
 
 size(7cm, 0);
-currentprojection = orthographic(6, 2.5, 2.8);
+currentprojection = orthographic(6, 2.5, 2.8, zoom = 0.85);
 
 // Palette du livre
 pen bleu  = rgb(70/255, 130/255, 180/255);   // steelblue
@@ -33,10 +33,19 @@ real z0 = f(x0, y0);
 // Surface z = f(x,y) et plan tangent, au-dessus du rectangle
 surface Surf = surface(new triple(pair u) { return (u.x, u.y, f(u.x, u.y)); },
                     (x0, y0), (x1, y1), 8, 8, Spline);
-draw(Surf, surfacepen = bleu + opacity(0.35), meshpen = bleu + 0.15pt, light = nolight);
+draw(Surf, surfacepen = bleu + opacity(0.35), light = nolight);
 surface T = surface(new triple(pair u) { return (u.x, u.y, L(u.x, u.y)); },
                     (x0, y0), (x1, y1), 8, 8);
-draw(T, surfacepen = rouge + opacity(0.25), meshpen = rouge + 0.15pt, light = nolight);
+draw(T, surfacepen = rouge + opacity(0.25), light = nolight);
+
+// Maillage léger (plus économique que meshpen dans la version WebGL)
+for (int i = 0; i <= 8; ++i) {
+  real x = x0 + i*Dx/8, y = y0 + i*Dy/8;
+  draw(graph(new triple(real t) { return (x, t, f(x, t)); }, y0, y1, 12, operator ..), bleu + 0.15pt);
+  draw(graph(new triple(real t) { return (t, y, f(t, y)); }, x0, x1, 12, operator ..), bleu + 0.15pt);
+  draw((x, y0, L(x, y0)) -- (x, y1, L(x, y1)), rouge + 0.15pt);
+  draw((x0, y, L(x0, y)) -- (x1, y, L(x1, y)), rouge + 0.15pt);
+}
 
 // Axes
 real ax = 2.3;

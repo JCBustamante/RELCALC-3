@@ -22,7 +22,7 @@ real f(pair p) { return cbrt(p.x)*cbrt(p.y); }
 
 real r = 2;
 // maillage non lissé (pas de Spline) : la surface a un point anguleux en (0,0)
-surface Surf = surface(f, (-r, -r), (r, r), 60, 60);
+surface Surf = surface(f, (-r, -r), (r, r), 24, 24);
 Surf.colors(palette(Surf.map(zpart), Gradient(...Spectral)));
 // sans éclairage : les couleurs du dégradé restent fidèles
 // (l'éclairage par défaut noircit les parois presque verticales)
@@ -33,8 +33,8 @@ draw(Surf);
 pen pm = gray(0.25) + 0.3pt;
 for (int i = -4; i <= 4; ++i) {
   real c = i*r/4;
-  draw(graph(new triple(real t) { return (c, t, f((c, t))); }, -r, r, 80, operator --), pm);
-  draw(graph(new triple(real t) { return (t, c, f((t, c))); }, -r, r, 80, operator --), pm);
+  draw(graph(new triple(real t) { return (c, t, f((c, t))); }, -r, r, 24, operator --), pm);
+  draw(graph(new triple(real t) { return (t, c, f((t, c))); }, -r, r, 24, operator --), pm);
 }
 
 // Axes

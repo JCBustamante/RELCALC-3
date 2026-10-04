@@ -225,39 +225,25 @@
           <p>
 
 </p>
-          <figure xml:id="eg-Int-3-ex1"><caption>La région <m>\cE</m> de <m>\R^3</m>.</caption><image xml:id="ex-int-triple-bornes" width="100%"><sageplot variant="3d" aspect="1.0">
-            var('x,y,z')
-            Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "orange", opacity = 0.35,frame = False, projection = 'orthographic')
-            Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.35,frame = False)
-            Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "blue", opacity = 0.35,frame = False)
-            Projxy = parametric_plot3d([x,0, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "green", opacity = 0.25,frame = False)
-            Fig = Base + Cyl + Plan+ Projxy
-
-            Fig += parametric_plot3d([x,x^2,0], (x,-1,1), color = "darkblue", thickness = 2)
-            Fig += parametric_plot3d([x,1,0], (x,-1,1), color = "darkblue", thickness = 2)
-            Fig += parametric_plot3d([x,x^2,1-x^2], (x,-1,1), color = "darkblue", thickness = 2)
-
-            Fig += arrow3d((0,0,0),(1.15,0,0), width=0.5, color = "black",frame = False)
-            Fig += text3d("x", (1.25,0,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,1.15,0), width=0.5, color = "black",frame = False)
-            Fig += text3d("y", (0,1.25,0), color = "black",frame = False)
-            Fig += arrow3d((0,0,0),(0,0,1.15), width=0.5, color = "black",frame = False)
-            Fig += text3d("z", (0,0,1.25), color = "black",frame = False)
-            Fig
-          </sageplot></image></figure>
+          <figure xml:id="eg-Int-3-ex1"><caption>La région <m>\cE</m> de <m>\R^3</m>.</caption><!-- Code Sage d'origine : notebooks/Chapitre-3.ipynb, figure 3.4.8 --><image xml:id="asy-region-triple-exemple" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/region-triple-exemple.asy"/>
+</asymptote></image></figure>
         </sidebyside>
       </statement>
       <solution>
         <sidebyside widths="40% 50%">
-          <p>Commençons par décrire <m>\cE</m> comme une région élémentaire, en laissant varier <m>z</m> entre <m>z=0 = \phi_1(x,y)</m> et <m>z=1-y = \phi_2(x,y)</m> (puisque <m>z</m> varie entre le plan <m>z=0</m> et le plan <m>y+z=1</m>). Notons que ces deux plans se coupent lorsque <m>0 = 1-y</m>, c'est-à-dire selon la droite <m>y=1</m>. Afin de décrire <m>\cE</m> sous la forme <xref ref="z-simple-3d"/>, nous la projetons sur le plan <m>Oxy</m>, obtenant la région  <m>\cD</m>.
+          <p>Commençons par décrire <m>\cE</m> comme une région élémentaire, en laissant varier <m>z</m> entre <m>z=0 = \phi_1(x,y)</m> et <m>z=1-y = \phi_2(x,y)</m> (puisque <m>z</m> varie entre le plan <m>z=0</m> et le plan <m>{y+z=1}</m>). Notons que ces deux plans se coupent lorsque <m>0 = 1-y</m>, c'est-à-dire selon la droite <m>y=1</m>. Afin de décrire <m>\cE</m> sous la forme <xref ref="z-simple-3d"/>, nous la projetons sur le plan <m>Oxy</m>, obtenant la région  <m>\cD</m>.
 
           </p>
           <image xml:id="sageplot-Int-3-eg-1a">
             <sageplot>
                   var('x,y')
-                  F = plot(x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$y$'], ticks =[[-1,1],[1]], color = "blue",
-                  fill = "max", fillcolor = "blue", fillalpha= 0.2, fontsize = 20)
-                  F +=text("$\\mathcal{D} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ x^2\\, \\leqslant\\, y \\, \\leqslant\\, 1$", (0.5,0.9),  fontsize=20, zorder=2, color= "black")
+                  F = plot(x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$y$'], ticks =[[-1,1],[1]], color = "seagreen",
+                  thickness = 2, fill = "max", fillcolor = "orange", fillalpha= 0.25, fontsize = 20)
+                  F += line([(-1,1), (1,1)], color = "steelblue", thickness = 2)
+                  F += text("$\\mathcal{D} : -1 \\leqslant x \\leqslant 1,$", (0.45,0.8), fontsize=20, zorder=2, color="black")
+                  F += text("$x^2 \\leqslant y \\leqslant 1$", (0.45,0.65), fontsize=20, zorder=2, color="black")
                   F
                </sageplot>
           </image>
@@ -281,8 +267,9 @@
           <image xml:id="sageplot-Int-3-eg-1b">
             <sageplot>
                   var('x,y')
-                  F = plot(1-x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$z$'], ticks =[[-1,1],[1]], color = "green", fill = True, fillcolor = "green", fillalpha= 0.2, fontsize = 20)
-                  F +=text("$\\mathcal{R} :-1\\, \\leqslant\\, x\\, \\leqslant 1,\\ 0\\, \\leqslant\\, z\\, \\leqslant\\, 1-x^2$", (0.5,0.1),  fontsize=20, zorder=2, color= "black")
+                  F = plot(1-x^2, (x,-1,1), axes = True, axes_labels = ['$x$','$z$'], ticks =[[-1,1],[1]], color = "mediumpurple", thickness = 2, fill = True, fillcolor = "mediumpurple", fillalpha= 0.3, fontsize = 20)
+                  F += text("$\\mathcal{R} : -1 \\leqslant x \\leqslant 1,$", (0.35,0.45), fontsize=20, zorder=2, color="black")
+                  F += text("$0 \\leqslant z \\leqslant 1-x^2$", (0.35,0.3), fontsize=20, zorder=2, color="black")
                   F
               </sageplot>
           </image>

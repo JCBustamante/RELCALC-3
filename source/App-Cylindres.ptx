@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-cylindres">
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
+    <title>Cylindres</title>
+
+ <p>
+        Dans le plan, une courbe admet une équation générale
+        <m>F(x,y) = 0</m> : penser à <m>x^2 + y^2 - 1 = 0</m>, où il
+        n'est pas toujours possible d'isoler <m>y</m>. Dans l'espace, l'ensemble solution d'une équation de la forme
+        <m>F(x,y,z) = 0</m> est une <term>surface</term>. Les <term>surfaces quadriques</term> et les <term>cylindres</term>
+        sont parmi les surfaces les plus simples, après les plans. On les retrouve un peu partout (antennes, réservoirs,
+        géolocalisation...).
+    </p>
+    <definition xml:id="def-cylindre">
+        <title>Les cylindres</title>
+        <statement>
+            <p>
+                Les cylindres ne sont pas toujours circulaires. Un
+                <term>cylindre</term> est une surface obtenue au moyen de :
+            </p>
+            <ul>
+                <li>
+                    <p>une courbe plane quelconque ;</p>
+                </li>
+                <li>
+                    <p>
+                        toutes les droites parallèles à une droite donnée qui passent
+                        par chacun des points de la courbe.
+                    </p>
+                </li>
+            </ul>
+        </statement>
+    </definition>
+
+    <example xml:id="ex-cylindres">
+      <statement>
+        <ol marker="(a)">
+            <li xml:id="ex-cylindre-parabolique">
+                <p>
+                    La surface d'équation
+                    <m>z = x^2</m> est un <term>cylindre parabolique</term>.
+                </p>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        La courbe <m>z=x^2</m> est une parabole dans le plan
+                        <m>Oxz</m> ; comme la variable <m>y</m> n'apparaît pas dans
+                        l'équation, on peut prendre cette parabole et la déplacer dans
+                        la direction des <m>y</m>.
+                    </p>
+                    <figure xml:id="fig-cylindre-parabolique">
+                        <caption>
+                            Le cylindre parabolique <m>z=x^2</m>.
+                        </caption>
+                        <image xml:id="asy-cylindre-parabolique">
+                            <description>
+                                <p>La parabole <m>z=x^2</m> dans le plan <m>Oxz</m>,
+                                déplacée dans la direction des <m>y</m>.</p>
+                            </description>
+                            <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cylindre-parabolique.asy"/>
+                            </asymptote>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+            <li>
+                <p>
+                    Un cylindre <q>cardiaque</q> : la courbe plane de départ est ici un
+                    cardioïde.
+                </p>
+                <sidebyside widths="45% 50%" valign="top">
+                    <p>
+                        Le cardioïde <m>r = 1+\cos\theta</m> (en coordonnées polaires
+                        dans le plan <m>Oxy</m>) est déplacé dans la direction des
+                        <m>z</m>.
+                    </p>
+                    <figure xml:id="fig-cylindre-cardioide">
+                        <caption>
+                            Un cylindre dont la base est un cardioïde.
+                        </caption>
+                        <image xml:id="asy-cylindre-cardioide">
+                            <description>
+                                <p>Un cylindre en forme de coeur, obtenu en déplaçant un
+                                cardioïde dans la direction verticale.</p>
+                            </description>
+                            <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cylindre-cardioide.asy"/>
+                            </asymptote>
+                        </image>
+                    </figure>
+                </sidebyside>
+            </li>
+        </ol>
+      </statement>
+    </example>
+
+</section>

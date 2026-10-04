@@ -56,25 +56,10 @@
           <p></p>
           <figure xml:id="fig-region3d-bord">
             <caption>La région <m>\cE</m> de <m>\R^3</m> et sa frontière.</caption>
-            <image xml:id="im-region3d-bornes" width="100%">
-              <sageplot variant="3d" aspect="1.0">
-                var('x,y,z')
-                Base = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,0],(x,-1,1), (y,0,1), color = "firebrick", opacity = 0.35,frame = False, projection = 'orthographic')
-                Cyl = parametric_plot3d([x,x^2, (1-y)*(1-x^2)],(x,-1,1),(y,0,1), color = "seagreen", opacity = 0.35,frame = False)
-                Plan = parametric_plot3d([(1-y)*x+y,(1-y)*x^2 + y,1-(1-y)*x^2 - y ],(x,-1,1), (y,0,1), color = "steelblue", opacity = 0.35,frame = False)
-                Fig = Base + Cyl + Plan
-                Fig += arrow3d((0,0,0),(1.3,0,0), width=0.5, color = "black",frame = False)
-                Fig += text3d("x", (1.4,0,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,1.3,0), width=0.5, color = "black",frame = False)
-                Fig += text3d("y", (0,1.4,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,0,1.3), width=0.5, color = "black",frame = False)
-                Fig += text3d("z", (0,0,1.4), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0.5,0.7,0),(0.5,0.7,-0.5), width=0.75, color = "firebrick",frame = False)
-                Fig += arrow3d((-0.5, 0.7, 0.3), (-0.5,1.05,0.65), width=0.75, color = "steelblue",frame = False)
-                Fig += arrow3d((0.5, 0.25, 0.5), (0.85,-0.1,0.5), width=0.75, color = "seagreen",frame = False)
-                Fig
-              </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.9.2 --><image xml:id="asy-region-divergence" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/region-divergence.asy"/>
+</asymptote></image>
           </figure>
         </sidebyside>
         <p>
@@ -192,31 +177,10 @@
           <p></p>
           <figure xml:id="fig-ex-div-fermer-surface">
             <caption>La surface <m>\cS</m> (en bleu) et le champ <m>\vF</m>. La face manquante, en rouge, n'en fait pas partie.</caption>
-            <image xml:id="im-ex-div-fermer-surface">
-              <sageplot variant="3d" aspect="1.0">
-              var('x,y,z')
-              Fig = plot_vector_field3d([x*y,y*z,x*z], (x,0,1), (y,0,1), (z,0,1), plot_points=[4,4,4], colors=["darkgray","darkgray"])
-              Fig += polygon3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0]], color="steelblue", alpha=0.85)
-              Fig += polygon3d([[1,1,0], [0,1,0], [0,1,1], [1,1,1]], color="steelblue", alpha=0.85)
-              Fig += polygon3d([[0,0,0],[1,0,0],[1,0,1],[0,0,1]], color="steelblue", alpha=0.85)
-              Fig += polygon3d([[0,0,0],[0,1,0],[0,1,1],[0,0,1]], color="steelblue", alpha=0.85)
-              Fig += polygon3d([[1,0,0],[1,1,0],[1,1,1],[1,0,1]], color="steelblue", alpha=0.85)
-              Fig += polygon3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1]], color="firebrick", alpha=0.3)
-              Fig += line3d([[0, 0, 0], [1,0,0], [1,1,0], [0,1,0],[0,0,0]], color="black", thickness= 5)
-              Fig += line3d([[0, 0, 1], [1,0,1], [1,1,1], [0,1,1],[0,0,1]], color="black", thickness= 5)
-              Fig += line3d([[0, 0, 0], [0,0,1]], color="black", thickness= 5)
-              Fig += line3d([[0, 1, 0], [0,1,1]], color="black", thickness= 5)
-              Fig += line3d([[1, 0, 0], [1,0,1]], color="black", thickness= 5)
-              Fig += line3d([[1, 1, 0], [1,1,1]], color="black", thickness= 5)
-              Fig += arrow3d((0,0,0),(1.5,0,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
-              Fig += arrow3d((0,0,0),(0,1.5,0), width=0.5, color = "black",frame = False)
-              Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
-              Fig += arrow3d((0,0,0),(0,0,1.5), width=0.5, color = "black",frame = False)
-              Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
-              Fig
-            </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.9.9 --><image xml:id="asy-cube-ouvert"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cube-ouvert.asy"/>
+</asymptote></image>
           </figure>
         </sidebyside>
       </statement>
@@ -282,25 +246,10 @@
           <p></p>
           <figure xml:id="fig-eg_divThmB">
             <caption>La surface <m>\cS</m> et le vecteur normal <m>\vn</m>.</caption>
-            <image xml:id="im-eg_divThmB" width="100%">
-              <sageplot variant="3d" aspect="1.0">
-                var('r,t')
-                Fig = parametric_plot3d([r*cos(t), r*sin(t), r], (r,1,2), (t,0,2*pi), color = "steelblue", opacity = 0.85)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,0,1), (t,0,2*pi), color = "steelblue", opacity = 0.25)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), r], (r,2,2.5), (t,0,2*pi), color = "steelblue", opacity = 0.25)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), 1], (r,0,1), (t,0,2*pi), color = "firebrick", opacity = 0.5)
-                Fig += parametric_plot3d([r*cos(t), r*sin(t), 2], (r,0,2), (t,0,2*pi), color = "firebrick", opacity = 0.5)
-                Fig += arrow3d((1,1,sqrt(2)),(3/2,3/2,sqrt(2)/2), width=1, color = "steelblue",frame = False, fontsize = 20)
-                Fig += text3d("n", (1.7,1.7,0.7), color = "steelblue")
-                Fig += arrow3d((0,0,0),(2.5,0,0), width=0.7, color = "black",frame = False)
-                Fig += text3d("x", (2.7,0,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,2.5,0), width=0.7, color = "black", frame = False)
-                Fig += text3d("y", (0,2.7,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,0,3), width=0.7, color = "black",frame = False)
-                Fig += text3d("z", (0,0,3.2), color = "black", fontsize = 20)
-                Fig
-              </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.9.12 --><image xml:id="asy-cone-tronque" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/cone-tronque.asy"/>
+</asymptote></image>
           </figure>
         </sidebyside>
       </statement>
@@ -506,35 +455,10 @@ La surface <m>\cS</m> est représentée dans la figure ci-contre. Elle est plut�
           <p></p>
           <figure xml:id="fig-ex-div-stokes">
             <caption>Les surfaces <m>\cS</m> et <m>\cS'</m>, avec leurs vecteurs normaux.</caption>
-            <image xml:id="im-ex-div-stokes" width="100%">
-              <sageplot variant="3d" aspect="1.0">
-                var('r,t')
-                X(r,t) = r*cos(t)
-                Y(r,t) = r*sin(t)
-                f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
-                fx = diff(f,x)
-                fy = diff(f,y)
-                x0, y0 = 0.5,0.3
-                h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
-                Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                        (r,0,1), (t,0,2*pi), color = "steelblue", mesh = True,opacity = 0.65)
-                Fig += parametric_plot3d([X(r,t), Y(r,t), 0 ],
-                                        (r,0,1), (t,0,2*pi), color = "firebrick", mesh = False)
-                Fig+= arrow3d((0.5,0.3,0),(0.5,0.3,-0.5), width=1, color = "firebrick",frame = False)
-                Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                  f(x0,y0) + 1/h), width=1, color = "steelblue",frame = False)
-                Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
-                Fig
-              </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.9.16 --><image xml:id="asy-surface-div-normales" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/surface-div-normales.asy"/>
+</asymptote></image>
           </figure>
         </sidebyside>
         <p>
@@ -603,34 +527,10 @@ puisque le domaine d'intégration est symétrique par rapport à la droite <m>x=
           <p></p>
           <figure xml:id="fig-ex-div-stokes-b">
             <caption>La surface <m>\cS</m> et son bord <m>\cC</m>.</caption>
-            <image xml:id="im-ex-div-stokes-b" width="100%">
-              <sageplot variant="3d" aspect="1.0">
-                var('r,t')
-                X(r,t) = r*cos(t)
-                Y(r,t) = r*sin(t)
-                f(x,y) = (1-x^2 -y^2)*(1-y^3)*cos(x)*exp(y)
-                fx = diff(f,x)
-                fy = diff(f,y)
-                x0, y0 = 0.5,0.3
-                h=2*sqrt(fx(x0,y0)^2 + fy(x0,y0)^2 +1)
-                Fig = parametric_plot3d([X(r,t), Y(r,t), f(X(r,t), Y(r,t)) ],
-                                        (r,0,1), (t,0,2*pi), color = "steelblue", mesh = True,opacity = 0.65)
-                Fig += parametric_plot3d([X(1,t), Y(1,t), 0 ],
-                                        (t,0,2*pi), color = "firebrick", thickness= 2)
-                Fig+= arrow3d((x0,y0,f(x0,y0)),(x0-fx(x0,y0)/h,y0 - fy(x0,y0)/h,
-                  f(x0,y0) + 1/h), width=1, color = "steelblue",frame = False)
-                Fig += arrow3d((0,0,0),(1.5,0,0), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("x", (1.7,0,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,1.5,0), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("y", (0,1.7,0), color = "black",frame = False, fontsize = 20)
-                Fig += arrow3d((0,0,0),(0,0,1.5), width=0.7, color = "black",
-                  frame = False)
-                Fig += text3d("z", (0,0,1.7), color = "black", fontsize = 20)
-                Fig
-              </sageplot>
-            </image>
+            <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.9.17 --><image xml:id="asy-surface-div-bord" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/surface-div-bord.asy"/>
+</asymptote></image>
           </figure>
         </sidebyside>
         <p>

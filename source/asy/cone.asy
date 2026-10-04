@@ -1,7 +1,7 @@
 // Un cône elliptique (annexe C)
 real a = 1, b = 2.5, c = 1.5, vmax = 1.3;
 triple P(pair w) { return (a*w.y*cos(w.x), b*w.y*sin(w.x), c*w.y); }
-surface Surf = surface(P, (0, -vmax), (2pi, vmax), 32, 12, Spline);
+surface Surf = surface(P, (0, -vmax), (2pi, vmax), 24, 8, Spline);
 colorer(Surf, YlOrBr, new real(triple q) { return 0.5 + 0.25*q.z/(c*vmax); });
 draw(Surf);
 

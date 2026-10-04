@@ -1,7 +1,7 @@
 // Un paraboloïde elliptique (annexe C)
 real a = 1.2, b = 1.8, rmax = 1.5;
 triple P(pair w) { return (a*w.x*cos(w.y), b*w.x*sin(w.y), w.x^2); }   // w = (r, theta)
-surface Surf = surface(P, (0, 0), (rmax, 2pi), 10, 32, Spline);
+surface Surf = surface(P, (0, 0), (rmax, 2pi), 8, 24, Spline);
 colorer(Surf, YlOrBr, new real(triple q) { return 0.35 + 0.3*q.z/rmax^2; });
 draw(Surf);
 

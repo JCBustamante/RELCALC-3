@@ -764,23 +764,18 @@
 
                 <figure xml:id="fig-Champ-3d-ex">
                     <caption>
-                      <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m>
+                      Le champ <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m>. La longueur des flèches est proportionnelle à la norme du champ, que leur couleur indique aussi : du violet pour les plus petites normes au jaune pour les plus grandes.
                     </caption>
 
-                    <image xml:id="sageplot3d-Champ-3d-ex" width="80%">
-                        <description>
+                    <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.1.13 --><image xml:id="asy-champ-3d" width="40%"><description>
                             <p>
                                 Le champ de vecteurs
                                 <m> \vF(x,y,z) = y\vi + \vj + (z^2 - 1)\vk</m>
                             </p>
-                        </description>
-                        <sageplot variant="3d" aspect="1.5">
-              var('x,y,z')
-              Fig = plot_vector_field3d((y,1,z^2-1),
-                (x,-1.5,1.5),(y,-1.5,1.5), (z,-1.5,1.5), frame= True, plot_points = 7, headlength = 5, width = 1)
-              Fig
-                        </sageplot>
-                    </image>
+                        </description><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/champ-3d.asy"/>
+</asymptote></image>
                 </figure>
             </statement>
         </example>

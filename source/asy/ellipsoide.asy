@@ -3,7 +3,7 @@ real a = 1, b = 2.5, c = 1.5;
 triple P(pair w) {   // w = (u, v)
   return (a*cos(w.x)*sin(w.y), b*sin(w.x)*sin(w.y), c*cos(w.y));
 }
-surface Surf = surface(P, (0, 0), (2pi, pi), 32, 16, Spline);
+surface Surf = surface(P, (0, 0), (2pi, pi), 24, 12, Spline);
 colorer(Surf, YlOrBr, new real(triple q) { return 0.5 + 0.25*q.z/c; });
 draw(Surf);
 

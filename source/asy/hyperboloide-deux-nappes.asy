@@ -4,8 +4,8 @@ real vcap = 1.2*vmax;   // les nappes sont tronquées à v = vcap
 triple Ph(pair w) { return (a*sinh(w.y)*cos(w.x), b*sinh(w.y)*sin(w.x), c*cosh(w.y)); }
 triple Pb(pair w) { return (a*sinh(w.y)*cos(w.x), b*sinh(w.y)*sin(w.x), -c*cosh(w.y)); }
 real t(triple q) { return 0.4 + 0.1*acosh(abs(q.z)/c)/vmax; }
-surface Haut = surface(Ph, (0, 0), (2pi, vcap), 32, 10, Spline);
-surface Bas  = surface(Pb, (0, 0), (2pi, vcap), 32, 10, Spline);
+surface Haut = surface(Ph, (0, 0), (2pi, vcap), 24, 8, Spline);
+surface Bas  = surface(Pb, (0, 0), (2pi, vcap), 24, 8, Spline);
 colorer(Haut, YlOrBr, t);
 colorer(Bas, YlOrBr, t);
 draw(Haut);

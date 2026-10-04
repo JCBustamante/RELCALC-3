@@ -1675,28 +1675,10 @@ the origin is <m>4\pi</m>.
                             La courbe <m>\cC</m> et une surface <m>\cS</m> dont elle est le bord, orientée par le vecteur rouge; en vert, le domaine <m>\cR</m>.
                         </caption>
 
-                        <image xml:id="im-ex-Stokes" width="100%">
-                            <sageplot variant="3d" aspect="1">
-            var('x,y,z,r,t')
-            L = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(0,pi/4, pi/80)]
-            Fig = line3d(L, thickness= 2, color = "steelblue")
-            L1 = [(2*cos(t),2*sin(t), 4*sin(t)^2) for t in sxrange(pi/4, 2*pi, pi/200)]
-            Fig +=line3d(L1, thickness= 2, color = "steelblue")
-            Fig += plot3d(y^2, (x,-2.1,2.1), (y,-2.1,2.1), color = "orange", opacity = 0.25)
-            Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 4*r^2 * sin(t)^2], (r,0,1), (t,0,2*pi), mesh = True, opacity = 0.65, color = "orange")
-            Fig += parametric_plot3d([2*r*cos(t), 2*r*sin(t), 0], (r,0,1), (t,0,2*pi), opacity = 0.65, color = "seagreen")
-            Fig += arrow3d((1, 1.732, 3), (0.654, 1.932, 3.693), color = "steelblue", width = 2)
-            Fig += arrow3d((-1, -1.732, 3), (-0.78, -1.857, 3.433), color = "steelblue", width = 2)
-            Fig += arrow3d((0,1,1), (0,0.2, 1.4), color = "firebrick", width =2)
-            Fig += arrow3d((0,0,0),(2.4,0,0), width=1, color = "black",frame = False)
-            Fig += text3d("x", (2.6,0,0), color = "black",frame = False, fontsize = 20)
-            Fig += arrow3d((0,0,0),(0,2.2,0), width=1, color = "black",frame = False)
-            Fig += text3d("y", (0,2.4,0), color = "black",frame = False, fontsize = 20)
-            Fig += arrow3d((0,0,0),(0,0,4.5), width=1, color = "black",frame = False)
-            Fig += text3d("z", (0,0,4.7), color = "black", fontsize = 20)
-            Fig
-                            </sageplot>
-                        </image>
+                        <!-- Code Sage d'origine : notebooks/Chapitre-4.ipynb, figure 4.8.12 --><image xml:id="asy-stokes-exemple" width="100%"><asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/stokes-exemple.asy"/>
+</asymptote></image>
                     </figure>
                 </sidebyside>
 

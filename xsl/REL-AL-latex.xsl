@@ -106,6 +106,25 @@
 <!-- rabat alors sur babel.                                                  -->
 <xsl:param name="latex.preamble.late">
   <xsl:text>\ifdefined\setmainlanguage\setmainlanguage{french}\else\usepackage[french]{babel}\fi&#xa;</xsl:text>
+  <!-- Pas de titre de section ou de sous-section en bas de page : s'il reste -->
+  <!-- trop peu de place, la division commence à la page suivante.           -->
+  <xsl:text>\usepackage{needspace}&#xa;</xsl:text>
+  <xsl:text>\AddToHook{env/sectionptx/before}{\Needspace{0.25\textheight}}&#xa;</xsl:text>
+  <xsl:text>\AddToHook{env/subsectionptx/before}{\Needspace{0.25\textheight}}&#xa;</xsl:text>
+  <!-- Pour les titres longs des boîtes (varwidth boxed title, PDF-style.xsl) -->
+  <xsl:text>\usepackage{varwidth}&#xa;</xsl:text>
+  <!-- Verso de couverture (144 x 198 pt) : largeur de la feuille, calé en bas. -->
+  <!-- Trop hautes (format lettre) : le surplus est coupé en haut, où il n'y   -->
+  <!-- a que le motif. Trop courtes (A4) : légèrement étirées (environ 3 %).   -->
+  <!-- Figures Asymptote, dans le PDF seulement : réduites à \asyfacteur de la -->
+  <!-- largeur prévue, et centrées (voir le gabarit image[asymptote] plus bas) -->
+  <xsl:text>\newcommand{\asyfacteur}{0.8}&#xa;</xsl:text>
+  <xsl:text>\newlength{\couvh}&#xa;</xsl:text>
+  <xsl:text>\newcommand{\couverture}[1]{%&#xa;</xsl:text>
+  <xsl:text>  \setlength{\couvh}{\dimexpr\paperwidth*198/144\relax}%&#xa;</xsl:text>
+  <xsl:text>  \ifdim\couvh&lt;\paperheight\setlength{\couvh}{\paperheight}\fi&#xa;</xsl:text>
+  <xsl:text>  \includepdf[noautoscale, keepaspectratio=false, width=\paperwidth, height=\couvh,&#xa;</xsl:text>
+  <xsl:text>    offset=0 {\dimexpr(\couvh-\paperheight)/2\relax}]{#1}}&#xa;</xsl:text>
 </xsl:param>
 
 <xsl:param name="latex.preamble.early">
@@ -191,6 +210,56 @@
         </xsl:when>
         <xsl:otherwise/>
     </xsl:choose>
+</xsl:template>
+
+<!-- Verso de couverture : copie du gabarit "back-cover" de PreTeXt       -->
+<!-- 2.52.3, avec \couverture (voir latex.preamble.late) au lieu de        -->
+<!-- \includepdf[noautoscale=false], pour remplir la feuille entière. Le   -->
+<!-- recto n'est pas touché : il est fourni aux dimensions de chaque feuille. -->
+<xsl:template name="back-cover">
+    <xsl:if test="$b-has-latex-back-cover">
+        <xsl:text>%% Back cover image, not numbered&#xa;</xsl:text>
+        <xsl:text>\cleardoublepage%&#xa;</xsl:text>
+        <xsl:if test="$latex-sides= 'two'">
+            <xsl:text>%% 2-sided, and at end of even page, so add odd page&#xa;</xsl:text>
+            <xsl:text>\thispagestyle{empty}\hbox{}\newpage%&#xa;</xsl:text>
+        </xsl:if>
+        <xsl:text>\couverture{</xsl:text>
+        <xsl:value-of select="$latex-back-cover-filename"/>
+        <xsl:text>}%&#xa;</xsl:text>
+    </xsl:if>
+</xsl:template>
+
+<!-- Figures Asymptote dans le PDF : copie du gabarit image[asymptote]     -->
+<!-- (mode image-inclusion) de pretext-latex-common.xsl, PreTeXt 2.52.3,    -->
+<!-- avec une largeur de \asyfacteur\linewidth (voir latex.preamble.late), -->
+<!-- centrée, au lieu de \linewidth. Le HTML n'est pas touché.              -->
+<xsl:template match="image[asymptote]" mode="image-inclusion">
+    <xsl:variable name="image-file-name">
+        <xsl:value-of select="$generated-directory"/>
+        <xsl:text>asymptote/</xsl:text>
+        <xsl:apply-templates select="asymptote" mode="image-source-basename"/>
+        <xsl:text>.pdf</xsl:text>
+    </xsl:variable>
+    <xsl:text>\makebox[\linewidth]{</xsl:text>
+    <xsl:choose>
+      <xsl:when test="$b-asymptote-links">
+        <xsl:text>\href{</xsl:text>
+        <xsl:value-of select="$baseurl"/>
+        <xsl:value-of select="$generated-directory"/>
+        <xsl:text>asymptote/</xsl:text>
+        <xsl:apply-templates select="asymptote" mode="image-source-basename"/>
+        <xsl:text>.html}{\includegraphics[width=\asyfacteur\linewidth]{</xsl:text>
+        <xsl:value-of select="$image-file-name"/>
+        <xsl:text>}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>\includegraphics[width=\asyfacteur\linewidth]{</xsl:text>
+        <xsl:value-of select="$image-file-name"/>
+        <xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:text>}&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Remove Ad card (may contain list of other books        -->

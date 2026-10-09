@@ -10,7 +10,7 @@ Ce manuel est une version traduite et adaptée des livres
 de  Feldman, Rechnitzer et Yeager.
 
 
-La version compilée se trouve à [https://relcalc.espaceweb.usherbrooke.ca/relcalc-3/Calcul-multivariable.html](https://relcalc.espaceweb.usherbrooke.ca/relcalc-3/Calcul-multivariable.html)
+La version compilée se trouve à [https://rel-math.communaute.usherbrooke.ca/relcalc-3/frontmatter.html](https://rel-math.communaute.usherbrooke.ca/relcalc-3/frontmatter.html)
 
 Ce manuel a été utilisée pendant son développement pour les cours MAT298 - Calcul Vectoriel, et MAT117 - Mathématiques I à l'Université de Sherbrooke.
 

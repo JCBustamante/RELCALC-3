@@ -5,7 +5,7 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021, juin 2022-->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - octobre 2026, avec -->
     <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Différentiabilité et approximations linéaires</title>
 
@@ -21,96 +21,161 @@
             L'équation de la tangente en question est
             <md>
                 <mrow xml:id="eqn-Tgt1-var" tag="star">
-      \amp y = y_0 + f'(x_0)(x-x_0)
+      \amp y = f(x_0) + f'(x_0)(x-x_0)
       </mrow>
             </md>,
             et la fonction <m>L(x) = f(x_0) + f'(x_0)(x-x_0)</m> est
             <em> l'approximation affine de <m>f</m> en <m>x_0</m></em>.
         </p>
 
-        <figure>
-            <caption>
-                Le graphe d'une fonction et son approximation affine au point
-                d'abscisse <m>7/2</m>
-            </caption>
-
-            <sidebyside widths="45% 45%">
-                <image xml:id="sageplot-approx-lin">
+        <sidebyside widths="50% 5% 45%" valign="top">
+            <p>
+                Pour un accroissement <m>dx</m> de la variable, l'approximation affine de <m>f</m> prédit une variation
+                <md>
+                    df = f'(x_0)\,dx = L(x_0+dx) - f(x_0),
+                </md>
+                alors que la vraie variation est
+                <md>
+                    \De f = f(x_0+dx) - f(x_0).
+                </md>
+                Lorsque <m>dx</m> est petit, <m>df \approx \De f</m>, et l'approximation est d'autant meilleure que <m>dx</m> est petit : c'est l'approximation <m>f(x) \approx L(x)</m>. La quantité <m>df</m> est appelée la
+                <em>différentielle</em> de <m>f</m> en <m>x_0</m> ; nous
+                reviendrons sur cette notion pour les fonctions de plusieurs
+                variables.
+            </p>
+            <p/>
+            <figure xml:id="fig-differentielle-1var">
+                <caption>
+                    La variation <m>df</m> prédite par l'approximation affine,
+                    comparée à <m>\De f</m>, la vraie variation de <m>f</m>.
+                </caption>
+                <!-- Figure reprise des notes de MAT194 (fig-differentielle), à la palette du livre -->
+                <image xml:id="sageplot-differentielle-1var">
+                    <description>
+                        <p>Une courbe et sa tangente en <m>x=x_0</m>, avec un accroissement
+                        <m>dx</m> ; deux flèches verticales comparent <m>df</m> (le long de la
+                        tangente) et <m>\De f</m> (le long de la courbe).</p>
+                    </description>
                     <sageplot>
-        var('x')
-        g(x) = (x-3)*(x-5)*(x-7)+40
-        f(x) = derivative(g,x)
-        g1 = plot(g, (x, 0, 8), axes_labels=['$x$', '$y$'], 
-                fontsize = 16, axes_labels_size = 1.6,  xmin=0, xmax=8, ymin=0, ymax=50)
-        g2 = plot(f(3.5)*(x-3.5)+g(3.5), (x,0, 8), rgbcolor='red')
-        g3 = point((3.5, g(3.5)),rgbcolor='black', pointsize=30)
-        graph = g1+g2+g3
-        graph
+a, h = 1, 2
+
+R = PolynomialRing(QQ, 'x')
+Pts = [ (a,1),(a+1, 1), (a+h, 4), (6,6)]
+f = R.lagrange_polynomial(Pts)
+
+Fig = plot(f(x), (x, 0, 6), color = "steelblue", thickness = 1.5,
+    axes_labels = ["$x$", "$y$"], fontsize = 10, axes_labels_size = 1.28,
+    ticks=[[],[]], figsize = [3,3])
+
+c = a+1
+dx = 1.5
+xdx = c + dx
+
+L = taylor(f(x), x, c, 1)
+Fig += plot(L, (x, a, xdx+0.5), color = "firebrick", thickness = 1.5, zorder = -1)
+
+Fig += point((c, f(c)), color='black', size=25, zorder=5)
+
+Fig += line([(c,0),(c,f(c))], color='grey', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += line([(xdx,f(c)),(xdx,L(x=xdx))], color='firebrick', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += line([(xdx,L(x=xdx)),(xdx,f(xdx))], color='steelblue', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += text("$x_0$", (c,-0.35), color='black', fontsize=10)
+
+y_h = -1
+Fig += arrow2d((c,y_h),(xdx,y_h), color='grey', width=0.7, arrowsize=1.5)
+Fig += arrow2d((xdx,y_h),(c,y_h), color='grey', width=0.7, arrowsize=1.5)
+Fig += text("$dx$", ((c+xdx)/2, y_h-0.5), color='grey', fontsize=10)
+
+fc = f(c)
+Ldx = L(x=xdx)
+x_v1 = xdx + 0.4
+Fig += line([(xdx,Ldx),(x_v1,Ldx)], color='firebrick', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += arrow2d((x_v1,fc),(x_v1,Ldx), color='firebrick', width=0.7, arrowsize=1.5)
+Fig += arrow2d((x_v1,Ldx),(x_v1,fc), color='firebrick', width=0.7, arrowsize=1.5)
+Fig += text("$df$", (x_v1+0.3, (fc+Ldx)/2), color='firebrick', fontsize=9)
+
+fdx = f(xdx)
+x_v2 = xdx + 1.6
+Fig += line([(0,fc),(x_v2,fc)], color='grey', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += text("$f(x_0)$", (-0.15,fc), color='black', fontsize=10, horizontal_alignment='right')
+Fig += line([(xdx,fdx),(x_v2,fdx)], color='steelblue', linestyle='dotted', thickness=0.75, zorder=1)
+Fig += arrow2d((x_v2,fc),(x_v2,fdx), color='steelblue', width=0.7, arrowsize=1.5)
+Fig += arrow2d((x_v2,fdx),(x_v2,fc), color='steelblue', width=0.7, arrowsize=1.5)
+Fig += text("$\\Delta f$", (x_v2+0.3, (fc+fdx)/2), color='steelblue', fontsize=9)
+
+Fig += text("$y=f(x)$", (4, 9.5), color='steelblue', fontsize=10)
+
+Fig
                     </sageplot>
                 </image>
-
-                <image xml:id="sageplot-approx-lin-zoom">
-                    <sageplot>
-        var('x')
-        g(x) = (x-3)*(x-5)*(x-7)+40
-        f(x) = derivative(g,x)
-        g1 = plot(g, (x, 3.2, 3.8), axes_labels=['$x$', '$y$'],
-                fontsize = 16, axes_labels_size = 1.6, xmin=3.2, xmax=3.8, ymin=41, ymax=44)
-        g2 = plot(f(3.5)*(x-3.5)+g(3.5), (x,3.2, 3.8), rgbcolor='red')
-        g3 = point((3.5, g(3.5)),rgbcolor='black', pointsize=30)
-        graph = g1+g2+g3
-        graph
-                    </sageplot>
-                </image>
-            </sidebyside>
-        </figure>
+            </figure>
+        </sidebyside>
 
         <p>
-            Dans ce cas, le vecteur <m>\vi + f'(x_0)\vj</m> est un vecteur
-            directeur pour cette droite tangente, ainsi que tout vecteur
-            colinéaire à celui-ci.
+            Par ailleurs, dans ce cas, le vecteur <m>\vi + f'(x_0)\vj</m> est un vecteur
+            directeur pour la droite tangente, et il en va de même pour tout vecteur colinéaire à celui-ci.
         </p>
 
         <p>
             Si on pense à la courbe comme une courbe paramétrée par
-            <m>\vr(t) = t\vi + f(t)\vj</m>, alors <m>\vi + f'(x_0)\vj</m> est
-            précisément <m>\vr'(x_0)'</m>.
+            <m>\vr(x) = x\vi + f(x)\vj</m>, alors <m>\vi + f'(x_0)\vj</m> est  précisément <m>\vr'(x_0)</m>.
             De plus tout autre paramétrage de la courbe donnera un vecteur
-            vitesse colinéaire à <m>\vr'(x_0)</m>.
-        </p>
-
-        <p>
-            De même, supposons que nous avons une surface <m>\cS</m> donnée par
-            <m>z=f(x,y)</m> qui est suffisamment lisse au point
-            <m>P_0(x_0,y_0,f(x_0,y_0))</m>.
-            Plus on regarde <m>\cS</m> de près, plus elle aura l'air d'une
-            portion de plan, qu'on conviendra d'appeler le <em>plan tangent</em>
-            à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>.
-            À nouveau, convenons de dire que le plan tangent à <m>\cS</m> en
-            <m>P_0</m> est l'ensemble de tous les vecteurs vitesse en <m>P_0</m>
-            de toutes les trajectoires qui, se trouvant sur <m>\cS</m>, passent
-            par <m>P_0</m>.
-        </p>
-
-        <p>
-            Nous avons que les vecteurs <m>(1,0,f_x(x_0,y_0))</m> et
-            <m>(0,1,f_y(x_0,y_0))</m> sont de tels vecteurs vitesse à <m>\cS</m>
-            en <m>(x_0,y_0,f(x_0,y_0))</m>.
-            S'il existe, le plan tangent doit contenir ces deux vecteurs
-            vitesse; comme ils sont clairement non colinéaires, leur produit
-            vectoriel serait alors un vecteur normal pour ce plan tangent.
+            vitesse colinéaire à <m>\vr'(x_0)</m>. Qui plus est, l'approximation linéaire de <m>\vr</m> en <m>x_0</m> (voir la <xref ref="def-approx-lin-chemin" text="global">définition</xref>) est 
             <md>
-                <mrow>
-  \begin{bmatrix}1\\ 0\\ f_x(x_0,y_0)\end{bmatrix} \times \begin{bmatrix}0\\1 \\f_y(x_0,y_0)\end{bmatrix}&amp;=\det\left[\begin{matrix}\vi&amp; 1 &amp;0 \\
-                     \vj &amp; 0 &amp; 1  \\
-                     \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)\end{matrix}\right]
-  </mrow>
-                <mrow>
-  &amp;=-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk
-  </mrow>
-            </md>
+                \vL(x) = \vr(x_0) + \vr'(x_0)(x-x_0) = \rvd{x_0}{f(x_0)} + (x-x_0)\rvd{1}{f'(x_0)},
+            </md> et il s'agit d'un paramétrage de la droite tangente à <m>\cC</m> en <m>(x_0,f(x_0))</m>. 
+            
         </p>
 
+    </subsection>
+
+    <subsection xml:id="pars-approx-plan-tangent">
+        <title>Approximation affine et plan tangent</title>
+
+        <sidebyside widths="45% 5% 50%" valign="top">
+            <stack>
+                <p>
+                    Supposons maintenant que nous avons une surface <m>\cS</m> donnée par <m>z=f(x,y)</m> qui est suffisamment lisse au point <m>P_0(x_0,y_0,f(x_0,y_0))</m>.
+                    Plus on regarde <m>\cS</m> de près, plus elle aura l'air d'une
+                    portion de plan, qu'on conviendra d'appeler le <em>plan tangent</em>
+                    à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>.
+                    À nouveau, convenons de dire que le plan tangent à <m>\cS</m> en
+                    <m>P_0</m> est l'ensemble de tous les vecteurs vitesse en <m>P_0</m>
+                    de toutes les trajectoires qui, se trouvant sur <m>\cS</m>, passent
+                    par <m>P_0</m>.
+                </p>
+                <p>
+                    Nous avons en particulier que les vecteurs <m>{\vi + f_x(x_0,y_0)\,\vk}</m> et <m>{\vj + f_y(x_0,y_0)\,\vk}</m> sont de tels vecteurs vitesse à <m>\cS</m> en <m>(x_0,y_0,f(x_0,y_0))</m>.
+                </p>
+            </stack>
+            <p/>
+            <figure xml:id="fig-plan-tangent-vitesses">
+                <caption>Le plan tangent en <m>P_0</m> est engendré par les vecteurs vitesse de deux courbes tracées sur la surface et passant par <m>P_0</m>.</caption>
+                <image xml:id="asy-plan-tangent-vitesses">
+                    <description><p>Une surface, un point <m>P_0</m> de la surface, deux courbes tracées sur la surface et passant par <m>P_0</m>, leurs vecteurs vitesse en <m>P_0</m> et le plan qu'ils engendrent, tangent à la surface.</p></description>
+                    <asymptote>
+<xi:include parse="text" href="asy/commun-3d.asy"/>
+<xi:include parse="text" href="asy/plan-tangent-vitesses.asy"/>
+                    </asymptote>
+                </image>
+            </figure>
+        </sidebyside>
+       
+        <p>
+            S'il existe, le plan tangent doit contenir ces deux vecteurs
+                        vitesse; comme ils sont clairement non colinéaires, leur produit
+                        vectoriel serait alors un vecteur normal pour ce plan tangent.
+                        <md>
+                            <mrow>
+              \begin{bmatrix}1\\ 0\\ f_x(x_0,y_0)\end{bmatrix} \times \begin{bmatrix}0\\1 \\f_y(x_0,y_0)\end{bmatrix}&amp;=\det\left[\begin{matrix}\vi&amp; 1 &amp;0 \\
+                                 \vj &amp; 0 &amp; 1  \\
+                                 \vk &amp; f_x(x_0,y_0) &amp; f_y(x_0,y_0)\end{matrix}\right]
+              </mrow>
+                            <mrow>
+              &amp;=-f_x(x_0,y_0)\,\vi - f_y(x_0,y_0)\,\vj +\vk
+              </mrow>
+                        </md>
+        </p>
         <p>
             S'il existe, le plan tangent à la surface <m>z=f(x,y)</m> au point
             <m>\left(x_0\,,\,y_0\,,\,f(x_0,y_0)\right)</m> serait donc le plan
@@ -247,39 +312,41 @@
                     en <m>(0,0)</m> serait la fonction nulle, <m>L(x,y)=0</m>.
                 </p>
 
-                <p>
-                    Vérifions si ce plan mérite vraiment le nom de plan tangent.
-                    Considérons le chemin donné par
-                    <m>\vr(t) = x(t)\vi + y(t)\vi + f(x(t),y(t))\vk = t\vi + t\vj +t^{2/3}</m>.
-                    La courbe correspondante se trouve sur la surface
-                    <m>z=f(x,y)</m> et passe par l'origine.
-                    Nous avons
-                    <m>\vr'(t) = \vi + \vj + \tfrac{2}{3}t^{-1/3}\vk</m>, qui
-                    n'existe pas pour <m>t=0</m>.
-                    Le plan <m>z=L(x,y) = 0</m> n'a pas donc ce qu'il faut!
-                </p>
+                <sidebyside widths="50% 5% 45%" valign="top">
+                    <p>
+                        Vérifions si ce plan mérite vraiment le nom de plan tangent.
+                        Considérons le chemin donné par
+                        <m>\vr(t) = x(t)\vi + y(t)\vj + f(x(t),y(t))\vk = t\vi + t\vj +t^{2/3}\vk</m>.
+                        La courbe correspondante se trouve sur la surface
+                        <m>z=f(x,y)</m> et passe par l'origine.
+                        Nous avons
+                        <m>\vr'(t) = \vi + \vj + \tfrac{2}{3}t^{-1/3}\vk</m>, qui
+                        n'existe pas pour <m>t=0</m>.
+                        Le plan <m>z=L(x,y) = 0</m> n'a pas donc ce qu'il faut!
+                    </p>
+                    <p/>
+                    <figure xml:id="fig-Diffte-pas-plan-tangent">
+                        <caption>
+                            Le graphe de <m>f(x,y) = x^{1/3}y^{1/3}</m>, avec un
+                            point anguleux à l'origine.
+                        </caption>
 
-                <figure xml:id="fig-Diffte-pas-plan-tangent">
-                    <caption>
-                        Le graphe de <m>f(x,y) = x^{1/3}y^{1/3}</m>, avec un
-                        point anguleux à l'origine.
-                    </caption>
-
-                    <!-- Remplace un sageplot 3D (rendu Tachyon médiocre dans le PDF) -->
-                    <image xml:id="asy-point-anguleux" width="60%">
-                        <description>
-                            <p>
-                                Le graphe d'une fonction en forme de quatre
-                                pétales se rejoignant en un point anguleux à
-                                l'origine, sans plan tangent possible en ce
-                                point.
-                            </p>
-                        </description>
-                        <asymptote>
-<xi:include parse="text" href="asy/point-anguleux.asy"/>
-                        </asymptote>
-                    </image>
-                </figure>
+                        <!-- Remplace un sageplot 3D (rendu Tachyon médiocre dans le PDF) -->
+                        <image xml:id="asy-point-anguleux">
+                            <description>
+                                <p>
+                                    Le graphe d'une fonction en forme de quatre
+                                    pétales se rejoignant en un point anguleux à
+                                    l'origine, sans plan tangent possible en ce
+                                    point.
+                                </p>
+                            </description>
+                            <asymptote>
+    <xi:include parse="text" href="asy/point-anguleux.asy"/>
+                            </asymptote>
+                        </image>
+                    </figure>
+                </sidebyside>
             </solution>
         </example>
     </subsection>
@@ -414,7 +481,7 @@
                 trouvent?
             </p>
             <p>
-                La réponse est oui, pourvu que <m>f</m> soit différentiable en <m>(x_0,y_0)</m>. Ce fait dépend de la <xref ref="thm_chainRule" text="règle de la chaîne"/> (que nous verrons plus loin).
+                La réponse est oui, pourvu que <m>f</m> soit différentiable en <m>(x_0,y_0)</m>. Ce fait dépend de la règle de la chaîne (voir le <xref ref="thm_chainRule" text="global">théorème</xref>), que nous verrons plus loin.
             </p>
         </remark>
 
@@ -585,34 +652,32 @@
             </statement>
 
             <solution>
-                <p>
-                    <sidebyside widths="50% 40%">
-                        <p>
-                            Pour commencer, notons que le graphe de <m>f</m> est
-                            la moitié supérieure d'un cône.
-                            À l'origine, il n'y a pas de plan qui épouse bien la
-                            forme du cône : nous avons un coin prononcé, le
-                            graphe ne s'aplatit pas.
-                        </p>
+                <sidebyside widths="50% 40%">
+                    <p>
+                        Pour commencer, notons que le graphe de <m>f</m> est
+                        la moitié supérieure d'un cône.
+                        À l'origine, il n'y a pas de plan qui épouse bien la
+                        forme du cône : nous avons un coin prononcé, le
+                        graphe ne s'aplatit pas.
+                    </p>
 
-                        <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, exemple 2.4.13 -->
-                        <image xml:id="asy-cone-non-diff">
-                            <asymptote>
+                    <!-- Code Sage d'origine : notebooks/Chapitre-2.ipynb, exemple 2.4.13 -->
+                    <image xml:id="asy-cone-non-diff">
+                        <asymptote>
 <xi:include parse="text" href="asy/commun-3d.asy"/>
 <xi:include parse="text" href="asy/cone-non-diff.asy"/>
-                            </asymptote>
-                        </image>
-                        <!-- <image source="/images/Jupyter-sage/Cone-differentiable.png"/> -->
-                    </sidebyside>
-                </p>
+                        </asymptote>
+                    </image>
+                    <!-- <image source="/images/Jupyter-sage/Cone-differentiable.png"/> -->
+                </sidebyside>
 
                 <p>
                     De façon plus analytique, calculons les dérivées partielles
                     en <m>(0,0)</m>.
                     Nous avons, d'après la définition,
                     <md>
-                        <mrow>f_x(0,0)  \amp = \lim_{x\to 0}\frac{f(x,0) - f(0,0)}{x} = \lim_{x\to 0} \frac{\sqrt{x^2}}{x} = \lim_{x\to 0} \frac{|x|}{x}</mrow>
-                    </md>,
+                        <mrow>f_x(0,0)  \amp = \lim_{x\to 0}\frac{f(x,0) - f(0,0)}{x} = \lim_{x\to 0} \frac{\sqrt{x^2}}{x} = \lim_{x\to 0} \frac{|x|}{x},</mrow>
+                    </md>
                     et cette limite n'existe pas.
                     De même, <m>f_y(0,0)</m> n'existe pas.
                     Ainsi, l'approximation linéaire n'existe pas à l'origine.

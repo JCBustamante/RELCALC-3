@@ -6,8 +6,8 @@ triple S(pair w) {   // w = (r, t)
   real x = w.x*cos(w.y), y = w.x*sin(w.y);
   return (x, y, f(x, y));
 }
-draw(surface(S, (0, 0), (1, 2pi), 8, 32, Spline), surfacepen = face(bleu, 0.65));
-maillage(S, (0, 0), (1, 2pi), 4, 12, bleu*0.7 + 0.2pt);
+draw(surface(S, (0, 0), (1, 2pi), 8, 32, Spline), surfacepen = face(orange, 0.65));
+maillage(S, (0, 0), (1, 2pi), 4, 12, orange*0.6 + 0.2pt);
 // Vecteur normal (vers le haut) au point (x0, y0, f(x0, y0))
 real x0 = 0.6, y0 = -0.3, e = 1e-5;   // point du versant tourné vers le lecteur
 real fx = (f(x0 + e, y0) - f(x0 - e, y0))/(2e);

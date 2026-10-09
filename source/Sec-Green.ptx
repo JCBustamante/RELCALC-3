@@ -4,7 +4,7 @@
   <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShAirelike 4.0 International License-->
   <!-- Traduit et adapté par Juan Carlos Bustamante, août 2021-->
   <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+  <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - octobre 2026, avec -->
   <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
   <title>Le théorème de Green</title>
   <introduction>
@@ -77,7 +77,7 @@
         <p>  Soit <m>\cR</m> une région bornée du plan telle que la frontière <m>\partial \cR</m> consiste en un nombre fini de courbes fermées, simples et lisses par morceaux, avec l'orientation positive.
         </p>
         
-        <sidebyside widths="25%  27%" valign="middle">
+        <sidebyside widths="27% 27%" valign="middle">
           <image source="images/CLP4-figs/greens1"/>
           <image source="images/CLP4-figs/dcircleE"/>
         </sidebyside>
@@ -106,7 +106,8 @@
               <sageplot aspect="1.0">
         p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
         Fig = arrow2d(path = p1, width=2, color='firebrick', 
-          axes_labels = ['$x$','$y$'], ticks =[[],[]], arrowsize = 4, xmin=-0.25, xmax=7.5, axes_labels_size =2.5)
+          axes_labels = ['$x$','$y$'], ticks =[[],[]], arrowsize = 4, xmin=-0.25, xmax=7.5, axes_labels_size =2.5,
+          figsize = [6.4, 3.84])   # 4.8 x 0.8 : compression verticale
         p2 = [[(2,-1), (3,-1),(4,0), (5,2)]]
         Fig += bezier_path(path = p2,color='firebrick', thickness= 2)
         p3 = [[(5,2), (5,3)]]
@@ -149,7 +150,8 @@
         p1 =  [[(1,1),(1.5,1),(1.5,-1),(2,-1)]]
         Fig = arrow2d(path = p1, width=2, color='firebrick', 
           axes_labels = ['$x$','$y$'], ticks =[[],[]], arrowsize = 4, 
-          xmin=-0.25, xmax=7.5, axes_labels_size =2.5)
+          xmin=-0.25, xmax=7.5, axes_labels_size =2.5,
+          figsize = [6.4, 3.84])   # 4.8 x 0.8 : compression verticale
         p2 = [[(2,-1), (3,-1),(4,0), (5,2)]]
         Fig += bezier_path(path = p2,color='steelblue', thickness= 2)        
         p3 = [[(5,2), (5,3)]]        
@@ -163,7 +165,7 @@
         Fig += arrow2d(path = p6, width=2, color='firebrick', arrowsize = 4)
         Fig += bezier_path(path=[[(1,3),(1,1)]], color='firebrick', thickness = 2) 
         Fig += text("$\\mathcal{C}'_2 : x = \\psi_2(y)$", (6.4, 7.4), color = "steelblue", axes = True, fontsize = 28)
-        Fig += text("$\\mathcal{C}'_1 : x = \\psi_1(y)$", (-2.8, 4.5), color = "firebrick", axes = True, fontsize = 28)
+        Fig += text("$\\mathcal{C}'_1 : x = \\psi_1(y)$", (-2.9, 4.5), color = "firebrick", axes = True, fontsize = 28)
         Fig += text("$\\mathcal{R}$", (3, 3), color = "black", axes = True, fontsize = 28)
         P = p1 + [p2[0:][0][1:]] +  [p3[0:][0][1:]] +[[(5,4)]] + [p4[0:][0][1:]] + [p5[0:][0][1:]]
         Fig += bezier_path(P, fill = True, alpha =0.25, rgbcolor = "orange", zorder = -1)
@@ -289,7 +291,7 @@
         <md><mrow>\vF(x,y) = \left(2y + 2xy\cos(x^2y)\right)\vi + \left(x - y + x^2\cos(x^2y)\right)\vj</mrow></md>
         le long de la portion du cercle <m>x^2 + y^2 = 1</m> se trouvant dans le demi-plan <m>x\geqslant 0</m> allant de <m>(0,-1)</m> à <m>(0,1)</m>.
       </p></statement><solution><p>Notons, pour commencer, que le calcul direct de l'intégrale de ligne est possible, mais laborieux. En effet, le paramétrage usuel <m>{\vr(t) = \cos t \, \vi + \sin t\, \vj}</m> avec <m>{-\pi/2 \leqslant t \leqslant \pi/2}</m> mène à intégrer, entre autres, le terme <m>{\cos\left(\cos^2 t\,\sin t\right)\left(\cos^3 t - 2\cos t\,\sin^2 t\right)}</m>, dont la primitive n'est pas évidente à trouver.
-      </p><p>
+      </p><sidebyside widths="60% 5% 35%" valign="middle"><stack><p>
         Par contre, la composante <m>\vk</m> du rotationnel de <m>\vF</m> est facile à traiter. Si nous dénotons par <m>P</m> et <m>Q</m> les composantes de <m>\vF</m>, nous avons
         <md><mrow>
           \pdiff{Q}{x} \amp= 1 + 2x\cos(x^2y) - 2x^3y\sin(x^2y),
@@ -297,7 +299,9 @@
           \pdiff{P}{y} \amp= 2 + 2x\cos(x^2y) - 2x^3y\sin(x^2y),
         </mrow></md>
         de sorte que <m>{\pdiff{Q}{x} - \pdiff{P}{y} = -1}</m>.
-      </p><sidebyside widths="30% 5% 65%" valign="middle"><image xml:id="sageplot-eg_fermer-trajectoire" width="100%"><description><p>Théorème de Green avec une courbe non fermée</p></description><sageplot>
+      </p><p>
+        Cependant, il y a une difficulté additionnelle : la courbe <m>\cC</m> n'est pas une courbe fermée, le théorème de Green ne peut donc pas être appliqué directement. Pour surmonter cet inconvénient, nous allons ajouter une portion de courbe, disons <m>\cC'</m>, à <m>\cC</m> de sorte que la trajectoire résultante <m>\Gamma</m>  obtenue en parcourant d'abord <m>\cC</m> puis <m>\cC'</m> soit fermée et que le théorème de Green puisse être appliqué. De plus, soit <m>\cR</m> la région enfermée par la courbe <m>\Gamma</m>.
+      </p></stack><p/><image xml:id="sageplot-eg_fermer-trajectoire" width="100%"><description><p>Théorème de Green avec une courbe non fermée</p></description><sageplot>
         N = 60
         p1 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [0,1,..,N/4] ]
         p2 = [(cos(j*pi/N-pi/2), sin(j*pi/N-pi/2) ) for j in [N/4,N/4+1,..,N]]
@@ -306,7 +310,7 @@
         L= p1+p2 +[(0,-1)]
         Fig = arrow2d(path=L1, aspect_ratio =1, arrowsize = 4, width=1,
           zorder = 5, color= "steelblue", axes= True, ticks = [[1],[1]],
-          axes_labels = ['$x$','$y$'], axes_labels_size=1.6, fontsize = 15)
+          axes_labels = ['$x$','$y$'], axes_labels_size=1.6, fontsize = 12)
         Fig += arrow2d(path=L2, arrowsize = 4, width=1, zorder = 5,
           color= "steelblue")
         Fig += arrow2d((0,1), (0,0.5), arrowsize = 4, width=1, zorder = 5,
@@ -314,14 +318,12 @@
         Fig += arrow2d((0,0.5), (0,-1), arrowsize = 4, width=1, zorder = 5,
           color= "firebrick")
         Fig += polygon2d(L, fill = True, alpha = 0.25, color ="orange")
-        Fig += text("$\\mathcal{C}$", (0.8,-0.75), color = "steelblue", fontsize = 26)
+        Fig += text("$\\mathcal{C}$", (0.8,-0.75), color = "steelblue", fontsize = 21)
         Fig += text("$\\mathcal{C}'$", (-0.15,0.5), color = "firebrick",
-          fontsize = 26)
-        Fig += text("$\\mathcal{R}$", (0.5,0.5), color = "black", fontsize = 26)
+          fontsize = 21)
+        Fig += text("$\\mathcal{R}$", (0.5,0.5), color = "black", fontsize = 21)
         Fig
-       </sageplot></image><p/><p>
-        Cependant, il y a une difficulté additionnelle : la courbe <m>\cC</m> n'est pas une courbe fermée, le théorème de Green ne peut donc pas être appliqué directement. Pour surmonter cet inconvénient, nous allons ajouter une portion de courbe, disons <m>\cC'</m>, à <m>\cC</m> de sorte que la trajectoire résultante <m>\Gamma</m>  obtenue en parcourant d'abord <m>\cC</m> puis <m>\cC'</m> soit fermée et que le théorème de Green puisse être appliqué. De plus, soit <m>\cR</m> la région enfermée par la courbe <m>\Gamma</m>.
-      </p></sidebyside><p>Nous avons alors
+       </sageplot></image></sidebyside><p>Nous avons alors
         <md><mrow>
           \iint_{\cR} \rot \vF \ \dee{A} = \int_{\partial \cR} \vF\cdot \dee{\vr} = \int_{\cC}\vF \cdot \dee{\vr} + \int_{\cC'}\vF \cdot \dee{\vr}.
         </mrow></md>
@@ -354,8 +356,56 @@
     </p>
 
 
-  <figure xml:id="OpenStax-Plusieurs-trous"><image source="images/OpenStax/CNX_Calc_Figure_16_04_014" width="75%"/><caption>L'orientation de la frontière d'une région est donnée par la règle de la main droite. Figure tirée de <em>Calculus Volume 3, d'OpenStax</em>
-  </caption></figure>
+  <figure xml:id="fig-plusieurs-trous">
+    <caption>L'orientation de la frontière d'une région est donnée par la règle de la main droite : (a) une région percée de trois trous ; (b) la même région coupée en deux morceaux, chacun orienté.</caption>
+    <!-- Remplace images/OpenStax/CNX_Calc_Figure_16_04_014 (Calculus Volume 3, OpenStax) -->
+    <image xml:id="tikz-plusieurs-trous" width="85%">
+      <description><p>Une région ovale percée de trois trous, avec l'orientation de chaque partie de sa frontière ; puis la même région coupée en deux morceaux, chacun orienté dans le sens antihoraire.</p></description>
+      <latex-image>
+\begin{tikzpicture}[scale=0.8,
+  fleche/.style={postaction={decorate}, decoration={markings,
+      mark=at position #1 with {\arrow{Stealth[length=2.2mm]}}}},
+  bord/.style={steelblue, line width=1pt}]
+  \def\a{3} \def\b{1.6} \def\r{0.45}
+  % (a) la région R : ellipse percée de trois trous
+  \begin{scope}
+    \fill[regionorange, opacity=0.25, even odd rule]
+      (0,0) ellipse ({\a} and {\b})
+      (-1.5,0) circle (\r) (0,0) circle (\r) (1.5,0) circle (\r);
+    % frontière extérieure : sens antihoraire
+    \draw[bord, fleche=0.25, fleche=0.75] (\a,0) arc[start angle=0, end angle=360, x radius=\a, y radius=\b];
+    % trous : sens horaire
+    \foreach \c in {-1.5,0,1.5}
+      \draw[bord, fleche=0.25] (\c+\r,0) arc[start angle=0, end angle=-360, radius=\r];
+    \node at (0,1.05) {$\mathcal{R}$};
+    \node at (0,-2.2) {(a)};
+  \end{scope}
+  % (b) la même région coupée en deux morceaux, chacun orienté
+  \begin{scope}[xshift=7.4cm]
+    \def\haut{(\a,0) arc[start angle=0, end angle=180, x radius=\a, y radius=\b]
+      -- (-1.5-\r,0) arc[start angle=180, end angle=0, radius=\r]
+      -- (-\r,0) arc[start angle=180, end angle=0, radius=\r]
+      -- (1.5-\r,0) arc[start angle=180, end angle=0, radius=\r] -- cycle}
+    \def\bas{(-\a,0) arc[start angle=180, end angle=360, x radius=\a, y radius=\b]
+      -- (1.5+\r,0) arc[start angle=0, end angle=-180, radius=\r]
+      -- (\r,0) arc[start angle=0, end angle=-180, radius=\r]
+      -- (-1.5+\r,0) arc[start angle=0, end angle=-180, radius=\r] -- cycle}
+    \begin{scope}[yshift=0.25cm]
+      \fill[regionorange, opacity=0.25] \haut;
+      \draw[bord, fleche=0.2, fleche=0.62, fleche=0.97] \haut;
+    \end{scope}
+    \begin{scope}[yshift=-0.25cm]
+      \fill[regionorange, opacity=0.25] \bas;
+      \draw[bord, fleche=0.2, fleche=0.62, fleche=0.97] \bas;
+    \end{scope}
+    \node at (0,1.3) {$\mathcal{R}_1$};
+    \node at (0,-1.3) {$\mathcal{R}_2$};
+    \node at (0,-2.2) {(b)};
+  \end{scope}
+\end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
 
 
   <p>
@@ -540,9 +590,9 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     #                  gridlines = False, axes = True, ticks = [[],[]],
     #                  axes_labels = ['$x$','$y$'], axes_labels_size=1.4, fill="grey",
     #                  fillalpha = 0.25, zorder = 6)
-    Fig = parametric_plot([r*cos(t), r*sin(t)], (t,0,2*pi), color = "firebrick",
+    Fig = parametric_plot([r*cos(t), r*sin(t)], (t,0,2*pi), color = "orange",
                       gridlines = False, axes = True, ticks = [[],[]],
-                      axes_labels = ['$x$','$y$'], axes_labels_size=2, fill="grey",
+                      axes_labels = ['$x$','$y$'], axes_labels_size=2, fill=True, fillcolor="orange",
                       fillalpha = 0.25, zorder = 6, figsize=4)
     chemin = [[(2,0),(2,1),(1,0),(1,1)],
       [(1,2),(1,3), (0,3)],
@@ -617,9 +667,17 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
     Voyons quelques exemples.
   </p>
     <example xml:id="Aire-astroide-Green">
-      <statement>
-        <sidebyside widths="55% 5% 40%" valign="top">
+      <!-- Volontairement sans statement/solution : l'énoncé et le début de la solution partagent la colonne de texte du sidebyside. -->
+        <sidebyside widths="60% 5% 35%" valign="top">
+          <stack>
           <p>Calculer l'aire de la région limitée par l'astroïde <m>x^{2/3} + y^{2/3} = 1</m>.</p>
+          <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
+        L'aire est alors donnée par
+          <md><mrow>
+            \frac{1}{2}\int_{\cC} x\dee{y} - y\dee{x} = \frac{1}{2}\int_0^{2\pi} (xy' - yx')\, \dee{t}.
+          </mrow></md>
+        </p>
+          </stack>
           <p/>
           <image xml:id="sageplot-Aire-astroide" width="90%">
             <description><p>L'aire de l'astroïde</p></description>
@@ -635,7 +693,7 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
           #  (0.5,0.5), fontsize = 14, color="black")
           Fig = parametric_plot([cos(t)^3, sin(t)^3], (t,0,2*pi),
             color= "steelblue", axes= True, ticks = [[],[]],
-            axes_labels = ['$x$','$y$'], axes_labels_size=1.8, fill=True, fillcolor="orange",
+            axes_labels = ['$x$','$y$'], axes_labels_size=1.6, fill=True, fillcolor="orange",
             fillalpha = 0.25, figsize = 4)
           Fig +=text("$\\mathcal{R}$", (0.2,0.2), fontsize = 12,
             color="black")
@@ -645,14 +703,6 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
          </sageplot>
           </image>
         </sidebyside>
-      </statement>
-      <solution>
-        <p>Nous avons obtenu un paramétrage de l'astroïde à l'<xref ref="eg_paramEllipse" text="global">exemple</xref>, à savoir <m>\vr(t) = \cos^3 t\, \vi + \sin^3 t\,\vj</m>, pour <m>0\leqslant  t\leqslant  2\pi</m>.
-        L'aire est alors donnée par
-          <md><mrow>
-            \frac{1}{2}\int_{\cC} x\dee{y} - y\dee{x} = \frac{1}{2}\int_0^{2\pi} (xy' - yx')\, \dee{t}.
-          </mrow></md>
-        </p>
         <p>
         Or, <m>{\vr'(t) = -(3\sin t\, \cos^2 t)\, \vi + 3 (\cos t\, \sin^2 t)\vj}</m>, de sorte que
         <md><mrow>x(t)y'(t) - y(t)x'(t) \amp= \cos^3t\ 3\cos t\ \sin^2 t+ \sin^3 t\, \ 3 \sin t\, \cos^2 t </mrow><mrow> \amp=3\left(\cos^4 t\, \sin^2 t + \sin^4 t\, \cos^2t\right)
@@ -661,7 +711,6 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
         <md><mrow>A \amp= \frac{1}{2}\int_0^{2\pi} 3\cos^2t\ \sin^2 t\, \dee{t} = \frac{3}{2}\int_0^{2\pi} \left(\frac{\sin 2t}{2}\right)^2\, \dee{t} </mrow><mrow> \amp= \frac{3}{8}\int_0^{2\pi} \sin^2\, 2t\, \dee{t} = \frac{3}{8} \int_0^{2\pi}\frac{1-\cos 4t}{2}\, \dee{t} =\frac{3\pi}{8}. </mrow></md>
 
       </p>
-      </solution>
     </example>
 
      <exercise>
@@ -674,7 +723,12 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
       </p>
       </statement>
       <solution>
-        <sidebyside widths="45% 50%">
+        <sidebyside widths="50% 45%">
+          <p>
+      Nous calculons l'aire au moyen de <m>\text{Aire}(\cR) = -\int_{\partial \cR} y\, \dee{x}</m>.
+
+      Le bord de <m>\cR</m> est composé de quatre courbes, dont trois sont des segments de droite : <m>\cC_1</m> est le segment de <m>(a,0)</m> à <m>(b,0)</m>; <m>\cC_2</m>, celui de <m>(b,0)</m> à <m>(b,f(b))</m>; <m>\cC_3</m> est la portion de la courbe <m>y=f(x)</m> <em>parcourue de droite à gauche, c'est-à-dire de <m>x=b</m> à <m>x=a</m></em>; <m>\cC_4</m> est le segment de <m>(a,f(a))</m> à <m>(a,0)</m>.
+      </p>
           <image xml:id="sageplot-Aire-Green">
             <description><p>L'aire avec le théorème de Green</p></description>
             <sageplot>
@@ -713,11 +767,6 @@ Il est important de remarquer que, dans le <xref ref="thm_Green_tgt" text="globa
         Fig
        </sageplot>
           </image>
-          <p>
-      Nous calculons l'aire au moyen de <m>\text{Aire}(\cR) = -\int_{\partial \cR} y\, \dee{x}</m>.
-
-      Le bord de <m>\cR</m> est composé de quatre courbes, dont trois sont des segments de droite : <m>\cC_1</m> est le segment de <m>(a,0)</m> à <m>(b,0)</m>; <m>\cC_2</m>, celui de <m>(b,0)</m> à <m>(b,f(b))</m>; <m>\cC_3</m> est la portion de la courbe <m>y=f(x)</m> <em>parcourue de droite à gauche, c'est-à-dire de <m>x=b</m> à <m>x=a</m></em>; <m>\cC_4</m> est le segment de <m>(a,f(a))</m> à <m>(a,0)</m>.
-      </p>
         </sidebyside>
         <p>
         Ainsi, l'aire est

@@ -5,7 +5,7 @@
     <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
     <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
     <!-- Traduit et adapté par Juan Carlos Bustamante, juillet 2021, juin 2022 -->
-    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - septembre 2026, avec -->
+    <!-- Révisé et modifié par Juan Carlos Bustamante, juillet - octobre 2026, avec -->
     <!-- utilisation d'outils d'intelligence artificielle : Claude, différentes versions -->
     <title>Vecteur gradient</title>
 
@@ -1222,6 +1222,69 @@
             <p>
                 Il est <alert> très important </alert> de pouvoir passer d'un
                 contexte à l'autre.
+            </p>
+        </remark>
+
+        <!-- Reprise de la remarque « Deux interprétations du gradient » des notes de MAT194 -->
+        <remark xml:id="rem-interpretations-gradient">
+            <title>Deux interprétations du gradient</title>
+            <p>
+                Le gradient joue deux rôles différents, selon le contexte.
+                Supposons que <m>f\colon\R^2\to\R</m> est différentiable.
+            </p>
+
+            <sidebyside widths="58% 4% 38%" valign="top">
+                <stack>
+                    <p>
+                        Soit <m>\cS</m> la surface d'équation <m>z=f(x,y)</m>, c'est-à-dire
+                        le graphe de <m>f</m>.
+                        Alors <m>\vnabla f(x_0,y_0)</m> est un vecteur qui vit
+                        <em>dans le domaine</em> de <m>f</m> : il pointe, à partir de
+                        <m>(x_0,y_0)</m>, dans la direction de plus forte croissance de
+                        <m>f</m> (voir la sous-section
+                        <q><xref ref="pars-Directionnelles-gradient" text="title"/></q>).
+                    </p>
+
+
+                    <p>
+                        Si on voit plutôt cette même surface comme une surface de niveau,
+                        celle d'équation <m>G(x,y,z)=0</m> avec <m>G(x,y,z) = f(x,y)-z</m>
+                        (au signe près, comme à la <xref ref="rem_tan_plane" text="global">remarque</xref>),
+                        alors, au point <m>(x_0,y_0,z_0)</m> de la surface (avec
+                        <m>z_0=f(x_0,y_0)</m>), <m>\vnabla G(x_0,y_0,z_0)</m> est un vecteur
+                        <em>normal à la surface</em>, orthogonal au plan tangent en ce
+                        point (<xref ref="thm_tan_plane_G" text="global">théorème</xref>).
+                        C'est la même idée que pour les courbes de niveau, une dimension
+                        plus haut.
+                    </p>
+                </stack>
+                <p/>
+                    <figure xml:id="fig-interpretations-gradient">
+                        <caption><m>\vnabla f</m> dans le domaine, <m>\vnabla G</m> normal à la surface</caption>
+                        <image xml:id="asy-interpretations-gradient">
+                            <description>
+                                <p>Le graphe de <m>f(x,y)=1+x^2+2y^2</m>, en bleu, au-dessus
+                                d'un quart d'ellipse orange du plan <m>Oxy</m>, dans le premier octant. Un vecteur rouge,
+                                dans le plan, part du point <m>\left(\tfrac{1}{4},\tfrac{1}{4}\right)</m> ;
+                                un vecteur bleu, normal à la surface, part du point
+                                correspondant du graphe.</p>
+                            </description>
+                            <asymptote>
+        <xi:include parse="text" href="asy/commun-3d.asy"/>
+        <xi:include parse="text" href="asy/interpretations-gradient.asy"/>
+                            </asymptote>
+                        </image>
+                    </figure>
+            </sidebyside>
+
+            <p>
+                La <xref ref="fig-interpretations-gradient" text="global">figure</xref>
+                montre les deux sur un même exemple. En rouge,
+                <m>\vnabla f(x_0,y_0)</m>, dans le domaine, pointe dans la
+                direction de plus forte croissance de <m>f</m> ; en bleu,
+                <m>\vnabla G(x_0,y_0,z_0) = f_x(x_0,y_0)\,\vi + f_y(x_0,y_0)\,\vj - \vk</m>
+                est normal à la surface au point correspondant. Sa partie
+                horizontale est précisément <m>\vnabla f(x_0,y_0)</m>.
             </p>
         </remark>
 

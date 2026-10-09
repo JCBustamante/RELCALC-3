@@ -2,7 +2,7 @@
 // [-1, 1]^2 (même domaine que le diagramme de courbes de niveau). En polaires,
 // g = t + pi/4 à un multiple de pi près, à valeurs dans ]-pi/2, pi/2[ :
 // deux rampes, avec une déchirure le long de la droite y = x.
-currentprojection = orthographic(5, 3.5, 3, zoom = 0.8);
+currentprojection = orthographic(5, 3.5, 3, zoom = 0.7);
 real k = 0.7;   // compression verticale de la figure (z affiché = 0.7 g(x,y))
 real e = 0.01;
 real t(triple q) { return (q.z/k + pi/2)/pi; }
